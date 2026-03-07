@@ -16,6 +16,8 @@ test('restores URL state by hydrating summary, county detail, and township slice
   await expect(page.getByTestId('scope-breadcrumbs')).toContainText('宜蘭縣')
   await expect(page.getByTestId('scope-breadcrumbs')).toContainText('宜蘭市')
   await expect(page.getByTestId('current-scope-card')).toContainText('宜蘭市')
+
+  await page.getByRole('tab', { name: /學校/ }).click()
   await expect(page.getByTestId('school-list')).toBeVisible()
 })
 
@@ -32,6 +34,8 @@ test('switching county loads the township slice and county detail on demand', as
   await townshipResponse
 
   await expect(page.getByTestId('scope-breadcrumbs')).toContainText('宜蘭縣')
+
+  await page.getByRole('tab', { name: /學校/ }).click()
   await expect(page.getByTestId('school-detail-panel')).toContainText('宜蘭縣')
   await expect(page.getByRole('heading', { name: '宜蘭縣 鄉鎮輪廓圖' })).toBeVisible()
   await expect(page.getByText('宜蘭市', { exact: false }).first()).toBeVisible()
@@ -40,6 +44,7 @@ test('switching county loads the township slice and county detail on demand', as
 test('shows anomaly notes after loading county details', async ({ page }) => {
   await page.goto(`/?county=${encodeURIComponent(yilanCountyId)}&township=${encodeURIComponent(yilanTownshipId)}`)
 
+  await page.getByRole('tab', { name: /區域/ }).click()
   await expect(page.getByTestId('scope-notes')).toContainText('宜蘭市 有 3 所學校存在年度缺漏。')
   await expect(page.getByTestId('data-note').first()).toContainText('缺年度')
 })

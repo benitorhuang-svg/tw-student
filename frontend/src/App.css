@@ -348,50 +348,67 @@
   grid-template-columns: minmax(320px, 380px) minmax(0, 1fr);
 }
 
-/* ── Tier sections ── */
+/* ── Tab navigation ── */
 
-.atlas-tier {
+.atlas-tabs {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 16px;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  position: sticky;
+  top: 8px;
+  z-index: 20;
+  backdrop-filter: blur(12px);
+}
+
+.atlas-tab {
+  flex: 1;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 12px;
+  background: transparent;
+  color: rgba(148, 163, 184, 0.7);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.atlas-tab:hover {
+  color: #e2e8f0;
+  background: rgba(148, 163, 184, 0.08);
+}
+
+.atlas-tab--active {
+  background: rgba(56, 189, 248, 0.15);
+  color: #e2e8f0;
+  box-shadow: 0 2px 12px rgba(56, 189, 248, 0.12);
+}
+
+.atlas-tab__badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  background: rgba(56, 189, 248, 0.25);
+  color: rgba(56, 189, 248, 0.95);
+  padding: 1px 7px;
+  border-radius: 99px;
+  line-height: 1.4;
+}
+
+.atlas-tab--active .atlas-tab__badge {
+  background: rgba(56, 189, 248, 0.35);
+}
+
+.atlas-tab-panel {
   display: grid;
   gap: 16px;
-  padding: 4px 0;
-  border-left: 3px solid rgba(148, 163, 184, 0.12);
-  padding-left: 14px;
-}
-
-.atlas-tier__label {
-  font-size: 0.72rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(148, 163, 184, 0.56);
-}
-
-.atlas-tier__label span {
-  font-weight: 700;
-  margin-right: 6px;
-}
-
-.atlas-tier--macro {
-  border-color: rgba(56, 189, 248, 0.28);
-}
-
-.atlas-tier--macro .atlas-tier__label span {
-  color: rgba(56, 189, 248, 0.82);
-}
-
-.atlas-tier--regional {
-  border-color: rgba(251, 191, 36, 0.28);
-}
-
-.atlas-tier--regional .atlas-tier__label span {
-  color: rgba(251, 191, 36, 0.82);
-}
-
-.atlas-tier--micro {
-  border-color: rgba(168, 85, 247, 0.28);
-}
-
-.atlas-tier--micro .atlas-tier__label span {
-  color: rgba(168, 85, 247, 0.82);
 }
 
 /* ── Education distribution bar ── */
@@ -430,6 +447,12 @@
 .scope-panel__actions {
   display: flex;
   gap: 10px;
+  align-items: center;
+}
+
+.scope-panel__actions-meta {
+  font-size: 0.78rem;
+  color: rgba(148, 163, 184, 0.56);
 }
 
 .trend-panel,
