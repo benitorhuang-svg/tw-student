@@ -1,0 +1,69 @@
+{
+  "county": {
+    "id": "南投縣",
+    "name": "南投縣",
+    "shortLabel": "南投",
+    "region": "中部"
+  },
+  "dataNotes": [],
+  "towns": [
+    {
+      "id": "南投縣:埔里鎮",
+      "name": "埔里鎮",
+      "countyId": "南投縣",
+      "schools": [
+        {
+          "id": "0021",
+          "code": "0021",
+          "name": "國立暨南國際大學",
+          "countyId": "南投縣",
+          "townshipId": "南投縣:埔里鎮",
+          "educationLevel": "大專院校",
+          "managementType": "公立",
+          "address": "南投縣埔里鎮大學路1號",
+          "phone": "(049)2910960#2996",
+          "website": "http://www.ncnu.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/0021/R/南投縣/埔里鎮/國立/否/一般/",
+          "coordinates": {
+            "longitude": 120.930818,
+            "latitude": 23.951191
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 6200
+            },
+            {
+              "year": 108,
+              "students": 6108
+            },
+            {
+              "year": 109,
+              "students": 6016
+            },
+            {
+              "year": 110,
+              "students": 6242
+            },
+            {
+              "year": 111,
+              "students": 6381
+            },
+            {
+              "year": 112,
+              "students": 6556
+            },
+            {
+              "year": 113,
+              "students": 6635
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    }
+  ]
+}

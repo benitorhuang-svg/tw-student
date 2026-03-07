@@ -1,0 +1,11 @@
+{
+  "name": "student-counting-analysis-tw",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "lint": "npm --prefix frontend run lint",
+    "data:refresh": "npm --prefix frontend run data:refresh",
+    "test:e2e": "npm --prefix frontend run test:e2e"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "county": {
+    "id": "金門縣",
+    "name": "金門縣",
+    "shortLabel": "金門",
+    "region": "離島"
+  },
+  "dataNotes": [],
+  "towns": [
+    {
+      "id": "金門縣:金寧鄉",
+      "name": "金寧鄉",
+      "countyId": "金門縣",
+      "schools": [
+        {
+          "id": "0048",
+          "code": "0048",
+          "name": "國立金門大學",
+          "countyId": "金門縣",
+          "townshipId": "金門縣:金寧鄉",
+          "educationLevel": "大專院校",
+          "managementType": "公立",
+          "address": "金門縣金寧鄉大學路1號",
+          "phone": "(082)313300",
+          "website": "http://www.nqu.edu.tw/cht/index.php",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/0048/R/金門縣/金寧鄉/國立/否/一般/",
+          "coordinates": {
+            "longitude": 118.322469,
+            "latitude": 24.448294
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 4303
+            },
+            {
+              "year": 108,
+              "students": 4387
+            },
+            {
+              "year": 109,
+              "students": 4131
+            },
+            {
+              "year": 110,
+              "students": 4215
+            },
+            {
+              "year": 111,
+              "students": 4175
+            },
+            {
+              "year": 112,
+              "students": 4050
+            },
+            {
+              "year": 113,
+              "students": 3823
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    }
+  ]
+}

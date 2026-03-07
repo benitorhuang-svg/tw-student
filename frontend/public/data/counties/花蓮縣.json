@@ -1,0 +1,69 @@
+{
+  "county": {
+    "id": "花蓮縣",
+    "name": "花蓮縣",
+    "shortLabel": "花蓮",
+    "region": "東部"
+  },
+  "dataNotes": [],
+  "towns": [
+    {
+      "id": "花蓮縣:壽豐鄉",
+      "name": "壽豐鄉",
+      "countyId": "花蓮縣",
+      "schools": [
+        {
+          "id": "0020",
+          "code": "0020",
+          "name": "國立東華大學",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:壽豐鄉",
+          "educationLevel": "大專院校",
+          "managementType": "公立",
+          "address": "花蓮縣壽豐鄉志學村大學路二段1號",
+          "phone": "(03)8903000",
+          "website": "http://www.ndhu.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/0020/R/花蓮縣/壽豐鄉/國立/否/一般/",
+          "coordinates": {
+            "longitude": 121.544414,
+            "latitude": 23.892308
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 9928
+            },
+            {
+              "year": 108,
+              "students": 9907
+            },
+            {
+              "year": 109,
+              "students": 10008
+            },
+            {
+              "year": 110,
+              "students": 10251
+            },
+            {
+              "year": 111,
+              "students": 10280
+            },
+            {
+              "year": 112,
+              "students": 10350
+            },
+            {
+              "year": 113,
+              "students": 10266
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    }
+  ]
+}

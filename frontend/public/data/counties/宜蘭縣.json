@@ -1,0 +1,5948 @@
+{
+  "county": {
+    "id": "宜蘭縣",
+    "name": "宜蘭縣",
+    "shortLabel": "宜蘭",
+    "region": "北部"
+  },
+  "dataNotes": [
+    {
+      "type": "缺年度",
+      "message": "宜蘭縣 有 9 所學校存在年度缺漏。",
+      "severity": "warning"
+    }
+  ],
+  "towns": [
+    {
+      "id": "宜蘭縣:三星鄉",
+      "name": "三星鄉",
+      "countyId": "宜蘭縣",
+      "schools": [
+        {
+          "id": "024661",
+          "code": "024661",
+          "name": "縣立三星國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:三星鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣三星鄉三星路五段86號",
+          "phone": "(03)9892026",
+          "website": "https://www.ssps.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024661/C/宜蘭縣/三星鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.650793,
+            "latitude": 24.666279
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 246
+            },
+            {
+              "year": 108,
+              "students": 239
+            },
+            {
+              "year": 109,
+              "students": 251
+            },
+            {
+              "year": 110,
+              "students": 258
+            },
+            {
+              "year": 111,
+              "students": 247
+            },
+            {
+              "year": 112,
+              "students": 239
+            },
+            {
+              "year": 113,
+              "students": 226
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024511",
+          "code": "024511",
+          "name": "縣立三星國中",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:三星鄉",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "宜蘭縣三星鄉星義路72號",
+          "phone": "(03)9892012",
+          "website": "http://www.ssjh.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024511/J/宜蘭縣/三星鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.653735,
+            "latitude": 24.667799
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 309
+            },
+            {
+              "year": 108,
+              "students": 291
+            },
+            {
+              "year": 109,
+              "students": 298
+            },
+            {
+              "year": 110,
+              "students": 287
+            },
+            {
+              "year": 111,
+              "students": 234
+            },
+            {
+              "year": 112,
+              "students": 221
+            },
+            {
+              "year": 113,
+              "students": 178
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024665",
+          "code": "024665",
+          "name": "縣立大隱國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:三星鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣三星鄉大隱中路347號",
+          "phone": "(03)9890155",
+          "website": "https://www.dyes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024665/C/宜蘭縣/三星鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.713123,
+            "latitude": 24.667974
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 155
+            },
+            {
+              "year": 108,
+              "students": 163
+            },
+            {
+              "year": 109,
+              "students": 158
+            },
+            {
+              "year": 110,
+              "students": 153
+            },
+            {
+              "year": 111,
+              "students": 162
+            },
+            {
+              "year": 112,
+              "students": 170
+            },
+            {
+              "year": 113,
+              "students": 174
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024662",
+          "code": "024662",
+          "name": "縣立大洲國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:三星鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣三星鄉大洲村上將路二段500號",
+          "phone": "(03)9551547",
+          "website": "https://www.djes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024662/C/宜蘭縣/三星鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.727399,
+            "latitude": 24.692983
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 143
+            },
+            {
+              "year": 108,
+              "students": 139
+            },
+            {
+              "year": 109,
+              "students": 128
+            },
+            {
+              "year": 110,
+              "students": 124
+            },
+            {
+              "year": 111,
+              "students": 130
+            },
+            {
+              "year": 112,
+              "students": 139
+            },
+            {
+              "year": 113,
+              "students": 137
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024663",
+          "code": "024663",
+          "name": "縣立憲明國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:三星鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣三星鄉天山村福山街119號",
+          "phone": "(03)9892049",
+          "website": "https://www.shmes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024663/C/宜蘭縣/三星鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.618554,
+            "latitude": 24.660762
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 75
+            },
+            {
+              "year": 108,
+              "students": 70
+            },
+            {
+              "year": 109,
+              "students": 72
+            },
+            {
+              "year": 110,
+              "students": 71
+            },
+            {
+              "year": 111,
+              "students": 74
+            },
+            {
+              "year": 112,
+              "students": 70
+            },
+            {
+              "year": 113,
+              "students": 71
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024664",
+          "code": "024664",
+          "name": "縣立萬富國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:三星鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣三星鄉萬富村健富路一段309號",
+          "phone": "(03)9890564",
+          "website": "https://www.wfes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024664/C/宜蘭縣/三星鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.688528,
+            "latitude": 24.679866
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 54
+            },
+            {
+              "year": 108,
+              "students": 57
+            },
+            {
+              "year": 109,
+              "students": 62
+            },
+            {
+              "year": 110,
+              "students": 67
+            },
+            {
+              "year": 111,
+              "students": 66
+            },
+            {
+              "year": 112,
+              "students": 75
+            },
+            {
+              "year": 113,
+              "students": 70
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    },
+    {
+      "id": "宜蘭縣:大同鄉",
+      "name": "大同鄉",
+      "countyId": "宜蘭縣",
+      "schools": [
+        {
+          "id": "024668",
+          "code": "024668",
+          "name": "縣立四季國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:大同鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣大同鄉四季村和勳巷1號",
+          "phone": "(03)9809312",
+          "website": "https://www.sches.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024668/C/宜蘭縣/大同鄉/縣市立/極偏/無/",
+          "coordinates": {
+            "longitude": 121.426676,
+            "latitude": 24.488407
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 78
+            },
+            {
+              "year": 108,
+              "students": 81
+            },
+            {
+              "year": 109,
+              "students": 85
+            },
+            {
+              "year": 110,
+              "students": 93
+            },
+            {
+              "year": 111,
+              "students": 99
+            },
+            {
+              "year": 112,
+              "students": 95
+            },
+            {
+              "year": 113,
+              "students": 97
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024670",
+          "code": "024670",
+          "name": "縣立大同國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:大同鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣大同鄉崙埤村朝陽10之9號",
+          "phone": "(03)9801172",
+          "website": "https://www.dtes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024670/C/宜蘭縣/大同鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.608987,
+            "latitude": 24.678263
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 86
+            },
+            {
+              "year": 108,
+              "students": 101
+            },
+            {
+              "year": 109,
+              "students": 105
+            },
+            {
+              "year": 110,
+              "students": 93
+            },
+            {
+              "year": 111,
+              "students": 84
+            },
+            {
+              "year": 112,
+              "students": 83
+            },
+            {
+              "year": 113,
+              "students": 67
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024671",
+          "code": "024671",
+          "name": "縣立寒溪國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:大同鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣大同鄉寒溪村寒溪巷16號",
+          "phone": "(03)9517441",
+          "website": "https://www.hsies.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024671/C/宜蘭縣/大同鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.687154,
+            "latitude": 24.609168
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 66
+            },
+            {
+              "year": 108,
+              "students": 57
+            },
+            {
+              "year": 109,
+              "students": 56
+            },
+            {
+              "year": 110,
+              "students": 51
+            },
+            {
+              "year": 111,
+              "students": 53
+            },
+            {
+              "year": 112,
+              "students": 62
+            },
+            {
+              "year": 113,
+              "students": 59
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024669",
+          "code": "024669",
+          "name": "縣立南山國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:大同鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣大同鄉南山村四鄰埤南巷31之3號",
+          "phone": "(03)9809113",
+          "website": "https://www.nses.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024669/C/宜蘭縣/大同鄉/縣市立/極偏/無/",
+          "coordinates": {
+            "longitude": 121.380617,
+            "latitude": 24.437308
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 74
+            },
+            {
+              "year": 108,
+              "students": 73
+            },
+            {
+              "year": 109,
+              "students": 70
+            },
+            {
+              "year": 110,
+              "students": 56
+            },
+            {
+              "year": 111,
+              "students": 59
+            },
+            {
+              "year": 112,
+              "students": 47
+            },
+            {
+              "year": 113,
+              "students": 46
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024523",
+          "code": "024523",
+          "name": "縣立大同國中",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:大同鄉",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "宜蘭縣大同鄉太平村一鄰泰雅路四段35號",
+          "phone": "(03)9809611",
+          "website": "http://www.dtjh.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024523/J/宜蘭縣/大同鄉/縣市立/極偏/無/",
+          "coordinates": {
+            "longitude": 121.47793,
+            "latitude": 24.574263
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 58
+            },
+            {
+              "year": 108,
+              "students": 54
+            },
+            {
+              "year": 109,
+              "students": 53
+            },
+            {
+              "year": 110,
+              "students": 46
+            },
+            {
+              "year": 111,
+              "students": 46
+            },
+            {
+              "year": 112,
+              "students": 38
+            },
+            {
+              "year": 113,
+              "students": 36
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    },
+    {
+      "id": "宜蘭縣:五結鄉",
+      "name": "五結鄉",
+      "countyId": "宜蘭縣",
+      "schools": [
+        {
+          "id": "024649",
+          "code": "024649",
+          "name": "縣立五結國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:五結鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣五結鄉五結中路二段88號",
+          "phone": "(03)9507272",
+          "website": "https://www.wjes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024649/C/宜蘭縣/五結鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.799128,
+            "latitude": 24.686699
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 417
+            },
+            {
+              "year": 108,
+              "students": 436
+            },
+            {
+              "year": 109,
+              "students": 463
+            },
+            {
+              "year": 110,
+              "students": 492
+            },
+            {
+              "year": 111,
+              "students": 513
+            },
+            {
+              "year": 112,
+              "students": 524
+            },
+            {
+              "year": 113,
+              "students": 530
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024652",
+          "code": "024652",
+          "name": "縣立利澤國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:五結鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣五結鄉成興村利寶路101號",
+          "phone": "(03)9503805",
+          "website": "https://www.ltps.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024652/C/宜蘭縣/五結鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.827667,
+            "latitude": 24.665479
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 296
+            },
+            {
+              "year": 108,
+              "students": 281
+            },
+            {
+              "year": 109,
+              "students": 281
+            },
+            {
+              "year": 110,
+              "students": 277
+            },
+            {
+              "year": 111,
+              "students": 277
+            },
+            {
+              "year": 112,
+              "students": 275
+            },
+            {
+              "year": 113,
+              "students": 277
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024650",
+          "code": "024650",
+          "name": "縣立學進國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:五結鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣五結鄉中正路三段151號",
+          "phone": "(03)9653801",
+          "website": "https://www.shjes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024650/C/宜蘭縣/五結鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.770248,
+            "latitude": 24.706814
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 247
+            },
+            {
+              "year": 108,
+              "students": 249
+            },
+            {
+              "year": 109,
+              "students": 248
+            },
+            {
+              "year": 110,
+              "students": 244
+            },
+            {
+              "year": 111,
+              "students": 245
+            },
+            {
+              "year": 112,
+              "students": 265
+            },
+            {
+              "year": 113,
+              "students": 261
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024516",
+          "code": "024516",
+          "name": "縣立五結國中",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:五結鄉",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "宜蘭縣五結鄉大吉村大吉五路58號",
+          "phone": "(03)9501105",
+          "website": "http://www.wjjh.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024516/J/宜蘭縣/五結鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.800241,
+            "latitude": 24.696306
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 281
+            },
+            {
+              "year": 108,
+              "students": 264
+            },
+            {
+              "year": 109,
+              "students": 229
+            },
+            {
+              "year": 110,
+              "students": 224
+            },
+            {
+              "year": 111,
+              "students": 220
+            },
+            {
+              "year": 112,
+              "students": 227
+            },
+            {
+              "year": 113,
+              "students": 243
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024518",
+          "code": "024518",
+          "name": "縣立利澤國中",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:五結鄉",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "宜蘭縣五結鄉成興村利寶路99號",
+          "phone": "(03)9504762",
+          "website": "http://www.ljjh.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024518/J/宜蘭縣/五結鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.829166,
+            "latitude": 24.665808
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 172
+            },
+            {
+              "year": 108,
+              "students": 167
+            },
+            {
+              "year": 109,
+              "students": 167
+            },
+            {
+              "year": 110,
+              "students": 154
+            },
+            {
+              "year": 111,
+              "students": 135
+            },
+            {
+              "year": 112,
+              "students": 110
+            },
+            {
+              "year": 113,
+              "students": 105
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024651",
+          "code": "024651",
+          "name": "縣立中興國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:五結鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣五結鄉四結村中興路三段67號",
+          "phone": "(03)9544356",
+          "website": "https://www.cses.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024651/C/宜蘭縣/五結鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.772431,
+            "latitude": 24.692576
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 70
+            },
+            {
+              "year": 108,
+              "students": 70
+            },
+            {
+              "year": 109,
+              "students": 69
+            },
+            {
+              "year": 110,
+              "students": 73
+            },
+            {
+              "year": 111,
+              "students": 80
+            },
+            {
+              "year": 112,
+              "students": 85
+            },
+            {
+              "year": 113,
+              "students": 93
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024517",
+          "code": "024517",
+          "name": "縣立興中國中",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:五結鄉",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "宜蘭縣五結鄉上四村中正東路50號",
+          "phone": "(03)9653453",
+          "website": "http://www.scjh.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024517/J/宜蘭縣/五結鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.770831,
+            "latitude": 24.699288
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 116
+            },
+            {
+              "year": 108,
+              "students": 113
+            },
+            {
+              "year": 109,
+              "students": 102
+            },
+            {
+              "year": 110,
+              "students": 106
+            },
+            {
+              "year": 111,
+              "students": 106
+            },
+            {
+              "year": 112,
+              "students": 102
+            },
+            {
+              "year": 113,
+              "students": 90
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024653",
+          "code": "024653",
+          "name": "縣立孝威國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:五結鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣五結鄉孝威路328號",
+          "phone": "(03)9503804",
+          "website": "https://www.swes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024653/C/宜蘭縣/五結鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.812278,
+            "latitude": 24.696499
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 81
+            },
+            {
+              "year": 108,
+              "students": 78
+            },
+            {
+              "year": 109,
+              "students": 91
+            },
+            {
+              "year": 110,
+              "students": 93
+            },
+            {
+              "year": 111,
+              "students": 96
+            },
+            {
+              "year": 112,
+              "students": 89
+            },
+            {
+              "year": 113,
+              "students": 86
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    },
+    {
+      "id": "宜蘭縣:冬山鄉",
+      "name": "冬山鄉",
+      "countyId": "宜蘭縣",
+      "schools": [
+        {
+          "id": "020407",
+          "code": "020407",
+          "name": "國立羅東高工",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:冬山鄉",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "宜蘭縣冬山鄉廣興路117號",
+          "phone": "(03)9514196",
+          "website": "https://www.ltivs.ilc.edu.tw/home.php",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/020407/H/宜蘭縣/冬山鄉/國立/否/無/",
+          "coordinates": {
+            "longitude": 121.751072,
+            "latitude": 24.670271
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 0
+            },
+            {
+              "year": 108,
+              "students": 1488
+            },
+            {
+              "year": 109,
+              "students": 1439
+            },
+            {
+              "year": 110,
+              "students": 1412
+            },
+            {
+              "year": 111,
+              "students": 1372
+            },
+            {
+              "year": 112,
+              "students": 1302
+            },
+            {
+              "year": 113,
+              "students": 1218
+            }
+          ],
+          "status": "正常",
+          "missingYears": [
+            107
+          ],
+          "dataNotes": [
+            {
+              "type": "缺年度",
+              "message": "缺少學年度資料：107",
+              "severity": "warning",
+              "years": [
+                107
+              ]
+            }
+          ]
+        },
+        {
+          "id": "024325",
+          "code": "024325",
+          "name": "縣立慈心華德福實中",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:冬山鄉",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "宜蘭縣冬山鄉照安路257號",
+          "phone": "(03)9596222",
+          "website": "http://www.waldorf.ilc.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/024325/H/宜蘭縣/冬山鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.794807,
+            "latitude": 24.626452
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 806
+            },
+            {
+              "year": 108,
+              "students": 910
+            },
+            {
+              "year": 109,
+              "students": 913
+            },
+            {
+              "year": 110,
+              "students": 904
+            },
+            {
+              "year": 111,
+              "students": 915
+            },
+            {
+              "year": 112,
+              "students": 896
+            },
+            {
+              "year": 113,
+              "students": 844
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024654",
+          "code": "024654",
+          "name": "縣立冬山國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:冬山鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣冬山鄉安平村安中路35號",
+          "phone": "(03)9593504",
+          "website": "https://www.tses.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024654/C/宜蘭縣/冬山鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.789947,
+            "latitude": 24.632291
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 550
+            },
+            {
+              "year": 108,
+              "students": 574
+            },
+            {
+              "year": 109,
+              "students": 563
+            },
+            {
+              "year": 110,
+              "students": 567
+            },
+            {
+              "year": 111,
+              "students": 568
+            },
+            {
+              "year": 112,
+              "students": 600
+            },
+            {
+              "year": 113,
+              "students": 612
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024701",
+          "code": "024701",
+          "name": "縣立清溝國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:冬山鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣冬山鄉清溝村永清路369號",
+          "phone": "(03)9585828",
+          "website": "https://www.ncges.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024701/C/宜蘭縣/冬山鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.763434,
+            "latitude": 24.663858
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 531
+            },
+            {
+              "year": 108,
+              "students": 541
+            },
+            {
+              "year": 109,
+              "students": 543
+            },
+            {
+              "year": 110,
+              "students": 548
+            },
+            {
+              "year": 111,
+              "students": 544
+            },
+            {
+              "year": 112,
+              "students": 525
+            },
+            {
+              "year": 113,
+              "students": 524
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024656",
+          "code": "024656",
+          "name": "縣立順安國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:冬山鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣冬山鄉順安村永興路二段17號",
+          "phone": "(03)9583445",
+          "website": "https://www.saps.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024656/C/宜蘭縣/冬山鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.762807,
+            "latitude": 24.653873
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 382
+            },
+            {
+              "year": 108,
+              "students": 381
+            },
+            {
+              "year": 109,
+              "students": 367
+            },
+            {
+              "year": 110,
+              "students": 373
+            },
+            {
+              "year": 111,
+              "students": 384
+            },
+            {
+              "year": 112,
+              "students": 369
+            },
+            {
+              "year": 113,
+              "students": 373
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024514",
+          "code": "024514",
+          "name": "縣立冬山國中",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:冬山鄉",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "宜蘭縣冬山鄉南興村照安路26號",
+          "phone": "(03)9592076",
+          "website": "http://www.dsjh.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024514/J/宜蘭縣/冬山鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.79203,
+            "latitude": 24.631886
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 375
+            },
+            {
+              "year": 108,
+              "students": 349
+            },
+            {
+              "year": 109,
+              "students": 321
+            },
+            {
+              "year": 110,
+              "students": 290
+            },
+            {
+              "year": 111,
+              "students": 262
+            },
+            {
+              "year": 112,
+              "students": 268
+            },
+            {
+              "year": 113,
+              "students": 269
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024515",
+          "code": "024515",
+          "name": "縣立順安國中",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:冬山鄉",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "宜蘭縣冬山鄉順安村永興路一段359號",
+          "phone": "(03)9581150",
+          "website": "http://www.sanjh.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024515/J/宜蘭縣/冬山鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.765617,
+            "latitude": 24.654156
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 238
+            },
+            {
+              "year": 108,
+              "students": 224
+            },
+            {
+              "year": 109,
+              "students": 221
+            },
+            {
+              "year": 110,
+              "students": 207
+            },
+            {
+              "year": 111,
+              "students": 230
+            },
+            {
+              "year": 112,
+              "students": 235
+            },
+            {
+              "year": 113,
+              "students": 214
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024659",
+          "code": "024659",
+          "name": "縣立大進國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:冬山鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣冬山鄉大進村大進七路51號",
+          "phone": "(03)9512268",
+          "website": "https://www.djps.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024659/C/宜蘭縣/冬山鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.716432,
+            "latitude": 24.634085
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 95
+            },
+            {
+              "year": 108,
+              "students": 95
+            },
+            {
+              "year": 109,
+              "students": 85
+            },
+            {
+              "year": 110,
+              "students": 77
+            },
+            {
+              "year": 111,
+              "students": 75
+            },
+            {
+              "year": 112,
+              "students": 71
+            },
+            {
+              "year": 113,
+              "students": 74
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024655",
+          "code": "024655",
+          "name": "縣立東興國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:冬山鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣冬山鄉東城村東城路316號",
+          "phone": "(03)9594047",
+          "website": "https://www.tshes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024655/C/宜蘭縣/冬山鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.806787,
+            "latitude": 24.629094
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 85
+            },
+            {
+              "year": 108,
+              "students": 76
+            },
+            {
+              "year": 109,
+              "students": 74
+            },
+            {
+              "year": 110,
+              "students": 75
+            },
+            {
+              "year": 111,
+              "students": 79
+            },
+            {
+              "year": 112,
+              "students": 74
+            },
+            {
+              "year": 113,
+              "students": 71
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024657",
+          "code": "024657",
+          "name": "縣立武淵國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:冬山鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣冬山鄉武淵村富農路二段350號",
+          "phone": "(03)9505971",
+          "website": "https://www.waes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024657/C/宜蘭縣/冬山鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.798791,
+            "latitude": 24.661573
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 60
+            },
+            {
+              "year": 108,
+              "students": 64
+            },
+            {
+              "year": 109,
+              "students": 71
+            },
+            {
+              "year": 110,
+              "students": 67
+            },
+            {
+              "year": 111,
+              "students": 67
+            },
+            {
+              "year": 112,
+              "students": 71
+            },
+            {
+              "year": 113,
+              "students": 71
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024658",
+          "code": "024658",
+          "name": "縣立廣興國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:冬山鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣冬山鄉廣興村梅花路303號",
+          "phone": "(03)9513484",
+          "website": "https://www.kses.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024658/C/宜蘭縣/冬山鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.742754,
+            "latitude": 24.665421
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 94
+            },
+            {
+              "year": 108,
+              "students": 93
+            },
+            {
+              "year": 109,
+              "students": 84
+            },
+            {
+              "year": 110,
+              "students": 78
+            },
+            {
+              "year": 111,
+              "students": 75
+            },
+            {
+              "year": 112,
+              "students": 67
+            },
+            {
+              "year": 113,
+              "students": 63
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024660",
+          "code": "024660",
+          "name": "縣立柯林國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:冬山鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣冬山鄉柯林村光華路158號",
+          "phone": "(03)9511355",
+          "website": "https://www.kles.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024660/C/宜蘭縣/冬山鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.731518,
+            "latitude": 24.67633
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 61
+            },
+            {
+              "year": 108,
+              "students": 68
+            },
+            {
+              "year": 109,
+              "students": 65
+            },
+            {
+              "year": 110,
+              "students": 63
+            },
+            {
+              "year": 111,
+              "students": 59
+            },
+            {
+              "year": 112,
+              "students": 52
+            },
+            {
+              "year": 113,
+              "students": 46
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": [
+        {
+          "type": "缺年度",
+          "message": "冬山鄉 有 1 所學校存在年度缺漏。",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "id": "宜蘭縣:壯圍鄉",
+      "name": "壯圍鄉",
+      "countyId": "宜蘭縣",
+      "schools": [
+        {
+          "id": "021310",
+          "code": "021310",
+          "name": "私立中道高中",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:壯圍鄉",
+          "educationLevel": "高中職",
+          "managementType": "私立",
+          "address": "宜蘭縣壯圍鄉功勞村中央路三段312巷7號",
+          "phone": "(03)9306696",
+          "website": "http://www.cdsh.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/021310/H/宜蘭縣/壯圍鄉/私立/否/無/",
+          "coordinates": {
+            "longitude": 121.793615,
+            "latitude": 24.75997
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 573
+            },
+            {
+              "year": 108,
+              "students": 907
+            },
+            {
+              "year": 109,
+              "students": 921
+            },
+            {
+              "year": 110,
+              "students": 920
+            },
+            {
+              "year": 111,
+              "students": 924
+            },
+            {
+              "year": 112,
+              "students": 919
+            },
+            {
+              "year": 113,
+              "students": 980
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024644",
+          "code": "024644",
+          "name": "縣立古亭國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:壯圍鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣壯圍鄉古亭村古亭路81號",
+          "phone": "(03)9301022",
+          "website": "https://www.gtes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024644/C/宜蘭縣/壯圍鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.798239,
+            "latitude": 24.771482
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 278
+            },
+            {
+              "year": 108,
+              "students": 286
+            },
+            {
+              "year": 109,
+              "students": 311
+            },
+            {
+              "year": 110,
+              "students": 318
+            },
+            {
+              "year": 111,
+              "students": 330
+            },
+            {
+              "year": 112,
+              "students": 335
+            },
+            {
+              "year": 113,
+              "students": 327
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024521",
+          "code": "024521",
+          "name": "縣立壯圍國中",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:壯圍鄉",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "宜蘭縣壯圍鄉富祥路588號",
+          "phone": "(03)9381773",
+          "website": "http://www.cwjh.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024521/J/宜蘭縣/壯圍鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.788511,
+            "latitude": 24.749319
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 416
+            },
+            {
+              "year": 108,
+              "students": 344
+            },
+            {
+              "year": 109,
+              "students": 314
+            },
+            {
+              "year": 110,
+              "students": 317
+            },
+            {
+              "year": 111,
+              "students": 272
+            },
+            {
+              "year": 112,
+              "students": 287
+            },
+            {
+              "year": 113,
+              "students": 315
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024643",
+          "code": "024643",
+          "name": "縣立壯圍國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:壯圍鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣壯圍鄉吉祥村壯五路55號",
+          "phone": "(03)9384442",
+          "website": "https://www.jwes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024643/C/宜蘭縣/壯圍鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.790153,
+            "latitude": 24.74358
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 148
+            },
+            {
+              "year": 108,
+              "students": 157
+            },
+            {
+              "year": 109,
+              "students": 152
+            },
+            {
+              "year": 110,
+              "students": 158
+            },
+            {
+              "year": 111,
+              "students": 184
+            },
+            {
+              "year": 112,
+              "students": 203
+            },
+            {
+              "year": 113,
+              "students": 219
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024648",
+          "code": "024648",
+          "name": "縣立新南國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:壯圍鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣壯圍鄉美福路一段1號",
+          "phone": "(03)9253337",
+          "website": "https://www.snes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024648/C/宜蘭縣/壯圍鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.799976,
+            "latitude": 24.722599
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 62
+            },
+            {
+              "year": 108,
+              "students": 61
+            },
+            {
+              "year": 109,
+              "students": 60
+            },
+            {
+              "year": 110,
+              "students": 63
+            },
+            {
+              "year": 111,
+              "students": 68
+            },
+            {
+              "year": 112,
+              "students": 70
+            },
+            {
+              "year": 113,
+              "students": 72
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024645",
+          "code": "024645",
+          "name": "縣立公館國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:壯圍鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣壯圍鄉紅葉路69號",
+          "phone": "(03)9380522",
+          "website": "https://www.kkes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024645/C/宜蘭縣/壯圍鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.816562,
+            "latitude": 24.735901
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 84
+            },
+            {
+              "year": 108,
+              "students": 80
+            },
+            {
+              "year": 109,
+              "students": 75
+            },
+            {
+              "year": 110,
+              "students": 76
+            },
+            {
+              "year": 111,
+              "students": 78
+            },
+            {
+              "year": 112,
+              "students": 69
+            },
+            {
+              "year": 113,
+              "students": 66
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024647",
+          "code": "024647",
+          "name": "縣立大福國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:壯圍鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣壯圍鄉大福村大福路一段62巷26號",
+          "phone": "(03)9301239",
+          "website": "https://www.dfes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024647/C/宜蘭縣/壯圍鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.814186,
+            "latitude": 24.801749
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 67
+            },
+            {
+              "year": 108,
+              "students": 59
+            },
+            {
+              "year": 109,
+              "students": 58
+            },
+            {
+              "year": 110,
+              "students": 55
+            },
+            {
+              "year": 111,
+              "students": 52
+            },
+            {
+              "year": 112,
+              "students": 47
+            },
+            {
+              "year": 113,
+              "students": 48
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024646",
+          "code": "024646",
+          "name": "縣立過嶺國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:壯圍鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣壯圍鄉過嶺村壯濱路三段261號",
+          "phone": "(03)9301404",
+          "website": "https://www.qles.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024646/C/宜蘭縣/壯圍鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.8147,
+            "latitude": 24.758813
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 50
+            },
+            {
+              "year": 108,
+              "students": 47
+            },
+            {
+              "year": 109,
+              "students": 39
+            },
+            {
+              "year": 110,
+              "students": 40
+            },
+            {
+              "year": 111,
+              "students": 29
+            },
+            {
+              "year": 112,
+              "students": 29
+            },
+            {
+              "year": 113,
+              "students": 36
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    },
+    {
+      "id": "宜蘭縣:宜蘭市",
+      "name": "宜蘭市",
+      "countyId": "宜蘭縣",
+      "schools": [
+        {
+          "id": "0031",
+          "code": "0031",
+          "name": "國立宜蘭大學",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:宜蘭市",
+          "educationLevel": "大專院校",
+          "managementType": "公立",
+          "address": "宜蘭縣宜蘭市神農路一段1號",
+          "phone": "(03)9357400",
+          "website": "http://www.niu.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/0031/R/宜蘭縣/宜蘭市/國立/否/一般/",
+          "coordinates": {
+            "longitude": 121.747592,
+            "latitude": 24.746213
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 5470
+            },
+            {
+              "year": 108,
+              "students": 5419
+            },
+            {
+              "year": 109,
+              "students": 5476
+            },
+            {
+              "year": 110,
+              "students": 5637
+            },
+            {
+              "year": 111,
+              "students": 5641
+            },
+            {
+              "year": 112,
+              "students": 5592
+            },
+            {
+              "year": 113,
+              "students": 5447
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "020403",
+          "code": "020403",
+          "name": "國立宜蘭高商",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:宜蘭市",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "宜蘭縣宜蘭市延平路50號",
+          "phone": "(03)9384147",
+          "website": "http://www.ilvs.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/020403/H/宜蘭縣/宜蘭市/國立/否/無/",
+          "coordinates": {
+            "longitude": 121.765496,
+            "latitude": 24.754891
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 0
+            },
+            {
+              "year": 108,
+              "students": 1557
+            },
+            {
+              "year": 109,
+              "students": 1460
+            },
+            {
+              "year": 110,
+              "students": 1490
+            },
+            {
+              "year": 111,
+              "students": 1493
+            },
+            {
+              "year": 112,
+              "students": 1454
+            },
+            {
+              "year": 113,
+              "students": 1425
+            }
+          ],
+          "status": "正常",
+          "missingYears": [
+            107
+          ],
+          "dataNotes": [
+            {
+              "type": "缺年度",
+              "message": "缺少學年度資料：107",
+              "severity": "warning",
+              "years": [
+                107
+              ]
+            }
+          ]
+        },
+        {
+          "id": "024608",
+          "code": "024608",
+          "name": "縣立黎明國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:宜蘭市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣宜蘭市校舍路1號",
+          "phone": "(03)9383792",
+          "website": "https://www.lmes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024608/C/宜蘭縣/宜蘭市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.764274,
+            "latitude": 24.751634
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1308
+            },
+            {
+              "year": 108,
+              "students": 1307
+            },
+            {
+              "year": 109,
+              "students": 1315
+            },
+            {
+              "year": 110,
+              "students": 1346
+            },
+            {
+              "year": 111,
+              "students": 1380
+            },
+            {
+              "year": 112,
+              "students": 1436
+            },
+            {
+              "year": 113,
+              "students": 1404
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "020301",
+          "code": "020301",
+          "name": "國立蘭陽女中",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:宜蘭市",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "宜蘭縣宜蘭市女中路二段355號",
+          "phone": "(03)9333819",
+          "website": "http://www.lygsh.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/020301/H/宜蘭縣/宜蘭市/國立/否/無/",
+          "coordinates": {
+            "longitude": 121.753526,
+            "latitude": 24.745056
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 0
+            },
+            {
+              "year": 108,
+              "students": 1399
+            },
+            {
+              "year": 109,
+              "students": 1335
+            },
+            {
+              "year": 110,
+              "students": 1343
+            },
+            {
+              "year": 111,
+              "students": 1365
+            },
+            {
+              "year": 112,
+              "students": 1372
+            },
+            {
+              "year": 113,
+              "students": 1392
+            }
+          ],
+          "status": "正常",
+          "missingYears": [
+            107
+          ],
+          "dataNotes": [
+            {
+              "type": "缺年度",
+              "message": "缺少學年度資料：107",
+              "severity": "warning",
+              "years": [
+                107
+              ]
+            }
+          ]
+        },
+        {
+          "id": "020302",
+          "code": "020302",
+          "name": "國立宜蘭高中",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:宜蘭市",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "宜蘭縣宜蘭市復興路三段8號",
+          "phone": "(03)9324153",
+          "website": "http://www.ylsh.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/020302/H/宜蘭縣/宜蘭市/國立/否/無/",
+          "coordinates": {
+            "longitude": 121.742789,
+            "latitude": 24.751114
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 0
+            },
+            {
+              "year": 108,
+              "students": 1564
+            },
+            {
+              "year": 109,
+              "students": 1462
+            },
+            {
+              "year": 110,
+              "students": 1396
+            },
+            {
+              "year": 111,
+              "students": 1405
+            },
+            {
+              "year": 112,
+              "students": 1385
+            },
+            {
+              "year": 113,
+              "students": 1387
+            }
+          ],
+          "status": "正常",
+          "missingYears": [
+            107
+          ],
+          "dataNotes": [
+            {
+              "type": "缺年度",
+              "message": "缺少學年度資料：107",
+              "severity": "warning",
+              "years": [
+                107
+              ]
+            }
+          ]
+        },
+        {
+          "id": "024605",
+          "code": "024605",
+          "name": "縣立光復國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:宜蘭市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣宜蘭市泰山路60號",
+          "phone": "(03)9322077",
+          "website": "https://www.kfps.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024605/C/宜蘭縣/宜蘭市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.747266,
+            "latitude": 24.755252
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1210
+            },
+            {
+              "year": 108,
+              "students": 1229
+            },
+            {
+              "year": 109,
+              "students": 1258
+            },
+            {
+              "year": 110,
+              "students": 1270
+            },
+            {
+              "year": 111,
+              "students": 1325
+            },
+            {
+              "year": 112,
+              "students": 1343
+            },
+            {
+              "year": 113,
+              "students": 1301
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024503",
+          "code": "024503",
+          "name": "縣立復興國中",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:宜蘭市",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "宜蘭縣宜蘭市復興路二段77號",
+          "phone": "(03)9322942",
+          "website": "http://www.fsjh.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024503/J/宜蘭縣/宜蘭市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.746996,
+            "latitude": 24.748862
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1400
+            },
+            {
+              "year": 108,
+              "students": 1278
+            },
+            {
+              "year": 109,
+              "students": 1222
+            },
+            {
+              "year": 110,
+              "students": 1226
+            },
+            {
+              "year": 111,
+              "students": 1278
+            },
+            {
+              "year": 112,
+              "students": 1239
+            },
+            {
+              "year": 113,
+              "students": 1271
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024502",
+          "code": "024502",
+          "name": "縣立中華國中",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:宜蘭市",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "宜蘭縣宜蘭市女中路一段100號",
+          "phone": "(03)9382704",
+          "website": "http://www.chjh.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024502/J/宜蘭縣/宜蘭市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.767501,
+            "latitude": 24.750408
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 988
+            },
+            {
+              "year": 108,
+              "students": 973
+            },
+            {
+              "year": 109,
+              "students": 947
+            },
+            {
+              "year": 110,
+              "students": 964
+            },
+            {
+              "year": 111,
+              "students": 903
+            },
+            {
+              "year": 112,
+              "students": 890
+            },
+            {
+              "year": 113,
+              "students": 880
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024601",
+          "code": "024601",
+          "name": "縣立中山國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:宜蘭市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣宜蘭市崇聖街4號",
+          "phone": "(03)9322064",
+          "website": "https://www.jses.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024601/C/宜蘭縣/宜蘭市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.754706,
+            "latitude": 24.754052
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 641
+            },
+            {
+              "year": 108,
+              "students": 654
+            },
+            {
+              "year": 109,
+              "students": 673
+            },
+            {
+              "year": 110,
+              "students": 686
+            },
+            {
+              "year": 111,
+              "students": 731
+            },
+            {
+              "year": 112,
+              "students": 778
+            },
+            {
+              "year": 113,
+              "students": 759
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024604",
+          "code": "024604",
+          "name": "縣立新生國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:宜蘭市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣宜蘭市大坡路一段100號",
+          "phone": "(03)9283791",
+          "website": "https://www.sses.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024604/C/宜蘭縣/宜蘭市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.754645,
+            "latitude": 24.77072
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 390
+            },
+            {
+              "year": 108,
+              "students": 441
+            },
+            {
+              "year": 109,
+              "students": 479
+            },
+            {
+              "year": 110,
+              "students": 491
+            },
+            {
+              "year": 111,
+              "students": 538
+            },
+            {
+              "year": 112,
+              "students": 581
+            },
+            {
+              "year": 113,
+              "students": 626
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024609",
+          "code": "024609",
+          "name": "縣立南屏國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:宜蘭市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣宜蘭市泰山路98號",
+          "phone": "(03)9323795",
+          "website": "https://www.npes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024609/C/宜蘭縣/宜蘭市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.742116,
+            "latitude": 24.753871
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 687
+            },
+            {
+              "year": 108,
+              "students": 642
+            },
+            {
+              "year": 109,
+              "students": 612
+            },
+            {
+              "year": 110,
+              "students": 584
+            },
+            {
+              "year": 111,
+              "students": 583
+            },
+            {
+              "year": 112,
+              "students": 596
+            },
+            {
+              "year": 113,
+              "students": 587
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024501",
+          "code": "024501",
+          "name": "縣立宜蘭國中",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:宜蘭市",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "宜蘭縣宜蘭市樹人路37號",
+          "phone": "(03)9322519",
+          "website": "http://www.iljh.ilc.edu.tw/iljhs/iljhs.htm",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024501/J/宜蘭縣/宜蘭市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.758161,
+            "latitude": 24.762005
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 509
+            },
+            {
+              "year": 108,
+              "students": 480
+            },
+            {
+              "year": 109,
+              "students": 474
+            },
+            {
+              "year": 110,
+              "students": 446
+            },
+            {
+              "year": 111,
+              "students": 477
+            },
+            {
+              "year": 112,
+              "students": 475
+            },
+            {
+              "year": 113,
+              "students": 507
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024524",
+          "code": "024524",
+          "name": "縣立凱旋國中",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:宜蘭市",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "宜蘭縣宜蘭市建業里10鄰縣政七街50巷1號",
+          "phone": "(03)9255600",
+          "website": "http://www.ksjh.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024524/J/宜蘭縣/宜蘭市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.757081,
+            "latitude": 24.725986
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 428
+            },
+            {
+              "year": 108,
+              "students": 431
+            },
+            {
+              "year": 109,
+              "students": 430
+            },
+            {
+              "year": 110,
+              "students": 472
+            },
+            {
+              "year": 111,
+              "students": 478
+            },
+            {
+              "year": 112,
+              "students": 479
+            },
+            {
+              "year": 113,
+              "students": 502
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024607",
+          "code": "024607",
+          "name": "縣立凱旋國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:宜蘭市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣宜蘭市凱旋路130號",
+          "phone": "(03)9253793",
+          "website": "https://www.kases.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024607/C/宜蘭縣/宜蘭市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.763248,
+            "latitude": 24.724445
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 371
+            },
+            {
+              "year": 108,
+              "students": 399
+            },
+            {
+              "year": 109,
+              "students": 404
+            },
+            {
+              "year": 110,
+              "students": 407
+            },
+            {
+              "year": 111,
+              "students": 433
+            },
+            {
+              "year": 112,
+              "students": 465
+            },
+            {
+              "year": 113,
+              "students": 479
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024602",
+          "code": "024602",
+          "name": "縣立宜蘭國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:宜蘭市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣宜蘭市崇聖街2號",
+          "phone": "(03)9322210",
+          "website": "https://www.iles.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024602/C/宜蘭縣/宜蘭市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.754194,
+            "latitude": 24.753128
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 465
+            },
+            {
+              "year": 108,
+              "students": 457
+            },
+            {
+              "year": 109,
+              "students": 446
+            },
+            {
+              "year": 110,
+              "students": 429
+            },
+            {
+              "year": 111,
+              "students": 433
+            },
+            {
+              "year": 112,
+              "students": 421
+            },
+            {
+              "year": 113,
+              "students": 398
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024606",
+          "code": "024606",
+          "name": "縣立育才國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:宜蘭市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣宜蘭市進士路一段32號",
+          "phone": "(03)9253794",
+          "website": "https://www.ytps.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024606/C/宜蘭縣/宜蘭市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.737574,
+            "latitude": 24.733408
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 310
+            },
+            {
+              "year": 108,
+              "students": 318
+            },
+            {
+              "year": 109,
+              "students": 324
+            },
+            {
+              "year": 110,
+              "students": 338
+            },
+            {
+              "year": 111,
+              "students": 346
+            },
+            {
+              "year": 112,
+              "students": 339
+            },
+            {
+              "year": 113,
+              "students": 318
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024603",
+          "code": "024603",
+          "name": "縣立力行國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:宜蘭市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣宜蘭市力行路152號",
+          "phone": "(03)9322309",
+          "website": "https://www.lses.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024603/C/宜蘭縣/宜蘭市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.755443,
+            "latitude": 24.76418
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 220
+            },
+            {
+              "year": 108,
+              "students": 209
+            },
+            {
+              "year": 109,
+              "students": 207
+            },
+            {
+              "year": 110,
+              "students": 211
+            },
+            {
+              "year": 111,
+              "students": 222
+            },
+            {
+              "year": 112,
+              "students": 241
+            },
+            {
+              "year": 113,
+              "students": 230
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": [
+        {
+          "type": "缺年度",
+          "message": "宜蘭市 有 3 所學校存在年度缺漏。",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "id": "宜蘭縣:南澳鄉",
+      "name": "南澳鄉",
+      "countyId": "宜蘭縣",
+      "schools": [
+        {
+          "id": "024322",
+          "code": "024322",
+          "name": "縣立南澳高中",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:南澳鄉",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "宜蘭縣南澳鄉蘇花路二段301號",
+          "phone": "(03)9981024",
+          "website": "http://www.nojh.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/024322/H/宜蘭縣/南澳鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.801371,
+            "latitude": 24.465563
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 194
+            },
+            {
+              "year": 108,
+              "students": 365
+            },
+            {
+              "year": 109,
+              "students": 331
+            },
+            {
+              "year": 110,
+              "students": 325
+            },
+            {
+              "year": 111,
+              "students": 290
+            },
+            {
+              "year": 112,
+              "students": 240
+            },
+            {
+              "year": 113,
+              "students": 240
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024673",
+          "code": "024673",
+          "name": "縣立碧候國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:南澳鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣南澳鄉碧候村自覺巷38號",
+          "phone": "(03)9981634",
+          "website": "https://www.bhoes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024673/C/宜蘭縣/南澳鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.784702,
+            "latitude": 24.474069
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 88
+            },
+            {
+              "year": 108,
+              "students": 88
+            },
+            {
+              "year": 109,
+              "students": 84
+            },
+            {
+              "year": 110,
+              "students": 98
+            },
+            {
+              "year": 111,
+              "students": 97
+            },
+            {
+              "year": 112,
+              "students": 87
+            },
+            {
+              "year": 113,
+              "students": 78
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024675",
+          "code": "024675",
+          "name": "縣立澳花國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:南澳鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣南澳鄉澳花村中央路19號",
+          "phone": "(03)9985108",
+          "website": "https://www.awes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024675/C/宜蘭縣/南澳鄉/縣市立/極偏/無/",
+          "coordinates": {
+            "longitude": 121.739578,
+            "latitude": 24.329383
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 87
+            },
+            {
+              "year": 108,
+              "students": 81
+            },
+            {
+              "year": 109,
+              "students": 74
+            },
+            {
+              "year": 110,
+              "students": 67
+            },
+            {
+              "year": 111,
+              "students": 75
+            },
+            {
+              "year": 112,
+              "students": 72
+            },
+            {
+              "year": 113,
+              "students": 73
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024672",
+          "code": "024672",
+          "name": "縣立南澳國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:南澳鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣南澳鄉南澳村中正路15號",
+          "phone": "(03)9981228",
+          "website": "https://www.naes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024672/C/宜蘭縣/南澳鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.800629,
+            "latitude": 24.467301
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 81
+            },
+            {
+              "year": 108,
+              "students": 66
+            },
+            {
+              "year": 109,
+              "students": 69
+            },
+            {
+              "year": 110,
+              "students": 66
+            },
+            {
+              "year": 111,
+              "students": 63
+            },
+            {
+              "year": 112,
+              "students": 57
+            },
+            {
+              "year": 113,
+              "students": 56
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024676",
+          "code": "024676",
+          "name": "縣立東澳國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:南澳鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣南澳鄉東岳村蘇花路三段209號",
+          "phone": "(03)9986217",
+          "website": "https://www.daes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024676/C/宜蘭縣/南澳鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.832931,
+            "latitude": 24.521585
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 58
+            },
+            {
+              "year": 108,
+              "students": 56
+            },
+            {
+              "year": 109,
+              "students": 50
+            },
+            {
+              "year": 110,
+              "students": 49
+            },
+            {
+              "year": 111,
+              "students": 52
+            },
+            {
+              "year": 112,
+              "students": 54
+            },
+            {
+              "year": 113,
+              "students": 46
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024677",
+          "code": "024677",
+          "name": "縣立金岳國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:南澳鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣南澳鄉金岳村金岳路2號",
+          "phone": "(03)9981636",
+          "website": "https://www.jyes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024677/C/宜蘭縣/南澳鄉/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 121.777341,
+            "latitude": 24.470885
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 46
+            },
+            {
+              "year": 108,
+              "students": 43
+            },
+            {
+              "year": 109,
+              "students": 43
+            },
+            {
+              "year": 110,
+              "students": 42
+            },
+            {
+              "year": 111,
+              "students": 42
+            },
+            {
+              "year": 112,
+              "students": 40
+            },
+            {
+              "year": 113,
+              "students": 38
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024674",
+          "code": "024674",
+          "name": "縣立武塔國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:南澳鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣南澳鄉武塔村新溪路1號",
+          "phone": "(03)9981632",
+          "website": "https://www.utaes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024674/C/宜蘭縣/南澳鄉/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 121.778546,
+            "latitude": 24.445607
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 31
+            },
+            {
+              "year": 108,
+              "students": 18
+            },
+            {
+              "year": 109,
+              "students": 19
+            },
+            {
+              "year": 110,
+              "students": 20
+            },
+            {
+              "year": 111,
+              "students": 23
+            },
+            {
+              "year": 112,
+              "students": 31
+            },
+            {
+              "year": 113,
+              "students": 33
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024678",
+          "code": "024678",
+          "name": "縣立金洋國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:南澳鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣南澳鄉金洋村金洋路11號",
+          "phone": "(03)9981486",
+          "website": "https://www.kyes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024678/C/宜蘭縣/南澳鄉/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 121.749136,
+            "latitude": 24.426115
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 39
+            },
+            {
+              "year": 108,
+              "students": 39
+            },
+            {
+              "year": 109,
+              "students": 44
+            },
+            {
+              "year": 110,
+              "students": 39
+            },
+            {
+              "year": 111,
+              "students": 31
+            },
+            {
+              "year": 112,
+              "students": 35
+            },
+            {
+              "year": 113,
+              "students": 31
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    },
+    {
+      "id": "宜蘭縣:員山鄉",
+      "name": "員山鄉",
+      "countyId": "宜蘭縣",
+      "schools": [
+        {
+          "id": "021301",
+          "code": "021301",
+          "name": "私立慧燈高中",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:員山鄉",
+          "educationLevel": "高中職",
+          "managementType": "私立",
+          "address": "宜蘭縣員山鄉協進路88號",
+          "phone": "(03)9229968",
+          "website": "https://web.hdsh.ilc.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/021301/H/宜蘭縣/員山鄉/私立/否/無/",
+          "coordinates": {
+            "longitude": 121.715353,
+            "latitude": 24.77726
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1258
+            },
+            {
+              "year": 108,
+              "students": 1937
+            },
+            {
+              "year": 109,
+              "students": 1792
+            },
+            {
+              "year": 110,
+              "students": 1640
+            },
+            {
+              "year": 111,
+              "students": 1528
+            },
+            {
+              "year": 112,
+              "students": 1396
+            },
+            {
+              "year": 113,
+              "students": 1496
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024634",
+          "code": "024634",
+          "name": "縣立員山國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:員山鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣員山鄉員山村復興路39號",
+          "phone": "(03)9224061",
+          "website": "https://www.yeses.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024634/C/宜蘭縣/員山鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.722404,
+            "latitude": 24.743823
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 290
+            },
+            {
+              "year": 108,
+              "students": 278
+            },
+            {
+              "year": 109,
+              "students": 271
+            },
+            {
+              "year": 110,
+              "students": 269
+            },
+            {
+              "year": 111,
+              "students": 284
+            },
+            {
+              "year": 112,
+              "students": 285
+            },
+            {
+              "year": 113,
+              "students": 281
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024519",
+          "code": "024519",
+          "name": "縣立員山國中",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:員山鄉",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "宜蘭縣員山鄉溫泉路92號",
+          "phone": "(03)9222331",
+          "website": "http://www.ysjh.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024519/J/宜蘭縣/員山鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.714343,
+            "latitude": 24.750301
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 324
+            },
+            {
+              "year": 108,
+              "students": 288
+            },
+            {
+              "year": 109,
+              "students": 259
+            },
+            {
+              "year": 110,
+              "students": 241
+            },
+            {
+              "year": 111,
+              "students": 221
+            },
+            {
+              "year": 112,
+              "students": 192
+            },
+            {
+              "year": 113,
+              "students": 191
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024637",
+          "code": "024637",
+          "name": "縣立同樂國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:員山鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣員山鄉同樂村新城路84之4號",
+          "phone": "(03)9223543",
+          "website": "https://www.tlps.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024637/C/宜蘭縣/員山鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.72889,
+            "latitude": 24.763012
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 176
+            },
+            {
+              "year": 108,
+              "students": 170
+            },
+            {
+              "year": 109,
+              "students": 167
+            },
+            {
+              "year": 110,
+              "students": 153
+            },
+            {
+              "year": 111,
+              "students": 154
+            },
+            {
+              "year": 112,
+              "students": 160
+            },
+            {
+              "year": 113,
+              "students": 137
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024640",
+          "code": "024640",
+          "name": "縣立內城國(中)小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:員山鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣員山鄉內城村內城路545號",
+          "phone": "(03)9221846",
+          "website": "https://www.ryjh.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024640/C/宜蘭縣/員山鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.687826,
+            "latitude": 24.717997
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 171
+            },
+            {
+              "year": 108,
+              "students": 174
+            },
+            {
+              "year": 109,
+              "students": 151
+            },
+            {
+              "year": 110,
+              "students": 143
+            },
+            {
+              "year": 111,
+              "students": 142
+            },
+            {
+              "year": 112,
+              "students": 141
+            },
+            {
+              "year": 113,
+              "students": 120
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024635",
+          "code": "024635",
+          "name": "縣立深溝國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:員山鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣員山鄉深溝村惠民路266號",
+          "phone": "(03)9224870",
+          "website": "https://www.sges.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024635/C/宜蘭縣/員山鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.724077,
+            "latitude": 24.723565
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 84
+            },
+            {
+              "year": 108,
+              "students": 89
+            },
+            {
+              "year": 109,
+              "students": 97
+            },
+            {
+              "year": 110,
+              "students": 104
+            },
+            {
+              "year": 111,
+              "students": 97
+            },
+            {
+              "year": 112,
+              "students": 100
+            },
+            {
+              "year": 113,
+              "students": 100
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024520",
+          "code": "024520",
+          "name": "縣立內城國中(小)",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:員山鄉",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "宜蘭縣員山鄉內城村內城路545號",
+          "phone": "(03)9221846",
+          "website": "http://www.ryjh.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024520/J/宜蘭縣/員山鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.687826,
+            "latitude": 24.717997
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 114
+            },
+            {
+              "year": 108,
+              "students": 115
+            },
+            {
+              "year": 109,
+              "students": 109
+            },
+            {
+              "year": 110,
+              "students": 92
+            },
+            {
+              "year": 111,
+              "students": 78
+            },
+            {
+              "year": 112,
+              "students": 81
+            },
+            {
+              "year": 113,
+              "students": 84
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024638",
+          "code": "024638",
+          "name": "縣立湖山國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:員山鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣員山鄉枕山村坡城路54號",
+          "phone": "(03)9221174",
+          "website": "https://www.hses.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024638/C/宜蘭縣/員山鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.69916,
+            "latitude": 24.779496
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 103
+            },
+            {
+              "year": 108,
+              "students": 113
+            },
+            {
+              "year": 109,
+              "students": 107
+            },
+            {
+              "year": 110,
+              "students": 98
+            },
+            {
+              "year": 111,
+              "students": 98
+            },
+            {
+              "year": 112,
+              "students": 82
+            },
+            {
+              "year": 113,
+              "students": 84
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024636",
+          "code": "024636",
+          "name": "縣立七賢國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:員山鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣員山鄉浮洲路30號",
+          "phone": "(03)9221688",
+          "website": "https://www.csps.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024636/C/宜蘭縣/員山鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.743235,
+            "latitude": 24.719829
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 55
+            },
+            {
+              "year": 108,
+              "students": 65
+            },
+            {
+              "year": 109,
+              "students": 76
+            },
+            {
+              "year": 110,
+              "students": 88
+            },
+            {
+              "year": 111,
+              "students": 95
+            },
+            {
+              "year": 112,
+              "students": 86
+            },
+            {
+              "year": 113,
+              "students": 83
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024639",
+          "code": "024639",
+          "name": "縣立大湖國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:員山鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣員山鄉湖東村蜊埤路55號",
+          "phone": "(03)9223584",
+          "website": "https://www.dhes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024639/C/宜蘭縣/員山鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.691075,
+            "latitude": 24.748032
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 96
+            },
+            {
+              "year": 108,
+              "students": 105
+            },
+            {
+              "year": 109,
+              "students": 97
+            },
+            {
+              "year": 110,
+              "students": 98
+            },
+            {
+              "year": 111,
+              "students": 98
+            },
+            {
+              "year": 112,
+              "students": 85
+            },
+            {
+              "year": 113,
+              "students": 76
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    },
+    {
+      "id": "宜蘭縣:頭城鎮",
+      "name": "頭城鎮",
+      "countyId": "宜蘭縣",
+      "schools": [
+        {
+          "id": "020409",
+          "code": "020409",
+          "name": "國立頭城家商",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:頭城鎮",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "宜蘭縣頭城鎮新興路111號",
+          "phone": "(03)9771131",
+          "website": "http://www.tcvs.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/020409/H/宜蘭縣/頭城鎮/國立/否/無/",
+          "coordinates": {
+            "longitude": 121.817125,
+            "latitude": 24.851252
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 0
+            },
+            {
+              "year": 108,
+              "students": 1076
+            },
+            {
+              "year": 109,
+              "students": 1093
+            },
+            {
+              "year": 110,
+              "students": 977
+            },
+            {
+              "year": 111,
+              "students": 836
+            },
+            {
+              "year": 112,
+              "students": 696
+            },
+            {
+              "year": 113,
+              "students": 679
+            }
+          ],
+          "status": "正常",
+          "missingYears": [
+            107
+          ],
+          "dataNotes": [
+            {
+              "type": "缺年度",
+              "message": "缺少學年度資料：107",
+              "severity": "warning",
+              "years": [
+                107
+              ]
+            }
+          ]
+        },
+        {
+          "id": "024623",
+          "code": "024623",
+          "name": "縣立頭城國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:頭城鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣頭城鎮開蘭路282號",
+          "phone": "(03)9771011",
+          "website": "https://www.tces.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024623/C/宜蘭縣/頭城鎮/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.827573,
+            "latitude": 24.862833
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 559
+            },
+            {
+              "year": 108,
+              "students": 551
+            },
+            {
+              "year": 109,
+              "students": 516
+            },
+            {
+              "year": 110,
+              "students": 508
+            },
+            {
+              "year": 111,
+              "students": 519
+            },
+            {
+              "year": 112,
+              "students": 567
+            },
+            {
+              "year": 113,
+              "students": 537
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024507",
+          "code": "024507",
+          "name": "縣立頭城國中",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:頭城鎮",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "宜蘭縣頭城鎮復興路145號",
+          "phone": "(03)9771002",
+          "website": "http://www.tcjh.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024507/J/宜蘭縣/頭城鎮/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.821266,
+            "latitude": 24.864787
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 606
+            },
+            {
+              "year": 108,
+              "students": 557
+            },
+            {
+              "year": 109,
+              "students": 506
+            },
+            {
+              "year": 110,
+              "students": 488
+            },
+            {
+              "year": 111,
+              "students": 437
+            },
+            {
+              "year": 112,
+              "students": 409
+            },
+            {
+              "year": 113,
+              "students": 391
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024625",
+          "code": "024625",
+          "name": "縣立二城國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:頭城鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣頭城鎮青雲路二段200號",
+          "phone": "(03)9771024",
+          "website": "https://www.eces.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024625/C/宜蘭縣/頭城鎮/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.805272,
+            "latitude": 24.843634
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 283
+            },
+            {
+              "year": 108,
+              "students": 280
+            },
+            {
+              "year": 109,
+              "students": 273
+            },
+            {
+              "year": 110,
+              "students": 271
+            },
+            {
+              "year": 111,
+              "students": 271
+            },
+            {
+              "year": 112,
+              "students": 266
+            },
+            {
+              "year": 113,
+              "students": 265
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024698",
+          "code": "024698",
+          "name": "縣立人文國(中)小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:頭城鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣頭城鎮拔雅里文雅路150號",
+          "phone": "(03)9773396",
+          "website": "https://www.jwps.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024698/C/宜蘭縣/頭城鎮/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.819901,
+            "latitude": 24.860532
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 126
+            },
+            {
+              "year": 108,
+              "students": 115
+            },
+            {
+              "year": 109,
+              "students": 94
+            },
+            {
+              "year": 110,
+              "students": 92
+            },
+            {
+              "year": 111,
+              "students": 103
+            },
+            {
+              "year": 112,
+              "students": 119
+            },
+            {
+              "year": 113,
+              "students": 119
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024626",
+          "code": "024626",
+          "name": "縣立大溪國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:頭城鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣頭城鎮濱海路4段250號",
+          "phone": "(03)9781044",
+          "website": "https://www.dses.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024626/C/宜蘭縣/頭城鎮/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.886464,
+            "latitude": 24.93552
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 50
+            },
+            {
+              "year": 108,
+              "students": 47
+            },
+            {
+              "year": 109,
+              "students": 58
+            },
+            {
+              "year": 110,
+              "students": 64
+            },
+            {
+              "year": 111,
+              "students": 72
+            },
+            {
+              "year": 112,
+              "students": 89
+            },
+            {
+              "year": 113,
+              "students": 104
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024624",
+          "code": "024624",
+          "name": "縣立竹安國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:頭城鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣頭城鎮竹安里頭濱路一段601號",
+          "phone": "(03)9771178",
+          "website": "https://www.jaes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024624/C/宜蘭縣/頭城鎮/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.820334,
+            "latitude": 24.825139
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 85
+            },
+            {
+              "year": 108,
+              "students": 85
+            },
+            {
+              "year": 109,
+              "students": 77
+            },
+            {
+              "year": 110,
+              "students": 85
+            },
+            {
+              "year": 111,
+              "students": 92
+            },
+            {
+              "year": 112,
+              "students": 84
+            },
+            {
+              "year": 113,
+              "students": 94
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024526",
+          "code": "024526",
+          "name": "縣立人文國中(小)",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:頭城鎮",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "宜蘭縣頭城鎮拔雅里文雅路150號",
+          "phone": "(03)9773396",
+          "website": "http://www.jwps.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024526/J/宜蘭縣/頭城鎮/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.819901,
+            "latitude": 24.860532
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 77
+            },
+            {
+              "year": 108,
+              "students": 62
+            },
+            {
+              "year": 109,
+              "students": 63
+            },
+            {
+              "year": 110,
+              "students": 58
+            },
+            {
+              "year": 111,
+              "students": 60
+            },
+            {
+              "year": 112,
+              "students": 61
+            },
+            {
+              "year": 113,
+              "students": 71
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024628",
+          "code": "024628",
+          "name": "縣立梗枋國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:頭城鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣頭城鎮更新路59號",
+          "phone": "(03)9771634",
+          "website": "https://www.gfes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024628/C/宜蘭縣/頭城鎮/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.862177,
+            "latitude": 24.900758
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 40
+            },
+            {
+              "year": 108,
+              "students": 49
+            },
+            {
+              "year": 109,
+              "students": 56
+            },
+            {
+              "year": 110,
+              "students": 65
+            },
+            {
+              "year": 111,
+              "students": 71
+            },
+            {
+              "year": 112,
+              "students": 71
+            },
+            {
+              "year": 113,
+              "students": 65
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024627",
+          "code": "024627",
+          "name": "縣立大里國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:頭城鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣頭城鎮濱海路七段65號",
+          "phone": "(03)9781440",
+          "website": "https://www.tles.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024627/C/宜蘭縣/頭城鎮/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.92646,
+            "latitude": 24.97061
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 58
+            },
+            {
+              "year": 108,
+              "students": 52
+            },
+            {
+              "year": 109,
+              "students": 56
+            },
+            {
+              "year": 110,
+              "students": 55
+            },
+            {
+              "year": 111,
+              "students": 53
+            },
+            {
+              "year": 112,
+              "students": 52
+            },
+            {
+              "year": 113,
+              "students": 63
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": [
+        {
+          "type": "缺年度",
+          "message": "頭城鎮 有 1 所學校存在年度缺漏。",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "id": "宜蘭縣:礁溪鄉",
+      "name": "礁溪鄉",
+      "countyId": "宜蘭縣",
+      "schools": [
+        {
+          "id": "024629",
+          "code": "024629",
+          "name": "縣立礁溪國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:礁溪鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣礁溪鄉大忠村礁溪路四段135號",
+          "phone": "(03)9882047",
+          "website": "https://www.jausips.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024629/C/宜蘭縣/礁溪鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.768455,
+            "latitude": 24.821686
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 627
+            },
+            {
+              "year": 108,
+              "students": 622
+            },
+            {
+              "year": 109,
+              "students": 636
+            },
+            {
+              "year": 110,
+              "students": 654
+            },
+            {
+              "year": 111,
+              "students": 674
+            },
+            {
+              "year": 112,
+              "students": 691
+            },
+            {
+              "year": 113,
+              "students": 654
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024512",
+          "code": "024512",
+          "name": "縣立礁溪國中",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:礁溪鄉",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "宜蘭縣礁溪鄉礁溪路四段23號",
+          "phone": "(03)9882412",
+          "website": "http://www.csjh.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024512/J/宜蘭縣/礁溪鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.767727,
+            "latitude": 24.817113
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 426
+            },
+            {
+              "year": 108,
+              "students": 403
+            },
+            {
+              "year": 109,
+              "students": 375
+            },
+            {
+              "year": 110,
+              "students": 363
+            },
+            {
+              "year": 111,
+              "students": 331
+            },
+            {
+              "year": 112,
+              "students": 299
+            },
+            {
+              "year": 113,
+              "students": 330
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024630",
+          "code": "024630",
+          "name": "縣立四結國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:礁溪鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣礁溪鄉吳沙村育英路46號",
+          "phone": "(03)9284751",
+          "website": "https://www.sjes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024630/C/宜蘭縣/礁溪鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.760012,
+            "latitude": 24.78722
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 200
+            },
+            {
+              "year": 108,
+              "students": 186
+            },
+            {
+              "year": 109,
+              "students": 185
+            },
+            {
+              "year": 110,
+              "students": 202
+            },
+            {
+              "year": 111,
+              "students": 201
+            },
+            {
+              "year": 112,
+              "students": 196
+            },
+            {
+              "year": 113,
+              "students": 197
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024631",
+          "code": "024631",
+          "name": "縣立龍潭國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:礁溪鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣礁溪鄉龍潭村育龍路71號",
+          "phone": "(03)9284764",
+          "website": "https://www.ltes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024631/C/宜蘭縣/礁溪鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.744129,
+            "latitude": 24.779682
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 175
+            },
+            {
+              "year": 108,
+              "students": 170
+            },
+            {
+              "year": 109,
+              "students": 171
+            },
+            {
+              "year": 110,
+              "students": 155
+            },
+            {
+              "year": 111,
+              "students": 144
+            },
+            {
+              "year": 112,
+              "students": 154
+            },
+            {
+              "year": 113,
+              "students": 144
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024633",
+          "code": "024633",
+          "name": "縣立三民國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:礁溪鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣礁溪鄉三民村十六結路100號",
+          "phone": "(03)9882271",
+          "website": "https://www.smps.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024633/C/宜蘭縣/礁溪鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.760124,
+            "latitude": 24.813622
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 162
+            },
+            {
+              "year": 108,
+              "students": 157
+            },
+            {
+              "year": 109,
+              "students": 151
+            },
+            {
+              "year": 110,
+              "students": 141
+            },
+            {
+              "year": 111,
+              "students": 155
+            },
+            {
+              "year": 112,
+              "students": 156
+            },
+            {
+              "year": 113,
+              "students": 142
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024513",
+          "code": "024513",
+          "name": "縣立吳沙國中",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:礁溪鄉",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "宜蘭縣礁溪鄉育英路79號",
+          "phone": "(03)9284701",
+          "website": "http://www.wsjh.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024513/J/宜蘭縣/礁溪鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.759814,
+            "latitude": 24.785268
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 168
+            },
+            {
+              "year": 108,
+              "students": 156
+            },
+            {
+              "year": 109,
+              "students": 151
+            },
+            {
+              "year": 110,
+              "students": 133
+            },
+            {
+              "year": 111,
+              "students": 130
+            },
+            {
+              "year": 112,
+              "students": 128
+            },
+            {
+              "year": 113,
+              "students": 116
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024632",
+          "code": "024632",
+          "name": "縣立玉田國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:礁溪鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣礁溪鄉玉民路一段169號",
+          "phone": "(03)9882461",
+          "website": "https://www.ytes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024632/C/宜蘭縣/礁溪鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.790386,
+            "latitude": 24.795669
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 82
+            },
+            {
+              "year": 108,
+              "students": 80
+            },
+            {
+              "year": 109,
+              "students": 73
+            },
+            {
+              "year": 110,
+              "students": 73
+            },
+            {
+              "year": 111,
+              "students": 71
+            },
+            {
+              "year": 112,
+              "students": 74
+            },
+            {
+              "year": 113,
+              "students": 67
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    },
+    {
+      "id": "宜蘭縣:羅東鎮",
+      "name": "羅東鎮",
+      "countyId": "宜蘭縣",
+      "schools": [
+        {
+          "id": "024504",
+          "code": "024504",
+          "name": "縣立羅東國中",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:羅東鎮",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "宜蘭縣羅東鎮中華路99號",
+          "phone": "(03)9542075",
+          "website": "http://www.ltjh.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024504/J/宜蘭縣/羅東鎮/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.768121,
+            "latitude": 24.68282
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1521
+            },
+            {
+              "year": 108,
+              "students": 1545
+            },
+            {
+              "year": 109,
+              "students": 1493
+            },
+            {
+              "year": 110,
+              "students": 1548
+            },
+            {
+              "year": 111,
+              "students": 1484
+            },
+            {
+              "year": 112,
+              "students": 1472
+            },
+            {
+              "year": 113,
+              "students": 1513
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024613",
+          "code": "024613",
+          "name": "縣立北成國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:羅東鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣羅東鎮北成路一段125號",
+          "phone": "(03)9512626",
+          "website": "https://www.pces.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024613/C/宜蘭縣/羅東鎮/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.75866,
+            "latitude": 24.674897
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1411
+            },
+            {
+              "year": 108,
+              "students": 1406
+            },
+            {
+              "year": 109,
+              "students": 1431
+            },
+            {
+              "year": 110,
+              "students": 1435
+            },
+            {
+              "year": 111,
+              "students": 1483
+            },
+            {
+              "year": 112,
+              "students": 1507
+            },
+            {
+              "year": 113,
+              "students": 1507
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024612",
+          "code": "024612",
+          "name": "縣立公正國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:羅東鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣羅東鎮公正路199號",
+          "phone": "(03)9566659",
+          "website": "https://www.gjes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024612/C/宜蘭縣/羅東鎮/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.7659,
+            "latitude": 24.678806
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1425
+            },
+            {
+              "year": 108,
+              "students": 1461
+            },
+            {
+              "year": 109,
+              "students": 1481
+            },
+            {
+              "year": 110,
+              "students": 1448
+            },
+            {
+              "year": 111,
+              "students": 1489
+            },
+            {
+              "year": 112,
+              "students": 1483
+            },
+            {
+              "year": 113,
+              "students": 1475
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "020308",
+          "code": "020308",
+          "name": "國立羅東高中",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:羅東鎮",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "宜蘭縣羅東鎮公正路324號",
+          "phone": "(03)9567645",
+          "website": "https://www.ldsh.ilc.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/020308/H/宜蘭縣/羅東鎮/國立/否/無/",
+          "coordinates": {
+            "longitude": 121.762088,
+            "latitude": 24.680972
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 0
+            },
+            {
+              "year": 108,
+              "students": 1415
+            },
+            {
+              "year": 109,
+              "students": 1382
+            },
+            {
+              "year": 110,
+              "students": 1346
+            },
+            {
+              "year": 111,
+              "students": 1331
+            },
+            {
+              "year": 112,
+              "students": 1307
+            },
+            {
+              "year": 113,
+              "students": 1295
+            }
+          ],
+          "status": "正常",
+          "missingYears": [
+            107
+          ],
+          "dataNotes": [
+            {
+              "type": "缺年度",
+              "message": "缺少學年度資料：107",
+              "severity": "warning",
+              "years": [
+                107
+              ]
+            }
+          ]
+        },
+        {
+          "id": "020404",
+          "code": "020404",
+          "name": "國立羅東高商",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:羅東鎮",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "宜蘭縣羅東鎮中山路四段360號",
+          "phone": "(03)9512875",
+          "website": "https://www.ltcvs.ilc.edu.tw/portal",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/020404/H/宜蘭縣/羅東鎮/國立/否/無/",
+          "coordinates": {
+            "longitude": 121.757138,
+            "latitude": 24.672808
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 0
+            },
+            {
+              "year": 108,
+              "students": 1491
+            },
+            {
+              "year": 109,
+              "students": 1361
+            },
+            {
+              "year": 110,
+              "students": 1373
+            },
+            {
+              "year": 111,
+              "students": 1333
+            },
+            {
+              "year": 112,
+              "students": 1275
+            },
+            {
+              "year": 113,
+              "students": 1219
+            }
+          ],
+          "status": "正常",
+          "missingYears": [
+            107
+          ],
+          "dataNotes": [
+            {
+              "type": "缺年度",
+              "message": "缺少學年度資料：107",
+              "severity": "warning",
+              "years": [
+                107
+              ]
+            }
+          ]
+        },
+        {
+          "id": "024506",
+          "code": "024506",
+          "name": "縣立國華國中",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:羅東鎮",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "宜蘭縣羅東鎮國華街101號",
+          "phone": "(03)9513062",
+          "website": "http://www.ghjh.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024506/J/宜蘭縣/羅東鎮/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.761678,
+            "latitude": 24.677627
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1228
+            },
+            {
+              "year": 108,
+              "students": 1153
+            },
+            {
+              "year": 109,
+              "students": 1111
+            },
+            {
+              "year": 110,
+              "students": 1067
+            },
+            {
+              "year": 111,
+              "students": 1033
+            },
+            {
+              "year": 112,
+              "students": 1072
+            },
+            {
+              "year": 113,
+              "students": 1113
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024611",
+          "code": "024611",
+          "name": "縣立成功國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:羅東鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣羅東鎮興東南路100號",
+          "phone": "(03)9542156",
+          "website": "https://www.cges.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024611/C/宜蘭縣/羅東鎮/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.768788,
+            "latitude": 24.670879
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 755
+            },
+            {
+              "year": 108,
+              "students": 786
+            },
+            {
+              "year": 109,
+              "students": 798
+            },
+            {
+              "year": 110,
+              "students": 817
+            },
+            {
+              "year": 111,
+              "students": 856
+            },
+            {
+              "year": 112,
+              "students": 864
+            },
+            {
+              "year": 113,
+              "students": 845
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024610",
+          "code": "024610",
+          "name": "縣立羅東國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:羅東鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣羅東鎮民族路1號",
+          "phone": "(03)9542342",
+          "website": "https://www.lotes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024610/C/宜蘭縣/羅東鎮/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.77199,
+            "latitude": 24.672653
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 731
+            },
+            {
+              "year": 108,
+              "students": 731
+            },
+            {
+              "year": 109,
+              "students": 728
+            },
+            {
+              "year": 110,
+              "students": 733
+            },
+            {
+              "year": 111,
+              "students": 761
+            },
+            {
+              "year": 112,
+              "students": 763
+            },
+            {
+              "year": 113,
+              "students": 764
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024614",
+          "code": "024614",
+          "name": "縣立竹林國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:羅東鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣羅東鎮復興路二段128號",
+          "phone": "(03)9542084",
+          "website": "https://www.jles.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024614/C/宜蘭縣/羅東鎮/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.766277,
+            "latitude": 24.688758
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 614
+            },
+            {
+              "year": 108,
+              "students": 626
+            },
+            {
+              "year": 109,
+              "students": 627
+            },
+            {
+              "year": 110,
+              "students": 593
+            },
+            {
+              "year": 111,
+              "students": 603
+            },
+            {
+              "year": 112,
+              "students": 580
+            },
+            {
+              "year": 113,
+              "students": 548
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024505",
+          "code": "024505",
+          "name": "縣立東光國中",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:羅東鎮",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "宜蘭縣羅東鎮興東南路201號",
+          "phone": "(03)9542603",
+          "website": "http://www.tkjh.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024505/J/宜蘭縣/羅東鎮/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.766806,
+            "latitude": 24.671737
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 639
+            },
+            {
+              "year": 108,
+              "students": 618
+            },
+            {
+              "year": 109,
+              "students": 587
+            },
+            {
+              "year": 110,
+              "students": 558
+            },
+            {
+              "year": 111,
+              "students": 527
+            },
+            {
+              "year": 112,
+              "students": 495
+            },
+            {
+              "year": 113,
+              "students": 506
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": [
+        {
+          "type": "缺年度",
+          "message": "羅東鎮 有 2 所學校存在年度缺漏。",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "id": "宜蘭縣:蘇澳鎮",
+      "name": "蘇澳鎮",
+      "countyId": "宜蘭縣",
+      "schools": [
+        {
+          "id": "024616",
+          "code": "024616",
+          "name": "縣立馬賽國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:蘇澳鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣蘇澳鎮永榮里大同路108號",
+          "phone": "(03)9902694",
+          "website": "https://www.mses.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024616/C/宜蘭縣/蘇澳鎮/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.83532,
+            "latitude": 24.621609
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 568
+            },
+            {
+              "year": 108,
+              "students": 570
+            },
+            {
+              "year": 109,
+              "students": 580
+            },
+            {
+              "year": 110,
+              "students": 582
+            },
+            {
+              "year": 111,
+              "students": 589
+            },
+            {
+              "year": 112,
+              "students": 608
+            },
+            {
+              "year": 113,
+              "students": 603
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024509",
+          "code": "024509",
+          "name": "縣立文化國中",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:蘇澳鎮",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "宜蘭縣蘇澳鎮永榮里新馬路2號",
+          "phone": "(03)9903060",
+          "website": "http://www.whjh.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024509/J/宜蘭縣/蘇澳鎮/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.833313,
+            "latitude": 24.618377
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 461
+            },
+            {
+              "year": 108,
+              "students": 455
+            },
+            {
+              "year": 109,
+              "students": 465
+            },
+            {
+              "year": 110,
+              "students": 450
+            },
+            {
+              "year": 111,
+              "students": 445
+            },
+            {
+              "year": 112,
+              "students": 447
+            },
+            {
+              "year": 113,
+              "students": 485
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "020405",
+          "code": "020405",
+          "name": "國立蘇澳海事",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:蘇澳鎮",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "宜蘭縣蘇澳鎮蘇港路213號",
+          "phone": "(03)9951661",
+          "website": "https://www.savs.ilc.edu.tw/home",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/020405/H/宜蘭縣/蘇澳鎮/國立/否/無/",
+          "coordinates": {
+            "longitude": 121.843585,
+            "latitude": 24.594254
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 0
+            },
+            {
+              "year": 108,
+              "students": 704
+            },
+            {
+              "year": 109,
+              "students": 671
+            },
+            {
+              "year": 110,
+              "students": 567
+            },
+            {
+              "year": 111,
+              "students": 415
+            },
+            {
+              "year": 112,
+              "students": 329
+            },
+            {
+              "year": 113,
+              "students": 330
+            }
+          ],
+          "status": "正常",
+          "missingYears": [
+            107
+          ],
+          "dataNotes": [
+            {
+              "type": "缺年度",
+              "message": "缺少學年度資料：107",
+              "severity": "warning",
+              "years": [
+                107
+              ]
+            }
+          ]
+        },
+        {
+          "id": "024615",
+          "code": "024615",
+          "name": "縣立蘇澳國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:蘇澳鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣蘇澳鎮中山路一段366號",
+          "phone": "(03)9962312",
+          "website": "https://www.saes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024615/C/宜蘭縣/蘇澳鎮/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.841196,
+            "latitude": 24.596825
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 412
+            },
+            {
+              "year": 108,
+              "students": 413
+            },
+            {
+              "year": 109,
+              "students": 389
+            },
+            {
+              "year": 110,
+              "students": 372
+            },
+            {
+              "year": 111,
+              "students": 350
+            },
+            {
+              "year": 112,
+              "students": 346
+            },
+            {
+              "year": 113,
+              "students": 323
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024621",
+          "code": "024621",
+          "name": "縣立岳明國(中)小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:蘇澳鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣蘇澳鎮嶺腳路140號",
+          "phone": "(03)9903044",
+          "website": "https://www.ymes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024621/C/宜蘭縣/蘇澳鎮/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.853319,
+            "latitude": 24.614055
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 144
+            },
+            {
+              "year": 108,
+              "students": 158
+            },
+            {
+              "year": 109,
+              "students": 172
+            },
+            {
+              "year": 110,
+              "students": 194
+            },
+            {
+              "year": 111,
+              "students": 194
+            },
+            {
+              "year": 112,
+              "students": 208
+            },
+            {
+              "year": 113,
+              "students": 203
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024508",
+          "code": "024508",
+          "name": "縣立蘇澳國中",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:蘇澳鎮",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "宜蘭縣蘇澳鎮中山路二段1號",
+          "phone": "(03)9962137",
+          "website": "http://www.sajh.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024508/J/宜蘭縣/蘇澳鎮/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.835071,
+            "latitude": 24.596191
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 319
+            },
+            {
+              "year": 108,
+              "students": 278
+            },
+            {
+              "year": 109,
+              "students": 239
+            },
+            {
+              "year": 110,
+              "students": 225
+            },
+            {
+              "year": 111,
+              "students": 231
+            },
+            {
+              "year": 112,
+              "students": 205
+            },
+            {
+              "year": 113,
+              "students": 182
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024620",
+          "code": "024620",
+          "name": "縣立南安國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:蘇澳鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣蘇澳鎮南建里學府路122號",
+          "phone": "(03)9962664",
+          "website": "https://www.naanes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024620/C/宜蘭縣/蘇澳鎮/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.86839,
+            "latitude": 24.578909
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 168
+            },
+            {
+              "year": 108,
+              "students": 164
+            },
+            {
+              "year": 109,
+              "students": 167
+            },
+            {
+              "year": 110,
+              "students": 142
+            },
+            {
+              "year": 111,
+              "students": 131
+            },
+            {
+              "year": 112,
+              "students": 132
+            },
+            {
+              "year": 113,
+              "students": 122
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024622",
+          "code": "024622",
+          "name": "縣立育英國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:蘇澳鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣蘇澳鎮褔德路134號",
+          "phone": "(03)9901294",
+          "website": "https://www.yies.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024622/C/宜蘭縣/蘇澳鎮/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.832682,
+            "latitude": 24.640116
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 120
+            },
+            {
+              "year": 108,
+              "students": 123
+            },
+            {
+              "year": 109,
+              "students": 107
+            },
+            {
+              "year": 110,
+              "students": 102
+            },
+            {
+              "year": 111,
+              "students": 105
+            },
+            {
+              "year": 112,
+              "students": 112
+            },
+            {
+              "year": 113,
+              "students": 111
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024617",
+          "code": "024617",
+          "name": "縣立蓬萊國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:蘇澳鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣蘇澳鎮南澳路85號",
+          "phone": "(03)9981062",
+          "website": "https://www.ples.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024617/C/宜蘭縣/蘇澳鎮/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.803016,
+            "latitude": 24.464568
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 78
+            },
+            {
+              "year": 108,
+              "students": 91
+            },
+            {
+              "year": 109,
+              "students": 109
+            },
+            {
+              "year": 110,
+              "students": 110
+            },
+            {
+              "year": 111,
+              "students": 122
+            },
+            {
+              "year": 112,
+              "students": 113
+            },
+            {
+              "year": 113,
+              "students": 101
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024618",
+          "code": "024618",
+          "name": "縣立士敏國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:蘇澳鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣蘇澳鎮光明路8號",
+          "phone": "(03)9962342",
+          "website": "https://www.smes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024618/C/宜蘭縣/蘇澳鎮/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.853807,
+            "latitude": 24.592277
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 60
+            },
+            {
+              "year": 108,
+              "students": 73
+            },
+            {
+              "year": 109,
+              "students": 80
+            },
+            {
+              "year": 110,
+              "students": 83
+            },
+            {
+              "year": 111,
+              "students": 84
+            },
+            {
+              "year": 112,
+              "students": 70
+            },
+            {
+              "year": 113,
+              "students": 75
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024527",
+          "code": "024527",
+          "name": "縣立岳明國中(小)",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:蘇澳鎮",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "宜蘭縣蘇澳鎮嶺腳路140號",
+          "phone": "(03)9903044",
+          "website": "https://www.ymes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024527/J/宜蘭縣/蘇澳鎮/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.853319,
+            "latitude": 24.614055
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 0
+            },
+            {
+              "year": 108,
+              "students": 0
+            },
+            {
+              "year": 109,
+              "students": 0
+            },
+            {
+              "year": 110,
+              "students": 0
+            },
+            {
+              "year": 111,
+              "students": 19
+            },
+            {
+              "year": 112,
+              "students": 35
+            },
+            {
+              "year": 113,
+              "students": 64
+            }
+          ],
+          "status": "正常",
+          "missingYears": [
+            107,
+            108,
+            109,
+            110
+          ],
+          "dataNotes": [
+            {
+              "type": "缺年度",
+              "message": "缺少學年度資料：107、108、109、110",
+              "severity": "warning",
+              "years": [
+                107,
+                108,
+                109,
+                110
+              ]
+            }
+          ]
+        },
+        {
+          "id": "024510",
+          "code": "024510",
+          "name": "縣立南安國中",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:蘇澳鎮",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "宜蘭縣蘇澳鎮學府路117號",
+          "phone": "(03)9962317",
+          "website": "http://www.najh.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024510/J/宜蘭縣/蘇澳鎮/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.868495,
+            "latitude": 24.574754
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 111
+            },
+            {
+              "year": 108,
+              "students": 101
+            },
+            {
+              "year": 109,
+              "students": 75
+            },
+            {
+              "year": 110,
+              "students": 70
+            },
+            {
+              "year": 111,
+              "students": 57
+            },
+            {
+              "year": 112,
+              "students": 53
+            },
+            {
+              "year": 113,
+              "students": 45
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024619",
+          "code": "024619",
+          "name": "縣立永樂國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:蘇澳鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣蘇澳鎮永樂路1號",
+          "phone": "(03)9962840",
+          "website": "https://www.yles.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024619/C/宜蘭縣/蘇澳鎮/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.843918,
+            "latitude": 24.575679
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 58
+            },
+            {
+              "year": 108,
+              "students": 48
+            },
+            {
+              "year": 109,
+              "students": 38
+            },
+            {
+              "year": 110,
+              "students": 37
+            },
+            {
+              "year": 111,
+              "students": 34
+            },
+            {
+              "year": 112,
+              "students": 33
+            },
+            {
+              "year": 113,
+              "students": 40
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": [
+        {
+          "type": "缺年度",
+          "message": "蘇澳鎮 有 2 所學校存在年度缺漏。",
+          "severity": "warning"
+        }
+      ]
+    }
+  ]
+}

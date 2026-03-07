@@ -1,0 +1,69 @@
+{
+  "county": {
+    "id": "嘉義縣",
+    "name": "嘉義縣",
+    "shortLabel": "嘉縣",
+    "region": "南部"
+  },
+  "dataNotes": [],
+  "towns": [
+    {
+      "id": "嘉義縣:民雄鄉",
+      "name": "民雄鄉",
+      "countyId": "嘉義縣",
+      "schools": [
+        {
+          "id": "0013",
+          "code": "0013",
+          "name": "國立中正大學",
+          "countyId": "嘉義縣",
+          "townshipId": "嘉義縣:民雄鄉",
+          "educationLevel": "大專院校",
+          "managementType": "公立",
+          "address": "嘉義縣民雄鄉三興村7鄰大學路一段168號",
+          "phone": "(05)2720411",
+          "website": "http://www.ccu.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/0013/R/嘉義縣/民雄鄉/國立/否/一般/",
+          "coordinates": {
+            "longitude": 120.470867,
+            "latitude": 23.563389
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 11328
+            },
+            {
+              "year": 108,
+              "students": 11205
+            },
+            {
+              "year": 109,
+              "students": 11128
+            },
+            {
+              "year": 110,
+              "students": 11212
+            },
+            {
+              "year": 111,
+              "students": 11373
+            },
+            {
+              "year": 112,
+              "students": 11540
+            },
+            {
+              "year": 113,
+              "students": 11553
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    }
+  ]
+}

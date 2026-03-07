@@ -1,0 +1,877 @@
+{
+  "county": {
+    "id": "苗栗縣",
+    "name": "苗栗縣",
+    "shortLabel": "苗栗",
+    "region": "中部"
+  },
+  "dataNotes": [
+    {
+      "type": "缺年度",
+      "message": "苗栗縣 有 8 所學校存在年度缺漏。",
+      "severity": "warning"
+    }
+  ],
+  "towns": [
+    {
+      "id": "苗栗縣:三義鄉",
+      "name": "三義鄉",
+      "countyId": "苗栗縣",
+      "schools": [
+        {
+          "id": "054308",
+          "code": "054308",
+          "name": "縣立三義高中",
+          "countyId": "苗栗縣",
+          "townshipId": "苗栗縣:三義鄉",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "苗栗縣三義鄉廣盛村11鄰122號",
+          "phone": "(037)872015",
+          "website": "https://sjh.mlc.edu.tw/Home/Index.php",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/054308/H/苗栗縣/三義鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.7659,
+            "latitude": 24.40991
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 411
+            },
+            {
+              "year": 108,
+              "students": 769
+            },
+            {
+              "year": 109,
+              "students": 703
+            },
+            {
+              "year": 110,
+              "students": 676
+            },
+            {
+              "year": 111,
+              "students": 624
+            },
+            {
+              "year": 112,
+              "students": 607
+            },
+            {
+              "year": 113,
+              "students": 542
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    },
+    {
+      "id": "苗栗縣:大湖鄉",
+      "name": "大湖鄉",
+      "countyId": "苗栗縣",
+      "schools": [
+        {
+          "id": "050401",
+          "code": "050401",
+          "name": "國立大湖農工",
+          "countyId": "苗栗縣",
+          "townshipId": "苗栗縣:大湖鄉",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "苗栗縣大湖鄉大寮村竹高屋68號",
+          "phone": "(037)992216",
+          "website": "http://www.thvs.mlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/050401/H/苗栗縣/大湖鄉/國立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.861085,
+            "latitude": 24.420153
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 0
+            },
+            {
+              "year": 108,
+              "students": 797
+            },
+            {
+              "year": 109,
+              "students": 719
+            },
+            {
+              "year": 110,
+              "students": 643
+            },
+            {
+              "year": 111,
+              "students": 598
+            },
+            {
+              "year": 112,
+              "students": 544
+            },
+            {
+              "year": 113,
+              "students": 490
+            }
+          ],
+          "status": "正常",
+          "missingYears": [
+            107
+          ],
+          "dataNotes": [
+            {
+              "type": "缺年度",
+              "message": "缺少學年度資料：107",
+              "severity": "warning",
+              "years": [
+                107
+              ]
+            }
+          ]
+        }
+      ],
+      "dataNotes": [
+        {
+          "type": "缺年度",
+          "message": "大湖鄉 有 1 所學校存在年度缺漏。",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "id": "苗栗縣:竹南鎮",
+      "name": "竹南鎮",
+      "countyId": "苗栗縣",
+      "schools": [
+        {
+          "id": "051302",
+          "code": "051302",
+          "name": "私立君毅高中",
+          "countyId": "苗栗縣",
+          "townshipId": "苗栗縣:竹南鎮",
+          "educationLevel": "高中職",
+          "managementType": "私立",
+          "address": "苗栗縣竹南鎮公義路245號",
+          "phone": "(037)622009",
+          "website": "http://www.cish.mlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/051302/H/苗栗縣/竹南鎮/私立/否/無/",
+          "coordinates": {
+            "longitude": 120.882951,
+            "latitude": 24.700688
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 776
+            },
+            {
+              "year": 108,
+              "students": 2302
+            },
+            {
+              "year": 109,
+              "students": 2237
+            },
+            {
+              "year": 110,
+              "students": 2208
+            },
+            {
+              "year": 111,
+              "students": 2162
+            },
+            {
+              "year": 112,
+              "students": 2117
+            },
+            {
+              "year": 113,
+              "students": 2113
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "050310",
+          "code": "050310",
+          "name": "國立竹南高中",
+          "countyId": "苗栗縣",
+          "townshipId": "苗栗縣:竹南鎮",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "苗栗縣竹南鎮中正路98號",
+          "phone": "(037)476855",
+          "website": "http://www.cnsh.mlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/050310/H/苗栗縣/竹南鎮/國立/否/無/",
+          "coordinates": {
+            "longitude": 120.87475,
+            "latitude": 24.684185
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 0
+            },
+            {
+              "year": 108,
+              "students": 1549
+            },
+            {
+              "year": 109,
+              "students": 1477
+            },
+            {
+              "year": 110,
+              "students": 1449
+            },
+            {
+              "year": 111,
+              "students": 1451
+            },
+            {
+              "year": 112,
+              "students": 1464
+            },
+            {
+              "year": 113,
+              "students": 1508
+            }
+          ],
+          "status": "正常",
+          "missingYears": [
+            107
+          ],
+          "dataNotes": [
+            {
+              "type": "缺年度",
+              "message": "缺少學年度資料：107",
+              "severity": "warning",
+              "years": [
+                107
+              ]
+            }
+          ]
+        },
+        {
+          "id": "051408",
+          "code": "051408",
+          "name": "私立中興商工",
+          "countyId": "苗栗縣",
+          "townshipId": "苗栗縣:竹南鎮",
+          "educationLevel": "高中職",
+          "managementType": "私立",
+          "address": "苗栗縣竹南鎮大營路211號",
+          "phone": "(037)467360",
+          "website": "https://www.csvs.mlc.edu.tw/home",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/051408/H/苗栗縣/竹南鎮/私立/否/無/",
+          "coordinates": {
+            "longitude": 120.872493,
+            "latitude": 24.688467
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 0
+            },
+            {
+              "year": 108,
+              "students": 859
+            },
+            {
+              "year": 109,
+              "students": 730
+            },
+            {
+              "year": 110,
+              "students": 625
+            },
+            {
+              "year": 111,
+              "students": 725
+            },
+            {
+              "year": 112,
+              "students": 657
+            },
+            {
+              "year": 113,
+              "students": 607
+            }
+          ],
+          "status": "正常",
+          "missingYears": [
+            107
+          ],
+          "dataNotes": [
+            {
+              "type": "缺年度",
+              "message": "缺少學年度資料：107",
+              "severity": "warning",
+              "years": [
+                107
+              ]
+            }
+          ]
+        }
+      ],
+      "dataNotes": [
+        {
+          "type": "缺年度",
+          "message": "竹南鎮 有 2 所學校存在年度缺漏。",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "id": "苗栗縣:卓蘭鎮",
+      "name": "卓蘭鎮",
+      "countyId": "苗栗縣",
+      "schools": [
+        {
+          "id": "050314",
+          "code": "050314",
+          "name": "國立卓蘭高中",
+          "countyId": "苗栗縣",
+          "townshipId": "苗栗縣:卓蘭鎮",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "苗栗縣卓蘭鎮老庄161號",
+          "phone": "(04)25892007",
+          "website": "https://www.jlsh.mlc.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/050314/H/苗栗縣/卓蘭鎮/國立/否/無/",
+          "coordinates": {
+            "longitude": 120.832199,
+            "latitude": 24.312704
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 316
+            },
+            {
+              "year": 108,
+              "students": 1188
+            },
+            {
+              "year": 109,
+              "students": 1140
+            },
+            {
+              "year": 110,
+              "students": 1027
+            },
+            {
+              "year": 111,
+              "students": 935
+            },
+            {
+              "year": 112,
+              "students": 849
+            },
+            {
+              "year": 113,
+              "students": 762
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "051307",
+          "code": "051307",
+          "name": "私立全人實驗高中",
+          "countyId": "苗栗縣",
+          "townshipId": "苗栗縣:卓蘭鎮",
+          "educationLevel": "高中職",
+          "managementType": "私立",
+          "address": "苗栗縣卓蘭鎮內灣141之3號",
+          "phone": "(04)25896909",
+          "website": "https://holistic.org.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/051307/H/苗栗縣/卓蘭鎮/私立/否/無/",
+          "coordinates": {
+            "longitude": 120.862623,
+            "latitude": 24.30507
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 34
+            },
+            {
+              "year": 108,
+              "students": 69
+            },
+            {
+              "year": 109,
+              "students": 60
+            },
+            {
+              "year": 110,
+              "students": 65
+            },
+            {
+              "year": 111,
+              "students": 54
+            },
+            {
+              "year": 112,
+              "students": 48
+            },
+            {
+              "year": 113,
+              "students": 51
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    },
+    {
+      "id": "苗栗縣:苑裡鎮",
+      "name": "苑裡鎮",
+      "countyId": "苗栗縣",
+      "schools": [
+        {
+          "id": "050315",
+          "code": "050315",
+          "name": "國立苑裡高中",
+          "countyId": "苗栗縣",
+          "townshipId": "苗栗縣:苑裡鎮",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "苗栗縣苑裡鎮育才街100號",
+          "phone": "(037)868680",
+          "website": "http://www.ylsh.mlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/050315/H/苗栗縣/苑裡鎮/國立/否/無/",
+          "coordinates": {
+            "longitude": 120.656607,
+            "latitude": 24.448516
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 0
+            },
+            {
+              "year": 108,
+              "students": 1201
+            },
+            {
+              "year": 109,
+              "students": 1144
+            },
+            {
+              "year": 110,
+              "students": 1136
+            },
+            {
+              "year": 111,
+              "students": 1156
+            },
+            {
+              "year": 112,
+              "students": 1126
+            },
+            {
+              "year": 113,
+              "students": 1108
+            }
+          ],
+          "status": "正常",
+          "missingYears": [
+            107
+          ],
+          "dataNotes": [
+            {
+              "type": "缺年度",
+              "message": "缺少學年度資料：107",
+              "severity": "warning",
+              "years": [
+                107
+              ]
+            }
+          ]
+        },
+        {
+          "id": "051413",
+          "code": "051413",
+          "name": "私立龍德家商",
+          "countyId": "苗栗縣",
+          "townshipId": "苗栗縣:苑裡鎮",
+          "educationLevel": "高中職",
+          "managementType": "私立",
+          "address": "苗栗縣苑裡鎮房裡里南房75之1號",
+          "phone": "(037)851277",
+          "website": "http://www.ldvs.mlc.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/051413/H/苗栗縣/苑裡鎮/私立/否/無/",
+          "coordinates": {
+            "longitude": 120.642982,
+            "latitude": 24.429617
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 0
+            },
+            {
+              "year": 108,
+              "students": 388
+            },
+            {
+              "year": 109,
+              "students": 228
+            },
+            {
+              "year": 110,
+              "students": 103
+            },
+            {
+              "year": 111,
+              "students": 34
+            },
+            {
+              "year": 112,
+              "students": 73
+            },
+            {
+              "year": 113,
+              "students": 113
+            }
+          ],
+          "status": "正常",
+          "missingYears": [
+            107
+          ],
+          "dataNotes": [
+            {
+              "type": "缺年度",
+              "message": "缺少學年度資料：107",
+              "severity": "warning",
+              "years": [
+                107
+              ]
+            }
+          ]
+        }
+      ],
+      "dataNotes": [
+        {
+          "type": "缺年度",
+          "message": "苑裡鎮 有 2 所學校存在年度缺漏。",
+          "severity": "warning"
+        }
+      ]
+    },
+    {
+      "id": "苗栗縣:苗栗市",
+      "name": "苗栗市",
+      "countyId": "苗栗縣",
+      "schools": [
+        {
+          "id": "0032",
+          "code": "0032",
+          "name": "國立聯合大學",
+          "countyId": "苗栗縣",
+          "townshipId": "苗栗縣:苗栗市",
+          "educationLevel": "大專院校",
+          "managementType": "公立",
+          "address": "苗栗縣苗栗市恭敬里聯大1號",
+          "phone": "(037)381000",
+          "website": "http://www.nuu.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/0032/R/苗栗縣/苗栗市/國立/否/一般/",
+          "coordinates": {
+            "longitude": 120.812248,
+            "latitude": 24.545699
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 7622
+            },
+            {
+              "year": 108,
+              "students": 7588
+            },
+            {
+              "year": 109,
+              "students": 7559
+            },
+            {
+              "year": 110,
+              "students": 7655
+            },
+            {
+              "year": 111,
+              "students": 7649
+            },
+            {
+              "year": 112,
+              "students": 7711
+            },
+            {
+              "year": 113,
+              "students": 7594
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "050404",
+          "code": "050404",
+          "name": "國立苗栗農工",
+          "countyId": "苗栗縣",
+          "townshipId": "苗栗縣:苗栗市",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "苗栗縣苗栗市經國路二段491號",
+          "phone": "(037)329281",
+          "website": "http://www.mlaivs.mlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/050404/H/苗栗縣/苗栗市/國立/否/無/",
+          "coordinates": {
+            "longitude": 120.833342,
+            "latitude": 24.556778
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 0
+            },
+            {
+              "year": 108,
+              "students": 1879
+            },
+            {
+              "year": 109,
+              "students": 1821
+            },
+            {
+              "year": 110,
+              "students": 1800
+            },
+            {
+              "year": 111,
+              "students": 1803
+            },
+            {
+              "year": 112,
+              "students": 1786
+            },
+            {
+              "year": 113,
+              "students": 1763
+            }
+          ],
+          "status": "正常",
+          "missingYears": [
+            107
+          ],
+          "dataNotes": [
+            {
+              "type": "缺年度",
+              "message": "缺少學年度資料：107",
+              "severity": "warning",
+              "years": [
+                107
+              ]
+            }
+          ]
+        },
+        {
+          "id": "050303",
+          "code": "050303",
+          "name": "國立苗栗高中",
+          "countyId": "苗栗縣",
+          "townshipId": "苗栗縣:苗栗市",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "苗栗縣苗栗市至公路183號",
+          "phone": "(037)320072",
+          "website": "http://www.mlsh.mlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/050303/H/苗栗縣/苗栗市/國立/否/無/",
+          "coordinates": {
+            "longitude": 120.816364,
+            "latitude": 24.559387
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 0
+            },
+            {
+              "year": 108,
+              "students": 1448
+            },
+            {
+              "year": 109,
+              "students": 1352
+            },
+            {
+              "year": 110,
+              "students": 1327
+            },
+            {
+              "year": 111,
+              "students": 1347
+            },
+            {
+              "year": 112,
+              "students": 1358
+            },
+            {
+              "year": 113,
+              "students": 1359
+            }
+          ],
+          "status": "正常",
+          "missingYears": [
+            107
+          ],
+          "dataNotes": [
+            {
+              "type": "缺年度",
+              "message": "缺少學年度資料：107",
+              "severity": "warning",
+              "years": [
+                107
+              ]
+            }
+          ]
+        },
+        {
+          "id": "051306",
+          "code": "051306",
+          "name": "私立建臺高中",
+          "countyId": "苗栗縣",
+          "townshipId": "苗栗縣:苗栗市",
+          "educationLevel": "高中職",
+          "managementType": "私立",
+          "address": "苗栗縣苗栗市福麗里至公路251號",
+          "phone": "(037)353270",
+          "website": "http://www.ctsh.mlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/051306/H/苗栗縣/苗栗市/私立/否/無/",
+          "coordinates": {
+            "longitude": 120.814633,
+            "latitude": 24.559372
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 861
+            },
+            {
+              "year": 108,
+              "students": 1835
+            },
+            {
+              "year": 109,
+              "students": 1740
+            },
+            {
+              "year": 110,
+              "students": 1609
+            },
+            {
+              "year": 111,
+              "students": 1367
+            },
+            {
+              "year": 112,
+              "students": 1158
+            },
+            {
+              "year": 113,
+              "students": 976
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "050407",
+          "code": "050407",
+          "name": "國立苗栗高商",
+          "countyId": "苗栗縣",
+          "townshipId": "苗栗縣:苗栗市",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "苗栗縣苗栗市電臺街7號",
+          "phone": "(037)356001",
+          "website": "http://www.mlvs.mlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/050407/H/苗栗縣/苗栗市/國立/否/無/",
+          "coordinates": {
+            "longitude": 120.815135,
+            "latitude": 24.55742
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 0
+            },
+            {
+              "year": 108,
+              "students": 1024
+            },
+            {
+              "year": 109,
+              "students": 984
+            },
+            {
+              "year": 110,
+              "students": 981
+            },
+            {
+              "year": 111,
+              "students": 985
+            },
+            {
+              "year": 112,
+              "students": 979
+            },
+            {
+              "year": 113,
+              "students": 957
+            }
+          ],
+          "status": "正常",
+          "missingYears": [
+            107
+          ],
+          "dataNotes": [
+            {
+              "type": "缺年度",
+              "message": "缺少學年度資料：107",
+              "severity": "warning",
+              "years": [
+                107
+              ]
+            }
+          ]
+        }
+      ],
+      "dataNotes": [
+        {
+          "type": "缺年度",
+          "message": "苗栗市 有 3 所學校存在年度缺漏。",
+          "severity": "warning"
+        }
+      ]
+    }
+  ]
+}

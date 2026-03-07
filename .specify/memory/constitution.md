@@ -1,50 +1,48 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+# 學生人數分析專案憲章
 
-## Core Principles
+## 核心原則
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### 一、互動探索優先
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+每一次版本更新都必須強化使用者的互動探索能力。產品主流程必須維持單頁面中的全台總覽 → 縣市 → 鄉鎮市區 → 學校層級下鑽。任何削弱這條主路徑、迫使使用者跳頁、或讓關鍵分析藏在次級操作後面的設計，都視為退步。
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### 二、先更新規格，再進行實作
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+所有有意義的需求、設計、資料結構或架構調整，都必須先反映在規格文件、實作計畫與任務拆解中，才可以修改程式。當需求有模糊地帶時，必須選擇最能提升互動品質、資料清晰度、交付穩定性與後續維護性的方案。
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### 三、正式資料可追溯與異常透明
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+視覺呈現必須服務於解讀，而不是只追求裝飾。每一張地圖、卡片、排行、趨勢圖都必須清楚標示分析範圍、學年度、篩選條件、彙總層級與資料來源。若資料存在停辦學校、缺漏年度、行政區改制、名稱異動或統計口徑差異，介面與資料契約都必須能明確揭露，而不是靜默吞掉。
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+### 四、效能優化必須可驗證
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+所有效能優化都必須能落在可驗證的交付物上，例如 URL 狀態同步、切片資料、TopoJSON 壓縮、延遲載入、快取策略、靜態建置產物縮減等。每次增量修改後，至少要能通過靜態檢查與正式建置，並可透過 quickstart 情境手動驗證互動與資料正確性。
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+### 五、邊界清楚，優先靜態交付
 
-## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
+架構上優先採用最簡單、最穩定、最容易部署的方案。若靜態檔、預切片資料、前端快取或瀏覽器端資料儲存已足夠，就不應為了「看起來進階」而過早引入本地資料庫或後端服務。只有在資料量、查詢型態或更新頻率已經證明靜態策略不足時，才允許新增資料庫層。
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+### 六、所有規格文件以繁體中文為準
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+本專案所有 SDD 規格文件、憲章、計畫、任務、資料契約與操作說明，皆以繁體中文撰寫與維護。若程式碼中出現英文命名，不影響文件必須以繁體中文解釋其目的、邏輯與驗證方式。
+
+## 產品約束
+
+- 主要使用者語言必須為繁體中文。
+- 桌面與行動裝置都必須支援完整的互動下鑽流程。
+- 分享連結必須能還原縣市、鄉鎮、學年度、學制與其他核心篩選狀態。
+- 正式資料載入策略必須優先考慮首次載入體積與重新進站速度。
+- JSON 與其他產出資料檔必須使用可讀的多行格式，不得輸出為單行壓縮檔內容。
+
+## 交付流程
+
+- 每個功能都必須維持 `specs/[feature]/` 內的 spec-kit 文件完整且同步。
+- 實作前必須先更新憲章、規格、計畫、任務與必要的資料契約。
+- 任務必須依賴順序撰寫，並能對應到明確使用者故事或跨切面需求。
+- 實作時必須聚焦在本次規格範圍，不得混入無關重構。
+
+## 治理規則
+
+本憲章高於倉庫內的臨時偏好與口頭慣例。任何偏離都必須先在計畫文件中說明必要性與成本。凡是修改互動流程、資料邊界、效能策略或文件語言規則，必須同步更新本憲章與受影響的規格文件。
+
+**版本**: 1.1.0 | **核准日期**: 2026-03-07 | **最後修訂**: 2026-03-07

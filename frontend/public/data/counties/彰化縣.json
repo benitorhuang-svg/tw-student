@@ -1,0 +1,69 @@
+{
+  "county": {
+    "id": "彰化縣",
+    "name": "彰化縣",
+    "shortLabel": "彰化",
+    "region": "中部"
+  },
+  "dataNotes": [],
+  "towns": [
+    {
+      "id": "彰化縣:彰化市",
+      "name": "彰化市",
+      "countyId": "彰化縣",
+      "schools": [
+        {
+          "id": "0015",
+          "code": "0015",
+          "name": "國立彰化師範大學",
+          "countyId": "彰化縣",
+          "townshipId": "彰化縣:彰化市",
+          "educationLevel": "大專院校",
+          "managementType": "公立",
+          "address": "彰化縣彰化市進德路1號",
+          "phone": "(04)7232105",
+          "website": "http://www.ncue.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/0015/R/彰化縣/彰化市/國立/否/師範/",
+          "coordinates": {
+            "longitude": 120.558479,
+            "latitude": 24.082738
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 8333
+            },
+            {
+              "year": 108,
+              "students": 8385
+            },
+            {
+              "year": 109,
+              "students": 8453
+            },
+            {
+              "year": 110,
+              "students": 8459
+            },
+            {
+              "year": 111,
+              "students": 8526
+            },
+            {
+              "year": 112,
+              "students": 8611
+            },
+            {
+              "year": 113,
+              "students": 8624
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    }
+  ]
+}

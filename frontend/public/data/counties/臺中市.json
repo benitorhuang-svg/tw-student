@@ -1,0 +1,293 @@
+{
+  "county": {
+    "id": "臺中市",
+    "name": "臺中市",
+    "shortLabel": "臺中",
+    "region": "中部"
+  },
+  "dataNotes": [],
+  "towns": [
+    {
+      "id": "臺中市:太平區",
+      "name": "太平區",
+      "countyId": "臺中市",
+      "schools": [
+        {
+          "id": "0043",
+          "code": "0043",
+          "name": "國立勤益科技大學",
+          "countyId": "臺中市",
+          "townshipId": "臺中市:太平區",
+          "educationLevel": "大專院校",
+          "managementType": "公立",
+          "address": "臺中市太平區坪林里中山路二段57號",
+          "phone": "(04)23924505",
+          "website": "http://www.ncut.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/0043/R/臺中市/太平區/國立/否/技職/",
+          "coordinates": {
+            "longitude": 120.73193,
+            "latitude": 24.143984
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 11101
+            },
+            {
+              "year": 108,
+              "students": 11130
+            },
+            {
+              "year": 109,
+              "students": 12134
+            },
+            {
+              "year": 110,
+              "students": 12442
+            },
+            {
+              "year": 111,
+              "students": 12421
+            },
+            {
+              "year": 112,
+              "students": 12603
+            },
+            {
+              "year": 113,
+              "students": 12510
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    },
+    {
+      "id": "臺中市:北區",
+      "name": "北區",
+      "countyId": "臺中市",
+      "schools": [
+        {
+          "id": "0050",
+          "code": "0050",
+          "name": "國立臺中科技大學",
+          "countyId": "臺中市",
+          "townshipId": "臺中市:北區",
+          "educationLevel": "大專院校",
+          "managementType": "公立",
+          "address": "臺中市北區三民路三段129號",
+          "phone": "(04)22195678",
+          "website": "http://www.nutc.edu.tw/bin/home.php",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/0050/R/臺中市/北區/國立/否/技職/",
+          "coordinates": {
+            "longitude": 120.682909,
+            "latitude": 24.15062
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 13565
+            },
+            {
+              "year": 108,
+              "students": 13367
+            },
+            {
+              "year": 109,
+              "students": 16091
+            },
+            {
+              "year": 110,
+              "students": 16191
+            },
+            {
+              "year": 111,
+              "students": 16095
+            },
+            {
+              "year": 112,
+              "students": 15989
+            },
+            {
+              "year": 113,
+              "students": 15762
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "0049",
+          "code": "0049",
+          "name": "國立臺灣體育運動大學",
+          "countyId": "臺中市",
+          "townshipId": "臺中市:北區",
+          "educationLevel": "大專院校",
+          "managementType": "公立",
+          "address": "臺中市北區雙十路一段16號",
+          "phone": "(04)22213108",
+          "website": "https://www.ntus.edu.tw/cht/index.php",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/0049/R/臺中市/北區/國立/否/一般/",
+          "coordinates": {
+            "longitude": 120.687618,
+            "latitude": 24.14869
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 3100
+            },
+            {
+              "year": 108,
+              "students": 3107
+            },
+            {
+              "year": 109,
+              "students": 3122
+            },
+            {
+              "year": 110,
+              "students": 3121
+            },
+            {
+              "year": 111,
+              "students": 3122
+            },
+            {
+              "year": 112,
+              "students": 3149
+            },
+            {
+              "year": 113,
+              "students": 3090
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    },
+    {
+      "id": "臺中市:西區",
+      "name": "西區",
+      "countyId": "臺中市",
+      "schools": [
+        {
+          "id": "0039",
+          "code": "0039",
+          "name": "國立臺中教育大學",
+          "countyId": "臺中市",
+          "townshipId": "臺中市:西區",
+          "educationLevel": "大專院校",
+          "managementType": "公立",
+          "address": "臺中市西區民生路140號",
+          "phone": "(04)22183199",
+          "website": "http://www.ntcu.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/0039/R/臺中市/西區/國立/否/師範/",
+          "coordinates": {
+            "longitude": 120.672154,
+            "latitude": 24.142653
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 4966
+            },
+            {
+              "year": 108,
+              "students": 4929
+            },
+            {
+              "year": 109,
+              "students": 4902
+            },
+            {
+              "year": 110,
+              "students": 5005
+            },
+            {
+              "year": 111,
+              "students": 5000
+            },
+            {
+              "year": 112,
+              "students": 5090
+            },
+            {
+              "year": 113,
+              "students": 5130
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    },
+    {
+      "id": "臺中市:南區",
+      "name": "南區",
+      "countyId": "臺中市",
+      "schools": [
+        {
+          "id": "0006",
+          "code": "0006",
+          "name": "國立中興大學",
+          "countyId": "臺中市",
+          "townshipId": "臺中市:南區",
+          "educationLevel": "大專院校",
+          "managementType": "公立",
+          "address": "臺中市南區興大路145號",
+          "phone": "(04)22873181",
+          "website": "http://www.nchu.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/0006/R/臺中市/南區/國立/否/一般/",
+          "coordinates": {
+            "longitude": 120.675551,
+            "latitude": 24.122122
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 14884
+            },
+            {
+              "year": 108,
+              "students": 14983
+            },
+            {
+              "year": 109,
+              "students": 14974
+            },
+            {
+              "year": 110,
+              "students": 15154
+            },
+            {
+              "year": 111,
+              "students": 15463
+            },
+            {
+              "year": 112,
+              "students": 15597
+            },
+            {
+              "year": 113,
+              "students": 15845
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    }
+  ]
+}

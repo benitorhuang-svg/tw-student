@@ -1,0 +1,127 @@
+{
+  "county": {
+    "id": "雲林縣",
+    "name": "雲林縣",
+    "shortLabel": "雲林",
+    "region": "中部"
+  },
+  "dataNotes": [],
+  "towns": [
+    {
+      "id": "雲林縣:斗六市",
+      "name": "斗六市",
+      "countyId": "雲林縣",
+      "schools": [
+        {
+          "id": "0023",
+          "code": "0023",
+          "name": "國立雲林科技大學",
+          "countyId": "雲林縣",
+          "townshipId": "雲林縣:斗六市",
+          "educationLevel": "大專院校",
+          "managementType": "公立",
+          "address": "雲林縣斗六市大學路三段123號",
+          "phone": "(05)5342601",
+          "website": "http://www.yuntech.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/0023/R/雲林縣/斗六市/國立/否/技職/",
+          "coordinates": {
+            "longitude": 120.534859,
+            "latitude": 23.694957
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 9732
+            },
+            {
+              "year": 108,
+              "students": 9716
+            },
+            {
+              "year": 109,
+              "students": 9808
+            },
+            {
+              "year": 110,
+              "students": 9885
+            },
+            {
+              "year": 111,
+              "students": 10027
+            },
+            {
+              "year": 112,
+              "students": 10338
+            },
+            {
+              "year": 113,
+              "students": 10470
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    },
+    {
+      "id": "雲林縣:虎尾鎮",
+      "name": "虎尾鎮",
+      "countyId": "雲林縣",
+      "schools": [
+        {
+          "id": "0033",
+          "code": "0033",
+          "name": "國立虎尾科技大學",
+          "countyId": "雲林縣",
+          "townshipId": "雲林縣:虎尾鎮",
+          "educationLevel": "大專院校",
+          "managementType": "公立",
+          "address": "雲林縣虎尾鎮文化路64號",
+          "phone": "(05)6315000",
+          "website": "http://www.nfu.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/0033/R/雲林縣/虎尾鎮/國立/否/技職/",
+          "coordinates": {
+            "longitude": 120.430091,
+            "latitude": 23.703312
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 10328
+            },
+            {
+              "year": 108,
+              "students": 10749
+            },
+            {
+              "year": 109,
+              "students": 11038
+            },
+            {
+              "year": 110,
+              "students": 11408
+            },
+            {
+              "year": 111,
+              "students": 11682
+            },
+            {
+              "year": 112,
+              "students": 11693
+            },
+            {
+              "year": 113,
+              "students": 11975
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    }
+  ]
+}

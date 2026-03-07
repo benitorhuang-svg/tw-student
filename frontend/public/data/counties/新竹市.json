@@ -1,0 +1,119 @@
+{
+  "county": {
+    "id": "新竹市",
+    "name": "新竹市",
+    "shortLabel": "竹市",
+    "region": "北部"
+  },
+  "dataNotes": [],
+  "towns": [
+    {
+      "id": "新竹市:東區",
+      "name": "東區",
+      "countyId": "新竹市",
+      "schools": [
+        {
+          "id": "0007",
+          "code": "0007",
+          "name": "國立陽明交通大學",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:東區",
+          "educationLevel": "大專院校",
+          "managementType": "公立",
+          "address": "新竹市東區大學路1001號",
+          "phone": "(03)5712121",
+          "website": "http://www.nycu.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/0007/R/新竹市/東區/國立/否/一般/",
+          "coordinates": {
+            "longitude": 120.999373,
+            "latitude": 24.789234
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 14271
+            },
+            {
+              "year": 108,
+              "students": 14742
+            },
+            {
+              "year": 109,
+              "students": 15182
+            },
+            {
+              "year": 110,
+              "students": 20412
+            },
+            {
+              "year": 111,
+              "students": 20707
+            },
+            {
+              "year": 112,
+              "students": 21428
+            },
+            {
+              "year": 113,
+              "students": 22117
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "0002",
+          "code": "0002",
+          "name": "國立清華大學",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:東區",
+          "educationLevel": "大專院校",
+          "managementType": "公立",
+          "address": "新竹市東區光復路二段101號",
+          "phone": "(03)5715131",
+          "website": "http://www.nthu.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/0002/R/新竹市/東區/國立/否/一般/",
+          "coordinates": {
+            "longitude": 120.996864,
+            "latitude": 24.796398
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 16657
+            },
+            {
+              "year": 108,
+              "students": 16678
+            },
+            {
+              "year": 109,
+              "students": 16917
+            },
+            {
+              "year": 110,
+              "students": 17488
+            },
+            {
+              "year": 111,
+              "students": 18034
+            },
+            {
+              "year": 112,
+              "students": 18191
+            },
+            {
+              "year": 113,
+              "students": 18269
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    }
+  ]
+}

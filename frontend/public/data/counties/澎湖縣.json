@@ -1,0 +1,69 @@
+{
+  "county": {
+    "id": "澎湖縣",
+    "name": "澎湖縣",
+    "shortLabel": "澎湖",
+    "region": "離島"
+  },
+  "dataNotes": [],
+  "towns": [
+    {
+      "id": "澎湖縣:馬公市",
+      "name": "馬公市",
+      "countyId": "澎湖縣",
+      "schools": [
+        {
+          "id": "0042",
+          "code": "0042",
+          "name": "國立澎湖科技大學",
+          "countyId": "澎湖縣",
+          "townshipId": "澎湖縣:馬公市",
+          "educationLevel": "大專院校",
+          "managementType": "公立",
+          "address": "澎湖縣馬公市六合路300號",
+          "phone": "(06)9264115",
+          "website": "http://www.npu.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/0042/R/澎湖縣/馬公市/國立/否/技職/",
+          "coordinates": {
+            "longitude": 119.581921,
+            "latitude": 23.57525
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 3025
+            },
+            {
+              "year": 108,
+              "students": 3051
+            },
+            {
+              "year": 109,
+              "students": 3047
+            },
+            {
+              "year": 110,
+              "students": 3063
+            },
+            {
+              "year": 111,
+              "students": 2927
+            },
+            {
+              "year": 112,
+              "students": 2702
+            },
+            {
+              "year": 113,
+              "students": 2388
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    }
+  ]
+}

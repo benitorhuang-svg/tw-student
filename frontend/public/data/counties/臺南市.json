@@ -1,0 +1,235 @@
+{
+  "county": {
+    "id": "臺南市",
+    "name": "臺南市",
+    "shortLabel": "臺南",
+    "region": "南部"
+  },
+  "dataNotes": [],
+  "towns": [
+    {
+      "id": "臺南市:中西區",
+      "name": "中西區",
+      "countyId": "臺南市",
+      "schools": [
+        {
+          "id": "0036",
+          "code": "0036",
+          "name": "國立臺南大學",
+          "countyId": "臺南市",
+          "townshipId": "臺南市:中西區",
+          "educationLevel": "大專院校",
+          "managementType": "公立",
+          "address": "臺南市中西區樹林街二段33號",
+          "phone": "(06)2133111",
+          "website": "http://web.nutn.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/0036/R/臺南市/中西區/國立/否/一般/",
+          "coordinates": {
+            "longitude": 120.207929,
+            "latitude": 22.984325
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 5692
+            },
+            {
+              "year": 108,
+              "students": 5667
+            },
+            {
+              "year": 109,
+              "students": 5773
+            },
+            {
+              "year": 110,
+              "students": 5939
+            },
+            {
+              "year": 111,
+              "students": 5869
+            },
+            {
+              "year": 112,
+              "students": 5961
+            },
+            {
+              "year": 113,
+              "students": 5966
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "0221",
+          "code": "0221",
+          "name": "國立臺南護理專科學校",
+          "countyId": "臺南市",
+          "townshipId": "臺南市:中西區",
+          "educationLevel": "大專院校",
+          "managementType": "公立",
+          "address": "臺南市中西區民族路二段78號",
+          "phone": "(06)2110600",
+          "website": "http://www.ntin.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/0221/R/臺南市/中西區/國立/否/技職/",
+          "coordinates": {
+            "longitude": 120.207299,
+            "latitude": 22.995698
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1958
+            },
+            {
+              "year": 108,
+              "students": 1939
+            },
+            {
+              "year": 109,
+              "students": 1917
+            },
+            {
+              "year": 110,
+              "students": 1926
+            },
+            {
+              "year": 111,
+              "students": 1985
+            },
+            {
+              "year": 112,
+              "students": 1983
+            },
+            {
+              "year": 113,
+              "students": 1992
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    },
+    {
+      "id": "臺南市:官田區",
+      "name": "官田區",
+      "countyId": "臺南市",
+      "schools": [
+        {
+          "id": "0035",
+          "code": "0035",
+          "name": "國立臺南藝術大學",
+          "countyId": "臺南市",
+          "townshipId": "臺南市:官田區",
+          "educationLevel": "大專院校",
+          "managementType": "公立",
+          "address": "臺南市官田區大崎里大崎66號",
+          "phone": "(06)6930100",
+          "website": "http://www.tnnua.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/0035/R/臺南市/官田區/國立/否/一般/",
+          "coordinates": {
+            "longitude": 120.374312,
+            "latitude": 23.185892
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1564
+            },
+            {
+              "year": 108,
+              "students": 1607
+            },
+            {
+              "year": 109,
+              "students": 1599
+            },
+            {
+              "year": 110,
+              "students": 1616
+            },
+            {
+              "year": 111,
+              "students": 1662
+            },
+            {
+              "year": 112,
+              "students": 1638
+            },
+            {
+              "year": 113,
+              "students": 1596
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    },
+    {
+      "id": "臺南市:東區",
+      "name": "東區",
+      "countyId": "臺南市",
+      "schools": [
+        {
+          "id": "0005",
+          "code": "0005",
+          "name": "國立成功大學",
+          "countyId": "臺南市",
+          "townshipId": "臺南市:東區",
+          "educationLevel": "大專院校",
+          "managementType": "公立",
+          "address": "臺南市東區大學路1號",
+          "phone": "(06)2757575",
+          "website": "http://www.ncku.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/0005/R/臺南市/東區/國立/否/一般/",
+          "coordinates": {
+            "longitude": 120.219502,
+            "latitude": 22.995577
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 21276
+            },
+            {
+              "year": 108,
+              "students": 21456
+            },
+            {
+              "year": 109,
+              "students": 21773
+            },
+            {
+              "year": 110,
+              "students": 22406
+            },
+            {
+              "year": 111,
+              "students": 22825
+            },
+            {
+              "year": 112,
+              "students": 23082
+            },
+            {
+              "year": 113,
+              "students": 23381
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    }
+  ]
+}

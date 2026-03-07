@@ -1,0 +1,69 @@
+{
+  "county": {
+    "id": "基隆市",
+    "name": "基隆市",
+    "shortLabel": "基隆",
+    "region": "北部"
+  },
+  "dataNotes": [],
+  "towns": [
+    {
+      "id": "基隆市:中正區",
+      "name": "中正區",
+      "countyId": "基隆市",
+      "schools": [
+        {
+          "id": "0012",
+          "code": "0012",
+          "name": "國立臺灣海洋大學",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:中正區",
+          "educationLevel": "大專院校",
+          "managementType": "公立",
+          "address": "基隆市中正區北寧路2號",
+          "phone": "(02)24622192",
+          "website": "http://www.ntou.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/0012/R/基隆市/中正區/國立/否/一般/",
+          "coordinates": {
+            "longitude": 121.772607,
+            "latitude": 25.150852
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 8655
+            },
+            {
+              "year": 108,
+              "students": 8838
+            },
+            {
+              "year": 109,
+              "students": 8905
+            },
+            {
+              "year": 110,
+              "students": 9068
+            },
+            {
+              "year": 111,
+              "students": 9167
+            },
+            {
+              "year": 112,
+              "students": 9214
+            },
+            {
+              "year": 113,
+              "students": 9102
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    }
+  ]
+}

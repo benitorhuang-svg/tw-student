@@ -1,0 +1,551 @@
+{
+  "county": {
+    "id": "臺北市",
+    "name": "臺北市",
+    "shortLabel": "臺北",
+    "region": "北部"
+  },
+  "dataNotes": [],
+  "towns": [
+    {
+      "id": "臺北市:大安區",
+      "name": "大安區",
+      "countyId": "臺北市",
+      "schools": [
+        {
+          "id": "0003",
+          "code": "0003",
+          "name": "國立臺灣大學",
+          "countyId": "臺北市",
+          "townshipId": "臺北市:大安區",
+          "educationLevel": "大專院校",
+          "managementType": "公立",
+          "address": "臺北市大安區羅斯福路四段1號",
+          "phone": "(02)33663366",
+          "website": "http://www.ntu.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/0003/R/臺北市/大安區/國立/否/一般/",
+          "coordinates": {
+            "longitude": 121.534714,
+            "latitude": 25.016832
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 31745
+            },
+            {
+              "year": 108,
+              "students": 31945
+            },
+            {
+              "year": 109,
+              "students": 32527
+            },
+            {
+              "year": 110,
+              "students": 32923
+            },
+            {
+              "year": 111,
+              "students": 33422
+            },
+            {
+              "year": 112,
+              "students": 33882
+            },
+            {
+              "year": 113,
+              "students": 34487
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "0004",
+          "code": "0004",
+          "name": "國立臺灣師範大學",
+          "countyId": "臺北市",
+          "townshipId": "臺北市:大安區",
+          "educationLevel": "大專院校",
+          "managementType": "公立",
+          "address": "臺北市大安區和平東路一段162號",
+          "phone": "(02)77491111",
+          "website": "http://www.ntnu.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/0004/R/臺北市/大安區/國立/否/師範/",
+          "coordinates": {
+            "longitude": 121.527535,
+            "latitude": 25.025957
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 15582
+            },
+            {
+              "year": 108,
+              "students": 15716
+            },
+            {
+              "year": 109,
+              "students": 15920
+            },
+            {
+              "year": 110,
+              "students": 16164
+            },
+            {
+              "year": 111,
+              "students": 16262
+            },
+            {
+              "year": 112,
+              "students": 16496
+            },
+            {
+              "year": 113,
+              "students": 16624
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "0025",
+          "code": "0025",
+          "name": "國立臺北科技大學",
+          "countyId": "臺北市",
+          "townshipId": "臺北市:大安區",
+          "educationLevel": "大專院校",
+          "managementType": "公立",
+          "address": "臺北市大安區忠孝東路三段1號",
+          "phone": "(02)27712171",
+          "website": "http://www.ntut.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/0025/R/臺北市/大安區/國立/否/技職/",
+          "coordinates": {
+            "longitude": 121.535955,
+            "latitude": 25.042636
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 13097
+            },
+            {
+              "year": 108,
+              "students": 13464
+            },
+            {
+              "year": 109,
+              "students": 13837
+            },
+            {
+              "year": 110,
+              "students": 13621
+            },
+            {
+              "year": 111,
+              "students": 13633
+            },
+            {
+              "year": 112,
+              "students": 13659
+            },
+            {
+              "year": 113,
+              "students": 13493
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "0022",
+          "code": "0022",
+          "name": "國立臺灣科技大學",
+          "countyId": "臺北市",
+          "townshipId": "臺北市:大安區",
+          "educationLevel": "大專院校",
+          "managementType": "公立",
+          "address": "臺北市大安區基隆路四段43號",
+          "phone": "(02)27333141",
+          "website": "http://www.ntust.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/0022/R/臺北市/大安區/國立/否/技職/",
+          "coordinates": {
+            "longitude": 121.541083,
+            "latitude": 25.013237
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 11137
+            },
+            {
+              "year": 108,
+              "students": 11274
+            },
+            {
+              "year": 109,
+              "students": 11171
+            },
+            {
+              "year": 110,
+              "students": 11229
+            },
+            {
+              "year": 111,
+              "students": 11648
+            },
+            {
+              "year": 112,
+              "students": 11672
+            },
+            {
+              "year": 113,
+              "students": 11849
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "0037",
+          "code": "0037",
+          "name": "國立臺北教育大學",
+          "countyId": "臺北市",
+          "townshipId": "臺北市:大安區",
+          "educationLevel": "大專院校",
+          "managementType": "公立",
+          "address": "臺北市大安區和平東路二段134號",
+          "phone": "(02)27321104",
+          "website": "http://www.ntue.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/0037/R/臺北市/大安區/國立/否/師範/",
+          "coordinates": {
+            "longitude": 121.544924,
+            "latitude": 25.024158
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 5814
+            },
+            {
+              "year": 108,
+              "students": 5790
+            },
+            {
+              "year": 109,
+              "students": 5885
+            },
+            {
+              "year": 110,
+              "students": 5938
+            },
+            {
+              "year": 111,
+              "students": 5955
+            },
+            {
+              "year": 112,
+              "students": 6095
+            },
+            {
+              "year": 113,
+              "students": 6039
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    },
+    {
+      "id": "臺北市:中正區",
+      "name": "中正區",
+      "countyId": "臺北市",
+      "schools": [
+        {
+          "id": "0051",
+          "code": "0051",
+          "name": "國立臺北商業大學",
+          "countyId": "臺北市",
+          "townshipId": "臺北市:中正區",
+          "educationLevel": "大專院校",
+          "managementType": "公立",
+          "address": "臺北市中正區濟南路一段321號",
+          "phone": "(02)33222777",
+          "website": "http://www.ntub.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/0051/R/臺北市/中正區/國立/否/技職/",
+          "coordinates": {
+            "longitude": 121.525532,
+            "latitude": 25.041947
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 6729
+            },
+            {
+              "year": 108,
+              "students": 6761
+            },
+            {
+              "year": 109,
+              "students": 7632
+            },
+            {
+              "year": 110,
+              "students": 7490
+            },
+            {
+              "year": 111,
+              "students": 7290
+            },
+            {
+              "year": 112,
+              "students": 6999
+            },
+            {
+              "year": 113,
+              "students": 6948
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    },
+    {
+      "id": "臺北市:內湖區",
+      "name": "內湖區",
+      "countyId": "臺北市",
+      "schools": [
+        {
+          "id": "0144",
+          "code": "0144",
+          "name": "國立臺灣戲曲學院",
+          "countyId": "臺北市",
+          "townshipId": "臺北市:內湖區",
+          "educationLevel": "大專院校",
+          "managementType": "公立",
+          "address": "臺北市內湖區內湖路二段177號",
+          "phone": "(02)27962666",
+          "website": "http://www.tcpa.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/0144/R/臺北市/內湖區/國立/否/技職/",
+          "coordinates": {
+            "longitude": 121.58672,
+            "latitude": 25.081298
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 607
+            },
+            {
+              "year": 108,
+              "students": 595
+            },
+            {
+              "year": 109,
+              "students": 546
+            },
+            {
+              "year": 110,
+              "students": 541
+            },
+            {
+              "year": 111,
+              "students": 516
+            },
+            {
+              "year": 112,
+              "students": 501
+            },
+            {
+              "year": 113,
+              "students": 449
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    },
+    {
+      "id": "臺北市:文山區",
+      "name": "文山區",
+      "countyId": "臺北市",
+      "schools": [
+        {
+          "id": "0001",
+          "code": "0001",
+          "name": "國立政治大學",
+          "countyId": "臺北市",
+          "townshipId": "臺北市:文山區",
+          "educationLevel": "大專院校",
+          "managementType": "公立",
+          "address": "臺北市文山區指南路二段64號",
+          "phone": "(02)29393091",
+          "website": "http://www.nccu.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/0001/R/臺北市/文山區/國立/否/一般/",
+          "coordinates": {
+            "longitude": 121.57624,
+            "latitude": 24.986835
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 16343
+            },
+            {
+              "year": 108,
+              "students": 16390
+            },
+            {
+              "year": 109,
+              "students": 16351
+            },
+            {
+              "year": 110,
+              "students": 16110
+            },
+            {
+              "year": 111,
+              "students": 16727
+            },
+            {
+              "year": 112,
+              "students": 16818
+            },
+            {
+              "year": 113,
+              "students": 16899
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    },
+    {
+      "id": "臺北市:北投區",
+      "name": "北投區",
+      "countyId": "臺北市",
+      "schools": [
+        {
+          "id": "0046",
+          "code": "0046",
+          "name": "國立臺北護理健康大學",
+          "countyId": "臺北市",
+          "townshipId": "臺北市:北投區",
+          "educationLevel": "大專院校",
+          "managementType": "公立",
+          "address": "臺北市北投區明德路365號",
+          "phone": "(02)28227101",
+          "website": "http://www.ntunhs.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/0046/R/臺北市/北投區/國立/否/技職/",
+          "coordinates": {
+            "longitude": 121.520649,
+            "latitude": 25.117509
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 5247
+            },
+            {
+              "year": 108,
+              "students": 5227
+            },
+            {
+              "year": 109,
+              "students": 5338
+            },
+            {
+              "year": 110,
+              "students": 5365
+            },
+            {
+              "year": 111,
+              "students": 5297
+            },
+            {
+              "year": 112,
+              "students": 5275
+            },
+            {
+              "year": 113,
+              "students": 5201
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "0028",
+          "code": "0028",
+          "name": "國立臺北藝術大學",
+          "countyId": "臺北市",
+          "townshipId": "臺北市:北投區",
+          "educationLevel": "大專院校",
+          "managementType": "公立",
+          "address": "臺北市北投區學園路1號",
+          "phone": "(02)28961000",
+          "website": "http://www.tnua.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/0028/R/臺北市/北投區/國立/否/一般/",
+          "coordinates": {
+            "longitude": 121.470133,
+            "latitude": 25.132181
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 3072
+            },
+            {
+              "year": 108,
+              "students": 3098
+            },
+            {
+              "year": 109,
+              "students": 3144
+            },
+            {
+              "year": 110,
+              "students": 3063
+            },
+            {
+              "year": 111,
+              "students": 3179
+            },
+            {
+              "year": 112,
+              "students": 3213
+            },
+            {
+              "year": 113,
+              "students": 3213
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "county": {
+    "id": "臺東縣",
+    "name": "臺東縣",
+    "shortLabel": "臺東",
+    "region": "東部"
+  },
+  "dataNotes": [],
+  "towns": [
+    {
+      "id": "臺東縣:臺東市",
+      "name": "臺東市",
+      "countyId": "臺東縣",
+      "schools": [
+        {
+          "id": "0030",
+          "code": "0030",
+          "name": "國立臺東大學",
+          "countyId": "臺東縣",
+          "townshipId": "臺東縣:臺東市",
+          "educationLevel": "大專院校",
+          "managementType": "公立",
+          "address": "臺東縣臺東市大學路二段369號",
+          "phone": "(089)318855",
+          "website": "http://www.nttu.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/0030/R/臺東縣/臺東市/國立/否/一般/",
+          "coordinates": {
+            "longitude": 121.070033,
+            "latitude": 22.737265
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 4583
+            },
+            {
+              "year": 108,
+              "students": 4722
+            },
+            {
+              "year": 109,
+              "students": 4939
+            },
+            {
+              "year": 110,
+              "students": 5140
+            },
+            {
+              "year": 111,
+              "students": 5099
+            },
+            {
+              "year": 112,
+              "students": 5121
+            },
+            {
+              "year": 113,
+              "students": 5048
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "0222",
+          "code": "0222",
+          "name": "國立臺東專科學校",
+          "countyId": "臺東縣",
+          "townshipId": "臺東縣:臺東市",
+          "educationLevel": "大專院校",
+          "managementType": "公立",
+          "address": "臺東縣臺東市正氣北路889號",
+          "phone": "(089)226389",
+          "website": "http://www.ntc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/0222/R/臺東縣/臺東市/國立/否/技職/",
+          "coordinates": {
+            "longitude": 121.122616,
+            "latitude": 22.758734
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1174
+            },
+            {
+              "year": 108,
+              "students": 1120
+            },
+            {
+              "year": 109,
+              "students": 1041
+            },
+            {
+              "year": 110,
+              "students": 955
+            },
+            {
+              "year": 111,
+              "students": 755
+            },
+            {
+              "year": 112,
+              "students": 686
+            },
+            {
+              "year": 113,
+              "students": 597
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    }
+  ]
+}
