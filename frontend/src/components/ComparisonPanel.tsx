@@ -1,6 +1,7 @@
 import type { ChangeEvent } from 'react'
 import { formatDelta, formatPercent, formatStudents } from '../lib/analytics'
 import type { SavedComparisonScenario } from '../hooks/types'
+import ComparisonBarChart from './ComparisonBarChart'
 
 type ComparisonCandidate = {
   id: string
@@ -112,6 +113,12 @@ function ComparisonPanel({
           </label>
         ))}
       </div>
+
+      {comparisonSummaries.length > 0 && (
+        <ComparisonBarChart
+          items={comparisonSummaries.map((c) => ({ id: c.id, label: c.name, value: c.students }))}
+        />
+      )}
 
       <div className="comparison-grid">
         {comparisonSummaries.map((county) => (

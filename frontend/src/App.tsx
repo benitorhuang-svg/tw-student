@@ -1,14 +1,17 @@
-import { useDeferredValue, useEffect, useState, useTransition, type ChangeEvent } from 'react'
+import { lazy, Suspense, useDeferredValue, useEffect, useRef, useState, useTransition, type ChangeEvent } from 'react'
+
 
 import './App.css'
 
-import AnomalyPanel from './components/AnomalyPanel'
-import ComparisonPanel from './components/ComparisonPanel'
 import FilterBar from './components/FilterBar'
 import InsightPanel from './components/InsightPanel'
-import SchoolDetailPanel from './components/SchoolDetailPanel'
+import OfflineMetricsPanel from './components/OfflineMetricsPanel'
 import ScopePanel from './components/ScopePanel'
 import TaiwanExplorerMap, { type SchoolMapPoint } from './components/TaiwanExplorerMap'
+
+const ComparisonPanel = lazy(() => import('./components/ComparisonPanel'))
+const AnomalyPanel = lazy(() => import('./components/AnomalyPanel'))
+const SchoolDetailPanel = lazy(() => import('./components/SchoolDetailPanel'))
 import {
   ACADEMIC_YEARS,
   EDUCATION_LEVELS,
@@ -117,8 +120,17 @@ function App() {
   const [selectedInvestigationId, setSelectedInvestigationId] = useState<string | null>(null)
   const [investigationFilter, setInvestigationFilter] = useState<InvestigationFilter>('全部')
 
-  // ── Tab state ──
-  const [activeTab, setActiveTab] = useState<AtlasTab>(initialQueryState.tab)
+  // ── Tab state with scroll memory ──
+  const [activeTab, setActiveTabRaw] = useState<AtlasTab>(initialQueryState.tab)
+  const sidebarRef = useRef<HTMLElement>(null)
+  const tabScrollMemory = useRef<Record<string, number>>({})
+  const setActiveTab = (tab: AtlasTab) => {
+    if (sidebarRef.current) tabScrollMemory.current[activeTab] = sidebarRef.current.scrollTop
+    setActiveTabRaw(tab)
+    requestAnimationFrame(() => {
+      if (sidebarRef.current) sidebarRef.current.scrollTop = tabScrollMemory.current[tab] ?? 0
+    })
+  }
 
   // ── Data hooks ──
   const {
@@ -561,70 +573,66 @@ function App() {
 
   return (
     <div className="app-shell" data-testid="atlas-app">
+      {/* ── Top bar: brand + tabs + status ── */}
       <header className="atlas-topbar">
-        <div className="atlas-topbar__intro panel">
-          <div>
-            <p className="eyebrow">Taiwan Education Atlas</p>
-            <h1>台灣學生數地圖工作台</h1>
-          </div>
-          <p>以 Leaflet 地圖作為主舞台，將篩選條件放到上方，把比較、異常調查、排行與學校表格收斂到左側分析工作台。</p>
+        <div className="atlas-topbar__brand">
+          <p className="eyebrow">Taiwan Education Atlas</p>
+          <h1>全台就讀人數地圖分析系統</h1>
         </div>
 
-        <div className={isOffline ? 'atlas-status atlas-status--offline' : 'atlas-status'}>
-          <strong>{isOffline ? '離線首頁模式' : '快取可用模式'}</strong>
-          <span>
-            {isOffline
-              ? `已啟用最近一次快取摘要，可離線查看 ${offlineReadyWithBuckets} 份地方切片與全台摘要。`
-              : `目前已快取 ${offlineReadyWithBuckets} 份地方切片，累積傳輸 ${formatFileSize(loadObservation.totalTransferredBytes)}。`}
-          </span>
-        </div>
+        <nav className="atlas-tabs" role="tablist">
+          {TAB_ITEMS.map((tab) => (
+            <button
+              key={tab.key}
+              role="tab"
+              type="button"
+              aria-selected={activeTab === tab.key}
+              className={activeTab === tab.key ? 'atlas-tab atlas-tab--active' : 'atlas-tab'}
+              onClick={() => setActiveTab(tab.key)}
+            >
+              {tab.label}
+              {tab.badge ? <span className="atlas-tab__badge">{tab.badge}</span> : null}
+            </button>
+          ))}
+        </nav>
 
-        <FilterBar
-          years={summaryDataset.years}
-          activeYear={activeYear}
-          educationLevel={educationLevel}
-          managementType={managementType}
-          region={region}
-          searchText={searchText}
-          isYearPlaybackActive={isYearPlaybackActive}
-          isPending={isPending}
-          countyQuickPicks={countyQuickPicks}
-          activeCountyId={activeCountyId}
-          onSetActiveYear={setActiveYear}
-          onSetEducationLevel={setEducationLevel}
-          onSetManagementType={setManagementType}
-          onSetRegion={setRegion}
-          onSetSearchText={setSearchText}
-          onSetIsYearPlaybackActive={setIsYearPlaybackActive}
-          onResetScope={handleResetScope}
-          onSelectCounty={handleCountySelect}
-          onPrefetchCounty={handlePrefetchCounty}
-          startTransition={startTransition}
-        />
+        <span className={isOffline ? 'atlas-topbar__status atlas-topbar__status--offline' : 'atlas-topbar__status'}>
+          {isOffline ? `離線模式 · ${offlineReadyWithBuckets} 份切片` : `快取 ${offlineReadyWithBuckets} 切片 · ${formatFileSize(loadObservation.totalTransferredBytes)}`}
+        </span>
       </header>
 
       <div className="atlas-workbench">
-        <main className="atlas-analysis-column">
-          {/* ── Tab bar ── */}
-          <nav className="atlas-tabs" role="tablist">
-            {TAB_ITEMS.map((tab) => (
-              <button
-                key={tab.key}
-                role="tab"
-                type="button"
-                aria-selected={activeTab === tab.key}
-                className={activeTab === tab.key ? 'atlas-tab atlas-tab--active' : 'atlas-tab'}
-                onClick={() => setActiveTab(tab.key)}
-              >
-                {tab.label}
-                {tab.badge ? <span className="atlas-tab__badge">{tab.badge}</span> : null}
-              </button>
-            ))}
-          </nav>
+        {/* ── Left sidebar ── */}
+        <aside className="atlas-sidebar" ref={sidebarRef}>
+          {/* Filters block */}
+          <div className="sidebar-block sidebar-block--filters">
+            <FilterBar
+              years={summaryDataset.years}
+              activeYear={activeYear}
+              educationLevel={educationLevel}
+              managementType={managementType}
+              region={region}
+              searchText={searchText}
+              isYearPlaybackActive={isYearPlaybackActive}
+              isPending={isPending}
+              countyQuickPicks={countyQuickPicks}
+              activeCountyId={activeCountyId}
+              onSetActiveYear={setActiveYear}
+              onSetEducationLevel={setEducationLevel}
+              onSetManagementType={setManagementType}
+              onSetRegion={setRegion}
+              onSetSearchText={setSearchText}
+              onSetIsYearPlaybackActive={setIsYearPlaybackActive}
+              onResetScope={handleResetScope}
+              onSelectCounty={handleCountySelect}
+              onPrefetchCounty={handlePrefetchCounty}
+              startTransition={startTransition}
+            />
+          </div>
 
-          {/* ── Tab: 概況總覽 ── */}
+          {/* ── Tab content in sidebar ── */}
           {activeTab === 'overview' && (
-            <div className="atlas-tab-panel">
+            <div className="atlas-tab-panel" data-tab="overview">
               <ScopePanel
                 scopePath={scopePath}
                 scopeHeadline={scopeHeadline}
@@ -642,7 +650,7 @@ function App() {
 
               <InsightPanel
                 title={selectedCounty ? `${selectedCounty.name} 鄉鎮排行` : '全台縣市排行'}
-                subtitle={selectedCounty ? '點擊鄉鎮即可同步切換表格與單校焦點' : '點擊縣市可載入地方細節與鄉鎮界線'}
+                subtitle={selectedCounty ? '點擊鄉鎮即可同步切換' : '點擊縣市載入地方細節'}
                 rows={topRows}
                 activeRowId={activeTownshipId ?? activeCountyId}
                 onSelectRow={(rowId) => {
@@ -657,70 +665,80 @@ function App() {
                 }}
                 emptyMessage="目前條件沒有可顯示的排行資料。"
               />
+
+              <OfflineMetricsPanel
+                loadObservation={loadObservation}
+                offlineReadySlices={offlineReadyWithBuckets}
+                totalCounties={countySummaries.length}
+                isOffline={isOffline}
+              />
             </div>
           )}
 
-          {/* ── Tab: 區域分析 ── */}
           {activeTab === 'regional' && (
-            <div className="atlas-tab-panel">
-              <ComparisonPanel
-                comparisonScenarioName={comparisonScenarioName}
-                onChangeScenarioName={setComparisonScenarioName}
-                effectiveComparisonCountyIds={effectiveComparisonCountyIds}
-                comparisonCandidates={comparisonCandidates}
-                comparisonSummaries={comparisonSummaries}
-                favoriteScenarios={favoriteScenarios}
-                recentScenarios={recentScenarios}
-                activeScenarioSnapshot={activeScenarioSnapshot}
-                favoriteScenarioIds={favoriteScenarioIds}
-                copyFeedback={copyFeedback.message}
-                scenarioFeedback={scenarioFeedback.message}
-                onToggleCounty={toggleComparisonCounty}
-                onCopyLink={handleCopyComparisonLink}
-                onSaveScenario={handleSaveFavoriteScenario}
-                onExportScenarios={handleExportFavoriteScenarios}
-                onImportScenarios={handleImportFavoriteScenarios}
-                onApplyScenario={applySavedScenario}
-                onTogglePinScenario={handleTogglePinScenario}
-                onRenameScenario={handleRenameFavoriteScenario}
-                onRemoveScenario={handleRemoveFavoriteScenario}
-              />
+            <div className="atlas-tab-panel" data-tab="regional">
+              <Suspense fallback={<div className="empty-state">載入區域分析…</div>}>
+                <ComparisonPanel
+                  comparisonScenarioName={comparisonScenarioName}
+                  onChangeScenarioName={setComparisonScenarioName}
+                  effectiveComparisonCountyIds={effectiveComparisonCountyIds}
+                  comparisonCandidates={comparisonCandidates}
+                  comparisonSummaries={comparisonSummaries}
+                  favoriteScenarios={favoriteScenarios}
+                  recentScenarios={recentScenarios}
+                  activeScenarioSnapshot={activeScenarioSnapshot}
+                  favoriteScenarioIds={favoriteScenarioIds}
+                  copyFeedback={copyFeedback.message}
+                  scenarioFeedback={scenarioFeedback.message}
+                  onToggleCounty={toggleComparisonCounty}
+                  onCopyLink={handleCopyComparisonLink}
+                  onSaveScenario={handleSaveFavoriteScenario}
+                  onExportScenarios={handleExportFavoriteScenarios}
+                  onImportScenarios={handleImportFavoriteScenarios}
+                  onApplyScenario={applySavedScenario}
+                  onTogglePinScenario={handleTogglePinScenario}
+                  onRenameScenario={handleRenameFavoriteScenario}
+                  onRemoveScenario={handleRemoveFavoriteScenario}
+                />
 
-              <AnomalyPanel
-                filteredAnomalies={filteredAnomalies}
-                activeInvestigation={activeInvestigation}
-                selectedInvestigationId={selectedInvestigationId}
-                investigationFilter={investigationFilter}
-                scopeNotes={scopeNotes}
-                scopeHeadline={scopeHeadline}
-                onSelectInvestigation={setSelectedInvestigationId}
-                onSetFilter={setInvestigationFilter}
-                onDownloadInvestigation={handleDownloadInvestigation}
-                onDownloadAll={handleDownloadAllInvestigations}
-              />
+                <AnomalyPanel
+                  filteredAnomalies={filteredAnomalies}
+                  activeInvestigation={activeInvestigation}
+                  selectedInvestigationId={selectedInvestigationId}
+                  investigationFilter={investigationFilter}
+                  scopeNotes={scopeNotes}
+                  scopeHeadline={scopeHeadline}
+                  onSelectInvestigation={setSelectedInvestigationId}
+                  onSetFilter={setInvestigationFilter}
+                  onDownloadInvestigation={handleDownloadInvestigation}
+                  onDownloadAll={handleDownloadAllInvestigations}
+                />
+              </Suspense>
             </div>
           )}
 
-          {/* ── Tab: 學校工作台 ── */}
           {activeTab === 'schools' && (
-            <div className="atlas-tab-panel">
-              <SchoolDetailPanel
-                selectedCountyName={selectedCounty?.name ?? null}
-                countyDetailError={countyDetailError}
-                isCountyDetailLoading={isCountyDetailLoading}
-                schoolInsights={schoolInsights}
-                selectedSchool={selectedSchool}
-                schoolPanelTitle={schoolPanelTitle}
-                activeYear={activeYear}
-                selectedTownshipSummary={selectedTownshipSummary}
-                selectedCountySummary={selectedCountySummary}
-                onSelectSchool={setSelectedSchoolId}
-              />
+            <div className="atlas-tab-panel" data-tab="schools">
+              <Suspense fallback={<div className="empty-state">載入學校工作台…</div>}>
+                <SchoolDetailPanel
+                  selectedCountyName={selectedCounty?.name ?? null}
+                  countyDetailError={countyDetailError}
+                  isCountyDetailLoading={isCountyDetailLoading}
+                  schoolInsights={schoolInsights}
+                  selectedSchool={selectedSchool}
+                  schoolPanelTitle={schoolPanelTitle}
+                  activeYear={activeYear}
+                  selectedTownshipSummary={selectedTownshipSummary}
+                  selectedCountySummary={selectedCountySummary}
+                  onSelectSchool={setSelectedSchoolId}
+                />
+              </Suspense>
             </div>
           )}
-        </main>
+        </aside>
 
-        <aside className="atlas-map-column">
+        {/* ── Right map ── */}
+        <main className="atlas-map-column">
           <TaiwanExplorerMap
             counties={countySummaries}
             activeCountyId={activeCountyId}
@@ -740,12 +758,12 @@ function App() {
             loadObservation={loadObservation}
             observedCounties={observedCounties}
           />
-        </aside>
+        </main>
       </div>
 
       <footer className="footer-note footer-note--official">
-        <span>正式資料來源: 教育部統計處校別資料、教育 GIS 點位、內政部國土測繪中心行政區界線。</span>
-        <span>資料產製時間: {generatedAtLabel}</span>
+        <span>資料來源: 教育部統計處 · 教育 GIS · 內政部國土測繪中心</span>
+        <span>{generatedAtLabel}</span>
       </footer>
     </div>
   )

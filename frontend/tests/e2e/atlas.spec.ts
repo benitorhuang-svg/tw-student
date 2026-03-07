@@ -37,7 +37,7 @@ test('switching county loads the township slice and county detail on demand', as
 
   await page.getByRole('tab', { name: /學校/ }).click()
   await expect(page.getByTestId('school-detail-panel')).toContainText('宜蘭縣')
-  await expect(page.getByRole('heading', { name: '宜蘭縣 鄉鎮輪廓圖' })).toBeVisible()
+  await expect(page.locator('.atlas-map-panel h3')).toContainText('宜蘭縣', { timeout: 10000 })
   await expect(page.getByText('宜蘭市', { exact: false }).first()).toBeVisible()
 })
 

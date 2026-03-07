@@ -16,24 +16,82 @@ function buildLinePath(points: Array<{ x: number; y: number }>) {
   return points.map((point, index) => `${index === 0 ? 'M' : 'L'} ${point.x} ${point.y}`).join(' ')
 }
 
+/** Simple linear regression: returns { slope, intercept } */
+function linearRegression(xs: number[], ys: number[]): { slope: number; intercept: number } | null {
+  const n = xs.length
+  if (n < 2) return null
+  const sumX = xs.reduce((a, b) => a + b, 0)
+  const sumY = ys.reduce((a, b) => a + b, 0)
+  const sumXY = xs.reduce((a, x, i) => a + x * ys[i], 0)
+  const sumX2 = xs.reduce((a, x) => a + x * x, 0)
+  const denom = n * sumX2 - sumX * sumX
+  if (denom === 0) return null
+  const slope = (n * sumXY - sumX * sumY) / denom
+  const intercept = (sumY - slope * sumX) / n
+  return { slope, intercept }
+}
+
 function TrendChart({ chartId, title, subtitle, points, activeYear }: TrendChartProps) {
+  const PREDICT_YEARS = 2
   const width = 620
   const height = 240
   const paddingX = 36
   const paddingY = 28
   const values = points.map((point) => point.value)
-  const maxValue = Math.max(...values, 1)
-  const minValue = Math.min(...values, 0)
-  const valueRange = Math.max(maxValue - minValue, 1)
 
-  const normalizedPoints = points.map((point, index) => {
-    const x = paddingX + (index * (width - paddingX * 2)) / Math.max(points.length - 1, 1)
-    const y = height - paddingY - ((point.value - minValue) / valueRange) * (height - paddingY * 2)
-    return { ...point, x, y }
-  })
+  // Compute regression for prediction values
+  const reg = linearRegression(
+    points.map((_, i) => i),
+    values,
+  )
+  const predictionValues = reg
+    ? Array.from({ length: PREDICT_YEARS }, (_, k) => reg.slope * (points.length + k) + reg.intercept)
+    : []
+
+  const allValues = [...values, ...predictionValues]
+  const maxValue = Math.max(...allValues, 1)
+  const minValue = Math.min(...allValues, 0)
+  const valueRange = Math.max(maxValue - minValue, 1)
+  const totalPoints = points.length + PREDICT_YEARS
+
+  const toX = (i: number) => paddingX + (i * (width - paddingX * 2)) / Math.max(totalPoints - 1, 1)
+  const toY = (v: number) => height - paddingY - ((v - minValue) / valueRange) * (height - paddingY * 2)
+
+  const normalizedPoints = points.map((point, index) => ({
+    ...point,
+    x: toX(index),
+    y: toY(point.value),
+  }))
+
+  const predictionPoints = predictionValues.map((v, k) => ({
+    x: toX(points.length + k),
+    y: toY(v),
+    year: (points.at(-1)?.year ?? activeYear) + k + 1,
+    value: Math.round(v),
+  }))
 
   const linePath = buildLinePath(normalizedPoints)
   const areaPath = `${linePath} L ${normalizedPoints.at(-1)?.x ?? paddingX} ${height - paddingY} L ${paddingX} ${height - paddingY} Z`
+
+  // Regression line covering actual data range
+  const regLinePath =
+    reg && normalizedPoints.length >= 2
+      ? buildLinePath(
+          normalizedPoints.map((_, i) => ({
+            x: toX(i),
+            y: toY(reg.slope * i + reg.intercept),
+          })),
+        )
+      : ''
+
+  // Prediction dashed path (extends from last actual point)
+  const predLinePath =
+    normalizedPoints.length > 0 && predictionPoints.length > 0
+      ? buildLinePath([
+          { x: normalizedPoints.at(-1)!.x, y: normalizedPoints.at(-1)!.y },
+          ...predictionPoints,
+        ])
+      : ''
 
   return (
     <section className="trend-panel">
@@ -57,6 +115,8 @@ function TrendChart({ chartId, title, subtitle, points, activeYear }: TrendChart
         })}
         <path className="trend-chart__area" d={areaPath} fill={`url(#${chartId}-area)`} />
         <path className="trend-chart__line" d={linePath} />
+        {regLinePath && <path className="trend-chart__regression" d={regLinePath} />}
+        {predLinePath && <path className="trend-chart__prediction" d={predLinePath} />}
         {normalizedPoints.map((point) => (
           <g key={point.year}>
             <circle
@@ -70,10 +130,19 @@ function TrendChart({ chartId, title, subtitle, points, activeYear }: TrendChart
             </text>
           </g>
         ))}
+        {predictionPoints.map((point) => (
+          <g key={point.year}>
+            <circle className="trend-chart__point trend-chart__point--predicted" cx={point.x} cy={point.y} r={4} />
+            <text className="trend-chart__label trend-chart__label--predicted" x={point.x} y={height - 6} textAnchor="middle">
+              {point.year}?
+            </text>
+          </g>
+        ))}
       </svg>
       <div className="trend-chart__footnote">
-        <span>最高值 {formatStudents(maxValue)} 人</span>
-        <span>最低值 {formatStudents(minValue)} 人</span>
+        <span>最高值 {formatStudents(Math.max(...values, 1))} 人</span>
+        <span>最低值 {formatStudents(Math.min(...values, 0))} 人</span>
+        {reg ? <span>年均變化 {reg.slope >= 0 ? '+' : ''}{formatStudents(Math.round(reg.slope))} 人</span> : null}
       </div>
     </section>
   )

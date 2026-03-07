@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { formatDelta, formatFileSize, formatPercent, formatStudents, type SchoolInsight } from '../lib/analytics'
+import { formatDelta, formatPercent, formatStudents, type SchoolInsight } from '../lib/analytics'
 
 type SchoolSortKey =
   | 'name'
@@ -55,21 +55,26 @@ function escapeCsv(value: string) {
   return `"${escaped}"`
 }
 
+const PAGE_SIZE = 50
+
 function SchoolDataTable({ schools, selectedSchoolId, onSelectSchool, scopeLabel }: SchoolDataTableProps) {
   const [sortKey, setSortKey] = useState<SchoolSortKey>('currentStudents')
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('desc')
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE)
 
   const sortedSchools = [...schools].sort((left, right) => compareSchoolRows(left, right, sortKey, sortDirection))
   const selectedSchool = sortedSchools.find((school) => school.id === selectedSchoolId) ?? sortedSchools.at(0) ?? null
+  const visibleSchools = sortedSchools.slice(0, visibleCount)
+  const hasMore = visibleCount < sortedSchools.length
 
   const handleSort = (nextSortKey: SchoolSortKey) => {
     if (sortKey === nextSortKey) {
       setSortDirection((current) => (current === 'asc' ? 'desc' : 'asc'))
-      return
+    } else {
+      setSortKey(nextSortKey)
+      setSortDirection(nextSortKey === 'name' || nextSortKey === 'townshipName' ? 'asc' : 'desc')
     }
-
-    setSortKey(nextSortKey)
-    setSortDirection(nextSortKey === 'name' || nextSortKey === 'townshipName' ? 'asc' : 'desc')
+    setVisibleCount(PAGE_SIZE)
   }
 
   const handleExport = () => {
@@ -133,7 +138,7 @@ function SchoolDataTable({ schools, selectedSchoolId, onSelectSchool, scopeLabel
             </tr>
           </thead>
           <tbody>
-            {sortedSchools.map((school) => {
+            {visibleSchools.map((school) => {
               const isActive = school.id === selectedSchool?.id
 
               return (
@@ -171,8 +176,16 @@ function SchoolDataTable({ schools, selectedSchoolId, onSelectSchool, scopeLabel
         </table>
       </div>
 
+      {hasMore && (
+        <div className="school-table-panel__loadmore">
+          <button type="button" className="ghost-button" onClick={() => setVisibleCount((c) => c + PAGE_SIZE)}>
+            載入更多（已顯示 {visibleCount} / {sortedSchools.length}）
+          </button>
+        </div>
+      )}
+
       <div className="school-table-panel__footer">
-        <span>目前可互動資料列大小約 {formatFileSize(new TextEncoder().encode(JSON.stringify(sortedSchools)).length)}</span>
+        <span>顯示 {visibleSchools.length} / {sortedSchools.length} 所</span>
         <span>點擊列可同步更新下方單校焦點</span>
       </div>
     </section>

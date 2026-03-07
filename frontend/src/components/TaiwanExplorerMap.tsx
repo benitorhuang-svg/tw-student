@@ -278,13 +278,26 @@ function TaiwanExplorerMap({
   const activeCounty = counties.find((county) => county.id === activeCountyId) ?? null
   const countyLookup = new Map(counties.map((county) => [county.id, county]))
   const townshipLookup = new Map(townshipRows.map((township) => [township.id, township]))
-  const maxCountyStudents = Math.max(...counties.filter((county) => !county.filteredOut).map((county) => county.students), 1)
   const maxTownshipStudents = Math.max(...townshipRows.map((township) => township.students), 1)
+  const choroplethColor = (students: number) => {
+    if (students >= 150000) return '#0f766e'
+    if (students >= 100000) return '#14b8a6'
+    if (students >= 50000) return '#5eead4'
+    return '#99f6e4'
+  }
+
+  const choroplethOpacity = (students: number) => {
+    if (students >= 150000) return 0.82
+    if (students >= 100000) return 0.64
+    if (students >= 50000) return 0.46
+    return 0.28
+  }
+
   const legendSteps = [
-    { id: 0, opacity: 0.18, label: '少於 5 萬' },
-    { id: 1, opacity: 0.36, label: '5 萬到 10 萬' },
-    { id: 2, opacity: 0.58, label: '10 萬到 15 萬' },
-    { id: 3, opacity: 0.8, label: '15 萬以上' },
+    { id: 0, color: '#99f6e4', opacity: 0.28, label: '< 5 萬' },
+    { id: 1, color: '#5eead4', opacity: 0.46, label: '5 萬 – 10 萬' },
+    { id: 2, color: '#14b8a6', opacity: 0.64, label: '10 萬 – 15 萬' },
+    { id: 3, color: '#0f766e', opacity: 0.82, label: '≥ 15 萬' },
   ]
 
   const hoveredSummary = activeCounty
@@ -377,8 +390,8 @@ function TaiwanExplorerMap({
                 return {
                   color: isActive || isHovered ? '#e2e8f0' : 'rgba(191, 219, 254, 0.38)',
                   weight: isActive ? 2.2 : isHovered ? 1.8 : 1.1,
-                  fillColor: isActive ? '#38bdf8' : '#22c55e',
-                  fillOpacity: activeCountyId && !isActive ? 0.09 : Math.max(summary.students / maxCountyStudents, 0.18),
+                  fillColor: isActive ? '#38bdf8' : choroplethColor(summary.students),
+                  fillOpacity: activeCountyId && !isActive ? 0.12 : choroplethOpacity(summary.students),
                 }
               }}
               onEachFeature={(feature: Feature, layer: L.Layer) => {
@@ -452,7 +465,7 @@ function TaiwanExplorerMap({
             <span className="map-stage__legend-title">地圖圖例</span>
             {legendSteps.map((step) => (
               <div key={step.id} className="map-stage__legend-row">
-                <span className="map-stage__legend-swatch" style={{ background: `rgba(16, 185, 129, ${step.opacity})` }} />
+                <span className="map-stage__legend-swatch" style={{ background: step.color, opacity: step.opacity }} />
                 <span>{step.label}</span>
               </div>
             ))}

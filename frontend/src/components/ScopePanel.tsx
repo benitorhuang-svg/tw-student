@@ -1,3 +1,4 @@
+import PieChart from './PieChart'
 import StatCard from './StatCard'
 import TrendChart from './TrendChart'
 import { formatAcademicYear, formatDelta, formatFileSize, formatPercent, formatStudents, type TrendPoint } from '../lib/analytics'
@@ -96,14 +97,7 @@ function ScopePanel({
           />
         </div>
 
-        <div className="education-distribution-bar">
-          {educationDistribution.map((row) => (
-            <div key={row.level} className="education-distribution-bar__segment" style={{ flex: Math.max(row.share, 0.02) }} title={`${row.level}: ${formatStudents(row.students)} 人 (${(row.share * 100).toFixed(1)}%)`}>
-              <strong>{row.level}</strong>
-              <span>{(row.share * 100).toFixed(0)}%</span>
-            </div>
-          ))}
-        </div>
+        <PieChart slices={educationDistribution.map((row) => ({ label: row.level, value: row.students, share: row.share }))} />
 
         <div className="scope-panel__actions">
           <button type="button" className="ghost-button" onClick={onPrefetchAll}>
