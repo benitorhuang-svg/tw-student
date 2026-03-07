@@ -374,6 +374,25 @@ export function getCountyNotesFromSummary(county: CountySummaryRecord) {
   return county.dataNotes ?? []
 }
 
+export function getNationalEducationDistribution(
+  counties: CountySummaryRecord[],
+  filters: DashboardFilters,
+): EducationDistributionRow[] {
+  const levels: Array<Exclude<EducationLevelFilter, '全部'>> = ['國小', '國中', '高中職', '大專院校']
+  const rows = levels.map((level) => {
+    const levelFilters = { ...filters, educationLevel: level as EducationLevelFilter }
+    const sums = getCountySummaries(counties, levelFilters).filter((c) => !c.filteredOut)
+    return {
+      level,
+      students: sums.reduce((s, c) => s + c.students, 0),
+      schools: sums.reduce((s, c) => s + c.schools, 0),
+      share: 0,
+    }
+  })
+  const total = rows.reduce((s, r) => s + r.students, 0)
+  return rows.map((r) => ({ ...r, share: total === 0 ? 0 : r.students / total }))
+}
+
 export function getCountyEducationDistribution(
   county: CountySummaryRecord,
   filters: Pick<DashboardFilters, 'managementType' | 'year'>,

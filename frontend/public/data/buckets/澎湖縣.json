@@ -1,0 +1,86 @@
+{
+  "generatedAt": "2026-03-07T15:15:16.040Z",
+  "county": {
+    "id": "澎湖縣",
+    "name": "澎湖縣",
+    "shortLabel": "澎湖",
+    "region": "離島"
+  },
+  "precisions": {
+    "5": [
+      {
+        "id": "5-wsjn1",
+        "geohash": "wsjn1",
+        "precision": 5,
+        "count": 1,
+        "latitude": 23.57525,
+        "longitude": 119.581921,
+        "bounds": {
+          "minLatitude": 23.57525,
+          "maxLatitude": 23.57525,
+          "minLongitude": 119.581921,
+          "maxLongitude": 119.581921
+        },
+        "topSchools": [
+          {
+            "id": "0042",
+            "name": "國立澎湖科技大學",
+            "townshipName": "馬公市",
+            "students": 2388,
+            "status": "正常"
+          }
+        ]
+      }
+    ],
+    "6": [
+      {
+        "id": "6-wsjn15",
+        "geohash": "wsjn15",
+        "precision": 6,
+        "count": 1,
+        "latitude": 23.57525,
+        "longitude": 119.581921,
+        "bounds": {
+          "minLatitude": 23.57525,
+          "maxLatitude": 23.57525,
+          "minLongitude": 119.581921,
+          "maxLongitude": 119.581921
+        },
+        "topSchools": [
+          {
+            "id": "0042",
+            "name": "國立澎湖科技大學",
+            "townshipName": "馬公市",
+            "students": 2388,
+            "status": "正常"
+          }
+        ]
+      }
+    ],
+    "7": [
+      {
+        "id": "7-wsjn15s",
+        "geohash": "wsjn15s",
+        "precision": 7,
+        "count": 1,
+        "latitude": 23.57525,
+        "longitude": 119.581921,
+        "bounds": {
+          "minLatitude": 23.57525,
+          "maxLatitude": 23.57525,
+          "minLongitude": 119.581921,
+          "maxLongitude": 119.581921
+        },
+        "topSchools": [
+          {
+            "id": "0042",
+            "name": "國立澎湖科技大學",
+            "townshipName": "馬公市",
+            "students": 2388,
+            "status": "正常"
+          }
+        ]
+      }
+    ]
+  }
+}

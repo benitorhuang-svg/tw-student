@@ -1,0 +1,86 @@
+{
+  "generatedAt": "2026-03-07T15:15:16.040Z",
+  "county": {
+    "id": "嘉義縣",
+    "name": "嘉義縣",
+    "shortLabel": "嘉縣",
+    "region": "南部"
+  },
+  "precisions": {
+    "5": [
+      {
+        "id": "5-wsjwj",
+        "geohash": "wsjwj",
+        "precision": 5,
+        "count": 1,
+        "latitude": 23.563389,
+        "longitude": 120.470867,
+        "bounds": {
+          "minLatitude": 23.563389,
+          "maxLatitude": 23.563389,
+          "minLongitude": 120.470867,
+          "maxLongitude": 120.470867
+        },
+        "topSchools": [
+          {
+            "id": "0013",
+            "name": "國立中正大學",
+            "townshipName": "民雄鄉",
+            "students": 11553,
+            "status": "正常"
+          }
+        ]
+      }
+    ],
+    "6": [
+      {
+        "id": "6-wsjwj3",
+        "geohash": "wsjwj3",
+        "precision": 6,
+        "count": 1,
+        "latitude": 23.563389,
+        "longitude": 120.470867,
+        "bounds": {
+          "minLatitude": 23.563389,
+          "maxLatitude": 23.563389,
+          "minLongitude": 120.470867,
+          "maxLongitude": 120.470867
+        },
+        "topSchools": [
+          {
+            "id": "0013",
+            "name": "國立中正大學",
+            "townshipName": "民雄鄉",
+            "students": 11553,
+            "status": "正常"
+          }
+        ]
+      }
+    ],
+    "7": [
+      {
+        "id": "7-wsjwj3s",
+        "geohash": "wsjwj3s",
+        "precision": 7,
+        "count": 1,
+        "latitude": 23.563389,
+        "longitude": 120.470867,
+        "bounds": {
+          "minLatitude": 23.563389,
+          "maxLatitude": 23.563389,
+          "minLongitude": 120.470867,
+          "maxLongitude": 120.470867
+        },
+        "topSchools": [
+          {
+            "id": "0013",
+            "name": "國立中正大學",
+            "townshipName": "民雄鄉",
+            "students": 11553,
+            "status": "正常"
+          }
+        ]
+      }
+    ]
+  }
+}

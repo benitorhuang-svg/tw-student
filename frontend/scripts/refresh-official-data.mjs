@@ -11,9 +11,12 @@ const ACADEMIC_YEARS = [107, 108, 109, 110, 111, 112, 113]
 const DATA_DIR = path.resolve(process.cwd(), 'public', 'data')
 const COUNTY_DETAIL_DIR = path.join(DATA_DIR, 'counties')
 const TOWNSHIP_DIR = path.join(DATA_DIR, 'townships')
+const BUCKET_DIR = path.join(DATA_DIR, 'buckets')
 const TOPOLOGY_QUANTIZATION = 1e5
 const SUMMARY_EDUCATION_LEVELS = ['全部', '國小', '國中', '高中職', '大專院校']
 const SUMMARY_MANAGEMENT_TYPES = ['全部', '公立', '私立']
+const BUCKET_PRECISIONS = [5, 6, 7]
+const GEOHASH_BASE32 = '0123456789bcdefghjkmnpqrstuvwxyz'
 
 const REGION_BY_COUNTY = {
   基隆市: '北部',
@@ -171,6 +174,10 @@ function toFileSlug(value) {
 }
 
 function toCountyDetailFile(countyId) {
+  return `${toFileSlug(countyId)}.json`
+}
+
+function toCountyBucketFile(countyId) {
   return `${toFileSlug(countyId)}.json`
 }
 
@@ -375,6 +382,137 @@ async function writePrettyJson(filePath, value) {
 
 function measurePrettyJsonBytes(value) {
   return new TextEncoder().encode(JSON.stringify(value, null, 2) + '\n').length
+}
+
+function encodeGeohash(latitude, longitude, precision) {
+  let latMin = -90
+  let latMax = 90
+  let lonMin = -180
+  let lonMax = 180
+  let isLongitudeTurn = true
+  let bit = 0
+  let character = 0
+  let geohash = ''
+
+  while (geohash.length < precision) {
+    if (isLongitudeTurn) {
+      const lonMid = (lonMin + lonMax) / 2
+      if (longitude >= lonMid) {
+        character = (character << 1) | 1
+        lonMin = lonMid
+      } else {
+        character <<= 1
+        lonMax = lonMid
+      }
+    } else {
+      const latMid = (latMin + latMax) / 2
+      if (latitude >= latMid) {
+        character = (character << 1) | 1
+        latMin = latMid
+      } else {
+        character <<= 1
+        latMax = latMid
+      }
+    }
+
+    isLongitudeTurn = !isLongitudeTurn
+    bit += 1
+
+    if (bit === 5) {
+      geohash += GEOHASH_BASE32[character]
+      bit = 0
+      character = 0
+    }
+  }
+
+  return geohash
+}
+
+function buildSchoolBuckets(schools, precision) {
+  const buckets = new Map()
+
+  schools.forEach((school) => {
+    const geohash = encodeGeohash(school.coordinates.latitude, school.coordinates.longitude, precision)
+    const existing = buckets.get(geohash)
+    const currentStudents = school.yearlyStudents.at(-1)?.students ?? 0
+
+    if (existing) {
+      existing.count += 1
+      existing.latitudeTotal += school.coordinates.latitude
+      existing.longitudeTotal += school.coordinates.longitude
+      existing.bounds.minLatitude = Math.min(existing.bounds.minLatitude, school.coordinates.latitude)
+      existing.bounds.maxLatitude = Math.max(existing.bounds.maxLatitude, school.coordinates.latitude)
+      existing.bounds.minLongitude = Math.min(existing.bounds.minLongitude, school.coordinates.longitude)
+      existing.bounds.maxLongitude = Math.max(existing.bounds.maxLongitude, school.coordinates.longitude)
+      existing.topSchools.push({
+        id: school.id,
+        name: school.name,
+        townshipName: school.townshipId.split(':').at(-1) ?? school.townshipId,
+        students: currentStudents,
+        status: school.status ?? '正常',
+      })
+      return
+    }
+
+    buckets.set(geohash, {
+      id: `${precision}-${geohash}`,
+      geohash,
+      precision,
+      count: 1,
+      latitudeTotal: school.coordinates.latitude,
+      longitudeTotal: school.coordinates.longitude,
+      bounds: {
+        minLatitude: school.coordinates.latitude,
+        maxLatitude: school.coordinates.latitude,
+        minLongitude: school.coordinates.longitude,
+        maxLongitude: school.coordinates.longitude,
+      },
+      topSchools: [
+        {
+          id: school.id,
+          name: school.name,
+          townshipName: school.townshipId.split(':').at(-1) ?? school.townshipId,
+          students: currentStudents,
+          status: school.status ?? '正常',
+        },
+      ],
+    })
+  })
+
+  return [...buckets.values()]
+    .map((bucket) => ({
+      id: bucket.id,
+      geohash: bucket.geohash,
+      precision: bucket.precision,
+      count: bucket.count,
+      latitude: Number((bucket.latitudeTotal / bucket.count).toFixed(6)),
+      longitude: Number((bucket.longitudeTotal / bucket.count).toFixed(6)),
+      bounds: {
+        minLatitude: Number(bucket.bounds.minLatitude.toFixed(6)),
+        maxLatitude: Number(bucket.bounds.maxLatitude.toFixed(6)),
+        minLongitude: Number(bucket.bounds.minLongitude.toFixed(6)),
+        maxLongitude: Number(bucket.bounds.maxLongitude.toFixed(6)),
+      },
+      topSchools: bucket.topSchools
+        .sort((left, right) => right.students - left.students)
+        .slice(0, 4),
+    }))
+    .sort((left, right) => right.count - left.count)
+}
+
+function buildCountyBucketSlice(county) {
+  const schools = county.towns.flatMap((town) => town.schools)
+
+  return {
+    generatedAt: new Date().toISOString(),
+    county: {
+      id: county.id,
+      name: county.name,
+      shortLabel: county.shortLabel,
+      region: county.region,
+    },
+    precisions: Object.fromEntries(BUCKET_PRECISIONS.map((precision) => [precision, buildSchoolBuckets(schools, precision)])),
+  }
 }
 
 async function fetchAllSchoolPoints() {
@@ -607,6 +745,7 @@ async function buildOfficialDataset() {
         region: county.region,
         townshipFile: `townships/${toFileSlug(county.id)}.topo.json`,
         detailFile: `counties/${toCountyDetailFile(county.id)}`,
+        bucketFile: `buckets/${toCountyBucketFile(county.id)}`,
         dataNotes: county.dataNotes,
         summaries: buildSummarySeries(county.towns.flatMap((town) => town.schools)),
         towns: county.towns.map((town) => ({
@@ -630,6 +769,10 @@ async function buildOfficialDataset() {
         dataNotes: county.dataNotes,
         towns: county.towns,
       },
+    })),
+    countyBuckets: counties.map((county) => ({
+      fileName: toCountyBucketFile(county.id),
+      detail: buildCountyBucketSlice(county),
     })),
   }
 }
@@ -710,16 +853,19 @@ async function main() {
     mkdir(DATA_DIR, { recursive: true }),
     rm(COUNTY_DETAIL_DIR, { recursive: true, force: true }),
     rm(TOWNSHIP_DIR, { recursive: true, force: true }),
+    rm(BUCKET_DIR, { recursive: true, force: true }),
     rm(path.join(DATA_DIR, 'county-boundaries.geojson'), { force: true }),
     rm(path.join(DATA_DIR, 'township-boundaries.geojson'), { force: true }),
     rm(path.join(DATA_DIR, 'education-dataset.json'), { force: true }),
   ])
   await mkdir(COUNTY_DETAIL_DIR, { recursive: true })
   await mkdir(TOWNSHIP_DIR, { recursive: true })
+  await mkdir(BUCKET_DIR, { recursive: true })
 
   const [datasetBundle, boundaries] = await Promise.all([buildOfficialDataset(), buildBoundaryFiles()])
 
   const countyDetailBytes = datasetBundle.countyDetails.reduce((sum, entry) => sum + measurePrettyJsonBytes(entry.detail), 0)
+  const countyBucketBytes = datasetBundle.countyBuckets.reduce((sum, entry) => sum + measurePrettyJsonBytes(entry.detail), 0)
   const townshipBoundaryBytes = boundaries.townshipTopologyByCounty.reduce(
     (sum, entry) => sum + measurePrettyJsonBytes(entry.topology),
     0,
@@ -730,12 +876,16 @@ async function main() {
   const townshipBoundarySizeMap = new Map(
     boundaries.townshipTopologyByCounty.map((entry) => [entry.countyId, measurePrettyJsonBytes(entry.topology)]),
   )
+  const countyBucketSizeMap = new Map(
+    datasetBundle.countyBuckets.map((entry) => [entry.detail.county.id, measurePrettyJsonBytes(entry.detail)]),
+  )
 
   datasetBundle.summaryDataset.counties = datasetBundle.summaryDataset.counties.map((county) => ({
     ...county,
     assetMetrics: {
       detailBytes: countyDetailSizeMap.get(county.id) ?? 0,
       townshipBytes: townshipBoundarySizeMap.get(county.id) ?? 0,
+      bucketBytes: countyBucketSizeMap.get(county.id) ?? 0,
     },
   }))
 
@@ -743,6 +893,7 @@ async function main() {
     summaryBytes: measurePrettyJsonBytes(datasetBundle.summaryDataset),
     countyBoundaryBytes: measurePrettyJsonBytes(boundaries.countyTopology),
     countyDetailBytes,
+    countyBucketBytes,
     townshipBoundaryBytes,
   }
 
@@ -750,6 +901,7 @@ async function main() {
     writePrettyJson(path.join(DATA_DIR, 'education-summary.json'), datasetBundle.summaryDataset),
     writePrettyJson(path.join(DATA_DIR, 'county-boundaries.topo.json'), boundaries.countyTopology),
     ...datasetBundle.countyDetails.map((entry) => writePrettyJson(path.join(COUNTY_DETAIL_DIR, entry.fileName), entry.detail)),
+    ...datasetBundle.countyBuckets.map((entry) => writePrettyJson(path.join(BUCKET_DIR, entry.fileName), entry.detail)),
     ...boundaries.townshipTopologyByCounty.map((entry) =>
       writePrettyJson(path.join(TOWNSHIP_DIR, entry.fileName), entry.topology),
     ),

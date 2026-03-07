@@ -1,0 +1,139 @@
+{
+  "generatedAt": "2026-03-07T15:15:16.039Z",
+  "county": {
+    "id": "新竹市",
+    "name": "新竹市",
+    "shortLabel": "竹市",
+    "region": "北部"
+  },
+  "precisions": {
+    "5": [
+      {
+        "id": "5-wsqj1",
+        "geohash": "wsqj1",
+        "precision": 5,
+        "count": 2,
+        "latitude": 24.792816,
+        "longitude": 120.998119,
+        "bounds": {
+          "minLatitude": 24.789234,
+          "maxLatitude": 24.796398,
+          "minLongitude": 120.996864,
+          "maxLongitude": 120.999373
+        },
+        "topSchools": [
+          {
+            "id": "0007",
+            "name": "國立陽明交通大學",
+            "townshipName": "東區",
+            "students": 22117,
+            "status": "正常"
+          },
+          {
+            "id": "0002",
+            "name": "國立清華大學",
+            "townshipName": "東區",
+            "students": 18269,
+            "status": "正常"
+          }
+        ]
+      }
+    ],
+    "6": [
+      {
+        "id": "6-wsqj12",
+        "geohash": "wsqj12",
+        "precision": 6,
+        "count": 1,
+        "latitude": 24.789234,
+        "longitude": 120.999373,
+        "bounds": {
+          "minLatitude": 24.789234,
+          "maxLatitude": 24.789234,
+          "minLongitude": 120.999373,
+          "maxLongitude": 120.999373
+        },
+        "topSchools": [
+          {
+            "id": "0007",
+            "name": "國立陽明交通大學",
+            "townshipName": "東區",
+            "students": 22117,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsqj16",
+        "geohash": "wsqj16",
+        "precision": 6,
+        "count": 1,
+        "latitude": 24.796398,
+        "longitude": 120.996864,
+        "bounds": {
+          "minLatitude": 24.796398,
+          "maxLatitude": 24.796398,
+          "minLongitude": 120.996864,
+          "maxLongitude": 120.996864
+        },
+        "topSchools": [
+          {
+            "id": "0002",
+            "name": "國立清華大學",
+            "townshipName": "東區",
+            "students": 18269,
+            "status": "正常"
+          }
+        ]
+      }
+    ],
+    "7": [
+      {
+        "id": "7-wsqj12t",
+        "geohash": "wsqj12t",
+        "precision": 7,
+        "count": 1,
+        "latitude": 24.789234,
+        "longitude": 120.999373,
+        "bounds": {
+          "minLatitude": 24.789234,
+          "maxLatitude": 24.789234,
+          "minLongitude": 120.999373,
+          "maxLongitude": 120.999373
+        },
+        "topSchools": [
+          {
+            "id": "0007",
+            "name": "國立陽明交通大學",
+            "townshipName": "東區",
+            "students": 22117,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsqj165",
+        "geohash": "wsqj165",
+        "precision": 7,
+        "count": 1,
+        "latitude": 24.796398,
+        "longitude": 120.996864,
+        "bounds": {
+          "minLatitude": 24.796398,
+          "maxLatitude": 24.796398,
+          "minLongitude": 120.996864,
+          "maxLongitude": 120.996864
+        },
+        "topSchools": [
+          {
+            "id": "0002",
+            "name": "國立清華大學",
+            "townshipName": "東區",
+            "students": 18269,
+            "status": "正常"
+          }
+        ]
+      }
+    ]
+  }
+}

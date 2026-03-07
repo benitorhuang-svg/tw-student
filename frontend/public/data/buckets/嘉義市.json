@@ -1,0 +1,86 @@
+{
+  "generatedAt": "2026-03-07T15:15:16.040Z",
+  "county": {
+    "id": "嘉義市",
+    "name": "嘉義市",
+    "shortLabel": "嘉市",
+    "region": "南部"
+  },
+  "precisions": {
+    "5": [
+      {
+        "id": "5-wsjtm",
+        "geohash": "wsjtm",
+        "precision": 5,
+        "count": 1,
+        "latitude": 23.463817,
+        "longitude": 120.483502,
+        "bounds": {
+          "minLatitude": 23.463817,
+          "maxLatitude": 23.463817,
+          "minLongitude": 120.483502,
+          "maxLongitude": 120.483502
+        },
+        "topSchools": [
+          {
+            "id": "0018",
+            "name": "國立嘉義大學",
+            "townshipName": "東區",
+            "students": 11349,
+            "status": "正常"
+          }
+        ]
+      }
+    ],
+    "6": [
+      {
+        "id": "6-wsjtmx",
+        "geohash": "wsjtmx",
+        "precision": 6,
+        "count": 1,
+        "latitude": 23.463817,
+        "longitude": 120.483502,
+        "bounds": {
+          "minLatitude": 23.463817,
+          "maxLatitude": 23.463817,
+          "minLongitude": 120.483502,
+          "maxLongitude": 120.483502
+        },
+        "topSchools": [
+          {
+            "id": "0018",
+            "name": "國立嘉義大學",
+            "townshipName": "東區",
+            "students": 11349,
+            "status": "正常"
+          }
+        ]
+      }
+    ],
+    "7": [
+      {
+        "id": "7-wsjtmxm",
+        "geohash": "wsjtmxm",
+        "precision": 7,
+        "count": 1,
+        "latitude": 23.463817,
+        "longitude": 120.483502,
+        "bounds": {
+          "minLatitude": 23.463817,
+          "maxLatitude": 23.463817,
+          "minLongitude": 120.483502,
+          "maxLongitude": 120.483502
+        },
+        "topSchools": [
+          {
+            "id": "0018",
+            "name": "國立嘉義大學",
+            "townshipName": "東區",
+            "students": 11349,
+            "status": "正常"
+          }
+        ]
+      }
+    ]
+  }
+}

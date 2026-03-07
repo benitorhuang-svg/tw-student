@@ -84,7 +84,25 @@
 - 縣市邊界與鄉鎮邊界各自獨立輸出。
 - 優先使用 TopoJSON 或等效壓縮格式，並保留必要屬性如 `countyId`、`townId`、`name`。
 
+### 校點分群切片 `SchoolBucketSlice`
+
+- 以縣市為單位輸出 geohash bucket JSON。
+- 每個 bucket 至少包含 `geohash`、`count`、中心點經緯度、包圍盒，以及代表性學校摘要。
+- 供低縮放層級地圖直接讀取，避免前端在載入後重算所有校點分群。
+
 ## 衍生檢視模型
+
+### 比較情境 `SavedComparisonScenario`
+
+- `id`：情境識別值。
+- `name`：情境名稱，可重新命名。
+- `countyIds`：比較中的縣市陣列。
+- `activeYear`：情境對應的學年度。
+- `educationLevel`：教育階段篩選。
+- `managementType`：公私立篩選。
+- `region`：區域篩選。
+- `pinned`：是否釘選。
+- `updatedAt`：最後更新時間。
 
 ### 分析摘要 `ScopeSummary`
 

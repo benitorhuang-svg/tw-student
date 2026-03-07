@@ -1,0 +1,86 @@
+{
+  "generatedAt": "2026-03-07T15:15:16.040Z",
+  "county": {
+    "id": "彰化縣",
+    "name": "彰化縣",
+    "shortLabel": "彰化",
+    "region": "中部"
+  },
+  "precisions": {
+    "5": [
+      {
+        "id": "5-wsm9p",
+        "geohash": "wsm9p",
+        "precision": 5,
+        "count": 1,
+        "latitude": 24.082738,
+        "longitude": 120.558479,
+        "bounds": {
+          "minLatitude": 24.082738,
+          "maxLatitude": 24.082738,
+          "minLongitude": 120.558479,
+          "maxLongitude": 120.558479
+        },
+        "topSchools": [
+          {
+            "id": "0015",
+            "name": "國立彰化師範大學",
+            "townshipName": "彰化市",
+            "students": 8624,
+            "status": "正常"
+          }
+        ]
+      }
+    ],
+    "6": [
+      {
+        "id": "6-wsm9p2",
+        "geohash": "wsm9p2",
+        "precision": 6,
+        "count": 1,
+        "latitude": 24.082738,
+        "longitude": 120.558479,
+        "bounds": {
+          "minLatitude": 24.082738,
+          "maxLatitude": 24.082738,
+          "minLongitude": 120.558479,
+          "maxLongitude": 120.558479
+        },
+        "topSchools": [
+          {
+            "id": "0015",
+            "name": "國立彰化師範大學",
+            "townshipName": "彰化市",
+            "students": 8624,
+            "status": "正常"
+          }
+        ]
+      }
+    ],
+    "7": [
+      {
+        "id": "7-wsm9p2h",
+        "geohash": "wsm9p2h",
+        "precision": 7,
+        "count": 1,
+        "latitude": 24.082738,
+        "longitude": 120.558479,
+        "bounds": {
+          "minLatitude": 24.082738,
+          "maxLatitude": 24.082738,
+          "minLongitude": 120.558479,
+          "maxLongitude": 120.558479
+        },
+        "topSchools": [
+          {
+            "id": "0015",
+            "name": "國立彰化師範大學",
+            "townshipName": "彰化市",
+            "students": 8624,
+            "status": "正常"
+          }
+        ]
+      }
+    ]
+  }
+}

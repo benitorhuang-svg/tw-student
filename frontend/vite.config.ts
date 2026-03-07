@@ -8,6 +8,9 @@ const publicBasePath = isGithubPagesBuild ? `/${repositoryName}/` : '/'
 
 export default defineConfig({
   base: publicBasePath,
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'leaflet', 'react-leaflet'],
+  },
   plugins: [
     react(),
     VitePWA({
@@ -49,6 +52,7 @@ export default defineConfig({
       workbox: {
         globPatterns: ['**/*.{js,css,html,svg,png,json,topo.json,ico,txt,woff2}'],
         navigateFallback: 'index.html',
+        navigateFallbackDenylist: [/\/data\//, /\.json$/],
         maximumFileSizeToCacheInBytes: 7 * 1024 * 1024,
         runtimeCaching: [
           {

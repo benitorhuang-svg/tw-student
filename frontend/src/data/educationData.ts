@@ -97,6 +97,41 @@ export type TownshipSummaryRecord = {
   summaries: Record<SummaryBucketKey, SummaryTrendRecord[]>
 }
 
+export type SchoolBucketPreview = {
+  id: string
+  name: string
+  townshipName: string
+  students: number
+  status: NonNullable<SchoolRecord['status']>
+}
+
+export type SchoolBucketRecord = {
+  id: string
+  geohash: string
+  precision: number
+  count: number
+  latitude: number
+  longitude: number
+  bounds: {
+    minLatitude: number
+    maxLatitude: number
+    minLongitude: number
+    maxLongitude: number
+  }
+  topSchools: SchoolBucketPreview[]
+}
+
+export type CountyBucketDataset = {
+  generatedAt: string
+  county: {
+    id: string
+    name: string
+    shortLabel: string
+    region: RegionGroup
+  }
+  precisions: Record<string, SchoolBucketRecord[]>
+}
+
 export type CountySummaryRecord = {
   id: string
   name: string
@@ -104,9 +139,11 @@ export type CountySummaryRecord = {
   region: RegionGroup
   townshipFile: string
   detailFile: string
+  bucketFile: string
   assetMetrics?: {
     detailBytes: number
     townshipBytes: number
+    bucketBytes: number
   }
   dataNotes?: DataNote[]
   summaries: Record<SummaryBucketKey, SummaryTrendRecord[]>
@@ -120,6 +157,7 @@ export type EducationSummaryDataset = {
     summaryBytes: number
     countyBoundaryBytes: number
     countyDetailBytes: number
+    countyBucketBytes: number
     townshipBoundaryBytes: number
   }
   sources: {
@@ -170,6 +208,7 @@ export type AtlasLoadSource = 'memory' | 'indexeddb' | 'network'
 
 export type AtlasLoadObservationSnapshot = {
   loadedCountyDetails: string[]
+  loadedBucketSlices: string[]
   loadedTownshipSlices: string[]
   cacheHits: number
   memoryHits: number
@@ -219,14 +258,18 @@ const observationListeners = new Set<(snapshot: AtlasLoadObservationSnapshot) =>
 let summaryCache: EducationSummaryDataset | null = null
 let countyBoundaryCache: CountyBoundaryCollection | null = null
 const countyDetailMemoryCache = new Map<string, CountyDetailDataset>()
+const countyBucketMemoryCache = new Map<string, CountyBucketDataset>()
 const townshipBoundaryMemoryCache = new Map<string, TownshipBoundaryCollection>()
 const pendingCountyDetailRequests = new Map<string, Promise<CountyDetailDataset>>()
+const pendingCountyBucketRequests = new Map<string, Promise<CountyBucketDataset>>()
 const pendingTownshipBoundaryRequests = new Map<string, Promise<TownshipBoundaryCollection>>()
 const countyDetailFileLookup = new Map<string, string>()
+const bucketFileLookup = new Map<string, string>()
 const townshipFileLookup = new Map<string, string>()
 
 let loadObservationState: AtlasLoadObservationSnapshot = {
   loadedCountyDetails: [],
+  loadedBucketSlices: [],
   loadedTownshipSlices: [],
   cacheHits: 0,
   memoryHits: 0,
@@ -247,6 +290,7 @@ function createObservationSnapshot(): AtlasLoadObservationSnapshot {
   return {
     ...loadObservationState,
     loadedCountyDetails: [...loadObservationState.loadedCountyDetails],
+    loadedBucketSlices: [...loadObservationState.loadedBucketSlices],
     loadedTownshipSlices: [...loadObservationState.loadedTownshipSlices],
     resourceSizes: { ...loadObservationState.resourceSizes },
   }
@@ -270,6 +314,7 @@ function recordResourceLoad(options: {
   resourceKey: string
   bytes?: number
   countyDetailId?: string
+  bucketCountyId?: string
   townshipCountyId?: string
 }) {
   const nextSizes = { ...loadObservationState.resourceSizes }
@@ -280,6 +325,7 @@ function recordResourceLoad(options: {
   loadObservationState = {
     ...loadObservationState,
     loadedCountyDetails: mergeUnique(loadObservationState.loadedCountyDetails, options.countyDetailId),
+    loadedBucketSlices: mergeUnique(loadObservationState.loadedBucketSlices, options.bucketCountyId),
     loadedTownshipSlices: mergeUnique(loadObservationState.loadedTownshipSlices, options.townshipCountyId),
     cacheHits:
       loadObservationState.cacheHits + (options.source === 'memory' || options.source === 'indexeddb' ? 1 : 0),
@@ -299,6 +345,10 @@ function detectCountyIdFromDetailFile(detailFile: string) {
   return countyDetailFileLookup.get(detailFile) ?? detailFile.replace(/^counties\//, '').replace(/\.json$/, '')
 }
 
+function detectCountyIdFromBucketFile(bucketFile: string) {
+  return bucketFileLookup.get(bucketFile) ?? bucketFile.replace(/^buckets\//, '').replace(/\.json$/, '')
+}
+
 function detectCountyIdFromTownshipFile(townshipFile: string) {
   return townshipFileLookup.get(townshipFile) ?? townshipFile.replace(/^townships\//, '').replace(/\.topo\.json$/, '')
 }
@@ -309,6 +359,10 @@ function toCountyDetailResourceKey(detailFile: string) {
 
 function toTownshipBoundaryResourceKey(townshipFile: string) {
   return `township-boundary:${townshipFile}`
+}
+
+function toCountyBucketResourceKey(bucketFile: string) {
+  return `county-bucket:${bucketFile}`
 }
 
 function toSummaryResourceKey() {
@@ -386,8 +440,11 @@ async function writePersistedResource<T>(key: string, value: T) {
   })
 }
 
+const DATA_BASE_URL = import.meta.env.BASE_URL.replace(/\/$/, '')
+
 async function fetchJsonWithMetrics<T>(resourcePath: string) {
-  const response = await fetch(resourcePath)
+  const url = resourcePath.startsWith('/') ? `${DATA_BASE_URL}${resourcePath}` : `${DATA_BASE_URL}/${resourcePath}`
+  const response = await fetch(url)
 
   if (!response.ok) {
     throw new Error(`無法載入資料 (${response.status})`)
@@ -428,9 +485,11 @@ export async function loadEducationSummary() {
   if (persisted?.value) {
     summaryCache = persisted.value
     countyDetailFileLookup.clear()
+    bucketFileLookup.clear()
     townshipFileLookup.clear()
     persisted.value.counties.forEach((county) => {
       countyDetailFileLookup.set(county.detailFile, county.id)
+      bucketFileLookup.set(county.bucketFile, county.id)
       townshipFileLookup.set(county.townshipFile, county.id)
     })
     recordResourceLoad({
@@ -444,9 +503,11 @@ export async function loadEducationSummary() {
   const { value, bytes } = await fetchJsonWithMetrics<EducationSummaryDataset>('/data/education-summary.json')
   summaryCache = value
   countyDetailFileLookup.clear()
+  bucketFileLookup.clear()
   townshipFileLookup.clear()
   value.counties.forEach((county) => {
     countyDetailFileLookup.set(county.detailFile, county.id)
+    bucketFileLookup.set(county.bucketFile, county.id)
     townshipFileLookup.set(county.townshipFile, county.id)
   })
   recordResourceLoad({
@@ -507,6 +568,57 @@ export async function loadCountyDetail(detailFile: string, countyId?: string) {
     return await nextRequest
   } finally {
     pendingCountyDetailRequests.delete(detailFile)
+  }
+}
+
+export async function loadCountyBuckets(bucketFile: string, countyId?: string) {
+  const resourceKey = toCountyBucketResourceKey(bucketFile)
+  const resolvedCountyId = countyId ?? detectCountyIdFromBucketFile(bucketFile)
+
+  if (countyBucketMemoryCache.has(bucketFile)) {
+    recordResourceLoad({
+      source: 'memory',
+      resourceKey,
+      bucketCountyId: resolvedCountyId,
+    })
+    return countyBucketMemoryCache.get(bucketFile) as CountyBucketDataset
+  }
+
+  const pendingRequest = pendingCountyBucketRequests.get(bucketFile)
+  if (pendingRequest) {
+    return pendingRequest
+  }
+
+  const nextRequest = (async () => {
+    const persisted = await readPersistedResource<CountyBucketDataset>(resourceKey)
+    if (persisted?.value) {
+      countyBucketMemoryCache.set(bucketFile, persisted.value)
+      recordResourceLoad({
+        source: 'indexeddb',
+        resourceKey,
+        bucketCountyId: resolvedCountyId,
+      })
+      return persisted.value
+    }
+
+    const { value, bytes } = await fetchJsonWithMetrics<CountyBucketDataset>(`/data/${bucketFile}`)
+    countyBucketMemoryCache.set(bucketFile, value)
+    recordResourceLoad({
+      source: 'network',
+      resourceKey: bucketFile,
+      bytes,
+      bucketCountyId: resolvedCountyId,
+    })
+    void writePersistedResource(resourceKey, value)
+    return value
+  })()
+
+  pendingCountyBucketRequests.set(bucketFile, nextRequest)
+
+  try {
+    return await nextRequest
+  } finally {
+    pendingCountyBucketRequests.delete(bucketFile)
   }
 }
 
@@ -595,14 +707,18 @@ export async function loadTownshipBoundaries(countyId: string, townshipFile?: st
 }
 
 export async function prefetchCountyResources(
-  county: Pick<CountySummaryRecord, 'id' | 'detailFile' | 'townshipFile'>,
+  county: Pick<CountySummaryRecord, 'id' | 'detailFile' | 'townshipFile' | 'bucketFile'>,
   options?: {
     includeTownshipSlice?: boolean
+    includeBucketSlice?: boolean
   },
 ) {
   const tasks: Array<Promise<unknown>> = [loadCountyDetail(county.detailFile, county.id)]
   if (options?.includeTownshipSlice) {
     tasks.push(loadTownshipBoundaries(county.id, county.townshipFile))
+  }
+  if (options?.includeBucketSlice) {
+    tasks.push(loadCountyBuckets(county.bucketFile, county.id))
   }
 
   await Promise.allSettled(tasks)

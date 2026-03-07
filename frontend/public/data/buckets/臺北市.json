@@ -1,0 +1,613 @@
+{
+  "generatedAt": "2026-03-07T15:15:16.040Z",
+  "county": {
+    "id": "臺北市",
+    "name": "臺北市",
+    "shortLabel": "臺北",
+    "region": "北部"
+  },
+  "precisions": {
+    "5": [
+      {
+        "id": "5-wsqqm",
+        "geohash": "wsqqm",
+        "precision": 5,
+        "count": 6,
+        "latitude": 25.027461,
+        "longitude": 121.534957,
+        "bounds": {
+          "minLatitude": 25.013237,
+          "maxLatitude": 25.042636,
+          "minLongitude": 121.525532,
+          "maxLongitude": 121.544924
+        },
+        "topSchools": [
+          {
+            "id": "0003",
+            "name": "國立臺灣大學",
+            "townshipName": "大安區",
+            "students": 34487,
+            "status": "正常"
+          },
+          {
+            "id": "0004",
+            "name": "國立臺灣師範大學",
+            "townshipName": "大安區",
+            "students": 16624,
+            "status": "正常"
+          },
+          {
+            "id": "0025",
+            "name": "國立臺北科技大學",
+            "townshipName": "大安區",
+            "students": 13493,
+            "status": "正常"
+          },
+          {
+            "id": "0022",
+            "name": "國立臺灣科技大學",
+            "townshipName": "大安區",
+            "students": 11849,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "5-wsqqw",
+        "geohash": "wsqqw",
+        "precision": 5,
+        "count": 1,
+        "latitude": 25.081298,
+        "longitude": 121.58672,
+        "bounds": {
+          "minLatitude": 25.081298,
+          "maxLatitude": 25.081298,
+          "minLongitude": 121.58672,
+          "maxLongitude": 121.58672
+        },
+        "topSchools": [
+          {
+            "id": "0144",
+            "name": "國立臺灣戲曲學院",
+            "townshipName": "內湖區",
+            "students": 449,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "5-wsqqn",
+        "geohash": "wsqqn",
+        "precision": 5,
+        "count": 1,
+        "latitude": 24.986835,
+        "longitude": 121.57624,
+        "bounds": {
+          "minLatitude": 24.986835,
+          "maxLatitude": 24.986835,
+          "minLongitude": 121.57624,
+          "maxLongitude": 121.57624
+        },
+        "topSchools": [
+          {
+            "id": "0001",
+            "name": "國立政治大學",
+            "townshipName": "文山區",
+            "students": 16899,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "5-wsqqv",
+        "geohash": "wsqqv",
+        "precision": 5,
+        "count": 1,
+        "latitude": 25.117509,
+        "longitude": 121.520649,
+        "bounds": {
+          "minLatitude": 25.117509,
+          "maxLatitude": 25.117509,
+          "minLongitude": 121.520649,
+          "maxLongitude": 121.520649
+        },
+        "topSchools": [
+          {
+            "id": "0046",
+            "name": "國立臺北護理健康大學",
+            "townshipName": "北投區",
+            "students": 5201,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "5-wsqqu",
+        "geohash": "wsqqu",
+        "precision": 5,
+        "count": 1,
+        "latitude": 25.132181,
+        "longitude": 121.470133,
+        "bounds": {
+          "minLatitude": 25.132181,
+          "maxLatitude": 25.132181,
+          "minLongitude": 121.470133,
+          "maxLongitude": 121.470133
+        },
+        "topSchools": [
+          {
+            "id": "0028",
+            "name": "國立臺北藝術大學",
+            "townshipName": "北投區",
+            "students": 3213,
+            "status": "正常"
+          }
+        ]
+      }
+    ],
+    "6": [
+      {
+        "id": "6-wsqqmd",
+        "geohash": "wsqqmd",
+        "precision": 6,
+        "count": 1,
+        "latitude": 25.016832,
+        "longitude": 121.534714,
+        "bounds": {
+          "minLatitude": 25.016832,
+          "maxLatitude": 25.016832,
+          "minLongitude": 121.534714,
+          "maxLongitude": 121.534714
+        },
+        "topSchools": [
+          {
+            "id": "0003",
+            "name": "國立臺灣大學",
+            "townshipName": "大安區",
+            "students": 34487,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsqqm7",
+        "geohash": "wsqqm7",
+        "precision": 6,
+        "count": 1,
+        "latitude": 25.025957,
+        "longitude": 121.527535,
+        "bounds": {
+          "minLatitude": 25.025957,
+          "maxLatitude": 25.025957,
+          "minLongitude": 121.527535,
+          "maxLongitude": 121.527535
+        },
+        "topSchools": [
+          {
+            "id": "0004",
+            "name": "國立臺灣師範大學",
+            "townshipName": "大安區",
+            "students": 16624,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsqqmw",
+        "geohash": "wsqqmw",
+        "precision": 6,
+        "count": 1,
+        "latitude": 25.042636,
+        "longitude": 121.535955,
+        "bounds": {
+          "minLatitude": 25.042636,
+          "maxLatitude": 25.042636,
+          "minLongitude": 121.535955,
+          "maxLongitude": 121.535955
+        },
+        "topSchools": [
+          {
+            "id": "0025",
+            "name": "國立臺北科技大學",
+            "townshipName": "大安區",
+            "students": 13493,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsqqm9",
+        "geohash": "wsqqm9",
+        "precision": 6,
+        "count": 1,
+        "latitude": 25.013237,
+        "longitude": 121.541083,
+        "bounds": {
+          "minLatitude": 25.013237,
+          "maxLatitude": 25.013237,
+          "minLongitude": 121.541083,
+          "maxLongitude": 121.541083
+        },
+        "topSchools": [
+          {
+            "id": "0022",
+            "name": "國立臺灣科技大學",
+            "townshipName": "大安區",
+            "students": 11849,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsqqmg",
+        "geohash": "wsqqmg",
+        "precision": 6,
+        "count": 1,
+        "latitude": 25.024158,
+        "longitude": 121.544924,
+        "bounds": {
+          "minLatitude": 25.024158,
+          "maxLatitude": 25.024158,
+          "minLongitude": 121.544924,
+          "maxLongitude": 121.544924
+        },
+        "topSchools": [
+          {
+            "id": "0037",
+            "name": "國立臺北教育大學",
+            "townshipName": "大安區",
+            "students": 6039,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsqqmq",
+        "geohash": "wsqqmq",
+        "precision": 6,
+        "count": 1,
+        "latitude": 25.041947,
+        "longitude": 121.525532,
+        "bounds": {
+          "minLatitude": 25.041947,
+          "maxLatitude": 25.041947,
+          "minLongitude": 121.525532,
+          "maxLongitude": 121.525532
+        },
+        "topSchools": [
+          {
+            "id": "0051",
+            "name": "國立臺北商業大學",
+            "townshipName": "中正區",
+            "students": 6948,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsqqwv",
+        "geohash": "wsqqwv",
+        "precision": 6,
+        "count": 1,
+        "latitude": 25.081298,
+        "longitude": 121.58672,
+        "bounds": {
+          "minLatitude": 25.081298,
+          "maxLatitude": 25.081298,
+          "minLongitude": 121.58672,
+          "maxLongitude": 121.58672
+        },
+        "topSchools": [
+          {
+            "id": "0144",
+            "name": "國立臺灣戲曲學院",
+            "townshipName": "內湖區",
+            "students": 449,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsqqns",
+        "geohash": "wsqqns",
+        "precision": 6,
+        "count": 1,
+        "latitude": 24.986835,
+        "longitude": 121.57624,
+        "bounds": {
+          "minLatitude": 24.986835,
+          "maxLatitude": 24.986835,
+          "minLongitude": 121.57624,
+          "maxLongitude": 121.57624
+        },
+        "topSchools": [
+          {
+            "id": "0001",
+            "name": "國立政治大學",
+            "townshipName": "文山區",
+            "students": 16899,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsqqvk",
+        "geohash": "wsqqvk",
+        "precision": 6,
+        "count": 1,
+        "latitude": 25.117509,
+        "longitude": 121.520649,
+        "bounds": {
+          "minLatitude": 25.117509,
+          "maxLatitude": 25.117509,
+          "minLongitude": 121.520649,
+          "maxLongitude": 121.520649
+        },
+        "topSchools": [
+          {
+            "id": "0046",
+            "name": "國立臺北護理健康大學",
+            "townshipName": "北投區",
+            "students": 5201,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsqqup",
+        "geohash": "wsqqup",
+        "precision": 6,
+        "count": 1,
+        "latitude": 25.132181,
+        "longitude": 121.470133,
+        "bounds": {
+          "minLatitude": 25.132181,
+          "maxLatitude": 25.132181,
+          "minLongitude": 121.470133,
+          "maxLongitude": 121.470133
+        },
+        "topSchools": [
+          {
+            "id": "0028",
+            "name": "國立臺北藝術大學",
+            "townshipName": "北投區",
+            "students": 3213,
+            "status": "正常"
+          }
+        ]
+      }
+    ],
+    "7": [
+      {
+        "id": "7-wsqqmd4",
+        "geohash": "wsqqmd4",
+        "precision": 7,
+        "count": 1,
+        "latitude": 25.016832,
+        "longitude": 121.534714,
+        "bounds": {
+          "minLatitude": 25.016832,
+          "maxLatitude": 25.016832,
+          "minLongitude": 121.534714,
+          "maxLongitude": 121.534714
+        },
+        "topSchools": [
+          {
+            "id": "0003",
+            "name": "國立臺灣大學",
+            "townshipName": "大安區",
+            "students": 34487,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsqqm7v",
+        "geohash": "wsqqm7v",
+        "precision": 7,
+        "count": 1,
+        "latitude": 25.025957,
+        "longitude": 121.527535,
+        "bounds": {
+          "minLatitude": 25.025957,
+          "maxLatitude": 25.025957,
+          "minLongitude": 121.527535,
+          "maxLongitude": 121.527535
+        },
+        "topSchools": [
+          {
+            "id": "0004",
+            "name": "國立臺灣師範大學",
+            "townshipName": "大安區",
+            "students": 16624,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsqqmwg",
+        "geohash": "wsqqmwg",
+        "precision": 7,
+        "count": 1,
+        "latitude": 25.042636,
+        "longitude": 121.535955,
+        "bounds": {
+          "minLatitude": 25.042636,
+          "maxLatitude": 25.042636,
+          "minLongitude": 121.535955,
+          "maxLongitude": 121.535955
+        },
+        "topSchools": [
+          {
+            "id": "0025",
+            "name": "國立臺北科技大學",
+            "townshipName": "大安區",
+            "students": 13493,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsqqm9x",
+        "geohash": "wsqqm9x",
+        "precision": 7,
+        "count": 1,
+        "latitude": 25.013237,
+        "longitude": 121.541083,
+        "bounds": {
+          "minLatitude": 25.013237,
+          "maxLatitude": 25.013237,
+          "minLongitude": 121.541083,
+          "maxLongitude": 121.541083
+        },
+        "topSchools": [
+          {
+            "id": "0022",
+            "name": "國立臺灣科技大學",
+            "townshipName": "大安區",
+            "students": 11849,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsqqmgd",
+        "geohash": "wsqqmgd",
+        "precision": 7,
+        "count": 1,
+        "latitude": 25.024158,
+        "longitude": 121.544924,
+        "bounds": {
+          "minLatitude": 25.024158,
+          "maxLatitude": 25.024158,
+          "minLongitude": 121.544924,
+          "maxLongitude": 121.544924
+        },
+        "topSchools": [
+          {
+            "id": "0037",
+            "name": "國立臺北教育大學",
+            "townshipName": "大安區",
+            "students": 6039,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsqqmqs",
+        "geohash": "wsqqmqs",
+        "precision": 7,
+        "count": 1,
+        "latitude": 25.041947,
+        "longitude": 121.525532,
+        "bounds": {
+          "minLatitude": 25.041947,
+          "maxLatitude": 25.041947,
+          "minLongitude": 121.525532,
+          "maxLongitude": 121.525532
+        },
+        "topSchools": [
+          {
+            "id": "0051",
+            "name": "國立臺北商業大學",
+            "townshipName": "中正區",
+            "students": 6948,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsqqwvb",
+        "geohash": "wsqqwvb",
+        "precision": 7,
+        "count": 1,
+        "latitude": 25.081298,
+        "longitude": 121.58672,
+        "bounds": {
+          "minLatitude": 25.081298,
+          "maxLatitude": 25.081298,
+          "minLongitude": 121.58672,
+          "maxLongitude": 121.58672
+        },
+        "topSchools": [
+          {
+            "id": "0144",
+            "name": "國立臺灣戲曲學院",
+            "townshipName": "內湖區",
+            "students": 449,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsqqns9",
+        "geohash": "wsqqns9",
+        "precision": 7,
+        "count": 1,
+        "latitude": 24.986835,
+        "longitude": 121.57624,
+        "bounds": {
+          "minLatitude": 24.986835,
+          "maxLatitude": 24.986835,
+          "minLongitude": 121.57624,
+          "maxLongitude": 121.57624
+        },
+        "topSchools": [
+          {
+            "id": "0001",
+            "name": "國立政治大學",
+            "townshipName": "文山區",
+            "students": 16899,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsqqvk8",
+        "geohash": "wsqqvk8",
+        "precision": 7,
+        "count": 1,
+        "latitude": 25.117509,
+        "longitude": 121.520649,
+        "bounds": {
+          "minLatitude": 25.117509,
+          "maxLatitude": 25.117509,
+          "minLongitude": 121.520649,
+          "maxLongitude": 121.520649
+        },
+        "topSchools": [
+          {
+            "id": "0046",
+            "name": "國立臺北護理健康大學",
+            "townshipName": "北投區",
+            "students": 5201,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsqqup5",
+        "geohash": "wsqqup5",
+        "precision": 7,
+        "count": 1,
+        "latitude": 25.132181,
+        "longitude": 121.470133,
+        "bounds": {
+          "minLatitude": 25.132181,
+          "maxLatitude": 25.132181,
+          "minLongitude": 121.470133,
+          "maxLongitude": 121.470133
+        },
+        "topSchools": [
+          {
+            "id": "0028",
+            "name": "國立臺北藝術大學",
+            "townshipName": "北投區",
+            "students": 3213,
+            "status": "正常"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,864 @@
+{
+  "generatedAt": "2026-03-07T15:15:16.033Z",
+  "county": {
+    "id": "苗栗縣",
+    "name": "苗栗縣",
+    "shortLabel": "苗栗",
+    "region": "中部"
+  },
+  "precisions": {
+    "5": [
+      {
+        "id": "5-wsmgt",
+        "geohash": "wsmgt",
+        "precision": 5,
+        "count": 5,
+        "latitude": 24.555731,
+        "longitude": 120.818344,
+        "bounds": {
+          "minLatitude": 24.545699,
+          "maxLatitude": 24.559387,
+          "minLongitude": 120.812248,
+          "maxLongitude": 120.833342
+        },
+        "topSchools": [
+          {
+            "id": "0032",
+            "name": "國立聯合大學",
+            "townshipName": "苗栗市",
+            "students": 7594,
+            "status": "正常"
+          },
+          {
+            "id": "050404",
+            "name": "國立苗栗農工",
+            "townshipName": "苗栗市",
+            "students": 1763,
+            "status": "正常"
+          },
+          {
+            "id": "050303",
+            "name": "國立苗栗高中",
+            "townshipName": "苗栗市",
+            "students": 1359,
+            "status": "正常"
+          },
+          {
+            "id": "051306",
+            "name": "私立建臺高中",
+            "townshipName": "苗栗市",
+            "students": 976,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "5-wsmuq",
+        "geohash": "wsmuq",
+        "precision": 5,
+        "count": 2,
+        "latitude": 24.686326,
+        "longitude": 120.873622,
+        "bounds": {
+          "minLatitude": 24.684185,
+          "maxLatitude": 24.688467,
+          "minLongitude": 120.872493,
+          "maxLongitude": 120.87475
+        },
+        "topSchools": [
+          {
+            "id": "050310",
+            "name": "國立竹南高中",
+            "townshipName": "竹南鎮",
+            "students": 1508,
+            "status": "正常"
+          },
+          {
+            "id": "051408",
+            "name": "私立中興商工",
+            "townshipName": "竹南鎮",
+            "students": 607,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "5-wsmfu",
+        "geohash": "wsmfu",
+        "precision": 5,
+        "count": 1,
+        "latitude": 24.40991,
+        "longitude": 120.7659,
+        "bounds": {
+          "minLatitude": 24.40991,
+          "maxLatitude": 24.40991,
+          "minLongitude": 120.7659,
+          "maxLongitude": 120.7659
+        },
+        "topSchools": [
+          {
+            "id": "054308",
+            "name": "縣立三義高中",
+            "townshipName": "三義鄉",
+            "students": 542,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "5-wsmfy",
+        "geohash": "wsmfy",
+        "precision": 5,
+        "count": 1,
+        "latitude": 24.420153,
+        "longitude": 120.861085,
+        "bounds": {
+          "minLatitude": 24.420153,
+          "maxLatitude": 24.420153,
+          "minLongitude": 120.861085,
+          "maxLongitude": 120.861085
+        },
+        "topSchools": [
+          {
+            "id": "050401",
+            "name": "國立大湖農工",
+            "townshipName": "大湖鄉",
+            "students": 490,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "5-wsmuw",
+        "geohash": "wsmuw",
+        "precision": 5,
+        "count": 1,
+        "latitude": 24.700688,
+        "longitude": 120.882951,
+        "bounds": {
+          "minLatitude": 24.700688,
+          "maxLatitude": 24.700688,
+          "minLongitude": 120.882951,
+          "maxLongitude": 120.882951
+        },
+        "topSchools": [
+          {
+            "id": "051302",
+            "name": "私立君毅高中",
+            "townshipName": "竹南鎮",
+            "students": 2113,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "5-wsmfm",
+        "geohash": "wsmfm",
+        "precision": 5,
+        "count": 1,
+        "latitude": 24.312704,
+        "longitude": 120.832199,
+        "bounds": {
+          "minLatitude": 24.312704,
+          "maxLatitude": 24.312704,
+          "minLongitude": 120.832199,
+          "maxLongitude": 120.832199
+        },
+        "topSchools": [
+          {
+            "id": "050314",
+            "name": "國立卓蘭高中",
+            "townshipName": "卓蘭鎮",
+            "students": 762,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "5-wsmfq",
+        "geohash": "wsmfq",
+        "precision": 5,
+        "count": 1,
+        "latitude": 24.30507,
+        "longitude": 120.862623,
+        "bounds": {
+          "minLatitude": 24.30507,
+          "maxLatitude": 24.30507,
+          "minLongitude": 120.862623,
+          "maxLongitude": 120.862623
+        },
+        "topSchools": [
+          {
+            "id": "051307",
+            "name": "私立全人實驗高中",
+            "townshipName": "卓蘭鎮",
+            "students": 51,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "5-wsmg1",
+        "geohash": "wsmg1",
+        "precision": 5,
+        "count": 1,
+        "latitude": 24.448516,
+        "longitude": 120.656607,
+        "bounds": {
+          "minLatitude": 24.448516,
+          "maxLatitude": 24.448516,
+          "minLongitude": 120.656607,
+          "maxLongitude": 120.656607
+        },
+        "topSchools": [
+          {
+            "id": "050315",
+            "name": "國立苑裡高中",
+            "townshipName": "苑裡鎮",
+            "students": 1108,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "5-wsmfc",
+        "geohash": "wsmfc",
+        "precision": 5,
+        "count": 1,
+        "latitude": 24.429617,
+        "longitude": 120.642982,
+        "bounds": {
+          "minLatitude": 24.429617,
+          "maxLatitude": 24.429617,
+          "minLongitude": 120.642982,
+          "maxLongitude": 120.642982
+        },
+        "topSchools": [
+          {
+            "id": "051413",
+            "name": "私立龍德家商",
+            "townshipName": "苑裡鎮",
+            "students": 113,
+            "status": "正常"
+          }
+        ]
+      }
+    ],
+    "6": [
+      {
+        "id": "6-wsmgtn",
+        "geohash": "wsmgtn",
+        "precision": 6,
+        "count": 3,
+        "latitude": 24.558726,
+        "longitude": 120.815377,
+        "bounds": {
+          "minLatitude": 24.55742,
+          "maxLatitude": 24.559387,
+          "minLongitude": 120.814633,
+          "maxLongitude": 120.816364
+        },
+        "topSchools": [
+          {
+            "id": "050303",
+            "name": "國立苗栗高中",
+            "townshipName": "苗栗市",
+            "students": 1359,
+            "status": "正常"
+          },
+          {
+            "id": "051306",
+            "name": "私立建臺高中",
+            "townshipName": "苗栗市",
+            "students": 976,
+            "status": "正常"
+          },
+          {
+            "id": "050407",
+            "name": "國立苗栗高商",
+            "townshipName": "苗栗市",
+            "students": 957,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsmfu5",
+        "geohash": "wsmfu5",
+        "precision": 6,
+        "count": 1,
+        "latitude": 24.40991,
+        "longitude": 120.7659,
+        "bounds": {
+          "minLatitude": 24.40991,
+          "maxLatitude": 24.40991,
+          "minLongitude": 120.7659,
+          "maxLongitude": 120.7659
+        },
+        "topSchools": [
+          {
+            "id": "054308",
+            "name": "縣立三義高中",
+            "townshipName": "三義鄉",
+            "students": 542,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsmfym",
+        "geohash": "wsmfym",
+        "precision": 6,
+        "count": 1,
+        "latitude": 24.420153,
+        "longitude": 120.861085,
+        "bounds": {
+          "minLatitude": 24.420153,
+          "maxLatitude": 24.420153,
+          "minLongitude": 120.861085,
+          "maxLongitude": 120.861085
+        },
+        "topSchools": [
+          {
+            "id": "050401",
+            "name": "國立大湖農工",
+            "townshipName": "大湖鄉",
+            "students": 490,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsmuwb",
+        "geohash": "wsmuwb",
+        "precision": 6,
+        "count": 1,
+        "latitude": 24.700688,
+        "longitude": 120.882951,
+        "bounds": {
+          "minLatitude": 24.700688,
+          "maxLatitude": 24.700688,
+          "minLongitude": 120.882951,
+          "maxLongitude": 120.882951
+        },
+        "topSchools": [
+          {
+            "id": "051302",
+            "name": "私立君毅高中",
+            "townshipName": "竹南鎮",
+            "students": 2113,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsmuqt",
+        "geohash": "wsmuqt",
+        "precision": 6,
+        "count": 1,
+        "latitude": 24.684185,
+        "longitude": 120.87475,
+        "bounds": {
+          "minLatitude": 24.684185,
+          "maxLatitude": 24.684185,
+          "minLongitude": 120.87475,
+          "maxLongitude": 120.87475
+        },
+        "topSchools": [
+          {
+            "id": "050310",
+            "name": "國立竹南高中",
+            "townshipName": "竹南鎮",
+            "students": 1508,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsmuqw",
+        "geohash": "wsmuqw",
+        "precision": 6,
+        "count": 1,
+        "latitude": 24.688467,
+        "longitude": 120.872493,
+        "bounds": {
+          "minLatitude": 24.688467,
+          "maxLatitude": 24.688467,
+          "minLongitude": 120.872493,
+          "maxLongitude": 120.872493
+        },
+        "topSchools": [
+          {
+            "id": "051408",
+            "name": "私立中興商工",
+            "townshipName": "竹南鎮",
+            "students": 607,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsmfm9",
+        "geohash": "wsmfm9",
+        "precision": 6,
+        "count": 1,
+        "latitude": 24.312704,
+        "longitude": 120.832199,
+        "bounds": {
+          "minLatitude": 24.312704,
+          "maxLatitude": 24.312704,
+          "minLongitude": 120.832199,
+          "maxLongitude": 120.832199
+        },
+        "topSchools": [
+          {
+            "id": "050314",
+            "name": "國立卓蘭高中",
+            "townshipName": "卓蘭鎮",
+            "students": 762,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsmfq2",
+        "geohash": "wsmfq2",
+        "precision": 6,
+        "count": 1,
+        "latitude": 24.30507,
+        "longitude": 120.862623,
+        "bounds": {
+          "minLatitude": 24.30507,
+          "maxLatitude": 24.30507,
+          "minLongitude": 120.862623,
+          "maxLongitude": 120.862623
+        },
+        "topSchools": [
+          {
+            "id": "051307",
+            "name": "私立全人實驗高中",
+            "townshipName": "卓蘭鎮",
+            "students": 51,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsmg1d",
+        "geohash": "wsmg1d",
+        "precision": 6,
+        "count": 1,
+        "latitude": 24.448516,
+        "longitude": 120.656607,
+        "bounds": {
+          "minLatitude": 24.448516,
+          "maxLatitude": 24.448516,
+          "minLongitude": 120.656607,
+          "maxLongitude": 120.656607
+        },
+        "topSchools": [
+          {
+            "id": "050315",
+            "name": "國立苑裡高中",
+            "townshipName": "苑裡鎮",
+            "students": 1108,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsmfcr",
+        "geohash": "wsmfcr",
+        "precision": 6,
+        "count": 1,
+        "latitude": 24.429617,
+        "longitude": 120.642982,
+        "bounds": {
+          "minLatitude": 24.429617,
+          "maxLatitude": 24.429617,
+          "minLongitude": 120.642982,
+          "maxLongitude": 120.642982
+        },
+        "topSchools": [
+          {
+            "id": "051413",
+            "name": "私立龍德家商",
+            "townshipName": "苑裡鎮",
+            "students": 113,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsmgth",
+        "geohash": "wsmgth",
+        "precision": 6,
+        "count": 1,
+        "latitude": 24.545699,
+        "longitude": 120.812248,
+        "bounds": {
+          "minLatitude": 24.545699,
+          "maxLatitude": 24.545699,
+          "minLongitude": 120.812248,
+          "maxLongitude": 120.812248
+        },
+        "topSchools": [
+          {
+            "id": "0032",
+            "name": "國立聯合大學",
+            "townshipName": "苗栗市",
+            "students": 7594,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsmgtw",
+        "geohash": "wsmgtw",
+        "precision": 6,
+        "count": 1,
+        "latitude": 24.556778,
+        "longitude": 120.833342,
+        "bounds": {
+          "minLatitude": 24.556778,
+          "maxLatitude": 24.556778,
+          "minLongitude": 120.833342,
+          "maxLongitude": 120.833342
+        },
+        "topSchools": [
+          {
+            "id": "050404",
+            "name": "國立苗栗農工",
+            "townshipName": "苗栗市",
+            "students": 1763,
+            "status": "正常"
+          }
+        ]
+      }
+    ],
+    "7": [
+      {
+        "id": "7-wsmfu5e",
+        "geohash": "wsmfu5e",
+        "precision": 7,
+        "count": 1,
+        "latitude": 24.40991,
+        "longitude": 120.7659,
+        "bounds": {
+          "minLatitude": 24.40991,
+          "maxLatitude": 24.40991,
+          "minLongitude": 120.7659,
+          "maxLongitude": 120.7659
+        },
+        "topSchools": [
+          {
+            "id": "054308",
+            "name": "縣立三義高中",
+            "townshipName": "三義鄉",
+            "students": 542,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsmfym8",
+        "geohash": "wsmfym8",
+        "precision": 7,
+        "count": 1,
+        "latitude": 24.420153,
+        "longitude": 120.861085,
+        "bounds": {
+          "minLatitude": 24.420153,
+          "maxLatitude": 24.420153,
+          "minLongitude": 120.861085,
+          "maxLongitude": 120.861085
+        },
+        "topSchools": [
+          {
+            "id": "050401",
+            "name": "國立大湖農工",
+            "townshipName": "大湖鄉",
+            "students": 490,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsmuwb8",
+        "geohash": "wsmuwb8",
+        "precision": 7,
+        "count": 1,
+        "latitude": 24.700688,
+        "longitude": 120.882951,
+        "bounds": {
+          "minLatitude": 24.700688,
+          "maxLatitude": 24.700688,
+          "minLongitude": 120.882951,
+          "maxLongitude": 120.882951
+        },
+        "topSchools": [
+          {
+            "id": "051302",
+            "name": "私立君毅高中",
+            "townshipName": "竹南鎮",
+            "students": 2113,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsmuqtd",
+        "geohash": "wsmuqtd",
+        "precision": 7,
+        "count": 1,
+        "latitude": 24.684185,
+        "longitude": 120.87475,
+        "bounds": {
+          "minLatitude": 24.684185,
+          "maxLatitude": 24.684185,
+          "minLongitude": 120.87475,
+          "maxLongitude": 120.87475
+        },
+        "topSchools": [
+          {
+            "id": "050310",
+            "name": "國立竹南高中",
+            "townshipName": "竹南鎮",
+            "students": 1508,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsmuqw2",
+        "geohash": "wsmuqw2",
+        "precision": 7,
+        "count": 1,
+        "latitude": 24.688467,
+        "longitude": 120.872493,
+        "bounds": {
+          "minLatitude": 24.688467,
+          "maxLatitude": 24.688467,
+          "minLongitude": 120.872493,
+          "maxLongitude": 120.872493
+        },
+        "topSchools": [
+          {
+            "id": "051408",
+            "name": "私立中興商工",
+            "townshipName": "竹南鎮",
+            "students": 607,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsmfm9g",
+        "geohash": "wsmfm9g",
+        "precision": 7,
+        "count": 1,
+        "latitude": 24.312704,
+        "longitude": 120.832199,
+        "bounds": {
+          "minLatitude": 24.312704,
+          "maxLatitude": 24.312704,
+          "minLongitude": 120.832199,
+          "maxLongitude": 120.832199
+        },
+        "topSchools": [
+          {
+            "id": "050314",
+            "name": "國立卓蘭高中",
+            "townshipName": "卓蘭鎮",
+            "students": 762,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsmfq29",
+        "geohash": "wsmfq29",
+        "precision": 7,
+        "count": 1,
+        "latitude": 24.30507,
+        "longitude": 120.862623,
+        "bounds": {
+          "minLatitude": 24.30507,
+          "maxLatitude": 24.30507,
+          "minLongitude": 120.862623,
+          "maxLongitude": 120.862623
+        },
+        "topSchools": [
+          {
+            "id": "051307",
+            "name": "私立全人實驗高中",
+            "townshipName": "卓蘭鎮",
+            "students": 51,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsmg1de",
+        "geohash": "wsmg1de",
+        "precision": 7,
+        "count": 1,
+        "latitude": 24.448516,
+        "longitude": 120.656607,
+        "bounds": {
+          "minLatitude": 24.448516,
+          "maxLatitude": 24.448516,
+          "minLongitude": 120.656607,
+          "maxLongitude": 120.656607
+        },
+        "topSchools": [
+          {
+            "id": "050315",
+            "name": "國立苑裡高中",
+            "townshipName": "苑裡鎮",
+            "students": 1108,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsmfcr3",
+        "geohash": "wsmfcr3",
+        "precision": 7,
+        "count": 1,
+        "latitude": 24.429617,
+        "longitude": 120.642982,
+        "bounds": {
+          "minLatitude": 24.429617,
+          "maxLatitude": 24.429617,
+          "minLongitude": 120.642982,
+          "maxLongitude": 120.642982
+        },
+        "topSchools": [
+          {
+            "id": "051413",
+            "name": "私立龍德家商",
+            "townshipName": "苑裡鎮",
+            "students": 113,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsmgthk",
+        "geohash": "wsmgthk",
+        "precision": 7,
+        "count": 1,
+        "latitude": 24.545699,
+        "longitude": 120.812248,
+        "bounds": {
+          "minLatitude": 24.545699,
+          "maxLatitude": 24.545699,
+          "minLongitude": 120.812248,
+          "maxLongitude": 120.812248
+        },
+        "topSchools": [
+          {
+            "id": "0032",
+            "name": "國立聯合大學",
+            "townshipName": "苗栗市",
+            "students": 7594,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsmgtwk",
+        "geohash": "wsmgtwk",
+        "precision": 7,
+        "count": 1,
+        "latitude": 24.556778,
+        "longitude": 120.833342,
+        "bounds": {
+          "minLatitude": 24.556778,
+          "maxLatitude": 24.556778,
+          "minLongitude": 120.833342,
+          "maxLongitude": 120.833342
+        },
+        "topSchools": [
+          {
+            "id": "050404",
+            "name": "國立苗栗農工",
+            "townshipName": "苗栗市",
+            "students": 1763,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsmgtnz",
+        "geohash": "wsmgtnz",
+        "precision": 7,
+        "count": 1,
+        "latitude": 24.559387,
+        "longitude": 120.816364,
+        "bounds": {
+          "minLatitude": 24.559387,
+          "maxLatitude": 24.559387,
+          "minLongitude": 120.816364,
+          "maxLongitude": 120.816364
+        },
+        "topSchools": [
+          {
+            "id": "050303",
+            "name": "國立苗栗高中",
+            "townshipName": "苗栗市",
+            "students": 1359,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsmgtny",
+        "geohash": "wsmgtny",
+        "precision": 7,
+        "count": 1,
+        "latitude": 24.559372,
+        "longitude": 120.814633,
+        "bounds": {
+          "minLatitude": 24.559372,
+          "maxLatitude": 24.559372,
+          "minLongitude": 120.814633,
+          "maxLongitude": 120.814633
+        },
+        "topSchools": [
+          {
+            "id": "051306",
+            "name": "私立建臺高中",
+            "townshipName": "苗栗市",
+            "students": 976,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsmgtnw",
+        "geohash": "wsmgtnw",
+        "precision": 7,
+        "count": 1,
+        "latitude": 24.55742,
+        "longitude": 120.815135,
+        "bounds": {
+          "minLatitude": 24.55742,
+          "maxLatitude": 24.55742,
+          "minLongitude": 120.815135,
+          "maxLongitude": 120.815135
+        },
+        "topSchools": [
+          {
+            "id": "050407",
+            "name": "國立苗栗高商",
+            "townshipName": "苗栗市",
+            "students": 957,
+            "status": "正常"
+          }
+        ]
+      }
+    ]
+  }
+}
