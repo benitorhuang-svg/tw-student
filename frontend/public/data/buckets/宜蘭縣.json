@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-07T15:15:16.029Z",
+  "generatedAt": "2026-03-07T17:48:54.066Z",
   "county": {
     "id": "宜蘭縣",
     "name": "宜蘭縣",
@@ -449,6 +449,50 @@
         ]
       },
       {
+        "id": "5-wsqs3",
+        "geohash": "wsqs3",
+        "precision": 5,
+        "count": 4,
+        "latitude": 24.676458,
+        "longitude": 121.708011,
+        "bounds": {
+          "minLatitude": 24.66501,
+          "maxLatitude": 24.692983,
+          "minLongitude": 121.688528,
+          "maxLongitude": 121.727399
+        },
+        "topSchools": [
+          {
+            "id": "1291",
+            "name": "聖母醫護管理專科學校",
+            "townshipName": "三星鄉",
+            "students": 1416,
+            "status": "正常"
+          },
+          {
+            "id": "024665",
+            "name": "縣立大隱國小",
+            "townshipName": "三星鄉",
+            "students": 174,
+            "status": "正常"
+          },
+          {
+            "id": "024662",
+            "name": "縣立大洲國小",
+            "townshipName": "三星鄉",
+            "students": 137,
+            "status": "正常"
+          },
+          {
+            "id": "024664",
+            "name": "縣立萬富國小",
+            "townshipName": "三星鄉",
+            "students": 70,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "5-wsqs7",
         "geohash": "wsqs7",
         "precision": 5,
@@ -532,43 +576,6 @@
             "name": "縣立東興國小",
             "townshipName": "冬山鄉",
             "students": 71,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "5-wsqs3",
-        "geohash": "wsqs3",
-        "precision": 5,
-        "count": 3,
-        "latitude": 24.680274,
-        "longitude": 121.709683,
-        "bounds": {
-          "minLatitude": 24.667974,
-          "maxLatitude": 24.692983,
-          "minLongitude": 121.688528,
-          "maxLongitude": 121.727399
-        },
-        "topSchools": [
-          {
-            "id": "024665",
-            "name": "縣立大隱國小",
-            "townshipName": "三星鄉",
-            "students": 174,
-            "status": "正常"
-          },
-          {
-            "id": "024662",
-            "name": "縣立大洲國小",
-            "townshipName": "三星鄉",
-            "students": 137,
-            "status": "正常"
-          },
-          {
-            "id": "024664",
-            "name": "縣立萬富國小",
-            "townshipName": "三星鄉",
-            "students": 70,
             "status": "正常"
           }
         ]
@@ -1104,6 +1111,29 @@
             "status": "正常"
           }
         ]
+      },
+      {
+        "id": "5-wsqt1",
+        "geohash": "wsqt1",
+        "precision": 5,
+        "count": 1,
+        "latitude": 24.81568,
+        "longitude": 121.723778,
+        "bounds": {
+          "minLatitude": 24.81568,
+          "maxLatitude": 24.81568,
+          "minLongitude": 121.723778,
+          "maxLongitude": 121.723778
+        },
+        "topSchools": [
+          {
+            "id": "1050",
+            "name": "佛光大學",
+            "townshipName": "礁溪鄉",
+            "students": 2525,
+            "status": "正常"
+          }
+        ]
       }
     ],
     "6": [
@@ -1627,6 +1657,29 @@
             "name": "縣立岳明國中(小)",
             "townshipName": "蘇澳鎮",
             "students": 64,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsqs36",
+        "geohash": "wsqs36",
+        "precision": 6,
+        "count": 1,
+        "latitude": 24.66501,
+        "longitude": 121.702992,
+        "bounds": {
+          "minLatitude": 24.66501,
+          "maxLatitude": 24.66501,
+          "minLongitude": 121.702992,
+          "maxLongitude": 121.702992
+        },
+        "topSchools": [
+          {
+            "id": "1291",
+            "name": "聖母醫護管理專科學校",
+            "townshipName": "三星鄉",
+            "students": 1416,
             "status": "正常"
           }
         ]
@@ -3104,6 +3157,29 @@
         ]
       },
       {
+        "id": "6-wsqt1v",
+        "geohash": "wsqt1v",
+        "precision": 6,
+        "count": 1,
+        "latitude": 24.81568,
+        "longitude": 121.723778,
+        "bounds": {
+          "minLatitude": 24.81568,
+          "maxLatitude": 24.81568,
+          "minLongitude": 121.723778,
+          "maxLongitude": 121.723778
+        },
+        "topSchools": [
+          {
+            "id": "1050",
+            "name": "佛光大學",
+            "townshipName": "礁溪鄉",
+            "students": 2525,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "6-wsqt4y",
         "geohash": "wsqt4y",
         "precision": 6,
@@ -3513,6 +3589,29 @@
             "name": "縣立岳明國中(小)",
             "townshipName": "蘇澳鎮",
             "students": 64,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsqs36j",
+        "geohash": "wsqs36j",
+        "precision": 7,
+        "count": 1,
+        "latitude": 24.66501,
+        "longitude": 121.702992,
+        "bounds": {
+          "minLatitude": 24.66501,
+          "maxLatitude": 24.66501,
+          "minLongitude": 121.702992,
+          "maxLongitude": 121.702992
+        },
+        "topSchools": [
+          {
+            "id": "1291",
+            "name": "聖母醫護管理專科學校",
+            "townshipName": "三星鄉",
+            "students": 1416,
             "status": "正常"
           }
         ]
@@ -5353,6 +5452,29 @@
             "name": "縣立大里國小",
             "townshipName": "頭城鎮",
             "students": 63,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsqt1vs",
+        "geohash": "wsqt1vs",
+        "precision": 7,
+        "count": 1,
+        "latitude": 24.81568,
+        "longitude": 121.723778,
+        "bounds": {
+          "minLatitude": 24.81568,
+          "maxLatitude": 24.81568,
+          "minLongitude": 121.723778,
+          "maxLongitude": 121.723778
+        },
+        "topSchools": [
+          {
+            "id": "1050",
+            "name": "佛光大學",
+            "townshipName": "礁溪鄉",
+            "students": 2525,
             "status": "正常"
           }
         ]

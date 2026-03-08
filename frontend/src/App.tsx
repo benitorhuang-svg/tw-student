@@ -1,91 +1,28 @@
-import { lazy, Suspense, useDeferredValue, useEffect, useRef, useState, useTransition, type ChangeEvent } from 'react'
-
+import { useDeferredValue, useState, useTransition } from 'react'
 
 import './App.css'
 
-import FilterBar from './components/FilterBar'
-import InsightPanel from './components/InsightPanel'
-import OfflineMetricsPanel from './components/OfflineMetricsPanel'
-import ScopePanel from './components/ScopePanel'
-import TaiwanExplorerMap, { type SchoolMapPoint } from './components/TaiwanExplorerMap'
-
-const ComparisonPanel = lazy(() => import('./components/ComparisonPanel'))
-const AnomalyPanel = lazy(() => import('./components/AnomalyPanel'))
-const SchoolDetailPanel = lazy(() => import('./components/SchoolDetailPanel'))
-import {
-  ACADEMIC_YEARS,
-  EDUCATION_LEVELS,
-  MANAGEMENT_TYPES,
-  REGION_GROUPS,
-  prefetchCountyResources,
-  type AcademicYear,
-  type EducationLevelFilter,
-  type ManagementTypeFilter,
-  type RegionGroupFilter,
-  type SchoolLevel,
-  type SchoolManagementType,
-} from './data/educationData'
-import {
-  formatFileSize,
-  getCountyComparisonSummaries,
-  getCountyNotesFromSummary,
-  getCountyRankingRows,
-  getCountyScopeSummaryFromSummary,
-  getCountySummaries,
-  getNationalEducationDistribution,
-  getNationSummary,
-  getSchoolInsights,
-  getTownshipNotesFromSummary,
-  getTownshipScopeSummaryFromSummary,
-  getTownshipSummaries,
-} from './lib/analytics'
+import AtlasFooter from './components/AtlasFooter'
+import AtlasHeader from './components/AtlasHeader'
+import AtlasSidebar from './components/AtlasSidebar'
+import type { AtlasTabItem } from './components/AtlasTabs'
+import TaiwanExplorerMap from './components/TaiwanExplorerMap'
+import { type AcademicYear, type EducationLevelFilter, type ManagementTypeFilter, type RegionGroupFilter } from './data/educationData'
+import { createSavedComparisonScenario, readStoredScenarios } from './hooks/atlasHelpers'
 import type { InvestigationFilter, SavedComparisonScenario } from './hooks/types'
-import {
-  createSavedComparisonScenario,
-  downloadCsvFile,
-  downloadJsonFile,
-  readStoredScenarios,
-  readStoredScenariosFromText,
-  writeStoredScenarios,
-} from './hooks/atlasHelpers'
-import { buildInvestigationItems, classifyInvestigation } from './hooks/buildInvestigationItems'
-import { useEducationData } from './hooks/useEducationData'
-import { useOnlineStatus } from './hooks/useOnlineStatus'
+import { useAtlasDerivedState } from './hooks/useAtlasDerivedState'
 import { useAtlasLoadObservation } from './hooks/useAtlasLoadObservation'
+import { useAtlasScenarioActions } from './hooks/useAtlasScenarioActions'
+import { useAtlasTopPrefetch } from './hooks/useAtlasTopPrefetch'
+import { readInitialQueryState, useAtlasTabState } from './hooks/useAtlasQueryState'
+import { useAtlasUrlSync } from './hooks/useAtlasUrlSync'
+import { useEducationData } from './hooks/useEducationData'
 import { useFeedbackMessage } from './hooks/useFeedbackMessage'
+import { useOnlineStatus } from './hooks/useOnlineStatus'
 import { useYearPlayback } from './hooks/useYearPlayback'
 
-const DEFAULT_YEAR = ACADEMIC_YEARS.at(-1) ?? 113
 const COMPARISON_FAVORITES_STORAGE_KEY = 'tw-atlas-comparison-favorites'
 const COMPARISON_RECENTS_STORAGE_KEY = 'tw-atlas-comparison-recents'
-
-type AtlasTab = 'overview' | 'regional' | 'schools'
-
-function readInitialQueryState() {
-  const params = new URLSearchParams(window.location.search)
-  const year = Number(params.get('year'))
-  const educationLevel = params.get('level')
-  const managementType = params.get('management')
-  const region = params.get('region')
-  const compare = params.get('compare')
-
-  return {
-    activeYear: ACADEMIC_YEARS.includes(year as AcademicYear) ? (year as AcademicYear) : DEFAULT_YEAR,
-    educationLevel: EDUCATION_LEVELS.includes(educationLevel as EducationLevelFilter)
-      ? (educationLevel as EducationLevelFilter)
-      : '全部',
-    managementType: MANAGEMENT_TYPES.includes(managementType as ManagementTypeFilter)
-      ? (managementType as ManagementTypeFilter)
-      : '全部',
-    region: REGION_GROUPS.includes(region as RegionGroupFilter) ? (region as RegionGroupFilter) : '全部',
-    searchText: params.get('search') ?? '',
-    selectedCountyId: params.get('county'),
-    selectedTownshipId: params.get('township'),
-    comparisonCountyIds: compare ? compare.split(',').map((v) => v.trim()).filter(Boolean) : [],
-    comparisonScenarioName: params.get('scenario') ?? '',
-    tab: (params.get('tab') as AtlasTab) || 'overview',
-  }
-}
 
 function App() {
   const initialQueryState = readInitialQueryState()
@@ -121,16 +58,8 @@ function App() {
   const [investigationFilter, setInvestigationFilter] = useState<InvestigationFilter>('全部')
 
   // ── Tab state with scroll memory ──
-  const [activeTab, setActiveTabRaw] = useState<AtlasTab>(initialQueryState.tab)
-  const sidebarRef = useRef<HTMLElement>(null)
-  const tabScrollMemory = useRef<Record<string, number>>({})
-  const setActiveTab = (tab: AtlasTab) => {
-    if (sidebarRef.current) tabScrollMemory.current[activeTab] = sidebarRef.current.scrollTop
-    setActiveTabRaw(tab)
-    requestAnimationFrame(() => {
-      if (sidebarRef.current) sidebarRef.current.scrollTop = tabScrollMemory.current[tab] ?? 0
-    })
-  }
+  const { activeTab, setActiveTab, sidebarRef } = useAtlasTabState(initialQueryState.tab)
+  const [mapResetToken, setMapResetToken] = useState(0)
 
   // ── Data hooks ──
   const {
@@ -144,61 +73,93 @@ function App() {
     clearCountyDetailError,
     prefetchCounty,
     prefetchAllCounties,
+    refreshData,
+    isRefreshingData,
+    refreshStatus,
   } = useEducationData(selectedCountyId)
 
   const [isYearPlaybackActive, setIsYearPlaybackActive] = useYearPlayback(summaryDataset, setActiveYear, startTransition)
 
-  // ── URL sync effect ──
-  useEffect(() => {
-    if (!summaryDataset) return
+  useAtlasUrlSync({
+    summaryDataset,
+    activeTab,
+    activeYear,
+    educationLevel,
+    managementType,
+    region,
+    deferredSearchText,
+    comparisonCountyIds,
+    comparisonScenarioName,
+    selectedCountyId,
+    selectedTownshipId,
+  })
 
-    const params = new URLSearchParams()
-    params.set('year', String(summaryDataset.years.includes(activeYear) ? activeYear : summaryDataset.years.at(-1) ?? activeYear))
+  useAtlasTopPrefetch({
+    summaryDataset,
+    selectedCountyId,
+    activeYear,
+    educationLevel,
+    managementType,
+    region,
+    deferredSearchText,
+  })
 
-    if (educationLevel !== '全部') params.set('level', educationLevel)
-    if (managementType !== '全部') params.set('management', managementType)
-    if (region !== '全部') params.set('region', region)
-    if (deferredSearchText.trim()) params.set('search', deferredSearchText.trim())
+  const derived = useAtlasDerivedState({
+    summaryDataset,
+    activeYear,
+    educationLevel,
+    managementType,
+    region,
+    deferredSearchText,
+    selectedCountyId,
+    selectedTownshipId,
+    selectedSchoolId,
+    comparisonCountyIds,
+    comparisonScenarioName,
+    countyDetailCache,
+    countyBucketCache,
+    townshipBoundaryCache,
+    countyDetailError,
+    loadObservation,
+    investigationFilter,
+    selectedInvestigationId,
+  })
 
-    const cleanedComparisonIds = comparisonCountyIds.filter((cid) => summaryDataset.counties.some((c) => c.id === cid))
-    if (cleanedComparisonIds.length > 0) params.set('compare', cleanedComparisonIds.join(','))
-    if (comparisonScenarioName.trim()) params.set('scenario', comparisonScenarioName.trim())
-
-    const countyIdForUrl = summaryDataset.counties.some((c) => c.id === selectedCountyId) ? selectedCountyId : null
-    if (countyIdForUrl) params.set('county', countyIdForUrl)
-
-    const townshipIdForUrl = countyIdForUrl
-      ? summaryDataset.counties.find((c) => c.id === countyIdForUrl)?.towns.some((t) => t.id === selectedTownshipId) ? selectedTownshipId : null
-      : null
-    if (townshipIdForUrl) params.set('township', townshipIdForUrl)
-
-    if (activeTab !== 'overview') params.set('tab', activeTab)
-
-    const nextSearch = params.toString()
-    const nextUrl = nextSearch ? `${window.location.pathname}?${nextSearch}` : window.location.pathname
-    window.history.replaceState({}, '', nextUrl)
-  }, [activeTab, activeYear, comparisonCountyIds, comparisonScenarioName, deferredSearchText, educationLevel, managementType, region, selectedCountyId, selectedTownshipId, summaryDataset])
-
-  // ── Top-3 prefetch ──
-  useEffect(() => {
-    if (!summaryDataset || selectedCountyId) return
-
-    const prefetchFilters = {
-      year: summaryDataset.years.includes(activeYear) ? activeYear : (summaryDataset.years.at(-1) ?? DEFAULT_YEAR),
-      educationLevel,
-      managementType,
-      region,
-      searchText: deferredSearchText,
-    }
-
-    const topCounties = getCountyRankingRows(getCountySummaries(summaryDataset.counties, prefetchFilters)).slice(0, 3)
-    topCounties
-      .map((row) => summaryDataset.counties.find((c) => c.id === row.id))
-      .filter((county): county is NonNullable<typeof county> => Boolean(county))
-      .forEach((county) => {
-        void prefetchCountyResources(county, { includeTownshipSlice: true, includeBucketSlice: true })
-      })
-  }, [activeYear, deferredSearchText, educationLevel, managementType, region, selectedCountyId, summaryDataset])
+  const activeScenarioSnapshot = derived.activeScenarioSnapshot
+    ? createSavedComparisonScenario(derived.activeScenarioSnapshot)
+    : null
+  const scenarioActions = useAtlasScenarioActions({
+    summaryDataset,
+    activeYear,
+    educationLevel,
+    managementType,
+    region,
+    comparisonCountyIds,
+    comparisonScenarioName,
+    favoriteScenarios,
+    activeScenarioSnapshot: derived.activeScenarioSnapshot,
+    filteredAnomalies: derived.filteredAnomalies,
+    scopeHeadline: derived.scopeHeadline,
+    favoritesStorageKey: COMPARISON_FAVORITES_STORAGE_KEY,
+    recentsStorageKey: COMPARISON_RECENTS_STORAGE_KEY,
+    setFavoriteScenarios,
+    setRecentScenarios,
+    setComparisonCountyIds,
+    setComparisonScenarioName,
+    setActiveYear,
+    setEducationLevel,
+    setManagementType,
+    setRegion,
+    setSelectedCountyId,
+    setSelectedTownshipId,
+    setSelectedSchoolId,
+    setMapResetToken,
+    setActiveTab,
+    clearCountyDetailError,
+    startTransition,
+    copyFeedback,
+    scenarioFeedback,
+  })
 
   // ── Loading / error guards ──
   if (loadError) {
@@ -229,542 +190,132 @@ function App() {
     )
   }
 
-  // ── Computed derivations ──
-  const filters = {
-    year: summaryDataset.years.includes(activeYear) ? activeYear : (summaryDataset.years.at(-1) ?? DEFAULT_YEAR),
-    educationLevel,
-    managementType,
-    region,
-    searchText: deferredSearchText,
-  }
-
-  const selectedCountyFromDataset = summaryDataset.counties.find((c) => c.id === selectedCountyId) ?? null
-  const countySummaries = getCountySummaries(summaryDataset.counties, filters)
-  const countyRankingRows = getCountyRankingRows(countySummaries)
-  const activeCountyId = selectedCountyFromDataset && countySummaries.some((c) => c.id === selectedCountyId && !c.filteredOut)
-    ? selectedCountyId
-    : null
-  const activeTownshipBoundaries = activeCountyId ? townshipBoundaryCache[activeCountyId] ?? null : null
-  const activeCountyBuckets = activeCountyId ? countyBucketCache[activeCountyId] ?? null : null
-  const isTownshipBoundaryLoading = Boolean(activeCountyId && !activeTownshipBoundaries)
-  const selectedCounty = summaryDataset.counties.find((c) => c.id === activeCountyId) ?? null
-  const selectedCountyDetail = activeCountyId ? countyDetailCache[activeCountyId] ?? null : null
-  const isCountyDetailLoading = Boolean(activeCountyId && !selectedCountyDetail && !countyDetailError)
-  const selectedCountySummary = selectedCounty ? getCountyScopeSummaryFromSummary(selectedCounty, filters) : null
-  const townshipRows = selectedCounty ? getTownshipSummaries(selectedCounty, filters) : []
-  const activeTownshipId = selectedCounty && townshipRows.some((t) => t.id === selectedTownshipId) ? selectedTownshipId : null
-  const selectedTownshipSummary = selectedCounty && activeTownshipId
-    ? getTownshipScopeSummaryFromSummary(selectedCounty, activeTownshipId, filters)
-    : null
-  const schoolInsights = getSchoolInsights(selectedCountyDetail, filters, activeTownshipId)
-  const activeSchoolId = schoolInsights.some((s) => s.id === selectedSchoolId) ? selectedSchoolId : null
-  const selectedSchool = schoolInsights.find((s) => s.id === activeSchoolId) ?? schoolInsights.at(0) ?? null
-  const nationalSummary = getNationSummary(summaryDataset.counties, filters)
-  const educationDistribution = getNationalEducationDistribution(summaryDataset.counties, filters)
-  const currentScope = selectedTownshipSummary ?? selectedCountySummary ?? nationalSummary
-  const rankingRows = selectedCounty ? townshipRows : countyRankingRows
-
-  const scopeNotes = selectedTownshipSummary && selectedCounty && activeTownshipId
-    ? getTownshipNotesFromSummary(selectedCounty, activeTownshipId)
-    : selectedCounty ? getCountyNotesFromSummary(selectedCounty) : []
-
-  const scopePath = ['全台灣']
-  if (selectedCountySummary) scopePath.push(selectedCountySummary.label)
-  if (selectedTownshipSummary) scopePath.push(selectedTownshipSummary.label)
-
-  const validComparisonIds = comparisonCountyIds.filter((cid) => summaryDataset.counties.some((c) => c.id === cid))
-  const effectiveComparisonCountyIds = (validComparisonIds.length > 0 ? validComparisonIds : countyRankingRows.map((r) => r.id).slice(0, 4)).slice(0, 4)
-  const comparisonSummaries = getCountyComparisonSummaries(summaryDataset.counties, effectiveComparisonCountyIds, filters)
-  const comparisonCandidateIds = [...new Set([...effectiveComparisonCountyIds, ...countyRankingRows.slice(0, 8).map((r) => r.id)])]
-  const comparisonCandidates = comparisonCandidateIds
-    .map((cid) => {
-      const rankingRow = countyRankingRows.find((r) => r.id === cid)
-      const summaryRow = countySummaries.find((r) => r.id === cid)
-      return { id: cid, displayName: summaryRow?.name ?? rankingRow?.label ?? cid }
-    })
-    .filter((row) => row.displayName !== row.id || summaryDataset.counties.some((c) => c.id === row.id))
-
-  const anomalies = buildInvestigationItems({
-    summaryDataset,
-    countySummaries,
-    countyRankingRows,
-    selectedCounty,
-    selectedCountyDetail,
-    selectedTownshipId: activeTownshipId,
-    selectedTownshipSummary,
-    scopeNotes,
-    filters: { educationLevel, managementType },
-  })
-  const filteredAnomalies = anomalies.filter((item) => investigationFilter === '全部' || classifyInvestigation(item) === investigationFilter)
-  const activeInvestigation = filteredAnomalies.find((item) => item.id === selectedInvestigationId) ?? filteredAnomalies[0] ?? null
-
-  const activeScenarioSnapshot = comparisonCountyIds.length > 0
-    ? createSavedComparisonScenario({
-        name: comparisonScenarioName.trim() || `比較 ${comparisonCountyIds.length} 縣市`,
-        countyIds: comparisonCountyIds.filter((cid) => summaryDataset.counties.some((c) => c.id === cid)).slice(0, 4),
-        activeYear,
-        educationLevel,
-        managementType,
-        region,
-      })
-    : null
-  const favoriteScenarioIds = new Set(favoriteScenarios.map((s) => s.id))
-  const topRows = rankingRows.slice(0, 6)
-  const topCountyPrefetchIds = selectedCounty ? '' : countyRankingRows.slice(0, 3).map((r) => r.id).join('|')
-  const countyQuickPicks = countySummaries
-    .filter((c) => !c.filteredOut)
-    .sort((a, b) => a.name.localeCompare(b.name, 'zh-Hant'))
-
-  const scopeHeadline = selectedTownshipSummary
-    ? `${selectedTownshipSummary.label} 校務分布`
-    : selectedCountySummary ? `${selectedCountySummary.label} 教育版圖` : '全台教育工作台'
-  const scopeDescription = selectedTownshipSummary
-    ? '已切到鄉鎮層級，左側表格與異常面板同步聚焦同一範圍。'
-    : selectedCountySummary
-      ? '已聚焦指定縣市，右側地圖呈現鄉鎮界線與校點分群，左側同步顯示比較與學校明細。'
-      : '上方篩選列負責切片條件，左側分析工作台負責比較、排行與治理，右側專注地圖探索。'
-  const schoolPanelTitle = selectedTownshipSummary
-    ? `${selectedTownshipSummary.label} 學校清單`
-    : selectedCountySummary ? `${selectedCountySummary.label} 重點學校` : '縣市細節載入後顯示學校清單'
-  const generatedAtLabel = new Date(summaryDataset.generatedAt).toLocaleString('zh-TW')
-  const offlineReadySlices = loadObservation.loadedCountyDetails.length + loadObservation.loadedTownshipSlices.length
-  const offlineReadyWithBuckets = offlineReadySlices + loadObservation.loadedBucketSlices.length
-
-  const observedCounties = summaryDataset.counties
-    .filter((c) =>
-      loadObservation.loadedCountyDetails.includes(c.id) ||
-      loadObservation.loadedBucketSlices.includes(c.id) ||
-      loadObservation.loadedTownshipSlices.includes(c.id),
-    )
-    .map((c) => ({
-      id: c.id,
-      name: c.name,
-      detailBytes: loadObservation.resourceSizes[c.detailFile] ?? c.assetMetrics?.detailBytes ?? 0,
-      bucketBytes: loadObservation.resourceSizes[c.bucketFile] ?? c.assetMetrics?.bucketBytes ?? 0,
-      townshipBytes: loadObservation.resourceSizes[c.townshipFile] ?? c.assetMetrics?.townshipBytes ?? 0,
-      hasBucketSlice: loadObservation.loadedBucketSlices.includes(c.id),
-      hasTownshipSlice: loadObservation.loadedTownshipSlices.includes(c.id),
-    }))
-
-  const schoolRecordLookup = new Map(
-    (selectedCountyDetail?.towns ?? []).flatMap((township) => township.schools.map((school) => [school.id, school] as const)),
-  )
-  const schoolMapPoints: SchoolMapPoint[] = schoolInsights.reduce<SchoolMapPoint[]>((points, school) => {
-    const rawSchool = schoolRecordLookup.get(school.id)
-    if (!rawSchool) return points
-    const { latitude, longitude } = rawSchool.coordinates
-    if (!Number.isFinite(latitude) || !Number.isFinite(longitude)) return points
-    points.push({
-      id: school.id,
-      name: school.name,
-      townshipName: school.townshipName,
-      educationLevel: school.educationLevel as SchoolLevel,
-      managementType: school.managementType as SchoolManagementType,
-      status: school.status ?? '正常',
-      currentStudents: school.currentStudents,
-      delta: school.delta,
-      latitude,
-      longitude,
-      website: rawSchool.profileUrl ?? rawSchool.website,
-    })
-    return points
-  }, [])
-
-  // ── Handlers ──
-  const handleCountySelect = (countyId: string) => {
-    startTransition(() => {
-      setSelectedCountyId(countyId)
-      setSelectedTownshipId(null)
-      setSelectedSchoolId(null)
-      clearCountyDetailError()
-    })
-  }
-
-  const handleTownshipSelect = (townshipId: string) => {
-    startTransition(() => {
-      setSelectedTownshipId(townshipId)
-      setSelectedSchoolId(null)
-    })
-  }
-
-  const handleResetScope = () => {
-    startTransition(() => {
-      setSelectedCountyId(null)
-      setSelectedTownshipId(null)
-      setSelectedSchoolId(null)
-      clearCountyDetailError()
-    })
-  }
-
   const handlePrefetchCounty = (countyId: string | null) => {
-    if (!selectedCounty && countyId) prefetchCounty(countyId)
-  }
-
-  const pushRecentScenario = (countyIds: string[], scenarioName: string) => {
-    const scenarioSnapshot = createSavedComparisonScenario({
-      name: scenarioName.trim() || `比較 ${countyIds.length} 縣市`,
-      countyIds: countyIds.filter((cid) => summaryDataset.counties.some((c) => c.id === cid)).slice(0, 4),
-      activeYear,
-      educationLevel,
-      managementType,
-      region,
-    })
-    if (scenarioSnapshot.countyIds.length === 0) return
-    setRecentScenarios((current) => {
-      const next = [scenarioSnapshot, ...current.filter((s) => s.id !== scenarioSnapshot.id)].slice(0, 6)
-      writeStoredScenarios(COMPARISON_RECENTS_STORAGE_KEY, next)
-      return next
-    })
-  }
-
-  const toggleComparisonCounty = (countyId: string) => {
-    setComparisonCountyIds((current) => {
-      if (current.includes(countyId)) {
-        const next = current.filter((id) => id !== countyId)
-        pushRecentScenario(next, comparisonScenarioName)
-        return next.length > 0 ? next : current
-      }
-      const next = [countyId, ...current].slice(0, 4)
-      pushRecentScenario(next, comparisonScenarioName)
-      return next
-    })
-  }
-
-  const handleCopyComparisonLink = async () => {
-    try {
-      await navigator.clipboard.writeText(window.location.href)
-      copyFeedback.show('比較情境連結已複製')
-    } catch {
-      copyFeedback.show('無法直接複製，請手動複製網址')
+    if (!derived.selectedCounty && countyId) {
+      prefetchCounty(countyId)
     }
   }
 
-  const applySavedScenario = (scenario: SavedComparisonScenario) => {
-    pushRecentScenario(scenario.countyIds, scenario.name)
-    startTransition(() => {
-      setComparisonScenarioName(scenario.name)
-      setComparisonCountyIds(scenario.countyIds.filter((cid) => summaryDataset.counties.some((c) => c.id === cid)).slice(0, 4))
-      setActiveYear(summaryDataset.years.includes(scenario.activeYear) ? scenario.activeYear : (summaryDataset.years.at(-1) ?? DEFAULT_YEAR))
-      setEducationLevel(EDUCATION_LEVELS.includes(scenario.educationLevel) ? scenario.educationLevel : '全部')
-      setManagementType(MANAGEMENT_TYPES.includes(scenario.managementType) ? scenario.managementType : '全部')
-      setRegion(REGION_GROUPS.includes(scenario.region) ? scenario.region : '全部')
-      setSelectedCountyId(null)
-      setSelectedTownshipId(null)
-      setSelectedSchoolId(null)
-    })
-    scenarioFeedback.show(`已套用情境：${scenario.name}`)
-  }
-
-  const handleSaveFavoriteScenario = () => {
-    if (!activeScenarioSnapshot) {
-      scenarioFeedback.show('目前沒有可收藏的比較情境')
-      return
-    }
-    pushRecentScenario(activeScenarioSnapshot.countyIds, activeScenarioSnapshot.name)
-    setFavoriteScenarios((current) => {
-      const next = [activeScenarioSnapshot, ...current.filter((s) => s.id !== activeScenarioSnapshot.id)].slice(0, 8)
-      writeStoredScenarios(COMPARISON_FAVORITES_STORAGE_KEY, next)
-      return next
-    })
-    scenarioFeedback.show(`已收藏情境：${activeScenarioSnapshot.name}`)
-  }
-
-  const handleRemoveFavoriteScenario = (scenarioId: string) => {
-    setFavoriteScenarios((current) => {
-      const next = current.filter((s) => s.id !== scenarioId)
-      writeStoredScenarios(COMPARISON_FAVORITES_STORAGE_KEY, next)
-      return next
-    })
-  }
-
-  const handleRenameFavoriteScenario = (scenarioId: string) => {
-    const nextName = window.prompt('輸入新的情境名稱')?.trim()
-    if (!nextName) return
-    setFavoriteScenarios((current) => {
-      const next = current.map((s) =>
-        s.id !== scenarioId ? s : createSavedComparisonScenario({ name: nextName, countyIds: s.countyIds, activeYear: s.activeYear, educationLevel: s.educationLevel, managementType: s.managementType, region: s.region, pinned: s.pinned }),
-      )
-      writeStoredScenarios(COMPARISON_FAVORITES_STORAGE_KEY, next)
-      return next
-    })
-    scenarioFeedback.show(`已重新命名情境：${nextName}`)
-  }
-
-  const handleTogglePinScenario = (scenarioId: string) => {
-    setFavoriteScenarios((current) => {
-      const next = current
-        .map((s) => s.id === scenarioId ? { ...s, pinned: !s.pinned, updatedAt: new Date().toISOString() } : s)
-        .sort((a, b) => Number(Boolean(b.pinned)) - Number(Boolean(a.pinned)))
-      writeStoredScenarios(COMPARISON_FAVORITES_STORAGE_KEY, next)
-      return next
-    })
-  }
-
-  const handleExportFavoriteScenarios = () => {
-    if (favoriteScenarios.length === 0) {
-      scenarioFeedback.show('目前沒有可匯出的收藏情境')
-      return
-    }
-    downloadJsonFile('atlas-comparison-scenarios.json', favoriteScenarios)
-    scenarioFeedback.show('已匯出收藏情境 JSON')
-  }
-
-  const handleImportFavoriteScenarios = async (event: ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0]
-    event.target.value = ''
-    if (!file) return
-    try {
-      const text = await file.text()
-      const imported = readStoredScenariosFromText(text)
-      if (imported.length === 0) {
-        scenarioFeedback.show('匯入檔案沒有有效情境')
-        return
-      }
-      setFavoriteScenarios((current) => {
-        const scenarioMap = new Map<string, SavedComparisonScenario>()
-        ;[...imported, ...current].forEach((s) => { if (!scenarioMap.has(s.id)) scenarioMap.set(s.id, s) })
-        const next = [...scenarioMap.values()]
-          .sort((a, b) => Number(Boolean(b.pinned)) - Number(Boolean(a.pinned)))
-          .slice(0, 16)
-        writeStoredScenarios(COMPARISON_FAVORITES_STORAGE_KEY, next)
-        return next
-      })
-      scenarioFeedback.show(`已匯入 ${imported.length} 筆情境`)
-    } catch {
-      scenarioFeedback.show('無法解析情境 JSON')
-    }
-  }
-
-  const handleDownloadInvestigation = (item: { seriesRows: { year: number; students: number; schools?: number; flags?: string[] }[]; downloadName: string }) => {
-    const hasSchools = item.seriesRows.some((r) => r.schools != null)
-    const hasFlags = item.seriesRows.some((r) => (r.flags?.length ?? 0) > 0)
-    const header = ['year', 'students', ...(hasSchools ? ['schools'] : []), ...(hasFlags ? ['flags'] : [])]
-    const rows = item.seriesRows.map((r) => [
-      String(r.year),
-      String(r.students),
-      ...(hasSchools ? [String(r.schools ?? '')] : []),
-      ...(hasFlags ? [r.flags?.join('|') ?? ''] : []),
-    ])
-    downloadCsvFile(item.downloadName, [header, ...rows])
-  }
-
-  const handleDownloadAllInvestigations = () => {
-    if (filteredAnomalies.length === 0) {
-      scenarioFeedback.show('目前沒有可匯出的異常序列')
-      return
-    }
-    const rows = filteredAnomalies.flatMap((item) =>
-      item.seriesRows.map((r) => [
-        item.scope, item.title, classifyInvestigation(item), item.severity, item.meta,
-        String(r.year), String(r.students), String(r.schools ?? ''), r.flags?.join('|') ?? '',
-      ]),
-    )
-    downloadCsvFile(`${scopeHeadline}-異常序列整批匯出.csv`, [
-      ['scope', 'title', 'filter', 'severity', 'meta', 'year', 'students', 'schools', 'flags'],
-      ...rows,
-    ])
-  }
-
-  const TAB_ITEMS: { key: AtlasTab; label: string; badge?: string }[] = [
+  const tabItems: AtlasTabItem[] = [
     { key: 'overview', label: '概況總覽' },
-    { key: 'regional', label: '區域分析', badge: comparisonCountyIds.length > 0 ? `${effectiveComparisonCountyIds.length}` : undefined },
-    { key: 'schools', label: '學校工作台', badge: schoolInsights.length > 0 ? `${schoolInsights.length}` : undefined },
+    { key: 'regional', label: '區域分析', badge: comparisonCountyIds.length > 0 ? `${derived.effectiveComparisonCountyIds.length}` : undefined },
+    { key: 'schools', label: '學校工作台', badge: derived.schoolInsights.length > 0 ? `${derived.schoolInsights.length}` : undefined },
   ]
 
   return (
     <div className="app-shell" data-testid="atlas-app">
-      {/* ── Top bar: brand + tabs + status ── */}
-      <header className="atlas-topbar">
-        <div className="atlas-topbar__brand">
-          <p className="eyebrow">Taiwan Education Atlas</p>
-          <h1>全台就讀人數地圖分析系統</h1>
-        </div>
-
-        <nav className="atlas-tabs" role="tablist">
-          {TAB_ITEMS.map((tab) => (
-            <button
-              key={tab.key}
-              role="tab"
-              type="button"
-              aria-selected={activeTab === tab.key}
-              className={activeTab === tab.key ? 'atlas-tab atlas-tab--active' : 'atlas-tab'}
-              onClick={() => setActiveTab(tab.key)}
-            >
-              {tab.label}
-              {tab.badge ? <span className="atlas-tab__badge">{tab.badge}</span> : null}
-            </button>
-          ))}
-        </nav>
-
-        <span className={isOffline ? 'atlas-topbar__status atlas-topbar__status--offline' : 'atlas-topbar__status'}>
-          {isOffline ? `離線模式 · ${offlineReadyWithBuckets} 份切片` : `快取 ${offlineReadyWithBuckets} 切片 · ${formatFileSize(loadObservation.totalTransferredBytes)}`}
-        </span>
-      </header>
+      <AtlasHeader />
 
       <div className="atlas-workbench">
-        {/* ── Left sidebar ── */}
-        <aside className="atlas-sidebar" ref={sidebarRef}>
-          {/* Filters block */}
-          <div className="sidebar-block sidebar-block--filters">
-            <FilterBar
-              years={summaryDataset.years}
-              activeYear={activeYear}
-              educationLevel={educationLevel}
-              managementType={managementType}
-              region={region}
-              searchText={searchText}
-              isYearPlaybackActive={isYearPlaybackActive}
-              isPending={isPending}
-              countyQuickPicks={countyQuickPicks}
-              activeCountyId={activeCountyId}
-              onSetActiveYear={setActiveYear}
-              onSetEducationLevel={setEducationLevel}
-              onSetManagementType={setManagementType}
-              onSetRegion={setRegion}
-              onSetSearchText={setSearchText}
-              onSetIsYearPlaybackActive={setIsYearPlaybackActive}
-              onResetScope={handleResetScope}
-              onSelectCounty={handleCountySelect}
-              onPrefetchCounty={handlePrefetchCounty}
-              startTransition={startTransition}
-            />
-          </div>
+        <AtlasSidebar
+          sidebarRef={sidebarRef}
+          activeTab={activeTab}
+          tabItems={tabItems}
+          onSetActiveTab={setActiveTab}
+          summaryYears={[...summaryDataset.years]}
+          activeYear={activeYear}
+          educationLevel={educationLevel}
+          managementType={managementType}
+          region={region}
+          searchText={searchText}
+          isYearPlaybackActive={isYearPlaybackActive}
+          isPending={isPending}
+          isOffline={isOffline}
+          countyQuickPicks={derived.countyQuickPicks}
+          activeCountyId={derived.activeCountyId}
+          activeTownshipId={derived.activeTownshipId}
+          currentScope={derived.currentScope}
+          scopePath={derived.scopePath}
+          scopeHeadline={derived.scopeHeadline}
+          scopeDescription={derived.scopeDescription}
+          educationDistribution={derived.educationDistribution}
+          observedCounties={derived.observedCounties}
+          topCountyPrefetchIds={derived.topCountyPrefetchIds}
+          loadObservation={loadObservation}
+          offlineReadyWithBuckets={derived.offlineReadyWithBuckets}
+          totalCounties={derived.countySummaries.length}
+          selectedCountyName={derived.selectedCounty?.name ?? null}
+          topRows={derived.topRows}
+          comparisonScenarioName={comparisonScenarioName}
+          effectiveComparisonCountyIds={derived.effectiveComparisonCountyIds}
+          comparisonCandidates={derived.comparisonCandidates}
+          comparisonSummaries={derived.comparisonSummaries}
+          favoriteScenarios={favoriteScenarios}
+          recentScenarios={recentScenarios}
+          activeScenarioSnapshot={activeScenarioSnapshot}
+          favoriteScenarioIds={scenarioActions.favoriteScenarioIds}
+          copyFeedbackMessage={copyFeedback.message}
+          scenarioFeedbackMessage={scenarioFeedback.message}
+          filteredAnomalies={derived.filteredAnomalies}
+          activeInvestigation={derived.activeInvestigation}
+          selectedInvestigationId={selectedInvestigationId}
+          investigationFilter={investigationFilter}
+          scopeNotes={derived.scopeNotes}
+          countyDetailError={countyDetailError}
+          isCountyDetailLoading={derived.isCountyDetailLoading}
+          schoolInsights={derived.schoolInsights}
+          selectedSchool={derived.selectedSchool}
+          schoolPanelTitle={derived.schoolPanelTitle}
+          selectedTownshipSummary={derived.selectedTownshipSummary}
+          selectedCountySummary={derived.selectedCountySummary}
+          onSetActiveYear={setActiveYear}
+          onSetEducationLevel={setEducationLevel}
+          onSetManagementType={setManagementType}
+          onSetRegion={setRegion}
+          onSetSearchText={setSearchText}
+          onSetIsYearPlaybackActive={setIsYearPlaybackActive}
+          onResetScope={scenarioActions.handleResetScope}
+          onSelectCounty={scenarioActions.handleCountySelect}
+          onSelectTownship={scenarioActions.handleTownshipSelect}
+          onPrefetchCounty={handlePrefetchCounty}
+          onPrefetchAll={prefetchAllCounties}
+          onChangeScenarioName={setComparisonScenarioName}
+          onToggleCounty={scenarioActions.toggleComparisonCounty}
+          onCopyLink={scenarioActions.handleCopyComparisonLink}
+          onSaveScenario={scenarioActions.handleSaveFavoriteScenario}
+          onExportScenarios={scenarioActions.handleExportFavoriteScenarios}
+          onImportScenarios={scenarioActions.handleImportFavoriteScenarios}
+          onApplyScenario={scenarioActions.applySavedScenario}
+          onTogglePinScenario={scenarioActions.handleTogglePinScenario}
+          onRenameScenario={scenarioActions.handleRenameFavoriteScenario}
+          onRemoveScenario={scenarioActions.handleRemoveFavoriteScenario}
+          onSelectInvestigation={setSelectedInvestigationId}
+          onSetFilter={setInvestigationFilter}
+          onDownloadInvestigation={scenarioActions.handleDownloadInvestigation}
+          onDownloadAll={scenarioActions.handleDownloadAllInvestigations}
+          onSelectSchool={setSelectedSchoolId}
+          startTransition={startTransition}
+        />
 
-          {/* ── Tab content in sidebar ── */}
-          {activeTab === 'overview' && (
-            <div className="atlas-tab-panel" data-tab="overview">
-              <ScopePanel
-                scopePath={scopePath}
-                scopeHeadline={scopeHeadline}
-                scopeDescription={scopeDescription}
-                currentScope={currentScope}
-                activeYear={activeYear}
-                isYearPlaybackActive={isYearPlaybackActive}
-                educationDistribution={educationDistribution}
-                observedCounties={observedCounties}
-                topCountyPrefetchIds={topCountyPrefetchIds}
-                loadObservation={loadObservation}
-                offlineReadyWithBuckets={offlineReadyWithBuckets}
-                onPrefetchAll={prefetchAllCounties}
-              />
-
-              <InsightPanel
-                title={selectedCounty ? `${selectedCounty.name} 鄉鎮排行` : '全台縣市排行'}
-                subtitle={selectedCounty ? '點擊鄉鎮即可同步切換' : '點擊縣市載入地方細節'}
-                rows={topRows}
-                activeRowId={activeTownshipId ?? activeCountyId}
-                onSelectRow={(rowId) => {
-                  if (selectedCounty) {
-                    handleTownshipSelect(rowId)
-                  } else {
-                    handleCountySelect(rowId)
-                  }
-                }}
-                onHoverRow={(rowId) => {
-                  if (!selectedCounty && rowId) handlePrefetchCounty(rowId)
-                }}
-                emptyMessage="目前條件沒有可顯示的排行資料。"
-              />
-
-              <OfflineMetricsPanel
-                loadObservation={loadObservation}
-                offlineReadySlices={offlineReadyWithBuckets}
-                totalCounties={countySummaries.length}
-                isOffline={isOffline}
-              />
-            </div>
-          )}
-
-          {activeTab === 'regional' && (
-            <div className="atlas-tab-panel" data-tab="regional">
-              <Suspense fallback={<div className="empty-state">載入區域分析…</div>}>
-                <ComparisonPanel
-                  comparisonScenarioName={comparisonScenarioName}
-                  onChangeScenarioName={setComparisonScenarioName}
-                  effectiveComparisonCountyIds={effectiveComparisonCountyIds}
-                  comparisonCandidates={comparisonCandidates}
-                  comparisonSummaries={comparisonSummaries}
-                  favoriteScenarios={favoriteScenarios}
-                  recentScenarios={recentScenarios}
-                  activeScenarioSnapshot={activeScenarioSnapshot}
-                  favoriteScenarioIds={favoriteScenarioIds}
-                  copyFeedback={copyFeedback.message}
-                  scenarioFeedback={scenarioFeedback.message}
-                  onToggleCounty={toggleComparisonCounty}
-                  onCopyLink={handleCopyComparisonLink}
-                  onSaveScenario={handleSaveFavoriteScenario}
-                  onExportScenarios={handleExportFavoriteScenarios}
-                  onImportScenarios={handleImportFavoriteScenarios}
-                  onApplyScenario={applySavedScenario}
-                  onTogglePinScenario={handleTogglePinScenario}
-                  onRenameScenario={handleRenameFavoriteScenario}
-                  onRemoveScenario={handleRemoveFavoriteScenario}
-                />
-
-                <AnomalyPanel
-                  filteredAnomalies={filteredAnomalies}
-                  activeInvestigation={activeInvestigation}
-                  selectedInvestigationId={selectedInvestigationId}
-                  investigationFilter={investigationFilter}
-                  scopeNotes={scopeNotes}
-                  scopeHeadline={scopeHeadline}
-                  onSelectInvestigation={setSelectedInvestigationId}
-                  onSetFilter={setInvestigationFilter}
-                  onDownloadInvestigation={handleDownloadInvestigation}
-                  onDownloadAll={handleDownloadAllInvestigations}
-                />
-              </Suspense>
-            </div>
-          )}
-
-          {activeTab === 'schools' && (
-            <div className="atlas-tab-panel" data-tab="schools">
-              <Suspense fallback={<div className="empty-state">載入學校工作台…</div>}>
-                <SchoolDetailPanel
-                  selectedCountyName={selectedCounty?.name ?? null}
-                  countyDetailError={countyDetailError}
-                  isCountyDetailLoading={isCountyDetailLoading}
-                  schoolInsights={schoolInsights}
-                  selectedSchool={selectedSchool}
-                  schoolPanelTitle={schoolPanelTitle}
-                  activeYear={activeYear}
-                  selectedTownshipSummary={selectedTownshipSummary}
-                  selectedCountySummary={selectedCountySummary}
-                  onSelectSchool={setSelectedSchoolId}
-                />
-              </Suspense>
-            </div>
-          )}
-        </aside>
-
-        {/* ── Right map ── */}
         <main className="atlas-map-column">
           <TaiwanExplorerMap
-            counties={countySummaries}
-            activeCountyId={activeCountyId}
-            activeTownshipId={activeTownshipId}
+            counties={derived.countySummaries}
+            activeCountyId={derived.activeCountyId}
+            activeTownshipId={derived.activeTownshipId}
             countyBoundaries={countyBoundaries}
-            townshipBoundaries={activeTownshipBoundaries}
-            townshipRows={townshipRows}
-            schoolPoints={schoolMapPoints}
-            countyBuckets={activeCountyBuckets}
-            selectedSchoolId={selectedSchool?.id ?? null}
-            isTownshipBoundaryLoading={isTownshipBoundaryLoading}
-            onSelectCounty={handleCountySelect}
-            onSelectTownship={handleTownshipSelect}
+            townshipBoundaries={derived.activeTownshipBoundaries}
+            townshipRows={derived.townshipRows}
+            schoolPoints={derived.schoolMapPoints}
+            countyBuckets={derived.activeCountyBuckets}
+            selectedSchoolId={derived.selectedSchool?.id ?? null}
+            isTownshipBoundaryLoading={derived.isTownshipBoundaryLoading}
+            activeTab={activeTab}
+            mapResetToken={mapResetToken}
+            onSelectCounty={scenarioActions.handleCountySelect}
+            onSelectTownship={scenarioActions.handleTownshipSelect}
             onSelectSchool={setSelectedSchoolId}
-            onResetScope={handleResetScope}
+            onResetScope={scenarioActions.handleResetScope}
             onHoverCounty={handlePrefetchCounty}
-            loadObservation={loadObservation}
-            observedCounties={observedCounties}
           />
         </main>
       </div>
 
-      <footer className="footer-note footer-note--official">
-        <span>資料來源: 教育部統計處 · 教育 GIS · 內政部國土測繪中心</span>
-        <span>{generatedAtLabel}</span>
-      </footer>
+      <AtlasFooter
+        generatedAtLabel={derived.generatedAtLabel}
+        isRefreshingData={isRefreshingData}
+        refreshStatus={refreshStatus}
+        onRefreshData={refreshData}
+      />
     </div>
   )
 }

@@ -92,7 +92,7 @@ function ScopePanel({
           <StatCard
             title="快取傳輸"
             value={formatFileSize(loadObservation.totalTransferredBytes)}
-            caption={`記憶體 ${loadObservation.memoryHits} / IndexedDB ${loadObservation.indexedDbHits} / 快取命中 ${loadObservation.cacheHits}`}
+            caption={`記憶體 ${loadObservation.memoryHits} / SQLite ${loadObservation.sqliteHits} / 快取命中 ${loadObservation.cacheHits}`}
             tone="coral"
           />
         </div>

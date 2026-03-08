@@ -6,6 +6,10 @@ import {
   loadEducationSummary,
   loadTownshipBoundaries,
   prefetchCountyResources,
+  refreshEducationSummary,
+  resetAtlasBoundaryCaches,
+  resetAtlasLoadObservations,
+  resetAtlasSqliteCache,
   type CountyBucketDataset,
   type CountyBoundaryCollection,
   type CountyDetailDataset,
@@ -21,6 +25,8 @@ export function useEducationData(selectedCountyId: string | null) {
   const [townshipBoundaryCache, setTownshipBoundaryCache] = useState<Record<string, TownshipBoundaryCollection>>({})
   const [loadError, setLoadError] = useState<string | null>(null)
   const [countyDetailError, setCountyDetailError] = useState<string | null>(null)
+  const [isRefreshingData, setIsRefreshingData] = useState(false)
+  const [refreshStatus, setRefreshStatus] = useState<string | null>(null)
 
   const selectedCountyForQuery = summaryDataset?.counties.find((county) => county.id === selectedCountyId) ?? null
 
@@ -73,6 +79,44 @@ export function useEducationData(selectedCountyId: string | null) {
 
   const clearCountyDetailError = () => setCountyDetailError(null)
 
+  const refreshData = async () => {
+    setIsRefreshingData(true)
+    setRefreshStatus(null)
+
+    try {
+      if ('caches' in window) {
+        const cacheKeys = await window.caches.keys()
+        await Promise.all(cacheKeys.map((cacheKey) => window.caches.delete(cacheKey)))
+      }
+
+      if ('serviceWorker' in navigator) {
+        const registrations = await navigator.serviceWorker.getRegistrations()
+        await Promise.all(registrations.map((registration) => registration.update()))
+      }
+
+      resetAtlasSqliteCache()
+      resetAtlasBoundaryCaches()
+      resetAtlasLoadObservations()
+      setCountyDetailCache({})
+      setCountyBucketCache({})
+      setTownshipBoundaryCache({})
+      setCountyDetailError(null)
+
+      const [nextSummary, nextBoundaries] = await Promise.all([
+        refreshEducationSummary(),
+        loadCountyBoundaries({ forceRefresh: true }),
+      ])
+
+      setSummaryDataset(nextSummary)
+      setCountyBoundaries(nextBoundaries)
+      setRefreshStatus('已重新抓取最新資料')
+    } catch (error) {
+      setRefreshStatus(error instanceof Error ? `資料更新失敗：${error.message}` : '資料更新失敗')
+    } finally {
+      setIsRefreshingData(false)
+    }
+  }
+
   return {
     summaryDataset,
     countyBoundaries,
@@ -84,5 +128,8 @@ export function useEducationData(selectedCountyId: string | null) {
     clearCountyDetailError,
     prefetchCounty,
     prefetchAllCounties,
+    refreshData,
+    isRefreshingData,
+    refreshStatus,
   }
 }

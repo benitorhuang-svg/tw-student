@@ -1,0 +1,693 @@
+{
+  "county": {
+    "id": "連江縣",
+    "name": "連江縣",
+    "shortLabel": "連江",
+    "region": "離島"
+  },
+  "dataNotes": [],
+  "towns": [
+    {
+      "id": "連江縣:北竿鄉",
+      "name": "北竿鄉",
+      "countyId": "連江縣",
+      "schools": [
+        {
+          "id": "724604",
+          "code": "724604",
+          "name": "縣立塘岐國小",
+          "countyId": "連江縣",
+          "townshipId": "連江縣:北竿鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "連江縣北竿鄉塘岐村56號",
+          "phone": "(0836)55420",
+          "website": "https://www.tcps.matsu.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/724604/C/連江縣/北竿鄉/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 119.996936,
+            "latitude": 26.223806
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 69
+            },
+            {
+              "year": 108,
+              "students": 65
+            },
+            {
+              "year": 109,
+              "students": 60
+            },
+            {
+              "year": 110,
+              "students": 62
+            },
+            {
+              "year": 111,
+              "students": 63
+            },
+            {
+              "year": 112,
+              "students": 75
+            },
+            {
+              "year": 113,
+              "students": 76
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "724503",
+          "code": "724503",
+          "name": "縣立中山國中",
+          "countyId": "連江縣",
+          "townshipId": "連江縣:北竿鄉",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "連江縣北竿鄉芹壁村84號",
+          "phone": "(0836)55223",
+          "website": "http://www.jshjh.matsu.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/724503/J/連江縣/北竿鄉/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 119.980528,
+            "latitude": 26.224032
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 40
+            },
+            {
+              "year": 108,
+              "students": 43
+            },
+            {
+              "year": 109,
+              "students": 44
+            },
+            {
+              "year": 110,
+              "students": 37
+            },
+            {
+              "year": 111,
+              "students": 34
+            },
+            {
+              "year": 112,
+              "students": 33
+            },
+            {
+              "year": 113,
+              "students": 33
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    },
+    {
+      "id": "連江縣:東引鄉",
+      "name": "東引鄉",
+      "countyId": "連江縣",
+      "schools": [
+        {
+          "id": "724608",
+          "code": "724608",
+          "name": "縣立東引國(中)小",
+          "countyId": "連江縣",
+          "townshipId": "連江縣:東引鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "連江縣東引鄉中柳村94號",
+          "phone": "(0836)77210",
+          "website": "https://www.tyjh.matsu.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/724608/C/連江縣/東引鄉/縣市立/極偏/無/",
+          "coordinates": {
+            "longitude": 120.488583,
+            "latitude": 26.368213
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 56
+            },
+            {
+              "year": 108,
+              "students": 49
+            },
+            {
+              "year": 109,
+              "students": 49
+            },
+            {
+              "year": 110,
+              "students": 53
+            },
+            {
+              "year": 111,
+              "students": 41
+            },
+            {
+              "year": 112,
+              "students": 49
+            },
+            {
+              "year": 113,
+              "students": 44
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "724505",
+          "code": "724505",
+          "name": "縣立東引國中(小)",
+          "countyId": "連江縣",
+          "townshipId": "連江縣:東引鄉",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "連江縣東引鄉中柳村94號",
+          "phone": "(0836)77210",
+          "website": "http://www.tyjh.matsu.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/724505/J/連江縣/東引鄉/縣市立/極偏/無/",
+          "coordinates": {
+            "longitude": 120.488583,
+            "latitude": 26.368213
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 21
+            },
+            {
+              "year": 108,
+              "students": 25
+            },
+            {
+              "year": 109,
+              "students": 29
+            },
+            {
+              "year": 110,
+              "students": 25
+            },
+            {
+              "year": 111,
+              "students": 24
+            },
+            {
+              "year": 112,
+              "students": 24
+            },
+            {
+              "year": 113,
+              "students": 31
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    },
+    {
+      "id": "連江縣:南竿鄉",
+      "name": "南竿鄉",
+      "countyId": "連江縣",
+      "schools": [
+        {
+          "id": "720301",
+          "code": "720301",
+          "name": "國立馬祖高中",
+          "countyId": "連江縣",
+          "townshipId": "連江縣:南竿鄉",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "連江縣南竿鄉介壽村374號",
+          "phone": "(0836)25668",
+          "website": "http://www.mssh.matsu.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/720301/H/連江縣/南竿鄉/國立/偏遠/無/",
+          "coordinates": {
+            "longitude": 119.949794,
+            "latitude": 26.154275
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 285
+            },
+            {
+              "year": 108,
+              "students": 257
+            },
+            {
+              "year": 109,
+              "students": 237
+            },
+            {
+              "year": 110,
+              "students": 232
+            },
+            {
+              "year": 111,
+              "students": 265
+            },
+            {
+              "year": 112,
+              "students": 269
+            },
+            {
+              "year": 113,
+              "students": 257
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "724601",
+          "code": "724601",
+          "name": "縣立介壽國(中)小",
+          "countyId": "連江縣",
+          "townshipId": "連江縣:南竿鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "連江縣南竿鄉介壽村13號",
+          "phone": "(0836)22192",
+          "website": "https://www.jsps.matsu.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/724601/C/連江縣/南竿鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 119.949917,
+            "latitude": 26.159737
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 193
+            },
+            {
+              "year": 108,
+              "students": 192
+            },
+            {
+              "year": 109,
+              "students": 209
+            },
+            {
+              "year": 110,
+              "students": 209
+            },
+            {
+              "year": 111,
+              "students": 211
+            },
+            {
+              "year": 112,
+              "students": 208
+            },
+            {
+              "year": 113,
+              "students": 207
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "724501",
+          "code": "724501",
+          "name": "縣立介壽國中(小)",
+          "countyId": "連江縣",
+          "townshipId": "連江縣:南竿鄉",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "連江縣南竿鄉介壽村13號",
+          "phone": "(0836)22192",
+          "website": "http://www.jsps.matsu.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/724501/J/連江縣/南竿鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 119.949917,
+            "latitude": 26.159737
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 109
+            },
+            {
+              "year": 108,
+              "students": 107
+            },
+            {
+              "year": 109,
+              "students": 102
+            },
+            {
+              "year": 110,
+              "students": 103
+            },
+            {
+              "year": 111,
+              "students": 110
+            },
+            {
+              "year": 112,
+              "students": 125
+            },
+            {
+              "year": 113,
+              "students": 126
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "724603",
+          "code": "724603",
+          "name": "縣立仁愛國小",
+          "countyId": "連江縣",
+          "townshipId": "連江縣:南竿鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "連江縣南竿鄉仁愛村95號",
+          "phone": "(0836)22146",
+          "website": "https://www.raps.matsu.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/724603/C/連江縣/南竿鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 119.925781,
+            "latitude": 26.140867
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 59
+            },
+            {
+              "year": 108,
+              "students": 62
+            },
+            {
+              "year": 109,
+              "students": 60
+            },
+            {
+              "year": 110,
+              "students": 65
+            },
+            {
+              "year": 111,
+              "students": 66
+            },
+            {
+              "year": 112,
+              "students": 74
+            },
+            {
+              "year": 113,
+              "students": 79
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "724602",
+          "code": "724602",
+          "name": "縣立中正國(中)小",
+          "countyId": "連江縣",
+          "townshipId": "連江縣:南竿鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "連江縣南竿鄉馬祖村4號",
+          "phone": "(0836)22196",
+          "website": "https://www.jjps.matsu.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/724602/C/連江縣/南竿鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 119.919551,
+            "latitude": 26.158672
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 82
+            },
+            {
+              "year": 108,
+              "students": 82
+            },
+            {
+              "year": 109,
+              "students": 94
+            },
+            {
+              "year": 110,
+              "students": 89
+            },
+            {
+              "year": 111,
+              "students": 81
+            },
+            {
+              "year": 112,
+              "students": 77
+            },
+            {
+              "year": 113,
+              "students": 70
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "724502",
+          "code": "724502",
+          "name": "縣立中正國中(小)",
+          "countyId": "連江縣",
+          "townshipId": "連江縣:南竿鄉",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "連江縣南竿鄉馬祖村4號",
+          "phone": "(0836)22196",
+          "website": "http://www.jjps.matsu.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/724502/J/連江縣/南竿鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 119.919551,
+            "latitude": 26.158672
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 37
+            },
+            {
+              "year": 108,
+              "students": 50
+            },
+            {
+              "year": 109,
+              "students": 63
+            },
+            {
+              "year": 110,
+              "students": 66
+            },
+            {
+              "year": 111,
+              "students": 68
+            },
+            {
+              "year": 112,
+              "students": 59
+            },
+            {
+              "year": 113,
+              "students": 57
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    },
+    {
+      "id": "連江縣:莒光鄉",
+      "name": "莒光鄉",
+      "countyId": "連江縣",
+      "schools": [
+        {
+          "id": "724504",
+          "code": "724504",
+          "name": "縣立敬恆國中(小)",
+          "countyId": "連江縣",
+          "townshipId": "連江縣:莒光鄉",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "連江縣莒光鄉青帆村19號",
+          "phone": "(0836)88179",
+          "website": "http://www.jhjh.matsu.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/724504/J/連江縣/莒光鄉/縣市立/極偏/無/",
+          "coordinates": {
+            "longitude": 119.934682,
+            "latitude": 25.970314
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 13
+            },
+            {
+              "year": 108,
+              "students": 16
+            },
+            {
+              "year": 109,
+              "students": 19
+            },
+            {
+              "year": 110,
+              "students": 16
+            },
+            {
+              "year": 111,
+              "students": 9
+            },
+            {
+              "year": 112,
+              "students": 11
+            },
+            {
+              "year": 113,
+              "students": 10
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "724607",
+          "code": "724607",
+          "name": "縣立東莒國小",
+          "countyId": "連江縣",
+          "townshipId": "連江縣:莒光鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "連江縣莒光鄉大坪村4號",
+          "phone": "(0836)89043",
+          "website": "https://www.djps.matsu.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/724607/C/連江縣/莒光鄉/縣市立/極偏/無/",
+          "coordinates": {
+            "longitude": 119.97367,
+            "latitude": 25.960048
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 11
+            },
+            {
+              "year": 108,
+              "students": 8
+            },
+            {
+              "year": 109,
+              "students": 8
+            },
+            {
+              "year": 110,
+              "students": 5
+            },
+            {
+              "year": 111,
+              "students": 8
+            },
+            {
+              "year": 112,
+              "students": 6
+            },
+            {
+              "year": 113,
+              "students": 6
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "724606",
+          "code": "724606",
+          "name": "縣立敬恆國(中)小",
+          "countyId": "連江縣",
+          "townshipId": "連江縣:莒光鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "連江縣莒光鄉青帆村18號",
+          "phone": "(0836)88179",
+          "website": "https://www.jhjh.matsu.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/724606/C/連江縣/莒光鄉/縣市立/極偏/無/",
+          "coordinates": {
+            "longitude": 119.934682,
+            "latitude": 25.970314
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 12
+            },
+            {
+              "year": 108,
+              "students": 12
+            },
+            {
+              "year": 109,
+              "students": 13
+            },
+            {
+              "year": 110,
+              "students": 9
+            },
+            {
+              "year": 111,
+              "students": 10
+            },
+            {
+              "year": 112,
+              "students": 7
+            },
+            {
+              "year": 113,
+              "students": 5
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    }
+  ]
+}

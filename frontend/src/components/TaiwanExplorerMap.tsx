@@ -1,55 +1,29 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useState } from 'react'
 
 import type { Feature, GeoJsonObject } from 'geojson'
 import L from 'leaflet'
-import { CircleMarker, GeoJSON, MapContainer, Marker, Popup, TileLayer, Tooltip, ZoomControl, useMap, useMapEvents } from 'react-leaflet'
+import { GeoJSON, MapContainer, TileLayer, ZoomControl } from 'react-leaflet'
 
 import type {
-  AtlasLoadObservationSnapshot,
   CountyBucketDataset,
   CountyBoundaryCollection,
   CountyBoundaryProperties,
-  SchoolBucketRecord,
   TownshipBoundaryCollection,
   TownshipBoundaryProperties,
 } from '../data/educationData'
-import {
-  formatDelta,
-  formatFileSize,
-  formatPercent,
-  formatStudents,
-  type CountySummary,
-  type RankingSummary,
-} from '../lib/analytics'
+import { type CountySummary, type RankingSummary } from '../lib/analytics'
+import MapBoundsController from './map/MapBoundsController'
+import MapFloatingHelp from './map/MapFloatingHelp'
+import VisibleSchoolMarkers from './map/VisibleSchoolMarkers'
+import type { SchoolMapPoint } from './map/types'
 
-type ObservedCountyResource = {
-  id: string
-  name: string
-  detailBytes: number
-  bucketBytes: number
-  townshipBytes: number
-  hasBucketSlice: boolean
-  hasTownshipSlice: boolean
-}
-
-export type SchoolMapPoint = {
-  id: string
-  name: string
-  townshipName: string
-  educationLevel: string
-  managementType: string
-  status: string
-  currentStudents: number
-  delta: number
-  latitude: number
-  longitude: number
-  website?: string
-}
+export type { SchoolMapPoint } from './map/types'
 
 type TaiwanExplorerMapProps = {
   counties: CountySummary[]
   activeCountyId: string | null
   activeTownshipId: string | null
+  activeTab: 'overview' | 'regional' | 'schools'
   countyBoundaries: CountyBoundaryCollection
   townshipBoundaries: TownshipBoundaryCollection | null
   townshipRows: RankingSummary[]
@@ -57,208 +31,19 @@ type TaiwanExplorerMapProps = {
   countyBuckets: CountyBucketDataset | null
   selectedSchoolId: string | null
   isTownshipBoundaryLoading: boolean
+  mapResetToken: number
   onSelectCounty: (countyId: string) => void
   onSelectTownship: (townshipId: string) => void
   onSelectSchool: (schoolId: string) => void
   onResetScope: () => void
   onHoverCounty?: (countyId: string | null) => void
-  loadObservation: AtlasLoadObservationSnapshot
-  observedCounties: ObservedCountyResource[]
-}
-
-function MapBoundsController({
-  countyBoundaries,
-  townshipBoundaries,
-  activeCountyId,
-}: {
-  countyBoundaries: CountyBoundaryCollection
-  townshipBoundaries: TownshipBoundaryCollection | null
-  activeCountyId: string | null
-}) {
-  const map = useMap()
-
-  useEffect(() => {
-    const boundsSource = townshipBoundaries
-      ? townshipBoundaries
-      : activeCountyId
-        ? {
-            type: 'FeatureCollection' as const,
-            features: countyBoundaries.features.filter((feature) => feature.properties.countyId === activeCountyId),
-          }
-        : countyBoundaries
-
-    const bounds = L.geoJSON(boundsSource as GeoJsonObject).getBounds()
-    if (bounds.isValid()) {
-      map.flyToBounds(bounds, {
-        padding: [22, 22],
-        duration: 0.7,
-        maxZoom: townshipBoundaries ? 11 : activeCountyId ? 9 : 8,
-      })
-    }
-  }, [activeCountyId, countyBoundaries, map, townshipBoundaries])
-
-  return null
-}
-
-function makeClusterIcon(count: number) {
-  return L.divIcon({
-    className: 'atlas-map-cluster-icon-wrap',
-    html: `<span class="atlas-map-cluster-icon">${count}</span>`,
-    iconSize: [40, 40],
-    iconAnchor: [20, 20],
-  })
-}
-
-function VisibleSchoolMarkers({
-  schoolPoints,
-  countyBuckets,
-  selectedSchoolId,
-  onSelectSchool,
-}: {
-  schoolPoints: SchoolMapPoint[]
-  countyBuckets: CountyBucketDataset | null
-  selectedSchoolId: string | null
-  onSelectSchool: (schoolId: string) => void
-}) {
-  const map = useMap()
-  const [zoom, setZoom] = useState(() => map.getZoom())
-  const [bounds, setBounds] = useState(() => map.getBounds())
-
-  useMapEvents({
-    moveend: () => {
-      setBounds(map.getBounds())
-    },
-    zoomend: () => {
-      setZoom(map.getZoom())
-      setBounds(map.getBounds())
-    },
-  })
-
-  const bucketIndex = useMemo(
-    () => ({
-      5: countyBuckets?.precisions['5'] ?? [],
-      6: countyBuckets?.precisions['6'] ?? [],
-      7: countyBuckets?.precisions['7'] ?? [],
-    }),
-    [countyBuckets],
-  )
-
-  const visiblePoints = useMemo(
-    () => schoolPoints.filter((point) => bounds.contains([point.latitude, point.longitude])),
-    [bounds, schoolPoints],
-  )
-
-  const clusteredPoints = useMemo(() => {
-    if (zoom >= 11) {
-      return visiblePoints.map((point) => ({
-        id: point.id,
-        count: 1,
-        latitude: point.latitude,
-        longitude: point.longitude,
-        schools: [point],
-        schoolNames: [point.name],
-        geohash: point.id,
-      }))
-    }
-
-    const precision = zoom >= 10 ? 7 : zoom >= 9 ? 6 : 5
-    const candidateBuckets = bucketIndex[precision as 5 | 6 | 7] as SchoolBucketRecord[]
-
-    return candidateBuckets
-      .filter((bucket) => {
-        return !(
-          bucket.bounds.maxLatitude < bounds.getSouth() ||
-          bucket.bounds.minLatitude > bounds.getNorth() ||
-          bucket.bounds.maxLongitude < bounds.getWest() ||
-          bucket.bounds.minLongitude > bounds.getEast()
-        )
-      })
-      .map((bucket) => ({
-        id: bucket.id,
-        count: bucket.count,
-        latitude: bucket.latitude,
-        longitude: bucket.longitude,
-        schools: [] as SchoolMapPoint[],
-        schoolNames: bucket.topSchools.map((school) => school.name),
-        geohash: bucket.geohash,
-      }))
-  }, [bounds, bucketIndex, visiblePoints, zoom])
-
-  return (
-    <>
-      {clusteredPoints.map((cluster) => {
-        if (cluster.count === 1 && cluster.schools.length === 1) {
-          const school = cluster.schools[0]
-          const isSelected = school.id === selectedSchoolId
-          return (
-            <CircleMarker
-              key={school.id}
-              center={[school.latitude, school.longitude]}
-              radius={isSelected ? 9 : Math.max(5, Math.min(10, Math.round(school.currentStudents / 150)))}
-              pathOptions={{
-                color: isSelected ? '#f8fafc' : '#0f172a',
-                weight: isSelected ? 2 : 1,
-                fillColor: school.status === '正常' ? '#38bdf8' : '#f59e0b',
-                fillOpacity: 0.9,
-              }}
-              eventHandlers={{
-                click: () => onSelectSchool(school.id),
-              }}
-            >
-              <Tooltip direction="top" offset={[0, -6]}>
-                {school.name}
-              </Tooltip>
-              <Popup>
-                <div className="atlas-map-popup">
-                  <strong>{school.name}</strong>
-                  <span>{school.townshipName}</span>
-                  <span>{school.educationLevel} / {school.managementType}</span>
-                  <span>{formatStudents(school.currentStudents)} 人</span>
-                  <span>{formatDelta(school.delta)} 人</span>
-                  {school.website ? (
-                    <a href={school.website} target="_blank" rel="noreferrer">
-                      查看學校資訊
-                    </a>
-                  ) : null}
-                </div>
-              </Popup>
-            </CircleMarker>
-          )
-        }
-
-        return (
-          <Marker
-            key={cluster.id}
-            position={[cluster.latitude, cluster.longitude]}
-            icon={makeClusterIcon(cluster.count)}
-            eventHandlers={{
-              click: () => {
-                map.flyTo([cluster.latitude, cluster.longitude], Math.min(map.getZoom() + 2, 12), {
-                  duration: 0.45,
-                })
-              },
-            }}
-          >
-            <Popup>
-              <div className="atlas-map-popup">
-                <strong>{cluster.count} 所學校分群</strong>
-                <span>目前視窗內已 lazy 載入</span>
-                <span>bucket: {cluster.geohash}</span>
-                <span>點擊分群可進一步放大檢視單校點位</span>
-                <span>{cluster.schoolNames.slice(0, 3).join('、')}</span>
-              </div>
-            </Popup>
-          </Marker>
-        )
-      })}
-    </>
-  )
 }
 
 function TaiwanExplorerMap({
   counties,
   activeCountyId,
   activeTownshipId,
+  activeTab,
   countyBoundaries,
   townshipBoundaries,
   townshipRows,
@@ -266,13 +51,12 @@ function TaiwanExplorerMap({
   countyBuckets,
   selectedSchoolId,
   isTownshipBoundaryLoading,
+  mapResetToken,
   onSelectCounty,
   onSelectTownship,
   onSelectSchool,
   onResetScope,
   onHoverCounty,
-  loadObservation,
-  observedCounties,
 }: TaiwanExplorerMapProps) {
   const [hoveredFeatureId, setHoveredFeatureId] = useState<string | null>(null)
   const activeCounty = counties.find((county) => county.id === activeCountyId) ?? null
@@ -293,62 +77,29 @@ function TaiwanExplorerMap({
     return 0.28
   }
 
-  const legendSteps = [
-    { id: 0, color: '#99f6e4', opacity: 0.28, label: '< 5 萬' },
-    { id: 1, color: '#5eead4', opacity: 0.46, label: '5 萬 – 10 萬' },
-    { id: 2, color: '#14b8a6', opacity: 0.64, label: '10 萬 – 15 萬' },
-    { id: 3, color: '#0f766e', opacity: 0.82, label: '≥ 15 萬' },
-  ]
-
   const hoveredSummary = activeCounty
     ? (hoveredFeatureId ? townshipLookup.get(hoveredFeatureId) ?? null : null)
     : hoveredFeatureId
       ? countyLookup.get(hoveredFeatureId) ?? null
       : null
+  const showSchoolMarkers = activeTab === 'schools' && Boolean(activeCounty) && schoolPoints.length > 0
+  const modeLabel = activeCounty ? (activeTab === 'schools' ? '校點模式' : '鄉鎮模式') : '縣市模式'
 
   return (
     <section className="panel atlas-map-panel">
-      <div className="panel-heading">
-        <div>
-          <p className="eyebrow">Leaflet 地圖</p>
-          <h3>{activeCounty ? `${activeCounty.name} 鄉鎮輪廓圖` : '全台縣市輪廓圖'}</h3>
-        </div>
-        <p className="panel-heading__meta">右側使用 Leaflet + CARTO 底圖，並在縣市模式下加入學校分群與視窗內 lazy marker 載入。</p>
-      </div>
-
       <div className="map-toolbar">
         <div className="map-toolbar__mode">
-          <span className="map-pill map-pill--active">{activeCounty ? '鄉鎮模式' : '縣市模式'}</span>
+          <span className="map-pill map-pill--active">{modeLabel}</span>
           {activeCounty ? <span className="map-pill">{activeCounty.name}</span> : <span className="map-pill">全台概覽</span>}
-          {activeCounty ? <span className="map-pill">校點 {schoolPoints.length.toLocaleString('zh-TW')} 筆</span> : null}
+          {activeCounty && activeTab === 'regional' ? <span className="map-pill">鄉鎮 {townshipRows.length.toLocaleString('zh-TW')} 筆</span> : null}
+          {activeCounty && activeTab === 'schools' ? <span className="map-pill">校點 {schoolPoints.length.toLocaleString('zh-TW')} 筆</span> : null}
+          {hoveredSummary ? <span className="map-pill">{'name' in hoveredSummary ? hoveredSummary.name : hoveredSummary.label}</span> : null}
         </div>
         {activeCounty ? (
           <button type="button" className="ghost-button" onClick={onResetScope}>
             回到全台縣市
           </button>
         ) : null}
-      </div>
-
-      <div className="map-hero-note">
-        {hoveredSummary ? (
-          <>
-            <strong>{'name' in hoveredSummary ? hoveredSummary.name : hoveredSummary.label}</strong>
-            <span>{formatStudents(hoveredSummary.students)} 人</span>
-            <span>
-              {formatDelta(hoveredSummary.delta)} 人 / {formatPercent(hoveredSummary.deltaRatio)}
-            </span>
-          </>
-        ) : activeCounty ? (
-          <>
-            <strong>{activeCounty.name}</strong>
-            <span>{isTownshipBoundaryLoading ? '正在載入該縣市鄉鎮界線切片。' : '拖曳地圖時只會載入視窗範圍內的學校點位；縮放較遠時會自動分群。'}</span>
-          </>
-        ) : (
-          <>
-            <strong>探索提示</strong>
-            <span>先以縣市模式掌握全台，再點入單一縣市檢視鄉鎮輪廓與學校群聚熱區。</span>
-          </>
-        )}
       </div>
 
       <div className="atlas-map-shell">
@@ -452,55 +203,13 @@ function TaiwanExplorerMap({
               />
             ) : null}
 
-            {activeCounty && schoolPoints.length > 0 ? (
+            {showSchoolMarkers ? (
               <VisibleSchoolMarkers countyBuckets={countyBuckets} schoolPoints={schoolPoints} selectedSchoolId={selectedSchoolId} onSelectSchool={onSelectSchool} />
             ) : null}
 
-            <MapBoundsController countyBoundaries={countyBoundaries} townshipBoundaries={townshipBoundaries} activeCountyId={activeCountyId} />
+            <MapBoundsController countyBoundaries={countyBoundaries} townshipBoundaries={townshipBoundaries} activeCountyId={activeCountyId} mapResetToken={mapResetToken} />
           </MapContainer>
-        </div>
-
-        <div className="atlas-map-sidebar">
-          <div className="atlas-map-sidecard">
-            <span className="map-stage__legend-title">地圖圖例</span>
-            {legendSteps.map((step) => (
-              <div key={step.id} className="map-stage__legend-row">
-                <span className="map-stage__legend-swatch" style={{ background: step.color, opacity: step.opacity }} />
-                <span>{step.label}</span>
-              </div>
-            ))}
-          </div>
-
-          <div className="atlas-map-sidecard atlas-map-sidecard--marker">
-            <span className="map-stage__legend-title">校點模式</span>
-            <span>低縮放：使用預先產製 bucket 分群</span>
-            <span>高縮放：顯示單校點位</span>
-            <span>目前選定：{selectedSchoolId ? '已鎖定單校' : '尚未選定'}</span>
-          </div>
-
-          <div className="atlas-map-sidecard" data-testid="map-observability">
-            <span className="map-stage__legend-title">載入來源觀測</span>
-            <span>快取命中 {loadObservation.cacheHits} 次</span>
-            <span>本地 DB {loadObservation.indexedDbHits} 次 / 記憶體 {loadObservation.memoryHits} 次</span>
-            <span>累積傳輸 {formatFileSize(loadObservation.totalTransferredBytes)}</span>
-            <div className="map-stage__observability-items">
-              {observedCounties.length === 0 ? <span>尚未載入縣市切片</span> : null}
-              {observedCounties.map((county) => (
-                <div key={county.id} className="map-stage__observability-chip">
-                  <strong>{county.name}</strong>
-                  <span>細節 {formatFileSize(county.detailBytes)}</span>
-                  <span>{county.hasBucketSlice ? `bucket ${formatFileSize(county.bucketBytes)}` : 'bucket 待載入'}</span>
-                  <span>{county.hasTownshipSlice ? `鄉鎮 ${formatFileSize(county.townshipBytes)}` : '鄉鎮待載入'}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="atlas-map-sidecard atlas-map-sidecard--source">
-            <span className="map-stage__legend-title">圖資來源</span>
-            <span>© OpenStreetMap contributors</span>
-            <span>© CARTO</span>
-          </div>
+          <MapFloatingHelp activeTab={activeTab} activeCountyName={activeCounty?.name ?? null} />
         </div>
       </div>
     </section>

@@ -8,6 +8,714 @@
   "dataNotes": [],
   "towns": [
     {
+      "id": "嘉義市:西區",
+      "name": "西區",
+      "countyId": "嘉義市",
+      "schools": [
+        {
+          "id": "203505",
+          "code": "203505",
+          "name": "市立民生國中",
+          "countyId": "嘉義市",
+          "townshipId": "嘉義市:西區",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "嘉義市西區新民路601號",
+          "phone": "(05)2855331",
+          "website": "http://www.msjh.cy.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/203505/J/嘉義市/西區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.439937,
+            "latitude": 23.464693
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1874
+            },
+            {
+              "year": 108,
+              "students": 1830
+            },
+            {
+              "year": 109,
+              "students": 1829
+            },
+            {
+              "year": 110,
+              "students": 1785
+            },
+            {
+              "year": 111,
+              "students": 1723
+            },
+            {
+              "year": 112,
+              "students": 1710
+            },
+            {
+              "year": 113,
+              "students": 1703
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "200302",
+          "code": "200302",
+          "name": "國立嘉義女中",
+          "countyId": "嘉義市",
+          "townshipId": "嘉義市:西區",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "嘉義市西區垂楊路243號",
+          "phone": "(05)2254603",
+          "website": "http://www.cygsh.cy.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/200302/H/嘉義市/西區/國立/否/無/",
+          "coordinates": {
+            "longitude": 120.451168,
+            "latitude": 23.473441
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1718
+            },
+            {
+              "year": 108,
+              "students": 1666
+            },
+            {
+              "year": 109,
+              "students": 1627
+            },
+            {
+              "year": 110,
+              "students": 1577
+            },
+            {
+              "year": 111,
+              "students": 1568
+            },
+            {
+              "year": 112,
+              "students": 1567
+            },
+            {
+              "year": 113,
+              "students": 1570
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "203602",
+          "code": "203602",
+          "name": "市立博愛國小",
+          "countyId": "嘉義市",
+          "townshipId": "嘉義市:西區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "嘉義市西區友愛路822號",
+          "phone": "(05)2322863",
+          "website": "https://www.paes.cy.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/203602/C/嘉義市/西區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.444086,
+            "latitude": 23.491062
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1289
+            },
+            {
+              "year": 108,
+              "students": 1264
+            },
+            {
+              "year": 109,
+              "students": 1233
+            },
+            {
+              "year": 110,
+              "students": 1239
+            },
+            {
+              "year": 111,
+              "students": 1232
+            },
+            {
+              "year": 112,
+              "students": 1232
+            },
+            {
+              "year": 113,
+              "students": 1209
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "203617",
+          "code": "203617",
+          "name": "市立興嘉國小",
+          "countyId": "嘉義市",
+          "townshipId": "嘉義市:西區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "嘉義市西區重慶路51號",
+          "phone": "(05)2860885",
+          "website": "https://www.sces.cy.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/203617/C/嘉義市/西區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.438166,
+            "latitude": 23.464551
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1321
+            },
+            {
+              "year": 108,
+              "students": 1313
+            },
+            {
+              "year": 109,
+              "students": 1301
+            },
+            {
+              "year": 110,
+              "students": 1281
+            },
+            {
+              "year": 111,
+              "students": 1271
+            },
+            {
+              "year": 112,
+              "students": 1246
+            },
+            {
+              "year": 113,
+              "students": 1189
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "203607",
+          "code": "203607",
+          "name": "市立志航國小",
+          "countyId": "嘉義市",
+          "townshipId": "嘉義市:西區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "嘉義市西區世賢路四段141號",
+          "phone": "(05)2857924",
+          "website": "https://www.ches.cy.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/203607/C/嘉義市/西區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.446483,
+            "latitude": 23.462468
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 795
+            },
+            {
+              "year": 108,
+              "students": 817
+            },
+            {
+              "year": 109,
+              "students": 790
+            },
+            {
+              "year": 110,
+              "students": 803
+            },
+            {
+              "year": 111,
+              "students": 827
+            },
+            {
+              "year": 112,
+              "students": 836
+            },
+            {
+              "year": 113,
+              "students": 820
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "203606",
+          "code": "203606",
+          "name": "市立大同國小",
+          "countyId": "嘉義市",
+          "townshipId": "嘉義市:西區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "嘉義市西區成功街15號",
+          "phone": "(05)2222114",
+          "website": "https://www.ttes.cy.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/203606/C/嘉義市/西區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.445739,
+            "latitude": 23.471332
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 857
+            },
+            {
+              "year": 108,
+              "students": 820
+            },
+            {
+              "year": 109,
+              "students": 820
+            },
+            {
+              "year": 110,
+              "students": 816
+            },
+            {
+              "year": 111,
+              "students": 808
+            },
+            {
+              "year": 112,
+              "students": 795
+            },
+            {
+              "year": 113,
+              "students": 795
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "203616",
+          "code": "203616",
+          "name": "市立世賢國小",
+          "countyId": "嘉義市",
+          "townshipId": "嘉義市:西區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "嘉義市西區世賢路一段687號",
+          "phone": "(05)2338264",
+          "website": "https://www.shes.cy.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/203616/C/嘉義市/西區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.428201,
+            "latitude": 23.4892
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 885
+            },
+            {
+              "year": 108,
+              "students": 833
+            },
+            {
+              "year": 109,
+              "students": 802
+            },
+            {
+              "year": 110,
+              "students": 775
+            },
+            {
+              "year": 111,
+              "students": 820
+            },
+            {
+              "year": 112,
+              "students": 839
+            },
+            {
+              "year": 113,
+              "students": 782
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "203609",
+          "code": "203609",
+          "name": "市立僑平國小",
+          "countyId": "嘉義市",
+          "townshipId": "嘉義市:西區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "嘉義市西區德安路10號",
+          "phone": "(05)2333746",
+          "website": "https://www.gpes.cy.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/203609/C/嘉義市/西區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.432448,
+            "latitude": 23.484441
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 656
+            },
+            {
+              "year": 108,
+              "students": 676
+            },
+            {
+              "year": 109,
+              "students": 642
+            },
+            {
+              "year": 110,
+              "students": 659
+            },
+            {
+              "year": 111,
+              "students": 692
+            },
+            {
+              "year": 112,
+              "students": 711
+            },
+            {
+              "year": 113,
+              "students": 661
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "203618",
+          "code": "203618",
+          "name": "市立港坪國小",
+          "countyId": "嘉義市",
+          "townshipId": "嘉義市:西區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "嘉義市西區四維路63號",
+          "phone": "(05)2369037",
+          "website": "https://www.gpps.cy.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/203618/C/嘉義市/西區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.42421,
+            "latitude": 23.479056
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 666
+            },
+            {
+              "year": 108,
+              "students": 657
+            },
+            {
+              "year": 109,
+              "students": 652
+            },
+            {
+              "year": 110,
+              "students": 651
+            },
+            {
+              "year": 111,
+              "students": 639
+            },
+            {
+              "year": 112,
+              "students": 621
+            },
+            {
+              "year": 113,
+              "students": 609
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "203603",
+          "code": "203603",
+          "name": "市立垂楊國小",
+          "countyId": "嘉義市",
+          "townshipId": "嘉義市:西區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "嘉義市西區垂楊路605號",
+          "phone": "(05)2853151",
+          "website": "https://www.cyes.cy.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/203603/C/嘉義市/西區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.438722,
+            "latitude": 23.472216
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 663
+            },
+            {
+              "year": 108,
+              "students": 638
+            },
+            {
+              "year": 109,
+              "students": 630
+            },
+            {
+              "year": 110,
+              "students": 600
+            },
+            {
+              "year": 111,
+              "students": 607
+            },
+            {
+              "year": 112,
+              "students": 584
+            },
+            {
+              "year": 113,
+              "students": 555
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "203506",
+          "code": "203506",
+          "name": "市立玉山國中",
+          "countyId": "嘉義市",
+          "townshipId": "嘉義市:西區",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "嘉義市西區友忠路1號",
+          "phone": "(05)2357980",
+          "website": "http://www.ysjh.cy.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/203506/J/嘉義市/西區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.42576,
+            "latitude": 23.468652
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 687
+            },
+            {
+              "year": 108,
+              "students": 632
+            },
+            {
+              "year": 109,
+              "students": 639
+            },
+            {
+              "year": 110,
+              "students": 607
+            },
+            {
+              "year": 111,
+              "students": 557
+            },
+            {
+              "year": 112,
+              "students": 520
+            },
+            {
+              "year": 113,
+              "students": 529
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "203613",
+          "code": "203613",
+          "name": "市立育人國小",
+          "countyId": "嘉義市",
+          "townshipId": "嘉義市:西區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "嘉義市西區育人路211號",
+          "phone": "(05)2351595",
+          "website": "https://www.ynes.cy.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/203613/C/嘉義市/西區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.415716,
+            "latitude": 23.472496
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 527
+            },
+            {
+              "year": 108,
+              "students": 507
+            },
+            {
+              "year": 109,
+              "students": 504
+            },
+            {
+              "year": 110,
+              "students": 499
+            },
+            {
+              "year": 111,
+              "students": 529
+            },
+            {
+              "year": 112,
+              "students": 516
+            },
+            {
+              "year": 113,
+              "students": 519
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "203508",
+          "code": "203508",
+          "name": "市立北園國中",
+          "countyId": "嘉義市",
+          "townshipId": "嘉義市:西區",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "嘉義市西區雙園街280號",
+          "phone": "(05)2374673",
+          "website": "https://school.cy.edu.tw/nss/s/pyjhweb/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/203508/J/嘉義市/西區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.427102,
+            "latitude": 23.49486
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 474
+            },
+            {
+              "year": 108,
+              "students": 427
+            },
+            {
+              "year": 109,
+              "students": 412
+            },
+            {
+              "year": 110,
+              "students": 366
+            },
+            {
+              "year": 111,
+              "students": 343
+            },
+            {
+              "year": 112,
+              "students": 324
+            },
+            {
+              "year": 113,
+              "students": 369
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "203611",
+          "code": "203611",
+          "name": "市立北園國小",
+          "countyId": "嘉義市",
+          "townshipId": "嘉義市:西區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "嘉義市西區北湖里北社尾路168號",
+          "phone": "(05)2371330",
+          "website": "https://www.pyes.cy.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/203611/C/嘉義市/西區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.425794,
+            "latitude": 23.494936
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 292
+            },
+            {
+              "year": 108,
+              "students": 297
+            },
+            {
+              "year": 109,
+              "students": 291
+            },
+            {
+              "year": 110,
+              "students": 310
+            },
+            {
+              "year": 111,
+              "students": 313
+            },
+            {
+              "year": 112,
+              "students": 313
+            },
+            {
+              "year": 113,
+              "students": 307
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    },
+    {
       "id": "嘉義市:東區",
       "name": "東區",
       "countyId": "嘉義市",
@@ -56,6 +764,1306 @@
             {
               "year": 113,
               "students": 11349
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "200405",
+          "code": "200405",
+          "name": "國立嘉義高工",
+          "countyId": "嘉義市",
+          "townshipId": "嘉義市:東區",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "嘉義市東區彌陀路174號",
+          "phone": "(05)2763060",
+          "website": "http://www.cyivs.cy.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/200405/H/嘉義市/東區/國立/否/無/",
+          "coordinates": {
+            "longitude": 120.464183,
+            "latitude": 23.472094
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 2928
+            },
+            {
+              "year": 108,
+              "students": 2776
+            },
+            {
+              "year": 109,
+              "students": 2661
+            },
+            {
+              "year": 110,
+              "students": 2603
+            },
+            {
+              "year": 111,
+              "students": 2506
+            },
+            {
+              "year": 112,
+              "students": 2415
+            },
+            {
+              "year": 113,
+              "students": 2356
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "201408",
+          "code": "201408",
+          "name": "私立東吳工家",
+          "countyId": "嘉義市",
+          "townshipId": "嘉義市:東區",
+          "educationLevel": "高中職",
+          "managementType": "私立",
+          "address": "嘉義市東區宣信街252號",
+          "phone": "(05)2246161",
+          "website": "http://www.dwvs.cy.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/201408/H/嘉義市/東區/私立/否/無/",
+          "coordinates": {
+            "longitude": 120.460927,
+            "latitude": 23.468913
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 3325
+            },
+            {
+              "year": 108,
+              "students": 3029
+            },
+            {
+              "year": 109,
+              "students": 2819
+            },
+            {
+              "year": 110,
+              "students": 2602
+            },
+            {
+              "year": 111,
+              "students": 2195
+            },
+            {
+              "year": 112,
+              "students": 1897
+            },
+            {
+              "year": 113,
+              "students": 2089
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "200303",
+          "code": "200303",
+          "name": "國立嘉義高中",
+          "countyId": "嘉義市",
+          "townshipId": "嘉義市:東區",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "嘉義市東區大雅路二段738號",
+          "phone": "(05)2762804",
+          "website": "https://www.cysh.cy.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/200303/H/嘉義市/東區/國立/否/無/",
+          "coordinates": {
+            "longitude": 120.464614,
+            "latitude": 23.477065
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 2289
+            },
+            {
+              "year": 108,
+              "students": 2205
+            },
+            {
+              "year": 109,
+              "students": 2156
+            },
+            {
+              "year": 110,
+              "students": 2104
+            },
+            {
+              "year": 111,
+              "students": 2057
+            },
+            {
+              "year": 112,
+              "students": 2039
+            },
+            {
+              "year": 113,
+              "students": 2023
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "203502",
+          "code": "203502",
+          "name": "市立北興國中",
+          "countyId": "嘉義市",
+          "townshipId": "嘉義市:東區",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "嘉義市東區仁義里博東路262號",
+          "phone": "(05)2766602",
+          "website": "http://www.psjh.cy.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/203502/J/嘉義市/東區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.454997,
+            "latitude": 23.490872
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1568
+            },
+            {
+              "year": 108,
+              "students": 1559
+            },
+            {
+              "year": 109,
+              "students": 1528
+            },
+            {
+              "year": 110,
+              "students": 1503
+            },
+            {
+              "year": 111,
+              "students": 1501
+            },
+            {
+              "year": 112,
+              "students": 1500
+            },
+            {
+              "year": 113,
+              "students": 1591
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "201312",
+          "code": "201312",
+          "name": "私立輔仁高中",
+          "countyId": "嘉義市",
+          "townshipId": "嘉義市:東區",
+          "educationLevel": "高中職",
+          "managementType": "私立",
+          "address": "嘉義市東區吳鳳南路270號",
+          "phone": "(05)2281001",
+          "website": "http://www.fjsh.cy.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/201312/H/嘉義市/東區/私立/否/無/",
+          "coordinates": {
+            "longitude": 120.456641,
+            "latitude": 23.460634
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1697
+            },
+            {
+              "year": 108,
+              "students": 1495
+            },
+            {
+              "year": 109,
+              "students": 1439
+            },
+            {
+              "year": 110,
+              "students": 1424
+            },
+            {
+              "year": 111,
+              "students": 1374
+            },
+            {
+              "year": 112,
+              "students": 1330
+            },
+            {
+              "year": 113,
+              "students": 1397
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "200406",
+          "code": "200406",
+          "name": "國立嘉義高商",
+          "countyId": "嘉義市",
+          "townshipId": "嘉義市:東區",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "嘉義市東區中山路7號",
+          "phone": "(05)2782421",
+          "website": "http://www.cyvs.cy.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/200406/H/嘉義市/東區/國立/否/無/",
+          "coordinates": {
+            "longitude": 120.462427,
+            "latitude": 23.482269
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1478
+            },
+            {
+              "year": 108,
+              "students": 1437
+            },
+            {
+              "year": 109,
+              "students": 1395
+            },
+            {
+              "year": 110,
+              "students": 1422
+            },
+            {
+              "year": 111,
+              "students": 1414
+            },
+            {
+              "year": 112,
+              "students": 1406
+            },
+            {
+              "year": 113,
+              "students": 1352
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "203601",
+          "code": "203601",
+          "name": "市立崇文國小",
+          "countyId": "嘉義市",
+          "townshipId": "嘉義市:東區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "嘉義市東區垂楊路241號",
+          "phone": "(05)2222310",
+          "website": "https://www.cwes.cy.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/203601/C/嘉義市/東區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.452892,
+            "latitude": 23.473366
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1356
+            },
+            {
+              "year": 108,
+              "students": 1459
+            },
+            {
+              "year": 109,
+              "students": 1432
+            },
+            {
+              "year": 110,
+              "students": 1403
+            },
+            {
+              "year": 111,
+              "students": 1370
+            },
+            {
+              "year": 112,
+              "students": 1357
+            },
+            {
+              "year": 113,
+              "students": 1272
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "203608",
+          "code": "203608",
+          "name": "市立嘉北國小",
+          "countyId": "嘉義市",
+          "townshipId": "嘉義市:東區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "嘉義市東區嘉北街65號",
+          "phone": "(05)2757091",
+          "website": "https://www.cpes.cy.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/203608/C/嘉義市/東區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.455177,
+            "latitude": 23.493458
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1345
+            },
+            {
+              "year": 108,
+              "students": 1340
+            },
+            {
+              "year": 109,
+              "students": 1318
+            },
+            {
+              "year": 110,
+              "students": 1367
+            },
+            {
+              "year": 111,
+              "students": 1406
+            },
+            {
+              "year": 112,
+              "students": 1336
+            },
+            {
+              "year": 113,
+              "students": 1268
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "200401",
+          "code": "200401",
+          "name": "國立華南高商",
+          "countyId": "嘉義市",
+          "townshipId": "嘉義市:東區",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "嘉義市東區光彩街69號",
+          "phone": "(05)2787140",
+          "website": "https://www.hnvs.cy.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/200401/H/嘉義市/東區/國立/否/無/",
+          "coordinates": {
+            "longitude": 120.458799,
+            "latitude": 23.479017
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1439
+            },
+            {
+              "year": 108,
+              "students": 1373
+            },
+            {
+              "year": 109,
+              "students": 1352
+            },
+            {
+              "year": 110,
+              "students": 1324
+            },
+            {
+              "year": 111,
+              "students": 1325
+            },
+            {
+              "year": 112,
+              "students": 1319
+            },
+            {
+              "year": 113,
+              "students": 1223
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "201310",
+          "code": "201310",
+          "name": "私立嘉華高中",
+          "countyId": "嘉義市",
+          "townshipId": "嘉義市:東區",
+          "educationLevel": "高中職",
+          "managementType": "私立",
+          "address": "嘉義市東區民權東路45號",
+          "phone": "(05)2761716",
+          "website": "http://www.chsh.cy.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/201310/H/嘉義市/東區/私立/否/無/",
+          "coordinates": {
+            "longitude": 120.476817,
+            "latitude": 23.483227
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 967
+            },
+            {
+              "year": 108,
+              "students": 926
+            },
+            {
+              "year": 109,
+              "students": 1019
+            },
+            {
+              "year": 110,
+              "students": 1033
+            },
+            {
+              "year": 111,
+              "students": 1076
+            },
+            {
+              "year": 112,
+              "students": 1118
+            },
+            {
+              "year": 113,
+              "students": 1208
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "200407",
+          "code": "200407",
+          "name": "國立嘉義家職",
+          "countyId": "嘉義市",
+          "townshipId": "嘉義市:東區",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "嘉義市東區體育路7號",
+          "phone": "(05)2259640",
+          "website": "https://www.cyhvs.cy.edu.tw/home",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/200407/H/嘉義市/東區/國立/否/無/",
+          "coordinates": {
+            "longitude": 120.458595,
+            "latitude": 23.472596
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1250
+            },
+            {
+              "year": 108,
+              "students": 1173
+            },
+            {
+              "year": 109,
+              "students": 1083
+            },
+            {
+              "year": 110,
+              "students": 1036
+            },
+            {
+              "year": 111,
+              "students": 1051
+            },
+            {
+              "year": 112,
+              "students": 1044
+            },
+            {
+              "year": 113,
+              "students": 997
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "203615",
+          "code": "203615",
+          "name": "市立興安國小",
+          "countyId": "嘉義市",
+          "townshipId": "嘉義市:東區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "嘉義市東區興美六路2號",
+          "phone": "(05)2232280",
+          "website": "https://www.haes.cy.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/203615/C/嘉義市/東區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.455135,
+            "latitude": 23.459256
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 666
+            },
+            {
+              "year": 108,
+              "students": 683
+            },
+            {
+              "year": 109,
+              "students": 711
+            },
+            {
+              "year": 110,
+              "students": 753
+            },
+            {
+              "year": 111,
+              "students": 819
+            },
+            {
+              "year": 112,
+              "students": 868
+            },
+            {
+              "year": 113,
+              "students": 890
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "200601",
+          "code": "200601",
+          "name": "國立嘉義大學附小",
+          "countyId": "嘉義市",
+          "townshipId": "嘉義市:東區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "嘉義市東區林森東路46號",
+          "phone": "(05)2788002",
+          "website": "https://www.ncyes.ncyu.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/200601/C/嘉義市/東區/國立/否/無/",
+          "coordinates": {
+            "longitude": 120.455829,
+            "latitude": 23.486351
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 839
+            },
+            {
+              "year": 108,
+              "students": 845
+            },
+            {
+              "year": 109,
+              "students": 841
+            },
+            {
+              "year": 110,
+              "students": 837
+            },
+            {
+              "year": 111,
+              "students": 834
+            },
+            {
+              "year": 112,
+              "students": 838
+            },
+            {
+              "year": 113,
+              "students": 833
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "203503",
+          "code": "203503",
+          "name": "市立嘉義國中",
+          "countyId": "嘉義市",
+          "townshipId": "嘉義市:東區",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "嘉義市東區王田里圓福街86號",
+          "phone": "(05)2762625",
+          "website": "http://www.cyjh.cy.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/203503/J/嘉義市/東區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.464727,
+            "latitude": 23.487255
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 991
+            },
+            {
+              "year": 108,
+              "students": 904
+            },
+            {
+              "year": 109,
+              "students": 894
+            },
+            {
+              "year": 110,
+              "students": 835
+            },
+            {
+              "year": 111,
+              "students": 806
+            },
+            {
+              "year": 112,
+              "students": 735
+            },
+            {
+              "year": 113,
+              "students": 727
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "203605",
+          "code": "203605",
+          "name": "市立宣信國小",
+          "countyId": "嘉義市",
+          "townshipId": "嘉義市:東區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "嘉義市東區宣信街266號",
+          "phone": "(05)2223904",
+          "website": "https://www.sses.cy.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/203605/C/嘉義市/東區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.45964,
+            "latitude": 23.470758
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 701
+            },
+            {
+              "year": 108,
+              "students": 727
+            },
+            {
+              "year": 109,
+              "students": 711
+            },
+            {
+              "year": 110,
+              "students": 706
+            },
+            {
+              "year": 111,
+              "students": 730
+            },
+            {
+              "year": 112,
+              "students": 738
+            },
+            {
+              "year": 113,
+              "students": 717
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "201304",
+          "code": "201304",
+          "name": "私立興華高中",
+          "countyId": "嘉義市",
+          "townshipId": "嘉義市:東區",
+          "educationLevel": "高中職",
+          "managementType": "私立",
+          "address": "嘉義市東區林森東路239號",
+          "phone": "(05)2764317",
+          "website": "http://www.hhsh.cy.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/201304/H/嘉義市/東區/私立/否/無/",
+          "coordinates": {
+            "longitude": 120.464605,
+            "latitude": 23.489587
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 2169
+            },
+            {
+              "year": 108,
+              "students": 1800
+            },
+            {
+              "year": 109,
+              "students": 1594
+            },
+            {
+              "year": 110,
+              "students": 1330
+            },
+            {
+              "year": 111,
+              "students": 1078
+            },
+            {
+              "year": 112,
+              "students": 843
+            },
+            {
+              "year": 113,
+              "students": 710
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "203504",
+          "code": "203504",
+          "name": "市立南興國中",
+          "countyId": "嘉義市",
+          "townshipId": "嘉義市:東區",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "嘉義市東區芳安路111號",
+          "phone": "(05)2224383",
+          "website": "http://www.nhjh.cy.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/203504/J/嘉義市/東區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.462118,
+            "latitude": 23.46785
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 723
+            },
+            {
+              "year": 108,
+              "students": 683
+            },
+            {
+              "year": 109,
+              "students": 693
+            },
+            {
+              "year": 110,
+              "students": 697
+            },
+            {
+              "year": 111,
+              "students": 665
+            },
+            {
+              "year": 112,
+              "students": 633
+            },
+            {
+              "year": 113,
+              "students": 657
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "203614",
+          "code": "203614",
+          "name": "市立蘭潭國小",
+          "countyId": "嘉義市",
+          "townshipId": "嘉義市:東區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "嘉義市東區小雅路419號",
+          "phone": "(05)2763492",
+          "website": "https://www.ltes.cy.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/203614/C/嘉義市/東區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.471241,
+            "latitude": 23.475259
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 590
+            },
+            {
+              "year": 108,
+              "students": 565
+            },
+            {
+              "year": 109,
+              "students": 531
+            },
+            {
+              "year": 110,
+              "students": 539
+            },
+            {
+              "year": 111,
+              "students": 566
+            },
+            {
+              "year": 112,
+              "students": 570
+            },
+            {
+              "year": 113,
+              "students": 592
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "203604",
+          "code": "203604",
+          "name": "市立民族國小",
+          "countyId": "嘉義市",
+          "townshipId": "嘉義市:東區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "嘉義市東區民族路235號",
+          "phone": "(05)2222113",
+          "website": "https://www.mtes.cy.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/203604/C/嘉義市/東區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.45519,
+            "latitude": 23.475817
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 584
+            },
+            {
+              "year": 108,
+              "students": 611
+            },
+            {
+              "year": 109,
+              "students": 574
+            },
+            {
+              "year": 110,
+              "students": 578
+            },
+            {
+              "year": 111,
+              "students": 576
+            },
+            {
+              "year": 112,
+              "students": 566
+            },
+            {
+              "year": 113,
+              "students": 563
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "203507",
+          "code": "203507",
+          "name": "市立蘭潭國中",
+          "countyId": "嘉義市",
+          "townshipId": "嘉義市:東區",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "嘉義市東區民權東路32號",
+          "phone": "(05)2773582",
+          "website": "http://www.ltjh.cy.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/203507/J/嘉義市/東區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.481752,
+            "latitude": 23.482536
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 528
+            },
+            {
+              "year": 108,
+              "students": 503
+            },
+            {
+              "year": 109,
+              "students": 499
+            },
+            {
+              "year": 110,
+              "students": 496
+            },
+            {
+              "year": 111,
+              "students": 473
+            },
+            {
+              "year": 112,
+              "students": 443
+            },
+            {
+              "year": 113,
+              "students": 475
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "203610",
+          "code": "203610",
+          "name": "市立林森國小",
+          "countyId": "嘉義市",
+          "townshipId": "嘉義市:東區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "嘉義市東區林森東路346號",
+          "phone": "(05)2762063",
+          "website": "https://www.lses.cy.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/203610/C/嘉義市/東區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.466566,
+            "latitude": 23.489465
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 567
+            },
+            {
+              "year": 108,
+              "students": 528
+            },
+            {
+              "year": 109,
+              "students": 516
+            },
+            {
+              "year": 110,
+              "students": 495
+            },
+            {
+              "year": 111,
+              "students": 490
+            },
+            {
+              "year": 112,
+              "students": 472
+            },
+            {
+              "year": 113,
+              "students": 440
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "203619",
+          "code": "203619",
+          "name": "市立文雅國小",
+          "countyId": "嘉義市",
+          "townshipId": "嘉義市:東區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "嘉義市東區文雅里文雅街2號",
+          "phone": "(05)2768011",
+          "website": "https://www.wyes.cy.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/203619/C/嘉義市/東區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.487469,
+            "latitude": 23.484095
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 310
+            },
+            {
+              "year": 108,
+              "students": 311
+            },
+            {
+              "year": 109,
+              "students": 310
+            },
+            {
+              "year": 110,
+              "students": 310
+            },
+            {
+              "year": 111,
+              "students": 307
+            },
+            {
+              "year": 112,
+              "students": 306
+            },
+            {
+              "year": 113,
+              "students": 295
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "203612",
+          "code": "203612",
+          "name": "市立精忠國小",
+          "countyId": "嘉義市",
+          "townshipId": "嘉義市:東區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "嘉義市東區林森東路840號",
+          "phone": "(05)2760474",
+          "website": "https://www.gces.cy.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/203612/C/嘉義市/東區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.480073,
+            "latitude": 23.491698
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 181
+            },
+            {
+              "year": 108,
+              "students": 216
+            },
+            {
+              "year": 109,
+              "students": 237
+            },
+            {
+              "year": 110,
+              "students": 262
+            },
+            {
+              "year": 111,
+              "students": 287
+            },
+            {
+              "year": 112,
+              "students": 291
+            },
+            {
+              "year": 113,
+              "students": 277
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "203501",
+          "code": "203501",
+          "name": "市立大業實驗國中",
+          "countyId": "嘉義市",
+          "townshipId": "嘉義市:東區",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "嘉義市東區大業街57號",
+          "phone": "(05)2223082",
+          "website": "http://www.dyjh.cy.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/203501/J/嘉義市/東區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.45403,
+            "latitude": 23.46215
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 422
+            },
+            {
+              "year": 108,
+              "students": 376
+            },
+            {
+              "year": 109,
+              "students": 329
+            },
+            {
+              "year": 110,
+              "students": 296
+            },
+            {
+              "year": 111,
+              "students": 275
+            },
+            {
+              "year": 112,
+              "students": 259
+            },
+            {
+              "year": 113,
+              "students": 245
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "201313",
+          "code": "201313",
+          "name": "私立宏仁高中",
+          "countyId": "嘉義市",
+          "townshipId": "嘉義市:東區",
+          "educationLevel": "高中職",
+          "managementType": "私立",
+          "address": "嘉義市東區忠孝路667號",
+          "phone": "(05)2322802",
+          "website": "http://www.hjgs.cy.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/201313/H/嘉義市/東區/私立/否/無/",
+          "coordinates": {
+            "longitude": 120.446399,
+            "latitude": 23.505814
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 440
+            },
+            {
+              "year": 108,
+              "students": 344
+            },
+            {
+              "year": 109,
+              "students": 343
+            },
+            {
+              "year": 110,
+              "students": 318
+            },
+            {
+              "year": 111,
+              "students": 289
+            },
+            {
+              "year": 112,
+              "students": 230
+            },
+            {
+              "year": 113,
+              "students": 169
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "201314",
+          "code": "201314",
+          "name": "私立立仁高中",
+          "countyId": "嘉義市",
+          "townshipId": "嘉義市:東區",
+          "educationLevel": "高中職",
+          "managementType": "私立",
+          "address": "嘉義市東區立仁路235號",
+          "phone": "(05)2226420",
+          "website": "http://www.ligvs.cy.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/201314/H/嘉義市/東區/私立/否/無/",
+          "coordinates": {
+            "longitude": 120.459281,
+            "latitude": 23.463088
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 374
+            },
+            {
+              "year": 108,
+              "students": 311
+            },
+            {
+              "year": 109,
+              "students": 271
+            },
+            {
+              "year": 110,
+              "students": 199
+            },
+            {
+              "year": 111,
+              "students": 130
+            },
+            {
+              "year": 112,
+              "students": 82
+            },
+            {
+              "year": 113,
+              "students": 54
             }
           ],
           "status": "正常",

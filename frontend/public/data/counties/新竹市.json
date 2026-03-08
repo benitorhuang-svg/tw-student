@@ -5,8 +5,622 @@
     "shortLabel": "竹市",
     "region": "北部"
   },
-  "dataNotes": [],
+  "dataNotes": [
+    {
+      "type": "缺年度",
+      "message": "新竹市 有 1 所學校存在年度缺漏。",
+      "severity": "warning"
+    }
+  ],
   "towns": [
+    {
+      "id": "新竹市:北區",
+      "name": "北區",
+      "countyId": "新竹市",
+      "schools": [
+        {
+          "id": "181307",
+          "code": "181307",
+          "name": "私立磐石高中",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:北區",
+          "educationLevel": "高中職",
+          "managementType": "私立",
+          "address": "新竹市北區西大路683號",
+          "phone": "(03)5223946",
+          "website": "http://www.sphs.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/181307/H/新竹市/北區/私立/否/無/",
+          "coordinates": {
+            "longitude": 120.956399,
+            "latitude": 24.810422
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 2300
+            },
+            {
+              "year": 108,
+              "students": 2236
+            },
+            {
+              "year": 109,
+              "students": 2276
+            },
+            {
+              "year": 110,
+              "students": 2257
+            },
+            {
+              "year": 111,
+              "students": 2222
+            },
+            {
+              "year": 112,
+              "students": 2182
+            },
+            {
+              "year": 113,
+              "students": 2209
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183603",
+          "code": "183603",
+          "name": "市立民富國小",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:北區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹市北區西大路561號",
+          "phone": "(03)5222102",
+          "website": "https://www.mfps.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/183603/C/新竹市/北區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.960344,
+            "latitude": 24.808323
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 2118
+            },
+            {
+              "year": 108,
+              "students": 2251
+            },
+            {
+              "year": 109,
+              "students": 2214
+            },
+            {
+              "year": 110,
+              "students": 2278
+            },
+            {
+              "year": 111,
+              "students": 2288
+            },
+            {
+              "year": 112,
+              "students": 2298
+            },
+            {
+              "year": 113,
+              "students": 2175
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183503",
+          "code": "183503",
+          "name": "市立光華國中",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:北區",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "新竹市北區光華北街10號",
+          "phone": "(03)5316605",
+          "website": "http://www.khjh.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/183503/J/新竹市/北區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.973645,
+            "latitude": 24.818746
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1629
+            },
+            {
+              "year": 108,
+              "students": 1596
+            },
+            {
+              "year": 109,
+              "students": 1642
+            },
+            {
+              "year": 110,
+              "students": 1574
+            },
+            {
+              "year": 111,
+              "students": 1462
+            },
+            {
+              "year": 112,
+              "students": 1373
+            },
+            {
+              "year": 113,
+              "students": 1505
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183605",
+          "code": "183605",
+          "name": "市立西門國小",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:北區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹市北區北大路450號",
+          "phone": "(03)5222492",
+          "website": "https://www.cmps.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/183605/C/新竹市/北區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.959799,
+            "latitude": 24.802802
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1278
+            },
+            {
+              "year": 108,
+              "students": 1373
+            },
+            {
+              "year": 109,
+              "students": 1426
+            },
+            {
+              "year": 110,
+              "students": 1527
+            },
+            {
+              "year": 111,
+              "students": 1576
+            },
+            {
+              "year": 112,
+              "students": 1558
+            },
+            {
+              "year": 113,
+              "students": 1482
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183611",
+          "code": "183611",
+          "name": "市立載熙國小",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:北區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹市北區武陵里東大路二段386號",
+          "phone": "(03)5316675",
+          "website": "https://www.thps.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/183611/C/新竹市/北區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.96347,
+            "latitude": 24.819682
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1325
+            },
+            {
+              "year": 108,
+              "students": 1293
+            },
+            {
+              "year": 109,
+              "students": 1326
+            },
+            {
+              "year": 110,
+              "students": 1369
+            },
+            {
+              "year": 111,
+              "students": 1343
+            },
+            {
+              "year": 112,
+              "students": 1396
+            },
+            {
+              "year": 113,
+              "students": 1396
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183306",
+          "code": "183306",
+          "name": "市立成德高中",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:北區",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "新竹市北區崧嶺路128巷38號",
+          "phone": "(03)5258748",
+          "website": "http://www.cdjh.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/183306/H/新竹市/北區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.952583,
+            "latitude": 24.79063
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1322
+            },
+            {
+              "year": 108,
+              "students": 1265
+            },
+            {
+              "year": 109,
+              "students": 1215
+            },
+            {
+              "year": 110,
+              "students": 1175
+            },
+            {
+              "year": 111,
+              "students": 1156
+            },
+            {
+              "year": 112,
+              "students": 1160
+            },
+            {
+              "year": 113,
+              "students": 1221
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183626",
+          "code": "183626",
+          "name": "市立舊社國小",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:北區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹市北區金竹路99號",
+          "phone": "(03)5342022",
+          "website": "https://www.jsps.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/183626/C/新竹市/北區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.973743,
+            "latitude": 24.822369
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1129
+            },
+            {
+              "year": 108,
+              "students": 1204
+            },
+            {
+              "year": 109,
+              "students": 1221
+            },
+            {
+              "year": 110,
+              "students": 1251
+            },
+            {
+              "year": 111,
+              "students": 1309
+            },
+            {
+              "year": 112,
+              "students": 1318
+            },
+            {
+              "year": 113,
+              "students": 1215
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183602",
+          "code": "183602",
+          "name": "市立北門國小",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:北區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹市北區水田里水田街33號",
+          "phone": "(03)5316668",
+          "website": "https://www.bmps.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/183602/C/新竹市/北區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.96579,
+            "latitude": 24.813928
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 977
+            },
+            {
+              "year": 108,
+              "students": 996
+            },
+            {
+              "year": 109,
+              "students": 993
+            },
+            {
+              "year": 110,
+              "students": 1038
+            },
+            {
+              "year": 111,
+              "students": 1034
+            },
+            {
+              "year": 112,
+              "students": 1020
+            },
+            {
+              "year": 113,
+              "students": 997
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183515",
+          "code": "183515",
+          "name": "市立竹光國中",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:北區",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "新竹市北區和平路1號",
+          "phone": "(03)5246683",
+          "website": "http://www.zgjh.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/183515/J/新竹市/北區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.955253,
+            "latitude": 24.807148
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 956
+            },
+            {
+              "year": 108,
+              "students": 1007
+            },
+            {
+              "year": 109,
+              "students": 1035
+            },
+            {
+              "year": 110,
+              "students": 1016
+            },
+            {
+              "year": 111,
+              "students": 1019
+            },
+            {
+              "year": 112,
+              "students": 984
+            },
+            {
+              "year": 113,
+              "students": 982
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183612",
+          "code": "183612",
+          "name": "市立南寮國小",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:北區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹市北區東大路三段465號",
+          "phone": "(03)5363448",
+          "website": "https://www.nlps.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/183612/C/新竹市/北區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.9398,
+            "latitude": 24.838636
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 839
+            },
+            {
+              "year": 108,
+              "students": 848
+            },
+            {
+              "year": 109,
+              "students": 849
+            },
+            {
+              "year": 110,
+              "students": 921
+            },
+            {
+              "year": 111,
+              "students": 918
+            },
+            {
+              "year": 112,
+              "students": 975
+            },
+            {
+              "year": 113,
+              "students": 949
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "180601",
+          "code": "180601",
+          "name": "國立清華大學附小",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:北區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹市北區四維路47號",
+          "phone": "(03)5282420",
+          "website": "https://www.sctcps.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/180601/C/新竹市/北區/國立/否/無/",
+          "coordinates": {
+            "longitude": 120.961222,
+            "latitude": 24.799281
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 852
+            },
+            {
+              "year": 108,
+              "students": 849
+            },
+            {
+              "year": 109,
+              "students": 865
+            },
+            {
+              "year": 110,
+              "students": 858
+            },
+            {
+              "year": 111,
+              "students": 863
+            },
+            {
+              "year": 112,
+              "students": 858
+            },
+            {
+              "year": 113,
+              "students": 852
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183508",
+          "code": "183508",
+          "name": "市立南華國中",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:北區",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "新竹市北區海濱路55號",
+          "phone": "(03)5362204",
+          "website": "http://www.nhjh.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/183508/J/新竹市/北區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.927229,
+            "latitude": 24.843665
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 311
+            },
+            {
+              "year": 108,
+              "students": 279
+            },
+            {
+              "year": 109,
+              "students": 278
+            },
+            {
+              "year": 110,
+              "students": 282
+            },
+            {
+              "year": 111,
+              "students": 268
+            },
+            {
+              "year": 112,
+              "students": 243
+            },
+            {
+              "year": 113,
+              "students": 246
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    },
     {
       "id": "新竹市:東區",
       "name": "東區",
@@ -111,9 +725,2584 @@
           "status": "正常",
           "missingYears": [],
           "dataNotes": []
+        },
+        {
+          "id": "181305",
+          "code": "181305",
+          "name": "私立光復高中",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:東區",
+          "educationLevel": "高中職",
+          "managementType": "私立",
+          "address": "新竹市東區光復路二段153號",
+          "phone": "(03)5753698",
+          "website": "http://www.kfsh.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/181305/H/新竹市/東區/私立/否/無/",
+          "coordinates": {
+            "longitude": 120.993575,
+            "latitude": 24.798124
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 5101
+            },
+            {
+              "year": 108,
+              "students": 4663
+            },
+            {
+              "year": 109,
+              "students": 4746
+            },
+            {
+              "year": 110,
+              "students": 4742
+            },
+            {
+              "year": 111,
+              "students": 4749
+            },
+            {
+              "year": 112,
+              "students": 4717
+            },
+            {
+              "year": 113,
+              "students": 4583
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "180301",
+          "code": "180301",
+          "name": "國立竹科實驗高級中等學校",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:東區",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "新竹市東區介壽路300號",
+          "phone": "(03)5777011",
+          "website": "https://www.nehs.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/180301/H/新竹市/東區/國立/否/無/",
+          "coordinates": {
+            "longitude": 121.016251,
+            "latitude": 24.778
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 2554
+            },
+            {
+              "year": 108,
+              "students": 2571
+            },
+            {
+              "year": 109,
+              "students": 2587
+            },
+            {
+              "year": 110,
+              "students": 2627
+            },
+            {
+              "year": 111,
+              "students": 2658
+            },
+            {
+              "year": 112,
+              "students": 2701
+            },
+            {
+              "year": 113,
+              "students": 2758
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183510",
+          "code": "183510",
+          "name": "市立三民國中",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:東區",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "新竹市東區中央路345號",
+          "phone": "(03)5339825",
+          "website": "http://www.smjh.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/183510/J/新竹市/東區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.97945,
+            "latitude": 24.812566
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1867
+            },
+            {
+              "year": 108,
+              "students": 1913
+            },
+            {
+              "year": 109,
+              "students": 2008
+            },
+            {
+              "year": 110,
+              "students": 2171
+            },
+            {
+              "year": 111,
+              "students": 2174
+            },
+            {
+              "year": 112,
+              "students": 2116
+            },
+            {
+              "year": 113,
+              "students": 2397
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183502",
+          "code": "183502",
+          "name": "市立培英國中",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:東區",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "新竹市東區學府路4號",
+          "phone": "(03)5721301",
+          "website": "http://www.pijh.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/183502/J/新竹市/東區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.977756,
+            "latitude": 24.794202
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 2434
+            },
+            {
+              "year": 108,
+              "students": 2386
+            },
+            {
+              "year": 109,
+              "students": 2403
+            },
+            {
+              "year": 110,
+              "students": 2279
+            },
+            {
+              "year": 111,
+              "students": 2343
+            },
+            {
+              "year": 112,
+              "students": 2365
+            },
+            {
+              "year": 113,
+              "students": 2392
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183607",
+          "code": "183607",
+          "name": "市立東園國小",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:東區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹市東區園後街25號",
+          "phone": "(03)5712496",
+          "website": "https://www.pups.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/183607/C/新竹市/東區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.985037,
+            "latitude": 24.799807
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 2147
+            },
+            {
+              "year": 108,
+              "students": 2204
+            },
+            {
+              "year": 109,
+              "students": 2165
+            },
+            {
+              "year": 110,
+              "students": 2179
+            },
+            {
+              "year": 111,
+              "students": 2260
+            },
+            {
+              "year": 112,
+              "students": 2252
+            },
+            {
+              "year": 113,
+              "students": 2195
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183313",
+          "code": "183313",
+          "name": "市立建功高中",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:東區",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "新竹市東區建功二路17號",
+          "phone": "(03)5745892",
+          "website": "https://www.cksh.hc.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/183313/H/新竹市/東區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.002253,
+            "latitude": 24.797863
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1796
+            },
+            {
+              "year": 108,
+              "students": 1897
+            },
+            {
+              "year": 109,
+              "students": 2067
+            },
+            {
+              "year": 110,
+              "students": 2218
+            },
+            {
+              "year": 111,
+              "students": 2167
+            },
+            {
+              "year": 112,
+              "students": 2100
+            },
+            {
+              "year": 113,
+              "students": 2183
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "181306",
+          "code": "181306",
+          "name": "私立曙光女中",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:東區",
+          "educationLevel": "高中職",
+          "managementType": "私立",
+          "address": "新竹市東區北大路61號",
+          "phone": "(03)5325709",
+          "website": "http://www.sggs.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/181306/H/新竹市/東區/私立/否/無/",
+          "coordinates": {
+            "longitude": 120.972894,
+            "latitude": 24.811926
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 2171
+            },
+            {
+              "year": 108,
+              "students": 2171
+            },
+            {
+              "year": 109,
+              "students": 2179
+            },
+            {
+              "year": 110,
+              "students": 2172
+            },
+            {
+              "year": 111,
+              "students": 2163
+            },
+            {
+              "year": 112,
+              "students": 2168
+            },
+            {
+              "year": 113,
+              "students": 2147
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183608",
+          "code": "183608",
+          "name": "市立三民國小",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:東區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹市東區自由路66號",
+          "phone": "(03)5326345",
+          "website": "https://www.smps.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/183608/C/新竹市/東區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.982056,
+            "latitude": 24.812996
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1869
+            },
+            {
+              "year": 108,
+              "students": 1833
+            },
+            {
+              "year": 109,
+              "students": 1890
+            },
+            {
+              "year": 110,
+              "students": 1919
+            },
+            {
+              "year": 111,
+              "students": 1945
+            },
+            {
+              "year": 112,
+              "students": 2004
+            },
+            {
+              "year": 113,
+              "students": 2007
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "180309",
+          "code": "180309",
+          "name": "國立新竹高中",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:東區",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "新竹市東區學府路36號",
+          "phone": "(03)5736666",
+          "website": "http://www.hchs.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/180309/H/新竹市/東區/國立/否/無/",
+          "coordinates": {
+            "longitude": 120.980183,
+            "latitude": 24.795065
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 2230
+            },
+            {
+              "year": 108,
+              "students": 2131
+            },
+            {
+              "year": 109,
+              "students": 2005
+            },
+            {
+              "year": 110,
+              "students": 1921
+            },
+            {
+              "year": 111,
+              "students": 1898
+            },
+            {
+              "year": 112,
+              "students": 1896
+            },
+            {
+              "year": 113,
+              "students": 1889
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183632",
+          "code": "183632",
+          "name": "市立關埔國小",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:東區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹市東區慈濟路2號",
+          "phone": "(03)6669086",
+          "website": "https://www.gpps.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/183632/C/新竹市/東區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.0135,
+            "latitude": 24.78855
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 264
+            },
+            {
+              "year": 108,
+              "students": 602
+            },
+            {
+              "year": 109,
+              "students": 919
+            },
+            {
+              "year": 110,
+              "students": 1219
+            },
+            {
+              "year": 111,
+              "students": 1516
+            },
+            {
+              "year": 112,
+              "students": 1811
+            },
+            {
+              "year": 113,
+              "students": 1872
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "180302",
+          "code": "180302",
+          "name": "國立新竹女中",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:東區",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "新竹市東區中華路二段270號",
+          "phone": "(03)5456611",
+          "website": "http://www.hgsh.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/180302/H/新竹市/東區/國立/否/無/",
+          "coordinates": {
+            "longitude": 120.975184,
+            "latitude": 24.805075
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 2061
+            },
+            {
+              "year": 108,
+              "students": 2006
+            },
+            {
+              "year": 109,
+              "students": 1941
+            },
+            {
+              "year": 110,
+              "students": 1889
+            },
+            {
+              "year": 111,
+              "students": 1880
+            },
+            {
+              "year": 112,
+              "students": 1862
+            },
+            {
+              "year": 113,
+              "students": 1866
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183610",
+          "code": "183610",
+          "name": "市立關東國小",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:東區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹市東區關東路53號",
+          "phone": "(03)5775645",
+          "website": "https://www.ktps.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/183610/C/新竹市/東區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.022039,
+            "latitude": 24.784134
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1593
+            },
+            {
+              "year": 108,
+              "students": 1688
+            },
+            {
+              "year": 109,
+              "students": 1761
+            },
+            {
+              "year": 110,
+              "students": 1840
+            },
+            {
+              "year": 111,
+              "students": 1900
+            },
+            {
+              "year": 112,
+              "students": 1875
+            },
+            {
+              "year": 113,
+              "students": 1757
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183604",
+          "code": "183604",
+          "name": "市立東門國小",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:東區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹市東區民族路33號",
+          "phone": "(03)5222109",
+          "website": "https://www.tmps.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/183604/C/新竹市/東區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.97249,
+            "latitude": 24.805685
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1773
+            },
+            {
+              "year": 108,
+              "students": 1842
+            },
+            {
+              "year": 109,
+              "students": 1815
+            },
+            {
+              "year": 110,
+              "students": 1830
+            },
+            {
+              "year": 111,
+              "students": 1825
+            },
+            {
+              "year": 112,
+              "students": 1769
+            },
+            {
+              "year": 113,
+              "students": 1617
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183609",
+          "code": "183609",
+          "name": "市立龍山國小",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:東區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹市東區光復路一段574號",
+          "phone": "(03)5774287",
+          "website": "https://www.lsps.hc.edu.tw/nss/p/index",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/183609/C/新竹市/東區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.007746,
+            "latitude": 24.789439
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1733
+            },
+            {
+              "year": 108,
+              "students": 1690
+            },
+            {
+              "year": 109,
+              "students": 1648
+            },
+            {
+              "year": 110,
+              "students": 1633
+            },
+            {
+              "year": 111,
+              "students": 1634
+            },
+            {
+              "year": 112,
+              "students": 1549
+            },
+            {
+              "year": 113,
+              "students": 1549
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "180404",
+          "code": "180404",
+          "name": "國立新竹高工",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:東區",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "新竹市東區中華路二段2號",
+          "phone": "(03)5322175",
+          "website": "https://www.hcvs.hc.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/180404/H/新竹市/東區/國立/否/無/",
+          "coordinates": {
+            "longitude": 120.984208,
+            "latitude": 24.810869
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1677
+            },
+            {
+              "year": 108,
+              "students": 1608
+            },
+            {
+              "year": 109,
+              "students": 1544
+            },
+            {
+              "year": 110,
+              "students": 1535
+            },
+            {
+              "year": 111,
+              "students": 1514
+            },
+            {
+              "year": 112,
+              "students": 1507
+            },
+            {
+              "year": 113,
+              "students": 1528
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "180403",
+          "code": "180403",
+          "name": "國立新竹高商",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:東區",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "新竹市東區學府路128號",
+          "phone": "(03)5722150",
+          "website": "http://www.hccvs.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/180403/H/新竹市/東區/國立/否/無/",
+          "coordinates": {
+            "longitude": 120.984824,
+            "latitude": 24.795506
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1707
+            },
+            {
+              "year": 108,
+              "students": 1614
+            },
+            {
+              "year": 109,
+              "students": 1565
+            },
+            {
+              "year": 110,
+              "students": 1531
+            },
+            {
+              "year": 111,
+              "students": 1498
+            },
+            {
+              "year": 112,
+              "students": 1480
+            },
+            {
+              "year": 113,
+              "students": 1480
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183613",
+          "code": "183613",
+          "name": "市立建功國小",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:東區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹市東區建功一路104巷22號",
+          "phone": "(03)5713447",
+          "website": "https://www.ckps.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/183613/C/新竹市/東區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.998644,
+            "latitude": 24.800471
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1551
+            },
+            {
+              "year": 108,
+              "students": 1536
+            },
+            {
+              "year": 109,
+              "students": 1481
+            },
+            {
+              "year": 110,
+              "students": 1477
+            },
+            {
+              "year": 111,
+              "students": 1478
+            },
+            {
+              "year": 112,
+              "students": 1416
+            },
+            {
+              "year": 113,
+              "students": 1367
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183505",
+          "code": "183505",
+          "name": "市立光武國中",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:東區",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "新竹市東區光復路一段512號",
+          "phone": "(03)5778784",
+          "website": "http://www.gwjh.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/183505/J/新竹市/東區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.012468,
+            "latitude": 24.787165
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1208
+            },
+            {
+              "year": 108,
+              "students": 1217
+            },
+            {
+              "year": 109,
+              "students": 1202
+            },
+            {
+              "year": 110,
+              "students": 1186
+            },
+            {
+              "year": 111,
+              "students": 1238
+            },
+            {
+              "year": 112,
+              "students": 1276
+            },
+            {
+              "year": 113,
+              "students": 1315
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "181603",
+          "code": "181603",
+          "name": "私立新竹市康橋國(中)小",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:東區",
+          "educationLevel": "國小",
+          "managementType": "私立",
+          "address": "新竹市東區柴橋路95號",
+          "phone": "(03)5192000",
+          "website": "https://www.kcis.hc.edu.tw/HsinchuCampus",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/181603/C/新竹市/東區/私立/否/無/",
+          "coordinates": {
+            "longitude": 120.965923,
+            "latitude": 24.768297
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 836
+            },
+            {
+              "year": 108,
+              "students": 1019
+            },
+            {
+              "year": 109,
+              "students": 1147
+            },
+            {
+              "year": 110,
+              "students": 1214
+            },
+            {
+              "year": 111,
+              "students": 1245
+            },
+            {
+              "year": 112,
+              "students": 1308
+            },
+            {
+              "year": 113,
+              "students": 1312
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183601",
+          "code": "183601",
+          "name": "市立新竹國小",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:東區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹市東區興學街106號",
+          "phone": "(03)5222153",
+          "website": "https://www.hsps.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/183601/C/新竹市/東區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.966218,
+            "latitude": 24.796662
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1250
+            },
+            {
+              "year": 108,
+              "students": 1258
+            },
+            {
+              "year": 109,
+              "students": 1230
+            },
+            {
+              "year": 110,
+              "students": 1217
+            },
+            {
+              "year": 111,
+              "students": 1221
+            },
+            {
+              "year": 112,
+              "students": 1171
+            },
+            {
+              "year": 113,
+              "students": 1099
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183504",
+          "code": "183504",
+          "name": "市立育賢國中",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:東區",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "新竹市東區南大路569號",
+          "phone": "(03)5223075",
+          "website": "http://www.ysjh.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/183504/J/新竹市/東區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.966539,
+            "latitude": 24.79055
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 827
+            },
+            {
+              "year": 108,
+              "students": 828
+            },
+            {
+              "year": 109,
+              "students": 843
+            },
+            {
+              "year": 110,
+              "students": 878
+            },
+            {
+              "year": 111,
+              "students": 832
+            },
+            {
+              "year": 112,
+              "students": 799
+            },
+            {
+              "year": 113,
+              "students": 901
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "181601",
+          "code": "181601",
+          "name": "私立曙光國小",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:東區",
+          "educationLevel": "國小",
+          "managementType": "私立",
+          "address": "新竹市東區北大路70號",
+          "phone": "(03)5328283",
+          "website": "http://www.sgps.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/181601/C/新竹市/東區/私立/否/無/",
+          "coordinates": {
+            "longitude": 120.97096,
+            "latitude": 24.812729
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 814
+            },
+            {
+              "year": 108,
+              "students": 821
+            },
+            {
+              "year": 109,
+              "students": 835
+            },
+            {
+              "year": 110,
+              "students": 820
+            },
+            {
+              "year": 111,
+              "students": 814
+            },
+            {
+              "year": 112,
+              "students": 824
+            },
+            {
+              "year": 113,
+              "students": 816
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183627",
+          "code": "183627",
+          "name": "市立陽光國小",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:東區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹市東區明湖路200號",
+          "phone": "(03)5629600",
+          "website": "https://www.ycps.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/183627/C/新竹市/東區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.968168,
+            "latitude": 24.790761
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 842
+            },
+            {
+              "year": 108,
+              "students": 855
+            },
+            {
+              "year": 109,
+              "students": 846
+            },
+            {
+              "year": 110,
+              "students": 821
+            },
+            {
+              "year": 111,
+              "students": 808
+            },
+            {
+              "year": 112,
+              "students": 773
+            },
+            {
+              "year": 113,
+              "students": 713
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183630",
+          "code": "183630",
+          "name": "市立青草湖國小",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:東區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹市東區明湖路1211號",
+          "phone": "(03)5200360",
+          "website": "https://www.cthps.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/183630/C/新竹市/東區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.978723,
+            "latitude": 24.769368
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 576
+            },
+            {
+              "year": 108,
+              "students": 629
+            },
+            {
+              "year": 109,
+              "students": 637
+            },
+            {
+              "year": 110,
+              "students": 652
+            },
+            {
+              "year": 111,
+              "students": 653
+            },
+            {
+              "year": 112,
+              "students": 656
+            },
+            {
+              "year": 113,
+              "students": 611
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183606",
+          "code": "183606",
+          "name": "市立竹蓮國小",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:東區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹市東區食品路226號",
+          "phone": "(03)5223066",
+          "website": "https://www.jlps.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/183606/C/新竹市/東區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.97373,
+            "latitude": 24.796633
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 571
+            },
+            {
+              "year": 108,
+              "students": 571
+            },
+            {
+              "year": 109,
+              "students": 550
+            },
+            {
+              "year": 110,
+              "students": 565
+            },
+            {
+              "year": 111,
+              "students": 585
+            },
+            {
+              "year": 112,
+              "students": 556
+            },
+            {
+              "year": 113,
+              "students": 530
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183501",
+          "code": "183501",
+          "name": "市立建華國中",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:東區",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "新竹市東區學府路2號",
+          "phone": "(03)5238075",
+          "website": "http://www.chjh.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/183501/J/新竹市/東區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.976316,
+            "latitude": 24.792939
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 562
+            },
+            {
+              "year": 108,
+              "students": 565
+            },
+            {
+              "year": 109,
+              "students": 569
+            },
+            {
+              "year": 110,
+              "students": 576
+            },
+            {
+              "year": 111,
+              "students": 487
+            },
+            {
+              "year": 112,
+              "students": 450
+            },
+            {
+              "year": 113,
+              "students": 499
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183628",
+          "code": "183628",
+          "name": "市立科園國小",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:東區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹市東區科學園路171號",
+          "phone": "(03)6668421",
+          "website": "https://www.kyps.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/183628/C/新竹市/東區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.012406,
+            "latitude": 24.781869
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 696
+            },
+            {
+              "year": 108,
+              "students": 697
+            },
+            {
+              "year": 109,
+              "students": 683
+            },
+            {
+              "year": 110,
+              "students": 614
+            },
+            {
+              "year": 111,
+              "students": 579
+            },
+            {
+              "year": 112,
+              "students": 549
+            },
+            {
+              "year": 113,
+              "students": 472
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183514",
+          "code": "183514",
+          "name": "市立新科國中",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:東區",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "新竹市東區光復路一段89巷88號",
+          "phone": "(03)6686387",
+          "website": "http://www.hkjh.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/183514/J/新竹市/東區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.023625,
+            "latitude": 24.780055
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 457
+            },
+            {
+              "year": 108,
+              "students": 407
+            },
+            {
+              "year": 109,
+              "students": 391
+            },
+            {
+              "year": 110,
+              "students": 407
+            },
+            {
+              "year": 111,
+              "students": 408
+            },
+            {
+              "year": 112,
+              "students": 405
+            },
+            {
+              "year": 113,
+              "students": 448
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "181502",
+          "code": "181502",
+          "name": "私立新竹市康橋國中(小)",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:東區",
+          "educationLevel": "國中",
+          "managementType": "私立",
+          "address": "新竹市東區柴橋路95號",
+          "phone": "(03)5192000",
+          "website": "http://www.kcbs.ntpc.edu.tw/_Admission/HsinchuCampus.html",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/181502/J/新竹市/東區/私立/否/無/",
+          "coordinates": {
+            "longitude": 120.965923,
+            "latitude": 24.768297
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 167
+            },
+            {
+              "year": 108,
+              "students": 232
+            },
+            {
+              "year": 109,
+              "students": 274
+            },
+            {
+              "year": 110,
+              "students": 274
+            },
+            {
+              "year": 111,
+              "students": 295
+            },
+            {
+              "year": 112,
+              "students": 332
+            },
+            {
+              "year": 113,
+              "students": 390
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183629",
+          "code": "183629",
+          "name": "市立高峰國小",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:東區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹市東區高翠路332巷2號",
+          "phone": "(03)5626909",
+          "website": "https://www.gfps.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/183629/C/新竹市/東區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.983756,
+            "latitude": 24.780217
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 400
+            },
+            {
+              "year": 108,
+              "students": 389
+            },
+            {
+              "year": 109,
+              "students": 384
+            },
+            {
+              "year": 110,
+              "students": 391
+            },
+            {
+              "year": 111,
+              "students": 369
+            },
+            {
+              "year": 112,
+              "students": 339
+            },
+            {
+              "year": 113,
+              "students": 308
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183614",
+          "code": "183614",
+          "name": "市立水源國小",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:東區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹市東區仰德路11號",
+          "phone": "(03)5711125",
+          "website": "https://www.syps.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/183614/C/新竹市/東區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.002574,
+            "latitude": 24.813064
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 243
+            },
+            {
+              "year": 108,
+              "students": 249
+            },
+            {
+              "year": 109,
+              "students": 264
+            },
+            {
+              "year": 110,
+              "students": 250
+            },
+            {
+              "year": 111,
+              "students": 241
+            },
+            {
+              "year": 112,
+              "students": 239
+            },
+            {
+              "year": 113,
+              "students": 240
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "181308",
+          "code": "181308",
+          "name": "私立世界高中",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:東區",
+          "educationLevel": "高中職",
+          "managementType": "私立",
+          "address": "新竹市東區光復路一段257號",
+          "phone": "(03)5783271",
+          "website": "http://www.wvs.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/181308/H/新竹市/東區/私立/否/無/",
+          "coordinates": {
+            "longitude": 121.019514,
+            "latitude": 24.781357
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 834
+            },
+            {
+              "year": 108,
+              "students": 647
+            },
+            {
+              "year": 109,
+              "students": 479
+            },
+            {
+              "year": 110,
+              "students": 347
+            },
+            {
+              "year": 111,
+              "students": 283
+            },
+            {
+              "year": 112,
+              "students": 255
+            },
+            {
+              "year": 113,
+              "students": 225
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
         }
       ],
       "dataNotes": []
+    },
+    {
+      "id": "新竹市:香山區",
+      "name": "香山區",
+      "countyId": "新竹市",
+      "schools": [
+        {
+          "id": "1053",
+          "code": "1053",
+          "name": "元培醫事科技大學",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:香山區",
+          "educationLevel": "大專院校",
+          "managementType": "私立",
+          "address": "新竹市香山區元培街306號",
+          "phone": "(03)5381183",
+          "website": "http://www.ypu.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/1053/R/新竹市/香山區/私立/否/技職/",
+          "coordinates": {
+            "longitude": 120.94038,
+            "latitude": 24.77784
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 6292
+            },
+            {
+              "year": 108,
+              "students": 6206
+            },
+            {
+              "year": 109,
+              "students": 6186
+            },
+            {
+              "year": 110,
+              "students": 5751
+            },
+            {
+              "year": 111,
+              "students": 5060
+            },
+            {
+              "year": 112,
+              "students": 4005
+            },
+            {
+              "year": 113,
+              "students": 3571
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "1011",
+          "code": "1011",
+          "name": "中華大學",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:香山區",
+          "educationLevel": "大專院校",
+          "managementType": "私立",
+          "address": "新竹市香山區東香里五福路二段707號",
+          "phone": "(03)5374281~5",
+          "website": "http://www.chu.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/1011/R/新竹市/香山區/私立/否/一般/",
+          "coordinates": {
+            "longitude": 120.952318,
+            "latitude": 24.757337
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 6267
+            },
+            {
+              "year": 108,
+              "students": 5471
+            },
+            {
+              "year": 109,
+              "students": 4948
+            },
+            {
+              "year": 110,
+              "students": 5045
+            },
+            {
+              "year": 111,
+              "students": 4461
+            },
+            {
+              "year": 112,
+              "students": 3898
+            },
+            {
+              "year": 113,
+              "students": 3557
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183307",
+          "code": "183307",
+          "name": "市立香山高中",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:香山區",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "新竹市香山區元培街124號",
+          "phone": "(03)5384332",
+          "website": "http://www.hhjh.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/183307/H/新竹市/香山區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.929531,
+            "latitude": 24.784783
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1500
+            },
+            {
+              "year": 108,
+              "students": 1502
+            },
+            {
+              "year": 109,
+              "students": 1534
+            },
+            {
+              "year": 110,
+              "students": 1469
+            },
+            {
+              "year": 111,
+              "students": 1469
+            },
+            {
+              "year": 112,
+              "students": 1443
+            },
+            {
+              "year": 113,
+              "students": 1553
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "1039",
+          "code": "1039",
+          "name": "玄奘大學",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:香山區",
+          "educationLevel": "大專院校",
+          "managementType": "私立",
+          "address": "新竹市香山區東香里玄奘路48號",
+          "phone": "(03)5302255",
+          "website": "http://www.hcu.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/1039/R/新竹市/香山區/私立/否/一般/",
+          "coordinates": {
+            "longitude": 120.943182,
+            "latitude": 24.774391
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 3674
+            },
+            {
+              "year": 108,
+              "students": 2889
+            },
+            {
+              "year": 109,
+              "students": 2408
+            },
+            {
+              "year": 110,
+              "students": 2049
+            },
+            {
+              "year": 111,
+              "students": 1805
+            },
+            {
+              "year": 112,
+              "students": 1551
+            },
+            {
+              "year": 113,
+              "students": 1387
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183615",
+          "code": "183615",
+          "name": "市立香山國小",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:香山區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹市香山區牛埔東路260號",
+          "phone": "(03)5386164",
+          "website": "https://www.hhps.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/183615/C/新竹市/香山區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.943795,
+            "latitude": 24.796571
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 787
+            },
+            {
+              "year": 108,
+              "students": 810
+            },
+            {
+              "year": 109,
+              "students": 828
+            },
+            {
+              "year": 110,
+              "students": 862
+            },
+            {
+              "year": 111,
+              "students": 935
+            },
+            {
+              "year": 112,
+              "students": 977
+            },
+            {
+              "year": 113,
+              "students": 945
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183625",
+          "code": "183625",
+          "name": "市立頂埔國小",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:香山區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹市香山區頂埔路23號",
+          "phone": "(03)5386204",
+          "website": "https://www.dpps.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/183625/C/新竹市/香山區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.950062,
+            "latitude": 24.79775
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 709
+            },
+            {
+              "year": 108,
+              "students": 729
+            },
+            {
+              "year": 109,
+              "students": 747
+            },
+            {
+              "year": 110,
+              "students": 758
+            },
+            {
+              "year": 111,
+              "students": 772
+            },
+            {
+              "year": 112,
+              "students": 807
+            },
+            {
+              "year": 113,
+              "students": 770
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183618",
+          "code": "183618",
+          "name": "市立大庄國小",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:香山區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹市香山區大庄路48號",
+          "phone": "(03)5384035",
+          "website": "https://www.ttps.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/183618/C/新竹市/香山區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.927182,
+            "latitude": 24.789368
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 625
+            },
+            {
+              "year": 108,
+              "students": 628
+            },
+            {
+              "year": 109,
+              "students": 632
+            },
+            {
+              "year": 110,
+              "students": 669
+            },
+            {
+              "year": 111,
+              "students": 677
+            },
+            {
+              "year": 112,
+              "students": 684
+            },
+            {
+              "year": 113,
+              "students": 678
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183616",
+          "code": "183616",
+          "name": "市立虎林國小",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:香山區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹市香山區延平路二段78號",
+          "phone": "(03)5381820",
+          "website": "https://www.hlps.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/183616/C/新竹市/香山區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.941198,
+            "latitude": 24.806022
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 563
+            },
+            {
+              "year": 108,
+              "students": 556
+            },
+            {
+              "year": 109,
+              "students": 508
+            },
+            {
+              "year": 110,
+              "students": 465
+            },
+            {
+              "year": 111,
+              "students": 464
+            },
+            {
+              "year": 112,
+              "students": 453
+            },
+            {
+              "year": 113,
+              "students": 413
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183622",
+          "code": "183622",
+          "name": "市立內湖國小",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:香山區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹市香山區內湖路109號",
+          "phone": "(03)5373184",
+          "website": "https://www.nhps.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/183622/C/新竹市/香山區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.90636,
+            "latitude": 24.742106
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 474
+            },
+            {
+              "year": 108,
+              "students": 456
+            },
+            {
+              "year": 109,
+              "students": 435
+            },
+            {
+              "year": 110,
+              "students": 443
+            },
+            {
+              "year": 111,
+              "students": 452
+            },
+            {
+              "year": 112,
+              "students": 429
+            },
+            {
+              "year": 113,
+              "students": 383
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183512",
+          "code": "183512",
+          "name": "市立虎林國中",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:香山區",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "新竹市香山區延平路二段76號",
+          "phone": "(03)5309433",
+          "website": "http://www.hljh.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/183512/J/新竹市/香山區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.942295,
+            "latitude": 24.806482
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 396
+            },
+            {
+              "year": 108,
+              "students": 371
+            },
+            {
+              "year": 109,
+              "students": 326
+            },
+            {
+              "year": 110,
+              "students": 345
+            },
+            {
+              "year": 111,
+              "students": 320
+            },
+            {
+              "year": 112,
+              "students": 290
+            },
+            {
+              "year": 113,
+              "students": 293
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183620",
+          "code": "183620",
+          "name": "市立朝山國小",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:香山區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹市香山區中華路五段648巷126號",
+          "phone": "(03)5374304",
+          "website": "https://www.csps.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/183620/C/新竹市/香山區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.91335,
+            "latitude": 24.765507
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 227
+            },
+            {
+              "year": 108,
+              "students": 226
+            },
+            {
+              "year": 109,
+              "students": 225
+            },
+            {
+              "year": 110,
+              "students": 213
+            },
+            {
+              "year": 111,
+              "students": 226
+            },
+            {
+              "year": 112,
+              "students": 219
+            },
+            {
+              "year": 113,
+              "students": 208
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183511",
+          "code": "183511",
+          "name": "市立內湖國中",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:香山區",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "新竹市香山區五福路一段12號",
+          "phone": "(03)5373484",
+          "website": "http://www.nhjhs.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/183511/J/新竹市/香山區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.911128,
+            "latitude": 24.742096
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 195
+            },
+            {
+              "year": 108,
+              "students": 186
+            },
+            {
+              "year": 109,
+              "students": 160
+            },
+            {
+              "year": 110,
+              "students": 145
+            },
+            {
+              "year": 111,
+              "students": 123
+            },
+            {
+              "year": 112,
+              "students": 124
+            },
+            {
+              "year": 113,
+              "students": 156
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183631",
+          "code": "183631",
+          "name": "市立華德福實驗國(中)小",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:香山區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹市香山區華德福街160巷25號",
+          "phone": "(03)5191909",
+          "website": "https://www.hwes.hc.edu.tw/nss/p/index",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/183631/C/新竹市/香山區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.959466,
+            "latitude": 24.751343
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 144
+            },
+            {
+              "year": 108,
+              "students": 149
+            },
+            {
+              "year": 109,
+              "students": 153
+            },
+            {
+              "year": 110,
+              "students": 153
+            },
+            {
+              "year": 111,
+              "students": 152
+            },
+            {
+              "year": 112,
+              "students": 140
+            },
+            {
+              "year": 113,
+              "students": 132
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183623",
+          "code": "183623",
+          "name": "市立南隘國小",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:香山區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹市香山區南隘路二段31號",
+          "phone": "(03)5371405",
+          "website": "https://www.nips.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/183623/C/新竹市/香山區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.929105,
+            "latitude": 24.726655
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 112
+            },
+            {
+              "year": 108,
+              "students": 104
+            },
+            {
+              "year": 109,
+              "students": 101
+            },
+            {
+              "year": 110,
+              "students": 105
+            },
+            {
+              "year": 111,
+              "students": 122
+            },
+            {
+              "year": 112,
+              "students": 123
+            },
+            {
+              "year": 113,
+              "students": 125
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183619",
+          "code": "183619",
+          "name": "市立茄苳國小",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:香山區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹市香山區茄苳里茄苳路70號",
+          "phone": "(03)5373543",
+          "website": "https://www.cdps.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/183619/C/新竹市/香山區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.945933,
+            "latitude": 24.755723
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 128
+            },
+            {
+              "year": 108,
+              "students": 134
+            },
+            {
+              "year": 109,
+              "students": 127
+            },
+            {
+              "year": 110,
+              "students": 128
+            },
+            {
+              "year": 111,
+              "students": 135
+            },
+            {
+              "year": 112,
+              "students": 136
+            },
+            {
+              "year": 113,
+              "students": 121
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183509",
+          "code": "183509",
+          "name": "市立富禮國中",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:香山區",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "新竹市香山區富禮街16號",
+          "phone": "(03)5374793",
+          "website": "http://www.fljh.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/183509/J/新竹市/香山區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.912189,
+            "latitude": 24.76438
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 130
+            },
+            {
+              "year": 108,
+              "students": 128
+            },
+            {
+              "year": 109,
+              "students": 118
+            },
+            {
+              "year": 110,
+              "students": 129
+            },
+            {
+              "year": 111,
+              "students": 128
+            },
+            {
+              "year": 112,
+              "students": 118
+            },
+            {
+              "year": 113,
+              "students": 112
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183617",
+          "code": "183617",
+          "name": "市立港南國小",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:香山區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹市香山區海埔路171巷91號",
+          "phone": "(03)5382964",
+          "website": "https://www.gnps.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/183617/C/新竹市/香山區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.922905,
+            "latitude": 24.814211
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 100
+            },
+            {
+              "year": 108,
+              "students": 102
+            },
+            {
+              "year": 109,
+              "students": 113
+            },
+            {
+              "year": 110,
+              "students": 122
+            },
+            {
+              "year": 111,
+              "students": 120
+            },
+            {
+              "year": 112,
+              "students": 121
+            },
+            {
+              "year": 113,
+              "students": 112
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183621",
+          "code": "183621",
+          "name": "市立大湖國小",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:香山區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹市香山區大湖里五福路一段530號",
+          "phone": "(03)5374609",
+          "website": "https://www.dhps.hc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/183621/C/新竹市/香山區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.933579,
+            "latitude": 24.745829
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 71
+            },
+            {
+              "year": 108,
+              "students": 52
+            },
+            {
+              "year": 109,
+              "students": 52
+            },
+            {
+              "year": 110,
+              "students": 50
+            },
+            {
+              "year": 111,
+              "students": 54
+            },
+            {
+              "year": 112,
+              "students": 58
+            },
+            {
+              "year": 113,
+              "students": 62
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "183516",
+          "code": "183516",
+          "name": "市立華德福實驗國中(小)",
+          "countyId": "新竹市",
+          "townshipId": "新竹市:香山區",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "新竹市香山區華德福街160巷25號",
+          "phone": "(03)5370531",
+          "website": "https://www.hwes.hc.edu.tw/nss/p/index",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/183516/J/新竹市/香山區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.959535,
+            "latitude": 24.751291
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 0
+            },
+            {
+              "year": 108,
+              "students": 13
+            },
+            {
+              "year": 109,
+              "students": 24
+            },
+            {
+              "year": 110,
+              "students": 40
+            },
+            {
+              "year": 111,
+              "students": 38
+            },
+            {
+              "year": 112,
+              "students": 40
+            },
+            {
+              "year": 113,
+              "students": 45
+            }
+          ],
+          "status": "正常",
+          "missingYears": [
+            107
+          ],
+          "dataNotes": [
+            {
+              "type": "缺年度",
+              "message": "缺少學年度資料：107",
+              "severity": "warning",
+              "years": [
+                107
+              ]
+            }
+          ]
+        }
+      ],
+      "dataNotes": [
+        {
+          "type": "缺年度",
+          "message": "香山區 有 1 所學校存在年度缺漏。",
+          "severity": "warning"
+        }
+      ]
     }
   ]
 }

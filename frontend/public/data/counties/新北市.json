@@ -8,7 +8,7 @@
   "dataNotes": [
     {
       "type": "缺年度",
-      "message": "新北市 有 25 所學校存在年度缺漏。",
+      "message": "新北市 有 26 所學校存在年度缺漏。",
       "severity": "warning"
     }
   ],
@@ -376,6 +376,56 @@
       "name": "三芝區",
       "countyId": "新北市",
       "schools": [
+        {
+          "id": "1195",
+          "code": "1195",
+          "name": "馬偕醫學院",
+          "countyId": "新北市",
+          "townshipId": "新北市:三芝區",
+          "educationLevel": "大專院校",
+          "managementType": "私立",
+          "address": "新北市三芝區中正路三段46號",
+          "phone": "(02)26360303",
+          "website": "http://www.mmc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/1195/R/新北市/三芝區/私立/否/一般/",
+          "coordinates": {
+            "longitude": 121.496695,
+            "latitude": 25.252917
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 708
+            },
+            {
+              "year": 108,
+              "students": 684
+            },
+            {
+              "year": 109,
+              "students": 816
+            },
+            {
+              "year": 110,
+              "students": 901
+            },
+            {
+              "year": 111,
+              "students": 862
+            },
+            {
+              "year": 112,
+              "students": 903
+            },
+            {
+              "year": 113,
+              "students": 986
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
         {
           "id": "014726",
           "code": "014726",
@@ -2951,6 +3001,56 @@
       "countyId": "新北市",
       "schools": [
         {
+          "id": "1080",
+          "code": "1080",
+          "name": "宏國德霖科技大學",
+          "countyId": "新北市",
+          "townshipId": "新北市:土城區",
+          "educationLevel": "大專院校",
+          "managementType": "私立",
+          "address": "新北市土城區青雲路380巷1號",
+          "phone": "(02)22733567",
+          "website": "http://www.hdut.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/1080/R/新北市/土城區/私立/否/技職/",
+          "coordinates": {
+            "longitude": 121.45695,
+            "latitude": 24.973439
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 6344
+            },
+            {
+              "year": 108,
+              "students": 5732
+            },
+            {
+              "year": 109,
+              "students": 5370
+            },
+            {
+              "year": 110,
+              "students": 4996
+            },
+            {
+              "year": 111,
+              "students": 4689
+            },
+            {
+              "year": 112,
+              "students": 3990
+            },
+            {
+              "year": 113,
+              "students": 4292
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
           "id": "014649",
           "code": "014649",
           "name": "市立廣福國小",
@@ -4130,6 +4230,56 @@
             {
               "year": 113,
               "students": 1459
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "1076",
+          "code": "1076",
+          "name": "華夏科技大學",
+          "countyId": "新北市",
+          "townshipId": "新北市:中和區",
+          "educationLevel": "大專院校",
+          "managementType": "私立",
+          "address": "新北市中和區工專路111號",
+          "phone": "(02)89415100",
+          "website": "http://www.hwh.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/1076/R/新北市/中和區/私立/否/技職/",
+          "coordinates": {
+            "longitude": 121.507678,
+            "latitude": 24.980905
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 4366
+            },
+            {
+              "year": 108,
+              "students": 4036
+            },
+            {
+              "year": 109,
+              "students": 4043
+            },
+            {
+              "year": 110,
+              "students": 3500
+            },
+            {
+              "year": 111,
+              "students": 2817
+            },
+            {
+              "year": 112,
+              "students": 1650
+            },
+            {
+              "year": 113,
+              "students": 822
             }
           ],
           "status": "正常",
@@ -5761,6 +5911,56 @@
       "countyId": "新北市",
       "schools": [
         {
+          "id": "1013",
+          "code": "1013",
+          "name": "華梵大學",
+          "countyId": "新北市",
+          "townshipId": "新北市:石碇區",
+          "educationLevel": "大專院校",
+          "managementType": "私立",
+          "address": "新北市石碇區華梵路1號",
+          "phone": "(02)26632102",
+          "website": "http://www.hfu.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/1013/R/新北市/石碇區/私立/否/一般/",
+          "coordinates": {
+            "longitude": 121.692106,
+            "latitude": 24.98002
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1871
+            },
+            {
+              "year": 108,
+              "students": 1518
+            },
+            {
+              "year": 109,
+              "students": 1165
+            },
+            {
+              "year": 110,
+              "students": 1090
+            },
+            {
+              "year": 111,
+              "students": 991
+            },
+            {
+              "year": 112,
+              "students": 1023
+            },
+            {
+              "year": 113,
+              "students": 1063
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
           "id": "014348",
           "code": "014348",
           "name": "市立石碇高中",
@@ -6985,6 +7185,56 @@
       "countyId": "新北市",
       "schools": [
         {
+          "id": "1078",
+          "code": "1078",
+          "name": "致理科技大學",
+          "countyId": "新北市",
+          "townshipId": "新北市:板橋區",
+          "educationLevel": "大專院校",
+          "managementType": "私立",
+          "address": "新北市板橋區文化路一段313號",
+          "phone": "(02)22576167",
+          "website": "http://www.chihlee.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/1078/R/新北市/板橋區/私立/否/技職/",
+          "coordinates": {
+            "longitude": 121.464405,
+            "latitude": 25.020898
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 11509
+            },
+            {
+              "year": 108,
+              "students": 11369
+            },
+            {
+              "year": 109,
+              "students": 11575
+            },
+            {
+              "year": 110,
+              "students": 11486
+            },
+            {
+              "year": 111,
+              "students": 11326
+            },
+            {
+              "year": 112,
+              "students": 10951
+            },
+            {
+              "year": 113,
+              "students": 10857
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
           "id": "0029",
           "code": "0029",
           "name": "國立臺灣藝術大學",
@@ -7033,6 +7283,71 @@
           "status": "正常",
           "missingYears": [],
           "dataNotes": []
+        },
+        {
+          "id": "1084",
+          "code": "1084",
+          "name": "亞東科技大學",
+          "countyId": "新北市",
+          "townshipId": "新北市:板橋區",
+          "educationLevel": "大專院校",
+          "managementType": "私立",
+          "address": "新北市板橋區四川路二段58號",
+          "phone": "(02)77388000",
+          "website": "https://www.aeust.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/1084/R/新北市/板橋區/私立/否/技職/",
+          "coordinates": {
+            "longitude": 121.452745,
+            "latitude": 24.995115
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 0
+            },
+            {
+              "year": 108,
+              "students": 0
+            },
+            {
+              "year": 109,
+              "students": 0
+            },
+            {
+              "year": 110,
+              "students": 4223
+            },
+            {
+              "year": 111,
+              "students": 3921
+            },
+            {
+              "year": 112,
+              "students": 3856
+            },
+            {
+              "year": 113,
+              "students": 3950
+            }
+          ],
+          "status": "正常",
+          "missingYears": [
+            107,
+            108,
+            109
+          ],
+          "dataNotes": [
+            {
+              "type": "缺年度",
+              "message": "缺少學年度資料：107、108、109",
+              "severity": "warning",
+              "years": [
+                107,
+                108,
+                109
+              ]
+            }
+          ]
         },
         {
           "id": "014302",
@@ -8660,7 +8975,7 @@
       "dataNotes": [
         {
           "type": "缺年度",
-          "message": "板橋區 有 2 所學校存在年度缺漏。",
+          "message": "板橋區 有 3 所學校存在年度缺漏。",
           "severity": "warning"
         }
       ]
@@ -8670,6 +8985,56 @@
       "name": "林口區",
       "countyId": "新北市",
       "schools": [
+        {
+          "id": "1073",
+          "code": "1073",
+          "name": "醒吾科技大學",
+          "countyId": "新北市",
+          "townshipId": "新北市:林口區",
+          "educationLevel": "大專院校",
+          "managementType": "私立",
+          "address": "新北市林口區粉寮路一段101號",
+          "phone": "(02)26015310",
+          "website": "http://www.hwu.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/1073/R/新北市/林口區/私立/否/技職/",
+          "coordinates": {
+            "longitude": 121.396394,
+            "latitude": 25.080808
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 8097
+            },
+            {
+              "year": 108,
+              "students": 7563
+            },
+            {
+              "year": 109,
+              "students": 7943
+            },
+            {
+              "year": 110,
+              "students": 7517
+            },
+            {
+              "year": 111,
+              "students": 6687
+            },
+            {
+              "year": 112,
+              "students": 6100
+            },
+            {
+              "year": 113,
+              "students": 5634
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
         {
           "id": "011330",
           "code": "011330",
@@ -9563,6 +9928,56 @@
           "dataNotes": []
         },
         {
+          "id": "1196",
+          "code": "1196",
+          "name": "法鼓文理學院",
+          "countyId": "新北市",
+          "townshipId": "新北市:金山區",
+          "educationLevel": "大專院校",
+          "managementType": "私立",
+          "address": "新北市金山區西湖里法鼓路700號",
+          "phone": "(02) 24980707",
+          "website": "http://www.dila.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/1196/R/新北市/金山區/私立/否/一般/",
+          "coordinates": {
+            "longitude": 121.61652,
+            "latitude": 25.245423
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 280
+            },
+            {
+              "year": 108,
+              "students": 305
+            },
+            {
+              "year": 109,
+              "students": 302
+            },
+            {
+              "year": 110,
+              "students": 329
+            },
+            {
+              "year": 111,
+              "students": 338
+            },
+            {
+              "year": 112,
+              "students": 363
+            },
+            {
+              "year": 113,
+              "students": 390
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
           "id": "014663",
           "code": "014663",
           "name": "市立金山國小",
@@ -9770,6 +10185,106 @@
       "name": "泰山區",
       "countyId": "新北市",
       "schools": [
+        {
+          "id": "1183",
+          "code": "1183",
+          "name": "黎明技術學院",
+          "countyId": "新北市",
+          "townshipId": "新北市:泰山區",
+          "educationLevel": "大專院校",
+          "managementType": "私立",
+          "address": "新北市泰山區泰林路三段22號",
+          "phone": "(02)29097811",
+          "website": "http://www.lit.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/1183/R/新北市/泰山區/私立/否/技職/",
+          "coordinates": {
+            "longitude": 121.420117,
+            "latitude": 25.066086
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 4925
+            },
+            {
+              "year": 108,
+              "students": 5060
+            },
+            {
+              "year": 109,
+              "students": 5191
+            },
+            {
+              "year": 110,
+              "students": 5254
+            },
+            {
+              "year": 111,
+              "students": 5061
+            },
+            {
+              "year": 112,
+              "students": 4742
+            },
+            {
+              "year": 113,
+              "students": 4924
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "1041",
+          "code": "1041",
+          "name": "明志科技大學",
+          "countyId": "新北市",
+          "townshipId": "新北市:泰山區",
+          "educationLevel": "大專院校",
+          "managementType": "私立",
+          "address": "新北市泰山區貴子里工專路84號",
+          "phone": "(02)29089899",
+          "website": "http://www.mcut.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/1041/R/新北市/泰山區/私立/否/技職/",
+          "coordinates": {
+            "longitude": 121.421304,
+            "latitude": 25.041619
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 4559
+            },
+            {
+              "year": 108,
+              "students": 4572
+            },
+            {
+              "year": 109,
+              "students": 4492
+            },
+            {
+              "year": 110,
+              "students": 4438
+            },
+            {
+              "year": 111,
+              "students": 4344
+            },
+            {
+              "year": 112,
+              "students": 4327
+            },
+            {
+              "year": 113,
+              "students": 4383
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
         {
           "id": "013303",
           "code": "013303",
@@ -10729,6 +11244,106 @@
       "countyId": "新北市",
       "schools": [
         {
+          "id": "1005",
+          "code": "1005",
+          "name": "淡江大學",
+          "countyId": "新北市",
+          "townshipId": "新北市:淡水區",
+          "educationLevel": "大專院校",
+          "managementType": "私立",
+          "address": "新北市淡水區英專路151號",
+          "phone": "(02)26215656",
+          "website": "http://www.tku.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/1005/R/新北市/淡水區/私立/否/一般/",
+          "coordinates": {
+            "longitude": 121.447112,
+            "latitude": 25.173841
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 25343
+            },
+            {
+              "year": 108,
+              "students": 24635
+            },
+            {
+              "year": 109,
+              "students": 24209
+            },
+            {
+              "year": 110,
+              "students": 24534
+            },
+            {
+              "year": 111,
+              "students": 23328
+            },
+            {
+              "year": 112,
+              "students": 22674
+            },
+            {
+              "year": 113,
+              "students": 22276
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "1083",
+          "code": "1083",
+          "name": "臺北海洋科技大學",
+          "countyId": "新北市",
+          "townshipId": "新北市:淡水區",
+          "educationLevel": "大專院校",
+          "managementType": "私立",
+          "address": "新北市淡水區濱海路三段150號",
+          "phone": "(02)28059999",
+          "website": "http://www.tumt.edu.tw/app/home.php",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/1083/R/新北市/淡水區/私立/否/技職/",
+          "coordinates": {
+            "longitude": 121.427258,
+            "latitude": 25.191353
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 4856
+            },
+            {
+              "year": 108,
+              "students": 4440
+            },
+            {
+              "year": 109,
+              "students": 4192
+            },
+            {
+              "year": 110,
+              "students": 4124
+            },
+            {
+              "year": 111,
+              "students": 4007
+            },
+            {
+              "year": 112,
+              "students": 3775
+            },
+            {
+              "year": 113,
+              "students": 3621
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
           "id": "011301",
           "code": "011301",
           "name": "私立淡江高中",
@@ -10772,6 +11387,56 @@
             {
               "year": 113,
               "students": 2353
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "1021",
+          "code": "1021",
+          "name": "真理大學",
+          "countyId": "新北市",
+          "townshipId": "新北市:淡水區",
+          "educationLevel": "大專院校",
+          "managementType": "私立",
+          "address": "新北市淡水區真理街32號",
+          "phone": "(02)26212121",
+          "website": "http://www.au.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/1021/R/新北市/淡水區/私立/否/一般/",
+          "coordinates": {
+            "longitude": 121.435003,
+            "latitude": 25.176823
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 6204
+            },
+            {
+              "year": 108,
+              "students": 5587
+            },
+            {
+              "year": 109,
+              "students": 5255
+            },
+            {
+              "year": 110,
+              "students": 5010
+            },
+            {
+              "year": 111,
+              "students": 4314
+            },
+            {
+              "year": 112,
+              "students": 3281
+            },
+            {
+              "year": 113,
+              "students": 2322
             }
           ],
           "status": "正常",
@@ -11409,6 +12074,56 @@
           "dataNotes": []
         },
         {
+          "id": "1044",
+          "code": "1044",
+          "name": "聖約翰科技大學",
+          "countyId": "新北市",
+          "townshipId": "新北市:淡水區",
+          "educationLevel": "大專院校",
+          "managementType": "私立",
+          "address": "新北市淡水區淡金路四段499號",
+          "phone": "(02)28013131#7011",
+          "website": "https://www.sju.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/1044/R/新北市/淡水區/私立/否/技職/",
+          "coordinates": {
+            "longitude": 121.45101,
+            "latitude": 25.227351
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 3807
+            },
+            {
+              "year": 108,
+              "students": 3073
+            },
+            {
+              "year": 109,
+              "students": 2391
+            },
+            {
+              "year": 110,
+              "students": 1838
+            },
+            {
+              "year": 111,
+              "students": 1119
+            },
+            {
+              "year": 112,
+              "students": 607
+            },
+            {
+              "year": 113,
+              "students": 467
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
           "id": "014716",
           "code": "014716",
           "name": "市立水源國小",
@@ -11773,6 +12488,56 @@
       "countyId": "新北市",
       "schools": [
         {
+          "id": "1056",
+          "code": "1056",
+          "name": "東南科技大學",
+          "countyId": "新北市",
+          "townshipId": "新北市:深坑區",
+          "educationLevel": "大專院校",
+          "managementType": "私立",
+          "address": "新北市深坑區北深路三段152號",
+          "phone": "(02)86625900",
+          "website": "http://www.tnu.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/1056/R/新北市/深坑區/私立/否/技職/",
+          "coordinates": {
+            "longitude": 121.604745,
+            "latitude": 25.004432
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 5935
+            },
+            {
+              "year": 108,
+              "students": 5575
+            },
+            {
+              "year": 109,
+              "students": 5168
+            },
+            {
+              "year": 110,
+              "students": 4850
+            },
+            {
+              "year": 111,
+              "students": 4376
+            },
+            {
+              "year": 112,
+              "students": 3647
+            },
+            {
+              "year": 113,
+              "students": 3556
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
           "id": "014676",
           "code": "014676",
           "name": "市立深坑國小",
@@ -11940,6 +12705,106 @@
               ]
             }
           ]
+        },
+        {
+          "id": "1054",
+          "code": "1054",
+          "name": "景文科技大學",
+          "countyId": "新北市",
+          "townshipId": "新北市:新店區",
+          "educationLevel": "大專院校",
+          "managementType": "私立",
+          "address": "新北市新店區安忠路99號",
+          "phone": "(02)82122000",
+          "website": "http://www.just.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/1054/R/新北市/新店區/私立/否/技職/",
+          "coordinates": {
+            "longitude": 121.509305,
+            "latitude": 24.95178
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 7061
+            },
+            {
+              "year": 108,
+              "students": 6849
+            },
+            {
+              "year": 109,
+              "students": 6656
+            },
+            {
+              "year": 110,
+              "students": 5903
+            },
+            {
+              "year": 111,
+              "students": 5342
+            },
+            {
+              "year": 112,
+              "students": 4599
+            },
+            {
+              "year": 113,
+              "students": 4354
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "1286",
+          "code": "1286",
+          "name": "耕莘健康管理專科學校",
+          "countyId": "新北市",
+          "townshipId": "新北市:新店區",
+          "educationLevel": "大專院校",
+          "managementType": "私立",
+          "address": "新北市新店區民族路112號",
+          "phone": "(02)22191131",
+          "website": "http://www.ctcn.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/1286/R/新北市/新店區/私立/否/技職/",
+          "coordinates": {
+            "longitude": 121.536648,
+            "latitude": 24.977048
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 5093
+            },
+            {
+              "year": 108,
+              "students": 4911
+            },
+            {
+              "year": 109,
+              "students": 4698
+            },
+            {
+              "year": 110,
+              "students": 4392
+            },
+            {
+              "year": 111,
+              "students": 4214
+            },
+            {
+              "year": 112,
+              "students": 4044
+            },
+            {
+              "year": 113,
+              "students": 3931
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "011302",
@@ -13138,6 +14003,56 @@
       "name": "新莊區",
       "countyId": "新北市",
       "schools": [
+        {
+          "id": "1002",
+          "code": "1002",
+          "name": "輔仁大學",
+          "countyId": "新北市",
+          "townshipId": "新北市:新莊區",
+          "educationLevel": "大專院校",
+          "managementType": "私立",
+          "address": "新北市新莊區中正路510號",
+          "phone": "(02)29052000",
+          "website": "http://www.fju.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/1002/R/新北市/新莊區/私立/否/一般/",
+          "coordinates": {
+            "longitude": 121.434694,
+            "latitude": 25.033274
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 26176
+            },
+            {
+              "year": 108,
+              "students": 25709
+            },
+            {
+              "year": 109,
+              "students": 25651
+            },
+            {
+              "year": 110,
+              "students": 25760
+            },
+            {
+              "year": 111,
+              "students": 25981
+            },
+            {
+              "year": 112,
+              "students": 25632
+            },
+            {
+              "year": 113,
+              "students": 25681
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
         {
           "id": "014353",
           "code": "014353",

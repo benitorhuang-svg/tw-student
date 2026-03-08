@@ -8,6 +8,880 @@
   "dataNotes": [],
   "towns": [
     {
+      "id": "金門縣:金沙鎮",
+      "name": "金沙鎮",
+      "countyId": "金門縣",
+      "schools": [
+        {
+          "id": "714504",
+          "code": "714504",
+          "name": "縣立金沙國中",
+          "countyId": "金門縣",
+          "townshipId": "金門縣:金沙鎮",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "金門縣金沙鎮汶沙里國中路61號",
+          "phone": "(082)352560",
+          "website": "http://www.ksjh.km.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/714504/J/金門縣/金沙鎮/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 118.415554,
+            "latitude": 24.490593
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 263
+            },
+            {
+              "year": 108,
+              "students": 244
+            },
+            {
+              "year": 109,
+              "students": 241
+            },
+            {
+              "year": 110,
+              "students": 233
+            },
+            {
+              "year": 111,
+              "students": 213
+            },
+            {
+              "year": 112,
+              "students": 190
+            },
+            {
+              "year": 113,
+              "students": 186
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "714609",
+          "code": "714609",
+          "name": "縣立金沙國小",
+          "countyId": "金門縣",
+          "townshipId": "金門縣:金沙鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "金門縣金沙鎮汶沙里后浦頭117號",
+          "phone": "(082)352569",
+          "website": "https://kses.km.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/714609/C/金門縣/金沙鎮/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 118.41216,
+            "latitude": 24.488478
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 237
+            },
+            {
+              "year": 108,
+              "students": 217
+            },
+            {
+              "year": 109,
+              "students": 210
+            },
+            {
+              "year": 110,
+              "students": 197
+            },
+            {
+              "year": 111,
+              "students": 198
+            },
+            {
+              "year": 112,
+              "students": 188
+            },
+            {
+              "year": 113,
+              "students": 173
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "714608",
+          "code": "714608",
+          "name": "縣立多年國小",
+          "countyId": "金門縣",
+          "townshipId": "金門縣:金沙鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "金門縣金沙鎮環島東路4段600號",
+          "phone": "(082)332470",
+          "website": "http://www.dnes.km.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/714608/C/金門縣/金沙鎮/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 118.454675,
+            "latitude": 24.452179
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 73
+            },
+            {
+              "year": 108,
+              "students": 75
+            },
+            {
+              "year": 109,
+              "students": 81
+            },
+            {
+              "year": 110,
+              "students": 92
+            },
+            {
+              "year": 111,
+              "students": 93
+            },
+            {
+              "year": 112,
+              "students": 90
+            },
+            {
+              "year": 113,
+              "students": 90
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "714610",
+          "code": "714610",
+          "name": "縣立何浦國小",
+          "countyId": "金門縣",
+          "townshipId": "金門縣:金沙鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "金門縣金沙鎮浦山里下塘頭39號",
+          "phone": "(082)352455",
+          "website": "https://hpps.km.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/714610/C/金門縣/金沙鎮/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 118.395453,
+            "latitude": 24.478267
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 98
+            },
+            {
+              "year": 108,
+              "students": 102
+            },
+            {
+              "year": 109,
+              "students": 92
+            },
+            {
+              "year": 110,
+              "students": 92
+            },
+            {
+              "year": 111,
+              "students": 82
+            },
+            {
+              "year": 112,
+              "students": 84
+            },
+            {
+              "year": 113,
+              "students": 77
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "714611",
+          "code": "714611",
+          "name": "縣立安瀾國小",
+          "countyId": "金門縣",
+          "townshipId": "金門縣:金沙鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "金門縣金沙鎮碧山村81號",
+          "phone": "(082)352861",
+          "website": "https://alps.km.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/714611/C/金門縣/金沙鎮/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 118.437866,
+            "latitude": 24.482521
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 54
+            },
+            {
+              "year": 108,
+              "students": 51
+            },
+            {
+              "year": 109,
+              "students": 51
+            },
+            {
+              "year": 110,
+              "students": 59
+            },
+            {
+              "year": 111,
+              "students": 56
+            },
+            {
+              "year": 112,
+              "students": 63
+            },
+            {
+              "year": 113,
+              "students": 61
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "714612",
+          "code": "714612",
+          "name": "縣立述美國小",
+          "countyId": "金門縣",
+          "townshipId": "金門縣:金沙鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "金門縣金沙鎮沙青路999號",
+          "phone": "(082)352860",
+          "website": "https://smps.km.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/714612/C/金門縣/金沙鎮/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 118.410882,
+            "latitude": 24.513692
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 70
+            },
+            {
+              "year": 108,
+              "students": 70
+            },
+            {
+              "year": 109,
+              "students": 70
+            },
+            {
+              "year": 110,
+              "students": 70
+            },
+            {
+              "year": 111,
+              "students": 63
+            },
+            {
+              "year": 112,
+              "students": 55
+            },
+            {
+              "year": 113,
+              "students": 58
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    },
+    {
+      "id": "金門縣:金城鎮",
+      "name": "金城鎮",
+      "countyId": "金門縣",
+      "schools": [
+        {
+          "id": "714603",
+          "code": "714603",
+          "name": "縣立中正國小",
+          "countyId": "金門縣",
+          "townshipId": "金門縣:金城鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "金門縣金城鎮珠浦北路38號",
+          "phone": "(082)325645",
+          "website": "http://www.jjes.km.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/714603/C/金門縣/金城鎮/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 118.316883,
+            "latitude": 24.43478
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1133
+            },
+            {
+              "year": 108,
+              "students": 1129
+            },
+            {
+              "year": 109,
+              "students": 1122
+            },
+            {
+              "year": 110,
+              "students": 1170
+            },
+            {
+              "year": 111,
+              "students": 1177
+            },
+            {
+              "year": 112,
+              "students": 1196
+            },
+            {
+              "year": 113,
+              "students": 1180
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "710301",
+          "code": "710301",
+          "name": "國立金門高中",
+          "countyId": "金門縣",
+          "townshipId": "金門縣:金城鎮",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "金門縣金城鎮光前路94號",
+          "phone": "(082)326582",
+          "website": "http://www.kmsh.km.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/710301/H/金門縣/金城鎮/國立/偏遠/無/",
+          "coordinates": {
+            "longitude": 118.314247,
+            "latitude": 24.435241
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 976
+            },
+            {
+              "year": 108,
+              "students": 948
+            },
+            {
+              "year": 109,
+              "students": 941
+            },
+            {
+              "year": 110,
+              "students": 940
+            },
+            {
+              "year": 111,
+              "students": 939
+            },
+            {
+              "year": 112,
+              "students": 939
+            },
+            {
+              "year": 113,
+              "students": 954
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "714501",
+          "code": "714501",
+          "name": "縣立金城國中",
+          "countyId": "金門縣",
+          "townshipId": "金門縣:金城鎮",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "金門縣金城鎮民權路32號",
+          "phone": "(082)325454",
+          "website": "http://www.kcjh.km.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/714501/J/金門縣/金城鎮/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 118.312985,
+            "latitude": 24.431445
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 891
+            },
+            {
+              "year": 108,
+              "students": 859
+            },
+            {
+              "year": 109,
+              "students": 844
+            },
+            {
+              "year": 110,
+              "students": 828
+            },
+            {
+              "year": 111,
+              "students": 820
+            },
+            {
+              "year": 112,
+              "students": 836
+            },
+            {
+              "year": 113,
+              "students": 876
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "714604",
+          "code": "714604",
+          "name": "縣立賢庵國小",
+          "countyId": "金門縣",
+          "townshipId": "金門縣:金城鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "金門縣金城鎮賢庵里庵前18之2號",
+          "phone": "(082)325463",
+          "website": "https://saps.km.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/714604/C/金門縣/金城鎮/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 118.319048,
+            "latitude": 24.417792
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 244
+            },
+            {
+              "year": 108,
+              "students": 244
+            },
+            {
+              "year": 109,
+              "students": 252
+            },
+            {
+              "year": 110,
+              "students": 257
+            },
+            {
+              "year": 111,
+              "students": 251
+            },
+            {
+              "year": 112,
+              "students": 247
+            },
+            {
+              "year": 113,
+              "students": 229
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "714605",
+          "code": "714605",
+          "name": "縣立古城國小",
+          "countyId": "金門縣",
+          "townshipId": "金門縣:金城鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "金門縣金城鎮古城村大古崗100號",
+          "phone": "(082)325274",
+          "website": "https://gcps.km.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/714605/C/金門縣/金城鎮/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 118.312421,
+            "latitude": 24.401767
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 126
+            },
+            {
+              "year": 108,
+              "students": 125
+            },
+            {
+              "year": 109,
+              "students": 124
+            },
+            {
+              "year": 110,
+              "students": 111
+            },
+            {
+              "year": 111,
+              "students": 113
+            },
+            {
+              "year": 112,
+              "students": 111
+            },
+            {
+              "year": 113,
+              "students": 108
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    },
+    {
+      "id": "金門縣:金湖鎮",
+      "name": "金湖鎮",
+      "countyId": "金門縣",
+      "schools": [
+        {
+          "id": "710401",
+          "code": "710401",
+          "name": "國立金門農工",
+          "countyId": "金門縣",
+          "townshipId": "金門縣:金湖鎮",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "金門縣金湖鎮新市里復興路1之11號",
+          "phone": "(082)333508",
+          "website": "http://www.kmvs.km.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/710401/H/金門縣/金湖鎮/國立/偏遠/無/",
+          "coordinates": {
+            "longitude": 118.423629,
+            "latitude": 24.442166
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1099
+            },
+            {
+              "year": 108,
+              "students": 998
+            },
+            {
+              "year": 109,
+              "students": 961
+            },
+            {
+              "year": 110,
+              "students": 874
+            },
+            {
+              "year": 111,
+              "students": 851
+            },
+            {
+              "year": 112,
+              "students": 819
+            },
+            {
+              "year": 113,
+              "students": 842
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "714601",
+          "code": "714601",
+          "name": "縣立金湖國小",
+          "countyId": "金門縣",
+          "townshipId": "金門縣:金湖鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "金門縣金湖鎮新市里林森路12號",
+          "phone": "(082)335977",
+          "website": "https://www.khes.km.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/714601/C/金門縣/金湖鎮/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 118.415596,
+            "latitude": 24.442776
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 590
+            },
+            {
+              "year": 108,
+              "students": 606
+            },
+            {
+              "year": 109,
+              "students": 603
+            },
+            {
+              "year": 110,
+              "students": 604
+            },
+            {
+              "year": 111,
+              "students": 601
+            },
+            {
+              "year": 112,
+              "students": 613
+            },
+            {
+              "year": 113,
+              "students": 587
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "714502",
+          "code": "714502",
+          "name": "縣立金湖國中",
+          "countyId": "金門縣",
+          "townshipId": "金門縣:金湖鎮",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "金門縣金湖鎮太湖路三段1號",
+          "phone": "(082)332612",
+          "website": "https://khjh.km.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/714502/J/金門縣/金湖鎮/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 118.42184,
+            "latitude": 24.436718
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 436
+            },
+            {
+              "year": 108,
+              "students": 435
+            },
+            {
+              "year": 109,
+              "students": 445
+            },
+            {
+              "year": 110,
+              "students": 456
+            },
+            {
+              "year": 111,
+              "students": 438
+            },
+            {
+              "year": 112,
+              "students": 420
+            },
+            {
+              "year": 113,
+              "students": 428
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "714606",
+          "code": "714606",
+          "name": "縣立開瑄國小",
+          "countyId": "金門縣",
+          "townshipId": "金門縣:金湖鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "金門縣金湖鎮瓊林里中興崗9-1號",
+          "phone": "(082)332165",
+          "website": "http://www.ksps.km.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/714606/C/金門縣/金湖鎮/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 118.377375,
+            "latitude": 24.445545
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 207
+            },
+            {
+              "year": 108,
+              "students": 214
+            },
+            {
+              "year": 109,
+              "students": 221
+            },
+            {
+              "year": 110,
+              "students": 212
+            },
+            {
+              "year": 111,
+              "students": 225
+            },
+            {
+              "year": 112,
+              "students": 250
+            },
+            {
+              "year": 113,
+              "students": 256
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "714607",
+          "code": "714607",
+          "name": "縣立柏村國小",
+          "countyId": "金門縣",
+          "townshipId": "金門縣:金湖鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "金門縣金湖鎮料羅村新塘10號",
+          "phone": "(082)332465",
+          "website": "https://btps.km.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/714607/C/金門縣/金湖鎮/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 118.438441,
+            "latitude": 24.421742
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 71
+            },
+            {
+              "year": 108,
+              "students": 70
+            },
+            {
+              "year": 109,
+              "students": 85
+            },
+            {
+              "year": 110,
+              "students": 88
+            },
+            {
+              "year": 111,
+              "students": 96
+            },
+            {
+              "year": 112,
+              "students": 99
+            },
+            {
+              "year": 113,
+              "students": 99
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "714619",
+          "code": "714619",
+          "name": "縣立正義國小",
+          "countyId": "金門縣",
+          "townshipId": "金門縣:金湖鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "金門縣金湖鎮正義里成功129號",
+          "phone": "(082)332734",
+          "website": "https://jyps.km.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/714619/C/金門縣/金湖鎮/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 118.387905,
+            "latitude": 24.439761
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 64
+            },
+            {
+              "year": 108,
+              "students": 55
+            },
+            {
+              "year": 109,
+              "students": 52
+            },
+            {
+              "year": 110,
+              "students": 53
+            },
+            {
+              "year": 111,
+              "students": 52
+            },
+            {
+              "year": 112,
+              "students": 51
+            },
+            {
+              "year": 113,
+              "students": 49
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    },
+    {
       "id": "金門縣:金寧鄉",
       "name": "金寧鄉",
       "countyId": "金門縣",
@@ -56,6 +930,464 @@
             {
               "year": 113,
               "students": 3823
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "714614",
+          "code": "714614",
+          "name": "縣立金鼎國小",
+          "countyId": "金門縣",
+          "townshipId": "金門縣:金寧鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "金門縣金寧鄉盤山村下堡123號",
+          "phone": "(082)325700",
+          "website": "https://cdps.km.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/714614/C/金門縣/金寧鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 118.33787,
+            "latitude": 24.447719
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 258
+            },
+            {
+              "year": 108,
+              "students": 291
+            },
+            {
+              "year": 109,
+              "students": 305
+            },
+            {
+              "year": 110,
+              "students": 351
+            },
+            {
+              "year": 111,
+              "students": 362
+            },
+            {
+              "year": 112,
+              "students": 373
+            },
+            {
+              "year": 113,
+              "students": 371
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "714503",
+          "code": "714503",
+          "name": "縣立金寧國中(小)",
+          "countyId": "金門縣",
+          "townshipId": "金門縣:金寧鄉",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "金門縣金寧鄉安岐1號",
+          "phone": "(082)325748",
+          "website": "http://www.cnjh.km.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/714503/J/金門縣/金寧鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 118.326856,
+            "latitude": 24.456724
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 185
+            },
+            {
+              "year": 108,
+              "students": 202
+            },
+            {
+              "year": 109,
+              "students": 228
+            },
+            {
+              "year": 110,
+              "students": 248
+            },
+            {
+              "year": 111,
+              "students": 261
+            },
+            {
+              "year": 112,
+              "students": 260
+            },
+            {
+              "year": 113,
+              "students": 299
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "714618",
+          "code": "714618",
+          "name": "縣立湖埔國小",
+          "countyId": "金門縣",
+          "townshipId": "金門縣:金寧鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "金門縣金寧鄉湖下196號",
+          "phone": "(082)326424",
+          "website": "https://hupu.km.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/714618/C/金門縣/金寧鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 118.308145,
+            "latitude": 24.457024
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 100
+            },
+            {
+              "year": 108,
+              "students": 121
+            },
+            {
+              "year": 109,
+              "students": 133
+            },
+            {
+              "year": 110,
+              "students": 152
+            },
+            {
+              "year": 111,
+              "students": 167
+            },
+            {
+              "year": 112,
+              "students": 196
+            },
+            {
+              "year": 113,
+              "students": 221
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "714602",
+          "code": "714602",
+          "name": "縣立金寧國(中)小",
+          "countyId": "金門縣",
+          "townshipId": "金門縣:金寧鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "金門縣金寧鄉安岐1號",
+          "phone": "(082)322535",
+          "website": "https://cnjh.km.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/714602/C/金門縣/金寧鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 118.326856,
+            "latitude": 24.456724
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 78
+            },
+            {
+              "year": 108,
+              "students": 77
+            },
+            {
+              "year": 109,
+              "students": 74
+            },
+            {
+              "year": 110,
+              "students": 70
+            },
+            {
+              "year": 111,
+              "students": 84
+            },
+            {
+              "year": 112,
+              "students": 91
+            },
+            {
+              "year": 113,
+              "students": 98
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "714613",
+          "code": "714613",
+          "name": "縣立古寧國小",
+          "countyId": "金門縣",
+          "townshipId": "金門縣:金寧鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "金門縣金寧鄉古寧村北山1號",
+          "phone": "(082)325750",
+          "website": "https://www.gnes.km.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/714613/C/金門縣/金寧鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 118.312848,
+            "latitude": 24.477927
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 95
+            },
+            {
+              "year": 108,
+              "students": 88
+            },
+            {
+              "year": 109,
+              "students": 88
+            },
+            {
+              "year": 110,
+              "students": 78
+            },
+            {
+              "year": 111,
+              "students": 70
+            },
+            {
+              "year": 112,
+              "students": 72
+            },
+            {
+              "year": 113,
+              "students": 67
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    },
+    {
+      "id": "金門縣:烈嶼鄉",
+      "name": "烈嶼鄉",
+      "countyId": "金門縣",
+      "schools": [
+        {
+          "id": "714615",
+          "code": "714615",
+          "name": "縣立卓環國小",
+          "countyId": "金門縣",
+          "townshipId": "金門縣:烈嶼鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "金門縣烈嶼鄉西路23號",
+          "phone": "(082)362124",
+          "website": "https://jhes.km.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/714615/C/金門縣/烈嶼鄉/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 118.246419,
+            "latitude": 24.431962
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 97
+            },
+            {
+              "year": 108,
+              "students": 88
+            },
+            {
+              "year": 109,
+              "students": 100
+            },
+            {
+              "year": 110,
+              "students": 98
+            },
+            {
+              "year": 111,
+              "students": 97
+            },
+            {
+              "year": 112,
+              "students": 90
+            },
+            {
+              "year": 113,
+              "students": 89
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "714505",
+          "code": "714505",
+          "name": "縣立烈嶼國中",
+          "countyId": "金門縣",
+          "townshipId": "金門縣:烈嶼鄉",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "金門縣烈嶼鄉后井38號",
+          "phone": "(082)362425",
+          "website": "http://www.lyjh.km.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/714505/J/金門縣/烈嶼鄉/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 118.241714,
+            "latitude": 24.430227
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 88
+            },
+            {
+              "year": 108,
+              "students": 106
+            },
+            {
+              "year": 109,
+              "students": 96
+            },
+            {
+              "year": 110,
+              "students": 106
+            },
+            {
+              "year": 111,
+              "students": 91
+            },
+            {
+              "year": 112,
+              "students": 89
+            },
+            {
+              "year": 113,
+              "students": 88
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "714620",
+          "code": "714620",
+          "name": "縣立西口國小",
+          "countyId": "金門縣",
+          "townshipId": "金門縣:烈嶼鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "金門縣烈嶼鄉西口村西方69號",
+          "phone": "(082)362411",
+          "website": "https://hkes.km.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/714620/C/金門縣/烈嶼鄉/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 118.237919,
+            "latitude": 24.436365
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 73
+            },
+            {
+              "year": 108,
+              "students": 69
+            },
+            {
+              "year": 109,
+              "students": 74
+            },
+            {
+              "year": 110,
+              "students": 62
+            },
+            {
+              "year": 111,
+              "students": 59
+            },
+            {
+              "year": 112,
+              "students": 63
+            },
+            {
+              "year": 113,
+              "students": 67
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "714616",
+          "code": "714616",
+          "name": "縣立上岐國小",
+          "countyId": "金門縣",
+          "townshipId": "金門縣:烈嶼鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "金門縣烈嶼鄉青岐123號",
+          "phone": "(082)362409",
+          "website": "https://sces.km.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/714616/C/金門縣/烈嶼鄉/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 118.22856,
+            "latitude": 24.415531
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 61
+            },
+            {
+              "year": 108,
+              "students": 64
+            },
+            {
+              "year": 109,
+              "students": 71
+            },
+            {
+              "year": 110,
+              "students": 62
+            },
+            {
+              "year": 111,
+              "students": 63
+            },
+            {
+              "year": 112,
+              "students": 56
+            },
+            {
+              "year": 113,
+              "students": 48
             }
           ],
           "status": "正常",

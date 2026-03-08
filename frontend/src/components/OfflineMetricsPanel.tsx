@@ -3,7 +3,7 @@ import { formatFileSize } from '../lib/analytics'
 type LoadObservation = {
   cacheHits: number
   memoryHits: number
-  indexedDbHits: number
+  sqliteHits: number
   networkFetches: number
   totalTransferredBytes: number
   loadedCountyDetails: string[]
@@ -19,8 +19,8 @@ type OfflineMetricsPanelProps = {
 }
 
 function OfflineMetricsPanel({ loadObservation, offlineReadySlices, totalCounties, isOffline }: OfflineMetricsPanelProps) {
-  const totalRequests = loadObservation.cacheHits + loadObservation.memoryHits + loadObservation.indexedDbHits + loadObservation.networkFetches
-  const cacheRatio = totalRequests > 0 ? (loadObservation.cacheHits + loadObservation.memoryHits + loadObservation.indexedDbHits) / totalRequests : 0
+  const totalRequests = loadObservation.cacheHits + loadObservation.memoryHits + loadObservation.sqliteHits + loadObservation.networkFetches
+  const cacheRatio = totalRequests > 0 ? (loadObservation.cacheHits + loadObservation.memoryHits + loadObservation.sqliteHits) / totalRequests : 0
   const coverageRatio = totalCounties > 0 ? offlineReadySlices / totalCounties : 0
 
   const rows = [
@@ -28,7 +28,7 @@ function OfflineMetricsPanel({ loadObservation, offlineReadySlices, totalCountie
     { label: '縣市覆蓋', value: `${offlineReadySlices}/${totalCounties}`, ratio: coverageRatio },
     { label: '傳輸量', value: formatFileSize(loadObservation.totalTransferredBytes), ratio: Math.min(loadObservation.totalTransferredBytes / (5 * 1024 * 1024), 1) },
     { label: '記憶體', value: `${loadObservation.memoryHits} 次`, ratio: totalRequests > 0 ? loadObservation.memoryHits / totalRequests : 0 },
-    { label: 'IndexedDB', value: `${loadObservation.indexedDbHits} 次`, ratio: totalRequests > 0 ? loadObservation.indexedDbHits / totalRequests : 0 },
+    { label: 'SQLite', value: `${loadObservation.sqliteHits} 次`, ratio: totalRequests > 0 ? loadObservation.sqliteHits / totalRequests : 0 },
     { label: '網路請求', value: `${loadObservation.networkFetches} 次`, ratio: totalRequests > 0 ? loadObservation.networkFetches / totalRequests : 0 },
   ]
 

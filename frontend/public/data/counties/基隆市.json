@@ -8,6 +8,1022 @@
   "dataNotes": [],
   "towns": [
     {
+      "id": "基隆市:七堵區",
+      "name": "七堵區",
+      "countyId": "基隆市",
+      "schools": [
+        {
+          "id": "170404",
+          "code": "170404",
+          "name": "國立基隆商工",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:七堵區",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "基隆市七堵區東新街22號",
+          "phone": "(02)24567126",
+          "website": "http://www.klcivs.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/170404/H/基隆市/七堵區/國立/否/無/",
+          "coordinates": {
+            "longitude": 121.717202,
+            "latitude": 25.094226
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1919
+            },
+            {
+              "year": 108,
+              "students": 1700
+            },
+            {
+              "year": 109,
+              "students": 1537
+            },
+            {
+              "year": 110,
+              "students": 1367
+            },
+            {
+              "year": 111,
+              "students": 1327
+            },
+            {
+              "year": 112,
+              "students": 1219
+            },
+            {
+              "year": 113,
+              "students": 1187
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173626",
+          "code": "173626",
+          "name": "市立七堵國小",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:七堵區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "基隆市七堵區明德一路184號",
+          "phone": "(02)24567116",
+          "website": "https://cdps.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173626/C/基隆市/七堵區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.713966,
+            "latitude": 25.098083
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 983
+            },
+            {
+              "year": 108,
+              "students": 999
+            },
+            {
+              "year": 109,
+              "students": 994
+            },
+            {
+              "year": 110,
+              "students": 988
+            },
+            {
+              "year": 111,
+              "students": 1007
+            },
+            {
+              "year": 112,
+              "students": 983
+            },
+            {
+              "year": 113,
+              "students": 939
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173628",
+          "code": "173628",
+          "name": "市立五堵國小",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:七堵區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "基隆市七堵區百一街25號",
+          "phone": "(02)24511457",
+          "website": "https://wdps.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173628/C/基隆市/七堵區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.69459,
+            "latitude": 25.079712
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 813
+            },
+            {
+              "year": 108,
+              "students": 818
+            },
+            {
+              "year": 109,
+              "students": 807
+            },
+            {
+              "year": 110,
+              "students": 822
+            },
+            {
+              "year": 111,
+              "students": 851
+            },
+            {
+              "year": 112,
+              "students": 875
+            },
+            {
+              "year": 113,
+              "students": 834
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173501",
+          "code": "173501",
+          "name": "市立明德國中",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:七堵區",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "基隆市七堵區東新街20號",
+          "phone": "(02)24561274",
+          "website": "http://www.mdjh.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173501/J/基隆市/七堵區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.716232,
+            "latitude": 25.094076
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 572
+            },
+            {
+              "year": 108,
+              "students": 563
+            },
+            {
+              "year": 109,
+              "students": 541
+            },
+            {
+              "year": 110,
+              "students": 486
+            },
+            {
+              "year": 111,
+              "students": 485
+            },
+            {
+              "year": 112,
+              "students": 452
+            },
+            {
+              "year": 113,
+              "students": 510
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173513",
+          "code": "173513",
+          "name": "市立百福國中",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:七堵區",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "基隆市七堵區福五街1號",
+          "phone": "(02)24511158",
+          "website": "http://www.pfjh.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173513/J/基隆市/七堵區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.698381,
+            "latitude": 25.083608
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 518
+            },
+            {
+              "year": 108,
+              "students": 472
+            },
+            {
+              "year": 109,
+              "students": 477
+            },
+            {
+              "year": 110,
+              "students": 469
+            },
+            {
+              "year": 111,
+              "students": 458
+            },
+            {
+              "year": 112,
+              "students": 417
+            },
+            {
+              "year": 113,
+              "students": 421
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173639",
+          "code": "173639",
+          "name": "市立長興國小",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:七堵區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "基隆市七堵區東新街3號",
+          "phone": "(02)24552096",
+          "website": "https://cses.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173639/C/基隆市/七堵區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.71354,
+            "latitude": 25.091661
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 229
+            },
+            {
+              "year": 108,
+              "students": 245
+            },
+            {
+              "year": 109,
+              "students": 228
+            },
+            {
+              "year": 110,
+              "students": 246
+            },
+            {
+              "year": 111,
+              "students": 248
+            },
+            {
+              "year": 112,
+              "students": 254
+            },
+            {
+              "year": 113,
+              "students": 234
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173629",
+          "code": "173629",
+          "name": "市立堵南國小",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:七堵區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "基隆市七堵區大德路120號",
+          "phone": "(02)24511339",
+          "website": "https://dnps.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173629/C/基隆市/七堵區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.69223,
+            "latitude": 25.083402
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 173
+            },
+            {
+              "year": 108,
+              "students": 164
+            },
+            {
+              "year": 109,
+              "students": 156
+            },
+            {
+              "year": 110,
+              "students": 160
+            },
+            {
+              "year": 111,
+              "students": 148
+            },
+            {
+              "year": 112,
+              "students": 152
+            },
+            {
+              "year": 113,
+              "students": 149
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173627",
+          "code": "173627",
+          "name": "市立華興國小",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:七堵區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "基隆市七堵區泰安路34號",
+          "phone": "(02)24512022",
+          "website": "https://jweb.kl.edu.tw/971",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173627/C/基隆市/七堵區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.708283,
+            "latitude": 25.087699
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 177
+            },
+            {
+              "year": 108,
+              "students": 174
+            },
+            {
+              "year": 109,
+              "students": 165
+            },
+            {
+              "year": 110,
+              "students": 173
+            },
+            {
+              "year": 111,
+              "students": 160
+            },
+            {
+              "year": 112,
+              "students": 149
+            },
+            {
+              "year": 113,
+              "students": 138
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173632",
+          "code": "173632",
+          "name": "市立尚仁國小",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:七堵區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "基隆市七堵區八德路20號",
+          "phone": "(02)24311708",
+          "website": "https://srps.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173632/C/基隆市/七堵區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.727787,
+            "latitude": 25.111552
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 142
+            },
+            {
+              "year": 108,
+              "students": 146
+            },
+            {
+              "year": 109,
+              "students": 143
+            },
+            {
+              "year": 110,
+              "students": 136
+            },
+            {
+              "year": 111,
+              "students": 135
+            },
+            {
+              "year": 112,
+              "students": 137
+            },
+            {
+              "year": 113,
+              "students": 138
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173630",
+          "code": "173630",
+          "name": "市立瑪陵國小",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:七堵區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "基隆市七堵區大成街1號",
+          "phone": "(02)24565663",
+          "website": "https://mlps.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173630/C/基隆市/七堵區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.689486,
+            "latitude": 25.110146
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 93
+            },
+            {
+              "year": 108,
+              "students": 80
+            },
+            {
+              "year": 109,
+              "students": 78
+            },
+            {
+              "year": 110,
+              "students": 84
+            },
+            {
+              "year": 111,
+              "students": 99
+            },
+            {
+              "year": 112,
+              "students": 85
+            },
+            {
+              "year": 113,
+              "students": 80
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173631",
+          "code": "173631",
+          "name": "市立復興國小",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:七堵區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "基隆市七堵區華新二路21號",
+          "phone": "(02)24515601",
+          "website": "https://fsps.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173631/C/基隆市/七堵區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.665233,
+            "latitude": 25.107454
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 53
+            },
+            {
+              "year": 108,
+              "students": 41
+            },
+            {
+              "year": 109,
+              "students": 55
+            },
+            {
+              "year": 110,
+              "students": 48
+            },
+            {
+              "year": 111,
+              "students": 60
+            },
+            {
+              "year": 112,
+              "students": 63
+            },
+            {
+              "year": 113,
+              "students": 51
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    },
+    {
+      "id": "基隆市:中山區",
+      "name": "中山區",
+      "countyId": "基隆市",
+      "schools": [
+        {
+          "id": "1185",
+          "code": "1185",
+          "name": "德育護理健康學院",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:中山區",
+          "educationLevel": "大專院校",
+          "managementType": "私立",
+          "address": "基隆市中山區復興路336號",
+          "phone": "(02)24372093",
+          "website": "http://www.cku.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/1185/R/基隆市/中山區/私立/否/技職/",
+          "coordinates": {
+            "longitude": 121.72915,
+            "latitude": 25.150462
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 3732
+            },
+            {
+              "year": 108,
+              "students": 3709
+            },
+            {
+              "year": 109,
+              "students": 4221
+            },
+            {
+              "year": 110,
+              "students": 4008
+            },
+            {
+              "year": 111,
+              "students": 3659
+            },
+            {
+              "year": 112,
+              "students": 3454
+            },
+            {
+              "year": 113,
+              "students": 3167
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "171308",
+          "code": "171308",
+          "name": "輔大聖心高中",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:中山區",
+          "educationLevel": "高中職",
+          "managementType": "私立",
+          "address": "基隆市中山區西定路166號",
+          "phone": "(02)24282454",
+          "website": "http://www.shsh.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/171308/H/基隆市/中山區/私立/否/無/",
+          "coordinates": {
+            "longitude": 121.733837,
+            "latitude": 25.136639
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 628
+            },
+            {
+              "year": 108,
+              "students": 1406
+            },
+            {
+              "year": 109,
+              "students": 1432
+            },
+            {
+              "year": 110,
+              "students": 1271
+            },
+            {
+              "year": 111,
+              "students": 1181
+            },
+            {
+              "year": 112,
+              "students": 1154
+            },
+            {
+              "year": 113,
+              "students": 1178
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173304",
+          "code": "173304",
+          "name": "市立中山高中",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:中山區",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "基隆市中山區文化路162號",
+          "phone": "(02)24248191",
+          "website": "https://csjh.kl.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/173304/H/基隆市/中山區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.730834,
+            "latitude": 25.153938
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 778
+            },
+            {
+              "year": 108,
+              "students": 729
+            },
+            {
+              "year": 109,
+              "students": 682
+            },
+            {
+              "year": 110,
+              "students": 638
+            },
+            {
+              "year": 111,
+              "students": 599
+            },
+            {
+              "year": 112,
+              "students": 583
+            },
+            {
+              "year": 113,
+              "students": 585
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173619",
+          "code": "173619",
+          "name": "市立中和國小",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:中山區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "基隆市中山區中和路64號",
+          "phone": "(02)24371751",
+          "website": "https://chps.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173619/C/基隆市/中山區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.720046,
+            "latitude": 25.146727
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 439
+            },
+            {
+              "year": 108,
+              "students": 422
+            },
+            {
+              "year": 109,
+              "students": 399
+            },
+            {
+              "year": 110,
+              "students": 393
+            },
+            {
+              "year": 111,
+              "students": 433
+            },
+            {
+              "year": 112,
+              "students": 425
+            },
+            {
+              "year": 113,
+              "students": 438
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173625",
+          "code": "173625",
+          "name": "市立德和國小",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:中山區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "基隆市中山區文化路164號",
+          "phone": "(02)24278095",
+          "website": "https://dhps.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173625/C/基隆市/中山區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.730914,
+            "latitude": 25.155279
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 380
+            },
+            {
+              "year": 108,
+              "students": 379
+            },
+            {
+              "year": 109,
+              "students": 349
+            },
+            {
+              "year": 110,
+              "students": 358
+            },
+            {
+              "year": 111,
+              "students": 347
+            },
+            {
+              "year": 112,
+              "students": 354
+            },
+            {
+              "year": 113,
+              "students": 337
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173621",
+          "code": "173621",
+          "name": "市立中山國小",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:中山區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "基隆市中山區通仁街28號",
+          "phone": "(02)24223053",
+          "website": "https://cshps.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173621/C/基隆市/中山區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.735923,
+            "latitude": 25.146566
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 70
+            },
+            {
+              "year": 108,
+              "students": 70
+            },
+            {
+              "year": 109,
+              "students": 71
+            },
+            {
+              "year": 110,
+              "students": 77
+            },
+            {
+              "year": 111,
+              "students": 83
+            },
+            {
+              "year": 112,
+              "students": 93
+            },
+            {
+              "year": 113,
+              "students": 113
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173623",
+          "code": "173623",
+          "name": "市立中華國小",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:中山區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "基隆市中山區中華路46巷26號",
+          "phone": "(02)24225530",
+          "website": "https://ches.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173623/C/基隆市/中山區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.738949,
+            "latitude": 25.149373
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 65
+            },
+            {
+              "year": 108,
+              "students": 66
+            },
+            {
+              "year": 109,
+              "students": 70
+            },
+            {
+              "year": 110,
+              "students": 84
+            },
+            {
+              "year": 111,
+              "students": 87
+            },
+            {
+              "year": 112,
+              "students": 103
+            },
+            {
+              "year": 113,
+              "students": 108
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173620",
+          "code": "173620",
+          "name": "市立仙洞國小",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:中山區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "基隆市中山區仁安街141號",
+          "phone": "(02)24223031",
+          "website": "https://sdps.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173620/C/基隆市/中山區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.746704,
+            "latitude": 25.147347
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 95
+            },
+            {
+              "year": 108,
+              "students": 107
+            },
+            {
+              "year": 109,
+              "students": 109
+            },
+            {
+              "year": 110,
+              "students": 113
+            },
+            {
+              "year": 111,
+              "students": 123
+            },
+            {
+              "year": 112,
+              "students": 124
+            },
+            {
+              "year": 113,
+              "students": 106
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173622",
+          "code": "173622",
+          "name": "市立港西國小",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:中山區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "基隆市中山區中山一路291巷45號",
+          "phone": "(02)24223068",
+          "website": "https://gsps.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173622/C/基隆市/中山區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.73952,
+            "latitude": 25.136585
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 80
+            },
+            {
+              "year": 108,
+              "students": 86
+            },
+            {
+              "year": 109,
+              "students": 83
+            },
+            {
+              "year": 110,
+              "students": 69
+            },
+            {
+              "year": 111,
+              "students": 73
+            },
+            {
+              "year": 112,
+              "students": 66
+            },
+            {
+              "year": 113,
+              "students": 60
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    },
+    {
       "id": "基隆市:中正區",
       "name": "中正區",
       "countyId": "基隆市",
@@ -56,6 +1072,2238 @@
             {
               "year": 113,
               "students": 9102
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "171306",
+          "code": "171306",
+          "name": "私立二信高中",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:中正區",
+          "educationLevel": "高中職",
+          "managementType": "私立",
+          "address": "基隆市中正區立德路243號",
+          "phone": "(02)24623131",
+          "website": "https://www.essh.kl.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/171306/H/基隆市/中正區/私立/否/無/",
+          "coordinates": {
+            "longitude": 121.770937,
+            "latitude": 25.144111
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 4069
+            },
+            {
+              "year": 108,
+              "students": 3741
+            },
+            {
+              "year": 109,
+              "students": 3608
+            },
+            {
+              "year": 110,
+              "students": 3514
+            },
+            {
+              "year": 111,
+              "students": 3317
+            },
+            {
+              "year": 112,
+              "students": 3076
+            },
+            {
+              "year": 113,
+              "students": 2949
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "170403",
+          "code": "170403",
+          "name": "國立海洋大學附屬基隆海事",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:中正區",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "基隆市中正區祥豐街246號",
+          "phone": "(02)24633655",
+          "website": "http://www.klms.ntou.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/170403/H/基隆市/中正區/國立/否/無/",
+          "coordinates": {
+            "longitude": 121.771125,
+            "latitude": 25.147332
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1295
+            },
+            {
+              "year": 108,
+              "students": 1149
+            },
+            {
+              "year": 109,
+              "students": 1068
+            },
+            {
+              "year": 110,
+              "students": 1009
+            },
+            {
+              "year": 111,
+              "students": 1024
+            },
+            {
+              "year": 112,
+              "students": 1039
+            },
+            {
+              "year": 113,
+              "students": 998
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173605",
+          "code": "173605",
+          "name": "市立八斗國小",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:中正區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "基隆市中正區北寧路396巷52號",
+          "phone": "(02)24693391",
+          "website": "https://bdps.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173605/C/基隆市/中正區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.797311,
+            "latitude": 25.138007
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 432
+            },
+            {
+              "year": 108,
+              "students": 459
+            },
+            {
+              "year": 109,
+              "students": 457
+            },
+            {
+              "year": 110,
+              "students": 463
+            },
+            {
+              "year": 111,
+              "students": 471
+            },
+            {
+              "year": 112,
+              "students": 496
+            },
+            {
+              "year": 113,
+              "students": 518
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173505",
+          "code": "173505",
+          "name": "市立中正國中",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:中正區",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "基隆市中正區中船路36巷59號",
+          "phone": "(02)24282191",
+          "website": "http://www.ccjh.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173505/J/基隆市/中正區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.75299,
+            "latitude": 25.13549
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 624
+            },
+            {
+              "year": 108,
+              "students": 555
+            },
+            {
+              "year": 109,
+              "students": 553
+            },
+            {
+              "year": 110,
+              "students": 552
+            },
+            {
+              "year": 111,
+              "students": 530
+            },
+            {
+              "year": 112,
+              "students": 460
+            },
+            {
+              "year": 113,
+              "students": 445
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173314",
+          "code": "173314",
+          "name": "市立八斗高中",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:中正區",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "基隆市中正區新豐街100號",
+          "phone": "(02)24692366",
+          "website": "https://bdjh.kl.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/173314/H/基隆市/中正區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.7881,
+            "latitude": 25.140501
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 483
+            },
+            {
+              "year": 108,
+              "students": 444
+            },
+            {
+              "year": 109,
+              "students": 419
+            },
+            {
+              "year": 110,
+              "students": 436
+            },
+            {
+              "year": 111,
+              "students": 453
+            },
+            {
+              "year": 112,
+              "students": 443
+            },
+            {
+              "year": 113,
+              "students": 444
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173602",
+          "code": "173602",
+          "name": "市立正濱國小",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:中正區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "基隆市中正區祥豐街216號",
+          "phone": "(02)24635551",
+          "website": "https://cbps.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173602/C/基隆市/中正區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.771044,
+            "latitude": 25.146646
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 395
+            },
+            {
+              "year": 108,
+              "students": 382
+            },
+            {
+              "year": 109,
+              "students": 355
+            },
+            {
+              "year": 110,
+              "students": 345
+            },
+            {
+              "year": 111,
+              "students": 352
+            },
+            {
+              "year": 112,
+              "students": 381
+            },
+            {
+              "year": 113,
+              "students": 397
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173510",
+          "code": "173510",
+          "name": "市立正濱國中",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:中正區",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "基隆市中正區正榮街88號",
+          "phone": "(02)24631490",
+          "website": "http://www.cbjh.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173510/J/基隆市/中正區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.763278,
+            "latitude": 25.146969
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 155
+            },
+            {
+              "year": 108,
+              "students": 163
+            },
+            {
+              "year": 109,
+              "students": 147
+            },
+            {
+              "year": 110,
+              "students": 161
+            },
+            {
+              "year": 111,
+              "students": 124
+            },
+            {
+              "year": 112,
+              "students": 93
+            },
+            {
+              "year": 113,
+              "students": 98
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173601",
+          "code": "173601",
+          "name": "市立中正國小",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:中正區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "基隆市中正區中船路36巷4號",
+          "phone": "(02)24223064",
+          "website": "https://ccps.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173601/C/基隆市/中正區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.750449,
+            "latitude": 25.135824
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 137
+            },
+            {
+              "year": 108,
+              "students": 115
+            },
+            {
+              "year": 109,
+              "students": 114
+            },
+            {
+              "year": 110,
+              "students": 107
+            },
+            {
+              "year": 111,
+              "students": 94
+            },
+            {
+              "year": 112,
+              "students": 92
+            },
+            {
+              "year": 113,
+              "students": 91
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173604",
+          "code": "173604",
+          "name": "市立和平國小",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:中正區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "基隆市中正區和一路84巷26號",
+          "phone": "(02)24622106",
+          "website": "https://hpps.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173604/C/基隆市/中正區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.766072,
+            "latitude": 25.155681
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 113
+            },
+            {
+              "year": 108,
+              "students": 108
+            },
+            {
+              "year": 109,
+              "students": 96
+            },
+            {
+              "year": 110,
+              "students": 88
+            },
+            {
+              "year": 111,
+              "students": 91
+            },
+            {
+              "year": 112,
+              "students": 80
+            },
+            {
+              "year": 113,
+              "students": 71
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173603",
+          "code": "173603",
+          "name": "市立忠孝國小",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:中正區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "基隆市中正區中正路656巷150號",
+          "phone": "(02)24622934",
+          "website": "https://csps.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173603/C/基隆市/中正區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.76676,
+            "latitude": 25.148996
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 65
+            },
+            {
+              "year": 108,
+              "students": 61
+            },
+            {
+              "year": 109,
+              "students": 59
+            },
+            {
+              "year": 110,
+              "students": 60
+            },
+            {
+              "year": 111,
+              "students": 69
+            },
+            {
+              "year": 112,
+              "students": 64
+            },
+            {
+              "year": 113,
+              "students": 59
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    },
+    {
+      "id": "基隆市:仁愛區",
+      "name": "仁愛區",
+      "countyId": "基隆市",
+      "schools": [
+        {
+          "id": "173612",
+          "code": "173612",
+          "name": "市立信義國小",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:仁愛區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "基隆市仁愛區仁二路135號",
+          "phone": "(02)24213960",
+          "website": "https://syps.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173612/C/基隆市/仁愛區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.746891,
+            "latitude": 25.127312
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1441
+            },
+            {
+              "year": 108,
+              "students": 1407
+            },
+            {
+              "year": 109,
+              "students": 1357
+            },
+            {
+              "year": 110,
+              "students": 1353
+            },
+            {
+              "year": 111,
+              "students": 1316
+            },
+            {
+              "year": 112,
+              "students": 1260
+            },
+            {
+              "year": 113,
+              "students": 1181
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173502",
+          "code": "173502",
+          "name": "市立銘傳國中",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:仁愛區",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "基隆市仁愛區劉銘傳路132號",
+          "phone": "(02)24223120",
+          "website": "http://www.mcjh.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173502/J/基隆市/仁愛區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.750672,
+            "latitude": 25.123519
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1311
+            },
+            {
+              "year": 108,
+              "students": 1310
+            },
+            {
+              "year": 109,
+              "students": 1272
+            },
+            {
+              "year": 110,
+              "students": 1213
+            },
+            {
+              "year": 111,
+              "students": 1156
+            },
+            {
+              "year": 112,
+              "students": 1130
+            },
+            {
+              "year": 113,
+              "students": 1124
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173611",
+          "code": "173611",
+          "name": "市立仁愛國小",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:仁愛區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "基隆市仁愛區仁二路139號",
+          "phone": "(02)24289131",
+          "website": "https://raps.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173611/C/基隆市/仁愛區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.745922,
+            "latitude": 25.127679
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 843
+            },
+            {
+              "year": 108,
+              "students": 873
+            },
+            {
+              "year": 109,
+              "students": 849
+            },
+            {
+              "year": 110,
+              "students": 847
+            },
+            {
+              "year": 111,
+              "students": 830
+            },
+            {
+              "year": 112,
+              "students": 810
+            },
+            {
+              "year": 113,
+              "students": 758
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173613",
+          "code": "173613",
+          "name": "市立成功國小",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:仁愛區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "基隆市仁愛區獅球路6號",
+          "phone": "(02)24313939",
+          "website": "https://ckps.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173613/C/基隆市/仁愛區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.738598,
+            "latitude": 25.126034
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 325
+            },
+            {
+              "year": 108,
+              "students": 311
+            },
+            {
+              "year": 109,
+              "students": 313
+            },
+            {
+              "year": 110,
+              "students": 322
+            },
+            {
+              "year": 111,
+              "students": 348
+            },
+            {
+              "year": 112,
+              "students": 361
+            },
+            {
+              "year": 113,
+              "students": 345
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173614",
+          "code": "173614",
+          "name": "市立南榮國小",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:仁愛區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "基隆市仁愛區南榮路321號",
+          "phone": "(02)24223038",
+          "website": "https://nrps.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173614/C/基隆市/仁愛區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.744389,
+            "latitude": 25.118925
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 127
+            },
+            {
+              "year": 108,
+              "students": 118
+            },
+            {
+              "year": 109,
+              "students": 134
+            },
+            {
+              "year": 110,
+              "students": 134
+            },
+            {
+              "year": 111,
+              "students": 125
+            },
+            {
+              "year": 112,
+              "students": 131
+            },
+            {
+              "year": 113,
+              "students": 132
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173508",
+          "code": "173508",
+          "name": "市立南榮國中",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:仁愛區",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "基隆市仁愛區南榮路319巷36號",
+          "phone": "(02)24282188",
+          "website": "http://www.nrjh.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173508/J/基隆市/仁愛區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.746291,
+            "latitude": 25.120148
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 135
+            },
+            {
+              "year": 108,
+              "students": 135
+            },
+            {
+              "year": 109,
+              "students": 126
+            },
+            {
+              "year": 110,
+              "students": 123
+            },
+            {
+              "year": 111,
+              "students": 109
+            },
+            {
+              "year": 112,
+              "students": 106
+            },
+            {
+              "year": 113,
+              "students": 118
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    },
+    {
+      "id": "基隆市:安樂區",
+      "name": "安樂區",
+      "countyId": "基隆市",
+      "schools": [
+        {
+          "id": "173633",
+          "code": "173633",
+          "name": "市立建德國小",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:安樂區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "基隆市安樂區安和一街392號",
+          "phone": "(02)24334216",
+          "website": "https://jdps.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173633/C/基隆市/安樂區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.721097,
+            "latitude": 25.124963
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1296
+            },
+            {
+              "year": 108,
+              "students": 1247
+            },
+            {
+              "year": 109,
+              "students": 1222
+            },
+            {
+              "year": 110,
+              "students": 1192
+            },
+            {
+              "year": 111,
+              "students": 1192
+            },
+            {
+              "year": 112,
+              "students": 1180
+            },
+            {
+              "year": 113,
+              "students": 1135
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173618",
+          "code": "173618",
+          "name": "市立武崙國小",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:安樂區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "基隆市安樂區武崙街203號",
+          "phone": "(02)24310018",
+          "website": "https://www.wlps.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173618/C/基隆市/安樂區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.706889,
+            "latitude": 25.138769
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1087
+            },
+            {
+              "year": 108,
+              "students": 1079
+            },
+            {
+              "year": 109,
+              "students": 1112
+            },
+            {
+              "year": 110,
+              "students": 1075
+            },
+            {
+              "year": 111,
+              "students": 1106
+            },
+            {
+              "year": 112,
+              "students": 1137
+            },
+            {
+              "year": 113,
+              "students": 1104
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173306",
+          "code": "173306",
+          "name": "市立安樂高中",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:安樂區",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "基隆市安樂區安一路360號",
+          "phone": "(02)24236600",
+          "website": "https://aljh.kl.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/173306/H/基隆市/安樂區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.729935,
+            "latitude": 25.13561
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 848
+            },
+            {
+              "year": 108,
+              "students": 831
+            },
+            {
+              "year": 109,
+              "students": 810
+            },
+            {
+              "year": 110,
+              "students": 804
+            },
+            {
+              "year": 111,
+              "students": 813
+            },
+            {
+              "year": 112,
+              "students": 823
+            },
+            {
+              "year": 113,
+              "students": 821
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173516",
+          "code": "173516",
+          "name": "市立武崙國中",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:安樂區",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "基隆市安樂區武崙街205號",
+          "phone": "(02)24342456",
+          "website": "https://wljh.kl.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173516/J/基隆市/安樂區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.706447,
+            "latitude": 25.137528
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 653
+            },
+            {
+              "year": 108,
+              "students": 640
+            },
+            {
+              "year": 109,
+              "students": 618
+            },
+            {
+              "year": 110,
+              "students": 668
+            },
+            {
+              "year": 111,
+              "students": 637
+            },
+            {
+              "year": 112,
+              "students": 657
+            },
+            {
+              "year": 113,
+              "students": 683
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173512",
+          "code": "173512",
+          "name": "市立建德國中",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:安樂區",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "基隆市安樂區安和一街29號",
+          "phone": "(02)24321234",
+          "website": "http://www.jdjh.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173512/J/基隆市/安樂區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.721501,
+            "latitude": 25.127317
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 851
+            },
+            {
+              "year": 108,
+              "students": 871
+            },
+            {
+              "year": 109,
+              "students": 828
+            },
+            {
+              "year": 110,
+              "students": 762
+            },
+            {
+              "year": 111,
+              "students": 678
+            },
+            {
+              "year": 112,
+              "students": 615
+            },
+            {
+              "year": 113,
+              "students": 646
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173616",
+          "code": "173616",
+          "name": "市立安樂國小",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:安樂區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "基隆市安樂區安一路177巷23號",
+          "phone": "(02)24220814",
+          "website": "https://jweb.kl.edu.tw/365",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173616/C/基隆市/安樂區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.730984,
+            "latitude": 25.131691
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 436
+            },
+            {
+              "year": 108,
+              "students": 405
+            },
+            {
+              "year": 109,
+              "students": 405
+            },
+            {
+              "year": 110,
+              "students": 398
+            },
+            {
+              "year": 111,
+              "students": 422
+            },
+            {
+              "year": 112,
+              "students": 431
+            },
+            {
+              "year": 113,
+              "students": 418
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173640",
+          "code": "173640",
+          "name": "市立長樂國小",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:安樂區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "基隆市安樂區樂利三街30巷123號",
+          "phone": "(02)24322765",
+          "website": "https://clps.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173640/C/基隆市/安樂區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.711066,
+            "latitude": 25.125743
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 384
+            },
+            {
+              "year": 108,
+              "students": 388
+            },
+            {
+              "year": 109,
+              "students": 371
+            },
+            {
+              "year": 110,
+              "students": 376
+            },
+            {
+              "year": 111,
+              "students": 373
+            },
+            {
+              "year": 112,
+              "students": 379
+            },
+            {
+              "year": 113,
+              "students": 354
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173617",
+          "code": "173617",
+          "name": "市立西定國小",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:安樂區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "基隆市安樂區新西街1號",
+          "phone": "(02)24223856",
+          "website": "https://sdes.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173617/C/基隆市/安樂區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.731304,
+            "latitude": 25.136914
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 226
+            },
+            {
+              "year": 108,
+              "students": 227
+            },
+            {
+              "year": 109,
+              "students": 233
+            },
+            {
+              "year": 110,
+              "students": 258
+            },
+            {
+              "year": 111,
+              "students": 268
+            },
+            {
+              "year": 112,
+              "students": 267
+            },
+            {
+              "year": 113,
+              "students": 255
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173638",
+          "code": "173638",
+          "name": "市立隆聖國小",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:安樂區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "基隆市安樂區武隆街107號",
+          "phone": "(02)24311480",
+          "website": "https://lsps.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173638/C/基隆市/安樂區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.694076,
+            "latitude": 25.15604
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 114
+            },
+            {
+              "year": 108,
+              "students": 132
+            },
+            {
+              "year": 109,
+              "students": 125
+            },
+            {
+              "year": 110,
+              "students": 133
+            },
+            {
+              "year": 111,
+              "students": 138
+            },
+            {
+              "year": 112,
+              "students": 146
+            },
+            {
+              "year": 113,
+              "students": 148
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    },
+    {
+      "id": "基隆市:信義區",
+      "name": "信義區",
+      "countyId": "基隆市",
+      "schools": [
+        {
+          "id": "1082",
+          "code": "1082",
+          "name": "崇右影藝科技大學",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:信義區",
+          "educationLevel": "大專院校",
+          "managementType": "私立",
+          "address": "基隆市信義區義七路40號",
+          "phone": "(02)24237785",
+          "website": "http://www.cufa.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/1082/R/基隆市/信義區/私立/否/技職/",
+          "coordinates": {
+            "longitude": 121.753747,
+            "latitude": 25.131712
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 2415
+            },
+            {
+              "year": 108,
+              "students": 2014
+            },
+            {
+              "year": 109,
+              "students": 2609
+            },
+            {
+              "year": 110,
+              "students": 1924
+            },
+            {
+              "year": 111,
+              "students": 1364
+            },
+            {
+              "year": 112,
+              "students": 1145
+            },
+            {
+              "year": 113,
+              "students": 1114
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173641",
+          "code": "173641",
+          "name": "市立深美國小",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:信義區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "基隆市信義區深美街198號",
+          "phone": "(02)24654821",
+          "website": "https://smps.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173641/C/基隆市/信義區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.777321,
+            "latitude": 25.137591
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 965
+            },
+            {
+              "year": 108,
+              "students": 968
+            },
+            {
+              "year": 109,
+              "students": 975
+            },
+            {
+              "year": 110,
+              "students": 961
+            },
+            {
+              "year": 111,
+              "students": 961
+            },
+            {
+              "year": 112,
+              "students": 956
+            },
+            {
+              "year": 113,
+              "students": 956
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "170301",
+          "code": "170301",
+          "name": "國立基隆女中",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:信義區",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "基隆市信義區東信路324號",
+          "phone": "(02)24278274",
+          "website": "http://www.klgsh.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/170301/H/基隆市/信義區/國立/否/無/",
+          "coordinates": {
+            "longitude": 121.759479,
+            "latitude": 25.129341
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1352
+            },
+            {
+              "year": 108,
+              "students": 1109
+            },
+            {
+              "year": 109,
+              "students": 962
+            },
+            {
+              "year": 110,
+              "students": 821
+            },
+            {
+              "year": 111,
+              "students": 807
+            },
+            {
+              "year": 112,
+              "students": 763
+            },
+            {
+              "year": 113,
+              "students": 738
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173607",
+          "code": "173607",
+          "name": "市立中興國小",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:信義區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "基隆市信義區信二路40號",
+          "phone": "(02)24225038",
+          "website": "https://chsps.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173607/C/基隆市/信義區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.757119,
+            "latitude": 25.131244
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 189
+            },
+            {
+              "year": 108,
+              "students": 190
+            },
+            {
+              "year": 109,
+              "students": 204
+            },
+            {
+              "year": 110,
+              "students": 281
+            },
+            {
+              "year": 111,
+              "students": 355
+            },
+            {
+              "year": 112,
+              "students": 430
+            },
+            {
+              "year": 113,
+              "students": 482
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173606",
+          "code": "173606",
+          "name": "市立東信國小",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:信義區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "基隆市信義區正信路26號",
+          "phone": "(02)24652133",
+          "website": "https://dsps.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173606/C/基隆市/信義區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.760562,
+            "latitude": 25.132135
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 501
+            },
+            {
+              "year": 108,
+              "students": 475
+            },
+            {
+              "year": 109,
+              "students": 463
+            },
+            {
+              "year": 110,
+              "students": 462
+            },
+            {
+              "year": 111,
+              "students": 454
+            },
+            {
+              "year": 112,
+              "students": 445
+            },
+            {
+              "year": 113,
+              "students": 403
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173608",
+          "code": "173608",
+          "name": "市立深澳國小",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:信義區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "基隆市信義區深澳坑路55-1號",
+          "phone": "(02)24652940",
+          "website": "https://saps.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173608/C/基隆市/信義區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.783696,
+            "latitude": 25.128819
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 221
+            },
+            {
+              "year": 108,
+              "students": 251
+            },
+            {
+              "year": 109,
+              "students": 268
+            },
+            {
+              "year": 110,
+              "students": 307
+            },
+            {
+              "year": 111,
+              "students": 328
+            },
+            {
+              "year": 112,
+              "students": 339
+            },
+            {
+              "year": 113,
+              "students": 352
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173509",
+          "code": "173509",
+          "name": "市立成功國中",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:信義區",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "基隆市信義區壽山路9號",
+          "phone": "(02)24225594",
+          "website": "http://www.ckjh.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173509/J/基隆市/信義區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.751756,
+            "latitude": 25.132579
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 259
+            },
+            {
+              "year": 108,
+              "students": 271
+            },
+            {
+              "year": 109,
+              "students": 253
+            },
+            {
+              "year": 110,
+              "students": 264
+            },
+            {
+              "year": 111,
+              "students": 263
+            },
+            {
+              "year": 112,
+              "students": 251
+            },
+            {
+              "year": 113,
+              "students": 285
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173503",
+          "code": "173503",
+          "name": "市立信義國中",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:信義區",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "基隆市信義區東信路4號",
+          "phone": "(02)24652199",
+          "website": "http://www.syjh.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173503/J/基隆市/信義區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.76849,
+            "latitude": 25.129567
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 247
+            },
+            {
+              "year": 108,
+              "students": 267
+            },
+            {
+              "year": 109,
+              "students": 264
+            },
+            {
+              "year": 110,
+              "students": 239
+            },
+            {
+              "year": 111,
+              "students": 203
+            },
+            {
+              "year": 112,
+              "students": 175
+            },
+            {
+              "year": 113,
+              "students": 202
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "171405",
+          "code": "171405",
+          "name": "私立光隆家商",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:信義區",
+          "educationLevel": "高中職",
+          "managementType": "私立",
+          "address": "基隆市信義區信二路264號",
+          "phone": "(02)24222237",
+          "website": "http://www.klhcvs.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/171405/H/基隆市/信義區/私立/否/無/",
+          "coordinates": {
+            "longitude": 121.749524,
+            "latitude": 25.130219
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 827
+            },
+            {
+              "year": 108,
+              "students": 572
+            },
+            {
+              "year": 109,
+              "students": 437
+            },
+            {
+              "year": 110,
+              "students": 342
+            },
+            {
+              "year": 111,
+              "students": 238
+            },
+            {
+              "year": 112,
+              "students": 232
+            },
+            {
+              "year": 113,
+              "students": 130
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173610",
+          "code": "173610",
+          "name": "市立東光國小",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:信義區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "基隆市信義區東信路236巷16號",
+          "phone": "(02)24650329",
+          "website": "https://dgps.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173610/C/基隆市/信義區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.763166,
+            "latitude": 25.129077
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 90
+            },
+            {
+              "year": 108,
+              "students": 109
+            },
+            {
+              "year": 109,
+              "students": 109
+            },
+            {
+              "year": 110,
+              "students": 113
+            },
+            {
+              "year": 111,
+              "students": 109
+            },
+            {
+              "year": 112,
+              "students": 105
+            },
+            {
+              "year": 113,
+              "students": 94
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "171407",
+          "code": "171407",
+          "name": "私立培德工家",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:信義區",
+          "educationLevel": "高中職",
+          "managementType": "私立",
+          "address": "基隆市信義區培德路73號",
+          "phone": "(02)24652121",
+          "website": "http://www.ptvs.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/171407/H/基隆市/信義區/私立/否/無/",
+          "coordinates": {
+            "longitude": 121.770523,
+            "latitude": 25.130893
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 221
+            },
+            {
+              "year": 108,
+              "students": 185
+            },
+            {
+              "year": 109,
+              "students": 140
+            },
+            {
+              "year": 110,
+              "students": 157
+            },
+            {
+              "year": 111,
+              "students": 104
+            },
+            {
+              "year": 112,
+              "students": 101
+            },
+            {
+              "year": 113,
+              "students": 73
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    },
+    {
+      "id": "基隆市:暖暖區",
+      "name": "暖暖區",
+      "countyId": "基隆市",
+      "schools": [
+        {
+          "id": "173637",
+          "code": "173637",
+          "name": "市立碇內國小",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:暖暖區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "基隆市暖暖區源遠路258號",
+          "phone": "(02)24581300",
+          "website": "https://dinps.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173637/C/基隆市/暖暖區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.754001,
+            "latitude": 25.098088
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 700
+            },
+            {
+              "year": 108,
+              "students": 712
+            },
+            {
+              "year": 109,
+              "students": 734
+            },
+            {
+              "year": 110,
+              "students": 768
+            },
+            {
+              "year": 111,
+              "students": 805
+            },
+            {
+              "year": 112,
+              "students": 830
+            },
+            {
+              "year": 113,
+              "students": 818
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "170302",
+          "code": "170302",
+          "name": "國立基隆高中",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:暖暖區",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "基隆市暖暖區源遠路20號",
+          "phone": "(02)24582052",
+          "website": "https://www.klsh.kl.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/170302/H/基隆市/暖暖區/國立/否/無/",
+          "coordinates": {
+            "longitude": 121.732555,
+            "latitude": 25.107411
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 760
+            },
+            {
+              "year": 108,
+              "students": 579
+            },
+            {
+              "year": 109,
+              "students": 596
+            },
+            {
+              "year": 110,
+              "students": 583
+            },
+            {
+              "year": 111,
+              "students": 615
+            },
+            {
+              "year": 112,
+              "students": 649
+            },
+            {
+              "year": 113,
+              "students": 681
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173642",
+          "code": "173642",
+          "name": "市立暖西國小",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:暖暖區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "基隆市暖暖區暖暖街350號",
+          "phone": "(02)24588583",
+          "website": "https://nsps.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173642/C/基隆市/暖暖區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.735003,
+            "latitude": 25.093718
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 440
+            },
+            {
+              "year": 108,
+              "students": 436
+            },
+            {
+              "year": 109,
+              "students": 423
+            },
+            {
+              "year": 110,
+              "students": 441
+            },
+            {
+              "year": 111,
+              "students": 432
+            },
+            {
+              "year": 112,
+              "students": 445
+            },
+            {
+              "year": 113,
+              "students": 473
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173307",
+          "code": "173307",
+          "name": "市立暖暖高中",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:暖暖區",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "基隆市暖暖區暖中路112號",
+          "phone": "(02)24575534",
+          "website": "https://nnjh.kl.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/173307/H/基隆市/暖暖區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.738573,
+            "latitude": 25.107646
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 596
+            },
+            {
+              "year": 108,
+              "students": 524
+            },
+            {
+              "year": 109,
+              "students": 501
+            },
+            {
+              "year": 110,
+              "students": 517
+            },
+            {
+              "year": 111,
+              "students": 494
+            },
+            {
+              "year": 112,
+              "students": 494
+            },
+            {
+              "year": 113,
+              "students": 452
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173515",
+          "code": "173515",
+          "name": "市立碇內國中",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:暖暖區",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "基隆市暖暖區源遠路152巷75號",
+          "phone": "(02)24586105",
+          "website": "http://www.dnjh.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173515/J/基隆市/暖暖區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.749369,
+            "latitude": 25.095756
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 499
+            },
+            {
+              "year": 108,
+              "students": 423
+            },
+            {
+              "year": 109,
+              "students": 400
+            },
+            {
+              "year": 110,
+              "students": 364
+            },
+            {
+              "year": 111,
+              "students": 355
+            },
+            {
+              "year": 112,
+              "students": 363
+            },
+            {
+              "year": 113,
+              "students": 410
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173635",
+          "code": "173635",
+          "name": "市立暖暖國小",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:暖暖區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "基隆市暖暖區暖暖街121號",
+          "phone": "(02)24583795",
+          "website": "https://nnps.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173635/C/基隆市/暖暖區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.737498,
+            "latitude": 25.100846
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 154
+            },
+            {
+              "year": 108,
+              "students": 178
+            },
+            {
+              "year": 109,
+              "students": 181
+            },
+            {
+              "year": 110,
+              "students": 190
+            },
+            {
+              "year": 111,
+              "students": 211
+            },
+            {
+              "year": 112,
+              "students": 193
+            },
+            {
+              "year": 113,
+              "students": 190
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173636",
+          "code": "173636",
+          "name": "市立暖江國小",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:暖暖區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "基隆市暖暖區寧靜街3號",
+          "phone": "(02)24574348",
+          "website": "https://njps.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173636/C/基隆市/暖暖區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.737926,
+            "latitude": 25.105673
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 133
+            },
+            {
+              "year": 108,
+              "students": 121
+            },
+            {
+              "year": 109,
+              "students": 119
+            },
+            {
+              "year": 110,
+              "students": 119
+            },
+            {
+              "year": 111,
+              "students": 143
+            },
+            {
+              "year": 112,
+              "students": 145
+            },
+            {
+              "year": 113,
+              "students": 144
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "173634",
+          "code": "173634",
+          "name": "市立八堵國小",
+          "countyId": "基隆市",
+          "townshipId": "基隆市:暖暖區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "基隆市暖暖區源遠路27號",
+          "phone": "(02)24573287",
+          "website": "https://badps.kl.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/173634/C/基隆市/暖暖區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.732828,
+            "latitude": 25.108565
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 92
+            },
+            {
+              "year": 108,
+              "students": 94
+            },
+            {
+              "year": 109,
+              "students": 96
+            },
+            {
+              "year": 110,
+              "students": 94
+            },
+            {
+              "year": 111,
+              "students": 98
+            },
+            {
+              "year": 112,
+              "students": 104
+            },
+            {
+              "year": 113,
+              "students": 103
             }
           ],
           "status": "正常",

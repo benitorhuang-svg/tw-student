@@ -60,22 +60,21 @@ function FilterBar({
   return (
     <section className="atlas-filterbar panel">
       <div className="atlas-filterbar__years">
-        <span className="filter-group__label">學年度</span>
-        <div className="chip-row">
-          {years.map((year) => (
-            <button
-              key={year}
-              type="button"
-              className={year === activeYear ? 'chip chip--active' : 'chip'}
-              onClick={() => {
-                onSetIsYearPlaybackActive(false)
-                startTransition(() => onSetActiveYear(year))
-              }}
-            >
-              {year}
-            </button>
-          ))}
-        </div>
+        <label className="filter-select filter-select--year">
+          <span>學年度</span>
+          <select
+            value={activeYear}
+            data-testid="academic-year-select"
+            onChange={(event) => {
+              onSetIsYearPlaybackActive(false)
+              startTransition(() => onSetActiveYear(Number(event.target.value) as AcademicYear))
+            }}
+          >
+            {years.map((year) => (
+              <option key={year} value={year}>{formatAcademicYear(year)}</option>
+            ))}
+          </select>
+        </label>
         <button
           type="button"
           className={isYearPlaybackActive ? 'ghost-button ghost-button--active' : 'ghost-button'}

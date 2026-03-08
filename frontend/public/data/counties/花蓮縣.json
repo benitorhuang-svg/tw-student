@@ -8,6 +8,5936 @@
   "dataNotes": [],
   "towns": [
     {
+      "id": "花蓮縣:玉里鎮",
+      "name": "玉里鎮",
+      "countyId": "花蓮縣",
+      "schools": [
+        {
+          "id": "154501",
+          "code": "154501",
+          "name": "縣立玉里國中",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:玉里鎮",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "花蓮縣玉里鎮民族街30號",
+          "phone": "(03)8882054",
+          "website": "http://www.yljh.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154501/J/花蓮縣/玉里鎮/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.313434,
+            "latitude": 23.335735
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 582
+            },
+            {
+              "year": 108,
+              "students": 541
+            },
+            {
+              "year": 109,
+              "students": 509
+            },
+            {
+              "year": 110,
+              "students": 487
+            },
+            {
+              "year": 111,
+              "students": 491
+            },
+            {
+              "year": 112,
+              "students": 479
+            },
+            {
+              "year": 113,
+              "students": 470
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "150309",
+          "code": "150309",
+          "name": "國立玉里高中",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:玉里鎮",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "花蓮縣玉里鎮中華路424號",
+          "phone": "(03)8886171",
+          "website": "http://www.ylsh.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/150309/H/花蓮縣/玉里鎮/國立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.320569,
+            "latitude": 23.346371
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 537
+            },
+            {
+              "year": 108,
+              "students": 524
+            },
+            {
+              "year": 109,
+              "students": 494
+            },
+            {
+              "year": 110,
+              "students": 446
+            },
+            {
+              "year": 111,
+              "students": 448
+            },
+            {
+              "year": 112,
+              "students": 396
+            },
+            {
+              "year": 113,
+              "students": 379
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154660",
+          "code": "154660",
+          "name": "縣立玉里國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:玉里鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣玉里鎮忠智路43號",
+          "phone": "(03)8882007",
+          "website": "https://www.ylps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154660/C/花蓮縣/玉里鎮/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.319247,
+            "latitude": 23.328922
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 284
+            },
+            {
+              "year": 108,
+              "students": 287
+            },
+            {
+              "year": 109,
+              "students": 281
+            },
+            {
+              "year": 110,
+              "students": 295
+            },
+            {
+              "year": 111,
+              "students": 308
+            },
+            {
+              "year": 112,
+              "students": 306
+            },
+            {
+              "year": 113,
+              "students": 334
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154661",
+          "code": "154661",
+          "name": "縣立中城國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:玉里鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣玉里鎮中山路一段1號",
+          "phone": "(03)8881982",
+          "website": "https://www.ccps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154661/C/花蓮縣/玉里鎮/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.317481,
+            "latitude": 23.324928
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 327
+            },
+            {
+              "year": 108,
+              "students": 334
+            },
+            {
+              "year": 109,
+              "students": 327
+            },
+            {
+              "year": 110,
+              "students": 319
+            },
+            {
+              "year": 111,
+              "students": 310
+            },
+            {
+              "year": 112,
+              "students": 308
+            },
+            {
+              "year": 113,
+              "students": 306
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154503",
+          "code": "154503",
+          "name": "縣立三民國中",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:玉里鎮",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "花蓮縣玉里鎮三民里151號",
+          "phone": "(03)8841198",
+          "website": "http://www.smjh.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154503/J/花蓮縣/玉里鎮/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 121.349733,
+            "latitude": 23.432727
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 102
+            },
+            {
+              "year": 108,
+              "students": 112
+            },
+            {
+              "year": 109,
+              "students": 112
+            },
+            {
+              "year": 110,
+              "students": 117
+            },
+            {
+              "year": 111,
+              "students": 105
+            },
+            {
+              "year": 112,
+              "students": 103
+            },
+            {
+              "year": 113,
+              "students": 96
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154669",
+          "code": "154669",
+          "name": "縣立三民國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:玉里鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣玉里鎮三民里118號",
+          "phone": "(03)8841183",
+          "website": "https://www.smps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154669/C/花蓮縣/玉里鎮/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 121.348471,
+            "latitude": 23.42991
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 37
+            },
+            {
+              "year": 108,
+              "students": 44
+            },
+            {
+              "year": 109,
+              "students": 46
+            },
+            {
+              "year": 110,
+              "students": 51
+            },
+            {
+              "year": 111,
+              "students": 62
+            },
+            {
+              "year": 112,
+              "students": 64
+            },
+            {
+              "year": 113,
+              "students": 64
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154502",
+          "code": "154502",
+          "name": "縣立玉東國中",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:玉里鎮",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "花蓮縣玉里鎮松浦里松浦39號",
+          "phone": "(03)8851062",
+          "website": "http://www.ytjh.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154502/J/花蓮縣/玉里鎮/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 121.370685,
+            "latitude": 23.417185
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 89
+            },
+            {
+              "year": 108,
+              "students": 100
+            },
+            {
+              "year": 109,
+              "students": 87
+            },
+            {
+              "year": 110,
+              "students": 79
+            },
+            {
+              "year": 111,
+              "students": 61
+            },
+            {
+              "year": 112,
+              "students": 55
+            },
+            {
+              "year": 113,
+              "students": 46
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154666",
+          "code": "154666",
+          "name": "縣立松浦國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:玉里鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣玉里鎮松浦里12鄰212號",
+          "phone": "(03)8851131",
+          "website": "https://www.spups.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154666/C/花蓮縣/玉里鎮/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 121.373459,
+            "latitude": 23.42867
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 54
+            },
+            {
+              "year": 108,
+              "students": 48
+            },
+            {
+              "year": 109,
+              "students": 42
+            },
+            {
+              "year": 110,
+              "students": 48
+            },
+            {
+              "year": 111,
+              "students": 43
+            },
+            {
+              "year": 112,
+              "students": 45
+            },
+            {
+              "year": 113,
+              "students": 38
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154670",
+          "code": "154670",
+          "name": "縣立大禹國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:玉里鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣玉里鎮中禹里225號",
+          "phone": "(03)8883274",
+          "website": "https://www.dyps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154670/C/花蓮縣/玉里鎮/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.328929,
+            "latitude": 23.380106
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 42
+            },
+            {
+              "year": 108,
+              "students": 37
+            },
+            {
+              "year": 109,
+              "students": 39
+            },
+            {
+              "year": 110,
+              "students": 46
+            },
+            {
+              "year": 111,
+              "students": 41
+            },
+            {
+              "year": 112,
+              "students": 43
+            },
+            {
+              "year": 113,
+              "students": 37
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154667",
+          "code": "154667",
+          "name": "縣立春日國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:玉里鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣玉里鎮春日里泰林95號",
+          "phone": "(03)8872628",
+          "website": "https://www.czips.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154667/C/花蓮縣/玉里鎮/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 121.393058,
+            "latitude": 23.452049
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 39
+            },
+            {
+              "year": 108,
+              "students": 36
+            },
+            {
+              "year": 109,
+              "students": 35
+            },
+            {
+              "year": 110,
+              "students": 37
+            },
+            {
+              "year": 111,
+              "students": 38
+            },
+            {
+              "year": 112,
+              "students": 34
+            },
+            {
+              "year": 113,
+              "students": 36
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154662",
+          "code": "154662",
+          "name": "縣立源城國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:玉里鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣玉里鎮源城里水源62號",
+          "phone": "(03)8882290",
+          "website": "https://www.jcps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154662/C/花蓮縣/玉里鎮/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.299184,
+            "latitude": 23.321717
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 43
+            },
+            {
+              "year": 108,
+              "students": 49
+            },
+            {
+              "year": 109,
+              "students": 45
+            },
+            {
+              "year": 110,
+              "students": 36
+            },
+            {
+              "year": 111,
+              "students": 37
+            },
+            {
+              "year": 112,
+              "students": 33
+            },
+            {
+              "year": 113,
+              "students": 33
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154663",
+          "code": "154663",
+          "name": "縣立樂合國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:玉里鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣玉里鎮樂合里新民41號",
+          "phone": "(03)8886087",
+          "website": "https://www.lhps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154663/C/花蓮縣/玉里鎮/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 121.339839,
+            "latitude": 23.321141
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 34
+            },
+            {
+              "year": 108,
+              "students": 31
+            },
+            {
+              "year": 109,
+              "students": 33
+            },
+            {
+              "year": 110,
+              "students": 36
+            },
+            {
+              "year": 111,
+              "students": 31
+            },
+            {
+              "year": 112,
+              "students": 35
+            },
+            {
+              "year": 113,
+              "students": 33
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154665",
+          "code": "154665",
+          "name": "縣立高寮國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:玉里鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣玉里鎮高寮92號",
+          "phone": "(03)8851078",
+          "website": "https://www.glps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154665/C/花蓮縣/玉里鎮/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 121.359048,
+            "latitude": 23.382961
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 46
+            },
+            {
+              "year": 108,
+              "students": 35
+            },
+            {
+              "year": 109,
+              "students": 28
+            },
+            {
+              "year": 110,
+              "students": 29
+            },
+            {
+              "year": 111,
+              "students": 29
+            },
+            {
+              "year": 112,
+              "students": 27
+            },
+            {
+              "year": 113,
+              "students": 24
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154671",
+          "code": "154671",
+          "name": "縣立長良國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:玉里鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣玉里鎮長良里163號",
+          "phone": "(03)8801171",
+          "website": "https://www.clps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154671/C/花蓮縣/玉里鎮/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 121.286067,
+            "latitude": 23.284531
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 31
+            },
+            {
+              "year": 108,
+              "students": 26
+            },
+            {
+              "year": 109,
+              "students": 24
+            },
+            {
+              "year": 110,
+              "students": 29
+            },
+            {
+              "year": 111,
+              "students": 27
+            },
+            {
+              "year": 112,
+              "students": 26
+            },
+            {
+              "year": 113,
+              "students": 24
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154668",
+          "code": "154668",
+          "name": "縣立德武國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:玉里鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣玉里鎮德武里9鄰171號",
+          "phone": "(03)8872824",
+          "website": "https://www.dwes.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154668/C/花蓮縣/玉里鎮/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 121.40558,
+            "latitude": 23.465909
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 27
+            },
+            {
+              "year": 108,
+              "students": 21
+            },
+            {
+              "year": 109,
+              "students": 17
+            },
+            {
+              "year": 110,
+              "students": 14
+            },
+            {
+              "year": 111,
+              "students": 15
+            },
+            {
+              "year": 112,
+              "students": 20
+            },
+            {
+              "year": 113,
+              "students": 20
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154664",
+          "code": "154664",
+          "name": "縣立觀音國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:玉里鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣玉里鎮觀音里16鄰9號",
+          "phone": "(03)8851006",
+          "website": "https://www.gips.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154664/C/花蓮縣/玉里鎮/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 121.357174,
+            "latitude": 23.394569
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 16
+            },
+            {
+              "year": 108,
+              "students": 12
+            },
+            {
+              "year": 109,
+              "students": 12
+            },
+            {
+              "year": 110,
+              "students": 12
+            },
+            {
+              "year": 111,
+              "students": 16
+            },
+            {
+              "year": 112,
+              "students": 19
+            },
+            {
+              "year": 113,
+              "students": 15
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    },
+    {
+      "id": "花蓮縣:光復鄉",
+      "name": "光復鄉",
+      "countyId": "花蓮縣",
+      "schools": [
+        {
+          "id": "154513",
+          "code": "154513",
+          "name": "縣立光復國中",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:光復鄉",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "花蓮縣光復鄉大馬村林森路200號",
+          "phone": "(03)8701027",
+          "website": "http://www.kfjhs.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154513/J/花蓮縣/光復鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.425212,
+            "latitude": 23.671005
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 233
+            },
+            {
+              "year": 108,
+              "students": 204
+            },
+            {
+              "year": 109,
+              "students": 214
+            },
+            {
+              "year": 110,
+              "students": 195
+            },
+            {
+              "year": 111,
+              "students": 180
+            },
+            {
+              "year": 112,
+              "students": 174
+            },
+            {
+              "year": 113,
+              "students": 176
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "150411",
+          "code": "150411",
+          "name": "國立光復商工",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:光復鄉",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "花蓮縣光復鄉林森路100號",
+          "phone": "(03)8700245",
+          "website": "http://www.kfcivs.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/150411/H/花蓮縣/光復鄉/國立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.427423,
+            "latitude": 23.667482
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 238
+            },
+            {
+              "year": 108,
+              "students": 234
+            },
+            {
+              "year": 109,
+              "students": 224
+            },
+            {
+              "year": 110,
+              "students": 232
+            },
+            {
+              "year": 111,
+              "students": 198
+            },
+            {
+              "year": 112,
+              "students": 180
+            },
+            {
+              "year": 113,
+              "students": 169
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154643",
+          "code": "154643",
+          "name": "縣立光復國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:光復鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣光復鄉大馬村中山路三段75號",
+          "phone": "(03)8701029",
+          "website": "https://www.kfps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154643/C/花蓮縣/光復鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.426927,
+            "latitude": 23.673583
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 144
+            },
+            {
+              "year": 108,
+              "students": 137
+            },
+            {
+              "year": 109,
+              "students": 128
+            },
+            {
+              "year": 110,
+              "students": 130
+            },
+            {
+              "year": 111,
+              "students": 132
+            },
+            {
+              "year": 112,
+              "students": 131
+            },
+            {
+              "year": 113,
+              "students": 127
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154648",
+          "code": "154648",
+          "name": "縣立大進國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:光復鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣光復鄉大進村糖廠街4號",
+          "phone": "(03)8701049",
+          "website": "https://www.dchps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154648/C/花蓮縣/光復鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.419141,
+            "latitude": 23.654676
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 111
+            },
+            {
+              "year": 108,
+              "students": 112
+            },
+            {
+              "year": 109,
+              "students": 115
+            },
+            {
+              "year": 110,
+              "students": 116
+            },
+            {
+              "year": 111,
+              "students": 115
+            },
+            {
+              "year": 112,
+              "students": 107
+            },
+            {
+              "year": 113,
+              "students": 113
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154644",
+          "code": "154644",
+          "name": "縣立太巴塱國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:光復鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣光復鄉中正路二段23號",
+          "phone": "(03)8701134",
+          "website": "https://www.tplps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154644/C/花蓮縣/光復鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.447825,
+            "latitude": 23.660031
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 100
+            },
+            {
+              "year": 108,
+              "students": 104
+            },
+            {
+              "year": 109,
+              "students": 97
+            },
+            {
+              "year": 110,
+              "students": 91
+            },
+            {
+              "year": 111,
+              "students": 95
+            },
+            {
+              "year": 112,
+              "students": 80
+            },
+            {
+              "year": 113,
+              "students": 76
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154514",
+          "code": "154514",
+          "name": "縣立富源國中",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:光復鄉",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "花蓮縣光復鄉大富村中山路一段2號",
+          "phone": "(03)8811002",
+          "website": "http://www.fyjh.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154514/J/花蓮縣/光復鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.385154,
+            "latitude": 23.588672
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 64
+            },
+            {
+              "year": 108,
+              "students": 50
+            },
+            {
+              "year": 109,
+              "students": 48
+            },
+            {
+              "year": 110,
+              "students": 50
+            },
+            {
+              "year": 111,
+              "students": 47
+            },
+            {
+              "year": 112,
+              "students": 42
+            },
+            {
+              "year": 113,
+              "students": 48
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154707",
+          "code": "154707",
+          "name": "縣立西富國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:光復鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣光復鄉西富村民有街51巷3號",
+          "phone": "(03)8702765",
+          "website": "https://www.sfps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154707/C/花蓮縣/光復鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.430256,
+            "latitude": 23.636328
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 29
+            },
+            {
+              "year": 108,
+              "students": 33
+            },
+            {
+              "year": 109,
+              "students": 32
+            },
+            {
+              "year": 110,
+              "students": 30
+            },
+            {
+              "year": 111,
+              "students": 29
+            },
+            {
+              "year": 112,
+              "students": 28
+            },
+            {
+              "year": 113,
+              "students": 26
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154708",
+          "code": "154708",
+          "name": "縣立大興國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:光復鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣光復鄉大興村民權街17號",
+          "phone": "(03)8702987",
+          "website": "https://www.dsps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154708/C/花蓮縣/光復鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.398157,
+            "latitude": 23.632332
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 36
+            },
+            {
+              "year": 108,
+              "students": 32
+            },
+            {
+              "year": 109,
+              "students": 33
+            },
+            {
+              "year": 110,
+              "students": 30
+            },
+            {
+              "year": 111,
+              "students": 27
+            },
+            {
+              "year": 112,
+              "students": 26
+            },
+            {
+              "year": 113,
+              "students": 22
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    },
+    {
+      "id": "花蓮縣:吉安鄉",
+      "name": "吉安鄉",
+      "countyId": "花蓮縣",
+      "schools": [
+        {
+          "id": "154619",
+          "code": "154619",
+          "name": "縣立宜昌國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:吉安鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣吉安鄉宜昌一街45號",
+          "phone": "(03)8520209",
+          "website": "https://www.ycps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154619/C/花蓮縣/吉安鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.585303,
+            "latitude": 23.970865
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 820
+            },
+            {
+              "year": 108,
+              "students": 814
+            },
+            {
+              "year": 109,
+              "students": 824
+            },
+            {
+              "year": 110,
+              "students": 812
+            },
+            {
+              "year": 111,
+              "students": 858
+            },
+            {
+              "year": 112,
+              "students": 871
+            },
+            {
+              "year": 113,
+              "students": 848
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154620",
+          "code": "154620",
+          "name": "縣立北昌國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:吉安鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣吉安鄉北昌村自強路533號",
+          "phone": "(03)8562619",
+          "website": "https://www.bcps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154620/C/花蓮縣/吉安鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.591803,
+            "latitude": 23.987238
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 790
+            },
+            {
+              "year": 108,
+              "students": 817
+            },
+            {
+              "year": 109,
+              "students": 818
+            },
+            {
+              "year": 110,
+              "students": 816
+            },
+            {
+              "year": 111,
+              "students": 842
+            },
+            {
+              "year": 112,
+              "students": 841
+            },
+            {
+              "year": 113,
+              "students": 824
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154510",
+          "code": "154510",
+          "name": "縣立宜昌國中",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:吉安鄉",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "花蓮縣吉安鄉宜昌1街41號",
+          "phone": "(03)8520803",
+          "website": "http://www.ycjh.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154510/J/花蓮縣/吉安鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.586755,
+            "latitude": 23.97191
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 753
+            },
+            {
+              "year": 108,
+              "students": 708
+            },
+            {
+              "year": 109,
+              "students": 673
+            },
+            {
+              "year": 110,
+              "students": 676
+            },
+            {
+              "year": 111,
+              "students": 659
+            },
+            {
+              "year": 112,
+              "students": 633
+            },
+            {
+              "year": 113,
+              "students": 672
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154618",
+          "code": "154618",
+          "name": "縣立吉安國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:吉安鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣吉安鄉吉安路二段97號",
+          "phone": "(03)8523984",
+          "website": "https://www.gaps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154618/C/花蓮縣/吉安鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.562844,
+            "latitude": 23.973465
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 222
+            },
+            {
+              "year": 108,
+              "students": 243
+            },
+            {
+              "year": 109,
+              "students": 253
+            },
+            {
+              "year": 110,
+              "students": 273
+            },
+            {
+              "year": 111,
+              "students": 308
+            },
+            {
+              "year": 112,
+              "students": 336
+            },
+            {
+              "year": 113,
+              "students": 348
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154625",
+          "code": "154625",
+          "name": "縣立太昌國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:吉安鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣吉安鄉太昌村明義五街1號",
+          "phone": "(03)8571746",
+          "website": "https://www.tacps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154625/C/花蓮縣/吉安鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.564909,
+            "latitude": 23.994942
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 317
+            },
+            {
+              "year": 108,
+              "students": 317
+            },
+            {
+              "year": 109,
+              "students": 319
+            },
+            {
+              "year": 110,
+              "students": 299
+            },
+            {
+              "year": 111,
+              "students": 295
+            },
+            {
+              "year": 112,
+              "students": 287
+            },
+            {
+              "year": 113,
+              "students": 276
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "151410",
+          "code": "151410",
+          "name": "花蓮縣上騰工商",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:吉安鄉",
+          "educationLevel": "高中職",
+          "managementType": "私立",
+          "address": "花蓮縣吉安鄉吉安村吉興四街101號",
+          "phone": "(03)8538565",
+          "website": "http://www.chvs.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/151410/H/花蓮縣/吉安鄉/私立/否/無/",
+          "coordinates": {
+            "longitude": 121.558651,
+            "latitude": 23.972107
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 473
+            },
+            {
+              "year": 108,
+              "students": 438
+            },
+            {
+              "year": 109,
+              "students": 411
+            },
+            {
+              "year": 110,
+              "students": 381
+            },
+            {
+              "year": 111,
+              "students": 335
+            },
+            {
+              "year": 112,
+              "students": 301
+            },
+            {
+              "year": 113,
+              "students": 257
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154621",
+          "code": "154621",
+          "name": "縣立稻香國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:吉安鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣吉安鄉稻香村稻香路99號",
+          "phone": "(03)8524663",
+          "website": "https://www.dshps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154621/C/花蓮縣/吉安鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.569157,
+            "latitude": 23.963137
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 267
+            },
+            {
+              "year": 108,
+              "students": 260
+            },
+            {
+              "year": 109,
+              "students": 277
+            },
+            {
+              "year": 110,
+              "students": 272
+            },
+            {
+              "year": 111,
+              "students": 265
+            },
+            {
+              "year": 112,
+              "students": 268
+            },
+            {
+              "year": 113,
+              "students": 248
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154523",
+          "code": "154523",
+          "name": "縣立化仁國中",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:吉安鄉",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "花蓮縣吉安鄉東昌村東海十街3號",
+          "phone": "(03)8543471",
+          "website": "http://www.hrjh.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154523/J/花蓮縣/吉安鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.593226,
+            "latitude": 23.965509
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 316
+            },
+            {
+              "year": 108,
+              "students": 301
+            },
+            {
+              "year": 109,
+              "students": 306
+            },
+            {
+              "year": 110,
+              "students": 305
+            },
+            {
+              "year": 111,
+              "students": 316
+            },
+            {
+              "year": 112,
+              "students": 282
+            },
+            {
+              "year": 113,
+              "students": 240
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154624",
+          "code": "154624",
+          "name": "縣立化仁國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:吉安鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣吉安鄉東里十一街83號",
+          "phone": "(03)8528720",
+          "website": "https://www.hzps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154624/C/花蓮縣/吉安鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.595666,
+            "latitude": 23.962902
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 222
+            },
+            {
+              "year": 108,
+              "students": 222
+            },
+            {
+              "year": 109,
+              "students": 219
+            },
+            {
+              "year": 110,
+              "students": 221
+            },
+            {
+              "year": 111,
+              "students": 232
+            },
+            {
+              "year": 112,
+              "students": 225
+            },
+            {
+              "year": 113,
+              "students": 214
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154509",
+          "code": "154509",
+          "name": "縣立吉安國中",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:吉安鄉",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "花蓮縣吉安鄉中山路三段662號",
+          "phone": "(03)8523136",
+          "website": "http://www.cajh.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154509/J/花蓮縣/吉安鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.561239,
+            "latitude": 23.983474
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 321
+            },
+            {
+              "year": 108,
+              "students": 274
+            },
+            {
+              "year": 109,
+              "students": 241
+            },
+            {
+              "year": 110,
+              "students": 204
+            },
+            {
+              "year": 111,
+              "students": 198
+            },
+            {
+              "year": 112,
+              "students": 207
+            },
+            {
+              "year": 113,
+              "students": 206
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154622",
+          "code": "154622",
+          "name": "縣立光華國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:吉安鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣吉安鄉光華村光華二街180號",
+          "phone": "(03)8421611",
+          "website": "https://www.khps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154622/C/花蓮縣/吉安鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.578677,
+            "latitude": 23.935659
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 73
+            },
+            {
+              "year": 108,
+              "students": 76
+            },
+            {
+              "year": 109,
+              "students": 69
+            },
+            {
+              "year": 110,
+              "students": 70
+            },
+            {
+              "year": 111,
+              "students": 72
+            },
+            {
+              "year": 112,
+              "students": 71
+            },
+            {
+              "year": 113,
+              "students": 74
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154623",
+          "code": "154623",
+          "name": "縣立南華國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:吉安鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣吉安鄉干城村吉安路6段60號",
+          "phone": "(03)8525043",
+          "website": "https://www.nhps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154623/C/花蓮縣/吉安鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.547509,
+            "latitude": 23.948503
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 81
+            },
+            {
+              "year": 108,
+              "students": 76
+            },
+            {
+              "year": 109,
+              "students": 69
+            },
+            {
+              "year": 110,
+              "students": 68
+            },
+            {
+              "year": 111,
+              "students": 63
+            },
+            {
+              "year": 112,
+              "students": 63
+            },
+            {
+              "year": 113,
+              "students": 50
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    },
+    {
+      "id": "花蓮縣:秀林鄉",
+      "name": "秀林鄉",
+      "countyId": "花蓮縣",
+      "schools": [
+        {
+          "id": "154689",
+          "code": "154689",
+          "name": "縣立水源國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:秀林鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣秀林鄉水源村111號",
+          "phone": "(03)8570781",
+          "website": "https://www.syps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154689/C/花蓮縣/秀林鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.55681,
+            "latitude": 24.003308
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 89
+            },
+            {
+              "year": 108,
+              "students": 89
+            },
+            {
+              "year": 109,
+              "students": 90
+            },
+            {
+              "year": 110,
+              "students": 96
+            },
+            {
+              "year": 111,
+              "students": 97
+            },
+            {
+              "year": 112,
+              "students": 95
+            },
+            {
+              "year": 113,
+              "students": 97
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154682",
+          "code": "154682",
+          "name": "縣立富世國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:秀林鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣秀林鄉富世村127號",
+          "phone": "(03)8611431",
+          "website": "https://www.fusps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154682/C/花蓮縣/秀林鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.629203,
+            "latitude": 24.147547
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 68
+            },
+            {
+              "year": 108,
+              "students": 73
+            },
+            {
+              "year": 109,
+              "students": 68
+            },
+            {
+              "year": 110,
+              "students": 79
+            },
+            {
+              "year": 111,
+              "students": 89
+            },
+            {
+              "year": 112,
+              "students": 76
+            },
+            {
+              "year": 113,
+              "students": 81
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154683",
+          "code": "154683",
+          "name": "縣立崇德國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:秀林鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣秀林鄉崇德村72號",
+          "phone": "(03)8621220",
+          "website": "https://www.cdps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154683/C/花蓮縣/秀林鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.652408,
+            "latitude": 24.16208
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 69
+            },
+            {
+              "year": 108,
+              "students": 76
+            },
+            {
+              "year": 109,
+              "students": 76
+            },
+            {
+              "year": 110,
+              "students": 83
+            },
+            {
+              "year": 111,
+              "students": 97
+            },
+            {
+              "year": 112,
+              "students": 94
+            },
+            {
+              "year": 113,
+              "students": 81
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154681",
+          "code": "154681",
+          "name": "縣立秀林國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:秀林鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣秀林鄉秀林村秀林路76號",
+          "phone": "(03)8611393",
+          "website": "https://www.slips.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154681/C/花蓮縣/秀林鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.624231,
+            "latitude": 24.117672
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 79
+            },
+            {
+              "year": 108,
+              "students": 81
+            },
+            {
+              "year": 109,
+              "students": 75
+            },
+            {
+              "year": 110,
+              "students": 77
+            },
+            {
+              "year": 111,
+              "students": 78
+            },
+            {
+              "year": 112,
+              "students": 81
+            },
+            {
+              "year": 113,
+              "students": 79
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154684",
+          "code": "154684",
+          "name": "縣立和平國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:秀林鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣秀林鄉和平村112號",
+          "phone": "(03)8681056",
+          "website": "https://www.hpps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154684/C/花蓮縣/秀林鄉/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 121.749109,
+            "latitude": 24.307938
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 86
+            },
+            {
+              "year": 108,
+              "students": 89
+            },
+            {
+              "year": 109,
+              "students": 89
+            },
+            {
+              "year": 110,
+              "students": 80
+            },
+            {
+              "year": 111,
+              "students": 84
+            },
+            {
+              "year": 112,
+              "students": 86
+            },
+            {
+              "year": 113,
+              "students": 75
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154688",
+          "code": "154688",
+          "name": "縣立銅門國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:秀林鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣秀林鄉銅門村69號",
+          "phone": "(03)8641174",
+          "website": "http://www.tmps.hlc.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154688/C/花蓮縣/秀林鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.493218,
+            "latitude": 23.965489
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 61
+            },
+            {
+              "year": 108,
+              "students": 63
+            },
+            {
+              "year": 109,
+              "students": 71
+            },
+            {
+              "year": 110,
+              "students": 62
+            },
+            {
+              "year": 111,
+              "students": 70
+            },
+            {
+              "year": 112,
+              "students": 70
+            },
+            {
+              "year": 113,
+              "students": 66
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154687",
+          "code": "154687",
+          "name": "縣立佳民國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:秀林鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣秀林鄉佳民村119號",
+          "phone": "(03)8264900",
+          "website": "https://www.cmps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154687/C/花蓮縣/秀林鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.598873,
+            "latitude": 24.053418
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 44
+            },
+            {
+              "year": 108,
+              "students": 40
+            },
+            {
+              "year": 109,
+              "students": 37
+            },
+            {
+              "year": 110,
+              "students": 41
+            },
+            {
+              "year": 111,
+              "students": 48
+            },
+            {
+              "year": 112,
+              "students": 52
+            },
+            {
+              "year": 113,
+              "students": 54
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154690",
+          "code": "154690",
+          "name": "縣立銅蘭國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:秀林鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣秀林鄉文蘭村70號",
+          "phone": "(03)8641005",
+          "website": "https://www.tlaps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154690/C/花蓮縣/秀林鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.507092,
+            "latitude": 23.947146
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 47
+            },
+            {
+              "year": 108,
+              "students": 52
+            },
+            {
+              "year": 109,
+              "students": 50
+            },
+            {
+              "year": 110,
+              "students": 42
+            },
+            {
+              "year": 111,
+              "students": 41
+            },
+            {
+              "year": 112,
+              "students": 44
+            },
+            {
+              "year": 113,
+              "students": 51
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154685",
+          "code": "154685",
+          "name": "縣立景美國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:秀林鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣秀林鄉景美村加灣112號",
+          "phone": "(03)8266707",
+          "website": "https://www.zmps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154685/C/花蓮縣/秀林鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.605998,
+            "latitude": 24.082817
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 50
+            },
+            {
+              "year": 108,
+              "students": 40
+            },
+            {
+              "year": 109,
+              "students": 39
+            },
+            {
+              "year": 110,
+              "students": 37
+            },
+            {
+              "year": 111,
+              "students": 38
+            },
+            {
+              "year": 112,
+              "students": 40
+            },
+            {
+              "year": 113,
+              "students": 46
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154710",
+          "code": "154710",
+          "name": "縣立西寶國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:秀林鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣秀林鄉富世村西寶11號",
+          "phone": "(03)8691040",
+          "website": "https://www.spps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154710/C/花蓮縣/秀林鄉/縣市立/極偏/無/",
+          "coordinates": {
+            "longitude": 121.482629,
+            "latitude": 24.20707
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 38
+            },
+            {
+              "year": 108,
+              "students": 37
+            },
+            {
+              "year": 109,
+              "students": 45
+            },
+            {
+              "year": 110,
+              "students": 42
+            },
+            {
+              "year": 111,
+              "students": 43
+            },
+            {
+              "year": 112,
+              "students": 45
+            },
+            {
+              "year": 113,
+              "students": 46
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154686",
+          "code": "154686",
+          "name": "縣立三棧國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:秀林鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣秀林鄉景美村三棧102號",
+          "phone": "(03)8260330",
+          "website": "https://www.szps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154686/C/花蓮縣/秀林鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.606429,
+            "latitude": 24.10284
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 31
+            },
+            {
+              "year": 108,
+              "students": 32
+            },
+            {
+              "year": 109,
+              "students": 35
+            },
+            {
+              "year": 110,
+              "students": 41
+            },
+            {
+              "year": 111,
+              "students": 43
+            },
+            {
+              "year": 112,
+              "students": 46
+            },
+            {
+              "year": 113,
+              "students": 45
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154691",
+          "code": "154691",
+          "name": "縣立文蘭國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:秀林鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣秀林鄉文蘭村米亞丸1號",
+          "phone": "(03)8641020",
+          "website": "https://www.wlps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154691/C/花蓮縣/秀林鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.5015,
+            "latitude": 23.922083
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 58
+            },
+            {
+              "year": 108,
+              "students": 50
+            },
+            {
+              "year": 109,
+              "students": 48
+            },
+            {
+              "year": 110,
+              "students": 39
+            },
+            {
+              "year": 111,
+              "students": 37
+            },
+            {
+              "year": 112,
+              "students": 31
+            },
+            {
+              "year": 113,
+              "students": 37
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    },
+    {
+      "id": "花蓮縣:卓溪鄉",
+      "name": "卓溪鄉",
+      "countyId": "花蓮縣",
+      "schools": [
+        {
+          "id": "154698",
+          "code": "154698",
+          "name": "縣立卓溪國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:卓溪鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣卓溪鄉卓溪村中正路72號",
+          "phone": "(03)8883514",
+          "website": "https://www.zsps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154698/C/花蓮縣/卓溪鄉/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 121.303308,
+            "latitude": 23.345775
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 41
+            },
+            {
+              "year": 108,
+              "students": 51
+            },
+            {
+              "year": 109,
+              "students": 56
+            },
+            {
+              "year": 110,
+              "students": 56
+            },
+            {
+              "year": 111,
+              "students": 58
+            },
+            {
+              "year": 112,
+              "students": 57
+            },
+            {
+              "year": 113,
+              "students": 55
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154701",
+          "code": "154701",
+          "name": "縣立太平國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:卓溪鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣卓溪鄉太平村1鄰2號",
+          "phone": "(03)8841359",
+          "website": "https://www.tpps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154701/C/花蓮縣/卓溪鄉/縣市立/極偏/無/",
+          "coordinates": {
+            "longitude": 121.320354,
+            "latitude": 23.406132
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 41
+            },
+            {
+              "year": 108,
+              "students": 39
+            },
+            {
+              "year": 109,
+              "students": 42
+            },
+            {
+              "year": 110,
+              "students": 45
+            },
+            {
+              "year": 111,
+              "students": 48
+            },
+            {
+              "year": 112,
+              "students": 47
+            },
+            {
+              "year": 113,
+              "students": 54
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154700",
+          "code": "154700",
+          "name": "縣立立山國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:卓溪鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣卓溪鄉立山村9鄰90號",
+          "phone": "(03)8841358",
+          "website": "https://www.lsps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154700/C/花蓮縣/卓溪鄉/縣市立/極偏/無/",
+          "coordinates": {
+            "longitude": 121.320839,
+            "latitude": 23.430957
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 44
+            },
+            {
+              "year": 108,
+              "students": 41
+            },
+            {
+              "year": 109,
+              "students": 47
+            },
+            {
+              "year": 110,
+              "students": 52
+            },
+            {
+              "year": 111,
+              "students": 52
+            },
+            {
+              "year": 112,
+              "students": 56
+            },
+            {
+              "year": 113,
+              "students": 49
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154699",
+          "code": "154699",
+          "name": "縣立崙山國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:卓溪鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣卓溪鄉崙山村1鄰12號",
+          "phone": "(03)8841350",
+          "website": "https://www.lsaps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154699/C/花蓮縣/卓溪鄉/縣市立/極偏/無/",
+          "coordinates": {
+            "longitude": 121.344186,
+            "latitude": 23.438508
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 47
+            },
+            {
+              "year": 108,
+              "students": 46
+            },
+            {
+              "year": 109,
+              "students": 43
+            },
+            {
+              "year": 110,
+              "students": 40
+            },
+            {
+              "year": 111,
+              "students": 41
+            },
+            {
+              "year": 112,
+              "students": 45
+            },
+            {
+              "year": 113,
+              "students": 37
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154704",
+          "code": "154704",
+          "name": "縣立古風國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:卓溪鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣卓溪鄉古風村崙天18號",
+          "phone": "(03)8846058",
+          "website": "https://www.gfps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154704/C/花蓮縣/卓溪鄉/縣市立/極偏/無/",
+          "coordinates": {
+            "longitude": 121.264574,
+            "latitude": 23.21967
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 46
+            },
+            {
+              "year": 108,
+              "students": 42
+            },
+            {
+              "year": 109,
+              "students": 38
+            },
+            {
+              "year": 110,
+              "students": 42
+            },
+            {
+              "year": 111,
+              "students": 36
+            },
+            {
+              "year": 112,
+              "students": 34
+            },
+            {
+              "year": 113,
+              "students": 33
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154703",
+          "code": "154703",
+          "name": "縣立卓樂國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:卓溪鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣卓溪鄉卓清村卓樂86號",
+          "phone": "(03)8889075",
+          "website": "https://www.zlps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154703/C/花蓮縣/卓溪鄉/縣市立/極偏/無/",
+          "coordinates": {
+            "longitude": 121.267406,
+            "latitude": 23.295847
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 40
+            },
+            {
+              "year": 108,
+              "students": 38
+            },
+            {
+              "year": 109,
+              "students": 33
+            },
+            {
+              "year": 110,
+              "students": 34
+            },
+            {
+              "year": 111,
+              "students": 32
+            },
+            {
+              "year": 112,
+              "students": 29
+            },
+            {
+              "year": 113,
+              "students": 27
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154702",
+          "code": "154702",
+          "name": "縣立卓清國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:卓溪鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣卓溪鄉卓清村清水6號",
+          "phone": "(03)8801163",
+          "website": "https://www.zcps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154702/C/花蓮縣/卓溪鄉/縣市立/極偏/無/",
+          "coordinates": {
+            "longitude": 121.272916,
+            "latitude": 23.278006
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 24
+            },
+            {
+              "year": 108,
+              "students": 21
+            },
+            {
+              "year": 109,
+              "students": 22
+            },
+            {
+              "year": 110,
+              "students": 29
+            },
+            {
+              "year": 111,
+              "students": 27
+            },
+            {
+              "year": 112,
+              "students": 31
+            },
+            {
+              "year": 113,
+              "students": 24
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154706",
+          "code": "154706",
+          "name": "縣立卓楓國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:卓溪鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣卓溪鄉古風村十二鄰古楓6號",
+          "phone": "(03)8846027",
+          "website": "https://www.zfps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154706/C/花蓮縣/卓溪鄉/縣市立/極偏/無/",
+          "coordinates": {
+            "longitude": 121.271965,
+            "latitude": 23.243793
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 19
+            },
+            {
+              "year": 108,
+              "students": 22
+            },
+            {
+              "year": 109,
+              "students": 24
+            },
+            {
+              "year": 110,
+              "students": 20
+            },
+            {
+              "year": 111,
+              "students": 18
+            },
+            {
+              "year": 112,
+              "students": 14
+            },
+            {
+              "year": 113,
+              "students": 15
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    },
+    {
+      "id": "花蓮縣:花蓮市",
+      "name": "花蓮市",
+      "countyId": "花蓮縣",
+      "schools": [
+        {
+          "id": "1027",
+          "code": "1027",
+          "name": "慈濟大學",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:花蓮市",
+          "educationLevel": "大專院校",
+          "managementType": "私立",
+          "address": "花蓮縣花蓮市中央路三段701號",
+          "phone": "(03)8565301",
+          "website": "http://www.tcu.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/1027/R/花蓮縣/花蓮市/私立/否/一般/",
+          "coordinates": {
+            "longitude": 121.590234,
+            "latitude": 23.99301
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 3448
+            },
+            {
+              "year": 108,
+              "students": 3373
+            },
+            {
+              "year": 109,
+              "students": 3383
+            },
+            {
+              "year": 110,
+              "students": 3348
+            },
+            {
+              "year": 111,
+              "students": 3057
+            },
+            {
+              "year": 112,
+              "students": 2835
+            },
+            {
+              "year": 113,
+              "students": 5285
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "151312",
+          "code": "151312",
+          "name": "財團法人慈濟大學附中",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:花蓮市",
+          "educationLevel": "高中職",
+          "managementType": "私立",
+          "address": "花蓮縣花蓮市介仁街178號",
+          "phone": "(03)8572823",
+          "website": "http://www.tcsh.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/151312/H/花蓮縣/花蓮市/私立/否/無/",
+          "coordinates": {
+            "longitude": 121.574199,
+            "latitude": 23.999901
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1634
+            },
+            {
+              "year": 108,
+              "students": 1652
+            },
+            {
+              "year": 109,
+              "students": 1701
+            },
+            {
+              "year": 110,
+              "students": 1767
+            },
+            {
+              "year": 111,
+              "students": 1783
+            },
+            {
+              "year": 112,
+              "students": 1769
+            },
+            {
+              "year": 113,
+              "students": 1814
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154506",
+          "code": "154506",
+          "name": "縣立國風國中",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:花蓮市",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "花蓮縣花蓮市國風里林政街7號",
+          "phone": "(03)8323847",
+          "website": "http://www.kfjh.hlc.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154506/J/花蓮縣/花蓮市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.595388,
+            "latitude": 23.978464
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1562
+            },
+            {
+              "year": 108,
+              "students": 1539
+            },
+            {
+              "year": 109,
+              "students": 1544
+            },
+            {
+              "year": 110,
+              "students": 1545
+            },
+            {
+              "year": 111,
+              "students": 1535
+            },
+            {
+              "year": 112,
+              "students": 1524
+            },
+            {
+              "year": 113,
+              "students": 1514
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154602",
+          "code": "154602",
+          "name": "縣立明義國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:花蓮市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣花蓮市明義街107號",
+          "phone": "(03)8326686",
+          "website": "https://www.myps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154602/C/花蓮縣/花蓮市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.603579,
+            "latitude": 23.978845
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1426
+            },
+            {
+              "year": 108,
+              "students": 1399
+            },
+            {
+              "year": 109,
+              "students": 1362
+            },
+            {
+              "year": 110,
+              "students": 1344
+            },
+            {
+              "year": 111,
+              "students": 1319
+            },
+            {
+              "year": 112,
+              "students": 1304
+            },
+            {
+              "year": 113,
+              "students": 1232
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154505",
+          "code": "154505",
+          "name": "縣立花崗國中",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:花蓮市",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "花蓮縣花蓮市公園路40號",
+          "phone": "(03)8323924",
+          "website": "http://www.hgjh.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154505/J/花蓮縣/花蓮市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.613034,
+            "latitude": 23.977485
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1243
+            },
+            {
+              "year": 108,
+              "students": 1200
+            },
+            {
+              "year": 109,
+              "students": 1189
+            },
+            {
+              "year": 110,
+              "students": 1153
+            },
+            {
+              "year": 111,
+              "students": 1115
+            },
+            {
+              "year": 112,
+              "students": 1112
+            },
+            {
+              "year": 113,
+              "students": 1170
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "150303",
+          "code": "150303",
+          "name": "國立花蓮高中",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:花蓮市",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "花蓮縣花蓮市民權路42號",
+          "phone": "(03)8242236",
+          "website": "https://www.hlhs.hlc.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/150303/H/花蓮縣/花蓮市/國立/否/無/",
+          "coordinates": {
+            "longitude": 121.625946,
+            "latitude": 23.986767
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1269
+            },
+            {
+              "year": 108,
+              "students": 1173
+            },
+            {
+              "year": 109,
+              "students": 1115
+            },
+            {
+              "year": 110,
+              "students": 1083
+            },
+            {
+              "year": 111,
+              "students": 1071
+            },
+            {
+              "year": 112,
+              "students": 1073
+            },
+            {
+              "year": 113,
+              "students": 1049
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "150302",
+          "code": "150302",
+          "name": "國立花蓮女中",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:花蓮市",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "花蓮縣花蓮市菁華街2號",
+          "phone": "(03)8321202",
+          "website": "http://www.hlgs.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/150302/H/花蓮縣/花蓮市/國立/否/無/",
+          "coordinates": {
+            "longitude": 121.615234,
+            "latitude": 23.979448
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1082
+            },
+            {
+              "year": 108,
+              "students": 1043
+            },
+            {
+              "year": 109,
+              "students": 1027
+            },
+            {
+              "year": 110,
+              "students": 1035
+            },
+            {
+              "year": 111,
+              "students": 1035
+            },
+            {
+              "year": 112,
+              "students": 1039
+            },
+            {
+              "year": 113,
+              "students": 1010
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154605",
+          "code": "154605",
+          "name": "縣立中正國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:花蓮市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣花蓮市中正路210號",
+          "phone": "(03)8322819",
+          "website": "https://www.czps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154605/C/花蓮縣/花蓮市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.599714,
+            "latitude": 23.971689
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 968
+            },
+            {
+              "year": 108,
+              "students": 974
+            },
+            {
+              "year": 109,
+              "students": 983
+            },
+            {
+              "year": 110,
+              "students": 982
+            },
+            {
+              "year": 111,
+              "students": 1027
+            },
+            {
+              "year": 112,
+              "students": 1036
+            },
+            {
+              "year": 113,
+              "students": 998
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "151307",
+          "code": "151307",
+          "name": "私立四維高中",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:花蓮市",
+          "educationLevel": "高中職",
+          "managementType": "私立",
+          "address": "花蓮縣花蓮市中山路一段200號",
+          "phone": "(03)8561455",
+          "website": "http://www.swsh.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/151307/H/花蓮縣/花蓮市/私立/否/無/",
+          "coordinates": {
+            "longitude": 121.591583,
+            "latitude": 24.000477
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1681
+            },
+            {
+              "year": 108,
+              "students": 1421
+            },
+            {
+              "year": 109,
+              "students": 1191
+            },
+            {
+              "year": 110,
+              "students": 1003
+            },
+            {
+              "year": 111,
+              "students": 886
+            },
+            {
+              "year": 112,
+              "students": 866
+            },
+            {
+              "year": 113,
+              "students": 897
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "150601",
+          "code": "150601",
+          "name": "國立東華大學附設實小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:花蓮市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣花蓮市永安街100號",
+          "phone": "(03)8222344",
+          "website": "https://www.efs.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/150601/C/花蓮縣/花蓮市/國立/否/無/",
+          "coordinates": {
+            "longitude": 121.6231,
+            "latitude": 23.990947
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 850
+            },
+            {
+              "year": 108,
+              "students": 839
+            },
+            {
+              "year": 109,
+              "students": 833
+            },
+            {
+              "year": 110,
+              "students": 820
+            },
+            {
+              "year": 111,
+              "students": 816
+            },
+            {
+              "year": 112,
+              "students": 819
+            },
+            {
+              "year": 113,
+              "students": 807
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "150405",
+          "code": "150405",
+          "name": "國立花蓮高商",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:花蓮市",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "花蓮縣花蓮市中山路418號",
+          "phone": "(03)8322532",
+          "website": "http://www.hlbh.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/150405/H/花蓮縣/花蓮市/國立/否/無/",
+          "coordinates": {
+            "longitude": 121.602403,
+            "latitude": 23.986597
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1082
+            },
+            {
+              "year": 108,
+              "students": 1014
+            },
+            {
+              "year": 109,
+              "students": 977
+            },
+            {
+              "year": 110,
+              "students": 967
+            },
+            {
+              "year": 111,
+              "students": 864
+            },
+            {
+              "year": 112,
+              "students": 841
+            },
+            {
+              "year": 113,
+              "students": 771
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "150404",
+          "code": "150404",
+          "name": "國立花蓮高工",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:花蓮市",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "花蓮縣花蓮市府前路27號",
+          "phone": "(03)8226108",
+          "website": "http://www.hlis.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/150404/H/花蓮縣/花蓮市/國立/否/無/",
+          "coordinates": {
+            "longitude": 121.619903,
+            "latitude": 23.998728
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1256
+            },
+            {
+              "year": 108,
+              "students": 1112
+            },
+            {
+              "year": 109,
+              "students": 1047
+            },
+            {
+              "year": 110,
+              "students": 1011
+            },
+            {
+              "year": 111,
+              "students": 1024
+            },
+            {
+              "year": 112,
+              "students": 837
+            },
+            {
+              "year": 113,
+              "students": 761
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "150401",
+          "code": "150401",
+          "name": "國立花蓮高農",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:花蓮市",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "花蓮縣花蓮市建國路161號",
+          "phone": "(03)8312301",
+          "website": "http://www.hla.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/150401/H/花蓮縣/花蓮市/國立/否/無/",
+          "coordinates": {
+            "longitude": 121.598967,
+            "latitude": 23.983581
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 776
+            },
+            {
+              "year": 108,
+              "students": 747
+            },
+            {
+              "year": 109,
+              "students": 731
+            },
+            {
+              "year": 110,
+              "students": 717
+            },
+            {
+              "year": 111,
+              "students": 702
+            },
+            {
+              "year": 112,
+              "students": 658
+            },
+            {
+              "year": 113,
+              "students": 599
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154612",
+          "code": "154612",
+          "name": "縣立鑄強國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:花蓮市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣花蓮市永興路20號",
+          "phone": "(03)8223787",
+          "website": "https://www.tcps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154612/C/花蓮縣/花蓮市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.625542,
+            "latitude": 23.992806
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 513
+            },
+            {
+              "year": 108,
+              "students": 502
+            },
+            {
+              "year": 109,
+              "students": 499
+            },
+            {
+              "year": 110,
+              "students": 509
+            },
+            {
+              "year": 111,
+              "students": 523
+            },
+            {
+              "year": 112,
+              "students": 538
+            },
+            {
+              "year": 113,
+              "students": 543
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154522",
+          "code": "154522",
+          "name": "縣立自強國中",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:花蓮市",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "花蓮縣花蓮市裕祥路89號",
+          "phone": "(03)8579338",
+          "website": "http://www.zcjh.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154522/J/花蓮縣/花蓮市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.599076,
+            "latitude": 23.997918
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 702
+            },
+            {
+              "year": 108,
+              "students": 650
+            },
+            {
+              "year": 109,
+              "students": 584
+            },
+            {
+              "year": 110,
+              "students": 585
+            },
+            {
+              "year": 111,
+              "students": 538
+            },
+            {
+              "year": 112,
+              "students": 519
+            },
+            {
+              "year": 113,
+              "students": 517
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "151602",
+          "code": "151602",
+          "name": "私立海星國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:花蓮市",
+          "educationLevel": "國小",
+          "managementType": "私立",
+          "address": "花蓮縣花蓮市永興路21號",
+          "phone": "(03)8225407",
+          "website": "https://www.rcsmps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/151602/C/花蓮縣/花蓮市/私立/否/無/",
+          "coordinates": {
+            "longitude": 121.6248,
+            "latitude": 23.992156
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 521
+            },
+            {
+              "year": 108,
+              "students": 535
+            },
+            {
+              "year": 109,
+              "students": 525
+            },
+            {
+              "year": 110,
+              "students": 523
+            },
+            {
+              "year": 111,
+              "students": 542
+            },
+            {
+              "year": 112,
+              "students": 552
+            },
+            {
+              "year": 113,
+              "students": 514
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154711",
+          "code": "154711",
+          "name": "縣立中原國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:花蓮市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣花蓮市中原路531號",
+          "phone": "(03)8333547",
+          "website": "https://www.cyps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154711/C/花蓮縣/花蓮市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.59643,
+            "latitude": 23.971747
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 398
+            },
+            {
+              "year": 108,
+              "students": 382
+            },
+            {
+              "year": 109,
+              "students": 455
+            },
+            {
+              "year": 110,
+              "students": 495
+            },
+            {
+              "year": 111,
+              "students": 532
+            },
+            {
+              "year": 112,
+              "students": 501
+            },
+            {
+              "year": 113,
+              "students": 485
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154603",
+          "code": "154603",
+          "name": "縣立明廉國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:花蓮市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣花蓮市中山路903號",
+          "phone": "(03)8569088",
+          "website": "https://www.mleps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154603/C/花蓮縣/花蓮市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.594726,
+            "latitude": 23.995008
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 489
+            },
+            {
+              "year": 108,
+              "students": 483
+            },
+            {
+              "year": 109,
+              "students": 482
+            },
+            {
+              "year": 110,
+              "students": 461
+            },
+            {
+              "year": 111,
+              "students": 479
+            },
+            {
+              "year": 112,
+              "students": 492
+            },
+            {
+              "year": 113,
+              "students": 474
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154610",
+          "code": "154610",
+          "name": "縣立忠孝國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:花蓮市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣花蓮市中華路298號",
+          "phone": "(03)8351218",
+          "website": "https://www.cshps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154610/C/花蓮縣/花蓮市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.598563,
+            "latitude": 23.975646
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 446
+            },
+            {
+              "year": 108,
+              "students": 474
+            },
+            {
+              "year": 109,
+              "students": 455
+            },
+            {
+              "year": 110,
+              "students": 459
+            },
+            {
+              "year": 111,
+              "students": 474
+            },
+            {
+              "year": 112,
+              "students": 472
+            },
+            {
+              "year": 113,
+              "students": 427
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154608",
+          "code": "154608",
+          "name": "縣立中華國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:花蓮市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣花蓮市國盛二街22號",
+          "phone": "(03)8324308",
+          "website": "https://www.chps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154608/C/花蓮縣/花蓮市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.607236,
+            "latitude": 23.992768
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 287
+            },
+            {
+              "year": 108,
+              "students": 277
+            },
+            {
+              "year": 109,
+              "students": 296
+            },
+            {
+              "year": 110,
+              "students": 294
+            },
+            {
+              "year": 111,
+              "students": 285
+            },
+            {
+              "year": 112,
+              "students": 278
+            },
+            {
+              "year": 113,
+              "students": 273
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154504",
+          "code": "154504",
+          "name": "縣立美崙國中",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:花蓮市",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "花蓮縣花蓮市化道路40巷1號",
+          "phone": "(03)8223537",
+          "website": "http://www.mljh.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154504/J/花蓮縣/花蓮市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.627708,
+            "latitude": 23.997831
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 476
+            },
+            {
+              "year": 108,
+              "students": 436
+            },
+            {
+              "year": 109,
+              "students": 412
+            },
+            {
+              "year": 110,
+              "students": 391
+            },
+            {
+              "year": 111,
+              "students": 350
+            },
+            {
+              "year": 112,
+              "students": 306
+            },
+            {
+              "year": 113,
+              "students": 264
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154604",
+          "code": "154604",
+          "name": "縣立明恥國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:花蓮市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣花蓮市中興路41號",
+          "phone": "(03)8222231",
+          "website": "https://www.mcps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154604/C/花蓮縣/花蓮市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.631012,
+            "latitude": 23.991878
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 239
+            },
+            {
+              "year": 108,
+              "students": 218
+            },
+            {
+              "year": 109,
+              "students": 228
+            },
+            {
+              "year": 110,
+              "students": 242
+            },
+            {
+              "year": 111,
+              "students": 238
+            },
+            {
+              "year": 112,
+              "students": 233
+            },
+            {
+              "year": 113,
+              "students": 225
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154601",
+          "code": "154601",
+          "name": "縣立明禮國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:花蓮市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣花蓮市明禮路6號",
+          "phone": "(03)8322353",
+          "website": "https://www.mlips.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154601/C/花蓮縣/花蓮市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.610527,
+            "latitude": 23.980075
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 185
+            },
+            {
+              "year": 108,
+              "students": 190
+            },
+            {
+              "year": 109,
+              "students": 186
+            },
+            {
+              "year": 110,
+              "students": 201
+            },
+            {
+              "year": 111,
+              "students": 211
+            },
+            {
+              "year": 112,
+              "students": 224
+            },
+            {
+              "year": 113,
+              "students": 220
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154301",
+          "code": "154301",
+          "name": "花蓮縣立體育高中",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:花蓮市",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "花蓮縣花蓮市達固湖灣大路21號",
+          "phone": "(03)8462610",
+          "website": "http://www.hpehs.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/154301/H/花蓮縣/花蓮市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.584387,
+            "latitude": 24.003002
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 106
+            },
+            {
+              "year": 108,
+              "students": 125
+            },
+            {
+              "year": 109,
+              "students": 150
+            },
+            {
+              "year": 110,
+              "students": 156
+            },
+            {
+              "year": 111,
+              "students": 147
+            },
+            {
+              "year": 112,
+              "students": 127
+            },
+            {
+              "year": 113,
+              "students": 116
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154611",
+          "code": "154611",
+          "name": "縣立北濱國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:花蓮市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣花蓮市北濱街113號",
+          "phone": "(03)8324093",
+          "website": "http://www.bbps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154611/C/花蓮縣/花蓮市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.61614,
+            "latitude": 23.977837
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 119
+            },
+            {
+              "year": 108,
+              "students": 125
+            },
+            {
+              "year": 109,
+              "students": 123
+            },
+            {
+              "year": 110,
+              "students": 122
+            },
+            {
+              "year": 111,
+              "students": 121
+            },
+            {
+              "year": 112,
+              "students": 113
+            },
+            {
+              "year": 113,
+              "students": 112
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154607",
+          "code": "154607",
+          "name": "縣立復興國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:花蓮市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣花蓮市府前路682號",
+          "phone": "(03)8223208",
+          "website": "https://www.fshps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154607/C/花蓮縣/花蓮市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.619077,
+            "latitude": 24.006654
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 120
+            },
+            {
+              "year": 108,
+              "students": 147
+            },
+            {
+              "year": 109,
+              "students": 99
+            },
+            {
+              "year": 110,
+              "students": 103
+            },
+            {
+              "year": 111,
+              "students": 93
+            },
+            {
+              "year": 112,
+              "students": 102
+            },
+            {
+              "year": 113,
+              "students": 107
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154606",
+          "code": "154606",
+          "name": "縣立信義國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:花蓮市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣花蓮市主計里信義街1號",
+          "phone": "(03)8331163",
+          "website": "https://www.syips.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154606/C/花蓮縣/花蓮市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.606207,
+            "latitude": 23.970844
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 75
+            },
+            {
+              "year": 108,
+              "students": 75
+            },
+            {
+              "year": 109,
+              "students": 77
+            },
+            {
+              "year": 110,
+              "students": 68
+            },
+            {
+              "year": 111,
+              "students": 67
+            },
+            {
+              "year": 112,
+              "students": 61
+            },
+            {
+              "year": 113,
+              "students": 50
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154613",
+          "code": "154613",
+          "name": "縣立國福國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:花蓮市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣花蓮市福光街277巷1號",
+          "phone": "(03)8561395",
+          "website": "https://www.gfups.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154613/C/花蓮縣/花蓮市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.580302,
+            "latitude": 24.009088
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 28
+            },
+            {
+              "year": 108,
+              "students": 35
+            },
+            {
+              "year": 109,
+              "students": 35
+            },
+            {
+              "year": 110,
+              "students": 32
+            },
+            {
+              "year": 111,
+              "students": 35
+            },
+            {
+              "year": 112,
+              "students": 39
+            },
+            {
+              "year": 113,
+              "students": 37
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    },
+    {
+      "id": "花蓮縣:富里鄉",
+      "name": "富里鄉",
+      "countyId": "花蓮縣",
+      "schools": [
+        {
+          "id": "154517",
+          "code": "154517",
+          "name": "縣立富里國中",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:富里鄉",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "花蓮縣富里鄉永安街173號",
+          "phone": "(03)8830006",
+          "website": "http://www.fljh.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154517/J/花蓮縣/富里鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.249153,
+            "latitude": 23.175772
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 133
+            },
+            {
+              "year": 108,
+              "students": 115
+            },
+            {
+              "year": 109,
+              "students": 105
+            },
+            {
+              "year": 110,
+              "students": 86
+            },
+            {
+              "year": 111,
+              "students": 87
+            },
+            {
+              "year": 112,
+              "students": 80
+            },
+            {
+              "year": 113,
+              "students": 83
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154672",
+          "code": "154672",
+          "name": "縣立富里國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:富里鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣富里鄉富里村永安街52號",
+          "phone": "(03)8831042",
+          "website": "https://www.fulps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154672/C/花蓮縣/富里鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.248329,
+            "latitude": 23.171858
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 108
+            },
+            {
+              "year": 108,
+              "students": 108
+            },
+            {
+              "year": 109,
+              "students": 97
+            },
+            {
+              "year": 110,
+              "students": 100
+            },
+            {
+              "year": 111,
+              "students": 92
+            },
+            {
+              "year": 112,
+              "students": 94
+            },
+            {
+              "year": 113,
+              "students": 80
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154674",
+          "code": "154674",
+          "name": "縣立東里國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:富里鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣富里鄉東里村道化路74號",
+          "phone": "(03)8861161",
+          "website": "https://www.tlps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154674/C/花蓮縣/富里鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.302871,
+            "latitude": 23.265549
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 49
+            },
+            {
+              "year": 108,
+              "students": 56
+            },
+            {
+              "year": 109,
+              "students": 67
+            },
+            {
+              "year": 110,
+              "students": 65
+            },
+            {
+              "year": 111,
+              "students": 65
+            },
+            {
+              "year": 112,
+              "students": 68
+            },
+            {
+              "year": 113,
+              "students": 64
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154518",
+          "code": "154518",
+          "name": "縣立富北國中",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:富里鄉",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "花蓮縣富里鄉新興村一鄰8號",
+          "phone": "(03)8821134",
+          "website": "http://www.fbjh.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154518/J/花蓮縣/富里鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.27996,
+            "latitude": 23.225072
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 99
+            },
+            {
+              "year": 108,
+              "students": 91
+            },
+            {
+              "year": 109,
+              "students": 72
+            },
+            {
+              "year": 110,
+              "students": 55
+            },
+            {
+              "year": 111,
+              "students": 54
+            },
+            {
+              "year": 112,
+              "students": 45
+            },
+            {
+              "year": 113,
+              "students": 50
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154680",
+          "code": "154680",
+          "name": "縣立東竹國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:富里鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣富里鄉竹田村富田3號",
+          "phone": "(03)8821514",
+          "website": "https://www.djps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154680/C/花蓮縣/富里鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.279788,
+            "latitude": 23.214187
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 61
+            },
+            {
+              "year": 108,
+              "students": 62
+            },
+            {
+              "year": 109,
+              "students": 54
+            },
+            {
+              "year": 110,
+              "students": 58
+            },
+            {
+              "year": 111,
+              "students": 51
+            },
+            {
+              "year": 112,
+              "students": 50
+            },
+            {
+              "year": 113,
+              "students": 46
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154521",
+          "code": "154521",
+          "name": "縣立東里國中",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:富里鄉",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "花蓮縣富里鄉東里村道化路82號",
+          "phone": "(03)8861174",
+          "website": "http://www.tljh.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154521/J/花蓮縣/富里鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.303087,
+            "latitude": 23.263604
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 27
+            },
+            {
+              "year": 108,
+              "students": 27
+            },
+            {
+              "year": 109,
+              "students": 30
+            },
+            {
+              "year": 110,
+              "students": 30
+            },
+            {
+              "year": 111,
+              "students": 28
+            },
+            {
+              "year": 112,
+              "students": 30
+            },
+            {
+              "year": 113,
+              "students": 32
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154676",
+          "code": "154676",
+          "name": "縣立吳江國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:富里鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣富里鄉吳江村6鄰52號",
+          "phone": "(03)8861242",
+          "website": "https://xc.hlc.edu.tw/~wcps_www/index.php",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154676/C/花蓮縣/富里鄉/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 121.322652,
+            "latitude": 23.278733
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 24
+            },
+            {
+              "year": 108,
+              "students": 18
+            },
+            {
+              "year": 109,
+              "students": 28
+            },
+            {
+              "year": 110,
+              "students": 31
+            },
+            {
+              "year": 111,
+              "students": 32
+            },
+            {
+              "year": 112,
+              "students": 30
+            },
+            {
+              "year": 113,
+              "students": 29
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154675",
+          "code": "154675",
+          "name": "縣立明里國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:富里鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣富里鄉明里村1鄰16號",
+          "phone": "(03)8846003",
+          "website": "https://www.mrps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154675/C/花蓮縣/富里鄉/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 121.248654,
+            "latitude": 23.201224
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 33
+            },
+            {
+              "year": 108,
+              "students": 30
+            },
+            {
+              "year": 109,
+              "students": 32
+            },
+            {
+              "year": 110,
+              "students": 32
+            },
+            {
+              "year": 111,
+              "students": 27
+            },
+            {
+              "year": 112,
+              "students": 26
+            },
+            {
+              "year": 113,
+              "students": 28
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154679",
+          "code": "154679",
+          "name": "縣立萬寧國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:富里鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣富里鄉萬寧村鎮寧108號",
+          "phone": "(03)8861211",
+          "website": "https://www.wlips.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154679/C/花蓮縣/富里鄉/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 121.297475,
+            "latitude": 23.253953
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 18
+            },
+            {
+              "year": 108,
+              "students": 17
+            },
+            {
+              "year": 109,
+              "students": 14
+            },
+            {
+              "year": 110,
+              "students": 18
+            },
+            {
+              "year": 111,
+              "students": 15
+            },
+            {
+              "year": 112,
+              "students": 16
+            },
+            {
+              "year": 113,
+              "students": 17
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154677",
+          "code": "154677",
+          "name": "縣立學田國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:富里鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣富里鄉學田村光明路1號",
+          "phone": "(03)8831324",
+          "website": "https://www.stps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154677/C/花蓮縣/富里鄉/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 121.226974,
+            "latitude": 23.155146
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 34
+            },
+            {
+              "year": 108,
+              "students": 31
+            },
+            {
+              "year": 109,
+              "students": 27
+            },
+            {
+              "year": 110,
+              "students": 25
+            },
+            {
+              "year": 111,
+              "students": 20
+            },
+            {
+              "year": 112,
+              "students": 16
+            },
+            {
+              "year": 113,
+              "students": 14
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154678",
+          "code": "154678",
+          "name": "縣立永豐國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:富里鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣富里鄉豐南村永豐84號",
+          "phone": "(03)8831195",
+          "website": "https://www.yfps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154678/C/花蓮縣/富里鄉/縣市立/極偏/無/",
+          "coordinates": {
+            "longitude": 121.266568,
+            "latitude": 23.154804
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 27
+            },
+            {
+              "year": 108,
+              "students": 25
+            },
+            {
+              "year": 109,
+              "students": 25
+            },
+            {
+              "year": 110,
+              "students": 22
+            },
+            {
+              "year": 111,
+              "students": 14
+            },
+            {
+              "year": 112,
+              "students": 8
+            },
+            {
+              "year": 113,
+              "students": 12
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    },
+    {
+      "id": "花蓮縣:新城鄉",
+      "name": "新城鄉",
+      "countyId": "花蓮縣",
+      "schools": [
+        {
+          "id": "151306",
+          "code": "151306",
+          "name": "私立海星高中",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:新城鄉",
+          "educationLevel": "高中職",
+          "managementType": "私立",
+          "address": "花蓮縣新城鄉嘉新村嘉新路36號",
+          "phone": "(03)8223116",
+          "website": "http://www.smhs.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/151306/H/花蓮縣/新城鄉/私立/否/無/",
+          "coordinates": {
+            "longitude": 121.613555,
+            "latitude": 24.007369
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1184
+            },
+            {
+              "year": 108,
+              "students": 1045
+            },
+            {
+              "year": 109,
+              "students": 915
+            },
+            {
+              "year": 110,
+              "students": 770
+            },
+            {
+              "year": 111,
+              "students": 738
+            },
+            {
+              "year": 112,
+              "students": 795
+            },
+            {
+              "year": 113,
+              "students": 976
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154615",
+          "code": "154615",
+          "name": "縣立北埔國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:新城鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣新城鄉北埔路170號",
+          "phone": "(03)8264624",
+          "website": "https://www.bpps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154615/C/花蓮縣/新城鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.605041,
+            "latitude": 24.031787
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 408
+            },
+            {
+              "year": 108,
+              "students": 412
+            },
+            {
+              "year": 109,
+              "students": 423
+            },
+            {
+              "year": 110,
+              "students": 431
+            },
+            {
+              "year": 111,
+              "students": 455
+            },
+            {
+              "year": 112,
+              "students": 494
+            },
+            {
+              "year": 113,
+              "students": 495
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "1148",
+          "code": "1148",
+          "name": "大漢技術學院",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:新城鄉",
+          "educationLevel": "大專院校",
+          "managementType": "私立",
+          "address": "花蓮縣新城鄉大漢村樹人街1號",
+          "phone": "(03)8210888",
+          "website": "http://www.dahan.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoR/1148/R/花蓮縣/新城鄉/私立/否/技職/",
+          "coordinates": {
+            "longitude": 121.605964,
+            "latitude": 24.039814
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1163
+            },
+            {
+              "year": 108,
+              "students": 1075
+            },
+            {
+              "year": 109,
+              "students": 999
+            },
+            {
+              "year": 110,
+              "students": 904
+            },
+            {
+              "year": 111,
+              "students": 784
+            },
+            {
+              "year": 112,
+              "students": 601
+            },
+            {
+              "year": 113,
+              "students": 310
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154507",
+          "code": "154507",
+          "name": "縣立秀林國中",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:新城鄉",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "花蓮縣新城鄉新城村中山路56號",
+          "phone": "(03)8611010",
+          "website": "http://www.sljh.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154507/J/花蓮縣/新城鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.653248,
+            "latitude": 24.125897
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 242
+            },
+            {
+              "year": 108,
+              "students": 219
+            },
+            {
+              "year": 109,
+              "students": 210
+            },
+            {
+              "year": 110,
+              "students": 226
+            },
+            {
+              "year": 111,
+              "students": 218
+            },
+            {
+              "year": 112,
+              "students": 207
+            },
+            {
+              "year": 113,
+              "students": 206
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154614",
+          "code": "154614",
+          "name": "縣立新城國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:新城鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣新城鄉新城村博愛路30號",
+          "phone": "(03)8611006",
+          "website": "https://www.scps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154614/C/花蓮縣/新城鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.651348,
+            "latitude": 24.128063
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 229
+            },
+            {
+              "year": 108,
+              "students": 233
+            },
+            {
+              "year": 109,
+              "students": 231
+            },
+            {
+              "year": 110,
+              "students": 230
+            },
+            {
+              "year": 111,
+              "students": 222
+            },
+            {
+              "year": 112,
+              "students": 220
+            },
+            {
+              "year": 113,
+              "students": 205
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154508",
+          "code": "154508",
+          "name": "縣立新城國中",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:新城鄉",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "花蓮縣新城鄉北埔村北埔路143號",
+          "phone": "(03)8263911",
+          "website": "http://www.scjh.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154508/J/花蓮縣/新城鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.604684,
+            "latitude": 24.030802
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 306
+            },
+            {
+              "year": 108,
+              "students": 254
+            },
+            {
+              "year": 109,
+              "students": 243
+            },
+            {
+              "year": 110,
+              "students": 227
+            },
+            {
+              "year": 111,
+              "students": 218
+            },
+            {
+              "year": 112,
+              "students": 197
+            },
+            {
+              "year": 113,
+              "students": 191
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154617",
+          "code": "154617",
+          "name": "縣立嘉里國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:新城鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣新城鄉嘉里村嘉里三街28號",
+          "phone": "(03)8266945",
+          "website": "https://www.zlips.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154617/C/花蓮縣/新城鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.609332,
+            "latitude": 24.014717
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 73
+            },
+            {
+              "year": 108,
+              "students": 69
+            },
+            {
+              "year": 109,
+              "students": 73
+            },
+            {
+              "year": 110,
+              "students": 83
+            },
+            {
+              "year": 111,
+              "students": 81
+            },
+            {
+              "year": 112,
+              "students": 82
+            },
+            {
+              "year": 113,
+              "students": 87
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154616",
+          "code": "154616",
+          "name": "縣立康樂國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:新城鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣新城鄉康樂村康樂一街38號",
+          "phone": "(03)8265597",
+          "website": "https://www.klps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154616/C/花蓮縣/新城鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.607757,
+            "latitude": 24.052498
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 71
+            },
+            {
+              "year": 108,
+              "students": 87
+            },
+            {
+              "year": 109,
+              "students": 80
+            },
+            {
+              "year": 110,
+              "students": 83
+            },
+            {
+              "year": 111,
+              "students": 84
+            },
+            {
+              "year": 112,
+              "students": 78
+            },
+            {
+              "year": 113,
+              "students": 75
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    },
+    {
+      "id": "花蓮縣:瑞穗鄉",
+      "name": "瑞穗鄉",
+      "countyId": "花蓮縣",
+      "schools": [
+        {
+          "id": "154649",
+          "code": "154649",
+          "name": "縣立瑞穗國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:瑞穗鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣瑞穗鄉溫泉路一段19號",
+          "phone": "(03)8876366",
+          "website": "https://www.zshps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154649/C/花蓮縣/瑞穗鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.374113,
+            "latitude": 23.498008
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 237
+            },
+            {
+              "year": 108,
+              "students": 217
+            },
+            {
+              "year": 109,
+              "students": 216
+            },
+            {
+              "year": 110,
+              "students": 218
+            },
+            {
+              "year": 111,
+              "students": 224
+            },
+            {
+              "year": 112,
+              "students": 222
+            },
+            {
+              "year": 113,
+              "students": 237
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154520",
+          "code": "154520",
+          "name": "縣立瑞穗國中",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:瑞穗鄉",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "花蓮縣瑞穗鄉成功北路18號",
+          "phone": "(03)8873111",
+          "website": "http://www.zsjh.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154520/J/花蓮縣/瑞穗鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.375238,
+            "latitude": 23.499039
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 251
+            },
+            {
+              "year": 108,
+              "students": 241
+            },
+            {
+              "year": 109,
+              "students": 222
+            },
+            {
+              "year": 110,
+              "students": 213
+            },
+            {
+              "year": 111,
+              "students": 194
+            },
+            {
+              "year": 112,
+              "students": 166
+            },
+            {
+              "year": 113,
+              "students": 157
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154650",
+          "code": "154650",
+          "name": "縣立瑞北國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:瑞穗鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣瑞穗鄉中正北路二段35號",
+          "phone": "(03)8872642",
+          "website": "https://www.zbps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154650/C/花蓮縣/瑞穗鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.378632,
+            "latitude": 23.525593
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 56
+            },
+            {
+              "year": 108,
+              "students": 47
+            },
+            {
+              "year": 109,
+              "students": 43
+            },
+            {
+              "year": 110,
+              "students": 43
+            },
+            {
+              "year": 111,
+              "students": 46
+            },
+            {
+              "year": 112,
+              "students": 56
+            },
+            {
+              "year": 113,
+              "students": 61
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154654",
+          "code": "154654",
+          "name": "縣立富源國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:瑞穗鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣瑞穗鄉富源村學士路30號",
+          "phone": "(03)8811029",
+          "website": "https://www.fyps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154654/C/花蓮縣/瑞穗鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.375538,
+            "latitude": 23.578788
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 78
+            },
+            {
+              "year": 108,
+              "students": 71
+            },
+            {
+              "year": 109,
+              "students": 66
+            },
+            {
+              "year": 110,
+              "students": 67
+            },
+            {
+              "year": 111,
+              "students": 66
+            },
+            {
+              "year": 112,
+              "students": 62
+            },
+            {
+              "year": 113,
+              "students": 60
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154651",
+          "code": "154651",
+          "name": "縣立瑞美國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:瑞穗鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣瑞穗鄉中山路二段389號",
+          "phone": "(03)8872014",
+          "website": "https://www.zmeps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154651/C/花蓮縣/瑞穗鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.39071,
+            "latitude": 23.493269
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 45
+            },
+            {
+              "year": 108,
+              "students": 45
+            },
+            {
+              "year": 109,
+              "students": 42
+            },
+            {
+              "year": 110,
+              "students": 40
+            },
+            {
+              "year": 111,
+              "students": 33
+            },
+            {
+              "year": 112,
+              "students": 40
+            },
+            {
+              "year": 113,
+              "students": 34
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154652",
+          "code": "154652",
+          "name": "縣立鶴岡國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:瑞穗鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣瑞穗鄉鶴岡村167號",
+          "phone": "(03)8872740",
+          "website": "https://www.hgps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154652/C/花蓮縣/瑞穗鄉/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 121.390436,
+            "latitude": 23.523594
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 16
+            },
+            {
+              "year": 108,
+              "students": 17
+            },
+            {
+              "year": 109,
+              "students": 15
+            },
+            {
+              "year": 110,
+              "students": 18
+            },
+            {
+              "year": 111,
+              "students": 19
+            },
+            {
+              "year": 112,
+              "students": 19
+            },
+            {
+              "year": 113,
+              "students": 21
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154653",
+          "code": "154653",
+          "name": "縣立舞鶴國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:瑞穗鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣瑞穗鄉舞鶴村64號",
+          "phone": "(03)8872394",
+          "website": "https://www.whps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154653/C/花蓮縣/瑞穗鄉/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 121.352042,
+            "latitude": 23.458949
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 29
+            },
+            {
+              "year": 108,
+              "students": 27
+            },
+            {
+              "year": 109,
+              "students": 21
+            },
+            {
+              "year": 110,
+              "students": 13
+            },
+            {
+              "year": 111,
+              "students": 11
+            },
+            {
+              "year": 112,
+              "students": 10
+            },
+            {
+              "year": 113,
+              "students": 9
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154705",
+          "code": "154705",
+          "name": "縣立奇美國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:瑞穗鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣瑞穗鄉奇美村47號",
+          "phone": "(03)8991077",
+          "website": "https://www.gmps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154705/C/花蓮縣/瑞穗鄉/縣市立/極偏/無/",
+          "coordinates": {
+            "longitude": 121.445636,
+            "latitude": 23.497079
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 9
+            },
+            {
+              "year": 108,
+              "students": 12
+            },
+            {
+              "year": 109,
+              "students": 15
+            },
+            {
+              "year": 110,
+              "students": 12
+            },
+            {
+              "year": 111,
+              "students": 9
+            },
+            {
+              "year": 112,
+              "students": 7
+            },
+            {
+              "year": 113,
+              "students": 8
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    },
+    {
+      "id": "花蓮縣:萬榮鄉",
+      "name": "萬榮鄉",
+      "countyId": "花蓮縣",
+      "schools": [
+        {
+          "id": "154696",
+          "code": "154696",
+          "name": "縣立西林國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:萬榮鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣萬榮鄉西林村8鄰114號",
+          "phone": "(03)8771064",
+          "website": "https://www.slps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154696/C/花蓮縣/萬榮鄉/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 121.440406,
+            "latitude": 23.811322
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 74
+            },
+            {
+              "year": 108,
+              "students": 70
+            },
+            {
+              "year": 109,
+              "students": 68
+            },
+            {
+              "year": 110,
+              "students": 64
+            },
+            {
+              "year": 111,
+              "students": 65
+            },
+            {
+              "year": 112,
+              "students": 59
+            },
+            {
+              "year": 113,
+              "students": 62
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154692",
+          "code": "154692",
+          "name": "縣立萬榮國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:萬榮鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣萬榮鄉萬榮村2鄰31號",
+          "phone": "(03)8751449",
+          "website": "https://www.wlops.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154692/C/花蓮縣/萬榮鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.411335,
+            "latitude": 23.715447
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 54
+            },
+            {
+              "year": 108,
+              "students": 46
+            },
+            {
+              "year": 109,
+              "students": 47
+            },
+            {
+              "year": 110,
+              "students": 49
+            },
+            {
+              "year": 111,
+              "students": 50
+            },
+            {
+              "year": 112,
+              "students": 47
+            },
+            {
+              "year": 113,
+              "students": 48
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154693",
+          "code": "154693",
+          "name": "縣立明利國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:萬榮鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣萬榮鄉明利村35號",
+          "phone": "(03)8751048",
+          "website": "https://www.mlps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154693/C/花蓮縣/萬榮鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.412353,
+            "latitude": 23.705554
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 46
+            },
+            {
+              "year": 108,
+              "students": 37
+            },
+            {
+              "year": 109,
+              "students": 41
+            },
+            {
+              "year": 110,
+              "students": 39
+            },
+            {
+              "year": 111,
+              "students": 36
+            },
+            {
+              "year": 112,
+              "students": 33
+            },
+            {
+              "year": 113,
+              "students": 41
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154697",
+          "code": "154697",
+          "name": "縣立紅葉國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:萬榮鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣萬榮鄉紅葉村1鄰4號",
+          "phone": "(03)8872784",
+          "website": "https://www.hyps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154697/C/花蓮縣/萬榮鄉/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 121.345478,
+            "latitude": 23.494791
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 52
+            },
+            {
+              "year": 108,
+              "students": 53
+            },
+            {
+              "year": 109,
+              "students": 52
+            },
+            {
+              "year": 110,
+              "students": 42
+            },
+            {
+              "year": 111,
+              "students": 37
+            },
+            {
+              "year": 112,
+              "students": 38
+            },
+            {
+              "year": 113,
+              "students": 39
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154695",
+          "code": "154695",
+          "name": "縣立馬遠國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:萬榮鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣萬榮鄉馬遠村39號",
+          "phone": "(03)8811371",
+          "website": "https://www.myups.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154695/C/花蓮縣/萬榮鄉/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 121.361315,
+            "latitude": 23.577165
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 38
+            },
+            {
+              "year": 108,
+              "students": 45
+            },
+            {
+              "year": 109,
+              "students": 47
+            },
+            {
+              "year": 110,
+              "students": 43
+            },
+            {
+              "year": 111,
+              "students": 45
+            },
+            {
+              "year": 112,
+              "students": 44
+            },
+            {
+              "year": 113,
+              "students": 37
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154694",
+          "code": "154694",
+          "name": "縣立見晴國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:萬榮鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣萬榮鄉見晴村89號",
+          "phone": "(03)8771574",
+          "website": "https://www.cchps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154694/C/花蓮縣/萬榮鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.451884,
+            "latitude": 23.783935
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 44
+            },
+            {
+              "year": 108,
+              "students": 40
+            },
+            {
+              "year": 109,
+              "students": 36
+            },
+            {
+              "year": 110,
+              "students": 37
+            },
+            {
+              "year": 111,
+              "students": 39
+            },
+            {
+              "year": 112,
+              "students": 37
+            },
+            {
+              "year": 113,
+              "students": 34
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    },
+    {
       "id": "花蓮縣:壽豐鄉",
       "name": "壽豐鄉",
       "countyId": "花蓮縣",
@@ -56,6 +5986,1222 @@
             {
               "year": 113,
               "students": 10266
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154511",
+          "code": "154511",
+          "name": "縣立壽豐國中",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:壽豐鄉",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "花蓮縣壽豐鄉豐裡村中山路132號",
+          "phone": "(03)8652111",
+          "website": "http://www.sfjh.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154511/J/花蓮縣/壽豐鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.500107,
+            "latitude": 23.845502
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 215
+            },
+            {
+              "year": 108,
+              "students": 198
+            },
+            {
+              "year": 109,
+              "students": 165
+            },
+            {
+              "year": 110,
+              "students": 150
+            },
+            {
+              "year": 111,
+              "students": 139
+            },
+            {
+              "year": 112,
+              "students": 128
+            },
+            {
+              "year": 113,
+              "students": 124
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154627",
+          "code": "154627",
+          "name": "縣立豐山國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:壽豐鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣壽豐鄉豐山村中山路41號",
+          "phone": "(03)8651640",
+          "website": "https://www.fsnps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154627/C/花蓮縣/壽豐鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.491717,
+            "latitude": 23.846472
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 75
+            },
+            {
+              "year": 108,
+              "students": 67
+            },
+            {
+              "year": 109,
+              "students": 69
+            },
+            {
+              "year": 110,
+              "students": 88
+            },
+            {
+              "year": 111,
+              "students": 106
+            },
+            {
+              "year": 112,
+              "students": 109
+            },
+            {
+              "year": 113,
+              "students": 124
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154626",
+          "code": "154626",
+          "name": "縣立壽豐國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:壽豐鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣壽豐鄉壽豐村壽山路37號",
+          "phone": "(03)8651024",
+          "website": "https://www.sfops.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154626/C/花蓮縣/壽豐鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.507913,
+            "latitude": 23.870349
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 133
+            },
+            {
+              "year": 108,
+              "students": 136
+            },
+            {
+              "year": 109,
+              "students": 140
+            },
+            {
+              "year": 110,
+              "students": 118
+            },
+            {
+              "year": 111,
+              "students": 116
+            },
+            {
+              "year": 112,
+              "students": 128
+            },
+            {
+              "year": 113,
+              "students": 123
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154629",
+          "code": "154629",
+          "name": "縣立志學國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:壽豐鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣壽豐鄉志學村中正路120巷10號",
+          "phone": "(03)8662600",
+          "website": "https://www.jsps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154629/C/花蓮縣/壽豐鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.531801,
+            "latitude": 23.904967
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 127
+            },
+            {
+              "year": 108,
+              "students": 127
+            },
+            {
+              "year": 109,
+              "students": 128
+            },
+            {
+              "year": 110,
+              "students": 133
+            },
+            {
+              "year": 111,
+              "students": 146
+            },
+            {
+              "year": 112,
+              "students": 130
+            },
+            {
+              "year": 113,
+              "students": 121
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154512",
+          "code": "154512",
+          "name": "縣立平和國中",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:壽豐鄉",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "花蓮縣壽豐鄉平和村平和路48號",
+          "phone": "(03)8661221",
+          "website": "http://www.phjh.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154512/J/花蓮縣/壽豐鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.518818,
+            "latitude": 23.885381
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 85
+            },
+            {
+              "year": 108,
+              "students": 86
+            },
+            {
+              "year": 109,
+              "students": 69
+            },
+            {
+              "year": 110,
+              "students": 73
+            },
+            {
+              "year": 111,
+              "students": 68
+            },
+            {
+              "year": 112,
+              "students": 70
+            },
+            {
+              "year": 113,
+              "students": 59
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154630",
+          "code": "154630",
+          "name": "縣立平和國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:壽豐鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣壽豐鄉平和路34號",
+          "phone": "(03)8661223",
+          "website": "https://www.phps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154630/C/花蓮縣/壽豐鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.519366,
+            "latitude": 23.884051
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 39
+            },
+            {
+              "year": 108,
+              "students": 42
+            },
+            {
+              "year": 109,
+              "students": 39
+            },
+            {
+              "year": 110,
+              "students": 49
+            },
+            {
+              "year": 111,
+              "students": 52
+            },
+            {
+              "year": 112,
+              "students": 64
+            },
+            {
+              "year": 113,
+              "students": 56
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154628",
+          "code": "154628",
+          "name": "縣立豐裡國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:壽豐鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣壽豐鄉豐裡村中山路299號",
+          "phone": "(03)8652183",
+          "website": "https://www.flps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154628/C/花蓮縣/壽豐鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.507809,
+            "latitude": 23.841612
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 78
+            },
+            {
+              "year": 108,
+              "students": 74
+            },
+            {
+              "year": 109,
+              "students": 74
+            },
+            {
+              "year": 110,
+              "students": 77
+            },
+            {
+              "year": 111,
+              "students": 67
+            },
+            {
+              "year": 112,
+              "students": 58
+            },
+            {
+              "year": 113,
+              "students": 50
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154632",
+          "code": "154632",
+          "name": "縣立月眉國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:壽豐鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣壽豐鄉月眉村月眉三段24號",
+          "phone": "(03)8631011",
+          "website": "https://www.ymps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154632/C/花蓮縣/壽豐鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.556351,
+            "latitude": 23.867991
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 29
+            },
+            {
+              "year": 108,
+              "students": 23
+            },
+            {
+              "year": 109,
+              "students": 24
+            },
+            {
+              "year": 110,
+              "students": 28
+            },
+            {
+              "year": 111,
+              "students": 30
+            },
+            {
+              "year": 112,
+              "students": 32
+            },
+            {
+              "year": 113,
+              "students": 25
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154631",
+          "code": "154631",
+          "name": "縣立溪口國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:壽豐鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣壽豐鄉溪口村溪口路87號",
+          "phone": "(03)8652275",
+          "website": "https://www.skps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154631/C/花蓮縣/壽豐鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.473066,
+            "latitude": 23.819523
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 27
+            },
+            {
+              "year": 108,
+              "students": 26
+            },
+            {
+              "year": 109,
+              "students": 23
+            },
+            {
+              "year": 110,
+              "students": 20
+            },
+            {
+              "year": 111,
+              "students": 19
+            },
+            {
+              "year": 112,
+              "students": 23
+            },
+            {
+              "year": 113,
+              "students": 22
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154633",
+          "code": "154633",
+          "name": "縣立水璉國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:壽豐鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣壽豐鄉水璉村水璉二街20號",
+          "phone": "(03)8601228",
+          "website": "https://www.sulps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154633/C/花蓮縣/壽豐鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.563391,
+            "latitude": 23.78264
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 30
+            },
+            {
+              "year": 108,
+              "students": 30
+            },
+            {
+              "year": 109,
+              "students": 30
+            },
+            {
+              "year": 110,
+              "students": 28
+            },
+            {
+              "year": 111,
+              "students": 27
+            },
+            {
+              "year": 112,
+              "students": 30
+            },
+            {
+              "year": 113,
+              "students": 20
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    },
+    {
+      "id": "花蓮縣:鳳林鎮",
+      "name": "鳳林鎮",
+      "countyId": "花蓮縣",
+      "schools": [
+        {
+          "id": "154515",
+          "code": "154515",
+          "name": "縣立鳳林國中",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:鳳林鎮",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "花蓮縣鳳林鎮光復路8號",
+          "phone": "(03)8761101",
+          "website": "http://www.fles.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154515/J/花蓮縣/鳳林鎮/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.449315,
+            "latitude": 23.74431
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 269
+            },
+            {
+              "year": 108,
+              "students": 250
+            },
+            {
+              "year": 109,
+              "students": 254
+            },
+            {
+              "year": 110,
+              "students": 246
+            },
+            {
+              "year": 111,
+              "students": 224
+            },
+            {
+              "year": 112,
+              "students": 232
+            },
+            {
+              "year": 113,
+              "students": 222
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154634",
+          "code": "154634",
+          "name": "縣立鳳林國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:鳳林鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣鳳林鎮中正路二段1號",
+          "phone": "(03)8762031",
+          "website": "https://www.flips.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154634/C/花蓮縣/鳳林鎮/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.446849,
+            "latitude": 23.743431
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 176
+            },
+            {
+              "year": 108,
+              "students": 178
+            },
+            {
+              "year": 109,
+              "students": 163
+            },
+            {
+              "year": 110,
+              "students": 161
+            },
+            {
+              "year": 111,
+              "students": 172
+            },
+            {
+              "year": 112,
+              "students": 165
+            },
+            {
+              "year": 113,
+              "students": 159
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154637",
+          "code": "154637",
+          "name": "縣立鳳仁國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:鳳林鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣鳳林鎮鳳仁里光復路94號",
+          "phone": "(03)8762201",
+          "website": "https://www.fjps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154637/C/花蓮縣/鳳林鎮/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.45182,
+            "latitude": 23.751117
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 74
+            },
+            {
+              "year": 108,
+              "students": 63
+            },
+            {
+              "year": 109,
+              "students": 61
+            },
+            {
+              "year": 110,
+              "students": 59
+            },
+            {
+              "year": 111,
+              "students": 54
+            },
+            {
+              "year": 112,
+              "students": 57
+            },
+            {
+              "year": 113,
+              "students": 50
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154636",
+          "code": "154636",
+          "name": "縣立大榮國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:鳳林鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣鳳林鎮大榮里復興路85號",
+          "phone": "(03)8763904",
+          "website": "https://www.dlps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154636/C/花蓮縣/鳳林鎮/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.468366,
+            "latitude": 23.754219
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 38
+            },
+            {
+              "year": 108,
+              "students": 43
+            },
+            {
+              "year": 109,
+              "students": 48
+            },
+            {
+              "year": 110,
+              "students": 44
+            },
+            {
+              "year": 111,
+              "students": 46
+            },
+            {
+              "year": 112,
+              "students": 44
+            },
+            {
+              "year": 113,
+              "students": 45
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154642",
+          "code": "154642",
+          "name": "縣立林榮國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:鳳林鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣鳳林鎮林榮里永安街2號",
+          "phone": "(03)8771024",
+          "website": "https://www.llps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154642/C/花蓮縣/鳳林鎮/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.452895,
+            "latitude": 23.801164
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 22
+            },
+            {
+              "year": 108,
+              "students": 27
+            },
+            {
+              "year": 109,
+              "students": 31
+            },
+            {
+              "year": 110,
+              "students": 26
+            },
+            {
+              "year": 111,
+              "students": 29
+            },
+            {
+              "year": 112,
+              "students": 37
+            },
+            {
+              "year": 113,
+              "students": 36
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154516",
+          "code": "154516",
+          "name": "縣立萬榮國中",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:鳳林鎮",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "花蓮縣鳳林鎮長橋路1號",
+          "phone": "(03)8751264",
+          "website": "http://www.wljh.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154516/J/花蓮縣/鳳林鎮/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.41784,
+            "latitude": 23.708123
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 55
+            },
+            {
+              "year": 108,
+              "students": 36
+            },
+            {
+              "year": 109,
+              "students": 38
+            },
+            {
+              "year": 110,
+              "students": 36
+            },
+            {
+              "year": 111,
+              "students": 39
+            },
+            {
+              "year": 112,
+              "students": 35
+            },
+            {
+              "year": 113,
+              "students": 34
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154640",
+          "code": "154640",
+          "name": "縣立長橋國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:鳳林鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣鳳林鎮長橋里長橋路2號",
+          "phone": "(03)8751654",
+          "website": "https://www.chcps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154640/C/花蓮縣/鳳林鎮/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.420098,
+            "latitude": 23.709328
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 37
+            },
+            {
+              "year": 108,
+              "students": 34
+            },
+            {
+              "year": 109,
+              "students": 36
+            },
+            {
+              "year": 110,
+              "students": 37
+            },
+            {
+              "year": 111,
+              "students": 28
+            },
+            {
+              "year": 112,
+              "students": 31
+            },
+            {
+              "year": 113,
+              "students": 28
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154638",
+          "code": "154638",
+          "name": "縣立北林國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:鳳林鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣鳳林鎮北林里平園路32號",
+          "phone": "(03)8762554",
+          "website": "https://www.blps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154638/C/花蓮縣/鳳林鎮/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.468274,
+            "latitude": 23.771566
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 20
+            },
+            {
+              "year": 108,
+              "students": 20
+            },
+            {
+              "year": 109,
+              "students": 21
+            },
+            {
+              "year": 110,
+              "students": 22
+            },
+            {
+              "year": 111,
+              "students": 24
+            },
+            {
+              "year": 112,
+              "students": 19
+            },
+            {
+              "year": 113,
+              "students": 22
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154399",
+          "code": "154399",
+          "name": "縣立南平中學",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:鳳林鎮",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "花蓮縣鳳林鎮八德路62號",
+          "phone": "(03)8772586",
+          "website": "http://www.nphs.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/154399/H/花蓮縣/鳳林鎮/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.457521,
+            "latitude": 23.783465
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 16
+            },
+            {
+              "year": 108,
+              "students": 2
+            },
+            {
+              "year": 109,
+              "students": 3
+            },
+            {
+              "year": 110,
+              "students": 9
+            },
+            {
+              "year": 111,
+              "students": 9
+            },
+            {
+              "year": 112,
+              "students": 6
+            },
+            {
+              "year": 113,
+              "students": 17
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        }
+      ],
+      "dataNotes": []
+    },
+    {
+      "id": "花蓮縣:豐濱鄉",
+      "name": "豐濱鄉",
+      "countyId": "花蓮縣",
+      "schools": [
+        {
+          "id": "154655",
+          "code": "154655",
+          "name": "縣立豐濱國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:豐濱鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣豐濱鄉豐濱村民族街5號",
+          "phone": "(03)8791111",
+          "website": "https://www.fbps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154655/C/花蓮縣/豐濱鄉/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 121.52093,
+            "latitude": 23.598236
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 48
+            },
+            {
+              "year": 108,
+              "students": 56
+            },
+            {
+              "year": 109,
+              "students": 58
+            },
+            {
+              "year": 110,
+              "students": 57
+            },
+            {
+              "year": 111,
+              "students": 61
+            },
+            {
+              "year": 112,
+              "students": 62
+            },
+            {
+              "year": 113,
+              "students": 65
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154519",
+          "code": "154519",
+          "name": "縣立豐濱國中",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:豐濱鄉",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "花蓮縣豐濱鄉光豐路26號",
+          "phone": "(03)8791159",
+          "website": "http://www.fpjh.hlc.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154519/J/花蓮縣/豐濱鄉/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 121.521437,
+            "latitude": 23.601173
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 52
+            },
+            {
+              "year": 108,
+              "students": 48
+            },
+            {
+              "year": 109,
+              "students": 49
+            },
+            {
+              "year": 110,
+              "students": 46
+            },
+            {
+              "year": 111,
+              "students": 44
+            },
+            {
+              "year": 112,
+              "students": 49
+            },
+            {
+              "year": 113,
+              "students": 43
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154657",
+          "code": "154657",
+          "name": "縣立靜浦國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:豐濱鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣豐濱鄉靜浦村64號",
+          "phone": "(03)8781021",
+          "website": "https://www.zpps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154657/C/花蓮縣/豐濱鄉/縣市立/極偏/無/",
+          "coordinates": {
+            "longitude": 121.495436,
+            "latitude": 23.461489
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 14
+            },
+            {
+              "year": 108,
+              "students": 13
+            },
+            {
+              "year": 109,
+              "students": 11
+            },
+            {
+              "year": 110,
+              "students": 11
+            },
+            {
+              "year": 111,
+              "students": 15
+            },
+            {
+              "year": 112,
+              "students": 16
+            },
+            {
+              "year": 113,
+              "students": 18
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154658",
+          "code": "154658",
+          "name": "縣立新社國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:豐濱鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣豐濱鄉新社村150號",
+          "phone": "(03)8711138",
+          "website": "https://www.ssps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154658/C/花蓮縣/豐濱鄉/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 121.53616,
+            "latitude": 23.651742
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 26
+            },
+            {
+              "year": 108,
+              "students": 26
+            },
+            {
+              "year": 109,
+              "students": 26
+            },
+            {
+              "year": 110,
+              "students": 20
+            },
+            {
+              "year": 111,
+              "students": 16
+            },
+            {
+              "year": 112,
+              "students": 18
+            },
+            {
+              "year": 113,
+              "students": 17
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "154656",
+          "code": "154656",
+          "name": "縣立港口國小",
+          "countyId": "花蓮縣",
+          "townshipId": "花蓮縣:豐濱鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "花蓮縣豐濱鄉港口村大港口43號",
+          "phone": "(03)8781037",
+          "website": "https://www.gkps.hlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/154656/C/花蓮縣/豐濱鄉/縣市立/極偏/無/",
+          "coordinates": {
+            "longitude": 121.496872,
+            "latitude": 23.468534
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 14
+            },
+            {
+              "year": 108,
+              "students": 17
+            },
+            {
+              "year": 109,
+              "students": 16
+            },
+            {
+              "year": 110,
+              "students": 18
+            },
+            {
+              "year": 111,
+              "students": 15
+            },
+            {
+              "year": 112,
+              "students": 13
+            },
+            {
+              "year": 113,
+              "students": 16
             }
           ],
           "status": "正常",

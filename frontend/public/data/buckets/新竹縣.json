@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-07T15:15:16.039Z",
+  "generatedAt": "2026-03-07T17:48:54.139Z",
   "county": {
     "id": "新竹縣",
     "name": "新竹縣",
@@ -12,16 +12,23 @@
         "id": "5-wsqj3",
         "geohash": "wsqj3",
         "precision": 5,
-        "count": 12,
-        "latitude": 24.842341,
-        "longitude": 121.004852,
+        "count": 13,
+        "latitude": 24.843971,
+        "longitude": 121.003704,
         "bounds": {
           "minLatitude": 24.830191,
           "maxLatitude": 24.872126,
-          "minLongitude": 120.990802,
+          "minLongitude": 120.989928,
           "maxLongitude": 121.019922
         },
         "topSchools": [
+          {
+            "id": "1032",
+            "name": "明新科技大學",
+            "townshipName": "新豐鄉",
+            "students": 9909,
+            "status": "正常"
+          },
           {
             "id": "041303",
             "name": "私立義民高中",
@@ -41,13 +48,6 @@
             "name": "縣立松林國小",
             "townshipName": "新豐鄉",
             "students": 1580,
-            "status": "正常"
-          },
-          {
-            "id": "044641",
-            "name": "縣立山崎國小",
-            "townshipName": "新豐鄉",
-            "students": 1517,
             "status": "正常"
           }
         ]
@@ -188,16 +188,23 @@
         "id": "5-wsqhg",
         "geohash": "wsqhg",
         "precision": 5,
-        "count": 6,
-        "latitude": 24.756054,
-        "longitude": 121.087694,
+        "count": 7,
+        "latitude": 24.7592,
+        "longitude": 121.088014,
         "bounds": {
           "minLatitude": 24.741277,
-          "maxLatitude": 24.774357,
+          "maxLatitude": 24.778071,
           "minLongitude": 121.07732,
           "maxLongitude": 121.103407
         },
         "topSchools": [
+          {
+            "id": "1072",
+            "name": "敏實科技大學",
+            "townshipName": "芎林鄉",
+            "students": 1071,
+            "status": "正常"
+          },
           {
             "id": "044528",
             "name": "縣立自強國中",
@@ -217,13 +224,6 @@
             "name": "私立上智國小",
             "townshipName": "竹東鎮",
             "students": 248,
-            "status": "正常"
-          },
-          {
-            "id": "044512",
-            "name": "縣立芎林國中",
-            "townshipName": "芎林鄉",
-            "students": 234,
             "status": "正常"
           }
         ]
@@ -1642,6 +1642,36 @@
         ]
       },
       {
+        "id": "6-wsqhgq",
+        "geohash": "wsqhgq",
+        "precision": 6,
+        "count": 2,
+        "latitude": 24.776214,
+        "longitude": 121.086726,
+        "bounds": {
+          "minLatitude": 24.774357,
+          "maxLatitude": 24.778071,
+          "minLongitude": 121.083519,
+          "maxLongitude": 121.089934
+        },
+        "topSchools": [
+          {
+            "id": "1072",
+            "name": "敏實科技大學",
+            "townshipName": "芎林鄉",
+            "students": 1071,
+            "status": "正常"
+          },
+          {
+            "id": "044655",
+            "name": "縣立芎林國小",
+            "townshipName": "芎林鄉",
+            "students": 541,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "6-wsqh3y",
         "geohash": "wsqh3y",
         "precision": 6,
@@ -2839,29 +2869,6 @@
         ]
       },
       {
-        "id": "6-wsqhgq",
-        "geohash": "wsqhgq",
-        "precision": 6,
-        "count": 1,
-        "latitude": 24.774357,
-        "longitude": 121.083519,
-        "bounds": {
-          "minLatitude": 24.774357,
-          "maxLatitude": 24.774357,
-          "minLongitude": 121.083519,
-          "maxLongitude": 121.083519
-        },
-        "topSchools": [
-          {
-            "id": "044655",
-            "name": "縣立芎林國小",
-            "townshipName": "芎林鄉",
-            "students": 541,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "6-wsqhge",
         "geohash": "wsqhge",
         "precision": 6,
@@ -3340,6 +3347,29 @@
             "name": "縣立照東國小",
             "townshipName": "新埔鎮",
             "students": 24,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsqj3n",
+        "geohash": "wsqj3n",
+        "precision": 6,
+        "count": 1,
+        "latitude": 24.863533,
+        "longitude": 120.989928,
+        "bounds": {
+          "minLatitude": 24.863533,
+          "maxLatitude": 24.863533,
+          "minLongitude": 120.989928,
+          "maxLongitude": 120.989928
+        },
+        "topSchools": [
+          {
+            "id": "1032",
+            "name": "明新科技大學",
+            "townshipName": "新豐鄉",
+            "students": 9909,
             "status": "正常"
           }
         ]
@@ -5362,6 +5392,29 @@
         ]
       },
       {
+        "id": "7-wsqhgqw",
+        "geohash": "wsqhgqw",
+        "precision": 7,
+        "count": 1,
+        "latitude": 24.778071,
+        "longitude": 121.089934,
+        "bounds": {
+          "minLatitude": 24.778071,
+          "maxLatitude": 24.778071,
+          "minLongitude": 121.089934,
+          "maxLongitude": 121.089934
+        },
+        "topSchools": [
+          {
+            "id": "1072",
+            "name": "敏實科技大學",
+            "townshipName": "芎林鄉",
+            "students": 1071,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "7-wsqhgq4",
         "geohash": "wsqhgq4",
         "precision": 7,
@@ -6001,6 +6054,29 @@
             "name": "縣立照東國小",
             "townshipName": "新埔鎮",
             "students": 24,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsqj3nq",
+        "geohash": "wsqj3nq",
+        "precision": 7,
+        "count": 1,
+        "latitude": 24.863533,
+        "longitude": 120.989928,
+        "bounds": {
+          "minLatitude": 24.863533,
+          "maxLatitude": 24.863533,
+          "minLongitude": 120.989928,
+          "maxLongitude": 120.989928
+        },
+        "topSchools": [
+          {
+            "id": "1032",
+            "name": "明新科技大學",
+            "townshipName": "新豐鄉",
+            "students": 9909,
             "status": "正常"
           }
         ]
