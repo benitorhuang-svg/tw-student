@@ -28,13 +28,16 @@
 
 html {
   scroll-behavior: smooth;
+  overscroll-behavior: none;
 }
 
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  min-height: 100dvh;
   background: transparent;
+  overflow: hidden;
 }
 
 body,
@@ -56,6 +59,7 @@ button {
 
 #root {
   min-height: 100vh;
+  min-height: 100dvh;
 }
 
 a {

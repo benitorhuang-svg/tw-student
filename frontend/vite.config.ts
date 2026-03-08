@@ -73,6 +73,28 @@ export default defineConfig({
               },
             },
           },
+          {
+            urlPattern: /\/data\/.*\.json$/i,
+            handler: 'StaleWhileRevalidate',
+            options: {
+              cacheName: 'education-data-json',
+              expiration: {
+                maxEntries: 30,
+                maxAgeSeconds: 60 * 60 * 24 * 7,
+              },
+            },
+          },
+          {
+            urlPattern: /^https:\/\/.*tile.*\.(png|jpg|pbf)$/i,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'map-tiles',
+              expiration: {
+                maxEntries: 500,
+                maxAgeSeconds: 60 * 60 * 24 * 30,
+              },
+            },
+          },
         ],
       },
     }),
