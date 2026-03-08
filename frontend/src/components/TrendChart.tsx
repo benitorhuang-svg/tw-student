@@ -1,4 +1,4 @@
-import { type TrendPoint, formatStudents } from '../lib/analytics'
+import { formatAcademicYearCompact, type TrendPoint, formatStudents } from '../lib/analytics'
 
 type TrendChartProps = {
   chartId: string
@@ -126,7 +126,7 @@ function TrendChart({ chartId, title, subtitle, points, activeYear }: TrendChart
               r={point.year === activeYear ? 6 : 4}
             />
             <text className="trend-chart__label" x={point.x} y={height - 6} textAnchor="middle">
-              {point.year}
+              {formatAcademicYearCompact(point.year)}
             </text>
           </g>
         ))}
@@ -134,7 +134,7 @@ function TrendChart({ chartId, title, subtitle, points, activeYear }: TrendChart
           <g key={point.year}>
             <circle className="trend-chart__point trend-chart__point--predicted" cx={point.x} cy={point.y} r={4} />
             <text className="trend-chart__label trend-chart__label--predicted" x={point.x} y={height - 6} textAnchor="middle">
-              {point.year}?
+              {formatAcademicYearCompact(point.year)}?
             </text>
           </g>
         ))}

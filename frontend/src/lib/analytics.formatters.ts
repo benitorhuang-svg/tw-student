@@ -14,8 +14,16 @@ export function formatPercent(deltaRatio: number) {
   return `${prefix}${(deltaRatio * 100).toFixed(1)}%`
 }
 
-export function formatAcademicYear(year: AcademicYear) {
-  return `${year} 學年`
+export function toGregorianYear(year: number) {
+  return year + 1911
+}
+
+export function formatAcademicYear(year: AcademicYear | number) {
+  return `${toGregorianYear(Number(year))} 學年度`
+}
+
+export function formatAcademicYearCompact(year: AcademicYear | number) {
+  return String(toGregorianYear(Number(year)))
 }
 
 export function formatFileSize(bytes: number) {

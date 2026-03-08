@@ -2,7 +2,7 @@
 
 ## 版型
 
-- 重組 `App.tsx` 為 `sidebar + stage + content rail`。
+- 對應 `001-core-atlas` 的主版型，維持 `control rail + analysis canvas`。
 - 保留現有資料與互動邏輯，只調整資訊層級與區塊編排。
 - 讓地圖延續深色舞台、圖例浮層與觀測資訊，但避免擋住主地圖辨識。
 

@@ -7,6 +7,7 @@ import type {
 } from '../data/educationData'
 import type { CountySummary } from '../lib/analytics'
 import {
+  formatAcademicYear,
   getCountyRankingRows,
   getTownshipScopeSummaryFromSummary,
   formatStudents,
@@ -154,7 +155,7 @@ export function buildInvestigationItems({
           id: `missing-${school.id}`,
           scope: '學校',
           title: `${school.name} / 缺年度`,
-          detail: `缺少 ${school.missingYears.join('、')} 學年的正式學生數紀錄。`,
+          detail: `缺少 ${school.missingYears.map((year) => formatAcademicYear(year)).join('、')} 的正式學生數紀錄。`,
           meta: `${township.name} | ${school.educationLevel}`,
           severity: 'warning',
           seriesRows: schoolSeriesRows,

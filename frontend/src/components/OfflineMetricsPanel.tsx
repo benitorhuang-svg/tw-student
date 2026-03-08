@@ -33,7 +33,7 @@ function OfflineMetricsPanel({ loadObservation, offlineReadySlices, totalCountie
   ]
 
   return (
-    <section className="sidebar-block">
+    <section className="panel offline-metrics-panel">
       <div className="panel-heading">
         <div>
           <p className="eyebrow">{isOffline ? '離線模式' : '快取狀態'}</p>

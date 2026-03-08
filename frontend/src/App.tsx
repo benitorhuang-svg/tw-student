@@ -2,9 +2,9 @@ import { useDeferredValue, useState, useTransition } from 'react'
 
 import './App.css'
 
+import AtlasAnalysisPanel from './components/AtlasAnalysisPanel'
+import AtlasControlRail from './components/AtlasControlRail'
 import AtlasFooter from './components/AtlasFooter'
-import AtlasHeader from './components/AtlasHeader'
-import AtlasSidebar from './components/AtlasSidebar'
 import type { AtlasTabItem } from './components/AtlasTabs'
 import TaiwanExplorerMap from './components/TaiwanExplorerMap'
 import { type AcademicYear, type EducationLevelFilter, type ManagementTypeFilter, type RegionGroupFilter } from './data/educationData'
@@ -204,14 +204,14 @@ function App() {
 
   return (
     <div className="app-shell" data-testid="atlas-app">
-      <AtlasHeader />
-
       <div className="atlas-workbench">
-        <AtlasSidebar
-          sidebarRef={sidebarRef}
+        <AtlasControlRail
           activeTab={activeTab}
           tabItems={tabItems}
           onSetActiveTab={setActiveTab}
+          scopePath={derived.scopePath}
+          scopeHeadline={derived.scopeHeadline}
+          scopeDescription={derived.scopeDescription}
           summaryYears={[...summaryDataset.years]}
           activeYear={activeYear}
           educationLevel={educationLevel}
@@ -220,8 +220,46 @@ function App() {
           searchText={searchText}
           isYearPlaybackActive={isYearPlaybackActive}
           isPending={isPending}
-          isOffline={isOffline}
           countyQuickPicks={derived.countyQuickPicks}
+          activeCountyId={derived.activeCountyId}
+          onSetActiveYear={setActiveYear}
+          onSetEducationLevel={setEducationLevel}
+          onSetManagementType={setManagementType}
+          onSetRegion={setRegion}
+          onSetSearchText={setSearchText}
+          onSetIsYearPlaybackActive={setIsYearPlaybackActive}
+          onResetScope={scenarioActions.handleResetScope}
+          onSelectCounty={scenarioActions.handleCountySelect}
+          onPrefetchCounty={handlePrefetchCounty}
+          startTransition={startTransition}
+        >
+          <TaiwanExplorerMap
+            counties={derived.countySummaries}
+            activeCountyId={derived.activeCountyId}
+            activeTownshipId={derived.activeTownshipId}
+            countyBoundaries={countyBoundaries}
+            townshipBoundaries={derived.activeTownshipBoundaries}
+            townshipRows={derived.townshipRows}
+            schoolPoints={derived.schoolMapPoints}
+            countyBuckets={derived.activeCountyBuckets}
+            selectedSchoolId={derived.selectedSchool?.id ?? null}
+            isTownshipBoundaryLoading={derived.isTownshipBoundaryLoading}
+            activeTab={activeTab}
+            mapResetToken={mapResetToken}
+            onSelectCounty={scenarioActions.handleCountySelect}
+            onSelectTownship={scenarioActions.handleTownshipSelect}
+            onSelectSchool={setSelectedSchoolId}
+            onResetScope={scenarioActions.handleResetScope}
+            onHoverCounty={handlePrefetchCounty}
+          />
+        </AtlasControlRail>
+
+        <AtlasAnalysisPanel
+          sidebarRef={sidebarRef}
+          activeTab={activeTab}
+          activeYear={activeYear}
+          isYearPlaybackActive={isYearPlaybackActive}
+          isOffline={isOffline}
           activeCountyId={derived.activeCountyId}
           activeTownshipId={derived.activeTownshipId}
           currentScope={derived.currentScope}
@@ -258,17 +296,10 @@ function App() {
           schoolPanelTitle={derived.schoolPanelTitle}
           selectedTownshipSummary={derived.selectedTownshipSummary}
           selectedCountySummary={derived.selectedCountySummary}
-          onSetActiveYear={setActiveYear}
-          onSetEducationLevel={setEducationLevel}
-          onSetManagementType={setManagementType}
-          onSetRegion={setRegion}
-          onSetSearchText={setSearchText}
-          onSetIsYearPlaybackActive={setIsYearPlaybackActive}
-          onResetScope={scenarioActions.handleResetScope}
+          onPrefetchAll={prefetchAllCounties}
           onSelectCounty={scenarioActions.handleCountySelect}
           onSelectTownship={scenarioActions.handleTownshipSelect}
           onPrefetchCounty={handlePrefetchCounty}
-          onPrefetchAll={prefetchAllCounties}
           onChangeScenarioName={setComparisonScenarioName}
           onToggleCounty={scenarioActions.toggleComparisonCounty}
           onCopyLink={scenarioActions.handleCopyComparisonLink}
@@ -284,30 +315,7 @@ function App() {
           onDownloadInvestigation={scenarioActions.handleDownloadInvestigation}
           onDownloadAll={scenarioActions.handleDownloadAllInvestigations}
           onSelectSchool={setSelectedSchoolId}
-          startTransition={startTransition}
         />
-
-        <main className="atlas-map-column">
-          <TaiwanExplorerMap
-            counties={derived.countySummaries}
-            activeCountyId={derived.activeCountyId}
-            activeTownshipId={derived.activeTownshipId}
-            countyBoundaries={countyBoundaries}
-            townshipBoundaries={derived.activeTownshipBoundaries}
-            townshipRows={derived.townshipRows}
-            schoolPoints={derived.schoolMapPoints}
-            countyBuckets={derived.activeCountyBuckets}
-            selectedSchoolId={derived.selectedSchool?.id ?? null}
-            isTownshipBoundaryLoading={derived.isTownshipBoundaryLoading}
-            activeTab={activeTab}
-            mapResetToken={mapResetToken}
-            onSelectCounty={scenarioActions.handleCountySelect}
-            onSelectTownship={scenarioActions.handleTownshipSelect}
-            onSelectSchool={setSelectedSchoolId}
-            onResetScope={scenarioActions.handleResetScope}
-            onHoverCounty={handlePrefetchCounty}
-          />
-        </main>
       </div>
 
       <AtlasFooter

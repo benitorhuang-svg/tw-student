@@ -61,7 +61,7 @@ function FilterBar({
     <section className="atlas-filterbar panel">
       <div className="atlas-filterbar__years">
         <label className="filter-select filter-select--year">
-          <span>學年度</span>
+          <span>學年度（西元）</span>
           <select
             value={activeYear}
             data-testid="academic-year-select"

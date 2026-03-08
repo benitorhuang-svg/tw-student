@@ -1,9 +1,9 @@
-# 規格：GitHub Pages、PWA 與 local_view 主版型改版
+# 平台交付規格：GitHub Pages、PWA 與部署體驗
 
 ## 目標
 
 - 以前端靜態站形式部署到 GitHub Pages。
-- 將目前首頁改為以 `specs/local_view.html` 地圖舞台感為主的雙欄版型。
+- 將目前首頁交付為可部署的靜態站，並保留與主規格一致的雙欄工作台體驗。
 - 保留既有互動地圖、排行、學校表格、異常註記與深連結能力。
 - 加入 PWA 基礎能力，支援安裝與靜態資產快取。
 
@@ -17,6 +17,6 @@
 
 - `vite build` 在 GitHub Actions 內可產出適用於 Pages 的靜態檔。
 - `main` 分支推送後自動部署到 GitHub Pages。
-- 首頁改為左側控制欄、右側主地圖舞台，視覺風格接近 `local_view.html`。
+- 首頁交付需對應 `001-core-atlas` 的左側控制欄、右側分析畫布版型。
 - 學校表格仍支援排序、匯出、單校焦點與既有測試 hook。
 - 站點具有 manifest 與 service worker，可被安裝為 PWA。

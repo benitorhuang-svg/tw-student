@@ -1,4 +1,4 @@
-import { formatStudents } from '../lib/analytics'
+import { formatAcademicYear, formatStudents } from '../lib/analytics'
 import type { InvestigationItem, InvestigationFilter, DataNote } from '../hooks/types'
 
 type AnomalyPanelProps = {
@@ -89,7 +89,7 @@ function AnomalyPanel({
             <table className="anomaly-series-table">
               <thead>
                 <tr>
-                  <th>年度</th>
+                  <th>學年度（西元）</th>
                   <th>學生數</th>
                   <th>學校數</th>
                   <th>旗標</th>
@@ -98,7 +98,7 @@ function AnomalyPanel({
               <tbody>
                 {activeInvestigation.seriesRows.map((row) => (
                   <tr key={`${activeInvestigation.id}-${row.year}`}>
-                    <td>{row.year}</td>
+                    <td>{formatAcademicYear(row.year)}</td>
                     <td>{formatStudents(row.students)}</td>
                     <td>{row.schools != null ? row.schools.toLocaleString('zh-TW') : '—'}</td>
                     <td>{row.flags?.length ? row.flags.join(' / ') : '—'}</td>

@@ -1,5 +1,5 @@
 import type { ChangeEvent } from 'react'
-import { formatDelta, formatPercent, formatStudents } from '../lib/analytics'
+import { formatAcademicYear, formatDelta, formatPercent, formatStudents } from '../lib/analytics'
 import type { SavedComparisonScenario } from '../hooks/types'
 import ComparisonBarChart from './ComparisonBarChart'
 
@@ -164,7 +164,7 @@ function ComparisonPanel({
               <div key={scenario.id} className={favoriteScenarioIds.has(scenario.id) && activeScenarioSnapshot?.id === scenario.id ? 'scenario-chip scenario-chip--active' : 'scenario-chip'}>
                 <button type="button" className="scenario-chip__apply" onClick={() => onApplyScenario(scenario)}>
                   <strong>{scenario.name}</strong>
-                  <span>{scenario.pinned ? '已釘選 / ' : ''}{scenario.countyIds.length} 縣市 / {scenario.activeYear} 學年</span>
+                  <span>{scenario.pinned ? '已釘選 / ' : ''}{scenario.countyIds.length} 縣市 / {formatAcademicYear(scenario.activeYear)}</span>
                 </button>
                 <button type="button" className="scenario-chip__remove" onClick={() => onTogglePinScenario(scenario.id)}>
                   {scenario.pinned ? '取消釘選' : '釘選'}
