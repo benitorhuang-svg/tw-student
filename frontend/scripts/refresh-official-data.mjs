@@ -22,6 +22,8 @@ async function prepareOutputDirectories() {
     rm(path.join(DATA_DIR, 'township-boundaries.geojson'), { force: true }),
     rm(path.join(DATA_DIR, 'education-dataset.json'), { force: true }),
     rm(path.join(DATA_DIR, 'education-atlas.sqlite'), { force: true }),
+    rm(path.join(DATA_DIR, 'area-coordinate-lookup.json'), { force: true }),
+    rm(path.join(DATA_DIR, 'school-coordinate-lookup.json'), { force: true }),
   ])
 
   await mkdir(COUNTY_DETAIL_DIR, { recursive: true })
@@ -51,9 +53,17 @@ function attachAssetMetrics(datasetBundle, boundaries) {
 }
 
 async function writeAtlasOutputs(datasetBundle, boundaries, sqliteBuffer) {
+  const areaCoordinateLookup = {
+    generatedAt: datasetBundle.summaryDataset.generatedAt,
+    counties: boundaries.countyCoordinateLookup,
+    townships: boundaries.townshipCoordinateLookup,
+  }
+
   await Promise.all([
     writePrettyJson(path.join(DATA_DIR, 'education-summary.json'), datasetBundle.summaryDataset),
     writePrettyJson(path.join(DATA_DIR, 'county-boundaries.topo.json'), boundaries.countyTopology),
+    writePrettyJson(path.join(DATA_DIR, 'area-coordinate-lookup.json'), areaCoordinateLookup),
+    writePrettyJson(path.join(DATA_DIR, 'school-coordinate-lookup.json'), datasetBundle.schoolCoordinateLookup),
     writeFile(path.join(DATA_DIR, 'education-atlas.sqlite'), sqliteBuffer),
     ...datasetBundle.countyDetails.map((entry) => writePrettyJson(path.join(COUNTY_DETAIL_DIR, entry.fileName), entry.detail)),
     ...datasetBundle.countyBuckets.map((entry) => writePrettyJson(path.join(BUCKET_DIR, entry.fileName), entry.detail)),

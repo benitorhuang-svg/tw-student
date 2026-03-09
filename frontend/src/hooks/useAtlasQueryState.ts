@@ -3,19 +3,18 @@ import {
   ACADEMIC_YEARS,
   EDUCATION_LEVELS,
   MANAGEMENT_TYPES,
-  REGION_GROUPS,
   type AcademicYear,
   type EducationLevelFilter,
   type ManagementTypeFilter,
   type RegionGroupFilter,
 } from '../data/educationData'
 
-export type AtlasTab = 'overview' | 'regional' | 'schools'
+export type AtlasTab = 'overview' | 'regional' | 'county' | 'schools' | 'school-focus'
 
-export const DEFAULT_YEAR = ACADEMIC_YEARS.at(-1) ?? 113
+export const DEFAULT_YEAR = ACADEMIC_YEARS.at(-1) ?? 114
 
 function isAtlasTab(value: string | null): value is AtlasTab {
-  return value === 'overview' || value === 'regional' || value === 'schools'
+  return value === 'overview' || value === 'regional' || value === 'county' || value === 'schools' || value === 'school-focus'
 }
 
 export function readInitialQueryState() {
@@ -23,9 +22,11 @@ export function readInitialQueryState() {
   const year = Number(params.get('year'))
   const educationLevel = params.get('level')
   const managementType = params.get('management')
-  const region = params.get('region')
   const compare = params.get('compare')
   const tab = params.get('tab')
+  const zoomRaw = Number(params.get('zoom'))
+  const latRaw = Number(params.get('lat'))
+  const lonRaw = Number(params.get('lon'))
 
   return {
     activeYear: ACADEMIC_YEARS.includes(year as AcademicYear) ? (year as AcademicYear) : DEFAULT_YEAR,
@@ -35,13 +36,16 @@ export function readInitialQueryState() {
     managementType: MANAGEMENT_TYPES.includes(managementType as ManagementTypeFilter)
       ? (managementType as ManagementTypeFilter)
       : '全部',
-    region: REGION_GROUPS.includes(region as RegionGroupFilter) ? (region as RegionGroupFilter) : '全部',
+    region: '全部' as RegionGroupFilter,
     searchText: params.get('search') ?? '',
     selectedCountyId: params.get('county'),
     selectedTownshipId: params.get('township'),
     comparisonCountyIds: compare ? compare.split(',').map((value) => value.trim()).filter(Boolean) : [],
     comparisonScenarioName: params.get('scenario') ?? '',
     tab: isAtlasTab(tab) ? tab : 'overview',
+    zoom: Number.isFinite(zoomRaw) && zoomRaw >= 7 && zoomRaw <= 12 ? zoomRaw : undefined,
+    lat: Number.isFinite(latRaw) && latRaw >= 21 && latRaw <= 26 ? latRaw : undefined,
+    lon: Number.isFinite(lonRaw) && lonRaw >= 119 && lonRaw <= 123 ? lonRaw : undefined,
   }
 }
 

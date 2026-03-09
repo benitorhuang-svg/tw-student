@@ -17,6 +17,7 @@ export type SchoolMapPoint = {
   status: string
   currentStudents: number
   delta: number
+  deltaRatio: number
   latitude: number
   longitude: number
   website?: string

@@ -15,6 +15,7 @@ type SchoolDataTableProps = {
   schools: SchoolInsight[]
   selectedSchoolId: string | null
   onSelectSchool: (schoolId: string) => void
+  onHoverSchool?: (schoolId: string | null) => void
   scopeLabel: string
 }
 
@@ -31,7 +32,7 @@ const sortableHeaders: Array<{ key: SchoolSortKey; label: string }> = [
   { key: 'educationLevel', label: '學制' },
   { key: 'managementType', label: '公私立' },
   { key: 'currentStudents', label: '學生數' },
-  { key: 'delta', label: '年增減' },
+  { key: 'delta', label: '今年增減' },
   { key: 'status', label: '狀態' },
 ]
 
@@ -57,13 +58,13 @@ function escapeCsv(value: string) {
 
 const PAGE_SIZE = 50
 
-function SchoolDataTable({ schools, selectedSchoolId, onSelectSchool, scopeLabel }: SchoolDataTableProps) {
+function SchoolDataTable({ schools, selectedSchoolId, onSelectSchool, onHoverSchool, scopeLabel }: SchoolDataTableProps) {
   const [sortKey, setSortKey] = useState<SchoolSortKey>('currentStudents')
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('desc')
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE)
 
   const sortedSchools = [...schools].sort((left, right) => compareSchoolRows(left, right, sortKey, sortDirection))
-  const selectedSchool = sortedSchools.find((school) => school.id === selectedSchoolId) ?? sortedSchools.at(0) ?? null
+  const selectedSchool = selectedSchoolId ? sortedSchools.find((school) => school.id === selectedSchoolId) ?? null : null
   const visibleSchools = sortedSchools.slice(0, visibleCount)
   const hasMore = visibleCount < sortedSchools.length
 
@@ -78,7 +79,7 @@ function SchoolDataTable({ schools, selectedSchoolId, onSelectSchool, scopeLabel
   }
 
   const handleExport = () => {
-    const header = ['學校', '代碼', '鄉鎮', '學制', '公私立', '學生數', '年增減', '成長率', '狀態', '地址', '電話', '網站']
+    const header = ['學校', '代碼', '鄉鎮', '學制', '公私立', '學生數', '今年增減', '成長率', '狀態', '地址', '電話', '網站']
     const rows = sortedSchools.map((school) => [
       school.name,
       school.code,
@@ -146,6 +147,8 @@ function SchoolDataTable({ schools, selectedSchoolId, onSelectSchool, scopeLabel
                   key={school.id}
                   className={isActive ? 'school-table__row school-table__row--active' : 'school-table__row'}
                   onClick={() => onSelectSchool(school.id)}
+                  onMouseEnter={() => onHoverSchool?.(school.id)}
+                  onMouseLeave={() => onHoverSchool?.(null)}
                   onKeyDown={(event) => {
                     if (event.key === 'Enter' || event.key === ' ') {
                       event.preventDefault()
@@ -186,7 +189,7 @@ function SchoolDataTable({ schools, selectedSchoolId, onSelectSchool, scopeLabel
 
       <div className="school-table-panel__footer">
         <span>顯示 {visibleSchools.length} / {sortedSchools.length} 所</span>
-        <span>點擊列可同步更新下方單校焦點</span>
+        <span>點擊列可同步切到右側學校分析分頁</span>
       </div>
     </section>
   )

@@ -82,6 +82,7 @@ export type SchoolInsight = {
   code: string
   name: string
   countyName: string
+  townshipId: string
   townshipName: string
   educationLevel: SchoolRecord['educationLevel']
   managementType: SchoolRecord['managementType']

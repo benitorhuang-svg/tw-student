@@ -5,7 +5,6 @@ import type {
   EducationLevelFilter,
   EducationSummaryDataset,
   ManagementTypeFilter,
-  RegionGroupFilter,
 } from '../data/educationData'
 import type { AtlasTab } from './useAtlasQueryState'
 
@@ -15,12 +14,14 @@ type UseAtlasUrlSyncArgs = {
   activeYear: AcademicYear
   educationLevel: EducationLevelFilter
   managementType: ManagementTypeFilter
-  region: RegionGroupFilter
   deferredSearchText: string
   comparisonCountyIds: string[]
   comparisonScenarioName: string
   selectedCountyId: string | null
   selectedTownshipId: string | null
+  mapZoom: number | null
+  mapLat: number | null
+  mapLon: number | null
 }
 
 export function useAtlasUrlSync({
@@ -29,12 +30,14 @@ export function useAtlasUrlSync({
   activeYear,
   educationLevel,
   managementType,
-  region,
   deferredSearchText,
   comparisonCountyIds,
   comparisonScenarioName,
   selectedCountyId,
   selectedTownshipId,
+  mapZoom,
+  mapLat,
+  mapLon,
 }: UseAtlasUrlSyncArgs) {
   useEffect(() => {
     if (!summaryDataset) return
@@ -44,7 +47,6 @@ export function useAtlasUrlSync({
 
     if (educationLevel !== '全部') params.set('level', educationLevel)
     if (managementType !== '全部') params.set('management', managementType)
-    if (region !== '全部') params.set('region', region)
     if (deferredSearchText.trim()) params.set('search', deferredSearchText.trim())
 
     const cleanedComparisonIds = comparisonCountyIds.filter((countyId) => summaryDataset.counties.some((county) => county.id === countyId))
@@ -60,6 +62,11 @@ export function useAtlasUrlSync({
     if (townshipIdForUrl) params.set('township', townshipIdForUrl)
 
     if (activeTab !== 'overview') params.set('tab', activeTab)
+    if (mapZoom != null) params.set('zoom', String(mapZoom))
+    if (mapLat != null && mapLon != null) {
+      params.set('lat', mapLat.toFixed(4))
+      params.set('lon', mapLon.toFixed(4))
+    }
 
     const nextSearch = params.toString()
     const nextUrl = nextSearch ? `${window.location.pathname}?${nextSearch}` : window.location.pathname
@@ -72,9 +79,11 @@ export function useAtlasUrlSync({
     deferredSearchText,
     educationLevel,
     managementType,
-    region,
     selectedCountyId,
     selectedTownshipId,
+    mapZoom,
+    mapLat,
+    mapLon,
     summaryDataset,
   ])
 }

@@ -61,6 +61,7 @@ function buildSchoolBuckets(schools, precision) {
 
     if (existing) {
       existing.count += 1
+      existing.totalStudents += currentStudents
       existing.latitudeTotal += school.coordinates.latitude
       existing.longitudeTotal += school.coordinates.longitude
       existing.bounds.minLatitude = Math.min(existing.bounds.minLatitude, school.coordinates.latitude)
@@ -76,6 +77,7 @@ function buildSchoolBuckets(schools, precision) {
       geohash,
       precision,
       count: 1,
+      totalStudents: currentStudents,
       latitudeTotal: school.coordinates.latitude,
       longitudeTotal: school.coordinates.longitude,
       bounds: {
@@ -94,6 +96,7 @@ function buildSchoolBuckets(schools, precision) {
       geohash: bucket.geohash,
       precision: bucket.precision,
       count: bucket.count,
+      totalStudents: bucket.totalStudents,
       latitude: Number((bucket.latitudeTotal / bucket.count).toFixed(6)),
       longitude: Number((bucket.longitudeTotal / bucket.count).toFixed(6)),
       bounds: {

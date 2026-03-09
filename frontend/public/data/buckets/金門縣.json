@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-07T17:48:54.081Z",
+  "generatedAt": "2026-03-09T18:20:24.771Z",
   "county": {
     "id": "金門縣",
     "name": "金門縣",
@@ -13,6 +13,7 @@
         "geohash": "wsk5h",
         "precision": 5,
         "count": 7,
+        "totalStudents": 6975,
         "latitude": 24.448072,
         "longitude": 118.321904,
         "bounds": {
@@ -33,7 +34,7 @@
             "id": "714603",
             "name": "縣立中正國小",
             "townshipName": "金城鎮",
-            "students": 1180,
+            "students": 1173,
             "status": "正常"
           },
           {
@@ -47,7 +48,7 @@
             "id": "714614",
             "name": "縣立金鼎國小",
             "townshipName": "金寧鄉",
-            "students": 371,
+            "students": 392,
             "status": "正常"
           }
         ]
@@ -57,6 +58,7 @@
         "geohash": "wsk5q",
         "precision": 5,
         "count": 4,
+        "totalStudents": 456,
         "latitude": 24.492758,
         "longitude": 118.408512,
         "bounds": {
@@ -77,21 +79,21 @@
             "id": "714609",
             "name": "縣立金沙國小",
             "townshipName": "金沙鎮",
-            "students": 173,
+            "students": 154,
             "status": "正常"
           },
           {
             "id": "714610",
             "name": "縣立何浦國小",
             "townshipName": "金沙鎮",
-            "students": 77,
+            "students": 65,
             "status": "正常"
           },
           {
             "id": "714612",
             "name": "縣立述美國小",
             "townshipName": "金沙鎮",
-            "students": 58,
+            "students": 51,
             "status": "正常"
           }
         ]
@@ -101,6 +103,7 @@
         "geohash": "wsk4u",
         "precision": 5,
         "count": 3,
+        "totalStudents": 1201,
         "latitude": 24.417001,
         "longitude": 118.314818,
         "bounds": {
@@ -121,14 +124,14 @@
             "id": "714604",
             "name": "縣立賢庵國小",
             "townshipName": "金城鎮",
-            "students": 229,
+            "students": 222,
             "status": "正常"
           },
           {
             "id": "714605",
             "name": "縣立古城國小",
             "townshipName": "金城鎮",
-            "students": 108,
+            "students": 103,
             "status": "正常"
           }
         ]
@@ -138,6 +141,7 @@
         "geohash": "wsk5n",
         "precision": 5,
         "count": 3,
+        "totalStudents": 1838,
         "latitude": 24.440553,
         "longitude": 118.420355,
         "bounds": {
@@ -158,7 +162,7 @@
             "id": "714601",
             "name": "縣立金湖國小",
             "townshipName": "金湖鎮",
-            "students": 587,
+            "students": 568,
             "status": "正常"
           },
           {
@@ -175,6 +179,7 @@
         "geohash": "wsk4f",
         "precision": 5,
         "count": 3,
+        "totalStudents": 220,
         "latitude": 24.425907,
         "longitude": 118.238898,
         "bounds": {
@@ -185,17 +190,17 @@
         },
         "topSchools": [
           {
-            "id": "714615",
-            "name": "縣立卓環國小",
-            "townshipName": "烈嶼鄉",
-            "students": 89,
-            "status": "正常"
-          },
-          {
             "id": "714505",
             "name": "縣立烈嶼國中",
             "townshipName": "烈嶼鄉",
             "students": 88,
+            "status": "正常"
+          },
+          {
+            "id": "714615",
+            "name": "縣立卓環國小",
+            "townshipName": "烈嶼鄉",
+            "students": 84,
             "status": "正常"
           },
           {
@@ -212,6 +217,7 @@
         "geohash": "wsk5j",
         "precision": 5,
         "count": 2,
+        "totalStudents": 313,
         "latitude": 24.442653,
         "longitude": 118.38264,
         "bounds": {
@@ -225,14 +231,14 @@
             "id": "714606",
             "name": "縣立開瑄國小",
             "townshipName": "金湖鎮",
-            "students": 256,
+            "students": 255,
             "status": "正常"
           },
           {
             "id": "714619",
             "name": "縣立正義國小",
             "townshipName": "金湖鎮",
-            "students": 49,
+            "students": 58,
             "status": "正常"
           }
         ]
@@ -242,6 +248,7 @@
         "geohash": "wsk5p",
         "precision": 5,
         "count": 1,
+        "totalStudents": 75,
         "latitude": 24.452179,
         "longitude": 118.454675,
         "bounds": {
@@ -255,7 +262,7 @@
             "id": "714608",
             "name": "縣立多年國小",
             "townshipName": "金沙鎮",
-            "students": 90,
+            "students": 75,
             "status": "正常"
           }
         ]
@@ -265,6 +272,7 @@
         "geohash": "wsk5r",
         "precision": 5,
         "count": 1,
+        "totalStudents": 66,
         "latitude": 24.482521,
         "longitude": 118.437866,
         "bounds": {
@@ -278,7 +286,7 @@
             "id": "714611",
             "name": "縣立安瀾國小",
             "townshipName": "金沙鎮",
-            "students": 61,
+            "students": 66,
             "status": "正常"
           }
         ]
@@ -288,6 +296,7 @@
         "geohash": "wsk4z",
         "precision": 5,
         "count": 1,
+        "totalStudents": 110,
         "latitude": 24.421742,
         "longitude": 118.438441,
         "bounds": {
@@ -301,7 +310,7 @@
             "id": "714607",
             "name": "縣立柏村國小",
             "townshipName": "金湖鎮",
-            "students": 99,
+            "students": 110,
             "status": "正常"
           }
         ]
@@ -311,6 +320,7 @@
         "geohash": "wsk5k",
         "precision": 5,
         "count": 1,
+        "totalStudents": 67,
         "latitude": 24.477927,
         "longitude": 118.312848,
         "bounds": {
@@ -334,6 +344,7 @@
         "geohash": "wsk54",
         "precision": 5,
         "count": 1,
+        "totalStudents": 61,
         "latitude": 24.436365,
         "longitude": 118.237919,
         "bounds": {
@@ -347,7 +358,7 @@
             "id": "714620",
             "name": "縣立西口國小",
             "townshipName": "烈嶼鄉",
-            "students": 67,
+            "students": 61,
             "status": "正常"
           }
         ]
@@ -359,6 +370,7 @@
         "geohash": "wsk5h2",
         "precision": 6,
         "count": 2,
+        "totalStudents": 2127,
         "latitude": 24.435011,
         "longitude": 118.315565,
         "bounds": {
@@ -372,7 +384,7 @@
             "id": "714603",
             "name": "縣立中正國小",
             "townshipName": "金城鎮",
-            "students": 1180,
+            "students": 1173,
             "status": "正常"
           },
           {
@@ -389,6 +401,7 @@
         "geohash": "wsk5hs",
         "precision": 6,
         "count": 2,
+        "totalStudents": 410,
         "latitude": 24.456724,
         "longitude": 118.326856,
         "bounds": {
@@ -409,7 +422,7 @@
             "id": "714602",
             "name": "縣立金寧國(中)小",
             "townshipName": "金寧鄉",
-            "students": 98,
+            "students": 111,
             "status": "正常"
           }
         ]
@@ -419,6 +432,7 @@
         "geohash": "wsk5qd",
         "precision": 6,
         "count": 1,
+        "totalStudents": 186,
         "latitude": 24.490593,
         "longitude": 118.415554,
         "bounds": {
@@ -442,6 +456,7 @@
         "geohash": "wsk5q9",
         "precision": 6,
         "count": 1,
+        "totalStudents": 154,
         "latitude": 24.488478,
         "longitude": 118.41216,
         "bounds": {
@@ -455,7 +470,7 @@
             "id": "714609",
             "name": "縣立金沙國小",
             "townshipName": "金沙鎮",
-            "students": 173,
+            "students": 154,
             "status": "正常"
           }
         ]
@@ -465,6 +480,7 @@
         "geohash": "wsk5pe",
         "precision": 6,
         "count": 1,
+        "totalStudents": 75,
         "latitude": 24.452179,
         "longitude": 118.454675,
         "bounds": {
@@ -478,30 +494,7 @@
             "id": "714608",
             "name": "縣立多年國小",
             "townshipName": "金沙鎮",
-            "students": 90,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "6-wsk5q0",
-        "geohash": "wsk5q0",
-        "precision": 6,
-        "count": 1,
-        "latitude": 24.478267,
-        "longitude": 118.395453,
-        "bounds": {
-          "minLatitude": 24.478267,
-          "maxLatitude": 24.478267,
-          "minLongitude": 118.395453,
-          "maxLongitude": 118.395453
-        },
-        "topSchools": [
-          {
-            "id": "714610",
-            "name": "縣立何浦國小",
-            "townshipName": "金沙鎮",
-            "students": 77,
+            "students": 75,
             "status": "正常"
           }
         ]
@@ -511,6 +504,7 @@
         "geohash": "wsk5r0",
         "precision": 6,
         "count": 1,
+        "totalStudents": 66,
         "latitude": 24.482521,
         "longitude": 118.437866,
         "bounds": {
@@ -524,7 +518,31 @@
             "id": "714611",
             "name": "縣立安瀾國小",
             "townshipName": "金沙鎮",
-            "students": 61,
+            "students": 66,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsk5q0",
+        "geohash": "wsk5q0",
+        "precision": 6,
+        "count": 1,
+        "totalStudents": 65,
+        "latitude": 24.478267,
+        "longitude": 118.395453,
+        "bounds": {
+          "minLatitude": 24.478267,
+          "maxLatitude": 24.478267,
+          "minLongitude": 118.395453,
+          "maxLongitude": 118.395453
+        },
+        "topSchools": [
+          {
+            "id": "714610",
+            "name": "縣立何浦國小",
+            "townshipName": "金沙鎮",
+            "students": 65,
             "status": "正常"
           }
         ]
@@ -534,6 +552,7 @@
         "geohash": "wsk5qw",
         "precision": 6,
         "count": 1,
+        "totalStudents": 51,
         "latitude": 24.513692,
         "longitude": 118.410882,
         "bounds": {
@@ -547,7 +566,7 @@
             "id": "714612",
             "name": "縣立述美國小",
             "townshipName": "金沙鎮",
-            "students": 58,
+            "students": 51,
             "status": "正常"
           }
         ]
@@ -557,6 +576,7 @@
         "geohash": "wsk4ur",
         "precision": 6,
         "count": 1,
+        "totalStudents": 876,
         "latitude": 24.431445,
         "longitude": 118.312985,
         "bounds": {
@@ -580,6 +600,7 @@
         "geohash": "wsk4um",
         "precision": 6,
         "count": 1,
+        "totalStudents": 222,
         "latitude": 24.417792,
         "longitude": 118.319048,
         "bounds": {
@@ -593,7 +614,7 @@
             "id": "714604",
             "name": "縣立賢庵國小",
             "townshipName": "金城鎮",
-            "students": 229,
+            "students": 222,
             "status": "正常"
           }
         ]
@@ -603,6 +624,7 @@
         "geohash": "wsk4u6",
         "precision": 6,
         "count": 1,
+        "totalStudents": 103,
         "latitude": 24.401767,
         "longitude": 118.312421,
         "bounds": {
@@ -616,7 +638,7 @@
             "id": "714605",
             "name": "縣立古城國小",
             "townshipName": "金城鎮",
-            "students": 108,
+            "students": 103,
             "status": "正常"
           }
         ]
@@ -626,6 +648,7 @@
         "geohash": "wsk5nc",
         "precision": 6,
         "count": 1,
+        "totalStudents": 842,
         "latitude": 24.442166,
         "longitude": 118.423629,
         "bounds": {
@@ -649,6 +672,7 @@
         "geohash": "wsk5n9",
         "precision": 6,
         "count": 1,
+        "totalStudents": 568,
         "latitude": 24.442776,
         "longitude": 118.415596,
         "bounds": {
@@ -662,7 +686,7 @@
             "id": "714601",
             "name": "縣立金湖國小",
             "townshipName": "金湖鎮",
-            "students": 587,
+            "students": 568,
             "status": "正常"
           }
         ]
@@ -672,6 +696,7 @@
         "geohash": "wsk5nb",
         "precision": 6,
         "count": 1,
+        "totalStudents": 428,
         "latitude": 24.436718,
         "longitude": 118.42184,
         "bounds": {
@@ -695,6 +720,7 @@
         "geohash": "wsk5jd",
         "precision": 6,
         "count": 1,
+        "totalStudents": 255,
         "latitude": 24.445545,
         "longitude": 118.377375,
         "bounds": {
@@ -708,7 +734,7 @@
             "id": "714606",
             "name": "縣立開瑄國小",
             "townshipName": "金湖鎮",
-            "students": 256,
+            "students": 255,
             "status": "正常"
           }
         ]
@@ -718,6 +744,7 @@
         "geohash": "wsk4zj",
         "precision": 6,
         "count": 1,
+        "totalStudents": 110,
         "latitude": 24.421742,
         "longitude": 118.438441,
         "bounds": {
@@ -731,7 +758,7 @@
             "id": "714607",
             "name": "縣立柏村國小",
             "townshipName": "金湖鎮",
-            "students": 99,
+            "students": 110,
             "status": "正常"
           }
         ]
@@ -741,6 +768,7 @@
         "geohash": "wsk5jc",
         "precision": 6,
         "count": 1,
+        "totalStudents": 58,
         "latitude": 24.439761,
         "longitude": 118.387905,
         "bounds": {
@@ -754,7 +782,7 @@
             "id": "714619",
             "name": "縣立正義國小",
             "townshipName": "金湖鎮",
-            "students": 49,
+            "students": 58,
             "status": "正常"
           }
         ]
@@ -764,6 +792,7 @@
         "geohash": "wsk5h6",
         "precision": 6,
         "count": 1,
+        "totalStudents": 3823,
         "latitude": 24.448294,
         "longitude": 118.322469,
         "bounds": {
@@ -787,6 +816,7 @@
         "geohash": "wsk5hf",
         "precision": 6,
         "count": 1,
+        "totalStudents": 392,
         "latitude": 24.447719,
         "longitude": 118.33787,
         "bounds": {
@@ -800,7 +830,7 @@
             "id": "714614",
             "name": "縣立金鼎國小",
             "townshipName": "金寧鄉",
-            "students": 371,
+            "students": 392,
             "status": "正常"
           }
         ]
@@ -810,6 +840,7 @@
         "geohash": "wsk5hh",
         "precision": 6,
         "count": 1,
+        "totalStudents": 223,
         "latitude": 24.457024,
         "longitude": 118.308145,
         "bounds": {
@@ -823,7 +854,7 @@
             "id": "714618",
             "name": "縣立湖埔國小",
             "townshipName": "金寧鄉",
-            "students": 221,
+            "students": 223,
             "status": "正常"
           }
         ]
@@ -833,6 +864,7 @@
         "geohash": "wsk5k2",
         "precision": 6,
         "count": 1,
+        "totalStudents": 67,
         "latitude": 24.477927,
         "longitude": 118.312848,
         "bounds": {
@@ -852,33 +884,11 @@
         ]
       },
       {
-        "id": "6-wsk4fz",
-        "geohash": "wsk4fz",
-        "precision": 6,
-        "count": 1,
-        "latitude": 24.431962,
-        "longitude": 118.246419,
-        "bounds": {
-          "minLatitude": 24.431962,
-          "maxLatitude": 24.431962,
-          "minLongitude": 118.246419,
-          "maxLongitude": 118.246419
-        },
-        "topSchools": [
-          {
-            "id": "714615",
-            "name": "縣立卓環國小",
-            "townshipName": "烈嶼鄉",
-            "students": 89,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "6-wsk4fx",
         "geohash": "wsk4fx",
         "precision": 6,
         "count": 1,
+        "totalStudents": 88,
         "latitude": 24.430227,
         "longitude": 118.241714,
         "bounds": {
@@ -898,10 +908,35 @@
         ]
       },
       {
+        "id": "6-wsk4fz",
+        "geohash": "wsk4fz",
+        "precision": 6,
+        "count": 1,
+        "totalStudents": 84,
+        "latitude": 24.431962,
+        "longitude": 118.246419,
+        "bounds": {
+          "minLatitude": 24.431962,
+          "maxLatitude": 24.431962,
+          "minLongitude": 118.246419,
+          "maxLongitude": 118.246419
+        },
+        "topSchools": [
+          {
+            "id": "714615",
+            "name": "縣立卓環國小",
+            "townshipName": "烈嶼鄉",
+            "students": 84,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "6-wsk548",
         "geohash": "wsk548",
         "precision": 6,
         "count": 1,
+        "totalStudents": 61,
         "latitude": 24.436365,
         "longitude": 118.237919,
         "bounds": {
@@ -915,7 +950,7 @@
             "id": "714620",
             "name": "縣立西口國小",
             "townshipName": "烈嶼鄉",
-            "students": 67,
+            "students": 61,
             "status": "正常"
           }
         ]
@@ -925,6 +960,7 @@
         "geohash": "wsk4fk",
         "precision": 6,
         "count": 1,
+        "totalStudents": 48,
         "latitude": 24.415531,
         "longitude": 118.22856,
         "bounds": {
@@ -950,6 +986,7 @@
         "geohash": "wsk5hs4",
         "precision": 7,
         "count": 2,
+        "totalStudents": 410,
         "latitude": 24.456724,
         "longitude": 118.326856,
         "bounds": {
@@ -970,7 +1007,7 @@
             "id": "714602",
             "name": "縣立金寧國(中)小",
             "townshipName": "金寧鄉",
-            "students": 98,
+            "students": 111,
             "status": "正常"
           }
         ]
@@ -980,6 +1017,7 @@
         "geohash": "wsk5qd7",
         "precision": 7,
         "count": 1,
+        "totalStudents": 186,
         "latitude": 24.490593,
         "longitude": 118.415554,
         "bounds": {
@@ -1003,6 +1041,7 @@
         "geohash": "wsk5q9c",
         "precision": 7,
         "count": 1,
+        "totalStudents": 154,
         "latitude": 24.488478,
         "longitude": 118.41216,
         "bounds": {
@@ -1016,7 +1055,7 @@
             "id": "714609",
             "name": "縣立金沙國小",
             "townshipName": "金沙鎮",
-            "students": 173,
+            "students": 154,
             "status": "正常"
           }
         ]
@@ -1026,6 +1065,7 @@
         "geohash": "wsk5pe2",
         "precision": 7,
         "count": 1,
+        "totalStudents": 75,
         "latitude": 24.452179,
         "longitude": 118.454675,
         "bounds": {
@@ -1039,30 +1079,7 @@
             "id": "714608",
             "name": "縣立多年國小",
             "townshipName": "金沙鎮",
-            "students": 90,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsk5q0h",
-        "geohash": "wsk5q0h",
-        "precision": 7,
-        "count": 1,
-        "latitude": 24.478267,
-        "longitude": 118.395453,
-        "bounds": {
-          "minLatitude": 24.478267,
-          "maxLatitude": 24.478267,
-          "minLongitude": 118.395453,
-          "maxLongitude": 118.395453
-        },
-        "topSchools": [
-          {
-            "id": "714610",
-            "name": "縣立何浦國小",
-            "townshipName": "金沙鎮",
-            "students": 77,
+            "students": 75,
             "status": "正常"
           }
         ]
@@ -1072,6 +1089,7 @@
         "geohash": "wsk5r0g",
         "precision": 7,
         "count": 1,
+        "totalStudents": 66,
         "latitude": 24.482521,
         "longitude": 118.437866,
         "bounds": {
@@ -1085,7 +1103,31 @@
             "id": "714611",
             "name": "縣立安瀾國小",
             "townshipName": "金沙鎮",
-            "students": 61,
+            "students": 66,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsk5q0h",
+        "geohash": "wsk5q0h",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 65,
+        "latitude": 24.478267,
+        "longitude": 118.395453,
+        "bounds": {
+          "minLatitude": 24.478267,
+          "maxLatitude": 24.478267,
+          "minLongitude": 118.395453,
+          "maxLongitude": 118.395453
+        },
+        "topSchools": [
+          {
+            "id": "714610",
+            "name": "縣立何浦國小",
+            "townshipName": "金沙鎮",
+            "students": 65,
             "status": "正常"
           }
         ]
@@ -1095,6 +1137,7 @@
         "geohash": "wsk5qw8",
         "precision": 7,
         "count": 1,
+        "totalStudents": 51,
         "latitude": 24.513692,
         "longitude": 118.410882,
         "bounds": {
@@ -1108,7 +1151,7 @@
             "id": "714612",
             "name": "縣立述美國小",
             "townshipName": "金沙鎮",
-            "students": 58,
+            "students": 51,
             "status": "正常"
           }
         ]
@@ -1118,6 +1161,7 @@
         "geohash": "wsk5h25",
         "precision": 7,
         "count": 1,
+        "totalStudents": 1173,
         "latitude": 24.43478,
         "longitude": 118.316883,
         "bounds": {
@@ -1131,7 +1175,7 @@
             "id": "714603",
             "name": "縣立中正國小",
             "townshipName": "金城鎮",
-            "students": 1180,
+            "students": 1173,
             "status": "正常"
           }
         ]
@@ -1141,6 +1185,7 @@
         "geohash": "wsk5h23",
         "precision": 7,
         "count": 1,
+        "totalStudents": 954,
         "latitude": 24.435241,
         "longitude": 118.314247,
         "bounds": {
@@ -1164,6 +1209,7 @@
         "geohash": "wsk4ur8",
         "precision": 7,
         "count": 1,
+        "totalStudents": 876,
         "latitude": 24.431445,
         "longitude": 118.312985,
         "bounds": {
@@ -1187,6 +1233,7 @@
         "geohash": "wsk4umj",
         "precision": 7,
         "count": 1,
+        "totalStudents": 222,
         "latitude": 24.417792,
         "longitude": 118.319048,
         "bounds": {
@@ -1200,7 +1247,7 @@
             "id": "714604",
             "name": "縣立賢庵國小",
             "townshipName": "金城鎮",
-            "students": 229,
+            "students": 222,
             "status": "正常"
           }
         ]
@@ -1210,6 +1257,7 @@
         "geohash": "wsk4u60",
         "precision": 7,
         "count": 1,
+        "totalStudents": 103,
         "latitude": 24.401767,
         "longitude": 118.312421,
         "bounds": {
@@ -1223,7 +1271,7 @@
             "id": "714605",
             "name": "縣立古城國小",
             "townshipName": "金城鎮",
-            "students": 108,
+            "students": 103,
             "status": "正常"
           }
         ]
@@ -1233,6 +1281,7 @@
         "geohash": "wsk5nc9",
         "precision": 7,
         "count": 1,
+        "totalStudents": 842,
         "latitude": 24.442166,
         "longitude": 118.423629,
         "bounds": {
@@ -1256,6 +1305,7 @@
         "geohash": "wsk5n9e",
         "precision": 7,
         "count": 1,
+        "totalStudents": 568,
         "latitude": 24.442776,
         "longitude": 118.415596,
         "bounds": {
@@ -1269,7 +1319,7 @@
             "id": "714601",
             "name": "縣立金湖國小",
             "townshipName": "金湖鎮",
-            "students": 587,
+            "students": 568,
             "status": "正常"
           }
         ]
@@ -1279,6 +1329,7 @@
         "geohash": "wsk5nb8",
         "precision": 7,
         "count": 1,
+        "totalStudents": 428,
         "latitude": 24.436718,
         "longitude": 118.42184,
         "bounds": {
@@ -1302,6 +1353,7 @@
         "geohash": "wsk5jdp",
         "precision": 7,
         "count": 1,
+        "totalStudents": 255,
         "latitude": 24.445545,
         "longitude": 118.377375,
         "bounds": {
@@ -1315,7 +1367,7 @@
             "id": "714606",
             "name": "縣立開瑄國小",
             "townshipName": "金湖鎮",
-            "students": 256,
+            "students": 255,
             "status": "正常"
           }
         ]
@@ -1325,6 +1377,7 @@
         "geohash": "wsk4zju",
         "precision": 7,
         "count": 1,
+        "totalStudents": 110,
         "latitude": 24.421742,
         "longitude": 118.438441,
         "bounds": {
@@ -1338,7 +1391,7 @@
             "id": "714607",
             "name": "縣立柏村國小",
             "townshipName": "金湖鎮",
-            "students": 99,
+            "students": 110,
             "status": "正常"
           }
         ]
@@ -1348,6 +1401,7 @@
         "geohash": "wsk5jcp",
         "precision": 7,
         "count": 1,
+        "totalStudents": 58,
         "latitude": 24.439761,
         "longitude": 118.387905,
         "bounds": {
@@ -1361,7 +1415,7 @@
             "id": "714619",
             "name": "縣立正義國小",
             "townshipName": "金湖鎮",
-            "students": 49,
+            "students": 58,
             "status": "正常"
           }
         ]
@@ -1371,6 +1425,7 @@
         "geohash": "wsk5h6x",
         "precision": 7,
         "count": 1,
+        "totalStudents": 3823,
         "latitude": 24.448294,
         "longitude": 118.322469,
         "bounds": {
@@ -1394,6 +1449,7 @@
         "geohash": "wsk5hfe",
         "precision": 7,
         "count": 1,
+        "totalStudents": 392,
         "latitude": 24.447719,
         "longitude": 118.33787,
         "bounds": {
@@ -1407,7 +1463,7 @@
             "id": "714614",
             "name": "縣立金鼎國小",
             "townshipName": "金寧鄉",
-            "students": 371,
+            "students": 392,
             "status": "正常"
           }
         ]
@@ -1417,6 +1473,7 @@
         "geohash": "wsk5hhm",
         "precision": 7,
         "count": 1,
+        "totalStudents": 223,
         "latitude": 24.457024,
         "longitude": 118.308145,
         "bounds": {
@@ -1430,7 +1487,7 @@
             "id": "714618",
             "name": "縣立湖埔國小",
             "townshipName": "金寧鄉",
-            "students": 221,
+            "students": 223,
             "status": "正常"
           }
         ]
@@ -1440,6 +1497,7 @@
         "geohash": "wsk5k20",
         "precision": 7,
         "count": 1,
+        "totalStudents": 67,
         "latitude": 24.477927,
         "longitude": 118.312848,
         "bounds": {
@@ -1459,33 +1517,11 @@
         ]
       },
       {
-        "id": "7-wsk4fz8",
-        "geohash": "wsk4fz8",
-        "precision": 7,
-        "count": 1,
-        "latitude": 24.431962,
-        "longitude": 118.246419,
-        "bounds": {
-          "minLatitude": 24.431962,
-          "maxLatitude": 24.431962,
-          "minLongitude": 118.246419,
-          "maxLongitude": 118.246419
-        },
-        "topSchools": [
-          {
-            "id": "714615",
-            "name": "縣立卓環國小",
-            "townshipName": "烈嶼鄉",
-            "students": 89,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "7-wsk4fxk",
         "geohash": "wsk4fxk",
         "precision": 7,
         "count": 1,
+        "totalStudents": 88,
         "latitude": 24.430227,
         "longitude": 118.241714,
         "bounds": {
@@ -1505,10 +1541,35 @@
         ]
       },
       {
+        "id": "7-wsk4fz8",
+        "geohash": "wsk4fz8",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 84,
+        "latitude": 24.431962,
+        "longitude": 118.246419,
+        "bounds": {
+          "minLatitude": 24.431962,
+          "maxLatitude": 24.431962,
+          "minLongitude": 118.246419,
+          "maxLongitude": 118.246419
+        },
+        "topSchools": [
+          {
+            "id": "714615",
+            "name": "縣立卓環國小",
+            "townshipName": "烈嶼鄉",
+            "students": 84,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "7-wsk548d",
         "geohash": "wsk548d",
         "precision": 7,
         "count": 1,
+        "totalStudents": 61,
         "latitude": 24.436365,
         "longitude": 118.237919,
         "bounds": {
@@ -1522,7 +1583,7 @@
             "id": "714620",
             "name": "縣立西口國小",
             "townshipName": "烈嶼鄉",
-            "students": 67,
+            "students": 61,
             "status": "正常"
           }
         ]
@@ -1532,6 +1593,7 @@
         "geohash": "wsk4fke",
         "precision": 7,
         "count": 1,
+        "totalStudents": 48,
         "latitude": 24.415531,
         "longitude": 118.22856,
         "bounds": {

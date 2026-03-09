@@ -38,7 +38,6 @@ export type SavedComparisonScenario = {
   activeYear: AcademicYear
   educationLevel: EducationLevelFilter
   managementType: ManagementTypeFilter
-  region: RegionGroupFilter
   pinned?: boolean
   updatedAt: string
 }

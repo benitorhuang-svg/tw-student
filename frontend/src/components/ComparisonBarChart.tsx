@@ -9,15 +9,25 @@ const BAR_COLORS = [
 
 type ComparisonBarChartProps = {
   items: { id: string; label: string; value: number }[]
+  activeItemId?: string | null
+  onHoverItem?: (id: string | null) => void
+  onSelectItem?: (id: string) => void
 }
 
-function ComparisonBarChart({ items }: ComparisonBarChartProps) {
+function ComparisonBarChart({ items, activeItemId = null, onHoverItem, onSelectItem }: ComparisonBarChartProps) {
   const max = Math.max(...items.map((i) => i.value), 1)
 
   return (
     <div className="comparison-bar-chart">
       {items.map((item, idx) => (
-        <div key={item.id} className="comparison-bar-chart__row">
+        <button
+          key={item.id}
+          type="button"
+          className={item.id === activeItemId ? 'comparison-bar-chart__row comparison-bar-chart__row--active' : 'comparison-bar-chart__row'}
+          onMouseEnter={() => onHoverItem?.(item.id)}
+          onMouseLeave={() => onHoverItem?.(null)}
+          onClick={() => onSelectItem?.(item.id)}
+        >
           <span className="comparison-bar-chart__label" title={item.label}>{item.label}</span>
           <div className="comparison-bar-chart__track">
             <div
@@ -29,7 +39,7 @@ function ComparisonBarChart({ items }: ComparisonBarChartProps) {
             />
           </div>
           <span className="comparison-bar-chart__value">{formatStudents(item.value)}</span>
-        </div>
+        </button>
       ))}
     </div>
   )

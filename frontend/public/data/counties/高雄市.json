@@ -7,9 +7,12 @@
   },
   "dataNotes": [
     {
-      "type": "缺年度",
-      "message": "高雄市 有 2 所學校存在年度缺漏。",
-      "severity": "warning"
+      "type": "異常值",
+      "message": "高雄市 有 1 所學校最新學年學生數為 0，需留意停辦或整併可能。",
+      "severity": "info",
+      "years": [
+        114
+      ]
     }
   ],
   "towns": [
@@ -62,6 +65,10 @@
             {
               "year": 113,
               "students": 27394
+            },
+            {
+              "year": 114,
+              "students": 27394
             }
           ],
           "status": "正常",
@@ -111,6 +118,10 @@
             },
             {
               "year": 113,
+              "students": 6849
+            },
+            {
+              "year": 114,
               "students": 6849
             }
           ],
@@ -162,6 +173,10 @@
             {
               "year": 113,
               "students": 6667
+            },
+            {
+              "year": 114,
+              "students": 6667
             }
           ],
           "status": "正常",
@@ -211,6 +226,10 @@
             },
             {
               "year": 113,
+              "students": 4402
+            },
+            {
+              "year": 114,
               "students": 4402
             }
           ],
@@ -262,6 +281,10 @@
             {
               "year": 113,
               "students": 2696
+            },
+            {
+              "year": 114,
+              "students": 2696
             }
           ],
           "status": "正常",
@@ -311,6 +334,10 @@
             },
             {
               "year": 113,
+              "students": 2593
+            },
+            {
+              "year": 114,
               "students": 2593
             }
           ],
@@ -362,6 +389,10 @@
             {
               "year": 113,
               "students": 2570
+            },
+            {
+              "year": 114,
+              "students": 2570
             }
           ],
           "status": "正常",
@@ -412,6 +443,10 @@
             {
               "year": 113,
               "students": 2124
+            },
+            {
+              "year": 114,
+              "students": 2086
             }
           ],
           "status": "正常",
@@ -462,6 +497,10 @@
             {
               "year": 113,
               "students": 2047
+            },
+            {
+              "year": 114,
+              "students": 2009
             }
           ],
           "status": "正常",
@@ -511,6 +550,10 @@
             },
             {
               "year": 113,
+              "students": 1923
+            },
+            {
+              "year": 114,
               "students": 1923
             }
           ],
@@ -562,106 +605,10 @@
             {
               "year": 113,
               "students": 1704
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "553608",
-          "code": "553608",
-          "name": "市立三民區民族國小",
-          "countyId": "高雄市",
-          "townshipId": "高雄市:三民區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "高雄市三民區平等路197號",
-          "phone": "(07)3860526",
-          "website": "https://www.mtps.kh.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/553608/C/高雄市/三民區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.320639,
-            "latitude": 22.643485
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1437
             },
             {
-              "year": 108,
-              "students": 1445
-            },
-            {
-              "year": 109,
-              "students": 1455
-            },
-            {
-              "year": 110,
-              "students": 1482
-            },
-            {
-              "year": 111,
-              "students": 1522
-            },
-            {
-              "year": 112,
-              "students": 1511
-            },
-            {
-              "year": 113,
-              "students": 1439
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "553607",
-          "code": "553607",
-          "name": "市立獅湖國小",
-          "countyId": "高雄市",
-          "townshipId": "高雄市:三民區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "高雄市三民區鼎金後路495號",
-          "phone": "(07)3424782",
-          "website": "https://www.shps.kh.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/553607/C/高雄市/三民區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.322246,
-            "latitude": 22.672228
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1501
-            },
-            {
-              "year": 108,
-              "students": 1486
-            },
-            {
-              "year": 109,
-              "students": 1504
-            },
-            {
-              "year": 110,
-              "students": 1540
-            },
-            {
-              "year": 111,
-              "students": 1523
-            },
-            {
-              "year": 112,
-              "students": 1513
-            },
-            {
-              "year": 113,
-              "students": 1426
+              "year": 114,
+              "students": 1704
             }
           ],
           "status": "正常",
@@ -712,6 +659,118 @@
             {
               "year": 113,
               "students": 1410
+            },
+            {
+              "year": 114,
+              "students": 1410
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "553608",
+          "code": "553608",
+          "name": "市立三民區民族國小",
+          "countyId": "高雄市",
+          "townshipId": "高雄市:三民區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "高雄市三民區平等路197號",
+          "phone": "(07)3860526",
+          "website": "https://www.mtps.kh.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/553608/C/高雄市/三民區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.320639,
+            "latitude": 22.643485
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1437
+            },
+            {
+              "year": 108,
+              "students": 1445
+            },
+            {
+              "year": 109,
+              "students": 1455
+            },
+            {
+              "year": 110,
+              "students": 1482
+            },
+            {
+              "year": 111,
+              "students": 1522
+            },
+            {
+              "year": 112,
+              "students": 1511
+            },
+            {
+              "year": 113,
+              "students": 1439
+            },
+            {
+              "year": 114,
+              "students": 1383
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "553607",
+          "code": "553607",
+          "name": "市立獅湖國小",
+          "countyId": "高雄市",
+          "townshipId": "高雄市:三民區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "高雄市三民區鼎金後路495號",
+          "phone": "(07)3424782",
+          "website": "https://www.shps.kh.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/553607/C/高雄市/三民區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.322246,
+            "latitude": 22.672228
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1501
+            },
+            {
+              "year": 108,
+              "students": 1486
+            },
+            {
+              "year": 109,
+              "students": 1504
+            },
+            {
+              "year": 110,
+              "students": 1540
+            },
+            {
+              "year": 111,
+              "students": 1523
+            },
+            {
+              "year": 112,
+              "students": 1513
+            },
+            {
+              "year": 113,
+              "students": 1426
+            },
+            {
+              "year": 114,
+              "students": 1337
             }
           ],
           "status": "正常",
@@ -762,56 +821,10 @@
             {
               "year": 113,
               "students": 1303
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "553609",
-          "code": "553609",
-          "name": "市立莊敬國小",
-          "countyId": "高雄市",
-          "townshipId": "高雄市:三民區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "高雄市三民區大昌一路200號",
-          "phone": "(07)3813210",
-          "website": "https://www.jjps.kh.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/553609/C/高雄市/三民區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.324301,
-            "latitude": 22.656009
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1380
             },
             {
-              "year": 108,
-              "students": 1352
-            },
-            {
-              "year": 109,
-              "students": 1259
-            },
-            {
-              "year": 110,
-              "students": 1208
-            },
-            {
-              "year": 111,
-              "students": 1226
-            },
-            {
-              "year": 112,
-              "students": 1256
-            },
-            {
-              "year": 113,
-              "students": 1202
+              "year": 114,
+              "students": 1234
             }
           ],
           "status": "正常",
@@ -862,6 +875,64 @@
             {
               "year": 113,
               "students": 1199
+            },
+            {
+              "year": 114,
+              "students": 1199
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "553609",
+          "code": "553609",
+          "name": "市立莊敬國小",
+          "countyId": "高雄市",
+          "townshipId": "高雄市:三民區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "高雄市三民區大昌一路200號",
+          "phone": "(07)3813210",
+          "website": "https://www.jjps.kh.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/553609/C/高雄市/三民區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.324301,
+            "latitude": 22.656009
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1380
+            },
+            {
+              "year": 108,
+              "students": 1352
+            },
+            {
+              "year": 109,
+              "students": 1259
+            },
+            {
+              "year": 110,
+              "students": 1208
+            },
+            {
+              "year": 111,
+              "students": 1226
+            },
+            {
+              "year": 112,
+              "students": 1256
+            },
+            {
+              "year": 113,
+              "students": 1202
+            },
+            {
+              "year": 114,
+              "students": 1169
             }
           ],
           "status": "正常",
@@ -912,6 +983,10 @@
             {
               "year": 113,
               "students": 1020
+            },
+            {
+              "year": 114,
+              "students": 972
             }
           ],
           "status": "正常",
@@ -961,6 +1036,10 @@
             },
             {
               "year": 113,
+              "students": 957
+            },
+            {
+              "year": 114,
               "students": 957
             }
           ],
@@ -1012,6 +1091,10 @@
             {
               "year": 113,
               "students": 929
+            },
+            {
+              "year": 114,
+              "students": 884
             }
           ],
           "status": "正常",
@@ -1062,6 +1145,10 @@
             {
               "year": 113,
               "students": 832
+            },
+            {
+              "year": 114,
+              "students": 760
             }
           ],
           "status": "正常",
@@ -1112,6 +1199,10 @@
             {
               "year": 113,
               "students": 732
+            },
+            {
+              "year": 114,
+              "students": 744
             }
           ],
           "status": "正常",
@@ -1162,6 +1253,10 @@
             {
               "year": 113,
               "students": 669
+            },
+            {
+              "year": 114,
+              "students": 665
             }
           ],
           "status": "正常",
@@ -1212,6 +1307,10 @@
             {
               "year": 113,
               "students": 635
+            },
+            {
+              "year": 114,
+              "students": 599
             }
           ],
           "status": "正常",
@@ -1261,6 +1360,10 @@
             },
             {
               "year": 113,
+              "students": 496
+            },
+            {
+              "year": 114,
               "students": 496
             }
           ],
@@ -1312,6 +1415,10 @@
             {
               "year": 113,
               "students": 458
+            },
+            {
+              "year": 114,
+              "students": 458
             }
           ],
           "status": "正常",
@@ -1362,6 +1469,10 @@
             {
               "year": 113,
               "students": 368
+            },
+            {
+              "year": 114,
+              "students": 358
             }
           ],
           "status": "正常",
@@ -1412,6 +1523,10 @@
             {
               "year": 113,
               "students": 271
+            },
+            {
+              "year": 114,
+              "students": 250
             }
           ],
           "status": "正常",
@@ -1470,6 +1585,10 @@
             {
               "year": 113,
               "students": 732
+            },
+            {
+              "year": 114,
+              "students": 732
             }
           ],
           "status": "正常",
@@ -1520,6 +1639,10 @@
             {
               "year": 113,
               "students": 527
+            },
+            {
+              "year": 114,
+              "students": 486
             }
           ],
           "status": "正常",
@@ -1569,6 +1692,10 @@
             },
             {
               "year": 113,
+              "students": 457
+            },
+            {
+              "year": 114,
               "students": 457
             }
           ],
@@ -1620,6 +1747,10 @@
             {
               "year": 113,
               "students": 86
+            },
+            {
+              "year": 114,
+              "students": 70
             }
           ],
           "status": "正常",
@@ -1678,6 +1809,10 @@
             {
               "year": 113,
               "students": 8280
+            },
+            {
+              "year": 114,
+              "students": 8280
             }
           ],
           "status": "正常",
@@ -1727,6 +1862,10 @@
             },
             {
               "year": 113,
+              "students": 6803
+            },
+            {
+              "year": 114,
               "students": 6803
             }
           ],
@@ -1778,6 +1917,10 @@
             {
               "year": 113,
               "students": 1422
+            },
+            {
+              "year": 114,
+              "students": 1359
             }
           ],
           "status": "正常",
@@ -1828,6 +1971,10 @@
             {
               "year": 113,
               "students": 916
+            },
+            {
+              "year": 114,
+              "students": 922
             }
           ],
           "status": "正常",
@@ -1877,6 +2024,10 @@
             },
             {
               "year": 113,
+              "students": 753
+            },
+            {
+              "year": 114,
               "students": 753
             }
           ],
@@ -1928,6 +2079,10 @@
             {
               "year": 113,
               "students": 715
+            },
+            {
+              "year": 114,
+              "students": 715
             }
           ],
           "status": "正常",
@@ -1977,6 +2132,10 @@
             },
             {
               "year": 113,
+              "students": 634
+            },
+            {
+              "year": 114,
               "students": 634
             }
           ],
@@ -2028,6 +2187,10 @@
             {
               "year": 113,
               "students": 594
+            },
+            {
+              "year": 114,
+              "students": 594
             }
           ],
           "status": "正常",
@@ -2078,6 +2241,10 @@
             {
               "year": 113,
               "students": 483
+            },
+            {
+              "year": 114,
+              "students": 465
             }
           ],
           "status": "正常",
@@ -2128,6 +2295,10 @@
             {
               "year": 113,
               "students": 417
+            },
+            {
+              "year": 114,
+              "students": 408
             }
           ],
           "status": "正常",
@@ -2178,6 +2349,10 @@
             {
               "year": 113,
               "students": 376
+            },
+            {
+              "year": 114,
+              "students": 397
             }
           ],
           "status": "正常",
@@ -2228,6 +2403,10 @@
             {
               "year": 113,
               "students": 354
+            },
+            {
+              "year": 114,
+              "students": 361
             }
           ],
           "status": "正常",
@@ -2278,6 +2457,10 @@
             {
               "year": 113,
               "students": 315
+            },
+            {
+              "year": 114,
+              "students": 311
             }
           ],
           "status": "正常",
@@ -2328,6 +2511,10 @@
             {
               "year": 113,
               "students": 135
+            },
+            {
+              "year": 114,
+              "students": 160
             }
           ],
           "status": "正常",
@@ -2377,6 +2564,10 @@
             },
             {
               "year": 113,
+              "students": 117
+            },
+            {
+              "year": 114,
               "students": 117
             }
           ],
@@ -2428,6 +2619,10 @@
             {
               "year": 113,
               "students": 111
+            },
+            {
+              "year": 114,
+              "students": 111
             }
           ],
           "status": "正常",
@@ -2478,26 +2673,15 @@
             {
               "year": 113,
               "students": 107
+            },
+            {
+              "year": 114,
+              "students": 108
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107,
-            108,
-            109
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107、108、109",
-              "severity": "warning",
-              "years": [
-                107,
-                108,
-                109
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "124624",
@@ -2543,6 +2727,10 @@
             {
               "year": 113,
               "students": 69
+            },
+            {
+              "year": 114,
+              "students": 67
             }
           ],
           "status": "正常",
@@ -2550,13 +2738,7 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "大寮區 有 1 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "高雄市:大樹區",
@@ -2606,6 +2788,10 @@
             },
             {
               "year": 113,
+              "students": 10932
+            },
+            {
+              "year": 114,
               "students": 10932
             }
           ],
@@ -2657,6 +2843,10 @@
             {
               "year": 113,
               "students": 792
+            },
+            {
+              "year": 114,
+              "students": 792
             }
           ],
           "status": "正常",
@@ -2707,6 +2897,10 @@
             {
               "year": 113,
               "students": 585
+            },
+            {
+              "year": 114,
+              "students": 601
             }
           ],
           "status": "正常",
@@ -2757,6 +2951,10 @@
             {
               "year": 113,
               "students": 553
+            },
+            {
+              "year": 114,
+              "students": 566
             }
           ],
           "status": "正常",
@@ -2806,6 +3004,10 @@
             },
             {
               "year": 113,
+              "students": 422
+            },
+            {
+              "year": 114,
               "students": 422
             }
           ],
@@ -2857,6 +3059,10 @@
             {
               "year": 113,
               "students": 377
+            },
+            {
+              "year": 114,
+              "students": 347
             }
           ],
           "status": "正常",
@@ -2906,6 +3112,10 @@
             },
             {
               "year": 113,
+              "students": 224
+            },
+            {
+              "year": 114,
               "students": 224
             }
           ],
@@ -2957,6 +3167,10 @@
             {
               "year": 113,
               "students": 144
+            },
+            {
+              "year": 114,
+              "students": 134
             }
           ],
           "status": "正常",
@@ -3006,6 +3220,10 @@
             },
             {
               "year": 113,
+              "students": 132
+            },
+            {
+              "year": 114,
               "students": 132
             }
           ],
@@ -3057,6 +3275,10 @@
             {
               "year": 113,
               "students": 49
+            },
+            {
+              "year": 114,
+              "students": 49
             }
           ],
           "status": "正常",
@@ -3107,56 +3329,10 @@
             {
               "year": 113,
               "students": 47
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "124632",
-          "code": "124632",
-          "name": "市立興田國小",
-          "countyId": "高雄市",
-          "townshipId": "高雄市:大樹區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "高雄市大樹區興田里興田路59號",
-          "phone": "(07)6561527",
-          "website": "https://www.xtp.kh.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/124632/C/高雄市/大樹區/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.445678,
-            "latitude": 22.740819
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 49
             },
             {
-              "year": 108,
-              "students": 45
-            },
-            {
-              "year": 109,
-              "students": 35
-            },
-            {
-              "year": 110,
-              "students": 31
-            },
-            {
-              "year": 111,
-              "students": 28
-            },
-            {
-              "year": 112,
-              "students": 37
-            },
-            {
-              "year": 113,
-              "students": 38
+              "year": 114,
+              "students": 36
             }
           ],
           "status": "正常",
@@ -3207,6 +3383,64 @@
             {
               "year": 113,
               "students": 33
+            },
+            {
+              "year": 114,
+              "students": 33
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "124632",
+          "code": "124632",
+          "name": "市立興田國小",
+          "countyId": "高雄市",
+          "townshipId": "高雄市:大樹區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "高雄市大樹區興田里興田路59號",
+          "phone": "(07)6561527",
+          "website": "https://www.xtp.kh.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/124632/C/高雄市/大樹區/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.445678,
+            "latitude": 22.740819
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 49
+            },
+            {
+              "year": 108,
+              "students": 45
+            },
+            {
+              "year": 109,
+              "students": 35
+            },
+            {
+              "year": 110,
+              "students": 31
+            },
+            {
+              "year": 111,
+              "students": 28
+            },
+            {
+              "year": 112,
+              "students": 37
+            },
+            {
+              "year": 113,
+              "students": 38
+            },
+            {
+              "year": 114,
+              "students": 31
             }
           ],
           "status": "正常",
@@ -3265,6 +3499,10 @@
             {
               "year": 113,
               "students": 4101
+            },
+            {
+              "year": 114,
+              "students": 4101
             }
           ],
           "status": "正常",
@@ -3314,6 +3552,10 @@
             },
             {
               "year": 113,
+              "students": 1408
+            },
+            {
+              "year": 114,
               "students": 1408
             }
           ],
@@ -3365,6 +3607,10 @@
             {
               "year": 113,
               "students": 1401
+            },
+            {
+              "year": 114,
+              "students": 1326
             }
           ],
           "status": "正常",
@@ -3414,6 +3660,10 @@
             },
             {
               "year": 113,
+              "students": 1322
+            },
+            {
+              "year": 114,
               "students": 1322
             }
           ],
@@ -3465,6 +3715,10 @@
             {
               "year": 113,
               "students": 1257
+            },
+            {
+              "year": 114,
+              "students": 1251
             }
           ],
           "status": "正常",
@@ -3514,6 +3768,10 @@
             },
             {
               "year": 113,
+              "students": 987
+            },
+            {
+              "year": 114,
               "students": 987
             }
           ],
@@ -3565,6 +3823,10 @@
             {
               "year": 113,
               "students": 983
+            },
+            {
+              "year": 114,
+              "students": 983
             }
           ],
           "status": "正常",
@@ -3615,6 +3877,10 @@
             {
               "year": 113,
               "students": 828
+            },
+            {
+              "year": 114,
+              "students": 777
             }
           ],
           "status": "正常",
@@ -3665,56 +3931,10 @@
             {
               "year": 113,
               "students": 672
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "613614",
-          "code": "613614",
-          "name": "市立明義國小",
-          "countyId": "高雄市",
-          "townshipId": "高雄市:小港區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "高雄市小港區明義街77號",
-          "phone": "(07)7917035",
-          "website": "https://www.myes.kh.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/613614/C/高雄市/小港區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.367184,
-            "latitude": 22.583085
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 401
             },
             {
-              "year": 108,
-              "students": 425
-            },
-            {
-              "year": 109,
-              "students": 425
-            },
-            {
-              "year": 110,
-              "students": 457
-            },
-            {
-              "year": 111,
-              "students": 485
-            },
-            {
-              "year": 112,
-              "students": 545
-            },
-            {
-              "year": 113,
-              "students": 561
+              "year": 114,
+              "students": 628
             }
           ],
           "status": "正常",
@@ -3765,6 +3985,64 @@
             {
               "year": 113,
               "students": 556
+            },
+            {
+              "year": 114,
+              "students": 552
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "613614",
+          "code": "613614",
+          "name": "市立明義國小",
+          "countyId": "高雄市",
+          "townshipId": "高雄市:小港區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "高雄市小港區明義街77號",
+          "phone": "(07)7917035",
+          "website": "https://www.myes.kh.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/613614/C/高雄市/小港區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.367184,
+            "latitude": 22.583085
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 401
+            },
+            {
+              "year": 108,
+              "students": 425
+            },
+            {
+              "year": 109,
+              "students": 425
+            },
+            {
+              "year": 110,
+              "students": 457
+            },
+            {
+              "year": 111,
+              "students": 485
+            },
+            {
+              "year": 112,
+              "students": 545
+            },
+            {
+              "year": 113,
+              "students": 561
+            },
+            {
+              "year": 114,
+              "students": 539
             }
           ],
           "status": "正常",
@@ -3814,6 +4092,10 @@
             },
             {
               "year": 113,
+              "students": 512
+            },
+            {
+              "year": 114,
               "students": 512
             }
           ],
@@ -3865,56 +4147,10 @@
             {
               "year": 113,
               "students": 510
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "613604",
-          "code": "613604",
-          "name": "市立青山國小",
-          "countyId": "高雄市",
-          "townshipId": "高雄市:小港區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "高雄市小港區濟南里飛機路153號",
-          "phone": "(07)8024872",
-          "website": "https://www.chsnps.kh.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/613604/C/高雄市/小港區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.360505,
-            "latitude": 22.572685
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 428
             },
             {
-              "year": 108,
-              "students": 442
-            },
-            {
-              "year": 109,
-              "students": 456
-            },
-            {
-              "year": 110,
-              "students": 482
-            },
-            {
-              "year": 111,
-              "students": 491
-            },
-            {
-              "year": 112,
-              "students": 492
-            },
-            {
-              "year": 113,
-              "students": 458
+              "year": 114,
+              "students": 495
             }
           ],
           "status": "正常",
@@ -3965,6 +4201,64 @@
             {
               "year": 113,
               "students": 456
+            },
+            {
+              "year": 114,
+              "students": 454
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "613604",
+          "code": "613604",
+          "name": "市立青山國小",
+          "countyId": "高雄市",
+          "townshipId": "高雄市:小港區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "高雄市小港區濟南里飛機路153號",
+          "phone": "(07)8024872",
+          "website": "https://www.chsnps.kh.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/613604/C/高雄市/小港區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.360505,
+            "latitude": 22.572685
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 428
+            },
+            {
+              "year": 108,
+              "students": 442
+            },
+            {
+              "year": 109,
+              "students": 456
+            },
+            {
+              "year": 110,
+              "students": 482
+            },
+            {
+              "year": 111,
+              "students": 491
+            },
+            {
+              "year": 112,
+              "students": 492
+            },
+            {
+              "year": 113,
+              "students": 458
+            },
+            {
+              "year": 114,
+              "students": 428
             }
           ],
           "status": "正常",
@@ -4015,6 +4309,10 @@
             {
               "year": 113,
               "students": 438
+            },
+            {
+              "year": 114,
+              "students": 418
             }
           ],
           "status": "正常",
@@ -4065,6 +4363,10 @@
             {
               "year": 113,
               "students": 270
+            },
+            {
+              "year": 114,
+              "students": 258
             }
           ],
           "status": "正常",
@@ -4115,6 +4417,10 @@
             {
               "year": 113,
               "students": 181
+            },
+            {
+              "year": 114,
+              "students": 160
             }
           ],
           "status": "正常",
@@ -4164,6 +4470,10 @@
             },
             {
               "year": 113,
+              "students": 145
+            },
+            {
+              "year": 114,
               "students": 145
             }
           ],
@@ -4215,6 +4525,10 @@
             {
               "year": 113,
               "students": 74
+            },
+            {
+              "year": 114,
+              "students": 67
             }
           ],
           "status": "正常",
@@ -4273,6 +4587,10 @@
             {
               "year": 113,
               "students": 1304
+            },
+            {
+              "year": 114,
+              "students": 1228
             }
           ],
           "status": "正常",
@@ -4322,6 +4640,10 @@
             },
             {
               "year": 113,
+              "students": 1194
+            },
+            {
+              "year": 114,
               "students": 1194
             }
           ],
@@ -4373,6 +4695,10 @@
             {
               "year": 113,
               "students": 1169
+            },
+            {
+              "year": 114,
+              "students": 1112
             }
           ],
           "status": "正常",
@@ -4423,6 +4749,10 @@
             {
               "year": 113,
               "students": 996
+            },
+            {
+              "year": 114,
+              "students": 1002
             }
           ],
           "status": "正常",
@@ -4472,6 +4802,10 @@
             },
             {
               "year": 113,
+              "students": 769
+            },
+            {
+              "year": 114,
               "students": 769
             }
           ],
@@ -4523,6 +4857,10 @@
             {
               "year": 113,
               "students": 588
+            },
+            {
+              "year": 114,
+              "students": 682
             }
           ],
           "status": "正常",
@@ -4573,6 +4911,10 @@
             {
               "year": 113,
               "students": 90
+            },
+            {
+              "year": 114,
+              "students": 91
             }
           ],
           "status": "正常",
@@ -4623,6 +4965,10 @@
             {
               "year": 113,
               "students": 62
+            },
+            {
+              "year": 114,
+              "students": 57
             }
           ],
           "status": "正常",
@@ -4681,6 +5027,10 @@
             {
               "year": 113,
               "students": 86
+            },
+            {
+              "year": 114,
+              "students": 91
             }
           ],
           "status": "正常",
@@ -4730,6 +5080,10 @@
             },
             {
               "year": 113,
+              "students": 79
+            },
+            {
+              "year": 114,
               "students": 79
             }
           ],
@@ -4781,6 +5135,10 @@
             {
               "year": 113,
               "students": 63
+            },
+            {
+              "year": 114,
+              "students": 62
             }
           ],
           "status": "正常",
@@ -4831,6 +5189,10 @@
             {
               "year": 113,
               "students": 41
+            },
+            {
+              "year": 114,
+              "students": 57
             }
           ],
           "status": "正常",
@@ -4881,6 +5243,10 @@
             {
               "year": 113,
               "students": 37
+            },
+            {
+              "year": 114,
+              "students": 41
             }
           ],
           "status": "正常",
@@ -4931,6 +5297,10 @@
             {
               "year": 113,
               "students": 24
+            },
+            {
+              "year": 114,
+              "students": 26
             }
           ],
           "status": "正常",
@@ -4989,6 +5359,10 @@
             {
               "year": 113,
               "students": 176
+            },
+            {
+              "year": 114,
+              "students": 176
             }
           ],
           "status": "正常",
@@ -5039,6 +5413,10 @@
             {
               "year": 113,
               "students": 126
+            },
+            {
+              "year": 114,
+              "students": 120
             }
           ],
           "status": "正常",
@@ -5089,56 +5467,10 @@
             {
               "year": 113,
               "students": 64
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "124711",
-          "code": "124711",
-          "name": "市立寶來國小",
-          "countyId": "高雄市",
-          "townshipId": "高雄市:六龜區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "高雄市六龜區寶來里中正路89號",
-          "phone": "(07)6881009",
-          "website": "https://www.bla.kh.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/124711/C/高雄市/六龜區/縣市立/極偏/無/",
-          "coordinates": {
-            "longitude": 120.700869,
-            "latitude": 23.10886
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 39
             },
             {
-              "year": 108,
-              "students": 41
-            },
-            {
-              "year": 109,
-              "students": 44
-            },
-            {
-              "year": 110,
-              "students": 48
-            },
-            {
-              "year": 111,
-              "students": 41
-            },
-            {
-              "year": 112,
-              "students": 42
-            },
-            {
-              "year": 113,
-              "students": 47
+              "year": 114,
+              "students": 64
             }
           ],
           "status": "正常",
@@ -5189,6 +5521,10 @@
             {
               "year": 113,
               "students": 42
+            },
+            {
+              "year": 114,
+              "students": 42
             }
           ],
           "status": "正常",
@@ -5196,99 +5532,53 @@
           "dataNotes": []
         },
         {
-          "id": "124708",
-          "code": "124708",
-          "name": "市立新發國小",
+          "id": "124711",
+          "code": "124711",
+          "name": "市立寶來國小",
           "countyId": "高雄市",
           "townshipId": "高雄市:六龜區",
           "educationLevel": "國小",
           "managementType": "公立",
-          "address": "高雄市六龜區新發里和平路130號",
-          "phone": "(07)6791387",
-          "website": "https://www.xfp.kh.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/124708/C/高雄市/六龜區/縣市立/特偏/無/",
+          "address": "高雄市六龜區寶來里中正路89號",
+          "phone": "(07)6881009",
+          "website": "https://www.bla.kh.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/124711/C/高雄市/六龜區/縣市立/極偏/無/",
           "coordinates": {
-            "longitude": 120.662528,
-            "latitude": 23.031784
+            "longitude": 120.700869,
+            "latitude": 23.10886
           },
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 24
+              "students": 39
             },
             {
               "year": 108,
-              "students": 26
+              "students": 41
             },
             {
               "year": 109,
-              "students": 25
+              "students": 44
             },
             {
               "year": 110,
-              "students": 28
+              "students": 48
             },
             {
               "year": 111,
-              "students": 28
+              "students": 41
             },
             {
               "year": 112,
-              "students": 24
+              "students": 42
             },
             {
               "year": 113,
-              "students": 29
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "124710",
-          "code": "124710",
-          "name": "市立新威國小",
-          "countyId": "高雄市",
-          "townshipId": "高雄市:六龜區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "高雄市六龜區新興里新威路212號",
-          "phone": "(07)6871134",
-          "website": "https://www.xwp.kh.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/124710/C/高雄市/六龜區/縣市立/特偏/無/",
-          "coordinates": {
-            "longitude": 120.627633,
-            "latitude": 22.898426
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
               "students": 47
             },
             {
-              "year": 108,
-              "students": 46
-            },
-            {
-              "year": 109,
+              "year": 114,
               "students": 40
-            },
-            {
-              "year": 110,
-              "students": 35
-            },
-            {
-              "year": 111,
-              "students": 36
-            },
-            {
-              "year": 112,
-              "students": 36
-            },
-            {
-              "year": 113,
-              "students": 29
             }
           ],
           "status": "正常",
@@ -5339,14 +5629,144 @@
             {
               "year": 113,
               "students": 23
+            },
+            {
+              "year": 114,
+              "students": 31
             }
           ],
           "status": "正常",
           "missingYears": [],
           "dataNotes": []
+        },
+        {
+          "id": "124708",
+          "code": "124708",
+          "name": "市立新發國小",
+          "countyId": "高雄市",
+          "townshipId": "高雄市:六龜區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "高雄市六龜區新發里和平路130號",
+          "phone": "(07)6791387",
+          "website": "https://www.xfp.kh.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/124708/C/高雄市/六龜區/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 120.662528,
+            "latitude": 23.031784
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 24
+            },
+            {
+              "year": 108,
+              "students": 26
+            },
+            {
+              "year": 109,
+              "students": 25
+            },
+            {
+              "year": 110,
+              "students": 28
+            },
+            {
+              "year": 111,
+              "students": 28
+            },
+            {
+              "year": 112,
+              "students": 24
+            },
+            {
+              "year": 113,
+              "students": 29
+            },
+            {
+              "year": 114,
+              "students": 28
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "124710",
+          "code": "124710",
+          "name": "市立新威國小",
+          "countyId": "高雄市",
+          "townshipId": "高雄市:六龜區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "高雄市六龜區新興里新威路212號",
+          "phone": "(07)6871134",
+          "website": "https://www.xwp.kh.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/124710/C/高雄市/六龜區/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 120.627633,
+            "latitude": 22.898426
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 47
+            },
+            {
+              "year": 108,
+              "students": 46
+            },
+            {
+              "year": 109,
+              "students": 40
+            },
+            {
+              "year": 110,
+              "students": 35
+            },
+            {
+              "year": 111,
+              "students": 36
+            },
+            {
+              "year": 112,
+              "students": 36
+            },
+            {
+              "year": 113,
+              "students": 29
+            },
+            {
+              "year": 114,
+              "students": 0
+            }
+          ],
+          "status": "待確認",
+          "missingYears": [],
+          "dataNotes": [
+            {
+              "type": "異常值",
+              "message": "114 學年學生數為 0，可能涉及停辦、整併或資料尚未更新。",
+              "severity": "warning",
+              "years": [
+                114
+              ]
+            }
+          ]
         }
       ],
-      "dataNotes": []
+      "dataNotes": [
+        {
+          "type": "異常值",
+          "message": "六龜區 有 1 所學校最新學年學生數為 0，需留意停辦或整併可能。",
+          "severity": "info",
+          "years": [
+            114
+          ]
+        }
+      ]
     },
     {
       "id": "高雄市:左營區",
@@ -5397,6 +5817,10 @@
             {
               "year": 113,
               "students": 2050
+            },
+            {
+              "year": 114,
+              "students": 2012
             }
           ],
           "status": "正常",
@@ -5446,6 +5870,10 @@
             },
             {
               "year": 113,
+              "students": 1953
+            },
+            {
+              "year": 114,
               "students": 1953
             }
           ],
@@ -5497,6 +5925,10 @@
             {
               "year": 113,
               "students": 1803
+            },
+            {
+              "year": 114,
+              "students": 1815
             }
           ],
           "status": "正常",
@@ -5547,56 +5979,10 @@
             {
               "year": 113,
               "students": 1748
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "533609",
-          "code": "533609",
-          "name": "市立新上國小",
-          "countyId": "高雄市",
-          "townshipId": "高雄市:左營區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "高雄市左營區大順一路100號",
-          "phone": "(07)5565940",
-          "website": "https://www.shsps.kh.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/533609/C/高雄市/左營區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.310872,
-            "latitude": 22.656823
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1596
             },
             {
-              "year": 108,
-              "students": 1648
-            },
-            {
-              "year": 109,
-              "students": 1684
-            },
-            {
-              "year": 110,
+              "year": 114,
               "students": 1748
-            },
-            {
-              "year": 111,
-              "students": 1801
-            },
-            {
-              "year": 112,
-              "students": 1810
-            },
-            {
-              "year": 113,
-              "students": 1747
             }
           ],
           "status": "正常",
@@ -5646,6 +6032,10 @@
             },
             {
               "year": 113,
+              "students": 1697
+            },
+            {
+              "year": 114,
               "students": 1697
             }
           ],
@@ -5697,6 +6087,64 @@
             {
               "year": 113,
               "students": 1672
+            },
+            {
+              "year": 114,
+              "students": 1672
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "533609",
+          "code": "533609",
+          "name": "市立新上國小",
+          "countyId": "高雄市",
+          "townshipId": "高雄市:左營區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "高雄市左營區大順一路100號",
+          "phone": "(07)5565940",
+          "website": "https://www.shsps.kh.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/533609/C/高雄市/左營區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.310872,
+            "latitude": 22.656823
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1596
+            },
+            {
+              "year": 108,
+              "students": 1648
+            },
+            {
+              "year": 109,
+              "students": 1684
+            },
+            {
+              "year": 110,
+              "students": 1748
+            },
+            {
+              "year": 111,
+              "students": 1801
+            },
+            {
+              "year": 112,
+              "students": 1810
+            },
+            {
+              "year": 113,
+              "students": 1747
+            },
+            {
+              "year": 114,
+              "students": 1643
             }
           ],
           "status": "正常",
@@ -5747,106 +6195,10 @@
             {
               "year": 113,
               "students": 1637
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "533612",
-          "code": "533612",
-          "name": "市立新光國小",
-          "countyId": "高雄市",
-          "townshipId": "高雄市:左營區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "高雄市左營區華夏路800號",
-          "phone": "(07)3438577",
-          "website": "https://www.skps.kh.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/533612/C/高雄市/左營區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.304347,
-            "latitude": 22.6797
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1639
             },
             {
-              "year": 108,
-              "students": 1662
-            },
-            {
-              "year": 109,
-              "students": 1695
-            },
-            {
-              "year": 110,
-              "students": 1716
-            },
-            {
-              "year": 111,
-              "students": 1753
-            },
-            {
-              "year": 112,
-              "students": 1747
-            },
-            {
-              "year": 113,
-              "students": 1622
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "533606",
-          "code": "533606",
-          "name": "市立勝利國小",
-          "countyId": "高雄市",
-          "townshipId": "高雄市:左營區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "高雄市左營區南屏路1號",
-          "phone": "(07)5522541",
-          "website": "https://www.slps.kh.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/533606/C/高雄市/左營區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.296044,
-            "latitude": 22.672235
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1533
-            },
-            {
-              "year": 108,
-              "students": 1527
-            },
-            {
-              "year": 109,
-              "students": 1519
-            },
-            {
-              "year": 110,
-              "students": 1572
-            },
-            {
-              "year": 111,
-              "students": 1613
-            },
-            {
-              "year": 112,
-              "students": 1647
-            },
-            {
-              "year": 113,
-              "students": 1601
+              "year": 114,
+              "students": 1637
             }
           ],
           "status": "正常",
@@ -5897,6 +6249,118 @@
             {
               "year": 113,
               "students": 1554
+            },
+            {
+              "year": 114,
+              "students": 1554
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "533606",
+          "code": "533606",
+          "name": "市立勝利國小",
+          "countyId": "高雄市",
+          "townshipId": "高雄市:左營區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "高雄市左營區南屏路1號",
+          "phone": "(07)5522541",
+          "website": "https://www.slps.kh.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/533606/C/高雄市/左營區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.296044,
+            "latitude": 22.672235
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1533
+            },
+            {
+              "year": 108,
+              "students": 1527
+            },
+            {
+              "year": 109,
+              "students": 1519
+            },
+            {
+              "year": 110,
+              "students": 1572
+            },
+            {
+              "year": 111,
+              "students": 1613
+            },
+            {
+              "year": 112,
+              "students": 1647
+            },
+            {
+              "year": 113,
+              "students": 1601
+            },
+            {
+              "year": 114,
+              "students": 1531
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "533612",
+          "code": "533612",
+          "name": "市立新光國小",
+          "countyId": "高雄市",
+          "townshipId": "高雄市:左營區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "高雄市左營區華夏路800號",
+          "phone": "(07)3438577",
+          "website": "https://www.skps.kh.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/533612/C/高雄市/左營區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.304347,
+            "latitude": 22.6797
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1639
+            },
+            {
+              "year": 108,
+              "students": 1662
+            },
+            {
+              "year": 109,
+              "students": 1695
+            },
+            {
+              "year": 110,
+              "students": 1716
+            },
+            {
+              "year": 111,
+              "students": 1753
+            },
+            {
+              "year": 112,
+              "students": 1747
+            },
+            {
+              "year": 113,
+              "students": 1622
+            },
+            {
+              "year": 114,
+              "students": 1528
             }
           ],
           "status": "正常",
@@ -5946,6 +6410,10 @@
             },
             {
               "year": 113,
+              "students": 1488
+            },
+            {
+              "year": 114,
               "students": 1488
             }
           ],
@@ -5997,6 +6465,10 @@
             {
               "year": 113,
               "students": 1271
+            },
+            {
+              "year": 114,
+              "students": 1166
             }
           ],
           "status": "正常",
@@ -6047,6 +6519,10 @@
             {
               "year": 113,
               "students": 996
+            },
+            {
+              "year": 114,
+              "students": 903
             }
           ],
           "status": "正常",
@@ -6096,6 +6572,10 @@
             },
             {
               "year": 113,
+              "students": 655
+            },
+            {
+              "year": 114,
               "students": 655
             }
           ],
@@ -6147,6 +6627,10 @@
             {
               "year": 113,
               "students": 459
+            },
+            {
+              "year": 114,
+              "students": 437
             }
           ],
           "status": "正常",
@@ -6196,6 +6680,10 @@
             },
             {
               "year": 113,
+              "students": 308
+            },
+            {
+              "year": 114,
               "students": 308
             }
           ],
@@ -6247,6 +6735,10 @@
             {
               "year": 113,
               "students": 298
+            },
+            {
+              "year": 114,
+              "students": 288
             }
           ],
           "status": "正常",
@@ -6297,6 +6789,10 @@
             {
               "year": 113,
               "students": 256
+            },
+            {
+              "year": 114,
+              "students": 261
             }
           ],
           "status": "正常",
@@ -6347,6 +6843,10 @@
             {
               "year": 113,
               "students": 205
+            },
+            {
+              "year": 114,
+              "students": 228
             }
           ],
           "status": "正常",
@@ -6396,6 +6896,10 @@
             },
             {
               "year": 113,
+              "students": 161
+            },
+            {
+              "year": 114,
               "students": 161
             }
           ],
@@ -6447,6 +6951,10 @@
             {
               "year": 113,
               "students": 69
+            },
+            {
+              "year": 114,
+              "students": 56
             }
           ],
           "status": "正常",
@@ -6505,6 +7013,10 @@
             {
               "year": 113,
               "students": 198
+            },
+            {
+              "year": 114,
+              "students": 184
             }
           ],
           "status": "正常",
@@ -6555,6 +7067,10 @@
             {
               "year": 113,
               "students": 173
+            },
+            {
+              "year": 114,
+              "students": 162
             }
           ],
           "status": "正常",
@@ -6604,6 +7120,10 @@
             },
             {
               "year": 113,
+              "students": 122
+            },
+            {
+              "year": 114,
               "students": 122
             }
           ],
@@ -6655,6 +7175,10 @@
             {
               "year": 113,
               "students": 40
+            },
+            {
+              "year": 114,
+              "students": 38
             }
           ],
           "status": "正常",
@@ -6713,6 +7237,10 @@
             {
               "year": 113,
               "students": 47
+            },
+            {
+              "year": 114,
+              "students": 45
             }
           ],
           "status": "正常",
@@ -6762,6 +7290,10 @@
             },
             {
               "year": 113,
+              "students": 44
+            },
+            {
+              "year": 114,
               "students": 44
             }
           ],
@@ -6813,6 +7345,10 @@
             {
               "year": 113,
               "students": 39
+            },
+            {
+              "year": 114,
+              "students": 44
             }
           ],
           "status": "正常",
@@ -6871,6 +7407,10 @@
             {
               "year": 113,
               "students": 100
+            },
+            {
+              "year": 114,
+              "students": 88
             }
           ],
           "status": "正常",
@@ -6920,6 +7460,10 @@
             },
             {
               "year": 113,
+              "students": 57
+            },
+            {
+              "year": 114,
               "students": 57
             }
           ],
@@ -6971,6 +7515,10 @@
             {
               "year": 113,
               "students": 20
+            },
+            {
+              "year": 114,
+              "students": 21
             }
           ],
           "status": "正常",
@@ -6985,56 +7533,6 @@
       "name": "杉林區",
       "countyId": "高雄市",
       "schools": [
-        {
-          "id": "124730",
-          "code": "124730",
-          "name": "市立巴楠花部落國(中)小",
-          "countyId": "高雄市",
-          "townshipId": "高雄市:杉林區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "高雄市杉林區大愛里和氣街15號",
-          "phone": "(07)6776031",
-          "website": "https://www.mzu.kh.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/124730/C/高雄市/杉林區/縣市立/特偏/無/",
-          "coordinates": {
-            "longitude": 120.539666,
-            "latitude": 22.964833
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 113
-            },
-            {
-              "year": 108,
-              "students": 114
-            },
-            {
-              "year": 109,
-              "students": 110
-            },
-            {
-              "year": 110,
-              "students": 108
-            },
-            {
-              "year": 111,
-              "students": 101
-            },
-            {
-              "year": 112,
-              "students": 102
-            },
-            {
-              "year": 113,
-              "students": 99
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
         {
           "id": "124535",
           "code": "124535",
@@ -7079,6 +7577,64 @@
             {
               "year": 113,
               "students": 91
+            },
+            {
+              "year": 114,
+              "students": 91
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "124730",
+          "code": "124730",
+          "name": "市立巴楠花部落國(中)小",
+          "countyId": "高雄市",
+          "townshipId": "高雄市:杉林區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "高雄市杉林區大愛里和氣街15號",
+          "phone": "(07)6776031",
+          "website": "https://www.mzu.kh.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/124730/C/高雄市/杉林區/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 120.539666,
+            "latitude": 22.964833
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 113
+            },
+            {
+              "year": 108,
+              "students": 114
+            },
+            {
+              "year": 109,
+              "students": 110
+            },
+            {
+              "year": 110,
+              "students": 108
+            },
+            {
+              "year": 111,
+              "students": 101
+            },
+            {
+              "year": 112,
+              "students": 102
+            },
+            {
+              "year": 113,
+              "students": 99
+            },
+            {
+              "year": 114,
+              "students": 90
             }
           ],
           "status": "正常",
@@ -7129,6 +7685,64 @@
             {
               "year": 113,
               "students": 72
+            },
+            {
+              "year": 114,
+              "students": 72
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "124714",
+          "code": "124714",
+          "name": "市立新庄國小",
+          "countyId": "高雄市",
+          "townshipId": "高雄市:杉林區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "高雄市杉林區新庄里司馬路45巷5號",
+          "phone": "(07)6771755",
+          "website": "https://www.szp.kh.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/124714/C/高雄市/杉林區/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 120.559909,
+            "latitude": 22.989369
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 41
+            },
+            {
+              "year": 108,
+              "students": 44
+            },
+            {
+              "year": 109,
+              "students": 44
+            },
+            {
+              "year": 110,
+              "students": 45
+            },
+            {
+              "year": 111,
+              "students": 41
+            },
+            {
+              "year": 112,
+              "students": 45
+            },
+            {
+              "year": 113,
+              "students": 42
+            },
+            {
+              "year": 114,
+              "students": 42
             }
           ],
           "status": "正常",
@@ -7179,55 +7793,9 @@
             {
               "year": 113,
               "students": 47
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "124714",
-          "code": "124714",
-          "name": "市立新庄國小",
-          "countyId": "高雄市",
-          "townshipId": "高雄市:杉林區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "高雄市杉林區新庄里司馬路45巷5號",
-          "phone": "(07)6771755",
-          "website": "https://www.szp.kh.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/124714/C/高雄市/杉林區/縣市立/特偏/無/",
-          "coordinates": {
-            "longitude": 120.559909,
-            "latitude": 22.989369
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 41
             },
             {
-              "year": 108,
-              "students": 44
-            },
-            {
-              "year": 109,
-              "students": 44
-            },
-            {
-              "year": 110,
-              "students": 45
-            },
-            {
-              "year": 111,
-              "students": 41
-            },
-            {
-              "year": 112,
-              "students": 45
-            },
-            {
-              "year": 113,
+              "year": 114,
               "students": 42
             }
           ],
@@ -7279,6 +7847,10 @@
             {
               "year": 113,
               "students": 35
+            },
+            {
+              "year": 114,
+              "students": 30
             }
           ],
           "status": "正常",
@@ -7329,87 +7901,24 @@
             {
               "year": 113,
               "students": 25
+            },
+            {
+              "year": 114,
+              "students": 25
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "杉林區 有 1 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "高雄市:那瑪夏區",
       "name": "那瑪夏區",
       "countyId": "高雄市",
       "schools": [
-        {
-          "id": "124731",
-          "code": "124731",
-          "name": "市立民生國小",
-          "countyId": "高雄市",
-          "townshipId": "高雄市:那瑪夏區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "高雄市那瑪夏區達卡努瓦里大光巷159號",
-          "phone": "(07)6701233",
-          "website": "https://www.msp.kh.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/124731/C/高雄市/那瑪夏區/縣市立/極偏/無/",
-          "coordinates": {
-            "longitude": 120.720616,
-            "latitude": 23.276348
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 96
-            },
-            {
-              "year": 108,
-              "students": 103
-            },
-            {
-              "year": 109,
-              "students": 103
-            },
-            {
-              "year": 110,
-              "students": 104
-            },
-            {
-              "year": 111,
-              "students": 111
-            },
-            {
-              "year": 112,
-              "students": 100
-            },
-            {
-              "year": 113,
-              "students": 102
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
         {
           "id": "124542",
           "code": "124542",
@@ -7454,6 +7963,64 @@
             {
               "year": 113,
               "students": 96
+            },
+            {
+              "year": 114,
+              "students": 96
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "124731",
+          "code": "124731",
+          "name": "市立民生國小",
+          "countyId": "高雄市",
+          "townshipId": "高雄市:那瑪夏區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "高雄市那瑪夏區達卡努瓦里大光巷159號",
+          "phone": "(07)6701233",
+          "website": "https://www.msp.kh.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/124731/C/高雄市/那瑪夏區/縣市立/極偏/無/",
+          "coordinates": {
+            "longitude": 120.720616,
+            "latitude": 23.276348
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 96
+            },
+            {
+              "year": 108,
+              "students": 103
+            },
+            {
+              "year": 109,
+              "students": 103
+            },
+            {
+              "year": 110,
+              "students": 104
+            },
+            {
+              "year": 111,
+              "students": 111
+            },
+            {
+              "year": 112,
+              "students": 100
+            },
+            {
+              "year": 113,
+              "students": 102
+            },
+            {
+              "year": 114,
+              "students": 95
             }
           ],
           "status": "正常",
@@ -7504,6 +8071,10 @@
             {
               "year": 113,
               "students": 59
+            },
+            {
+              "year": 114,
+              "students": 49
             }
           ],
           "status": "正常",
@@ -7562,6 +8133,10 @@
             {
               "year": 113,
               "students": 1560
+            },
+            {
+              "year": 114,
+              "students": 1560
             }
           ],
           "status": "正常",
@@ -7611,6 +8186,10 @@
             },
             {
               "year": 113,
+              "students": 1401
+            },
+            {
+              "year": 114,
               "students": 1401
             }
           ],
@@ -7662,6 +8241,10 @@
             {
               "year": 113,
               "students": 1392
+            },
+            {
+              "year": 114,
+              "students": 1349
             }
           ],
           "status": "正常",
@@ -7711,6 +8294,10 @@
             },
             {
               "year": 113,
+              "students": 1265
+            },
+            {
+              "year": 114,
               "students": 1265
             }
           ],
@@ -7762,6 +8349,10 @@
             {
               "year": 113,
               "students": 1011
+            },
+            {
+              "year": 114,
+              "students": 1003
             }
           ],
           "status": "正常",
@@ -7811,6 +8402,10 @@
             },
             {
               "year": 113,
+              "students": 884
+            },
+            {
+              "year": 114,
               "students": 884
             }
           ],
@@ -7862,6 +8457,10 @@
             {
               "year": 113,
               "students": 822
+            },
+            {
+              "year": 114,
+              "students": 823
             }
           ],
           "status": "正常",
@@ -7912,6 +8511,10 @@
             {
               "year": 113,
               "students": 742
+            },
+            {
+              "year": 114,
+              "students": 688
             }
           ],
           "status": "正常",
@@ -7962,6 +8565,10 @@
             {
               "year": 113,
               "students": 432
+            },
+            {
+              "year": 114,
+              "students": 422
             }
           ],
           "status": "正常",
@@ -8012,6 +8619,10 @@
             {
               "year": 113,
               "students": 347
+            },
+            {
+              "year": 114,
+              "students": 329
             }
           ],
           "status": "正常",
@@ -8061,6 +8672,10 @@
             },
             {
               "year": 113,
+              "students": 249
+            },
+            {
+              "year": 114,
               "students": 249
             }
           ],
@@ -8112,6 +8727,10 @@
             {
               "year": 113,
               "students": 216
+            },
+            {
+              "year": 114,
+              "students": 216
             }
           ],
           "status": "正常",
@@ -8162,6 +8781,10 @@
             {
               "year": 113,
               "students": 138
+            },
+            {
+              "year": 114,
+              "students": 152
             }
           ],
           "status": "正常",
@@ -8220,6 +8843,10 @@
             {
               "year": 113,
               "students": 1780
+            },
+            {
+              "year": 114,
+              "students": 1780
             }
           ],
           "status": "正常",
@@ -8270,6 +8897,10 @@
             {
               "year": 113,
               "students": 1513
+            },
+            {
+              "year": 114,
+              "students": 1491
             }
           ],
           "status": "正常",
@@ -8320,6 +8951,10 @@
             {
               "year": 113,
               "students": 731
+            },
+            {
+              "year": 114,
+              "students": 736
             }
           ],
           "status": "正常",
@@ -8370,56 +9005,10 @@
             {
               "year": 113,
               "students": 249
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "124616",
-          "code": "124616",
-          "name": "市立金潭國小",
-          "countyId": "高雄市",
-          "townshipId": "高雄市:林園區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "高雄市林園區中厝里金潭路40號",
-          "phone": "(07)6412332",
-          "website": "https://www.jtp.kh.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/124616/C/高雄市/林園區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.396094,
-            "latitude": 22.528656
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 242
             },
             {
-              "year": 108,
-              "students": 232
-            },
-            {
-              "year": 109,
-              "students": 222
-            },
-            {
-              "year": 110,
-              "students": 206
-            },
-            {
-              "year": 111,
-              "students": 216
-            },
-            {
-              "year": 112,
-              "students": 227
-            },
-            {
-              "year": 113,
-              "students": 230
+              "year": 114,
+              "students": 247
             }
           ],
           "status": "正常",
@@ -8470,6 +9059,64 @@
             {
               "year": 113,
               "students": 225
+            },
+            {
+              "year": 114,
+              "students": 212
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "124616",
+          "code": "124616",
+          "name": "市立金潭國小",
+          "countyId": "高雄市",
+          "townshipId": "高雄市:林園區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "高雄市林園區中厝里金潭路40號",
+          "phone": "(07)6412332",
+          "website": "https://www.jtp.kh.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/124616/C/高雄市/林園區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.396094,
+            "latitude": 22.528656
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 242
+            },
+            {
+              "year": 108,
+              "students": 232
+            },
+            {
+              "year": 109,
+              "students": 222
+            },
+            {
+              "year": 110,
+              "students": 206
+            },
+            {
+              "year": 111,
+              "students": 216
+            },
+            {
+              "year": 112,
+              "students": 227
+            },
+            {
+              "year": 113,
+              "students": 230
+            },
+            {
+              "year": 114,
+              "students": 210
             }
           ],
           "status": "正常",
@@ -8519,6 +9166,10 @@
             },
             {
               "year": 113,
+              "students": 149
+            },
+            {
+              "year": 114,
               "students": 149
             }
           ],
@@ -8570,6 +9221,10 @@
             {
               "year": 113,
               "students": 90
+            },
+            {
+              "year": 114,
+              "students": 93
             }
           ],
           "status": "正常",
@@ -8628,6 +9283,10 @@
             {
               "year": 113,
               "students": 982
+            },
+            {
+              "year": 114,
+              "students": 969
             }
           ],
           "status": "正常",
@@ -8677,6 +9336,10 @@
             },
             {
               "year": 113,
+              "students": 558
+            },
+            {
+              "year": 114,
               "students": 558
             }
           ],
@@ -8728,6 +9391,10 @@
             {
               "year": 113,
               "students": 114
+            },
+            {
+              "year": 114,
+              "students": 102
             }
           ],
           "status": "正常",
@@ -8777,6 +9444,10 @@
             },
             {
               "year": 113,
+              "students": 80
+            },
+            {
+              "year": 114,
               "students": 80
             }
           ],
@@ -8836,6 +9507,10 @@
             {
               "year": 113,
               "students": 2265
+            },
+            {
+              "year": 114,
+              "students": 2265
             }
           ],
           "status": "正常",
@@ -8886,6 +9561,10 @@
             {
               "year": 113,
               "students": 797
+            },
+            {
+              "year": 114,
+              "students": 719
             }
           ],
           "status": "正常",
@@ -8936,6 +9615,10 @@
             {
               "year": 113,
               "students": 325
+            },
+            {
+              "year": 114,
+              "students": 325
             }
           ],
           "status": "正常",
@@ -8985,6 +9668,10 @@
             },
             {
               "year": 113,
+              "students": 185
+            },
+            {
+              "year": 114,
               "students": 185
             }
           ],
@@ -9044,6 +9731,10 @@
             {
               "year": 113,
               "students": 1957
+            },
+            {
+              "year": 114,
+              "students": 1957
             }
           ],
           "status": "正常",
@@ -9093,6 +9784,10 @@
             },
             {
               "year": 113,
+              "students": 1900
+            },
+            {
+              "year": 114,
               "students": 1900
             }
           ],
@@ -9144,6 +9839,10 @@
             {
               "year": 113,
               "students": 1525
+            },
+            {
+              "year": 114,
+              "students": 1525
             }
           ],
           "status": "正常",
@@ -9194,6 +9893,10 @@
             {
               "year": 113,
               "students": 1497
+            },
+            {
+              "year": 114,
+              "students": 1388
             }
           ],
           "status": "正常",
@@ -9244,6 +9947,10 @@
             {
               "year": 113,
               "students": 1310
+            },
+            {
+              "year": 114,
+              "students": 1289
             }
           ],
           "status": "正常",
@@ -9294,6 +10001,10 @@
             {
               "year": 113,
               "students": 1228
+            },
+            {
+              "year": 114,
+              "students": 1218
             }
           ],
           "status": "正常",
@@ -9343,6 +10054,10 @@
             },
             {
               "year": 113,
+              "students": 862
+            },
+            {
+              "year": 114,
               "students": 862
             }
           ],
@@ -9394,6 +10109,10 @@
             {
               "year": 113,
               "students": 721
+            },
+            {
+              "year": 114,
+              "students": 682
             }
           ],
           "status": "正常",
@@ -9444,6 +10163,10 @@
             {
               "year": 113,
               "students": 692
+            },
+            {
+              "year": 114,
+              "students": 674
             }
           ],
           "status": "正常",
@@ -9494,6 +10217,10 @@
             {
               "year": 113,
               "students": 689
+            },
+            {
+              "year": 114,
+              "students": 653
             }
           ],
           "status": "正常",
@@ -9544,6 +10271,10 @@
             {
               "year": 113,
               "students": 487
+            },
+            {
+              "year": 114,
+              "students": 485
             }
           ],
           "status": "正常",
@@ -9593,6 +10324,10 @@
             },
             {
               "year": 113,
+              "students": 483
+            },
+            {
+              "year": 114,
               "students": 483
             }
           ],
@@ -9644,6 +10379,10 @@
             {
               "year": 113,
               "students": 479
+            },
+            {
+              "year": 114,
+              "students": 444
             }
           ],
           "status": "正常",
@@ -9694,6 +10433,10 @@
             {
               "year": 113,
               "students": 431
+            },
+            {
+              "year": 114,
+              "students": 429
             }
           ],
           "status": "正常",
@@ -9744,6 +10487,10 @@
             {
               "year": 113,
               "students": 428
+            },
+            {
+              "year": 114,
+              "students": 402
             }
           ],
           "status": "正常",
@@ -9794,6 +10541,64 @@
             {
               "year": 113,
               "students": 294
+            },
+            {
+              "year": 114,
+              "students": 294
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "593608",
+          "code": "593608",
+          "name": "市立明正國小",
+          "countyId": "高雄市",
+          "townshipId": "高雄市:前鎮區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "高雄市前鎮區明道路2號",
+          "phone": "(07)8110965",
+          "website": "https://www.mcps.kh.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/593608/C/高雄市/前鎮區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.326731,
+            "latitude": 22.580439
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 309
+            },
+            {
+              "year": 108,
+              "students": 289
+            },
+            {
+              "year": 109,
+              "students": 277
+            },
+            {
+              "year": 110,
+              "students": 274
+            },
+            {
+              "year": 111,
+              "students": 287
+            },
+            {
+              "year": 112,
+              "students": 288
+            },
+            {
+              "year": 113,
+              "students": 267
+            },
+            {
+              "year": 114,
+              "students": 290
             }
           ],
           "status": "正常",
@@ -9843,6 +10648,10 @@
             },
             {
               "year": 113,
+              "students": 281
+            },
+            {
+              "year": 114,
               "students": 281
             }
           ],
@@ -9894,56 +10703,10 @@
             {
               "year": 113,
               "students": 276
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "593608",
-          "code": "593608",
-          "name": "市立明正國小",
-          "countyId": "高雄市",
-          "townshipId": "高雄市:前鎮區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "高雄市前鎮區明道路2號",
-          "phone": "(07)8110965",
-          "website": "https://www.mcps.kh.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/593608/C/高雄市/前鎮區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.326731,
-            "latitude": 22.580439
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 309
             },
             {
-              "year": 108,
-              "students": 289
-            },
-            {
-              "year": 109,
-              "students": 277
-            },
-            {
-              "year": 110,
-              "students": 274
-            },
-            {
-              "year": 111,
-              "students": 287
-            },
-            {
-              "year": 112,
-              "students": 288
-            },
-            {
-              "year": 113,
-              "students": 267
+              "year": 114,
+              "students": 276
             }
           ],
           "status": "正常",
@@ -9994,6 +10757,10 @@
             {
               "year": 113,
               "students": 173
+            },
+            {
+              "year": 114,
+              "students": 152
             }
           ],
           "status": "正常",
@@ -10044,6 +10811,10 @@
             {
               "year": 113,
               "students": 154
+            },
+            {
+              "year": 114,
+              "students": 147
             }
           ],
           "status": "正常",
@@ -10093,6 +10864,10 @@
             },
             {
               "year": 113,
+              "students": 73
+            },
+            {
+              "year": 114,
               "students": 73
             }
           ],
@@ -10152,6 +10927,10 @@
             {
               "year": 113,
               "students": 393
+            },
+            {
+              "year": 114,
+              "students": 397
             }
           ],
           "status": "正常",
@@ -10202,56 +10981,10 @@
             {
               "year": 113,
               "students": 243
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "124701",
-          "code": "124701",
-          "name": "市立中壇國小",
-          "countyId": "高雄市",
-          "townshipId": "高雄市:美濃區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "高雄市美濃區中壇里忠孝路一段19號",
-          "phone": "(07)6812534",
-          "website": "https://www.ztp.kh.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/124701/C/高雄市/美濃區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.530572,
-            "latitude": 22.883998
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 242
             },
             {
-              "year": 108,
-              "students": 225
-            },
-            {
-              "year": 109,
-              "students": 221
-            },
-            {
-              "year": 110,
-              "students": 196
-            },
-            {
-              "year": 111,
-              "students": 185
-            },
-            {
-              "year": 112,
-              "students": 187
-            },
-            {
-              "year": 113,
-              "students": 173
+              "year": 114,
+              "students": 243
             }
           ],
           "status": "正常",
@@ -10302,6 +11035,10 @@
             {
               "year": 113,
               "students": 172
+            },
+            {
+              "year": 114,
+              "students": 172
             }
           ],
           "status": "正常",
@@ -10309,99 +11046,53 @@
           "dataNotes": []
         },
         {
-          "id": "124705",
-          "code": "124705",
-          "name": "市立吉東國小",
+          "id": "124701",
+          "code": "124701",
+          "name": "市立中壇國小",
           "countyId": "高雄市",
           "townshipId": "高雄市:美濃區",
           "educationLevel": "國小",
           "managementType": "公立",
-          "address": "高雄市美濃區吉東里吉頂路19號",
-          "phone": "(07)6831144",
-          "website": "https://www.jdp.kh.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/124705/C/高雄市/美濃區/縣市立/偏遠/無/",
+          "address": "高雄市美濃區中壇里忠孝路一段19號",
+          "phone": "(07)6812534",
+          "website": "https://www.ztp.kh.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/124701/C/高雄市/美濃區/縣市立/否/無/",
           "coordinates": {
-            "longitude": 120.546484,
-            "latitude": 22.853439
+            "longitude": 120.530572,
+            "latitude": 22.883998
           },
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 75
+              "students": 242
             },
             {
               "year": 108,
-              "students": 84
+              "students": 225
             },
             {
               "year": 109,
-              "students": 83
+              "students": 221
             },
             {
               "year": 110,
-              "students": 87
+              "students": 196
             },
             {
               "year": 111,
-              "students": 97
+              "students": 185
             },
             {
               "year": 112,
-              "students": 101
+              "students": 187
             },
             {
               "year": 113,
-              "students": 97
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "124699",
-          "code": "124699",
-          "name": "市立吉洋國小",
-          "countyId": "高雄市",
-          "townshipId": "高雄市:美濃區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "高雄市美濃區吉和里忠孝路二段59號",
-          "phone": "(07)6831849",
-          "website": "https://www.jyp.kh.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/124699/C/高雄市/美濃區/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.520527,
-            "latitude": 22.86139
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 110
+              "students": 173
             },
             {
-              "year": 108,
-              "students": 93
-            },
-            {
-              "year": 109,
-              "students": 94
-            },
-            {
-              "year": 110,
-              "students": 88
-            },
-            {
-              "year": 111,
-              "students": 84
-            },
-            {
-              "year": 112,
-              "students": 82
-            },
-            {
-              "year": 113,
-              "students": 78
+              "year": 114,
+              "students": 156
             }
           ],
           "status": "正常",
@@ -10452,6 +11143,64 @@
             {
               "year": 113,
               "students": 78
+            },
+            {
+              "year": 114,
+              "students": 89
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "124705",
+          "code": "124705",
+          "name": "市立吉東國小",
+          "countyId": "高雄市",
+          "townshipId": "高雄市:美濃區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "高雄市美濃區吉東里吉頂路19號",
+          "phone": "(07)6831144",
+          "website": "https://www.jdp.kh.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/124705/C/高雄市/美濃區/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.546484,
+            "latitude": 22.853439
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 75
+            },
+            {
+              "year": 108,
+              "students": 84
+            },
+            {
+              "year": 109,
+              "students": 83
+            },
+            {
+              "year": 110,
+              "students": 87
+            },
+            {
+              "year": 111,
+              "students": 97
+            },
+            {
+              "year": 112,
+              "students": 101
+            },
+            {
+              "year": 113,
+              "students": 97
+            },
+            {
+              "year": 114,
+              "students": 87
             }
           ],
           "status": "正常",
@@ -10502,6 +11251,64 @@
             {
               "year": 113,
               "students": 71
+            },
+            {
+              "year": 114,
+              "students": 67
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "124699",
+          "code": "124699",
+          "name": "市立吉洋國小",
+          "countyId": "高雄市",
+          "townshipId": "高雄市:美濃區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "高雄市美濃區吉和里忠孝路二段59號",
+          "phone": "(07)6831849",
+          "website": "https://www.jyp.kh.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/124699/C/高雄市/美濃區/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.520527,
+            "latitude": 22.86139
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 110
+            },
+            {
+              "year": 108,
+              "students": 93
+            },
+            {
+              "year": 109,
+              "students": 94
+            },
+            {
+              "year": 110,
+              "students": 88
+            },
+            {
+              "year": 111,
+              "students": 84
+            },
+            {
+              "year": 112,
+              "students": 82
+            },
+            {
+              "year": 113,
+              "students": 78
+            },
+            {
+              "year": 114,
+              "students": 67
             }
           ],
           "status": "正常",
@@ -10552,6 +11359,10 @@
             {
               "year": 113,
               "students": 71
+            },
+            {
+              "year": 114,
+              "students": 66
             }
           ],
           "status": "正常",
@@ -10601,6 +11412,10 @@
             },
             {
               "year": 113,
+              "students": 65
+            },
+            {
+              "year": 114,
               "students": 65
             }
           ],
@@ -10652,6 +11467,10 @@
             {
               "year": 113,
               "students": 63
+            },
+            {
+              "year": 114,
+              "students": 63
             }
           ],
           "status": "正常",
@@ -10702,6 +11521,10 @@
             {
               "year": 113,
               "students": 63
+            },
+            {
+              "year": 114,
+              "students": 61
             }
           ],
           "status": "正常",
@@ -10752,6 +11575,10 @@
             {
               "year": 113,
               "students": 34
+            },
+            {
+              "year": 114,
+              "students": 57
             }
           ],
           "status": "正常",
@@ -10810,6 +11637,10 @@
             {
               "year": 113,
               "students": 7262
+            },
+            {
+              "year": 114,
+              "students": 7262
             }
           ],
           "status": "正常",
@@ -10859,6 +11690,10 @@
             },
             {
               "year": 113,
+              "students": 3045
+            },
+            {
+              "year": 114,
               "students": 3045
             }
           ],
@@ -10910,6 +11745,10 @@
             {
               "year": 113,
               "students": 2590
+            },
+            {
+              "year": 114,
+              "students": 2590
             }
           ],
           "status": "正常",
@@ -10960,6 +11799,10 @@
             {
               "year": 113,
               "students": 2323
+            },
+            {
+              "year": 114,
+              "students": 2268
             }
           ],
           "status": "正常",
@@ -11009,6 +11852,10 @@
             },
             {
               "year": 113,
+              "students": 1772
+            },
+            {
+              "year": 114,
               "students": 1772
             }
           ],
@@ -11060,6 +11907,10 @@
             {
               "year": 113,
               "students": 1551
+            },
+            {
+              "year": 114,
+              "students": 1551
             }
           ],
           "status": "正常",
@@ -11110,56 +11961,10 @@
             {
               "year": 113,
               "students": 1504
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "580301",
-          "code": "580301",
-          "name": "國立高師大附中",
-          "countyId": "高雄市",
-          "townshipId": "高雄市:苓雅區",
-          "educationLevel": "高中職",
-          "managementType": "公立",
-          "address": "高雄市苓雅區凱旋二路89號",
-          "phone": "(07)7613875",
-          "website": "http://www.nknush.kh.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/580301/H/高雄市/苓雅區/國立/否/無/",
-          "coordinates": {
-            "longitude": 120.320387,
-            "latitude": 22.626196
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1382
             },
             {
-              "year": 108,
-              "students": 1385
-            },
-            {
-              "year": 109,
-              "students": 1391
-            },
-            {
-              "year": 110,
-              "students": 1383
-            },
-            {
-              "year": 111,
-              "students": 1384
-            },
-            {
-              "year": 112,
-              "students": 1379
-            },
-            {
-              "year": 113,
-              "students": 1363
+              "year": 114,
+              "students": 1430
             }
           ],
           "status": "正常",
@@ -11210,6 +12015,64 @@
             {
               "year": 113,
               "students": 1316
+            },
+            {
+              "year": 114,
+              "students": 1366
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "580301",
+          "code": "580301",
+          "name": "國立高師大附中",
+          "countyId": "高雄市",
+          "townshipId": "高雄市:苓雅區",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "高雄市苓雅區凱旋二路89號",
+          "phone": "(07)7613875",
+          "website": "http://www.nknush.kh.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/580301/H/高雄市/苓雅區/國立/否/無/",
+          "coordinates": {
+            "longitude": 120.320387,
+            "latitude": 22.626196
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1382
+            },
+            {
+              "year": 108,
+              "students": 1385
+            },
+            {
+              "year": 109,
+              "students": 1391
+            },
+            {
+              "year": 110,
+              "students": 1383
+            },
+            {
+              "year": 111,
+              "students": 1384
+            },
+            {
+              "year": 112,
+              "students": 1379
+            },
+            {
+              "year": 113,
+              "students": 1363
+            },
+            {
+              "year": 114,
+              "students": 1361
             }
           ],
           "status": "正常",
@@ -11260,6 +12123,10 @@
             {
               "year": 113,
               "students": 855
+            },
+            {
+              "year": 114,
+              "students": 827
             }
           ],
           "status": "正常",
@@ -11309,6 +12176,10 @@
             },
             {
               "year": 113,
+              "students": 584
+            },
+            {
+              "year": 114,
               "students": 584
             }
           ],
@@ -11360,56 +12231,10 @@
             {
               "year": 113,
               "students": 580
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "583604",
-          "code": "583604",
-          "name": "市立凱旋國小",
-          "countyId": "高雄市",
-          "townshipId": "高雄市:苓雅區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "高雄市苓雅區憲政路235號",
-          "phone": "(07)2235181",
-          "website": "https://www.ksps.kh.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/583604/C/高雄市/苓雅區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.320085,
-            "latitude": 22.636305
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 468
             },
             {
-              "year": 108,
-              "students": 479
-            },
-            {
-              "year": 109,
-              "students": 499
-            },
-            {
-              "year": 110,
-              "students": 487
-            },
-            {
-              "year": 111,
-              "students": 506
-            },
-            {
-              "year": 112,
-              "students": 494
-            },
-            {
-              "year": 113,
-              "students": 466
+              "year": 114,
+              "students": 573
             }
           ],
           "status": "正常",
@@ -11459,6 +12284,10 @@
             },
             {
               "year": 113,
+              "students": 448
+            },
+            {
+              "year": 114,
               "students": 448
             }
           ],
@@ -11510,6 +12339,10 @@
             {
               "year": 113,
               "students": 435
+            },
+            {
+              "year": 114,
+              "students": 432
             }
           ],
           "status": "正常",
@@ -11560,6 +12393,64 @@
             {
               "year": 113,
               "students": 426
+            },
+            {
+              "year": 114,
+              "students": 432
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "583604",
+          "code": "583604",
+          "name": "市立凱旋國小",
+          "countyId": "高雄市",
+          "townshipId": "高雄市:苓雅區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "高雄市苓雅區憲政路235號",
+          "phone": "(07)2235181",
+          "website": "https://www.ksps.kh.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/583604/C/高雄市/苓雅區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.320085,
+            "latitude": 22.636305
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 468
+            },
+            {
+              "year": 108,
+              "students": 479
+            },
+            {
+              "year": 109,
+              "students": 499
+            },
+            {
+              "year": 110,
+              "students": 487
+            },
+            {
+              "year": 111,
+              "students": 506
+            },
+            {
+              "year": 112,
+              "students": 494
+            },
+            {
+              "year": 113,
+              "students": 466
+            },
+            {
+              "year": 114,
+              "students": 415
             }
           ],
           "status": "正常",
@@ -11609,6 +12500,10 @@
             },
             {
               "year": 113,
+              "students": 237
+            },
+            {
+              "year": 114,
               "students": 237
             }
           ],
@@ -11660,6 +12555,10 @@
             {
               "year": 113,
               "students": 193
+            },
+            {
+              "year": 114,
+              "students": 171
             }
           ],
           "status": "正常",
@@ -11674,56 +12573,6 @@
       "name": "茂林區",
       "countyId": "高雄市",
       "schools": [
-        {
-          "id": "124732",
-          "code": "124732",
-          "name": "市立茂林國小",
-          "countyId": "高雄市",
-          "townshipId": "高雄市:茂林區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "高雄市茂林區茂林里4之3號",
-          "phone": "(07)6801043",
-          "website": "https://www.mlp.kh.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/124732/C/高雄市/茂林區/縣市立/特偏/無/",
-          "coordinates": {
-            "longitude": 120.664565,
-            "latitude": 22.88632
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 42
-            },
-            {
-              "year": 108,
-              "students": 44
-            },
-            {
-              "year": 109,
-              "students": 37
-            },
-            {
-              "year": 110,
-              "students": 31
-            },
-            {
-              "year": 111,
-              "students": 30
-            },
-            {
-              "year": 112,
-              "students": 34
-            },
-            {
-              "year": 113,
-              "students": 36
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
         {
           "id": "124733",
           "code": "124733",
@@ -11768,6 +12617,64 @@
             {
               "year": 113,
               "students": 32
+            },
+            {
+              "year": 114,
+              "students": 33
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "124732",
+          "code": "124732",
+          "name": "市立茂林國小",
+          "countyId": "高雄市",
+          "townshipId": "高雄市:茂林區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "高雄市茂林區茂林里4之3號",
+          "phone": "(07)6801043",
+          "website": "https://www.mlp.kh.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/124732/C/高雄市/茂林區/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 120.664565,
+            "latitude": 22.88632
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 42
+            },
+            {
+              "year": 108,
+              "students": 44
+            },
+            {
+              "year": 109,
+              "students": 37
+            },
+            {
+              "year": 110,
+              "students": 31
+            },
+            {
+              "year": 111,
+              "students": 30
+            },
+            {
+              "year": 112,
+              "students": 34
+            },
+            {
+              "year": 113,
+              "students": 36
+            },
+            {
+              "year": 114,
+              "students": 31
             }
           ],
           "status": "正常",
@@ -11817,6 +12724,10 @@
             },
             {
               "year": 113,
+              "students": 22
+            },
+            {
+              "year": 114,
               "students": 22
             }
           ],
@@ -11876,6 +12787,10 @@
             {
               "year": 113,
               "students": 603
+            },
+            {
+              "year": 114,
+              "students": 590
             }
           ],
           "status": "正常",
@@ -11925,6 +12840,10 @@
             },
             {
               "year": 113,
+              "students": 392
+            },
+            {
+              "year": 114,
               "students": 392
             }
           ],
@@ -11976,56 +12895,10 @@
             {
               "year": 113,
               "students": 385
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "124680",
-          "code": "124680",
-          "name": "市立茄萣區成功國小",
-          "countyId": "高雄市",
-          "townshipId": "高雄市:茄萣區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "高雄市茄萣區吉定里成功路1號",
-          "phone": "(07)6902053",
-          "website": "https://www.tgn.kh.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/124680/C/高雄市/茄萣區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.186033,
-            "latitude": 22.888722
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 273
             },
             {
-              "year": 108,
-              "students": 248
-            },
-            {
-              "year": 109,
-              "students": 219
-            },
-            {
-              "year": 110,
-              "students": 200
-            },
-            {
-              "year": 111,
-              "students": 187
-            },
-            {
-              "year": 112,
-              "students": 175
-            },
-            {
-              "year": 113,
-              "students": 175
+              "year": 114,
+              "students": 385
             }
           ],
           "status": "正常",
@@ -12076,6 +12949,64 @@
             {
               "year": 113,
               "students": 166
+            },
+            {
+              "year": 114,
+              "students": 162
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "124680",
+          "code": "124680",
+          "name": "市立茄萣區成功國小",
+          "countyId": "高雄市",
+          "townshipId": "高雄市:茄萣區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "高雄市茄萣區吉定里成功路1號",
+          "phone": "(07)6902053",
+          "website": "https://www.tgn.kh.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/124680/C/高雄市/茄萣區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.186033,
+            "latitude": 22.888722
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 273
+            },
+            {
+              "year": 108,
+              "students": 248
+            },
+            {
+              "year": 109,
+              "students": 219
+            },
+            {
+              "year": 110,
+              "students": 200
+            },
+            {
+              "year": 111,
+              "students": 187
+            },
+            {
+              "year": 112,
+              "students": 175
+            },
+            {
+              "year": 113,
+              "students": 175
+            },
+            {
+              "year": 114,
+              "students": 161
             }
           ],
           "status": "正常",
@@ -12126,6 +13057,10 @@
             {
               "year": 113,
               "students": 160
+            },
+            {
+              "year": 114,
+              "students": 152
             }
           ],
           "status": "正常",
@@ -12184,6 +13119,10 @@
             {
               "year": 113,
               "students": 65
+            },
+            {
+              "year": 114,
+              "students": 72
             }
           ],
           "status": "正常",
@@ -12233,6 +13172,10 @@
             },
             {
               "year": 113,
+              "students": 52
+            },
+            {
+              "year": 114,
               "students": 52
             }
           ],
@@ -12284,6 +13227,10 @@
             {
               "year": 113,
               "students": 50
+            },
+            {
+              "year": 114,
+              "students": 41
             }
           ],
           "status": "正常",
@@ -12333,6 +13280,10 @@
             },
             {
               "year": 113,
+              "students": 29
+            },
+            {
+              "year": 114,
               "students": 29
             }
           ],
@@ -12384,6 +13335,10 @@
             {
               "year": 113,
               "students": 29
+            },
+            {
+              "year": 114,
+              "students": 26
             }
           ],
           "status": "正常",
@@ -12433,6 +13388,10 @@
             },
             {
               "year": 113,
+              "students": 10
+            },
+            {
+              "year": 114,
               "students": 10
             }
           ],
@@ -12492,6 +13451,10 @@
             {
               "year": 113,
               "students": 863
+            },
+            {
+              "year": 114,
+              "students": 827
             }
           ],
           "status": "正常",
@@ -12542,6 +13505,10 @@
             {
               "year": 113,
               "students": 460
+            },
+            {
+              "year": 114,
+              "students": 469
             }
           ],
           "status": "正常",
@@ -12592,6 +13559,10 @@
             {
               "year": 113,
               "students": 408
+            },
+            {
+              "year": 114,
+              "students": 408
             }
           ],
           "status": "正常",
@@ -12641,6 +13612,10 @@
             },
             {
               "year": 113,
+              "students": 143
+            },
+            {
+              "year": 114,
               "students": 143
             }
           ],
@@ -12700,6 +13675,10 @@
             {
               "year": 113,
               "students": 14957
+            },
+            {
+              "year": 114,
+              "students": 14957
             }
           ],
           "status": "正常",
@@ -12749,6 +13728,10 @@
             },
             {
               "year": 113,
+              "students": 1395
+            },
+            {
+              "year": 114,
               "students": 1395
             }
           ],
@@ -12800,6 +13783,10 @@
             {
               "year": 113,
               "students": 630
+            },
+            {
+              "year": 114,
+              "students": 612
             }
           ],
           "status": "正常",
@@ -12850,6 +13837,10 @@
             {
               "year": 113,
               "students": 583
+            },
+            {
+              "year": 114,
+              "students": 572
             }
           ],
           "status": "正常",
@@ -12900,6 +13891,10 @@
             {
               "year": 113,
               "students": 557
+            },
+            {
+              "year": 114,
+              "students": 535
             }
           ],
           "status": "正常",
@@ -12949,6 +13944,10 @@
             },
             {
               "year": 113,
+              "students": 142
+            },
+            {
+              "year": 114,
               "students": 142
             }
           ],
@@ -13008,6 +14007,10 @@
             {
               "year": 113,
               "students": 476
+            },
+            {
+              "year": 114,
+              "students": 455
             }
           ],
           "status": "正常",
@@ -13058,6 +14061,10 @@
             {
               "year": 113,
               "students": 346
+            },
+            {
+              "year": 114,
+              "students": 310
             }
           ],
           "status": "正常",
@@ -13107,6 +14114,10 @@
             },
             {
               "year": 113,
+              "students": 300
+            },
+            {
+              "year": 114,
               "students": 300
             }
           ],
@@ -13158,6 +14169,10 @@
             {
               "year": 113,
               "students": 219
+            },
+            {
+              "year": 114,
+              "students": 210
             }
           ],
           "status": "正常",
@@ -13208,6 +14223,10 @@
             {
               "year": 113,
               "students": 83
+            },
+            {
+              "year": 114,
+              "students": 77
             }
           ],
           "status": "正常",
@@ -13258,6 +14277,10 @@
             {
               "year": 113,
               "students": 72
+            },
+            {
+              "year": 114,
+              "students": 56
             }
           ],
           "status": "正常",
@@ -13316,6 +14339,10 @@
             {
               "year": 113,
               "students": 1757
+            },
+            {
+              "year": 114,
+              "students": 1757
             }
           ],
           "status": "正常",
@@ -13366,6 +14393,10 @@
             {
               "year": 113,
               "students": 1384
+            },
+            {
+              "year": 114,
+              "students": 1345
             }
           ],
           "status": "正常",
@@ -13415,6 +14446,10 @@
             },
             {
               "year": 113,
+              "students": 1140
+            },
+            {
+              "year": 114,
               "students": 1140
             }
           ],
@@ -13466,6 +14501,10 @@
             {
               "year": 113,
               "students": 568
+            },
+            {
+              "year": 114,
+              "students": 542
             }
           ],
           "status": "正常",
@@ -13516,6 +14555,10 @@
             {
               "year": 113,
               "students": 297
+            },
+            {
+              "year": 114,
+              "students": 269
             }
           ],
           "status": "正常",
@@ -13566,6 +14609,10 @@
             {
               "year": 113,
               "students": 244
+            },
+            {
+              "year": 114,
+              "students": 226
             }
           ],
           "status": "正常",
@@ -13624,6 +14671,10 @@
             {
               "year": 113,
               "students": 6192
+            },
+            {
+              "year": 114,
+              "students": 6192
             }
           ],
           "status": "正常",
@@ -13674,6 +14725,10 @@
             {
               "year": 113,
               "students": 2049
+            },
+            {
+              "year": 114,
+              "students": 2026
             }
           ],
           "status": "正常",
@@ -13724,6 +14779,10 @@
             {
               "year": 113,
               "students": 1913
+            },
+            {
+              "year": 114,
+              "students": 1880
             }
           ],
           "status": "正常",
@@ -13774,56 +14833,10 @@
             {
               "year": 113,
               "students": 1779
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "543607",
-          "code": "543607",
-          "name": "市立楠陽國小",
-          "countyId": "高雄市",
-          "townshipId": "高雄市:楠梓區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "高雄市楠梓區楠陽路100號",
-          "phone": "(07)3520675",
-          "website": "https://www.nyps.kh.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/543607/C/高雄市/楠梓區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.330982,
-            "latitude": 22.725408
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1337
             },
             {
-              "year": 108,
-              "students": 1454
-            },
-            {
-              "year": 109,
-              "students": 1529
-            },
-            {
-              "year": 110,
-              "students": 1567
-            },
-            {
-              "year": 111,
-              "students": 1625
-            },
-            {
-              "year": 112,
-              "students": 1689
-            },
-            {
-              "year": 113,
-              "students": 1677
+              "year": 114,
+              "students": 1779
             }
           ],
           "status": "正常",
@@ -13874,6 +14887,64 @@
             {
               "year": 113,
               "students": 1676
+            },
+            {
+              "year": 114,
+              "students": 1676
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "543607",
+          "code": "543607",
+          "name": "市立楠陽國小",
+          "countyId": "高雄市",
+          "townshipId": "高雄市:楠梓區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "高雄市楠梓區楠陽路100號",
+          "phone": "(07)3520675",
+          "website": "https://www.nyps.kh.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/543607/C/高雄市/楠梓區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.330982,
+            "latitude": 22.725408
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1337
+            },
+            {
+              "year": 108,
+              "students": 1454
+            },
+            {
+              "year": 109,
+              "students": 1529
+            },
+            {
+              "year": 110,
+              "students": 1567
+            },
+            {
+              "year": 111,
+              "students": 1625
+            },
+            {
+              "year": 112,
+              "students": 1689
+            },
+            {
+              "year": 113,
+              "students": 1677
+            },
+            {
+              "year": 114,
+              "students": 1642
             }
           ],
           "status": "正常",
@@ -13924,6 +14995,10 @@
             {
               "year": 113,
               "students": 1607
+            },
+            {
+              "year": 114,
+              "students": 1556
             }
           ],
           "status": "正常",
@@ -13973,6 +15048,10 @@
             },
             {
               "year": 113,
+              "students": 1433
+            },
+            {
+              "year": 114,
               "students": 1433
             }
           ],
@@ -14024,56 +15103,10 @@
             {
               "year": 113,
               "students": 1153
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "543605",
-          "code": "543605",
-          "name": "市立莒光國小",
-          "countyId": "高雄市",
-          "townshipId": "高雄市:楠梓區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "高雄市楠梓區後昌路842號",
-          "phone": "(07)3612078",
-          "website": "https://www.chukps.kh.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/543605/C/高雄市/楠梓區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.295745,
-            "latitude": 22.711897
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1065
             },
             {
-              "year": 108,
-              "students": 1078
-            },
-            {
-              "year": 109,
-              "students": 1048
-            },
-            {
-              "year": 110,
-              "students": 1048
-            },
-            {
-              "year": 111,
-              "students": 1090
-            },
-            {
-              "year": 112,
-              "students": 1076
-            },
-            {
-              "year": 113,
-              "students": 1046
+              "year": 114,
+              "students": 1153
             }
           ],
           "status": "正常",
@@ -14124,6 +15157,64 @@
             {
               "year": 113,
               "students": 922
+            },
+            {
+              "year": 114,
+              "students": 1019
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "543605",
+          "code": "543605",
+          "name": "市立莒光國小",
+          "countyId": "高雄市",
+          "townshipId": "高雄市:楠梓區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "高雄市楠梓區後昌路842號",
+          "phone": "(07)3612078",
+          "website": "https://www.chukps.kh.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/543605/C/高雄市/楠梓區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.295745,
+            "latitude": 22.711897
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1065
+            },
+            {
+              "year": 108,
+              "students": 1078
+            },
+            {
+              "year": 109,
+              "students": 1048
+            },
+            {
+              "year": 110,
+              "students": 1048
+            },
+            {
+              "year": 111,
+              "students": 1090
+            },
+            {
+              "year": 112,
+              "students": 1076
+            },
+            {
+              "year": 113,
+              "students": 1046
+            },
+            {
+              "year": 114,
+              "students": 966
             }
           ],
           "status": "正常",
@@ -14174,6 +15265,10 @@
             {
               "year": 113,
               "students": 921
+            },
+            {
+              "year": 114,
+              "students": 925
             }
           ],
           "status": "正常",
@@ -14223,6 +15318,10 @@
             },
             {
               "year": 113,
+              "students": 889
+            },
+            {
+              "year": 114,
               "students": 889
             }
           ],
@@ -14274,6 +15373,10 @@
             {
               "year": 113,
               "students": 832
+            },
+            {
+              "year": 114,
+              "students": 800
             }
           ],
           "status": "正常",
@@ -14323,6 +15426,10 @@
             },
             {
               "year": 113,
+              "students": 766
+            },
+            {
+              "year": 114,
               "students": 766
             }
           ],
@@ -14374,6 +15481,10 @@
             {
               "year": 113,
               "students": 650
+            },
+            {
+              "year": 114,
+              "students": 656
             }
           ],
           "status": "正常",
@@ -14423,6 +15534,10 @@
             },
             {
               "year": 113,
+              "students": 393
+            },
+            {
+              "year": 114,
               "students": 393
             }
           ],
@@ -14474,11 +15589,89 @@
             {
               "year": 113,
               "students": 324
+            },
+            {
+              "year": 114,
+              "students": 324
             }
           ],
           "status": "正常",
           "missingYears": [],
           "dataNotes": []
+        },
+        {
+          "id": "120320",
+          "code": "120320",
+          "name": "國立高科實驗高中",
+          "countyId": "高雄市",
+          "townshipId": "高雄市:楠梓區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "高雄市楠梓區盛昌街161號",
+          "phone": "(07)6120121",
+          "website": "https://www.nehs.kh.edu.tw/",
+          "profileUrl": "",
+          "coordinates": {
+            "longitude": 120.286899,
+            "latitude": 22.713617
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 0
+            },
+            {
+              "year": 108,
+              "students": 0
+            },
+            {
+              "year": 109,
+              "students": 0
+            },
+            {
+              "year": 110,
+              "students": 0
+            },
+            {
+              "year": 111,
+              "students": 0
+            },
+            {
+              "year": 112,
+              "students": 0
+            },
+            {
+              "year": 113,
+              "students": 0
+            },
+            {
+              "year": 114,
+              "students": 67
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": [
+            {
+              "type": "其他",
+              "message": "正式統計資料存在但 GIS 點位缺失，座標改採校址解點。",
+              "severity": "info"
+            }
+          ],
+          "_missingGIS": true,
+          "_missingCoordinateEntry": {
+            "code": "120320",
+            "name": "國立高科實驗高中",
+            "county": "高雄市",
+            "township": "楠梓區",
+            "level": "國小",
+            "address": "高雄市楠梓區盛昌街161號",
+            "longitude": 120.286899,
+            "latitude": 22.713617,
+            "coordinateResolution": "地址解點",
+            "coordinateMatchType": "PointAddress",
+            "coordinateMatchScore": 100
+          }
         }
       ],
       "dataNotes": []
@@ -14532,6 +15725,10 @@
             {
               "year": 113,
               "students": 7213
+            },
+            {
+              "year": 114,
+              "students": 7213
             }
           ],
           "status": "正常",
@@ -14581,6 +15778,10 @@
             },
             {
               "year": 113,
+              "students": 1365
+            },
+            {
+              "year": 114,
               "students": 1365
             }
           ],
@@ -14632,56 +15833,10 @@
             {
               "year": 113,
               "students": 1240
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "124667",
-          "code": "124667",
-          "name": "市立路竹國小",
-          "countyId": "高雄市",
-          "townshipId": "高雄市:路竹區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "高雄市路竹區竹南里中山路712巷16號",
-          "phone": "(07)6969920",
-          "website": "https://www.lzp.kh.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/124667/C/高雄市/路竹區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.259638,
-            "latitude": 22.856647
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1060
             },
             {
-              "year": 108,
-              "students": 1048
-            },
-            {
-              "year": 109,
-              "students": 1063
-            },
-            {
-              "year": 110,
-              "students": 1071
-            },
-            {
-              "year": 111,
-              "students": 1083
-            },
-            {
-              "year": 112,
-              "students": 1067
-            },
-            {
-              "year": 113,
-              "students": 1014
+              "year": 114,
+              "students": 1240
             }
           ],
           "status": "正常",
@@ -14732,6 +15887,64 @@
             {
               "year": 113,
               "students": 953
+            },
+            {
+              "year": 114,
+              "students": 955
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "124667",
+          "code": "124667",
+          "name": "市立路竹國小",
+          "countyId": "高雄市",
+          "townshipId": "高雄市:路竹區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "高雄市路竹區竹南里中山路712巷16號",
+          "phone": "(07)6969920",
+          "website": "https://www.lzp.kh.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/124667/C/高雄市/路竹區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.259638,
+            "latitude": 22.856647
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1060
+            },
+            {
+              "year": 108,
+              "students": 1048
+            },
+            {
+              "year": 109,
+              "students": 1063
+            },
+            {
+              "year": 110,
+              "students": 1071
+            },
+            {
+              "year": 111,
+              "students": 1083
+            },
+            {
+              "year": 112,
+              "students": 1067
+            },
+            {
+              "year": 113,
+              "students": 1014
+            },
+            {
+              "year": 114,
+              "students": 950
             }
           ],
           "status": "正常",
@@ -14781,6 +15994,10 @@
             },
             {
               "year": 113,
+              "students": 374
+            },
+            {
+              "year": 114,
               "students": 374
             }
           ],
@@ -14832,6 +16049,10 @@
             {
               "year": 113,
               "students": 317
+            },
+            {
+              "year": 114,
+              "students": 316
             }
           ],
           "status": "正常",
@@ -14882,6 +16103,10 @@
             {
               "year": 113,
               "students": 240
+            },
+            {
+              "year": 114,
+              "students": 230
             }
           ],
           "status": "正常",
@@ -14932,6 +16157,10 @@
             {
               "year": 113,
               "students": 169
+            },
+            {
+              "year": 114,
+              "students": 187
             }
           ],
           "status": "正常",
@@ -14981,6 +16210,10 @@
             },
             {
               "year": 113,
+              "students": 140
+            },
+            {
+              "year": 114,
               "students": 140
             }
           ],
@@ -15032,6 +16265,10 @@
             {
               "year": 113,
               "students": 63
+            },
+            {
+              "year": 114,
+              "students": 66
             }
           ],
           "status": "正常",
@@ -15082,6 +16319,10 @@
             {
               "year": 113,
               "students": 49
+            },
+            {
+              "year": 114,
+              "students": 44
             }
           ],
           "status": "正常",
@@ -15140,6 +16381,10 @@
             {
               "year": 113,
               "students": 10948
+            },
+            {
+              "year": 114,
+              "students": 10948
             }
           ],
           "status": "正常",
@@ -15190,6 +16435,10 @@
             {
               "year": 113,
               "students": 2414
+            },
+            {
+              "year": 114,
+              "students": 2362
             }
           ],
           "status": "正常",
@@ -15240,6 +16489,10 @@
             {
               "year": 113,
               "students": 1736
+            },
+            {
+              "year": 114,
+              "students": 1737
             }
           ],
           "status": "正常",
@@ -15289,6 +16542,10 @@
             },
             {
               "year": 113,
+              "students": 1637
+            },
+            {
+              "year": 114,
               "students": 1637
             }
           ],
@@ -15340,6 +16597,10 @@
             {
               "year": 113,
               "students": 1505
+            },
+            {
+              "year": 114,
+              "students": 1505
             }
           ],
           "status": "正常",
@@ -15390,6 +16651,10 @@
             {
               "year": 113,
               "students": 1494
+            },
+            {
+              "year": 114,
+              "students": 1475
             }
           ],
           "status": "正常",
@@ -15440,6 +16705,10 @@
             {
               "year": 113,
               "students": 1226
+            },
+            {
+              "year": 114,
+              "students": 1208
             }
           ],
           "status": "正常",
@@ -15489,6 +16758,10 @@
             },
             {
               "year": 113,
+              "students": 1037
+            },
+            {
+              "year": 114,
               "students": 1037
             }
           ],
@@ -15540,6 +16813,10 @@
             {
               "year": 113,
               "students": 898
+            },
+            {
+              "year": 114,
+              "students": 860
             }
           ],
           "status": "正常",
@@ -15590,6 +16867,10 @@
             {
               "year": 113,
               "students": 851
+            },
+            {
+              "year": 114,
+              "students": 842
             }
           ],
           "status": "正常",
@@ -15640,6 +16921,10 @@
             {
               "year": 113,
               "students": 390
+            },
+            {
+              "year": 114,
+              "students": 351
             }
           ],
           "status": "正常",
@@ -15690,6 +16975,10 @@
             {
               "year": 113,
               "students": 236
+            },
+            {
+              "year": 114,
+              "students": 225
             }
           ],
           "status": "正常",
@@ -15739,6 +17028,10 @@
             },
             {
               "year": 113,
+              "students": 163
+            },
+            {
+              "year": 114,
               "students": 163
             }
           ],
@@ -15790,6 +17083,10 @@
             {
               "year": 113,
               "students": 142
+            },
+            {
+              "year": 114,
+              "students": 144
             }
           ],
           "status": "正常",
@@ -15840,6 +17137,10 @@
             {
               "year": 113,
               "students": 75
+            },
+            {
+              "year": 114,
+              "students": 82
             }
           ],
           "status": "正常",
@@ -15898,6 +17199,10 @@
             {
               "year": 113,
               "students": 651
+            },
+            {
+              "year": 114,
+              "students": 651
             }
           ],
           "status": "正常",
@@ -15948,6 +17253,10 @@
             {
               "year": 113,
               "students": 646
+            },
+            {
+              "year": 114,
+              "students": 633
             }
           ],
           "status": "正常",
@@ -15997,6 +17306,10 @@
             },
             {
               "year": 113,
+              "students": 629
+            },
+            {
+              "year": 114,
               "students": 629
             }
           ],
@@ -16048,6 +17361,10 @@
             {
               "year": 113,
               "students": 507
+            },
+            {
+              "year": 114,
+              "students": 507
             }
           ],
           "status": "正常",
@@ -16098,56 +17415,10 @@
             {
               "year": 113,
               "students": 446
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "124693",
-          "code": "124693",
-          "name": "市立旗尾國小",
-          "countyId": "高雄市",
-          "townshipId": "高雄市:旗山區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "高雄市旗山區東平里延平二路19號",
-          "phone": "(07)6616708",
-          "website": "https://www.qwp.kh.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/124693/C/高雄市/旗山區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.491966,
-            "latitude": 22.882445
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 64
             },
             {
-              "year": 108,
-              "students": 60
-            },
-            {
-              "year": 109,
-              "students": 60
-            },
-            {
-              "year": 110,
-              "students": 71
-            },
-            {
-              "year": 111,
-              "students": 71
-            },
-            {
-              "year": 112,
-              "students": 78
-            },
-            {
-              "year": 113,
-              "students": 103
+              "year": 114,
+              "students": 442
             }
           ],
           "status": "正常",
@@ -16198,6 +17469,10 @@
             {
               "year": 113,
               "students": 99
+            },
+            {
+              "year": 114,
+              "students": 101
             }
           ],
           "status": "正常",
@@ -16247,6 +17522,10 @@
             },
             {
               "year": 113,
+              "students": 95
+            },
+            {
+              "year": 114,
               "students": 95
             }
           ],
@@ -16298,6 +17577,64 @@
             {
               "year": 113,
               "students": 89
+            },
+            {
+              "year": 114,
+              "students": 88
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "124693",
+          "code": "124693",
+          "name": "市立旗尾國小",
+          "countyId": "高雄市",
+          "townshipId": "高雄市:旗山區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "高雄市旗山區東平里延平二路19號",
+          "phone": "(07)6616708",
+          "website": "https://www.qwp.kh.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/124693/C/高雄市/旗山區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.491966,
+            "latitude": 22.882445
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 64
+            },
+            {
+              "year": 108,
+              "students": 60
+            },
+            {
+              "year": 109,
+              "students": 60
+            },
+            {
+              "year": 110,
+              "students": 71
+            },
+            {
+              "year": 111,
+              "students": 71
+            },
+            {
+              "year": 112,
+              "students": 78
+            },
+            {
+              "year": 113,
+              "students": 103
+            },
+            {
+              "year": 114,
+              "students": 80
             }
           ],
           "status": "正常",
@@ -16348,6 +17685,10 @@
             {
               "year": 113,
               "students": 39
+            },
+            {
+              "year": 114,
+              "students": 38
             }
           ],
           "status": "正常",
@@ -16397,6 +17738,10 @@
             },
             {
               "year": 113,
+              "students": 29
+            },
+            {
+              "year": 114,
               "students": 29
             }
           ],
@@ -16456,56 +17801,10 @@
             {
               "year": 113,
               "students": 384
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "603603",
-          "code": "603603",
-          "name": "市立中洲國小",
-          "countyId": "高雄市",
-          "townshipId": "高雄市:旗津區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "高雄市旗津區旗津二路275號",
-          "phone": "(07)5712225",
-          "website": "https://www.chucps.kh.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/603603/C/高雄市/旗津區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.294563,
-            "latitude": 22.577289
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 258
             },
             {
-              "year": 108,
-              "students": 248
-            },
-            {
-              "year": 109,
-              "students": 263
-            },
-            {
-              "year": 110,
-              "students": 260
-            },
-            {
-              "year": 111,
-              "students": 255
-            },
-            {
-              "year": 112,
-              "students": 253
-            },
-            {
-              "year": 113,
-              "students": 249
+              "year": 114,
+              "students": 361
             }
           ],
           "status": "正常",
@@ -16556,6 +17855,64 @@
             {
               "year": 113,
               "students": 243
+            },
+            {
+              "year": 114,
+              "students": 243
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "603603",
+          "code": "603603",
+          "name": "市立中洲國小",
+          "countyId": "高雄市",
+          "townshipId": "高雄市:旗津區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "高雄市旗津區旗津二路275號",
+          "phone": "(07)5712225",
+          "website": "https://www.chucps.kh.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/603603/C/高雄市/旗津區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.294563,
+            "latitude": 22.577289
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 258
+            },
+            {
+              "year": 108,
+              "students": 248
+            },
+            {
+              "year": 109,
+              "students": 263
+            },
+            {
+              "year": 110,
+              "students": 260
+            },
+            {
+              "year": 111,
+              "students": 255
+            },
+            {
+              "year": 112,
+              "students": 253
+            },
+            {
+              "year": 113,
+              "students": 249
+            },
+            {
+              "year": 114,
+              "students": 240
             }
           ],
           "status": "正常",
@@ -16606,6 +17963,10 @@
             {
               "year": 113,
               "students": 61
+            },
+            {
+              "year": 114,
+              "students": 48
             }
           ],
           "status": "正常",
@@ -16620,56 +17981,6 @@
       "name": "鳳山區",
       "countyId": "高雄市",
       "schools": [
-        {
-          "id": "124611",
-          "code": "124611",
-          "name": "市立新甲國小",
-          "countyId": "高雄市",
-          "townshipId": "高雄市:鳳山區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "高雄市鳳山區新強里新富路255號",
-          "phone": "(07)7668170",
-          "website": "https://www.xjp.kh.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/124611/C/高雄市/鳳山區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.34012,
-            "latitude": 22.613245
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 2255
-            },
-            {
-              "year": 108,
-              "students": 2240
-            },
-            {
-              "year": 109,
-              "students": 2197
-            },
-            {
-              "year": 110,
-              "students": 2157
-            },
-            {
-              "year": 111,
-              "students": 2204
-            },
-            {
-              "year": 112,
-              "students": 2216
-            },
-            {
-              "year": 113,
-              "students": 2113
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
         {
           "id": "120409",
           "code": "120409",
@@ -16714,6 +18025,64 @@
             {
               "year": 113,
               "students": 2065
+            },
+            {
+              "year": 114,
+              "students": 2065
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "124611",
+          "code": "124611",
+          "name": "市立新甲國小",
+          "countyId": "高雄市",
+          "townshipId": "高雄市:鳳山區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "高雄市鳳山區新強里新富路255號",
+          "phone": "(07)7668170",
+          "website": "https://www.xjp.kh.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/124611/C/高雄市/鳳山區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.34012,
+            "latitude": 22.613245
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 2255
+            },
+            {
+              "year": 108,
+              "students": 2240
+            },
+            {
+              "year": 109,
+              "students": 2197
+            },
+            {
+              "year": 110,
+              "students": 2157
+            },
+            {
+              "year": 111,
+              "students": 2204
+            },
+            {
+              "year": 112,
+              "students": 2216
+            },
+            {
+              "year": 113,
+              "students": 2113
+            },
+            {
+              "year": 114,
+              "students": 1995
             }
           ],
           "status": "正常",
@@ -16763,6 +18132,10 @@
             },
             {
               "year": 113,
+              "students": 1930
+            },
+            {
+              "year": 114,
               "students": 1930
             }
           ],
@@ -16814,6 +18187,10 @@
             {
               "year": 113,
               "students": 1918
+            },
+            {
+              "year": 114,
+              "students": 1918
             }
           ],
           "status": "正常",
@@ -16863,6 +18240,10 @@
             },
             {
               "year": 113,
+              "students": 1826
+            },
+            {
+              "year": 114,
               "students": 1826
             }
           ],
@@ -16914,56 +18295,10 @@
             {
               "year": 113,
               "students": 1508
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "124742",
-          "code": "124742",
-          "name": "市立文德國小",
-          "countyId": "高雄市",
-          "townshipId": "高雄市:鳳山區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "高雄市鳳山區文衡路356號",
-          "phone": "(07)7768723",
-          "website": "https://www.wdp.kh.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/124742/C/高雄市/鳳山區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.353989,
-            "latitude": 22.640939
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1284
             },
             {
-              "year": 108,
-              "students": 1315
-            },
-            {
-              "year": 109,
-              "students": 1353
-            },
-            {
-              "year": 110,
-              "students": 1407
-            },
-            {
-              "year": 111,
-              "students": 1459
-            },
-            {
-              "year": 112,
-              "students": 1514
-            },
-            {
-              "year": 113,
-              "students": 1485
+              "year": 114,
+              "students": 1508
             }
           ],
           "status": "正常",
@@ -17014,6 +18349,10 @@
             {
               "year": 113,
               "students": 1437
+            },
+            {
+              "year": 114,
+              "students": 1437
             }
           ],
           "status": "正常",
@@ -17021,99 +18360,53 @@
           "dataNotes": []
         },
         {
-          "id": "124743",
-          "code": "124743",
-          "name": "市立瑞興國小",
+          "id": "124742",
+          "code": "124742",
+          "name": "市立文德國小",
           "countyId": "高雄市",
           "townshipId": "高雄市:鳳山區",
           "educationLevel": "國小",
           "managementType": "公立",
-          "address": "高雄市鳳山區博愛路271號",
-          "phone": "(07)7429803",
-          "website": "https://www.rsp.kh.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/124743/C/高雄市/鳳山區/縣市立/否/無/",
+          "address": "高雄市鳳山區文衡路356號",
+          "phone": "(07)7768723",
+          "website": "https://www.wdp.kh.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/124742/C/高雄市/鳳山區/縣市立/否/無/",
           "coordinates": {
-            "longitude": 120.368349,
-            "latitude": 22.630174
+            "longitude": 120.353989,
+            "latitude": 22.640939
           },
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 1208
+              "students": 1284
             },
             {
               "year": 108,
-              "students": 1186
+              "students": 1315
             },
             {
               "year": 109,
-              "students": 1223
+              "students": 1353
             },
             {
               "year": 110,
-              "students": 1221
+              "students": 1407
             },
             {
               "year": 111,
-              "students": 1272
+              "students": 1459
             },
             {
               "year": 112,
-              "students": 1272
+              "students": 1514
             },
             {
               "year": 113,
-              "students": 1245
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "124740",
-          "code": "124740",
-          "name": "市立鳳西國小",
-          "countyId": "高雄市",
-          "townshipId": "高雄市:鳳山區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "高雄市鳳山區光華東路100號",
-          "phone": "(07)7400773",
-          "website": "https://www.fxp.kh.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/124740/C/高雄市/鳳山區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.358724,
-            "latitude": 22.617143
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1225
+              "students": 1485
             },
             {
-              "year": 108,
-              "students": 1231
-            },
-            {
-              "year": 109,
-              "students": 1192
-            },
-            {
-              "year": 110,
-              "students": 1221
-            },
-            {
-              "year": 111,
-              "students": 1255
-            },
-            {
-              "year": 112,
-              "students": 1321
-            },
-            {
-              "year": 113,
-              "students": 1226
+              "year": 114,
+              "students": 1418
             }
           ],
           "status": "正常",
@@ -17164,6 +18457,118 @@
             {
               "year": 113,
               "students": 1220
+            },
+            {
+              "year": 114,
+              "students": 1220
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "124743",
+          "code": "124743",
+          "name": "市立瑞興國小",
+          "countyId": "高雄市",
+          "townshipId": "高雄市:鳳山區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "高雄市鳳山區博愛路271號",
+          "phone": "(07)7429803",
+          "website": "https://www.rsp.kh.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/124743/C/高雄市/鳳山區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.368349,
+            "latitude": 22.630174
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1208
+            },
+            {
+              "year": 108,
+              "students": 1186
+            },
+            {
+              "year": 109,
+              "students": 1223
+            },
+            {
+              "year": 110,
+              "students": 1221
+            },
+            {
+              "year": 111,
+              "students": 1272
+            },
+            {
+              "year": 112,
+              "students": 1272
+            },
+            {
+              "year": 113,
+              "students": 1245
+            },
+            {
+              "year": 114,
+              "students": 1214
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "124740",
+          "code": "124740",
+          "name": "市立鳳西國小",
+          "countyId": "高雄市",
+          "townshipId": "高雄市:鳳山區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "高雄市鳳山區光華東路100號",
+          "phone": "(07)7400773",
+          "website": "https://www.fxp.kh.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/124740/C/高雄市/鳳山區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.358724,
+            "latitude": 22.617143
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1225
+            },
+            {
+              "year": 108,
+              "students": 1231
+            },
+            {
+              "year": 109,
+              "students": 1192
+            },
+            {
+              "year": 110,
+              "students": 1221
+            },
+            {
+              "year": 111,
+              "students": 1255
+            },
+            {
+              "year": 112,
+              "students": 1321
+            },
+            {
+              "year": 113,
+              "students": 1226
+            },
+            {
+              "year": 114,
+              "students": 1178
             }
           ],
           "status": "正常",
@@ -17213,6 +18618,10 @@
             },
             {
               "year": 113,
+              "students": 1163
+            },
+            {
+              "year": 114,
               "students": 1163
             }
           ],
@@ -17264,56 +18673,10 @@
             {
               "year": 113,
               "students": 1141
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "124608",
-          "code": "124608",
-          "name": "市立南成國小",
-          "countyId": "高雄市",
-          "townshipId": "高雄市:鳳山區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "高雄市鳳山區南成里南和街101號",
-          "phone": "(07)8215354",
-          "website": "https://www.ntp.kh.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/124608/C/高雄市/鳳山區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.335451,
-            "latitude": 22.594346
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1112
             },
             {
-              "year": 108,
-              "students": 1111
-            },
-            {
-              "year": 109,
-              "students": 1071
-            },
-            {
-              "year": 110,
-              "students": 1084
-            },
-            {
-              "year": 111,
-              "students": 1109
-            },
-            {
-              "year": 112,
-              "students": 1136
-            },
-            {
-              "year": 113,
-              "students": 1089
+              "year": 114,
+              "students": 1138
             }
           ],
           "status": "正常",
@@ -17364,6 +18727,10 @@
             {
               "year": 113,
               "students": 1079
+            },
+            {
+              "year": 114,
+              "students": 1041
             }
           ],
           "status": "正常",
@@ -17414,6 +18781,64 @@
             {
               "year": 113,
               "students": 1043
+            },
+            {
+              "year": 114,
+              "students": 1041
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "124608",
+          "code": "124608",
+          "name": "市立南成國小",
+          "countyId": "高雄市",
+          "townshipId": "高雄市:鳳山區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "高雄市鳳山區南成里南和街101號",
+          "phone": "(07)8215354",
+          "website": "https://www.ntp.kh.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/124608/C/高雄市/鳳山區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.335451,
+            "latitude": 22.594346
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1112
+            },
+            {
+              "year": 108,
+              "students": 1111
+            },
+            {
+              "year": 109,
+              "students": 1071
+            },
+            {
+              "year": 110,
+              "students": 1084
+            },
+            {
+              "year": 111,
+              "students": 1109
+            },
+            {
+              "year": 112,
+              "students": 1136
+            },
+            {
+              "year": 113,
+              "students": 1089
+            },
+            {
+              "year": 114,
+              "students": 990
             }
           ],
           "status": "正常",
@@ -17464,6 +18889,10 @@
             {
               "year": 113,
               "students": 913
+            },
+            {
+              "year": 114,
+              "students": 937
             }
           ],
           "status": "正常",
@@ -17514,6 +18943,10 @@
             {
               "year": 113,
               "students": 912
+            },
+            {
+              "year": 114,
+              "students": 879
             }
           ],
           "status": "正常",
@@ -17563,6 +18996,10 @@
             },
             {
               "year": 113,
+              "students": 767
+            },
+            {
+              "year": 114,
               "students": 767
             }
           ],
@@ -17614,56 +19051,10 @@
             {
               "year": 113,
               "students": 743
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "124504",
-          "code": "124504",
-          "name": "市立五甲國中",
-          "countyId": "高雄市",
-          "townshipId": "高雄市:鳳山區",
-          "educationLevel": "國中",
-          "managementType": "公立",
-          "address": "高雄市鳳山區龍成路111號",
-          "phone": "(07)8211569",
-          "website": "http://www.wzm.kh.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/124504/J/高雄市/鳳山區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.328184,
-            "latitude": 22.598561
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1023
             },
             {
-              "year": 108,
-              "students": 966
-            },
-            {
-              "year": 109,
-              "students": 888
-            },
-            {
-              "year": 110,
-              "students": 843
-            },
-            {
-              "year": 111,
-              "students": 764
-            },
-            {
-              "year": 112,
-              "students": 694
-            },
-            {
-              "year": 113,
-              "students": 702
+              "year": 114,
+              "students": 740
             }
           ],
           "status": "正常",
@@ -17714,6 +19105,10 @@
             {
               "year": 113,
               "students": 677
+            },
+            {
+              "year": 114,
+              "students": 710
             }
           ],
           "status": "正常",
@@ -17721,49 +19116,53 @@
           "dataNotes": []
         },
         {
-          "id": "124749",
-          "code": "124749",
-          "name": "市立福誠國小",
+          "id": "124504",
+          "code": "124504",
+          "name": "市立五甲國中",
           "countyId": "高雄市",
           "townshipId": "高雄市:鳳山區",
-          "educationLevel": "國小",
+          "educationLevel": "國中",
           "managementType": "公立",
-          "address": "高雄市鳳山區忠誠路145號",
-          "phone": "(07)8120152",
-          "website": "https://www.ftn.kh.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/124749/C/高雄市/鳳山區/縣市立/否/無/",
+          "address": "高雄市鳳山區龍成路111號",
+          "phone": "(07)8211569",
+          "website": "http://www.wzm.kh.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/124504/J/高雄市/鳳山區/縣市立/否/無/",
           "coordinates": {
-            "longitude": 120.325026,
-            "latitude": 22.596977
+            "longitude": 120.328184,
+            "latitude": 22.598561
           },
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 525
+              "students": 1023
             },
             {
               "year": 108,
-              "students": 543
+              "students": 966
             },
             {
               "year": 109,
-              "students": 534
+              "students": 888
             },
             {
               "year": 110,
-              "students": 550
+              "students": 843
             },
             {
               "year": 111,
-              "students": 590
+              "students": 764
             },
             {
               "year": 112,
-              "students": 613
+              "students": 694
             },
             {
               "year": 113,
-              "students": 571
+              "students": 702
+            },
+            {
+              "year": 114,
+              "students": 702
             }
           ],
           "status": "正常",
@@ -17814,56 +19213,10 @@
             {
               "year": 113,
               "students": 562
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "124601",
-          "code": "124601",
-          "name": "市立鳳山國小",
-          "countyId": "高雄市",
-          "townshipId": "高雄市:鳳山區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "高雄市鳳山區興仁里中山路231號",
-          "phone": "(07)7419119",
-          "website": "https://www.fsp.kh.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/124601/C/高雄市/鳳山區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.355963,
-            "latitude": 22.624613
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 490
             },
             {
-              "year": 108,
-              "students": 516
-            },
-            {
-              "year": 109,
-              "students": 499
-            },
-            {
-              "year": 110,
-              "students": 505
-            },
-            {
-              "year": 111,
-              "students": 527
-            },
-            {
-              "year": 112,
-              "students": 549
-            },
-            {
-              "year": 113,
-              "students": 542
+              "year": 114,
+              "students": 546
             }
           ],
           "status": "正常",
@@ -17914,6 +19267,118 @@
             {
               "year": 113,
               "students": 526
+            },
+            {
+              "year": 114,
+              "students": 526
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "124749",
+          "code": "124749",
+          "name": "市立福誠國小",
+          "countyId": "高雄市",
+          "townshipId": "高雄市:鳳山區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "高雄市鳳山區忠誠路145號",
+          "phone": "(07)8120152",
+          "website": "https://www.ftn.kh.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/124749/C/高雄市/鳳山區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.325026,
+            "latitude": 22.596977
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 525
+            },
+            {
+              "year": 108,
+              "students": 543
+            },
+            {
+              "year": 109,
+              "students": 534
+            },
+            {
+              "year": 110,
+              "students": 550
+            },
+            {
+              "year": 111,
+              "students": 590
+            },
+            {
+              "year": 112,
+              "students": 613
+            },
+            {
+              "year": 113,
+              "students": 571
+            },
+            {
+              "year": 114,
+              "students": 526
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "124601",
+          "code": "124601",
+          "name": "市立鳳山國小",
+          "countyId": "高雄市",
+          "townshipId": "高雄市:鳳山區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "高雄市鳳山區興仁里中山路231號",
+          "phone": "(07)7419119",
+          "website": "https://www.fsp.kh.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/124601/C/高雄市/鳳山區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.355963,
+            "latitude": 22.624613
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 490
+            },
+            {
+              "year": 108,
+              "students": 516
+            },
+            {
+              "year": 109,
+              "students": 499
+            },
+            {
+              "year": 110,
+              "students": 505
+            },
+            {
+              "year": 111,
+              "students": 527
+            },
+            {
+              "year": 112,
+              "students": 549
+            },
+            {
+              "year": 113,
+              "students": 542
+            },
+            {
+              "year": 114,
+              "students": 522
             }
           ],
           "status": "正常",
@@ -17964,6 +19429,10 @@
             {
               "year": 113,
               "students": 467
+            },
+            {
+              "year": 114,
+              "students": 419
             }
           ],
           "status": "正常",
@@ -18014,6 +19483,10 @@
             {
               "year": 113,
               "students": 400
+            },
+            {
+              "year": 114,
+              "students": 366
             }
           ],
           "status": "正常",
@@ -18064,6 +19537,10 @@
             {
               "year": 113,
               "students": 345
+            },
+            {
+              "year": 114,
+              "students": 344
             }
           ],
           "status": "正常",
@@ -18114,6 +19591,10 @@
             {
               "year": 113,
               "students": 279
+            },
+            {
+              "year": 114,
+              "students": 263
             }
           ],
           "status": "正常",
@@ -18164,6 +19645,10 @@
             {
               "year": 113,
               "students": 245
+            },
+            {
+              "year": 114,
+              "students": 232
             }
           ],
           "status": "正常",
@@ -18214,6 +19699,10 @@
             {
               "year": 113,
               "students": 198
+            },
+            {
+              "year": 114,
+              "students": 202
             }
           ],
           "status": "正常",
@@ -18263,6 +19752,10 @@
             },
             {
               "year": 113,
+              "students": 197
+            },
+            {
+              "year": 114,
               "students": 197
             }
           ],
@@ -18314,6 +19807,10 @@
             {
               "year": 113,
               "students": 126
+            },
+            {
+              "year": 114,
+              "students": 136
             }
           ],
           "status": "正常",
@@ -18363,6 +19860,10 @@
             },
             {
               "year": 113,
+              "students": 115
+            },
+            {
+              "year": 114,
               "students": 115
             }
           ],
@@ -18422,6 +19923,10 @@
             {
               "year": 113,
               "students": 1345
+            },
+            {
+              "year": 114,
+              "students": 1345
             }
           ],
           "status": "正常",
@@ -18472,6 +19977,10 @@
             {
               "year": 113,
               "students": 712
+            },
+            {
+              "year": 114,
+              "students": 691
             }
           ],
           "status": "正常",
@@ -18521,6 +20030,10 @@
             },
             {
               "year": 113,
+              "students": 668
+            },
+            {
+              "year": 114,
               "students": 668
             }
           ],
@@ -18572,6 +20085,10 @@
             {
               "year": 113,
               "students": 494
+            },
+            {
+              "year": 114,
+              "students": 503
             }
           ],
           "status": "正常",
@@ -18622,6 +20139,10 @@
             {
               "year": 113,
               "students": 454
+            },
+            {
+              "year": 114,
+              "students": 421
             }
           ],
           "status": "正常",
@@ -18672,6 +20193,10 @@
             {
               "year": 113,
               "students": 267
+            },
+            {
+              "year": 114,
+              "students": 258
             }
           ],
           "status": "正常",
@@ -18722,6 +20247,10 @@
             {
               "year": 113,
               "students": 123
+            },
+            {
+              "year": 114,
+              "students": 138
             }
           ],
           "status": "正常",
@@ -18780,6 +20309,10 @@
             {
               "year": 113,
               "students": 8226
+            },
+            {
+              "year": 114,
+              "students": 8226
             }
           ],
           "status": "正常",
@@ -18830,6 +20363,10 @@
             {
               "year": 113,
               "students": 428
+            },
+            {
+              "year": 114,
+              "students": 429
             }
           ],
           "status": "正常",
@@ -18879,6 +20416,10 @@
             },
             {
               "year": 113,
+              "students": 303
+            },
+            {
+              "year": 114,
               "students": 303
             }
           ],
@@ -18930,6 +20471,10 @@
             {
               "year": 113,
               "students": 273
+            },
+            {
+              "year": 114,
+              "students": 249
             }
           ],
           "status": "正常",
@@ -18980,6 +20525,10 @@
             {
               "year": 113,
               "students": 119
+            },
+            {
+              "year": 114,
+              "students": 98
             }
           ],
           "status": "正常",
@@ -19030,6 +20579,10 @@
             {
               "year": 113,
               "students": 94
+            },
+            {
+              "year": 114,
+              "students": 93
             }
           ],
           "status": "正常",
@@ -19080,6 +20633,10 @@
             {
               "year": 113,
               "students": 60
+            },
+            {
+              "year": 114,
+              "students": 56
             }
           ],
           "status": "正常",
@@ -19129,6 +20686,10 @@
             },
             {
               "year": 113,
+              "students": 23
+            },
+            {
+              "year": 114,
               "students": 23
             }
           ],
@@ -19188,6 +20749,10 @@
             {
               "year": 113,
               "students": 431
+            },
+            {
+              "year": 114,
+              "students": 409
             }
           ],
           "status": "正常",
@@ -19237,6 +20802,10 @@
             },
             {
               "year": 113,
+              "students": 280
+            },
+            {
+              "year": 114,
               "students": 280
             }
           ],
@@ -19288,6 +20857,10 @@
             {
               "year": 113,
               "students": 211
+            },
+            {
+              "year": 114,
+              "students": 212
             }
           ],
           "status": "正常",
@@ -19338,6 +20911,10 @@
             {
               "year": 113,
               "students": 92
+            },
+            {
+              "year": 114,
+              "students": 85
             }
           ],
           "status": "正常",
@@ -19396,6 +20973,10 @@
             {
               "year": 113,
               "students": 484
+            },
+            {
+              "year": 114,
+              "students": 461
             }
           ],
           "status": "正常",
@@ -19445,6 +21026,10 @@
             },
             {
               "year": 113,
+              "students": 422
+            },
+            {
+              "year": 114,
               "students": 422
             }
           ],
@@ -19496,6 +21081,10 @@
             {
               "year": 113,
               "students": 397
+            },
+            {
+              "year": 114,
+              "students": 371
             }
           ],
           "status": "正常",
@@ -19546,6 +21135,10 @@
             {
               "year": 113,
               "students": 315
+            },
+            {
+              "year": 114,
+              "students": 312
             }
           ],
           "status": "正常",

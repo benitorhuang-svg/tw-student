@@ -5,13 +5,7 @@
     "shortLabel": "臺中",
     "region": "中部"
   },
-  "dataNotes": [
-    {
-      "type": "缺年度",
-      "message": "臺中市 有 20 所學校存在年度缺漏。",
-      "severity": "warning"
-    }
-  ],
+  "dataNotes": [],
   "towns": [
     {
       "id": "臺中市:大甲區",
@@ -62,22 +56,15 @@
             {
               "year": 113,
               "students": 1521
+            },
+            {
+              "year": 114,
+              "students": 1521
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "063402",
@@ -123,22 +110,15 @@
             {
               "year": 113,
               "students": 1417
+            },
+            {
+              "year": 114,
+              "students": 1417
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "063303",
@@ -184,22 +164,15 @@
             {
               "year": 113,
               "students": 1406
+            },
+            {
+              "year": 114,
+              "students": 1406
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "064510",
@@ -244,6 +217,10 @@
             },
             {
               "year": 113,
+              "students": 1361
+            },
+            {
+              "year": 114,
               "students": 1361
             }
           ],
@@ -295,6 +272,10 @@
             {
               "year": 113,
               "students": 1290
+            },
+            {
+              "year": 114,
+              "students": 1251
             }
           ],
           "status": "正常",
@@ -345,6 +326,10 @@
             {
               "year": 113,
               "students": 994
+            },
+            {
+              "year": 114,
+              "students": 971
             }
           ],
           "status": "正常",
@@ -395,6 +380,10 @@
             {
               "year": 113,
               "students": 893
+            },
+            {
+              "year": 114,
+              "students": 865
             }
           ],
           "status": "正常",
@@ -444,6 +433,10 @@
             },
             {
               "year": 113,
+              "students": 691
+            },
+            {
+              "year": 114,
               "students": 691
             }
           ],
@@ -495,6 +488,10 @@
             {
               "year": 113,
               "students": 560
+            },
+            {
+              "year": 114,
+              "students": 554
             }
           ],
           "status": "正常",
@@ -544,6 +541,10 @@
             },
             {
               "year": 113,
+              "students": 541
+            },
+            {
+              "year": 114,
               "students": 541
             }
           ],
@@ -595,6 +596,10 @@
             {
               "year": 113,
               "students": 441
+            },
+            {
+              "year": 114,
+              "students": 456
             }
           ],
           "status": "正常",
@@ -645,6 +650,10 @@
             {
               "year": 113,
               "students": 271
+            },
+            {
+              "year": 114,
+              "students": 272
             }
           ],
           "status": "正常",
@@ -695,6 +704,10 @@
             {
               "year": 113,
               "students": 209
+            },
+            {
+              "year": 114,
+              "students": 220
             }
           ],
           "status": "正常",
@@ -745,6 +758,10 @@
             {
               "year": 113,
               "students": 194
+            },
+            {
+              "year": 114,
+              "students": 182
             }
           ],
           "status": "正常",
@@ -795,6 +812,10 @@
             {
               "year": 113,
               "students": 60
+            },
+            {
+              "year": 114,
+              "students": 54
             }
           ],
           "status": "正常",
@@ -845,6 +866,10 @@
             {
               "year": 113,
               "students": 47
+            },
+            {
+              "year": 114,
+              "students": 44
             }
           ],
           "status": "正常",
@@ -852,13 +877,7 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "大甲區 有 3 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "臺中市:大安區",
@@ -908,6 +927,10 @@
             },
             {
               "year": 113,
+              "students": 243
+            },
+            {
+              "year": 114,
               "students": 243
             }
           ],
@@ -959,6 +982,10 @@
             {
               "year": 113,
               "students": 114
+            },
+            {
+              "year": 114,
+              "students": 102
             }
           ],
           "status": "正常",
@@ -1009,6 +1036,10 @@
             {
               "year": 113,
               "students": 98
+            },
+            {
+              "year": 114,
+              "students": 93
             }
           ],
           "status": "正常",
@@ -1058,6 +1089,10 @@
             },
             {
               "year": 113,
+              "students": 85
+            },
+            {
+              "year": 114,
               "students": 85
             }
           ],
@@ -1109,6 +1144,10 @@
             {
               "year": 113,
               "students": 45
+            },
+            {
+              "year": 114,
+              "students": 43
             }
           ],
           "status": "正常",
@@ -1167,6 +1206,10 @@
             {
               "year": 113,
               "students": 940
+            },
+            {
+              "year": 114,
+              "students": 893
             }
           ],
           "status": "正常",
@@ -1216,6 +1259,10 @@
             },
             {
               "year": 113,
+              "students": 709
+            },
+            {
+              "year": 114,
               "students": 709
             }
           ],
@@ -1267,6 +1314,10 @@
             {
               "year": 113,
               "students": 584
+            },
+            {
+              "year": 114,
+              "students": 537
             }
           ],
           "status": "正常",
@@ -1317,6 +1368,10 @@
             {
               "year": 113,
               "students": 495
+            },
+            {
+              "year": 114,
+              "students": 471
             }
           ],
           "status": "正常",
@@ -1367,6 +1422,10 @@
             {
               "year": 113,
               "students": 363
+            },
+            {
+              "year": 114,
+              "students": 323
             }
           ],
           "status": "正常",
@@ -1417,6 +1476,10 @@
             {
               "year": 113,
               "students": 268
+            },
+            {
+              "year": 114,
+              "students": 258
             }
           ],
           "status": "正常",
@@ -1467,6 +1530,10 @@
             {
               "year": 113,
               "students": 196
+            },
+            {
+              "year": 114,
+              "students": 179
             }
           ],
           "status": "正常",
@@ -1517,6 +1584,10 @@
             {
               "year": 113,
               "students": 129
+            },
+            {
+              "year": 114,
+              "students": 90
             }
           ],
           "status": "正常",
@@ -1575,6 +1646,10 @@
             {
               "year": 113,
               "students": 6328
+            },
+            {
+              "year": 114,
+              "students": 6328
             }
           ],
           "status": "正常",
@@ -1624,6 +1699,10 @@
             },
             {
               "year": 113,
+              "students": 3358
+            },
+            {
+              "year": 114,
               "students": 3358
             }
           ],
@@ -1675,6 +1754,10 @@
             {
               "year": 113,
               "students": 2866
+            },
+            {
+              "year": 114,
+              "students": 2866
             }
           ],
           "status": "正常",
@@ -1725,22 +1808,15 @@
             {
               "year": 113,
               "students": 2292
+            },
+            {
+              "year": 114,
+              "students": 2292
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "064708",
@@ -1786,6 +1862,10 @@
             {
               "year": 113,
               "students": 1905
+            },
+            {
+              "year": 114,
+              "students": 1809
             }
           ],
           "status": "正常",
@@ -1836,6 +1916,10 @@
             {
               "year": 113,
               "students": 1595
+            },
+            {
+              "year": 114,
+              "students": 1592
             }
           ],
           "status": "正常",
@@ -1886,22 +1970,15 @@
             {
               "year": 113,
               "students": 1509
+            },
+            {
+              "year": 114,
+              "students": 1509
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "064548",
@@ -1946,6 +2023,10 @@
             },
             {
               "year": 113,
+              "students": 1508
+            },
+            {
+              "year": 114,
               "students": 1508
             }
           ],
@@ -1997,56 +2078,10 @@
             {
               "year": 113,
               "students": 1337
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "064738",
-          "code": "064738",
-          "name": "市立益民國小",
-          "countyId": "臺中市",
-          "townshipId": "臺中市:大里區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺中市大里區益民路二段48號",
-          "phone": "(04)24834970",
-          "website": "https://ymes.tc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/064738/C/臺中市/大里區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.687322,
-            "latitude": 24.107073
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1431
             },
             {
-              "year": 108,
-              "students": 1429
-            },
-            {
-              "year": 109,
-              "students": 1389
-            },
-            {
-              "year": 110,
-              "students": 1372
-            },
-            {
-              "year": 111,
-              "students": 1371
-            },
-            {
-              "year": 112,
-              "students": 1351
-            },
-            {
-              "year": 113,
-              "students": 1296
+              "year": 114,
+              "students": 1337
             }
           ],
           "status": "正常",
@@ -2097,6 +2132,64 @@
             {
               "year": 113,
               "students": 1201
+            },
+            {
+              "year": 114,
+              "students": 1201
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "064738",
+          "code": "064738",
+          "name": "市立益民國小",
+          "countyId": "臺中市",
+          "townshipId": "臺中市:大里區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺中市大里區益民路二段48號",
+          "phone": "(04)24834970",
+          "website": "https://ymes.tc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/064738/C/臺中市/大里區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.687322,
+            "latitude": 24.107073
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1431
+            },
+            {
+              "year": 108,
+              "students": 1429
+            },
+            {
+              "year": 109,
+              "students": 1389
+            },
+            {
+              "year": 110,
+              "students": 1372
+            },
+            {
+              "year": 111,
+              "students": 1371
+            },
+            {
+              "year": 112,
+              "students": 1351
+            },
+            {
+              "year": 113,
+              "students": 1296
+            },
+            {
+              "year": 114,
+              "students": 1172
             }
           ],
           "status": "正常",
@@ -2146,6 +2239,10 @@
             },
             {
               "year": 113,
+              "students": 1169
+            },
+            {
+              "year": 114,
               "students": 1169
             }
           ],
@@ -2197,6 +2294,10 @@
             {
               "year": 113,
               "students": 1156
+            },
+            {
+              "year": 114,
+              "students": 1167
             }
           ],
           "status": "正常",
@@ -2247,6 +2348,10 @@
             {
               "year": 113,
               "students": 1152
+            },
+            {
+              "year": 114,
+              "students": 1116
             }
           ],
           "status": "正常",
@@ -2297,56 +2402,10 @@
             {
               "year": 113,
               "students": 1069
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "064707",
-          "code": "064707",
-          "name": "市立崇光國小",
-          "countyId": "臺中市",
-          "townshipId": "臺中市:大里區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺中市大里區大明路181號",
-          "phone": "(04)24818836",
-          "website": "https://cgps.tc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/064707/C/臺中市/大里區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.684641,
-            "latitude": 24.114835
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1232
             },
             {
-              "year": 108,
-              "students": 1210
-            },
-            {
-              "year": 109,
-              "students": 1177
-            },
-            {
-              "year": 110,
-              "students": 1170
-            },
-            {
-              "year": 111,
-              "students": 1197
-            },
-            {
-              "year": 112,
-              "students": 1144
-            },
-            {
-              "year": 113,
-              "students": 1059
+              "year": 114,
+              "students": 1006
             }
           ],
           "status": "正常",
@@ -2397,6 +2456,64 @@
             {
               "year": 113,
               "students": 1033
+            },
+            {
+              "year": 114,
+              "students": 997
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "064707",
+          "code": "064707",
+          "name": "市立崇光國小",
+          "countyId": "臺中市",
+          "townshipId": "臺中市:大里區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺中市大里區大明路181號",
+          "phone": "(04)24818836",
+          "website": "https://cgps.tc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/064707/C/臺中市/大里區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.684641,
+            "latitude": 24.114835
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1232
+            },
+            {
+              "year": 108,
+              "students": 1210
+            },
+            {
+              "year": 109,
+              "students": 1177
+            },
+            {
+              "year": 110,
+              "students": 1170
+            },
+            {
+              "year": 111,
+              "students": 1197
+            },
+            {
+              "year": 112,
+              "students": 1144
+            },
+            {
+              "year": 113,
+              "students": 1059
+            },
+            {
+              "year": 114,
+              "students": 996
             }
           ],
           "status": "正常",
@@ -2410,7 +2527,7 @@
           "countyId": "臺中市",
           "townshipId": "臺中市:大里區",
           "educationLevel": "高中職",
-          "managementType": "私立",
+          "managementType": "公立",
           "address": "臺中市大里區新仁路三段210號",
           "phone": "(04)24821027",
           "website": "http://www.tmsh.tc.edu.tw",
@@ -2447,106 +2564,10 @@
             {
               "year": 113,
               "students": 857
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "064753",
-          "code": "064753",
-          "name": "市立美群國小",
-          "countyId": "臺中市",
-          "townshipId": "臺中市:大里區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺中市大里區美群路99號",
-          "phone": "(04)24912129",
-          "website": "https://mcps.tc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/064753/C/臺中市/大里區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.709511,
-            "latitude": 24.084055
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 617
             },
             {
-              "year": 108,
-              "students": 607
-            },
-            {
-              "year": 109,
-              "students": 595
-            },
-            {
-              "year": 110,
-              "students": 603
-            },
-            {
-              "year": 111,
-              "students": 639
-            },
-            {
-              "year": 112,
-              "students": 652
-            },
-            {
-              "year": 113,
-              "students": 646
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "064705",
-          "code": "064705",
-          "name": "市立大里國小",
-          "countyId": "臺中市",
-          "townshipId": "臺中市:大里區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺中市大里區新興路50號",
-          "phone": "(04)24066002",
-          "website": "https://dlps.tc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/064705/C/臺中市/大里區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.677462,
-            "latitude": 24.100316
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 648
-            },
-            {
-              "year": 108,
-              "students": 664
-            },
-            {
-              "year": 109,
-              "students": 644
-            },
-            {
-              "year": 110,
-              "students": 619
-            },
-            {
-              "year": 111,
-              "students": 664
-            },
-            {
-              "year": 112,
-              "students": 662
-            },
-            {
-              "year": 113,
-              "students": 634
+              "year": 114,
+              "students": 857
             }
           ],
           "status": "正常",
@@ -2597,6 +2618,118 @@
             {
               "year": 113,
               "students": 613
+            },
+            {
+              "year": 114,
+              "students": 613
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "064753",
+          "code": "064753",
+          "name": "市立美群國小",
+          "countyId": "臺中市",
+          "townshipId": "臺中市:大里區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺中市大里區美群路99號",
+          "phone": "(04)24912129",
+          "website": "https://mcps.tc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/064753/C/臺中市/大里區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.709511,
+            "latitude": 24.084055
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 617
+            },
+            {
+              "year": 108,
+              "students": 607
+            },
+            {
+              "year": 109,
+              "students": 595
+            },
+            {
+              "year": 110,
+              "students": 603
+            },
+            {
+              "year": 111,
+              "students": 639
+            },
+            {
+              "year": 112,
+              "students": 652
+            },
+            {
+              "year": 113,
+              "students": 646
+            },
+            {
+              "year": 114,
+              "students": 608
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "064705",
+          "code": "064705",
+          "name": "市立大里國小",
+          "countyId": "臺中市",
+          "townshipId": "臺中市:大里區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺中市大里區新興路50號",
+          "phone": "(04)24066002",
+          "website": "https://dlps.tc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/064705/C/臺中市/大里區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.677462,
+            "latitude": 24.100316
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 648
+            },
+            {
+              "year": 108,
+              "students": 664
+            },
+            {
+              "year": 109,
+              "students": 644
+            },
+            {
+              "year": 110,
+              "students": 619
+            },
+            {
+              "year": 111,
+              "students": 664
+            },
+            {
+              "year": 112,
+              "students": 662
+            },
+            {
+              "year": 113,
+              "students": 634
+            },
+            {
+              "year": 114,
+              "students": 591
             }
           ],
           "status": "正常",
@@ -2647,6 +2780,10 @@
             {
               "year": 113,
               "students": 449
+            },
+            {
+              "year": 114,
+              "students": 440
             }
           ],
           "status": "正常",
@@ -2696,6 +2833,10 @@
             },
             {
               "year": 113,
+              "students": 398
+            },
+            {
+              "year": 114,
               "students": 398
             }
           ],
@@ -2747,6 +2888,10 @@
             {
               "year": 113,
               "students": 176
+            },
+            {
+              "year": 114,
+              "students": 228
             }
           ],
           "status": "正常",
@@ -2754,13 +2899,7 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "大里區 有 2 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "臺中市:大雅區",
@@ -2811,56 +2950,10 @@
             {
               "year": 113,
               "students": 1776
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "064622",
-          "code": "064622",
-          "name": "市立大明國小",
-          "countyId": "臺中市",
-          "townshipId": "臺中市:大雅區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺中市大雅區中清路四段158號",
-          "phone": "(04)25651300",
-          "website": "https://tmes.tc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/064622/C/臺中市/大雅區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.643366,
-            "latitude": 24.229199
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1535
             },
             {
-              "year": 108,
-              "students": 1550
-            },
-            {
-              "year": 109,
-              "students": 1542
-            },
-            {
-              "year": 110,
-              "students": 1529
-            },
-            {
-              "year": 111,
-              "students": 1541
-            },
-            {
-              "year": 112,
-              "students": 1505
-            },
-            {
-              "year": 113,
-              "students": 1376
+              "year": 114,
+              "students": 1752
             }
           ],
           "status": "正常",
@@ -2911,6 +3004,64 @@
             {
               "year": 113,
               "students": 1325
+            },
+            {
+              "year": 114,
+              "students": 1325
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "064622",
+          "code": "064622",
+          "name": "市立大明國小",
+          "countyId": "臺中市",
+          "townshipId": "臺中市:大雅區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺中市大雅區中清路四段158號",
+          "phone": "(04)25651300",
+          "website": "https://tmes.tc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/064622/C/臺中市/大雅區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.643366,
+            "latitude": 24.229199
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1535
+            },
+            {
+              "year": 108,
+              "students": 1550
+            },
+            {
+              "year": 109,
+              "students": 1542
+            },
+            {
+              "year": 110,
+              "students": 1529
+            },
+            {
+              "year": 111,
+              "students": 1541
+            },
+            {
+              "year": 112,
+              "students": 1505
+            },
+            {
+              "year": 113,
+              "students": 1376
+            },
+            {
+              "year": 114,
+              "students": 1278
             }
           ],
           "status": "正常",
@@ -2960,6 +3111,10 @@
             },
             {
               "year": 113,
+              "students": 1151
+            },
+            {
+              "year": 114,
               "students": 1151
             }
           ],
@@ -3011,56 +3166,10 @@
             {
               "year": 113,
               "students": 875
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "064621",
-          "code": "064621",
-          "name": "市立三和國小",
-          "countyId": "臺中市",
-          "townshipId": "臺中市:大雅區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺中市大雅區三和里春亭2街1號",
-          "phone": "(04)25664494",
-          "website": "https://shes.tc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/064621/C/臺中市/大雅區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.668234,
-            "latitude": 24.219617
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 755
             },
             {
-              "year": 108,
-              "students": 753
-            },
-            {
-              "year": 109,
-              "students": 753
-            },
-            {
-              "year": 110,
-              "students": 775
-            },
-            {
-              "year": 111,
-              "students": 765
-            },
-            {
-              "year": 112,
-              "students": 762
-            },
-            {
-              "year": 113,
-              "students": 740
+              "year": 114,
+              "students": 1129
             }
           ],
           "status": "正常",
@@ -3111,6 +3220,64 @@
             {
               "year": 113,
               "students": 740
+            },
+            {
+              "year": 114,
+              "students": 714
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "064621",
+          "code": "064621",
+          "name": "市立三和國小",
+          "countyId": "臺中市",
+          "townshipId": "臺中市:大雅區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺中市大雅區三和里春亭2街1號",
+          "phone": "(04)25664494",
+          "website": "https://shes.tc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/064621/C/臺中市/大雅區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.668234,
+            "latitude": 24.219617
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 755
+            },
+            {
+              "year": 108,
+              "students": 753
+            },
+            {
+              "year": 109,
+              "students": 753
+            },
+            {
+              "year": 110,
+              "students": 775
+            },
+            {
+              "year": 111,
+              "students": 765
+            },
+            {
+              "year": 112,
+              "students": 762
+            },
+            {
+              "year": 113,
+              "students": 740
+            },
+            {
+              "year": 114,
+              "students": 710
             }
           ],
           "status": "正常",
@@ -3161,6 +3328,10 @@
             {
               "year": 113,
               "students": 610
+            },
+            {
+              "year": 114,
+              "students": 594
             }
           ],
           "status": "正常",
@@ -3211,6 +3382,10 @@
             {
               "year": 113,
               "students": 415
+            },
+            {
+              "year": 114,
+              "students": 357
             }
           ],
           "status": "正常",
@@ -3261,6 +3436,10 @@
             {
               "year": 113,
               "students": 165
+            },
+            {
+              "year": 114,
+              "students": 143
             }
           ],
           "status": "正常",
@@ -3311,6 +3490,10 @@
             {
               "year": 113,
               "students": 78
+            },
+            {
+              "year": 114,
+              "students": 65
             }
           ],
           "status": "正常",
@@ -3369,6 +3552,10 @@
             {
               "year": 113,
               "students": 667
+            },
+            {
+              "year": 114,
+              "students": 624
             }
           ],
           "status": "正常",
@@ -3427,6 +3614,10 @@
             {
               "year": 113,
               "students": 12510
+            },
+            {
+              "year": 114,
+              "students": 12510
             }
           ],
           "status": "正常",
@@ -3477,22 +3668,15 @@
             {
               "year": 113,
               "students": 2121
+            },
+            {
+              "year": 114,
+              "students": 2121
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "061315",
@@ -3537,6 +3721,10 @@
             },
             {
               "year": 113,
+              "students": 1967
+            },
+            {
+              "year": 114,
               "students": 1967
             }
           ],
@@ -3588,6 +3776,10 @@
             {
               "year": 113,
               "students": 1724
+            },
+            {
+              "year": 114,
+              "students": 1696
             }
           ],
           "status": "正常",
@@ -3638,6 +3830,64 @@
             {
               "year": 113,
               "students": 1687
+            },
+            {
+              "year": 114,
+              "students": 1687
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "063602",
+          "code": "063602",
+          "name": "市立新高國小",
+          "countyId": "臺中市",
+          "townshipId": "臺中市:太平區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺中市太平區立功路68號",
+          "phone": "(04)23981688",
+          "website": "https://xges.tc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/063602/C/臺中市/太平區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.713831,
+            "latitude": 24.151229
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 0
+            },
+            {
+              "year": 108,
+              "students": 0
+            },
+            {
+              "year": 109,
+              "students": 339
+            },
+            {
+              "year": 110,
+              "students": 603
+            },
+            {
+              "year": 111,
+              "students": 840
+            },
+            {
+              "year": 112,
+              "students": 1083
+            },
+            {
+              "year": 113,
+              "students": 1359
+            },
+            {
+              "year": 114,
+              "students": 1616
             }
           ],
           "status": "正常",
@@ -3687,6 +3937,10 @@
             },
             {
               "year": 113,
+              "students": 1492
+            },
+            {
+              "year": 114,
               "students": 1492
             }
           ],
@@ -3738,6 +3992,10 @@
             {
               "year": 113,
               "students": 1471
+            },
+            {
+              "year": 114,
+              "students": 1440
             }
           ],
           "status": "正常",
@@ -3788,74 +4046,15 @@
             {
               "year": 113,
               "students": 1400
+            },
+            {
+              "year": 114,
+              "students": 1331
             }
           ],
           "status": "正常",
           "missingYears": [],
           "dataNotes": []
-        },
-        {
-          "id": "063602",
-          "code": "063602",
-          "name": "市立新高國小",
-          "countyId": "臺中市",
-          "townshipId": "臺中市:太平區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺中市太平區立功路68號",
-          "phone": "(04)23981688",
-          "website": "https://xges.tc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/063602/C/臺中市/太平區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.713831,
-            "latitude": 24.151229
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 0
-            },
-            {
-              "year": 108,
-              "students": 0
-            },
-            {
-              "year": 109,
-              "students": 339
-            },
-            {
-              "year": 110,
-              "students": 603
-            },
-            {
-              "year": 111,
-              "students": 840
-            },
-            {
-              "year": 112,
-              "students": 1083
-            },
-            {
-              "year": 113,
-              "students": 1359
-            }
-          ],
-          "status": "正常",
-          "missingYears": [
-            107,
-            108
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107、108",
-              "severity": "warning",
-              "years": [
-                107,
-                108
-              ]
-            }
-          ]
         },
         {
           "id": "064745",
@@ -3901,6 +4100,10 @@
             {
               "year": 113,
               "students": 1102
+            },
+            {
+              "year": 114,
+              "students": 1059
             }
           ],
           "status": "正常",
@@ -3951,6 +4154,10 @@
             {
               "year": 113,
               "students": 909
+            },
+            {
+              "year": 114,
+              "students": 881
             }
           ],
           "status": "正常",
@@ -4001,6 +4208,10 @@
             {
               "year": 113,
               "students": 774
+            },
+            {
+              "year": 114,
+              "students": 771
             }
           ],
           "status": "正常",
@@ -4050,6 +4261,10 @@
             },
             {
               "year": 113,
+              "students": 672
+            },
+            {
+              "year": 114,
               "students": 672
             }
           ],
@@ -4101,56 +4316,10 @@
             {
               "year": 113,
               "students": 635
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "064725",
-          "code": "064725",
-          "name": "市立光隆國小",
-          "countyId": "臺中市",
-          "townshipId": "臺中市:太平區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺中市太平區光隆里光興路487巷5號",
-          "phone": "(04)22713626",
-          "website": "https://klps.tc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/064725/C/臺中市/太平區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.727687,
-            "latitude": 24.104468
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 679
             },
             {
-              "year": 108,
-              "students": 676
-            },
-            {
-              "year": 109,
-              "students": 658
-            },
-            {
-              "year": 110,
-              "students": 667
-            },
-            {
-              "year": 111,
+              "year": 114,
               "students": 635
-            },
-            {
-              "year": 112,
-              "students": 631
-            },
-            {
-              "year": 113,
-              "students": 614
             }
           ],
           "status": "正常",
@@ -4201,6 +4370,10 @@
             {
               "year": 113,
               "students": 590
+            },
+            {
+              "year": 114,
+              "students": 600
             }
           ],
           "status": "正常",
@@ -4208,49 +4381,53 @@
           "dataNotes": []
         },
         {
-          "id": "064758",
-          "code": "064758",
-          "name": "市立車籠埔國小",
+          "id": "064725",
+          "code": "064725",
+          "name": "市立光隆國小",
           "countyId": "臺中市",
           "townshipId": "臺中市:太平區",
           "educationLevel": "國小",
           "managementType": "公立",
-          "address": "臺中市太平區光明路10-2號",
-          "phone": "(04)22763928",
-          "website": "https://clpes.tc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/064758/C/臺中市/太平區/縣市立/否/無/",
+          "address": "臺中市太平區光隆里光興路487巷5號",
+          "phone": "(04)22713626",
+          "website": "https://klps.tc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/064725/C/臺中市/太平區/縣市立/否/無/",
           "coordinates": {
-            "longitude": 120.731397,
-            "latitude": 24.10945
+            "longitude": 120.727687,
+            "latitude": 24.104468
           },
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 421
+              "students": 679
             },
             {
               "year": 108,
-              "students": 434
+              "students": 676
             },
             {
               "year": 109,
-              "students": 438
+              "students": 658
             },
             {
               "year": 110,
-              "students": 445
+              "students": 667
             },
             {
               "year": 111,
-              "students": 424
+              "students": 635
             },
             {
               "year": 112,
-              "students": 420
+              "students": 631
             },
             {
               "year": 113,
-              "students": 389
+              "students": 614
+            },
+            {
+              "year": 114,
+              "students": 574
             }
           ],
           "status": "正常",
@@ -4301,6 +4478,64 @@
             {
               "year": 113,
               "students": 384
+            },
+            {
+              "year": 114,
+              "students": 384
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "064758",
+          "code": "064758",
+          "name": "市立車籠埔國小",
+          "countyId": "臺中市",
+          "townshipId": "臺中市:太平區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺中市太平區光明路10-2號",
+          "phone": "(04)22763928",
+          "website": "https://clpes.tc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/064758/C/臺中市/太平區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.731397,
+            "latitude": 24.10945
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 421
+            },
+            {
+              "year": 108,
+              "students": 434
+            },
+            {
+              "year": 109,
+              "students": 438
+            },
+            {
+              "year": 110,
+              "students": 445
+            },
+            {
+              "year": 111,
+              "students": 424
+            },
+            {
+              "year": 112,
+              "students": 420
+            },
+            {
+              "year": 113,
+              "students": 389
+            },
+            {
+              "year": 114,
+              "students": 364
             }
           ],
           "status": "正常",
@@ -4351,56 +4586,10 @@
             {
               "year": 113,
               "students": 337
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "064727",
-          "code": "064727",
-          "name": "市立頭汴國小",
-          "countyId": "臺中市",
-          "townshipId": "臺中市:太平區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺中市太平區頭汴里北田路20號",
-          "phone": "(04)22703129",
-          "website": "https://tbps.tc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/064727/C/臺中市/太平區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.752257,
-            "latitude": 24.122881
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 92
             },
             {
-              "year": 108,
-              "students": 90
-            },
-            {
-              "year": 109,
-              "students": 85
-            },
-            {
-              "year": 110,
-              "students": 95
-            },
-            {
-              "year": 111,
-              "students": 107
-            },
-            {
-              "year": 112,
-              "students": 106
-            },
-            {
-              "year": 113,
-              "students": 107
+              "year": 114,
+              "students": 319
             }
           ],
           "status": "正常",
@@ -4451,6 +4640,64 @@
             {
               "year": 113,
               "students": 104
+            },
+            {
+              "year": 114,
+              "students": 104
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "064727",
+          "code": "064727",
+          "name": "市立頭汴國小",
+          "countyId": "臺中市",
+          "townshipId": "臺中市:太平區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺中市太平區頭汴里北田路20號",
+          "phone": "(04)22703129",
+          "website": "https://tbps.tc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/064727/C/臺中市/太平區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.752257,
+            "latitude": 24.122881
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 92
+            },
+            {
+              "year": 108,
+              "students": 90
+            },
+            {
+              "year": 109,
+              "students": 85
+            },
+            {
+              "year": 110,
+              "students": 95
+            },
+            {
+              "year": 111,
+              "students": 107
+            },
+            {
+              "year": 112,
+              "students": 106
+            },
+            {
+              "year": 113,
+              "students": 107
+            },
+            {
+              "year": 114,
+              "students": 97
             }
           ],
           "status": "正常",
@@ -4501,6 +4748,10 @@
             {
               "year": 113,
               "students": 50
+            },
+            {
+              "year": 114,
+              "students": 54
             }
           ],
           "status": "正常",
@@ -4551,6 +4802,10 @@
             {
               "year": 113,
               "students": 37
+            },
+            {
+              "year": 114,
+              "students": 24
             }
           ],
           "status": "正常",
@@ -4558,13 +4813,7 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "太平區 有 2 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "臺中市:北屯區",
@@ -4614,6 +4863,10 @@
             },
             {
               "year": 113,
+              "students": 7492
+            },
+            {
+              "year": 114,
               "students": 7492
             }
           ],
@@ -4665,6 +4918,10 @@
             {
               "year": 113,
               "students": 6102
+            },
+            {
+              "year": 114,
+              "students": 6102
             }
           ],
           "status": "正常",
@@ -4714,6 +4971,10 @@
             },
             {
               "year": 113,
+              "students": 3546
+            },
+            {
+              "year": 114,
               "students": 3546
             }
           ],
@@ -4765,6 +5026,10 @@
             {
               "year": 113,
               "students": 3131
+            },
+            {
+              "year": 114,
+              "students": 3131
             }
           ],
           "status": "正常",
@@ -4815,6 +5080,10 @@
             {
               "year": 113,
               "students": 2847
+            },
+            {
+              "year": 114,
+              "students": 2927
             }
           ],
           "status": "正常",
@@ -4865,6 +5134,64 @@
             {
               "year": 113,
               "students": 1945
+            },
+            {
+              "year": 114,
+              "students": 1836
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "193665",
+          "code": "193665",
+          "name": "市立廍子國小",
+          "countyId": "臺中市",
+          "townshipId": "臺中市:北屯區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺中市北屯區景賢路290號",
+          "phone": "(04)24350705",
+          "website": "https://buzies.tc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/193665/C/臺中市/北屯區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.722071,
+            "latitude": 24.167377
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 0
+            },
+            {
+              "year": 108,
+              "students": 0
+            },
+            {
+              "year": 109,
+              "students": 174
+            },
+            {
+              "year": 110,
+              "students": 450
+            },
+            {
+              "year": 111,
+              "students": 783
+            },
+            {
+              "year": 112,
+              "students": 1125
+            },
+            {
+              "year": 113,
+              "students": 1471
+            },
+            {
+              "year": 114,
+              "students": 1812
             }
           ],
           "status": "正常",
@@ -4914,6 +5241,10 @@
             },
             {
               "year": 113,
+              "students": 1734
+            },
+            {
+              "year": 114,
               "students": 1734
             }
           ],
@@ -4965,6 +5296,10 @@
             {
               "year": 113,
               "students": 1591
+            },
+            {
+              "year": 114,
+              "students": 1501
             }
           ],
           "status": "正常",
@@ -5015,6 +5350,10 @@
             {
               "year": 113,
               "students": 1554
+            },
+            {
+              "year": 114,
+              "students": 1494
             }
           ],
           "status": "正常",
@@ -5065,119 +5404,10 @@
             {
               "year": 113,
               "students": 1526
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "193665",
-          "code": "193665",
-          "name": "市立廍子國小",
-          "countyId": "臺中市",
-          "townshipId": "臺中市:北屯區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺中市北屯區景賢路290號",
-          "phone": "(04)24350705",
-          "website": "https://buzies.tc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/193665/C/臺中市/北屯區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.722071,
-            "latitude": 24.167377
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 0
             },
             {
-              "year": 108,
-              "students": 0
-            },
-            {
-              "year": 109,
-              "students": 174
-            },
-            {
-              "year": 110,
-              "students": 450
-            },
-            {
-              "year": 111,
-              "students": 783
-            },
-            {
-              "year": 112,
-              "students": 1125
-            },
-            {
-              "year": 113,
-              "students": 1471
-            }
-          ],
-          "status": "正常",
-          "missingYears": [
-            107,
-            108
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107、108",
-              "severity": "warning",
-              "years": [
-                107,
-                108
-              ]
-            }
-          ]
-        },
-        {
-          "id": "193639",
-          "code": "193639",
-          "name": "市立建功國小",
-          "countyId": "臺中市",
-          "townshipId": "臺中市:北屯區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺中市北屯區軍和街43號",
-          "phone": "(04)24367042",
-          "website": "https://jkes.tc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/193639/C/臺中市/北屯區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.716036,
-            "latitude": 24.175943
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1214
-            },
-            {
-              "year": 108,
-              "students": 1292
-            },
-            {
-              "year": 109,
-              "students": 1269
-            },
-            {
-              "year": 110,
-              "students": 1312
-            },
-            {
-              "year": 111,
-              "students": 1345
-            },
-            {
-              "year": 112,
-              "students": 1363
-            },
-            {
-              "year": 113,
-              "students": 1299
+              "year": 114,
+              "students": 1455
             }
           ],
           "status": "正常",
@@ -5228,6 +5458,64 @@
             {
               "year": 113,
               "students": 1286
+            },
+            {
+              "year": 114,
+              "students": 1286
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "193639",
+          "code": "193639",
+          "name": "市立建功國小",
+          "countyId": "臺中市",
+          "townshipId": "臺中市:北屯區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺中市北屯區軍和街43號",
+          "phone": "(04)24367042",
+          "website": "https://jkes.tc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/193639/C/臺中市/北屯區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.716036,
+            "latitude": 24.175943
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1214
+            },
+            {
+              "year": 108,
+              "students": 1292
+            },
+            {
+              "year": 109,
+              "students": 1269
+            },
+            {
+              "year": 110,
+              "students": 1312
+            },
+            {
+              "year": 111,
+              "students": 1345
+            },
+            {
+              "year": 112,
+              "students": 1363
+            },
+            {
+              "year": 113,
+              "students": 1299
+            },
+            {
+              "year": 114,
+              "students": 1209
             }
           ],
           "status": "正常",
@@ -5278,6 +5566,10 @@
             {
               "year": 113,
               "students": 1166
+            },
+            {
+              "year": 114,
+              "students": 1107
             }
           ],
           "status": "正常",
@@ -5328,6 +5620,10 @@
             {
               "year": 113,
               "students": 1072
+            },
+            {
+              "year": 114,
+              "students": 1065
             }
           ],
           "status": "正常",
@@ -5378,56 +5674,10 @@
             {
               "year": 113,
               "students": 898
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "193633",
-          "code": "193633",
-          "name": "市立僑孝國小",
-          "countyId": "臺中市",
-          "townshipId": "臺中市:北屯區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺中市北屯區北屯路435號",
-          "phone": "(04)22447049",
-          "website": "https://qxes.tc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/193633/C/臺中市/北屯區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.69958,
-            "latitude": 24.177704
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 717
             },
             {
-              "year": 108,
-              "students": 744
-            },
-            {
-              "year": 109,
-              "students": 740
-            },
-            {
-              "year": 110,
-              "students": 788
-            },
-            {
-              "year": 111,
-              "students": 840
-            },
-            {
-              "year": 112,
-              "students": 879
-            },
-            {
-              "year": 113,
-              "students": 891
+              "year": 114,
+              "students": 833
             }
           ],
           "status": "正常",
@@ -5478,6 +5728,64 @@
             {
               "year": 113,
               "students": 828
+            },
+            {
+              "year": 114,
+              "students": 830
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "193633",
+          "code": "193633",
+          "name": "市立僑孝國小",
+          "countyId": "臺中市",
+          "townshipId": "臺中市:北屯區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺中市北屯區北屯路435號",
+          "phone": "(04)22447049",
+          "website": "https://qxes.tc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/193633/C/臺中市/北屯區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.69958,
+            "latitude": 24.177704
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 717
+            },
+            {
+              "year": 108,
+              "students": 744
+            },
+            {
+              "year": 109,
+              "students": 740
+            },
+            {
+              "year": 110,
+              "students": 788
+            },
+            {
+              "year": 111,
+              "students": 840
+            },
+            {
+              "year": 112,
+              "students": 879
+            },
+            {
+              "year": 113,
+              "students": 891
+            },
+            {
+              "year": 114,
+              "students": 809
             }
           ],
           "status": "正常",
@@ -5528,6 +5836,10 @@
             {
               "year": 113,
               "students": 824
+            },
+            {
+              "year": 114,
+              "students": 803
             }
           ],
           "status": "正常",
@@ -5578,6 +5890,10 @@
             {
               "year": 113,
               "students": 785
+            },
+            {
+              "year": 114,
+              "students": 759
             }
           ],
           "status": "正常",
@@ -5628,6 +5944,10 @@
             {
               "year": 113,
               "students": 759
+            },
+            {
+              "year": 114,
+              "students": 703
             }
           ],
           "status": "正常",
@@ -5677,6 +5997,10 @@
             },
             {
               "year": 113,
+              "students": 673
+            },
+            {
+              "year": 114,
               "students": 673
             }
           ],
@@ -5728,6 +6052,10 @@
             {
               "year": 113,
               "students": 515
+            },
+            {
+              "year": 114,
+              "students": 483
             }
           ],
           "status": "正常",
@@ -5778,6 +6106,10 @@
             {
               "year": 113,
               "students": 500
+            },
+            {
+              "year": 114,
+              "students": 468
             }
           ],
           "status": "正常",
@@ -5827,6 +6159,10 @@
             },
             {
               "year": 113,
+              "students": 444
+            },
+            {
+              "year": 114,
               "students": 444
             }
           ],
@@ -5878,11 +6214,89 @@
             {
               "year": 113,
               "students": 323
+            },
+            {
+              "year": 114,
+              "students": 324
             }
           ],
           "status": "正常",
           "missingYears": [],
           "dataNotes": []
+        },
+        {
+          "id": "193667",
+          "code": "193667",
+          "name": "市立松強國小",
+          "countyId": "臺中市",
+          "townshipId": "臺中市:北屯區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺中市北屯區崇德九路198號",
+          "phone": "(04)23696933",
+          "website": "https://sqes.tc.edu.tw",
+          "profileUrl": "",
+          "coordinates": {
+            "longitude": 120.691423,
+            "latitude": 24.186995
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 0
+            },
+            {
+              "year": 108,
+              "students": 0
+            },
+            {
+              "year": 109,
+              "students": 0
+            },
+            {
+              "year": 110,
+              "students": 0
+            },
+            {
+              "year": 111,
+              "students": 0
+            },
+            {
+              "year": 112,
+              "students": 0
+            },
+            {
+              "year": 113,
+              "students": 0
+            },
+            {
+              "year": 114,
+              "students": 301
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": [
+            {
+              "type": "其他",
+              "message": "正式統計資料存在但 GIS 點位缺失，座標已依校址人工覆核校正。",
+              "severity": "info"
+            }
+          ],
+          "_missingGIS": true,
+          "_missingCoordinateEntry": {
+            "code": "193667",
+            "name": "市立松強國小",
+            "county": "臺中市",
+            "township": "北屯區",
+            "level": "國小",
+            "address": "臺中市北屯區崇德九路198號",
+            "longitude": 120.691423,
+            "latitude": 24.186995,
+            "coordinateResolution": "人工校正",
+            "coordinateMatchType": "manual-review",
+            "coordinateMatchScore": 100
+          }
         },
         {
           "id": "191315",
@@ -5927,6 +6341,10 @@
             },
             {
               "year": 113,
+              "students": 266
+            },
+            {
+              "year": 114,
               "students": 266
             }
           ],
@@ -5978,6 +6396,10 @@
             {
               "year": 113,
               "students": 222
+            },
+            {
+              "year": 114,
+              "students": 205
             }
           ],
           "status": "正常",
@@ -6027,6 +6449,10 @@
             },
             {
               "year": 113,
+              "students": 161
+            },
+            {
+              "year": 114,
               "students": 161
             }
           ],
@@ -6078,6 +6504,10 @@
             {
               "year": 113,
               "students": 107
+            },
+            {
+              "year": 114,
+              "students": 120
             }
           ],
           "status": "正常",
@@ -6085,13 +6515,7 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "北屯區 有 1 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "臺中市:北區",
@@ -6141,6 +6565,10 @@
             },
             {
               "year": 113,
+              "students": 15762
+            },
+            {
+              "year": 114,
               "students": 15762
             }
           ],
@@ -6192,6 +6620,10 @@
             {
               "year": 113,
               "students": 5673
+            },
+            {
+              "year": 114,
+              "students": 5673
             }
           ],
           "status": "正常",
@@ -6241,6 +6673,10 @@
             },
             {
               "year": 113,
+              "students": 3090
+            },
+            {
+              "year": 114,
               "students": 3090
             }
           ],
@@ -6292,6 +6728,10 @@
             {
               "year": 113,
               "students": 2715
+            },
+            {
+              "year": 114,
+              "students": 2715
             }
           ],
           "status": "正常",
@@ -6341,6 +6781,10 @@
             },
             {
               "year": 113,
+              "students": 2390
+            },
+            {
+              "year": 114,
               "students": 2390
             }
           ],
@@ -6392,6 +6836,10 @@
             {
               "year": 113,
               "students": 2308
+            },
+            {
+              "year": 114,
+              "students": 2308
             }
           ],
           "status": "正常",
@@ -6442,6 +6890,10 @@
             {
               "year": 113,
               "students": 2026
+            },
+            {
+              "year": 114,
+              "students": 1920
             }
           ],
           "status": "正常",
@@ -6491,6 +6943,10 @@
             },
             {
               "year": 113,
+              "students": 1033
+            },
+            {
+              "year": 114,
               "students": 1033
             }
           ],
@@ -6542,56 +6998,10 @@
             {
               "year": 113,
               "students": 947
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "193617",
-          "code": "193617",
-          "name": "市立北區中華國小",
-          "countyId": "臺中市",
-          "townshipId": "臺中市:北區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺中市北區漢口路三段2號",
-          "phone": "(04)22979601",
-          "website": "https://zhes.tc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/193617/C/臺中市/北區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.665678,
-            "latitude": 24.166
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 851
             },
             {
-              "year": 108,
-              "students": 892
-            },
-            {
-              "year": 109,
-              "students": 861
-            },
-            {
-              "year": 110,
-              "students": 891
-            },
-            {
-              "year": 111,
-              "students": 860
-            },
-            {
-              "year": 112,
-              "students": 903
-            },
-            {
-              "year": 113,
-              "students": 841
+              "year": 114,
+              "students": 917
             }
           ],
           "status": "正常",
@@ -6642,6 +7052,64 @@
             {
               "year": 113,
               "students": 812
+            },
+            {
+              "year": 114,
+              "students": 800
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "193617",
+          "code": "193617",
+          "name": "市立北區中華國小",
+          "countyId": "臺中市",
+          "townshipId": "臺中市:北區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺中市北區漢口路三段2號",
+          "phone": "(04)22979601",
+          "website": "https://zhes.tc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/193617/C/臺中市/北區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.665678,
+            "latitude": 24.166
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 851
+            },
+            {
+              "year": 108,
+              "students": 892
+            },
+            {
+              "year": 109,
+              "students": 861
+            },
+            {
+              "year": 110,
+              "students": 891
+            },
+            {
+              "year": 111,
+              "students": 860
+            },
+            {
+              "year": 112,
+              "students": 903
+            },
+            {
+              "year": 113,
+              "students": 841
+            },
+            {
+              "year": 114,
+              "students": 782
             }
           ],
           "status": "正常",
@@ -6692,56 +7160,10 @@
             {
               "year": 113,
               "students": 771
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "193620",
-          "code": "193620",
-          "name": "市立省三國小",
-          "countyId": "臺中市",
-          "townshipId": "臺中市:北區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺中市北區崇德路一段107號",
-          "phone": "(04)22318092",
-          "website": "https://sses.tc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/193620/C/臺中市/北區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.684276,
-            "latitude": 24.159771
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 817
             },
             {
-              "year": 108,
-              "students": 828
-            },
-            {
-              "year": 109,
-              "students": 819
-            },
-            {
-              "year": 110,
-              "students": 838
-            },
-            {
-              "year": 111,
-              "students": 860
-            },
-            {
-              "year": 112,
-              "students": 798
-            },
-            {
-              "year": 113,
-              "students": 738
+              "year": 114,
+              "students": 747
             }
           ],
           "status": "正常",
@@ -6792,6 +7214,64 @@
             {
               "year": 113,
               "students": 714
+            },
+            {
+              "year": 114,
+              "students": 738
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "193620",
+          "code": "193620",
+          "name": "市立省三國小",
+          "countyId": "臺中市",
+          "townshipId": "臺中市:北區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺中市北區崇德路一段107號",
+          "phone": "(04)22318092",
+          "website": "https://sses.tc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/193620/C/臺中市/北區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.684276,
+            "latitude": 24.159771
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 817
+            },
+            {
+              "year": 108,
+              "students": 828
+            },
+            {
+              "year": 109,
+              "students": 819
+            },
+            {
+              "year": 110,
+              "students": 838
+            },
+            {
+              "year": 111,
+              "students": 860
+            },
+            {
+              "year": 112,
+              "students": 798
+            },
+            {
+              "year": 113,
+              "students": 738
+            },
+            {
+              "year": 114,
+              "students": 704
             }
           ],
           "status": "正常",
@@ -6841,6 +7321,10 @@
             },
             {
               "year": 113,
+              "students": 677
+            },
+            {
+              "year": 114,
               "students": 677
             }
           ],
@@ -6892,6 +7376,10 @@
             {
               "year": 113,
               "students": 586
+            },
+            {
+              "year": 114,
+              "students": 586
             }
           ],
           "status": "正常",
@@ -6942,6 +7430,10 @@
             {
               "year": 113,
               "students": 425
+            },
+            {
+              "year": 114,
+              "students": 375
             }
           ],
           "status": "正常",
@@ -6992,6 +7484,10 @@
             {
               "year": 113,
               "students": 337
+            },
+            {
+              "year": 114,
+              "students": 312
             }
           ],
           "status": "正常",
@@ -7050,6 +7546,10 @@
             {
               "year": 113,
               "students": 726
+            },
+            {
+              "year": 114,
+              "students": 704
             }
           ],
           "status": "正常",
@@ -7099,6 +7599,10 @@
             },
             {
               "year": 113,
+              "students": 324
+            },
+            {
+              "year": 114,
               "students": 324
             }
           ],
@@ -7150,6 +7654,10 @@
             {
               "year": 113,
               "students": 70
+            },
+            {
+              "year": 114,
+              "students": 75
             }
           ],
           "status": "正常",
@@ -7200,6 +7708,10 @@
             {
               "year": 113,
               "students": 68
+            },
+            {
+              "year": 114,
+              "students": 66
             }
           ],
           "status": "正常",
@@ -7250,6 +7762,10 @@
             {
               "year": 113,
               "students": 62
+            },
+            {
+              "year": 114,
+              "students": 63
             }
           ],
           "status": "正常",
@@ -7299,6 +7815,10 @@
             },
             {
               "year": 113,
+              "students": 49
+            },
+            {
+              "year": 114,
               "students": 49
             }
           ],
@@ -7358,6 +7878,10 @@
             {
               "year": 113,
               "students": 259
+            },
+            {
+              "year": 114,
+              "students": 249
             }
           ],
           "status": "正常",
@@ -7407,6 +7931,10 @@
             },
             {
               "year": 113,
+              "students": 233
+            },
+            {
+              "year": 114,
               "students": 233
             }
           ],
@@ -7458,6 +7986,10 @@
             {
               "year": 113,
               "students": 150
+            },
+            {
+              "year": 114,
+              "students": 142
             }
           ],
           "status": "正常",
@@ -7516,6 +8048,10 @@
             {
               "year": 113,
               "students": 1741
+            },
+            {
+              "year": 114,
+              "students": 1741
             }
           ],
           "status": "正常",
@@ -7566,6 +8102,10 @@
             {
               "year": 113,
               "students": 1414
+            },
+            {
+              "year": 114,
+              "students": 1355
             }
           ],
           "status": "正常",
@@ -7616,6 +8156,10 @@
             {
               "year": 113,
               "students": 700
+            },
+            {
+              "year": 114,
+              "students": 687
             }
           ],
           "status": "正常",
@@ -7665,6 +8209,10 @@
             },
             {
               "year": 113,
+              "students": 421
+            },
+            {
+              "year": 114,
               "students": 421
             }
           ],
@@ -7716,6 +8264,10 @@
             {
               "year": 113,
               "students": 248
+            },
+            {
+              "year": 114,
+              "students": 243
             }
           ],
           "status": "正常",
@@ -7766,6 +8318,10 @@
             {
               "year": 113,
               "students": 239
+            },
+            {
+              "year": 114,
+              "students": 234
             }
           ],
           "status": "正常",
@@ -7816,6 +8372,10 @@
             {
               "year": 113,
               "students": 141
+            },
+            {
+              "year": 114,
+              "students": 118
             }
           ],
           "status": "正常",
@@ -7866,6 +8426,10 @@
             {
               "year": 113,
               "students": 111
+            },
+            {
+              "year": 114,
+              "students": 108
             }
           ],
           "status": "正常",
@@ -7924,6 +8488,10 @@
             {
               "year": 113,
               "students": 21462
+            },
+            {
+              "year": 114,
+              "students": 21462
             }
           ],
           "status": "正常",
@@ -7973,6 +8541,10 @@
             },
             {
               "year": 113,
+              "students": 15586
+            },
+            {
+              "year": 114,
               "students": 15586
             }
           ],
@@ -8024,6 +8596,10 @@
             {
               "year": 113,
               "students": 7995
+            },
+            {
+              "year": 114,
+              "students": 7995
             }
           ],
           "status": "正常",
@@ -8074,6 +8650,10 @@
             {
               "year": 113,
               "students": 2749
+            },
+            {
+              "year": 114,
+              "students": 2783
             }
           ],
           "status": "正常",
@@ -8123,6 +8703,10 @@
             },
             {
               "year": 113,
+              "students": 2220
+            },
+            {
+              "year": 114,
               "students": 2220
             }
           ],
@@ -8174,106 +8758,10 @@
             {
               "year": 113,
               "students": 2094
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "193624",
-          "code": "193624",
-          "name": "市立西屯區永安國小",
-          "countyId": "臺中市",
-          "townshipId": "臺中市:西屯區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺中市西屯區西屯路三段133號",
-          "phone": "(04)24624470",
-          "website": "https://yaes.tc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/193624/C/臺中市/西屯區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.624969,
-            "latitude": 24.184554
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1769
             },
             {
-              "year": 108,
-              "students": 1771
-            },
-            {
-              "year": 109,
-              "students": 1783
-            },
-            {
-              "year": 110,
-              "students": 1822
-            },
-            {
-              "year": 111,
-              "students": 1821
-            },
-            {
-              "year": 112,
-              "students": 1841
-            },
-            {
-              "year": 113,
-              "students": 1763
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "193650",
-          "code": "193650",
-          "name": "市立國安國小",
-          "countyId": "臺中市",
-          "townshipId": "臺中市:西屯區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺中市西屯區國祥街1號",
-          "phone": "(04)24621681",
-          "website": "https://gaes.tc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/193650/C/臺中市/西屯區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.608863,
-            "latitude": 24.193684
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1535
-            },
-            {
-              "year": 108,
-              "students": 1588
-            },
-            {
-              "year": 109,
-              "students": 1637
-            },
-            {
-              "year": 110,
-              "students": 1726
-            },
-            {
-              "year": 111,
-              "students": 1769
-            },
-            {
-              "year": 112,
-              "students": 1771
-            },
-            {
-              "year": 113,
-              "students": 1730
+              "year": 114,
+              "students": 2094
             }
           ],
           "status": "正常",
@@ -8324,6 +8812,118 @@
             {
               "year": 113,
               "students": 1664
+            },
+            {
+              "year": 114,
+              "students": 1664
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "193624",
+          "code": "193624",
+          "name": "市立西屯區永安國小",
+          "countyId": "臺中市",
+          "townshipId": "臺中市:西屯區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺中市西屯區西屯路三段133號",
+          "phone": "(04)24624470",
+          "website": "https://yaes.tc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/193624/C/臺中市/西屯區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.624969,
+            "latitude": 24.184554
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1769
+            },
+            {
+              "year": 108,
+              "students": 1771
+            },
+            {
+              "year": 109,
+              "students": 1783
+            },
+            {
+              "year": 110,
+              "students": 1822
+            },
+            {
+              "year": 111,
+              "students": 1821
+            },
+            {
+              "year": 112,
+              "students": 1841
+            },
+            {
+              "year": 113,
+              "students": 1763
+            },
+            {
+              "year": 114,
+              "students": 1662
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "193650",
+          "code": "193650",
+          "name": "市立國安國小",
+          "countyId": "臺中市",
+          "townshipId": "臺中市:西屯區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺中市西屯區國祥街1號",
+          "phone": "(04)24621681",
+          "website": "https://gaes.tc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/193650/C/臺中市/西屯區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.608863,
+            "latitude": 24.193684
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1535
+            },
+            {
+              "year": 108,
+              "students": 1588
+            },
+            {
+              "year": 109,
+              "students": 1637
+            },
+            {
+              "year": 110,
+              "students": 1726
+            },
+            {
+              "year": 111,
+              "students": 1769
+            },
+            {
+              "year": 112,
+              "students": 1771
+            },
+            {
+              "year": 113,
+              "students": 1730
+            },
+            {
+              "year": 114,
+              "students": 1602
             }
           ],
           "status": "正常",
@@ -8374,6 +8974,10 @@
             {
               "year": 113,
               "students": 1164
+            },
+            {
+              "year": 114,
+              "students": 1144
             }
           ],
           "status": "正常",
@@ -8423,6 +9027,10 @@
             },
             {
               "year": 113,
+              "students": 1070
+            },
+            {
+              "year": 114,
               "students": 1070
             }
           ],
@@ -8474,6 +9082,10 @@
             {
               "year": 113,
               "students": 1036
+            },
+            {
+              "year": 114,
+              "students": 1011
             }
           ],
           "status": "正常",
@@ -8524,6 +9136,10 @@
             {
               "year": 113,
               "students": 1010
+            },
+            {
+              "year": 114,
+              "students": 956
             }
           ],
           "status": "正常",
@@ -8574,56 +9190,10 @@
             {
               "year": 113,
               "students": 929
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "193662",
-          "code": "193662",
-          "name": "市立惠來國小",
-          "countyId": "臺中市",
-          "townshipId": "臺中市:西屯區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺中市西屯區文中路168號",
-          "phone": "(04)23176353",
-          "website": "https://hles.tc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/193662/C/臺中市/西屯區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.649168,
-            "latitude": 24.164764
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 895
             },
             {
-              "year": 108,
-              "students": 880
-            },
-            {
-              "year": 109,
-              "students": 889
-            },
-            {
-              "year": 110,
-              "students": 908
-            },
-            {
-              "year": 111,
-              "students": 911
-            },
-            {
-              "year": 112,
-              "students": 920
-            },
-            {
-              "year": 113,
-              "students": 898
+              "year": 114,
+              "students": 916
             }
           ],
           "status": "正常",
@@ -8674,6 +9244,10 @@
             {
               "year": 113,
               "students": 878
+            },
+            {
+              "year": 114,
+              "students": 847
             }
           ],
           "status": "正常",
@@ -8681,49 +9255,53 @@
           "dataNotes": []
         },
         {
-          "id": "193659",
-          "code": "193659",
-          "name": "市立上安國小",
+          "id": "193662",
+          "code": "193662",
+          "name": "市立惠來國小",
           "countyId": "臺中市",
           "townshipId": "臺中市:西屯區",
           "educationLevel": "國小",
           "managementType": "公立",
-          "address": "臺中市西屯區上安路156號",
-          "phone": "(04)24527322",
-          "website": "https://saes.tc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/193659/C/臺中市/西屯區/縣市立/否/無/",
+          "address": "臺中市西屯區文中路168號",
+          "phone": "(04)23176353",
+          "website": "https://hles.tc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/193662/C/臺中市/西屯區/縣市立/否/無/",
           "coordinates": {
-            "longitude": 120.639382,
-            "latitude": 24.172705
+            "longitude": 120.649168,
+            "latitude": 24.164764
           },
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 792
+              "students": 895
             },
             {
               "year": 108,
-              "students": 798
+              "students": 880
             },
             {
               "year": 109,
-              "students": 805
+              "students": 889
             },
             {
               "year": 110,
-              "students": 830
+              "students": 908
             },
             {
               "year": 111,
-              "students": 862
+              "students": 911
             },
             {
               "year": 112,
-              "students": 860
+              "students": 920
             },
             {
               "year": 113,
-              "students": 850
+              "students": 898
+            },
+            {
+              "year": 114,
+              "students": 844
             }
           ],
           "status": "正常",
@@ -8774,6 +9352,64 @@
             {
               "year": 113,
               "students": 825
+            },
+            {
+              "year": 114,
+              "students": 825
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "193659",
+          "code": "193659",
+          "name": "市立上安國小",
+          "countyId": "臺中市",
+          "townshipId": "臺中市:西屯區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺中市西屯區上安路156號",
+          "phone": "(04)24527322",
+          "website": "https://saes.tc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/193659/C/臺中市/西屯區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.639382,
+            "latitude": 24.172705
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 792
+            },
+            {
+              "year": 108,
+              "students": 798
+            },
+            {
+              "year": 109,
+              "students": 805
+            },
+            {
+              "year": 110,
+              "students": 830
+            },
+            {
+              "year": 111,
+              "students": 862
+            },
+            {
+              "year": 112,
+              "students": 860
+            },
+            {
+              "year": 113,
+              "students": 850
+            },
+            {
+              "year": 114,
+              "students": 794
             }
           ],
           "status": "正常",
@@ -8823,6 +9459,10 @@
             },
             {
               "year": 113,
+              "students": 693
+            },
+            {
+              "year": 114,
               "students": 693
             }
           ],
@@ -8874,6 +9514,10 @@
             {
               "year": 113,
               "students": 682
+            },
+            {
+              "year": 114,
+              "students": 665
             }
           ],
           "status": "正常",
@@ -8923,6 +9567,10 @@
             },
             {
               "year": 113,
+              "students": 638
+            },
+            {
+              "year": 114,
               "students": 638
             }
           ],
@@ -8974,6 +9622,10 @@
             {
               "year": 113,
               "students": 633
+            },
+            {
+              "year": 114,
+              "students": 569
             }
           ],
           "status": "正常",
@@ -9024,56 +9676,10 @@
             {
               "year": 113,
               "students": 404
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "193649",
-          "code": "193649",
-          "name": "市立何厝國小",
-          "countyId": "臺中市",
-          "townshipId": "臺中市:西屯區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺中市西屯區重慶路1號",
-          "phone": "(04)23166492",
-          "website": "https://hces.tc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/193649/C/臺中市/西屯區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.654049,
-            "latitude": 24.163814
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 393
             },
             {
-              "year": 108,
-              "students": 388
-            },
-            {
-              "year": 109,
-              "students": 409
-            },
-            {
-              "year": 110,
-              "students": 405
-            },
-            {
-              "year": 111,
-              "students": 417
-            },
-            {
-              "year": 112,
-              "students": 405
-            },
-            {
-              "year": 113,
-              "students": 384
+              "year": 114,
+              "students": 378
             }
           ],
           "status": "正常",
@@ -9124,6 +9730,10 @@
             {
               "year": 113,
               "students": 380
+            },
+            {
+              "year": 114,
+              "students": 369
             }
           ],
           "status": "正常",
@@ -9174,6 +9784,64 @@
             {
               "year": 113,
               "students": 363
+            },
+            {
+              "year": 114,
+              "students": 363
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "193649",
+          "code": "193649",
+          "name": "市立何厝國小",
+          "countyId": "臺中市",
+          "townshipId": "臺中市:西屯區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺中市西屯區重慶路1號",
+          "phone": "(04)23166492",
+          "website": "https://hces.tc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/193649/C/臺中市/西屯區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.654049,
+            "latitude": 24.163814
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 393
+            },
+            {
+              "year": 108,
+              "students": 388
+            },
+            {
+              "year": 109,
+              "students": 409
+            },
+            {
+              "year": 110,
+              "students": 405
+            },
+            {
+              "year": 111,
+              "students": 417
+            },
+            {
+              "year": 112,
+              "students": 405
+            },
+            {
+              "year": 113,
+              "students": 384
+            },
+            {
+              "year": 114,
+              "students": 353
             }
           ],
           "status": "正常",
@@ -9224,6 +9892,10 @@
             {
               "year": 113,
               "students": 205
+            },
+            {
+              "year": 114,
+              "students": 191
             }
           ],
           "status": "正常",
@@ -9273,6 +9945,10 @@
             },
             {
               "year": 113,
+              "students": 124
+            },
+            {
+              "year": 114,
               "students": 124
             }
           ],
@@ -9332,6 +10008,10 @@
             {
               "year": 113,
               "students": 5130
+            },
+            {
+              "year": 114,
+              "students": 5130
             }
           ],
           "status": "正常",
@@ -9381,6 +10061,10 @@
             },
             {
               "year": 113,
+              "students": 2172
+            },
+            {
+              "year": 114,
               "students": 2172
             }
           ],
@@ -9432,56 +10116,10 @@
             {
               "year": 113,
               "students": 1913
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "193644",
-          "code": "193644",
-          "name": "市立大勇國小",
-          "countyId": "臺中市",
-          "townshipId": "臺中市:西區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺中市西區忠明南路515號",
-          "phone": "(04)23755959",
-          "website": "https://dyes.tc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/193644/C/臺中市/西區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.657837,
-            "latitude": 24.134542
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1905
             },
             {
-              "year": 108,
-              "students": 1906
-            },
-            {
-              "year": 109,
-              "students": 1880
-            },
-            {
-              "year": 110,
-              "students": 1880
-            },
-            {
-              "year": 111,
-              "students": 1920
-            },
-            {
-              "year": 112,
-              "students": 1922
-            },
-            {
-              "year": 113,
-              "students": 1864
+              "year": 114,
+              "students": 1913
             }
           ],
           "status": "正常",
@@ -9532,6 +10170,64 @@
             {
               "year": 113,
               "students": 1819
+            },
+            {
+              "year": 114,
+              "students": 1819
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "193644",
+          "code": "193644",
+          "name": "市立大勇國小",
+          "countyId": "臺中市",
+          "townshipId": "臺中市:西區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺中市西區忠明南路515號",
+          "phone": "(04)23755959",
+          "website": "https://dyes.tc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/193644/C/臺中市/西區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.657837,
+            "latitude": 24.134542
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1905
+            },
+            {
+              "year": 108,
+              "students": 1906
+            },
+            {
+              "year": 109,
+              "students": 1880
+            },
+            {
+              "year": 110,
+              "students": 1880
+            },
+            {
+              "year": 111,
+              "students": 1920
+            },
+            {
+              "year": 112,
+              "students": 1922
+            },
+            {
+              "year": 113,
+              "students": 1864
+            },
+            {
+              "year": 114,
+              "students": 1718
             }
           ],
           "status": "正常",
@@ -9582,6 +10278,10 @@
             {
               "year": 113,
               "students": 1498
+            },
+            {
+              "year": 114,
+              "students": 1381
             }
           ],
           "status": "正常",
@@ -9631,6 +10331,10 @@
             },
             {
               "year": 113,
+              "students": 1311
+            },
+            {
+              "year": 114,
               "students": 1311
             }
           ],
@@ -9682,6 +10386,10 @@
             {
               "year": 113,
               "students": 1090
+            },
+            {
+              "year": 114,
+              "students": 1090
             }
           ],
           "status": "正常",
@@ -9732,6 +10440,10 @@
             {
               "year": 113,
               "students": 1029
+            },
+            {
+              "year": 114,
+              "students": 970
             }
           ],
           "status": "正常",
@@ -9782,6 +10494,10 @@
             {
               "year": 113,
               "students": 997
+            },
+            {
+              "year": 114,
+              "students": 920
             }
           ],
           "status": "正常",
@@ -9832,6 +10548,10 @@
             {
               "year": 113,
               "students": 745
+            },
+            {
+              "year": 114,
+              "students": 739
             }
           ],
           "status": "正常",
@@ -9882,6 +10602,10 @@
             {
               "year": 113,
               "students": 666
+            },
+            {
+              "year": 114,
+              "students": 665
             }
           ],
           "status": "正常",
@@ -9940,6 +10664,10 @@
             {
               "year": 113,
               "students": 11320
+            },
+            {
+              "year": 114,
+              "students": 11320
             }
           ],
           "status": "正常",
@@ -9989,6 +10717,10 @@
             },
             {
               "year": 113,
+              "students": 10630
+            },
+            {
+              "year": 114,
               "students": 10630
             }
           ],
@@ -10040,6 +10772,10 @@
             {
               "year": 113,
               "students": 2001
+            },
+            {
+              "year": 114,
+              "students": 1916
             }
           ],
           "status": "正常",
@@ -10090,22 +10826,15 @@
             {
               "year": 113,
               "students": 1799
+            },
+            {
+              "year": 114,
+              "students": 1799
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "064515",
@@ -10150,6 +10879,10 @@
             },
             {
               "year": 113,
+              "students": 1541
+            },
+            {
+              "year": 114,
               "students": 1541
             }
           ],
@@ -10201,6 +10934,10 @@
             {
               "year": 113,
               "students": 1322
+            },
+            {
+              "year": 114,
+              "students": 1292
             }
           ],
           "status": "正常",
@@ -10251,6 +10988,10 @@
             {
               "year": 113,
               "students": 1267
+            },
+            {
+              "year": 114,
+              "students": 1182
             }
           ],
           "status": "正常",
@@ -10301,56 +11042,10 @@
             {
               "year": 113,
               "students": 1012
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "064681",
-          "code": "064681",
-          "name": "市立鹿峰國小",
-          "countyId": "臺中市",
-          "townshipId": "臺中市:沙鹿區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺中市沙鹿區鹿峰里星河路209號",
-          "phone": "(04)26224210",
-          "website": "https://lfes.tc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/064681/C/臺中市/沙鹿區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.570006,
-            "latitude": 24.255951
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 476
             },
             {
-              "year": 108,
-              "students": 493
-            },
-            {
-              "year": 109,
-              "students": 513
-            },
-            {
-              "year": 110,
-              "students": 535
-            },
-            {
-              "year": 111,
-              "students": 570
-            },
-            {
-              "year": 112,
-              "students": 604
-            },
-            {
-              "year": 113,
-              "students": 631
+              "year": 114,
+              "students": 1012
             }
           ],
           "status": "正常",
@@ -10401,6 +11096,64 @@
             {
               "year": 113,
               "students": 623
+            },
+            {
+              "year": 114,
+              "students": 623
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "064681",
+          "code": "064681",
+          "name": "市立鹿峰國小",
+          "countyId": "臺中市",
+          "townshipId": "臺中市:沙鹿區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺中市沙鹿區鹿峰里星河路209號",
+          "phone": "(04)26224210",
+          "website": "https://lfes.tc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/064681/C/臺中市/沙鹿區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.570006,
+            "latitude": 24.255951
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 476
+            },
+            {
+              "year": 108,
+              "students": 493
+            },
+            {
+              "year": 109,
+              "students": 513
+            },
+            {
+              "year": 110,
+              "students": 535
+            },
+            {
+              "year": 111,
+              "students": 570
+            },
+            {
+              "year": 112,
+              "students": 604
+            },
+            {
+              "year": 113,
+              "students": 631
+            },
+            {
+              "year": 114,
+              "students": 617
             }
           ],
           "status": "正常",
@@ -10451,6 +11204,10 @@
             {
               "year": 113,
               "students": 475
+            },
+            {
+              "year": 114,
+              "students": 465
             }
           ],
           "status": "正常",
@@ -10501,11 +11258,89 @@
             {
               "year": 113,
               "students": 320
+            },
+            {
+              "year": 114,
+              "students": 309
             }
           ],
           "status": "正常",
           "missingYears": [],
           "dataNotes": []
+        },
+        {
+          "id": "063603",
+          "code": "063603",
+          "name": "市立鹿陽國小",
+          "countyId": "臺中市",
+          "townshipId": "臺中市:沙鹿區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺中市沙鹿區保定路107號",
+          "phone": "(04)26318536",
+          "website": "https://lyps.tc.edu.tw",
+          "profileUrl": "",
+          "coordinates": {
+            "longitude": 120.564785,
+            "latitude": 24.210844
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 0
+            },
+            {
+              "year": 108,
+              "students": 0
+            },
+            {
+              "year": 109,
+              "students": 0
+            },
+            {
+              "year": 110,
+              "students": 0
+            },
+            {
+              "year": 111,
+              "students": 0
+            },
+            {
+              "year": 112,
+              "students": 0
+            },
+            {
+              "year": 113,
+              "students": 0
+            },
+            {
+              "year": 114,
+              "students": 209
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": [
+            {
+              "type": "其他",
+              "message": "正式統計資料存在但 GIS 點位缺失，座標改採校址解點。",
+              "severity": "info"
+            }
+          ],
+          "_missingGIS": true,
+          "_missingCoordinateEntry": {
+            "code": "063603",
+            "name": "市立鹿陽國小",
+            "county": "臺中市",
+            "township": "沙鹿區",
+            "level": "國小",
+            "address": "臺中市沙鹿區保定路107號",
+            "longitude": 120.564785,
+            "latitude": 24.210844,
+            "coordinateResolution": "地址解點",
+            "coordinateMatchType": "StreetAddress",
+            "coordinateMatchScore": 100
+          }
         },
         {
           "id": "064549",
@@ -10550,6 +11385,10 @@
             },
             {
               "year": 113,
+              "students": 158
+            },
+            {
+              "year": 114,
               "students": 158
             }
           ],
@@ -10601,6 +11440,10 @@
             {
               "year": 113,
               "students": 68
+            },
+            {
+              "year": 114,
+              "students": 66
             }
           ],
           "status": "正常",
@@ -10608,13 +11451,7 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "沙鹿區 有 1 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "臺中市:和平區",
@@ -10665,6 +11502,10 @@
             {
               "year": 113,
               "students": 76
+            },
+            {
+              "year": 114,
+              "students": 71
             }
           ],
           "status": "正常",
@@ -10715,6 +11556,10 @@
             {
               "year": 113,
               "students": 68
+            },
+            {
+              "year": 114,
+              "students": 70
             }
           ],
           "status": "正常",
@@ -10764,6 +11609,64 @@
             },
             {
               "year": 113,
+              "students": 54
+            },
+            {
+              "year": 114,
+              "students": 55
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "064736",
+          "code": "064736",
+          "name": "市立自由國小",
+          "countyId": "臺中市",
+          "townshipId": "臺中市:和平區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺中市和平區自由里東崎路二段49號",
+          "phone": "(04)25911342",
+          "website": "https://yyps.tc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/064736/C/臺中市/和平區/縣市立/極偏/無/",
+          "coordinates": {
+            "longitude": 120.90892,
+            "latitude": 24.29142
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 51
+            },
+            {
+              "year": 108,
+              "students": 37
+            },
+            {
+              "year": 109,
+              "students": 27
+            },
+            {
+              "year": 110,
+              "students": 28
+            },
+            {
+              "year": 111,
+              "students": 30
+            },
+            {
+              "year": 112,
+              "students": 36
+            },
+            {
+              "year": 113,
+              "students": 44
+            },
+            {
+              "year": 114,
               "students": 54
             }
           ],
@@ -10815,6 +11718,10 @@
             {
               "year": 113,
               "students": 48
+            },
+            {
+              "year": 114,
+              "students": 41
             }
           ],
           "status": "正常",
@@ -10865,56 +11772,10 @@
             {
               "year": 113,
               "students": 44
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "064736",
-          "code": "064736",
-          "name": "市立自由國小",
-          "countyId": "臺中市",
-          "townshipId": "臺中市:和平區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺中市和平區自由里東崎路二段49號",
-          "phone": "(04)25911342",
-          "website": "https://yyps.tc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/064736/C/臺中市/和平區/縣市立/極偏/無/",
-          "coordinates": {
-            "longitude": 120.90892,
-            "latitude": 24.29142
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 51
             },
             {
-              "year": 108,
-              "students": 37
-            },
-            {
-              "year": 109,
-              "students": 27
-            },
-            {
-              "year": 110,
-              "students": 28
-            },
-            {
-              "year": 111,
-              "students": 30
-            },
-            {
-              "year": 112,
-              "students": 36
-            },
-            {
-              "year": 113,
-              "students": 44
+              "year": 114,
+              "students": 41
             }
           ],
           "status": "正常",
@@ -10964,6 +11825,10 @@
             },
             {
               "year": 113,
+              "students": 40
+            },
+            {
+              "year": 114,
               "students": 40
             }
           ],
@@ -11015,6 +11880,10 @@
             {
               "year": 113,
               "students": 38
+            },
+            {
+              "year": 114,
+              "students": 38
             }
           ],
           "status": "正常",
@@ -11065,6 +11934,10 @@
             {
               "year": 113,
               "students": 33
+            },
+            {
+              "year": 114,
+              "students": 36
             }
           ],
           "status": "正常",
@@ -11114,6 +11987,10 @@
             },
             {
               "year": 113,
+              "students": 23
+            },
+            {
+              "year": 114,
               "students": 23
             }
           ],
@@ -11173,6 +12050,10 @@
             {
               "year": 113,
               "students": 2101
+            },
+            {
+              "year": 114,
+              "students": 2101
             }
           ],
           "status": "正常",
@@ -11222,6 +12103,10 @@
             },
             {
               "year": 113,
+              "students": 2041
+            },
+            {
+              "year": 114,
               "students": 2041
             }
           ],
@@ -11273,6 +12158,10 @@
             {
               "year": 113,
               "students": 1219
+            },
+            {
+              "year": 114,
+              "students": 1159
             }
           ],
           "status": "正常",
@@ -11323,6 +12212,10 @@
             {
               "year": 113,
               "students": 1054
+            },
+            {
+              "year": 114,
+              "students": 1006
             }
           ],
           "status": "正常",
@@ -11373,6 +12266,10 @@
             {
               "year": 113,
               "students": 920
+            },
+            {
+              "year": 114,
+              "students": 909
             }
           ],
           "status": "正常",
@@ -11423,6 +12320,10 @@
             {
               "year": 113,
               "students": 657
+            },
+            {
+              "year": 114,
+              "students": 659
             }
           ],
           "status": "正常",
@@ -11472,6 +12373,10 @@
             },
             {
               "year": 113,
+              "students": 602
+            },
+            {
+              "year": 114,
               "students": 602
             }
           ],
@@ -11523,6 +12428,10 @@
             {
               "year": 113,
               "students": 422
+            },
+            {
+              "year": 114,
+              "students": 395
             }
           ],
           "status": "正常",
@@ -11572,6 +12481,10 @@
             },
             {
               "year": 113,
+              "students": 266
+            },
+            {
+              "year": 114,
               "students": 266
             }
           ],
@@ -11623,6 +12536,10 @@
             {
               "year": 113,
               "students": 240
+            },
+            {
+              "year": 114,
+              "students": 251
             }
           ],
           "status": "正常",
@@ -11681,22 +12598,15 @@
             {
               "year": 113,
               "students": 1492
+            },
+            {
+              "year": 114,
+              "students": 1492
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "064529",
@@ -11741,6 +12651,10 @@
             },
             {
               "year": 113,
+              "students": 729
+            },
+            {
+              "year": 114,
               "students": 729
             }
           ],
@@ -11792,6 +12706,10 @@
             {
               "year": 113,
               "students": 707
+            },
+            {
+              "year": 114,
+              "students": 708
             }
           ],
           "status": "正常",
@@ -11842,22 +12760,15 @@
             {
               "year": 113,
               "students": 451
+            },
+            {
+              "year": 114,
+              "students": 451
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "064636",
@@ -11903,6 +12814,10 @@
             {
               "year": 113,
               "students": 429
+            },
+            {
+              "year": 114,
+              "students": 420
             }
           ],
           "status": "正常",
@@ -11953,6 +12868,10 @@
             {
               "year": 113,
               "students": 306
+            },
+            {
+              "year": 114,
+              "students": 318
             }
           ],
           "status": "正常",
@@ -12003,6 +12922,10 @@
             {
               "year": 113,
               "students": 188
+            },
+            {
+              "year": 114,
+              "students": 154
             }
           ],
           "status": "正常",
@@ -12052,6 +12975,10 @@
             },
             {
               "year": 113,
+              "students": 110
+            },
+            {
+              "year": 114,
               "students": 110
             }
           ],
@@ -12103,56 +13030,10 @@
             {
               "year": 113,
               "students": 80
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "064641",
-          "code": "064641",
-          "name": "市立新成國小",
-          "countyId": "臺中市",
-          "townshipId": "臺中市:東勢區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺中市東勢區上城街260號",
-          "phone": "(04)25853447",
-          "website": "https://tsces.tc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/064641/C/臺中市/東勢區/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.839527,
-            "latitude": 24.221387
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 60
             },
             {
-              "year": 108,
-              "students": 69
-            },
-            {
-              "year": 109,
+              "year": 114,
               "students": 79
-            },
-            {
-              "year": 110,
-              "students": 75
-            },
-            {
-              "year": 111,
-              "students": 79
-            },
-            {
-              "year": 112,
-              "students": 71
-            },
-            {
-              "year": 113,
-              "students": 68
             }
           ],
           "status": "正常",
@@ -12203,6 +13084,10 @@
             {
               "year": 113,
               "students": 67
+            },
+            {
+              "year": 114,
+              "students": 67
             }
           ],
           "status": "正常",
@@ -12210,48 +13095,52 @@
           "dataNotes": []
         },
         {
-          "id": "064638",
-          "code": "064638",
-          "name": "市立東勢區成功國小",
+          "id": "064641",
+          "code": "064641",
+          "name": "市立新成國小",
           "countyId": "臺中市",
           "townshipId": "臺中市:東勢區",
           "educationLevel": "國小",
           "managementType": "公立",
-          "address": "臺中市東勢區慶東里東關路五段600號",
-          "phone": "(04)25852040",
-          "website": "https://ckaps.tc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/064638/C/臺中市/東勢區/縣市立/偏遠/無/",
+          "address": "臺中市東勢區上城街260號",
+          "phone": "(04)25853447",
+          "website": "https://tsces.tc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/064641/C/臺中市/東勢區/縣市立/偏遠/無/",
           "coordinates": {
-            "longitude": 120.840267,
-            "latitude": 24.208125
+            "longitude": 120.839527,
+            "latitude": 24.221387
           },
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 84
+              "students": 60
             },
             {
               "year": 108,
-              "students": 78
+              "students": 69
             },
             {
               "year": 109,
-              "students": 80
+              "students": 79
             },
             {
               "year": 110,
-              "students": 81
+              "students": 75
             },
             {
               "year": 111,
-              "students": 78
+              "students": 79
             },
             {
               "year": 112,
-              "students": 72
+              "students": 71
             },
             {
               "year": 113,
+              "students": 68
+            },
+            {
+              "year": 114,
               "students": 62
             }
           ],
@@ -12303,6 +13192,10 @@
             {
               "year": 113,
               "students": 54
+            },
+            {
+              "year": 114,
+              "students": 55
             }
           ],
           "status": "正常",
@@ -12310,49 +13203,53 @@
           "dataNotes": []
         },
         {
-          "id": "064639",
-          "code": "064639",
-          "name": "市立石角國小",
+          "id": "064638",
+          "code": "064638",
+          "name": "市立東勢區成功國小",
           "countyId": "臺中市",
           "townshipId": "臺中市:東勢區",
           "educationLevel": "國小",
           "managementType": "公立",
-          "address": "臺中市東勢區東坑路西盛巷22號",
-          "phone": "(04)25873011",
-          "website": "https://sjps.tc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/064639/C/臺中市/東勢區/縣市立/偏遠/無/",
+          "address": "臺中市東勢區慶東里東關路五段600號",
+          "phone": "(04)25852040",
+          "website": "https://ckaps.tc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/064638/C/臺中市/東勢區/縣市立/偏遠/無/",
           "coordinates": {
-            "longitude": 120.850512,
-            "latitude": 24.237594
+            "longitude": 120.840267,
+            "latitude": 24.208125
           },
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 34
+              "students": 84
             },
             {
               "year": 108,
-              "students": 33
+              "students": 78
             },
             {
               "year": 109,
-              "students": 35
+              "students": 80
             },
             {
               "year": 110,
-              "students": 37
+              "students": 81
             },
             {
               "year": 111,
-              "students": 35
+              "students": 78
             },
             {
               "year": 112,
-              "students": 33
+              "students": 72
             },
             {
               "year": 113,
-              "students": 37
+              "students": 62
+            },
+            {
+              "year": 114,
+              "students": 52
             }
           ],
           "status": "正常",
@@ -12403,6 +13300,64 @@
             {
               "year": 113,
               "students": 30
+            },
+            {
+              "year": 114,
+              "students": 32
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "064639",
+          "code": "064639",
+          "name": "市立石角國小",
+          "countyId": "臺中市",
+          "townshipId": "臺中市:東勢區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺中市東勢區東坑路西盛巷22號",
+          "phone": "(04)25873011",
+          "website": "https://sjps.tc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/064639/C/臺中市/東勢區/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.850512,
+            "latitude": 24.237594
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 34
+            },
+            {
+              "year": 108,
+              "students": 33
+            },
+            {
+              "year": 109,
+              "students": 35
+            },
+            {
+              "year": 110,
+              "students": 37
+            },
+            {
+              "year": 111,
+              "students": 35
+            },
+            {
+              "year": 112,
+              "students": 33
+            },
+            {
+              "year": 113,
+              "students": 37
+            },
+            {
+              "year": 114,
+              "students": 31
             }
           ],
           "status": "正常",
@@ -12410,13 +13365,7 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "東勢區 有 2 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "臺中市:南屯區",
@@ -12466,6 +13415,10 @@
             },
             {
               "year": 113,
+              "students": 8355
+            },
+            {
+              "year": 114,
               "students": 8355
             }
           ],
@@ -12517,6 +13470,10 @@
             {
               "year": 113,
               "students": 3284
+            },
+            {
+              "year": 114,
+              "students": 3284
             }
           ],
           "status": "正常",
@@ -12567,6 +13524,10 @@
             {
               "year": 113,
               "students": 2677
+            },
+            {
+              "year": 114,
+              "students": 2561
             }
           ],
           "status": "正常",
@@ -12617,6 +13578,10 @@
             {
               "year": 113,
               "students": 2338
+            },
+            {
+              "year": 114,
+              "students": 2217
             }
           ],
           "status": "正常",
@@ -12666,6 +13631,10 @@
             },
             {
               "year": 113,
+              "students": 2120
+            },
+            {
+              "year": 114,
               "students": 2120
             }
           ],
@@ -12717,6 +13686,10 @@
             {
               "year": 113,
               "students": 1813
+            },
+            {
+              "year": 114,
+              "students": 1736
             }
           ],
           "status": "正常",
@@ -12766,6 +13739,10 @@
             },
             {
               "year": 113,
+              "students": 1717
+            },
+            {
+              "year": 114,
               "students": 1717
             }
           ],
@@ -12817,6 +13794,10 @@
             {
               "year": 113,
               "students": 1620
+            },
+            {
+              "year": 114,
+              "students": 1575
             }
           ],
           "status": "正常",
@@ -12867,6 +13848,10 @@
             {
               "year": 113,
               "students": 1555
+            },
+            {
+              "year": 114,
+              "students": 1490
             }
           ],
           "status": "正常",
@@ -12917,6 +13902,10 @@
             {
               "year": 113,
               "students": 1138
+            },
+            {
+              "year": 114,
+              "students": 1113
             }
           ],
           "status": "正常",
@@ -12967,6 +13956,10 @@
             {
               "year": 113,
               "students": 1008
+            },
+            {
+              "year": 114,
+              "students": 1000
             }
           ],
           "status": "正常",
@@ -13017,56 +14010,10 @@
             {
               "year": 113,
               "students": 985
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "193631",
-          "code": "193631",
-          "name": "市立黎明國小",
-          "countyId": "臺中市",
-          "townshipId": "臺中市:南屯區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺中市南屯區黎明路二段555號",
-          "phone": "(04)22517363",
-          "website": "https://lmes.tc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/193631/C/臺中市/南屯區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.632562,
-            "latitude": 24.157727
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 775
             },
             {
-              "year": 108,
-              "students": 787
-            },
-            {
-              "year": 109,
-              "students": 753
-            },
-            {
-              "year": 110,
-              "students": 761
-            },
-            {
-              "year": 111,
-              "students": 780
-            },
-            {
-              "year": 112,
-              "students": 795
-            },
-            {
-              "year": 113,
-              "students": 803
+              "year": 114,
+              "students": 985
             }
           ],
           "status": "正常",
@@ -13117,6 +14064,10 @@
             {
               "year": 113,
               "students": 796
+            },
+            {
+              "year": 114,
+              "students": 796
             }
           ],
           "status": "正常",
@@ -13124,49 +14075,53 @@
           "dataNotes": []
         },
         {
-          "id": "193628",
-          "code": "193628",
-          "name": "市立鎮平國小",
+          "id": "193631",
+          "code": "193631",
+          "name": "市立黎明國小",
           "countyId": "臺中市",
           "townshipId": "臺中市:南屯區",
           "educationLevel": "國小",
           "managementType": "公立",
-          "address": "臺中市南屯區黎明路一段425號",
-          "phone": "(04)24792122",
-          "website": "https://zpes.tc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/193628/C/臺中市/南屯區/縣市立/否/無/",
+          "address": "臺中市南屯區黎明路二段555號",
+          "phone": "(04)22517363",
+          "website": "https://lmes.tc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/193631/C/臺中市/南屯區/縣市立/否/無/",
           "coordinates": {
-            "longitude": 120.628585,
-            "latitude": 24.120945
+            "longitude": 120.632562,
+            "latitude": 24.157727
           },
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 674
+              "students": 775
             },
             {
               "year": 108,
-              "students": 679
+              "students": 787
             },
             {
               "year": 109,
-              "students": 645
+              "students": 753
             },
             {
               "year": 110,
-              "students": 658
+              "students": 761
             },
             {
               "year": 111,
-              "students": 647
+              "students": 780
             },
             {
               "year": 112,
-              "students": 634
+              "students": 795
             },
             {
               "year": 113,
-              "students": 608
+              "students": 803
+            },
+            {
+              "year": 114,
+              "students": 760
             }
           ],
           "status": "正常",
@@ -13217,6 +14172,64 @@
             {
               "year": 113,
               "students": 593
+            },
+            {
+              "year": 114,
+              "students": 593
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "193628",
+          "code": "193628",
+          "name": "市立鎮平國小",
+          "countyId": "臺中市",
+          "townshipId": "臺中市:南屯區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺中市南屯區黎明路一段425號",
+          "phone": "(04)24792122",
+          "website": "https://zpes.tc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/193628/C/臺中市/南屯區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.628585,
+            "latitude": 24.120945
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 674
+            },
+            {
+              "year": 108,
+              "students": 679
+            },
+            {
+              "year": 109,
+              "students": 645
+            },
+            {
+              "year": 110,
+              "students": 658
+            },
+            {
+              "year": 111,
+              "students": 647
+            },
+            {
+              "year": 112,
+              "students": 634
+            },
+            {
+              "year": 113,
+              "students": 608
+            },
+            {
+              "year": 114,
+              "students": 569
             }
           ],
           "status": "正常",
@@ -13267,6 +14280,10 @@
             {
               "year": 113,
               "students": 382
+            },
+            {
+              "year": 114,
+              "students": 416
             }
           ],
           "status": "正常",
@@ -13325,6 +14342,10 @@
             {
               "year": 113,
               "students": 15845
+            },
+            {
+              "year": 114,
+              "students": 15845
             }
           ],
           "status": "正常",
@@ -13374,6 +14395,10 @@
             },
             {
               "year": 113,
+              "students": 7157
+            },
+            {
+              "year": 114,
               "students": 7157
             }
           ],
@@ -13425,6 +14450,10 @@
             {
               "year": 113,
               "students": 3293
+            },
+            {
+              "year": 114,
+              "students": 3337
             }
           ],
           "status": "正常",
@@ -13474,6 +14503,10 @@
             },
             {
               "year": 113,
+              "students": 3168
+            },
+            {
+              "year": 114,
               "students": 3168
             }
           ],
@@ -13525,6 +14558,10 @@
             {
               "year": 113,
               "students": 1662
+            },
+            {
+              "year": 114,
+              "students": 1647
             }
           ],
           "status": "正常",
@@ -13575,6 +14612,10 @@
             {
               "year": 113,
               "students": 1434
+            },
+            {
+              "year": 114,
+              "students": 1345
             }
           ],
           "status": "正常",
@@ -13625,6 +14666,10 @@
             {
               "year": 113,
               "students": 1139
+            },
+            {
+              "year": 114,
+              "students": 1008
             }
           ],
           "status": "正常",
@@ -13674,6 +14719,10 @@
             },
             {
               "year": 113,
+              "students": 741
+            },
+            {
+              "year": 114,
               "students": 741
             }
           ],
@@ -13725,6 +14774,10 @@
             {
               "year": 113,
               "students": 610
+            },
+            {
+              "year": 114,
+              "students": 613
             }
           ],
           "status": "正常",
@@ -13774,6 +14827,10 @@
             },
             {
               "year": 113,
+              "students": 429
+            },
+            {
+              "year": 114,
               "students": 429
             }
           ],
@@ -13825,37 +14882,18 @@
             {
               "year": 113,
               "students": 283
+            },
+            {
+              "year": 114,
+              "students": 419
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107,
-            108,
-            109,
-            110
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107、108、109、110",
-              "severity": "warning",
-              "years": [
-                107,
-                108,
-                109,
-                110
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "南區 有 1 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "臺中市:烏日區",
@@ -13905,6 +14943,10 @@
             },
             {
               "year": 113,
+              "students": 6857
+            },
+            {
+              "year": 114,
               "students": 6857
             }
           ],
@@ -13956,6 +14998,10 @@
             {
               "year": 113,
               "students": 1178
+            },
+            {
+              "year": 114,
+              "students": 1178
             }
           ],
           "status": "正常",
@@ -14006,6 +15052,10 @@
             {
               "year": 113,
               "students": 1135
+            },
+            {
+              "year": 114,
+              "students": 1149
             }
           ],
           "status": "正常",
@@ -14056,6 +15106,10 @@
             {
               "year": 113,
               "students": 985
+            },
+            {
+              "year": 114,
+              "students": 1072
             }
           ],
           "status": "正常",
@@ -14106,6 +15160,10 @@
             {
               "year": 113,
               "students": 798
+            },
+            {
+              "year": 114,
+              "students": 825
             }
           ],
           "status": "正常",
@@ -14156,6 +15214,10 @@
             {
               "year": 113,
               "students": 764
+            },
+            {
+              "year": 114,
+              "students": 728
             }
           ],
           "status": "正常",
@@ -14206,6 +15268,10 @@
             {
               "year": 113,
               "students": 355
+            },
+            {
+              "year": 114,
+              "students": 349
             }
           ],
           "status": "正常",
@@ -14255,6 +15321,10 @@
             },
             {
               "year": 113,
+              "students": 326
+            },
+            {
+              "year": 114,
               "students": 326
             }
           ],
@@ -14306,6 +15376,10 @@
             {
               "year": 113,
               "students": 262
+            },
+            {
+              "year": 114,
+              "students": 241
             }
           ],
           "status": "正常",
@@ -14319,7 +15393,7 @@
           "countyId": "臺中市",
           "townshipId": "臺中市:烏日區",
           "educationLevel": "高中職",
-          "managementType": "私立",
+          "managementType": "公立",
           "address": "臺中市烏日區公園路36號",
           "phone": "(04)23377520",
           "website": "https://www.motherearth.com.tw/",
@@ -14356,6 +15430,10 @@
             {
               "year": 113,
               "students": 229
+            },
+            {
+              "year": 114,
+              "students": 228
             }
           ],
           "status": "正常",
@@ -14405,6 +15483,10 @@
             },
             {
               "year": 113,
+              "students": 177
+            },
+            {
+              "year": 114,
               "students": 177
             }
           ],
@@ -14456,6 +15538,10 @@
             {
               "year": 113,
               "students": 60
+            },
+            {
+              "year": 114,
+              "students": 52
             }
           ],
           "status": "正常",
@@ -14506,6 +15592,10 @@
             {
               "year": 113,
               "students": 52
+            },
+            {
+              "year": 114,
+              "students": 51
             }
           ],
           "status": "正常",
@@ -14564,6 +15654,10 @@
             {
               "year": 113,
               "students": 1222
+            },
+            {
+              "year": 114,
+              "students": 1196
             }
           ],
           "status": "正常",
@@ -14614,24 +15708,15 @@
             {
               "year": 113,
               "students": 879
+            },
+            {
+              "year": 114,
+              "students": 879
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107,
-            108
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107、108",
-              "severity": "warning",
-              "years": [
-                107,
-                108
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "064615",
@@ -14677,6 +15762,10 @@
             {
               "year": 113,
               "students": 714
+            },
+            {
+              "year": 114,
+              "students": 679
             }
           ],
           "status": "正常",
@@ -14726,6 +15815,10 @@
             },
             {
               "year": 113,
+              "students": 496
+            },
+            {
+              "year": 114,
               "students": 496
             }
           ],
@@ -14777,6 +15870,10 @@
             {
               "year": 113,
               "students": 396
+            },
+            {
+              "year": 114,
+              "students": 388
             }
           ],
           "status": "正常",
@@ -14827,6 +15924,10 @@
             {
               "year": 113,
               "students": 387
+            },
+            {
+              "year": 114,
+              "students": 369
             }
           ],
           "status": "正常",
@@ -14877,6 +15978,10 @@
             {
               "year": 113,
               "students": 363
+            },
+            {
+              "year": 114,
+              "students": 339
             }
           ],
           "status": "正常",
@@ -14884,13 +15989,7 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "神岡區 有 1 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "臺中市:梧棲區",
@@ -14940,6 +16039,10 @@
             },
             {
               "year": 113,
+              "students": 1808
+            },
+            {
+              "year": 114,
               "students": 1808
             }
           ],
@@ -14991,6 +16094,10 @@
             {
               "year": 113,
               "students": 1358
+            },
+            {
+              "year": 114,
+              "students": 1328
             }
           ],
           "status": "正常",
@@ -15041,6 +16148,10 @@
             {
               "year": 113,
               "students": 1254
+            },
+            {
+              "year": 114,
+              "students": 1200
             }
           ],
           "status": "正常",
@@ -15091,6 +16202,10 @@
             {
               "year": 113,
               "students": 902
+            },
+            {
+              "year": 114,
+              "students": 961
             }
           ],
           "status": "正常",
@@ -15140,6 +16255,10 @@
             },
             {
               "year": 113,
+              "students": 503
+            },
+            {
+              "year": 114,
               "students": 503
             }
           ],
@@ -15191,6 +16310,10 @@
             {
               "year": 113,
               "students": 303
+            },
+            {
+              "year": 114,
+              "students": 280
             }
           ],
           "status": "正常",
@@ -15241,6 +16364,10 @@
             {
               "year": 113,
               "students": 222
+            },
+            {
+              "year": 114,
+              "students": 223
             }
           ],
           "status": "正常",
@@ -15291,6 +16418,10 @@
             {
               "year": 113,
               "students": 93
+            },
+            {
+              "year": 114,
+              "students": 106
             }
           ],
           "status": "正常",
@@ -15305,56 +16436,6 @@
       "name": "清水區",
       "countyId": "臺中市",
       "schools": [
-        {
-          "id": "064652",
-          "code": "064652",
-          "name": "市立清水國小",
-          "countyId": "臺中市",
-          "townshipId": "臺中市:清水區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺中市清水區光華路125號",
-          "phone": "(04)26222004",
-          "website": "https://cses.tc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/064652/C/臺中市/清水區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.573178,
-            "latitude": 24.266789
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1524
-            },
-            {
-              "year": 108,
-              "students": 1524
-            },
-            {
-              "year": 109,
-              "students": 1573
-            },
-            {
-              "year": 110,
-              "students": 1607
-            },
-            {
-              "year": 111,
-              "students": 1679
-            },
-            {
-              "year": 112,
-              "students": 1700
-            },
-            {
-              "year": 113,
-              "students": 1682
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
         {
           "id": "064513",
           "code": "064513",
@@ -15399,6 +16480,64 @@
             {
               "year": 113,
               "students": 1645
+            },
+            {
+              "year": 114,
+              "students": 1645
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "064652",
+          "code": "064652",
+          "name": "市立清水國小",
+          "countyId": "臺中市",
+          "townshipId": "臺中市:清水區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺中市清水區光華路125號",
+          "phone": "(04)26222004",
+          "website": "https://cses.tc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/064652/C/臺中市/清水區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.573178,
+            "latitude": 24.266789
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1524
+            },
+            {
+              "year": 108,
+              "students": 1524
+            },
+            {
+              "year": 109,
+              "students": 1573
+            },
+            {
+              "year": 110,
+              "students": 1607
+            },
+            {
+              "year": 111,
+              "students": 1679
+            },
+            {
+              "year": 112,
+              "students": 1700
+            },
+            {
+              "year": 113,
+              "students": 1682
+            },
+            {
+              "year": 114,
+              "students": 1643
             }
           ],
           "status": "正常",
@@ -15449,22 +16588,15 @@
             {
               "year": 113,
               "students": 1422
+            },
+            {
+              "year": 114,
+              "students": 1422
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "064654",
@@ -15510,6 +16642,10 @@
             {
               "year": 113,
               "students": 925
+            },
+            {
+              "year": 114,
+              "students": 895
             }
           ],
           "status": "正常",
@@ -15560,6 +16696,10 @@
             {
               "year": 113,
               "students": 765
+            },
+            {
+              "year": 114,
+              "students": 756
             }
           ],
           "status": "正常",
@@ -15610,6 +16750,64 @@
             {
               "year": 113,
               "students": 677
+            },
+            {
+              "year": 114,
+              "students": 669
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "064739",
+          "code": "064739",
+          "name": "市立槺榔國小",
+          "countyId": "臺中市",
+          "townshipId": "臺中市:清水區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺中市清水區中央路23-12號",
+          "phone": "(04)26562684",
+          "website": "https://klnes.tc.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/064739/C/臺中市/清水區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.545144,
+            "latitude": 24.263902
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 153
+            },
+            {
+              "year": 108,
+              "students": 171
+            },
+            {
+              "year": 109,
+              "students": 187
+            },
+            {
+              "year": 110,
+              "students": 215
+            },
+            {
+              "year": 111,
+              "students": 234
+            },
+            {
+              "year": 112,
+              "students": 230
+            },
+            {
+              "year": 113,
+              "students": 266
+            },
+            {
+              "year": 114,
+              "students": 280
             }
           ],
           "status": "正常",
@@ -15660,55 +16858,9 @@
             {
               "year": 113,
               "students": 266
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "064739",
-          "code": "064739",
-          "name": "市立槺榔國小",
-          "countyId": "臺中市",
-          "townshipId": "臺中市:清水區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺中市清水區中央路23-12號",
-          "phone": "(04)26562684",
-          "website": "https://klnes.tc.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/064739/C/臺中市/清水區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.545144,
-            "latitude": 24.263902
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 153
             },
             {
-              "year": 108,
-              "students": 171
-            },
-            {
-              "year": 109,
-              "students": 187
-            },
-            {
-              "year": 110,
-              "students": 215
-            },
-            {
-              "year": 111,
-              "students": 234
-            },
-            {
-              "year": 112,
-              "students": 230
-            },
-            {
-              "year": 113,
+              "year": 114,
               "students": 266
             }
           ],
@@ -15760,22 +16912,15 @@
             {
               "year": 113,
               "students": 250
+            },
+            {
+              "year": 114,
+              "students": 250
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "064656",
@@ -15821,6 +16966,10 @@
             {
               "year": 113,
               "students": 243
+            },
+            {
+              "year": 114,
+              "students": 231
             }
           ],
           "status": "正常",
@@ -15871,6 +17020,10 @@
             {
               "year": 113,
               "students": 173
+            },
+            {
+              "year": 114,
+              "students": 145
             }
           ],
           "status": "正常",
@@ -15921,56 +17074,10 @@
             {
               "year": 113,
               "students": 103
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "064657",
-          "code": "064657",
-          "name": "市立甲南國小",
-          "countyId": "臺中市",
-          "townshipId": "臺中市:清水區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺中市清水區菁埔里臨海路26號",
-          "phone": "(04)26261834",
-          "website": "https://jnes.tc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/064657/C/臺中市/清水區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.595588,
-            "latitude": 24.304878
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 114
             },
             {
-              "year": 108,
-              "students": 103
-            },
-            {
-              "year": 109,
-              "students": 83
-            },
-            {
-              "year": 110,
-              "students": 80
-            },
-            {
-              "year": 111,
-              "students": 75
-            },
-            {
-              "year": 112,
-              "students": 85
-            },
-            {
-              "year": 113,
-              "students": 85
+              "year": 114,
+              "students": 102
             }
           ],
           "status": "正常",
@@ -16021,6 +17128,64 @@
             {
               "year": 113,
               "students": 78
+            },
+            {
+              "year": 114,
+              "students": 78
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "064657",
+          "code": "064657",
+          "name": "市立甲南國小",
+          "countyId": "臺中市",
+          "townshipId": "臺中市:清水區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺中市清水區菁埔里臨海路26號",
+          "phone": "(04)26261834",
+          "website": "https://jnes.tc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/064657/C/臺中市/清水區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.595588,
+            "latitude": 24.304878
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 114
+            },
+            {
+              "year": 108,
+              "students": 103
+            },
+            {
+              "year": 109,
+              "students": 83
+            },
+            {
+              "year": 110,
+              "students": 80
+            },
+            {
+              "year": 111,
+              "students": 75
+            },
+            {
+              "year": 112,
+              "students": 85
+            },
+            {
+              "year": 113,
+              "students": 85
+            },
+            {
+              "year": 114,
+              "students": 77
             }
           ],
           "status": "正常",
@@ -16070,6 +17235,10 @@
             },
             {
               "year": 113,
+              "students": 53
+            },
+            {
+              "year": 114,
               "students": 53
             }
           ],
@@ -16121,6 +17290,10 @@
             {
               "year": 113,
               "students": 46
+            },
+            {
+              "year": 114,
+              "students": 40
             }
           ],
           "status": "正常",
@@ -16128,13 +17301,7 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "清水區 有 2 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "臺中市:新社區",
@@ -16184,6 +17351,10 @@
             },
             {
               "year": 113,
+              "students": 1270
+            },
+            {
+              "year": 114,
               "students": 1270
             }
           ],
@@ -16235,6 +17406,10 @@
             {
               "year": 113,
               "students": 486
+            },
+            {
+              "year": 114,
+              "students": 453
             }
           ],
           "status": "正常",
@@ -16285,6 +17460,10 @@
             {
               "year": 113,
               "students": 180
+            },
+            {
+              "year": 114,
+              "students": 158
             }
           ],
           "status": "正常",
@@ -16335,6 +17514,10 @@
             {
               "year": 113,
               "students": 55
+            },
+            {
+              "year": 114,
+              "students": 53
             }
           ],
           "status": "正常",
@@ -16385,6 +17568,10 @@
             {
               "year": 113,
               "students": 53
+            },
+            {
+              "year": 114,
+              "students": 51
             }
           ],
           "status": "正常",
@@ -16435,6 +17622,10 @@
             {
               "year": 113,
               "students": 44
+            },
+            {
+              "year": 114,
+              "students": 46
             }
           ],
           "status": "正常",
@@ -16485,6 +17676,10 @@
             {
               "year": 113,
               "students": 39
+            },
+            {
+              "year": 114,
+              "students": 37
             }
           ],
           "status": "正常",
@@ -16535,6 +17730,10 @@
             {
               "year": 113,
               "students": 30
+            },
+            {
+              "year": 114,
+              "students": 28
             }
           ],
           "status": "正常",
@@ -16585,6 +17784,10 @@
             {
               "year": 113,
               "students": 17
+            },
+            {
+              "year": 114,
+              "students": 16
             }
           ],
           "status": "正常",
@@ -16643,6 +17846,10 @@
             {
               "year": 113,
               "students": 2669
+            },
+            {
+              "year": 114,
+              "students": 2669
             }
           ],
           "status": "正常",
@@ -16693,6 +17900,10 @@
             {
               "year": 113,
               "students": 1774
+            },
+            {
+              "year": 114,
+              "students": 1758
             }
           ],
           "status": "正常",
@@ -16743,6 +17954,10 @@
             {
               "year": 113,
               "students": 1490
+            },
+            {
+              "year": 114,
+              "students": 1508
             }
           ],
           "status": "正常",
@@ -16793,6 +18008,10 @@
             {
               "year": 113,
               "students": 1378
+            },
+            {
+              "year": 114,
+              "students": 1323
             }
           ],
           "status": "正常",
@@ -16842,6 +18061,10 @@
             },
             {
               "year": 113,
+              "students": 1074
+            },
+            {
+              "year": 114,
               "students": 1074
             }
           ],
@@ -16893,6 +18116,10 @@
             {
               "year": 113,
               "students": 1010
+            },
+            {
+              "year": 114,
+              "students": 1043
             }
           ],
           "status": "正常",
@@ -16906,7 +18133,7 @@
           "countyId": "臺中市",
           "townshipId": "臺中市:潭子區",
           "educationLevel": "高中職",
-          "managementType": "私立",
+          "managementType": "公立",
           "address": "臺中市潭子區潭興路一段165巷320號",
           "phone": "(04)25395066",
           "website": "https://sites.google.com/ivyjhs.tc.edu.tw/www110/%E9%A6%96%E9%A0%81",
@@ -16942,6 +18169,10 @@
             },
             {
               "year": 113,
+              "students": 853
+            },
+            {
+              "year": 114,
               "students": 853
             }
           ],
@@ -16993,6 +18224,10 @@
             {
               "year": 113,
               "students": 733
+            },
+            {
+              "year": 114,
+              "students": 676
             }
           ],
           "status": "正常",
@@ -17043,6 +18278,10 @@
             {
               "year": 113,
               "students": 577
+            },
+            {
+              "year": 114,
+              "students": 575
             }
           ],
           "status": "正常",
@@ -17092,6 +18331,10 @@
             },
             {
               "year": 113,
+              "students": 476
+            },
+            {
+              "year": 114,
               "students": 476
             }
           ],
@@ -17143,6 +18386,10 @@
             {
               "year": 113,
               "students": 224
+            },
+            {
+              "year": 114,
+              "students": 223
             }
           ],
           "status": "正常",
@@ -17193,41 +18440,18 @@
             {
               "year": 113,
               "students": 9
+            },
+            {
+              "year": 114,
+              "students": 9
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107,
-            108,
-            109,
-            110,
-            111,
-            112
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107、108、109、110、111、112",
-              "severity": "warning",
-              "years": [
-                107,
-                108,
-                109,
-                110,
-                111,
-                112
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "潭子區 有 1 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "臺中市:龍井區",
@@ -17277,6 +18501,10 @@
             },
             {
               "year": 113,
+              "students": 1103
+            },
+            {
+              "year": 114,
               "students": 1103
             }
           ],
@@ -17328,6 +18556,10 @@
             {
               "year": 113,
               "students": 871
+            },
+            {
+              "year": 114,
+              "students": 850
             }
           ],
           "status": "正常",
@@ -17378,6 +18610,10 @@
             {
               "year": 113,
               "students": 848
+            },
+            {
+              "year": 114,
+              "students": 787
             }
           ],
           "status": "正常",
@@ -17427,6 +18663,10 @@
             },
             {
               "year": 113,
+              "students": 561
+            },
+            {
+              "year": 114,
               "students": 561
             }
           ],
@@ -17478,6 +18718,10 @@
             {
               "year": 113,
               "students": 498
+            },
+            {
+              "year": 114,
+              "students": 504
             }
           ],
           "status": "正常",
@@ -17528,56 +18772,10 @@
             {
               "year": 113,
               "students": 465
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "064686",
-          "code": "064686",
-          "name": "市立龍山國小",
-          "countyId": "臺中市",
-          "townshipId": "臺中市:龍井區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺中市龍井區中山一路一段6號",
-          "phone": "(04)26352454",
-          "website": "https://lsps.tc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/064686/C/臺中市/龍井區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.550766,
-            "latitude": 24.214146
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 381
             },
             {
-              "year": 108,
-              "students": 393
-            },
-            {
-              "year": 109,
-              "students": 405
-            },
-            {
-              "year": 110,
-              "students": 400
-            },
-            {
-              "year": 111,
-              "students": 438
-            },
-            {
-              "year": 112,
-              "students": 460
-            },
-            {
-              "year": 113,
-              "students": 457
+              "year": 114,
+              "students": 454
             }
           ],
           "status": "正常",
@@ -17628,6 +18826,64 @@
             {
               "year": 113,
               "students": 397
+            },
+            {
+              "year": 114,
+              "students": 397
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "064686",
+          "code": "064686",
+          "name": "市立龍山國小",
+          "countyId": "臺中市",
+          "townshipId": "臺中市:龍井區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺中市龍井區中山一路一段6號",
+          "phone": "(04)26352454",
+          "website": "https://lsps.tc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/064686/C/臺中市/龍井區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.550766,
+            "latitude": 24.214146
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 381
+            },
+            {
+              "year": 108,
+              "students": 393
+            },
+            {
+              "year": 109,
+              "students": 405
+            },
+            {
+              "year": 110,
+              "students": 400
+            },
+            {
+              "year": 111,
+              "students": 438
+            },
+            {
+              "year": 112,
+              "students": 460
+            },
+            {
+              "year": 113,
+              "students": 457
+            },
+            {
+              "year": 114,
+              "students": 396
             }
           ],
           "status": "正常",
@@ -17678,6 +18934,10 @@
             {
               "year": 113,
               "students": 371
+            },
+            {
+              "year": 114,
+              "students": 382
             }
           ],
           "status": "正常",
@@ -17728,6 +18988,10 @@
             {
               "year": 113,
               "students": 87
+            },
+            {
+              "year": 114,
+              "students": 86
             }
           ],
           "status": "正常",
@@ -17786,6 +19050,10 @@
             {
               "year": 113,
               "students": 2764
+            },
+            {
+              "year": 114,
+              "students": 2734
             }
           ],
           "status": "正常",
@@ -17835,6 +19103,10 @@
             },
             {
               "year": 113,
+              "students": 1937
+            },
+            {
+              "year": 114,
               "students": 1937
             }
           ],
@@ -17886,6 +19158,10 @@
             {
               "year": 113,
               "students": 1853
+            },
+            {
+              "year": 114,
+              "students": 1780
             }
           ],
           "status": "正常",
@@ -17936,22 +19212,15 @@
             {
               "year": 113,
               "students": 1538
+            },
+            {
+              "year": 114,
+              "students": 1538
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "063312",
@@ -17997,22 +19266,15 @@
             {
               "year": 113,
               "students": 1511
+            },
+            {
+              "year": 114,
+              "students": 1511
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "064751",
@@ -18058,6 +19320,10 @@
             {
               "year": 113,
               "students": 1366
+            },
+            {
+              "year": 114,
+              "students": 1290
             }
           ],
           "status": "正常",
@@ -18107,6 +19373,10 @@
             },
             {
               "year": 113,
+              "students": 1258
+            },
+            {
+              "year": 114,
               "students": 1258
             }
           ],
@@ -18158,6 +19428,10 @@
             {
               "year": 113,
               "students": 972
+            },
+            {
+              "year": 114,
+              "students": 951
             }
           ],
           "status": "正常",
@@ -18207,6 +19481,10 @@
             },
             {
               "year": 113,
+              "students": 930
+            },
+            {
+              "year": 114,
               "students": 930
             }
           ],
@@ -18258,6 +19536,10 @@
             {
               "year": 113,
               "students": 652
+            },
+            {
+              "year": 114,
+              "students": 615
             }
           ],
           "status": "正常",
@@ -18308,56 +19590,10 @@
             {
               "year": 113,
               "students": 514
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "064601",
-          "code": "064601",
-          "name": "市立豐原國小",
-          "countyId": "臺中市",
-          "townshipId": "臺中市:豐原區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺中市豐原區新生北路155號",
-          "phone": "(04)25222066",
-          "website": "https://fyes.tc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/064601/C/臺中市/豐原區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.720824,
-            "latitude": 24.254671
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 545
             },
             {
-              "year": 108,
-              "students": 552
-            },
-            {
-              "year": 109,
-              "students": 521
-            },
-            {
-              "year": 110,
-              "students": 520
-            },
-            {
-              "year": 111,
-              "students": 554
-            },
-            {
-              "year": 112,
-              "students": 563
-            },
-            {
-              "year": 113,
-              "students": 498
+              "year": 114,
+              "students": 514
             }
           ],
           "status": "正常",
@@ -18408,6 +19644,64 @@
             {
               "year": 113,
               "students": 494
+            },
+            {
+              "year": 114,
+              "students": 467
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "064601",
+          "code": "064601",
+          "name": "市立豐原國小",
+          "countyId": "臺中市",
+          "townshipId": "臺中市:豐原區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺中市豐原區新生北路155號",
+          "phone": "(04)25222066",
+          "website": "https://fyes.tc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/064601/C/臺中市/豐原區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.720824,
+            "latitude": 24.254671
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 545
+            },
+            {
+              "year": 108,
+              "students": 552
+            },
+            {
+              "year": 109,
+              "students": 521
+            },
+            {
+              "year": 110,
+              "students": 520
+            },
+            {
+              "year": 111,
+              "students": 554
+            },
+            {
+              "year": 112,
+              "students": 563
+            },
+            {
+              "year": 113,
+              "students": 498
+            },
+            {
+              "year": 114,
+              "students": 445
             }
           ],
           "status": "正常",
@@ -18458,6 +19752,10 @@
             {
               "year": 113,
               "students": 452
+            },
+            {
+              "year": 114,
+              "students": 430
             }
           ],
           "status": "正常",
@@ -18508,6 +19806,10 @@
             {
               "year": 113,
               "students": 357
+            },
+            {
+              "year": 114,
+              "students": 344
             }
           ],
           "status": "正常",
@@ -18558,6 +19860,10 @@
             {
               "year": 113,
               "students": 276
+            },
+            {
+              "year": 114,
+              "students": 272
             }
           ],
           "status": "正常",
@@ -18565,13 +19871,7 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "豐原區 有 2 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "臺中市:霧峰區",
@@ -18621,6 +19921,10 @@
             },
             {
               "year": 113,
+              "students": 13152
+            },
+            {
+              "year": 114,
               "students": 13152
             }
           ],
@@ -18672,6 +19976,10 @@
             {
               "year": 113,
               "students": 10776
+            },
+            {
+              "year": 114,
+              "students": 10776
             }
           ],
           "status": "正常",
@@ -18722,22 +20030,15 @@
             {
               "year": 113,
               "students": 1361
+            },
+            {
+              "year": 114,
+              "students": 1361
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "063408",
@@ -18783,22 +20084,15 @@
             {
               "year": 113,
               "students": 1315
+            },
+            {
+              "year": 114,
+              "students": 1315
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "064712",
@@ -18844,6 +20138,10 @@
             {
               "year": 113,
               "students": 1007
+            },
+            {
+              "year": 114,
+              "students": 971
             }
           ],
           "status": "正常",
@@ -18893,6 +20191,10 @@
             },
             {
               "year": 113,
+              "students": 841
+            },
+            {
+              "year": 114,
               "students": 841
             }
           ],
@@ -18944,6 +20246,10 @@
             {
               "year": 113,
               "students": 472
+            },
+            {
+              "year": 114,
+              "students": 465
             }
           ],
           "status": "正常",
@@ -18994,6 +20300,10 @@
             {
               "year": 113,
               "students": 407
+            },
+            {
+              "year": 114,
+              "students": 393
             }
           ],
           "status": "正常",
@@ -19044,6 +20354,10 @@
             {
               "year": 113,
               "students": 390
+            },
+            {
+              "year": 114,
+              "students": 391
             }
           ],
           "status": "正常",
@@ -19093,6 +20407,10 @@
             },
             {
               "year": 113,
+              "students": 246
+            },
+            {
+              "year": 114,
               "students": 246
             }
           ],
@@ -19144,6 +20462,10 @@
             {
               "year": 113,
               "students": 205
+            },
+            {
+              "year": 114,
+              "students": 202
             }
           ],
           "status": "正常",
@@ -19194,6 +20516,10 @@
             {
               "year": 113,
               "students": 159
+            },
+            {
+              "year": 114,
+              "students": 162
             }
           ],
           "status": "正常",
@@ -19244,6 +20570,10 @@
             {
               "year": 113,
               "students": 144
+            },
+            {
+              "year": 114,
+              "students": 132
             }
           ],
           "status": "正常",
@@ -19294,6 +20624,10 @@
             {
               "year": 113,
               "students": 94
+            },
+            {
+              "year": 114,
+              "students": 96
             }
           ],
           "status": "正常",
@@ -19344,6 +20678,10 @@
             {
               "year": 113,
               "students": 75
+            },
+            {
+              "year": 114,
+              "students": 71
             }
           ],
           "status": "正常",
@@ -19394,6 +20732,10 @@
             {
               "year": 113,
               "students": 65
+            },
+            {
+              "year": 114,
+              "students": 64
             }
           ],
           "status": "正常",
@@ -19444,6 +20786,10 @@
             {
               "year": 113,
               "students": 63
+            },
+            {
+              "year": 114,
+              "students": 52
             }
           ],
           "status": "正常",
@@ -19451,13 +20797,7 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "霧峰區 有 2 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     }
   ]
 }

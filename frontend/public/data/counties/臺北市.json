@@ -5,13 +5,7 @@
     "shortLabel": "臺北",
     "region": "北部"
   },
-  "dataNotes": [
-    {
-      "type": "缺年度",
-      "message": "臺北市 有 4 所學校存在年度缺漏。",
-      "severity": "warning"
-    }
-  ],
+  "dataNotes": [],
   "towns": [
     {
       "id": "臺北市:士林區",
@@ -61,6 +55,10 @@
             },
             {
               "year": 113,
+              "students": 17904
+            },
+            {
+              "year": 114,
               "students": 17904
             }
           ],
@@ -112,6 +110,10 @@
             {
               "year": 113,
               "students": 17287
+            },
+            {
+              "year": 114,
+              "students": 17287
             }
           ],
           "status": "正常",
@@ -161,6 +163,10 @@
             },
             {
               "year": 113,
+              "students": 14958
+            },
+            {
+              "year": 114,
               "students": 14958
             }
           ],
@@ -212,6 +218,10 @@
             {
               "year": 113,
               "students": 2111
+            },
+            {
+              "year": 114,
+              "students": 2111
             }
           ],
           "status": "正常",
@@ -262,6 +272,10 @@
             {
               "year": 113,
               "students": 2075
+            },
+            {
+              "year": 114,
+              "students": 2092
             }
           ],
           "status": "正常",
@@ -311,6 +325,10 @@
             },
             {
               "year": 113,
+              "students": 1889
+            },
+            {
+              "year": 114,
               "students": 1889
             }
           ],
@@ -362,6 +380,10 @@
             {
               "year": 113,
               "students": 1785
+            },
+            {
+              "year": 114,
+              "students": 1701
             }
           ],
           "status": "正常",
@@ -412,56 +434,10 @@
             {
               "year": 113,
               "students": 1676
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "413611",
-          "code": "413611",
-          "name": "市立百齡國小",
-          "countyId": "臺北市",
-          "townshipId": "臺北市:士林區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺北市士林區福中里福港街205號",
-          "phone": "(02)28817683",
-          "website": "https://www.bles.tp.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/413611/C/臺北市/士林區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.518606,
-            "latitude": 25.086129
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1442
             },
             {
-              "year": 108,
-              "students": 1447
-            },
-            {
-              "year": 109,
-              "students": 1466
-            },
-            {
-              "year": 110,
-              "students": 1476
-            },
-            {
-              "year": 111,
-              "students": 1480
-            },
-            {
-              "year": 112,
-              "students": 1481
-            },
-            {
-              "year": 113,
-              "students": 1370
+              "year": 114,
+              "students": 1676
             }
           ],
           "status": "正常",
@@ -512,6 +488,64 @@
             {
               "year": 113,
               "students": 1340
+            },
+            {
+              "year": 114,
+              "students": 1340
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "413611",
+          "code": "413611",
+          "name": "市立百齡國小",
+          "countyId": "臺北市",
+          "townshipId": "臺北市:士林區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺北市士林區福中里福港街205號",
+          "phone": "(02)28817683",
+          "website": "https://www.bles.tp.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/413611/C/臺北市/士林區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.518606,
+            "latitude": 25.086129
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1442
+            },
+            {
+              "year": 108,
+              "students": 1447
+            },
+            {
+              "year": 109,
+              "students": 1466
+            },
+            {
+              "year": 110,
+              "students": 1476
+            },
+            {
+              "year": 111,
+              "students": 1480
+            },
+            {
+              "year": 112,
+              "students": 1481
+            },
+            {
+              "year": 113,
+              "students": 1370
+            },
+            {
+              "year": 114,
+              "students": 1310
             }
           ],
           "status": "正常",
@@ -561,6 +595,10 @@
             },
             {
               "year": 113,
+              "students": 1270
+            },
+            {
+              "year": 114,
               "students": 1270
             }
           ],
@@ -612,6 +650,10 @@
             {
               "year": 113,
               "students": 1267
+            },
+            {
+              "year": 114,
+              "students": 1267
             }
           ],
           "status": "正常",
@@ -662,106 +704,10 @@
             {
               "year": 113,
               "students": 1170
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "413602",
-          "code": "413602",
-          "name": "市立士東國小",
-          "countyId": "臺北市",
-          "townshipId": "臺北市:士林區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺北市士林區蘭雅里中山北路6段392號",
-          "phone": "(02)28710064",
-          "website": "https://www.stes.tp.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/413602/C/臺北市/士林區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.526987,
-            "latitude": 25.113068
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 954
             },
             {
-              "year": 108,
-              "students": 1007
-            },
-            {
-              "year": 109,
-              "students": 1023
-            },
-            {
-              "year": 110,
-              "students": 1025
-            },
-            {
-              "year": 111,
-              "students": 1021
-            },
-            {
-              "year": 112,
-              "students": 1021
-            },
-            {
-              "year": 113,
-              "students": 1001
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "413613",
-          "code": "413613",
-          "name": "市立葫蘆國小",
-          "countyId": "臺北市",
-          "townshipId": "臺北市:士林區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺北市士林區環河北路3段95號",
-          "phone": "(02)28129586",
-          "website": "https://www.hrps.tp.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/413613/C/臺北市/士林區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.507074,
-            "latitude": 25.084026
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1116
-            },
-            {
-              "year": 108,
-              "students": 1106
-            },
-            {
-              "year": 109,
-              "students": 1083
-            },
-            {
-              "year": 110,
-              "students": 1067
-            },
-            {
-              "year": 111,
-              "students": 1053
-            },
-            {
-              "year": 112,
-              "students": 1046
-            },
-            {
-              "year": 113,
-              "students": 990
+              "year": 114,
+              "students": 1078
             }
           ],
           "status": "正常",
@@ -812,6 +758,118 @@
             {
               "year": 113,
               "students": 967
+            },
+            {
+              "year": 114,
+              "students": 1004
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "413602",
+          "code": "413602",
+          "name": "市立士東國小",
+          "countyId": "臺北市",
+          "townshipId": "臺北市:士林區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺北市士林區蘭雅里中山北路6段392號",
+          "phone": "(02)28710064",
+          "website": "https://www.stes.tp.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/413602/C/臺北市/士林區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.526987,
+            "latitude": 25.113068
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 954
+            },
+            {
+              "year": 108,
+              "students": 1007
+            },
+            {
+              "year": 109,
+              "students": 1023
+            },
+            {
+              "year": 110,
+              "students": 1025
+            },
+            {
+              "year": 111,
+              "students": 1021
+            },
+            {
+              "year": 112,
+              "students": 1021
+            },
+            {
+              "year": 113,
+              "students": 1001
+            },
+            {
+              "year": 114,
+              "students": 958
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "413613",
+          "code": "413613",
+          "name": "市立葫蘆國小",
+          "countyId": "臺北市",
+          "townshipId": "臺北市:士林區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺北市士林區環河北路3段95號",
+          "phone": "(02)28129586",
+          "website": "https://www.hrps.tp.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/413613/C/臺北市/士林區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.507074,
+            "latitude": 25.084026
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1116
+            },
+            {
+              "year": 108,
+              "students": 1106
+            },
+            {
+              "year": 109,
+              "students": 1083
+            },
+            {
+              "year": 110,
+              "students": 1067
+            },
+            {
+              "year": 111,
+              "students": 1053
+            },
+            {
+              "year": 112,
+              "students": 1046
+            },
+            {
+              "year": 113,
+              "students": 990
+            },
+            {
+              "year": 114,
+              "students": 915
             }
           ],
           "status": "正常",
@@ -862,6 +920,10 @@
             {
               "year": 113,
               "students": 873
+            },
+            {
+              "year": 114,
+              "students": 821
             }
           ],
           "status": "正常",
@@ -912,6 +974,10 @@
             {
               "year": 113,
               "students": 782
+            },
+            {
+              "year": 114,
+              "students": 745
             }
           ],
           "status": "正常",
@@ -961,6 +1027,10 @@
             },
             {
               "year": 113,
+              "students": 689
+            },
+            {
+              "year": 114,
               "students": 689
             }
           ],
@@ -1012,6 +1082,10 @@
             {
               "year": 113,
               "students": 687
+            },
+            {
+              "year": 114,
+              "students": 661
             }
           ],
           "status": "正常",
@@ -1061,6 +1135,10 @@
             },
             {
               "year": 113,
+              "students": 610
+            },
+            {
+              "year": 114,
               "students": 610
             }
           ],
@@ -1112,6 +1190,10 @@
             {
               "year": 113,
               "students": 548
+            },
+            {
+              "year": 114,
+              "students": 510
             }
           ],
           "status": "正常",
@@ -1162,6 +1244,10 @@
             {
               "year": 113,
               "students": 495
+            },
+            {
+              "year": 114,
+              "students": 484
             }
           ],
           "status": "正常",
@@ -1212,56 +1298,10 @@
             {
               "year": 113,
               "students": 486
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "413608",
-          "code": "413608",
-          "name": "市立劍潭國小",
-          "countyId": "臺北市",
-          "townshipId": "臺北市:士林區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺北市士林區明勝里通河街16號",
-          "phone": "(02)28855491",
-          "website": "https://www.jtes.tp.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/413608/C/臺北市/士林區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.522937,
-            "latitude": 25.079773
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 427
             },
             {
-              "year": 108,
-              "students": 432
-            },
-            {
-              "year": 109,
-              "students": 436
-            },
-            {
-              "year": 110,
-              "students": 455
-            },
-            {
-              "year": 111,
-              "students": 443
-            },
-            {
-              "year": 112,
-              "students": 443
-            },
-            {
-              "year": 113,
-              "students": 434
+              "year": 114,
+              "students": 450
             }
           ],
           "status": "正常",
@@ -1312,6 +1352,64 @@
             {
               "year": 113,
               "students": 423
+            },
+            {
+              "year": 114,
+              "students": 407
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "413608",
+          "code": "413608",
+          "name": "市立劍潭國小",
+          "countyId": "臺北市",
+          "townshipId": "臺北市:士林區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺北市士林區明勝里通河街16號",
+          "phone": "(02)28855491",
+          "website": "https://www.jtes.tp.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/413608/C/臺北市/士林區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.522937,
+            "latitude": 25.079773
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 427
+            },
+            {
+              "year": 108,
+              "students": 432
+            },
+            {
+              "year": 109,
+              "students": 436
+            },
+            {
+              "year": 110,
+              "students": 455
+            },
+            {
+              "year": 111,
+              "students": 443
+            },
+            {
+              "year": 112,
+              "students": 443
+            },
+            {
+              "year": 113,
+              "students": 434
+            },
+            {
+              "year": 114,
+              "students": 401
             }
           ],
           "status": "正常",
@@ -1362,6 +1460,10 @@
             {
               "year": 113,
               "students": 220
+            },
+            {
+              "year": 114,
+              "students": 228
             }
           ],
           "status": "正常",
@@ -1412,6 +1514,10 @@
             {
               "year": 113,
               "students": 136
+            },
+            {
+              "year": 114,
+              "students": 133
             }
           ],
           "status": "正常",
@@ -1462,56 +1568,10 @@
             {
               "year": 113,
               "students": 126
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "413612",
-          "code": "413612",
-          "name": "市立雙溪國小",
-          "countyId": "臺北市",
-          "townshipId": "臺北市:士林區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺北市士林區翠山里中社路2段66號",
-          "phone": "(02)28411038",
-          "website": "https://www.sses.tp.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/413612/C/臺北市/士林區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.564737,
-            "latitude": 25.106451
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 123
             },
             {
-              "year": 108,
-              "students": 141
-            },
-            {
-              "year": 109,
-              "students": 124
-            },
-            {
-              "year": 110,
-              "students": 124
-            },
-            {
-              "year": 111,
-              "students": 125
-            },
-            {
-              "year": 112,
-              "students": 116
-            },
-            {
-              "year": 113,
-              "students": 118
+              "year": 114,
+              "students": 126
             }
           ],
           "status": "正常",
@@ -1562,6 +1622,64 @@
             {
               "year": 113,
               "students": 113
+            },
+            {
+              "year": 114,
+              "students": 113
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "413612",
+          "code": "413612",
+          "name": "市立雙溪國小",
+          "countyId": "臺北市",
+          "townshipId": "臺北市:士林區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺北市士林區翠山里中社路2段66號",
+          "phone": "(02)28411038",
+          "website": "https://www.sses.tp.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/413612/C/臺北市/士林區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.564737,
+            "latitude": 25.106451
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 123
+            },
+            {
+              "year": 108,
+              "students": 141
+            },
+            {
+              "year": 109,
+              "students": 124
+            },
+            {
+              "year": 110,
+              "students": 124
+            },
+            {
+              "year": 111,
+              "students": 125
+            },
+            {
+              "year": 112,
+              "students": 116
+            },
+            {
+              "year": 113,
+              "students": 118
+            },
+            {
+              "year": 114,
+              "students": 112
             }
           ],
           "status": "正常",
@@ -1612,6 +1730,10 @@
             {
               "year": 113,
               "students": 105
+            },
+            {
+              "year": 114,
+              "students": 96
             }
           ],
           "status": "正常",
@@ -1662,6 +1784,10 @@
             {
               "year": 113,
               "students": 100
+            },
+            {
+              "year": 114,
+              "students": 94
             }
           ],
           "status": "正常",
@@ -1711,6 +1837,10 @@
             },
             {
               "year": 113,
+              "students": 57
+            },
+            {
+              "year": 114,
               "students": 57
             }
           ],
@@ -1762,6 +1892,10 @@
             {
               "year": 113,
               "students": 49
+            },
+            {
+              "year": 114,
+              "students": 47
             }
           ],
           "status": "正常",
@@ -1820,6 +1954,10 @@
             {
               "year": 113,
               "students": 2041
+            },
+            {
+              "year": 114,
+              "students": 2041
             }
           ],
           "status": "正常",
@@ -1869,6 +2007,10 @@
             },
             {
               "year": 113,
+              "students": 1594
+            },
+            {
+              "year": 114,
               "students": 1594
             }
           ],
@@ -1920,6 +2062,10 @@
             {
               "year": 113,
               "students": 1301
+            },
+            {
+              "year": 114,
+              "students": 1301
             }
           ],
           "status": "正常",
@@ -1969,6 +2115,10 @@
             },
             {
               "year": 113,
+              "students": 1243
+            },
+            {
+              "year": 114,
               "students": 1243
             }
           ],
@@ -2020,6 +2170,10 @@
             {
               "year": 113,
               "students": 1026
+            },
+            {
+              "year": 114,
+              "students": 1026
             }
           ],
           "status": "正常",
@@ -2070,6 +2224,10 @@
             {
               "year": 113,
               "students": 949
+            },
+            {
+              "year": 114,
+              "students": 910
             }
           ],
           "status": "正常",
@@ -2120,6 +2278,10 @@
             {
               "year": 113,
               "students": 857
+            },
+            {
+              "year": 114,
+              "students": 792
             }
           ],
           "status": "正常",
@@ -2170,6 +2332,10 @@
             {
               "year": 113,
               "students": 825
+            },
+            {
+              "year": 114,
+              "students": 781
             }
           ],
           "status": "正常",
@@ -2220,6 +2386,10 @@
             {
               "year": 113,
               "students": 763
+            },
+            {
+              "year": 114,
+              "students": 769
             }
           ],
           "status": "正常",
@@ -2269,6 +2439,10 @@
             },
             {
               "year": 113,
+              "students": 691
+            },
+            {
+              "year": 114,
               "students": 691
             }
           ],
@@ -2320,6 +2494,10 @@
             {
               "year": 113,
               "students": 688
+            },
+            {
+              "year": 114,
+              "students": 676
             }
           ],
           "status": "正常",
@@ -2369,6 +2547,10 @@
             },
             {
               "year": 113,
+              "students": 583
+            },
+            {
+              "year": 114,
               "students": 583
             }
           ],
@@ -2420,6 +2602,10 @@
             {
               "year": 113,
               "students": 510
+            },
+            {
+              "year": 114,
+              "students": 510
             }
           ],
           "status": "正常",
@@ -2470,6 +2656,10 @@
             {
               "year": 113,
               "students": 479
+            },
+            {
+              "year": 114,
+              "students": 451
             }
           ],
           "status": "正常",
@@ -2520,56 +2710,10 @@
             {
               "year": 113,
               "students": 425
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "363606",
-          "code": "363606",
-          "name": "市立大同國小",
-          "countyId": "臺北市",
-          "townshipId": "臺北市:大同區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺北市大同區蓬萊里大龍街51號",
-          "phone": "(02)25965407",
-          "website": "https://web.ttps.tp.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/363606/C/臺北市/大同區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.516315,
-            "latitude": 25.06459
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 378
             },
             {
-              "year": 108,
-              "students": 379
-            },
-            {
-              "year": 109,
-              "students": 395
-            },
-            {
-              "year": 110,
-              "students": 390
-            },
-            {
-              "year": 111,
-              "students": 397
-            },
-            {
-              "year": 112,
+              "year": 114,
               "students": 401
-            },
-            {
-              "year": 113,
-              "students": 384
             }
           ],
           "status": "正常",
@@ -2620,6 +2764,64 @@
             {
               "year": 113,
               "students": 362
+            },
+            {
+              "year": 114,
+              "students": 362
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "363606",
+          "code": "363606",
+          "name": "市立大同國小",
+          "countyId": "臺北市",
+          "townshipId": "臺北市:大同區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺北市大同區蓬萊里大龍街51號",
+          "phone": "(02)25965407",
+          "website": "https://web.ttps.tp.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/363606/C/臺北市/大同區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.516315,
+            "latitude": 25.06459
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 378
+            },
+            {
+              "year": 108,
+              "students": 379
+            },
+            {
+              "year": 109,
+              "students": 395
+            },
+            {
+              "year": 110,
+              "students": 390
+            },
+            {
+              "year": 111,
+              "students": 397
+            },
+            {
+              "year": 112,
+              "students": 401
+            },
+            {
+              "year": 113,
+              "students": 384
+            },
+            {
+              "year": 114,
+              "students": 353
             }
           ],
           "status": "正常",
@@ -2670,6 +2872,10 @@
             {
               "year": 113,
               "students": 327
+            },
+            {
+              "year": 114,
+              "students": 309
             }
           ],
           "status": "正常",
@@ -2719,6 +2925,10 @@
             },
             {
               "year": 113,
+              "students": 188
+            },
+            {
+              "year": 114,
               "students": 188
             }
           ],
@@ -2778,6 +2988,10 @@
             {
               "year": 113,
               "students": 34487
+            },
+            {
+              "year": 114,
+              "students": 34487
             }
           ],
           "status": "正常",
@@ -2827,6 +3041,10 @@
             },
             {
               "year": 113,
+              "students": 16624
+            },
+            {
+              "year": 114,
               "students": 16624
             }
           ],
@@ -2878,6 +3096,10 @@
             {
               "year": 113,
               "students": 13493
+            },
+            {
+              "year": 114,
+              "students": 13493
             }
           ],
           "status": "正常",
@@ -2927,6 +3149,10 @@
             },
             {
               "year": 113,
+              "students": 11849
+            },
+            {
+              "year": 114,
               "students": 11849
             }
           ],
@@ -2978,6 +3204,10 @@
             {
               "year": 113,
               "students": 6039
+            },
+            {
+              "year": 114,
+              "students": 6039
             }
           ],
           "status": "正常",
@@ -3028,6 +3258,10 @@
             {
               "year": 113,
               "students": 3266
+            },
+            {
+              "year": 114,
+              "students": 3264
             }
           ],
           "status": "正常",
@@ -3077,6 +3311,10 @@
             },
             {
               "year": 113,
+              "students": 3124
+            },
+            {
+              "year": 114,
               "students": 3124
             }
           ],
@@ -3128,6 +3366,10 @@
             {
               "year": 113,
               "students": 2933
+            },
+            {
+              "year": 114,
+              "students": 2933
             }
           ],
           "status": "正常",
@@ -3177,6 +3419,10 @@
             },
             {
               "year": 113,
+              "students": 2620
+            },
+            {
+              "year": 114,
               "students": 2620
             }
           ],
@@ -3228,6 +3474,10 @@
             {
               "year": 113,
               "students": 2238
+            },
+            {
+              "year": 114,
+              "students": 2238
             }
           ],
           "status": "正常",
@@ -3278,56 +3528,10 @@
             {
               "year": 113,
               "students": 2213
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "333604",
-          "code": "333604",
-          "name": "市立建安國小",
-          "countyId": "臺北市",
-          "townshipId": "臺北市:大安區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺北市大安區龍雲里大安路2段99號",
-          "phone": "(02)27077119",
-          "website": "https://www.jnps.tp.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/333604/C/臺北市/大安區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.547551,
-            "latitude": 25.029362
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1640
             },
             {
-              "year": 108,
-              "students": 1754
-            },
-            {
-              "year": 109,
-              "students": 1780
-            },
-            {
-              "year": 110,
-              "students": 1865
-            },
-            {
-              "year": 111,
-              "students": 1959
-            },
-            {
-              "year": 112,
-              "students": 1954
-            },
-            {
-              "year": 113,
-              "students": 1851
+              "year": 114,
+              "students": 2105
             }
           ],
           "status": "正常",
@@ -3378,6 +3582,64 @@
             {
               "year": 113,
               "students": 1828
+            },
+            {
+              "year": 114,
+              "students": 1828
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "333604",
+          "code": "333604",
+          "name": "市立建安國小",
+          "countyId": "臺北市",
+          "townshipId": "臺北市:大安區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺北市大安區龍雲里大安路2段99號",
+          "phone": "(02)27077119",
+          "website": "https://www.jnps.tp.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/333604/C/臺北市/大安區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.547551,
+            "latitude": 25.029362
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1640
+            },
+            {
+              "year": 108,
+              "students": 1754
+            },
+            {
+              "year": 109,
+              "students": 1780
+            },
+            {
+              "year": 110,
+              "students": 1865
+            },
+            {
+              "year": 111,
+              "students": 1959
+            },
+            {
+              "year": 112,
+              "students": 1954
+            },
+            {
+              "year": 113,
+              "students": 1851
+            },
+            {
+              "year": 114,
+              "students": 1721
             }
           ],
           "status": "正常",
@@ -3427,6 +3689,10 @@
             },
             {
               "year": 113,
+              "students": 1677
+            },
+            {
+              "year": 114,
               "students": 1677
             }
           ],
@@ -3478,6 +3744,10 @@
             {
               "year": 113,
               "students": 1395
+            },
+            {
+              "year": 114,
+              "students": 1395
             }
           ],
           "status": "正常",
@@ -3528,6 +3798,10 @@
             {
               "year": 113,
               "students": 1331
+            },
+            {
+              "year": 114,
+              "students": 1287
             }
           ],
           "status": "正常",
@@ -3578,6 +3852,10 @@
             {
               "year": 113,
               "students": 1306
+            },
+            {
+              "year": 114,
+              "students": 1245
             }
           ],
           "status": "正常",
@@ -3628,56 +3906,10 @@
             {
               "year": 113,
               "students": 1208
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "333607",
-          "code": "333607",
-          "name": "市立古亭國小",
-          "countyId": "臺北市",
-          "townshipId": "臺北市:大安區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺北市大安區古風里羅斯福路3段201號",
-          "phone": "(02)23639795",
-          "website": "https://www.gtes.tp.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/333607/C/臺北市/大安區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.528772,
-            "latitude": 25.020819
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1062
             },
             {
-              "year": 108,
-              "students": 1158
-            },
-            {
-              "year": 109,
-              "students": 1210
-            },
-            {
-              "year": 110,
-              "students": 1231
-            },
-            {
-              "year": 111,
-              "students": 1220
-            },
-            {
-              "year": 112,
-              "students": 1230
-            },
-            {
-              "year": 113,
-              "students": 1164
+              "year": 114,
+              "students": 1149
             }
           ],
           "status": "正常",
@@ -3728,6 +3960,10 @@
             {
               "year": 113,
               "students": 1159
+            },
+            {
+              "year": 114,
+              "students": 1138
             }
           ],
           "status": "正常",
@@ -3778,6 +4014,64 @@
             {
               "year": 113,
               "students": 1136
+            },
+            {
+              "year": 114,
+              "students": 1136
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "333607",
+          "code": "333607",
+          "name": "市立古亭國小",
+          "countyId": "臺北市",
+          "townshipId": "臺北市:大安區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺北市大安區古風里羅斯福路3段201號",
+          "phone": "(02)23639795",
+          "website": "https://www.gtes.tp.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/333607/C/臺北市/大安區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.528772,
+            "latitude": 25.020819
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1062
+            },
+            {
+              "year": 108,
+              "students": 1158
+            },
+            {
+              "year": 109,
+              "students": 1210
+            },
+            {
+              "year": 110,
+              "students": 1231
+            },
+            {
+              "year": 111,
+              "students": 1220
+            },
+            {
+              "year": 112,
+              "students": 1230
+            },
+            {
+              "year": 113,
+              "students": 1164
+            },
+            {
+              "year": 114,
+              "students": 1106
             }
           ],
           "status": "正常",
@@ -3828,56 +4122,10 @@
             {
               "year": 113,
               "students": 1084
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "333610",
-          "code": "333610",
-          "name": "市立新生國小",
-          "countyId": "臺北市",
-          "townshipId": "臺北市:大安區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺北市大安區新生南路二段36號",
-          "phone": "(02)23913122",
-          "website": "https://web.snes.tp.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/333610/C/臺北市/大安區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.53332,
-            "latitude": 25.029672
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1059
             },
             {
-              "year": 108,
-              "students": 1072
-            },
-            {
-              "year": 109,
-              "students": 1104
-            },
-            {
-              "year": 110,
-              "students": 1054
-            },
-            {
-              "year": 111,
-              "students": 1043
-            },
-            {
-              "year": 112,
-              "students": 1039
-            },
-            {
-              "year": 113,
-              "students": 1017
+              "year": 114,
+              "students": 1084
             }
           ],
           "status": "正常",
@@ -3928,6 +4176,64 @@
             {
               "year": 113,
               "students": 1013
+            },
+            {
+              "year": 114,
+              "students": 1000
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "333610",
+          "code": "333610",
+          "name": "市立新生國小",
+          "countyId": "臺北市",
+          "townshipId": "臺北市:大安區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺北市大安區新生南路二段36號",
+          "phone": "(02)23913122",
+          "website": "https://web.snes.tp.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/333610/C/臺北市/大安區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.53332,
+            "latitude": 25.029672
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1059
+            },
+            {
+              "year": 108,
+              "students": 1072
+            },
+            {
+              "year": 109,
+              "students": 1104
+            },
+            {
+              "year": 110,
+              "students": 1054
+            },
+            {
+              "year": 111,
+              "students": 1043
+            },
+            {
+              "year": 112,
+              "students": 1039
+            },
+            {
+              "year": 113,
+              "students": 1017
+            },
+            {
+              "year": 114,
+              "students": 996
             }
           ],
           "status": "正常",
@@ -3978,6 +4284,10 @@
             {
               "year": 113,
               "students": 862
+            },
+            {
+              "year": 114,
+              "students": 824
             }
           ],
           "status": "正常",
@@ -4028,6 +4338,10 @@
             {
               "year": 113,
               "students": 649
+            },
+            {
+              "year": 114,
+              "students": 634
             }
           ],
           "status": "正常",
@@ -4077,6 +4391,10 @@
             },
             {
               "year": 113,
+              "students": 589
+            },
+            {
+              "year": 114,
               "students": 589
             }
           ],
@@ -4128,6 +4446,10 @@
             {
               "year": 113,
               "students": 485
+            },
+            {
+              "year": 114,
+              "students": 498
             }
           ],
           "status": "正常",
@@ -4177,6 +4499,10 @@
             },
             {
               "year": 113,
+              "students": 372
+            },
+            {
+              "year": 114,
               "students": 372
             }
           ],
@@ -4228,6 +4554,10 @@
             {
               "year": 113,
               "students": 367
+            },
+            {
+              "year": 114,
+              "students": 367
             }
           ],
           "status": "正常",
@@ -4278,6 +4608,10 @@
             {
               "year": 113,
               "students": 336
+            },
+            {
+              "year": 114,
+              "students": 327
             }
           ],
           "status": "正常",
@@ -4328,6 +4662,10 @@
             {
               "year": 113,
               "students": 294
+            },
+            {
+              "year": 114,
+              "students": 272
             }
           ],
           "status": "正常",
@@ -4377,6 +4715,10 @@
             },
             {
               "year": 113,
+              "students": 258
+            },
+            {
+              "year": 114,
               "students": 258
             }
           ],
@@ -4428,26 +4770,15 @@
             {
               "year": 113,
               "students": 245
+            },
+            {
+              "year": 114,
+              "students": 245
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107,
-            108,
-            109
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107、108、109",
-              "severity": "warning",
-              "years": [
-                107,
-                108,
-                109
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "331502",
@@ -4492,6 +4823,10 @@
             },
             {
               "year": 113,
+              "students": 103
+            },
+            {
+              "year": 114,
               "students": 103
             }
           ],
@@ -4543,6 +4878,10 @@
             {
               "year": 113,
               "students": 51
+            },
+            {
+              "year": 114,
+              "students": 51
             }
           ],
           "status": "正常",
@@ -4550,13 +4889,7 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "大安區 有 1 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "臺北市:中山區",
@@ -4606,6 +4939,10 @@
             },
             {
               "year": 113,
+              "students": 10305
+            },
+            {
+              "year": 114,
               "students": 10305
             }
           ],
@@ -4657,6 +4994,10 @@
             {
               "year": 113,
               "students": 3490
+            },
+            {
+              "year": 114,
+              "students": 3490
             }
           ],
           "status": "正常",
@@ -4706,6 +5047,10 @@
             },
             {
               "year": 113,
+              "students": 2253
+            },
+            {
+              "year": 114,
               "students": 2253
             }
           ],
@@ -4757,6 +5102,10 @@
             {
               "year": 113,
               "students": 2189
+            },
+            {
+              "year": 114,
+              "students": 2189
             }
           ],
           "status": "正常",
@@ -4806,6 +5155,10 @@
             },
             {
               "year": 113,
+              "students": 1814
+            },
+            {
+              "year": 114,
               "students": 1814
             }
           ],
@@ -4857,106 +5210,10 @@
             {
               "year": 113,
               "students": 1488
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "343610",
-          "code": "343610",
-          "name": "市立永安國小",
-          "countyId": "臺北市",
-          "townshipId": "臺北市:中山區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺北市中山區明水路397巷19弄1號",
-          "phone": "(02)25335672",
-          "website": "https://www.yaes.tp.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/343610/C/臺北市/中山區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.549702,
-            "latitude": 25.078937
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1031
             },
             {
-              "year": 108,
-              "students": 1080
-            },
-            {
-              "year": 109,
-              "students": 1185
-            },
-            {
-              "year": 110,
-              "students": 1199
-            },
-            {
-              "year": 111,
-              "students": 1200
-            },
-            {
-              "year": 112,
-              "students": 1148
-            },
-            {
-              "year": 113,
-              "students": 1071
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "343607",
-          "code": "343607",
-          "name": "市立五常國小",
-          "countyId": "臺北市",
-          "townshipId": "臺北市:中山區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺北市中山區下埤里五常街16號",
-          "phone": "(02)25023416",
-          "website": "https://www.wcps.tp.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/343607/C/臺北市/中山區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.54223,
-            "latitude": 25.06406
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 949
-            },
-            {
-              "year": 108,
-              "students": 988
-            },
-            {
-              "year": 109,
-              "students": 1029
-            },
-            {
-              "year": 110,
-              "students": 1047
-            },
-            {
-              "year": 111,
-              "students": 1055
-            },
-            {
-              "year": 112,
-              "students": 1058
-            },
-            {
-              "year": 113,
-              "students": 1050
+              "year": 114,
+              "students": 1434
             }
           ],
           "status": "正常",
@@ -5007,6 +5264,118 @@
             {
               "year": 113,
               "students": 1036
+            },
+            {
+              "year": 114,
+              "students": 1036
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "343607",
+          "code": "343607",
+          "name": "市立五常國小",
+          "countyId": "臺北市",
+          "townshipId": "臺北市:中山區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺北市中山區下埤里五常街16號",
+          "phone": "(02)25023416",
+          "website": "https://www.wcps.tp.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/343607/C/臺北市/中山區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.54223,
+            "latitude": 25.06406
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 949
+            },
+            {
+              "year": 108,
+              "students": 988
+            },
+            {
+              "year": 109,
+              "students": 1029
+            },
+            {
+              "year": 110,
+              "students": 1047
+            },
+            {
+              "year": 111,
+              "students": 1055
+            },
+            {
+              "year": 112,
+              "students": 1058
+            },
+            {
+              "year": 113,
+              "students": 1050
+            },
+            {
+              "year": 114,
+              "students": 1016
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "343610",
+          "code": "343610",
+          "name": "市立永安國小",
+          "countyId": "臺北市",
+          "townshipId": "臺北市:中山區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺北市中山區明水路397巷19弄1號",
+          "phone": "(02)25335672",
+          "website": "https://www.yaes.tp.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/343610/C/臺北市/中山區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.549702,
+            "latitude": 25.078937
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1031
+            },
+            {
+              "year": 108,
+              "students": 1080
+            },
+            {
+              "year": 109,
+              "students": 1185
+            },
+            {
+              "year": 110,
+              "students": 1199
+            },
+            {
+              "year": 111,
+              "students": 1200
+            },
+            {
+              "year": 112,
+              "students": 1148
+            },
+            {
+              "year": 113,
+              "students": 1071
+            },
+            {
+              "year": 114,
+              "students": 997
             }
           ],
           "status": "正常",
@@ -5057,56 +5426,10 @@
             {
               "year": 113,
               "students": 994
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "343604",
-          "code": "343604",
-          "name": "市立長春國小",
-          "countyId": "臺北市",
-          "townshipId": "臺北市:中山區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺北市中山區中央里長春路165號",
-          "phone": "(02)25024366",
-          "website": "https://www.ccps.tp.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/343604/C/臺北市/中山區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.53392,
-            "latitude": 25.055063
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1038
             },
             {
-              "year": 108,
-              "students": 1031
-            },
-            {
-              "year": 109,
-              "students": 1085
-            },
-            {
-              "year": 110,
-              "students": 1078
-            },
-            {
-              "year": 111,
-              "students": 1136
-            },
-            {
-              "year": 112,
-              "students": 1087
-            },
-            {
-              "year": 113,
-              "students": 981
+              "year": 114,
+              "students": 949
             }
           ],
           "status": "正常",
@@ -5157,6 +5480,64 @@
             {
               "year": 113,
               "students": 920
+            },
+            {
+              "year": 114,
+              "students": 920
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "343604",
+          "code": "343604",
+          "name": "市立長春國小",
+          "countyId": "臺北市",
+          "townshipId": "臺北市:中山區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺北市中山區中央里長春路165號",
+          "phone": "(02)25024366",
+          "website": "https://www.ccps.tp.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/343604/C/臺北市/中山區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.53392,
+            "latitude": 25.055063
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1038
+            },
+            {
+              "year": 108,
+              "students": 1031
+            },
+            {
+              "year": 109,
+              "students": 1085
+            },
+            {
+              "year": 110,
+              "students": 1078
+            },
+            {
+              "year": 111,
+              "students": 1136
+            },
+            {
+              "year": 112,
+              "students": 1087
+            },
+            {
+              "year": 113,
+              "students": 981
+            },
+            {
+              "year": 114,
+              "students": 919
             }
           ],
           "status": "正常",
@@ -5207,6 +5588,10 @@
             {
               "year": 113,
               "students": 874
+            },
+            {
+              "year": 114,
+              "students": 803
             }
           ],
           "status": "正常",
@@ -5257,6 +5642,10 @@
             {
               "year": 113,
               "students": 717
+            },
+            {
+              "year": 114,
+              "students": 692
             }
           ],
           "status": "正常",
@@ -5307,6 +5696,10 @@
             {
               "year": 113,
               "students": 693
+            },
+            {
+              "year": 114,
+              "students": 687
             }
           ],
           "status": "正常",
@@ -5357,6 +5750,10 @@
             {
               "year": 113,
               "students": 582
+            },
+            {
+              "year": 114,
+              "students": 545
             }
           ],
           "status": "正常",
@@ -5406,6 +5803,10 @@
             },
             {
               "year": 113,
+              "students": 535
+            },
+            {
+              "year": 114,
               "students": 535
             }
           ],
@@ -5457,6 +5858,10 @@
             {
               "year": 113,
               "students": 415
+            },
+            {
+              "year": 114,
+              "students": 415
             }
           ],
           "status": "正常",
@@ -5507,56 +5912,10 @@
             {
               "year": 113,
               "students": 335
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "343609",
-          "code": "343609",
-          "name": "市立懷生國小",
-          "countyId": "臺北市",
-          "townshipId": "臺北市:中山區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺北市中山區埤頭里安東街16巷2號",
-          "phone": "(02)27710846",
-          "website": "https://www.wses.tp.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/343609/C/臺北市/中山區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.541737,
-            "latitude": 25.04514
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 298
             },
             {
-              "year": 108,
-              "students": 340
-            },
-            {
-              "year": 109,
-              "students": 384
-            },
-            {
-              "year": 110,
-              "students": 403
-            },
-            {
-              "year": 111,
-              "students": 428
-            },
-            {
-              "year": 112,
-              "students": 338
-            },
-            {
-              "year": 113,
-              "students": 311
+              "year": 114,
+              "students": 335
             }
           ],
           "status": "正常",
@@ -5607,6 +5966,10 @@
             {
               "year": 113,
               "students": 303
+            },
+            {
+              "year": 114,
+              "students": 303
             }
           ],
           "status": "正常",
@@ -5614,49 +5977,53 @@
           "dataNotes": []
         },
         {
-          "id": "343606",
-          "code": "343606",
-          "name": "市立大佳國小",
+          "id": "343609",
+          "code": "343609",
+          "name": "市立懷生國小",
           "countyId": "臺北市",
           "townshipId": "臺北市:中山區",
           "educationLevel": "國小",
           "managementType": "公立",
-          "address": "臺北市中山區大佳里6鄰濱江街107號",
-          "phone": "(02)25035816",
-          "website": "https://www.djes.tp.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/343606/C/臺北市/中山區/縣市立/否/無/",
+          "address": "臺北市中山區埤頭里安東街16巷2號",
+          "phone": "(02)27710846",
+          "website": "https://www.wses.tp.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/343609/C/臺北市/中山區/縣市立/否/無/",
           "coordinates": {
-            "longitude": 121.535954,
-            "latitude": 25.073303
+            "longitude": 121.541737,
+            "latitude": 25.04514
           },
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 281
+              "students": 298
             },
             {
               "year": 108,
-              "students": 288
+              "students": 340
             },
             {
               "year": 109,
-              "students": 306
+              "students": 384
             },
             {
               "year": 110,
-              "students": 326
+              "students": 403
             },
             {
               "year": 111,
-              "students": 319
+              "students": 428
             },
             {
               "year": 112,
-              "students": 297
+              "students": 338
             },
             {
               "year": 113,
-              "students": 276
+              "students": 311
+            },
+            {
+              "year": 114,
+              "students": 271
             }
           ],
           "status": "正常",
@@ -5707,6 +6074,64 @@
             {
               "year": 113,
               "students": 267
+            },
+            {
+              "year": 114,
+              "students": 267
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "343606",
+          "code": "343606",
+          "name": "市立大佳國小",
+          "countyId": "臺北市",
+          "townshipId": "臺北市:中山區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺北市中山區大佳里6鄰濱江街107號",
+          "phone": "(02)25035816",
+          "website": "https://www.djes.tp.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/343606/C/臺北市/中山區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.535954,
+            "latitude": 25.073303
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 281
+            },
+            {
+              "year": 108,
+              "students": 288
+            },
+            {
+              "year": 109,
+              "students": 306
+            },
+            {
+              "year": 110,
+              "students": 326
+            },
+            {
+              "year": 111,
+              "students": 319
+            },
+            {
+              "year": 112,
+              "students": 297
+            },
+            {
+              "year": 113,
+              "students": 276
+            },
+            {
+              "year": 114,
+              "students": 250
             }
           ],
           "status": "正常",
@@ -5765,6 +6190,10 @@
             {
               "year": 113,
               "students": 8099
+            },
+            {
+              "year": 114,
+              "students": 8099
             }
           ],
           "status": "正常",
@@ -5814,6 +6243,10 @@
             },
             {
               "year": 113,
+              "students": 6948
+            },
+            {
+              "year": 114,
               "students": 6948
             }
           ],
@@ -5865,6 +6298,10 @@
             {
               "year": 113,
               "students": 2821
+            },
+            {
+              "year": 114,
+              "students": 2821
             }
           ],
           "status": "正常",
@@ -5914,6 +6351,10 @@
             },
             {
               "year": 113,
+              "students": 2393
+            },
+            {
+              "year": 114,
               "students": 2393
             }
           ],
@@ -5965,6 +6406,10 @@
             {
               "year": 113,
               "students": 2291
+            },
+            {
+              "year": 114,
+              "students": 2291
             }
           ],
           "status": "正常",
@@ -6014,6 +6459,10 @@
             },
             {
               "year": 113,
+              "students": 2101
+            },
+            {
+              "year": 114,
               "students": 2101
             }
           ],
@@ -6065,6 +6514,10 @@
             {
               "year": 113,
               "students": 1709
+            },
+            {
+              "year": 114,
+              "students": 1669
             }
           ],
           "status": "正常",
@@ -6115,6 +6568,10 @@
             {
               "year": 113,
               "students": 1516
+            },
+            {
+              "year": 114,
+              "students": 1495
             }
           ],
           "status": "正常",
@@ -6164,6 +6621,10 @@
             },
             {
               "year": 113,
+              "students": 1445
+            },
+            {
+              "year": 114,
               "students": 1445
             }
           ],
@@ -6215,6 +6676,10 @@
             {
               "year": 113,
               "students": 1294
+            },
+            {
+              "year": 114,
+              "students": 1251
             }
           ],
           "status": "正常",
@@ -6264,6 +6729,10 @@
             },
             {
               "year": 113,
+              "students": 1203
+            },
+            {
+              "year": 114,
               "students": 1203
             }
           ],
@@ -6315,6 +6784,10 @@
             {
               "year": 113,
               "students": 1088
+            },
+            {
+              "year": 114,
+              "students": 1088
             }
           ],
           "status": "正常",
@@ -6365,6 +6838,10 @@
             {
               "year": 113,
               "students": 700
+            },
+            {
+              "year": 114,
+              "students": 694
             }
           ],
           "status": "正常",
@@ -6415,6 +6892,10 @@
             {
               "year": 113,
               "students": 669
+            },
+            {
+              "year": 114,
+              "students": 620
             }
           ],
           "status": "正常",
@@ -6465,6 +6946,10 @@
             {
               "year": 113,
               "students": 637
+            },
+            {
+              "year": 114,
+              "students": 601
             }
           ],
           "status": "正常",
@@ -6514,6 +6999,10 @@
             },
             {
               "year": 113,
+              "students": 504
+            },
+            {
+              "year": 114,
               "students": 504
             }
           ],
@@ -6565,6 +7054,10 @@
             {
               "year": 113,
               "students": 502
+            },
+            {
+              "year": 114,
+              "students": 502
             }
           ],
           "status": "正常",
@@ -6614,6 +7107,10 @@
             },
             {
               "year": 113,
+              "students": 479
+            },
+            {
+              "year": 114,
               "students": 479
             }
           ],
@@ -6665,6 +7162,10 @@
             {
               "year": 113,
               "students": 369
+            },
+            {
+              "year": 114,
+              "students": 369
             }
           ],
           "status": "正常",
@@ -6715,6 +7216,10 @@
             {
               "year": 113,
               "students": 328
+            },
+            {
+              "year": 114,
+              "students": 313
             }
           ],
           "status": "正常",
@@ -6765,6 +7270,10 @@
             {
               "year": 113,
               "students": 138
+            },
+            {
+              "year": 114,
+              "students": 157
             }
           ],
           "status": "正常",
@@ -6823,6 +7332,10 @@
             {
               "year": 113,
               "students": 5086
+            },
+            {
+              "year": 114,
+              "students": 5086
             }
           ],
           "status": "正常",
@@ -6872,6 +7385,10 @@
             },
             {
               "year": 113,
+              "students": 3239
+            },
+            {
+              "year": 114,
               "students": 3239
             }
           ],
@@ -6923,56 +7440,10 @@
             {
               "year": 113,
               "students": 1960
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "403604",
-          "code": "403604",
-          "name": "市立東湖國小",
-          "countyId": "臺北市",
-          "townshipId": "臺北市:內湖區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺北市內湖區東湖里東湖路115號",
-          "phone": "(02)26339984",
-          "website": "https://www.dfps.tp.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/403604/C/臺北市/內湖區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.615445,
-            "latitude": 25.068831
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1705
             },
             {
-              "year": 108,
-              "students": 1802
-            },
-            {
-              "year": 109,
-              "students": 1804
-            },
-            {
-              "year": 110,
-              "students": 1854
-            },
-            {
-              "year": 111,
-              "students": 1962
-            },
-            {
-              "year": 112,
-              "students": 2007
-            },
-            {
-              "year": 113,
-              "students": 1917
+              "year": 114,
+              "students": 1960
             }
           ],
           "status": "正常",
@@ -7023,6 +7494,64 @@
             {
               "year": 113,
               "students": 1849
+            },
+            {
+              "year": 114,
+              "students": 1849
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "403604",
+          "code": "403604",
+          "name": "市立東湖國小",
+          "countyId": "臺北市",
+          "townshipId": "臺北市:內湖區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺北市內湖區東湖里東湖路115號",
+          "phone": "(02)26339984",
+          "website": "https://www.dfps.tp.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/403604/C/臺北市/內湖區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.615445,
+            "latitude": 25.068831
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1705
+            },
+            {
+              "year": 108,
+              "students": 1802
+            },
+            {
+              "year": 109,
+              "students": 1804
+            },
+            {
+              "year": 110,
+              "students": 1854
+            },
+            {
+              "year": 111,
+              "students": 1962
+            },
+            {
+              "year": 112,
+              "students": 2007
+            },
+            {
+              "year": 113,
+              "students": 1917
+            },
+            {
+              "year": 114,
+              "students": 1790
             }
           ],
           "status": "正常",
@@ -7073,56 +7602,10 @@
             {
               "year": 113,
               "students": 1767
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "403607",
-          "code": "403607",
-          "name": "市立明湖國小",
-          "countyId": "臺北市",
-          "townshipId": "臺北市:內湖區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺北市內湖區東湖里康寧路3段105號",
-          "phone": "(02)26323477",
-          "website": "https://www.mhups.tp.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/403607/C/臺北市/內湖區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.610795,
-            "latitude": 25.071335
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1722
             },
             {
-              "year": 108,
-              "students": 1716
-            },
-            {
-              "year": 109,
-              "students": 1690
-            },
-            {
-              "year": 110,
-              "students": 1683
-            },
-            {
-              "year": 111,
-              "students": 1707
-            },
-            {
-              "year": 112,
-              "students": 1666
-            },
-            {
-              "year": 113,
-              "students": 1634
+              "year": 114,
+              "students": 1767
             }
           ],
           "status": "正常",
@@ -7173,6 +7656,64 @@
             {
               "year": 113,
               "students": 1622
+            },
+            {
+              "year": 114,
+              "students": 1622
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "403607",
+          "code": "403607",
+          "name": "市立明湖國小",
+          "countyId": "臺北市",
+          "townshipId": "臺北市:內湖區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺北市內湖區東湖里康寧路3段105號",
+          "phone": "(02)26323477",
+          "website": "https://www.mhups.tp.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/403607/C/臺北市/內湖區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.610795,
+            "latitude": 25.071335
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1722
+            },
+            {
+              "year": 108,
+              "students": 1716
+            },
+            {
+              "year": 109,
+              "students": 1690
+            },
+            {
+              "year": 110,
+              "students": 1683
+            },
+            {
+              "year": 111,
+              "students": 1707
+            },
+            {
+              "year": 112,
+              "students": 1666
+            },
+            {
+              "year": 113,
+              "students": 1634
+            },
+            {
+              "year": 114,
+              "students": 1609
             }
           ],
           "status": "正常",
@@ -7222,6 +7763,10 @@
             },
             {
               "year": 113,
+              "students": 1507
+            },
+            {
+              "year": 114,
               "students": 1507
             }
           ],
@@ -7273,6 +7818,10 @@
             {
               "year": 113,
               "students": 1499
+            },
+            {
+              "year": 114,
+              "students": 1468
             }
           ],
           "status": "正常",
@@ -7323,6 +7872,10 @@
             {
               "year": 113,
               "students": 1372
+            },
+            {
+              "year": 114,
+              "students": 1298
             }
           ],
           "status": "正常",
@@ -7373,6 +7926,10 @@
             {
               "year": 113,
               "students": 1308
+            },
+            {
+              "year": 114,
+              "students": 1250
             }
           ],
           "status": "正常",
@@ -7423,6 +7980,10 @@
             {
               "year": 113,
               "students": 1305
+            },
+            {
+              "year": 114,
+              "students": 1210
             }
           ],
           "status": "正常",
@@ -7473,6 +8034,10 @@
             {
               "year": 113,
               "students": 1054
+            },
+            {
+              "year": 114,
+              "students": 1030
             }
           ],
           "status": "正常",
@@ -7522,6 +8087,10 @@
             },
             {
               "year": 113,
+              "students": 978
+            },
+            {
+              "year": 114,
               "students": 978
             }
           ],
@@ -7573,56 +8142,10 @@
             {
               "year": 113,
               "students": 941
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "403602",
-          "code": "403602",
-          "name": "市立碧湖國小",
-          "countyId": "臺北市",
-          "townshipId": "臺北市:內湖區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺北市內湖區內湖里金龍路100號",
-          "phone": "(02)27907161",
-          "website": "https://www.bhps.tp.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/403602/C/臺北市/內湖區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.591299,
-            "latitude": 25.08499
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 935
             },
             {
-              "year": 108,
-              "students": 911
-            },
-            {
-              "year": 109,
-              "students": 910
-            },
-            {
-              "year": 110,
-              "students": 927
-            },
-            {
-              "year": 111,
-              "students": 968
-            },
-            {
-              "year": 112,
-              "students": 996
-            },
-            {
-              "year": 113,
-              "students": 932
+              "year": 114,
+              "students": 941
             }
           ],
           "status": "正常",
@@ -7673,6 +8196,64 @@
             {
               "year": 113,
               "students": 906
+            },
+            {
+              "year": 114,
+              "students": 911
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "403602",
+          "code": "403602",
+          "name": "市立碧湖國小",
+          "countyId": "臺北市",
+          "townshipId": "臺北市:內湖區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺北市內湖區內湖里金龍路100號",
+          "phone": "(02)27907161",
+          "website": "https://www.bhps.tp.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/403602/C/臺北市/內湖區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.591299,
+            "latitude": 25.08499
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 935
+            },
+            {
+              "year": 108,
+              "students": 911
+            },
+            {
+              "year": 109,
+              "students": 910
+            },
+            {
+              "year": 110,
+              "students": 927
+            },
+            {
+              "year": 111,
+              "students": 968
+            },
+            {
+              "year": 112,
+              "students": 996
+            },
+            {
+              "year": 113,
+              "students": 932
+            },
+            {
+              "year": 114,
+              "students": 869
             }
           ],
           "status": "正常",
@@ -7722,6 +8303,10 @@
             },
             {
               "year": 113,
+              "students": 841
+            },
+            {
+              "year": 114,
               "students": 841
             }
           ],
@@ -7773,6 +8358,10 @@
             {
               "year": 113,
               "students": 742
+            },
+            {
+              "year": 114,
+              "students": 742
             }
           ],
           "status": "正常",
@@ -7823,56 +8412,10 @@
             {
               "year": 113,
               "students": 709
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "403611",
-          "code": "403611",
-          "name": "市立大湖國小",
-          "countyId": "臺北市",
-          "townshipId": "臺北市:內湖區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺北市內湖區大湖里大湖山莊街170號",
-          "phone": "(02)27915870",
-          "website": "https://www.dhps.tp.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/403611/C/臺北市/內湖區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.600984,
-            "latitude": 25.087491
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 503
             },
             {
-              "year": 108,
-              "students": 581
-            },
-            {
-              "year": 109,
-              "students": 606
-            },
-            {
-              "year": 110,
-              "students": 622
-            },
-            {
-              "year": 111,
-              "students": 643
-            },
-            {
-              "year": 112,
-              "students": 639
-            },
-            {
-              "year": 113,
-              "students": 628
+              "year": 114,
+              "students": 701
             }
           ],
           "status": "正常",
@@ -7923,6 +8466,64 @@
             {
               "year": 113,
               "students": 575
+            },
+            {
+              "year": 114,
+              "students": 575
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "403611",
+          "code": "403611",
+          "name": "市立大湖國小",
+          "countyId": "臺北市",
+          "townshipId": "臺北市:內湖區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺北市內湖區大湖里大湖山莊街170號",
+          "phone": "(02)27915870",
+          "website": "https://www.dhps.tp.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/403611/C/臺北市/內湖區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.600984,
+            "latitude": 25.087491
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 503
+            },
+            {
+              "year": 108,
+              "students": 581
+            },
+            {
+              "year": 109,
+              "students": 606
+            },
+            {
+              "year": 110,
+              "students": 622
+            },
+            {
+              "year": 111,
+              "students": 643
+            },
+            {
+              "year": 112,
+              "students": 639
+            },
+            {
+              "year": 113,
+              "students": 628
+            },
+            {
+              "year": 114,
+              "students": 572
             }
           ],
           "status": "正常",
@@ -7973,6 +8574,10 @@
             {
               "year": 113,
               "students": 512
+            },
+            {
+              "year": 114,
+              "students": 509
             }
           ],
           "status": "正常",
@@ -8022,6 +8627,10 @@
             },
             {
               "year": 113,
+              "students": 449
+            },
+            {
+              "year": 114,
               "students": 449
             }
           ],
@@ -8073,6 +8682,10 @@
             {
               "year": 113,
               "students": 364
+            },
+            {
+              "year": 114,
+              "students": 347
             }
           ],
           "status": "正常",
@@ -8123,6 +8736,10 @@
             {
               "year": 113,
               "students": 180
+            },
+            {
+              "year": 114,
+              "students": 180
             }
           ],
           "status": "正常",
@@ -8172,6 +8789,10 @@
             },
             {
               "year": 113,
+              "students": 14
+            },
+            {
+              "year": 114,
               "students": 14
             }
           ],
@@ -8231,6 +8852,10 @@
             {
               "year": 113,
               "students": 16899
+            },
+            {
+              "year": 114,
+              "students": 16899
             }
           ],
           "status": "正常",
@@ -8280,6 +8905,10 @@
             },
             {
               "year": 113,
+              "students": 11028
+            },
+            {
+              "year": 114,
               "students": 11028
             }
           ],
@@ -8331,6 +8960,10 @@
             {
               "year": 113,
               "students": 5561
+            },
+            {
+              "year": 114,
+              "students": 5561
             }
           ],
           "status": "正常",
@@ -8380,6 +9013,10 @@
             },
             {
               "year": 113,
+              "students": 3204
+            },
+            {
+              "year": 114,
               "students": 3204
             }
           ],
@@ -8431,22 +9068,15 @@
             {
               "year": 113,
               "students": 2579
+            },
+            {
+              "year": 114,
+              "students": 2579
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "383301",
@@ -8491,6 +9121,10 @@
             },
             {
               "year": 113,
+              "students": 1861
+            },
+            {
+              "year": 114,
               "students": 1861
             }
           ],
@@ -8542,6 +9176,10 @@
             {
               "year": 113,
               "students": 1831
+            },
+            {
+              "year": 114,
+              "students": 1831
             }
           ],
           "status": "正常",
@@ -8591,6 +9229,10 @@
             },
             {
               "year": 113,
+              "students": 1591
+            },
+            {
+              "year": 114,
               "students": 1591
             }
           ],
@@ -8642,6 +9284,10 @@
             {
               "year": 113,
               "students": 1521
+            },
+            {
+              "year": 114,
+              "students": 1521
             }
           ],
           "status": "正常",
@@ -8692,6 +9338,10 @@
             {
               "year": 113,
               "students": 1502
+            },
+            {
+              "year": 114,
+              "students": 1501
             }
           ],
           "status": "正常",
@@ -8741,6 +9391,10 @@
             },
             {
               "year": 113,
+              "students": 1264
+            },
+            {
+              "year": 114,
               "students": 1264
             }
           ],
@@ -8792,6 +9446,10 @@
             {
               "year": 113,
               "students": 1118
+            },
+            {
+              "year": 114,
+              "students": 1118
             }
           ],
           "status": "正常",
@@ -8841,6 +9499,10 @@
             },
             {
               "year": 113,
+              "students": 1118
+            },
+            {
+              "year": 114,
               "students": 1118
             }
           ],
@@ -8892,6 +9554,10 @@
             {
               "year": 113,
               "students": 1052
+            },
+            {
+              "year": 114,
+              "students": 1052
             }
           ],
           "status": "正常",
@@ -8942,6 +9608,10 @@
             {
               "year": 113,
               "students": 993
+            },
+            {
+              "year": 114,
+              "students": 903
             }
           ],
           "status": "正常",
@@ -8992,6 +9662,10 @@
             {
               "year": 113,
               "students": 916
+            },
+            {
+              "year": 114,
+              "students": 872
             }
           ],
           "status": "正常",
@@ -9042,6 +9716,10 @@
             {
               "year": 113,
               "students": 801
+            },
+            {
+              "year": 114,
+              "students": 762
             }
           ],
           "status": "正常",
@@ -9092,6 +9770,10 @@
             {
               "year": 113,
               "students": 771
+            },
+            {
+              "year": 114,
+              "students": 760
             }
           ],
           "status": "正常",
@@ -9142,6 +9824,10 @@
             {
               "year": 113,
               "students": 769
+            },
+            {
+              "year": 114,
+              "students": 743
             }
           ],
           "status": "正常",
@@ -9192,6 +9878,10 @@
             {
               "year": 113,
               "students": 749
+            },
+            {
+              "year": 114,
+              "students": 706
             }
           ],
           "status": "正常",
@@ -9242,56 +9932,10 @@
             {
               "year": 113,
               "students": 725
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "383616",
-          "code": "383616",
-          "name": "市立萬興國小",
-          "countyId": "臺北市",
-          "townshipId": "臺北市:文山區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺北市文山區萬興里秀明路2段114號",
-          "phone": "(02)29381721",
-          "website": "https://www.wxes.tp.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/383616/C/臺北市/文山區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.576529,
-            "latitude": 24.990273
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 751
             },
             {
-              "year": 108,
-              "students": 802
-            },
-            {
-              "year": 109,
-              "students": 771
-            },
-            {
-              "year": 110,
-              "students": 763
-            },
-            {
-              "year": 111,
-              "students": 765
-            },
-            {
-              "year": 112,
-              "students": 758
-            },
-            {
-              "year": 113,
-              "students": 695
+              "year": 114,
+              "students": 685
             }
           ],
           "status": "正常",
@@ -9341,6 +9985,10 @@
             },
             {
               "year": 113,
+              "students": 669
+            },
+            {
+              "year": 114,
               "students": 669
             }
           ],
@@ -9392,6 +10040,64 @@
             {
               "year": 113,
               "students": 660
+            },
+            {
+              "year": 114,
+              "students": 652
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "383616",
+          "code": "383616",
+          "name": "市立萬興國小",
+          "countyId": "臺北市",
+          "townshipId": "臺北市:文山區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺北市文山區萬興里秀明路2段114號",
+          "phone": "(02)29381721",
+          "website": "https://www.wxes.tp.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/383616/C/臺北市/文山區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.576529,
+            "latitude": 24.990273
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 751
+            },
+            {
+              "year": 108,
+              "students": 802
+            },
+            {
+              "year": 109,
+              "students": 771
+            },
+            {
+              "year": 110,
+              "students": 763
+            },
+            {
+              "year": 111,
+              "students": 765
+            },
+            {
+              "year": 112,
+              "students": 758
+            },
+            {
+              "year": 113,
+              "students": 695
+            },
+            {
+              "year": 114,
+              "students": 623
             }
           ],
           "status": "正常",
@@ -9442,6 +10148,10 @@
             {
               "year": 113,
               "students": 623
+            },
+            {
+              "year": 114,
+              "students": 614
             }
           ],
           "status": "正常",
@@ -9492,6 +10202,10 @@
             {
               "year": 113,
               "students": 618
+            },
+            {
+              "year": 114,
+              "students": 594
             }
           ],
           "status": "正常",
@@ -9541,6 +10255,10 @@
             },
             {
               "year": 113,
+              "students": 531
+            },
+            {
+              "year": 114,
               "students": 531
             }
           ],
@@ -9592,6 +10310,10 @@
             {
               "year": 113,
               "students": 498
+            },
+            {
+              "year": 114,
+              "students": 480
             }
           ],
           "status": "正常",
@@ -9642,6 +10364,10 @@
             {
               "year": 113,
               "students": 431
+            },
+            {
+              "year": 114,
+              "students": 428
             }
           ],
           "status": "正常",
@@ -9692,6 +10418,10 @@
             {
               "year": 113,
               "students": 425
+            },
+            {
+              "year": 114,
+              "students": 427
             }
           ],
           "status": "正常",
@@ -9742,6 +10472,10 @@
             {
               "year": 113,
               "students": 382
+            },
+            {
+              "year": 114,
+              "students": 359
             }
           ],
           "status": "正常",
@@ -9792,6 +10526,10 @@
             {
               "year": 113,
               "students": 346
+            },
+            {
+              "year": 114,
+              "students": 331
             }
           ],
           "status": "正常",
@@ -9842,6 +10580,10 @@
             {
               "year": 113,
               "students": 304
+            },
+            {
+              "year": 114,
+              "students": 292
             }
           ],
           "status": "正常",
@@ -9892,6 +10634,10 @@
             {
               "year": 113,
               "students": 296
+            },
+            {
+              "year": 114,
+              "students": 284
             }
           ],
           "status": "正常",
@@ -9942,6 +10688,10 @@
             {
               "year": 113,
               "students": 275
+            },
+            {
+              "year": 114,
+              "students": 274
             }
           ],
           "status": "正常",
@@ -9992,56 +10742,10 @@
             {
               "year": 113,
               "students": 251
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "383611",
-          "code": "383611",
-          "name": "市立博嘉實驗國小",
-          "countyId": "臺北市",
-          "townshipId": "臺北市:文山區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺北市文山區木柵路4段159巷14-1號",
-          "phone": "(02)22302585",
-          "website": "https://www.bjps.tp.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/383611/C/臺北市/文山區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.57581,
-            "latitude": 25.002082
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 263
             },
             {
-              "year": 108,
-              "students": 264
-            },
-            {
-              "year": 109,
-              "students": 281
-            },
-            {
-              "year": 110,
-              "students": 286
-            },
-            {
-              "year": 111,
-              "students": 282
-            },
-            {
-              "year": 112,
-              "students": 276
-            },
-            {
-              "year": 113,
-              "students": 246
+              "year": 114,
+              "students": 251
             }
           ],
           "status": "正常",
@@ -10092,6 +10796,64 @@
             {
               "year": 113,
               "students": 232
+            },
+            {
+              "year": 114,
+              "students": 232
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "383611",
+          "code": "383611",
+          "name": "市立博嘉實驗國小",
+          "countyId": "臺北市",
+          "townshipId": "臺北市:文山區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺北市文山區木柵路4段159巷14-1號",
+          "phone": "(02)22302585",
+          "website": "https://www.bjps.tp.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/383611/C/臺北市/文山區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.57581,
+            "latitude": 25.002082
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 263
+            },
+            {
+              "year": 108,
+              "students": 264
+            },
+            {
+              "year": 109,
+              "students": 281
+            },
+            {
+              "year": 110,
+              "students": 286
+            },
+            {
+              "year": 111,
+              "students": 282
+            },
+            {
+              "year": 112,
+              "students": 276
+            },
+            {
+              "year": 113,
+              "students": 246
+            },
+            {
+              "year": 114,
+              "students": 219
             }
           ],
           "status": "正常",
@@ -10141,6 +10903,10 @@
             },
             {
               "year": 113,
+              "students": 192
+            },
+            {
+              "year": 114,
               "students": 192
             }
           ],
@@ -10192,56 +10958,10 @@
             {
               "year": 113,
               "students": 130
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "383612",
-          "code": "383612",
-          "name": "市立指南實小",
-          "countyId": "臺北市",
-          "townshipId": "臺北市:文山區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺北市文山區指南路三段38巷5-2號",
-          "phone": "(02)29393546",
-          "website": "http://www.cnps.tp.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/383612/C/臺北市/文山區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.584125,
-            "latitude": 24.976178
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 126
             },
             {
-              "year": 108,
-              "students": 131
-            },
-            {
-              "year": 109,
-              "students": 140
-            },
-            {
-              "year": 110,
-              "students": 144
-            },
-            {
-              "year": 111,
-              "students": 132
-            },
-            {
-              "year": 112,
-              "students": 127
-            },
-            {
-              "year": 113,
-              "students": 122
+              "year": 114,
+              "students": 130
             }
           ],
           "status": "正常",
@@ -10292,37 +11012,72 @@
             {
               "year": 113,
               "students": 121
+            },
+            {
+              "year": 114,
+              "students": 121
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107,
-            108,
-            109,
-            110
-          ],
-          "dataNotes": [
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "383612",
+          "code": "383612",
+          "name": "市立指南實小",
+          "countyId": "臺北市",
+          "townshipId": "臺北市:文山區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺北市文山區指南路三段38巷5-2號",
+          "phone": "(02)29393546",
+          "website": "http://www.cnps.tp.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/383612/C/臺北市/文山區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.584125,
+            "latitude": 24.976178
+          },
+          "yearlyStudents": [
             {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107、108、109、110",
-              "severity": "warning",
-              "years": [
-                107,
-                108,
-                109,
-                110
-              ]
+              "year": 107,
+              "students": 126
+            },
+            {
+              "year": 108,
+              "students": 131
+            },
+            {
+              "year": 109,
+              "students": 140
+            },
+            {
+              "year": 110,
+              "students": 144
+            },
+            {
+              "year": 111,
+              "students": 132
+            },
+            {
+              "year": 112,
+              "students": 127
+            },
+            {
+              "year": 113,
+              "students": 122
+            },
+            {
+              "year": 114,
+              "students": 116
             }
-          ]
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "文山區 有 2 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "臺北市:北投區",
@@ -10372,6 +11127,10 @@
             },
             {
               "year": 113,
+              "students": 8778
+            },
+            {
+              "year": 114,
               "students": 8778
             }
           ],
@@ -10423,6 +11182,10 @@
             {
               "year": 113,
               "students": 5201
+            },
+            {
+              "year": 114,
+              "students": 5201
             }
           ],
           "status": "正常",
@@ -10472,6 +11235,10 @@
             },
             {
               "year": 113,
+              "students": 4046
+            },
+            {
+              "year": 114,
               "students": 4046
             }
           ],
@@ -10523,6 +11290,10 @@
             {
               "year": 113,
               "students": 3213
+            },
+            {
+              "year": 114,
+              "students": 3213
             }
           ],
           "status": "正常",
@@ -10572,6 +11343,10 @@
             },
             {
               "year": 113,
+              "students": 2960
+            },
+            {
+              "year": 114,
               "students": 2960
             }
           ],
@@ -10623,6 +11398,10 @@
             {
               "year": 113,
               "students": 2395
+            },
+            {
+              "year": 114,
+              "students": 2395
             }
           ],
           "status": "正常",
@@ -10673,6 +11452,10 @@
             {
               "year": 113,
               "students": 2275
+            },
+            {
+              "year": 114,
+              "students": 2216
             }
           ],
           "status": "正常",
@@ -10722,6 +11505,10 @@
             },
             {
               "year": 113,
+              "students": 2017
+            },
+            {
+              "year": 114,
               "students": 2017
             }
           ],
@@ -10773,6 +11560,10 @@
             {
               "year": 113,
               "students": 1859
+            },
+            {
+              "year": 114,
+              "students": 1859
             }
           ],
           "status": "正常",
@@ -10823,56 +11614,10 @@
             {
               "year": 113,
               "students": 1581
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "423616",
-          "code": "423616",
-          "name": "市立文化國小",
-          "countyId": "臺北市",
-          "townshipId": "臺北市:北投區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺北市北投區文化里文化三路1號",
-          "phone": "(02)28933828",
-          "website": "https://www.whps.tp.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/423616/C/臺北市/北投區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.496507,
-            "latitude": 25.137229
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1512
             },
             {
-              "year": 108,
-              "students": 1499
-            },
-            {
-              "year": 109,
-              "students": 1489
-            },
-            {
-              "year": 110,
-              "students": 1520
-            },
-            {
-              "year": 111,
-              "students": 1506
-            },
-            {
-              "year": 112,
-              "students": 1499
-            },
-            {
-              "year": 113,
-              "students": 1425
+              "year": 114,
+              "students": 1581
             }
           ],
           "status": "正常",
@@ -10923,6 +11668,64 @@
             {
               "year": 113,
               "students": 1373
+            },
+            {
+              "year": 114,
+              "students": 1333
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "423616",
+          "code": "423616",
+          "name": "市立文化國小",
+          "countyId": "臺北市",
+          "townshipId": "臺北市:北投區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺北市北投區文化里文化三路1號",
+          "phone": "(02)28933828",
+          "website": "https://www.whps.tp.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/423616/C/臺北市/北投區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.496507,
+            "latitude": 25.137229
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1512
+            },
+            {
+              "year": 108,
+              "students": 1499
+            },
+            {
+              "year": 109,
+              "students": 1489
+            },
+            {
+              "year": 110,
+              "students": 1520
+            },
+            {
+              "year": 111,
+              "students": 1506
+            },
+            {
+              "year": 112,
+              "students": 1499
+            },
+            {
+              "year": 113,
+              "students": 1425
+            },
+            {
+              "year": 114,
+              "students": 1326
             }
           ],
           "status": "正常",
@@ -10972,6 +11775,10 @@
             },
             {
               "year": 113,
+              "students": 1126
+            },
+            {
+              "year": 114,
               "students": 1126
             }
           ],
@@ -11023,6 +11830,10 @@
             {
               "year": 113,
               "students": 1122
+            },
+            {
+              "year": 114,
+              "students": 1036
             }
           ],
           "status": "正常",
@@ -11073,56 +11884,10 @@
             {
               "year": 113,
               "students": 818
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "423614",
-          "code": "423614",
-          "name": "市立明德國小",
-          "countyId": "臺北市",
-          "townshipId": "臺北市:北投區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺北市北投區榮華里明德路190號",
-          "phone": "(02)28229651",
-          "website": "https://www.mdes.tp.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/423614/C/臺北市/北投區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.522224,
-            "latitude": 25.112263
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 636
             },
             {
-              "year": 108,
-              "students": 718
-            },
-            {
-              "year": 109,
-              "students": 770
-            },
-            {
-              "year": 110,
-              "students": 802
-            },
-            {
-              "year": 111,
-              "students": 836
-            },
-            {
-              "year": 112,
-              "students": 849
-            },
-            {
-              "year": 113,
-              "students": 813
+              "year": 114,
+              "students": 818
             }
           ],
           "status": "正常",
@@ -11173,6 +11938,64 @@
             {
               "year": 113,
               "students": 780
+            },
+            {
+              "year": 114,
+              "students": 736
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "423614",
+          "code": "423614",
+          "name": "市立明德國小",
+          "countyId": "臺北市",
+          "townshipId": "臺北市:北投區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺北市北投區榮華里明德路190號",
+          "phone": "(02)28229651",
+          "website": "https://www.mdes.tp.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/423614/C/臺北市/北投區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.522224,
+            "latitude": 25.112263
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 636
+            },
+            {
+              "year": 108,
+              "students": 718
+            },
+            {
+              "year": 109,
+              "students": 770
+            },
+            {
+              "year": 110,
+              "students": 802
+            },
+            {
+              "year": 111,
+              "students": 836
+            },
+            {
+              "year": 112,
+              "students": 849
+            },
+            {
+              "year": 113,
+              "students": 813
+            },
+            {
+              "year": 114,
+              "students": 719
             }
           ],
           "status": "正常",
@@ -11223,56 +12046,10 @@
             {
               "year": 113,
               "students": 652
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "423501",
-          "code": "423501",
-          "name": "市立北投國中",
-          "countyId": "臺北市",
-          "townshipId": "臺北市:北投區",
-          "educationLevel": "國中",
-          "managementType": "公立",
-          "address": "臺北市北投區溫泉里溫泉路62號",
-          "phone": "(02)28912091",
-          "website": "http://www.ptjh.tp.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/423501/J/臺北市/北投區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.504374,
-            "latitude": 25.134477
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 838
             },
             {
-              "year": 108,
-              "students": 754
-            },
-            {
-              "year": 109,
-              "students": 648
-            },
-            {
-              "year": 110,
-              "students": 585
-            },
-            {
-              "year": 111,
-              "students": 543
-            },
-            {
-              "year": 112,
-              "students": 523
-            },
-            {
-              "year": 113,
-              "students": 587
+              "year": 114,
+              "students": 631
             }
           ],
           "status": "正常",
@@ -11323,6 +12100,64 @@
             {
               "year": 113,
               "students": 581
+            },
+            {
+              "year": 114,
+              "students": 604
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "423501",
+          "code": "423501",
+          "name": "市立北投國中",
+          "countyId": "臺北市",
+          "townshipId": "臺北市:北投區",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "臺北市北投區溫泉里溫泉路62號",
+          "phone": "(02)28912091",
+          "website": "http://www.ptjh.tp.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/423501/J/臺北市/北投區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.504374,
+            "latitude": 25.134477
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 838
+            },
+            {
+              "year": 108,
+              "students": 754
+            },
+            {
+              "year": 109,
+              "students": 648
+            },
+            {
+              "year": 110,
+              "students": 585
+            },
+            {
+              "year": 111,
+              "students": 543
+            },
+            {
+              "year": 112,
+              "students": 523
+            },
+            {
+              "year": 113,
+              "students": 587
+            },
+            {
+              "year": 114,
+              "students": 587
             }
           ],
           "status": "正常",
@@ -11373,6 +12208,10 @@
             {
               "year": 113,
               "students": 428
+            },
+            {
+              "year": 114,
+              "students": 391
             }
           ],
           "status": "正常",
@@ -11423,6 +12262,10 @@
             {
               "year": 113,
               "students": 329
+            },
+            {
+              "year": 114,
+              "students": 323
             }
           ],
           "status": "正常",
@@ -11473,56 +12316,10 @@
             {
               "year": 113,
               "students": 307
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "423610",
-          "code": "423610",
-          "name": "市立桃源國小",
-          "countyId": "臺北市",
-          "townshipId": "臺北市:北投區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺北市北投區中央北路3段40巷45號",
-          "phone": "(02)28941208",
-          "website": "https://www.tyues.tp.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/423610/C/臺北市/北投區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.483666,
-            "latitude": 25.139681
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 297
             },
             {
-              "year": 108,
-              "students": 285
-            },
-            {
-              "year": 109,
-              "students": 293
-            },
-            {
-              "year": 110,
-              "students": 288
-            },
-            {
-              "year": 111,
-              "students": 315
-            },
-            {
-              "year": 112,
-              "students": 326
-            },
-            {
-              "year": 113,
-              "students": 301
+              "year": 114,
+              "students": 307
             }
           ],
           "status": "正常",
@@ -11573,6 +12370,64 @@
             {
               "year": 113,
               "students": 287
+            },
+            {
+              "year": 114,
+              "students": 287
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "423610",
+          "code": "423610",
+          "name": "市立桃源國小",
+          "countyId": "臺北市",
+          "townshipId": "臺北市:北投區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺北市北投區中央北路3段40巷45號",
+          "phone": "(02)28941208",
+          "website": "https://www.tyues.tp.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/423610/C/臺北市/北投區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.483666,
+            "latitude": 25.139681
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 297
+            },
+            {
+              "year": 108,
+              "students": 285
+            },
+            {
+              "year": 109,
+              "students": 293
+            },
+            {
+              "year": 110,
+              "students": 288
+            },
+            {
+              "year": 111,
+              "students": 315
+            },
+            {
+              "year": 112,
+              "students": 326
+            },
+            {
+              "year": 113,
+              "students": 301
+            },
+            {
+              "year": 114,
+              "students": 281
             }
           ],
           "status": "正常",
@@ -11623,6 +12478,10 @@
             {
               "year": 113,
               "students": 265
+            },
+            {
+              "year": 114,
+              "students": 255
             }
           ],
           "status": "正常",
@@ -11672,6 +12531,10 @@
             },
             {
               "year": 113,
+              "students": 238
+            },
+            {
+              "year": 114,
               "students": 238
             }
           ],
@@ -11723,6 +12586,10 @@
             {
               "year": 113,
               "students": 198
+            },
+            {
+              "year": 114,
+              "students": 198
             }
           ],
           "status": "正常",
@@ -11773,6 +12640,10 @@
             {
               "year": 113,
               "students": 109
+            },
+            {
+              "year": 114,
+              "students": 100
             }
           ],
           "status": "正常",
@@ -11823,6 +12694,10 @@
             {
               "year": 113,
               "students": 87
+            },
+            {
+              "year": 114,
+              "students": 83
             }
           ],
           "status": "正常",
@@ -11873,6 +12748,10 @@
             {
               "year": 113,
               "students": 66
+            },
+            {
+              "year": 114,
+              "students": 64
             }
           ],
           "status": "正常",
@@ -11923,6 +12802,10 @@
             {
               "year": 113,
               "students": 65
+            },
+            {
+              "year": 114,
+              "students": 50
             }
           ],
           "status": "正常",
@@ -11981,6 +12864,10 @@
             {
               "year": 113,
               "students": 2138
+            },
+            {
+              "year": 114,
+              "students": 2099
             }
           ],
           "status": "正常",
@@ -12030,6 +12917,10 @@
             },
             {
               "year": 113,
+              "students": 2096
+            },
+            {
+              "year": 114,
               "students": 2096
             }
           ],
@@ -12081,6 +12972,10 @@
             {
               "year": 113,
               "students": 1824
+            },
+            {
+              "year": 114,
+              "students": 1824
             }
           ],
           "status": "正常",
@@ -12131,6 +13026,10 @@
             {
               "year": 113,
               "students": 1685
+            },
+            {
+              "year": 114,
+              "students": 1680
             }
           ],
           "status": "正常",
@@ -12180,6 +13079,10 @@
             },
             {
               "year": 113,
+              "students": 1604
+            },
+            {
+              "year": 114,
               "students": 1604
             }
           ],
@@ -12231,56 +13134,10 @@
             {
               "year": 113,
               "students": 1425
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "313606",
-          "code": "313606",
-          "name": "市立民權國小",
-          "countyId": "臺北市",
-          "townshipId": "臺北市:松山區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺北市松山區民權東路四段200號",
-          "phone": "(02)27652327",
-          "website": "https://www.mqes.tp.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/313606/C/臺北市/松山區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.562232,
-            "latitude": 25.062372
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1340
             },
             {
-              "year": 108,
-              "students": 1393
-            },
-            {
-              "year": 109,
-              "students": 1422
-            },
-            {
-              "year": 110,
-              "students": 1398
-            },
-            {
-              "year": 111,
-              "students": 1344
-            },
-            {
-              "year": 112,
-              "students": 1308
-            },
-            {
-              "year": 113,
-              "students": 1317
+              "year": 114,
+              "students": 1347
             }
           ],
           "status": "正常",
@@ -12331,6 +13188,64 @@
             {
               "year": 113,
               "students": 1259
+            },
+            {
+              "year": 114,
+              "students": 1259
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "313606",
+          "code": "313606",
+          "name": "市立民權國小",
+          "countyId": "臺北市",
+          "townshipId": "臺北市:松山區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺北市松山區民權東路四段200號",
+          "phone": "(02)27652327",
+          "website": "https://www.mqes.tp.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/313606/C/臺北市/松山區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.562232,
+            "latitude": 25.062372
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1340
+            },
+            {
+              "year": 108,
+              "students": 1393
+            },
+            {
+              "year": 109,
+              "students": 1422
+            },
+            {
+              "year": 110,
+              "students": 1398
+            },
+            {
+              "year": 111,
+              "students": 1344
+            },
+            {
+              "year": 112,
+              "students": 1308
+            },
+            {
+              "year": 113,
+              "students": 1317
+            },
+            {
+              "year": 114,
+              "students": 1210
             }
           ],
           "status": "正常",
@@ -12381,6 +13296,10 @@
             {
               "year": 113,
               "students": 1159
+            },
+            {
+              "year": 114,
+              "students": 1073
             }
           ],
           "status": "正常",
@@ -12431,6 +13350,10 @@
             {
               "year": 113,
               "students": 1105
+            },
+            {
+              "year": 114,
+              "students": 1010
             }
           ],
           "status": "正常",
@@ -12481,56 +13404,10 @@
             {
               "year": 113,
               "students": 984
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "313601",
-          "code": "313601",
-          "name": "市立松山國小",
-          "countyId": "臺北市",
-          "townshipId": "臺北市:松山區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺北市松山區八德路四段746號",
-          "phone": "(02)27672907",
-          "website": "https://www.ssps.tp.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/313601/C/臺北市/松山區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.578852,
-            "latitude": 25.051076
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 673
             },
             {
-              "year": 108,
-              "students": 710
-            },
-            {
-              "year": 109,
-              "students": 710
-            },
-            {
-              "year": 110,
-              "students": 726
-            },
-            {
-              "year": 111,
-              "students": 742
-            },
-            {
-              "year": 112,
-              "students": 746
-            },
-            {
-              "year": 113,
-              "students": 708
+              "year": 114,
+              "students": 934
             }
           ],
           "status": "正常",
@@ -12580,6 +13457,10 @@
             },
             {
               "year": 113,
+              "students": 707
+            },
+            {
+              "year": 114,
               "students": 707
             }
           ],
@@ -12631,6 +13512,64 @@
             {
               "year": 113,
               "students": 678
+            },
+            {
+              "year": 114,
+              "students": 678
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "313601",
+          "code": "313601",
+          "name": "市立松山國小",
+          "countyId": "臺北市",
+          "townshipId": "臺北市:松山區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺北市松山區八德路四段746號",
+          "phone": "(02)27672907",
+          "website": "https://www.ssps.tp.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/313601/C/臺北市/松山區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.578852,
+            "latitude": 25.051076
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 673
+            },
+            {
+              "year": 108,
+              "students": 710
+            },
+            {
+              "year": 109,
+              "students": 710
+            },
+            {
+              "year": 110,
+              "students": 726
+            },
+            {
+              "year": 111,
+              "students": 742
+            },
+            {
+              "year": 112,
+              "students": 746
+            },
+            {
+              "year": 113,
+              "students": 708
+            },
+            {
+              "year": 114,
+              "students": 642
             }
           ],
           "status": "正常",
@@ -12681,6 +13620,10 @@
             {
               "year": 113,
               "students": 477
+            },
+            {
+              "year": 114,
+              "students": 454
             }
           ],
           "status": "正常",
@@ -12739,6 +13682,10 @@
             {
               "year": 113,
               "students": 6204
+            },
+            {
+              "year": 114,
+              "students": 6204
             }
           ],
           "status": "正常",
@@ -12788,6 +13735,10 @@
             },
             {
               "year": 113,
+              "students": 2183
+            },
+            {
+              "year": 114,
               "students": 2183
             }
           ],
@@ -12839,6 +13790,10 @@
             {
               "year": 113,
               "students": 2146
+            },
+            {
+              "year": 114,
+              "students": 2146
             }
           ],
           "status": "正常",
@@ -12889,56 +13844,10 @@
             {
               "year": 113,
               "students": 1924
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "323603",
-          "code": "323603",
-          "name": "市立光復國小",
-          "countyId": "臺北市",
-          "townshipId": "臺北市:信義區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺北市信義區光復南路271號",
-          "phone": "(02)27585076",
-          "website": "https://www.kfps.tp.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/323603/C/臺北市/信義區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.557889,
-            "latitude": 25.040049
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1909
             },
             {
-              "year": 108,
-              "students": 1944
-            },
-            {
-              "year": 109,
-              "students": 1955
-            },
-            {
-              "year": 110,
-              "students": 1962
-            },
-            {
-              "year": 111,
-              "students": 2026
-            },
-            {
-              "year": 112,
-              "students": 2000
-            },
-            {
-              "year": 113,
-              "students": 1893
+              "year": 114,
+              "students": 1851
             }
           ],
           "status": "正常",
@@ -12989,6 +13898,64 @@
             {
               "year": 113,
               "students": 1822
+            },
+            {
+              "year": 114,
+              "students": 1822
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "323603",
+          "code": "323603",
+          "name": "市立光復國小",
+          "countyId": "臺北市",
+          "townshipId": "臺北市:信義區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺北市信義區光復南路271號",
+          "phone": "(02)27585076",
+          "website": "https://www.kfps.tp.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/323603/C/臺北市/信義區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.557889,
+            "latitude": 25.040049
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1909
+            },
+            {
+              "year": 108,
+              "students": 1944
+            },
+            {
+              "year": 109,
+              "students": 1955
+            },
+            {
+              "year": 110,
+              "students": 1962
+            },
+            {
+              "year": 111,
+              "students": 2026
+            },
+            {
+              "year": 112,
+              "students": 2000
+            },
+            {
+              "year": 113,
+              "students": 1893
+            },
+            {
+              "year": 114,
+              "students": 1785
             }
           ],
           "status": "正常",
@@ -13038,6 +14005,10 @@
             },
             {
               "year": 113,
+              "students": 1562
+            },
+            {
+              "year": 114,
               "students": 1562
             }
           ],
@@ -13089,6 +14060,10 @@
             {
               "year": 113,
               "students": 1325
+            },
+            {
+              "year": 114,
+              "students": 1325
             }
           ],
           "status": "正常",
@@ -13139,28 +14114,15 @@
             {
               "year": 113,
               "students": 1195
+            },
+            {
+              "year": 114,
+              "students": 1173
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107,
-            108,
-            109,
-            110
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107、108、109、110",
-              "severity": "warning",
-              "years": [
-                107,
-                108,
-                109,
-                110
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "323601",
@@ -13206,6 +14168,10 @@
             {
               "year": 113,
               "students": 1028
+            },
+            {
+              "year": 114,
+              "students": 939
             }
           ],
           "status": "正常",
@@ -13256,6 +14222,10 @@
             {
               "year": 113,
               "students": 833
+            },
+            {
+              "year": 114,
+              "students": 808
             }
           ],
           "status": "正常",
@@ -13306,6 +14276,10 @@
             {
               "year": 113,
               "students": 821
+            },
+            {
+              "year": 114,
+              "students": 757
             }
           ],
           "status": "正常",
@@ -13356,56 +14330,10 @@
             {
               "year": 113,
               "students": 777
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "323604",
-          "code": "323604",
-          "name": "市立三興國小",
-          "countyId": "臺北市",
-          "townshipId": "臺北市:信義區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺北市信義區景聯里基隆路2段99號",
-          "phone": "(02)27385488",
-          "website": "https://www.shps.tp.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/323604/C/臺北市/信義區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.558333,
-            "latitude": 25.029491
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 612
             },
             {
-              "year": 108,
-              "students": 642
-            },
-            {
-              "year": 109,
-              "students": 645
-            },
-            {
-              "year": 110,
-              "students": 667
-            },
-            {
-              "year": 111,
-              "students": 732
-            },
-            {
-              "year": 112,
-              "students": 702
-            },
-            {
-              "year": 113,
-              "students": 688
+              "year": 114,
+              "students": 724
             }
           ],
           "status": "正常",
@@ -13456,6 +14384,64 @@
             {
               "year": 113,
               "students": 686
+            },
+            {
+              "year": 114,
+              "students": 686
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "323604",
+          "code": "323604",
+          "name": "市立三興國小",
+          "countyId": "臺北市",
+          "townshipId": "臺北市:信義區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺北市信義區景聯里基隆路2段99號",
+          "phone": "(02)27385488",
+          "website": "https://www.shps.tp.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/323604/C/臺北市/信義區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.558333,
+            "latitude": 25.029491
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 612
+            },
+            {
+              "year": 108,
+              "students": 642
+            },
+            {
+              "year": 109,
+              "students": 645
+            },
+            {
+              "year": 110,
+              "students": 667
+            },
+            {
+              "year": 111,
+              "students": 732
+            },
+            {
+              "year": 112,
+              "students": 702
+            },
+            {
+              "year": 113,
+              "students": 688
+            },
+            {
+              "year": 114,
+              "students": 619
             }
           ],
           "status": "正常",
@@ -13505,6 +14491,10 @@
             },
             {
               "year": 113,
+              "students": 491
+            },
+            {
+              "year": 114,
               "students": 491
             }
           ],
@@ -13556,6 +14546,10 @@
             {
               "year": 113,
               "students": 369
+            },
+            {
+              "year": 114,
+              "students": 369
             }
           ],
           "status": "正常",
@@ -13606,6 +14600,10 @@
             {
               "year": 113,
               "students": 212
+            },
+            {
+              "year": 114,
+              "students": 212
             }
           ],
           "status": "正常",
@@ -13613,13 +14611,7 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "信義區 有 1 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "臺北市:南港區",
@@ -13669,6 +14661,10 @@
             },
             {
               "year": 113,
+              "students": 2866
+            },
+            {
+              "year": 114,
               "students": 2866
             }
           ],
@@ -13720,6 +14716,10 @@
             {
               "year": 113,
               "students": 2023
+            },
+            {
+              "year": 114,
+              "students": 2023
             }
           ],
           "status": "正常",
@@ -13769,6 +14769,10 @@
             },
             {
               "year": 113,
+              "students": 1780
+            },
+            {
+              "year": 114,
               "students": 1780
             }
           ],
@@ -13820,6 +14824,10 @@
             {
               "year": 113,
               "students": 1693
+            },
+            {
+              "year": 114,
+              "students": 1693
             }
           ],
           "status": "正常",
@@ -13870,6 +14878,10 @@
             {
               "year": 113,
               "students": 1307
+            },
+            {
+              "year": 114,
+              "students": 1282
             }
           ],
           "status": "正常",
@@ -13920,6 +14932,10 @@
             {
               "year": 113,
               "students": 996
+            },
+            {
+              "year": 114,
+              "students": 978
             }
           ],
           "status": "正常",
@@ -13969,6 +14985,10 @@
             },
             {
               "year": 113,
+              "students": 776
+            },
+            {
+              "year": 114,
               "students": 776
             }
           ],
@@ -14020,6 +15040,10 @@
             {
               "year": 113,
               "students": 687
+            },
+            {
+              "year": 114,
+              "students": 676
             }
           ],
           "status": "正常",
@@ -14070,6 +15094,10 @@
             {
               "year": 113,
               "students": 655
+            },
+            {
+              "year": 114,
+              "students": 660
             }
           ],
           "status": "正常",
@@ -14120,6 +15148,10 @@
             {
               "year": 113,
               "students": 622
+            },
+            {
+              "year": 114,
+              "students": 600
             }
           ],
           "status": "正常",
@@ -14170,6 +15202,10 @@
             {
               "year": 113,
               "students": 583
+            },
+            {
+              "year": 114,
+              "students": 564
             }
           ],
           "status": "正常",
@@ -14220,6 +15256,10 @@
             {
               "year": 113,
               "students": 391
+            },
+            {
+              "year": 114,
+              "students": 378
             }
           ],
           "status": "正常",
@@ -14269,6 +15309,10 @@
             },
             {
               "year": 113,
+              "students": 284
+            },
+            {
+              "year": 114,
               "students": 284
             }
           ],
@@ -14328,6 +15372,10 @@
             {
               "year": 113,
               "students": 1645
+            },
+            {
+              "year": 114,
+              "students": 1645
             }
           ],
           "status": "正常",
@@ -14377,6 +15425,10 @@
             },
             {
               "year": 113,
+              "students": 1156
+            },
+            {
+              "year": 114,
               "students": 1156
             }
           ],
@@ -14428,6 +15480,10 @@
             {
               "year": 113,
               "students": 987
+            },
+            {
+              "year": 114,
+              "students": 925
             }
           ],
           "status": "正常",
@@ -14478,6 +15534,10 @@
             {
               "year": 113,
               "students": 805
+            },
+            {
+              "year": 114,
+              "students": 793
             }
           ],
           "status": "正常",
@@ -14528,6 +15588,10 @@
             {
               "year": 113,
               "students": 752
+            },
+            {
+              "year": 114,
+              "students": 687
             }
           ],
           "status": "正常",
@@ -14577,6 +15641,10 @@
             },
             {
               "year": 113,
+              "students": 678
+            },
+            {
+              "year": 114,
               "students": 678
             }
           ],
@@ -14628,6 +15696,10 @@
             {
               "year": 113,
               "students": 634
+            },
+            {
+              "year": 114,
+              "students": 592
             }
           ],
           "status": "正常",
@@ -14678,6 +15750,10 @@
             {
               "year": 113,
               "students": 619
+            },
+            {
+              "year": 114,
+              "students": 583
             }
           ],
           "status": "正常",
@@ -14728,106 +15804,10 @@
             {
               "year": 113,
               "students": 605
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "373608",
-          "code": "373608",
-          "name": "市立西門國小",
-          "countyId": "臺北市",
-          "townshipId": "臺北市:萬華區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺北市萬華區西門里成都路98號",
-          "phone": "(02)23113519",
-          "website": "https://www.hmes.tp.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/373608/C/臺北市/萬華區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.503593,
-            "latitude": 25.042998
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 397
             },
             {
-              "year": 108,
-              "students": 450
-            },
-            {
-              "year": 109,
-              "students": 499
-            },
-            {
-              "year": 110,
-              "students": 551
-            },
-            {
-              "year": 111,
-              "students": 581
-            },
-            {
-              "year": 112,
-              "students": 585
-            },
-            {
-              "year": 113,
-              "students": 572
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "373602",
-          "code": "373602",
-          "name": "市立雙園國小",
-          "countyId": "臺北市",
-          "townshipId": "臺北市:萬華區",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺北市萬華區雙園里莒光路315號",
-          "phone": "(02)23061893",
-          "website": "https://www.syps.tp.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/373602/C/臺北市/萬華區/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.497988,
-            "latitude": 25.03079
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 603
-            },
-            {
-              "year": 108,
-              "students": 596
-            },
-            {
-              "year": 109,
-              "students": 608
-            },
-            {
-              "year": 110,
-              "students": 611
-            },
-            {
-              "year": 111,
-              "students": 615
-            },
-            {
-              "year": 112,
-              "students": 604
-            },
-            {
-              "year": 113,
-              "students": 544
+              "year": 114,
+              "students": 540
             }
           ],
           "status": "正常",
@@ -14878,6 +15858,118 @@
             {
               "year": 113,
               "students": 534
+            },
+            {
+              "year": 114,
+              "students": 534
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "373608",
+          "code": "373608",
+          "name": "市立西門國小",
+          "countyId": "臺北市",
+          "townshipId": "臺北市:萬華區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺北市萬華區西門里成都路98號",
+          "phone": "(02)23113519",
+          "website": "https://www.hmes.tp.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/373608/C/臺北市/萬華區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.503593,
+            "latitude": 25.042998
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 397
+            },
+            {
+              "year": 108,
+              "students": 450
+            },
+            {
+              "year": 109,
+              "students": 499
+            },
+            {
+              "year": 110,
+              "students": 551
+            },
+            {
+              "year": 111,
+              "students": 581
+            },
+            {
+              "year": 112,
+              "students": 585
+            },
+            {
+              "year": 113,
+              "students": 572
+            },
+            {
+              "year": 114,
+              "students": 531
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "373602",
+          "code": "373602",
+          "name": "市立雙園國小",
+          "countyId": "臺北市",
+          "townshipId": "臺北市:萬華區",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺北市萬華區雙園里莒光路315號",
+          "phone": "(02)23061893",
+          "website": "https://www.syps.tp.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/373602/C/臺北市/萬華區/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.497988,
+            "latitude": 25.03079
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 603
+            },
+            {
+              "year": 108,
+              "students": 596
+            },
+            {
+              "year": 109,
+              "students": 608
+            },
+            {
+              "year": 110,
+              "students": 611
+            },
+            {
+              "year": 111,
+              "students": 615
+            },
+            {
+              "year": 112,
+              "students": 604
+            },
+            {
+              "year": 113,
+              "students": 544
+            },
+            {
+              "year": 114,
+              "students": 511
             }
           ],
           "status": "正常",
@@ -14928,6 +16020,10 @@
             {
               "year": 113,
               "students": 515
+            },
+            {
+              "year": 114,
+              "students": 465
             }
           ],
           "status": "正常",
@@ -14978,6 +16074,10 @@
             {
               "year": 113,
               "students": 399
+            },
+            {
+              "year": 114,
+              "students": 381
             }
           ],
           "status": "正常",
@@ -15028,6 +16128,10 @@
             {
               "year": 113,
               "students": 382
+            },
+            {
+              "year": 114,
+              "students": 375
             }
           ],
           "status": "正常",
@@ -15078,6 +16182,10 @@
             {
               "year": 113,
               "students": 266
+            },
+            {
+              "year": 114,
+              "students": 240
             }
           ],
           "status": "正常",
@@ -15127,6 +16235,10 @@
             },
             {
               "year": 113,
+              "students": 192
+            },
+            {
+              "year": 114,
               "students": 192
             }
           ],

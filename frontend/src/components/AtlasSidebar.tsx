@@ -15,7 +15,9 @@ const SchoolDetailPanel = lazy(() => import('./SchoolDetailPanel'))
 const TAB_META: Record<AtlasTab, { title: string; description: string }> = {
   overview: { title: '概況總覽', description: '先看全台與目前範圍的摘要、排名與整體變動，再決定是否切入區域分析。' },
   regional: { title: '區域分析', description: '這一頁只聚焦縣市與鄉鎮下鑽，不混入學校校點，方便掌握區域層級差異。' },
+  county: { title: '縣市分析', description: '地圖與右側圖表同步聚焦單一縣市，支援從鄉鎮排行一路切到各校分析。' },
   schools: { title: '學校工作台', description: '只有在學校工作台才顯示校點、學校清單與單校趨勢，避免與區域下鑽混淆。' },
+  'school-focus': { title: '單校分析', description: '保留單校圖表、資料註記與基準切換，作為從各校分析往下一層的專屬工作台。' },
 }
 
 function AtlasSidebar({
@@ -224,7 +226,7 @@ function AtlasSidebar({
         </div>
       ) : null}
 
-      {activeTab === 'schools' ? (
+      {activeTab === 'schools' || activeTab === 'school-focus' ? (
         <div className="atlas-tab-panel" data-tab="schools">
           <Suspense fallback={<div className="empty-state">載入學校工作台…</div>}>
             <SchoolDetailPanel
@@ -232,11 +234,15 @@ function AtlasSidebar({
               countyDetailError={countyDetailError}
               isCountyDetailLoading={isCountyDetailLoading}
               schoolInsights={schoolInsights}
+              countyWideSchoolInsights={schoolInsights}
               selectedSchool={selectedSchool}
               schoolPanelTitle={schoolPanelTitle}
+              panelMode={activeTab === 'school-focus' ? 'focus' : 'workspace'}
               activeYear={activeYear}
+              activeWorkbenchView={selectedSchool ? 'analysis' : 'list'}
               selectedTownshipSummary={selectedTownshipSummary}
               selectedCountySummary={selectedCountySummary}
+              onSetWorkbenchView={() => undefined}
               onSelectSchool={onSelectSchool}
             />
           </Suspense>

@@ -3,7 +3,6 @@ import type { AcademicYear, EducationLevelFilter, ManagementTypeFilter, RegionGr
 import {
   EDUCATION_LEVELS,
   MANAGEMENT_TYPES,
-  REGION_GROUPS,
 } from '../data/educationData'
 import type { TransitionStartFunction } from 'react'
 
@@ -40,7 +39,6 @@ function FilterBar({
   activeYear,
   educationLevel,
   managementType,
-  region,
   searchText,
   isYearPlaybackActive,
   isPending,
@@ -49,7 +47,6 @@ function FilterBar({
   onSetActiveYear,
   onSetEducationLevel,
   onSetManagementType,
-  onSetRegion,
   onSetSearchText,
   onSetIsYearPlaybackActive,
   onResetScope,
@@ -61,7 +58,7 @@ function FilterBar({
     <section className="atlas-filterbar panel">
       <div className="atlas-filterbar__years">
         <label className="filter-select filter-select--year">
-          <span>學年度（西元）</span>
+          <span>學年度</span>
           <select
             value={activeYear}
             data-testid="academic-year-select"
@@ -99,15 +96,6 @@ function FilterBar({
           <select value={managementType} onChange={(event) => startTransition(() => onSetManagementType(event.target.value as ManagementTypeFilter))}>
             {MANAGEMENT_TYPES.map((type) => (
               <option key={type} value={type}>{type}</option>
-            ))}
-          </select>
-        </label>
-
-        <label className="filter-select">
-          <span>區域</span>
-          <select value={region} onChange={(event) => startTransition(() => onSetRegion(event.target.value as RegionGroupFilter))}>
-            {REGION_GROUPS.map((regionOption) => (
-              <option key={regionOption} value={regionOption}>{regionOption}</option>
             ))}
           </select>
         </label>

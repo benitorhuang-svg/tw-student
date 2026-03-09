@@ -10,7 +10,9 @@ export {
   getTownshipNotesFromSummary,
   getCountyNotesFromSummary,
   getNationalEducationDistribution,
+  getNationalEducationTrendSeries,
   getCountyEducationDistribution,
+  getRegionalComparisonRows,
   getCountyComparisonSummaries,
   getCountyRankingRows,
 } from './analytics.summary'

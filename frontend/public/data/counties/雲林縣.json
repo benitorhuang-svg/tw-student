@@ -7,9 +7,12 @@
   },
   "dataNotes": [
     {
-      "type": "缺年度",
-      "message": "雲林縣 有 17 所學校存在年度缺漏。",
-      "severity": "warning"
+      "type": "異常值",
+      "message": "雲林縣 有 2 所學校最新學年學生數為 0，需留意停辦或整併可能。",
+      "severity": "info",
+      "years": [
+        114
+      ]
     }
   ],
   "towns": [
@@ -62,6 +65,10 @@
             {
               "year": 113,
               "students": 394
+            },
+            {
+              "year": 114,
+              "students": 394
             }
           ],
           "status": "正常",
@@ -112,6 +119,10 @@
             {
               "year": 113,
               "students": 272
+            },
+            {
+              "year": 114,
+              "students": 243
             }
           ],
           "status": "正常",
@@ -162,6 +173,10 @@
             {
               "year": 113,
               "students": 137
+            },
+            {
+              "year": 114,
+              "students": 125
             }
           ],
           "status": "正常",
@@ -212,6 +227,10 @@
             {
               "year": 113,
               "students": 105
+            },
+            {
+              "year": 114,
+              "students": 100
             }
           ],
           "status": "正常",
@@ -262,6 +281,10 @@
             {
               "year": 113,
               "students": 77
+            },
+            {
+              "year": 114,
+              "students": 73
             }
           ],
           "status": "正常",
@@ -312,6 +335,10 @@
             {
               "year": 113,
               "students": 51
+            },
+            {
+              "year": 114,
+              "students": 52
             }
           ],
           "status": "正常",
@@ -362,6 +389,10 @@
             {
               "year": 113,
               "students": 49
+            },
+            {
+              "year": 114,
+              "students": 46
             }
           ],
           "status": "正常",
@@ -412,6 +443,10 @@
             {
               "year": 113,
               "students": 41
+            },
+            {
+              "year": 114,
+              "students": 43
             }
           ],
           "status": "正常",
@@ -462,6 +497,10 @@
             {
               "year": 113,
               "students": 20
+            },
+            {
+              "year": 114,
+              "students": 23
             }
           ],
           "status": "正常",
@@ -520,6 +559,10 @@
             {
               "year": 113,
               "students": 191
+            },
+            {
+              "year": 114,
+              "students": 193
             }
           ],
           "status": "正常",
@@ -570,6 +613,10 @@
             {
               "year": 113,
               "students": 144
+            },
+            {
+              "year": 114,
+              "students": 148
             }
           ],
           "status": "正常",
@@ -619,6 +666,10 @@
             },
             {
               "year": 113,
+              "students": 126
+            },
+            {
+              "year": 114,
               "students": 126
             }
           ],
@@ -670,6 +721,10 @@
             {
               "year": 113,
               "students": 115
+            },
+            {
+              "year": 114,
+              "students": 94
             }
           ],
           "status": "正常",
@@ -720,6 +775,10 @@
             {
               "year": 113,
               "students": 70
+            },
+            {
+              "year": 114,
+              "students": 61
             }
           ],
           "status": "正常",
@@ -770,56 +829,10 @@
             {
               "year": 113,
               "students": 48
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "094739",
-          "code": "094739",
-          "name": "縣立興南國小",
-          "countyId": "雲林縣",
-          "townshipId": "雲林縣:口湖鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "雲林縣口湖鄉埔南村9號",
-          "phone": "(05)7892190",
-          "website": "https://hnps.ylc.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094739/C/雲林縣/口湖鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.190908,
-            "latitude": 23.60029
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 27
             },
             {
-              "year": 108,
-              "students": 27
-            },
-            {
-              "year": 109,
-              "students": 38
-            },
-            {
-              "year": 110,
-              "students": 41
-            },
-            {
-              "year": 111,
-              "students": 40
-            },
-            {
-              "year": 112,
-              "students": 42
-            },
-            {
-              "year": 113,
-              "students": 42
+              "year": 114,
+              "students": 50
             }
           ],
           "status": "正常",
@@ -870,6 +883,118 @@
             {
               "year": 113,
               "students": 38
+            },
+            {
+              "year": 114,
+              "students": 38
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "094739",
+          "code": "094739",
+          "name": "縣立興南國小",
+          "countyId": "雲林縣",
+          "townshipId": "雲林縣:口湖鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "雲林縣口湖鄉埔南村9號",
+          "phone": "(05)7892190",
+          "website": "https://hnps.ylc.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094739/C/雲林縣/口湖鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.190908,
+            "latitude": 23.60029
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 27
+            },
+            {
+              "year": 108,
+              "students": 27
+            },
+            {
+              "year": 109,
+              "students": 38
+            },
+            {
+              "year": 110,
+              "students": 41
+            },
+            {
+              "year": 111,
+              "students": 40
+            },
+            {
+              "year": 112,
+              "students": 42
+            },
+            {
+              "year": 113,
+              "students": 42
+            },
+            {
+              "year": 114,
+              "students": 37
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "094737",
+          "code": "094737",
+          "name": "縣立金湖國小",
+          "countyId": "雲林縣",
+          "townshipId": "雲林縣:口湖鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "雲林縣口湖鄉港東村民主路15號",
+          "phone": "(05)7971188",
+          "website": "https://chps.ylc.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094737/C/雲林縣/口湖鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.154148,
+            "latitude": 23.574051
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 55
+            },
+            {
+              "year": 108,
+              "students": 55
+            },
+            {
+              "year": 109,
+              "students": 55
+            },
+            {
+              "year": 110,
+              "students": 48
+            },
+            {
+              "year": 111,
+              "students": 48
+            },
+            {
+              "year": 112,
+              "students": 36
+            },
+            {
+              "year": 113,
+              "students": 31
+            },
+            {
+              "year": 114,
+              "students": 32
             }
           ],
           "status": "正常",
@@ -920,55 +1045,9 @@
             {
               "year": 113,
               "students": 38
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "094737",
-          "code": "094737",
-          "name": "縣立金湖國小",
-          "countyId": "雲林縣",
-          "townshipId": "雲林縣:口湖鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "雲林縣口湖鄉港東村民主路15號",
-          "phone": "(05)7971188",
-          "website": "https://chps.ylc.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094737/C/雲林縣/口湖鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.154148,
-            "latitude": 23.574051
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 55
             },
             {
-              "year": 108,
-              "students": 55
-            },
-            {
-              "year": 109,
-              "students": 55
-            },
-            {
-              "year": 110,
-              "students": 48
-            },
-            {
-              "year": 111,
-              "students": 48
-            },
-            {
-              "year": 112,
-              "students": 36
-            },
-            {
-              "year": 113,
+              "year": 114,
               "students": 31
             }
           ],
@@ -1020,6 +1099,10 @@
             {
               "year": 113,
               "students": 29
+            },
+            {
+              "year": 114,
+              "students": 25
             }
           ],
           "status": "正常",
@@ -1078,22 +1161,15 @@
             {
               "year": 113,
               "students": 915
+            },
+            {
+              "year": 114,
+              "students": 915
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "091307",
@@ -1138,6 +1214,10 @@
             },
             {
               "year": 113,
+              "students": 804
+            },
+            {
+              "year": 114,
               "students": 804
             }
           ],
@@ -1189,6 +1269,10 @@
             {
               "year": 113,
               "students": 670
+            },
+            {
+              "year": 114,
+              "students": 657
             }
           ],
           "status": "正常",
@@ -1238,6 +1322,10 @@
             },
             {
               "year": 113,
+              "students": 530
+            },
+            {
+              "year": 114,
               "students": 530
             }
           ],
@@ -1289,6 +1377,10 @@
             {
               "year": 113,
               "students": 241
+            },
+            {
+              "year": 114,
+              "students": 229
             }
           ],
           "status": "正常",
@@ -1338,6 +1430,10 @@
             },
             {
               "year": 113,
+              "students": 219
+            },
+            {
+              "year": 114,
               "students": 219
             }
           ],
@@ -1389,6 +1485,10 @@
             {
               "year": 113,
               "students": 116
+            },
+            {
+              "year": 114,
+              "students": 113
             }
           ],
           "status": "正常",
@@ -1439,26 +1539,15 @@
             {
               "year": 113,
               "students": 101
+            },
+            {
+              "year": 114,
+              "students": 112
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107,
-            108,
-            109
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107、108、109",
-              "severity": "warning",
-              "years": [
-                107,
-                108,
-                109
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "094665",
@@ -1504,6 +1593,10 @@
             {
               "year": 113,
               "students": 37
+            },
+            {
+              "year": 114,
+              "students": 30
             }
           ],
           "status": "正常",
@@ -1554,56 +1647,10 @@
             {
               "year": 113,
               "students": 32
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "094664",
-          "code": "094664",
-          "name": "縣立新庄國小",
-          "countyId": "雲林縣",
-          "townshipId": "雲林縣:土庫鎮",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "雲林縣土庫鎮新庄里南新庄1號",
-          "phone": "(05)6652874",
-          "website": "https://sjes.ylc.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094664/C/雲林縣/土庫鎮/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.371179,
-            "latitude": 23.733108
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 33
             },
             {
-              "year": 108,
-              "students": 32
-            },
-            {
-              "year": 109,
-              "students": 29
-            },
-            {
-              "year": 110,
-              "students": 28
-            },
-            {
-              "year": 111,
-              "students": 24
-            },
-            {
-              "year": 112,
-              "students": 22
-            },
-            {
-              "year": 113,
-              "students": 21
+              "year": 114,
+              "students": 20
             }
           ],
           "status": "正常",
@@ -1654,6 +1701,64 @@
             {
               "year": 113,
               "students": 20
+            },
+            {
+              "year": 114,
+              "students": 20
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "094664",
+          "code": "094664",
+          "name": "縣立新庄國小",
+          "countyId": "雲林縣",
+          "townshipId": "雲林縣:土庫鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "雲林縣土庫鎮新庄里南新庄1號",
+          "phone": "(05)6652874",
+          "website": "https://sjes.ylc.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094664/C/雲林縣/土庫鎮/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.371179,
+            "latitude": 23.733108
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 33
+            },
+            {
+              "year": 108,
+              "students": 32
+            },
+            {
+              "year": 109,
+              "students": 29
+            },
+            {
+              "year": 110,
+              "students": 28
+            },
+            {
+              "year": 111,
+              "students": 24
+            },
+            {
+              "year": 112,
+              "students": 22
+            },
+            {
+              "year": 113,
+              "students": 21
+            },
+            {
+              "year": 114,
+              "students": 16
             }
           ],
           "status": "正常",
@@ -1661,13 +1766,7 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "土庫鎮 有 2 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "雲林縣:大埤鄉",
@@ -1718,6 +1817,10 @@
             {
               "year": 113,
               "students": 305
+            },
+            {
+              "year": 114,
+              "students": 293
             }
           ],
           "status": "正常",
@@ -1768,106 +1871,10 @@
             {
               "year": 113,
               "students": 206
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "094645",
-          "code": "094645",
-          "name": "縣立仁和國小",
-          "countyId": "雲林縣",
-          "townshipId": "雲林縣:大埤鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "雲林縣大埤鄉豐岡村仁和路4號",
-          "phone": "(05)5912454",
-          "website": "https://zhes.ylc.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094645/C/雲林縣/大埤鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.422689,
-            "latitude": 23.662025
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 53
             },
             {
-              "year": 108,
-              "students": 60
-            },
-            {
-              "year": 109,
-              "students": 71
-            },
-            {
-              "year": 110,
-              "students": 69
-            },
-            {
-              "year": 111,
-              "students": 79
-            },
-            {
-              "year": 112,
-              "students": 76
-            },
-            {
-              "year": 113,
-              "students": 68
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "094644",
-          "code": "094644",
-          "name": "縣立舊庄國小",
-          "countyId": "雲林縣",
-          "townshipId": "雲林縣:大埤鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "雲林縣大埤鄉怡然村怡然路92號",
-          "phone": "(05)5912094",
-          "website": "https://jjes.ylc.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094644/C/雲林縣/大埤鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.401494,
-            "latitude": 23.633529
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 91
-            },
-            {
-              "year": 108,
-              "students": 91
-            },
-            {
-              "year": 109,
-              "students": 82
-            },
-            {
-              "year": 110,
-              "students": 76
-            },
-            {
-              "year": 111,
-              "students": 76
-            },
-            {
-              "year": 112,
-              "students": 61
-            },
-            {
-              "year": 113,
-              "students": 60
+              "year": 114,
+              "students": 206
             }
           ],
           "status": "正常",
@@ -1918,6 +1925,118 @@
             {
               "year": 113,
               "students": 46
+            },
+            {
+              "year": 114,
+              "students": 57
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "094644",
+          "code": "094644",
+          "name": "縣立舊庄國小",
+          "countyId": "雲林縣",
+          "townshipId": "雲林縣:大埤鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "雲林縣大埤鄉怡然村怡然路92號",
+          "phone": "(05)5912094",
+          "website": "https://jjes.ylc.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094644/C/雲林縣/大埤鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.401494,
+            "latitude": 23.633529
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 91
+            },
+            {
+              "year": 108,
+              "students": 91
+            },
+            {
+              "year": 109,
+              "students": 82
+            },
+            {
+              "year": 110,
+              "students": 76
+            },
+            {
+              "year": 111,
+              "students": 76
+            },
+            {
+              "year": 112,
+              "students": 61
+            },
+            {
+              "year": 113,
+              "students": 60
+            },
+            {
+              "year": 114,
+              "students": 56
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "094645",
+          "code": "094645",
+          "name": "縣立仁和國小",
+          "countyId": "雲林縣",
+          "townshipId": "雲林縣:大埤鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "雲林縣大埤鄉豐岡村仁和路4號",
+          "phone": "(05)5912454",
+          "website": "https://zhes.ylc.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094645/C/雲林縣/大埤鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.422689,
+            "latitude": 23.662025
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 53
+            },
+            {
+              "year": 108,
+              "students": 60
+            },
+            {
+              "year": 109,
+              "students": 71
+            },
+            {
+              "year": 110,
+              "students": 69
+            },
+            {
+              "year": 111,
+              "students": 79
+            },
+            {
+              "year": 112,
+              "students": 76
+            },
+            {
+              "year": 113,
+              "students": 68
+            },
+            {
+              "year": 114,
+              "students": 54
             }
           ],
           "status": "正常",
@@ -1968,6 +2087,10 @@
             {
               "year": 113,
               "students": 36
+            },
+            {
+              "year": 114,
+              "students": 35
             }
           ],
           "status": "正常",
@@ -2026,6 +2149,10 @@
             {
               "year": 113,
               "students": 347
+            },
+            {
+              "year": 114,
+              "students": 328
             }
           ],
           "status": "正常",
@@ -2075,6 +2202,10 @@
             },
             {
               "year": 113,
+              "students": 182
+            },
+            {
+              "year": 114,
               "students": 182
             }
           ],
@@ -2126,6 +2257,10 @@
             {
               "year": 113,
               "students": 104
+            },
+            {
+              "year": 114,
+              "students": 88
             }
           ],
           "status": "正常",
@@ -2176,6 +2311,10 @@
             {
               "year": 113,
               "students": 68
+            },
+            {
+              "year": 114,
+              "students": 70
             }
           ],
           "status": "正常",
@@ -2226,6 +2365,10 @@
             {
               "year": 113,
               "students": 43
+            },
+            {
+              "year": 114,
+              "students": 41
             }
           ],
           "status": "正常",
@@ -2276,6 +2419,10 @@
             {
               "year": 113,
               "students": 33
+            },
+            {
+              "year": 114,
+              "students": 37
             }
           ],
           "status": "正常",
@@ -2283,48 +2430,52 @@
           "dataNotes": []
         },
         {
-          "id": "094718",
-          "code": "094718",
-          "name": "縣立山內國小",
+          "id": "094723",
+          "code": "094723",
+          "name": "縣立和平國小",
           "countyId": "雲林縣",
           "townshipId": "雲林縣:元長鄉",
           "educationLevel": "國小",
           "managementType": "公立",
-          "address": "雲林縣元長鄉山內村南山路3號",
-          "phone": "(05)7882152",
-          "website": "https://snes.ylc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094718/C/雲林縣/元長鄉/縣市立/偏遠/無/",
+          "address": "雲林縣元長鄉子茂村4號",
+          "phone": "(05)7882684",
+          "website": "https://hpes.ylc.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094723/C/雲林縣/元長鄉/縣市立/偏遠/無/",
           "coordinates": {
-            "longitude": 120.312379,
-            "latitude": 23.67883
+            "longitude": 120.336255,
+            "latitude": 23.65856
           },
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 23
+              "students": 44
             },
             {
               "year": 108,
-              "students": 23
+              "students": 35
             },
             {
               "year": 109,
-              "students": 27
+              "students": 34
             },
             {
               "year": 110,
-              "students": 24
+              "students": 34
             },
             {
               "year": 111,
-              "students": 22
+              "students": 31
             },
             {
               "year": 112,
-              "students": 29
+              "students": 28
             },
             {
               "year": 113,
+              "students": 22
+            },
+            {
+              "year": 114,
               "students": 26
             }
           ],
@@ -2376,6 +2527,10 @@
             {
               "year": 113,
               "students": 23
+            },
+            {
+              "year": 114,
+              "students": 24
             }
           ],
           "status": "正常",
@@ -2383,49 +2538,53 @@
           "dataNotes": []
         },
         {
-          "id": "094723",
-          "code": "094723",
-          "name": "縣立和平國小",
+          "id": "094718",
+          "code": "094718",
+          "name": "縣立山內國小",
           "countyId": "雲林縣",
           "townshipId": "雲林縣:元長鄉",
           "educationLevel": "國小",
           "managementType": "公立",
-          "address": "雲林縣元長鄉子茂村4號",
-          "phone": "(05)7882684",
-          "website": "https://hpes.ylc.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094723/C/雲林縣/元長鄉/縣市立/偏遠/無/",
+          "address": "雲林縣元長鄉山內村南山路3號",
+          "phone": "(05)7882152",
+          "website": "https://snes.ylc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094718/C/雲林縣/元長鄉/縣市立/偏遠/無/",
           "coordinates": {
-            "longitude": 120.336255,
-            "latitude": 23.65856
+            "longitude": 120.312379,
+            "latitude": 23.67883
           },
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 44
+              "students": 23
             },
             {
               "year": 108,
-              "students": 35
+              "students": 23
             },
             {
               "year": 109,
-              "students": 34
+              "students": 27
             },
             {
               "year": 110,
-              "students": 34
+              "students": 24
             },
             {
               "year": 111,
-              "students": 31
+              "students": 22
             },
             {
               "year": 112,
-              "students": 28
+              "students": 29
             },
             {
               "year": 113,
-              "students": 22
+              "students": 26
+            },
+            {
+              "year": 114,
+              "students": 23
             }
           ],
           "status": "正常",
@@ -2476,6 +2635,10 @@
             {
               "year": 113,
               "students": 19
+            },
+            {
+              "year": 114,
+              "students": 14
             }
           ],
           "status": "正常",
@@ -2534,6 +2697,10 @@
             {
               "year": 113,
               "students": 10470
+            },
+            {
+              "year": 114,
+              "students": 10470
             }
           ],
           "status": "正常",
@@ -2583,6 +2750,10 @@
             },
             {
               "year": 113,
+              "students": 1977
+            },
+            {
+              "year": 114,
               "students": 1977
             }
           ],
@@ -2634,6 +2805,10 @@
             {
               "year": 113,
               "students": 1715
+            },
+            {
+              "year": 114,
+              "students": 1715
             }
           ],
           "status": "正常",
@@ -2684,22 +2859,15 @@
             {
               "year": 113,
               "students": 1523
+            },
+            {
+              "year": 114,
+              "students": 1523
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "094610",
@@ -2745,106 +2913,10 @@
             {
               "year": 113,
               "students": 1246
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "094756",
-          "code": "094756",
-          "name": "縣立斗六國小",
-          "countyId": "雲林縣",
-          "townshipId": "雲林縣:斗六市",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "雲林縣斗六市鎮東路225號",
-          "phone": "(05)5379600",
-          "website": "https://dlps.ylc.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094756/C/雲林縣/斗六市/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.552738,
-            "latitude": 23.707571
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1026
             },
             {
-              "year": 108,
-              "students": 1025
-            },
-            {
-              "year": 109,
-              "students": 1033
-            },
-            {
-              "year": 110,
-              "students": 1033
-            },
-            {
-              "year": 111,
-              "students": 1042
-            },
-            {
-              "year": 112,
-              "students": 1008
-            },
-            {
-              "year": 113,
-              "students": 986
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "094755",
-          "code": "094755",
-          "name": "縣立雲林國小",
-          "countyId": "雲林縣",
-          "townshipId": "雲林縣:斗六市",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "雲林縣斗六市莊敬路111號",
-          "phone": "(05)5361112",
-          "website": "https://yles.ylc.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094755/C/雲林縣/斗六市/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.548272,
-            "latitude": 23.702866
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 927
-            },
-            {
-              "year": 108,
-              "students": 954
-            },
-            {
-              "year": 109,
-              "students": 1002
-            },
-            {
-              "year": 110,
-              "students": 992
-            },
-            {
-              "year": 111,
-              "students": 994
-            },
-            {
-              "year": 112,
-              "students": 981
-            },
-            {
-              "year": 113,
-              "students": 973
+              "year": 114,
+              "students": 1231
             }
           ],
           "status": "正常",
@@ -2895,67 +2967,118 @@
             {
               "year": 113,
               "students": 971
+            },
+            {
+              "year": 114,
+              "students": 971
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
-          "id": "094601",
-          "code": "094601",
-          "name": "縣立鎮西國小",
+          "id": "094756",
+          "code": "094756",
+          "name": "縣立斗六國小",
           "countyId": "雲林縣",
           "townshipId": "雲林縣:斗六市",
           "educationLevel": "國小",
           "managementType": "公立",
-          "address": "雲林縣斗六市中和里西平路3號",
-          "phone": "(05)5322047",
-          "website": "https://jces.ylc.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094601/C/雲林縣/斗六市/縣市立/否/無/",
+          "address": "雲林縣斗六市鎮東路225號",
+          "phone": "(05)5379600",
+          "website": "https://dlps.ylc.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094756/C/雲林縣/斗六市/縣市立/否/無/",
           "coordinates": {
-            "longitude": 120.538802,
-            "latitude": 23.707169
+            "longitude": 120.552738,
+            "latitude": 23.707571
           },
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 663
+              "students": 1026
             },
             {
               "year": 108,
-              "students": 733
+              "students": 1025
             },
             {
               "year": 109,
-              "students": 751
+              "students": 1033
             },
             {
               "year": 110,
-              "students": 785
+              "students": 1033
             },
             {
               "year": 111,
-              "students": 829
+              "students": 1042
             },
             {
               "year": 112,
-              "students": 831
+              "students": 1008
             },
             {
               "year": 113,
-              "students": 797
+              "students": 986
+            },
+            {
+              "year": 114,
+              "students": 957
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "094755",
+          "code": "094755",
+          "name": "縣立雲林國小",
+          "countyId": "雲林縣",
+          "townshipId": "雲林縣:斗六市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "雲林縣斗六市莊敬路111號",
+          "phone": "(05)5361112",
+          "website": "https://yles.ylc.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094755/C/雲林縣/斗六市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.548272,
+            "latitude": 23.702866
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 927
+            },
+            {
+              "year": 108,
+              "students": 954
+            },
+            {
+              "year": 109,
+              "students": 1002
+            },
+            {
+              "year": 110,
+              "students": 992
+            },
+            {
+              "year": 111,
+              "students": 994
+            },
+            {
+              "year": 112,
+              "students": 981
+            },
+            {
+              "year": 113,
+              "students": 973
+            },
+            {
+              "year": 114,
+              "students": 942
             }
           ],
           "status": "正常",
@@ -3006,6 +3129,64 @@
             {
               "year": 113,
               "students": 790
+            },
+            {
+              "year": 114,
+              "students": 790
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "094601",
+          "code": "094601",
+          "name": "縣立鎮西國小",
+          "countyId": "雲林縣",
+          "townshipId": "雲林縣:斗六市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "雲林縣斗六市中和里西平路3號",
+          "phone": "(05)5322047",
+          "website": "https://jces.ylc.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094601/C/雲林縣/斗六市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.538802,
+            "latitude": 23.707169
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 663
+            },
+            {
+              "year": 108,
+              "students": 733
+            },
+            {
+              "year": 109,
+              "students": 751
+            },
+            {
+              "year": 110,
+              "students": 785
+            },
+            {
+              "year": 111,
+              "students": 829
+            },
+            {
+              "year": 112,
+              "students": 831
+            },
+            {
+              "year": 113,
+              "students": 797
+            },
+            {
+              "year": 114,
+              "students": 750
             }
           ],
           "status": "正常",
@@ -3056,6 +3237,10 @@
             {
               "year": 113,
               "students": 569
+            },
+            {
+              "year": 114,
+              "students": 592
             }
           ],
           "status": "正常",
@@ -3106,6 +3291,10 @@
             {
               "year": 113,
               "students": 540
+            },
+            {
+              "year": 114,
+              "students": 546
             }
           ],
           "status": "正常",
@@ -3155,6 +3344,10 @@
             },
             {
               "year": 113,
+              "students": 502
+            },
+            {
+              "year": 114,
               "students": 502
             }
           ],
@@ -3206,6 +3399,10 @@
             {
               "year": 113,
               "students": 428
+            },
+            {
+              "year": 114,
+              "students": 426
             }
           ],
           "status": "正常",
@@ -3219,7 +3416,7 @@
           "countyId": "雲林縣",
           "townshipId": "雲林縣:斗六市",
           "educationLevel": "高中職",
-          "managementType": "私立",
+          "managementType": "公立",
           "address": "雲林縣斗六市鎮南路1110號",
           "phone": "(05)5378899",
           "website": "https://www.victoria.ylc.edu.tw/",
@@ -3255,6 +3452,10 @@
             },
             {
               "year": 113,
+              "students": 289
+            },
+            {
+              "year": 114,
               "students": 289
             }
           ],
@@ -3306,56 +3507,10 @@
             {
               "year": 113,
               "students": 256
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "094606",
-          "code": "094606",
-          "name": "縣立溪洲國小",
-          "countyId": "雲林縣",
-          "townshipId": "雲林縣:斗六市",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "雲林縣斗六市溪洲里萬年路809號",
-          "phone": "(05)5512485",
-          "website": "https://sjps.ylc.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094606/C/雲林縣/斗六市/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.55533,
-            "latitude": 23.741155
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 233
             },
             {
-              "year": 108,
-              "students": 230
-            },
-            {
-              "year": 109,
-              "students": 215
-            },
-            {
-              "year": 110,
-              "students": 220
-            },
-            {
-              "year": 111,
-              "students": 221
-            },
-            {
-              "year": 112,
-              "students": 235
-            },
-            {
-              "year": 113,
-              "students": 230
+              "year": 114,
+              "students": 256
             }
           ],
           "status": "正常",
@@ -3406,6 +3561,64 @@
             {
               "year": 113,
               "students": 227
+            },
+            {
+              "year": 114,
+              "students": 217
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "094606",
+          "code": "094606",
+          "name": "縣立溪洲國小",
+          "countyId": "雲林縣",
+          "townshipId": "雲林縣:斗六市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "雲林縣斗六市溪洲里萬年路809號",
+          "phone": "(05)5512485",
+          "website": "https://sjps.ylc.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094606/C/雲林縣/斗六市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.55533,
+            "latitude": 23.741155
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 233
+            },
+            {
+              "year": 108,
+              "students": 230
+            },
+            {
+              "year": 109,
+              "students": 215
+            },
+            {
+              "year": 110,
+              "students": 220
+            },
+            {
+              "year": 111,
+              "students": 221
+            },
+            {
+              "year": 112,
+              "students": 235
+            },
+            {
+              "year": 113,
+              "students": 230
+            },
+            {
+              "year": 114,
+              "students": 213
             }
           ],
           "status": "正常",
@@ -3456,6 +3669,10 @@
             {
               "year": 113,
               "students": 127
+            },
+            {
+              "year": 114,
+              "students": 138
             }
           ],
           "status": "正常",
@@ -3506,56 +3723,10 @@
             {
               "year": 113,
               "students": 107
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "094604",
-          "code": "094604",
-          "name": "縣立梅林國小",
-          "countyId": "雲林縣",
-          "townshipId": "雲林縣:斗六市",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "雲林縣斗六市梅林里梅林路256號",
-          "phone": "(05)5572211",
-          "website": "https://mlps.ylc.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094604/C/雲林縣/斗六市/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.601433,
-            "latitude": 23.702618
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 69
             },
             {
-              "year": 108,
-              "students": 65
-            },
-            {
-              "year": 109,
-              "students": 57
-            },
-            {
-              "year": 110,
-              "students": 52
-            },
-            {
-              "year": 111,
-              "students": 51
-            },
-            {
-              "year": 112,
-              "students": 53
-            },
-            {
-              "year": 113,
-              "students": 53
+              "year": 114,
+              "students": 103
             }
           ],
           "status": "正常",
@@ -3606,6 +3777,64 @@
             {
               "year": 113,
               "students": 44
+            },
+            {
+              "year": 114,
+              "students": 45
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "094604",
+          "code": "094604",
+          "name": "縣立梅林國小",
+          "countyId": "雲林縣",
+          "townshipId": "雲林縣:斗六市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "雲林縣斗六市梅林里梅林路256號",
+          "phone": "(05)5572211",
+          "website": "https://mlps.ylc.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094604/C/雲林縣/斗六市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.601433,
+            "latitude": 23.702618
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 69
+            },
+            {
+              "year": 108,
+              "students": 65
+            },
+            {
+              "year": 109,
+              "students": 57
+            },
+            {
+              "year": 110,
+              "students": 52
+            },
+            {
+              "year": 111,
+              "students": 51
+            },
+            {
+              "year": 112,
+              "students": 53
+            },
+            {
+              "year": 113,
+              "students": 53
+            },
+            {
+              "year": 114,
+              "students": 43
             }
           ],
           "status": "正常",
@@ -3613,13 +3842,7 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "斗六市 有 2 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "雲林縣:斗南鎮",
@@ -3669,6 +3892,10 @@
             },
             {
               "year": 113,
+              "students": 1038
+            },
+            {
+              "year": 114,
               "students": 1038
             }
           ],
@@ -3720,6 +3947,10 @@
             {
               "year": 113,
               "students": 785
+            },
+            {
+              "year": 114,
+              "students": 777
             }
           ],
           "status": "正常",
@@ -3770,6 +4001,10 @@
             {
               "year": 113,
               "students": 690
+            },
+            {
+              "year": 114,
+              "students": 654
             }
           ],
           "status": "正常",
@@ -3819,6 +4054,10 @@
             },
             {
               "year": 113,
+              "students": 360
+            },
+            {
+              "year": 114,
               "students": 360
             }
           ],
@@ -3870,22 +4109,15 @@
             {
               "year": 113,
               "students": 310
+            },
+            {
+              "year": 114,
+              "students": 310
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "094635",
@@ -3931,6 +4163,10 @@
             {
               "year": 113,
               "students": 243
+            },
+            {
+              "year": 114,
+              "students": 233
             }
           ],
           "status": "正常",
@@ -3981,6 +4217,10 @@
             {
               "year": 113,
               "students": 102
+            },
+            {
+              "year": 114,
+              "students": 113
             }
           ],
           "status": "正常",
@@ -4031,6 +4271,10 @@
             {
               "year": 113,
               "students": 97
+            },
+            {
+              "year": 114,
+              "students": 80
             }
           ],
           "status": "正常",
@@ -4081,6 +4325,10 @@
             {
               "year": 113,
               "students": 51
+            },
+            {
+              "year": 114,
+              "students": 49
             }
           ],
           "status": "正常",
@@ -4088,13 +4336,7 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "斗南鎮 有 1 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "雲林縣:水林鄉",
@@ -4145,6 +4387,10 @@
             {
               "year": 113,
               "students": 343
+            },
+            {
+              "year": 114,
+              "students": 309
             }
           ],
           "status": "正常",
@@ -4195,22 +4441,15 @@
             {
               "year": 113,
               "students": 284
+            },
+            {
+              "year": 114,
+              "students": 284
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "094506",
@@ -4255,6 +4494,10 @@
             },
             {
               "year": 113,
+              "students": 118
+            },
+            {
+              "year": 114,
               "students": 118
             }
           ],
@@ -4306,6 +4549,10 @@
             {
               "year": 113,
               "students": 47
+            },
+            {
+              "year": 114,
+              "students": 49
             }
           ],
           "status": "正常",
@@ -4356,6 +4603,118 @@
             {
               "year": 113,
               "students": 45
+            },
+            {
+              "year": 114,
+              "students": 41
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "094750",
+          "code": "094750",
+          "name": "縣立誠正國小",
+          "countyId": "雲林縣",
+          "townshipId": "雲林縣:水林鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "雲林縣水林鄉蘇秦村1號",
+          "phone": "(05)7921114",
+          "website": "https://cjes.ylc.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094750/C/雲林縣/水林鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.261366,
+            "latitude": 23.620602
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 35
+            },
+            {
+              "year": 108,
+              "students": 32
+            },
+            {
+              "year": 109,
+              "students": 28
+            },
+            {
+              "year": 110,
+              "students": 26
+            },
+            {
+              "year": 111,
+              "students": 25
+            },
+            {
+              "year": 112,
+              "students": 24
+            },
+            {
+              "year": 113,
+              "students": 20
+            },
+            {
+              "year": 114,
+              "students": 21
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "094754",
+          "code": "094754",
+          "name": "縣立大興國小",
+          "countyId": "雲林縣",
+          "townshipId": "雲林縣:水林鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "雲林縣水林鄉大溝村1號",
+          "phone": "(05)7851300",
+          "website": "https://dsps.ylc.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094754/C/雲林縣/水林鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.210497,
+            "latitude": 23.565848
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 30
+            },
+            {
+              "year": 108,
+              "students": 29
+            },
+            {
+              "year": 109,
+              "students": 26
+            },
+            {
+              "year": 110,
+              "students": 22
+            },
+            {
+              "year": 111,
+              "students": 19
+            },
+            {
+              "year": 112,
+              "students": 18
+            },
+            {
+              "year": 113,
+              "students": 17
+            },
+            {
+              "year": 114,
+              "students": 21
             }
           ],
           "status": "正常",
@@ -4406,6 +4765,10 @@
             {
               "year": 113,
               "students": 25
+            },
+            {
+              "year": 114,
+              "students": 20
             }
           ],
           "status": "正常",
@@ -4456,55 +4819,9 @@
             {
               "year": 113,
               "students": 25
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "094750",
-          "code": "094750",
-          "name": "縣立誠正國小",
-          "countyId": "雲林縣",
-          "townshipId": "雲林縣:水林鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "雲林縣水林鄉蘇秦村1號",
-          "phone": "(05)7921114",
-          "website": "https://cjes.ylc.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094750/C/雲林縣/水林鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.261366,
-            "latitude": 23.620602
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 35
             },
             {
-              "year": 108,
-              "students": 32
-            },
-            {
-              "year": 109,
-              "students": 28
-            },
-            {
-              "year": 110,
-              "students": 26
-            },
-            {
-              "year": 111,
-              "students": 25
-            },
-            {
-              "year": 112,
-              "students": 24
-            },
-            {
-              "year": 113,
+              "year": 114,
               "students": 20
             }
           ],
@@ -4556,56 +4873,10 @@
             {
               "year": 113,
               "students": 19
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "094754",
-          "code": "094754",
-          "name": "縣立大興國小",
-          "countyId": "雲林縣",
-          "townshipId": "雲林縣:水林鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "雲林縣水林鄉大溝村1號",
-          "phone": "(05)7851300",
-          "website": "https://dsps.ylc.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094754/C/雲林縣/水林鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.210497,
-            "latitude": 23.565848
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 30
             },
             {
-              "year": 108,
-              "students": 29
-            },
-            {
-              "year": 109,
-              "students": 26
-            },
-            {
-              "year": 110,
-              "students": 22
-            },
-            {
-              "year": 111,
-              "students": 19
-            },
-            {
-              "year": 112,
-              "students": 18
-            },
-            {
-              "year": 113,
-              "students": 17
+              "year": 114,
+              "students": 16
             }
           ],
           "status": "正常",
@@ -4613,13 +4884,7 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "水林鄉 有 1 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "雲林縣:北港鎮",
@@ -4670,6 +4935,10 @@
             {
               "year": 113,
               "students": 1205
+            },
+            {
+              "year": 114,
+              "students": 1215
             }
           ],
           "status": "正常",
@@ -4719,6 +4988,10 @@
             },
             {
               "year": 113,
+              "students": 882
+            },
+            {
+              "year": 114,
               "students": 882
             }
           ],
@@ -4770,22 +5043,15 @@
             {
               "year": 113,
               "students": 729
+            },
+            {
+              "year": 114,
+              "students": 729
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "090306",
@@ -4831,22 +5097,15 @@
             {
               "year": 113,
               "students": 651
+            },
+            {
+              "year": 114,
+              "students": 651
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "094707",
@@ -4892,6 +5151,10 @@
             {
               "year": 113,
               "students": 469
+            },
+            {
+              "year": 114,
+              "students": 405
             }
           ],
           "status": "正常",
@@ -4942,22 +5205,15 @@
             {
               "year": 113,
               "students": 254
+            },
+            {
+              "year": 114,
+              "students": 254
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "094520",
@@ -5002,6 +5258,10 @@
             },
             {
               "year": 113,
+              "students": 220
+            },
+            {
+              "year": 114,
               "students": 220
             }
           ],
@@ -5053,6 +5313,10 @@
             {
               "year": 113,
               "students": 65
+            },
+            {
+              "year": 114,
+              "students": 75
             }
           ],
           "status": "正常",
@@ -5103,56 +5367,10 @@
             {
               "year": 113,
               "students": 48
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "094711",
-          "code": "094711",
-          "name": "縣立東榮國小",
-          "countyId": "雲林縣",
-          "townshipId": "雲林縣:北港鎮",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "雲林縣北港鎮溝皂里174號",
-          "phone": "(05)7921304",
-          "website": "https://dles.ylc.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094711/C/雲林縣/北港鎮/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.293825,
-            "latitude": 23.612779
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 45
             },
             {
-              "year": 108,
-              "students": 42
-            },
-            {
-              "year": 109,
-              "students": 40
-            },
-            {
-              "year": 110,
-              "students": 43
-            },
-            {
-              "year": 111,
+              "year": 114,
               "students": 41
-            },
-            {
-              "year": 112,
-              "students": 36
-            },
-            {
-              "year": 113,
-              "students": 34
             }
           ],
           "status": "正常",
@@ -5203,6 +5421,10 @@
             {
               "year": 113,
               "students": 28
+            },
+            {
+              "year": 114,
+              "students": 32
             }
           ],
           "status": "正常",
@@ -5210,49 +5432,53 @@
           "dataNotes": []
         },
         {
-          "id": "094710",
-          "code": "094710",
-          "name": "縣立育英國小",
+          "id": "094711",
+          "code": "094711",
+          "name": "縣立東榮國小",
           "countyId": "雲林縣",
           "townshipId": "雲林縣:北港鎮",
           "educationLevel": "國小",
           "managementType": "公立",
-          "address": "雲林縣北港鎮番溝里84號",
-          "phone": "(05)7921224",
-          "website": "https://yyes.ylc.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094710/C/雲林縣/北港鎮/縣市立/偏遠/無/",
+          "address": "雲林縣北港鎮溝皂里174號",
+          "phone": "(05)7921304",
+          "website": "https://dles.ylc.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094711/C/雲林縣/北港鎮/縣市立/偏遠/無/",
           "coordinates": {
-            "longitude": 120.278642,
-            "latitude": 23.62248
+            "longitude": 120.293825,
+            "latitude": 23.612779
           },
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 28
+              "students": 45
             },
             {
               "year": 108,
-              "students": 28
+              "students": 42
             },
             {
               "year": 109,
-              "students": 23
+              "students": 40
             },
             {
               "year": 110,
-              "students": 27
+              "students": 43
             },
             {
               "year": 111,
-              "students": 25
+              "students": 41
             },
             {
               "year": 112,
-              "students": 21
+              "students": 36
             },
             {
               "year": 113,
-              "students": 23
+              "students": 34
+            },
+            {
+              "year": 114,
+              "students": 31
             }
           ],
           "status": "正常",
@@ -5303,18 +5529,88 @@
             {
               "year": 113,
               "students": 18
+            },
+            {
+              "year": 114,
+              "students": 18
             }
           ],
           "status": "正常",
           "missingYears": [],
           "dataNotes": []
+        },
+        {
+          "id": "094710",
+          "code": "094710",
+          "name": "縣立育英國小",
+          "countyId": "雲林縣",
+          "townshipId": "雲林縣:北港鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "雲林縣北港鎮番溝里84號",
+          "phone": "(05)7921224",
+          "website": "https://yyes.ylc.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094710/C/雲林縣/北港鎮/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.278642,
+            "latitude": 23.62248
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 28
+            },
+            {
+              "year": 108,
+              "students": 28
+            },
+            {
+              "year": 109,
+              "students": 23
+            },
+            {
+              "year": 110,
+              "students": 27
+            },
+            {
+              "year": 111,
+              "students": 25
+            },
+            {
+              "year": 112,
+              "students": 21
+            },
+            {
+              "year": 113,
+              "students": 23
+            },
+            {
+              "year": 114,
+              "students": 0
+            }
+          ],
+          "status": "待確認",
+          "missingYears": [],
+          "dataNotes": [
+            {
+              "type": "異常值",
+              "message": "114 學年學生數為 0，可能涉及停辦、整併或資料尚未更新。",
+              "severity": "warning",
+              "years": [
+                114
+              ]
+            }
+          ]
         }
       ],
       "dataNotes": [
         {
-          "type": "缺年度",
-          "message": "北港鎮 有 3 所學校存在年度缺漏。",
-          "severity": "warning"
+          "type": "異常值",
+          "message": "北港鎮 有 1 所學校最新學年學生數為 0，需留意停辦或整併可能。",
+          "severity": "info",
+          "years": [
+            114
+          ]
         }
       ]
     },
@@ -5323,67 +5619,6 @@
       "name": "古坑鄉",
       "countyId": "雲林縣",
       "schools": [
-        {
-          "id": "091319",
-          "code": "091319",
-          "name": "福智高中",
-          "countyId": "雲林縣",
-          "townshipId": "雲林縣:古坑鄉",
-          "educationLevel": "高中職",
-          "managementType": "私立",
-          "address": "雲林縣古坑鄉麻園村平和23號",
-          "phone": "(05)5828223",
-          "website": "http://bwsh.ylc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/091319/H/雲林縣/古坑鄉/私立/否/無/",
-          "coordinates": {
-            "longitude": 120.523171,
-            "latitude": 23.635509
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 0
-            },
-            {
-              "year": 108,
-              "students": 644
-            },
-            {
-              "year": 109,
-              "students": 611
-            },
-            {
-              "year": 110,
-              "students": 586
-            },
-            {
-              "year": 111,
-              "students": 522
-            },
-            {
-              "year": 112,
-              "students": 410
-            },
-            {
-              "year": 113,
-              "students": 315
-            }
-          ],
-          "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
-        },
         {
           "id": "091602",
           "code": "091602",
@@ -5428,6 +5663,64 @@
             {
               "year": 113,
               "students": 295
+            },
+            {
+              "year": 114,
+              "students": 353
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "091319",
+          "code": "091319",
+          "name": "福智高中",
+          "countyId": "雲林縣",
+          "townshipId": "雲林縣:古坑鄉",
+          "educationLevel": "高中職",
+          "managementType": "公立",
+          "address": "雲林縣古坑鄉麻園村平和23號",
+          "phone": "(05)5828223",
+          "website": "http://bwsh.ylc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/091319/H/雲林縣/古坑鄉/私立/否/無/",
+          "coordinates": {
+            "longitude": 120.523171,
+            "latitude": 23.635509
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 0
+            },
+            {
+              "year": 108,
+              "students": 644
+            },
+            {
+              "year": 109,
+              "students": 611
+            },
+            {
+              "year": 110,
+              "students": 586
+            },
+            {
+              "year": 111,
+              "students": 522
+            },
+            {
+              "year": 112,
+              "students": 410
+            },
+            {
+              "year": 113,
+              "students": 315
+            },
+            {
+              "year": 114,
+              "students": 315
             }
           ],
           "status": "正常",
@@ -5477,6 +5770,10 @@
             },
             {
               "year": 113,
+              "students": 284
+            },
+            {
+              "year": 114,
               "students": 284
             }
           ],
@@ -5528,56 +5825,10 @@
             {
               "year": 113,
               "students": 204
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "094612",
-          "code": "094612",
-          "name": "縣立古坑國(中)小",
-          "countyId": "雲林縣",
-          "townshipId": "雲林縣:古坑鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "雲林縣古坑鄉朝陽路3號",
-          "phone": "(05)5821024",
-          "website": "https://kkjh.ylc.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094612/C/雲林縣/古坑鄉/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.567052,
-            "latitude": 23.646551
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 219
             },
             {
-              "year": 108,
-              "students": 209
-            },
-            {
-              "year": 109,
-              "students": 204
-            },
-            {
-              "year": 110,
-              "students": 191
-            },
-            {
-              "year": 111,
-              "students": 198
-            },
-            {
-              "year": 112,
-              "students": 188
-            },
-            {
-              "year": 113,
-              "students": 182
+              "year": 114,
+              "students": 206
             }
           ],
           "status": "正常",
@@ -5628,6 +5879,64 @@
             {
               "year": 113,
               "students": 172
+            },
+            {
+              "year": 114,
+              "students": 172
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "094612",
+          "code": "094612",
+          "name": "縣立古坑國(中)小",
+          "countyId": "雲林縣",
+          "townshipId": "雲林縣:古坑鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "雲林縣古坑鄉朝陽路3號",
+          "phone": "(05)5821024",
+          "website": "https://kkjh.ylc.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094612/C/雲林縣/古坑鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.567052,
+            "latitude": 23.646551
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 219
+            },
+            {
+              "year": 108,
+              "students": 209
+            },
+            {
+              "year": 109,
+              "students": 204
+            },
+            {
+              "year": 110,
+              "students": 191
+            },
+            {
+              "year": 111,
+              "students": 198
+            },
+            {
+              "year": 112,
+              "students": 188
+            },
+            {
+              "year": 113,
+              "students": 182
+            },
+            {
+              "year": 114,
+              "students": 159
             }
           ],
           "status": "正常",
@@ -5678,22 +5987,15 @@
             {
               "year": 113,
               "students": 139
+            },
+            {
+              "year": 114,
+              "students": 139
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "094512",
@@ -5738,6 +6040,10 @@
             },
             {
               "year": 113,
+              "students": 123
+            },
+            {
+              "year": 114,
               "students": 123
             }
           ],
@@ -5789,6 +6095,10 @@
             {
               "year": 113,
               "students": 121
+            },
+            {
+              "year": 114,
+              "students": 111
             }
           ],
           "status": "正常",
@@ -5839,6 +6149,10 @@
             {
               "year": 113,
               "students": 112
+            },
+            {
+              "year": 114,
+              "students": 102
             }
           ],
           "status": "正常",
@@ -5888,6 +6202,10 @@
             },
             {
               "year": 113,
+              "students": 93
+            },
+            {
+              "year": 114,
               "students": 93
             }
           ],
@@ -5939,6 +6257,10 @@
             {
               "year": 113,
               "students": 84
+            },
+            {
+              "year": 114,
+              "students": 81
             }
           ],
           "status": "正常",
@@ -5989,6 +6311,10 @@
             {
               "year": 113,
               "students": 59
+            },
+            {
+              "year": 114,
+              "students": 54
             }
           ],
           "status": "正常",
@@ -6039,6 +6365,10 @@
             {
               "year": 113,
               "students": 48
+            },
+            {
+              "year": 114,
+              "students": 42
             }
           ],
           "status": "正常",
@@ -6089,106 +6419,10 @@
             {
               "year": 113,
               "students": 33
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "094624",
-          "code": "094624",
-          "name": "縣立新光國小",
-          "countyId": "雲林縣",
-          "townshipId": "雲林縣:古坑鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "雲林縣古坑鄉新庄村新庄1之1號",
-          "phone": "(05)5260572",
-          "website": "https://sgps.ylc.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094624/C/雲林縣/古坑鄉/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.586484,
-            "latitude": 23.687007
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 30
             },
             {
-              "year": 108,
-              "students": 27
-            },
-            {
-              "year": 109,
-              "students": 26
-            },
-            {
-              "year": 110,
-              "students": 25
-            },
-            {
-              "year": 111,
-              "students": 23
-            },
-            {
-              "year": 112,
-              "students": 29
-            },
-            {
-              "year": 113,
-              "students": 29
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "094617",
-          "code": "094617",
-          "name": "縣立桂林國小",
-          "countyId": "雲林縣",
-          "townshipId": "雲林縣:古坑鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "雲林縣古坑鄉桂林村95號",
-          "phone": "(05)5901048",
-          "website": "https://gles.ylc.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094617/C/雲林縣/古坑鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.607712,
-            "latitude": 23.612129
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 42
-            },
-            {
-              "year": 108,
-              "students": 43
-            },
-            {
-              "year": 109,
-              "students": 42
-            },
-            {
-              "year": 110,
-              "students": 37
-            },
-            {
-              "year": 111,
-              "students": 33
-            },
-            {
-              "year": 112,
-              "students": 32
-            },
-            {
-              "year": 113,
-              "students": 27
+              "year": 114,
+              "students": 34
             }
           ],
           "status": "正常",
@@ -6239,6 +6473,10 @@
             {
               "year": 113,
               "students": 26
+            },
+            {
+              "year": 114,
+              "students": 30
             }
           ],
           "status": "正常",
@@ -6246,65 +6484,112 @@
           "dataNotes": []
         },
         {
-          "id": "091603",
-          "code": "091603",
-          "name": "私立福智實驗國小",
+          "id": "094624",
+          "code": "094624",
+          "name": "縣立新光國小",
           "countyId": "雲林縣",
           "townshipId": "雲林縣:古坑鄉",
           "educationLevel": "國小",
-          "managementType": "私立",
-          "address": "雲林縣古坑鄉麻園村平和21號",
-          "phone": "(05)5828222",
-          "website": "http://bwes.ylc.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/091603/C/雲林縣/古坑鄉/私立/否/無/",
+          "managementType": "公立",
+          "address": "雲林縣古坑鄉新庄村新庄1之1號",
+          "phone": "(05)5260572",
+          "website": "https://sgps.ylc.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094624/C/雲林縣/古坑鄉/縣市立/否/無/",
           "coordinates": {
-            "longitude": 120.521254,
-            "latitude": 23.634924
+            "longitude": 120.586484,
+            "latitude": 23.687007
           },
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 0
-            },
-            {
-              "year": 108,
-              "students": 22
-            },
-            {
-              "year": 109,
-              "students": 25
-            },
-            {
-              "year": 110,
-              "students": 23
-            },
-            {
-              "year": 111,
               "students": 30
             },
             {
+              "year": 108,
+              "students": 27
+            },
+            {
+              "year": 109,
+              "students": 26
+            },
+            {
+              "year": 110,
+              "students": 25
+            },
+            {
+              "year": 111,
+              "students": 23
+            },
+            {
               "year": 112,
-              "students": 24
+              "students": 29
             },
             {
               "year": 113,
-              "students": 24
+              "students": 29
+            },
+            {
+              "year": 114,
+              "students": 23
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "094617",
+          "code": "094617",
+          "name": "縣立桂林國小",
+          "countyId": "雲林縣",
+          "townshipId": "雲林縣:古坑鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "雲林縣古坑鄉桂林村95號",
+          "phone": "(05)5901048",
+          "website": "https://gles.ylc.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094617/C/雲林縣/古坑鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.607712,
+            "latitude": 23.612129
+          },
+          "yearlyStudents": [
             {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
+              "year": 107,
+              "students": 42
+            },
+            {
+              "year": 108,
+              "students": 43
+            },
+            {
+              "year": 109,
+              "students": 42
+            },
+            {
+              "year": 110,
+              "students": 37
+            },
+            {
+              "year": 111,
+              "students": 33
+            },
+            {
+              "year": 112,
+              "students": 32
+            },
+            {
+              "year": 113,
+              "students": 27
+            },
+            {
+              "year": 114,
+              "students": 21
             }
-          ]
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "094621",
@@ -6350,6 +6635,10 @@
             {
               "year": 113,
               "students": 23
+            },
+            {
+              "year": 114,
+              "students": 20
             }
           ],
           "status": "正常",
@@ -6400,18 +6689,88 @@
             {
               "year": 113,
               "students": 17
+            },
+            {
+              "year": 114,
+              "students": 18
             }
           ],
           "status": "正常",
           "missingYears": [],
           "dataNotes": []
+        },
+        {
+          "id": "091603",
+          "code": "091603",
+          "name": "私立福智實驗國小",
+          "countyId": "雲林縣",
+          "townshipId": "雲林縣:古坑鄉",
+          "educationLevel": "國小",
+          "managementType": "私立",
+          "address": "雲林縣古坑鄉麻園村平和21號",
+          "phone": "(05)5828222",
+          "website": "http://bwes.ylc.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/091603/C/雲林縣/古坑鄉/私立/否/無/",
+          "coordinates": {
+            "longitude": 120.521254,
+            "latitude": 23.634924
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 0
+            },
+            {
+              "year": 108,
+              "students": 22
+            },
+            {
+              "year": 109,
+              "students": 25
+            },
+            {
+              "year": 110,
+              "students": 23
+            },
+            {
+              "year": 111,
+              "students": 30
+            },
+            {
+              "year": 112,
+              "students": 24
+            },
+            {
+              "year": 113,
+              "students": 24
+            },
+            {
+              "year": 114,
+              "students": 0
+            }
+          ],
+          "status": "待確認",
+          "missingYears": [],
+          "dataNotes": [
+            {
+              "type": "異常值",
+              "message": "114 學年學生數為 0，可能涉及停辦、整併或資料尚未更新。",
+              "severity": "warning",
+              "years": [
+                114
+              ]
+            }
+          ]
         }
       ],
       "dataNotes": [
         {
-          "type": "缺年度",
-          "message": "古坑鄉 有 3 所學校存在年度缺漏。",
-          "severity": "warning"
+          "type": "異常值",
+          "message": "古坑鄉 有 1 所學校最新學年學生數為 0，需留意停辦或整併可能。",
+          "severity": "info",
+          "years": [
+            114
+          ]
         }
       ]
     },
@@ -6464,6 +6823,10 @@
             {
               "year": 113,
               "students": 492
+            },
+            {
+              "year": 114,
+              "students": 492
             }
           ],
           "status": "正常",
@@ -6514,6 +6877,10 @@
             {
               "year": 113,
               "students": 166
+            },
+            {
+              "year": 114,
+              "students": 165
             }
           ],
           "status": "正常",
@@ -6563,6 +6930,10 @@
             },
             {
               "year": 113,
+              "students": 82
+            },
+            {
+              "year": 114,
               "students": 82
             }
           ],
@@ -6614,106 +6985,10 @@
             {
               "year": 113,
               "students": 56
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "094729",
-          "code": "094729",
-          "name": "縣立建陽國小",
-          "countyId": "雲林縣",
-          "townshipId": "雲林縣:四湖鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "雲林縣四湖鄉箔子村箔子寮333號",
-          "phone": "(05)7721851",
-          "website": "https://jyes.ylc.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094729/C/雲林縣/四湖鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.151849,
-            "latitude": 23.633968
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 67
             },
             {
-              "year": 108,
-              "students": 66
-            },
-            {
-              "year": 109,
-              "students": 65
-            },
-            {
-              "year": 110,
-              "students": 61
-            },
-            {
-              "year": 111,
-              "students": 53
-            },
-            {
-              "year": 112,
-              "students": 45
-            },
-            {
-              "year": 113,
-              "students": 46
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "094728",
-          "code": "094728",
-          "name": "縣立三崙國小",
-          "countyId": "雲林縣",
-          "townshipId": "雲林縣:四湖鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "雲林縣四湖鄉崙南村延平南路18號",
-          "phone": "(05)7721044",
-          "website": "https://sales.ylc.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094728/C/雲林縣/四湖鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.155927,
-            "latitude": 23.65171
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 62
-            },
-            {
-              "year": 108,
-              "students": 65
-            },
-            {
-              "year": 109,
-              "students": 60
-            },
-            {
-              "year": 110,
-              "students": 57
-            },
-            {
-              "year": 111,
-              "students": 56
-            },
-            {
-              "year": 112,
-              "students": 49
-            },
-            {
-              "year": 113,
-              "students": 42
+              "year": 114,
+              "students": 52
             }
           ],
           "status": "正常",
@@ -6763,6 +7038,10 @@
             },
             {
               "year": 113,
+              "students": 40
+            },
+            {
+              "year": 114,
               "students": 40
             }
           ],
@@ -6814,6 +7093,10 @@
             {
               "year": 113,
               "students": 34
+            },
+            {
+              "year": 114,
+              "students": 39
             }
           ],
           "status": "正常",
@@ -6821,49 +7104,107 @@
           "dataNotes": []
         },
         {
-          "id": "094727",
-          "code": "094727",
-          "name": "縣立林厝國小",
+          "id": "094729",
+          "code": "094729",
+          "name": "縣立建陽國小",
           "countyId": "雲林縣",
           "townshipId": "雲林縣:四湖鄉",
           "educationLevel": "國小",
           "managementType": "公立",
-          "address": "雲林縣四湖鄉林東村中華路1號",
-          "phone": "(05)7721320",
-          "website": "https://lotps.ylc.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094727/C/雲林縣/四湖鄉/縣市立/偏遠/無/",
+          "address": "雲林縣四湖鄉箔子村箔子寮333號",
+          "phone": "(05)7721851",
+          "website": "https://jyes.ylc.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094729/C/雲林縣/四湖鄉/縣市立/偏遠/無/",
           "coordinates": {
-            "longitude": 120.178926,
-            "latitude": 23.669158
+            "longitude": 120.151849,
+            "latitude": 23.633968
           },
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 45
+              "students": 67
             },
             {
               "year": 108,
-              "students": 49
+              "students": 66
             },
             {
               "year": 109,
-              "students": 37
+              "students": 65
             },
             {
               "year": 110,
-              "students": 33
+              "students": 61
             },
             {
               "year": 111,
-              "students": 32
+              "students": 53
             },
             {
               "year": 112,
-              "students": 35
+              "students": 45
             },
             {
               "year": 113,
-              "students": 31
+              "students": 46
+            },
+            {
+              "year": 114,
+              "students": 37
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "094728",
+          "code": "094728",
+          "name": "縣立三崙國小",
+          "countyId": "雲林縣",
+          "townshipId": "雲林縣:四湖鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "雲林縣四湖鄉崙南村延平南路18號",
+          "phone": "(05)7721044",
+          "website": "https://sales.ylc.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094728/C/雲林縣/四湖鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.155927,
+            "latitude": 23.65171
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 62
+            },
+            {
+              "year": 108,
+              "students": 65
+            },
+            {
+              "year": 109,
+              "students": 60
+            },
+            {
+              "year": 110,
+              "students": 57
+            },
+            {
+              "year": 111,
+              "students": 56
+            },
+            {
+              "year": 112,
+              "students": 49
+            },
+            {
+              "year": 113,
+              "students": 42
+            },
+            {
+              "year": 114,
+              "students": 35
             }
           ],
           "status": "正常",
@@ -6914,6 +7255,10 @@
             {
               "year": 113,
               "students": 24
+            },
+            {
+              "year": 114,
+              "students": 25
             }
           ],
           "status": "正常",
@@ -6921,49 +7266,53 @@
           "dataNotes": []
         },
         {
-          "id": "094726",
-          "code": "094726",
-          "name": "縣立飛沙國小",
+          "id": "094727",
+          "code": "094727",
+          "name": "縣立林厝國小",
           "countyId": "雲林縣",
           "townshipId": "雲林縣:四湖鄉",
           "educationLevel": "國小",
           "managementType": "公立",
-          "address": "雲林縣四湖鄉飛沙村大同路26號",
-          "phone": "(05)7723688",
-          "website": "https://fses.ylc.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094726/C/雲林縣/四湖鄉/縣市立/偏遠/無/",
+          "address": "雲林縣四湖鄉林東村中華路1號",
+          "phone": "(05)7721320",
+          "website": "https://lotps.ylc.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094727/C/雲林縣/四湖鄉/縣市立/偏遠/無/",
           "coordinates": {
-            "longitude": 120.178401,
-            "latitude": 23.643293
+            "longitude": 120.178926,
+            "latitude": 23.669158
           },
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 33
+              "students": 45
             },
             {
               "year": 108,
-              "students": 32
+              "students": 49
             },
             {
               "year": 109,
-              "students": 30
+              "students": 37
             },
             {
               "year": 110,
-              "students": 28
+              "students": 33
             },
             {
               "year": 111,
-              "students": 24
+              "students": 32
             },
             {
               "year": 112,
-              "students": 22
+              "students": 35
             },
             {
               "year": 113,
-              "students": 21
+              "students": 31
+            },
+            {
+              "year": 114,
+              "students": 22
             }
           ],
           "status": "正常",
@@ -7014,6 +7363,64 @@
             {
               "year": 113,
               "students": 21
+            },
+            {
+              "year": 114,
+              "students": 21
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "094726",
+          "code": "094726",
+          "name": "縣立飛沙國小",
+          "countyId": "雲林縣",
+          "townshipId": "雲林縣:四湖鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "雲林縣四湖鄉飛沙村大同路26號",
+          "phone": "(05)7723688",
+          "website": "https://fses.ylc.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094726/C/雲林縣/四湖鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.178401,
+            "latitude": 23.643293
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 33
+            },
+            {
+              "year": 108,
+              "students": 32
+            },
+            {
+              "year": 109,
+              "students": 30
+            },
+            {
+              "year": 110,
+              "students": 28
+            },
+            {
+              "year": 111,
+              "students": 24
+            },
+            {
+              "year": 112,
+              "students": 22
+            },
+            {
+              "year": 113,
+              "students": 21
+            },
+            {
+              "year": 114,
+              "students": 19
             }
           ],
           "status": "正常",
@@ -7063,6 +7470,10 @@
             },
             {
               "year": 113,
+              "students": 16
+            },
+            {
+              "year": 114,
               "students": 16
             }
           ],
@@ -7114,6 +7525,10 @@
             {
               "year": 113,
               "students": 11
+            },
+            {
+              "year": 114,
+              "students": 13
             }
           ],
           "status": "正常",
@@ -7172,22 +7587,15 @@
             {
               "year": 113,
               "students": 1438
+            },
+            {
+              "year": 114,
+              "students": 1438
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "091503",
@@ -7232,6 +7640,10 @@
             },
             {
               "year": 113,
+              "students": 1403
+            },
+            {
+              "year": 114,
               "students": 1403
             }
           ],
@@ -7283,6 +7695,10 @@
             {
               "year": 113,
               "students": 879
+            },
+            {
+              "year": 114,
+              "students": 853
             }
           ],
           "status": "正常",
@@ -7333,6 +7749,10 @@
             {
               "year": 113,
               "students": 659
+            },
+            {
+              "year": 114,
+              "students": 658
             }
           ],
           "status": "正常",
@@ -7382,6 +7802,10 @@
             },
             {
               "year": 113,
+              "students": 301
+            },
+            {
+              "year": 114,
               "students": 301
             }
           ],
@@ -7433,6 +7857,10 @@
             {
               "year": 113,
               "students": 176
+            },
+            {
+              "year": 114,
+              "students": 188
             }
           ],
           "status": "正常",
@@ -7483,6 +7911,10 @@
             {
               "year": 113,
               "students": 93
+            },
+            {
+              "year": 114,
+              "students": 87
             }
           ],
           "status": "正常",
@@ -7533,56 +7965,10 @@
             {
               "year": 113,
               "students": 87
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "094682",
-          "code": "094682",
-          "name": "縣立廣興國小",
-          "countyId": "雲林縣",
-          "townshipId": "雲林縣:西螺鎮",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "雲林縣西螺鎮廣興里廣興路59號",
-          "phone": "(05)5863094",
-          "website": "https://gses.ylc.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094682/C/雲林縣/西螺鎮/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.45815,
-            "latitude": 23.766836
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 93
             },
             {
-              "year": 108,
-              "students": 93
-            },
-            {
-              "year": 109,
-              "students": 82
-            },
-            {
-              "year": 110,
-              "students": 72
-            },
-            {
-              "year": 111,
-              "students": 77
-            },
-            {
-              "year": 112,
-              "students": 75
-            },
-            {
-              "year": 113,
-              "students": 67
+              "year": 114,
+              "students": 81
             }
           ],
           "status": "正常",
@@ -7633,6 +8019,64 @@
             {
               "year": 113,
               "students": 60
+            },
+            {
+              "year": 114,
+              "students": 57
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "094682",
+          "code": "094682",
+          "name": "縣立廣興國小",
+          "countyId": "雲林縣",
+          "townshipId": "雲林縣:西螺鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "雲林縣西螺鎮廣興里廣興路59號",
+          "phone": "(05)5863094",
+          "website": "https://gses.ylc.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094682/C/雲林縣/西螺鎮/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.45815,
+            "latitude": 23.766836
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 93
+            },
+            {
+              "year": 108,
+              "students": 93
+            },
+            {
+              "year": 109,
+              "students": 82
+            },
+            {
+              "year": 110,
+              "students": 72
+            },
+            {
+              "year": 111,
+              "students": 77
+            },
+            {
+              "year": 112,
+              "students": 75
+            },
+            {
+              "year": 113,
+              "students": 67
+            },
+            {
+              "year": 114,
+              "students": 54
             }
           ],
           "status": "正常",
@@ -7683,6 +8127,10 @@
             {
               "year": 113,
               "students": 34
+            },
+            {
+              "year": 114,
+              "students": 28
             }
           ],
           "status": "正常",
@@ -7690,13 +8138,7 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "西螺鎮 有 1 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "雲林縣:東勢鄉",
@@ -7747,6 +8189,10 @@
             {
               "year": 113,
               "students": 211
+            },
+            {
+              "year": 114,
+              "students": 196
             }
           ],
           "status": "正常",
@@ -7796,6 +8242,10 @@
             },
             {
               "year": 113,
+              "students": 113
+            },
+            {
+              "year": 114,
               "students": 113
             }
           ],
@@ -7847,6 +8297,10 @@
             {
               "year": 113,
               "students": 46
+            },
+            {
+              "year": 114,
+              "students": 49
             }
           ],
           "status": "正常",
@@ -7896,6 +8350,10 @@
             },
             {
               "year": 113,
+              "students": 36
+            },
+            {
+              "year": 114,
               "students": 36
             }
           ],
@@ -7947,6 +8405,10 @@
             {
               "year": 113,
               "students": 36
+            },
+            {
+              "year": 114,
+              "students": 30
             }
           ],
           "status": "正常",
@@ -7997,6 +8459,10 @@
             {
               "year": 113,
               "students": 28
+            },
+            {
+              "year": 114,
+              "students": 25
             }
           ],
           "status": "正常",
@@ -8055,6 +8521,10 @@
             {
               "year": 113,
               "students": 674
+            },
+            {
+              "year": 114,
+              "students": 674
             }
           ],
           "status": "正常",
@@ -8068,7 +8538,7 @@
           "countyId": "雲林縣",
           "townshipId": "雲林縣:林內鄉",
           "educationLevel": "高中職",
-          "managementType": "私立",
+          "managementType": "公立",
           "address": "雲林縣林內鄉烏麻村長源201號",
           "phone": "(05)5800099",
           "website": "http://www.yfsh.ylc.edu.tw",
@@ -8105,22 +8575,15 @@
             {
               "year": 113,
               "students": 543
+            },
+            {
+              "year": 114,
+              "students": 543
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "094625",
@@ -8166,6 +8629,10 @@
             {
               "year": 113,
               "students": 202
+            },
+            {
+              "year": 114,
+              "students": 205
             }
           ],
           "status": "正常",
@@ -8215,6 +8682,10 @@
             },
             {
               "year": 113,
+              "students": 137
+            },
+            {
+              "year": 114,
               "students": 137
             }
           ],
@@ -8266,6 +8737,10 @@
             {
               "year": 113,
               "students": 103
+            },
+            {
+              "year": 114,
+              "students": 95
             }
           ],
           "status": "正常",
@@ -8316,6 +8791,10 @@
             {
               "year": 113,
               "students": 96
+            },
+            {
+              "year": 114,
+              "students": 84
             }
           ],
           "status": "正常",
@@ -8366,6 +8845,10 @@
             {
               "year": 113,
               "students": 85
+            },
+            {
+              "year": 114,
+              "students": 78
             }
           ],
           "status": "正常",
@@ -8416,6 +8899,10 @@
             {
               "year": 113,
               "students": 28
+            },
+            {
+              "year": 114,
+              "students": 36
             }
           ],
           "status": "正常",
@@ -8466,6 +8953,10 @@
             {
               "year": 113,
               "students": 28
+            },
+            {
+              "year": 114,
+              "students": 28
             }
           ],
           "status": "正常",
@@ -8473,13 +8964,7 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "林內鄉 有 1 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "雲林縣:虎尾鎮",
@@ -8529,6 +9014,10 @@
             },
             {
               "year": 113,
+              "students": 11975
+            },
+            {
+              "year": 114,
               "students": 11975
             }
           ],
@@ -8580,22 +9069,15 @@
             {
               "year": 113,
               "students": 1364
+            },
+            {
+              "year": 114,
+              "students": 1364
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "094649",
@@ -8641,6 +9123,10 @@
             {
               "year": 113,
               "students": 1327
+            },
+            {
+              "year": 114,
+              "students": 1350
             }
           ],
           "status": "正常",
@@ -8691,22 +9177,15 @@
             {
               "year": 113,
               "students": 1139
+            },
+            {
+              "year": 114,
+              "students": 1139
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "094648",
@@ -8752,6 +9231,10 @@
             {
               "year": 113,
               "students": 1018
+            },
+            {
+              "year": 114,
+              "students": 990
             }
           ],
           "status": "正常",
@@ -8801,6 +9284,10 @@
             },
             {
               "year": 113,
+              "students": 894
+            },
+            {
+              "year": 114,
               "students": 894
             }
           ],
@@ -8852,6 +9339,10 @@
             {
               "year": 113,
               "students": 870
+            },
+            {
+              "year": 114,
+              "students": 870
             }
           ],
           "status": "正常",
@@ -8902,6 +9393,10 @@
             {
               "year": 113,
               "students": 743
+            },
+            {
+              "year": 114,
+              "students": 750
             }
           ],
           "status": "正常",
@@ -8951,6 +9446,10 @@
             },
             {
               "year": 113,
+              "students": 439
+            },
+            {
+              "year": 114,
               "students": 439
             }
           ],
@@ -9002,22 +9501,15 @@
             {
               "year": 113,
               "students": 406
+            },
+            {
+              "year": 114,
+              "students": 406
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "094653",
@@ -9063,6 +9555,10 @@
             {
               "year": 113,
               "students": 231
+            },
+            {
+              "year": 114,
+              "students": 232
             }
           ],
           "status": "正常",
@@ -9113,56 +9609,10 @@
             {
               "year": 113,
               "students": 227
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "094654",
-          "code": "094654",
-          "name": "縣立平和國小",
-          "countyId": "雲林縣",
-          "townshipId": "雲林縣:虎尾鎮",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "雲林縣虎尾鎮平和里光復路22號",
-          "phone": "(05)6322742",
-          "website": "https://phps.ylc.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094654/C/雲林縣/虎尾鎮/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.451074,
-            "latitude": 23.707591
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 210
             },
             {
-              "year": 108,
-              "students": 200
-            },
-            {
-              "year": 109,
-              "students": 194
-            },
-            {
-              "year": 110,
-              "students": 195
-            },
-            {
-              "year": 111,
-              "students": 193
-            },
-            {
-              "year": 112,
-              "students": 198
-            },
-            {
-              "year": 113,
-              "students": 198
+              "year": 114,
+              "students": 227
             }
           ],
           "status": "正常",
@@ -9213,6 +9663,64 @@
             {
               "year": 113,
               "students": 179
+            },
+            {
+              "year": 114,
+              "students": 196
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "094654",
+          "code": "094654",
+          "name": "縣立平和國小",
+          "countyId": "雲林縣",
+          "townshipId": "雲林縣:虎尾鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "雲林縣虎尾鎮平和里光復路22號",
+          "phone": "(05)6322742",
+          "website": "https://phps.ylc.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094654/C/雲林縣/虎尾鎮/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.451074,
+            "latitude": 23.707591
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 210
+            },
+            {
+              "year": 108,
+              "students": 200
+            },
+            {
+              "year": 109,
+              "students": 194
+            },
+            {
+              "year": 110,
+              "students": 195
+            },
+            {
+              "year": 111,
+              "students": 193
+            },
+            {
+              "year": 112,
+              "students": 198
+            },
+            {
+              "year": 113,
+              "students": 198
+            },
+            {
+              "year": 114,
+              "students": 195
             }
           ],
           "status": "正常",
@@ -9263,6 +9771,10 @@
             {
               "year": 113,
               "students": 120
+            },
+            {
+              "year": 114,
+              "students": 124
             }
           ],
           "status": "正常",
@@ -9313,6 +9825,10 @@
             {
               "year": 113,
               "students": 110
+            },
+            {
+              "year": 114,
+              "students": 108
             }
           ],
           "status": "正常",
@@ -9363,6 +9879,10 @@
             {
               "year": 113,
               "students": 87
+            },
+            {
+              "year": 114,
+              "students": 96
             }
           ],
           "status": "正常",
@@ -9413,6 +9933,10 @@
             {
               "year": 113,
               "students": 76
+            },
+            {
+              "year": 114,
+              "students": 81
             }
           ],
           "status": "正常",
@@ -9463,6 +9987,10 @@
             {
               "year": 113,
               "students": 63
+            },
+            {
+              "year": 114,
+              "students": 61
             }
           ],
           "status": "正常",
@@ -9470,13 +9998,7 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "虎尾鎮 有 3 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "雲林縣:崙背鄉",
@@ -9527,6 +10049,10 @@
             {
               "year": 113,
               "students": 605
+            },
+            {
+              "year": 114,
+              "students": 581
             }
           ],
           "status": "正常",
@@ -9576,6 +10102,10 @@
             },
             {
               "year": 113,
+              "students": 307
+            },
+            {
+              "year": 114,
               "students": 307
             }
           ],
@@ -9627,56 +10157,10 @@
             {
               "year": 113,
               "students": 190
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "094697",
-          "code": "094697",
-          "name": "縣立豐榮國小",
-          "countyId": "雲林縣",
-          "townshipId": "雲林縣:崙背鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "雲林縣崙背鄉豐榮村豐榮路21號",
-          "phone": "(05)6552006",
-          "website": "https://flps.ylc.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094697/C/雲林縣/崙背鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.311851,
-            "latitude": 23.791993
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 93
             },
             {
-              "year": 108,
-              "students": 99
-            },
-            {
-              "year": 109,
-              "students": 100
-            },
-            {
-              "year": 110,
-              "students": 98
-            },
-            {
-              "year": 111,
-              "students": 90
-            },
-            {
-              "year": 112,
-              "students": 99
-            },
-            {
-              "year": 113,
-              "students": 77
+              "year": 114,
+              "students": 186
             }
           ],
           "status": "正常",
@@ -9727,6 +10211,64 @@
             {
               "year": 113,
               "students": 72
+            },
+            {
+              "year": 114,
+              "students": 94
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "094697",
+          "code": "094697",
+          "name": "縣立豐榮國小",
+          "countyId": "雲林縣",
+          "townshipId": "雲林縣:崙背鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "雲林縣崙背鄉豐榮村豐榮路21號",
+          "phone": "(05)6552006",
+          "website": "https://flps.ylc.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094697/C/雲林縣/崙背鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.311851,
+            "latitude": 23.791993
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 93
+            },
+            {
+              "year": 108,
+              "students": 99
+            },
+            {
+              "year": 109,
+              "students": 100
+            },
+            {
+              "year": 110,
+              "students": 98
+            },
+            {
+              "year": 111,
+              "students": 90
+            },
+            {
+              "year": 112,
+              "students": 99
+            },
+            {
+              "year": 113,
+              "students": 77
+            },
+            {
+              "year": 114,
+              "students": 67
             }
           ],
           "status": "正常",
@@ -9777,6 +10319,10 @@
             {
               "year": 113,
               "students": 61
+            },
+            {
+              "year": 114,
+              "students": 55
             }
           ],
           "status": "正常",
@@ -9827,6 +10373,10 @@
             {
               "year": 113,
               "students": 43
+            },
+            {
+              "year": 114,
+              "students": 44
             }
           ],
           "status": "正常",
@@ -9841,56 +10391,6 @@
       "name": "麥寮鄉",
       "countyId": "雲林縣",
       "schools": [
-        {
-          "id": "094702",
-          "code": "094702",
-          "name": "縣立麥寮國小",
-          "countyId": "雲林縣",
-          "townshipId": "雲林縣:麥寮鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "雲林縣麥寮鄉麥津村中山路260號",
-          "phone": "(05)6932266",
-          "website": "https://mles.ylc.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094702/C/雲林縣/麥寮鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.254656,
-            "latitude": 23.750039
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1247
-            },
-            {
-              "year": 108,
-              "students": 1214
-            },
-            {
-              "year": 109,
-              "students": 1221
-            },
-            {
-              "year": 110,
-              "students": 1183
-            },
-            {
-              "year": 111,
-              "students": 1182
-            },
-            {
-              "year": 112,
-              "students": 1218
-            },
-            {
-              "year": 113,
-              "students": 1151
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
         {
           "id": "094307",
           "code": "094307",
@@ -9935,6 +10435,64 @@
             {
               "year": 113,
               "students": 1116
+            },
+            {
+              "year": 114,
+              "students": 1116
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "094702",
+          "code": "094702",
+          "name": "縣立麥寮國小",
+          "countyId": "雲林縣",
+          "townshipId": "雲林縣:麥寮鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "雲林縣麥寮鄉麥津村中山路260號",
+          "phone": "(05)6932266",
+          "website": "https://mles.ylc.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094702/C/雲林縣/麥寮鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.254656,
+            "latitude": 23.750039
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1247
+            },
+            {
+              "year": 108,
+              "students": 1214
+            },
+            {
+              "year": 109,
+              "students": 1221
+            },
+            {
+              "year": 110,
+              "students": 1183
+            },
+            {
+              "year": 111,
+              "students": 1182
+            },
+            {
+              "year": 112,
+              "students": 1218
+            },
+            {
+              "year": 113,
+              "students": 1151
+            },
+            {
+              "year": 114,
+              "students": 1058
             }
           ],
           "status": "正常",
@@ -9985,6 +10543,10 @@
             {
               "year": 113,
               "students": 670
+            },
+            {
+              "year": 114,
+              "students": 651
             }
           ],
           "status": "正常",
@@ -10035,6 +10597,10 @@
             {
               "year": 113,
               "students": 98
+            },
+            {
+              "year": 114,
+              "students": 94
             }
           ],
           "status": "正常",
@@ -10085,6 +10651,10 @@
             {
               "year": 113,
               "students": 67
+            },
+            {
+              "year": 114,
+              "students": 70
             }
           ],
           "status": "正常",
@@ -10135,6 +10705,10 @@
             {
               "year": 113,
               "students": 61
+            },
+            {
+              "year": 114,
+              "students": 60
             }
           ],
           "status": "正常",
@@ -10193,6 +10767,10 @@
             {
               "year": 113,
               "students": 476
+            },
+            {
+              "year": 114,
+              "students": 470
             }
           ],
           "status": "正常",
@@ -10242,6 +10820,10 @@
             },
             {
               "year": 113,
+              "students": 282
+            },
+            {
+              "year": 114,
               "students": 282
             }
           ],
@@ -10293,6 +10875,10 @@
             {
               "year": 113,
               "students": 229
+            },
+            {
+              "year": 114,
+              "students": 220
             }
           ],
           "status": "正常",
@@ -10343,6 +10929,10 @@
             {
               "year": 113,
               "students": 167
+            },
+            {
+              "year": 114,
+              "students": 149
             }
           ],
           "status": "正常",
@@ -10393,56 +10983,10 @@
             {
               "year": 113,
               "students": 98
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "094641",
-          "code": "094641",
-          "name": "縣立僑和國小",
-          "countyId": "雲林縣",
-          "townshipId": "雲林縣:莿桐鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "雲林縣莿桐鄉興桐村新庄1號",
-          "phone": "(05)5842230",
-          "website": "https://choes.ylc.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094641/C/雲林縣/莿桐鄉/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.492982,
-            "latitude": 23.764064
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 43
             },
             {
-              "year": 108,
-              "students": 44
-            },
-            {
-              "year": 109,
-              "students": 47
-            },
-            {
-              "year": 110,
-              "students": 65
-            },
-            {
-              "year": 111,
-              "students": 70
-            },
-            {
-              "year": 112,
-              "students": 75
-            },
-            {
-              "year": 113,
-              "students": 91
+              "year": 114,
+              "students": 102
             }
           ],
           "status": "正常",
@@ -10493,6 +11037,64 @@
             {
               "year": 113,
               "students": 86
+            },
+            {
+              "year": 114,
+              "students": 93
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "094641",
+          "code": "094641",
+          "name": "縣立僑和國小",
+          "countyId": "雲林縣",
+          "townshipId": "雲林縣:莿桐鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "雲林縣莿桐鄉興桐村新庄1號",
+          "phone": "(05)5842230",
+          "website": "https://choes.ylc.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094641/C/雲林縣/莿桐鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.492982,
+            "latitude": 23.764064
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 43
+            },
+            {
+              "year": 108,
+              "students": 44
+            },
+            {
+              "year": 109,
+              "students": 47
+            },
+            {
+              "year": 110,
+              "students": 65
+            },
+            {
+              "year": 111,
+              "students": 70
+            },
+            {
+              "year": 112,
+              "students": 75
+            },
+            {
+              "year": 113,
+              "students": 91
+            },
+            {
+              "year": 114,
+              "students": 90
             }
           ],
           "status": "正常",
@@ -10551,56 +11153,10 @@
             {
               "year": 113,
               "students": 224
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "094676",
-          "code": "094676",
-          "name": "縣立崙豐國小",
-          "countyId": "雲林縣",
-          "townshipId": "雲林縣:臺西鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "雲林縣臺西鄉永豐村崙豐路42號",
-          "phone": "(05)6982142",
-          "website": "https://lfes.ylc.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094676/C/雲林縣/臺西鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.20947,
-            "latitude": 23.720315
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 257
             },
             {
-              "year": 108,
-              "students": 231
-            },
-            {
-              "year": 109,
-              "students": 206
-            },
-            {
-              "year": 110,
-              "students": 191
-            },
-            {
-              "year": 111,
-              "students": 192
-            },
-            {
-              "year": 112,
-              "students": 186
-            },
-            {
-              "year": 113,
-              "students": 184
+              "year": 114,
+              "students": 219
             }
           ],
           "status": "正常",
@@ -10651,6 +11207,64 @@
             {
               "year": 113,
               "students": 183
+            },
+            {
+              "year": 114,
+              "students": 183
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "094676",
+          "code": "094676",
+          "name": "縣立崙豐國小",
+          "countyId": "雲林縣",
+          "townshipId": "雲林縣:臺西鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "雲林縣臺西鄉永豐村崙豐路42號",
+          "phone": "(05)6982142",
+          "website": "https://lfes.ylc.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/094676/C/雲林縣/臺西鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.20947,
+            "latitude": 23.720315
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 257
+            },
+            {
+              "year": 108,
+              "students": 231
+            },
+            {
+              "year": 109,
+              "students": 206
+            },
+            {
+              "year": 110,
+              "students": 191
+            },
+            {
+              "year": 111,
+              "students": 192
+            },
+            {
+              "year": 112,
+              "students": 186
+            },
+            {
+              "year": 113,
+              "students": 184
+            },
+            {
+              "year": 114,
+              "students": 173
             }
           ],
           "status": "正常",
@@ -10701,6 +11315,10 @@
             {
               "year": 113,
               "students": 65
+            },
+            {
+              "year": 114,
+              "students": 55
             }
           ],
           "status": "正常",
@@ -10751,6 +11369,10 @@
             {
               "year": 113,
               "students": 46
+            },
+            {
+              "year": 114,
+              "students": 49
             }
           ],
           "status": "正常",
@@ -10801,6 +11423,10 @@
             {
               "year": 113,
               "students": 44
+            },
+            {
+              "year": 114,
+              "students": 34
             }
           ],
           "status": "正常",
@@ -10859,6 +11485,10 @@
             {
               "year": 113,
               "students": 353
+            },
+            {
+              "year": 114,
+              "students": 326
             }
           ],
           "status": "正常",
@@ -10909,6 +11539,10 @@
             {
               "year": 113,
               "students": 118
+            },
+            {
+              "year": 114,
+              "students": 116
             }
           ],
           "status": "正常",
@@ -10958,6 +11592,10 @@
             },
             {
               "year": 113,
+              "students": 91
+            },
+            {
+              "year": 114,
               "students": 91
             }
           ],
@@ -11009,6 +11647,10 @@
             {
               "year": 113,
               "students": 39
+            },
+            {
+              "year": 114,
+              "students": 35
             }
           ],
           "status": "正常",
@@ -11059,6 +11701,10 @@
             {
               "year": 113,
               "students": 31
+            },
+            {
+              "year": 114,
+              "students": 26
             }
           ],
           "status": "正常",

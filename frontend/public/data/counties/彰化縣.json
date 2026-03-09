@@ -7,9 +7,12 @@
   },
   "dataNotes": [
     {
-      "type": "缺年度",
-      "message": "彰化縣 有 19 所學校存在年度缺漏。",
-      "severity": "warning"
+      "type": "異常值",
+      "message": "彰化縣 有 1 所學校最新學年學生數為 0，需留意停辦或整併可能。",
+      "severity": "info",
+      "years": [
+        114
+      ]
     }
   ],
   "towns": [
@@ -62,6 +65,10 @@
             {
               "year": 113,
               "students": 239
+            },
+            {
+              "year": 114,
+              "students": 226
             }
           ],
           "status": "正常",
@@ -111,6 +118,10 @@
             },
             {
               "year": 113,
+              "students": 99
+            },
+            {
+              "year": 114,
               "students": 99
             }
           ],
@@ -162,6 +173,10 @@
             {
               "year": 113,
               "students": 94
+            },
+            {
+              "year": 114,
+              "students": 91
             }
           ],
           "status": "正常",
@@ -212,6 +227,10 @@
             {
               "year": 113,
               "students": 46
+            },
+            {
+              "year": 114,
+              "students": 38
             }
           ],
           "status": "正常",
@@ -270,22 +289,15 @@
             {
               "year": 113,
               "students": 1071
+            },
+            {
+              "year": 114,
+              "students": 1071
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "074313",
@@ -330,6 +342,10 @@
             },
             {
               "year": 113,
+              "students": 937
+            },
+            {
+              "year": 114,
               "students": 937
             }
           ],
@@ -381,6 +397,10 @@
             {
               "year": 113,
               "students": 775
+            },
+            {
+              "year": 114,
+              "students": 795
             }
           ],
           "status": "正常",
@@ -431,6 +451,10 @@
             {
               "year": 113,
               "students": 626
+            },
+            {
+              "year": 114,
+              "students": 580
             }
           ],
           "status": "正常",
@@ -481,6 +505,10 @@
             {
               "year": 113,
               "students": 202
+            },
+            {
+              "year": 114,
+              "students": 194
             }
           ],
           "status": "正常",
@@ -488,49 +516,53 @@
           "dataNotes": []
         },
         {
-          "id": "074741",
-          "code": "074741",
-          "name": "縣立廣興國小",
+          "id": "074740",
+          "code": "074740",
+          "name": "縣立香田國小",
           "countyId": "彰化縣",
           "townshipId": "彰化縣:二林鎮",
           "educationLevel": "國小",
           "managementType": "公立",
-          "address": "彰化縣二林鎮廣興里廣興巷2之1號",
-          "phone": "(04)8962584",
-          "website": "https://www.gsps.chc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/074741/C/彰化縣/二林鎮/縣市立/偏遠/無/",
+          "address": "彰化縣二林鎮香田里儒林路10之1號",
+          "phone": "(04)8960654",
+          "website": "https://www.sstes.chc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/074740/C/彰化縣/二林鎮/縣市立/偏遠/無/",
           "coordinates": {
-            "longitude": 120.362706,
-            "latitude": 23.876141
+            "longitude": 120.376223,
+            "latitude": 23.874327
           },
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 40
+              "students": 63
             },
             {
               "year": 108,
-              "students": 68
+              "students": 62
             },
             {
               "year": 109,
-              "students": 86
+              "students": 55
             },
             {
               "year": 110,
-              "students": 89
+              "students": 64
             },
             {
               "year": 111,
-              "students": 106
+              "students": 65
             },
             {
               "year": 112,
-              "students": 118
+              "students": 85
             },
             {
               "year": 113,
-              "students": 123
+              "students": 107
+            },
+            {
+              "year": 114,
+              "students": 129
             }
           ],
           "status": "正常",
@@ -580,6 +612,10 @@
             },
             {
               "year": 113,
+              "students": 119
+            },
+            {
+              "year": 114,
               "students": 119
             }
           ],
@@ -631,6 +667,10 @@
             {
               "year": 113,
               "students": 115
+            },
+            {
+              "year": 114,
+              "students": 117
             }
           ],
           "status": "正常",
@@ -638,49 +678,53 @@
           "dataNotes": []
         },
         {
-          "id": "074740",
-          "code": "074740",
-          "name": "縣立香田國小",
+          "id": "074741",
+          "code": "074741",
+          "name": "縣立廣興國小",
           "countyId": "彰化縣",
           "townshipId": "彰化縣:二林鎮",
           "educationLevel": "國小",
           "managementType": "公立",
-          "address": "彰化縣二林鎮香田里儒林路10之1號",
-          "phone": "(04)8960654",
-          "website": "https://www.sstes.chc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/074740/C/彰化縣/二林鎮/縣市立/偏遠/無/",
+          "address": "彰化縣二林鎮廣興里廣興巷2之1號",
+          "phone": "(04)8962584",
+          "website": "https://www.gsps.chc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/074741/C/彰化縣/二林鎮/縣市立/偏遠/無/",
           "coordinates": {
-            "longitude": 120.376223,
-            "latitude": 23.874327
+            "longitude": 120.362706,
+            "latitude": 23.876141
           },
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 63
+              "students": 40
             },
             {
               "year": 108,
-              "students": 62
+              "students": 68
             },
             {
               "year": 109,
-              "students": 55
+              "students": 86
             },
             {
               "year": 110,
-              "students": 64
+              "students": 89
             },
             {
               "year": 111,
-              "students": 65
+              "students": 106
             },
             {
               "year": 112,
-              "students": 85
+              "students": 118
             },
             {
               "year": 113,
-              "students": 107
+              "students": 123
+            },
+            {
+              "year": 114,
+              "students": 115
             }
           ],
           "status": "正常",
@@ -731,6 +775,10 @@
             {
               "year": 113,
               "students": 100
+            },
+            {
+              "year": 114,
+              "students": 88
             }
           ],
           "status": "正常",
@@ -781,6 +829,10 @@
             {
               "year": 113,
               "students": 84
+            },
+            {
+              "year": 114,
+              "students": 70
             }
           ],
           "status": "正常",
@@ -830,6 +882,64 @@
             },
             {
               "year": 113,
+              "students": 60
+            },
+            {
+              "year": 114,
+              "students": 62
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "074743",
+          "code": "074743",
+          "name": "縣立新生國小",
+          "countyId": "彰化縣",
+          "townshipId": "彰化縣:二林鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "彰化縣二林鎮趙甲里鎮平巷59號",
+          "phone": "(04)8964330",
+          "website": "https://www.sssps.chc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/074743/C/彰化縣/二林鎮/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.39473,
+            "latitude": 23.937657
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 61
+            },
+            {
+              "year": 108,
+              "students": 62
+            },
+            {
+              "year": 109,
+              "students": 58
+            },
+            {
+              "year": 110,
+              "students": 63
+            },
+            {
+              "year": 111,
+              "students": 62
+            },
+            {
+              "year": 112,
+              "students": 59
+            },
+            {
+              "year": 113,
+              "students": 53
+            },
+            {
+              "year": 114,
               "students": 60
             }
           ],
@@ -881,56 +991,10 @@
             {
               "year": 113,
               "students": 55
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "074743",
-          "code": "074743",
-          "name": "縣立新生國小",
-          "countyId": "彰化縣",
-          "townshipId": "彰化縣:二林鎮",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "彰化縣二林鎮趙甲里鎮平巷59號",
-          "phone": "(04)8964330",
-          "website": "https://www.sssps.chc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/074743/C/彰化縣/二林鎮/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.39473,
-            "latitude": 23.937657
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 61
             },
             {
-              "year": 108,
-              "students": 62
-            },
-            {
-              "year": 109,
-              "students": 58
-            },
-            {
-              "year": 110,
-              "students": 63
-            },
-            {
-              "year": 111,
-              "students": 62
-            },
-            {
-              "year": 112,
-              "students": 59
-            },
-            {
-              "year": 113,
-              "students": 53
+              "year": 114,
+              "students": 52
             }
           ],
           "status": "正常",
@@ -981,6 +1045,10 @@
             {
               "year": 113,
               "students": 46
+            },
+            {
+              "year": 114,
+              "students": 46
             }
           ],
           "status": "正常",
@@ -988,13 +1056,7 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "二林鎮 有 1 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "彰化縣:大村鄉",
@@ -1044,6 +1106,10 @@
             },
             {
               "year": 113,
+              "students": 3666
+            },
+            {
+              "year": 114,
               "students": 3666
             }
           ],
@@ -1095,6 +1161,10 @@
             {
               "year": 113,
               "students": 790
+            },
+            {
+              "year": 114,
+              "students": 782
             }
           ],
           "status": "正常",
@@ -1145,6 +1215,10 @@
             {
               "year": 113,
               "students": 458
+            },
+            {
+              "year": 114,
+              "students": 446
             }
           ],
           "status": "正常",
@@ -1194,6 +1268,10 @@
             },
             {
               "year": 113,
+              "students": 365
+            },
+            {
+              "year": 114,
               "students": 365
             }
           ],
@@ -1245,6 +1323,10 @@
             {
               "year": 113,
               "students": 221
+            },
+            {
+              "year": 114,
+              "students": 226
             }
           ],
           "status": "正常",
@@ -1295,6 +1377,10 @@
             {
               "year": 113,
               "students": 108
+            },
+            {
+              "year": 114,
+              "students": 103
             }
           ],
           "status": "正常",
@@ -1353,6 +1439,10 @@
             {
               "year": 113,
               "students": 234
+            },
+            {
+              "year": 114,
+              "students": 219
             }
           ],
           "status": "正常",
@@ -1402,6 +1492,10 @@
             },
             {
               "year": 113,
+              "students": 155
+            },
+            {
+              "year": 114,
               "students": 155
             }
           ],
@@ -1453,6 +1547,10 @@
             {
               "year": 113,
               "students": 61
+            },
+            {
+              "year": 114,
+              "students": 61
             }
           ],
           "status": "正常",
@@ -1503,6 +1601,10 @@
             {
               "year": 113,
               "students": 32
+            },
+            {
+              "year": 114,
+              "students": 31
             }
           ],
           "status": "正常",
@@ -1561,22 +1663,15 @@
             {
               "year": 113,
               "students": 1400
+            },
+            {
+              "year": 114,
+              "students": 1400
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "074712",
@@ -1622,6 +1717,10 @@
             {
               "year": 113,
               "students": 766
+            },
+            {
+              "year": 114,
+              "students": 764
             }
           ],
           "status": "正常",
@@ -1671,6 +1770,10 @@
             },
             {
               "year": 113,
+              "students": 594
+            },
+            {
+              "year": 114,
               "students": 594
             }
           ],
@@ -1722,6 +1825,10 @@
             {
               "year": 113,
               "students": 413
+            },
+            {
+              "year": 114,
+              "students": 433
             }
           ],
           "status": "正常",
@@ -1772,6 +1879,10 @@
             {
               "year": 113,
               "students": 403
+            },
+            {
+              "year": 114,
+              "students": 392
             }
           ],
           "status": "正常",
@@ -1822,6 +1933,10 @@
             {
               "year": 113,
               "students": 351
+            },
+            {
+              "year": 114,
+              "students": 331
             }
           ],
           "status": "正常",
@@ -1872,6 +1987,10 @@
             {
               "year": 113,
               "students": 43
+            },
+            {
+              "year": 114,
+              "students": 41
             }
           ],
           "status": "正常",
@@ -1879,13 +1998,7 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "北斗鎮 有 1 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "彰化縣:永靖鄉",
@@ -1936,22 +2049,15 @@
             {
               "year": 113,
               "students": 1150
+            },
+            {
+              "year": 114,
+              "students": 1150
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "074693",
@@ -1997,6 +2103,10 @@
             {
               "year": 113,
               "students": 1035
+            },
+            {
+              "year": 114,
+              "students": 1032
             }
           ],
           "status": "正常",
@@ -2046,6 +2156,10 @@
             },
             {
               "year": 113,
+              "students": 802
+            },
+            {
+              "year": 114,
               "students": 802
             }
           ],
@@ -2097,6 +2211,10 @@
             {
               "year": 113,
               "students": 240
+            },
+            {
+              "year": 114,
+              "students": 229
             }
           ],
           "status": "正常",
@@ -2147,6 +2265,10 @@
             {
               "year": 113,
               "students": 124
+            },
+            {
+              "year": 114,
+              "students": 104
             }
           ],
           "status": "正常",
@@ -2196,6 +2318,10 @@
             },
             {
               "year": 113,
+              "students": 103
+            },
+            {
+              "year": 114,
               "students": 103
             }
           ],
@@ -2247,6 +2373,10 @@
             {
               "year": 113,
               "students": 36
+            },
+            {
+              "year": 114,
+              "students": 41
             }
           ],
           "status": "正常",
@@ -2254,13 +2384,7 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "永靖鄉 有 1 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "彰化縣:田中鎮",
@@ -2311,22 +2435,15 @@
             {
               "year": 113,
               "students": 1572
+            },
+            {
+              "year": 114,
+              "students": 1572
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "071317",
@@ -2371,6 +2488,10 @@
             },
             {
               "year": 113,
+              "students": 1340
+            },
+            {
+              "year": 114,
               "students": 1340
             }
           ],
@@ -2422,6 +2543,10 @@
             {
               "year": 113,
               "students": 822
+            },
+            {
+              "year": 114,
+              "students": 822
             }
           ],
           "status": "正常",
@@ -2472,6 +2597,10 @@
             {
               "year": 113,
               "students": 705
+            },
+            {
+              "year": 114,
+              "students": 653
             }
           ],
           "status": "正常",
@@ -2522,6 +2651,10 @@
             {
               "year": 113,
               "students": 443
+            },
+            {
+              "year": 114,
+              "students": 404
             }
           ],
           "status": "正常",
@@ -2572,6 +2705,10 @@
             {
               "year": 113,
               "students": 204
+            },
+            {
+              "year": 114,
+              "students": 193
             }
           ],
           "status": "正常",
@@ -2622,6 +2759,10 @@
             {
               "year": 113,
               "students": 103
+            },
+            {
+              "year": 114,
+              "students": 99
             }
           ],
           "status": "正常",
@@ -2672,6 +2813,10 @@
             {
               "year": 113,
               "students": 69
+            },
+            {
+              "year": 114,
+              "students": 66
             }
           ],
           "status": "正常",
@@ -2722,6 +2867,10 @@
             {
               "year": 113,
               "students": 50
+            },
+            {
+              "year": 114,
+              "students": 45
             }
           ],
           "status": "正常",
@@ -2772,6 +2921,10 @@
             {
               "year": 113,
               "students": 42
+            },
+            {
+              "year": 114,
+              "students": 41
             }
           ],
           "status": "正常",
@@ -2779,13 +2932,7 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "田中鎮 有 1 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "彰化縣:田尾鄉",
@@ -2836,6 +2983,10 @@
             {
               "year": 113,
               "students": 589
+            },
+            {
+              "year": 114,
+              "students": 576
             }
           ],
           "status": "正常",
@@ -2885,6 +3036,10 @@
             },
             {
               "year": 113,
+              "students": 375
+            },
+            {
+              "year": 114,
               "students": 375
             }
           ],
@@ -2936,6 +3091,10 @@
             {
               "year": 113,
               "students": 171
+            },
+            {
+              "year": 114,
+              "students": 165
             }
           ],
           "status": "正常",
@@ -2986,6 +3145,10 @@
             {
               "year": 113,
               "students": 87
+            },
+            {
+              "year": 114,
+              "students": 80
             }
           ],
           "status": "正常",
@@ -3036,6 +3199,10 @@
             {
               "year": 113,
               "students": 67
+            },
+            {
+              "year": 114,
+              "students": 61
             }
           ],
           "status": "正常",
@@ -3094,6 +3261,10 @@
             {
               "year": 113,
               "students": 625
+            },
+            {
+              "year": 114,
+              "students": 625
             }
           ],
           "status": "正常",
@@ -3144,6 +3315,10 @@
             {
               "year": 113,
               "students": 252
+            },
+            {
+              "year": 114,
+              "students": 265
             }
           ],
           "status": "正常",
@@ -3194,6 +3369,10 @@
             {
               "year": 113,
               "students": 52
+            },
+            {
+              "year": 114,
+              "students": 51
             }
           ],
           "status": "正常",
@@ -3244,56 +3423,10 @@
             {
               "year": 113,
               "students": 45
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "074755",
-          "code": "074755",
-          "name": "縣立民靖國小",
-          "countyId": "彰化縣",
-          "townshipId": "彰化縣:竹塘鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "彰化縣竹塘鄉民靖村文昌路152號",
-          "phone": "(04)8972693",
-          "website": "https://www.mjes.chc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/074755/C/彰化縣/竹塘鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.416232,
-            "latitude": 23.875856
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 42
             },
             {
-              "year": 108,
-              "students": 41
-            },
-            {
-              "year": 109,
-              "students": 36
-            },
-            {
-              "year": 110,
-              "students": 45
-            },
-            {
-              "year": 111,
-              "students": 43
-            },
-            {
-              "year": 112,
-              "students": 40
-            },
-            {
-              "year": 113,
-              "students": 37
+              "year": 114,
+              "students": 46
             }
           ],
           "status": "正常",
@@ -3344,14 +3477,90 @@
             {
               "year": 113,
               "students": 34
+            },
+            {
+              "year": 114,
+              "students": 34
             }
           ],
           "status": "正常",
           "missingYears": [],
           "dataNotes": []
+        },
+        {
+          "id": "074755",
+          "code": "074755",
+          "name": "縣立民靖國小",
+          "countyId": "彰化縣",
+          "townshipId": "彰化縣:竹塘鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "彰化縣竹塘鄉民靖村文昌路152號",
+          "phone": "(04)8972693",
+          "website": "https://www.mjes.chc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/074755/C/彰化縣/竹塘鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.416232,
+            "latitude": 23.875856
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 42
+            },
+            {
+              "year": 108,
+              "students": 41
+            },
+            {
+              "year": 109,
+              "students": 36
+            },
+            {
+              "year": 110,
+              "students": 45
+            },
+            {
+              "year": 111,
+              "students": 43
+            },
+            {
+              "year": 112,
+              "students": 40
+            },
+            {
+              "year": 113,
+              "students": 37
+            },
+            {
+              "year": 114,
+              "students": 0
+            }
+          ],
+          "status": "待確認",
+          "missingYears": [],
+          "dataNotes": [
+            {
+              "type": "異常值",
+              "message": "114 學年學生數為 0，可能涉及停辦、整併或資料尚未更新。",
+              "severity": "warning",
+              "years": [
+                114
+              ]
+            }
+          ]
         }
       ],
-      "dataNotes": []
+      "dataNotes": [
+        {
+          "type": "異常值",
+          "message": "竹塘鄉 有 1 所學校最新學年學生數為 0，需留意停辦或整併可能。",
+          "severity": "info",
+          "years": [
+            114
+          ]
+        }
+      ]
     },
     {
       "id": "彰化縣:伸港鄉",
@@ -3401,6 +3610,10 @@
             },
             {
               "year": 113,
+              "students": 773
+            },
+            {
+              "year": 114,
               "students": 773
             }
           ],
@@ -3452,6 +3665,10 @@
             {
               "year": 113,
               "students": 732
+            },
+            {
+              "year": 114,
+              "students": 723
             }
           ],
           "status": "正常",
@@ -3502,6 +3719,10 @@
             {
               "year": 113,
               "students": 624
+            },
+            {
+              "year": 114,
+              "students": 616
             }
           ],
           "status": "正常",
@@ -3552,6 +3773,10 @@
             {
               "year": 113,
               "students": 530
+            },
+            {
+              "year": 114,
+              "students": 510
             }
           ],
           "status": "正常",
@@ -3602,6 +3827,10 @@
             {
               "year": 113,
               "students": 98
+            },
+            {
+              "year": 114,
+              "students": 88
             }
           ],
           "status": "正常",
@@ -3660,22 +3889,15 @@
             {
               "year": 113,
               "students": 1491
+            },
+            {
+              "year": 114,
+              "students": 1491
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "074657",
@@ -3721,6 +3943,10 @@
             {
               "year": 113,
               "students": 987
+            },
+            {
+              "year": 114,
+              "students": 918
             }
           ],
           "status": "正常",
@@ -3770,6 +3996,10 @@
             },
             {
               "year": 113,
+              "students": 897
+            },
+            {
+              "year": 114,
               "students": 897
             }
           ],
@@ -3821,6 +4051,10 @@
             {
               "year": 113,
               "students": 460
+            },
+            {
+              "year": 114,
+              "students": 454
             }
           ],
           "status": "正常",
@@ -3871,6 +4105,10 @@
             {
               "year": 113,
               "students": 154
+            },
+            {
+              "year": 114,
+              "students": 150
             }
           ],
           "status": "正常",
@@ -3921,6 +4159,10 @@
             {
               "year": 113,
               "students": 153
+            },
+            {
+              "year": 114,
+              "students": 139
             }
           ],
           "status": "正常",
@@ -3971,6 +4213,10 @@
             {
               "year": 113,
               "students": 113
+            },
+            {
+              "year": 114,
+              "students": 107
             }
           ],
           "status": "正常",
@@ -4021,6 +4267,10 @@
             {
               "year": 113,
               "students": 85
+            },
+            {
+              "year": 114,
+              "students": 77
             }
           ],
           "status": "正常",
@@ -4028,13 +4278,7 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "秀水鄉 有 1 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "彰化縣:和美鎮",
@@ -4084,6 +4328,10 @@
             },
             {
               "year": 113,
+              "students": 1531
+            },
+            {
+              "year": 114,
               "students": 1531
             }
           ],
@@ -4135,6 +4383,10 @@
             {
               "year": 113,
               "students": 1278
+            },
+            {
+              "year": 114,
+              "students": 1255
             }
           ],
           "status": "正常",
@@ -4185,56 +4437,10 @@
             {
               "year": 113,
               "students": 870
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "074627",
-          "code": "074627",
-          "name": "縣立和美國小",
-          "countyId": "彰化縣",
-          "townshipId": "彰化縣:和美鎮",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "彰化縣和美鎮和西里和平街19號",
-          "phone": "(04)7552005",
-          "website": "https://www.hmps.chc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/074627/C/彰化縣/和美鎮/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.495477,
-            "latitude": 24.112225
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1104
             },
             {
-              "year": 108,
-              "students": 1053
-            },
-            {
-              "year": 109,
-              "students": 996
-            },
-            {
-              "year": 110,
-              "students": 967
-            },
-            {
-              "year": 111,
-              "students": 928
-            },
-            {
-              "year": 112,
-              "students": 866
-            },
-            {
-              "year": 113,
-              "students": 797
+              "year": 114,
+              "students": 846
             }
           ],
           "status": "正常",
@@ -4285,6 +4491,10 @@
             {
               "year": 113,
               "students": 782
+            },
+            {
+              "year": 114,
+              "students": 753
             }
           ],
           "status": "正常",
@@ -4335,6 +4545,64 @@
             {
               "year": 113,
               "students": 745
+            },
+            {
+              "year": 114,
+              "students": 745
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "074627",
+          "code": "074627",
+          "name": "縣立和美國小",
+          "countyId": "彰化縣",
+          "townshipId": "彰化縣:和美鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "彰化縣和美鎮和西里和平街19號",
+          "phone": "(04)7552005",
+          "website": "https://www.hmps.chc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/074627/C/彰化縣/和美鎮/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.495477,
+            "latitude": 24.112225
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1104
+            },
+            {
+              "year": 108,
+              "students": 1053
+            },
+            {
+              "year": 109,
+              "students": 996
+            },
+            {
+              "year": 110,
+              "students": 967
+            },
+            {
+              "year": 111,
+              "students": 928
+            },
+            {
+              "year": 112,
+              "students": 866
+            },
+            {
+              "year": 113,
+              "students": 797
+            },
+            {
+              "year": 114,
+              "students": 721
             }
           ],
           "status": "正常",
@@ -4385,6 +4653,10 @@
             {
               "year": 113,
               "students": 324
+            },
+            {
+              "year": 114,
+              "students": 325
             }
           ],
           "status": "正常",
@@ -4435,6 +4707,10 @@
             {
               "year": 113,
               "students": 218
+            },
+            {
+              "year": 114,
+              "students": 215
             }
           ],
           "status": "正常",
@@ -4485,6 +4761,10 @@
             {
               "year": 113,
               "students": 188
+            },
+            {
+              "year": 114,
+              "students": 190
             }
           ],
           "status": "正常",
@@ -4543,6 +4823,10 @@
             {
               "year": 113,
               "students": 826
+            },
+            {
+              "year": 114,
+              "students": 801
             }
           ],
           "status": "正常",
@@ -4592,6 +4876,10 @@
             },
             {
               "year": 113,
+              "students": 574
+            },
+            {
+              "year": 114,
               "students": 574
             }
           ],
@@ -4643,6 +4931,10 @@
             {
               "year": 113,
               "students": 288
+            },
+            {
+              "year": 114,
+              "students": 277
             }
           ],
           "status": "正常",
@@ -4693,6 +4985,10 @@
             {
               "year": 113,
               "students": 262
+            },
+            {
+              "year": 114,
+              "students": 248
             }
           ],
           "status": "正常",
@@ -4743,6 +5039,10 @@
             {
               "year": 113,
               "students": 173
+            },
+            {
+              "year": 114,
+              "students": 157
             }
           ],
           "status": "正常",
@@ -4793,6 +5093,10 @@
             {
               "year": 113,
               "students": 127
+            },
+            {
+              "year": 114,
+              "students": 133
             }
           ],
           "status": "正常",
@@ -4843,6 +5147,10 @@
             {
               "year": 113,
               "students": 91
+            },
+            {
+              "year": 114,
+              "students": 94
             }
           ],
           "status": "正常",
@@ -4893,6 +5201,10 @@
             {
               "year": 113,
               "students": 80
+            },
+            {
+              "year": 114,
+              "students": 74
             }
           ],
           "status": "正常",
@@ -4951,6 +5263,10 @@
             {
               "year": 113,
               "students": 379
+            },
+            {
+              "year": 114,
+              "students": 367
             }
           ],
           "status": "正常",
@@ -5000,6 +5316,10 @@
             },
             {
               "year": 113,
+              "students": 222
+            },
+            {
+              "year": 114,
               "students": 222
             }
           ],
@@ -5051,6 +5371,10 @@
             {
               "year": 113,
               "students": 142
+            },
+            {
+              "year": 114,
+              "students": 127
             }
           ],
           "status": "正常",
@@ -5101,106 +5425,10 @@
             {
               "year": 113,
               "students": 82
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "074620",
-          "code": "074620",
-          "name": "縣立茄荖國小",
-          "countyId": "彰化縣",
-          "townshipId": "彰化縣:芬園鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "彰化縣芬園鄉茄荖村嘉北街96號",
-          "phone": "(049)2523018",
-          "website": "https://www.cles.chc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/074620/C/彰化縣/芬園鄉/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.643652,
-            "latitude": 24.015282
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 111
             },
             {
-              "year": 108,
-              "students": 117
-            },
-            {
-              "year": 109,
-              "students": 113
-            },
-            {
-              "year": 110,
-              "students": 103
-            },
-            {
-              "year": 111,
-              "students": 92
-            },
-            {
-              "year": 112,
-              "students": 92
-            },
-            {
-              "year": 113,
-              "students": 74
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "074616",
-          "code": "074616",
-          "name": "縣立富山國小",
-          "countyId": "彰化縣",
-          "townshipId": "彰化縣:芬園鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "彰化縣芬園鄉大埔村大埔路6號",
-          "phone": "(049)2522084",
-          "website": "https://www.fsps.chc.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/074616/C/彰化縣/芬園鄉/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.619496,
-            "latitude": 24.027191
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 89
-            },
-            {
-              "year": 108,
-              "students": 74
-            },
-            {
-              "year": 109,
-              "students": 66
-            },
-            {
-              "year": 110,
-              "students": 72
-            },
-            {
-              "year": 111,
-              "students": 65
-            },
-            {
-              "year": 112,
-              "students": 72
-            },
-            {
-              "year": 113,
-              "students": 69
+              "year": 114,
+              "students": 82
             }
           ],
           "status": "正常",
@@ -5251,6 +5479,118 @@
             {
               "year": 113,
               "students": 64
+            },
+            {
+              "year": 114,
+              "students": 63
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "074620",
+          "code": "074620",
+          "name": "縣立茄荖國小",
+          "countyId": "彰化縣",
+          "townshipId": "彰化縣:芬園鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "彰化縣芬園鄉茄荖村嘉北街96號",
+          "phone": "(049)2523018",
+          "website": "https://www.cles.chc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/074620/C/彰化縣/芬園鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.643652,
+            "latitude": 24.015282
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 111
+            },
+            {
+              "year": 108,
+              "students": 117
+            },
+            {
+              "year": 109,
+              "students": 113
+            },
+            {
+              "year": 110,
+              "students": 103
+            },
+            {
+              "year": 111,
+              "students": 92
+            },
+            {
+              "year": 112,
+              "students": 92
+            },
+            {
+              "year": 113,
+              "students": 74
+            },
+            {
+              "year": 114,
+              "students": 62
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "074616",
+          "code": "074616",
+          "name": "縣立富山國小",
+          "countyId": "彰化縣",
+          "townshipId": "彰化縣:芬園鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "彰化縣芬園鄉大埔村大埔路6號",
+          "phone": "(049)2522084",
+          "website": "https://www.fsps.chc.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/074616/C/彰化縣/芬園鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.619496,
+            "latitude": 24.027191
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 89
+            },
+            {
+              "year": 108,
+              "students": 74
+            },
+            {
+              "year": 109,
+              "students": 66
+            },
+            {
+              "year": 110,
+              "students": 72
+            },
+            {
+              "year": 111,
+              "students": 65
+            },
+            {
+              "year": 112,
+              "students": 72
+            },
+            {
+              "year": 113,
+              "students": 69
+            },
+            {
+              "year": 114,
+              "students": 58
             }
           ],
           "status": "正常",
@@ -5309,6 +5649,10 @@
             {
               "year": 113,
               "students": 1181
+            },
+            {
+              "year": 114,
+              "students": 1127
             }
           ],
           "status": "正常",
@@ -5358,6 +5702,10 @@
             },
             {
               "year": 113,
+              "students": 549
+            },
+            {
+              "year": 114,
               "students": 549
             }
           ],
@@ -5409,6 +5757,10 @@
             {
               "year": 113,
               "students": 248
+            },
+            {
+              "year": 114,
+              "students": 244
             }
           ],
           "status": "正常",
@@ -5459,6 +5811,10 @@
             {
               "year": 113,
               "students": 202
+            },
+            {
+              "year": 114,
+              "students": 181
             }
           ],
           "status": "正常",
@@ -5509,6 +5865,10 @@
             {
               "year": 113,
               "students": 187
+            },
+            {
+              "year": 114,
+              "students": 180
             }
           ],
           "status": "正常",
@@ -5559,6 +5919,10 @@
             {
               "year": 113,
               "students": 105
+            },
+            {
+              "year": 114,
+              "students": 99
             }
           ],
           "status": "正常",
@@ -5609,6 +5973,10 @@
             {
               "year": 113,
               "students": 48
+            },
+            {
+              "year": 114,
+              "students": 53
             }
           ],
           "status": "正常",
@@ -5667,6 +6035,10 @@
             {
               "year": 113,
               "students": 212
+            },
+            {
+              "year": 114,
+              "students": 212
             }
           ],
           "status": "正常",
@@ -5716,6 +6088,10 @@
             },
             {
               "year": 113,
+              "students": 188
+            },
+            {
+              "year": 114,
               "students": 188
             }
           ],
@@ -5767,6 +6143,10 @@
             {
               "year": 113,
               "students": 181
+            },
+            {
+              "year": 114,
+              "students": 180
             }
           ],
           "status": "正常",
@@ -5817,6 +6197,10 @@
             {
               "year": 113,
               "students": 144
+            },
+            {
+              "year": 114,
+              "students": 141
             }
           ],
           "status": "正常",
@@ -5867,6 +6251,10 @@
             {
               "year": 113,
               "students": 92
+            },
+            {
+              "year": 114,
+              "students": 88
             }
           ],
           "status": "正常",
@@ -5916,6 +6304,10 @@
             },
             {
               "year": 113,
+              "students": 86
+            },
+            {
+              "year": 114,
               "students": 86
             }
           ],
@@ -5967,6 +6359,10 @@
             {
               "year": 113,
               "students": 70
+            },
+            {
+              "year": 114,
+              "students": 68
             }
           ],
           "status": "正常",
@@ -6017,105 +6413,9 @@
             {
               "year": 113,
               "students": 68
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "074762",
-          "code": "074762",
-          "name": "縣立草湖國小",
-          "countyId": "彰化縣",
-          "townshipId": "彰化縣:芳苑鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "彰化縣芳苑鄉文津村芳草路66號",
-          "phone": "(04)8933327",
-          "website": "https://www.thes.chc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/074762/C/彰化縣/芳苑鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.367479,
-            "latitude": 23.956372
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 54
             },
             {
-              "year": 108,
-              "students": 50
-            },
-            {
-              "year": 109,
-              "students": 52
-            },
-            {
-              "year": 110,
-              "students": 55
-            },
-            {
-              "year": 111,
-              "students": 47
-            },
-            {
-              "year": 112,
-              "students": 53
-            },
-            {
-              "year": 113,
-              "students": 63
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "074760",
-          "code": "074760",
-          "name": "縣立民權華德福實驗國(中)小",
-          "countyId": "彰化縣",
-          "townshipId": "彰化縣:芳苑鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "彰化縣芳苑鄉五俊村新生巷5之1號",
-          "phone": "(04)8932625",
-          "website": "https://www.mces.chc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/074760/C/彰化縣/芳苑鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.347135,
-            "latitude": 23.933552
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 45
-            },
-            {
-              "year": 108,
-              "students": 49
-            },
-            {
-              "year": 109,
-              "students": 55
-            },
-            {
-              "year": 110,
-              "students": 63
-            },
-            {
-              "year": 111,
-              "students": 67
-            },
-            {
-              "year": 112,
-              "students": 68
-            },
-            {
-              "year": 113,
+              "year": 114,
               "students": 61
             }
           ],
@@ -6167,6 +6467,118 @@
             {
               "year": 113,
               "students": 58
+            },
+            {
+              "year": 114,
+              "students": 57
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "074760",
+          "code": "074760",
+          "name": "縣立民權華德福實驗國(中)小",
+          "countyId": "彰化縣",
+          "townshipId": "彰化縣:芳苑鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "彰化縣芳苑鄉五俊村新生巷5之1號",
+          "phone": "(04)8932625",
+          "website": "https://www.mces.chc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/074760/C/彰化縣/芳苑鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.347135,
+            "latitude": 23.933552
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 45
+            },
+            {
+              "year": 108,
+              "students": 49
+            },
+            {
+              "year": 109,
+              "students": 55
+            },
+            {
+              "year": 110,
+              "students": 63
+            },
+            {
+              "year": 111,
+              "students": 67
+            },
+            {
+              "year": 112,
+              "students": 68
+            },
+            {
+              "year": 113,
+              "students": 61
+            },
+            {
+              "year": 114,
+              "students": 56
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "074762",
+          "code": "074762",
+          "name": "縣立草湖國小",
+          "countyId": "彰化縣",
+          "townshipId": "彰化縣:芳苑鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "彰化縣芳苑鄉文津村芳草路66號",
+          "phone": "(04)8933327",
+          "website": "https://www.thes.chc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/074762/C/彰化縣/芳苑鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.367479,
+            "latitude": 23.956372
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 54
+            },
+            {
+              "year": 108,
+              "students": 50
+            },
+            {
+              "year": 109,
+              "students": 52
+            },
+            {
+              "year": 110,
+              "students": 55
+            },
+            {
+              "year": 111,
+              "students": 47
+            },
+            {
+              "year": 112,
+              "students": 53
+            },
+            {
+              "year": 113,
+              "students": 63
+            },
+            {
+              "year": 114,
+              "students": 56
             }
           ],
           "status": "正常",
@@ -6217,6 +6629,10 @@
             {
               "year": 113,
               "students": 43
+            },
+            {
+              "year": 114,
+              "students": 34
             }
           ],
           "status": "正常",
@@ -6267,31 +6683,18 @@
             {
               "year": 113,
               "students": 30
+            },
+            {
+              "year": 114,
+              "students": 30
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "芳苑鄉 有 1 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "彰化縣:員林市",
@@ -6342,56 +6745,10 @@
             {
               "year": 113,
               "students": 1951
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "074682",
-          "code": "074682",
-          "name": "縣立靜修國小",
-          "countyId": "彰化縣",
-          "townshipId": "彰化縣:員林市",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "彰化縣員林市南平里靜修路74號",
-          "phone": "(04)8320341",
-          "website": "https://www.sjses.chc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/074682/C/彰化縣/員林市/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.565644,
-            "latitude": 23.963264
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1848
             },
             {
-              "year": 108,
-              "students": 1917
-            },
-            {
-              "year": 109,
-              "students": 1928
-            },
-            {
-              "year": 110,
-              "students": 1945
-            },
-            {
-              "year": 111,
-              "students": 2011
-            },
-            {
-              "year": 112,
-              "students": 2042
-            },
-            {
-              "year": 113,
-              "students": 1926
+              "year": 114,
+              "students": 1951
             }
           ],
           "status": "正常",
@@ -6442,6 +6799,64 @@
             {
               "year": 113,
               "students": 1907
+            },
+            {
+              "year": 114,
+              "students": 1906
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "074682",
+          "code": "074682",
+          "name": "縣立靜修國小",
+          "countyId": "彰化縣",
+          "townshipId": "彰化縣:員林市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "彰化縣員林市南平里靜修路74號",
+          "phone": "(04)8320341",
+          "website": "https://www.sjses.chc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/074682/C/彰化縣/員林市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.565644,
+            "latitude": 23.963264
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1848
+            },
+            {
+              "year": 108,
+              "students": 1917
+            },
+            {
+              "year": 109,
+              "students": 1928
+            },
+            {
+              "year": 110,
+              "students": 1945
+            },
+            {
+              "year": 111,
+              "students": 2011
+            },
+            {
+              "year": 112,
+              "students": 2042
+            },
+            {
+              "year": 113,
+              "students": 1926
+            },
+            {
+              "year": 114,
+              "students": 1857
             }
           ],
           "status": "正常",
@@ -6492,22 +6907,15 @@
             {
               "year": 113,
               "students": 1730
+            },
+            {
+              "year": 114,
+              "students": 1730
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "074683",
@@ -6553,6 +6961,10 @@
             {
               "year": 113,
               "students": 1586
+            },
+            {
+              "year": 114,
+              "students": 1575
             }
           ],
           "status": "正常",
@@ -6603,22 +7015,15 @@
             {
               "year": 113,
               "students": 1446
+            },
+            {
+              "year": 114,
+              "students": 1446
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "070410",
@@ -6664,22 +7069,15 @@
             {
               "year": 113,
               "students": 1187
+            },
+            {
+              "year": 114,
+              "students": 1187
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "070409",
@@ -6725,22 +7123,15 @@
             {
               "year": 113,
               "students": 1099
+            },
+            {
+              "year": 114,
+              "students": 1099
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "074510",
@@ -6785,6 +7176,10 @@
             },
             {
               "year": 113,
+              "students": 1019
+            },
+            {
+              "year": 114,
               "students": 1019
             }
           ],
@@ -6836,6 +7231,10 @@
             {
               "year": 113,
               "students": 978
+            },
+            {
+              "year": 114,
+              "students": 1006
             }
           ],
           "status": "正常",
@@ -6885,6 +7284,10 @@
             },
             {
               "year": 113,
+              "students": 554
+            },
+            {
+              "year": 114,
               "students": 554
             }
           ],
@@ -6936,6 +7339,10 @@
             {
               "year": 113,
               "students": 479
+            },
+            {
+              "year": 114,
+              "students": 461
             }
           ],
           "status": "正常",
@@ -6986,6 +7393,10 @@
             {
               "year": 113,
               "students": 295
+            },
+            {
+              "year": 114,
+              "students": 276
             }
           ],
           "status": "正常",
@@ -7036,6 +7447,10 @@
             {
               "year": 113,
               "students": 222
+            },
+            {
+              "year": 114,
+              "students": 210
             }
           ],
           "status": "正常",
@@ -7086,6 +7501,10 @@
             {
               "year": 113,
               "students": 155
+            },
+            {
+              "year": 114,
+              "students": 148
             }
           ],
           "status": "正常",
@@ -7136,22 +7555,15 @@
             {
               "year": 113,
               "students": 130
+            },
+            {
+              "year": 114,
+              "students": 130
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "074688",
@@ -7197,6 +7609,10 @@
             {
               "year": 113,
               "students": 57
+            },
+            {
+              "year": 114,
+              "students": 50
             }
           ],
           "status": "正常",
@@ -7204,13 +7620,7 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "員林市 有 5 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "彰化縣:埔心鄉",
@@ -7261,6 +7671,10 @@
             {
               "year": 113,
               "students": 457
+            },
+            {
+              "year": 114,
+              "students": 435
             }
           ],
           "status": "正常",
@@ -7310,6 +7724,10 @@
             },
             {
               "year": 113,
+              "students": 318
+            },
+            {
+              "year": 114,
               "students": 318
             }
           ],
@@ -7361,6 +7779,10 @@
             {
               "year": 113,
               "students": 231
+            },
+            {
+              "year": 114,
+              "students": 206
             }
           ],
           "status": "正常",
@@ -7411,6 +7833,10 @@
             {
               "year": 113,
               "students": 201
+            },
+            {
+              "year": 114,
+              "students": 182
             }
           ],
           "status": "正常",
@@ -7461,6 +7887,10 @@
             {
               "year": 113,
               "students": 132
+            },
+            {
+              "year": 114,
+              "students": 137
             }
           ],
           "status": "正常",
@@ -7511,6 +7941,10 @@
             {
               "year": 113,
               "students": 66
+            },
+            {
+              "year": 114,
+              "students": 67
             }
           ],
           "status": "正常",
@@ -7561,6 +7995,10 @@
             {
               "year": 113,
               "students": 61
+            },
+            {
+              "year": 114,
+              "students": 56
             }
           ],
           "status": "正常",
@@ -7610,6 +8048,10 @@
             },
             {
               "year": 113,
+              "students": 41
+            },
+            {
+              "year": 114,
               "students": 41
             }
           ],
@@ -7669,6 +8111,10 @@
             {
               "year": 113,
               "students": 410
+            },
+            {
+              "year": 114,
+              "students": 393
             }
           ],
           "status": "正常",
@@ -7719,6 +8165,10 @@
             {
               "year": 113,
               "students": 312
+            },
+            {
+              "year": 114,
+              "students": 294
             }
           ],
           "status": "正常",
@@ -7768,6 +8218,10 @@
             },
             {
               "year": 113,
+              "students": 279
+            },
+            {
+              "year": 114,
               "students": 279
             }
           ],
@@ -7819,6 +8273,10 @@
             {
               "year": 113,
               "students": 127
+            },
+            {
+              "year": 114,
+              "students": 128
             }
           ],
           "status": "正常",
@@ -7869,6 +8327,10 @@
             {
               "year": 113,
               "students": 70
+            },
+            {
+              "year": 114,
+              "students": 65
             }
           ],
           "status": "正常",
@@ -7919,56 +8381,10 @@
             {
               "year": 113,
               "students": 62
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "074667",
-          "code": "074667",
-          "name": "縣立大園國小",
-          "countyId": "彰化縣",
-          "townshipId": "彰化縣:埔鹽鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "彰化縣埔鹽鄉豐澤村埔打路45之1號",
-          "phone": "(04)8853760",
-          "website": "https://www.dyes.chc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/074667/C/彰化縣/埔鹽鄉/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.488229,
-            "latitude": 23.979791
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 44
             },
             {
-              "year": 108,
-              "students": 40
-            },
-            {
-              "year": 109,
-              "students": 37
-            },
-            {
-              "year": 110,
-              "students": 44
-            },
-            {
-              "year": 111,
-              "students": 43
-            },
-            {
-              "year": 112,
-              "students": 45
-            },
-            {
-              "year": 113,
-              "students": 40
+              "year": 114,
+              "students": 60
             }
           ],
           "status": "正常",
@@ -8019,6 +8435,64 @@
             {
               "year": 113,
               "students": 39
+            },
+            {
+              "year": 114,
+              "students": 44
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "074667",
+          "code": "074667",
+          "name": "縣立大園國小",
+          "countyId": "彰化縣",
+          "townshipId": "彰化縣:埔鹽鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "彰化縣埔鹽鄉豐澤村埔打路45之1號",
+          "phone": "(04)8853760",
+          "website": "https://www.dyes.chc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/074667/C/彰化縣/埔鹽鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.488229,
+            "latitude": 23.979791
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 44
+            },
+            {
+              "year": 108,
+              "students": 40
+            },
+            {
+              "year": 109,
+              "students": 37
+            },
+            {
+              "year": 110,
+              "students": 44
+            },
+            {
+              "year": 111,
+              "students": 43
+            },
+            {
+              "year": 112,
+              "students": 45
+            },
+            {
+              "year": 113,
+              "students": 40
+            },
+            {
+              "year": 114,
+              "students": 40
             }
           ],
           "status": "正常",
@@ -8077,6 +8551,10 @@
             {
               "year": 113,
               "students": 652
+            },
+            {
+              "year": 114,
+              "students": 612
             }
           ],
           "status": "正常",
@@ -8126,6 +8604,10 @@
             },
             {
               "year": 113,
+              "students": 364
+            },
+            {
+              "year": 114,
               "students": 364
             }
           ],
@@ -8177,6 +8659,10 @@
             {
               "year": 113,
               "students": 239
+            },
+            {
+              "year": 114,
+              "students": 236
             }
           ],
           "status": "正常",
@@ -8227,6 +8713,10 @@
             {
               "year": 113,
               "students": 166
+            },
+            {
+              "year": 114,
+              "students": 156
             }
           ],
           "status": "正常",
@@ -8276,6 +8766,10 @@
             },
             {
               "year": 113,
+              "students": 90
+            },
+            {
+              "year": 114,
               "students": 90
             }
           ],
@@ -8327,6 +8821,10 @@
             {
               "year": 113,
               "students": 68
+            },
+            {
+              "year": 114,
+              "students": 61
             }
           ],
           "status": "正常",
@@ -8377,6 +8875,10 @@
             {
               "year": 113,
               "students": 52
+            },
+            {
+              "year": 114,
+              "students": 53
             }
           ],
           "status": "正常",
@@ -8435,6 +8937,10 @@
             {
               "year": 113,
               "students": 1542
+            },
+            {
+              "year": 114,
+              "students": 1531
             }
           ],
           "status": "正常",
@@ -8485,22 +8991,15 @@
             {
               "year": 113,
               "students": 1332
+            },
+            {
+              "year": 114,
+              "students": 1332
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "074639",
@@ -8546,6 +9045,10 @@
             {
               "year": 113,
               "students": 905
+            },
+            {
+              "year": 114,
+              "students": 804
             }
           ],
           "status": "正常",
@@ -8596,6 +9099,10 @@
             {
               "year": 113,
               "students": 792
+            },
+            {
+              "year": 114,
+              "students": 758
             }
           ],
           "status": "正常",
@@ -8646,6 +9153,10 @@
             {
               "year": 113,
               "students": 744
+            },
+            {
+              "year": 114,
+              "students": 680
             }
           ],
           "status": "正常",
@@ -8695,6 +9206,10 @@
             },
             {
               "year": 113,
+              "students": 626
+            },
+            {
+              "year": 114,
               "students": 626
             }
           ],
@@ -8746,6 +9261,10 @@
             {
               "year": 113,
               "students": 381
+            },
+            {
+              "year": 114,
+              "students": 367
             }
           ],
           "status": "正常",
@@ -8796,6 +9315,10 @@
             {
               "year": 113,
               "students": 312
+            },
+            {
+              "year": 114,
+              "students": 283
             }
           ],
           "status": "正常",
@@ -8846,22 +9369,15 @@
             {
               "year": 113,
               "students": 240
+            },
+            {
+              "year": 114,
+              "students": 240
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "074642",
@@ -8907,6 +9423,10 @@
             {
               "year": 113,
               "students": 207
+            },
+            {
+              "year": 114,
+              "students": 198
             }
           ],
           "status": "正常",
@@ -8956,6 +9476,10 @@
             },
             {
               "year": 113,
+              "students": 198
+            },
+            {
+              "year": 114,
               "students": 198
             }
           ],
@@ -9007,6 +9531,10 @@
             {
               "year": 113,
               "students": 153
+            },
+            {
+              "year": 114,
+              "students": 142
             }
           ],
           "status": "正常",
@@ -9057,35 +9585,18 @@
             {
               "year": 113,
               "students": 91
+            },
+            {
+              "year": 114,
+              "students": 116
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107,
-            108,
-            109
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107、108、109",
-              "severity": "warning",
-              "years": [
-                107,
-                108,
-                109
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "鹿港鎮 有 3 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "彰化縣:溪州鄉",
@@ -9136,6 +9647,10 @@
             {
               "year": 113,
               "students": 376
+            },
+            {
+              "year": 114,
+              "students": 361
             }
           ],
           "status": "正常",
@@ -9185,6 +9700,10 @@
             },
             {
               "year": 113,
+              "students": 234
+            },
+            {
+              "year": 114,
               "students": 234
             }
           ],
@@ -9236,6 +9755,10 @@
             {
               "year": 113,
               "students": 172
+            },
+            {
+              "year": 114,
+              "students": 160
             }
           ],
           "status": "正常",
@@ -9285,6 +9808,10 @@
             },
             {
               "year": 113,
+              "students": 155
+            },
+            {
+              "year": 114,
               "students": 155
             }
           ],
@@ -9336,56 +9863,10 @@
             {
               "year": 113,
               "students": 85
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "074729",
-          "code": "074729",
-          "name": "縣立三條國小",
-          "countyId": "彰化縣",
-          "townshipId": "彰化縣:溪州鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "彰化縣溪州鄉三條村中央路二段31號",
-          "phone": "(04)8895080",
-          "website": "https://www.steps.chc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/074729/C/彰化縣/溪州鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.494506,
-            "latitude": 23.826912
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 78
             },
             {
-              "year": 108,
+              "year": 114,
               "students": 76
-            },
-            {
-              "year": 109,
-              "students": 70
-            },
-            {
-              "year": 110,
-              "students": 74
-            },
-            {
-              "year": 111,
-              "students": 73
-            },
-            {
-              "year": 112,
-              "students": 75
-            },
-            {
-              "year": 113,
-              "students": 77
             }
           ],
           "status": "正常",
@@ -9436,6 +9917,10 @@
             {
               "year": 113,
               "students": 69
+            },
+            {
+              "year": 114,
+              "students": 76
             }
           ],
           "status": "正常",
@@ -9443,49 +9928,53 @@
           "dataNotes": []
         },
         {
-          "id": "074734",
-          "code": "074734",
-          "name": "縣立大莊國小",
+          "id": "074729",
+          "code": "074729",
+          "name": "縣立三條國小",
           "countyId": "彰化縣",
           "townshipId": "彰化縣:溪州鄉",
           "educationLevel": "國小",
           "managementType": "公立",
-          "address": "彰化縣溪州鄉大庄村中橫巷1號",
-          "phone": "(04)8802438",
-          "website": "https://www.djps.chc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/074734/C/彰化縣/溪州鄉/縣市立/偏遠/無/",
+          "address": "彰化縣溪州鄉三條村中央路二段31號",
+          "phone": "(04)8895080",
+          "website": "https://www.steps.chc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/074729/C/彰化縣/溪州鄉/縣市立/偏遠/無/",
           "coordinates": {
-            "longitude": 120.567574,
-            "latitude": 23.816285
+            "longitude": 120.494506,
+            "latitude": 23.826912
           },
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 77
+              "students": 78
             },
             {
               "year": 108,
-              "students": 71
+              "students": 76
             },
             {
               "year": 109,
-              "students": 66
+              "students": 70
             },
             {
               "year": 110,
-              "students": 62
+              "students": 74
             },
             {
               "year": 111,
-              "students": 57
+              "students": 73
             },
             {
               "year": 112,
-              "students": 63
+              "students": 75
             },
             {
               "year": 113,
-              "students": 60
+              "students": 77
+            },
+            {
+              "year": 114,
+              "students": 73
             }
           ],
           "status": "正常",
@@ -9536,6 +10025,64 @@
             {
               "year": 113,
               "students": 58
+            },
+            {
+              "year": 114,
+              "students": 54
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "074734",
+          "code": "074734",
+          "name": "縣立大莊國小",
+          "countyId": "彰化縣",
+          "townshipId": "彰化縣:溪州鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "彰化縣溪州鄉大庄村中橫巷1號",
+          "phone": "(04)8802438",
+          "website": "https://www.djps.chc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/074734/C/彰化縣/溪州鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.567574,
+            "latitude": 23.816285
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 77
+            },
+            {
+              "year": 108,
+              "students": 71
+            },
+            {
+              "year": 109,
+              "students": 66
+            },
+            {
+              "year": 110,
+              "students": 62
+            },
+            {
+              "year": 111,
+              "students": 57
+            },
+            {
+              "year": 112,
+              "students": 63
+            },
+            {
+              "year": 113,
+              "students": 60
+            },
+            {
+              "year": 114,
+              "students": 53
             }
           ],
           "status": "正常",
@@ -9586,6 +10133,10 @@
             {
               "year": 113,
               "students": 39
+            },
+            {
+              "year": 114,
+              "students": 41
             }
           ],
           "status": "正常",
@@ -9636,6 +10187,10 @@
             {
               "year": 113,
               "students": 33
+            },
+            {
+              "year": 114,
+              "students": 30
             }
           ],
           "status": "正常",
@@ -9694,22 +10249,15 @@
             {
               "year": 113,
               "students": 1550
+            },
+            {
+              "year": 114,
+              "students": 1550
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "074518",
@@ -9754,6 +10302,10 @@
             },
             {
               "year": 113,
+              "students": 1274
+            },
+            {
+              "year": 114,
               "students": 1274
             }
           ],
@@ -9805,6 +10357,10 @@
             {
               "year": 113,
               "students": 986
+            },
+            {
+              "year": 114,
+              "students": 992
             }
           ],
           "status": "正常",
@@ -9854,6 +10410,10 @@
             },
             {
               "year": 113,
+              "students": 873
+            },
+            {
+              "year": 114,
               "students": 873
             }
           ],
@@ -9905,6 +10465,10 @@
             {
               "year": 113,
               "students": 832
+            },
+            {
+              "year": 114,
+              "students": 829
             }
           ],
           "status": "正常",
@@ -9955,6 +10519,10 @@
             {
               "year": 113,
               "students": 454
+            },
+            {
+              "year": 114,
+              "students": 420
             }
           ],
           "status": "正常",
@@ -10005,6 +10573,10 @@
             {
               "year": 113,
               "students": 405
+            },
+            {
+              "year": 114,
+              "students": 388
             }
           ],
           "status": "正常",
@@ -10055,6 +10627,10 @@
             {
               "year": 113,
               "students": 240
+            },
+            {
+              "year": 114,
+              "students": 256
             }
           ],
           "status": "正常",
@@ -10105,6 +10681,10 @@
             {
               "year": 113,
               "students": 143
+            },
+            {
+              "year": 114,
+              "students": 159
             }
           ],
           "status": "正常",
@@ -10155,6 +10735,10 @@
             {
               "year": 113,
               "students": 130
+            },
+            {
+              "year": 114,
+              "students": 132
             }
           ],
           "status": "正常",
@@ -10162,13 +10746,7 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "溪湖鎮 有 1 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "彰化縣:彰化市",
@@ -10218,6 +10796,10 @@
             },
             {
               "year": 113,
+              "students": 8624
+            },
+            {
+              "year": 114,
               "students": 8624
             }
           ],
@@ -10269,6 +10851,10 @@
             {
               "year": 113,
               "students": 3497
+            },
+            {
+              "year": 114,
+              "students": 3497
             }
           ],
           "status": "正常",
@@ -10318,6 +10904,10 @@
             },
             {
               "year": 113,
+              "students": 3306
+            },
+            {
+              "year": 114,
               "students": 3306
             }
           ],
@@ -10369,6 +10959,10 @@
             {
               "year": 113,
               "students": 2437
+            },
+            {
+              "year": 114,
+              "students": 2313
             }
           ],
           "status": "正常",
@@ -10419,22 +11013,15 @@
             {
               "year": 113,
               "students": 2090
+            },
+            {
+              "year": 114,
+              "students": 2090
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "070406",
@@ -10480,22 +11067,15 @@
             {
               "year": 113,
               "students": 2007
+            },
+            {
+              "year": 114,
+              "students": 2007
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "070401",
@@ -10541,22 +11121,15 @@
             {
               "year": 113,
               "students": 1967
+            },
+            {
+              "year": 114,
+              "students": 1967
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "074540",
@@ -10601,6 +11174,10 @@
             },
             {
               "year": 113,
+              "students": 1684
+            },
+            {
+              "year": 114,
               "students": 1684
             }
           ],
@@ -10652,67 +11229,10 @@
             {
               "year": 113,
               "students": 1560
-            }
-          ],
-          "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
-        },
-        {
-          "id": "074601",
-          "code": "074601",
-          "name": "縣立中山國小",
-          "countyId": "彰化縣",
-          "townshipId": "彰化縣:彰化市",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "彰化縣彰化市中山路二段678號",
-          "phone": "(04)7222033",
-          "website": "https://www.cses.chc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/074601/C/彰化縣/彰化市/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.546629,
-            "latitude": 24.081826
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1613
             },
             {
-              "year": 108,
-              "students": 1657
-            },
-            {
-              "year": 109,
-              "students": 1668
-            },
-            {
-              "year": 110,
-              "students": 1710
-            },
-            {
-              "year": 111,
-              "students": 1693
-            },
-            {
-              "year": 112,
-              "students": 1634
-            },
-            {
-              "year": 113,
-              "students": 1558
+              "year": 114,
+              "students": 1560
             }
           ],
           "status": "正常",
@@ -10763,6 +11283,10 @@
             {
               "year": 113,
               "students": 1529
+            },
+            {
+              "year": 114,
+              "students": 1529
             }
           ],
           "status": "正常",
@@ -10770,49 +11294,53 @@
           "dataNotes": []
         },
         {
-          "id": "074603",
-          "code": "074603",
-          "name": "縣立平和國小",
+          "id": "074601",
+          "code": "074601",
+          "name": "縣立中山國小",
           "countyId": "彰化縣",
           "townshipId": "彰化縣:彰化市",
           "educationLevel": "國小",
           "managementType": "公立",
-          "address": "彰化縣彰化市西安里中正路二段450號",
-          "phone": "(04)7222355",
-          "website": "https://www.phes.chc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/074603/C/彰化縣/彰化市/縣市立/否/無/",
+          "address": "彰化縣彰化市中山路二段678號",
+          "phone": "(04)7222033",
+          "website": "https://www.cses.chc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/074601/C/彰化縣/彰化市/縣市立/否/無/",
           "coordinates": {
-            "longitude": 120.53532,
-            "latitude": 24.071791
+            "longitude": 120.546629,
+            "latitude": 24.081826
           },
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 1214
+              "students": 1613
             },
             {
               "year": 108,
-              "students": 1186
+              "students": 1657
             },
             {
               "year": 109,
-              "students": 1194
+              "students": 1668
             },
             {
               "year": 110,
-              "students": 1193
+              "students": 1710
             },
             {
               "year": 111,
-              "students": 1245
+              "students": 1693
             },
             {
               "year": 112,
-              "students": 1276
+              "students": 1634
             },
             {
               "year": 113,
-              "students": 1239
+              "students": 1558
+            },
+            {
+              "year": 114,
+              "students": 1440
             }
           ],
           "status": "正常",
@@ -10863,6 +11391,64 @@
             {
               "year": 113,
               "students": 1197
+            },
+            {
+              "year": 114,
+              "students": 1203
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "074603",
+          "code": "074603",
+          "name": "縣立平和國小",
+          "countyId": "彰化縣",
+          "townshipId": "彰化縣:彰化市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "彰化縣彰化市西安里中正路二段450號",
+          "phone": "(04)7222355",
+          "website": "https://www.phes.chc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/074603/C/彰化縣/彰化市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.53532,
+            "latitude": 24.071791
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1214
+            },
+            {
+              "year": 108,
+              "students": 1186
+            },
+            {
+              "year": 109,
+              "students": 1194
+            },
+            {
+              "year": 110,
+              "students": 1193
+            },
+            {
+              "year": 111,
+              "students": 1245
+            },
+            {
+              "year": 112,
+              "students": 1276
+            },
+            {
+              "year": 113,
+              "students": 1239
+            },
+            {
+              "year": 114,
+              "students": 1165
             }
           ],
           "status": "正常",
@@ -10912,6 +11498,10 @@
             },
             {
               "year": 113,
+              "students": 1128
+            },
+            {
+              "year": 114,
               "students": 1128
             }
           ],
@@ -10963,6 +11553,10 @@
             {
               "year": 113,
               "students": 1062
+            },
+            {
+              "year": 114,
+              "students": 1042
             }
           ],
           "status": "正常",
@@ -11013,6 +11607,10 @@
             {
               "year": 113,
               "students": 1029
+            },
+            {
+              "year": 114,
+              "students": 967
             }
           ],
           "status": "正常",
@@ -11062,6 +11660,10 @@
             },
             {
               "year": 113,
+              "students": 949
+            },
+            {
+              "year": 114,
               "students": 949
             }
           ],
@@ -11113,6 +11715,10 @@
             {
               "year": 113,
               "students": 944
+            },
+            {
+              "year": 114,
+              "students": 875
             }
           ],
           "status": "正常",
@@ -11163,6 +11769,10 @@
             {
               "year": 113,
               "students": 849
+            },
+            {
+              "year": 114,
+              "students": 811
             }
           ],
           "status": "正常",
@@ -11213,56 +11823,10 @@
             {
               "year": 113,
               "students": 699
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "074774",
-          "code": "074774",
-          "name": "縣立信義國(中)小",
-          "countyId": "彰化縣",
-          "townshipId": "彰化縣:彰化市",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "彰化縣彰化市向陽里向陽街168號",
-          "phone": "(04)7635888",
-          "website": "https://www.hyjhes.chc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/074774/C/彰化縣/彰化市/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.528455,
-            "latitude": 24.06289
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 613
             },
             {
-              "year": 108,
-              "students": 663
-            },
-            {
-              "year": 109,
-              "students": 679
-            },
-            {
-              "year": 110,
-              "students": 676
-            },
-            {
-              "year": 111,
-              "students": 701
-            },
-            {
-              "year": 112,
-              "students": 701
-            },
-            {
-              "year": 113,
-              "students": 679
+              "year": 114,
+              "students": 699
             }
           ],
           "status": "正常",
@@ -11313,6 +11877,64 @@
             {
               "year": 113,
               "students": 659
+            },
+            {
+              "year": 114,
+              "students": 669
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "074774",
+          "code": "074774",
+          "name": "縣立信義國(中)小",
+          "countyId": "彰化縣",
+          "townshipId": "彰化縣:彰化市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "彰化縣彰化市向陽里向陽街168號",
+          "phone": "(04)7635888",
+          "website": "https://www.hyjhes.chc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/074774/C/彰化縣/彰化市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.528455,
+            "latitude": 24.06289
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 613
+            },
+            {
+              "year": 108,
+              "students": 663
+            },
+            {
+              "year": 109,
+              "students": 679
+            },
+            {
+              "year": 110,
+              "students": 676
+            },
+            {
+              "year": 111,
+              "students": 701
+            },
+            {
+              "year": 112,
+              "students": 701
+            },
+            {
+              "year": 113,
+              "students": 679
+            },
+            {
+              "year": 114,
+              "students": 641
             }
           ],
           "status": "正常",
@@ -11363,6 +11985,10 @@
             {
               "year": 113,
               "students": 522
+            },
+            {
+              "year": 114,
+              "students": 504
             }
           ],
           "status": "正常",
@@ -11413,6 +12039,10 @@
             {
               "year": 113,
               "students": 435
+            },
+            {
+              "year": 114,
+              "students": 435
             }
           ],
           "status": "正常",
@@ -11426,7 +12056,7 @@
           "countyId": "彰化縣",
           "townshipId": "彰化縣:彰化市",
           "educationLevel": "高中職",
-          "managementType": "私立",
+          "managementType": "公立",
           "address": "彰化縣彰化市彰水路145號",
           "phone": "(04)7524109",
           "website": "https://www.zdhs.chc.edu.tw/bin/home.php",
@@ -11463,6 +12093,10 @@
             {
               "year": 113,
               "students": 339
+            },
+            {
+              "year": 114,
+              "students": 364
             }
           ],
           "status": "正常",
@@ -11512,6 +12146,10 @@
             },
             {
               "year": 113,
+              "students": 339
+            },
+            {
+              "year": 114,
               "students": 339
             }
           ],
@@ -11563,6 +12201,10 @@
             {
               "year": 113,
               "students": 319
+            },
+            {
+              "year": 114,
+              "students": 314
             }
           ],
           "status": "正常",
@@ -11613,6 +12255,10 @@
             {
               "year": 113,
               "students": 137
+            },
+            {
+              "year": 114,
+              "students": 145
             }
           ],
           "status": "正常",
@@ -11663,6 +12309,10 @@
             {
               "year": 113,
               "students": 62
+            },
+            {
+              "year": 114,
+              "students": 57
             }
           ],
           "status": "正常",
@@ -11713,6 +12363,10 @@
             {
               "year": 113,
               "students": 53
+            },
+            {
+              "year": 114,
+              "students": 51
             }
           ],
           "status": "正常",
@@ -11763,6 +12417,10 @@
             {
               "year": 113,
               "students": 41
+            },
+            {
+              "year": 114,
+              "students": 34
             }
           ],
           "status": "正常",
@@ -11770,13 +12428,7 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "彰化市 有 4 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "彰化縣:福興鄉",
@@ -11826,6 +12478,10 @@
             },
             {
               "year": 113,
+              "students": 1462
+            },
+            {
+              "year": 114,
               "students": 1462
             }
           ],
@@ -11877,6 +12533,10 @@
             {
               "year": 113,
               "students": 727
+            },
+            {
+              "year": 114,
+              "students": 727
             }
           ],
           "status": "正常",
@@ -11927,6 +12587,10 @@
             {
               "year": 113,
               "students": 539
+            },
+            {
+              "year": 114,
+              "students": 520
             }
           ],
           "status": "正常",
@@ -11977,6 +12641,10 @@
             {
               "year": 113,
               "students": 378
+            },
+            {
+              "year": 114,
+              "students": 358
             }
           ],
           "status": "正常",
@@ -12027,56 +12695,10 @@
             {
               "year": 113,
               "students": 252
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "074652",
-          "code": "074652",
-          "name": "縣立日新國小",
-          "countyId": "彰化縣",
-          "townshipId": "彰化縣:福興鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "彰化縣福興鄉番婆村彰鹿路六段546號",
-          "phone": "(04)7773861",
-          "website": "https://www.rses.chc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/074652/C/彰化縣/福興鄉/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.4595,
-            "latitude": 24.046221
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 111
             },
             {
-              "year": 108,
-              "students": 117
-            },
-            {
-              "year": 109,
-              "students": 119
-            },
-            {
-              "year": 110,
-              "students": 129
-            },
-            {
-              "year": 111,
-              "students": 124
-            },
-            {
-              "year": 112,
-              "students": 116
-            },
-            {
-              "year": 113,
-              "students": 111
+              "year": 114,
+              "students": 238
             }
           ],
           "status": "正常",
@@ -12127,6 +12749,10 @@
             {
               "year": 113,
               "students": 105
+            },
+            {
+              "year": 114,
+              "students": 98
             }
           ],
           "status": "正常",
@@ -12134,49 +12760,53 @@
           "dataNotes": []
         },
         {
-          "id": "074648",
-          "code": "074648",
-          "name": "縣立文昌國小",
+          "id": "074652",
+          "code": "074652",
+          "name": "縣立日新國小",
           "countyId": "彰化縣",
           "townshipId": "彰化縣:福興鄉",
           "educationLevel": "國小",
           "managementType": "公立",
-          "address": "彰化縣福興鄉鎮平村鎮平街1號",
-          "phone": "(04)7702812",
-          "website": "https://www.wces.chc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/074648/C/彰化縣/福興鄉/縣市立/偏遠/無/",
+          "address": "彰化縣福興鄉番婆村彰鹿路六段546號",
+          "phone": "(04)7773861",
+          "website": "https://www.rses.chc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/074652/C/彰化縣/福興鄉/縣市立/否/無/",
           "coordinates": {
-            "longitude": 120.419119,
-            "latitude": 24.00803
+            "longitude": 120.4595,
+            "latitude": 24.046221
           },
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 88
+              "students": 111
             },
             {
               "year": 108,
-              "students": 95
+              "students": 117
             },
             {
               "year": 109,
-              "students": 98
+              "students": 119
             },
             {
               "year": 110,
-              "students": 98
+              "students": 129
             },
             {
               "year": 111,
-              "students": 99
+              "students": 124
             },
             {
               "year": 112,
-              "students": 91
+              "students": 116
             },
             {
               "year": 113,
-              "students": 84
+              "students": 111
+            },
+            {
+              "year": 114,
+              "students": 97
             }
           ],
           "status": "正常",
@@ -12227,6 +12857,64 @@
             {
               "year": 113,
               "students": 74
+            },
+            {
+              "year": 114,
+              "students": 73
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "074648",
+          "code": "074648",
+          "name": "縣立文昌國小",
+          "countyId": "彰化縣",
+          "townshipId": "彰化縣:福興鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "彰化縣福興鄉鎮平村鎮平街1號",
+          "phone": "(04)7702812",
+          "website": "https://www.wces.chc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/074648/C/彰化縣/福興鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.419119,
+            "latitude": 24.00803
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 88
+            },
+            {
+              "year": 108,
+              "students": 95
+            },
+            {
+              "year": 109,
+              "students": 98
+            },
+            {
+              "year": 110,
+              "students": 98
+            },
+            {
+              "year": 111,
+              "students": 99
+            },
+            {
+              "year": 112,
+              "students": 91
+            },
+            {
+              "year": 113,
+              "students": 84
+            },
+            {
+              "year": 114,
+              "students": 69
             }
           ],
           "status": "正常",
@@ -12285,6 +12973,10 @@
             {
               "year": 113,
               "students": 609
+            },
+            {
+              "year": 114,
+              "students": 594
             }
           ],
           "status": "正常",
@@ -12334,6 +13026,10 @@
             },
             {
               "year": 113,
+              "students": 342
+            },
+            {
+              "year": 114,
               "students": 342
             }
           ],
@@ -12385,6 +13081,10 @@
             {
               "year": 113,
               "students": 91
+            },
+            {
+              "year": 114,
+              "students": 83
             }
           ],
           "status": "正常",

@@ -6,6 +6,8 @@ type TrendChartProps = {
   subtitle: string
   points: TrendPoint[]
   activeYear: number
+  showHeader?: boolean
+  formatValue?: (value: number) => string
 }
 
 function buildLinePath(points: Array<{ x: number; y: number }>) {
@@ -31,7 +33,7 @@ function linearRegression(xs: number[], ys: number[]): { slope: number; intercep
   return { slope, intercept }
 }
 
-function TrendChart({ chartId, title, subtitle, points, activeYear }: TrendChartProps) {
+function TrendChart({ chartId, title, subtitle, points, activeYear, showHeader = true, formatValue = (value) => `${formatStudents(Math.round(value))} 人` }: TrendChartProps) {
   const PREDICT_YEARS = 2
   const width = 620
   const height = 240
@@ -95,18 +97,21 @@ function TrendChart({ chartId, title, subtitle, points, activeYear }: TrendChart
 
   return (
     <section className="trend-panel">
-      <div className="panel-heading">
-        <div>
-          <p className="eyebrow">趨勢視窗</p>
-          <h3>{title}</h3>
+      {showHeader ? (
+        <div className="panel-heading">
+          <div>
+            <p className="eyebrow">趨勢視窗</p>
+            <h3>{title}</h3>
+          </div>
+          <p className="panel-heading__meta">{subtitle}</p>
         </div>
-        <p className="panel-heading__meta">{subtitle}</p>
-      </div>
+      ) : null}
       <svg className="trend-chart" viewBox={`0 0 ${width} ${height}`} role="img" aria-label={title}>
         <defs>
           <linearGradient id={`${chartId}-area`} x1="0" x2="0" y1="0" y2="1">
-            <stop offset="0%" stopColor="rgba(16, 185, 129, 0.34)" />
-            <stop offset="100%" stopColor="rgba(16, 185, 129, 0.02)" />
+            <stop offset="0%" stopColor="rgba(42, 111, 145, 0.32)" />
+            <stop offset="60%" stopColor="rgba(120, 165, 188, 0.12)" />
+            <stop offset="100%" stopColor="rgba(42, 111, 145, 0.02)" />
           </linearGradient>
         </defs>
         {[0, 0.33, 0.66, 1].map((ratio) => {
@@ -140,9 +145,9 @@ function TrendChart({ chartId, title, subtitle, points, activeYear }: TrendChart
         ))}
       </svg>
       <div className="trend-chart__footnote">
-        <span>最高值 {formatStudents(Math.max(...values, 1))} 人</span>
-        <span>最低值 {formatStudents(Math.min(...values, 0))} 人</span>
-        {reg ? <span>年均變化 {reg.slope >= 0 ? '+' : ''}{formatStudents(Math.round(reg.slope))} 人</span> : null}
+        <span>最高值 {formatValue(Math.max(...values, 1))}</span>
+        <span>最低值 {formatValue(Math.min(...values, 0))}</span>
+        {reg ? <span>年均變化 {formatValue(Math.round(reg.slope))}</span> : null}
       </div>
     </section>
   )

@@ -56,6 +56,10 @@
             {
               "year": 113,
               "students": 128
+            },
+            {
+              "year": 114,
+              "students": 128
             }
           ],
           "status": "正常",
@@ -106,6 +110,10 @@
             {
               "year": 113,
               "students": 113
+            },
+            {
+              "year": 114,
+              "students": 114
             }
           ],
           "status": "正常",
@@ -156,6 +164,10 @@
             {
               "year": 113,
               "students": 72
+            },
+            {
+              "year": 114,
+              "students": 70
             }
           ],
           "status": "正常",
@@ -206,6 +218,10 @@
             {
               "year": 113,
               "students": 51
+            },
+            {
+              "year": 114,
+              "students": 54
             }
           ],
           "status": "正常",
@@ -220,56 +236,6 @@
       "name": "太麻里鄉",
       "countyId": "臺東縣",
       "schools": [
-        {
-          "id": "144629",
-          "code": "144629",
-          "name": "縣立大王國小",
-          "countyId": "臺東縣",
-          "townshipId": "臺東縣:太麻里鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺東縣太麻里鄉大王村文化路60號",
-          "phone": "(089)781342",
-          "website": "https://dwps.ttct.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/144629/C/臺東縣/太麻里鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 121.00374,
-            "latitude": 22.613303
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 178
-            },
-            {
-              "year": 108,
-              "students": 175
-            },
-            {
-              "year": 109,
-              "students": 157
-            },
-            {
-              "year": 110,
-              "students": 160
-            },
-            {
-              "year": 111,
-              "students": 159
-            },
-            {
-              "year": 112,
-              "students": 154
-            },
-            {
-              "year": 113,
-              "students": 146
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
         {
           "id": "144512",
           "code": "144512",
@@ -314,6 +280,10 @@
             {
               "year": 113,
               "students": 140
+            },
+            {
+              "year": 114,
+              "students": 140
             }
           ],
           "status": "正常",
@@ -321,99 +291,53 @@
           "dataNotes": []
         },
         {
-          "id": "144632",
-          "code": "144632",
-          "name": "縣立三和國小",
+          "id": "144629",
+          "code": "144629",
+          "name": "縣立大王國小",
           "countyId": "臺東縣",
           "townshipId": "臺東縣:太麻里鄉",
           "educationLevel": "國小",
           "managementType": "公立",
-          "address": "臺東縣太麻里鄉三和村漁場94號",
-          "phone": "(089)512291",
-          "website": "https://sahps.ttct.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/144632/C/臺東縣/太麻里鄉/縣市立/偏遠/無/",
+          "address": "臺東縣太麻里鄉大王村文化路60號",
+          "phone": "(089)781342",
+          "website": "https://dwps.ttct.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/144629/C/臺東縣/太麻里鄉/縣市立/偏遠/無/",
           "coordinates": {
-            "longitude": 121.037228,
-            "latitude": 22.672569
+            "longitude": 121.00374,
+            "latitude": 22.613303
           },
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 39
+              "students": 178
             },
             {
               "year": 108,
-              "students": 46
+              "students": 175
             },
             {
               "year": 109,
-              "students": 53
+              "students": 157
             },
             {
               "year": 110,
-              "students": 55
+              "students": 160
             },
             {
               "year": 111,
-              "students": 48
+              "students": 159
             },
             {
               "year": 112,
-              "students": 44
+              "students": 154
             },
             {
               "year": 113,
-              "students": 48
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "144633",
-          "code": "144633",
-          "name": "縣立美和國小",
-          "countyId": "臺東縣",
-          "townshipId": "臺東縣:太麻里鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺東縣太麻里鄉美和村美和90號",
-          "phone": "(089)512487",
-          "website": "https://mhps.ttct.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/144633/C/臺東縣/太麻里鄉/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.044371,
-            "latitude": 22.688042
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 54
+              "students": 146
             },
             {
-              "year": 108,
-              "students": 49
-            },
-            {
-              "year": 109,
-              "students": 39
-            },
-            {
-              "year": 110,
-              "students": 44
-            },
-            {
-              "year": 111,
-              "students": 46
-            },
-            {
-              "year": 112,
-              "students": 44
-            },
-            {
-              "year": 113,
-              "students": 43
+              "year": 114,
+              "students": 134
             }
           ],
           "status": "正常",
@@ -464,6 +388,64 @@
             {
               "year": 113,
               "students": 40
+            },
+            {
+              "year": 114,
+              "students": 40
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "144632",
+          "code": "144632",
+          "name": "縣立三和國小",
+          "countyId": "臺東縣",
+          "townshipId": "臺東縣:太麻里鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺東縣太麻里鄉三和村漁場94號",
+          "phone": "(089)512291",
+          "website": "https://sahps.ttct.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/144632/C/臺東縣/太麻里鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.037228,
+            "latitude": 22.672569
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 39
+            },
+            {
+              "year": 108,
+              "students": 46
+            },
+            {
+              "year": 109,
+              "students": 53
+            },
+            {
+              "year": 110,
+              "students": 55
+            },
+            {
+              "year": 111,
+              "students": 48
+            },
+            {
+              "year": 112,
+              "students": 44
+            },
+            {
+              "year": 113,
+              "students": 48
+            },
+            {
+              "year": 114,
+              "students": 36
             }
           ],
           "status": "正常",
@@ -514,6 +496,64 @@
             {
               "year": 113,
               "students": 36
+            },
+            {
+              "year": 114,
+              "students": 34
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "144633",
+          "code": "144633",
+          "name": "縣立美和國小",
+          "countyId": "臺東縣",
+          "townshipId": "臺東縣:太麻里鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺東縣太麻里鄉美和村美和90號",
+          "phone": "(089)512487",
+          "website": "https://mhps.ttct.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/144633/C/臺東縣/太麻里鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.044371,
+            "latitude": 22.688042
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 54
+            },
+            {
+              "year": 108,
+              "students": 49
+            },
+            {
+              "year": 109,
+              "students": 39
+            },
+            {
+              "year": 110,
+              "students": 44
+            },
+            {
+              "year": 111,
+              "students": 46
+            },
+            {
+              "year": 112,
+              "students": 44
+            },
+            {
+              "year": 113,
+              "students": 43
+            },
+            {
+              "year": 114,
+              "students": 31
             }
           ],
           "status": "正常",
@@ -564,6 +604,10 @@
             {
               "year": 113,
               "students": 28
+            },
+            {
+              "year": 114,
+              "students": 24
             }
           ],
           "status": "正常",
@@ -622,6 +666,10 @@
             {
               "year": 113,
               "students": 234
+            },
+            {
+              "year": 114,
+              "students": 219
             }
           ],
           "status": "正常",
@@ -672,56 +720,10 @@
             {
               "year": 113,
               "students": 200
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "140408",
-          "code": "140408",
-          "name": "國立成功商水",
-          "countyId": "臺東縣",
-          "townshipId": "臺東縣:成功鎮",
-          "educationLevel": "高中職",
-          "managementType": "公立",
-          "address": "臺東縣成功鎮太平路52號",
-          "phone": "(089)850011",
-          "website": "https://www.ckvs.ttct.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/140408/H/臺東縣/成功鎮/國立/特偏/無/",
-          "coordinates": {
-            "longitude": 121.381937,
-            "latitude": 23.104478
-          },
-          "yearlyStudents": [
+            },
             {
-              "year": 107,
+              "year": 114,
               "students": 200
-            },
-            {
-              "year": 108,
-              "students": 171
-            },
-            {
-              "year": 109,
-              "students": 170
-            },
-            {
-              "year": 110,
-              "students": 144
-            },
-            {
-              "year": 111,
-              "students": 130
-            },
-            {
-              "year": 112,
-              "students": 106
-            },
-            {
-              "year": 113,
-              "students": 104
             }
           ],
           "status": "正常",
@@ -772,6 +774,10 @@
             {
               "year": 113,
               "students": 101
+            },
+            {
+              "year": 114,
+              "students": 110
             }
           ],
           "status": "正常",
@@ -779,49 +785,53 @@
           "dataNotes": []
         },
         {
-          "id": "144664",
-          "code": "144664",
-          "name": "縣立信義國小",
+          "id": "140408",
+          "code": "140408",
+          "name": "國立成功商水",
           "countyId": "臺東縣",
           "townshipId": "臺東縣:成功鎮",
-          "educationLevel": "國小",
+          "educationLevel": "高中職",
           "managementType": "公立",
-          "address": "臺東縣成功鎮信義里都歷路58號",
-          "phone": "(089)841029",
-          "website": "https://syips.ttct.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/144664/C/臺東縣/成功鎮/縣市立/特偏/無/",
+          "address": "臺東縣成功鎮太平路52號",
+          "phone": "(089)850011",
+          "website": "https://www.ckvs.ttct.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/140408/H/臺東縣/成功鎮/國立/特偏/無/",
           "coordinates": {
-            "longitude": 121.33029,
-            "latitude": 23.026524
+            "longitude": 121.381937,
+            "latitude": 23.104478
           },
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 60
+              "students": 200
             },
             {
               "year": 108,
-              "students": 59
+              "students": 171
             },
             {
               "year": 109,
-              "students": 56
+              "students": 170
             },
             {
               "year": 110,
-              "students": 45
+              "students": 144
             },
             {
               "year": 111,
-              "students": 40
+              "students": 130
             },
             {
               "year": 112,
-              "students": 44
+              "students": 106
             },
             {
               "year": 113,
-              "students": 46
+              "students": 104
+            },
+            {
+              "year": 114,
+              "students": 104
             }
           ],
           "status": "正常",
@@ -872,6 +882,64 @@
             {
               "year": 113,
               "students": 37
+            },
+            {
+              "year": 114,
+              "students": 42
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "144664",
+          "code": "144664",
+          "name": "縣立信義國小",
+          "countyId": "臺東縣",
+          "townshipId": "臺東縣:成功鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺東縣成功鎮信義里都歷路58號",
+          "phone": "(089)841029",
+          "website": "https://syips.ttct.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/144664/C/臺東縣/成功鎮/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 121.33029,
+            "latitude": 23.026524
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 60
+            },
+            {
+              "year": 108,
+              "students": 59
+            },
+            {
+              "year": 109,
+              "students": 56
+            },
+            {
+              "year": 110,
+              "students": 45
+            },
+            {
+              "year": 111,
+              "students": 40
+            },
+            {
+              "year": 112,
+              "students": 44
+            },
+            {
+              "year": 113,
+              "students": 46
+            },
+            {
+              "year": 114,
+              "students": 40
             }
           ],
           "status": "正常",
@@ -922,6 +990,10 @@
             {
               "year": 113,
               "students": 34
+            },
+            {
+              "year": 114,
+              "students": 28
             }
           ],
           "status": "正常",
@@ -980,6 +1052,10 @@
             {
               "year": 113,
               "students": 146
+            },
+            {
+              "year": 114,
+              "students": 146
             }
           ],
           "status": "正常",
@@ -1030,6 +1106,10 @@
             {
               "year": 113,
               "students": 129
+            },
+            {
+              "year": 114,
+              "students": 123
             }
           ],
           "status": "正常",
@@ -1080,6 +1160,10 @@
             {
               "year": 113,
               "students": 56
+            },
+            {
+              "year": 114,
+              "students": 54
             }
           ],
           "status": "正常",
@@ -1129,6 +1213,10 @@
             },
             {
               "year": 113,
+              "students": 44
+            },
+            {
+              "year": 114,
               "students": 44
             }
           ],
@@ -1188,6 +1276,10 @@
             {
               "year": 113,
               "students": 153
+            },
+            {
+              "year": 114,
+              "students": 149
             }
           ],
           "status": "正常",
@@ -1238,6 +1330,10 @@
             {
               "year": 113,
               "students": 139
+            },
+            {
+              "year": 114,
+              "students": 138
             }
           ],
           "status": "正常",
@@ -1288,55 +1384,9 @@
             {
               "year": 113,
               "students": 90
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "144627",
-          "code": "144627",
-          "name": "縣立大南國小",
-          "countyId": "臺東縣",
-          "townshipId": "臺東縣:卑南鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺東縣卑南鄉東興村東園一街40號",
-          "phone": "(089)382402",
-          "website": "https://dnps.ttct.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/144627/C/臺東縣/卑南鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 121.04309,
-            "latitude": 22.764924
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 65
             },
             {
-              "year": 108,
-              "students": 71
-            },
-            {
-              "year": 109,
-              "students": 74
-            },
-            {
-              "year": 110,
-              "students": 76
-            },
-            {
-              "year": 111,
-              "students": 72
-            },
-            {
-              "year": 112,
-              "students": 77
-            },
-            {
-              "year": 113,
+              "year": 114,
               "students": 81
             }
           ],
@@ -1388,6 +1438,64 @@
             {
               "year": 113,
               "students": 67
+            },
+            {
+              "year": 114,
+              "students": 75
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "144627",
+          "code": "144627",
+          "name": "縣立大南國小",
+          "countyId": "臺東縣",
+          "townshipId": "臺東縣:卑南鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺東縣卑南鄉東興村東園一街40號",
+          "phone": "(089)382402",
+          "website": "https://dnps.ttct.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/144627/C/臺東縣/卑南鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.04309,
+            "latitude": 22.764924
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 65
+            },
+            {
+              "year": 108,
+              "students": 71
+            },
+            {
+              "year": 109,
+              "students": 74
+            },
+            {
+              "year": 110,
+              "students": 76
+            },
+            {
+              "year": 111,
+              "students": 72
+            },
+            {
+              "year": 112,
+              "students": 77
+            },
+            {
+              "year": 113,
+              "students": 81
+            },
+            {
+              "year": 114,
+              "students": 65
             }
           ],
           "status": "正常",
@@ -1437,6 +1545,10 @@
             },
             {
               "year": 113,
+              "students": 63
+            },
+            {
+              "year": 114,
               "students": 63
             }
           ],
@@ -1488,6 +1600,10 @@
             {
               "year": 113,
               "students": 59
+            },
+            {
+              "year": 114,
+              "students": 60
             }
           ],
           "status": "正常",
@@ -1538,6 +1654,10 @@
             {
               "year": 113,
               "students": 44
+            },
+            {
+              "year": 114,
+              "students": 40
             }
           ],
           "status": "正常",
@@ -1588,6 +1708,10 @@
             {
               "year": 113,
               "students": 39
+            },
+            {
+              "year": 114,
+              "students": 33
             }
           ],
           "status": "正常",
@@ -1646,6 +1770,10 @@
             {
               "year": 113,
               "students": 93
+            },
+            {
+              "year": 114,
+              "students": 81
             }
           ],
           "status": "正常",
@@ -1696,6 +1824,10 @@
             {
               "year": 113,
               "students": 67
+            },
+            {
+              "year": 114,
+              "students": 71
             }
           ],
           "status": "正常",
@@ -1746,6 +1878,10 @@
             {
               "year": 113,
               "students": 47
+            },
+            {
+              "year": 114,
+              "students": 52
             }
           ],
           "status": "正常",
@@ -1795,6 +1931,10 @@
             },
             {
               "year": 113,
+              "students": 39
+            },
+            {
+              "year": 114,
               "students": 39
             }
           ],
@@ -1846,6 +1986,10 @@
             {
               "year": 113,
               "students": 32
+            },
+            {
+              "year": 114,
+              "students": 27
             }
           ],
           "status": "正常",
@@ -1904,6 +2048,10 @@
             {
               "year": 113,
               "students": 76
+            },
+            {
+              "year": 114,
+              "students": 76
             }
           ],
           "status": "正常",
@@ -1953,6 +2101,10 @@
             },
             {
               "year": 113,
+              "students": 56
+            },
+            {
+              "year": 114,
               "students": 56
             }
           ],
@@ -2004,6 +2156,10 @@
             {
               "year": 113,
               "students": 52
+            },
+            {
+              "year": 114,
+              "students": 56
             }
           ],
           "status": "正常",
@@ -2054,6 +2210,10 @@
             {
               "year": 113,
               "students": 49
+            },
+            {
+              "year": 114,
+              "students": 45
             }
           ],
           "status": "正常",
@@ -2104,6 +2264,10 @@
             {
               "year": 113,
               "students": 40
+            },
+            {
+              "year": 114,
+              "students": 39
             }
           ],
           "status": "正常",
@@ -2154,6 +2318,10 @@
             {
               "year": 113,
               "students": 30
+            },
+            {
+              "year": 114,
+              "students": 24
             }
           ],
           "status": "正常",
@@ -2204,6 +2372,10 @@
             {
               "year": 113,
               "students": 11
+            },
+            {
+              "year": 114,
+              "students": 9
             }
           ],
           "status": "正常",
@@ -2262,56 +2434,10 @@
             {
               "year": 113,
               "students": 116
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "144676",
-          "code": "144676",
-          "name": "縣立嘉蘭國小",
-          "countyId": "臺東縣",
-          "townshipId": "臺東縣:金峰鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺東縣金峰鄉嘉蘭村3鄰132號",
-          "phone": "(089)751224",
-          "website": "https://jles.ttct.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/144676/C/臺東縣/金峰鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.961516,
-            "latitude": 22.595381
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 65
             },
             {
-              "year": 108,
-              "students": 65
-            },
-            {
-              "year": 109,
-              "students": 68
-            },
-            {
-              "year": 110,
-              "students": 74
-            },
-            {
-              "year": 111,
-              "students": 81
-            },
-            {
-              "year": 112,
-              "students": 74
-            },
-            {
-              "year": 113,
-              "students": 77
+              "year": 114,
+              "students": 108
             }
           ],
           "status": "正常",
@@ -2362,6 +2488,64 @@
             {
               "year": 113,
               "students": 73
+            },
+            {
+              "year": 114,
+              "students": 70
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "144676",
+          "code": "144676",
+          "name": "縣立嘉蘭國小",
+          "countyId": "臺東縣",
+          "townshipId": "臺東縣:金峰鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺東縣金峰鄉嘉蘭村3鄰132號",
+          "phone": "(089)751224",
+          "website": "https://jles.ttct.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/144676/C/臺東縣/金峰鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.961516,
+            "latitude": 22.595381
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 65
+            },
+            {
+              "year": 108,
+              "students": 65
+            },
+            {
+              "year": 109,
+              "students": 68
+            },
+            {
+              "year": 110,
+              "students": 74
+            },
+            {
+              "year": 111,
+              "students": 81
+            },
+            {
+              "year": 112,
+              "students": 74
+            },
+            {
+              "year": 113,
+              "students": 77
+            },
+            {
+              "year": 114,
+              "students": 68
             }
           ],
           "status": "正常",
@@ -2412,6 +2596,10 @@
             {
               "year": 113,
               "students": 43
+            },
+            {
+              "year": 114,
+              "students": 51
             }
           ],
           "status": "正常",
@@ -2426,56 +2614,6 @@
       "name": "長濱鄉",
       "countyId": "臺東縣",
       "schools": [
-        {
-          "id": "144669",
-          "code": "144669",
-          "name": "縣立長濱國小",
-          "countyId": "臺東縣",
-          "townshipId": "臺東縣:長濱鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺東縣長濱鄉長濱村五鄰長濱11號",
-          "phone": "(089)831038",
-          "website": "https://cbps.ttct.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/144669/C/臺東縣/長濱鄉/縣市立/極偏/無/",
-          "coordinates": {
-            "longitude": 121.451583,
-            "latitude": 23.316284
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 92
-            },
-            {
-              "year": 108,
-              "students": 80
-            },
-            {
-              "year": 109,
-              "students": 74
-            },
-            {
-              "year": 110,
-              "students": 78
-            },
-            {
-              "year": 111,
-              "students": 72
-            },
-            {
-              "year": 112,
-              "students": 76
-            },
-            {
-              "year": 113,
-              "students": 70
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
         {
           "id": "144518",
           "code": "144518",
@@ -2520,6 +2658,10 @@
             {
               "year": 113,
               "students": 64
+            },
+            {
+              "year": 114,
+              "students": 64
             }
           ],
           "status": "正常",
@@ -2527,49 +2669,53 @@
           "dataNotes": []
         },
         {
-          "id": "144671",
-          "code": "144671",
-          "name": "縣立寧埔國小",
+          "id": "144669",
+          "code": "144669",
+          "name": "縣立長濱國小",
           "countyId": "臺東縣",
           "townshipId": "臺東縣:長濱鄉",
           "educationLevel": "國小",
           "managementType": "公立",
-          "address": "臺東縣長濱鄉寧埔村十鄰41號",
-          "phone": "(089)801082",
-          "website": "https://nbps.ttct.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/144671/C/臺東縣/長濱鄉/縣市立/特偏/無/",
+          "address": "臺東縣長濱鄉長濱村五鄰長濱11號",
+          "phone": "(089)831038",
+          "website": "https://cbps.ttct.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/144669/C/臺東縣/長濱鄉/縣市立/極偏/無/",
           "coordinates": {
-            "longitude": 121.414149,
-            "latitude": 23.244328
+            "longitude": 121.451583,
+            "latitude": 23.316284
           },
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 45
+              "students": 92
             },
             {
               "year": 108,
-              "students": 29
+              "students": 80
             },
             {
               "year": 109,
-              "students": 33
+              "students": 74
             },
             {
               "year": 110,
-              "students": 29
+              "students": 78
             },
             {
               "year": 111,
-              "students": 29
+              "students": 72
             },
             {
               "year": 112,
-              "students": 27
+              "students": 76
             },
             {
               "year": 113,
-              "students": 22
+              "students": 70
+            },
+            {
+              "year": 114,
+              "students": 64
             }
           ],
           "status": "正常",
@@ -2620,6 +2766,64 @@
             {
               "year": 113,
               "students": 22
+            },
+            {
+              "year": 114,
+              "students": 26
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "144671",
+          "code": "144671",
+          "name": "縣立寧埔國小",
+          "countyId": "臺東縣",
+          "townshipId": "臺東縣:長濱鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺東縣長濱鄉寧埔村十鄰41號",
+          "phone": "(089)801082",
+          "website": "https://nbps.ttct.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/144671/C/臺東縣/長濱鄉/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 121.414149,
+            "latitude": 23.244328
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 45
+            },
+            {
+              "year": 108,
+              "students": 29
+            },
+            {
+              "year": 109,
+              "students": 33
+            },
+            {
+              "year": 110,
+              "students": 29
+            },
+            {
+              "year": 111,
+              "students": 29
+            },
+            {
+              "year": 112,
+              "students": 27
+            },
+            {
+              "year": 113,
+              "students": 22
+            },
+            {
+              "year": 114,
+              "students": 24
             }
           ],
           "status": "正常",
@@ -2670,6 +2874,10 @@
             {
               "year": 113,
               "students": 21
+            },
+            {
+              "year": 114,
+              "students": 20
             }
           ],
           "status": "正常",
@@ -2720,6 +2928,10 @@
             {
               "year": 113,
               "students": 19
+            },
+            {
+              "year": 114,
+              "students": 14
             }
           ],
           "status": "正常",
@@ -2778,6 +2990,10 @@
             {
               "year": 113,
               "students": 43
+            },
+            {
+              "year": 114,
+              "students": 41
             }
           ],
           "status": "正常",
@@ -2828,56 +3044,10 @@
             {
               "year": 113,
               "students": 43
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "144702",
-          "code": "144702",
-          "name": "縣立霧鹿國小",
-          "countyId": "臺東縣",
-          "townshipId": "臺東縣:海端鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺東縣海端鄉霧鹿村12號",
-          "phone": "(089)935053",
-          "website": "https://wulps.ttct.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/144702/C/臺東縣/海端鄉/縣市立/極偏/無/",
-          "coordinates": {
-            "longitude": 121.041551,
-            "latitude": 23.1693
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 51
             },
             {
-              "year": 108,
-              "students": 42
-            },
-            {
-              "year": 109,
-              "students": 38
-            },
-            {
-              "year": 110,
+              "year": 114,
               "students": 40
-            },
-            {
-              "year": 111,
-              "students": 43
-            },
-            {
-              "year": 112,
-              "students": 43
-            },
-            {
-              "year": 113,
-              "students": 38
             }
           ],
           "status": "正常",
@@ -2928,6 +3098,64 @@
             {
               "year": 113,
               "students": 37
+            },
+            {
+              "year": 114,
+              "students": 37
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "144702",
+          "code": "144702",
+          "name": "縣立霧鹿國小",
+          "countyId": "臺東縣",
+          "townshipId": "臺東縣:海端鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺東縣海端鄉霧鹿村12號",
+          "phone": "(089)935053",
+          "website": "https://wulps.ttct.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/144702/C/臺東縣/海端鄉/縣市立/極偏/無/",
+          "coordinates": {
+            "longitude": 121.041551,
+            "latitude": 23.1693
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 51
+            },
+            {
+              "year": 108,
+              "students": 42
+            },
+            {
+              "year": 109,
+              "students": 38
+            },
+            {
+              "year": 110,
+              "students": 40
+            },
+            {
+              "year": 111,
+              "students": 43
+            },
+            {
+              "year": 112,
+              "students": 43
+            },
+            {
+              "year": 113,
+              "students": 38
+            },
+            {
+              "year": 114,
+              "students": 36
             }
           ],
           "status": "正常",
@@ -2978,6 +3206,10 @@
             {
               "year": 113,
               "students": 34
+            },
+            {
+              "year": 114,
+              "students": 31
             }
           ],
           "status": "正常",
@@ -3028,55 +3260,9 @@
             {
               "year": 113,
               "students": 31
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "144698",
-          "code": "144698",
-          "name": "縣立錦屏國小",
-          "countyId": "臺東縣",
-          "townshipId": "臺東縣:海端鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺東縣海端鄉廣原村錦屏1號",
-          "phone": "(089)861762",
-          "website": "https://jpps.ttct.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/144698/C/臺東縣/海端鄉/縣市立/極偏/無/",
-          "coordinates": {
-            "longitude": 121.176144,
-            "latitude": 23.132223
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 43
             },
             {
-              "year": 108,
-              "students": 36
-            },
-            {
-              "year": 109,
-              "students": 39
-            },
-            {
-              "year": 110,
-              "students": 38
-            },
-            {
-              "year": 111,
-              "students": 33
-            },
-            {
-              "year": 112,
-              "students": 33
-            },
-            {
-              "year": 113,
+              "year": 114,
               "students": 30
             }
           ],
@@ -3128,6 +3314,64 @@
             {
               "year": 113,
               "students": 27
+            },
+            {
+              "year": 114,
+              "students": 30
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "144698",
+          "code": "144698",
+          "name": "縣立錦屏國小",
+          "countyId": "臺東縣",
+          "townshipId": "臺東縣:海端鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺東縣海端鄉廣原村錦屏1號",
+          "phone": "(089)861762",
+          "website": "https://jpps.ttct.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/144698/C/臺東縣/海端鄉/縣市立/極偏/無/",
+          "coordinates": {
+            "longitude": 121.176144,
+            "latitude": 23.132223
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 43
+            },
+            {
+              "year": 108,
+              "students": 36
+            },
+            {
+              "year": 109,
+              "students": 39
+            },
+            {
+              "year": 110,
+              "students": 38
+            },
+            {
+              "year": 111,
+              "students": 33
+            },
+            {
+              "year": 112,
+              "students": 33
+            },
+            {
+              "year": 113,
+              "students": 30
+            },
+            {
+              "year": 114,
+              "students": 29
             }
           ],
           "status": "正常",
@@ -3142,56 +3386,6 @@
       "name": "鹿野鄉",
       "countyId": "臺東縣",
       "schools": [
-        {
-          "id": "144646",
-          "code": "144646",
-          "name": "縣立瑞源國小",
-          "countyId": "臺東縣",
-          "townshipId": "臺東縣:鹿野鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺東縣鹿野鄉瑞源村文化路67號",
-          "phone": "(089)581064",
-          "website": "https://ryes.ttct.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/144646/C/臺東縣/鹿野鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 121.155542,
-            "latitude": 22.957797
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 90
-            },
-            {
-              "year": 108,
-              "students": 71
-            },
-            {
-              "year": 109,
-              "students": 73
-            },
-            {
-              "year": 110,
-              "students": 69
-            },
-            {
-              "year": 111,
-              "students": 64
-            },
-            {
-              "year": 112,
-              "students": 62
-            },
-            {
-              "year": 113,
-              "students": 58
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
         {
           "id": "144508",
           "code": "144508",
@@ -3236,6 +3430,64 @@
             {
               "year": 113,
               "students": 57
+            },
+            {
+              "year": 114,
+              "students": 57
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "144646",
+          "code": "144646",
+          "name": "縣立瑞源國小",
+          "countyId": "臺東縣",
+          "townshipId": "臺東縣:鹿野鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺東縣鹿野鄉瑞源村文化路67號",
+          "phone": "(089)581064",
+          "website": "https://ryes.ttct.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/144646/C/臺東縣/鹿野鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.155542,
+            "latitude": 22.957797
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 90
+            },
+            {
+              "year": 108,
+              "students": 71
+            },
+            {
+              "year": 109,
+              "students": 73
+            },
+            {
+              "year": 110,
+              "students": 69
+            },
+            {
+              "year": 111,
+              "students": 64
+            },
+            {
+              "year": 112,
+              "students": 62
+            },
+            {
+              "year": 113,
+              "students": 58
+            },
+            {
+              "year": 114,
+              "students": 56
             }
           ],
           "status": "正常",
@@ -3286,6 +3538,10 @@
             {
               "year": 113,
               "students": 54
+            },
+            {
+              "year": 114,
+              "students": 50
             }
           ],
           "status": "正常",
@@ -3336,6 +3592,10 @@
             {
               "year": 113,
               "students": 45
+            },
+            {
+              "year": 114,
+              "students": 39
             }
           ],
           "status": "正常",
@@ -3386,6 +3646,10 @@
             {
               "year": 113,
               "students": 38
+            },
+            {
+              "year": 114,
+              "students": 35
             }
           ],
           "status": "正常",
@@ -3436,6 +3700,10 @@
             {
               "year": 113,
               "students": 29
+            },
+            {
+              "year": 114,
+              "students": 25
             }
           ],
           "status": "正常",
@@ -3485,6 +3753,10 @@
             },
             {
               "year": 113,
+              "students": 15
+            },
+            {
+              "year": 114,
               "students": 15
             }
           ],
@@ -3544,6 +3816,10 @@
             {
               "year": 113,
               "students": 37
+            },
+            {
+              "year": 114,
+              "students": 34
             }
           ],
           "status": "正常",
@@ -3594,6 +3870,10 @@
             {
               "year": 113,
               "students": 33
+            },
+            {
+              "year": 114,
+              "students": 32
             }
           ],
           "status": "正常",
@@ -3644,6 +3924,10 @@
             {
               "year": 113,
               "students": 27
+            },
+            {
+              "year": 114,
+              "students": 28
             }
           ],
           "status": "正常",
@@ -3702,6 +3986,10 @@
             {
               "year": 113,
               "students": 64
+            },
+            {
+              "year": 114,
+              "students": 79
             }
           ],
           "status": "正常",
@@ -3751,6 +4039,10 @@
             },
             {
               "year": 113,
+              "students": 52
+            },
+            {
+              "year": 114,
               "students": 52
             }
           ],
@@ -3802,6 +4094,10 @@
             {
               "year": 113,
               "students": 51
+            },
+            {
+              "year": 114,
+              "students": 39
             }
           ],
           "status": "正常",
@@ -3860,6 +4156,10 @@
             {
               "year": 113,
               "students": 5048
+            },
+            {
+              "year": 114,
+              "students": 5048
             }
           ],
           "status": "正常",
@@ -3909,6 +4209,10 @@
             },
             {
               "year": 113,
+              "students": 1420
+            },
+            {
+              "year": 114,
               "students": 1420
             }
           ],
@@ -3960,6 +4264,10 @@
             {
               "year": 113,
               "students": 1015
+            },
+            {
+              "year": 114,
+              "students": 1004
             }
           ],
           "status": "正常",
@@ -4009,6 +4317,10 @@
             },
             {
               "year": 113,
+              "students": 851
+            },
+            {
+              "year": 114,
               "students": 851
             }
           ],
@@ -4060,6 +4372,10 @@
             {
               "year": 113,
               "students": 834
+            },
+            {
+              "year": 114,
+              "students": 834
             }
           ],
           "status": "正常",
@@ -4109,6 +4425,10 @@
             },
             {
               "year": 113,
+              "students": 806
+            },
+            {
+              "year": 114,
               "students": 806
             }
           ],
@@ -4160,6 +4480,10 @@
             {
               "year": 113,
               "students": 704
+            },
+            {
+              "year": 114,
+              "students": 698
             }
           ],
           "status": "正常",
@@ -4210,6 +4534,10 @@
             {
               "year": 113,
               "students": 692
+            },
+            {
+              "year": 114,
+              "students": 693
             }
           ],
           "status": "正常",
@@ -4259,6 +4587,10 @@
             },
             {
               "year": 113,
+              "students": 600
+            },
+            {
+              "year": 114,
               "students": 600
             }
           ],
@@ -4310,6 +4642,10 @@
             {
               "year": 113,
               "students": 597
+            },
+            {
+              "year": 114,
+              "students": 597
             }
           ],
           "status": "正常",
@@ -4360,6 +4696,10 @@
             {
               "year": 113,
               "students": 536
+            },
+            {
+              "year": 114,
+              "students": 504
             }
           ],
           "status": "正常",
@@ -4410,6 +4750,10 @@
             {
               "year": 113,
               "students": 422
+            },
+            {
+              "year": 114,
+              "students": 419
             }
           ],
           "status": "正常",
@@ -4459,6 +4803,10 @@
             },
             {
               "year": 113,
+              "students": 410
+            },
+            {
+              "year": 114,
               "students": 410
             }
           ],
@@ -4510,6 +4858,10 @@
             {
               "year": 113,
               "students": 407
+            },
+            {
+              "year": 114,
+              "students": 407
             }
           ],
           "status": "正常",
@@ -4560,6 +4912,10 @@
             {
               "year": 113,
               "students": 395
+            },
+            {
+              "year": 114,
+              "students": 385
             }
           ],
           "status": "正常",
@@ -4609,6 +4965,10 @@
             },
             {
               "year": 113,
+              "students": 362
+            },
+            {
+              "year": 114,
               "students": 362
             }
           ],
@@ -4660,6 +5020,10 @@
             {
               "year": 113,
               "students": 315
+            },
+            {
+              "year": 114,
+              "students": 310
             }
           ],
           "status": "正常",
@@ -4710,6 +5074,10 @@
             {
               "year": 113,
               "students": 297
+            },
+            {
+              "year": 114,
+              "students": 300
             }
           ],
           "status": "正常",
@@ -4760,6 +5128,10 @@
             {
               "year": 113,
               "students": 280
+            },
+            {
+              "year": 114,
+              "students": 268
             }
           ],
           "status": "正常",
@@ -4810,6 +5182,10 @@
             {
               "year": 113,
               "students": 263
+            },
+            {
+              "year": 114,
+              "students": 265
             }
           ],
           "status": "正常",
@@ -4859,6 +5235,10 @@
             },
             {
               "year": 113,
+              "students": 221
+            },
+            {
+              "year": 114,
               "students": 221
             }
           ],
@@ -4910,6 +5290,10 @@
             {
               "year": 113,
               "students": 221
+            },
+            {
+              "year": 114,
+              "students": 221
             }
           ],
           "status": "正常",
@@ -4960,6 +5344,10 @@
             {
               "year": 113,
               "students": 211
+            },
+            {
+              "year": 114,
+              "students": 219
             }
           ],
           "status": "正常",
@@ -5010,6 +5398,10 @@
             {
               "year": 113,
               "students": 179
+            },
+            {
+              "year": 114,
+              "students": 173
             }
           ],
           "status": "正常",
@@ -5060,6 +5452,10 @@
             {
               "year": 113,
               "students": 134
+            },
+            {
+              "year": 114,
+              "students": 141
             }
           ],
           "status": "正常",
@@ -5109,6 +5505,10 @@
             },
             {
               "year": 113,
+              "students": 116
+            },
+            {
+              "year": 114,
               "students": 116
             }
           ],
@@ -5160,6 +5560,10 @@
             {
               "year": 113,
               "students": 104
+            },
+            {
+              "year": 114,
+              "students": 105
             }
           ],
           "status": "正常",
@@ -5210,56 +5614,10 @@
             {
               "year": 113,
               "students": 90
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "144611",
-          "code": "144611",
-          "name": "縣立豐年國小",
-          "countyId": "臺東縣",
-          "townshipId": "臺東縣:臺東市",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺東縣臺東市中興路三段320號",
-          "phone": "(089)226733",
-          "website": "https://fnps.ttct.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/144611/C/臺東縣/臺東市/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.111454,
-            "latitude": 22.77223
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 62
             },
             {
-              "year": 108,
-              "students": 73
-            },
-            {
-              "year": 109,
-              "students": 72
-            },
-            {
-              "year": 110,
-              "students": 82
-            },
-            {
-              "year": 111,
-              "students": 80
-            },
-            {
-              "year": 112,
-              "students": 81
-            },
-            {
-              "year": 113,
-              "students": 82
+              "year": 114,
+              "students": 90
             }
           ],
           "status": "正常",
@@ -5310,56 +5668,10 @@
             {
               "year": 113,
               "students": 78
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "144614",
-          "code": "144614",
-          "name": "縣立南王國小",
-          "countyId": "臺東縣",
-          "townshipId": "臺東縣:臺東市",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺東縣臺東市南王里更生北路726號",
-          "phone": "(089)223203",
-          "website": "https://nwps.ttct.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/144614/C/臺東縣/臺東市/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.11424,
-            "latitude": 22.789012
-          },
-          "yearlyStudents": [
+            },
             {
-              "year": 107,
+              "year": 114,
               "students": 74
-            },
-            {
-              "year": 108,
-              "students": 68
-            },
-            {
-              "year": 109,
-              "students": 71
-            },
-            {
-              "year": 110,
-              "students": 67
-            },
-            {
-              "year": 111,
-              "students": 73
-            },
-            {
-              "year": 112,
-              "students": 64
-            },
-            {
-              "year": 113,
-              "students": 72
             }
           ],
           "status": "正常",
@@ -5410,6 +5722,10 @@
             {
               "year": 113,
               "students": 70
+            },
+            {
+              "year": 114,
+              "students": 69
             }
           ],
           "status": "正常",
@@ -5417,49 +5733,107 @@
           "dataNotes": []
         },
         {
-          "id": "144613",
-          "code": "144613",
-          "name": "縣立岩灣國小",
+          "id": "144611",
+          "code": "144611",
+          "name": "縣立豐年國小",
           "countyId": "臺東縣",
           "townshipId": "臺東縣:臺東市",
           "educationLevel": "國小",
           "managementType": "公立",
-          "address": "臺東縣臺東市岩灣路50巷401弄11號",
-          "phone": "(089)223415",
-          "website": "https://yups.ttct.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/144613/C/臺東縣/臺東市/縣市立/否/無/",
+          "address": "臺東縣臺東市中興路三段320號",
+          "phone": "(089)226733",
+          "website": "https://fnps.ttct.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/144611/C/臺東縣/臺東市/縣市立/否/無/",
           "coordinates": {
-            "longitude": 121.124868,
-            "latitude": 22.806236
+            "longitude": 121.111454,
+            "latitude": 22.77223
           },
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 56
-            },
-            {
-              "year": 108,
-              "students": 55
-            },
-            {
-              "year": 109,
               "students": 62
             },
             {
+              "year": 108,
+              "students": 73
+            },
+            {
+              "year": 109,
+              "students": 72
+            },
+            {
               "year": 110,
-              "students": 59
+              "students": 82
             },
             {
               "year": 111,
-              "students": 64
+              "students": 80
             },
             {
               "year": 112,
-              "students": 68
+              "students": 81
             },
             {
               "year": 113,
-              "students": 59
+              "students": 82
+            },
+            {
+              "year": 114,
+              "students": 69
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "144614",
+          "code": "144614",
+          "name": "縣立南王國小",
+          "countyId": "臺東縣",
+          "townshipId": "臺東縣:臺東市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺東縣臺東市南王里更生北路726號",
+          "phone": "(089)223203",
+          "website": "https://nwps.ttct.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/144614/C/臺東縣/臺東市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.11424,
+            "latitude": 22.789012
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 74
+            },
+            {
+              "year": 108,
+              "students": 68
+            },
+            {
+              "year": 109,
+              "students": 71
+            },
+            {
+              "year": 110,
+              "students": 67
+            },
+            {
+              "year": 111,
+              "students": 73
+            },
+            {
+              "year": 112,
+              "students": 64
+            },
+            {
+              "year": 113,
+              "students": 72
+            },
+            {
+              "year": 114,
+              "students": 66
             }
           ],
           "status": "正常",
@@ -5510,6 +5884,64 @@
             {
               "year": 113,
               "students": 54
+            },
+            {
+              "year": 114,
+              "students": 58
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "144613",
+          "code": "144613",
+          "name": "縣立岩灣國小",
+          "countyId": "臺東縣",
+          "townshipId": "臺東縣:臺東市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺東縣臺東市岩灣路50巷401弄11號",
+          "phone": "(089)223415",
+          "website": "https://yups.ttct.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/144613/C/臺東縣/臺東市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.124868,
+            "latitude": 22.806236
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 56
+            },
+            {
+              "year": 108,
+              "students": 55
+            },
+            {
+              "year": 109,
+              "students": 62
+            },
+            {
+              "year": 110,
+              "students": 59
+            },
+            {
+              "year": 111,
+              "students": 64
+            },
+            {
+              "year": 112,
+              "students": 68
+            },
+            {
+              "year": 113,
+              "students": 59
+            },
+            {
+              "year": 114,
+              "students": 49
             }
           ],
           "status": "正常",
@@ -5560,6 +5992,10 @@
             {
               "year": 113,
               "students": 42
+            },
+            {
+              "year": 114,
+              "students": 36
             }
           ],
           "status": "正常",
@@ -5610,6 +6046,10 @@
             {
               "year": 113,
               "students": 38
+            },
+            {
+              "year": 114,
+              "students": 35
             }
           ],
           "status": "正常",
@@ -5668,6 +6108,10 @@
             {
               "year": 113,
               "students": 313
+            },
+            {
+              "year": 114,
+              "students": 300
             }
           ],
           "status": "正常",
@@ -5717,6 +6161,10 @@
             },
             {
               "year": 113,
+              "students": 298
+            },
+            {
+              "year": 114,
               "students": 298
             }
           ],
@@ -5768,6 +6216,10 @@
             {
               "year": 113,
               "students": 181
+            },
+            {
+              "year": 114,
+              "students": 181
             }
           ],
           "status": "正常",
@@ -5818,6 +6270,10 @@
             {
               "year": 113,
               "students": 36
+            },
+            {
+              "year": 114,
+              "students": 32
             }
           ],
           "status": "正常",
@@ -5868,6 +6324,10 @@
             {
               "year": 113,
               "students": 27
+            },
+            {
+              "year": 114,
+              "students": 31
             }
           ],
           "status": "正常",
@@ -5918,6 +6378,10 @@
             {
               "year": 113,
               "students": 21
+            },
+            {
+              "year": 114,
+              "students": 24
             }
           ],
           "status": "正常",
@@ -5976,6 +6440,10 @@
             {
               "year": 113,
               "students": 115
+            },
+            {
+              "year": 114,
+              "students": 115
             }
           ],
           "status": "正常",
@@ -6026,6 +6494,10 @@
             {
               "year": 113,
               "students": 54
+            },
+            {
+              "year": 114,
+              "students": 49
             }
           ],
           "status": "正常",
@@ -6076,56 +6548,10 @@
             {
               "year": 113,
               "students": 52
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "144685",
-          "code": "144685",
-          "name": "縣立蘭嶼國小",
-          "countyId": "臺東縣",
-          "townshipId": "臺東縣:蘭嶼鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "臺東縣蘭嶼鄉紅頭村1之1號",
-          "phone": "(089)731576",
-          "website": "https://laps.ttct.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/144685/C/臺東縣/蘭嶼鄉/縣市立/特偏/無/",
-          "coordinates": {
-            "longitude": 121.56289,
-            "latitude": 22.019611
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 26
             },
             {
-              "year": 108,
-              "students": 27
-            },
-            {
-              "year": 109,
-              "students": 24
-            },
-            {
-              "year": 110,
-              "students": 29
-            },
-            {
-              "year": 111,
-              "students": 29
-            },
-            {
-              "year": 112,
-              "students": 34
-            },
-            {
-              "year": 113,
-              "students": 36
+              "year": 114,
+              "students": 47
             }
           ],
           "status": "正常",
@@ -6176,6 +6602,64 @@
             {
               "year": 113,
               "students": 33
+            },
+            {
+              "year": 114,
+              "students": 36
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "144685",
+          "code": "144685",
+          "name": "縣立蘭嶼國小",
+          "countyId": "臺東縣",
+          "townshipId": "臺東縣:蘭嶼鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "臺東縣蘭嶼鄉紅頭村1之1號",
+          "phone": "(089)731576",
+          "website": "https://laps.ttct.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/144685/C/臺東縣/蘭嶼鄉/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 121.56289,
+            "latitude": 22.019611
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 26
+            },
+            {
+              "year": 108,
+              "students": 27
+            },
+            {
+              "year": 109,
+              "students": 24
+            },
+            {
+              "year": 110,
+              "students": 29
+            },
+            {
+              "year": 111,
+              "students": 29
+            },
+            {
+              "year": 112,
+              "students": 34
+            },
+            {
+              "year": 113,
+              "students": 36
+            },
+            {
+              "year": 114,
+              "students": 27
             }
           ],
           "status": "正常",

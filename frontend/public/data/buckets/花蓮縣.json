@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-07T17:48:54.074Z",
+  "generatedAt": "2026-03-09T18:20:24.767Z",
   "county": {
     "id": "花蓮縣",
     "name": "花蓮縣",
@@ -13,6 +13,7 @@
         "geohash": "wsq2r",
         "precision": 5,
         "count": 16,
+        "totalStudents": 9853,
         "latitude": 23.983086,
         "longitude": 121.612625,
         "bounds": {
@@ -23,15 +24,15 @@
         },
         "topSchools": [
           {
-            "id": "154602",
-            "name": "縣立明義國小",
+            "id": "154505",
+            "name": "縣立花崗國中",
             "townshipName": "花蓮市",
-            "students": 1232,
+            "students": 1170,
             "status": "正常"
           },
           {
-            "id": "154505",
-            "name": "縣立花崗國中",
+            "id": "154602",
+            "name": "縣立明義國小",
             "townshipName": "花蓮市",
             "students": 1170,
             "status": "正常"
@@ -57,6 +58,7 @@
         "geohash": "wsq2q",
         "precision": 5,
         "count": 12,
+        "totalStudents": 11058,
         "latitude": 23.974486,
         "longitude": 121.582225,
         "bounds": {
@@ -84,14 +86,14 @@
             "id": "154619",
             "name": "縣立宜昌國小",
             "townshipName": "吉安鄉",
-            "students": 848,
+            "students": 841,
             "status": "正常"
           },
           {
             "id": "154620",
             "name": "縣立北昌國小",
             "townshipName": "吉安鄉",
-            "students": 824,
+            "students": 805,
             "status": "正常"
           }
         ]
@@ -101,6 +103,7 @@
         "geohash": "wsq2x",
         "precision": 5,
         "count": 8,
+        "totalStudents": 3415,
         "latitude": 24.010726,
         "longitude": 121.612297,
         "bounds": {
@@ -135,7 +138,7 @@
             "id": "154615",
             "name": "縣立北埔國小",
             "townshipName": "新城鄉",
-            "students": 495,
+            "students": 487,
             "status": "正常"
           }
         ]
@@ -145,6 +148,7 @@
         "geohash": "wsq2w",
         "precision": 5,
         "count": 7,
+        "totalStudents": 3682,
         "latitude": 24.000818,
         "longitude": 121.578131,
         "bounds": {
@@ -158,7 +162,7 @@
             "id": "151312",
             "name": "財團法人慈濟大學附中",
             "townshipName": "花蓮市",
-            "students": 1814,
+            "students": 1813,
             "status": "正常"
           },
           {
@@ -172,14 +176,14 @@
             "id": "154603",
             "name": "縣立明廉國小",
             "townshipName": "花蓮市",
-            "students": 474,
+            "students": 486,
             "status": "正常"
           },
           {
             "id": "154625",
             "name": "縣立太昌國小",
             "townshipName": "吉安鄉",
-            "students": 276,
+            "students": 239,
             "status": "正常"
           }
         ]
@@ -189,6 +193,7 @@
         "geohash": "wsnm3",
         "precision": 5,
         "count": 5,
+        "totalStudents": 248,
         "latitude": 23.437753,
         "longitude": 121.353578,
         "bounds": {
@@ -209,21 +214,21 @@
             "id": "154669",
             "name": "縣立三民國小",
             "townshipName": "玉里鎮",
-            "students": 64,
-            "status": "正常"
-          },
-          {
-            "id": "154666",
-            "name": "縣立松浦國小",
-            "townshipName": "玉里鎮",
-            "students": 38,
+            "students": 68,
             "status": "正常"
           },
           {
             "id": "154699",
             "name": "縣立崙山國小",
             "townshipName": "卓溪鄉",
-            "students": 37,
+            "students": 39,
+            "status": "正常"
+          },
+          {
+            "id": "154666",
+            "name": "縣立松浦國小",
+            "townshipName": "玉里鎮",
+            "students": 34,
             "status": "正常"
           }
         ]
@@ -233,6 +238,7 @@
         "geohash": "wsnqe",
         "precision": 5,
         "count": 4,
+        "totalStudents": 509,
         "latitude": 23.668025,
         "longitude": 121.431847,
         "bounds": {
@@ -260,14 +266,14 @@
             "id": "154643",
             "name": "縣立光復國小",
             "townshipName": "光復鄉",
-            "students": 127,
+            "students": 99,
             "status": "正常"
           },
           {
             "id": "154644",
             "name": "縣立太巴塱國小",
             "townshipName": "光復鄉",
-            "students": 76,
+            "students": 65,
             "status": "正常"
           }
         ]
@@ -277,6 +283,7 @@
         "geohash": "wsnhp",
         "precision": 5,
         "count": 4,
+        "totalStudents": 143,
         "latitude": 23.22568,
         "longitude": 121.274072,
         "bounds": {
@@ -297,21 +304,21 @@
             "id": "154680",
             "name": "縣立東竹國小",
             "townshipName": "富里鄉",
-            "students": 46,
+            "students": 44,
             "status": "正常"
           },
           {
             "id": "154704",
             "name": "縣立古風國小",
             "townshipName": "卓溪鄉",
-            "students": 33,
+            "students": 36,
             "status": "正常"
           },
           {
             "id": "154706",
             "name": "縣立卓楓國小",
             "townshipName": "卓溪鄉",
-            "students": 15,
+            "students": 13,
             "status": "正常"
           }
         ]
@@ -321,6 +328,7 @@
         "geohash": "wsnk2",
         "precision": 5,
         "count": 4,
+        "totalStudents": 128,
         "latitude": 23.26546,
         "longitude": 121.306521,
         "bounds": {
@@ -334,7 +342,7 @@
             "id": "154674",
             "name": "縣立東里國小",
             "townshipName": "富里鄉",
-            "students": 64,
+            "students": 61,
             "status": "正常"
           },
           {
@@ -348,14 +356,14 @@
             "id": "154676",
             "name": "縣立吳江國小",
             "townshipName": "富里鄉",
-            "students": 29,
+            "students": 22,
             "status": "正常"
           },
           {
             "id": "154679",
             "name": "縣立萬寧國小",
             "townshipName": "富里鄉",
-            "students": 17,
+            "students": 13,
             "status": "正常"
           }
         ]
@@ -365,6 +373,7 @@
         "geohash": "wsnr7",
         "precision": 5,
         "count": 4,
+        "totalStudents": 144,
         "latitude": 23.794972,
         "longitude": 121.450677,
         "bounds": {
@@ -378,21 +387,21 @@
             "id": "154696",
             "name": "縣立西林國小",
             "townshipName": "萬榮鄉",
-            "students": 62,
-            "status": "正常"
-          },
-          {
-            "id": "154642",
-            "name": "縣立林榮國小",
-            "townshipName": "鳳林鎮",
-            "students": 36,
+            "students": 60,
             "status": "正常"
           },
           {
             "id": "154694",
             "name": "縣立見晴國小",
             "townshipName": "萬榮鄉",
-            "students": 34,
+            "students": 38,
+            "status": "正常"
+          },
+          {
+            "id": "154642",
+            "name": "縣立林榮國小",
+            "townshipName": "鳳林鎮",
+            "students": 29,
             "status": "正常"
           },
           {
@@ -409,6 +418,7 @@
         "geohash": "wsnqf",
         "precision": 5,
         "count": 4,
+        "totalStudents": 157,
         "latitude": 23.709613,
         "longitude": 121.415407,
         "bounds": {
@@ -422,14 +432,14 @@
             "id": "154692",
             "name": "縣立萬榮國小",
             "townshipName": "萬榮鄉",
-            "students": 48,
+            "students": 49,
             "status": "正常"
           },
           {
             "id": "154693",
             "name": "縣立明利國小",
             "townshipName": "萬榮鄉",
-            "students": 41,
+            "students": 43,
             "status": "正常"
           },
           {
@@ -443,7 +453,7 @@
             "id": "154640",
             "name": "縣立長橋國小",
             "townshipName": "鳳林鎮",
-            "students": 28,
+            "students": 31,
             "status": "正常"
           }
         ]
@@ -453,6 +463,7 @@
         "geohash": "wsnrv",
         "precision": 5,
         "count": 4,
+        "totalStudents": 10487,
         "latitude": 23.891677,
         "longitude": 121.5286,
         "bounds": {
@@ -473,7 +484,7 @@
             "id": "154629",
             "name": "縣立志學國小",
             "townshipName": "壽豐鄉",
-            "students": 121,
+            "students": 108,
             "status": "正常"
           },
           {
@@ -487,7 +498,7 @@
             "id": "154630",
             "name": "縣立平和國小",
             "townshipName": "壽豐鄉",
-            "students": 56,
+            "students": 54,
             "status": "正常"
           }
         ]
@@ -497,6 +508,7 @@
         "geohash": "wsnrs",
         "precision": 5,
         "count": 4,
+        "totalStudents": 318,
         "latitude": 23.838277,
         "longitude": 121.493175,
         "bounds": {
@@ -507,15 +519,15 @@
         },
         "topSchools": [
           {
-            "id": "154511",
-            "name": "縣立壽豐國中",
+            "id": "154627",
+            "name": "縣立豐山國小",
             "townshipName": "壽豐鄉",
-            "students": 124,
+            "students": 132,
             "status": "正常"
           },
           {
-            "id": "154627",
-            "name": "縣立豐山國小",
+            "id": "154511",
+            "name": "縣立壽豐國中",
             "townshipName": "壽豐鄉",
             "students": 124,
             "status": "正常"
@@ -524,14 +536,14 @@
             "id": "154628",
             "name": "縣立豐裡國小",
             "townshipName": "壽豐鄉",
-            "students": 50,
+            "students": 46,
             "status": "正常"
           },
           {
             "id": "154631",
             "name": "縣立溪口國小",
             "townshipName": "壽豐鄉",
-            "students": 22,
+            "students": 16,
             "status": "正常"
           }
         ]
@@ -541,6 +553,7 @@
         "geohash": "wsnkb",
         "precision": 5,
         "count": 3,
+        "totalStudents": 907,
         "latitude": 23.342627,
         "longitude": 121.312437,
         "bounds": {
@@ -568,7 +581,7 @@
             "id": "154698",
             "name": "縣立卓溪國小",
             "townshipName": "卓溪鄉",
-            "students": 55,
+            "students": 58,
             "status": "正常"
           }
         ]
@@ -578,6 +591,7 @@
         "geohash": "wsnk8",
         "precision": 5,
         "count": 3,
+        "totalStudents": 644,
         "latitude": 23.325189,
         "longitude": 121.311971,
         "bounds": {
@@ -591,21 +605,21 @@
             "id": "154660",
             "name": "縣立玉里國小",
             "townshipName": "玉里鎮",
-            "students": 334,
+            "students": 326,
             "status": "正常"
           },
           {
             "id": "154661",
             "name": "縣立中城國小",
             "townshipName": "玉里鎮",
-            "students": 306,
+            "students": 295,
             "status": "正常"
           },
           {
             "id": "154662",
             "name": "縣立源城國小",
             "townshipName": "玉里鎮",
-            "students": 33,
+            "students": 23,
             "status": "正常"
           }
         ]
@@ -615,6 +629,7 @@
         "geohash": "wsnm1",
         "precision": 5,
         "count": 3,
+        "totalStudents": 89,
         "latitude": 23.398238,
         "longitude": 121.362302,
         "bounds": {
@@ -635,7 +650,7 @@
             "id": "154665",
             "name": "縣立高寮國小",
             "townshipName": "玉里鎮",
-            "students": 24,
+            "students": 28,
             "status": "正常"
           },
           {
@@ -652,6 +667,7 @@
         "geohash": "wsq3p",
         "precision": 5,
         "count": 3,
+        "totalStudents": 180,
         "latitude": 24.10111,
         "longitude": 121.612219,
         "bounds": {
@@ -665,21 +681,21 @@
             "id": "154681",
             "name": "縣立秀林國小",
             "townshipName": "秀林鄉",
-            "students": 79,
+            "students": 78,
             "status": "正常"
           },
           {
             "id": "154685",
             "name": "縣立景美國小",
             "townshipName": "秀林鄉",
-            "students": 46,
+            "students": 53,
             "status": "正常"
           },
           {
             "id": "154686",
             "name": "縣立三棧國小",
             "townshipName": "秀林鄉",
-            "students": 45,
+            "students": 49,
             "status": "正常"
           }
         ]
@@ -689,6 +705,7 @@
         "geohash": "wsq2z",
         "precision": 5,
         "count": 3,
+        "totalStudents": 423,
         "latitude": 24.048577,
         "longitude": 121.604198,
         "bounds": {
@@ -706,17 +723,17 @@
             "status": "正常"
           },
           {
-            "id": "154616",
-            "name": "縣立康樂國小",
-            "townshipName": "新城鄉",
-            "students": 75,
-            "status": "正常"
-          },
-          {
             "id": "154687",
             "name": "縣立佳民國小",
             "townshipName": "秀林鄉",
-            "students": 54,
+            "students": 57,
+            "status": "正常"
+          },
+          {
+            "id": "154616",
+            "name": "縣立康樂國小",
+            "townshipName": "新城鄉",
+            "students": 56,
             "status": "正常"
           }
         ]
@@ -726,6 +743,7 @@
         "geohash": "wsn5z",
         "precision": 5,
         "count": 3,
+        "totalStudents": 197,
         "latitude": 23.182951,
         "longitude": 121.248712,
         "bounds": {
@@ -736,6 +754,13 @@
         },
         "topSchools": [
           {
+            "id": "154672",
+            "name": "縣立富里國小",
+            "townshipName": "富里鄉",
+            "students": 89,
+            "status": "正常"
+          },
+          {
             "id": "154517",
             "name": "縣立富里國中",
             "townshipName": "富里鄉",
@@ -743,17 +768,10 @@
             "status": "正常"
           },
           {
-            "id": "154672",
-            "name": "縣立富里國小",
-            "townshipName": "富里鄉",
-            "students": 80,
-            "status": "正常"
-          },
-          {
             "id": "154675",
             "name": "縣立明里國小",
             "townshipName": "富里鄉",
-            "students": 28,
+            "students": 25,
             "status": "正常"
           }
         ]
@@ -763,6 +781,7 @@
         "geohash": "wsnm9",
         "precision": 5,
         "count": 3,
+        "totalStudents": 424,
         "latitude": 23.497279,
         "longitude": 121.364943,
         "bounds": {
@@ -776,7 +795,7 @@
             "id": "154649",
             "name": "縣立瑞穗國小",
             "townshipName": "瑞穗鄉",
-            "students": 237,
+            "students": 228,
             "status": "正常"
           },
           {
@@ -800,6 +819,7 @@
         "geohash": "wsnr5",
         "precision": 5,
         "count": 3,
+        "totalStudents": 447,
         "latitude": 23.746286,
         "longitude": 121.449328,
         "bounds": {
@@ -820,14 +840,14 @@
             "id": "154634",
             "name": "縣立鳳林國小",
             "townshipName": "鳳林鎮",
-            "students": 159,
+            "students": 168,
             "status": "正常"
           },
           {
             "id": "154637",
             "name": "縣立鳳仁國小",
             "townshipName": "鳳林鎮",
-            "students": 50,
+            "students": 57,
             "status": "正常"
           }
         ]
@@ -837,6 +857,7 @@
         "geohash": "wsnm0",
         "precision": 5,
         "count": 2,
+        "totalStudents": 88,
         "latitude": 23.393119,
         "longitude": 121.324641,
         "bounds": {
@@ -850,7 +871,7 @@
             "id": "154701",
             "name": "縣立太平國小",
             "townshipName": "卓溪鄉",
-            "students": 54,
+            "students": 51,
             "status": "正常"
           },
           {
@@ -867,6 +888,7 @@
         "geohash": "wsnm6",
         "precision": 5,
         "count": 2,
+        "totalStudents": 49,
         "latitude": 23.458979,
         "longitude": 121.399319,
         "bounds": {
@@ -880,14 +902,14 @@
             "id": "154667",
             "name": "縣立春日國小",
             "townshipName": "玉里鎮",
-            "students": 36,
+            "students": 32,
             "status": "正常"
           },
           {
             "id": "154668",
             "name": "縣立德武國小",
             "townshipName": "玉里鎮",
-            "students": 20,
+            "students": 17,
             "status": "正常"
           }
         ]
@@ -897,6 +919,7 @@
         "geohash": "wsnhr",
         "precision": 5,
         "count": 2,
+        "totalStudents": 51,
         "latitude": 23.281269,
         "longitude": 121.279492,
         "bounds": {
@@ -907,17 +930,17 @@
         },
         "topSchools": [
           {
-            "id": "154671",
-            "name": "縣立長良國小",
-            "townshipName": "玉里鎮",
-            "students": 24,
-            "status": "正常"
-          },
-          {
             "id": "154702",
             "name": "縣立卓清國小",
             "townshipName": "卓溪鄉",
-            "students": 24,
+            "students": 26,
+            "status": "正常"
+          },
+          {
+            "id": "154671",
+            "name": "縣立長良國小",
+            "townshipName": "玉里鎮",
+            "students": 25,
             "status": "正常"
           }
         ]
@@ -927,6 +950,7 @@
         "geohash": "wsq92",
         "precision": 5,
         "count": 2,
+        "totalStudents": 284,
         "latitude": 24.145072,
         "longitude": 121.651878,
         "bounds": {
@@ -940,14 +964,14 @@
             "id": "154614",
             "name": "縣立新城國小",
             "townshipName": "新城鄉",
-            "students": 205,
+            "students": 208,
             "status": "正常"
           },
           {
             "id": "154683",
             "name": "縣立崇德國小",
             "townshipName": "秀林鄉",
-            "students": 81,
+            "students": 76,
             "status": "正常"
           }
         ]
@@ -957,6 +981,7 @@
         "geohash": "wsq2h",
         "precision": 5,
         "count": 2,
+        "totalStudents": 81,
         "latitude": 23.934615,
         "longitude": 121.504296,
         "bounds": {
@@ -970,14 +995,14 @@
             "id": "154690",
             "name": "縣立銅蘭國小",
             "townshipName": "秀林鄉",
-            "students": 51,
+            "students": 48,
             "status": "正常"
           },
           {
             "id": "154691",
             "name": "縣立文蘭國小",
             "townshipName": "秀林鄉",
-            "students": 37,
+            "students": 33,
             "status": "正常"
           }
         ]
@@ -987,6 +1012,7 @@
         "geohash": "wsnmf",
         "precision": 5,
         "count": 2,
+        "totalStudents": 86,
         "latitude": 23.524594,
         "longitude": 121.384534,
         "bounds": {
@@ -1000,14 +1026,14 @@
             "id": "154650",
             "name": "縣立瑞北國小",
             "townshipName": "瑞穗鄉",
-            "students": 61,
+            "students": 67,
             "status": "正常"
           },
           {
             "id": "154652",
             "name": "縣立鶴岡國小",
             "townshipName": "瑞穗鄉",
-            "students": 21,
+            "students": 19,
             "status": "正常"
           }
         ]
@@ -1017,6 +1043,7 @@
         "geohash": "wsnq1",
         "precision": 5,
         "count": 2,
+        "totalStudents": 92,
         "latitude": 23.577976,
         "longitude": 121.368426,
         "bounds": {
@@ -1030,14 +1057,14 @@
             "id": "154654",
             "name": "縣立富源國小",
             "townshipName": "瑞穗鄉",
-            "students": 60,
+            "students": 59,
             "status": "正常"
           },
           {
             "id": "154695",
             "name": "縣立馬遠國小",
             "townshipName": "萬榮鄉",
-            "students": 37,
+            "students": 33,
             "status": "正常"
           }
         ]
@@ -1047,6 +1074,7 @@
         "geohash": "wsnrh",
         "precision": 5,
         "count": 2,
+        "totalStudents": 60,
         "latitude": 23.762892,
         "longitude": 121.46832,
         "bounds": {
@@ -1060,14 +1088,14 @@
             "id": "154636",
             "name": "縣立大榮國小",
             "townshipName": "鳳林鎮",
-            "students": 45,
+            "students": 43,
             "status": "正常"
           },
           {
             "id": "154638",
             "name": "縣立北林國小",
             "townshipName": "鳳林鎮",
-            "students": 22,
+            "students": 17,
             "status": "正常"
           }
         ]
@@ -1077,6 +1105,7 @@
         "geohash": "wsnk9",
         "precision": 5,
         "count": 1,
+        "totalStudents": 23,
         "latitude": 23.321141,
         "longitude": 121.339839,
         "bounds": {
@@ -1090,7 +1119,7 @@
             "id": "154663",
             "name": "縣立樂合國小",
             "townshipName": "玉里鎮",
-            "students": 33,
+            "students": 23,
             "status": "正常"
           }
         ]
@@ -1100,6 +1129,7 @@
         "geohash": "wsnqd",
         "precision": 5,
         "count": 1,
+        "totalStudents": 108,
         "latitude": 23.654676,
         "longitude": 121.419141,
         "bounds": {
@@ -1113,7 +1143,7 @@
             "id": "154648",
             "name": "縣立大進國小",
             "townshipName": "光復鄉",
-            "students": 113,
+            "students": 108,
             "status": "正常"
           }
         ]
@@ -1123,6 +1153,7 @@
         "geohash": "wsnq4",
         "precision": 5,
         "count": 1,
+        "totalStudents": 48,
         "latitude": 23.588672,
         "longitude": 121.385154,
         "bounds": {
@@ -1146,6 +1177,7 @@
         "geohash": "wsnq7",
         "precision": 5,
         "count": 1,
+        "totalStudents": 31,
         "latitude": 23.636328,
         "longitude": 121.430256,
         "bounds": {
@@ -1159,7 +1191,7 @@
             "id": "154707",
             "name": "縣立西富國小",
             "townshipName": "光復鄉",
-            "students": 26,
+            "students": 31,
             "status": "正常"
           }
         ]
@@ -1169,6 +1201,7 @@
         "geohash": "wsnq6",
         "precision": 5,
         "count": 1,
+        "totalStudents": 22,
         "latitude": 23.632332,
         "longitude": 121.398157,
         "bounds": {
@@ -1192,6 +1225,7 @@
         "geohash": "wsq2n",
         "precision": 5,
         "count": 1,
+        "totalStudents": 75,
         "latitude": 23.935659,
         "longitude": 121.578677,
         "bounds": {
@@ -1205,7 +1239,7 @@
             "id": "154622",
             "name": "縣立光華國小",
             "townshipName": "吉安鄉",
-            "students": 74,
+            "students": 75,
             "status": "正常"
           }
         ]
@@ -1215,6 +1249,7 @@
         "geohash": "wsq2j",
         "precision": 5,
         "count": 1,
+        "totalStudents": 55,
         "latitude": 23.948503,
         "longitude": 121.547509,
         "bounds": {
@@ -1228,7 +1263,7 @@
             "id": "154623",
             "name": "縣立南華國小",
             "townshipName": "吉安鄉",
-            "students": 50,
+            "students": 55,
             "status": "正常"
           }
         ]
@@ -1238,6 +1273,7 @@
         "geohash": "wsq3r",
         "precision": 5,
         "count": 1,
+        "totalStudents": 93,
         "latitude": 24.147547,
         "longitude": 121.629203,
         "bounds": {
@@ -1251,7 +1287,7 @@
             "id": "154682",
             "name": "縣立富世國小",
             "townshipName": "秀林鄉",
-            "students": 81,
+            "students": 93,
             "status": "正常"
           }
         ]
@@ -1261,6 +1297,7 @@
         "geohash": "wsqd6",
         "precision": 5,
         "count": 1,
+        "totalStudents": 80,
         "latitude": 24.307938,
         "longitude": 121.749109,
         "bounds": {
@@ -1274,7 +1311,7 @@
             "id": "154684",
             "name": "縣立和平國小",
             "townshipName": "秀林鄉",
-            "students": 75,
+            "students": 80,
             "status": "正常"
           }
         ]
@@ -1284,6 +1321,7 @@
         "geohash": "wsq2k",
         "precision": 5,
         "count": 1,
+        "totalStudents": 63,
         "latitude": 23.965489,
         "longitude": 121.493218,
         "bounds": {
@@ -1297,7 +1335,7 @@
             "id": "154688",
             "name": "縣立銅門國小",
             "townshipName": "秀林鄉",
-            "students": 66,
+            "students": 63,
             "status": "正常"
           }
         ]
@@ -1307,6 +1345,7 @@
         "geohash": "wsq3s",
         "precision": 5,
         "count": 1,
+        "totalStudents": 41,
         "latitude": 24.20707,
         "longitude": 121.482629,
         "bounds": {
@@ -1320,7 +1359,7 @@
             "id": "154710",
             "name": "縣立西寶國小",
             "townshipName": "秀林鄉",
-            "students": 46,
+            "students": 41,
             "status": "正常"
           }
         ]
@@ -1330,6 +1369,7 @@
         "geohash": "wsnm2",
         "precision": 5,
         "count": 1,
+        "totalStudents": 48,
         "latitude": 23.430957,
         "longitude": 121.320839,
         "bounds": {
@@ -1343,7 +1383,7 @@
             "id": "154700",
             "name": "縣立立山國小",
             "townshipName": "卓溪鄉",
-            "students": 49,
+            "students": 48,
             "status": "正常"
           }
         ]
@@ -1353,6 +1393,7 @@
         "geohash": "wsnhx",
         "precision": 5,
         "count": 1,
+        "totalStudents": 27,
         "latitude": 23.295847,
         "longitude": 121.267406,
         "bounds": {
@@ -1376,6 +1417,7 @@
         "geohash": "wsn5w",
         "precision": 5,
         "count": 1,
+        "totalStudents": 14,
         "latitude": 23.155146,
         "longitude": 121.226974,
         "bounds": {
@@ -1399,6 +1441,7 @@
         "geohash": "wsn5x",
         "precision": 5,
         "count": 1,
+        "totalStudents": 12,
         "latitude": 23.154804,
         "longitude": 121.266568,
         "bounds": {
@@ -1422,6 +1465,7 @@
         "geohash": "wsq90",
         "precision": 5,
         "count": 1,
+        "totalStudents": 206,
         "latitude": 24.125897,
         "longitude": 121.653248,
         "bounds": {
@@ -1445,6 +1489,7 @@
         "geohash": "wsnmd",
         "precision": 5,
         "count": 1,
+        "totalStudents": 29,
         "latitude": 23.493269,
         "longitude": 121.39071,
         "bounds": {
@@ -1458,7 +1503,7 @@
             "id": "154651",
             "name": "縣立瑞美國小",
             "townshipName": "瑞穗鄉",
-            "students": 34,
+            "students": 29,
             "status": "正常"
           }
         ]
@@ -1468,6 +1513,7 @@
         "geohash": "wsnme",
         "precision": 5,
         "count": 1,
+        "totalStudents": 7,
         "latitude": 23.497079,
         "longitude": 121.445636,
         "bounds": {
@@ -1481,7 +1527,7 @@
             "id": "154705",
             "name": "縣立奇美國小",
             "townshipName": "瑞穗鄉",
-            "students": 8,
+            "students": 7,
             "status": "正常"
           }
         ]
@@ -1491,6 +1537,7 @@
         "geohash": "wsnru",
         "precision": 5,
         "count": 1,
+        "totalStudents": 116,
         "latitude": 23.870349,
         "longitude": 121.507913,
         "bounds": {
@@ -1504,7 +1551,7 @@
             "id": "154626",
             "name": "縣立壽豐國小",
             "townshipName": "壽豐鄉",
-            "students": 123,
+            "students": 116,
             "status": "正常"
           }
         ]
@@ -1514,6 +1561,7 @@
         "geohash": "wsnry",
         "precision": 5,
         "count": 1,
+        "totalStudents": 27,
         "latitude": 23.867991,
         "longitude": 121.556351,
         "bounds": {
@@ -1527,7 +1575,7 @@
             "id": "154632",
             "name": "縣立月眉國小",
             "townshipName": "壽豐鄉",
-            "students": 25,
+            "students": 27,
             "status": "正常"
           }
         ]
@@ -1537,6 +1585,7 @@
         "geohash": "wsnrq",
         "precision": 5,
         "count": 1,
+        "totalStudents": 14,
         "latitude": 23.78264,
         "longitude": 121.563391,
         "bounds": {
@@ -1550,7 +1599,7 @@
             "id": "154633",
             "name": "縣立水璉國小",
             "townshipName": "壽豐鄉",
-            "students": 20,
+            "students": 14,
             "status": "正常"
           }
         ]
@@ -1560,6 +1609,7 @@
         "geohash": "wsnqj",
         "precision": 5,
         "count": 1,
+        "totalStudents": 53,
         "latitude": 23.598236,
         "longitude": 121.52093,
         "bounds": {
@@ -1573,7 +1623,7 @@
             "id": "154655",
             "name": "縣立豐濱國小",
             "townshipName": "豐濱鄉",
-            "students": 65,
+            "students": 53,
             "status": "正常"
           }
         ]
@@ -1583,6 +1633,7 @@
         "geohash": "wsnqm",
         "precision": 5,
         "count": 1,
+        "totalStudents": 43,
         "latitude": 23.601173,
         "longitude": 121.521437,
         "bounds": {
@@ -1602,10 +1653,35 @@
         ]
       },
       {
+        "id": "5-wsnms",
+        "geohash": "wsnms",
+        "precision": 5,
+        "count": 1,
+        "totalStudents": 19,
+        "latitude": 23.468534,
+        "longitude": 121.496872,
+        "bounds": {
+          "minLatitude": 23.468534,
+          "maxLatitude": 23.468534,
+          "minLongitude": 121.496872,
+          "maxLongitude": 121.496872
+        },
+        "topSchools": [
+          {
+            "id": "154656",
+            "name": "縣立港口國小",
+            "townshipName": "豐濱鄉",
+            "students": 19,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "5-wsnmk",
         "geohash": "wsnmk",
         "precision": 5,
         "count": 1,
+        "totalStudents": 18,
         "latitude": 23.461489,
         "longitude": 121.495436,
         "bounds": {
@@ -1629,6 +1705,7 @@
         "geohash": "wsnqt",
         "precision": 5,
         "count": 1,
+        "totalStudents": 16,
         "latitude": 23.651742,
         "longitude": 121.53616,
         "bounds": {
@@ -1642,29 +1719,6 @@
             "id": "154658",
             "name": "縣立新社國小",
             "townshipName": "豐濱鄉",
-            "students": 17,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "5-wsnms",
-        "geohash": "wsnms",
-        "precision": 5,
-        "count": 1,
-        "latitude": 23.468534,
-        "longitude": 121.496872,
-        "bounds": {
-          "minLatitude": 23.468534,
-          "maxLatitude": 23.468534,
-          "minLongitude": 121.496872,
-          "maxLongitude": 121.496872
-        },
-        "topSchools": [
-          {
-            "id": "154656",
-            "name": "縣立港口國小",
-            "townshipName": "豐濱鄉",
             "students": 16,
             "status": "正常"
           }
@@ -1677,6 +1731,7 @@
         "geohash": "wsq2rm",
         "precision": 6,
         "count": 3,
+        "totalStudents": 1318,
         "latitude": 23.97912,
         "longitude": 121.613967,
         "bounds": {
@@ -1697,14 +1752,14 @@
             "id": "154601",
             "name": "縣立明禮國小",
             "townshipName": "花蓮市",
-            "students": 220,
+            "students": 204,
             "status": "正常"
           },
           {
             "id": "154611",
             "name": "縣立北濱國小",
             "townshipName": "花蓮市",
-            "students": 112,
+            "students": 104,
             "status": "正常"
           }
         ]
@@ -1714,6 +1769,7 @@
         "geohash": "wsq2rx",
         "precision": 6,
         "count": 3,
+        "totalStudents": 1884,
         "latitude": 23.99197,
         "longitude": 121.624481,
         "bounds": {
@@ -1727,21 +1783,21 @@
             "id": "150601",
             "name": "國立東華大學附設實小",
             "townshipName": "花蓮市",
-            "students": 807,
+            "students": 798,
             "status": "正常"
           },
           {
             "id": "154612",
             "name": "縣立鑄強國小",
             "townshipName": "花蓮市",
-            "students": 543,
+            "students": 552,
             "status": "正常"
           },
           {
             "id": "151602",
             "name": "私立海星國小",
             "townshipName": "花蓮市",
-            "students": 514,
+            "students": 534,
             "status": "正常"
           }
         ]
@@ -1751,6 +1807,7 @@
         "geohash": "wsnk8w",
         "precision": 6,
         "count": 2,
+        "totalStudents": 621,
         "latitude": 23.326925,
         "longitude": 121.318364,
         "bounds": {
@@ -1764,14 +1821,14 @@
             "id": "154660",
             "name": "縣立玉里國小",
             "townshipName": "玉里鎮",
-            "students": 334,
+            "students": 326,
             "status": "正常"
           },
           {
             "id": "154661",
             "name": "縣立中城國小",
             "townshipName": "玉里鎮",
-            "students": 306,
+            "students": 295,
             "status": "正常"
           }
         ]
@@ -1781,6 +1838,7 @@
         "geohash": "wsnm33",
         "precision": 6,
         "count": 2,
+        "totalStudents": 164,
         "latitude": 23.431318,
         "longitude": 121.349102,
         "bounds": {
@@ -1801,7 +1859,7 @@
             "id": "154669",
             "name": "縣立三民國小",
             "townshipName": "玉里鎮",
-            "students": 64,
+            "students": 68,
             "status": "正常"
           }
         ]
@@ -1811,6 +1869,7 @@
         "geohash": "wsnqej",
         "precision": 6,
         "count": 2,
+        "totalStudents": 275,
         "latitude": 23.672294,
         "longitude": 121.42607,
         "bounds": {
@@ -1831,7 +1890,7 @@
             "id": "154643",
             "name": "縣立光復國小",
             "townshipName": "光復鄉",
-            "students": 127,
+            "students": 99,
             "status": "正常"
           }
         ]
@@ -1841,6 +1900,7 @@
         "geohash": "wsq2qg",
         "precision": 6,
         "count": 2,
+        "totalStudents": 1113,
         "latitude": 23.971829,
         "longitude": 121.591592,
         "bounds": {
@@ -1861,7 +1921,7 @@
             "id": "154711",
             "name": "縣立中原國小",
             "townshipName": "花蓮市",
-            "students": 485,
+            "students": 441,
             "status": "正常"
           }
         ]
@@ -1871,6 +1931,7 @@
         "geohash": "wsq2qf",
         "precision": 6,
         "count": 2,
+        "totalStudents": 456,
         "latitude": 23.964205,
         "longitude": 121.594446,
         "bounds": {
@@ -1891,7 +1952,7 @@
             "id": "154624",
             "name": "縣立化仁國小",
             "townshipName": "吉安鄉",
-            "students": 214,
+            "students": 216,
             "status": "正常"
           }
         ]
@@ -1901,6 +1962,7 @@
         "geohash": "wsq2r5",
         "precision": 6,
         "count": 2,
+        "totalStudents": 1035,
         "latitude": 23.971266,
         "longitude": 121.60296,
         "bounds": {
@@ -1914,14 +1976,14 @@
             "id": "154605",
             "name": "縣立中正國小",
             "townshipName": "花蓮市",
-            "students": 998,
+            "students": 991,
             "status": "正常"
           },
           {
             "id": "154606",
             "name": "縣立信義國小",
             "townshipName": "花蓮市",
-            "students": 50,
+            "students": 44,
             "status": "正常"
           }
         ]
@@ -1931,6 +1993,7 @@
         "geohash": "wsq2rn",
         "precision": 6,
         "count": 2,
+        "totalStudents": 1370,
         "latitude": 23.985089,
         "longitude": 121.600685,
         "bounds": {
@@ -1961,6 +2024,7 @@
         "geohash": "wsq2x8",
         "precision": 6,
         "count": 2,
+        "totalStudents": 1025,
         "latitude": 23.99828,
         "longitude": 121.623806,
         "bounds": {
@@ -1991,6 +2055,7 @@
         "geohash": "wsnk27",
         "precision": 6,
         "count": 2,
+        "totalStudents": 93,
         "latitude": 23.264577,
         "longitude": 121.302979,
         "bounds": {
@@ -2004,7 +2069,7 @@
             "id": "154674",
             "name": "縣立東里國小",
             "townshipName": "富里鄉",
-            "students": 64,
+            "students": 61,
             "status": "正常"
           },
           {
@@ -2021,6 +2086,7 @@
         "geohash": "wsq2xn",
         "precision": 6,
         "count": 2,
+        "totalStudents": 678,
         "latitude": 24.031295,
         "longitude": 121.604862,
         "bounds": {
@@ -2034,7 +2100,7 @@
             "id": "154615",
             "name": "縣立北埔國小",
             "townshipName": "新城鄉",
-            "students": 495,
+            "students": 487,
             "status": "正常"
           },
           {
@@ -2051,6 +2117,7 @@
         "geohash": "wsnm9v",
         "precision": 6,
         "count": 2,
+        "totalStudents": 385,
         "latitude": 23.498523,
         "longitude": 121.374675,
         "bounds": {
@@ -2064,7 +2131,7 @@
             "id": "154649",
             "name": "縣立瑞穗國小",
             "townshipName": "瑞穗鄉",
-            "students": 237,
+            "students": 228,
             "status": "正常"
           },
           {
@@ -2081,6 +2148,7 @@
         "geohash": "wsnqfg",
         "precision": 6,
         "count": 2,
+        "totalStudents": 77,
         "latitude": 23.706838,
         "longitude": 121.415097,
         "bounds": {
@@ -2094,7 +2162,7 @@
             "id": "154693",
             "name": "縣立明利國小",
             "townshipName": "萬榮鄉",
-            "students": 41,
+            "students": 43,
             "status": "正常"
           },
           {
@@ -2111,6 +2179,7 @@
         "geohash": "wsnrsu",
         "precision": 6,
         "count": 2,
+        "totalStudents": 170,
         "latitude": 23.843557,
         "longitude": 121.503958,
         "bounds": {
@@ -2131,7 +2200,7 @@
             "id": "154628",
             "name": "縣立豐裡國小",
             "townshipName": "壽豐鄉",
-            "students": 50,
+            "students": 46,
             "status": "正常"
           }
         ]
@@ -2141,6 +2210,7 @@
         "geohash": "wsnr5d",
         "precision": 6,
         "count": 2,
+        "totalStudents": 390,
         "latitude": 23.74387,
         "longitude": 121.448082,
         "bounds": {
@@ -2161,7 +2231,7 @@
             "id": "154634",
             "name": "縣立鳳林國小",
             "townshipName": "鳳林鎮",
-            "students": 159,
+            "students": 168,
             "status": "正常"
           }
         ]
@@ -2171,6 +2241,7 @@
         "geohash": "wsnkb8",
         "precision": 6,
         "count": 1,
+        "totalStudents": 470,
         "latitude": 23.335735,
         "longitude": 121.313434,
         "bounds": {
@@ -2194,6 +2265,7 @@
         "geohash": "wsnkbd",
         "precision": 6,
         "count": 1,
+        "totalStudents": 379,
         "latitude": 23.346371,
         "longitude": 121.320569,
         "bounds": {
@@ -2217,6 +2289,7 @@
         "geohash": "wsnm1y",
         "precision": 6,
         "count": 1,
+        "totalStudents": 46,
         "latitude": 23.417185,
         "longitude": 121.370685,
         "bounds": {
@@ -2236,33 +2309,11 @@
         ]
       },
       {
-        "id": "6-wsnm3c",
-        "geohash": "wsnm3c",
-        "precision": 6,
-        "count": 1,
-        "latitude": 23.42867,
-        "longitude": 121.373459,
-        "bounds": {
-          "minLatitude": 23.42867,
-          "maxLatitude": 23.42867,
-          "minLongitude": 121.373459,
-          "maxLongitude": 121.373459
-        },
-        "topSchools": [
-          {
-            "id": "154666",
-            "name": "縣立松浦國小",
-            "townshipName": "玉里鎮",
-            "students": 38,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "6-wsnm0b",
         "geohash": "wsnm0b",
         "precision": 6,
         "count": 1,
+        "totalStudents": 37,
         "latitude": 23.380106,
         "longitude": 121.328929,
         "bounds": {
@@ -2282,10 +2333,35 @@
         ]
       },
       {
+        "id": "6-wsnm3c",
+        "geohash": "wsnm3c",
+        "precision": 6,
+        "count": 1,
+        "totalStudents": 34,
+        "latitude": 23.42867,
+        "longitude": 121.373459,
+        "bounds": {
+          "minLatitude": 23.42867,
+          "maxLatitude": 23.42867,
+          "minLongitude": 121.373459,
+          "maxLongitude": 121.373459
+        },
+        "topSchools": [
+          {
+            "id": "154666",
+            "name": "縣立松浦國小",
+            "townshipName": "玉里鎮",
+            "students": 34,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "6-wsnm6m",
         "geohash": "wsnm6m",
         "precision": 6,
         "count": 1,
+        "totalStudents": 32,
         "latitude": 23.452049,
         "longitude": 121.393058,
         "bounds": {
@@ -2299,53 +2375,7 @@
             "id": "154667",
             "name": "縣立春日國小",
             "townshipName": "玉里鎮",
-            "students": 36,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "6-wsnk8j",
-        "geohash": "wsnk8j",
-        "precision": 6,
-        "count": 1,
-        "latitude": 23.321717,
-        "longitude": 121.299184,
-        "bounds": {
-          "minLatitude": 23.321717,
-          "maxLatitude": 23.321717,
-          "minLongitude": 121.299184,
-          "maxLongitude": 121.299184
-        },
-        "topSchools": [
-          {
-            "id": "154662",
-            "name": "縣立源城國小",
-            "townshipName": "玉里鎮",
-            "students": 33,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "6-wsnk9j",
-        "geohash": "wsnk9j",
-        "precision": 6,
-        "count": 1,
-        "latitude": 23.321141,
-        "longitude": 121.339839,
-        "bounds": {
-          "minLatitude": 23.321141,
-          "maxLatitude": 23.321141,
-          "minLongitude": 121.339839,
-          "maxLongitude": 121.339839
-        },
-        "topSchools": [
-          {
-            "id": "154663",
-            "name": "縣立樂合國小",
-            "townshipName": "玉里鎮",
-            "students": 33,
+            "students": 32,
             "status": "正常"
           }
         ]
@@ -2355,6 +2385,7 @@
         "geohash": "wsnm18",
         "precision": 6,
         "count": 1,
+        "totalStudents": 28,
         "latitude": 23.382961,
         "longitude": 121.359048,
         "bounds": {
@@ -2368,7 +2399,7 @@
             "id": "154665",
             "name": "縣立高寮國小",
             "townshipName": "玉里鎮",
-            "students": 24,
+            "students": 28,
             "status": "正常"
           }
         ]
@@ -2378,6 +2409,7 @@
         "geohash": "wsnhry",
         "precision": 6,
         "count": 1,
+        "totalStudents": 25,
         "latitude": 23.284531,
         "longitude": 121.286067,
         "bounds": {
@@ -2391,7 +2423,55 @@
             "id": "154671",
             "name": "縣立長良國小",
             "townshipName": "玉里鎮",
-            "students": 24,
+            "students": 25,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsnk8j",
+        "geohash": "wsnk8j",
+        "precision": 6,
+        "count": 1,
+        "totalStudents": 23,
+        "latitude": 23.321717,
+        "longitude": 121.299184,
+        "bounds": {
+          "minLatitude": 23.321717,
+          "maxLatitude": 23.321717,
+          "minLongitude": 121.299184,
+          "maxLongitude": 121.299184
+        },
+        "topSchools": [
+          {
+            "id": "154662",
+            "name": "縣立源城國小",
+            "townshipName": "玉里鎮",
+            "students": 23,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsnk9j",
+        "geohash": "wsnk9j",
+        "precision": 6,
+        "count": 1,
+        "totalStudents": 23,
+        "latitude": 23.321141,
+        "longitude": 121.339839,
+        "bounds": {
+          "minLatitude": 23.321141,
+          "maxLatitude": 23.321141,
+          "minLongitude": 121.339839,
+          "maxLongitude": 121.339839
+        },
+        "topSchools": [
+          {
+            "id": "154663",
+            "name": "縣立樂合國小",
+            "townshipName": "玉里鎮",
+            "students": 23,
             "status": "正常"
           }
         ]
@@ -2401,6 +2481,7 @@
         "geohash": "wsnm6x",
         "precision": 6,
         "count": 1,
+        "totalStudents": 17,
         "latitude": 23.465909,
         "longitude": 121.40558,
         "bounds": {
@@ -2414,7 +2495,7 @@
             "id": "154668",
             "name": "縣立德武國小",
             "townshipName": "玉里鎮",
-            "students": 20,
+            "students": 17,
             "status": "正常"
           }
         ]
@@ -2424,6 +2505,7 @@
         "geohash": "wsnm1d",
         "precision": 6,
         "count": 1,
+        "totalStudents": 15,
         "latitude": 23.394569,
         "longitude": 121.357174,
         "bounds": {
@@ -2447,6 +2529,7 @@
         "geohash": "wsnqeh",
         "precision": 6,
         "count": 1,
+        "totalStudents": 169,
         "latitude": 23.667482,
         "longitude": 121.427423,
         "bounds": {
@@ -2470,6 +2553,7 @@
         "geohash": "wsnqdf",
         "precision": 6,
         "count": 1,
+        "totalStudents": 108,
         "latitude": 23.654676,
         "longitude": 121.419141,
         "bounds": {
@@ -2483,7 +2567,7 @@
             "id": "154648",
             "name": "縣立大進國小",
             "townshipName": "光復鄉",
-            "students": 113,
+            "students": 108,
             "status": "正常"
           }
         ]
@@ -2493,6 +2577,7 @@
         "geohash": "wsnqee",
         "precision": 6,
         "count": 1,
+        "totalStudents": 65,
         "latitude": 23.660031,
         "longitude": 121.447825,
         "bounds": {
@@ -2506,7 +2591,7 @@
             "id": "154644",
             "name": "縣立太巴塱國小",
             "townshipName": "光復鄉",
-            "students": 76,
+            "students": 65,
             "status": "正常"
           }
         ]
@@ -2516,6 +2601,7 @@
         "geohash": "wsnq4n",
         "precision": 6,
         "count": 1,
+        "totalStudents": 48,
         "latitude": 23.588672,
         "longitude": 121.385154,
         "bounds": {
@@ -2539,6 +2625,7 @@
         "geohash": "wsnq7n",
         "precision": 6,
         "count": 1,
+        "totalStudents": 31,
         "latitude": 23.636328,
         "longitude": 121.430256,
         "bounds": {
@@ -2552,7 +2639,7 @@
             "id": "154707",
             "name": "縣立西富國小",
             "townshipName": "光復鄉",
-            "students": 26,
+            "students": 31,
             "status": "正常"
           }
         ]
@@ -2562,6 +2649,7 @@
         "geohash": "wsnq6q",
         "precision": 6,
         "count": 1,
+        "totalStudents": 22,
         "latitude": 23.632332,
         "longitude": 121.398157,
         "bounds": {
@@ -2585,6 +2673,7 @@
         "geohash": "wsq2qe",
         "precision": 6,
         "count": 1,
+        "totalStudents": 841,
         "latitude": 23.970865,
         "longitude": 121.585303,
         "bounds": {
@@ -2598,7 +2687,7 @@
             "id": "154619",
             "name": "縣立宜昌國小",
             "townshipName": "吉安鄉",
-            "students": 848,
+            "students": 841,
             "status": "正常"
           }
         ]
@@ -2608,6 +2697,7 @@
         "geohash": "wsq2qy",
         "precision": 6,
         "count": 1,
+        "totalStudents": 805,
         "latitude": 23.987238,
         "longitude": 121.591803,
         "bounds": {
@@ -2621,7 +2711,7 @@
             "id": "154620",
             "name": "縣立北昌國小",
             "townshipName": "吉安鄉",
-            "students": 824,
+            "students": 805,
             "status": "正常"
           }
         ]
@@ -2631,6 +2721,7 @@
         "geohash": "wsq2qh",
         "precision": 6,
         "count": 1,
+        "totalStudents": 343,
         "latitude": 23.973465,
         "longitude": 121.562844,
         "bounds": {
@@ -2644,30 +2735,7 @@
             "id": "154618",
             "name": "縣立吉安國小",
             "townshipName": "吉安鄉",
-            "students": 348,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "6-wsq2w2",
-        "geohash": "wsq2w2",
-        "precision": 6,
-        "count": 1,
-        "latitude": 23.994942,
-        "longitude": 121.564909,
-        "bounds": {
-          "minLatitude": 23.994942,
-          "maxLatitude": 23.994942,
-          "minLongitude": 121.564909,
-          "maxLongitude": 121.564909
-        },
-        "topSchools": [
-          {
-            "id": "154625",
-            "name": "縣立太昌國小",
-            "townshipName": "吉安鄉",
-            "students": 276,
+            "students": 343,
             "status": "正常"
           }
         ]
@@ -2677,6 +2745,7 @@
         "geohash": "wsq2q5",
         "precision": 6,
         "count": 1,
+        "totalStudents": 257,
         "latitude": 23.972107,
         "longitude": 121.558651,
         "bounds": {
@@ -2696,10 +2765,35 @@
         ]
       },
       {
+        "id": "6-wsq2w2",
+        "geohash": "wsq2w2",
+        "precision": 6,
+        "count": 1,
+        "totalStudents": 239,
+        "latitude": 23.994942,
+        "longitude": 121.564909,
+        "bounds": {
+          "minLatitude": 23.994942,
+          "maxLatitude": 23.994942,
+          "minLongitude": 121.564909,
+          "maxLongitude": 121.564909
+        },
+        "topSchools": [
+          {
+            "id": "154625",
+            "name": "縣立太昌國小",
+            "townshipName": "吉安鄉",
+            "students": 239,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "6-wsq2q6",
         "geohash": "wsq2q6",
         "precision": 6,
         "count": 1,
+        "totalStudents": 238,
         "latitude": 23.963137,
         "longitude": 121.569157,
         "bounds": {
@@ -2713,7 +2807,7 @@
             "id": "154621",
             "name": "縣立稻香國小",
             "townshipName": "吉安鄉",
-            "students": 248,
+            "students": 238,
             "status": "正常"
           }
         ]
@@ -2723,6 +2817,7 @@
         "geohash": "wsq2qn",
         "precision": 6,
         "count": 1,
+        "totalStudents": 206,
         "latitude": 23.983474,
         "longitude": 121.561239,
         "bounds": {
@@ -2746,6 +2841,7 @@
         "geohash": "wsq2nt",
         "precision": 6,
         "count": 1,
+        "totalStudents": 75,
         "latitude": 23.935659,
         "longitude": 121.578677,
         "bounds": {
@@ -2759,7 +2855,7 @@
             "id": "154622",
             "name": "縣立光華國小",
             "townshipName": "吉安鄉",
-            "students": 74,
+            "students": 75,
             "status": "正常"
           }
         ]
@@ -2769,6 +2865,7 @@
         "geohash": "wsq2jz",
         "precision": 6,
         "count": 1,
+        "totalStudents": 55,
         "latitude": 23.948503,
         "longitude": 121.547509,
         "bounds": {
@@ -2782,7 +2879,7 @@
             "id": "154623",
             "name": "縣立南華國小",
             "townshipName": "吉安鄉",
-            "students": 50,
+            "students": 55,
             "status": "正常"
           }
         ]
@@ -2792,6 +2889,7 @@
         "geohash": "wsq2w1",
         "precision": 6,
         "count": 1,
+        "totalStudents": 96,
         "latitude": 24.003308,
         "longitude": 121.55681,
         "bounds": {
@@ -2805,7 +2903,7 @@
             "id": "154689",
             "name": "縣立水源國小",
             "townshipName": "秀林鄉",
-            "students": 97,
+            "students": 96,
             "status": "正常"
           }
         ]
@@ -2815,6 +2913,7 @@
         "geohash": "wsq3re",
         "precision": 6,
         "count": 1,
+        "totalStudents": 93,
         "latitude": 24.147547,
         "longitude": 121.629203,
         "bounds": {
@@ -2828,53 +2927,7 @@
             "id": "154682",
             "name": "縣立富世國小",
             "townshipName": "秀林鄉",
-            "students": 81,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "6-wsq92q",
-        "geohash": "wsq92q",
-        "precision": 6,
-        "count": 1,
-        "latitude": 24.16208,
-        "longitude": 121.652408,
-        "bounds": {
-          "minLatitude": 24.16208,
-          "maxLatitude": 24.16208,
-          "minLongitude": 121.652408,
-          "maxLongitude": 121.652408
-        },
-        "topSchools": [
-          {
-            "id": "154683",
-            "name": "縣立崇德國小",
-            "townshipName": "秀林鄉",
-            "students": 81,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "6-wsq3pw",
-        "geohash": "wsq3pw",
-        "precision": 6,
-        "count": 1,
-        "latitude": 24.117672,
-        "longitude": 121.624231,
-        "bounds": {
-          "minLatitude": 24.117672,
-          "maxLatitude": 24.117672,
-          "minLongitude": 121.624231,
-          "maxLongitude": 121.624231
-        },
-        "topSchools": [
-          {
-            "id": "154681",
-            "name": "縣立秀林國小",
-            "townshipName": "秀林鄉",
-            "students": 79,
+            "students": 93,
             "status": "正常"
           }
         ]
@@ -2884,6 +2937,7 @@
         "geohash": "wsqd63",
         "precision": 6,
         "count": 1,
+        "totalStudents": 80,
         "latitude": 24.307938,
         "longitude": 121.749109,
         "bounds": {
@@ -2897,7 +2951,55 @@
             "id": "154684",
             "name": "縣立和平國小",
             "townshipName": "秀林鄉",
-            "students": 75,
+            "students": 80,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsq3pw",
+        "geohash": "wsq3pw",
+        "precision": 6,
+        "count": 1,
+        "totalStudents": 78,
+        "latitude": 24.117672,
+        "longitude": 121.624231,
+        "bounds": {
+          "minLatitude": 24.117672,
+          "maxLatitude": 24.117672,
+          "minLongitude": 121.624231,
+          "maxLongitude": 121.624231
+        },
+        "topSchools": [
+          {
+            "id": "154681",
+            "name": "縣立秀林國小",
+            "townshipName": "秀林鄉",
+            "students": 78,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsq92q",
+        "geohash": "wsq92q",
+        "precision": 6,
+        "count": 1,
+        "totalStudents": 76,
+        "latitude": 24.16208,
+        "longitude": 121.652408,
+        "bounds": {
+          "minLatitude": 24.16208,
+          "maxLatitude": 24.16208,
+          "minLongitude": 121.652408,
+          "maxLongitude": 121.652408
+        },
+        "topSchools": [
+          {
+            "id": "154683",
+            "name": "縣立崇德國小",
+            "townshipName": "秀林鄉",
+            "students": 76,
             "status": "正常"
           }
         ]
@@ -2907,6 +3009,7 @@
         "geohash": "wsq2kd",
         "precision": 6,
         "count": 1,
+        "totalStudents": 63,
         "latitude": 23.965489,
         "longitude": 121.493218,
         "bounds": {
@@ -2920,7 +3023,7 @@
             "id": "154688",
             "name": "縣立銅門國小",
             "townshipName": "秀林鄉",
-            "students": 66,
+            "students": 63,
             "status": "正常"
           }
         ]
@@ -2930,6 +3033,7 @@
         "geohash": "wsq2z4",
         "precision": 6,
         "count": 1,
+        "totalStudents": 57,
         "latitude": 24.053418,
         "longitude": 121.598873,
         "bounds": {
@@ -2943,30 +3047,7 @@
             "id": "154687",
             "name": "縣立佳民國小",
             "townshipName": "秀林鄉",
-            "students": 54,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "6-wsq2hz",
-        "geohash": "wsq2hz",
-        "precision": 6,
-        "count": 1,
-        "latitude": 23.947146,
-        "longitude": 121.507092,
-        "bounds": {
-          "minLatitude": 23.947146,
-          "maxLatitude": 23.947146,
-          "minLongitude": 121.507092,
-          "maxLongitude": 121.507092
-        },
-        "topSchools": [
-          {
-            "id": "154690",
-            "name": "縣立銅蘭國小",
-            "townshipName": "秀林鄉",
-            "students": 51,
+            "students": 57,
             "status": "正常"
           }
         ]
@@ -2976,6 +3057,7 @@
         "geohash": "wsq3p0",
         "precision": 6,
         "count": 1,
+        "totalStudents": 53,
         "latitude": 24.082817,
         "longitude": 121.605998,
         "bounds": {
@@ -2989,30 +3071,7 @@
             "id": "154685",
             "name": "縣立景美國小",
             "townshipName": "秀林鄉",
-            "students": 46,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "6-wsq3sq",
-        "geohash": "wsq3sq",
-        "precision": 6,
-        "count": 1,
-        "latitude": 24.20707,
-        "longitude": 121.482629,
-        "bounds": {
-          "minLatitude": 24.20707,
-          "maxLatitude": 24.20707,
-          "minLongitude": 121.482629,
-          "maxLongitude": 121.482629
-        },
-        "topSchools": [
-          {
-            "id": "154710",
-            "name": "縣立西寶國小",
-            "townshipName": "秀林鄉",
-            "students": 46,
+            "students": 53,
             "status": "正常"
           }
         ]
@@ -3022,6 +3081,7 @@
         "geohash": "wsq3p5",
         "precision": 6,
         "count": 1,
+        "totalStudents": 49,
         "latitude": 24.10284,
         "longitude": 121.606429,
         "bounds": {
@@ -3035,7 +3095,55 @@
             "id": "154686",
             "name": "縣立三棧國小",
             "townshipName": "秀林鄉",
-            "students": 45,
+            "students": 49,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsq2hz",
+        "geohash": "wsq2hz",
+        "precision": 6,
+        "count": 1,
+        "totalStudents": 48,
+        "latitude": 23.947146,
+        "longitude": 121.507092,
+        "bounds": {
+          "minLatitude": 23.947146,
+          "maxLatitude": 23.947146,
+          "minLongitude": 121.507092,
+          "maxLongitude": 121.507092
+        },
+        "topSchools": [
+          {
+            "id": "154690",
+            "name": "縣立銅蘭國小",
+            "townshipName": "秀林鄉",
+            "students": 48,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsq3sq",
+        "geohash": "wsq3sq",
+        "precision": 6,
+        "count": 1,
+        "totalStudents": 41,
+        "latitude": 24.20707,
+        "longitude": 121.482629,
+        "bounds": {
+          "minLatitude": 24.20707,
+          "maxLatitude": 24.20707,
+          "minLongitude": 121.482629,
+          "maxLongitude": 121.482629
+        },
+        "topSchools": [
+          {
+            "id": "154710",
+            "name": "縣立西寶國小",
+            "townshipName": "秀林鄉",
+            "students": 41,
             "status": "正常"
           }
         ]
@@ -3045,6 +3153,7 @@
         "geohash": "wsq2hf",
         "precision": 6,
         "count": 1,
+        "totalStudents": 33,
         "latitude": 23.922083,
         "longitude": 121.5015,
         "bounds": {
@@ -3058,7 +3167,7 @@
             "id": "154691",
             "name": "縣立文蘭國小",
             "townshipName": "秀林鄉",
-            "students": 37,
+            "students": 33,
             "status": "正常"
           }
         ]
@@ -3068,6 +3177,7 @@
         "geohash": "wsnkb3",
         "precision": 6,
         "count": 1,
+        "totalStudents": 58,
         "latitude": 23.345775,
         "longitude": 121.303308,
         "bounds": {
@@ -3081,7 +3191,7 @@
             "id": "154698",
             "name": "縣立卓溪國小",
             "townshipName": "卓溪鄉",
-            "students": 55,
+            "students": 58,
             "status": "正常"
           }
         ]
@@ -3091,6 +3201,7 @@
         "geohash": "wsnm0s",
         "precision": 6,
         "count": 1,
+        "totalStudents": 51,
         "latitude": 23.406132,
         "longitude": 121.320354,
         "bounds": {
@@ -3104,7 +3215,7 @@
             "id": "154701",
             "name": "縣立太平國小",
             "townshipName": "卓溪鄉",
-            "students": 54,
+            "students": 51,
             "status": "正常"
           }
         ]
@@ -3114,6 +3225,7 @@
         "geohash": "wsnm29",
         "precision": 6,
         "count": 1,
+        "totalStudents": 48,
         "latitude": 23.430957,
         "longitude": 121.320839,
         "bounds": {
@@ -3127,7 +3239,7 @@
             "id": "154700",
             "name": "縣立立山國小",
             "townshipName": "卓溪鄉",
-            "students": 49,
+            "students": 48,
             "status": "正常"
           }
         ]
@@ -3137,6 +3249,7 @@
         "geohash": "wsnm36",
         "precision": 6,
         "count": 1,
+        "totalStudents": 39,
         "latitude": 23.438508,
         "longitude": 121.344186,
         "bounds": {
@@ -3150,7 +3263,7 @@
             "id": "154699",
             "name": "縣立崙山國小",
             "townshipName": "卓溪鄉",
-            "students": 37,
+            "students": 39,
             "status": "正常"
           }
         ]
@@ -3160,6 +3273,7 @@
         "geohash": "wsnhp7",
         "precision": 6,
         "count": 1,
+        "totalStudents": 36,
         "latitude": 23.21967,
         "longitude": 121.264574,
         "bounds": {
@@ -3173,7 +3287,7 @@
             "id": "154704",
             "name": "縣立古風國小",
             "townshipName": "卓溪鄉",
-            "students": 33,
+            "students": 36,
             "status": "正常"
           }
         ]
@@ -3183,6 +3297,7 @@
         "geohash": "wsnhx8",
         "precision": 6,
         "count": 1,
+        "totalStudents": 27,
         "latitude": 23.295847,
         "longitude": 121.267406,
         "bounds": {
@@ -3206,6 +3321,7 @@
         "geohash": "wsnhrt",
         "precision": 6,
         "count": 1,
+        "totalStudents": 26,
         "latitude": 23.278006,
         "longitude": 121.272916,
         "bounds": {
@@ -3219,7 +3335,7 @@
             "id": "154702",
             "name": "縣立卓清國小",
             "townshipName": "卓溪鄉",
-            "students": 24,
+            "students": 26,
             "status": "正常"
           }
         ]
@@ -3229,6 +3345,7 @@
         "geohash": "wsnhpx",
         "precision": 6,
         "count": 1,
+        "totalStudents": 13,
         "latitude": 23.243793,
         "longitude": 121.271965,
         "bounds": {
@@ -3242,7 +3359,7 @@
             "id": "154706",
             "name": "縣立卓楓國小",
             "townshipName": "卓溪鄉",
-            "students": 15,
+            "students": 13,
             "status": "正常"
           }
         ]
@@ -3252,6 +3369,7 @@
         "geohash": "wsq2qz",
         "precision": 6,
         "count": 1,
+        "totalStudents": 5285,
         "latitude": 23.99301,
         "longitude": 121.590234,
         "bounds": {
@@ -3275,6 +3393,7 @@
         "geohash": "wsq2w3",
         "precision": 6,
         "count": 1,
+        "totalStudents": 1813,
         "latitude": 23.999901,
         "longitude": 121.574199,
         "bounds": {
@@ -3288,7 +3407,7 @@
             "id": "151312",
             "name": "財團法人慈濟大學附中",
             "townshipName": "花蓮市",
-            "students": 1814,
+            "students": 1813,
             "status": "正常"
           }
         ]
@@ -3298,6 +3417,7 @@
         "geohash": "wsq2qv",
         "precision": 6,
         "count": 1,
+        "totalStudents": 1514,
         "latitude": 23.978464,
         "longitude": 121.595388,
         "bounds": {
@@ -3317,33 +3437,11 @@
         ]
       },
       {
-        "id": "6-wsq2rj",
-        "geohash": "wsq2rj",
-        "precision": 6,
-        "count": 1,
-        "latitude": 23.978845,
-        "longitude": 121.603579,
-        "bounds": {
-          "minLatitude": 23.978845,
-          "maxLatitude": 23.978845,
-          "minLongitude": 121.603579,
-          "maxLongitude": 121.603579
-        },
-        "topSchools": [
-          {
-            "id": "154602",
-            "name": "縣立明義國小",
-            "townshipName": "花蓮市",
-            "students": 1232,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "6-wsq2rk",
         "geohash": "wsq2rk",
         "precision": 6,
         "count": 1,
+        "totalStudents": 1170,
         "latitude": 23.977485,
         "longitude": 121.613034,
         "bounds": {
@@ -3363,10 +3461,35 @@
         ]
       },
       {
+        "id": "6-wsq2rj",
+        "geohash": "wsq2rj",
+        "precision": 6,
+        "count": 1,
+        "totalStudents": 1170,
+        "latitude": 23.978845,
+        "longitude": 121.603579,
+        "bounds": {
+          "minLatitude": 23.978845,
+          "maxLatitude": 23.978845,
+          "minLongitude": 121.603579,
+          "maxLongitude": 121.603579
+        },
+        "topSchools": [
+          {
+            "id": "154602",
+            "name": "縣立明義國小",
+            "townshipName": "花蓮市",
+            "students": 1170,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "6-wsq2rw",
         "geohash": "wsq2rw",
         "precision": 6,
         "count": 1,
+        "totalStudents": 1049,
         "latitude": 23.986767,
         "longitude": 121.625946,
         "bounds": {
@@ -3390,6 +3513,7 @@
         "geohash": "wsq2wc",
         "precision": 6,
         "count": 1,
+        "totalStudents": 897,
         "latitude": 24.000477,
         "longitude": 121.591583,
         "bounds": {
@@ -3413,6 +3537,7 @@
         "geohash": "wsq2x0",
         "precision": 6,
         "count": 1,
+        "totalStudents": 517,
         "latitude": 23.997918,
         "longitude": 121.599076,
         "bounds": {
@@ -3436,6 +3561,7 @@
         "geohash": "wsq2wb",
         "precision": 6,
         "count": 1,
+        "totalStudents": 486,
         "latitude": 23.995008,
         "longitude": 121.594726,
         "bounds": {
@@ -3449,7 +3575,7 @@
             "id": "154603",
             "name": "縣立明廉國小",
             "townshipName": "花蓮市",
-            "students": 474,
+            "students": 486,
             "status": "正常"
           }
         ]
@@ -3459,6 +3585,7 @@
         "geohash": "wsq2rh",
         "precision": 6,
         "count": 1,
+        "totalStudents": 375,
         "latitude": 23.975646,
         "longitude": 121.598563,
         "bounds": {
@@ -3472,7 +3599,7 @@
             "id": "154610",
             "name": "縣立忠孝國小",
             "townshipName": "花蓮市",
-            "students": 427,
+            "students": 375,
             "status": "正常"
           }
         ]
@@ -3482,6 +3609,7 @@
         "geohash": "wsq2rp",
         "precision": 6,
         "count": 1,
+        "totalStudents": 267,
         "latitude": 23.992768,
         "longitude": 121.607236,
         "bounds": {
@@ -3495,7 +3623,7 @@
             "id": "154608",
             "name": "縣立中華國小",
             "townshipName": "花蓮市",
-            "students": 273,
+            "students": 267,
             "status": "正常"
           }
         ]
@@ -3505,6 +3633,7 @@
         "geohash": "wsq2rz",
         "precision": 6,
         "count": 1,
+        "totalStudents": 215,
         "latitude": 23.991878,
         "longitude": 121.631012,
         "bounds": {
@@ -3518,7 +3647,7 @@
             "id": "154604",
             "name": "縣立明恥國小",
             "townshipName": "花蓮市",
-            "students": 225,
+            "students": 215,
             "status": "正常"
           }
         ]
@@ -3528,6 +3657,7 @@
         "geohash": "wsq2w9",
         "precision": 6,
         "count": 1,
+        "totalStudents": 116,
         "latitude": 24.003002,
         "longitude": 121.584387,
         "bounds": {
@@ -3551,6 +3681,7 @@
         "geohash": "wsq2xd",
         "precision": 6,
         "count": 1,
+        "totalStudents": 110,
         "latitude": 24.006654,
         "longitude": 121.619077,
         "bounds": {
@@ -3564,7 +3695,7 @@
             "id": "154607",
             "name": "縣立復興國小",
             "townshipName": "花蓮市",
-            "students": 107,
+            "students": 110,
             "status": "正常"
           }
         ]
@@ -3574,6 +3705,7 @@
         "geohash": "wsq2wd",
         "precision": 6,
         "count": 1,
+        "totalStudents": 35,
         "latitude": 24.009088,
         "longitude": 121.580302,
         "bounds": {
@@ -3587,7 +3719,31 @@
             "id": "154613",
             "name": "縣立國福國小",
             "townshipName": "花蓮市",
-            "students": 37,
+            "students": 35,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsn5z4",
+        "geohash": "wsn5z4",
+        "precision": 6,
+        "count": 1,
+        "totalStudents": 89,
+        "latitude": 23.171858,
+        "longitude": 121.248329,
+        "bounds": {
+          "minLatitude": 23.171858,
+          "maxLatitude": 23.171858,
+          "minLongitude": 121.248329,
+          "maxLongitude": 121.248329
+        },
+        "topSchools": [
+          {
+            "id": "154672",
+            "name": "縣立富里國小",
+            "townshipName": "富里鄉",
+            "students": 89,
             "status": "正常"
           }
         ]
@@ -3597,6 +3753,7 @@
         "geohash": "wsn5z5",
         "precision": 6,
         "count": 1,
+        "totalStudents": 83,
         "latitude": 23.175772,
         "longitude": 121.249153,
         "bounds": {
@@ -3616,33 +3773,11 @@
         ]
       },
       {
-        "id": "6-wsn5z4",
-        "geohash": "wsn5z4",
-        "precision": 6,
-        "count": 1,
-        "latitude": 23.171858,
-        "longitude": 121.248329,
-        "bounds": {
-          "minLatitude": 23.171858,
-          "maxLatitude": 23.171858,
-          "minLongitude": 121.248329,
-          "maxLongitude": 121.248329
-        },
-        "topSchools": [
-          {
-            "id": "154672",
-            "name": "縣立富里國小",
-            "townshipName": "富里鄉",
-            "students": 80,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "6-wsnhpg",
         "geohash": "wsnhpg",
         "precision": 6,
         "count": 1,
+        "totalStudents": 50,
         "latitude": 23.225072,
         "longitude": 121.27996,
         "bounds": {
@@ -3666,6 +3801,7 @@
         "geohash": "wsnhpf",
         "precision": 6,
         "count": 1,
+        "totalStudents": 44,
         "latitude": 23.214187,
         "longitude": 121.279788,
         "bounds": {
@@ -3679,30 +3815,7 @@
             "id": "154680",
             "name": "縣立東竹國小",
             "townshipName": "富里鄉",
-            "students": 46,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "6-wsnk2v",
-        "geohash": "wsnk2v",
-        "precision": 6,
-        "count": 1,
-        "latitude": 23.278733,
-        "longitude": 121.322652,
-        "bounds": {
-          "minLatitude": 23.278733,
-          "maxLatitude": 23.278733,
-          "minLongitude": 121.322652,
-          "maxLongitude": 121.322652
-        },
-        "topSchools": [
-          {
-            "id": "154676",
-            "name": "縣立吳江國小",
-            "townshipName": "富里鄉",
-            "students": 29,
+            "students": 44,
             "status": "正常"
           }
         ]
@@ -3712,6 +3825,7 @@
         "geohash": "wsn5zp",
         "precision": 6,
         "count": 1,
+        "totalStudents": 25,
         "latitude": 23.201224,
         "longitude": 121.248654,
         "bounds": {
@@ -3725,30 +3839,31 @@
             "id": "154675",
             "name": "縣立明里國小",
             "townshipName": "富里鄉",
-            "students": 28,
+            "students": 25,
             "status": "正常"
           }
         ]
       },
       {
-        "id": "6-wsnk21",
-        "geohash": "wsnk21",
+        "id": "6-wsnk2v",
+        "geohash": "wsnk2v",
         "precision": 6,
         "count": 1,
-        "latitude": 23.253953,
-        "longitude": 121.297475,
+        "totalStudents": 22,
+        "latitude": 23.278733,
+        "longitude": 121.322652,
         "bounds": {
-          "minLatitude": 23.253953,
-          "maxLatitude": 23.253953,
-          "minLongitude": 121.297475,
-          "maxLongitude": 121.297475
+          "minLatitude": 23.278733,
+          "maxLatitude": 23.278733,
+          "minLongitude": 121.322652,
+          "maxLongitude": 121.322652
         },
         "topSchools": [
           {
-            "id": "154679",
-            "name": "縣立萬寧國小",
+            "id": "154676",
+            "name": "縣立吳江國小",
             "townshipName": "富里鄉",
-            "students": 17,
+            "students": 22,
             "status": "正常"
           }
         ]
@@ -3758,6 +3873,7 @@
         "geohash": "wsn5wx",
         "precision": 6,
         "count": 1,
+        "totalStudents": 14,
         "latitude": 23.155146,
         "longitude": 121.226974,
         "bounds": {
@@ -3777,10 +3893,35 @@
         ]
       },
       {
+        "id": "6-wsnk21",
+        "geohash": "wsnk21",
+        "precision": 6,
+        "count": 1,
+        "totalStudents": 13,
+        "latitude": 23.253953,
+        "longitude": 121.297475,
+        "bounds": {
+          "minLatitude": 23.253953,
+          "maxLatitude": 23.253953,
+          "minLongitude": 121.297475,
+          "maxLongitude": 121.297475
+        },
+        "topSchools": [
+          {
+            "id": "154679",
+            "name": "縣立萬寧國小",
+            "townshipName": "富里鄉",
+            "students": 13,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "6-wsn5xr",
         "geohash": "wsn5xr",
         "precision": 6,
         "count": 1,
+        "totalStudents": 12,
         "latitude": 23.154804,
         "longitude": 121.266568,
         "bounds": {
@@ -3804,6 +3945,7 @@
         "geohash": "wsq2x6",
         "precision": 6,
         "count": 1,
+        "totalStudents": 976,
         "latitude": 24.007369,
         "longitude": 121.613555,
         "bounds": {
@@ -3827,6 +3969,7 @@
         "geohash": "wsq2z0",
         "precision": 6,
         "count": 1,
+        "totalStudents": 310,
         "latitude": 24.039814,
         "longitude": 121.605964,
         "bounds": {
@@ -3846,10 +3989,35 @@
         ]
       },
       {
+        "id": "6-wsq920",
+        "geohash": "wsq920",
+        "precision": 6,
+        "count": 1,
+        "totalStudents": 208,
+        "latitude": 24.128063,
+        "longitude": 121.651348,
+        "bounds": {
+          "minLatitude": 24.128063,
+          "maxLatitude": 24.128063,
+          "minLongitude": 121.651348,
+          "maxLongitude": 121.651348
+        },
+        "topSchools": [
+          {
+            "id": "154614",
+            "name": "縣立新城國小",
+            "townshipName": "新城鄉",
+            "students": 208,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "6-wsq90r",
         "geohash": "wsq90r",
         "precision": 6,
         "count": 1,
+        "totalStudents": 206,
         "latitude": 24.125897,
         "longitude": 121.653248,
         "bounds": {
@@ -3869,33 +4037,11 @@
         ]
       },
       {
-        "id": "6-wsq920",
-        "geohash": "wsq920",
-        "precision": 6,
-        "count": 1,
-        "latitude": 24.128063,
-        "longitude": 121.651348,
-        "bounds": {
-          "minLatitude": 24.128063,
-          "maxLatitude": 24.128063,
-          "minLongitude": 121.651348,
-          "maxLongitude": 121.651348
-        },
-        "topSchools": [
-          {
-            "id": "154614",
-            "name": "縣立新城國小",
-            "townshipName": "新城鄉",
-            "students": 205,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "6-wsq2x7",
         "geohash": "wsq2x7",
         "precision": 6,
         "count": 1,
+        "totalStudents": 109,
         "latitude": 24.014717,
         "longitude": 121.609332,
         "bounds": {
@@ -3909,7 +4055,7 @@
             "id": "154617",
             "name": "縣立嘉里國小",
             "townshipName": "新城鄉",
-            "students": 87,
+            "students": 109,
             "status": "正常"
           }
         ]
@@ -3919,6 +4065,7 @@
         "geohash": "wsq2z6",
         "precision": 6,
         "count": 1,
+        "totalStudents": 56,
         "latitude": 24.052498,
         "longitude": 121.607757,
         "bounds": {
@@ -3932,7 +4079,7 @@
             "id": "154616",
             "name": "縣立康樂國小",
             "townshipName": "新城鄉",
-            "students": 75,
+            "students": 56,
             "status": "正常"
           }
         ]
@@ -3942,6 +4089,7 @@
         "geohash": "wsnmf4",
         "precision": 6,
         "count": 1,
+        "totalStudents": 67,
         "latitude": 23.525593,
         "longitude": 121.378632,
         "bounds": {
@@ -3955,7 +4103,7 @@
             "id": "154650",
             "name": "縣立瑞北國小",
             "townshipName": "瑞穗鄉",
-            "students": 61,
+            "students": 67,
             "status": "正常"
           }
         ]
@@ -3965,6 +4113,7 @@
         "geohash": "wsnq1u",
         "precision": 6,
         "count": 1,
+        "totalStudents": 59,
         "latitude": 23.578788,
         "longitude": 121.375538,
         "bounds": {
@@ -3978,7 +4127,7 @@
             "id": "154654",
             "name": "縣立富源國小",
             "townshipName": "瑞穗鄉",
-            "students": 60,
+            "students": 59,
             "status": "正常"
           }
         ]
@@ -3988,6 +4137,7 @@
         "geohash": "wsnmdk",
         "precision": 6,
         "count": 1,
+        "totalStudents": 29,
         "latitude": 23.493269,
         "longitude": 121.39071,
         "bounds": {
@@ -4001,7 +4151,7 @@
             "id": "154651",
             "name": "縣立瑞美國小",
             "townshipName": "瑞穗鄉",
-            "students": 34,
+            "students": 29,
             "status": "正常"
           }
         ]
@@ -4011,6 +4161,7 @@
         "geohash": "wsnmf6",
         "precision": 6,
         "count": 1,
+        "totalStudents": 19,
         "latitude": 23.523594,
         "longitude": 121.390436,
         "bounds": {
@@ -4024,7 +4175,7 @@
             "id": "154652",
             "name": "縣立鶴岡國小",
             "townshipName": "瑞穗鄉",
-            "students": 21,
+            "students": 19,
             "status": "正常"
           }
         ]
@@ -4034,6 +4185,7 @@
         "geohash": "wsnm3q",
         "precision": 6,
         "count": 1,
+        "totalStudents": 11,
         "latitude": 23.458949,
         "longitude": 121.352042,
         "bounds": {
@@ -4047,7 +4199,7 @@
             "id": "154653",
             "name": "縣立舞鶴國小",
             "townshipName": "瑞穗鄉",
-            "students": 9,
+            "students": 11,
             "status": "正常"
           }
         ]
@@ -4057,6 +4209,7 @@
         "geohash": "wsnmet",
         "precision": 6,
         "count": 1,
+        "totalStudents": 7,
         "latitude": 23.497079,
         "longitude": 121.445636,
         "bounds": {
@@ -4070,7 +4223,7 @@
             "id": "154705",
             "name": "縣立奇美國小",
             "townshipName": "瑞穗鄉",
-            "students": 8,
+            "students": 7,
             "status": "正常"
           }
         ]
@@ -4080,6 +4233,7 @@
         "geohash": "wsnr7q",
         "precision": 6,
         "count": 1,
+        "totalStudents": 60,
         "latitude": 23.811322,
         "longitude": 121.440406,
         "bounds": {
@@ -4093,7 +4247,7 @@
             "id": "154696",
             "name": "縣立西林國小",
             "townshipName": "萬榮鄉",
-            "students": 62,
+            "students": 60,
             "status": "正常"
           }
         ]
@@ -4103,6 +4257,7 @@
         "geohash": "wsnqfv",
         "precision": 6,
         "count": 1,
+        "totalStudents": 49,
         "latitude": 23.715447,
         "longitude": 121.411335,
         "bounds": {
@@ -4116,7 +4271,7 @@
             "id": "154692",
             "name": "縣立萬榮國小",
             "townshipName": "萬榮鄉",
-            "students": 48,
+            "students": 49,
             "status": "正常"
           }
         ]
@@ -4126,6 +4281,7 @@
         "geohash": "wsnm9m",
         "precision": 6,
         "count": 1,
+        "totalStudents": 39,
         "latitude": 23.494791,
         "longitude": 121.345478,
         "bounds": {
@@ -4145,33 +4301,11 @@
         ]
       },
       {
-        "id": "6-wsnq1s",
-        "geohash": "wsnq1s",
-        "precision": 6,
-        "count": 1,
-        "latitude": 23.577165,
-        "longitude": 121.361315,
-        "bounds": {
-          "minLatitude": 23.577165,
-          "maxLatitude": 23.577165,
-          "minLongitude": 121.361315,
-          "maxLongitude": 121.361315
-        },
-        "topSchools": [
-          {
-            "id": "154695",
-            "name": "縣立馬遠國小",
-            "townshipName": "萬榮鄉",
-            "students": 37,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "6-wsnr79",
         "geohash": "wsnr79",
         "precision": 6,
         "count": 1,
+        "totalStudents": 38,
         "latitude": 23.783935,
         "longitude": 121.451884,
         "bounds": {
@@ -4185,7 +4319,31 @@
             "id": "154694",
             "name": "縣立見晴國小",
             "townshipName": "萬榮鄉",
-            "students": 34,
+            "students": 38,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsnq1s",
+        "geohash": "wsnq1s",
+        "precision": 6,
+        "count": 1,
+        "totalStudents": 33,
+        "latitude": 23.577165,
+        "longitude": 121.361315,
+        "bounds": {
+          "minLatitude": 23.577165,
+          "maxLatitude": 23.577165,
+          "minLongitude": 121.361315,
+          "maxLongitude": 121.361315
+        },
+        "topSchools": [
+          {
+            "id": "154695",
+            "name": "縣立馬遠國小",
+            "townshipName": "萬榮鄉",
+            "students": 33,
             "status": "正常"
           }
         ]
@@ -4195,6 +4353,7 @@
         "geohash": "wsnrvv",
         "precision": 6,
         "count": 1,
+        "totalStudents": 10266,
         "latitude": 23.892308,
         "longitude": 121.544414,
         "bounds": {
@@ -4218,6 +4377,7 @@
         "geohash": "wsnrst",
         "precision": 6,
         "count": 1,
+        "totalStudents": 132,
         "latitude": 23.846472,
         "longitude": 121.491717,
         "bounds": {
@@ -4231,7 +4391,7 @@
             "id": "154627",
             "name": "縣立豐山國小",
             "townshipName": "壽豐鄉",
-            "students": 124,
+            "students": 132,
             "status": "正常"
           }
         ]
@@ -4241,6 +4401,7 @@
         "geohash": "wsnruc",
         "precision": 6,
         "count": 1,
+        "totalStudents": 116,
         "latitude": 23.870349,
         "longitude": 121.507913,
         "bounds": {
@@ -4254,7 +4415,7 @@
             "id": "154626",
             "name": "縣立壽豐國小",
             "townshipName": "壽豐鄉",
-            "students": 123,
+            "students": 116,
             "status": "正常"
           }
         ]
@@ -4264,6 +4425,7 @@
         "geohash": "wsnrvx",
         "precision": 6,
         "count": 1,
+        "totalStudents": 108,
         "latitude": 23.904967,
         "longitude": 121.531801,
         "bounds": {
@@ -4277,7 +4439,7 @@
             "id": "154629",
             "name": "縣立志學國小",
             "townshipName": "壽豐鄉",
-            "students": 121,
+            "students": 108,
             "status": "正常"
           }
         ]
@@ -4287,6 +4449,7 @@
         "geohash": "wsnrvh",
         "precision": 6,
         "count": 1,
+        "totalStudents": 59,
         "latitude": 23.885381,
         "longitude": 121.518818,
         "bounds": {
@@ -4310,6 +4473,7 @@
         "geohash": "wsnrv5",
         "precision": 6,
         "count": 1,
+        "totalStudents": 54,
         "latitude": 23.884051,
         "longitude": 121.519366,
         "bounds": {
@@ -4323,7 +4487,7 @@
             "id": "154630",
             "name": "縣立平和國小",
             "townshipName": "壽豐鄉",
-            "students": 56,
+            "students": 54,
             "status": "正常"
           }
         ]
@@ -4333,6 +4497,7 @@
         "geohash": "wsnry1",
         "precision": 6,
         "count": 1,
+        "totalStudents": 27,
         "latitude": 23.867991,
         "longitude": 121.556351,
         "bounds": {
@@ -4346,7 +4511,7 @@
             "id": "154632",
             "name": "縣立月眉國小",
             "townshipName": "壽豐鄉",
-            "students": 25,
+            "students": 27,
             "status": "正常"
           }
         ]
@@ -4356,6 +4521,7 @@
         "geohash": "wsnrs0",
         "precision": 6,
         "count": 1,
+        "totalStudents": 16,
         "latitude": 23.819523,
         "longitude": 121.473066,
         "bounds": {
@@ -4369,7 +4535,7 @@
             "id": "154631",
             "name": "縣立溪口國小",
             "townshipName": "壽豐鄉",
-            "students": 22,
+            "students": 16,
             "status": "正常"
           }
         ]
@@ -4379,6 +4545,7 @@
         "geohash": "wsnrq1",
         "precision": 6,
         "count": 1,
+        "totalStudents": 14,
         "latitude": 23.78264,
         "longitude": 121.563391,
         "bounds": {
@@ -4392,7 +4559,7 @@
             "id": "154633",
             "name": "縣立水璉國小",
             "townshipName": "壽豐鄉",
-            "students": 20,
+            "students": 14,
             "status": "正常"
           }
         ]
@@ -4402,6 +4569,7 @@
         "geohash": "wsnr5e",
         "precision": 6,
         "count": 1,
+        "totalStudents": 57,
         "latitude": 23.751117,
         "longitude": 121.45182,
         "bounds": {
@@ -4415,7 +4583,7 @@
             "id": "154637",
             "name": "縣立鳳仁國小",
             "townshipName": "鳳林鎮",
-            "students": 50,
+            "students": 57,
             "status": "正常"
           }
         ]
@@ -4425,6 +4593,7 @@
         "geohash": "wsnrhh",
         "precision": 6,
         "count": 1,
+        "totalStudents": 43,
         "latitude": 23.754219,
         "longitude": 121.468366,
         "bounds": {
@@ -4438,30 +4607,7 @@
             "id": "154636",
             "name": "縣立大榮國小",
             "townshipName": "鳳林鎮",
-            "students": 45,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "6-wsnr7s",
-        "geohash": "wsnr7s",
-        "precision": 6,
-        "count": 1,
-        "latitude": 23.801164,
-        "longitude": 121.452895,
-        "bounds": {
-          "minLatitude": 23.801164,
-          "maxLatitude": 23.801164,
-          "minLongitude": 121.452895,
-          "maxLongitude": 121.452895
-        },
-        "topSchools": [
-          {
-            "id": "154642",
-            "name": "縣立林榮國小",
-            "townshipName": "鳳林鎮",
-            "students": 36,
+            "students": 43,
             "status": "正常"
           }
         ]
@@ -4471,6 +4617,7 @@
         "geohash": "wsnqfu",
         "precision": 6,
         "count": 1,
+        "totalStudents": 31,
         "latitude": 23.709328,
         "longitude": 121.420098,
         "bounds": {
@@ -4484,30 +4631,31 @@
             "id": "154640",
             "name": "縣立長橋國小",
             "townshipName": "鳳林鎮",
-            "students": 28,
+            "students": 31,
             "status": "正常"
           }
         ]
       },
       {
-        "id": "6-wsnrhp",
-        "geohash": "wsnrhp",
+        "id": "6-wsnr7s",
+        "geohash": "wsnr7s",
         "precision": 6,
         "count": 1,
-        "latitude": 23.771566,
-        "longitude": 121.468274,
+        "totalStudents": 29,
+        "latitude": 23.801164,
+        "longitude": 121.452895,
         "bounds": {
-          "minLatitude": 23.771566,
-          "maxLatitude": 23.771566,
-          "minLongitude": 121.468274,
-          "maxLongitude": 121.468274
+          "minLatitude": 23.801164,
+          "maxLatitude": 23.801164,
+          "minLongitude": 121.452895,
+          "maxLongitude": 121.452895
         },
         "topSchools": [
           {
-            "id": "154638",
-            "name": "縣立北林國小",
+            "id": "154642",
+            "name": "縣立林榮國小",
             "townshipName": "鳳林鎮",
-            "students": 22,
+            "students": 29,
             "status": "正常"
           }
         ]
@@ -4517,6 +4665,7 @@
         "geohash": "wsnr7c",
         "precision": 6,
         "count": 1,
+        "totalStudents": 17,
         "latitude": 23.783465,
         "longitude": 121.457521,
         "bounds": {
@@ -4536,10 +4685,35 @@
         ]
       },
       {
+        "id": "6-wsnrhp",
+        "geohash": "wsnrhp",
+        "precision": 6,
+        "count": 1,
+        "totalStudents": 17,
+        "latitude": 23.771566,
+        "longitude": 121.468274,
+        "bounds": {
+          "minLatitude": 23.771566,
+          "maxLatitude": 23.771566,
+          "minLongitude": 121.468274,
+          "maxLongitude": 121.468274
+        },
+        "topSchools": [
+          {
+            "id": "154638",
+            "name": "縣立北林國小",
+            "townshipName": "鳳林鎮",
+            "students": 17,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "6-wsnqjr",
         "geohash": "wsnqjr",
         "precision": 6,
         "count": 1,
+        "totalStudents": 53,
         "latitude": 23.598236,
         "longitude": 121.52093,
         "bounds": {
@@ -4553,7 +4727,7 @@
             "id": "154655",
             "name": "縣立豐濱國小",
             "townshipName": "豐濱鄉",
-            "students": 65,
+            "students": 53,
             "status": "正常"
           }
         ]
@@ -4563,6 +4737,7 @@
         "geohash": "wsnqm2",
         "precision": 6,
         "count": 1,
+        "totalStudents": 43,
         "latitude": 23.601173,
         "longitude": 121.521437,
         "bounds": {
@@ -4582,10 +4757,35 @@
         ]
       },
       {
+        "id": "6-wsnms8",
+        "geohash": "wsnms8",
+        "precision": 6,
+        "count": 1,
+        "totalStudents": 19,
+        "latitude": 23.468534,
+        "longitude": 121.496872,
+        "bounds": {
+          "minLatitude": 23.468534,
+          "maxLatitude": 23.468534,
+          "minLongitude": 121.496872,
+          "maxLongitude": 121.496872
+        },
+        "topSchools": [
+          {
+            "id": "154656",
+            "name": "縣立港口國小",
+            "townshipName": "豐濱鄉",
+            "students": 19,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "6-wsnmkx",
         "geohash": "wsnmkx",
         "precision": 6,
         "count": 1,
+        "totalStudents": 18,
         "latitude": 23.461489,
         "longitude": 121.495436,
         "bounds": {
@@ -4609,6 +4809,7 @@
         "geohash": "wsnqt9",
         "precision": 6,
         "count": 1,
+        "totalStudents": 16,
         "latitude": 23.651742,
         "longitude": 121.53616,
         "bounds": {
@@ -4622,29 +4823,6 @@
             "id": "154658",
             "name": "縣立新社國小",
             "townshipName": "豐濱鄉",
-            "students": 17,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "6-wsnms8",
-        "geohash": "wsnms8",
-        "precision": 6,
-        "count": 1,
-        "latitude": 23.468534,
-        "longitude": 121.496872,
-        "bounds": {
-          "minLatitude": 23.468534,
-          "maxLatitude": 23.468534,
-          "minLongitude": 121.496872,
-          "maxLongitude": 121.496872
-        },
-        "topSchools": [
-          {
-            "id": "154656",
-            "name": "縣立港口國小",
-            "townshipName": "豐濱鄉",
             "students": 16,
             "status": "正常"
           }
@@ -4657,6 +4835,7 @@
         "geohash": "wsnkb81",
         "precision": 7,
         "count": 1,
+        "totalStudents": 470,
         "latitude": 23.335735,
         "longitude": 121.313434,
         "bounds": {
@@ -4680,6 +4859,7 @@
         "geohash": "wsnkbdn",
         "precision": 7,
         "count": 1,
+        "totalStudents": 379,
         "latitude": 23.346371,
         "longitude": 121.320569,
         "bounds": {
@@ -4703,6 +4883,7 @@
         "geohash": "wsnk8wv",
         "precision": 7,
         "count": 1,
+        "totalStudents": 326,
         "latitude": 23.328922,
         "longitude": 121.319247,
         "bounds": {
@@ -4716,7 +4897,7 @@
             "id": "154660",
             "name": "縣立玉里國小",
             "townshipName": "玉里鎮",
-            "students": 334,
+            "students": 326,
             "status": "正常"
           }
         ]
@@ -4726,6 +4907,7 @@
         "geohash": "wsnk8wh",
         "precision": 7,
         "count": 1,
+        "totalStudents": 295,
         "latitude": 23.324928,
         "longitude": 121.317481,
         "bounds": {
@@ -4739,7 +4921,7 @@
             "id": "154661",
             "name": "縣立中城國小",
             "townshipName": "玉里鎮",
-            "students": 306,
+            "students": 295,
             "status": "正常"
           }
         ]
@@ -4749,6 +4931,7 @@
         "geohash": "wsnm33u",
         "precision": 7,
         "count": 1,
+        "totalStudents": 96,
         "latitude": 23.432727,
         "longitude": 121.349733,
         "bounds": {
@@ -4772,6 +4955,7 @@
         "geohash": "wsnm337",
         "precision": 7,
         "count": 1,
+        "totalStudents": 68,
         "latitude": 23.42991,
         "longitude": 121.348471,
         "bounds": {
@@ -4785,7 +4969,7 @@
             "id": "154669",
             "name": "縣立三民國小",
             "townshipName": "玉里鎮",
-            "students": 64,
+            "students": 68,
             "status": "正常"
           }
         ]
@@ -4795,6 +4979,7 @@
         "geohash": "wsnm1yg",
         "precision": 7,
         "count": 1,
+        "totalStudents": 46,
         "latitude": 23.417185,
         "longitude": 121.370685,
         "bounds": {
@@ -4814,33 +4999,11 @@
         ]
       },
       {
-        "id": "7-wsnm3cj",
-        "geohash": "wsnm3cj",
-        "precision": 7,
-        "count": 1,
-        "latitude": 23.42867,
-        "longitude": 121.373459,
-        "bounds": {
-          "minLatitude": 23.42867,
-          "maxLatitude": 23.42867,
-          "minLongitude": 121.373459,
-          "maxLongitude": 121.373459
-        },
-        "topSchools": [
-          {
-            "id": "154666",
-            "name": "縣立松浦國小",
-            "townshipName": "玉里鎮",
-            "students": 38,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "7-wsnm0bj",
         "geohash": "wsnm0bj",
         "precision": 7,
         "count": 1,
+        "totalStudents": 37,
         "latitude": 23.380106,
         "longitude": 121.328929,
         "bounds": {
@@ -4860,10 +5023,35 @@
         ]
       },
       {
+        "id": "7-wsnm3cj",
+        "geohash": "wsnm3cj",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 34,
+        "latitude": 23.42867,
+        "longitude": 121.373459,
+        "bounds": {
+          "minLatitude": 23.42867,
+          "maxLatitude": 23.42867,
+          "minLongitude": 121.373459,
+          "maxLongitude": 121.373459
+        },
+        "topSchools": [
+          {
+            "id": "154666",
+            "name": "縣立松浦國小",
+            "townshipName": "玉里鎮",
+            "students": 34,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "7-wsnm6m7",
         "geohash": "wsnm6m7",
         "precision": 7,
         "count": 1,
+        "totalStudents": 32,
         "latitude": 23.452049,
         "longitude": 121.393058,
         "bounds": {
@@ -4877,53 +5065,7 @@
             "id": "154667",
             "name": "縣立春日國小",
             "townshipName": "玉里鎮",
-            "students": 36,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsnk8jx",
-        "geohash": "wsnk8jx",
-        "precision": 7,
-        "count": 1,
-        "latitude": 23.321717,
-        "longitude": 121.299184,
-        "bounds": {
-          "minLatitude": 23.321717,
-          "maxLatitude": 23.321717,
-          "minLongitude": 121.299184,
-          "maxLongitude": 121.299184
-        },
-        "topSchools": [
-          {
-            "id": "154662",
-            "name": "縣立源城國小",
-            "townshipName": "玉里鎮",
-            "students": 33,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsnk9jk",
-        "geohash": "wsnk9jk",
-        "precision": 7,
-        "count": 1,
-        "latitude": 23.321141,
-        "longitude": 121.339839,
-        "bounds": {
-          "minLatitude": 23.321141,
-          "maxLatitude": 23.321141,
-          "minLongitude": 121.339839,
-          "maxLongitude": 121.339839
-        },
-        "topSchools": [
-          {
-            "id": "154663",
-            "name": "縣立樂合國小",
-            "townshipName": "玉里鎮",
-            "students": 33,
+            "students": 32,
             "status": "正常"
           }
         ]
@@ -4933,6 +5075,7 @@
         "geohash": "wsnm18d",
         "precision": 7,
         "count": 1,
+        "totalStudents": 28,
         "latitude": 23.382961,
         "longitude": 121.359048,
         "bounds": {
@@ -4946,7 +5089,7 @@
             "id": "154665",
             "name": "縣立高寮國小",
             "townshipName": "玉里鎮",
-            "students": 24,
+            "students": 28,
             "status": "正常"
           }
         ]
@@ -4956,6 +5099,7 @@
         "geohash": "wsnhryv",
         "precision": 7,
         "count": 1,
+        "totalStudents": 25,
         "latitude": 23.284531,
         "longitude": 121.286067,
         "bounds": {
@@ -4969,7 +5113,55 @@
             "id": "154671",
             "name": "縣立長良國小",
             "townshipName": "玉里鎮",
-            "students": 24,
+            "students": 25,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsnk8jx",
+        "geohash": "wsnk8jx",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 23,
+        "latitude": 23.321717,
+        "longitude": 121.299184,
+        "bounds": {
+          "minLatitude": 23.321717,
+          "maxLatitude": 23.321717,
+          "minLongitude": 121.299184,
+          "maxLongitude": 121.299184
+        },
+        "topSchools": [
+          {
+            "id": "154662",
+            "name": "縣立源城國小",
+            "townshipName": "玉里鎮",
+            "students": 23,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsnk9jk",
+        "geohash": "wsnk9jk",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 23,
+        "latitude": 23.321141,
+        "longitude": 121.339839,
+        "bounds": {
+          "minLatitude": 23.321141,
+          "maxLatitude": 23.321141,
+          "minLongitude": 121.339839,
+          "maxLongitude": 121.339839
+        },
+        "topSchools": [
+          {
+            "id": "154663",
+            "name": "縣立樂合國小",
+            "townshipName": "玉里鎮",
+            "students": 23,
             "status": "正常"
           }
         ]
@@ -4979,6 +5171,7 @@
         "geohash": "wsnm6xu",
         "precision": 7,
         "count": 1,
+        "totalStudents": 17,
         "latitude": 23.465909,
         "longitude": 121.40558,
         "bounds": {
@@ -4992,7 +5185,7 @@
             "id": "154668",
             "name": "縣立德武國小",
             "townshipName": "玉里鎮",
-            "students": 20,
+            "students": 17,
             "status": "正常"
           }
         ]
@@ -5002,6 +5195,7 @@
         "geohash": "wsnm1dc",
         "precision": 7,
         "count": 1,
+        "totalStudents": 15,
         "latitude": 23.394569,
         "longitude": 121.357174,
         "bounds": {
@@ -5025,6 +5219,7 @@
         "geohash": "wsnqej5",
         "precision": 7,
         "count": 1,
+        "totalStudents": 176,
         "latitude": 23.671005,
         "longitude": 121.425212,
         "bounds": {
@@ -5048,6 +5243,7 @@
         "geohash": "wsnqehs",
         "precision": 7,
         "count": 1,
+        "totalStudents": 169,
         "latitude": 23.667482,
         "longitude": 121.427423,
         "bounds": {
@@ -5067,33 +5263,11 @@
         ]
       },
       {
-        "id": "7-wsnqejs",
-        "geohash": "wsnqejs",
-        "precision": 7,
-        "count": 1,
-        "latitude": 23.673583,
-        "longitude": 121.426927,
-        "bounds": {
-          "minLatitude": 23.673583,
-          "maxLatitude": 23.673583,
-          "minLongitude": 121.426927,
-          "maxLongitude": 121.426927
-        },
-        "topSchools": [
-          {
-            "id": "154643",
-            "name": "縣立光復國小",
-            "townshipName": "光復鄉",
-            "students": 127,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "7-wsnqdfn",
         "geohash": "wsnqdfn",
         "precision": 7,
         "count": 1,
+        "totalStudents": 108,
         "latitude": 23.654676,
         "longitude": 121.419141,
         "bounds": {
@@ -5107,7 +5281,31 @@
             "id": "154648",
             "name": "縣立大進國小",
             "townshipName": "光復鄉",
-            "students": 113,
+            "students": 108,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsnqejs",
+        "geohash": "wsnqejs",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 99,
+        "latitude": 23.673583,
+        "longitude": 121.426927,
+        "bounds": {
+          "minLatitude": 23.673583,
+          "maxLatitude": 23.673583,
+          "minLongitude": 121.426927,
+          "maxLongitude": 121.426927
+        },
+        "topSchools": [
+          {
+            "id": "154643",
+            "name": "縣立光復國小",
+            "townshipName": "光復鄉",
+            "students": 99,
             "status": "正常"
           }
         ]
@@ -5117,6 +5315,7 @@
         "geohash": "wsnqee5",
         "precision": 7,
         "count": 1,
+        "totalStudents": 65,
         "latitude": 23.660031,
         "longitude": 121.447825,
         "bounds": {
@@ -5130,7 +5329,7 @@
             "id": "154644",
             "name": "縣立太巴塱國小",
             "townshipName": "光復鄉",
-            "students": 76,
+            "students": 65,
             "status": "正常"
           }
         ]
@@ -5140,6 +5339,7 @@
         "geohash": "wsnq4nj",
         "precision": 7,
         "count": 1,
+        "totalStudents": 48,
         "latitude": 23.588672,
         "longitude": 121.385154,
         "bounds": {
@@ -5163,6 +5363,7 @@
         "geohash": "wsnq7ny",
         "precision": 7,
         "count": 1,
+        "totalStudents": 31,
         "latitude": 23.636328,
         "longitude": 121.430256,
         "bounds": {
@@ -5176,7 +5377,7 @@
             "id": "154707",
             "name": "縣立西富國小",
             "townshipName": "光復鄉",
-            "students": 26,
+            "students": 31,
             "status": "正常"
           }
         ]
@@ -5186,6 +5387,7 @@
         "geohash": "wsnq6qp",
         "precision": 7,
         "count": 1,
+        "totalStudents": 22,
         "latitude": 23.632332,
         "longitude": 121.398157,
         "bounds": {
@@ -5209,6 +5411,7 @@
         "geohash": "wsq2qez",
         "precision": 7,
         "count": 1,
+        "totalStudents": 841,
         "latitude": 23.970865,
         "longitude": 121.585303,
         "bounds": {
@@ -5222,7 +5425,7 @@
             "id": "154619",
             "name": "縣立宜昌國小",
             "townshipName": "吉安鄉",
-            "students": 848,
+            "students": 841,
             "status": "正常"
           }
         ]
@@ -5232,6 +5435,7 @@
         "geohash": "wsq2qys",
         "precision": 7,
         "count": 1,
+        "totalStudents": 805,
         "latitude": 23.987238,
         "longitude": 121.591803,
         "bounds": {
@@ -5245,7 +5449,7 @@
             "id": "154620",
             "name": "縣立北昌國小",
             "townshipName": "吉安鄉",
-            "students": 824,
+            "students": 805,
             "status": "正常"
           }
         ]
@@ -5255,6 +5459,7 @@
         "geohash": "wsq2qgb",
         "precision": 7,
         "count": 1,
+        "totalStudents": 672,
         "latitude": 23.97191,
         "longitude": 121.586755,
         "bounds": {
@@ -5278,6 +5483,7 @@
         "geohash": "wsq2qhp",
         "precision": 7,
         "count": 1,
+        "totalStudents": 343,
         "latitude": 23.973465,
         "longitude": 121.562844,
         "bounds": {
@@ -5291,30 +5497,7 @@
             "id": "154618",
             "name": "縣立吉安國小",
             "townshipName": "吉安鄉",
-            "students": 348,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsq2w20",
-        "geohash": "wsq2w20",
-        "precision": 7,
-        "count": 1,
-        "latitude": 23.994942,
-        "longitude": 121.564909,
-        "bounds": {
-          "minLatitude": 23.994942,
-          "maxLatitude": 23.994942,
-          "minLongitude": 121.564909,
-          "maxLongitude": 121.564909
-        },
-        "topSchools": [
-          {
-            "id": "154625",
-            "name": "縣立太昌國小",
-            "townshipName": "吉安鄉",
-            "students": 276,
+            "students": 343,
             "status": "正常"
           }
         ]
@@ -5324,6 +5507,7 @@
         "geohash": "wsq2q5u",
         "precision": 7,
         "count": 1,
+        "totalStudents": 257,
         "latitude": 23.972107,
         "longitude": 121.558651,
         "bounds": {
@@ -5343,33 +5527,11 @@
         ]
       },
       {
-        "id": "7-wsq2q67",
-        "geohash": "wsq2q67",
-        "precision": 7,
-        "count": 1,
-        "latitude": 23.963137,
-        "longitude": 121.569157,
-        "bounds": {
-          "minLatitude": 23.963137,
-          "maxLatitude": 23.963137,
-          "minLongitude": 121.569157,
-          "maxLongitude": 121.569157
-        },
-        "topSchools": [
-          {
-            "id": "154621",
-            "name": "縣立稻香國小",
-            "townshipName": "吉安鄉",
-            "students": 248,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "7-wsq2qfv",
         "geohash": "wsq2qfv",
         "precision": 7,
         "count": 1,
+        "totalStudents": 240,
         "latitude": 23.965509,
         "longitude": 121.593226,
         "bounds": {
@@ -5389,10 +5551,59 @@
         ]
       },
       {
+        "id": "7-wsq2w20",
+        "geohash": "wsq2w20",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 239,
+        "latitude": 23.994942,
+        "longitude": 121.564909,
+        "bounds": {
+          "minLatitude": 23.994942,
+          "maxLatitude": 23.994942,
+          "minLongitude": 121.564909,
+          "maxLongitude": 121.564909
+        },
+        "topSchools": [
+          {
+            "id": "154625",
+            "name": "縣立太昌國小",
+            "townshipName": "吉安鄉",
+            "students": 239,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsq2q67",
+        "geohash": "wsq2q67",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 238,
+        "latitude": 23.963137,
+        "longitude": 121.569157,
+        "bounds": {
+          "minLatitude": 23.963137,
+          "maxLatitude": 23.963137,
+          "minLongitude": 121.569157,
+          "maxLongitude": 121.569157
+        },
+        "topSchools": [
+          {
+            "id": "154621",
+            "name": "縣立稻香國小",
+            "townshipName": "吉安鄉",
+            "students": 238,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "7-wsq2qfr",
         "geohash": "wsq2qfr",
         "precision": 7,
         "count": 1,
+        "totalStudents": 216,
         "latitude": 23.962902,
         "longitude": 121.595666,
         "bounds": {
@@ -5406,7 +5617,7 @@
             "id": "154624",
             "name": "縣立化仁國小",
             "townshipName": "吉安鄉",
-            "students": 214,
+            "students": 216,
             "status": "正常"
           }
         ]
@@ -5416,6 +5627,7 @@
         "geohash": "wsq2qnn",
         "precision": 7,
         "count": 1,
+        "totalStudents": 206,
         "latitude": 23.983474,
         "longitude": 121.561239,
         "bounds": {
@@ -5439,6 +5651,7 @@
         "geohash": "wsq2nt6",
         "precision": 7,
         "count": 1,
+        "totalStudents": 75,
         "latitude": 23.935659,
         "longitude": 121.578677,
         "bounds": {
@@ -5452,7 +5665,7 @@
             "id": "154622",
             "name": "縣立光華國小",
             "townshipName": "吉安鄉",
-            "students": 74,
+            "students": 75,
             "status": "正常"
           }
         ]
@@ -5462,6 +5675,7 @@
         "geohash": "wsq2jzs",
         "precision": 7,
         "count": 1,
+        "totalStudents": 55,
         "latitude": 23.948503,
         "longitude": 121.547509,
         "bounds": {
@@ -5475,7 +5689,7 @@
             "id": "154623",
             "name": "縣立南華國小",
             "townshipName": "吉安鄉",
-            "students": 50,
+            "students": 55,
             "status": "正常"
           }
         ]
@@ -5485,6 +5699,7 @@
         "geohash": "wsq2w1d",
         "precision": 7,
         "count": 1,
+        "totalStudents": 96,
         "latitude": 24.003308,
         "longitude": 121.55681,
         "bounds": {
@@ -5498,7 +5713,7 @@
             "id": "154689",
             "name": "縣立水源國小",
             "townshipName": "秀林鄉",
-            "students": 97,
+            "students": 96,
             "status": "正常"
           }
         ]
@@ -5508,6 +5723,7 @@
         "geohash": "wsq3rez",
         "precision": 7,
         "count": 1,
+        "totalStudents": 93,
         "latitude": 24.147547,
         "longitude": 121.629203,
         "bounds": {
@@ -5521,53 +5737,7 @@
             "id": "154682",
             "name": "縣立富世國小",
             "townshipName": "秀林鄉",
-            "students": 81,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsq92q8",
-        "geohash": "wsq92q8",
-        "precision": 7,
-        "count": 1,
-        "latitude": 24.16208,
-        "longitude": 121.652408,
-        "bounds": {
-          "minLatitude": 24.16208,
-          "maxLatitude": 24.16208,
-          "minLongitude": 121.652408,
-          "maxLongitude": 121.652408
-        },
-        "topSchools": [
-          {
-            "id": "154683",
-            "name": "縣立崇德國小",
-            "townshipName": "秀林鄉",
-            "students": 81,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsq3pwk",
-        "geohash": "wsq3pwk",
-        "precision": 7,
-        "count": 1,
-        "latitude": 24.117672,
-        "longitude": 121.624231,
-        "bounds": {
-          "minLatitude": 24.117672,
-          "maxLatitude": 24.117672,
-          "minLongitude": 121.624231,
-          "maxLongitude": 121.624231
-        },
-        "topSchools": [
-          {
-            "id": "154681",
-            "name": "縣立秀林國小",
-            "townshipName": "秀林鄉",
-            "students": 79,
+            "students": 93,
             "status": "正常"
           }
         ]
@@ -5577,6 +5747,7 @@
         "geohash": "wsqd63n",
         "precision": 7,
         "count": 1,
+        "totalStudents": 80,
         "latitude": 24.307938,
         "longitude": 121.749109,
         "bounds": {
@@ -5590,7 +5761,55 @@
             "id": "154684",
             "name": "縣立和平國小",
             "townshipName": "秀林鄉",
-            "students": 75,
+            "students": 80,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsq3pwk",
+        "geohash": "wsq3pwk",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 78,
+        "latitude": 24.117672,
+        "longitude": 121.624231,
+        "bounds": {
+          "minLatitude": 24.117672,
+          "maxLatitude": 24.117672,
+          "minLongitude": 121.624231,
+          "maxLongitude": 121.624231
+        },
+        "topSchools": [
+          {
+            "id": "154681",
+            "name": "縣立秀林國小",
+            "townshipName": "秀林鄉",
+            "students": 78,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsq92q8",
+        "geohash": "wsq92q8",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 76,
+        "latitude": 24.16208,
+        "longitude": 121.652408,
+        "bounds": {
+          "minLatitude": 24.16208,
+          "maxLatitude": 24.16208,
+          "minLongitude": 121.652408,
+          "maxLongitude": 121.652408
+        },
+        "topSchools": [
+          {
+            "id": "154683",
+            "name": "縣立崇德國小",
+            "townshipName": "秀林鄉",
+            "students": 76,
             "status": "正常"
           }
         ]
@@ -5600,6 +5819,7 @@
         "geohash": "wsq2kdu",
         "precision": 7,
         "count": 1,
+        "totalStudents": 63,
         "latitude": 23.965489,
         "longitude": 121.493218,
         "bounds": {
@@ -5613,7 +5833,7 @@
             "id": "154688",
             "name": "縣立銅門國小",
             "townshipName": "秀林鄉",
-            "students": 66,
+            "students": 63,
             "status": "正常"
           }
         ]
@@ -5623,6 +5843,7 @@
         "geohash": "wsq2z4c",
         "precision": 7,
         "count": 1,
+        "totalStudents": 57,
         "latitude": 24.053418,
         "longitude": 121.598873,
         "bounds": {
@@ -5636,30 +5857,7 @@
             "id": "154687",
             "name": "縣立佳民國小",
             "townshipName": "秀林鄉",
-            "students": 54,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsq2hzq",
-        "geohash": "wsq2hzq",
-        "precision": 7,
-        "count": 1,
-        "latitude": 23.947146,
-        "longitude": 121.507092,
-        "bounds": {
-          "minLatitude": 23.947146,
-          "maxLatitude": 23.947146,
-          "minLongitude": 121.507092,
-          "maxLongitude": 121.507092
-        },
-        "topSchools": [
-          {
-            "id": "154690",
-            "name": "縣立銅蘭國小",
-            "townshipName": "秀林鄉",
-            "students": 51,
+            "students": 57,
             "status": "正常"
           }
         ]
@@ -5669,6 +5867,7 @@
         "geohash": "wsq3p0n",
         "precision": 7,
         "count": 1,
+        "totalStudents": 53,
         "latitude": 24.082817,
         "longitude": 121.605998,
         "bounds": {
@@ -5682,30 +5881,7 @@
             "id": "154685",
             "name": "縣立景美國小",
             "townshipName": "秀林鄉",
-            "students": 46,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsq3squ",
-        "geohash": "wsq3squ",
-        "precision": 7,
-        "count": 1,
-        "latitude": 24.20707,
-        "longitude": 121.482629,
-        "bounds": {
-          "minLatitude": 24.20707,
-          "maxLatitude": 24.20707,
-          "minLongitude": 121.482629,
-          "maxLongitude": 121.482629
-        },
-        "topSchools": [
-          {
-            "id": "154710",
-            "name": "縣立西寶國小",
-            "townshipName": "秀林鄉",
-            "students": 46,
+            "students": 53,
             "status": "正常"
           }
         ]
@@ -5715,6 +5891,7 @@
         "geohash": "wsq3p5z",
         "precision": 7,
         "count": 1,
+        "totalStudents": 49,
         "latitude": 24.10284,
         "longitude": 121.606429,
         "bounds": {
@@ -5728,7 +5905,55 @@
             "id": "154686",
             "name": "縣立三棧國小",
             "townshipName": "秀林鄉",
-            "students": 45,
+            "students": 49,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsq2hzq",
+        "geohash": "wsq2hzq",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 48,
+        "latitude": 23.947146,
+        "longitude": 121.507092,
+        "bounds": {
+          "minLatitude": 23.947146,
+          "maxLatitude": 23.947146,
+          "minLongitude": 121.507092,
+          "maxLongitude": 121.507092
+        },
+        "topSchools": [
+          {
+            "id": "154690",
+            "name": "縣立銅蘭國小",
+            "townshipName": "秀林鄉",
+            "students": 48,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsq3squ",
+        "geohash": "wsq3squ",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 41,
+        "latitude": 24.20707,
+        "longitude": 121.482629,
+        "bounds": {
+          "minLatitude": 24.20707,
+          "maxLatitude": 24.20707,
+          "minLongitude": 121.482629,
+          "maxLongitude": 121.482629
+        },
+        "topSchools": [
+          {
+            "id": "154710",
+            "name": "縣立西寶國小",
+            "townshipName": "秀林鄉",
+            "students": 41,
             "status": "正常"
           }
         ]
@@ -5738,6 +5963,7 @@
         "geohash": "wsq2hff",
         "precision": 7,
         "count": 1,
+        "totalStudents": 33,
         "latitude": 23.922083,
         "longitude": 121.5015,
         "bounds": {
@@ -5751,7 +5977,7 @@
             "id": "154691",
             "name": "縣立文蘭國小",
             "townshipName": "秀林鄉",
-            "students": 37,
+            "students": 33,
             "status": "正常"
           }
         ]
@@ -5761,6 +5987,7 @@
         "geohash": "wsnkb3f",
         "precision": 7,
         "count": 1,
+        "totalStudents": 58,
         "latitude": 23.345775,
         "longitude": 121.303308,
         "bounds": {
@@ -5774,7 +6001,7 @@
             "id": "154698",
             "name": "縣立卓溪國小",
             "townshipName": "卓溪鄉",
-            "students": 55,
+            "students": 58,
             "status": "正常"
           }
         ]
@@ -5784,6 +6011,7 @@
         "geohash": "wsnm0sy",
         "precision": 7,
         "count": 1,
+        "totalStudents": 51,
         "latitude": 23.406132,
         "longitude": 121.320354,
         "bounds": {
@@ -5797,7 +6025,7 @@
             "id": "154701",
             "name": "縣立太平國小",
             "townshipName": "卓溪鄉",
-            "students": 54,
+            "students": 51,
             "status": "正常"
           }
         ]
@@ -5807,6 +6035,7 @@
         "geohash": "wsnm29r",
         "precision": 7,
         "count": 1,
+        "totalStudents": 48,
         "latitude": 23.430957,
         "longitude": 121.320839,
         "bounds": {
@@ -5820,7 +6049,7 @@
             "id": "154700",
             "name": "縣立立山國小",
             "townshipName": "卓溪鄉",
-            "students": 49,
+            "students": 48,
             "status": "正常"
           }
         ]
@@ -5830,6 +6059,7 @@
         "geohash": "wsnm36b",
         "precision": 7,
         "count": 1,
+        "totalStudents": 39,
         "latitude": 23.438508,
         "longitude": 121.344186,
         "bounds": {
@@ -5843,7 +6073,7 @@
             "id": "154699",
             "name": "縣立崙山國小",
             "townshipName": "卓溪鄉",
-            "students": 37,
+            "students": 39,
             "status": "正常"
           }
         ]
@@ -5853,6 +6083,7 @@
         "geohash": "wsnhp7n",
         "precision": 7,
         "count": 1,
+        "totalStudents": 36,
         "latitude": 23.21967,
         "longitude": 121.264574,
         "bounds": {
@@ -5866,7 +6097,7 @@
             "id": "154704",
             "name": "縣立古風國小",
             "townshipName": "卓溪鄉",
-            "students": 33,
+            "students": 36,
             "status": "正常"
           }
         ]
@@ -5876,6 +6107,7 @@
         "geohash": "wsnhx8b",
         "precision": 7,
         "count": 1,
+        "totalStudents": 27,
         "latitude": 23.295847,
         "longitude": 121.267406,
         "bounds": {
@@ -5899,6 +6131,7 @@
         "geohash": "wsnhrts",
         "precision": 7,
         "count": 1,
+        "totalStudents": 26,
         "latitude": 23.278006,
         "longitude": 121.272916,
         "bounds": {
@@ -5912,7 +6145,7 @@
             "id": "154702",
             "name": "縣立卓清國小",
             "townshipName": "卓溪鄉",
-            "students": 24,
+            "students": 26,
             "status": "正常"
           }
         ]
@@ -5922,6 +6155,7 @@
         "geohash": "wsnhpx7",
         "precision": 7,
         "count": 1,
+        "totalStudents": 13,
         "latitude": 23.243793,
         "longitude": 121.271965,
         "bounds": {
@@ -5935,7 +6169,7 @@
             "id": "154706",
             "name": "縣立卓楓國小",
             "townshipName": "卓溪鄉",
-            "students": 15,
+            "students": 13,
             "status": "正常"
           }
         ]
@@ -5945,6 +6179,7 @@
         "geohash": "wsq2qzg",
         "precision": 7,
         "count": 1,
+        "totalStudents": 5285,
         "latitude": 23.99301,
         "longitude": 121.590234,
         "bounds": {
@@ -5968,6 +6203,7 @@
         "geohash": "wsq2w3p",
         "precision": 7,
         "count": 1,
+        "totalStudents": 1813,
         "latitude": 23.999901,
         "longitude": 121.574199,
         "bounds": {
@@ -5981,7 +6217,7 @@
             "id": "151312",
             "name": "財團法人慈濟大學附中",
             "townshipName": "花蓮市",
-            "students": 1814,
+            "students": 1813,
             "status": "正常"
           }
         ]
@@ -5991,6 +6227,7 @@
         "geohash": "wsq2qvp",
         "precision": 7,
         "count": 1,
+        "totalStudents": 1514,
         "latitude": 23.978464,
         "longitude": 121.595388,
         "bounds": {
@@ -6010,33 +6247,11 @@
         ]
       },
       {
-        "id": "7-wsq2rjj",
-        "geohash": "wsq2rjj",
-        "precision": 7,
-        "count": 1,
-        "latitude": 23.978845,
-        "longitude": 121.603579,
-        "bounds": {
-          "minLatitude": 23.978845,
-          "maxLatitude": 23.978845,
-          "minLongitude": 121.603579,
-          "maxLongitude": 121.603579
-        },
-        "topSchools": [
-          {
-            "id": "154602",
-            "name": "縣立明義國小",
-            "townshipName": "花蓮市",
-            "students": 1232,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "7-wsq2rkg",
         "geohash": "wsq2rkg",
         "precision": 7,
         "count": 1,
+        "totalStudents": 1170,
         "latitude": 23.977485,
         "longitude": 121.613034,
         "bounds": {
@@ -6056,10 +6271,35 @@
         ]
       },
       {
+        "id": "7-wsq2rjj",
+        "geohash": "wsq2rjj",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 1170,
+        "latitude": 23.978845,
+        "longitude": 121.603579,
+        "bounds": {
+          "minLatitude": 23.978845,
+          "maxLatitude": 23.978845,
+          "minLongitude": 121.603579,
+          "maxLongitude": 121.603579
+        },
+        "topSchools": [
+          {
+            "id": "154602",
+            "name": "縣立明義國小",
+            "townshipName": "花蓮市",
+            "students": 1170,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "7-wsq2rwt",
         "geohash": "wsq2rwt",
         "precision": 7,
         "count": 1,
+        "totalStudents": 1049,
         "latitude": 23.986767,
         "longitude": 121.625946,
         "bounds": {
@@ -6083,6 +6323,7 @@
         "geohash": "wsq2rmm",
         "precision": 7,
         "count": 1,
+        "totalStudents": 1010,
         "latitude": 23.979448,
         "longitude": 121.615234,
         "bounds": {
@@ -6106,6 +6347,7 @@
         "geohash": "wsq2r5f",
         "precision": 7,
         "count": 1,
+        "totalStudents": 991,
         "latitude": 23.971689,
         "longitude": 121.599714,
         "bounds": {
@@ -6119,7 +6361,7 @@
             "id": "154605",
             "name": "縣立中正國小",
             "townshipName": "花蓮市",
-            "students": 998,
+            "students": 991,
             "status": "正常"
           }
         ]
@@ -6129,6 +6371,7 @@
         "geohash": "wsq2wch",
         "precision": 7,
         "count": 1,
+        "totalStudents": 897,
         "latitude": 24.000477,
         "longitude": 121.591583,
         "bounds": {
@@ -6152,6 +6395,7 @@
         "geohash": "wsq2rx7",
         "precision": 7,
         "count": 1,
+        "totalStudents": 798,
         "latitude": 23.990947,
         "longitude": 121.6231,
         "bounds": {
@@ -6165,7 +6409,7 @@
             "id": "150601",
             "name": "國立東華大學附設實小",
             "townshipName": "花蓮市",
-            "students": 807,
+            "students": 798,
             "status": "正常"
           }
         ]
@@ -6175,6 +6419,7 @@
         "geohash": "wsq2rns",
         "precision": 7,
         "count": 1,
+        "totalStudents": 771,
         "latitude": 23.986597,
         "longitude": 121.602403,
         "bounds": {
@@ -6198,6 +6443,7 @@
         "geohash": "wsq2x8b",
         "precision": 7,
         "count": 1,
+        "totalStudents": 761,
         "latitude": 23.998728,
         "longitude": 121.619903,
         "bounds": {
@@ -6221,6 +6467,7 @@
         "geohash": "wsq2rn1",
         "precision": 7,
         "count": 1,
+        "totalStudents": 599,
         "latitude": 23.983581,
         "longitude": 121.598967,
         "bounds": {
@@ -6244,6 +6491,7 @@
         "geohash": "wsq2rxv",
         "precision": 7,
         "count": 1,
+        "totalStudents": 552,
         "latitude": 23.992806,
         "longitude": 121.625542,
         "bounds": {
@@ -6257,7 +6505,31 @@
             "id": "154612",
             "name": "縣立鑄強國小",
             "townshipName": "花蓮市",
-            "students": 543,
+            "students": 552,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsq2rxs",
+        "geohash": "wsq2rxs",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 534,
+        "latitude": 23.992156,
+        "longitude": 121.6248,
+        "bounds": {
+          "minLatitude": 23.992156,
+          "maxLatitude": 23.992156,
+          "minLongitude": 121.6248,
+          "maxLongitude": 121.6248
+        },
+        "topSchools": [
+          {
+            "id": "151602",
+            "name": "私立海星國小",
+            "townshipName": "花蓮市",
+            "students": 534,
             "status": "正常"
           }
         ]
@@ -6267,6 +6539,7 @@
         "geohash": "wsq2x09",
         "precision": 7,
         "count": 1,
+        "totalStudents": 517,
         "latitude": 23.997918,
         "longitude": 121.599076,
         "bounds": {
@@ -6286,56 +6559,11 @@
         ]
       },
       {
-        "id": "7-wsq2rxs",
-        "geohash": "wsq2rxs",
-        "precision": 7,
-        "count": 1,
-        "latitude": 23.992156,
-        "longitude": 121.6248,
-        "bounds": {
-          "minLatitude": 23.992156,
-          "maxLatitude": 23.992156,
-          "minLongitude": 121.6248,
-          "maxLongitude": 121.6248
-        },
-        "topSchools": [
-          {
-            "id": "151602",
-            "name": "私立海星國小",
-            "townshipName": "花蓮市",
-            "students": 514,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsq2qgz",
-        "geohash": "wsq2qgz",
-        "precision": 7,
-        "count": 1,
-        "latitude": 23.971747,
-        "longitude": 121.59643,
-        "bounds": {
-          "minLatitude": 23.971747,
-          "maxLatitude": 23.971747,
-          "minLongitude": 121.59643,
-          "maxLongitude": 121.59643
-        },
-        "topSchools": [
-          {
-            "id": "154711",
-            "name": "縣立中原國小",
-            "townshipName": "花蓮市",
-            "students": 485,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "7-wsq2wbn",
         "geohash": "wsq2wbn",
         "precision": 7,
         "count": 1,
+        "totalStudents": 486,
         "latitude": 23.995008,
         "longitude": 121.594726,
         "bounds": {
@@ -6349,7 +6577,31 @@
             "id": "154603",
             "name": "縣立明廉國小",
             "townshipName": "花蓮市",
-            "students": 474,
+            "students": 486,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsq2qgz",
+        "geohash": "wsq2qgz",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 441,
+        "latitude": 23.971747,
+        "longitude": 121.59643,
+        "bounds": {
+          "minLatitude": 23.971747,
+          "maxLatitude": 23.971747,
+          "minLongitude": 121.59643,
+          "maxLongitude": 121.59643
+        },
+        "topSchools": [
+          {
+            "id": "154711",
+            "name": "縣立中原國小",
+            "townshipName": "花蓮市",
+            "students": 441,
             "status": "正常"
           }
         ]
@@ -6359,6 +6611,7 @@
         "geohash": "wsq2rh9",
         "precision": 7,
         "count": 1,
+        "totalStudents": 375,
         "latitude": 23.975646,
         "longitude": 121.598563,
         "bounds": {
@@ -6372,7 +6625,7 @@
             "id": "154610",
             "name": "縣立忠孝國小",
             "townshipName": "花蓮市",
-            "students": 427,
+            "students": 375,
             "status": "正常"
           }
         ]
@@ -6382,6 +6635,7 @@
         "geohash": "wsq2rpz",
         "precision": 7,
         "count": 1,
+        "totalStudents": 267,
         "latitude": 23.992768,
         "longitude": 121.607236,
         "bounds": {
@@ -6395,7 +6649,7 @@
             "id": "154608",
             "name": "縣立中華國小",
             "townshipName": "花蓮市",
-            "students": 273,
+            "students": 267,
             "status": "正常"
           }
         ]
@@ -6405,6 +6659,7 @@
         "geohash": "wsq2x8w",
         "precision": 7,
         "count": 1,
+        "totalStudents": 264,
         "latitude": 23.997831,
         "longitude": 121.627708,
         "bounds": {
@@ -6428,6 +6683,7 @@
         "geohash": "wsq2rz9",
         "precision": 7,
         "count": 1,
+        "totalStudents": 215,
         "latitude": 23.991878,
         "longitude": 121.631012,
         "bounds": {
@@ -6441,7 +6697,7 @@
             "id": "154604",
             "name": "縣立明恥國小",
             "townshipName": "花蓮市",
-            "students": 225,
+            "students": 215,
             "status": "正常"
           }
         ]
@@ -6451,6 +6707,7 @@
         "geohash": "wsq2rm6",
         "precision": 7,
         "count": 1,
+        "totalStudents": 204,
         "latitude": 23.980075,
         "longitude": 121.610527,
         "bounds": {
@@ -6464,7 +6721,7 @@
             "id": "154601",
             "name": "縣立明禮國小",
             "townshipName": "花蓮市",
-            "students": 220,
+            "students": 204,
             "status": "正常"
           }
         ]
@@ -6474,6 +6731,7 @@
         "geohash": "wsq2w9x",
         "precision": 7,
         "count": 1,
+        "totalStudents": 116,
         "latitude": 24.003002,
         "longitude": 121.584387,
         "bounds": {
@@ -6493,33 +6751,11 @@
         ]
       },
       {
-        "id": "7-wsq2rmn",
-        "geohash": "wsq2rmn",
-        "precision": 7,
-        "count": 1,
-        "latitude": 23.977837,
-        "longitude": 121.61614,
-        "bounds": {
-          "minLatitude": 23.977837,
-          "maxLatitude": 23.977837,
-          "minLongitude": 121.61614,
-          "maxLongitude": 121.61614
-        },
-        "topSchools": [
-          {
-            "id": "154611",
-            "name": "縣立北濱國小",
-            "townshipName": "花蓮市",
-            "students": 112,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "7-wsq2xd2",
         "geohash": "wsq2xd2",
         "precision": 7,
         "count": 1,
+        "totalStudents": 110,
         "latitude": 24.006654,
         "longitude": 121.619077,
         "bounds": {
@@ -6533,7 +6769,31 @@
             "id": "154607",
             "name": "縣立復興國小",
             "townshipName": "花蓮市",
-            "students": 107,
+            "students": 110,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsq2rmn",
+        "geohash": "wsq2rmn",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 104,
+        "latitude": 23.977837,
+        "longitude": 121.61614,
+        "bounds": {
+          "minLatitude": 23.977837,
+          "maxLatitude": 23.977837,
+          "minLongitude": 121.61614,
+          "maxLongitude": 121.61614
+        },
+        "topSchools": [
+          {
+            "id": "154611",
+            "name": "縣立北濱國小",
+            "townshipName": "花蓮市",
+            "students": 104,
             "status": "正常"
           }
         ]
@@ -6543,6 +6803,7 @@
         "geohash": "wsq2r5y",
         "precision": 7,
         "count": 1,
+        "totalStudents": 44,
         "latitude": 23.970844,
         "longitude": 121.606207,
         "bounds": {
@@ -6556,7 +6817,7 @@
             "id": "154606",
             "name": "縣立信義國小",
             "townshipName": "花蓮市",
-            "students": 50,
+            "students": 44,
             "status": "正常"
           }
         ]
@@ -6566,6 +6827,7 @@
         "geohash": "wsq2wds",
         "precision": 7,
         "count": 1,
+        "totalStudents": 35,
         "latitude": 24.009088,
         "longitude": 121.580302,
         "bounds": {
@@ -6579,7 +6841,31 @@
             "id": "154613",
             "name": "縣立國福國小",
             "townshipName": "花蓮市",
-            "students": 37,
+            "students": 35,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsn5z46",
+        "geohash": "wsn5z46",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 89,
+        "latitude": 23.171858,
+        "longitude": 121.248329,
+        "bounds": {
+          "minLatitude": 23.171858,
+          "maxLatitude": 23.171858,
+          "minLongitude": 121.248329,
+          "maxLongitude": 121.248329
+        },
+        "topSchools": [
+          {
+            "id": "154672",
+            "name": "縣立富里國小",
+            "townshipName": "富里鄉",
+            "students": 89,
             "status": "正常"
           }
         ]
@@ -6589,6 +6875,7 @@
         "geohash": "wsn5z54",
         "precision": 7,
         "count": 1,
+        "totalStudents": 83,
         "latitude": 23.175772,
         "longitude": 121.249153,
         "bounds": {
@@ -6608,33 +6895,11 @@
         ]
       },
       {
-        "id": "7-wsn5z46",
-        "geohash": "wsn5z46",
-        "precision": 7,
-        "count": 1,
-        "latitude": 23.171858,
-        "longitude": 121.248329,
-        "bounds": {
-          "minLatitude": 23.171858,
-          "maxLatitude": 23.171858,
-          "minLongitude": 121.248329,
-          "maxLongitude": 121.248329
-        },
-        "topSchools": [
-          {
-            "id": "154672",
-            "name": "縣立富里國小",
-            "townshipName": "富里鄉",
-            "students": 80,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "7-wsnk276",
         "geohash": "wsnk276",
         "precision": 7,
         "count": 1,
+        "totalStudents": 61,
         "latitude": 23.265549,
         "longitude": 121.302871,
         "bounds": {
@@ -6648,7 +6913,7 @@
             "id": "154674",
             "name": "縣立東里國小",
             "townshipName": "富里鄉",
-            "students": 64,
+            "students": 61,
             "status": "正常"
           }
         ]
@@ -6658,6 +6923,7 @@
         "geohash": "wsnhpgc",
         "precision": 7,
         "count": 1,
+        "totalStudents": 50,
         "latitude": 23.225072,
         "longitude": 121.27996,
         "bounds": {
@@ -6681,6 +6947,7 @@
         "geohash": "wsnhpf1",
         "precision": 7,
         "count": 1,
+        "totalStudents": 44,
         "latitude": 23.214187,
         "longitude": 121.279788,
         "bounds": {
@@ -6694,7 +6961,7 @@
             "id": "154680",
             "name": "縣立東竹國小",
             "townshipName": "富里鄉",
-            "students": 46,
+            "students": 44,
             "status": "正常"
           }
         ]
@@ -6704,6 +6971,7 @@
         "geohash": "wsnk274",
         "precision": 7,
         "count": 1,
+        "totalStudents": 32,
         "latitude": 23.263604,
         "longitude": 121.303087,
         "bounds": {
@@ -6723,33 +6991,11 @@
         ]
       },
       {
-        "id": "7-wsnk2vb",
-        "geohash": "wsnk2vb",
-        "precision": 7,
-        "count": 1,
-        "latitude": 23.278733,
-        "longitude": 121.322652,
-        "bounds": {
-          "minLatitude": 23.278733,
-          "maxLatitude": 23.278733,
-          "minLongitude": 121.322652,
-          "maxLongitude": 121.322652
-        },
-        "topSchools": [
-          {
-            "id": "154676",
-            "name": "縣立吳江國小",
-            "townshipName": "富里鄉",
-            "students": 29,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "7-wsn5zpd",
         "geohash": "wsn5zpd",
         "precision": 7,
         "count": 1,
+        "totalStudents": 25,
         "latitude": 23.201224,
         "longitude": 121.248654,
         "bounds": {
@@ -6763,30 +7009,31 @@
             "id": "154675",
             "name": "縣立明里國小",
             "townshipName": "富里鄉",
-            "students": 28,
+            "students": 25,
             "status": "正常"
           }
         ]
       },
       {
-        "id": "7-wsnk21q",
-        "geohash": "wsnk21q",
+        "id": "7-wsnk2vb",
+        "geohash": "wsnk2vb",
         "precision": 7,
         "count": 1,
-        "latitude": 23.253953,
-        "longitude": 121.297475,
+        "totalStudents": 22,
+        "latitude": 23.278733,
+        "longitude": 121.322652,
         "bounds": {
-          "minLatitude": 23.253953,
-          "maxLatitude": 23.253953,
-          "minLongitude": 121.297475,
-          "maxLongitude": 121.297475
+          "minLatitude": 23.278733,
+          "maxLatitude": 23.278733,
+          "minLongitude": 121.322652,
+          "maxLongitude": 121.322652
         },
         "topSchools": [
           {
-            "id": "154679",
-            "name": "縣立萬寧國小",
+            "id": "154676",
+            "name": "縣立吳江國小",
             "townshipName": "富里鄉",
-            "students": 17,
+            "students": 22,
             "status": "正常"
           }
         ]
@@ -6796,6 +7043,7 @@
         "geohash": "wsn5wx6",
         "precision": 7,
         "count": 1,
+        "totalStudents": 14,
         "latitude": 23.155146,
         "longitude": 121.226974,
         "bounds": {
@@ -6815,10 +7063,35 @@
         ]
       },
       {
+        "id": "7-wsnk21q",
+        "geohash": "wsnk21q",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 13,
+        "latitude": 23.253953,
+        "longitude": 121.297475,
+        "bounds": {
+          "minLatitude": 23.253953,
+          "maxLatitude": 23.253953,
+          "minLongitude": 121.297475,
+          "maxLongitude": 121.297475
+        },
+        "topSchools": [
+          {
+            "id": "154679",
+            "name": "縣立萬寧國小",
+            "townshipName": "富里鄉",
+            "students": 13,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "7-wsn5xrp",
         "geohash": "wsn5xrp",
         "precision": 7,
         "count": 1,
+        "totalStudents": 12,
         "latitude": 23.154804,
         "longitude": 121.266568,
         "bounds": {
@@ -6842,6 +7115,7 @@
         "geohash": "wsq2x6k",
         "precision": 7,
         "count": 1,
+        "totalStudents": 976,
         "latitude": 24.007369,
         "longitude": 121.613555,
         "bounds": {
@@ -6865,6 +7139,7 @@
         "geohash": "wsq2xny",
         "precision": 7,
         "count": 1,
+        "totalStudents": 487,
         "latitude": 24.031787,
         "longitude": 121.605041,
         "bounds": {
@@ -6878,7 +7153,7 @@
             "id": "154615",
             "name": "縣立北埔國小",
             "townshipName": "新城鄉",
-            "students": 495,
+            "students": 487,
             "status": "正常"
           }
         ]
@@ -6888,6 +7163,7 @@
         "geohash": "wsq2z0q",
         "precision": 7,
         "count": 1,
+        "totalStudents": 310,
         "latitude": 24.039814,
         "longitude": 121.605964,
         "bounds": {
@@ -6907,10 +7183,35 @@
         ]
       },
       {
+        "id": "7-wsq920r",
+        "geohash": "wsq920r",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 208,
+        "latitude": 24.128063,
+        "longitude": 121.651348,
+        "bounds": {
+          "minLatitude": 24.128063,
+          "maxLatitude": 24.128063,
+          "minLongitude": 121.651348,
+          "maxLongitude": 121.651348
+        },
+        "topSchools": [
+          {
+            "id": "154614",
+            "name": "縣立新城國小",
+            "townshipName": "新城鄉",
+            "students": 208,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "7-wsq90rc",
         "geohash": "wsq90rc",
         "precision": 7,
         "count": 1,
+        "totalStudents": 206,
         "latitude": 24.125897,
         "longitude": 121.653248,
         "bounds": {
@@ -6930,33 +7231,11 @@
         ]
       },
       {
-        "id": "7-wsq920r",
-        "geohash": "wsq920r",
-        "precision": 7,
-        "count": 1,
-        "latitude": 24.128063,
-        "longitude": 121.651348,
-        "bounds": {
-          "minLatitude": 24.128063,
-          "maxLatitude": 24.128063,
-          "minLongitude": 121.651348,
-          "maxLongitude": 121.651348
-        },
-        "topSchools": [
-          {
-            "id": "154614",
-            "name": "縣立新城國小",
-            "townshipName": "新城鄉",
-            "students": 205,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "7-wsq2xnt",
         "geohash": "wsq2xnt",
         "precision": 7,
         "count": 1,
+        "totalStudents": 191,
         "latitude": 24.030802,
         "longitude": 121.604684,
         "bounds": {
@@ -6980,6 +7259,7 @@
         "geohash": "wsq2x79",
         "precision": 7,
         "count": 1,
+        "totalStudents": 109,
         "latitude": 24.014717,
         "longitude": 121.609332,
         "bounds": {
@@ -6993,7 +7273,7 @@
             "id": "154617",
             "name": "縣立嘉里國小",
             "townshipName": "新城鄉",
-            "students": 87,
+            "students": 109,
             "status": "正常"
           }
         ]
@@ -7003,6 +7283,7 @@
         "geohash": "wsq2z68",
         "precision": 7,
         "count": 1,
+        "totalStudents": 56,
         "latitude": 24.052498,
         "longitude": 121.607757,
         "bounds": {
@@ -7016,7 +7297,7 @@
             "id": "154616",
             "name": "縣立康樂國小",
             "townshipName": "新城鄉",
-            "students": 75,
+            "students": 56,
             "status": "正常"
           }
         ]
@@ -7026,6 +7307,7 @@
         "geohash": "wsnm9vt",
         "precision": 7,
         "count": 1,
+        "totalStudents": 228,
         "latitude": 23.498008,
         "longitude": 121.374113,
         "bounds": {
@@ -7039,7 +7321,7 @@
             "id": "154649",
             "name": "縣立瑞穗國小",
             "townshipName": "瑞穗鄉",
-            "students": 237,
+            "students": 228,
             "status": "正常"
           }
         ]
@@ -7049,6 +7331,7 @@
         "geohash": "wsnm9vy",
         "precision": 7,
         "count": 1,
+        "totalStudents": 157,
         "latitude": 23.499039,
         "longitude": 121.375238,
         "bounds": {
@@ -7072,6 +7355,7 @@
         "geohash": "wsnmf49",
         "precision": 7,
         "count": 1,
+        "totalStudents": 67,
         "latitude": 23.525593,
         "longitude": 121.378632,
         "bounds": {
@@ -7085,7 +7369,7 @@
             "id": "154650",
             "name": "縣立瑞北國小",
             "townshipName": "瑞穗鄉",
-            "students": 61,
+            "students": 67,
             "status": "正常"
           }
         ]
@@ -7095,6 +7379,7 @@
         "geohash": "wsnq1uq",
         "precision": 7,
         "count": 1,
+        "totalStudents": 59,
         "latitude": 23.578788,
         "longitude": 121.375538,
         "bounds": {
@@ -7108,7 +7393,7 @@
             "id": "154654",
             "name": "縣立富源國小",
             "townshipName": "瑞穗鄉",
-            "students": 60,
+            "students": 59,
             "status": "正常"
           }
         ]
@@ -7118,6 +7403,7 @@
         "geohash": "wsnmdkf",
         "precision": 7,
         "count": 1,
+        "totalStudents": 29,
         "latitude": 23.493269,
         "longitude": 121.39071,
         "bounds": {
@@ -7131,7 +7417,7 @@
             "id": "154651",
             "name": "縣立瑞美國小",
             "townshipName": "瑞穗鄉",
-            "students": 34,
+            "students": 29,
             "status": "正常"
           }
         ]
@@ -7141,6 +7427,7 @@
         "geohash": "wsnmf63",
         "precision": 7,
         "count": 1,
+        "totalStudents": 19,
         "latitude": 23.523594,
         "longitude": 121.390436,
         "bounds": {
@@ -7154,7 +7441,7 @@
             "id": "154652",
             "name": "縣立鶴岡國小",
             "townshipName": "瑞穗鄉",
-            "students": 21,
+            "students": 19,
             "status": "正常"
           }
         ]
@@ -7164,6 +7451,7 @@
         "geohash": "wsnm3qt",
         "precision": 7,
         "count": 1,
+        "totalStudents": 11,
         "latitude": 23.458949,
         "longitude": 121.352042,
         "bounds": {
@@ -7177,7 +7465,7 @@
             "id": "154653",
             "name": "縣立舞鶴國小",
             "townshipName": "瑞穗鄉",
-            "students": 9,
+            "students": 11,
             "status": "正常"
           }
         ]
@@ -7187,6 +7475,7 @@
         "geohash": "wsnmetd",
         "precision": 7,
         "count": 1,
+        "totalStudents": 7,
         "latitude": 23.497079,
         "longitude": 121.445636,
         "bounds": {
@@ -7200,7 +7489,7 @@
             "id": "154705",
             "name": "縣立奇美國小",
             "townshipName": "瑞穗鄉",
-            "students": 8,
+            "students": 7,
             "status": "正常"
           }
         ]
@@ -7210,6 +7499,7 @@
         "geohash": "wsnr7qw",
         "precision": 7,
         "count": 1,
+        "totalStudents": 60,
         "latitude": 23.811322,
         "longitude": 121.440406,
         "bounds": {
@@ -7223,7 +7513,7 @@
             "id": "154696",
             "name": "縣立西林國小",
             "townshipName": "萬榮鄉",
-            "students": 62,
+            "students": 60,
             "status": "正常"
           }
         ]
@@ -7233,6 +7523,7 @@
         "geohash": "wsnqfv3",
         "precision": 7,
         "count": 1,
+        "totalStudents": 49,
         "latitude": 23.715447,
         "longitude": 121.411335,
         "bounds": {
@@ -7246,7 +7537,7 @@
             "id": "154692",
             "name": "縣立萬榮國小",
             "townshipName": "萬榮鄉",
-            "students": 48,
+            "students": 49,
             "status": "正常"
           }
         ]
@@ -7256,6 +7547,7 @@
         "geohash": "wsnqfg3",
         "precision": 7,
         "count": 1,
+        "totalStudents": 43,
         "latitude": 23.705554,
         "longitude": 121.412353,
         "bounds": {
@@ -7269,7 +7561,7 @@
             "id": "154693",
             "name": "縣立明利國小",
             "townshipName": "萬榮鄉",
-            "students": 41,
+            "students": 43,
             "status": "正常"
           }
         ]
@@ -7279,6 +7571,7 @@
         "geohash": "wsnm9m1",
         "precision": 7,
         "count": 1,
+        "totalStudents": 39,
         "latitude": 23.494791,
         "longitude": 121.345478,
         "bounds": {
@@ -7298,33 +7591,11 @@
         ]
       },
       {
-        "id": "7-wsnq1sh",
-        "geohash": "wsnq1sh",
-        "precision": 7,
-        "count": 1,
-        "latitude": 23.577165,
-        "longitude": 121.361315,
-        "bounds": {
-          "minLatitude": 23.577165,
-          "maxLatitude": 23.577165,
-          "minLongitude": 121.361315,
-          "maxLongitude": 121.361315
-        },
-        "topSchools": [
-          {
-            "id": "154695",
-            "name": "縣立馬遠國小",
-            "townshipName": "萬榮鄉",
-            "students": 37,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "7-wsnr79w",
         "geohash": "wsnr79w",
         "precision": 7,
         "count": 1,
+        "totalStudents": 38,
         "latitude": 23.783935,
         "longitude": 121.451884,
         "bounds": {
@@ -7338,7 +7609,31 @@
             "id": "154694",
             "name": "縣立見晴國小",
             "townshipName": "萬榮鄉",
-            "students": 34,
+            "students": 38,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsnq1sh",
+        "geohash": "wsnq1sh",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 33,
+        "latitude": 23.577165,
+        "longitude": 121.361315,
+        "bounds": {
+          "minLatitude": 23.577165,
+          "maxLatitude": 23.577165,
+          "minLongitude": 121.361315,
+          "maxLongitude": 121.361315
+        },
+        "topSchools": [
+          {
+            "id": "154695",
+            "name": "縣立馬遠國小",
+            "townshipName": "萬榮鄉",
+            "students": 33,
             "status": "正常"
           }
         ]
@@ -7348,6 +7643,7 @@
         "geohash": "wsnrvv3",
         "precision": 7,
         "count": 1,
+        "totalStudents": 10266,
         "latitude": 23.892308,
         "longitude": 121.544414,
         "bounds": {
@@ -7367,10 +7663,35 @@
         ]
       },
       {
+        "id": "7-wsnrst5",
+        "geohash": "wsnrst5",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 132,
+        "latitude": 23.846472,
+        "longitude": 121.491717,
+        "bounds": {
+          "minLatitude": 23.846472,
+          "maxLatitude": 23.846472,
+          "minLongitude": 121.491717,
+          "maxLongitude": 121.491717
+        },
+        "topSchools": [
+          {
+            "id": "154627",
+            "name": "縣立豐山國小",
+            "townshipName": "壽豐鄉",
+            "students": 132,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "7-wsnrsuc",
         "geohash": "wsnrsuc",
         "precision": 7,
         "count": 1,
+        "totalStudents": 124,
         "latitude": 23.845502,
         "longitude": 121.500107,
         "bounds": {
@@ -7390,33 +7711,11 @@
         ]
       },
       {
-        "id": "7-wsnrst5",
-        "geohash": "wsnrst5",
-        "precision": 7,
-        "count": 1,
-        "latitude": 23.846472,
-        "longitude": 121.491717,
-        "bounds": {
-          "minLatitude": 23.846472,
-          "maxLatitude": 23.846472,
-          "minLongitude": 121.491717,
-          "maxLongitude": 121.491717
-        },
-        "topSchools": [
-          {
-            "id": "154627",
-            "name": "縣立豐山國小",
-            "townshipName": "壽豐鄉",
-            "students": 124,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "7-wsnrucr",
         "geohash": "wsnrucr",
         "precision": 7,
         "count": 1,
+        "totalStudents": 116,
         "latitude": 23.870349,
         "longitude": 121.507913,
         "bounds": {
@@ -7430,7 +7729,7 @@
             "id": "154626",
             "name": "縣立壽豐國小",
             "townshipName": "壽豐鄉",
-            "students": 123,
+            "students": 116,
             "status": "正常"
           }
         ]
@@ -7440,6 +7739,7 @@
         "geohash": "wsnrvxb",
         "precision": 7,
         "count": 1,
+        "totalStudents": 108,
         "latitude": 23.904967,
         "longitude": 121.531801,
         "bounds": {
@@ -7453,7 +7753,7 @@
             "id": "154629",
             "name": "縣立志學國小",
             "townshipName": "壽豐鄉",
-            "students": 121,
+            "students": 108,
             "status": "正常"
           }
         ]
@@ -7463,6 +7763,7 @@
         "geohash": "wsnrvhp",
         "precision": 7,
         "count": 1,
+        "totalStudents": 59,
         "latitude": 23.885381,
         "longitude": 121.518818,
         "bounds": {
@@ -7486,6 +7787,7 @@
         "geohash": "wsnrv5z",
         "precision": 7,
         "count": 1,
+        "totalStudents": 54,
         "latitude": 23.884051,
         "longitude": 121.519366,
         "bounds": {
@@ -7499,7 +7801,7 @@
             "id": "154630",
             "name": "縣立平和國小",
             "townshipName": "壽豐鄉",
-            "students": 56,
+            "students": 54,
             "status": "正常"
           }
         ]
@@ -7509,6 +7811,7 @@
         "geohash": "wsnrsup",
         "precision": 7,
         "count": 1,
+        "totalStudents": 46,
         "latitude": 23.841612,
         "longitude": 121.507809,
         "bounds": {
@@ -7522,7 +7825,7 @@
             "id": "154628",
             "name": "縣立豐裡國小",
             "townshipName": "壽豐鄉",
-            "students": 50,
+            "students": 46,
             "status": "正常"
           }
         ]
@@ -7532,6 +7835,7 @@
         "geohash": "wsnry14",
         "precision": 7,
         "count": 1,
+        "totalStudents": 27,
         "latitude": 23.867991,
         "longitude": 121.556351,
         "bounds": {
@@ -7545,7 +7849,7 @@
             "id": "154632",
             "name": "縣立月眉國小",
             "townshipName": "壽豐鄉",
-            "students": 25,
+            "students": 27,
             "status": "正常"
           }
         ]
@@ -7555,6 +7859,7 @@
         "geohash": "wsnrs0j",
         "precision": 7,
         "count": 1,
+        "totalStudents": 16,
         "latitude": 23.819523,
         "longitude": 121.473066,
         "bounds": {
@@ -7568,7 +7873,7 @@
             "id": "154631",
             "name": "縣立溪口國小",
             "townshipName": "壽豐鄉",
-            "students": 22,
+            "students": 16,
             "status": "正常"
           }
         ]
@@ -7578,6 +7883,7 @@
         "geohash": "wsnrq1r",
         "precision": 7,
         "count": 1,
+        "totalStudents": 14,
         "latitude": 23.78264,
         "longitude": 121.563391,
         "bounds": {
@@ -7591,7 +7897,7 @@
             "id": "154633",
             "name": "縣立水璉國小",
             "townshipName": "壽豐鄉",
-            "students": 20,
+            "students": 14,
             "status": "正常"
           }
         ]
@@ -7601,6 +7907,7 @@
         "geohash": "wsnr5ds",
         "precision": 7,
         "count": 1,
+        "totalStudents": 222,
         "latitude": 23.74431,
         "longitude": 121.449315,
         "bounds": {
@@ -7624,6 +7931,7 @@
         "geohash": "wsnr5d6",
         "precision": 7,
         "count": 1,
+        "totalStudents": 168,
         "latitude": 23.743431,
         "longitude": 121.446849,
         "bounds": {
@@ -7637,7 +7945,7 @@
             "id": "154634",
             "name": "縣立鳳林國小",
             "townshipName": "鳳林鎮",
-            "students": 159,
+            "students": 168,
             "status": "正常"
           }
         ]
@@ -7647,6 +7955,7 @@
         "geohash": "wsnr5ey",
         "precision": 7,
         "count": 1,
+        "totalStudents": 57,
         "latitude": 23.751117,
         "longitude": 121.45182,
         "bounds": {
@@ -7660,7 +7969,7 @@
             "id": "154637",
             "name": "縣立鳳仁國小",
             "townshipName": "鳳林鎮",
-            "students": 50,
+            "students": 57,
             "status": "正常"
           }
         ]
@@ -7670,6 +7979,7 @@
         "geohash": "wsnrhh6",
         "precision": 7,
         "count": 1,
+        "totalStudents": 43,
         "latitude": 23.754219,
         "longitude": 121.468366,
         "bounds": {
@@ -7683,30 +7993,7 @@
             "id": "154636",
             "name": "縣立大榮國小",
             "townshipName": "鳳林鎮",
-            "students": 45,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsnr7sz",
-        "geohash": "wsnr7sz",
-        "precision": 7,
-        "count": 1,
-        "latitude": 23.801164,
-        "longitude": 121.452895,
-        "bounds": {
-          "minLatitude": 23.801164,
-          "maxLatitude": 23.801164,
-          "minLongitude": 121.452895,
-          "maxLongitude": 121.452895
-        },
-        "topSchools": [
-          {
-            "id": "154642",
-            "name": "縣立林榮國小",
-            "townshipName": "鳳林鎮",
-            "students": 36,
+            "students": 43,
             "status": "正常"
           }
         ]
@@ -7716,6 +8003,7 @@
         "geohash": "wsnqfgv",
         "precision": 7,
         "count": 1,
+        "totalStudents": 34,
         "latitude": 23.708123,
         "longitude": 121.41784,
         "bounds": {
@@ -7739,6 +8027,7 @@
         "geohash": "wsnqfup",
         "precision": 7,
         "count": 1,
+        "totalStudents": 31,
         "latitude": 23.709328,
         "longitude": 121.420098,
         "bounds": {
@@ -7752,30 +8041,31 @@
             "id": "154640",
             "name": "縣立長橋國小",
             "townshipName": "鳳林鎮",
-            "students": 28,
+            "students": 31,
             "status": "正常"
           }
         ]
       },
       {
-        "id": "7-wsnrhp6",
-        "geohash": "wsnrhp6",
+        "id": "7-wsnr7sz",
+        "geohash": "wsnr7sz",
         "precision": 7,
         "count": 1,
-        "latitude": 23.771566,
-        "longitude": 121.468274,
+        "totalStudents": 29,
+        "latitude": 23.801164,
+        "longitude": 121.452895,
         "bounds": {
-          "minLatitude": 23.771566,
-          "maxLatitude": 23.771566,
-          "minLongitude": 121.468274,
-          "maxLongitude": 121.468274
+          "minLatitude": 23.801164,
+          "maxLatitude": 23.801164,
+          "minLongitude": 121.452895,
+          "maxLongitude": 121.452895
         },
         "topSchools": [
           {
-            "id": "154638",
-            "name": "縣立北林國小",
+            "id": "154642",
+            "name": "縣立林榮國小",
             "townshipName": "鳳林鎮",
-            "students": 22,
+            "students": 29,
             "status": "正常"
           }
         ]
@@ -7785,6 +8075,7 @@
         "geohash": "wsnr7cd",
         "precision": 7,
         "count": 1,
+        "totalStudents": 17,
         "latitude": 23.783465,
         "longitude": 121.457521,
         "bounds": {
@@ -7804,10 +8095,35 @@
         ]
       },
       {
+        "id": "7-wsnrhp6",
+        "geohash": "wsnrhp6",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 17,
+        "latitude": 23.771566,
+        "longitude": 121.468274,
+        "bounds": {
+          "minLatitude": 23.771566,
+          "maxLatitude": 23.771566,
+          "minLongitude": 121.468274,
+          "maxLongitude": 121.468274
+        },
+        "topSchools": [
+          {
+            "id": "154638",
+            "name": "縣立北林國小",
+            "townshipName": "鳳林鎮",
+            "students": 17,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "7-wsnqjrb",
         "geohash": "wsnqjrb",
         "precision": 7,
         "count": 1,
+        "totalStudents": 53,
         "latitude": 23.598236,
         "longitude": 121.52093,
         "bounds": {
@@ -7821,7 +8137,7 @@
             "id": "154655",
             "name": "縣立豐濱國小",
             "townshipName": "豐濱鄉",
-            "students": 65,
+            "students": 53,
             "status": "正常"
           }
         ]
@@ -7831,6 +8147,7 @@
         "geohash": "wsnqm23",
         "precision": 7,
         "count": 1,
+        "totalStudents": 43,
         "latitude": 23.601173,
         "longitude": 121.521437,
         "bounds": {
@@ -7850,10 +8167,35 @@
         ]
       },
       {
+        "id": "7-wsnms8r",
+        "geohash": "wsnms8r",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 19,
+        "latitude": 23.468534,
+        "longitude": 121.496872,
+        "bounds": {
+          "minLatitude": 23.468534,
+          "maxLatitude": 23.468534,
+          "minLongitude": 121.496872,
+          "maxLongitude": 121.496872
+        },
+        "topSchools": [
+          {
+            "id": "154656",
+            "name": "縣立港口國小",
+            "townshipName": "豐濱鄉",
+            "students": 19,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "7-wsnmkxn",
         "geohash": "wsnmkxn",
         "precision": 7,
         "count": 1,
+        "totalStudents": 18,
         "latitude": 23.461489,
         "longitude": 121.495436,
         "bounds": {
@@ -7877,6 +8219,7 @@
         "geohash": "wsnqt9e",
         "precision": 7,
         "count": 1,
+        "totalStudents": 16,
         "latitude": 23.651742,
         "longitude": 121.53616,
         "bounds": {
@@ -7889,29 +8232,6 @@
           {
             "id": "154658",
             "name": "縣立新社國小",
-            "townshipName": "豐濱鄉",
-            "students": 17,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsnms8r",
-        "geohash": "wsnms8r",
-        "precision": 7,
-        "count": 1,
-        "latitude": 23.468534,
-        "longitude": 121.496872,
-        "bounds": {
-          "minLatitude": 23.468534,
-          "maxLatitude": 23.468534,
-          "minLongitude": 121.496872,
-          "maxLongitude": 121.496872
-        },
-        "topSchools": [
-          {
-            "id": "154656",
-            "name": "縣立港口國小",
             "townshipName": "豐濱鄉",
             "students": 16,
             "status": "正常"

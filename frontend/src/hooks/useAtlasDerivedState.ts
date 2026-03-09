@@ -19,6 +19,8 @@ import {
   getCountyScopeSummaryFromSummary,
   getCountySummaries,
   getNationalEducationDistribution,
+  getNationalEducationTrendSeries,
+  getRegionalComparisonRows,
   getNationSummary,
   getSchoolInsights,
   getTownshipNotesFromSummary,
@@ -86,9 +88,12 @@ export function useAtlasDerivedState({
       townshipRows: [],
       activeTownshipId: null,
       selectedTownshipSummary: null,
+      countyWideSchoolInsights: [],
       schoolInsights: [],
       selectedSchool: null,
       educationDistribution: [],
+      nationalEducationTrendSeries: [],
+      regionalComparisonRows: [],
       currentScope: { label: '全台灣', caption: '', students: 0, schools: 0, delta: 0, deltaRatio: 0, trend: [] },
       rankingRows: [],
       scopeNotes: [],
@@ -123,9 +128,7 @@ export function useAtlasDerivedState({
   const selectedCountyFromDataset = summaryDataset.counties.find((county) => county.id === selectedCountyId) ?? null
   const countySummaries = getCountySummaries(summaryDataset.counties, filters)
   const countyRankingRows = getCountyRankingRows(countySummaries)
-  const activeCountyId = selectedCountyFromDataset && countySummaries.some((county) => county.id === selectedCountyId && !county.filteredOut)
-    ? selectedCountyId
-    : null
+  const activeCountyId = selectedCountyFromDataset ? selectedCountyId : null
   const activeTownshipBoundaries = activeCountyId ? townshipBoundaryCache[activeCountyId] ?? null : null
   const activeCountyBuckets = activeCountyId ? countyBucketCache[activeCountyId] ?? null : null
   const isTownshipBoundaryLoading = Boolean(activeCountyId && !activeTownshipBoundaries)
@@ -138,18 +141,23 @@ export function useAtlasDerivedState({
   const selectedTownshipSummary = selectedCounty && activeTownshipId
     ? getTownshipScopeSummaryFromSummary(selectedCounty, activeTownshipId, filters)
     : null
+  const countyWideSchoolInsights = getSchoolInsights(selectedCountyDetail, filters, null)
   const schoolInsights = getSchoolInsights(selectedCountyDetail, filters, activeTownshipId)
-  const activeSchoolId = schoolInsights.some((school) => school.id === selectedSchoolId) ? selectedSchoolId : null
-  const selectedSchool = schoolInsights.find((school) => school.id === activeSchoolId) ?? schoolInsights.at(0) ?? null
+  const activeSchoolId = countyWideSchoolInsights.some((school) => school.id === selectedSchoolId) ? selectedSchoolId : null
+  const selectedSchool = activeSchoolId
+    ? countyWideSchoolInsights.find((school) => school.id === activeSchoolId) ?? null
+    : null
   const nationalSummary = getNationSummary(summaryDataset.counties, filters)
   const educationDistribution = getNationalEducationDistribution(summaryDataset.counties, filters)
+  const nationalEducationTrendSeries = getNationalEducationTrendSeries(summaryDataset.counties, filters)
+  const regionalComparisonRows = getRegionalComparisonRows(summaryDataset.counties, filters)
   const currentScope = selectedTownshipSummary ?? selectedCountySummary ?? nationalSummary
   const rankingRows = selectedCounty ? townshipRows : countyRankingRows
   const scopeNotes = selectedTownshipSummary && selectedCounty && activeTownshipId
     ? getTownshipNotesFromSummary(selectedCounty, activeTownshipId)
     : selectedCounty ? getCountyNotesFromSummary(selectedCounty) : []
 
-  const scopePath = ['全台灣']
+  const scopePath = ['全台']
   if (selectedCountySummary) scopePath.push(selectedCountySummary.label)
   if (selectedTownshipSummary) scopePath.push(selectedTownshipSummary.label)
 
@@ -186,7 +194,6 @@ export function useAtlasDerivedState({
         activeYear: filters.year,
         educationLevel,
         managementType,
-        region,
       }
     : null
 
@@ -227,11 +234,17 @@ export function useAtlasDerivedState({
   const schoolRecordLookup = new Map(
     (selectedCountyDetail?.towns ?? []).flatMap((township) => township.schools.map((school) => [school.id, school] as const)),
   )
-  const schoolMapPoints: SchoolMapPoint[] = schoolInsights.reduce<SchoolMapPoint[]>((points, school) => {
+  const visibleSchoolInsights = activeTownshipId
+    ? schoolInsights
+    : selectedSchool
+      ? countyWideSchoolInsights
+      : schoolInsights
+
+  const schoolMapPoints: SchoolMapPoint[] = visibleSchoolInsights.reduce<SchoolMapPoint[]>((points, school) => {
     const rawSchool = schoolRecordLookup.get(school.id)
     if (!rawSchool) return points
     const { latitude, longitude } = rawSchool.coordinates
-    if (!Number.isFinite(latitude) || !Number.isFinite(longitude)) return points
+    if (!Number.isFinite(latitude) || !Number.isFinite(longitude) || (latitude === 0 && longitude === 0)) return points
     points.push({
       id: school.id,
       name: school.name,
@@ -241,6 +254,7 @@ export function useAtlasDerivedState({
       status: school.status ?? '正常',
       currentStudents: school.currentStudents,
       delta: school.delta,
+      deltaRatio: school.deltaRatio,
       latitude,
       longitude,
       website: rawSchool.profileUrl ?? rawSchool.website,
@@ -249,42 +263,16 @@ export function useAtlasDerivedState({
   }, [])
 
   return {
-    filters,
-    countySummaries,
-    countyRankingRows,
-    activeCountyId,
-    activeTownshipBoundaries,
-    activeCountyBuckets,
-    isTownshipBoundaryLoading,
-    selectedCounty,
-    selectedCountyDetail,
-    isCountyDetailLoading,
-    selectedCountySummary,
-    townshipRows,
-    activeTownshipId,
-    selectedTownshipSummary,
-    schoolInsights,
-    selectedSchool,
-    educationDistribution,
-    currentScope,
-    rankingRows,
-    scopeNotes,
-    scopePath,
-    effectiveComparisonCountyIds,
-    comparisonSummaries,
-    comparisonCandidates,
-    filteredAnomalies,
-    activeInvestigation,
-    activeScenarioSnapshot,
-    topRows,
-    topCountyPrefetchIds,
-    countyQuickPicks,
-    scopeHeadline,
-    scopeDescription,
-    schoolPanelTitle,
-    generatedAtLabel,
-    offlineReadyWithBuckets,
-    observedCounties,
-    schoolMapPoints,
+    filters, countySummaries, countyRankingRows,
+    activeCountyId, activeTownshipBoundaries, activeCountyBuckets, isTownshipBoundaryLoading,
+    selectedCounty, selectedCountyDetail, isCountyDetailLoading, selectedCountySummary,
+    townshipRows, activeTownshipId, selectedTownshipSummary,
+    countyWideSchoolInsights, schoolInsights, selectedSchool,
+    educationDistribution, nationalEducationTrendSeries, regionalComparisonRows, currentScope, rankingRows, scopeNotes, scopePath,
+    effectiveComparisonCountyIds, comparisonSummaries, comparisonCandidates,
+    filteredAnomalies, activeInvestigation, activeScenarioSnapshot,
+    topRows, topCountyPrefetchIds, countyQuickPicks,
+    scopeHeadline, scopeDescription, schoolPanelTitle, generatedAtLabel,
+    offlineReadyWithBuckets, observedCounties, schoolMapPoints,
   }
 }

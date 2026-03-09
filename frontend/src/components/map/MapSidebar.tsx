@@ -3,7 +3,7 @@ import { formatFileSize, type CountySummary } from '../../lib/analytics'
 import type { ObservedCountyResource, SchoolMapPoint } from './types'
 
 type MapSidebarProps = {
-  activeTab: 'overview' | 'regional' | 'schools'
+  activeTab: 'overview' | 'regional' | 'schools' | 'school-focus'
   activeCounty: CountySummary | null
   selectedSchool: SchoolMapPoint | null
   loadObservation: AtlasLoadObservationSnapshot
@@ -50,8 +50,8 @@ function MapSidebar({
         </div>
       ) : null}
 
-      {activeTab === 'schools' ? (
-        <div className="atlas-map-sidecard atlas-map-sidecard--marker">
+      {activeTab === 'schools' || activeTab === 'school-focus' ? (
+        <div className="atlas-map-sidecard atlas-map-sidecard--marker" data-testid="map-school-card">
           <span className="map-stage__legend-title">學校定位</span>
           <span>低縮放：使用預先產製 bucket 分群</span>
           <span>高縮放：顯示單校點位</span>

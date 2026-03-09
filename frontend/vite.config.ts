@@ -11,6 +11,19 @@ export default defineConfig({
   optimizeDeps: {
     include: ['react', 'react-dom', 'leaflet', 'react-leaflet'],
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (!id.includes('node_modules')) return undefined
+          if (id.includes('sql.js')) return 'vendor-sqljs'
+          if (id.includes('leaflet') || id.includes('react-leaflet')) return 'vendor-leaflet'
+          if (id.includes('react-dom') || id.includes('/react/')) return 'vendor-react'
+          return undefined
+        },
+      },
+    },
+  },
   plugins: [
     react(),
     VitePWA({

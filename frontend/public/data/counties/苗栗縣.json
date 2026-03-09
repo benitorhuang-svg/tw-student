@@ -7,9 +7,12 @@
   },
   "dataNotes": [
     {
-      "type": "缺年度",
-      "message": "苗栗縣 有 8 所學校存在年度缺漏。",
-      "severity": "warning"
+      "type": "異常值",
+      "message": "苗栗縣 有 1 所學校最新學年學生數為 0，需留意停辦或整併可能。",
+      "severity": "info",
+      "years": [
+        114
+      ]
     }
   ],
   "towns": [
@@ -62,6 +65,10 @@
             {
               "year": 113,
               "students": 542
+            },
+            {
+              "year": 114,
+              "students": 542
             }
           ],
           "status": "正常",
@@ -112,6 +119,10 @@
             {
               "year": 113,
               "students": 282
+            },
+            {
+              "year": 114,
+              "students": 267
             }
           ],
           "status": "正常",
@@ -162,6 +173,10 @@
             {
               "year": 113,
               "students": 254
+            },
+            {
+              "year": 114,
+              "students": 252
             }
           ],
           "status": "正常",
@@ -212,6 +227,10 @@
             {
               "year": 113,
               "students": 54
+            },
+            {
+              "year": 114,
+              "students": 56
             }
           ],
           "status": "正常",
@@ -262,6 +281,10 @@
             {
               "year": 113,
               "students": 45
+            },
+            {
+              "year": 114,
+              "students": 41
             }
           ],
           "status": "正常",
@@ -320,6 +343,10 @@
             {
               "year": 113,
               "students": 242
+            },
+            {
+              "year": 114,
+              "students": 242
             }
           ],
           "status": "正常",
@@ -369,6 +396,10 @@
             },
             {
               "year": 113,
+              "students": 82
+            },
+            {
+              "year": 114,
               "students": 82
             }
           ],
@@ -428,22 +459,15 @@
             {
               "year": 113,
               "students": 490
+            },
+            {
+              "year": 114,
+              "students": 490
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "054690",
@@ -489,6 +513,10 @@
             {
               "year": 113,
               "students": 188
+            },
+            {
+              "year": 114,
+              "students": 163
             }
           ],
           "status": "正常",
@@ -538,6 +566,10 @@
             },
             {
               "year": 113,
+              "students": 113
+            },
+            {
+              "year": 114,
               "students": 113
             }
           ],
@@ -589,6 +621,10 @@
             {
               "year": 113,
               "students": 92
+            },
+            {
+              "year": 114,
+              "students": 92
             }
           ],
           "status": "正常",
@@ -638,6 +674,10 @@
             },
             {
               "year": 113,
+              "students": 79
+            },
+            {
+              "year": 114,
               "students": 79
             }
           ],
@@ -689,6 +729,10 @@
             {
               "year": 113,
               "students": 52
+            },
+            {
+              "year": 114,
+              "students": 56
             }
           ],
           "status": "正常",
@@ -738,6 +782,64 @@
             },
             {
               "year": 113,
+              "students": 25
+            },
+            {
+              "year": 114,
+              "students": 30
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "054696",
+          "code": "054696",
+          "name": "縣立新開國小",
+          "countyId": "苗栗縣",
+          "townshipId": "苗栗縣:大湖鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "苗栗縣大湖鄉新開村25號",
+          "phone": "(037)951210",
+          "website": "https://shinkaies.mlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/054696/C/苗栗縣/大湖鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.826637,
+            "latitude": 24.347838
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 25
+            },
+            {
+              "year": 108,
+              "students": 23
+            },
+            {
+              "year": 109,
+              "students": 22
+            },
+            {
+              "year": 110,
+              "students": 24
+            },
+            {
+              "year": 111,
+              "students": 22
+            },
+            {
+              "year": 112,
+              "students": 22
+            },
+            {
+              "year": 113,
+              "students": 21
+            },
+            {
+              "year": 114,
               "students": 25
             }
           ],
@@ -789,56 +891,10 @@
             {
               "year": 113,
               "students": 22
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "054696",
-          "code": "054696",
-          "name": "縣立新開國小",
-          "countyId": "苗栗縣",
-          "townshipId": "苗栗縣:大湖鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "苗栗縣大湖鄉新開村25號",
-          "phone": "(037)951210",
-          "website": "https://shinkaies.mlc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/054696/C/苗栗縣/大湖鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.826637,
-            "latitude": 24.347838
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 25
             },
             {
-              "year": 108,
-              "students": 23
-            },
-            {
-              "year": 109,
-              "students": 22
-            },
-            {
-              "year": 110,
-              "students": 24
-            },
-            {
-              "year": 111,
-              "students": 22
-            },
-            {
-              "year": 112,
-              "students": 22
-            },
-            {
-              "year": 113,
-              "students": 21
+              "year": 114,
+              "students": 19
             }
           ],
           "status": "正常",
@@ -889,6 +945,10 @@
             {
               "year": 113,
               "students": 16
+            },
+            {
+              "year": 114,
+              "students": 16
             }
           ],
           "status": "正常",
@@ -896,13 +956,7 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "大湖鄉 有 1 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "苗栗縣:公館鄉",
@@ -953,6 +1007,10 @@
             {
               "year": 113,
               "students": 859
+            },
+            {
+              "year": 114,
+              "students": 848
             }
           ],
           "status": "正常",
@@ -1002,6 +1060,10 @@
             },
             {
               "year": 113,
+              "students": 756
+            },
+            {
+              "year": 114,
               "students": 756
             }
           ],
@@ -1053,6 +1115,10 @@
             {
               "year": 113,
               "students": 206
+            },
+            {
+              "year": 114,
+              "students": 194
             }
           ],
           "status": "正常",
@@ -1103,6 +1169,10 @@
             {
               "year": 113,
               "students": 169
+            },
+            {
+              "year": 114,
+              "students": 156
             }
           ],
           "status": "正常",
@@ -1153,6 +1223,10 @@
             {
               "year": 113,
               "students": 147
+            },
+            {
+              "year": 114,
+              "students": 127
             }
           ],
           "status": "正常",
@@ -1202,6 +1276,10 @@
             },
             {
               "year": 113,
+              "students": 87
+            },
+            {
+              "year": 114,
               "students": 87
             }
           ],
@@ -1253,6 +1331,10 @@
             {
               "year": 113,
               "students": 70
+            },
+            {
+              "year": 114,
+              "students": 69
             }
           ],
           "status": "正常",
@@ -1303,6 +1385,10 @@
             {
               "year": 113,
               "students": 63
+            },
+            {
+              "year": 114,
+              "students": 62
             }
           ],
           "status": "正常",
@@ -1353,6 +1439,10 @@
             {
               "year": 113,
               "students": 41
+            },
+            {
+              "year": 114,
+              "students": 46
             }
           ],
           "status": "正常",
@@ -1411,6 +1501,10 @@
             {
               "year": 113,
               "students": 2113
+            },
+            {
+              "year": 114,
+              "students": 2113
             }
           ],
           "status": "正常",
@@ -1461,56 +1555,10 @@
             {
               "year": 113,
               "students": 2025
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "054659",
-          "code": "054659",
-          "name": "縣立竹南國小",
-          "countyId": "苗栗縣",
-          "townshipId": "苗栗縣:竹南鎮",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "苗栗縣竹南鎮中正路146號",
-          "phone": "(037)462020",
-          "website": "https://junanes.mlc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/054659/C/苗栗縣/竹南鎮/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.869559,
-            "latitude": 24.683846
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1541
             },
             {
-              "year": 108,
-              "students": 1598
-            },
-            {
-              "year": 109,
-              "students": 1598
-            },
-            {
-              "year": 110,
-              "students": 1621
-            },
-            {
-              "year": 111,
-              "students": 1681
-            },
-            {
-              "year": 112,
-              "students": 1642
-            },
-            {
-              "year": 113,
-              "students": 1576
+              "year": 114,
+              "students": 1983
             }
           ],
           "status": "正常",
@@ -1561,22 +1609,69 @@
             {
               "year": 113,
               "students": 1508
+            },
+            {
+              "year": 114,
+              "students": 1508
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "054659",
+          "code": "054659",
+          "name": "縣立竹南國小",
+          "countyId": "苗栗縣",
+          "townshipId": "苗栗縣:竹南鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "苗栗縣竹南鎮中正路146號",
+          "phone": "(037)462020",
+          "website": "https://junanes.mlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/054659/C/苗栗縣/竹南鎮/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.869559,
+            "latitude": 24.683846
+          },
+          "yearlyStudents": [
             {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
+              "year": 107,
+              "students": 1541
+            },
+            {
+              "year": 108,
+              "students": 1598
+            },
+            {
+              "year": 109,
+              "students": 1598
+            },
+            {
+              "year": 110,
+              "students": 1621
+            },
+            {
+              "year": 111,
+              "students": 1681
+            },
+            {
+              "year": 112,
+              "students": 1642
+            },
+            {
+              "year": 113,
+              "students": 1576
+            },
+            {
+              "year": 114,
+              "students": 1490
             }
-          ]
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "054520",
@@ -1621,6 +1716,10 @@
             },
             {
               "year": 113,
+              "students": 1406
+            },
+            {
+              "year": 114,
               "students": 1406
             }
           ],
@@ -1672,6 +1771,10 @@
             {
               "year": 113,
               "students": 1105
+            },
+            {
+              "year": 114,
+              "students": 1105
             }
           ],
           "status": "正常",
@@ -1722,6 +1825,10 @@
             {
               "year": 113,
               "students": 726
+            },
+            {
+              "year": 114,
+              "students": 719
             }
           ],
           "status": "正常",
@@ -1771,6 +1878,10 @@
             },
             {
               "year": 113,
+              "students": 701
+            },
+            {
+              "year": 114,
               "students": 701
             }
           ],
@@ -1822,6 +1933,10 @@
             {
               "year": 113,
               "students": 687
+            },
+            {
+              "year": 114,
+              "students": 653
             }
           ],
           "status": "正常",
@@ -1872,22 +1987,15 @@
             {
               "year": 113,
               "students": 607
+            },
+            {
+              "year": 114,
+              "students": 607
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "054663",
@@ -1933,6 +2041,10 @@
             {
               "year": 113,
               "students": 480
+            },
+            {
+              "year": 114,
+              "students": 440
             }
           ],
           "status": "正常",
@@ -1983,6 +2095,10 @@
             {
               "year": 113,
               "students": 332
+            },
+            {
+              "year": 114,
+              "students": 331
             }
           ],
           "status": "正常",
@@ -2033,6 +2149,10 @@
             {
               "year": 113,
               "students": 323
+            },
+            {
+              "year": 114,
+              "students": 298
             }
           ],
           "status": "正常",
@@ -2083,6 +2203,10 @@
             {
               "year": 113,
               "students": 158
+            },
+            {
+              "year": 114,
+              "students": 157
             }
           ],
           "status": "正常",
@@ -2090,69 +2214,13 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "竹南鎮 有 2 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "苗栗縣:西湖鄉",
       "name": "西湖鄉",
       "countyId": "苗栗縣",
       "schools": [
-        {
-          "id": "054515",
-          "code": "054515",
-          "name": "縣立西湖國中",
-          "countyId": "苗栗縣",
-          "townshipId": "苗栗縣:西湖鄉",
-          "educationLevel": "國中",
-          "managementType": "公立",
-          "address": "苗栗縣西湖鄉龍洞村一鄰1之1號",
-          "phone": "(037)921016",
-          "website": "http://www.shihujh.mlc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/054515/J/苗栗縣/西湖鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.757385,
-            "latitude": 24.555988
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 111
-            },
-            {
-              "year": 108,
-              "students": 102
-            },
-            {
-              "year": 109,
-              "students": 84
-            },
-            {
-              "year": 110,
-              "students": 76
-            },
-            {
-              "year": 111,
-              "students": 67
-            },
-            {
-              "year": 112,
-              "students": 72
-            },
-            {
-              "year": 113,
-              "students": 75
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
         {
           "id": "054646",
           "code": "054646",
@@ -2197,6 +2265,64 @@
             {
               "year": 113,
               "students": 70
+            },
+            {
+              "year": 114,
+              "students": 88
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "054515",
+          "code": "054515",
+          "name": "縣立西湖國中",
+          "countyId": "苗栗縣",
+          "townshipId": "苗栗縣:西湖鄉",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "苗栗縣西湖鄉龍洞村一鄰1之1號",
+          "phone": "(037)921016",
+          "website": "http://www.shihujh.mlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/054515/J/苗栗縣/西湖鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.757385,
+            "latitude": 24.555988
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 111
+            },
+            {
+              "year": 108,
+              "students": 102
+            },
+            {
+              "year": 109,
+              "students": 84
+            },
+            {
+              "year": 110,
+              "students": 76
+            },
+            {
+              "year": 111,
+              "students": 67
+            },
+            {
+              "year": 112,
+              "students": 72
+            },
+            {
+              "year": 113,
+              "students": 75
+            },
+            {
+              "year": 114,
+              "students": 75
             }
           ],
           "status": "正常",
@@ -2247,6 +2373,10 @@
             {
               "year": 113,
               "students": 29
+            },
+            {
+              "year": 114,
+              "students": 23
             }
           ],
           "status": "正常",
@@ -2297,14 +2427,36 @@
             {
               "year": 113,
               "students": 15
+            },
+            {
+              "year": 114,
+              "students": 0
             }
           ],
-          "status": "正常",
+          "status": "待確認",
           "missingYears": [],
-          "dataNotes": []
+          "dataNotes": [
+            {
+              "type": "異常值",
+              "message": "114 學年學生數為 0，可能涉及停辦、整併或資料尚未更新。",
+              "severity": "warning",
+              "years": [
+                114
+              ]
+            }
+          ]
         }
       ],
-      "dataNotes": []
+      "dataNotes": [
+        {
+          "type": "異常值",
+          "message": "西湖鄉 有 1 所學校最新學年學生數為 0，需留意停辦或整併可能。",
+          "severity": "info",
+          "years": [
+            114
+          ]
+        }
+      ]
     },
     {
       "id": "苗栗縣:卓蘭鎮",
@@ -2354,6 +2506,10 @@
             },
             {
               "year": 113,
+              "students": 762
+            },
+            {
+              "year": 114,
               "students": 762
             }
           ],
@@ -2405,6 +2561,10 @@
             {
               "year": 113,
               "students": 342
+            },
+            {
+              "year": 114,
+              "students": 331
             }
           ],
           "status": "正常",
@@ -2455,6 +2615,10 @@
             {
               "year": 113,
               "students": 65
+            },
+            {
+              "year": 114,
+              "students": 62
             }
           ],
           "status": "正常",
@@ -2505,6 +2669,10 @@
             {
               "year": 113,
               "students": 51
+            },
+            {
+              "year": 114,
+              "students": 52
             }
           ],
           "status": "正常",
@@ -2554,6 +2722,10 @@
             },
             {
               "year": 113,
+              "students": 50
+            },
+            {
+              "year": 114,
               "students": 50
             }
           ],
@@ -2605,6 +2777,10 @@
             {
               "year": 113,
               "students": 40
+            },
+            {
+              "year": 114,
+              "students": 42
             }
           ],
           "status": "正常",
@@ -2655,6 +2831,10 @@
             {
               "year": 113,
               "students": 19
+            },
+            {
+              "year": 114,
+              "students": 21
             }
           ],
           "status": "正常",
@@ -2705,6 +2885,10 @@
             {
               "year": 113,
               "students": 17
+            },
+            {
+              "year": 114,
+              "students": 14
             }
           ],
           "status": "正常",
@@ -2763,6 +2947,10 @@
             {
               "year": 113,
               "students": 118
+            },
+            {
+              "year": 114,
+              "students": 106
             }
           ],
           "status": "正常",
@@ -2813,56 +3001,10 @@
             {
               "year": 113,
               "students": 75
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "054670",
-          "code": "054670",
-          "name": "縣立南埔國小",
-          "countyId": "苗栗縣",
-          "townshipId": "苗栗縣:南庄鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "苗栗縣南庄鄉南富村134號",
-          "phone": "(037)822324",
-          "website": "https://nanpues.mlc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/054670/C/苗栗縣/南庄鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.972966,
-            "latitude": 24.635224
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 63
             },
             {
-              "year": 108,
-              "students": 66
-            },
-            {
-              "year": 109,
-              "students": 59
-            },
-            {
-              "year": 110,
-              "students": 61
-            },
-            {
-              "year": 111,
-              "students": 59
-            },
-            {
-              "year": 112,
-              "students": 55
-            },
-            {
-              "year": 113,
-              "students": 53
+              "year": 114,
+              "students": 75
             }
           ],
           "status": "正常",
@@ -2913,6 +3055,64 @@
             {
               "year": 113,
               "students": 46
+            },
+            {
+              "year": 114,
+              "students": 45
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "054670",
+          "code": "054670",
+          "name": "縣立南埔國小",
+          "countyId": "苗栗縣",
+          "townshipId": "苗栗縣:南庄鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "苗栗縣南庄鄉南富村134號",
+          "phone": "(037)822324",
+          "website": "https://nanpues.mlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/054670/C/苗栗縣/南庄鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.972966,
+            "latitude": 24.635224
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 63
+            },
+            {
+              "year": 108,
+              "students": 66
+            },
+            {
+              "year": 109,
+              "students": 59
+            },
+            {
+              "year": 110,
+              "students": 61
+            },
+            {
+              "year": 111,
+              "students": 59
+            },
+            {
+              "year": 112,
+              "students": 55
+            },
+            {
+              "year": 113,
+              "students": 53
+            },
+            {
+              "year": 114,
+              "students": 42
             }
           ],
           "status": "正常",
@@ -2963,6 +3163,10 @@
             {
               "year": 113,
               "students": 45
+            },
+            {
+              "year": 114,
+              "students": 39
             }
           ],
           "status": "正常",
@@ -3013,6 +3217,10 @@
             {
               "year": 113,
               "students": 28
+            },
+            {
+              "year": 114,
+              "students": 26
             }
           ],
           "status": "正常",
@@ -3071,6 +3279,10 @@
             {
               "year": 113,
               "students": 5458
+            },
+            {
+              "year": 114,
+              "students": 5458
             }
           ],
           "status": "正常",
@@ -3121,6 +3333,10 @@
             {
               "year": 113,
               "students": 689
+            },
+            {
+              "year": 114,
+              "students": 693
             }
           ],
           "status": "正常",
@@ -3171,6 +3387,10 @@
             {
               "year": 113,
               "students": 375
+            },
+            {
+              "year": 114,
+              "students": 368
             }
           ],
           "status": "正常",
@@ -3220,6 +3440,10 @@
             },
             {
               "year": 113,
+              "students": 239
+            },
+            {
+              "year": 114,
               "students": 239
             }
           ],
@@ -3271,6 +3495,10 @@
             {
               "year": 113,
               "students": 234
+            },
+            {
+              "year": 114,
+              "students": 234
             }
           ],
           "status": "正常",
@@ -3320,6 +3548,10 @@
             },
             {
               "year": 113,
+              "students": 153
+            },
+            {
+              "year": 114,
               "students": 153
             }
           ],
@@ -3371,6 +3603,10 @@
             {
               "year": 113,
               "students": 79
+            },
+            {
+              "year": 114,
+              "students": 80
             }
           ],
           "status": "正常",
@@ -3421,6 +3657,10 @@
             {
               "year": 113,
               "students": 64
+            },
+            {
+              "year": 114,
+              "students": 65
             }
           ],
           "status": "正常",
@@ -3471,56 +3711,10 @@
             {
               "year": 113,
               "students": 62
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "054686",
-          "code": "054686",
-          "name": "縣立成功國小",
-          "countyId": "苗栗縣",
-          "townshipId": "苗栗縣:後龍鎮",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "苗栗縣後龍鎮水尾里12鄰104之1號",
-          "phone": "(037)722211",
-          "website": "https://cges.mlc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/054686/C/苗栗縣/後龍鎮/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.762022,
-            "latitude": 24.632849
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 65
             },
             {
-              "year": 108,
-              "students": 58
-            },
-            {
-              "year": 109,
+              "year": 114,
               "students": 56
-            },
-            {
-              "year": 110,
-              "students": 56
-            },
-            {
-              "year": 111,
-              "students": 55
-            },
-            {
-              "year": 112,
-              "students": 51
-            },
-            {
-              "year": 113,
-              "students": 55
             }
           ],
           "status": "正常",
@@ -3571,6 +3765,64 @@
             {
               "year": 113,
               "students": 44
+            },
+            {
+              "year": 114,
+              "students": 46
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "054686",
+          "code": "054686",
+          "name": "縣立成功國小",
+          "countyId": "苗栗縣",
+          "townshipId": "苗栗縣:後龍鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "苗栗縣後龍鎮水尾里12鄰104之1號",
+          "phone": "(037)722211",
+          "website": "https://cges.mlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/054686/C/苗栗縣/後龍鎮/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.762022,
+            "latitude": 24.632849
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 65
+            },
+            {
+              "year": 108,
+              "students": 58
+            },
+            {
+              "year": 109,
+              "students": 56
+            },
+            {
+              "year": 110,
+              "students": 56
+            },
+            {
+              "year": 111,
+              "students": 55
+            },
+            {
+              "year": 112,
+              "students": 51
+            },
+            {
+              "year": 113,
+              "students": 55
+            },
+            {
+              "year": 114,
+              "students": 46
             }
           ],
           "status": "正常",
@@ -3621,6 +3873,10 @@
             {
               "year": 113,
               "students": 39
+            },
+            {
+              "year": 114,
+              "students": 36
             }
           ],
           "status": "正常",
@@ -3670,6 +3926,10 @@
             },
             {
               "year": 113,
+              "students": 34
+            },
+            {
+              "year": 114,
               "students": 34
             }
           ],
@@ -3721,6 +3981,10 @@
             {
               "year": 113,
               "students": 29
+            },
+            {
+              "year": 114,
+              "students": 27
             }
           ],
           "status": "正常",
@@ -3779,6 +4043,10 @@
             {
               "year": 113,
               "students": 1293
+            },
+            {
+              "year": 114,
+              "students": 1293
             }
           ],
           "status": "正常",
@@ -3829,22 +4097,15 @@
             {
               "year": 113,
               "students": 1108
+            },
+            {
+              "year": 114,
+              "students": 1108
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "054722",
@@ -3890,6 +4151,10 @@
             {
               "year": 113,
               "students": 529
+            },
+            {
+              "year": 114,
+              "students": 513
             }
           ],
           "status": "正常",
@@ -3940,56 +4205,10 @@
             {
               "year": 113,
               "students": 416
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "054629",
-          "code": "054629",
-          "name": "縣立山腳國小",
-          "countyId": "苗栗縣",
-          "townshipId": "苗栗縣:苑裡鎮",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "苗栗縣苑裡鎮舊社里10鄰47號",
-          "phone": "(037)745024",
-          "website": "https://sj.mlc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/054629/C/苗栗縣/苑裡鎮/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.685162,
-            "latitude": 24.4174
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 259
             },
             {
-              "year": 108,
-              "students": 244
-            },
-            {
-              "year": 109,
-              "students": 252
-            },
-            {
-              "year": 110,
-              "students": 252
-            },
-            {
-              "year": 111,
-              "students": 268
-            },
-            {
-              "year": 112,
-              "students": 256
-            },
-            {
-              "year": 113,
-              "students": 259
+              "year": 114,
+              "students": 408
             }
           ],
           "status": "正常",
@@ -4040,6 +4259,64 @@
             {
               "year": 113,
               "students": 256
+            },
+            {
+              "year": 114,
+              "students": 255
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "054629",
+          "code": "054629",
+          "name": "縣立山腳國小",
+          "countyId": "苗栗縣",
+          "townshipId": "苗栗縣:苑裡鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "苗栗縣苑裡鎮舊社里10鄰47號",
+          "phone": "(037)745024",
+          "website": "https://sj.mlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/054629/C/苗栗縣/苑裡鎮/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.685162,
+            "latitude": 24.4174
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 259
+            },
+            {
+              "year": 108,
+              "students": 244
+            },
+            {
+              "year": 109,
+              "students": 252
+            },
+            {
+              "year": 110,
+              "students": 252
+            },
+            {
+              "year": 111,
+              "students": 268
+            },
+            {
+              "year": 112,
+              "students": 256
+            },
+            {
+              "year": 113,
+              "students": 259
+            },
+            {
+              "year": 114,
+              "students": 244
             }
           ],
           "status": "正常",
@@ -4090,6 +4367,10 @@
             {
               "year": 113,
               "students": 235
+            },
+            {
+              "year": 114,
+              "students": 242
             }
           ],
           "status": "正常",
@@ -4139,6 +4420,10 @@
             },
             {
               "year": 113,
+              "students": 173
+            },
+            {
+              "year": 114,
               "students": 173
             }
           ],
@@ -4190,6 +4475,10 @@
             {
               "year": 113,
               "students": 168
+            },
+            {
+              "year": 114,
+              "students": 156
             }
           ],
           "status": "正常",
@@ -4240,22 +4529,15 @@
             {
               "year": 113,
               "students": 113
+            },
+            {
+              "year": 114,
+              "students": 113
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "054631",
@@ -4301,6 +4583,10 @@
             {
               "year": 113,
               "students": 98
+            },
+            {
+              "year": 114,
+              "students": 79
             }
           ],
           "status": "正常",
@@ -4351,6 +4637,10 @@
             {
               "year": 113,
               "students": 49
+            },
+            {
+              "year": 114,
+              "students": 38
             }
           ],
           "status": "正常",
@@ -4401,6 +4691,10 @@
             {
               "year": 113,
               "students": 39
+            },
+            {
+              "year": 114,
+              "students": 30
             }
           ],
           "status": "正常",
@@ -4408,13 +4702,7 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "苑裡鎮 有 2 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "苗栗縣:苗栗市",
@@ -4464,6 +4752,10 @@
             },
             {
               "year": 113,
+              "students": 7594
+            },
+            {
+              "year": 114,
               "students": 7594
             }
           ],
@@ -4515,22 +4807,15 @@
             {
               "year": 113,
               "students": 1763
+            },
+            {
+              "year": 114,
+              "students": 1763
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "054717",
@@ -4576,6 +4861,10 @@
             {
               "year": 113,
               "students": 1429
+            },
+            {
+              "year": 114,
+              "students": 1408
             }
           ],
           "status": "正常",
@@ -4626,22 +4915,15 @@
             {
               "year": 113,
               "students": 1359
+            },
+            {
+              "year": 114,
+              "students": 1359
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "054503",
@@ -4686,6 +4968,10 @@
             },
             {
               "year": 113,
+              "students": 1249
+            },
+            {
+              "year": 114,
               "students": 1249
             }
           ],
@@ -4737,6 +5023,10 @@
             {
               "year": 113,
               "students": 1064
+            },
+            {
+              "year": 114,
+              "students": 994
             }
           ],
           "status": "正常",
@@ -4786,6 +5076,10 @@
             },
             {
               "year": 113,
+              "students": 976
+            },
+            {
+              "year": 114,
               "students": 976
             }
           ],
@@ -4837,22 +5131,15 @@
             {
               "year": 113,
               "students": 957
+            },
+            {
+              "year": 114,
+              "students": 957
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "054602",
@@ -4898,6 +5185,10 @@
             {
               "year": 113,
               "students": 624
+            },
+            {
+              "year": 114,
+              "students": 600
             }
           ],
           "status": "正常",
@@ -4948,6 +5239,10 @@
             {
               "year": 113,
               "students": 424
+            },
+            {
+              "year": 114,
+              "students": 396
             }
           ],
           "status": "正常",
@@ -4997,6 +5292,10 @@
             },
             {
               "year": 113,
+              "students": 387
+            },
+            {
+              "year": 114,
               "students": 387
             }
           ],
@@ -5048,6 +5347,10 @@
             {
               "year": 113,
               "students": 378
+            },
+            {
+              "year": 114,
+              "students": 370
             }
           ],
           "status": "正常",
@@ -5098,6 +5401,10 @@
             {
               "year": 113,
               "students": 363
+            },
+            {
+              "year": 114,
+              "students": 365
             }
           ],
           "status": "正常",
@@ -5148,6 +5455,10 @@
             {
               "year": 113,
               "students": 282
+            },
+            {
+              "year": 114,
+              "students": 284
             }
           ],
           "status": "正常",
@@ -5197,6 +5508,10 @@
             },
             {
               "year": 113,
+              "students": 242
+            },
+            {
+              "year": 114,
               "students": 242
             }
           ],
@@ -5248,6 +5563,10 @@
             {
               "year": 113,
               "students": 75
+            },
+            {
+              "year": 114,
+              "students": 74
             }
           ],
           "status": "正常",
@@ -5255,69 +5574,13 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "苗栗市 有 3 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "苗栗縣:泰安鄉",
       "name": "泰安鄉",
       "countyId": "苗栗縣",
       "schools": [
-        {
-          "id": "054714",
-          "code": "054714",
-          "name": "縣立梅園國小",
-          "countyId": "苗栗縣",
-          "townshipId": "苗栗縣:泰安鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "苗栗縣泰安鄉梅園村二鄰38號",
-          "phone": "(037)962146",
-          "website": "https://my.mlc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/054714/C/苗栗縣/泰安鄉/縣市立/極偏/無/",
-          "coordinates": {
-            "longitude": 120.970949,
-            "latitude": 24.388377
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 43
-            },
-            {
-              "year": 108,
-              "students": 44
-            },
-            {
-              "year": 109,
-              "students": 53
-            },
-            {
-              "year": 110,
-              "students": 51
-            },
-            {
-              "year": 111,
-              "students": 48
-            },
-            {
-              "year": 112,
-              "students": 46
-            },
-            {
-              "year": 113,
-              "students": 46
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
         {
           "id": "054712",
           "code": "054712",
@@ -5362,6 +5625,10 @@
             {
               "year": 113,
               "students": 44
+            },
+            {
+              "year": 114,
+              "students": 47
             }
           ],
           "status": "正常",
@@ -5369,99 +5636,53 @@
           "dataNotes": []
         },
         {
-          "id": "054711",
-          "code": "054711",
-          "name": "縣立汶水國小",
+          "id": "054714",
+          "code": "054714",
+          "name": "縣立梅園國小",
           "countyId": "苗栗縣",
           "townshipId": "苗栗縣:泰安鄉",
           "educationLevel": "國小",
           "managementType": "公立",
-          "address": "苗栗縣泰安鄉錦水村四鄰12號",
-          "phone": "(037)941037",
-          "website": "https://ws.mlc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/054711/C/苗栗縣/泰安鄉/縣市立/特偏/無/",
+          "address": "苗栗縣泰安鄉梅園村二鄰38號",
+          "phone": "(037)962146",
+          "website": "https://my.mlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/054714/C/苗栗縣/泰安鄉/縣市立/極偏/無/",
           "coordinates": {
-            "longitude": 120.940655,
-            "latitude": 24.46502
+            "longitude": 120.970949,
+            "latitude": 24.388377
           },
           "yearlyStudents": [
             {
               "year": 107,
+              "students": 43
+            },
+            {
+              "year": 108,
+              "students": 44
+            },
+            {
+              "year": 109,
               "students": 53
             },
             {
-              "year": 108,
-              "students": 60
-            },
-            {
-              "year": 109,
-              "students": 59
-            },
-            {
               "year": 110,
-              "students": 50
+              "students": 51
             },
             {
               "year": 111,
-              "students": 40
+              "students": 48
             },
             {
               "year": 112,
-              "students": 37
+              "students": 46
             },
             {
               "year": 113,
-              "students": 35
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "054708",
-          "code": "054708",
-          "name": "縣立泰興國小",
-          "countyId": "苗栗縣",
-          "townshipId": "苗栗縣:泰安鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "苗栗縣泰安鄉中興村1鄰2號",
-          "phone": "(037)992852",
-          "website": "https://tses.mlc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/054708/C/苗栗縣/泰安鄉/縣市立/極偏/無/",
-          "coordinates": {
-            "longitude": 120.92113,
-            "latitude": 24.3945
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 28
+              "students": 46
             },
             {
-              "year": 108,
-              "students": 34
-            },
-            {
-              "year": 109,
-              "students": 31
-            },
-            {
-              "year": 110,
-              "students": 30
-            },
-            {
-              "year": 111,
-              "students": 31
-            },
-            {
-              "year": 112,
-              "students": 35
-            },
-            {
-              "year": 113,
-              "students": 32
+              "year": 114,
+              "students": 41
             }
           ],
           "status": "正常",
@@ -5512,6 +5733,118 @@
             {
               "year": 113,
               "students": 29
+            },
+            {
+              "year": 114,
+              "students": 32
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "054711",
+          "code": "054711",
+          "name": "縣立汶水國小",
+          "countyId": "苗栗縣",
+          "townshipId": "苗栗縣:泰安鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "苗栗縣泰安鄉錦水村四鄰12號",
+          "phone": "(037)941037",
+          "website": "https://ws.mlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/054711/C/苗栗縣/泰安鄉/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 120.940655,
+            "latitude": 24.46502
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 53
+            },
+            {
+              "year": 108,
+              "students": 60
+            },
+            {
+              "year": 109,
+              "students": 59
+            },
+            {
+              "year": 110,
+              "students": 50
+            },
+            {
+              "year": 111,
+              "students": 40
+            },
+            {
+              "year": 112,
+              "students": 37
+            },
+            {
+              "year": 113,
+              "students": 35
+            },
+            {
+              "year": 114,
+              "students": 31
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "054708",
+          "code": "054708",
+          "name": "縣立泰興國小",
+          "countyId": "苗栗縣",
+          "townshipId": "苗栗縣:泰安鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "苗栗縣泰安鄉中興村1鄰2號",
+          "phone": "(037)992852",
+          "website": "https://tses.mlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/054708/C/苗栗縣/泰安鄉/縣市立/極偏/無/",
+          "coordinates": {
+            "longitude": 120.92113,
+            "latitude": 24.3945
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 28
+            },
+            {
+              "year": 108,
+              "students": 34
+            },
+            {
+              "year": 109,
+              "students": 31
+            },
+            {
+              "year": 110,
+              "students": 30
+            },
+            {
+              "year": 111,
+              "students": 31
+            },
+            {
+              "year": 112,
+              "students": 35
+            },
+            {
+              "year": 113,
+              "students": 32
+            },
+            {
+              "year": 114,
+              "students": 25
             }
           ],
           "status": "正常",
@@ -5561,6 +5894,10 @@
             },
             {
               "year": 113,
+              "students": 20
+            },
+            {
+              "year": 114,
               "students": 20
             }
           ],
@@ -5612,6 +5949,10 @@
             {
               "year": 113,
               "students": 14
+            },
+            {
+              "year": 114,
+              "students": 14
             }
           ],
           "status": "正常",
@@ -5662,6 +6003,10 @@
             {
               "year": 113,
               "students": 6
+            },
+            {
+              "year": 114,
+              "students": 3
             }
           ],
           "status": "正常",
@@ -5720,6 +6065,10 @@
             {
               "year": 113,
               "students": 665
+            },
+            {
+              "year": 114,
+              "students": 641
             }
           ],
           "status": "正常",
@@ -5769,6 +6118,10 @@
             },
             {
               "year": 113,
+              "students": 271
+            },
+            {
+              "year": 114,
               "students": 271
             }
           ],
@@ -5820,6 +6173,10 @@
             {
               "year": 113,
               "students": 116
+            },
+            {
+              "year": 114,
+              "students": 121
             }
           ],
           "status": "正常",
@@ -5869,6 +6226,10 @@
             },
             {
               "year": 113,
+              "students": 110
+            },
+            {
+              "year": 114,
               "students": 110
             }
           ],
@@ -5920,6 +6281,10 @@
             {
               "year": 113,
               "students": 102
+            },
+            {
+              "year": 114,
+              "students": 93
             }
           ],
           "status": "正常",
@@ -5970,6 +6335,10 @@
             {
               "year": 113,
               "students": 78
+            },
+            {
+              "year": 114,
+              "students": 77
             }
           ],
           "status": "正常",
@@ -6019,6 +6388,10 @@
             },
             {
               "year": 113,
+              "students": 76
+            },
+            {
+              "year": 114,
               "students": 76
             }
           ],
@@ -6070,6 +6443,10 @@
             {
               "year": 113,
               "students": 58
+            },
+            {
+              "year": 114,
+              "students": 58
             }
           ],
           "status": "正常",
@@ -6120,106 +6497,10 @@
             {
               "year": 113,
               "students": 48
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "054639",
-          "code": "054639",
-          "name": "縣立新埔國小",
-          "countyId": "苗栗縣",
-          "townshipId": "苗栗縣:通霄鎮",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "苗栗縣通霄鎮新埔里55號",
-          "phone": "(037)792094",
-          "website": "https://spes.mlc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/054639/C/苗栗縣/通霄鎮/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.695347,
-            "latitude": 24.54203
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 57
             },
             {
-              "year": 108,
-              "students": 61
-            },
-            {
-              "year": 109,
-              "students": 63
-            },
-            {
-              "year": 110,
-              "students": 56
-            },
-            {
-              "year": 111,
-              "students": 54
-            },
-            {
-              "year": 112,
+              "year": 114,
               "students": 49
-            },
-            {
-              "year": 113,
-              "students": 43
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "054512",
-          "code": "054512",
-          "name": "縣立南和國中",
-          "countyId": "苗栗縣",
-          "townshipId": "苗栗縣:通霄鎮",
-          "educationLevel": "國中",
-          "managementType": "公立",
-          "address": "苗栗縣通霄鎮南和里9鄰112之1號",
-          "phone": "(037)782404",
-          "website": "https://nhjh.mlc.edu.tw/Home/Index.php",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/054512/J/苗栗縣/通霄鎮/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.721093,
-            "latitude": 24.447487
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 57
-            },
-            {
-              "year": 108,
-              "students": 47
-            },
-            {
-              "year": 109,
-              "students": 33
-            },
-            {
-              "year": 110,
-              "students": 30
-            },
-            {
-              "year": 111,
-              "students": 30
-            },
-            {
-              "year": 112,
-              "students": 40
-            },
-            {
-              "year": 113,
-              "students": 40
             }
           ],
           "status": "正常",
@@ -6270,6 +6551,118 @@
             {
               "year": 113,
               "students": 39
+            },
+            {
+              "year": 114,
+              "students": 42
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "054512",
+          "code": "054512",
+          "name": "縣立南和國中",
+          "countyId": "苗栗縣",
+          "townshipId": "苗栗縣:通霄鎮",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "苗栗縣通霄鎮南和里9鄰112之1號",
+          "phone": "(037)782404",
+          "website": "https://nhjh.mlc.edu.tw/Home/Index.php",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/054512/J/苗栗縣/通霄鎮/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.721093,
+            "latitude": 24.447487
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 57
+            },
+            {
+              "year": 108,
+              "students": 47
+            },
+            {
+              "year": 109,
+              "students": 33
+            },
+            {
+              "year": 110,
+              "students": 30
+            },
+            {
+              "year": 111,
+              "students": 30
+            },
+            {
+              "year": 112,
+              "students": 40
+            },
+            {
+              "year": 113,
+              "students": 40
+            },
+            {
+              "year": 114,
+              "students": 40
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "054639",
+          "code": "054639",
+          "name": "縣立新埔國小",
+          "countyId": "苗栗縣",
+          "townshipId": "苗栗縣:通霄鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "苗栗縣通霄鎮新埔里55號",
+          "phone": "(037)792094",
+          "website": "https://spes.mlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/054639/C/苗栗縣/通霄鎮/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.695347,
+            "latitude": 24.54203
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 57
+            },
+            {
+              "year": 108,
+              "students": 61
+            },
+            {
+              "year": 109,
+              "students": 63
+            },
+            {
+              "year": 110,
+              "students": 56
+            },
+            {
+              "year": 111,
+              "students": 54
+            },
+            {
+              "year": 112,
+              "students": 49
+            },
+            {
+              "year": 113,
+              "students": 43
+            },
+            {
+              "year": 114,
+              "students": 37
             }
           ],
           "status": "正常",
@@ -6320,6 +6713,10 @@
             {
               "year": 113,
               "students": 31
+            },
+            {
+              "year": 114,
+              "students": 28
             }
           ],
           "status": "正常",
@@ -6370,6 +6767,10 @@
             {
               "year": 113,
               "students": 28
+            },
+            {
+              "year": 114,
+              "students": 27
             }
           ],
           "status": "正常",
@@ -6420,6 +6821,10 @@
             {
               "year": 113,
               "students": 28
+            },
+            {
+              "year": 114,
+              "students": 23
             }
           ],
           "status": "正常",
@@ -6478,6 +6883,10 @@
             {
               "year": 113,
               "students": 3386
+            },
+            {
+              "year": 114,
+              "students": 3386
             }
           ],
           "status": "正常",
@@ -6528,6 +6937,10 @@
             {
               "year": 113,
               "students": 176
+            },
+            {
+              "year": 114,
+              "students": 171
             }
           ],
           "status": "正常",
@@ -6578,6 +6991,10 @@
             {
               "year": 113,
               "students": 113
+            },
+            {
+              "year": 114,
+              "students": 120
             }
           ],
           "status": "正常",
@@ -6627,6 +7044,10 @@
             },
             {
               "year": 113,
+              "students": 88
+            },
+            {
+              "year": 114,
               "students": 88
             }
           ],
@@ -6678,6 +7099,10 @@
             {
               "year": 113,
               "students": 82
+            },
+            {
+              "year": 114,
+              "students": 82
             }
           ],
           "status": "正常",
@@ -6728,6 +7153,10 @@
             {
               "year": 113,
               "students": 60
+            },
+            {
+              "year": 114,
+              "students": 53
             }
           ],
           "status": "正常",
@@ -6778,6 +7207,10 @@
             {
               "year": 113,
               "students": 49
+            },
+            {
+              "year": 114,
+              "students": 47
             }
           ],
           "status": "正常",
@@ -6828,6 +7261,10 @@
             {
               "year": 113,
               "students": 42
+            },
+            {
+              "year": 114,
+              "students": 43
             }
           ],
           "status": "正常",
@@ -6886,6 +7323,10 @@
             {
               "year": 113,
               "students": 35
+            },
+            {
+              "year": 114,
+              "students": 33
             }
           ],
           "status": "正常",
@@ -6935,6 +7376,10 @@
             },
             {
               "year": 113,
+              "students": 32
+            },
+            {
+              "year": 114,
               "students": 32
             }
           ],
@@ -6986,6 +7431,10 @@
             {
               "year": 113,
               "students": 32
+            },
+            {
+              "year": 114,
+              "students": 29
             }
           ],
           "status": "正常",
@@ -7036,6 +7485,10 @@
             {
               "year": 113,
               "students": 16
+            },
+            {
+              "year": 114,
+              "students": 18
             }
           ],
           "status": "正常",
@@ -7094,6 +7547,10 @@
             {
               "year": 113,
               "students": 385
+            },
+            {
+              "year": 114,
+              "students": 374
             }
           ],
           "status": "正常",
@@ -7143,6 +7600,10 @@
             },
             {
               "year": 113,
+              "students": 246
+            },
+            {
+              "year": 114,
               "students": 246
             }
           ],
@@ -7194,6 +7655,10 @@
             {
               "year": 113,
               "students": 72
+            },
+            {
+              "year": 114,
+              "students": 81
             }
           ],
           "status": "正常",
@@ -7244,6 +7709,10 @@
             {
               "year": 113,
               "students": 68
+            },
+            {
+              "year": 114,
+              "students": 61
             }
           ],
           "status": "正常",
@@ -7294,6 +7763,10 @@
             {
               "year": 113,
               "students": 53
+            },
+            {
+              "year": 114,
+              "students": 57
             }
           ],
           "status": "正常",
@@ -7344,6 +7817,10 @@
             {
               "year": 113,
               "students": 46
+            },
+            {
+              "year": 114,
+              "students": 41
             }
           ],
           "status": "正常",
@@ -7393,6 +7870,10 @@
             },
             {
               "year": 113,
+              "students": 27
+            },
+            {
+              "year": 114,
               "students": 27
             }
           ],
@@ -7452,6 +7933,10 @@
             {
               "year": 113,
               "students": 1395
+            },
+            {
+              "year": 114,
+              "students": 1374
             }
           ],
           "status": "正常",
@@ -7501,6 +7986,10 @@
             },
             {
               "year": 113,
+              "students": 1251
+            },
+            {
+              "year": 114,
               "students": 1251
             }
           ],
@@ -7552,6 +8041,10 @@
             {
               "year": 113,
               "students": 1214
+            },
+            {
+              "year": 114,
+              "students": 1132
             }
           ],
           "status": "正常",
@@ -7601,6 +8094,10 @@
             },
             {
               "year": 113,
+              "students": 1099
+            },
+            {
+              "year": 114,
               "students": 1099
             }
           ],
@@ -7652,106 +8149,10 @@
             {
               "year": 113,
               "students": 947
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "054650",
-          "code": "054650",
-          "name": "縣立頭份國小",
-          "countyId": "苗栗縣",
-          "townshipId": "苗栗縣:頭份市",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "苗栗縣頭份市頭份里中正路219號",
-          "phone": "(037)663020",
-          "website": "https://tfes.mlc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/054650/C/苗栗縣/頭份市/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.912193,
-            "latitude": 24.688175
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 868
             },
             {
-              "year": 108,
-              "students": 854
-            },
-            {
-              "year": 109,
-              "students": 817
-            },
-            {
-              "year": 110,
-              "students": 817
-            },
-            {
-              "year": 111,
-              "students": 831
-            },
-            {
-              "year": 112,
-              "students": 845
-            },
-            {
-              "year": 113,
-              "students": 822
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "054720",
-          "code": "054720",
-          "name": "縣立蟠桃國小",
-          "countyId": "苗栗縣",
-          "townshipId": "苗栗縣:頭份市",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "苗栗縣頭份市信東路285號",
-          "phone": "(037)685410",
-          "website": "https://pans.mlc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/054720/C/苗栗縣/頭份市/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.9066,
-            "latitude": 24.692858
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 747
-            },
-            {
-              "year": 108,
-              "students": 763
-            },
-            {
-              "year": 109,
-              "students": 763
-            },
-            {
-              "year": 110,
-              "students": 777
-            },
-            {
-              "year": 111,
-              "students": 800
-            },
-            {
-              "year": 112,
-              "students": 827
-            },
-            {
-              "year": 113,
-              "students": 800
+              "year": 114,
+              "students": 947
             }
           ],
           "status": "正常",
@@ -7802,6 +8203,118 @@
             {
               "year": 113,
               "students": 773
+            },
+            {
+              "year": 114,
+              "students": 818
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "054720",
+          "code": "054720",
+          "name": "縣立蟠桃國小",
+          "countyId": "苗栗縣",
+          "townshipId": "苗栗縣:頭份市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "苗栗縣頭份市信東路285號",
+          "phone": "(037)685410",
+          "website": "https://pans.mlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/054720/C/苗栗縣/頭份市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.9066,
+            "latitude": 24.692858
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 747
+            },
+            {
+              "year": 108,
+              "students": 763
+            },
+            {
+              "year": 109,
+              "students": 763
+            },
+            {
+              "year": 110,
+              "students": 777
+            },
+            {
+              "year": 111,
+              "students": 800
+            },
+            {
+              "year": 112,
+              "students": 827
+            },
+            {
+              "year": 113,
+              "students": 800
+            },
+            {
+              "year": 114,
+              "students": 787
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "054650",
+          "code": "054650",
+          "name": "縣立頭份國小",
+          "countyId": "苗栗縣",
+          "townshipId": "苗栗縣:頭份市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "苗栗縣頭份市頭份里中正路219號",
+          "phone": "(037)663020",
+          "website": "https://tfes.mlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/054650/C/苗栗縣/頭份市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.912193,
+            "latitude": 24.688175
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 868
+            },
+            {
+              "year": 108,
+              "students": 854
+            },
+            {
+              "year": 109,
+              "students": 817
+            },
+            {
+              "year": 110,
+              "students": 817
+            },
+            {
+              "year": 111,
+              "students": 831
+            },
+            {
+              "year": 112,
+              "students": 845
+            },
+            {
+              "year": 113,
+              "students": 822
+            },
+            {
+              "year": 114,
+              "students": 769
             }
           ],
           "status": "正常",
@@ -7852,6 +8365,10 @@
             {
               "year": 113,
               "students": 544
+            },
+            {
+              "year": 114,
+              "students": 512
             }
           ],
           "status": "正常",
@@ -7902,6 +8419,10 @@
             {
               "year": 113,
               "students": 410
+            },
+            {
+              "year": 114,
+              "students": 415
             }
           ],
           "status": "正常",
@@ -7952,6 +8473,10 @@
             {
               "year": 113,
               "students": 371
+            },
+            {
+              "year": 114,
+              "students": 352
             }
           ],
           "status": "正常",
@@ -8002,6 +8527,10 @@
             {
               "year": 113,
               "students": 308
+            },
+            {
+              "year": 114,
+              "students": 269
             }
           ],
           "status": "正常",
@@ -8052,56 +8581,10 @@
             {
               "year": 113,
               "students": 263
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "054655",
-          "code": "054655",
-          "name": "縣立斗煥國小",
-          "countyId": "苗栗縣",
-          "townshipId": "苗栗縣:頭份市",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "苗栗縣頭份市斗煥里中正二路221號",
-          "phone": "(037)663848",
-          "website": "https://dh.mlc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/054655/C/苗栗縣/頭份市/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.947113,
-            "latitude": 24.68167
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 212
             },
             {
-              "year": 108,
-              "students": 203
-            },
-            {
-              "year": 109,
-              "students": 209
-            },
-            {
-              "year": 110,
-              "students": 185
-            },
-            {
-              "year": 111,
-              "students": 183
-            },
-            {
-              "year": 112,
-              "students": 172
-            },
-            {
-              "year": 113,
-              "students": 157
+              "year": 114,
+              "students": 249
             }
           ],
           "status": "正常",
@@ -8152,6 +8635,64 @@
             {
               "year": 113,
               "students": 152
+            },
+            {
+              "year": 114,
+              "students": 156
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "054655",
+          "code": "054655",
+          "name": "縣立斗煥國小",
+          "countyId": "苗栗縣",
+          "townshipId": "苗栗縣:頭份市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "苗栗縣頭份市斗煥里中正二路221號",
+          "phone": "(037)663848",
+          "website": "https://dh.mlc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/054655/C/苗栗縣/頭份市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.947113,
+            "latitude": 24.68167
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 212
+            },
+            {
+              "year": 108,
+              "students": 203
+            },
+            {
+              "year": 109,
+              "students": 209
+            },
+            {
+              "year": 110,
+              "students": 185
+            },
+            {
+              "year": 111,
+              "students": 183
+            },
+            {
+              "year": 112,
+              "students": 172
+            },
+            {
+              "year": 113,
+              "students": 157
+            },
+            {
+              "year": 114,
+              "students": 141
             }
           ],
           "status": "正常",
@@ -8201,6 +8742,10 @@
             },
             {
               "year": 113,
+              "students": 132
+            },
+            {
+              "year": 114,
               "students": 132
             }
           ],
@@ -8260,6 +8805,10 @@
             {
               "year": 113,
               "students": 233
+            },
+            {
+              "year": 114,
+              "students": 215
             }
           ],
           "status": "正常",
@@ -8309,6 +8858,10 @@
             },
             {
               "year": 113,
+              "students": 186
+            },
+            {
+              "year": 114,
               "students": 186
             }
           ],
@@ -8360,6 +8913,10 @@
             {
               "year": 113,
               "students": 29
+            },
+            {
+              "year": 114,
+              "students": 28
             }
           ],
           "status": "正常",

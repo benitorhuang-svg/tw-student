@@ -46,19 +46,23 @@
 - `year`：目前學年度。
 - `educationLevel`：目前教育階段或 `全部`。
 - `managementType`：目前公私立或 `全部`。
-- `region`：目前區域群組或 `全部`。
+- `region`：目前區域群組或 `全部`；僅作為區域比較與聚合切片條件，不可被縣市、鄉鎮或單校操作隱性覆寫。
 - `selectedCountyId`：目前選定縣市或 `null`。
 - `selectedTownshipId`：目前選定鄉鎮或 `null`。
-- `searchText`：自由文字搜尋。
+- `searchText`：自由文字搜尋；若唯一命中正式學校代碼，需可導向對應縣市與單校分析，並保留地理範圍與單校聚焦的雙軌狀態。
+- `selectedSchoolId`：目前聚焦的學校或 `null`；此狀態獨立於 `selectedTownshipId`，即使仍停留在縣市層，地圖也需能依此顯示對應校點與單校圖表。
 
 ## URL 分享狀態 `ShareState`
 
 - `year`：網址中的學年度參數。
 - `level`：網址中的教育階段參數。
 - `county`：網址中的縣市識別值。
-- `town`：網址中的鄉鎮市區識別值。
+- `township`：網址中的鄉鎮市區識別值。
 - `region`：網址中的區域群組參數。
-- `q`：網址中的搜尋關鍵字。
+- `search`：網址中的搜尋關鍵字。
+- `zoom`：網址中的地圖縮放層級。
+- `lat`：網址中的地圖中心緯度。
+- `lon`：網址中的地圖中心經度。
 
 ## 資料註記 `DataNote`
 
@@ -131,6 +135,25 @@
 - `trend`：完整年度趨勢。
 - `notes`：該校資料註記。
 - `status`：學校狀態。
+
+### 缺少座標項目 `MissingCoordinateEntry`
+
+- `code`：教育部正式學校代碼。
+- `name`：學校名稱。
+- `county`：所屬縣市名稱。
+- `township`：所屬鄉鎮名稱。
+- `level`：教育階段。
+- `address`：正式資料中的校址，用於補件與外部比對。
+- `longitude` / `latitude`：目前採用的座標值。
+- `coordinateResolution`：座標解析來源，允許 `人工校正`、`地址解點`、`鄉鎮近似值`。
+- `coordinateMatchType`：若使用地址解點，保留 geocoder 回傳的命中型別。
+- `coordinateMatchScore`：若使用地址解點，保留 geocoder 回傳的信心分數。
+
+### 座標補件工作流 `CoordinateWorkflowEntry`
+
+- `schoolCode`：對應的學校代碼。
+- `status`：補件狀態，僅允許 `GIS缺點位`、`人工補點`、`已回填`。
+- `updatedAt`：最近一次調整工作流狀態的時間。
 
 ## 資料替換邊界
 

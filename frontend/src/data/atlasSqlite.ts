@@ -1,6 +1,3 @@
-import initSqlJs from 'sql.js'
-import wasmUrl from 'sql.js/dist/sql-wasm.wasm?url'
-
 import { recordResourceLoad } from './atlasLoadObservation'
 import type {
   CountyBucketDataset,
@@ -57,6 +54,10 @@ async function loadDatabase(options: LoadDatabaseOptions = {}) {
 
   if (!sqlDatabasePromise) {
     sqlDatabasePromise = (async () => {
+      const [{ default: initSqlJs }, { default: wasmUrl }] = await Promise.all([
+        import('sql.js'),
+        import('sql.js/dist/sql-wasm.wasm?url'),
+      ])
       const SQL = await initSqlJs({ locateFile: () => wasmUrl })
       const response = await fetch(getDatabaseUrl(options.forceRefresh), {
         cache: options.forceRefresh ? 'no-store' : 'default',

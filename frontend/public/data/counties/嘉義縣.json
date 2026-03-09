@@ -7,9 +7,12 @@
   },
   "dataNotes": [
     {
-      "type": "缺年度",
-      "message": "嘉義縣 有 1 所學校存在年度缺漏。",
-      "severity": "warning"
+      "type": "異常值",
+      "message": "嘉義縣 有 1 所學校最新學年學生數為 0，需留意停辦或整併可能。",
+      "severity": "info",
+      "years": [
+        114
+      ]
     }
   ],
   "towns": [
@@ -62,6 +65,10 @@
             {
               "year": 113,
               "students": 4690
+            },
+            {
+              "year": 114,
+              "students": 4690
             }
           ],
           "status": "正常",
@@ -111,6 +118,10 @@
             },
             {
               "year": 113,
+              "students": 2957
+            },
+            {
+              "year": 114,
               "students": 2957
             }
           ],
@@ -162,6 +173,10 @@
             {
               "year": 113,
               "students": 537
+            },
+            {
+              "year": 114,
+              "students": 551
             }
           ],
           "status": "正常",
@@ -211,6 +226,10 @@
             },
             {
               "year": 113,
+              "students": 500
+            },
+            {
+              "year": 114,
               "students": 500
             }
           ],
@@ -262,6 +281,10 @@
             {
               "year": 113,
               "students": 361
+            },
+            {
+              "year": 114,
+              "students": 334
             }
           ],
           "status": "正常",
@@ -312,56 +335,10 @@
             {
               "year": 113,
               "students": 254
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "104617",
-          "code": "104617",
-          "name": "縣立中林國小",
-          "countyId": "嘉義縣",
-          "townshipId": "嘉義縣:大林鎮",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "嘉義縣大林鎮中林里147號",
-          "phone": "(05)2653941",
-          "website": "https://www.cles.cyc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/104617/C/嘉義縣/大林鎮/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.476881,
-            "latitude": 23.590157
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 63
             },
             {
-              "year": 108,
-              "students": 52
-            },
-            {
-              "year": 109,
-              "students": 46
-            },
-            {
-              "year": 110,
-              "students": 49
-            },
-            {
-              "year": 111,
-              "students": 39
-            },
-            {
-              "year": 112,
-              "students": 40
-            },
-            {
-              "year": 113,
-              "students": 37
+              "year": 114,
+              "students": 226
             }
           ],
           "status": "正常",
@@ -412,6 +389,64 @@
             {
               "year": 113,
               "students": 28
+            },
+            {
+              "year": 114,
+              "students": 42
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "104617",
+          "code": "104617",
+          "name": "縣立中林國小",
+          "countyId": "嘉義縣",
+          "townshipId": "嘉義縣:大林鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "嘉義縣大林鎮中林里147號",
+          "phone": "(05)2653941",
+          "website": "https://www.cles.cyc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/104617/C/嘉義縣/大林鎮/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.476881,
+            "latitude": 23.590157
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 63
+            },
+            {
+              "year": 108,
+              "students": 52
+            },
+            {
+              "year": 109,
+              "students": 46
+            },
+            {
+              "year": 110,
+              "students": 49
+            },
+            {
+              "year": 111,
+              "students": 39
+            },
+            {
+              "year": 112,
+              "students": 40
+            },
+            {
+              "year": 113,
+              "students": 37
+            },
+            {
+              "year": 114,
+              "students": 36
             }
           ],
           "status": "正常",
@@ -461,6 +496,10 @@
             },
             {
               "year": 113,
+              "students": 15
+            },
+            {
+              "year": 114,
               "students": 15
             }
           ],
@@ -520,6 +559,10 @@
             {
               "year": 113,
               "students": 58
+            },
+            {
+              "year": 114,
+              "students": 65
             }
           ],
           "status": "正常",
@@ -569,6 +612,10 @@
             },
             {
               "year": 113,
+              "students": 24
+            },
+            {
+              "year": 114,
               "students": 24
             }
           ],
@@ -628,6 +675,10 @@
             {
               "year": 113,
               "students": 496
+            },
+            {
+              "year": 114,
+              "students": 465
             }
           ],
           "status": "正常",
@@ -677,6 +728,10 @@
             },
             {
               "year": 113,
+              "students": 232
+            },
+            {
+              "year": 114,
               "students": 232
             }
           ],
@@ -728,6 +783,10 @@
             {
               "year": 113,
               "students": 209
+            },
+            {
+              "year": 114,
+              "students": 215
             }
           ],
           "status": "正常",
@@ -778,6 +837,10 @@
             {
               "year": 113,
               "students": 198
+            },
+            {
+              "year": 114,
+              "students": 193
             }
           ],
           "status": "正常",
@@ -828,6 +891,10 @@
             {
               "year": 113,
               "students": 182
+            },
+            {
+              "year": 114,
+              "students": 158
             }
           ],
           "status": "正常",
@@ -878,6 +945,10 @@
             {
               "year": 113,
               "students": 102
+            },
+            {
+              "year": 114,
+              "students": 96
             }
           ],
           "status": "正常",
@@ -928,6 +999,10 @@
             {
               "year": 113,
               "students": 92
+            },
+            {
+              "year": 114,
+              "students": 88
             }
           ],
           "status": "正常",
@@ -978,56 +1053,10 @@
             {
               "year": 113,
               "students": 55
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "104682",
-          "code": "104682",
-          "name": "縣立大有國小",
-          "countyId": "嘉義縣",
-          "townshipId": "嘉義縣:中埔鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "嘉義縣中埔鄉裕民村石頭厝17之1號",
-          "phone": "(05)2531561",
-          "website": "https://www.dyps.cyc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/104682/C/嘉義縣/中埔鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.512632,
-            "latitude": 23.429222
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 20
             },
             {
-              "year": 108,
-              "students": 19
-            },
-            {
-              "year": 109,
-              "students": 17
-            },
-            {
-              "year": 110,
-              "students": 22
-            },
-            {
-              "year": 111,
-              "students": 21
-            },
-            {
-              "year": 112,
-              "students": 20
-            },
-            {
-              "year": 113,
-              "students": 24
+              "year": 114,
+              "students": 45
             }
           ],
           "status": "正常",
@@ -1078,6 +1107,64 @@
             {
               "year": 113,
               "students": 24
+            },
+            {
+              "year": 114,
+              "students": 22
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "104682",
+          "code": "104682",
+          "name": "縣立大有國小",
+          "countyId": "嘉義縣",
+          "townshipId": "嘉義縣:中埔鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "嘉義縣中埔鄉裕民村石頭厝17之1號",
+          "phone": "(05)2531561",
+          "website": "https://www.dyps.cyc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/104682/C/嘉義縣/中埔鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.512632,
+            "latitude": 23.429222
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 20
+            },
+            {
+              "year": 108,
+              "students": 19
+            },
+            {
+              "year": 109,
+              "students": 17
+            },
+            {
+              "year": 110,
+              "students": 22
+            },
+            {
+              "year": 111,
+              "students": 21
+            },
+            {
+              "year": 112,
+              "students": 20
+            },
+            {
+              "year": 113,
+              "students": 24
+            },
+            {
+              "year": 114,
+              "students": 18
             }
           ],
           "status": "正常",
@@ -1136,6 +1223,10 @@
             {
               "year": 113,
               "students": 161
+            },
+            {
+              "year": 114,
+              "students": 155
             }
           ],
           "status": "正常",
@@ -1185,6 +1276,10 @@
             },
             {
               "year": 113,
+              "students": 110
+            },
+            {
+              "year": 114,
               "students": 110
             }
           ],
@@ -1236,106 +1331,10 @@
             {
               "year": 113,
               "students": 67
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "104640",
-          "code": "104640",
-          "name": "縣立六腳國小",
-          "countyId": "嘉義縣",
-          "townshipId": "嘉義縣:六腳鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "嘉義縣六腳鄉六腳村105號",
-          "phone": "(05)3781403",
-          "website": "https://www.ljps.cyc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/104640/C/嘉義縣/六腳鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.252196,
-            "latitude": 23.509452
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 58
             },
             {
-              "year": 108,
-              "students": 54
-            },
-            {
-              "year": 109,
-              "students": 56
-            },
-            {
-              "year": 110,
-              "students": 55
-            },
-            {
-              "year": 111,
-              "students": 52
-            },
-            {
-              "year": 112,
-              "students": 51
-            },
-            {
-              "year": 113,
-              "students": 49
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "104645",
-          "code": "104645",
-          "name": "縣立北美國小",
-          "countyId": "嘉義縣",
-          "townshipId": "嘉義縣:六腳鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "嘉義縣六腳鄉崙陽村122號",
-          "phone": "(05)7811429",
-          "website": "https://www.bmps.cyc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/104645/C/嘉義縣/六腳鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.303996,
-            "latitude": 23.558356
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 47
-            },
-            {
-              "year": 108,
-              "students": 50
-            },
-            {
-              "year": 109,
-              "students": 48
-            },
-            {
-              "year": 110,
-              "students": 49
-            },
-            {
-              "year": 111,
-              "students": 47
-            },
-            {
-              "year": 112,
-              "students": 51
-            },
-            {
-              "year": 113,
-              "students": 49
+              "year": 114,
+              "students": 60
             }
           ],
           "status": "正常",
@@ -1386,6 +1385,64 @@
             {
               "year": 113,
               "students": 45
+            },
+            {
+              "year": 114,
+              "students": 45
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "104645",
+          "code": "104645",
+          "name": "縣立北美國小",
+          "countyId": "嘉義縣",
+          "townshipId": "嘉義縣:六腳鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "嘉義縣六腳鄉崙陽村122號",
+          "phone": "(05)7811429",
+          "website": "https://www.bmps.cyc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/104645/C/嘉義縣/六腳鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.303996,
+            "latitude": 23.558356
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 47
+            },
+            {
+              "year": 108,
+              "students": 50
+            },
+            {
+              "year": 109,
+              "students": 48
+            },
+            {
+              "year": 110,
+              "students": 49
+            },
+            {
+              "year": 111,
+              "students": 47
+            },
+            {
+              "year": 112,
+              "students": 51
+            },
+            {
+              "year": 113,
+              "students": 49
+            },
+            {
+              "year": 114,
+              "students": 42
             }
           ],
           "status": "正常",
@@ -1436,6 +1493,64 @@
             {
               "year": 113,
               "students": 32
+            },
+            {
+              "year": 114,
+              "students": 38
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "104640",
+          "code": "104640",
+          "name": "縣立六腳國小",
+          "countyId": "嘉義縣",
+          "townshipId": "嘉義縣:六腳鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "嘉義縣六腳鄉六腳村105號",
+          "phone": "(05)3781403",
+          "website": "https://www.ljps.cyc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/104640/C/嘉義縣/六腳鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.252196,
+            "latitude": 23.509452
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 58
+            },
+            {
+              "year": 108,
+              "students": 54
+            },
+            {
+              "year": 109,
+              "students": 56
+            },
+            {
+              "year": 110,
+              "students": 55
+            },
+            {
+              "year": 111,
+              "students": 52
+            },
+            {
+              "year": 112,
+              "students": 51
+            },
+            {
+              "year": 113,
+              "students": 49
+            },
+            {
+              "year": 114,
+              "students": 36
             }
           ],
           "status": "正常",
@@ -1494,6 +1609,10 @@
             {
               "year": 113,
               "students": 1000
+            },
+            {
+              "year": 114,
+              "students": 1000
             }
           ],
           "status": "正常",
@@ -1544,6 +1663,10 @@
             {
               "year": 113,
               "students": 889
+            },
+            {
+              "year": 114,
+              "students": 884
             }
           ],
           "status": "正常",
@@ -1594,6 +1717,10 @@
             {
               "year": 113,
               "students": 383
+            },
+            {
+              "year": 114,
+              "students": 347
             }
           ],
           "status": "正常",
@@ -1643,6 +1770,10 @@
             },
             {
               "year": 113,
+              "students": 331
+            },
+            {
+              "year": 114,
               "students": 331
             }
           ],
@@ -1694,56 +1825,10 @@
             {
               "year": 113,
               "students": 321
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "104672",
-          "code": "104672",
-          "name": "縣立新埤國小",
-          "countyId": "嘉義縣",
-          "townshipId": "嘉義縣:太保市",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "嘉義縣太保市新埤里214號",
-          "phone": "(05)3611075",
-          "website": "https://www.spps.cyc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/104672/C/嘉義縣/太保市/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.334589,
-            "latitude": 23.485509
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 181
             },
             {
-              "year": 108,
-              "students": 191
-            },
-            {
-              "year": 109,
-              "students": 175
-            },
-            {
-              "year": 110,
-              "students": 175
-            },
-            {
-              "year": 111,
-              "students": 174
-            },
-            {
-              "year": 112,
-              "students": 162
-            },
-            {
-              "year": 113,
-              "students": 156
+              "year": 114,
+              "students": 294
             }
           ],
           "status": "正常",
@@ -1794,6 +1879,64 @@
             {
               "year": 113,
               "students": 152
+            },
+            {
+              "year": 114,
+              "students": 152
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "104672",
+          "code": "104672",
+          "name": "縣立新埤國小",
+          "countyId": "嘉義縣",
+          "townshipId": "嘉義縣:太保市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "嘉義縣太保市新埤里214號",
+          "phone": "(05)3611075",
+          "website": "https://www.spps.cyc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/104672/C/嘉義縣/太保市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.334589,
+            "latitude": 23.485509
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 181
+            },
+            {
+              "year": 108,
+              "students": 191
+            },
+            {
+              "year": 109,
+              "students": 175
+            },
+            {
+              "year": 110,
+              "students": 175
+            },
+            {
+              "year": 111,
+              "students": 174
+            },
+            {
+              "year": 112,
+              "students": 162
+            },
+            {
+              "year": 113,
+              "students": 156
+            },
+            {
+              "year": 114,
+              "students": 147
             }
           ],
           "status": "正常",
@@ -1852,6 +1995,10 @@
             {
               "year": 113,
               "students": 1064
+            },
+            {
+              "year": 114,
+              "students": 1064
             }
           ],
           "status": "正常",
@@ -1902,6 +2049,10 @@
             {
               "year": 113,
               "students": 788
+            },
+            {
+              "year": 114,
+              "students": 754
             }
           ],
           "status": "正常",
@@ -1951,6 +2102,10 @@
             },
             {
               "year": 113,
+              "students": 391
+            },
+            {
+              "year": 114,
               "students": 391
             }
           ],
@@ -2002,6 +2157,10 @@
             {
               "year": 113,
               "students": 270
+            },
+            {
+              "year": 114,
+              "students": 270
             }
           ],
           "status": "正常",
@@ -2052,6 +2211,10 @@
             {
               "year": 113,
               "students": 220
+            },
+            {
+              "year": 114,
+              "students": 211
             }
           ],
           "status": "正常",
@@ -2102,6 +2265,10 @@
             {
               "year": 113,
               "students": 112
+            },
+            {
+              "year": 114,
+              "students": 103
             }
           ],
           "status": "正常",
@@ -2152,6 +2319,10 @@
             {
               "year": 113,
               "students": 101
+            },
+            {
+              "year": 114,
+              "students": 96
             }
           ],
           "status": "正常",
@@ -2202,6 +2373,10 @@
             {
               "year": 113,
               "students": 93
+            },
+            {
+              "year": 114,
+              "students": 90
             }
           ],
           "status": "正常",
@@ -2252,6 +2427,10 @@
             {
               "year": 113,
               "students": 82
+            },
+            {
+              "year": 114,
+              "students": 80
             }
           ],
           "status": "正常",
@@ -2302,6 +2481,10 @@
             {
               "year": 113,
               "students": 40
+            },
+            {
+              "year": 114,
+              "students": 45
             }
           ],
           "status": "正常",
@@ -2352,6 +2535,10 @@
             {
               "year": 113,
               "students": 34
+            },
+            {
+              "year": 114,
+              "students": 39
             }
           ],
           "status": "正常",
@@ -2410,56 +2597,10 @@
             {
               "year": 113,
               "students": 206
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "104612",
-          "code": "104612",
-          "name": "縣立新塭國小",
-          "countyId": "嘉義縣",
-          "townshipId": "嘉義縣:布袋鎮",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "嘉義縣布袋鎮新民里374號",
-          "phone": "(05)3431064",
-          "website": "https://www.sups.cyc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/104612/C/嘉義縣/布袋鎮/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.160549,
-            "latitude": 23.330252
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 123
             },
             {
-              "year": 108,
-              "students": 112
-            },
-            {
-              "year": 109,
-              "students": 104
-            },
-            {
-              "year": 110,
-              "students": 96
-            },
-            {
-              "year": 111,
-              "students": 106
-            },
-            {
-              "year": 112,
-              "students": 99
-            },
-            {
-              "year": 113,
-              "students": 105
+              "year": 114,
+              "students": 190
             }
           ],
           "status": "正常",
@@ -2510,6 +2651,64 @@
             {
               "year": 113,
               "students": 100
+            },
+            {
+              "year": 114,
+              "students": 104
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "104612",
+          "code": "104612",
+          "name": "縣立新塭國小",
+          "countyId": "嘉義縣",
+          "townshipId": "嘉義縣:布袋鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "嘉義縣布袋鎮新民里374號",
+          "phone": "(05)3431064",
+          "website": "https://www.sups.cyc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/104612/C/嘉義縣/布袋鎮/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.160549,
+            "latitude": 23.330252
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 123
+            },
+            {
+              "year": 108,
+              "students": 112
+            },
+            {
+              "year": 109,
+              "students": 104
+            },
+            {
+              "year": 110,
+              "students": 96
+            },
+            {
+              "year": 111,
+              "students": 106
+            },
+            {
+              "year": 112,
+              "students": 99
+            },
+            {
+              "year": 113,
+              "students": 105
+            },
+            {
+              "year": 114,
+              "students": 103
             }
           ],
           "status": "正常",
@@ -2560,56 +2759,10 @@
             {
               "year": 113,
               "students": 87
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "104608",
-          "code": "104608",
-          "name": "縣立景山國小",
-          "countyId": "嘉義縣",
-          "townshipId": "嘉義縣:布袋鎮",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "嘉義縣布袋鎮東港里136號",
-          "phone": "(05)3472734",
-          "website": "https://www.jsps.cyc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/104608/C/嘉義縣/布袋鎮/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.193226,
-            "latitude": 23.382823
-          },
-          "yearlyStudents": [
+            },
             {
-              "year": 107,
+              "year": 114,
               "students": 84
-            },
-            {
-              "year": 108,
-              "students": 81
-            },
-            {
-              "year": 109,
-              "students": 81
-            },
-            {
-              "year": 110,
-              "students": 81
-            },
-            {
-              "year": 111,
-              "students": 77
-            },
-            {
-              "year": 112,
-              "students": 77
-            },
-            {
-              "year": 113,
-              "students": 67
             }
           ],
           "status": "正常",
@@ -2660,6 +2813,64 @@
             {
               "year": 113,
               "students": 66
+            },
+            {
+              "year": 114,
+              "students": 66
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "104608",
+          "code": "104608",
+          "name": "縣立景山國小",
+          "countyId": "嘉義縣",
+          "townshipId": "嘉義縣:布袋鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "嘉義縣布袋鎮東港里136號",
+          "phone": "(05)3472734",
+          "website": "https://www.jsps.cyc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/104608/C/嘉義縣/布袋鎮/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.193226,
+            "latitude": 23.382823
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 84
+            },
+            {
+              "year": 108,
+              "students": 81
+            },
+            {
+              "year": 109,
+              "students": 81
+            },
+            {
+              "year": 110,
+              "students": 81
+            },
+            {
+              "year": 111,
+              "students": 77
+            },
+            {
+              "year": 112,
+              "students": 77
+            },
+            {
+              "year": 113,
+              "students": 67
+            },
+            {
+              "year": 114,
+              "students": 63
             }
           ],
           "status": "正常",
@@ -2710,6 +2921,10 @@
             {
               "year": 113,
               "students": 45
+            },
+            {
+              "year": 114,
+              "students": 43
             }
           ],
           "status": "正常",
@@ -2760,56 +2975,10 @@
             {
               "year": 113,
               "students": 38
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "104611",
-          "code": "104611",
-          "name": "縣立貴林國小",
-          "countyId": "嘉義縣",
-          "townshipId": "嘉義縣:布袋鎮",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "嘉義縣布袋鎮樹林里82號",
-          "phone": "(05)3451641",
-          "website": "https://www.glps.cyc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/104611/C/嘉義縣/布袋鎮/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.214228,
-            "latitude": 23.419798
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 27
             },
             {
-              "year": 108,
-              "students": 25
-            },
-            {
-              "year": 109,
-              "students": 22
-            },
-            {
-              "year": 110,
-              "students": 21
-            },
-            {
-              "year": 111,
-              "students": 21
-            },
-            {
-              "year": 112,
-              "students": 20
-            },
-            {
-              "year": 113,
-              "students": 21
+              "year": 114,
+              "students": 36
             }
           ],
           "status": "正常",
@@ -2860,6 +3029,64 @@
             {
               "year": 113,
               "students": 18
+            },
+            {
+              "year": 114,
+              "students": 23
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "104611",
+          "code": "104611",
+          "name": "縣立貴林國小",
+          "countyId": "嘉義縣",
+          "townshipId": "嘉義縣:布袋鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "嘉義縣布袋鎮樹林里82號",
+          "phone": "(05)3451641",
+          "website": "https://www.glps.cyc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/104611/C/嘉義縣/布袋鎮/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.214228,
+            "latitude": 23.419798
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 27
+            },
+            {
+              "year": 108,
+              "students": 25
+            },
+            {
+              "year": 109,
+              "students": 22
+            },
+            {
+              "year": 110,
+              "students": 21
+            },
+            {
+              "year": 111,
+              "students": 21
+            },
+            {
+              "year": 112,
+              "students": 20
+            },
+            {
+              "year": 113,
+              "students": 21
+            },
+            {
+              "year": 114,
+              "students": 23
             }
           ],
           "status": "正常",
@@ -2918,6 +3145,10 @@
             {
               "year": 113,
               "students": 11553
+            },
+            {
+              "year": 114,
+              "students": 11553
             }
           ],
           "status": "正常",
@@ -2967,6 +3198,10 @@
             },
             {
               "year": 113,
+              "students": 3933
+            },
+            {
+              "year": 114,
               "students": 3933
             }
           ],
@@ -3018,6 +3253,10 @@
             {
               "year": 113,
               "students": 2072
+            },
+            {
+              "year": 114,
+              "students": 2072
             }
           ],
           "status": "正常",
@@ -3068,56 +3307,10 @@
             {
               "year": 113,
               "students": 795
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "104621",
-          "code": "104621",
-          "name": "縣立民雄國小",
-          "countyId": "嘉義縣",
-          "townshipId": "嘉義縣:民雄鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "嘉義縣民雄鄉中樂村民族路43號",
-          "phone": "(05)2262022",
-          "website": "https://www.mhps.cyc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/104621/C/嘉義縣/民雄鄉/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.429444,
-            "latitude": 23.555125
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 994
             },
             {
-              "year": 108,
-              "students": 993
-            },
-            {
-              "year": 109,
-              "students": 945
-            },
-            {
-              "year": 110,
-              "students": 907
-            },
-            {
-              "year": 111,
-              "students": 902
-            },
-            {
-              "year": 112,
-              "students": 842
-            },
-            {
-              "year": 113,
-              "students": 788
+              "year": 114,
+              "students": 795
             }
           ],
           "status": "正常",
@@ -3168,6 +3361,64 @@
             {
               "year": 113,
               "students": 765
+            },
+            {
+              "year": 114,
+              "students": 765
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "104621",
+          "code": "104621",
+          "name": "縣立民雄國小",
+          "countyId": "嘉義縣",
+          "townshipId": "嘉義縣:民雄鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "嘉義縣民雄鄉中樂村民族路43號",
+          "phone": "(05)2262022",
+          "website": "https://www.mhps.cyc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/104621/C/嘉義縣/民雄鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.429444,
+            "latitude": 23.555125
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 994
+            },
+            {
+              "year": 108,
+              "students": 993
+            },
+            {
+              "year": 109,
+              "students": 945
+            },
+            {
+              "year": 110,
+              "students": 907
+            },
+            {
+              "year": 111,
+              "students": 902
+            },
+            {
+              "year": 112,
+              "students": 842
+            },
+            {
+              "year": 113,
+              "students": 788
+            },
+            {
+              "year": 114,
+              "students": 760
             }
           ],
           "status": "正常",
@@ -3218,6 +3469,10 @@
             {
               "year": 113,
               "students": 616
+            },
+            {
+              "year": 114,
+              "students": 611
             }
           ],
           "status": "正常",
@@ -3268,6 +3523,10 @@
             {
               "year": 113,
               "students": 500
+            },
+            {
+              "year": 114,
+              "students": 482
             }
           ],
           "status": "正常",
@@ -3318,6 +3577,10 @@
             {
               "year": 113,
               "students": 472
+            },
+            {
+              "year": 114,
+              "students": 478
             }
           ],
           "status": "正常",
@@ -3367,6 +3630,10 @@
             },
             {
               "year": 113,
+              "students": 290
+            },
+            {
+              "year": 114,
               "students": 290
             }
           ],
@@ -3418,6 +3685,10 @@
             {
               "year": 113,
               "students": 225
+            },
+            {
+              "year": 114,
+              "students": 198
             }
           ],
           "status": "正常",
@@ -3468,6 +3739,10 @@
             {
               "year": 113,
               "students": 144
+            },
+            {
+              "year": 114,
+              "students": 130
             }
           ],
           "status": "正常",
@@ -3518,6 +3793,10 @@
             {
               "year": 113,
               "students": 110
+            },
+            {
+              "year": 114,
+              "students": 105
             }
           ],
           "status": "正常",
@@ -3568,6 +3847,10 @@
             {
               "year": 113,
               "students": 50
+            },
+            {
+              "year": 114,
+              "students": 49
             }
           ],
           "status": "正常",
@@ -3618,6 +3901,10 @@
             {
               "year": 113,
               "students": 35
+            },
+            {
+              "year": 114,
+              "students": 34
             }
           ],
           "status": "正常",
@@ -3676,6 +3963,10 @@
             {
               "year": 113,
               "students": 1045
+            },
+            {
+              "year": 114,
+              "students": 1045
             }
           ],
           "status": "正常",
@@ -3726,56 +4017,10 @@
             {
               "year": 113,
               "students": 1041
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "104601",
-          "code": "104601",
-          "name": "縣立朴子國小",
-          "countyId": "嘉義縣",
-          "townshipId": "嘉義縣:朴子市",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "嘉義縣朴子市山通路11號",
-          "phone": "(05)3792032",
-          "website": "https://www.ptps.cyc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/104601/C/嘉義縣/朴子市/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.247944,
-            "latitude": 23.466666
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 708
             },
             {
-              "year": 108,
-              "students": 680
-            },
-            {
-              "year": 109,
-              "students": 657
-            },
-            {
-              "year": 110,
-              "students": 620
-            },
-            {
-              "year": 111,
-              "students": 626
-            },
-            {
-              "year": 112,
-              "students": 614
-            },
-            {
-              "year": 113,
-              "students": 574
+              "year": 114,
+              "students": 998
             }
           ],
           "status": "正常",
@@ -3826,6 +4071,10 @@
             {
               "year": 113,
               "students": 574
+            },
+            {
+              "year": 114,
+              "students": 562
             }
           ],
           "status": "正常",
@@ -3876,6 +4125,64 @@
             {
               "year": 113,
               "students": 527
+            },
+            {
+              "year": 114,
+              "students": 527
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "104601",
+          "code": "104601",
+          "name": "縣立朴子國小",
+          "countyId": "嘉義縣",
+          "townshipId": "嘉義縣:朴子市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "嘉義縣朴子市山通路11號",
+          "phone": "(05)3792032",
+          "website": "https://www.ptps.cyc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/104601/C/嘉義縣/朴子市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.247944,
+            "latitude": 23.466666
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 708
+            },
+            {
+              "year": 108,
+              "students": 680
+            },
+            {
+              "year": 109,
+              "students": 657
+            },
+            {
+              "year": 110,
+              "students": 620
+            },
+            {
+              "year": 111,
+              "students": 626
+            },
+            {
+              "year": 112,
+              "students": 614
+            },
+            {
+              "year": 113,
+              "students": 574
+            },
+            {
+              "year": 114,
+              "students": 512
             }
           ],
           "status": "正常",
@@ -3925,6 +4232,10 @@
             },
             {
               "year": 113,
+              "students": 504
+            },
+            {
+              "year": 114,
               "students": 504
             }
           ],
@@ -3976,32 +4287,15 @@
             {
               "year": 113,
               "students": 205
+            },
+            {
+              "year": 114,
+              "students": 242
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107,
-            108,
-            109,
-            110,
-            111,
-            112
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107、108、109、110、111、112",
-              "severity": "warning",
-              "years": [
-                107,
-                108,
-                109,
-                110,
-                111,
-                112
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "104606",
@@ -4047,6 +4341,10 @@
             {
               "year": 113,
               "students": 106
+            },
+            {
+              "year": 114,
+              "students": 105
             }
           ],
           "status": "正常",
@@ -4097,6 +4395,10 @@
             {
               "year": 113,
               "students": 90
+            },
+            {
+              "year": 114,
+              "students": 93
             }
           ],
           "status": "正常",
@@ -4147,6 +4449,10 @@
             {
               "year": 113,
               "students": 88
+            },
+            {
+              "year": 114,
+              "students": 81
             }
           ],
           "status": "正常",
@@ -4197,6 +4503,10 @@
             {
               "year": 113,
               "students": 54
+            },
+            {
+              "year": 114,
+              "students": 53
             }
           ],
           "status": "正常",
@@ -4204,13 +4514,7 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "朴子市 有 1 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "嘉義縣:竹崎鄉",
@@ -4260,6 +4564,10 @@
             },
             {
               "year": 113,
+              "students": 1004
+            },
+            {
+              "year": 114,
               "students": 1004
             }
           ],
@@ -4311,6 +4619,10 @@
             {
               "year": 113,
               "students": 446
+            },
+            {
+              "year": 114,
+              "students": 436
             }
           ],
           "status": "正常",
@@ -4361,6 +4673,10 @@
             {
               "year": 113,
               "students": 131
+            },
+            {
+              "year": 114,
+              "students": 122
             }
           ],
           "status": "正常",
@@ -4411,6 +4727,10 @@
             {
               "year": 113,
               "students": 118
+            },
+            {
+              "year": 114,
+              "students": 106
             }
           ],
           "status": "正常",
@@ -4461,6 +4781,10 @@
             {
               "year": 113,
               "students": 72
+            },
+            {
+              "year": 114,
+              "students": 73
             }
           ],
           "status": "正常",
@@ -4510,6 +4834,10 @@
             },
             {
               "year": 113,
+              "students": 61
+            },
+            {
+              "year": 114,
               "students": 61
             }
           ],
@@ -4561,55 +4889,9 @@
             {
               "year": 113,
               "students": 42
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "104712",
-          "code": "104712",
-          "name": "縣立義仁國小",
-          "countyId": "嘉義縣",
-          "townshipId": "嘉義縣:竹崎鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "嘉義縣竹崎鄉義和村22號",
-          "phone": "(05)2110534",
-          "website": "https://www.yrps.cyc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/104712/C/嘉義縣/竹崎鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.499066,
-            "latitude": 23.508535
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 64
             },
             {
-              "year": 108,
-              "students": 62
-            },
-            {
-              "year": 109,
-              "students": 57
-            },
-            {
-              "year": 110,
-              "students": 49
-            },
-            {
-              "year": 111,
-              "students": 46
-            },
-            {
-              "year": 112,
-              "students": 42
-            },
-            {
-              "year": 113,
+              "year": 114,
               "students": 41
             }
           ],
@@ -4661,6 +4943,64 @@
             {
               "year": 113,
               "students": 36
+            },
+            {
+              "year": 114,
+              "students": 37
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "104712",
+          "code": "104712",
+          "name": "縣立義仁國小",
+          "countyId": "嘉義縣",
+          "townshipId": "嘉義縣:竹崎鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "嘉義縣竹崎鄉義和村22號",
+          "phone": "(05)2110534",
+          "website": "https://www.yrps.cyc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/104712/C/嘉義縣/竹崎鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.499066,
+            "latitude": 23.508535
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 64
+            },
+            {
+              "year": 108,
+              "students": 62
+            },
+            {
+              "year": 109,
+              "students": 57
+            },
+            {
+              "year": 110,
+              "students": 49
+            },
+            {
+              "year": 111,
+              "students": 46
+            },
+            {
+              "year": 112,
+              "students": 42
+            },
+            {
+              "year": 113,
+              "students": 41
+            },
+            {
+              "year": 114,
+              "students": 34
             }
           ],
           "status": "正常",
@@ -4711,6 +5051,10 @@
             {
               "year": 113,
               "students": 21
+            },
+            {
+              "year": 114,
+              "students": 20
             }
           ],
           "status": "正常",
@@ -4761,6 +5105,10 @@
             {
               "year": 113,
               "students": 20
+            },
+            {
+              "year": 114,
+              "students": 18
             }
           ],
           "status": "正常",
@@ -4811,6 +5159,10 @@
             {
               "year": 113,
               "students": 19
+            },
+            {
+              "year": 114,
+              "students": 15
             }
           ],
           "status": "正常",
@@ -4861,6 +5213,10 @@
             {
               "year": 113,
               "students": 13
+            },
+            {
+              "year": 114,
+              "students": 14
             }
           ],
           "status": "正常",
@@ -4875,6 +5231,60 @@
       "name": "東石鄉",
       "countyId": "嘉義縣",
       "schools": [
+        {
+          "id": "104504",
+          "code": "104504",
+          "name": "縣立過溝國中",
+          "countyId": "嘉義縣",
+          "townshipId": "嘉義縣:東石鄉",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "嘉義縣東石鄉西崙村438號",
+          "phone": "(05)3451005",
+          "website": "http://www.kkjh.cyc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/104504/J/嘉義縣/東石鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.183244,
+            "latitude": 23.421942
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 227
+            },
+            {
+              "year": 108,
+              "students": 176
+            },
+            {
+              "year": 109,
+              "students": 153
+            },
+            {
+              "year": 110,
+              "students": 124
+            },
+            {
+              "year": 111,
+              "students": 127
+            },
+            {
+              "year": 112,
+              "students": 111
+            },
+            {
+              "year": 113,
+              "students": 117
+            },
+            {
+              "year": 114,
+              "students": 117
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
         {
           "id": "104647",
           "code": "104647",
@@ -4919,55 +5329,9 @@
             {
               "year": 113,
               "students": 129
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "104504",
-          "code": "104504",
-          "name": "縣立過溝國中",
-          "countyId": "嘉義縣",
-          "townshipId": "嘉義縣:東石鄉",
-          "educationLevel": "國中",
-          "managementType": "公立",
-          "address": "嘉義縣東石鄉西崙村438號",
-          "phone": "(05)3451005",
-          "website": "http://www.kkjh.cyc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/104504/J/嘉義縣/東石鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.183244,
-            "latitude": 23.421942
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 227
             },
             {
-              "year": 108,
-              "students": 176
-            },
-            {
-              "year": 109,
-              "students": 153
-            },
-            {
-              "year": 110,
-              "students": 124
-            },
-            {
-              "year": 111,
-              "students": 127
-            },
-            {
-              "year": 112,
-              "students": 111
-            },
-            {
-              "year": 113,
+              "year": 114,
               "students": 117
             }
           ],
@@ -5019,6 +5383,10 @@
             {
               "year": 113,
               "students": 80
+            },
+            {
+              "year": 114,
+              "students": 80
             }
           ],
           "status": "正常",
@@ -5069,55 +5437,9 @@
             {
               "year": 113,
               "students": 63
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "104652",
-          "code": "104652",
-          "name": "縣立港墘國小",
-          "countyId": "嘉義縣",
-          "townshipId": "嘉義縣:東石鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "嘉義縣東石鄉港墘村64號",
-          "phone": "(05)3795350",
-          "website": "https://www.kcps.cyc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/104652/C/嘉義縣/東石鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.213972,
-            "latitude": 23.463875
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 59
             },
             {
-              "year": 108,
-              "students": 65
-            },
-            {
-              "year": 109,
-              "students": 62
-            },
-            {
-              "year": 110,
-              "students": 62
-            },
-            {
-              "year": 111,
-              "students": 59
-            },
-            {
-              "year": 112,
-              "students": 57
-            },
-            {
-              "year": 113,
+              "year": 114,
               "students": 55
             }
           ],
@@ -5169,6 +5491,64 @@
             {
               "year": 113,
               "students": 48
+            },
+            {
+              "year": 114,
+              "students": 48
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "104652",
+          "code": "104652",
+          "name": "縣立港墘國小",
+          "countyId": "嘉義縣",
+          "townshipId": "嘉義縣:東石鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "嘉義縣東石鄉港墘村64號",
+          "phone": "(05)3795350",
+          "website": "https://www.kcps.cyc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/104652/C/嘉義縣/東石鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.213972,
+            "latitude": 23.463875
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 59
+            },
+            {
+              "year": 108,
+              "students": 65
+            },
+            {
+              "year": 109,
+              "students": 62
+            },
+            {
+              "year": 110,
+              "students": 62
+            },
+            {
+              "year": 111,
+              "students": 59
+            },
+            {
+              "year": 112,
+              "students": 57
+            },
+            {
+              "year": 113,
+              "students": 55
+            },
+            {
+              "year": 114,
+              "students": 48
             }
           ],
           "status": "正常",
@@ -5219,6 +5599,10 @@
             {
               "year": 113,
               "students": 41
+            },
+            {
+              "year": 114,
+              "students": 40
             }
           ],
           "status": "正常",
@@ -5269,56 +5653,10 @@
             {
               "year": 113,
               "students": 36
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "104650",
-          "code": "104650",
-          "name": "縣立龍港國小",
-          "countyId": "嘉義縣",
-          "townshipId": "嘉義縣:東石鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "嘉義縣東石鄉龍港村113號",
-          "phone": "(05)3732671",
-          "website": "https://www.lges.cyc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/104650/C/嘉義縣/東石鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.177118,
-            "latitude": 23.484746
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 47
             },
             {
-              "year": 108,
-              "students": 45
-            },
-            {
-              "year": 109,
-              "students": 43
-            },
-            {
-              "year": 110,
-              "students": 41
-            },
-            {
-              "year": 111,
-              "students": 36
-            },
-            {
-              "year": 112,
-              "students": 33
-            },
-            {
-              "year": 113,
-              "students": 31
+              "year": 114,
+              "students": 34
             }
           ],
           "status": "正常",
@@ -5369,6 +5707,64 @@
             {
               "year": 113,
               "students": 30
+            },
+            {
+              "year": 114,
+              "students": 28
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "104650",
+          "code": "104650",
+          "name": "縣立龍港國小",
+          "countyId": "嘉義縣",
+          "townshipId": "嘉義縣:東石鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "嘉義縣東石鄉龍港村113號",
+          "phone": "(05)3732671",
+          "website": "https://www.lges.cyc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/104650/C/嘉義縣/東石鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.177118,
+            "latitude": 23.484746
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 47
+            },
+            {
+              "year": 108,
+              "students": 45
+            },
+            {
+              "year": 109,
+              "students": 43
+            },
+            {
+              "year": 110,
+              "students": 41
+            },
+            {
+              "year": 111,
+              "students": 36
+            },
+            {
+              "year": 112,
+              "students": 33
+            },
+            {
+              "year": 113,
+              "students": 31
+            },
+            {
+              "year": 114,
+              "students": 25
             }
           ],
           "status": "正常",
@@ -5427,6 +5823,10 @@
             {
               "year": 113,
               "students": 57
+            },
+            {
+              "year": 114,
+              "students": 58
             }
           ],
           "status": "正常",
@@ -5477,6 +5877,10 @@
             {
               "year": 113,
               "students": 48
+            },
+            {
+              "year": 114,
+              "students": 44
             }
           ],
           "status": "正常",
@@ -5527,6 +5931,10 @@
             {
               "year": 113,
               "students": 31
+            },
+            {
+              "year": 114,
+              "students": 30
             }
           ],
           "status": "正常",
@@ -5576,6 +5984,10 @@
             },
             {
               "year": 113,
+              "students": 28
+            },
+            {
+              "year": 114,
               "students": 28
             }
           ],
@@ -5627,6 +6039,64 @@
             {
               "year": 113,
               "students": 21
+            },
+            {
+              "year": 114,
+              "students": 21
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "104737",
+          "code": "104737",
+          "name": "縣立茶山國小",
+          "countyId": "嘉義縣",
+          "townshipId": "嘉義縣:阿里山鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "嘉義縣阿里山鄉茶山村三鄰74號",
+          "phone": "(05)2513014",
+          "website": "https://www.chses.cyc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/104737/C/嘉義縣/阿里山鄉/縣市立/極偏/無/",
+          "coordinates": {
+            "longitude": 120.666813,
+            "latitude": 23.300326
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 19
+            },
+            {
+              "year": 108,
+              "students": 13
+            },
+            {
+              "year": 109,
+              "students": 14
+            },
+            {
+              "year": 110,
+              "students": 18
+            },
+            {
+              "year": 111,
+              "students": 19
+            },
+            {
+              "year": 112,
+              "students": 19
+            },
+            {
+              "year": 113,
+              "students": 17
+            },
+            {
+              "year": 114,
+              "students": 19
             }
           ],
           "status": "正常",
@@ -5676,6 +6146,10 @@
             },
             {
               "year": 113,
+              "students": 18
+            },
+            {
+              "year": 114,
               "students": 18
             }
           ],
@@ -5727,56 +6201,10 @@
             {
               "year": 113,
               "students": 18
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "104737",
-          "code": "104737",
-          "name": "縣立茶山國小",
-          "countyId": "嘉義縣",
-          "townshipId": "嘉義縣:阿里山鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "嘉義縣阿里山鄉茶山村三鄰74號",
-          "phone": "(05)2513014",
-          "website": "https://www.chses.cyc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/104737/C/嘉義縣/阿里山鄉/縣市立/極偏/無/",
-          "coordinates": {
-            "longitude": 120.666813,
-            "latitude": 23.300326
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 19
             },
             {
-              "year": 108,
-              "students": 13
-            },
-            {
-              "year": 109,
-              "students": 14
-            },
-            {
-              "year": 110,
-              "students": 18
-            },
-            {
-              "year": 111,
-              "students": 19
-            },
-            {
-              "year": 112,
-              "students": 19
-            },
-            {
-              "year": 113,
-              "students": 17
+              "year": 114,
+              "students": 16
             }
           ],
           "status": "正常",
@@ -5827,6 +6255,10 @@
             {
               "year": 113,
               "students": 16
+            },
+            {
+              "year": 114,
+              "students": 15
             }
           ],
           "status": "正常",
@@ -5876,6 +6308,10 @@
             },
             {
               "year": 113,
+              "students": 7
+            },
+            {
+              "year": 114,
               "students": 7
             }
           ],
@@ -5927,6 +6363,10 @@
             {
               "year": 113,
               "students": 5
+            },
+            {
+              "year": 114,
+              "students": 6
             }
           ],
           "status": "正常",
@@ -5985,6 +6425,10 @@
             {
               "year": 113,
               "students": 220
+            },
+            {
+              "year": 114,
+              "students": 220
             }
           ],
           "status": "正常",
@@ -6035,6 +6479,10 @@
             {
               "year": 113,
               "students": 215
+            },
+            {
+              "year": 114,
+              "students": 202
             }
           ],
           "status": "正常",
@@ -6085,6 +6533,10 @@
             {
               "year": 113,
               "students": 194
+            },
+            {
+              "year": 114,
+              "students": 190
             }
           ],
           "status": "正常",
@@ -6135,6 +6587,10 @@
             {
               "year": 113,
               "students": 62
+            },
+            {
+              "year": 114,
+              "students": 65
             }
           ],
           "status": "正常",
@@ -6185,6 +6641,10 @@
             {
               "year": 113,
               "students": 23
+            },
+            {
+              "year": 114,
+              "students": 18
             }
           ],
           "status": "正常",
@@ -6235,6 +6695,10 @@
             {
               "year": 113,
               "students": 21
+            },
+            {
+              "year": 114,
+              "students": 18
             }
           ],
           "status": "正常",
@@ -6285,55 +6749,9 @@
             {
               "year": 113,
               "students": 18
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "104717",
-          "code": "104717",
-          "name": "縣立太平國小",
-          "countyId": "嘉義縣",
-          "townshipId": "嘉義縣:梅山鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "嘉義縣梅山鄉太平村大坪4號",
-          "phone": "(05)2571004",
-          "website": "https://www.tpps.cyc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/104717/C/嘉義縣/梅山鄉/縣市立/特偏/無/",
-          "coordinates": {
-            "longitude": 120.606889,
-            "latitude": 23.561245
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 29
             },
             {
-              "year": 108,
-              "students": 26
-            },
-            {
-              "year": 109,
-              "students": 21
-            },
-            {
-              "year": 110,
-              "students": 20
-            },
-            {
-              "year": 111,
-              "students": 16
-            },
-            {
-              "year": 112,
-              "students": 14
-            },
-            {
-              "year": 113,
+              "year": 114,
               "students": 16
             }
           ],
@@ -6385,6 +6803,10 @@
             {
               "year": 113,
               "students": 11
+            },
+            {
+              "year": 114,
+              "students": 13
             }
           ],
           "status": "正常",
@@ -6434,6 +6856,64 @@
             },
             {
               "year": 113,
+              "students": 11
+            },
+            {
+              "year": 114,
+              "students": 13
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "104717",
+          "code": "104717",
+          "name": "縣立太平國小",
+          "countyId": "嘉義縣",
+          "townshipId": "嘉義縣:梅山鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "嘉義縣梅山鄉太平村大坪4號",
+          "phone": "(05)2571004",
+          "website": "https://www.tpps.cyc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/104717/C/嘉義縣/梅山鄉/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 120.606889,
+            "latitude": 23.561245
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 29
+            },
+            {
+              "year": 108,
+              "students": 26
+            },
+            {
+              "year": 109,
+              "students": 21
+            },
+            {
+              "year": 110,
+              "students": 20
+            },
+            {
+              "year": 111,
+              "students": 16
+            },
+            {
+              "year": 112,
+              "students": 14
+            },
+            {
+              "year": 113,
+              "students": 16
+            },
+            {
+              "year": 114,
               "students": 11
             }
           ],
@@ -6493,6 +6973,10 @@
             {
               "year": 113,
               "students": 158
+            },
+            {
+              "year": 114,
+              "students": 149
             }
           ],
           "status": "正常",
@@ -6542,6 +7026,10 @@
             },
             {
               "year": 113,
+              "students": 112
+            },
+            {
+              "year": 114,
               "students": 112
             }
           ],
@@ -6593,56 +7081,10 @@
             {
               "year": 113,
               "students": 70
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "104657",
-          "code": "104657",
-          "name": "縣立下潭國小",
-          "countyId": "嘉義縣",
-          "townshipId": "嘉義縣:鹿草鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "嘉義縣鹿草鄉光潭村196號",
-          "phone": "(05)3651544",
-          "website": "https://www.htps.cyc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/104657/C/嘉義縣/鹿草鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.285999,
-            "latitude": 23.374169
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 59
             },
             {
-              "year": 108,
-              "students": 48
-            },
-            {
-              "year": 109,
-              "students": 57
-            },
-            {
-              "year": 110,
-              "students": 59
-            },
-            {
-              "year": 111,
-              "students": 57
-            },
-            {
-              "year": 112,
-              "students": 49
-            },
-            {
-              "year": 113,
-              "students": 38
+              "year": 114,
+              "students": 60
             }
           ],
           "status": "正常",
@@ -6693,6 +7135,64 @@
             {
               "year": 113,
               "students": 34
+            },
+            {
+              "year": 114,
+              "students": 38
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "104657",
+          "code": "104657",
+          "name": "縣立下潭國小",
+          "countyId": "嘉義縣",
+          "townshipId": "嘉義縣:鹿草鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "嘉義縣鹿草鄉光潭村196號",
+          "phone": "(05)3651544",
+          "website": "https://www.htps.cyc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/104657/C/嘉義縣/鹿草鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.285999,
+            "latitude": 23.374169
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 59
+            },
+            {
+              "year": 108,
+              "students": 48
+            },
+            {
+              "year": 109,
+              "students": 57
+            },
+            {
+              "year": 110,
+              "students": 59
+            },
+            {
+              "year": 111,
+              "students": 57
+            },
+            {
+              "year": 112,
+              "students": 49
+            },
+            {
+              "year": 113,
+              "students": 38
+            },
+            {
+              "year": 114,
+              "students": 33
             }
           ],
           "status": "正常",
@@ -6743,6 +7243,10 @@
             {
               "year": 113,
               "students": 18
+            },
+            {
+              "year": 114,
+              "students": 14
             }
           ],
           "status": "正常",
@@ -6801,6 +7305,10 @@
             {
               "year": 113,
               "students": 174
+            },
+            {
+              "year": 114,
+              "students": 173
             }
           ],
           "status": "正常",
@@ -6850,6 +7358,10 @@
             },
             {
               "year": 113,
+              "students": 102
+            },
+            {
+              "year": 114,
               "students": 102
             }
           ],
@@ -6901,6 +7413,64 @@
             {
               "year": 113,
               "students": 48
+            },
+            {
+              "year": 114,
+              "students": 48
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "104695",
+          "code": "104695",
+          "name": "縣立黎明國小",
+          "countyId": "嘉義縣",
+          "townshipId": "嘉義縣:番路鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "嘉義縣番路鄉觸口村觸口164號",
+          "phone": "(05)2591194",
+          "website": "https://www.limps.cyc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/104695/C/嘉義縣/番路鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.604378,
+            "latitude": 23.438711
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 32
+            },
+            {
+              "year": 108,
+              "students": 29
+            },
+            {
+              "year": 109,
+              "students": 27
+            },
+            {
+              "year": 110,
+              "students": 23
+            },
+            {
+              "year": 111,
+              "students": 21
+            },
+            {
+              "year": 112,
+              "students": 23
+            },
+            {
+              "year": 113,
+              "students": 22
+            },
+            {
+              "year": 114,
+              "students": 25
             }
           ],
           "status": "正常",
@@ -6951,55 +7521,9 @@
             {
               "year": 113,
               "students": 22
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "104695",
-          "code": "104695",
-          "name": "縣立黎明國小",
-          "countyId": "嘉義縣",
-          "townshipId": "嘉義縣:番路鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "嘉義縣番路鄉觸口村觸口164號",
-          "phone": "(05)2591194",
-          "website": "https://www.limps.cyc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/104695/C/嘉義縣/番路鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.604378,
-            "latitude": 23.438711
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 32
             },
             {
-              "year": 108,
-              "students": 29
-            },
-            {
-              "year": 109,
-              "students": 27
-            },
-            {
-              "year": 110,
-              "students": 23
-            },
-            {
-              "year": 111,
-              "students": 21
-            },
-            {
-              "year": 112,
-              "students": 23
-            },
-            {
-              "year": 113,
+              "year": 114,
               "students": 22
             }
           ],
@@ -7051,14 +7575,36 @@
             {
               "year": 113,
               "students": 8
+            },
+            {
+              "year": 114,
+              "students": 0
             }
           ],
-          "status": "正常",
+          "status": "待確認",
           "missingYears": [],
-          "dataNotes": []
+          "dataNotes": [
+            {
+              "type": "異常值",
+              "message": "114 學年學生數為 0，可能涉及停辦、整併或資料尚未更新。",
+              "severity": "warning",
+              "years": [
+                114
+              ]
+            }
+          ]
         }
       ],
-      "dataNotes": []
+      "dataNotes": [
+        {
+          "type": "異常值",
+          "message": "番路鄉 有 1 所學校最新學年學生數為 0，需留意停辦或整併可能。",
+          "severity": "info",
+          "years": [
+            114
+          ]
+        }
+      ]
     },
     {
       "id": "嘉義縣:新港鄉",
@@ -7108,6 +7654,10 @@
             },
             {
               "year": 113,
+              "students": 665
+            },
+            {
+              "year": 114,
               "students": 665
             }
           ],
@@ -7159,6 +7709,10 @@
             {
               "year": 113,
               "students": 532
+            },
+            {
+              "year": 114,
+              "students": 505
             }
           ],
           "status": "正常",
@@ -7209,6 +7763,10 @@
             {
               "year": 113,
               "students": 371
+            },
+            {
+              "year": 114,
+              "students": 373
             }
           ],
           "status": "正常",
@@ -7258,6 +7816,10 @@
             },
             {
               "year": 113,
+              "students": 195
+            },
+            {
+              "year": 114,
               "students": 195
             }
           ],
@@ -7309,6 +7871,10 @@
             {
               "year": 113,
               "students": 135
+            },
+            {
+              "year": 114,
+              "students": 119
             }
           ],
           "status": "正常",
@@ -7359,6 +7925,10 @@
             {
               "year": 113,
               "students": 36
+            },
+            {
+              "year": 114,
+              "students": 35
             }
           ],
           "status": "正常",
@@ -7409,6 +7979,10 @@
             {
               "year": 113,
               "students": 24
+            },
+            {
+              "year": 114,
+              "students": 20
             }
           ],
           "status": "正常",
@@ -7459,6 +8033,10 @@
             {
               "year": 113,
               "students": 19
+            },
+            {
+              "year": 114,
+              "students": 18
             }
           ],
           "status": "正常",
@@ -7517,6 +8095,10 @@
             {
               "year": 113,
               "students": 203
+            },
+            {
+              "year": 114,
+              "students": 193
             }
           ],
           "status": "正常",
@@ -7566,6 +8148,10 @@
             },
             {
               "year": 113,
+              "students": 116
+            },
+            {
+              "year": 114,
               "students": 116
             }
           ],
@@ -7617,6 +8203,10 @@
             {
               "year": 113,
               "students": 98
+            },
+            {
+              "year": 114,
+              "students": 108
             }
           ],
           "status": "正常",
@@ -7667,6 +8257,10 @@
             {
               "year": 113,
               "students": 57
+            },
+            {
+              "year": 114,
+              "students": 68
             }
           ],
           "status": "正常",
@@ -7716,6 +8310,10 @@
             },
             {
               "year": 113,
+              "students": 47
+            },
+            {
+              "year": 114,
               "students": 47
             }
           ],
@@ -7775,6 +8373,10 @@
             {
               "year": 113,
               "students": 252
+            },
+            {
+              "year": 114,
+              "students": 252
             }
           ],
           "status": "正常",
@@ -7825,6 +8427,10 @@
             {
               "year": 113,
               "students": 216
+            },
+            {
+              "year": 114,
+              "students": 218
             }
           ],
           "status": "正常",
@@ -7875,6 +8481,10 @@
             {
               "year": 113,
               "students": 56
+            },
+            {
+              "year": 114,
+              "students": 55
             }
           ],
           "status": "正常",
@@ -7925,6 +8535,10 @@
             {
               "year": 113,
               "students": 41
+            },
+            {
+              "year": 114,
+              "students": 49
             }
           ],
           "status": "正常",
@@ -7975,6 +8589,10 @@
             {
               "year": 113,
               "students": 36
+            },
+            {
+              "year": 114,
+              "students": 31
             }
           ],
           "status": "正常",
@@ -8025,6 +8643,10 @@
             {
               "year": 113,
               "students": 20
+            },
+            {
+              "year": 114,
+              "students": 18
             }
           ],
           "status": "正常",

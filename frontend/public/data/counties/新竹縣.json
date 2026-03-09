@@ -5,13 +5,7 @@
     "shortLabel": "竹縣",
     "region": "北部"
   },
-  "dataNotes": [
-    {
-      "type": "缺年度",
-      "message": "新竹縣 有 7 所學校存在年度缺漏。",
-      "severity": "warning"
-    }
-  ],
+  "dataNotes": [],
   "towns": [
     {
       "id": "新竹縣:五峰鄉",
@@ -62,6 +56,10 @@
             {
               "year": 113,
               "students": 68
+            },
+            {
+              "year": 114,
+              "students": 70
             }
           ],
           "status": "正常",
@@ -111,6 +109,10 @@
             },
             {
               "year": 113,
+              "students": 51
+            },
+            {
+              "year": 114,
               "students": 51
             }
           ],
@@ -162,6 +164,10 @@
             {
               "year": 113,
               "students": 45
+            },
+            {
+              "year": 114,
+              "students": 45
             }
           ],
           "status": "正常",
@@ -212,6 +218,10 @@
             {
               "year": 113,
               "students": 32
+            },
+            {
+              "year": 114,
+              "students": 25
             }
           ],
           "status": "正常",
@@ -270,6 +280,10 @@
             {
               "year": 113,
               "students": 260
+            },
+            {
+              "year": 114,
+              "students": 254
             }
           ],
           "status": "正常",
@@ -319,6 +333,10 @@
             },
             {
               "year": 113,
+              "students": 125
+            },
+            {
+              "year": 114,
               "students": 125
             }
           ],
@@ -370,6 +388,10 @@
             {
               "year": 113,
               "students": 62
+            },
+            {
+              "year": 114,
+              "students": 59
             }
           ],
           "status": "正常",
@@ -428,56 +450,10 @@
             {
               "year": 113,
               "students": 234
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "044668",
-          "code": "044668",
-          "name": "縣立新樂國小",
-          "countyId": "新竹縣",
-          "townshipId": "新竹縣:尖石鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "新竹縣尖石鄉新樂村一鄰10號",
-          "phone": "(03)5841500",
-          "website": "https://hles.hcc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/044668/C/新竹縣/尖石鄉/縣市立/特偏/無/",
-          "coordinates": {
-            "longitude": 121.250461,
-            "latitude": 24.731735
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 123
             },
             {
-              "year": 108,
-              "students": 118
-            },
-            {
-              "year": 109,
-              "students": 105
-            },
-            {
-              "year": 110,
-              "students": 112
-            },
-            {
-              "year": 111,
-              "students": 102
-            },
-            {
-              "year": 112,
-              "students": 101
-            },
-            {
-              "year": 113,
-              "students": 90
+              "year": 114,
+              "students": 234
             }
           ],
           "status": "正常",
@@ -528,6 +504,10 @@
             {
               "year": 113,
               "students": 87
+            },
+            {
+              "year": 114,
+              "students": 89
             }
           ],
           "status": "正常",
@@ -578,6 +558,64 @@
             {
               "year": 113,
               "students": 74
+            },
+            {
+              "year": 114,
+              "students": 82
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "044668",
+          "code": "044668",
+          "name": "縣立新樂國小",
+          "countyId": "新竹縣",
+          "townshipId": "新竹縣:尖石鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹縣尖石鄉新樂村一鄰10號",
+          "phone": "(03)5841500",
+          "website": "https://hles.hcc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/044668/C/新竹縣/尖石鄉/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 121.250461,
+            "latitude": 24.731735
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 123
+            },
+            {
+              "year": 108,
+              "students": 118
+            },
+            {
+              "year": 109,
+              "students": 105
+            },
+            {
+              "year": 110,
+              "students": 112
+            },
+            {
+              "year": 111,
+              "students": 102
+            },
+            {
+              "year": 112,
+              "students": 101
+            },
+            {
+              "year": 113,
+              "students": 90
+            },
+            {
+              "year": 114,
+              "students": 81
             }
           ],
           "status": "正常",
@@ -628,6 +666,10 @@
             {
               "year": 113,
               "students": 65
+            },
+            {
+              "year": 114,
+              "students": 68
             }
           ],
           "status": "正常",
@@ -678,106 +720,10 @@
             {
               "year": 113,
               "students": 45
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "044666",
-          "code": "044666",
-          "name": "縣立尖石國小",
-          "countyId": "新竹縣",
-          "townshipId": "新竹縣:尖石鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "新竹縣尖石鄉嘉樂村六鄰7號",
-          "phone": "(03)5841563",
-          "website": "https://gsps.hcc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/044666/C/新竹縣/尖石鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 121.226247,
-            "latitude": 24.728769
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 21
             },
             {
-              "year": 108,
-              "students": 24
-            },
-            {
-              "year": 109,
-              "students": 27
-            },
-            {
-              "year": 110,
-              "students": 28
-            },
-            {
-              "year": 111,
-              "students": 26
-            },
-            {
-              "year": 112,
-              "students": 34
-            },
-            {
-              "year": 113,
-              "students": 40
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "044672",
-          "code": "044672",
-          "name": "縣立石磊國小",
-          "countyId": "新竹縣",
-          "townshipId": "新竹縣:尖石鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "新竹縣尖石鄉玉峰村十鄰49號",
-          "phone": "(03)5847001",
-          "website": "https://sles.hcc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/044672/C/新竹縣/尖石鄉/縣市立/極偏/無/",
-          "coordinates": {
-            "longitude": 121.326512,
-            "latitude": 24.655545
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 31
-            },
-            {
-              "year": 108,
-              "students": 27
-            },
-            {
-              "year": 109,
-              "students": 30
-            },
-            {
-              "year": 110,
-              "students": 32
-            },
-            {
-              "year": 111,
-              "students": 26
-            },
-            {
-              "year": 112,
-              "students": 33
-            },
-            {
-              "year": 113,
-              "students": 35
+              "year": 114,
+              "students": 42
             }
           ],
           "status": "正常",
@@ -828,6 +774,118 @@
             {
               "year": 113,
               "students": 34
+            },
+            {
+              "year": 114,
+              "students": 41
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "044666",
+          "code": "044666",
+          "name": "縣立尖石國小",
+          "countyId": "新竹縣",
+          "townshipId": "新竹縣:尖石鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹縣尖石鄉嘉樂村六鄰7號",
+          "phone": "(03)5841563",
+          "website": "https://gsps.hcc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/044666/C/新竹縣/尖石鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.226247,
+            "latitude": 24.728769
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 21
+            },
+            {
+              "year": 108,
+              "students": 24
+            },
+            {
+              "year": 109,
+              "students": 27
+            },
+            {
+              "year": 110,
+              "students": 28
+            },
+            {
+              "year": 111,
+              "students": 26
+            },
+            {
+              "year": 112,
+              "students": 34
+            },
+            {
+              "year": 113,
+              "students": 40
+            },
+            {
+              "year": 114,
+              "students": 38
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "044672",
+          "code": "044672",
+          "name": "縣立石磊國小",
+          "countyId": "新竹縣",
+          "townshipId": "新竹縣:尖石鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹縣尖石鄉玉峰村十鄰49號",
+          "phone": "(03)5847001",
+          "website": "https://sles.hcc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/044672/C/新竹縣/尖石鄉/縣市立/極偏/無/",
+          "coordinates": {
+            "longitude": 121.326512,
+            "latitude": 24.655545
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 31
+            },
+            {
+              "year": 108,
+              "students": 27
+            },
+            {
+              "year": 109,
+              "students": 30
+            },
+            {
+              "year": 110,
+              "students": 32
+            },
+            {
+              "year": 111,
+              "students": 26
+            },
+            {
+              "year": 112,
+              "students": 33
+            },
+            {
+              "year": 113,
+              "students": 35
+            },
+            {
+              "year": 114,
+              "students": 37
             }
           ],
           "status": "正常",
@@ -878,6 +936,10 @@
             {
               "year": 113,
               "students": 18
+            },
+            {
+              "year": 114,
+              "students": 20
             }
           ],
           "status": "正常",
@@ -936,56 +998,10 @@
             {
               "year": 113,
               "students": 2811
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "044683",
-          "code": "044683",
-          "name": "縣立興隆國小",
-          "countyId": "新竹縣",
-          "townshipId": "新竹縣:竹北市",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "新竹縣竹北市文興路88號",
-          "phone": "(03)6681799",
-          "website": "https://hlps.hcc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/044683/C/新竹縣/竹北市/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.015413,
-            "latitude": 24.816315
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1851
             },
             {
-              "year": 108,
-              "students": 1938
-            },
-            {
-              "year": 109,
-              "students": 1966
-            },
-            {
-              "year": 110,
-              "students": 2016
-            },
-            {
-              "year": 111,
-              "students": 2013
-            },
-            {
-              "year": 112,
-              "students": 2012
-            },
-            {
-              "year": 113,
-              "students": 1895
+              "year": 114,
+              "students": 2811
             }
           ],
           "status": "正常",
@@ -1036,22 +1052,69 @@
             {
               "year": 113,
               "students": 1890
+            },
+            {
+              "year": 114,
+              "students": 1890
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "044683",
+          "code": "044683",
+          "name": "縣立興隆國小",
+          "countyId": "新竹縣",
+          "townshipId": "新竹縣:竹北市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹縣竹北市文興路88號",
+          "phone": "(03)6681799",
+          "website": "https://hlps.hcc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/044683/C/新竹縣/竹北市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.015413,
+            "latitude": 24.816315
+          },
+          "yearlyStudents": [
             {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
+              "year": 107,
+              "students": 1851
+            },
+            {
+              "year": 108,
+              "students": 1938
+            },
+            {
+              "year": 109,
+              "students": 1966
+            },
+            {
+              "year": 110,
+              "students": 2016
+            },
+            {
+              "year": 111,
+              "students": 2013
+            },
+            {
+              "year": 112,
+              "students": 2012
+            },
+            {
+              "year": 113,
+              "students": 1895
+            },
+            {
+              "year": 114,
+              "students": 1823
             }
-          ]
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "044685",
@@ -1097,56 +1160,10 @@
             {
               "year": 113,
               "students": 1856
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "044682",
-          "code": "044682",
-          "name": "縣立十興國小",
-          "countyId": "新竹縣",
-          "townshipId": "新竹縣:竹北市",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "新竹縣竹北市莊敬北路66號",
-          "phone": "(03)6583517",
-          "website": "https://shps.hcc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/044682/C/新竹縣/竹北市/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.02491,
-            "latitude": 24.823903
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1858
             },
             {
-              "year": 108,
-              "students": 1911
-            },
-            {
-              "year": 109,
-              "students": 1911
-            },
-            {
-              "year": 110,
-              "students": 1885
-            },
-            {
-              "year": 111,
-              "students": 1895
-            },
-            {
-              "year": 112,
-              "students": 1888
-            },
-            {
-              "year": 113,
-              "students": 1804
+              "year": 114,
+              "students": 1775
             }
           ],
           "status": "正常",
@@ -1197,6 +1214,64 @@
             {
               "year": 113,
               "students": 1758
+            },
+            {
+              "year": 114,
+              "students": 1758
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "044682",
+          "code": "044682",
+          "name": "縣立十興國小",
+          "countyId": "新竹縣",
+          "townshipId": "新竹縣:竹北市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹縣竹北市莊敬北路66號",
+          "phone": "(03)6583517",
+          "website": "https://shps.hcc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/044682/C/新竹縣/竹北市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.02491,
+            "latitude": 24.823903
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1858
+            },
+            {
+              "year": 108,
+              "students": 1911
+            },
+            {
+              "year": 109,
+              "students": 1911
+            },
+            {
+              "year": 110,
+              "students": 1885
+            },
+            {
+              "year": 111,
+              "students": 1895
+            },
+            {
+              "year": 112,
+              "students": 1888
+            },
+            {
+              "year": 113,
+              "students": 1804
+            },
+            {
+              "year": 114,
+              "students": 1751
             }
           ],
           "status": "正常",
@@ -1246,6 +1321,10 @@
             },
             {
               "year": 113,
+              "students": 1651
+            },
+            {
+              "year": 114,
               "students": 1651
             }
           ],
@@ -1297,6 +1376,10 @@
             {
               "year": 113,
               "students": 1561
+            },
+            {
+              "year": 114,
+              "students": 1514
             }
           ],
           "status": "正常",
@@ -1347,6 +1430,10 @@
             {
               "year": 113,
               "students": 1416
+            },
+            {
+              "year": 114,
+              "students": 1383
             }
           ],
           "status": "正常",
@@ -1397,106 +1484,10 @@
             {
               "year": 113,
               "students": 1404
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "044631",
-          "code": "044631",
-          "name": "縣立六家國小",
-          "countyId": "新竹縣",
-          "townshipId": "新竹縣:竹北市",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "新竹縣竹北市嘉興路62號",
-          "phone": "(03)5502624",
-          "website": "https://ljes.hcc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/044631/C/新竹縣/竹北市/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.0259,
-            "latitude": 24.813803
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1491
             },
             {
-              "year": 108,
-              "students": 1496
-            },
-            {
-              "year": 109,
-              "students": 1495
-            },
-            {
-              "year": 110,
-              "students": 1530
-            },
-            {
-              "year": 111,
-              "students": 1498
-            },
-            {
-              "year": 112,
-              "students": 1486
-            },
-            {
-              "year": 113,
-              "students": 1380
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "044627",
-          "code": "044627",
-          "name": "縣立竹北國小",
-          "countyId": "新竹縣",
-          "townshipId": "新竹縣:竹北市",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "新竹縣竹北市中央路98號",
-          "phone": "(03)5552047",
-          "website": "https://cbes.hcc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/044627/C/新竹縣/竹北市/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.002321,
-            "latitude": 24.838242
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1293
-            },
-            {
-              "year": 108,
-              "students": 1304
-            },
-            {
-              "year": 109,
-              "students": 1282
-            },
-            {
-              "year": 110,
-              "students": 1314
-            },
-            {
-              "year": 111,
-              "students": 1370
-            },
-            {
-              "year": 112,
-              "students": 1378
-            },
-            {
-              "year": 113,
-              "students": 1344
+              "year": 114,
+              "students": 1377
             }
           ],
           "status": "正常",
@@ -1547,28 +1538,123 @@
             {
               "year": 113,
               "students": 1340
+            },
+            {
+              "year": 114,
+              "students": 1340
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107,
-            108,
-            109,
-            110
-          ],
-          "dataNotes": [
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "044631",
+          "code": "044631",
+          "name": "縣立六家國小",
+          "countyId": "新竹縣",
+          "townshipId": "新竹縣:竹北市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹縣竹北市嘉興路62號",
+          "phone": "(03)5502624",
+          "website": "https://ljes.hcc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/044631/C/新竹縣/竹北市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.0259,
+            "latitude": 24.813803
+          },
+          "yearlyStudents": [
             {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107、108、109、110",
-              "severity": "warning",
-              "years": [
-                107,
-                108,
-                109,
-                110
-              ]
+              "year": 107,
+              "students": 1491
+            },
+            {
+              "year": 108,
+              "students": 1496
+            },
+            {
+              "year": 109,
+              "students": 1495
+            },
+            {
+              "year": 110,
+              "students": 1530
+            },
+            {
+              "year": 111,
+              "students": 1498
+            },
+            {
+              "year": 112,
+              "students": 1486
+            },
+            {
+              "year": 113,
+              "students": 1380
+            },
+            {
+              "year": 114,
+              "students": 1321
             }
-          ]
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "044627",
+          "code": "044627",
+          "name": "縣立竹北國小",
+          "countyId": "新竹縣",
+          "townshipId": "新竹縣:竹北市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹縣竹北市中央路98號",
+          "phone": "(03)5552047",
+          "website": "https://cbes.hcc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/044627/C/新竹縣/竹北市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.002321,
+            "latitude": 24.838242
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1293
+            },
+            {
+              "year": 108,
+              "students": 1304
+            },
+            {
+              "year": 109,
+              "students": 1282
+            },
+            {
+              "year": 110,
+              "students": 1314
+            },
+            {
+              "year": 111,
+              "students": 1370
+            },
+            {
+              "year": 112,
+              "students": 1378
+            },
+            {
+              "year": 113,
+              "students": 1344
+            },
+            {
+              "year": 114,
+              "students": 1316
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "041602",
@@ -1614,6 +1700,10 @@
             {
               "year": 113,
               "students": 1324
+            },
+            {
+              "year": 114,
+              "students": 1304
             }
           ],
           "status": "正常",
@@ -1663,6 +1753,10 @@
             },
             {
               "year": 113,
+              "students": 1240
+            },
+            {
+              "year": 114,
               "students": 1240
             }
           ],
@@ -1714,6 +1808,10 @@
             {
               "year": 113,
               "students": 1168
+            },
+            {
+              "year": 114,
+              "students": 1119
             }
           ],
           "status": "正常",
@@ -1764,6 +1862,10 @@
             {
               "year": 113,
               "students": 1077
+            },
+            {
+              "year": 114,
+              "students": 1054
             }
           ],
           "status": "正常",
@@ -1814,6 +1916,64 @@
             {
               "year": 113,
               "students": 1034
+            },
+            {
+              "year": 114,
+              "students": 1019
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "044686",
+          "code": "044686",
+          "name": "縣立嘉豐國小",
+          "countyId": "新竹縣",
+          "townshipId": "新竹縣:竹北市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹縣竹北市嘉豐五路一段59號",
+          "phone": "(03)6672361",
+          "website": "https://jfes.hcc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/044686/C/新竹縣/竹北市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.03103,
+            "latitude": 24.81459
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 0
+            },
+            {
+              "year": 108,
+              "students": 0
+            },
+            {
+              "year": 109,
+              "students": 0
+            },
+            {
+              "year": 110,
+              "students": 0
+            },
+            {
+              "year": 111,
+              "students": 268
+            },
+            {
+              "year": 112,
+              "students": 476
+            },
+            {
+              "year": 113,
+              "students": 719
+            },
+            {
+              "year": 114,
+              "students": 935
             }
           ],
           "status": "正常",
@@ -1863,6 +2023,10 @@
             },
             {
               "year": 113,
+              "students": 923
+            },
+            {
+              "year": 114,
               "students": 923
             }
           ],
@@ -1914,6 +2078,10 @@
             {
               "year": 113,
               "students": 779
+            },
+            {
+              "year": 114,
+              "students": 779
             }
           ],
           "status": "正常",
@@ -1964,123 +2132,10 @@
             {
               "year": 113,
               "students": 737
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "044686",
-          "code": "044686",
-          "name": "縣立嘉豐國小",
-          "countyId": "新竹縣",
-          "townshipId": "新竹縣:竹北市",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "新竹縣竹北市嘉豐五路一段59號",
-          "phone": "(03)6672361",
-          "website": "https://jfes.hcc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/044686/C/新竹縣/竹北市/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.03103,
-            "latitude": 24.81459
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 0
             },
             {
-              "year": 108,
-              "students": 0
-            },
-            {
-              "year": 109,
-              "students": 0
-            },
-            {
-              "year": 110,
-              "students": 0
-            },
-            {
-              "year": 111,
-              "students": 268
-            },
-            {
-              "year": 112,
-              "students": 476
-            },
-            {
-              "year": 113,
-              "students": 719
-            }
-          ],
-          "status": "正常",
-          "missingYears": [
-            107,
-            108,
-            109,
-            110
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107、108、109、110",
-              "severity": "warning",
-              "years": [
-                107,
-                108,
-                109,
-                110
-              ]
-            }
-          ]
-        },
-        {
-          "id": "044632",
-          "code": "044632",
-          "name": "縣立東海國小",
-          "countyId": "新竹縣",
-          "townshipId": "新竹縣:竹北市",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "新竹縣竹北市東興路一段839號",
-          "phone": "(03)5502961",
-          "website": "https://dhes.hcc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/044632/C/新竹縣/竹北市/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.050576,
-            "latitude": 24.806001
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 184
-            },
-            {
-              "year": 108,
-              "students": 216
-            },
-            {
-              "year": 109,
-              "students": 314
-            },
-            {
-              "year": 110,
-              "students": 371
-            },
-            {
-              "year": 111,
-              "students": 406
-            },
-            {
-              "year": 112,
-              "students": 409
-            },
-            {
-              "year": 113,
-              "students": 372
+              "year": 114,
+              "students": 737
             }
           ],
           "status": "正常",
@@ -2131,6 +2186,64 @@
             {
               "year": 113,
               "students": 362
+            },
+            {
+              "year": 114,
+              "students": 362
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "044632",
+          "code": "044632",
+          "name": "縣立東海國小",
+          "countyId": "新竹縣",
+          "townshipId": "新竹縣:竹北市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹縣竹北市東興路一段839號",
+          "phone": "(03)5502961",
+          "website": "https://dhes.hcc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/044632/C/新竹縣/竹北市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.050576,
+            "latitude": 24.806001
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 184
+            },
+            {
+              "year": 108,
+              "students": 216
+            },
+            {
+              "year": 109,
+              "students": 314
+            },
+            {
+              "year": 110,
+              "students": 371
+            },
+            {
+              "year": 111,
+              "students": 406
+            },
+            {
+              "year": 112,
+              "students": 409
+            },
+            {
+              "year": 113,
+              "students": 372
+            },
+            {
+              "year": 114,
+              "students": 320
             }
           ],
           "status": "正常",
@@ -2181,6 +2294,10 @@
             {
               "year": 113,
               "students": 202
+            },
+            {
+              "year": 114,
+              "students": 200
             }
           ],
           "status": "正常",
@@ -2231,32 +2348,15 @@
             {
               "year": 113,
               "students": 148
+            },
+            {
+              "year": 114,
+              "students": 148
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107,
-            108,
-            109,
-            110,
-            111,
-            112
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107、108、109、110、111、112",
-              "severity": "warning",
-              "years": [
-                107,
-                108,
-                109,
-                110,
-                111,
-                112
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "044510",
@@ -2302,106 +2402,10 @@
             {
               "year": 113,
               "students": 131
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "044633",
-          "code": "044633",
-          "name": "縣立豐田國小",
-          "countyId": "新竹縣",
-          "townshipId": "新竹縣:竹北市",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "新竹縣竹北市中正西路1377號",
-          "phone": "(03)5563930",
-          "website": "https://ftes.hcc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/044633/C/新竹縣/竹北市/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.964314,
-            "latitude": 24.842148
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 88
             },
             {
-              "year": 108,
-              "students": 90
-            },
-            {
-              "year": 109,
-              "students": 100
-            },
-            {
-              "year": 110,
-              "students": 93
-            },
-            {
-              "year": 111,
-              "students": 85
-            },
-            {
-              "year": 112,
-              "students": 89
-            },
-            {
-              "year": 113,
-              "students": 95
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "044635",
-          "code": "044635",
-          "name": "縣立新港國小",
-          "countyId": "新竹縣",
-          "townshipId": "新竹縣:竹北市",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "新竹縣竹北市長青路一段333巷135號",
-          "phone": "(03)5563275",
-          "website": "https://hges.hcc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/044635/C/新竹縣/竹北市/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.954728,
-            "latitude": 24.850654
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 85
-            },
-            {
-              "year": 108,
-              "students": 92
-            },
-            {
-              "year": 109,
-              "students": 84
-            },
-            {
-              "year": 110,
-              "students": 84
-            },
-            {
-              "year": 111,
-              "students": 84
-            },
-            {
-              "year": 112,
-              "students": 87
-            },
-            {
-              "year": 113,
-              "students": 95
+              "year": 114,
+              "students": 131
             }
           ],
           "status": "正常",
@@ -2452,76 +2456,206 @@
             {
               "year": 113,
               "students": 93
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        }
-      ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "竹北市 有 4 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
-    },
-    {
-      "id": "新竹縣:竹東鎮",
-      "name": "竹東鎮",
-      "countyId": "新竹縣",
-      "schools": [
-        {
-          "id": "041306",
-          "code": "041306",
-          "name": "私立東泰高中",
-          "countyId": "新竹縣",
-          "townshipId": "新竹縣:竹東鎮",
-          "educationLevel": "高中職",
-          "managementType": "私立",
-          "address": "新竹縣竹東鎮東峰路343號",
-          "phone": "(03)5961232",
-          "website": "http://www.ttsh.hcc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/041306/H/新竹縣/竹東鎮/私立/否/無/",
-          "coordinates": {
-            "longitude": 121.098742,
-            "latitude": 24.71132
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 123
             },
             {
-              "year": 108,
-              "students": 1660
-            },
-            {
-              "year": 109,
-              "students": 1609
-            },
-            {
-              "year": 110,
-              "students": 1597
-            },
-            {
-              "year": 111,
-              "students": 1551
-            },
-            {
-              "year": 112,
-              "students": 1528
-            },
-            {
-              "year": 113,
-              "students": 1689
+              "year": 114,
+              "students": 91
             }
           ],
           "status": "正常",
           "missingYears": [],
           "dataNotes": []
         },
+        {
+          "id": "044635",
+          "code": "044635",
+          "name": "縣立新港國小",
+          "countyId": "新竹縣",
+          "townshipId": "新竹縣:竹北市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹縣竹北市長青路一段333巷135號",
+          "phone": "(03)5563275",
+          "website": "https://hges.hcc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/044635/C/新竹縣/竹北市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.954728,
+            "latitude": 24.850654
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 85
+            },
+            {
+              "year": 108,
+              "students": 92
+            },
+            {
+              "year": 109,
+              "students": 84
+            },
+            {
+              "year": 110,
+              "students": 84
+            },
+            {
+              "year": 111,
+              "students": 84
+            },
+            {
+              "year": 112,
+              "students": 87
+            },
+            {
+              "year": 113,
+              "students": 95
+            },
+            {
+              "year": 114,
+              "students": 83
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "044633",
+          "code": "044633",
+          "name": "縣立豐田國小",
+          "countyId": "新竹縣",
+          "townshipId": "新竹縣:竹北市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹縣竹北市中正西路1377號",
+          "phone": "(03)5563930",
+          "website": "https://ftes.hcc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/044633/C/新竹縣/竹北市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.964314,
+            "latitude": 24.842148
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 88
+            },
+            {
+              "year": 108,
+              "students": 90
+            },
+            {
+              "year": 109,
+              "students": 100
+            },
+            {
+              "year": 110,
+              "students": 93
+            },
+            {
+              "year": 111,
+              "students": 85
+            },
+            {
+              "year": 112,
+              "students": 89
+            },
+            {
+              "year": 113,
+              "students": 95
+            },
+            {
+              "year": 114,
+              "students": 77
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "044687",
+          "code": "044687",
+          "name": "縣立文興國小",
+          "countyId": "新竹縣",
+          "townshipId": "新竹縣:竹北市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹縣竹北市高鐵九路88號",
+          "phone": "(03)6576608",
+          "website": "https://wxes.hcc.edu.tw",
+          "profileUrl": "",
+          "coordinates": {
+            "longitude": 121.042191,
+            "latitude": 24.802387
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 0
+            },
+            {
+              "year": 108,
+              "students": 0
+            },
+            {
+              "year": 109,
+              "students": 0
+            },
+            {
+              "year": 110,
+              "students": 0
+            },
+            {
+              "year": 111,
+              "students": 0
+            },
+            {
+              "year": 112,
+              "students": 0
+            },
+            {
+              "year": 113,
+              "students": 0
+            },
+            {
+              "year": 114,
+              "students": 64
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": [
+            {
+              "type": "其他",
+              "message": "正式統計資料存在但 GIS 點位缺失，座標改採校址解點。",
+              "severity": "info"
+            }
+          ],
+          "_missingGIS": true,
+          "_missingCoordinateEntry": {
+            "code": "044687",
+            "name": "縣立文興國小",
+            "county": "新竹縣",
+            "township": "竹北市",
+            "level": "國小",
+            "address": "新竹縣竹北市高鐵九路88號",
+            "longitude": 121.042191,
+            "latitude": 24.802387,
+            "coordinateResolution": "地址解點",
+            "coordinateMatchType": "StreetAddress",
+            "coordinateMatchScore": 97.8
+          }
+        }
+      ],
+      "dataNotes": []
+    },
+    {
+      "id": "新竹縣:竹東鎮",
+      "name": "竹東鎮",
+      "countyId": "新竹縣",
+      "schools": [
         {
           "id": "044622",
           "code": "044622",
@@ -2566,6 +2700,64 @@
             {
               "year": 113,
               "students": 1655
+            },
+            {
+              "year": 114,
+              "students": 1692
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "041306",
+          "code": "041306",
+          "name": "私立東泰高中",
+          "countyId": "新竹縣",
+          "townshipId": "新竹縣:竹東鎮",
+          "educationLevel": "高中職",
+          "managementType": "私立",
+          "address": "新竹縣竹東鎮東峰路343號",
+          "phone": "(03)5961232",
+          "website": "http://www.ttsh.hcc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/041306/H/新竹縣/竹東鎮/私立/否/無/",
+          "coordinates": {
+            "longitude": 121.098742,
+            "latitude": 24.71132
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 123
+            },
+            {
+              "year": 108,
+              "students": 1660
+            },
+            {
+              "year": 109,
+              "students": 1609
+            },
+            {
+              "year": 110,
+              "students": 1597
+            },
+            {
+              "year": 111,
+              "students": 1551
+            },
+            {
+              "year": 112,
+              "students": 1528
+            },
+            {
+              "year": 113,
+              "students": 1689
+            },
+            {
+              "year": 114,
+              "students": 1689
             }
           ],
           "status": "正常",
@@ -2616,6 +2808,10 @@
             {
               "year": 113,
               "students": 1622
+            },
+            {
+              "year": 114,
+              "students": 1560
             }
           ],
           "status": "正常",
@@ -2666,22 +2862,15 @@
             {
               "year": 113,
               "students": 1495
+            },
+            {
+              "year": 114,
+              "students": 1495
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "044679",
@@ -2727,6 +2916,10 @@
             {
               "year": 113,
               "students": 997
+            },
+            {
+              "year": 114,
+              "students": 942
             }
           ],
           "status": "正常",
@@ -2776,6 +2969,10 @@
             },
             {
               "year": 113,
+              "students": 819
+            },
+            {
+              "year": 114,
               "students": 819
             }
           ],
@@ -2827,6 +3024,10 @@
             {
               "year": 113,
               "students": 771
+            },
+            {
+              "year": 114,
+              "students": 771
             }
           ],
           "status": "正常",
@@ -2876,6 +3077,10 @@
             },
             {
               "year": 113,
+              "students": 742
+            },
+            {
+              "year": 114,
               "students": 742
             }
           ],
@@ -2927,6 +3132,10 @@
             {
               "year": 113,
               "students": 632
+            },
+            {
+              "year": 114,
+              "students": 608
             }
           ],
           "status": "正常",
@@ -2977,6 +3186,10 @@
             {
               "year": 113,
               "students": 395
+            },
+            {
+              "year": 114,
+              "students": 369
             }
           ],
           "status": "正常",
@@ -3027,6 +3240,10 @@
             {
               "year": 113,
               "students": 248
+            },
+            {
+              "year": 114,
+              "students": 238
             }
           ],
           "status": "正常",
@@ -3077,6 +3294,10 @@
             {
               "year": 113,
               "students": 221
+            },
+            {
+              "year": 114,
+              "students": 215
             }
           ],
           "status": "正常",
@@ -3126,6 +3347,10 @@
             },
             {
               "year": 113,
+              "students": 140
+            },
+            {
+              "year": 114,
               "students": 140
             }
           ],
@@ -3177,6 +3402,10 @@
             {
               "year": 113,
               "students": 80
+            },
+            {
+              "year": 114,
+              "students": 77
             }
           ],
           "status": "正常",
@@ -3227,6 +3456,10 @@
             {
               "year": 113,
               "students": 57
+            },
+            {
+              "year": 114,
+              "students": 52
             }
           ],
           "status": "正常",
@@ -3277,6 +3510,10 @@
             {
               "year": 113,
               "students": 27
+            },
+            {
+              "year": 114,
+              "students": 32
             }
           ],
           "status": "正常",
@@ -3284,13 +3521,7 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "竹東鎮 有 1 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "新竹縣:芎林鄉",
@@ -3340,6 +3571,10 @@
             },
             {
               "year": 113,
+              "students": 1071
+            },
+            {
+              "year": 114,
               "students": 1071
             }
           ],
@@ -3391,6 +3626,10 @@
             {
               "year": 113,
               "students": 541
+            },
+            {
+              "year": 114,
+              "students": 505
             }
           ],
           "status": "正常",
@@ -3440,6 +3679,10 @@
             },
             {
               "year": 113,
+              "students": 234
+            },
+            {
+              "year": 114,
               "students": 234
             }
           ],
@@ -3491,6 +3734,10 @@
             {
               "year": 113,
               "students": 103
+            },
+            {
+              "year": 114,
+              "students": 85
             }
           ],
           "status": "正常",
@@ -3541,6 +3788,10 @@
             {
               "year": 113,
               "students": 54
+            },
+            {
+              "year": 114,
+              "students": 69
             }
           ],
           "status": "正常",
@@ -3599,6 +3850,10 @@
             {
               "year": 113,
               "students": 63
+            },
+            {
+              "year": 114,
+              "students": 58
             }
           ],
           "status": "正常",
@@ -3649,6 +3904,10 @@
             {
               "year": 113,
               "students": 53
+            },
+            {
+              "year": 114,
+              "students": 48
             }
           ],
           "status": "正常",
@@ -3698,6 +3957,10 @@
             },
             {
               "year": 113,
+              "students": 41
+            },
+            {
+              "year": 114,
               "students": 41
             }
           ],
@@ -3757,6 +4020,10 @@
             {
               "year": 113,
               "students": 2140
+            },
+            {
+              "year": 114,
+              "students": 2108
             }
           ],
           "status": "正常",
@@ -3806,6 +4073,10 @@
             },
             {
               "year": 113,
+              "students": 1843
+            },
+            {
+              "year": 114,
               "students": 1843
             }
           ],
@@ -3857,6 +4128,10 @@
             {
               "year": 113,
               "students": 1499
+            },
+            {
+              "year": 114,
+              "students": 1482
             }
           ],
           "status": "正常",
@@ -3907,6 +4182,10 @@
             {
               "year": 113,
               "students": 955
+            },
+            {
+              "year": 114,
+              "students": 907
             }
           ],
           "status": "正常",
@@ -3956,6 +4235,10 @@
             },
             {
               "year": 113,
+              "students": 412
+            },
+            {
+              "year": 114,
               "students": 412
             }
           ],
@@ -4007,6 +4290,10 @@
             {
               "year": 113,
               "students": 249
+            },
+            {
+              "year": 114,
+              "students": 249
             }
           ],
           "status": "正常",
@@ -4057,6 +4344,10 @@
             {
               "year": 113,
               "students": 200
+            },
+            {
+              "year": 114,
+              "students": 202
             }
           ],
           "status": "正常",
@@ -4107,6 +4398,64 @@
             {
               "year": 113,
               "students": 189
+            },
+            {
+              "year": 114,
+              "students": 191
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "044638",
+          "code": "044638",
+          "name": "縣立和興國小",
+          "countyId": "新竹縣",
+          "townshipId": "新竹縣:湖口鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹縣湖口鄉和興村德興路930號",
+          "phone": "(03)5992094",
+          "website": "https://hres.hcc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/044638/C/新竹縣/湖口鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.039253,
+            "latitude": 24.927257
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 54
+            },
+            {
+              "year": 108,
+              "students": 62
+            },
+            {
+              "year": 109,
+              "students": 56
+            },
+            {
+              "year": 110,
+              "students": 57
+            },
+            {
+              "year": 111,
+              "students": 63
+            },
+            {
+              "year": 112,
+              "students": 63
+            },
+            {
+              "year": 113,
+              "students": 65
+            },
+            {
+              "year": 114,
+              "students": 71
             }
           ],
           "status": "正常",
@@ -4157,55 +4506,9 @@
             {
               "year": 113,
               "students": 72
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "044638",
-          "code": "044638",
-          "name": "縣立和興國小",
-          "countyId": "新竹縣",
-          "townshipId": "新竹縣:湖口鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "新竹縣湖口鄉和興村德興路930號",
-          "phone": "(03)5992094",
-          "website": "https://hres.hcc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/044638/C/新竹縣/湖口鄉/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.039253,
-            "latitude": 24.927257
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 54
             },
             {
-              "year": 108,
-              "students": 62
-            },
-            {
-              "year": 109,
-              "students": 56
-            },
-            {
-              "year": 110,
-              "students": 57
-            },
-            {
-              "year": 111,
-              "students": 63
-            },
-            {
-              "year": 112,
-              "students": 63
-            },
-            {
-              "year": 113,
+              "year": 114,
               "students": 65
             }
           ],
@@ -4265,22 +4568,15 @@
             {
               "year": 113,
               "students": 1243
+            },
+            {
+              "year": 114,
+              "students": 1243
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "044610",
@@ -4326,6 +4622,10 @@
             {
               "year": 113,
               "students": 734
+            },
+            {
+              "year": 114,
+              "students": 719
             }
           ],
           "status": "正常",
@@ -4375,6 +4675,10 @@
             },
             {
               "year": 113,
+              "students": 229
+            },
+            {
+              "year": 114,
               "students": 229
             }
           ],
@@ -4426,6 +4730,10 @@
             {
               "year": 113,
               "students": 189
+            },
+            {
+              "year": 114,
+              "students": 166
             }
           ],
           "status": "正常",
@@ -4476,6 +4784,10 @@
             {
               "year": 113,
               "students": 170
+            },
+            {
+              "year": 114,
+              "students": 165
             }
           ],
           "status": "正常",
@@ -4526,6 +4838,10 @@
             {
               "year": 113,
               "students": 106
+            },
+            {
+              "year": 114,
+              "students": 103
             }
           ],
           "status": "正常",
@@ -4576,6 +4892,10 @@
             {
               "year": 113,
               "students": 95
+            },
+            {
+              "year": 114,
+              "students": 90
             }
           ],
           "status": "正常",
@@ -4626,56 +4946,10 @@
             {
               "year": 113,
               "students": 85
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "044617",
-          "code": "044617",
-          "name": "縣立寶石國小",
-          "countyId": "新竹縣",
-          "townshipId": "新竹縣:新埔鎮",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "新竹縣新埔鎮寶石里九鄰關埔路內立段672號",
-          "phone": "(03)5882397",
-          "website": "https://pses.hcc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/044617/C/新竹縣/新埔鎮/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.078723,
-            "latitude": 24.816638
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 101
             },
             {
-              "year": 108,
-              "students": 100
-            },
-            {
-              "year": 109,
-              "students": 95
-            },
-            {
-              "year": 110,
-              "students": 88
-            },
-            {
-              "year": 111,
-              "students": 87
-            },
-            {
-              "year": 112,
+              "year": 114,
               "students": 79
-            },
-            {
-              "year": 113,
-              "students": 73
             }
           ],
           "status": "正常",
@@ -4726,6 +5000,64 @@
             {
               "year": 113,
               "students": 68
+            },
+            {
+              "year": 114,
+              "students": 68
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "044617",
+          "code": "044617",
+          "name": "縣立寶石國小",
+          "countyId": "新竹縣",
+          "townshipId": "新竹縣:新埔鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹縣新埔鎮寶石里九鄰關埔路內立段672號",
+          "phone": "(03)5882397",
+          "website": "https://pses.hcc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/044617/C/新竹縣/新埔鎮/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.078723,
+            "latitude": 24.816638
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 101
+            },
+            {
+              "year": 108,
+              "students": 100
+            },
+            {
+              "year": 109,
+              "students": 95
+            },
+            {
+              "year": 110,
+              "students": 88
+            },
+            {
+              "year": 111,
+              "students": 87
+            },
+            {
+              "year": 112,
+              "students": 79
+            },
+            {
+              "year": 113,
+              "students": 73
+            },
+            {
+              "year": 114,
+              "students": 66
             }
           ],
           "status": "正常",
@@ -4775,6 +5107,10 @@
             },
             {
               "year": 113,
+              "students": 43
+            },
+            {
+              "year": 114,
               "students": 43
             }
           ],
@@ -4826,6 +5162,10 @@
             {
               "year": 113,
               "students": 31
+            },
+            {
+              "year": 114,
+              "students": 34
             }
           ],
           "status": "正常",
@@ -4876,6 +5216,10 @@
             {
               "year": 113,
               "students": 24
+            },
+            {
+              "year": 114,
+              "students": 27
             }
           ],
           "status": "正常",
@@ -4883,13 +5227,7 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "新埔鎮 有 1 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "新竹縣:新豐鄉",
@@ -4939,6 +5277,10 @@
             },
             {
               "year": 113,
+              "students": 9909
+            },
+            {
+              "year": 114,
               "students": 9909
             }
           ],
@@ -4990,6 +5332,10 @@
             {
               "year": 113,
               "students": 1833
+            },
+            {
+              "year": 114,
+              "students": 1833
             }
           ],
           "status": "正常",
@@ -5040,6 +5386,10 @@
             {
               "year": 113,
               "students": 1580
+            },
+            {
+              "year": 114,
+              "students": 1520
             }
           ],
           "status": "正常",
@@ -5090,6 +5440,10 @@
             {
               "year": 113,
               "students": 1517
+            },
+            {
+              "year": 114,
+              "students": 1418
             }
           ],
           "status": "正常",
@@ -5140,56 +5494,10 @@
             {
               "year": 113,
               "students": 960
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "044651",
-          "code": "044651",
-          "name": "縣立新豐國小",
-          "countyId": "新竹縣",
-          "townshipId": "新竹縣:新豐鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "新竹縣新豐鄉重興村明德巷13號",
-          "phone": "(03)5592081",
-          "website": "https://hfes.hcc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/044651/C/新竹縣/新豐鄉/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.988103,
-            "latitude": 24.900955
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 824
             },
             {
-              "year": 108,
-              "students": 836
-            },
-            {
-              "year": 109,
-              "students": 876
-            },
-            {
-              "year": 110,
-              "students": 880
-            },
-            {
-              "year": 111,
-              "students": 911
-            },
-            {
-              "year": 112,
-              "students": 952
-            },
-            {
-              "year": 113,
-              "students": 911
+              "year": 114,
+              "students": 960
             }
           ],
           "status": "正常",
@@ -5240,6 +5548,64 @@
             {
               "year": 113,
               "students": 903
+            },
+            {
+              "year": 114,
+              "students": 903
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "044651",
+          "code": "044651",
+          "name": "縣立新豐國小",
+          "countyId": "新竹縣",
+          "townshipId": "新竹縣:新豐鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹縣新豐鄉重興村明德巷13號",
+          "phone": "(03)5592081",
+          "website": "https://hfes.hcc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/044651/C/新竹縣/新豐鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.988103,
+            "latitude": 24.900955
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 824
+            },
+            {
+              "year": 108,
+              "students": 836
+            },
+            {
+              "year": 109,
+              "students": 876
+            },
+            {
+              "year": 110,
+              "students": 880
+            },
+            {
+              "year": 111,
+              "students": 911
+            },
+            {
+              "year": 112,
+              "students": 952
+            },
+            {
+              "year": 113,
+              "students": 911
+            },
+            {
+              "year": 114,
+              "students": 878
             }
           ],
           "status": "正常",
@@ -5289,6 +5655,10 @@
             },
             {
               "year": 113,
+              "students": 401
+            },
+            {
+              "year": 114,
               "students": 401
             }
           ],
@@ -5340,6 +5710,10 @@
             {
               "year": 113,
               "students": 126
+            },
+            {
+              "year": 114,
+              "students": 132
             }
           ],
           "status": "正常",
@@ -5390,6 +5764,10 @@
             {
               "year": 113,
               "students": 69
+            },
+            {
+              "year": 114,
+              "students": 70
             }
           ],
           "status": "正常",
@@ -5439,6 +5817,10 @@
             },
             {
               "year": 113,
+              "students": 66
+            },
+            {
+              "year": 114,
               "students": 66
             }
           ],
@@ -5490,6 +5872,10 @@
             {
               "year": 113,
               "students": 60
+            },
+            {
+              "year": 114,
+              "students": 60
             }
           ],
           "status": "正常",
@@ -5540,6 +5926,10 @@
             {
               "year": 113,
               "students": 54
+            },
+            {
+              "year": 114,
+              "students": 51
             }
           ],
           "status": "正常",
@@ -5598,6 +5988,10 @@
             {
               "year": 113,
               "students": 247
+            },
+            {
+              "year": 114,
+              "students": 242
             }
           ],
           "status": "正常",
@@ -5647,6 +6041,10 @@
             },
             {
               "year": 113,
+              "students": 119
+            },
+            {
+              "year": 114,
               "students": 119
             }
           ],
@@ -5698,6 +6096,10 @@
             {
               "year": 113,
               "students": 95
+            },
+            {
+              "year": 114,
+              "students": 89
             }
           ],
           "status": "正常",
@@ -5747,6 +6149,10 @@
             },
             {
               "year": 113,
+              "students": 61
+            },
+            {
+              "year": 114,
               "students": 61
             }
           ],
@@ -5798,6 +6204,10 @@
             {
               "year": 113,
               "students": 40
+            },
+            {
+              "year": 114,
+              "students": 34
             }
           ],
           "status": "正常",
@@ -5848,6 +6258,10 @@
             {
               "year": 113,
               "students": 24
+            },
+            {
+              "year": 114,
+              "students": 21
             }
           ],
           "status": "正常",
@@ -5898,6 +6312,10 @@
             {
               "year": 113,
               "students": 20
+            },
+            {
+              "year": 114,
+              "students": 18
             }
           ],
           "status": "正常",
@@ -5956,22 +6374,15 @@
             {
               "year": 113,
               "students": 881
+            },
+            {
+              "year": 114,
+              "students": 881
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "044601",
@@ -6017,6 +6428,10 @@
             {
               "year": 113,
               "students": 459
+            },
+            {
+              "year": 114,
+              "students": 407
             }
           ],
           "status": "正常",
@@ -6066,6 +6481,10 @@
             },
             {
               "year": 113,
+              "students": 349
+            },
+            {
+              "year": 114,
               "students": 349
             }
           ],
@@ -6117,6 +6536,10 @@
             {
               "year": 113,
               "students": 241
+            },
+            {
+              "year": 114,
+              "students": 238
             }
           ],
           "status": "正常",
@@ -6166,6 +6589,10 @@
             },
             {
               "year": 113,
+              "students": 75
+            },
+            {
+              "year": 114,
               "students": 75
             }
           ],
@@ -6217,56 +6644,10 @@
             {
               "year": 113,
               "students": 67
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "044505",
-          "code": "044505",
-          "name": "縣立石光國中",
-          "countyId": "新竹縣",
-          "townshipId": "新竹縣:關西鎮",
-          "educationLevel": "國中",
-          "managementType": "公立",
-          "address": "新竹縣關西鎮石光里308巷44號",
-          "phone": "(03)5868019",
-          "website": "https://sgjh.hcc.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/044505/J/新竹縣/關西鎮/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 121.129957,
-            "latitude": 24.814974
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 100
             },
             {
-              "year": 108,
-              "students": 79
-            },
-            {
-              "year": 109,
-              "students": 81
-            },
-            {
-              "year": 110,
+              "year": 114,
               "students": 59
-            },
-            {
-              "year": 111,
-              "students": 56
-            },
-            {
-              "year": 112,
-              "students": 42
-            },
-            {
-              "year": 113,
-              "students": 56
             }
           ],
           "status": "正常",
@@ -6317,6 +6698,64 @@
             {
               "year": 113,
               "students": 54
+            },
+            {
+              "year": 114,
+              "students": 59
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "044505",
+          "code": "044505",
+          "name": "縣立石光國中",
+          "countyId": "新竹縣",
+          "townshipId": "新竹縣:關西鎮",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "新竹縣關西鎮石光里308巷44號",
+          "phone": "(03)5868019",
+          "website": "https://sgjh.hcc.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/044505/J/新竹縣/關西鎮/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.129957,
+            "latitude": 24.814974
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 100
+            },
+            {
+              "year": 108,
+              "students": 79
+            },
+            {
+              "year": 109,
+              "students": 81
+            },
+            {
+              "year": 110,
+              "students": 59
+            },
+            {
+              "year": 111,
+              "students": 56
+            },
+            {
+              "year": 112,
+              "students": 42
+            },
+            {
+              "year": 113,
+              "students": 56
+            },
+            {
+              "year": 114,
+              "students": 56
             }
           ],
           "status": "正常",
@@ -6367,56 +6806,10 @@
             {
               "year": 113,
               "students": 42
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "044604",
-          "code": "044604",
-          "name": "縣立坪林國小",
-          "countyId": "新竹縣",
-          "townshipId": "新竹縣:關西鎮",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "新竹縣關西鎮上林里坪林11號",
-          "phone": "(03)5869310",
-          "website": "https://ples.hcc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/044604/C/新竹縣/關西鎮/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.140408,
-            "latitude": 24.801089
-          },
-          "yearlyStudents": [
+            },
             {
-              "year": 107,
+              "year": 114,
               "students": 42
-            },
-            {
-              "year": 108,
-              "students": 47
-            },
-            {
-              "year": 109,
-              "students": 42
-            },
-            {
-              "year": 110,
-              "students": 46
-            },
-            {
-              "year": 111,
-              "students": 46
-            },
-            {
-              "year": 112,
-              "students": 41
-            },
-            {
-              "year": 113,
-              "students": 41
             }
           ],
           "status": "正常",
@@ -6467,6 +6860,10 @@
             {
               "year": 113,
               "students": 39
+            },
+            {
+              "year": 114,
+              "students": 41
             }
           ],
           "status": "正常",
@@ -6474,49 +6871,53 @@
           "dataNotes": []
         },
         {
-          "id": "044605",
-          "code": "044605",
-          "name": "縣立南和國小",
+          "id": "044604",
+          "code": "044604",
+          "name": "縣立坪林國小",
           "countyId": "新竹縣",
           "townshipId": "新竹縣:關西鎮",
           "educationLevel": "國小",
           "managementType": "公立",
-          "address": "新竹縣關西鎮南和里69號",
-          "phone": "(03)5868952",
-          "website": "https://nhes.hcc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/044605/C/新竹縣/關西鎮/縣市立/否/無/",
+          "address": "新竹縣關西鎮上林里坪林11號",
+          "phone": "(03)5869310",
+          "website": "https://ples.hcc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/044604/C/新竹縣/關西鎮/縣市立/否/無/",
           "coordinates": {
-            "longitude": 121.12059,
-            "latitude": 24.809173
+            "longitude": 121.140408,
+            "latitude": 24.801089
           },
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 33
+              "students": 42
             },
             {
               "year": 108,
-              "students": 38
+              "students": 47
             },
             {
               "year": 109,
-              "students": 37
+              "students": 42
             },
             {
               "year": 110,
-              "students": 32
+              "students": 46
             },
             {
               "year": 111,
-              "students": 29
+              "students": 46
             },
             {
               "year": 112,
-              "students": 29
+              "students": 41
             },
             {
               "year": 113,
-              "students": 24
+              "students": 41
+            },
+            {
+              "year": 114,
+              "students": 36
             }
           ],
           "status": "正常",
@@ -6567,6 +6968,64 @@
             {
               "year": 113,
               "students": 23
+            },
+            {
+              "year": 114,
+              "students": 23
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "044605",
+          "code": "044605",
+          "name": "縣立南和國小",
+          "countyId": "新竹縣",
+          "townshipId": "新竹縣:關西鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "新竹縣關西鎮南和里69號",
+          "phone": "(03)5868952",
+          "website": "https://nhes.hcc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/044605/C/新竹縣/關西鎮/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.12059,
+            "latitude": 24.809173
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 33
+            },
+            {
+              "year": 108,
+              "students": 38
+            },
+            {
+              "year": 109,
+              "students": 37
+            },
+            {
+              "year": 110,
+              "students": 32
+            },
+            {
+              "year": 111,
+              "students": 29
+            },
+            {
+              "year": 112,
+              "students": 29
+            },
+            {
+              "year": 113,
+              "students": 24
+            },
+            {
+              "year": 114,
+              "students": 18
             }
           ],
           "status": "正常",
@@ -6574,13 +7033,7 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "關西鎮 有 1 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "新竹縣:寶山鄉",
@@ -6631,6 +7084,10 @@
             {
               "year": 113,
               "students": 317
+            },
+            {
+              "year": 114,
+              "students": 279
             }
           ],
           "status": "正常",
@@ -6680,6 +7137,10 @@
             },
             {
               "year": 113,
+              "students": 142
+            },
+            {
+              "year": 114,
               "students": 142
             }
           ],
@@ -6731,6 +7192,10 @@
             {
               "year": 113,
               "students": 90
+            },
+            {
+              "year": 114,
+              "students": 74
             }
           ],
           "status": "正常",
@@ -6781,6 +7246,10 @@
             {
               "year": 113,
               "students": 58
+            },
+            {
+              "year": 114,
+              "students": 50
             }
           ],
           "status": "正常",

@@ -4,7 +4,9 @@ import {
   type EducationLevelFilter,
   type ManagementTypeFilter,
   type DataNote,
+  type RegionGroupFilter,
 } from '../data/educationData'
+import type { AtlasTab } from './useAtlasQueryState'
 import type { InvestigationItem, InvestigationFilter, SavedComparisonScenario } from './types'
 
 export function severityRank(severity: DataNote['severity']) {
@@ -99,7 +101,7 @@ function parseScenarioArray(rawValue: string) {
     return [] as SavedComparisonScenario[]
   }
 
-  return parsed.filter((item): item is SavedComparisonScenario => {
+  return parsed.filter((item) => {
     return (
       item &&
       typeof item === 'object' &&
@@ -109,10 +111,18 @@ function parseScenarioArray(rawValue: string) {
       typeof item.activeYear === 'number' &&
       typeof item.educationLevel === 'string' &&
       typeof item.managementType === 'string' &&
-      typeof item.region === 'string' &&
       typeof item.updatedAt === 'string'
     )
-  })
+  }).map((item) => ({
+    id: item.id,
+    name: item.name,
+    countyIds: item.countyIds,
+    activeYear: item.activeYear,
+    educationLevel: item.educationLevel,
+    managementType: item.managementType,
+    pinned: item.pinned,
+    updatedAt: item.updatedAt,
+  }))
 }
 
 export function buildComparisonScenarioId(scenario: Omit<SavedComparisonScenario, 'id' | 'updatedAt'>) {
@@ -122,7 +132,6 @@ export function buildComparisonScenarioId(scenario: Omit<SavedComparisonScenario
     scenario.activeYear,
     scenario.educationLevel,
     scenario.managementType,
-    scenario.region,
   ].join('__')
 }
 
@@ -145,4 +154,22 @@ export function classifyInvestigation(item: InvestigationItem): InvestigationFil
     return '停辦/整併'
   }
   return '正式註記'
+}
+
+export function buildDesktopTabItems(
+  region: RegionGroupFilter,
+  selectedCounty: { shortLabel: string } | null,
+  selectedTownshipSummary: { label: string } | null,
+  selectedSchool: { name: string } | null,
+): Array<{ id: AtlasTab; label: string }> {
+  const items: Array<{ id: AtlasTab; label: string }> = [
+    { id: 'overview', label: '全台總覽' },
+    { id: 'regional', label: region === '全部' ? '區域分析' : `${region} 區域分析` },
+  ]
+  if (selectedCounty) {
+    items.push({ id: 'county', label: `${selectedCounty.shortLabel} 縣市分析` })
+    items.push({ id: 'schools', label: selectedTownshipSummary ? `${selectedTownshipSummary.label} 各校分析` : '鄉鎮各校分析' })
+    if (selectedSchool) items.push({ id: 'school-focus', label: `${selectedSchool.name} 校別概況` })
+  }
+  return items
 }

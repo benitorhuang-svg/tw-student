@@ -27,6 +27,7 @@ export function getSchoolInsights(
             code: school.code,
             name: school.name,
             countyName: countyDetail.county.name,
+            townshipId: township.id,
             townshipName: township.name,
             educationLevel: school.educationLevel,
             managementType: school.managementType,

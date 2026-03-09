@@ -5,13 +5,7 @@
     "shortLabel": "屏東",
     "region": "南部"
   },
-  "dataNotes": [
-    {
-      "type": "缺年度",
-      "message": "屏東縣 有 2 所學校存在年度缺漏。",
-      "severity": "warning"
-    }
-  ],
+  "dataNotes": [],
   "towns": [
     {
       "id": "屏東縣:九如鄉",
@@ -62,6 +56,10 @@
             {
               "year": 113,
               "students": 497
+            },
+            {
+              "year": 114,
+              "students": 483
             }
           ],
           "status": "正常",
@@ -111,6 +109,10 @@
             },
             {
               "year": 113,
+              "students": 336
+            },
+            {
+              "year": 114,
               "students": 336
             }
           ],
@@ -162,6 +164,10 @@
             {
               "year": 113,
               "students": 124
+            },
+            {
+              "year": 114,
+              "students": 111
             }
           ],
           "status": "正常",
@@ -212,6 +218,10 @@
             {
               "year": 113,
               "students": 86
+            },
+            {
+              "year": 114,
+              "students": 90
             }
           ],
           "status": "正常",
@@ -262,6 +272,10 @@
             {
               "year": 113,
               "students": 72
+            },
+            {
+              "year": 114,
+              "students": 76
             }
           ],
           "status": "正常",
@@ -320,6 +334,10 @@
             {
               "year": 113,
               "students": 138
+            },
+            {
+              "year": 114,
+              "students": 126
             }
           ],
           "status": "正常",
@@ -369,6 +387,10 @@
             },
             {
               "year": 113,
+              "students": 52
+            },
+            {
+              "year": 114,
               "students": 52
             }
           ],
@@ -420,56 +442,10 @@
             {
               "year": 113,
               "students": 47
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "134741",
-          "code": "134741",
-          "name": "縣立青葉國小",
-          "countyId": "屏東縣",
-          "townshipId": "屏東縣:三地門鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "屏東縣三地門鄉青葉村光復巷1之2號",
-          "phone": "(08)7961997",
-          "website": "https://www.cyes.ptc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/134741/C/屏東縣/三地門鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.639277,
-            "latitude": 22.838275
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 46
             },
             {
-              "year": 108,
-              "students": 40
-            },
-            {
-              "year": 109,
-              "students": 36
-            },
-            {
-              "year": 110,
-              "students": 38
-            },
-            {
-              "year": 111,
-              "students": 39
-            },
-            {
-              "year": 112,
-              "students": 39
-            },
-            {
-              "year": 113,
-              "students": 39
+              "year": 114,
+              "students": 49
             }
           ],
           "status": "正常",
@@ -520,6 +496,64 @@
             {
               "year": 113,
               "students": 39
+            },
+            {
+              "year": 114,
+              "students": 40
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "134741",
+          "code": "134741",
+          "name": "縣立青葉國小",
+          "countyId": "屏東縣",
+          "townshipId": "屏東縣:三地門鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "屏東縣三地門鄉青葉村光復巷1之2號",
+          "phone": "(08)7961997",
+          "website": "https://www.cyes.ptc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/134741/C/屏東縣/三地門鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.639277,
+            "latitude": 22.838275
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 46
+            },
+            {
+              "year": 108,
+              "students": 40
+            },
+            {
+              "year": 109,
+              "students": 36
+            },
+            {
+              "year": 110,
+              "students": 38
+            },
+            {
+              "year": 111,
+              "students": 39
+            },
+            {
+              "year": 112,
+              "students": 39
+            },
+            {
+              "year": 113,
+              "students": 39
+            },
+            {
+              "year": 114,
+              "students": 37
             }
           ],
           "status": "正常",
@@ -578,6 +612,10 @@
             {
               "year": 113,
               "students": 10003
+            },
+            {
+              "year": 114,
+              "students": 10003
             }
           ],
           "status": "正常",
@@ -627,6 +665,10 @@
             },
             {
               "year": 113,
+              "students": 4460
+            },
+            {
+              "year": 114,
               "students": 4460
             }
           ],
@@ -678,6 +720,10 @@
             {
               "year": 113,
               "students": 1157
+            },
+            {
+              "year": 114,
+              "students": 1157
             }
           ],
           "status": "正常",
@@ -728,6 +774,10 @@
             {
               "year": 113,
               "students": 526
+            },
+            {
+              "year": 114,
+              "students": 522
             }
           ],
           "status": "正常",
@@ -778,6 +828,10 @@
             {
               "year": 113,
               "students": 474
+            },
+            {
+              "year": 114,
+              "students": 479
             }
           ],
           "status": "正常",
@@ -827,6 +881,10 @@
             },
             {
               "year": 113,
+              "students": 464
+            },
+            {
+              "year": 114,
               "students": 464
             }
           ],
@@ -878,6 +936,10 @@
             {
               "year": 113,
               "students": 321
+            },
+            {
+              "year": 114,
+              "students": 321
             }
           ],
           "status": "正常",
@@ -928,6 +990,10 @@
             {
               "year": 113,
               "students": 300
+            },
+            {
+              "year": 114,
+              "students": 308
             }
           ],
           "status": "正常",
@@ -977,6 +1043,10 @@
             },
             {
               "year": 113,
+              "students": 285
+            },
+            {
+              "year": 114,
               "students": 285
             }
           ],
@@ -1028,6 +1098,10 @@
             {
               "year": 113,
               "students": 236
+            },
+            {
+              "year": 114,
+              "students": 236
             }
           ],
           "status": "正常",
@@ -1078,6 +1152,10 @@
             {
               "year": 113,
               "students": 210
+            },
+            {
+              "year": 114,
+              "students": 209
             }
           ],
           "status": "正常",
@@ -1128,56 +1206,10 @@
             {
               "year": 113,
               "students": 126
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "134666",
-          "code": "134666",
-          "name": "縣立新生國小",
-          "countyId": "屏東縣",
-          "townshipId": "屏東縣:內埔鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "屏東縣內埔鄉大新村大新路109號",
-          "phone": "(08)7708211",
-          "website": "https://www.ssps.ptc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/134666/C/屏東縣/內埔鄉/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.590732,
-            "latitude": 22.667213
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 84
             },
             {
-              "year": 108,
-              "students": 99
-            },
-            {
-              "year": 109,
-              "students": 97
-            },
-            {
-              "year": 110,
-              "students": 103
-            },
-            {
-              "year": 111,
-              "students": 96
-            },
-            {
-              "year": 112,
-              "students": 94
-            },
-            {
-              "year": 113,
-              "students": 101
+              "year": 114,
+              "students": 137
             }
           ],
           "status": "正常",
@@ -1228,6 +1260,64 @@
             {
               "year": 113,
               "students": 90
+            },
+            {
+              "year": 114,
+              "students": 88
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "134666",
+          "code": "134666",
+          "name": "縣立新生國小",
+          "countyId": "屏東縣",
+          "townshipId": "屏東縣:內埔鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "屏東縣內埔鄉大新村大新路109號",
+          "phone": "(08)7708211",
+          "website": "https://www.ssps.ptc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/134666/C/屏東縣/內埔鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.590732,
+            "latitude": 22.667213
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 84
+            },
+            {
+              "year": 108,
+              "students": 99
+            },
+            {
+              "year": 109,
+              "students": 97
+            },
+            {
+              "year": 110,
+              "students": 103
+            },
+            {
+              "year": 111,
+              "students": 96
+            },
+            {
+              "year": 112,
+              "students": 94
+            },
+            {
+              "year": 113,
+              "students": 101
+            },
+            {
+              "year": 114,
+              "students": 83
             }
           ],
           "status": "正常",
@@ -1278,6 +1368,10 @@
             {
               "year": 113,
               "students": 60
+            },
+            {
+              "year": 114,
+              "students": 62
             }
           ],
           "status": "正常",
@@ -1328,6 +1422,10 @@
             {
               "year": 113,
               "students": 56
+            },
+            {
+              "year": 114,
+              "students": 57
             }
           ],
           "status": "正常",
@@ -1377,6 +1475,10 @@
             },
             {
               "year": 113,
+              "students": 31
+            },
+            {
+              "year": 114,
               "students": 31
             }
           ],
@@ -1436,6 +1538,10 @@
             {
               "year": 113,
               "students": 223
+            },
+            {
+              "year": 114,
+              "students": 223
             }
           ],
           "status": "正常",
@@ -1486,6 +1592,10 @@
             {
               "year": 113,
               "students": 154
+            },
+            {
+              "year": 114,
+              "students": 158
             }
           ],
           "status": "正常",
@@ -1536,6 +1646,10 @@
             {
               "year": 113,
               "students": 113
+            },
+            {
+              "year": 114,
+              "students": 120
             }
           ],
           "status": "正常",
@@ -1585,6 +1699,10 @@
             },
             {
               "year": 113,
+              "students": 70
+            },
+            {
+              "year": 114,
               "students": 70
             }
           ],
@@ -1644,6 +1762,10 @@
             {
               "year": 113,
               "students": 90
+            },
+            {
+              "year": 114,
+              "students": 86
             }
           ],
           "status": "正常",
@@ -1694,6 +1816,10 @@
             {
               "year": 113,
               "students": 71
+            },
+            {
+              "year": 114,
+              "students": 68
             }
           ],
           "status": "正常",
@@ -1744,6 +1870,10 @@
             {
               "year": 113,
               "students": 62
+            },
+            {
+              "year": 114,
+              "students": 62
             }
           ],
           "status": "正常",
@@ -1793,6 +1923,10 @@
             },
             {
               "year": 113,
+              "students": 40
+            },
+            {
+              "year": 114,
               "students": 40
             }
           ],
@@ -1852,6 +1986,10 @@
             {
               "year": 113,
               "students": 208
+            },
+            {
+              "year": 114,
+              "students": 221
             }
           ],
           "status": "正常",
@@ -1901,6 +2039,10 @@
             },
             {
               "year": 113,
+              "students": 198
+            },
+            {
+              "year": 114,
               "students": 198
             }
           ],
@@ -1960,6 +2102,10 @@
             {
               "year": 113,
               "students": 516
+            },
+            {
+              "year": 114,
+              "students": 516
             }
           ],
           "status": "正常",
@@ -2010,6 +2156,10 @@
             {
               "year": 113,
               "students": 464
+            },
+            {
+              "year": 114,
+              "students": 469
             }
           ],
           "status": "正常",
@@ -2060,56 +2210,10 @@
             {
               "year": 113,
               "students": 389
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "134648",
-          "code": "134648",
-          "name": "縣立土庫國小",
-          "countyId": "屏東縣",
-          "townshipId": "屏東縣:里港鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "屏東縣里港鄉中和村中和路33號",
-          "phone": "(08)7731553",
-          "website": "https://www.tkps.ptc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/134648/C/屏東縣/里港鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.492149,
-            "latitude": 22.807582
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 94
             },
             {
-              "year": 108,
-              "students": 90
-            },
-            {
-              "year": 109,
-              "students": 84
-            },
-            {
-              "year": 110,
-              "students": 96
-            },
-            {
-              "year": 111,
-              "students": 106
-            },
-            {
-              "year": 112,
-              "students": 100
-            },
-            {
-              "year": 113,
-              "students": 94
+              "year": 114,
+              "students": 376
             }
           ],
           "status": "正常",
@@ -2160,6 +2264,64 @@
             {
               "year": 113,
               "students": 89
+            },
+            {
+              "year": 114,
+              "students": 82
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "134648",
+          "code": "134648",
+          "name": "縣立土庫國小",
+          "countyId": "屏東縣",
+          "townshipId": "屏東縣:里港鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "屏東縣里港鄉中和村中和路33號",
+          "phone": "(08)7731553",
+          "website": "https://www.tkps.ptc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/134648/C/屏東縣/里港鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.492149,
+            "latitude": 22.807582
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 94
+            },
+            {
+              "year": 108,
+              "students": 90
+            },
+            {
+              "year": 109,
+              "students": 84
+            },
+            {
+              "year": 110,
+              "students": 96
+            },
+            {
+              "year": 111,
+              "students": 106
+            },
+            {
+              "year": 112,
+              "students": 100
+            },
+            {
+              "year": 113,
+              "students": 94
+            },
+            {
+              "year": 114,
+              "students": 77
             }
           ],
           "status": "正常",
@@ -2210,6 +2372,10 @@
             {
               "year": 113,
               "students": 60
+            },
+            {
+              "year": 114,
+              "students": 58
             }
           ],
           "status": "正常",
@@ -2260,6 +2426,10 @@
             {
               "year": 113,
               "students": 54
+            },
+            {
+              "year": 114,
+              "students": 55
             }
           ],
           "status": "正常",
@@ -2318,6 +2488,10 @@
             {
               "year": 113,
               "students": 641
+            },
+            {
+              "year": 114,
+              "students": 641
             }
           ],
           "status": "正常",
@@ -2368,6 +2542,10 @@
             {
               "year": 113,
               "students": 273
+            },
+            {
+              "year": 114,
+              "students": 265
             }
           ],
           "status": "正常",
@@ -2418,6 +2596,10 @@
             {
               "year": 113,
               "students": 145
+            },
+            {
+              "year": 114,
+              "students": 134
             }
           ],
           "status": "正常",
@@ -2467,6 +2649,10 @@
             },
             {
               "year": 113,
+              "students": 130
+            },
+            {
+              "year": 114,
               "students": 130
             }
           ],
@@ -2518,6 +2704,10 @@
             {
               "year": 113,
               "students": 82
+            },
+            {
+              "year": 114,
+              "students": 73
             }
           ],
           "status": "正常",
@@ -2568,6 +2758,10 @@
             {
               "year": 113,
               "students": 76
+            },
+            {
+              "year": 114,
+              "students": 65
             }
           ],
           "status": "正常",
@@ -2617,6 +2811,10 @@
             },
             {
               "year": 113,
+              "students": 44
+            },
+            {
+              "year": 114,
               "students": 44
             }
           ],
@@ -2676,6 +2874,10 @@
             {
               "year": 113,
               "students": 340
+            },
+            {
+              "year": 114,
+              "students": 340
             }
           ],
           "status": "正常",
@@ -2726,6 +2928,10 @@
             {
               "year": 113,
               "students": 124
+            },
+            {
+              "year": 114,
+              "students": 127
             }
           ],
           "status": "正常",
@@ -2776,6 +2982,64 @@
             {
               "year": 113,
               "students": 64
+            },
+            {
+              "year": 114,
+              "students": 69
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "134758",
+          "code": "134758",
+          "name": "縣立古樓國小",
+          "countyId": "屏東縣",
+          "townshipId": "屏東縣:來義鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "屏東縣來義鄉古樓村育英路2號",
+          "phone": "(08)7850281",
+          "website": "https://www.ghes.ptc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/134758/C/屏東縣/來義鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.627489,
+            "latitude": 22.528254
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 37
+            },
+            {
+              "year": 108,
+              "students": 34
+            },
+            {
+              "year": 109,
+              "students": 40
+            },
+            {
+              "year": 110,
+              "students": 44
+            },
+            {
+              "year": 111,
+              "students": 50
+            },
+            {
+              "year": 112,
+              "students": 58
+            },
+            {
+              "year": 113,
+              "students": 58
+            },
+            {
+              "year": 114,
+              "students": 59
             }
           ],
           "status": "正常",
@@ -2826,55 +3090,9 @@
             {
               "year": 113,
               "students": 59
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "134758",
-          "code": "134758",
-          "name": "縣立古樓國小",
-          "countyId": "屏東縣",
-          "townshipId": "屏東縣:來義鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "屏東縣來義鄉古樓村育英路2號",
-          "phone": "(08)7850281",
-          "website": "https://www.ghes.ptc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/134758/C/屏東縣/來義鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.627489,
-            "latitude": 22.528254
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 37
             },
             {
-              "year": 108,
-              "students": 34
-            },
-            {
-              "year": 109,
-              "students": 40
-            },
-            {
-              "year": 110,
-              "students": 44
-            },
-            {
-              "year": 111,
-              "students": 50
-            },
-            {
-              "year": 112,
-              "students": 58
-            },
-            {
-              "year": 113,
+              "year": 114,
               "students": 58
             }
           ],
@@ -2926,6 +3144,10 @@
             {
               "year": 113,
               "students": 53
+            },
+            {
+              "year": 114,
+              "students": 55
             }
           ],
           "status": "正常",
@@ -2984,6 +3206,10 @@
             {
               "year": 113,
               "students": 1612
+            },
+            {
+              "year": 114,
+              "students": 1612
             }
           ],
           "status": "正常",
@@ -3034,6 +3260,10 @@
             {
               "year": 113,
               "students": 721
+            },
+            {
+              "year": 114,
+              "students": 705
             }
           ],
           "status": "正常",
@@ -3083,6 +3313,10 @@
             },
             {
               "year": 113,
+              "students": 615
+            },
+            {
+              "year": 114,
               "students": 615
             }
           ],
@@ -3134,6 +3368,10 @@
             {
               "year": 113,
               "students": 615
+            },
+            {
+              "year": 114,
+              "students": 606
             }
           ],
           "status": "正常",
@@ -3184,6 +3422,10 @@
             {
               "year": 113,
               "students": 503
+            },
+            {
+              "year": 114,
+              "students": 494
             }
           ],
           "status": "正常",
@@ -3234,6 +3476,10 @@
             {
               "year": 113,
               "students": 480
+            },
+            {
+              "year": 114,
+              "students": 458
             }
           ],
           "status": "正常",
@@ -3283,6 +3529,10 @@
             },
             {
               "year": 113,
+              "students": 401
+            },
+            {
+              "year": 114,
               "students": 401
             }
           ],
@@ -3334,6 +3584,10 @@
             {
               "year": 113,
               "students": 195
+            },
+            {
+              "year": 114,
+              "students": 179
             }
           ],
           "status": "正常",
@@ -3384,6 +3638,10 @@
             {
               "year": 113,
               "students": 103
+            },
+            {
+              "year": 114,
+              "students": 105
             }
           ],
           "status": "正常",
@@ -3434,6 +3692,10 @@
             {
               "year": 113,
               "students": 70
+            },
+            {
+              "year": 114,
+              "students": 75
             }
           ],
           "status": "正常",
@@ -3492,56 +3754,10 @@
             {
               "year": 113,
               "students": 85
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "134537",
-          "code": "134537",
-          "name": "縣立獅子國中",
-          "countyId": "屏東縣",
-          "townshipId": "屏東縣:枋山鄉",
-          "educationLevel": "國中",
-          "managementType": "公立",
-          "address": "屏東縣枋山鄉楓港村舊庄280號",
-          "phone": "(08)8771121",
-          "website": "http://www.stjh.ptc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/134537/J/屏東縣/枋山鄉/縣市立/特偏/無/",
-          "coordinates": {
-            "longitude": 120.700806,
-            "latitude": 22.204604
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 66
             },
             {
-              "year": 108,
-              "students": 67
-            },
-            {
-              "year": 109,
-              "students": 60
-            },
-            {
-              "year": 110,
-              "students": 48
-            },
-            {
-              "year": 111,
-              "students": 32
-            },
-            {
-              "year": 112,
-              "students": 36
-            },
-            {
-              "year": 113,
-              "students": 40
+              "year": 114,
+              "students": 84
             }
           ],
           "status": "正常",
@@ -3592,6 +3808,64 @@
             {
               "year": 113,
               "students": 38
+            },
+            {
+              "year": 114,
+              "students": 42
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "134537",
+          "code": "134537",
+          "name": "縣立獅子國中",
+          "countyId": "屏東縣",
+          "townshipId": "屏東縣:枋山鄉",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "屏東縣枋山鄉楓港村舊庄280號",
+          "phone": "(08)8771121",
+          "website": "http://www.stjh.ptc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/134537/J/屏東縣/枋山鄉/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 120.700806,
+            "latitude": 22.204604
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 66
+            },
+            {
+              "year": 108,
+              "students": 67
+            },
+            {
+              "year": 109,
+              "students": 60
+            },
+            {
+              "year": 110,
+              "students": 48
+            },
+            {
+              "year": 111,
+              "students": 32
+            },
+            {
+              "year": 112,
+              "students": 36
+            },
+            {
+              "year": 113,
+              "students": 40
+            },
+            {
+              "year": 114,
+              "students": 40
             }
           ],
           "status": "正常",
@@ -3650,6 +3924,10 @@
             {
               "year": 113,
               "students": 746
+            },
+            {
+              "year": 114,
+              "students": 746
             }
           ],
           "status": "正常",
@@ -3700,6 +3978,10 @@
             {
               "year": 113,
               "students": 447
+            },
+            {
+              "year": 114,
+              "students": 439
             }
           ],
           "status": "正常",
@@ -3750,6 +4032,10 @@
             {
               "year": 113,
               "students": 304
+            },
+            {
+              "year": 114,
+              "students": 286
             }
           ],
           "status": "正常",
@@ -3800,6 +4086,10 @@
             {
               "year": 113,
               "students": 123
+            },
+            {
+              "year": 114,
+              "students": 127
             }
           ],
           "status": "正常",
@@ -3850,6 +4140,10 @@
             {
               "year": 113,
               "students": 116
+            },
+            {
+              "year": 114,
+              "students": 103
             }
           ],
           "status": "正常",
@@ -3908,6 +4202,10 @@
             {
               "year": 113,
               "students": 364
+            },
+            {
+              "year": 114,
+              "students": 364
             }
           ],
           "status": "正常",
@@ -3958,6 +4256,10 @@
             {
               "year": 113,
               "students": 215
+            },
+            {
+              "year": 114,
+              "students": 222
             }
           ],
           "status": "正常",
@@ -4008,6 +4310,10 @@
             {
               "year": 113,
               "students": 179
+            },
+            {
+              "year": 114,
+              "students": 184
             }
           ],
           "status": "正常",
@@ -4058,6 +4364,10 @@
             {
               "year": 113,
               "students": 54
+            },
+            {
+              "year": 114,
+              "students": 45
             }
           ],
           "status": "正常",
@@ -4108,6 +4418,10 @@
             {
               "year": 113,
               "students": 48
+            },
+            {
+              "year": 114,
+              "students": 42
             }
           ],
           "status": "正常",
@@ -4157,6 +4471,10 @@
             },
             {
               "year": 113,
+              "students": 42
+            },
+            {
+              "year": 114,
               "students": 42
             }
           ],
@@ -4216,6 +4534,10 @@
             {
               "year": 113,
               "students": 502
+            },
+            {
+              "year": 114,
+              "students": 495
             }
           ],
           "status": "正常",
@@ -4266,6 +4588,10 @@
             {
               "year": 113,
               "students": 278
+            },
+            {
+              "year": 114,
+              "students": 275
             }
           ],
           "status": "正常",
@@ -4316,56 +4642,10 @@
             {
               "year": 113,
               "students": 219
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "131601",
-          "code": "131601",
-          "name": "私立崇華國小",
-          "countyId": "屏東縣",
-          "townshipId": "屏東縣:長治鄉",
-          "educationLevel": "國小",
-          "managementType": "私立",
-          "address": "屏東縣長治鄉復興村新興路38號",
-          "phone": "(08)7626365",
-          "website": "https://web.chbes.ptc.edu.tw/?lang=zh-hant",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/131601/C/屏東縣/長治鄉/私立/否/無/",
-          "coordinates": {
-            "longitude": 120.546795,
-            "latitude": 22.681928
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 163
             },
             {
-              "year": 108,
-              "students": 156
-            },
-            {
-              "year": 109,
-              "students": 158
-            },
-            {
-              "year": 110,
-              "students": 123
-            },
-            {
-              "year": 111,
-              "students": 127
-            },
-            {
-              "year": 112,
-              "students": 125
-            },
-            {
-              "year": 113,
-              "students": 86
+              "year": 114,
+              "students": 219
             }
           ],
           "status": "正常",
@@ -4416,6 +4696,64 @@
             {
               "year": 113,
               "students": 70
+            },
+            {
+              "year": 114,
+              "students": 72
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "131601",
+          "code": "131601",
+          "name": "私立崇華國小",
+          "countyId": "屏東縣",
+          "townshipId": "屏東縣:長治鄉",
+          "educationLevel": "國小",
+          "managementType": "私立",
+          "address": "屏東縣長治鄉復興村新興路38號",
+          "phone": "(08)7626365",
+          "website": "https://web.chbes.ptc.edu.tw/?lang=zh-hant",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/131601/C/屏東縣/長治鄉/私立/否/無/",
+          "coordinates": {
+            "longitude": 120.546795,
+            "latitude": 22.681928
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 163
+            },
+            {
+              "year": 108,
+              "students": 156
+            },
+            {
+              "year": 109,
+              "students": 158
+            },
+            {
+              "year": 110,
+              "students": 123
+            },
+            {
+              "year": 111,
+              "students": 127
+            },
+            {
+              "year": 112,
+              "students": 125
+            },
+            {
+              "year": 113,
+              "students": 86
+            },
+            {
+              "year": 114,
+              "students": 50
             }
           ],
           "status": "正常",
@@ -4429,7 +4767,7 @@
           "countyId": "屏東縣",
           "townshipId": "屏東縣:長治鄉",
           "educationLevel": "高中職",
-          "managementType": "私立",
+          "managementType": "公立",
           "address": "屏東縣長治鄉新興路38號",
           "phone": "(08)7626365",
           "website": "https://web.chbes.ptc.edu.tw/?lang=zh-hant",
@@ -4466,33 +4804,18 @@
             {
               "year": 113,
               "students": 9
+            },
+            {
+              "year": 114,
+              "students": 9
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107,
-            108
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107、108",
-              "severity": "warning",
-              "years": [
-                107,
-                108
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "長治鄉 有 1 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "屏東縣:南州鄉",
@@ -4542,6 +4865,10 @@
             },
             {
               "year": 113,
+              "students": 1798
+            },
+            {
+              "year": 114,
               "students": 1798
             }
           ],
@@ -4593,56 +4920,10 @@
             {
               "year": 113,
               "students": 238
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "134708",
-          "code": "134708",
-          "name": "縣立南州國小",
-          "countyId": "屏東縣",
-          "townshipId": "屏東縣:南州鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "屏東縣南州鄉溪南村人和路191號",
-          "phone": "(08)8642097",
-          "website": "https://www.njps.ptc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/134708/C/屏東縣/南州鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.507067,
-            "latitude": 22.488255
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 166
             },
             {
-              "year": 108,
-              "students": 167
-            },
-            {
-              "year": 109,
-              "students": 158
-            },
-            {
-              "year": 110,
-              "students": 150
-            },
-            {
-              "year": 111,
-              "students": 149
-            },
-            {
-              "year": 112,
-              "students": 133
-            },
-            {
-              "year": 113,
-              "students": 108
+              "year": 114,
+              "students": 243
             }
           ],
           "status": "正常",
@@ -4693,6 +4974,64 @@
             {
               "year": 113,
               "students": 98
+            },
+            {
+              "year": 114,
+              "students": 98
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "134708",
+          "code": "134708",
+          "name": "縣立南州國小",
+          "countyId": "屏東縣",
+          "townshipId": "屏東縣:南州鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "屏東縣南州鄉溪南村人和路191號",
+          "phone": "(08)8642097",
+          "website": "https://www.njps.ptc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/134708/C/屏東縣/南州鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.507067,
+            "latitude": 22.488255
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 166
+            },
+            {
+              "year": 108,
+              "students": 167
+            },
+            {
+              "year": 109,
+              "students": 158
+            },
+            {
+              "year": 110,
+              "students": 150
+            },
+            {
+              "year": 111,
+              "students": 149
+            },
+            {
+              "year": 112,
+              "students": 133
+            },
+            {
+              "year": 113,
+              "students": 108
+            },
+            {
+              "year": 114,
+              "students": 95
             }
           ],
           "status": "正常",
@@ -4742,6 +5081,10 @@
             },
             {
               "year": 113,
+              "students": 69
+            },
+            {
+              "year": 114,
               "students": 69
             }
           ],
@@ -4801,6 +5144,10 @@
             {
               "year": 113,
               "students": 8740
+            },
+            {
+              "year": 114,
+              "students": 8740
             }
           ],
           "status": "正常",
@@ -4850,6 +5197,10 @@
             },
             {
               "year": 113,
+              "students": 1801
+            },
+            {
+              "year": 114,
               "students": 1801
             }
           ],
@@ -4901,6 +5252,10 @@
             {
               "year": 113,
               "students": 1695
+            },
+            {
+              "year": 114,
+              "students": 1695
             }
           ],
           "status": "正常",
@@ -4950,6 +5305,10 @@
             },
             {
               "year": 113,
+              "students": 1648
+            },
+            {
+              "year": 114,
               "students": 1648
             }
           ],
@@ -5001,6 +5360,10 @@
             {
               "year": 113,
               "students": 1568
+            },
+            {
+              "year": 114,
+              "students": 1568
             }
           ],
           "status": "正常",
@@ -5050,6 +5413,10 @@
             },
             {
               "year": 113,
+              "students": 1471
+            },
+            {
+              "year": 114,
               "students": 1471
             }
           ],
@@ -5101,6 +5468,10 @@
             {
               "year": 113,
               "students": 1431
+            },
+            {
+              "year": 114,
+              "students": 1431
             }
           ],
           "status": "正常",
@@ -5151,6 +5522,10 @@
             {
               "year": 113,
               "students": 1323
+            },
+            {
+              "year": 114,
+              "students": 1318
             }
           ],
           "status": "正常",
@@ -5201,6 +5576,10 @@
             {
               "year": 113,
               "students": 1279
+            },
+            {
+              "year": 114,
+              "students": 1232
             }
           ],
           "status": "正常",
@@ -5250,6 +5629,10 @@
             },
             {
               "year": 113,
+              "students": 1219
+            },
+            {
+              "year": 114,
               "students": 1219
             }
           ],
@@ -5301,56 +5684,10 @@
             {
               "year": 113,
               "students": 1020
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "134601",
-          "code": "134601",
-          "name": "縣立中正國小",
-          "countyId": "屏東縣",
-          "townshipId": "屏東縣:屏東市",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "屏東縣屏東市文明里蘇州街75號",
-          "phone": "(08)7324113",
-          "website": "https://www.ccps.ptc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/134601/C/屏東縣/屏東市/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.48836,
-            "latitude": 22.673763
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 726
             },
             {
-              "year": 108,
-              "students": 758
-            },
-            {
-              "year": 109,
-              "students": 788
-            },
-            {
-              "year": 110,
-              "students": 810
-            },
-            {
-              "year": 111,
-              "students": 831
-            },
-            {
-              "year": 112,
-              "students": 841
-            },
-            {
-              "year": 113,
-              "students": 813
+              "year": 114,
+              "students": 989
             }
           ],
           "status": "正常",
@@ -5401,6 +5738,64 @@
             {
               "year": 113,
               "students": 807
+            },
+            {
+              "year": 114,
+              "students": 824
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "134601",
+          "code": "134601",
+          "name": "縣立中正國小",
+          "countyId": "屏東縣",
+          "townshipId": "屏東縣:屏東市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "屏東縣屏東市文明里蘇州街75號",
+          "phone": "(08)7324113",
+          "website": "https://www.ccps.ptc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/134601/C/屏東縣/屏東市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.48836,
+            "latitude": 22.673763
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 726
+            },
+            {
+              "year": 108,
+              "students": 758
+            },
+            {
+              "year": 109,
+              "students": 788
+            },
+            {
+              "year": 110,
+              "students": 810
+            },
+            {
+              "year": 111,
+              "students": 831
+            },
+            {
+              "year": 112,
+              "students": 841
+            },
+            {
+              "year": 113,
+              "students": 813
+            },
+            {
+              "year": 114,
+              "students": 784
             }
           ],
           "status": "正常",
@@ -5451,6 +5846,10 @@
             {
               "year": 113,
               "students": 712
+            },
+            {
+              "year": 114,
+              "students": 696
             }
           ],
           "status": "正常",
@@ -5500,6 +5899,10 @@
             },
             {
               "year": 113,
+              "students": 663
+            },
+            {
+              "year": 114,
               "students": 663
             }
           ],
@@ -5551,6 +5954,10 @@
             {
               "year": 113,
               "students": 614
+            },
+            {
+              "year": 114,
+              "students": 616
             }
           ],
           "status": "正常",
@@ -5601,56 +6008,10 @@
             {
               "year": 113,
               "students": 536
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "134616",
-          "code": "134616",
-          "name": "縣立和平國小",
-          "countyId": "屏東縣",
-          "townshipId": "屏東縣:屏東市",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "屏東縣屏東市中正里華正路80號",
-          "phone": "(08)7364440",
-          "website": "https://www.hpps.ptc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/134616/C/屏東縣/屏東市/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.501721,
-            "latitude": 22.687059
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 583
             },
             {
-              "year": 108,
-              "students": 589
-            },
-            {
-              "year": 109,
-              "students": 566
-            },
-            {
-              "year": 110,
-              "students": 592
-            },
-            {
-              "year": 111,
-              "students": 583
-            },
-            {
-              "year": 112,
-              "students": 583
-            },
-            {
-              "year": 113,
-              "students": 536
+              "year": 114,
+              "students": 547
             }
           ],
           "status": "正常",
@@ -5700,6 +6061,10 @@
             },
             {
               "year": 113,
+              "students": 526
+            },
+            {
+              "year": 114,
               "students": 526
             }
           ],
@@ -5751,6 +6116,64 @@
             {
               "year": 113,
               "students": 501
+            },
+            {
+              "year": 114,
+              "students": 501
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "134616",
+          "code": "134616",
+          "name": "縣立和平國小",
+          "countyId": "屏東縣",
+          "townshipId": "屏東縣:屏東市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "屏東縣屏東市中正里華正路80號",
+          "phone": "(08)7364440",
+          "website": "https://www.hpps.ptc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/134616/C/屏東縣/屏東市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.501721,
+            "latitude": 22.687059
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 583
+            },
+            {
+              "year": 108,
+              "students": 589
+            },
+            {
+              "year": 109,
+              "students": 566
+            },
+            {
+              "year": 110,
+              "students": 592
+            },
+            {
+              "year": 111,
+              "students": 583
+            },
+            {
+              "year": 112,
+              "students": 583
+            },
+            {
+              "year": 113,
+              "students": 536
+            },
+            {
+              "year": 114,
+              "students": 495
             }
           ],
           "status": "正常",
@@ -5801,6 +6224,10 @@
             {
               "year": 113,
               "students": 404
+            },
+            {
+              "year": 114,
+              "students": 365
             }
           ],
           "status": "正常",
@@ -5851,6 +6278,10 @@
             {
               "year": 113,
               "students": 382
+            },
+            {
+              "year": 114,
+              "students": 359
             }
           ],
           "status": "正常",
@@ -5900,6 +6331,10 @@
             },
             {
               "year": 113,
+              "students": 267
+            },
+            {
+              "year": 114,
               "students": 267
             }
           ],
@@ -5951,6 +6386,10 @@
             {
               "year": 113,
               "students": 251
+            },
+            {
+              "year": 114,
+              "students": 251
             }
           ],
           "status": "正常",
@@ -6001,56 +6440,10 @@
             {
               "year": 113,
               "students": 231
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "134786",
-          "code": "134786",
-          "name": "縣立民生國小",
-          "countyId": "屏東縣",
-          "townshipId": "屏東縣:屏東市",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "屏東縣屏東市瑞光里安心四橫巷139-1號",
-          "phone": "(08)7216566",
-          "website": "https://www.msps.ptc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/134786/C/屏東縣/屏東市/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.512739,
-            "latitude": 22.661862
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 230
             },
             {
-              "year": 108,
-              "students": 214
-            },
-            {
-              "year": 109,
+              "year": 114,
               "students": 231
-            },
-            {
-              "year": 110,
-              "students": 231
-            },
-            {
-              "year": 111,
-              "students": 234
-            },
-            {
-              "year": 112,
-              "students": 238
-            },
-            {
-              "year": 113,
-              "students": 217
             }
           ],
           "status": "正常",
@@ -6101,6 +6494,64 @@
             {
               "year": 113,
               "students": 211
+            },
+            {
+              "year": 114,
+              "students": 224
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "134786",
+          "code": "134786",
+          "name": "縣立民生國小",
+          "countyId": "屏東縣",
+          "townshipId": "屏東縣:屏東市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "屏東縣屏東市瑞光里安心四橫巷139-1號",
+          "phone": "(08)7216566",
+          "website": "https://www.msps.ptc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/134786/C/屏東縣/屏東市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.512739,
+            "latitude": 22.661862
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 230
+            },
+            {
+              "year": 108,
+              "students": 214
+            },
+            {
+              "year": 109,
+              "students": 231
+            },
+            {
+              "year": 110,
+              "students": 231
+            },
+            {
+              "year": 111,
+              "students": 234
+            },
+            {
+              "year": 112,
+              "students": 238
+            },
+            {
+              "year": 113,
+              "students": 217
+            },
+            {
+              "year": 114,
+              "students": 206
             }
           ],
           "status": "正常",
@@ -6151,6 +6602,10 @@
             {
               "year": 113,
               "students": 174
+            },
+            {
+              "year": 114,
+              "students": 172
             }
           ],
           "status": "正常",
@@ -6201,55 +6656,9 @@
             {
               "year": 113,
               "students": 154
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "134609",
-          "code": "134609",
-          "name": "縣立歸來國小",
-          "countyId": "屏東縣",
-          "townshipId": "屏東縣:屏東市",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "屏東縣屏東市湖西里歸國巷1號",
-          "phone": "(08)7223241",
-          "website": "https://www.glps.ptc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/134609/C/屏東縣/屏東市/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.509216,
-            "latitude": 22.65903
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 119
             },
             {
-              "year": 108,
-              "students": 133
-            },
-            {
-              "year": 109,
-              "students": 144
-            },
-            {
-              "year": 110,
-              "students": 142
-            },
-            {
-              "year": 111,
-              "students": 150
-            },
-            {
-              "year": 112,
-              "students": 160
-            },
-            {
-              "year": 113,
+              "year": 114,
               "students": 143
             }
           ],
@@ -6301,6 +6710,10 @@
             {
               "year": 113,
               "students": 121
+            },
+            {
+              "year": 114,
+              "students": 138
             }
           ],
           "status": "正常",
@@ -6308,49 +6721,53 @@
           "dataNotes": []
         },
         {
-          "id": "134610",
-          "code": "134610",
-          "name": "縣立前進國小",
+          "id": "134609",
+          "code": "134609",
+          "name": "縣立歸來國小",
           "countyId": "屏東縣",
           "townshipId": "屏東縣:屏東市",
           "educationLevel": "國小",
           "managementType": "公立",
-          "address": "屏東縣屏東市建國路405巷100弄39號",
-          "phone": "(08)7523291",
-          "website": "https://www.cjes.ptc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/134610/C/屏東縣/屏東市/縣市立/否/無/",
+          "address": "屏東縣屏東市湖西里歸國巷1號",
+          "phone": "(08)7223241",
+          "website": "https://www.glps.ptc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/134609/C/屏東縣/屏東市/縣市立/否/無/",
           "coordinates": {
-            "longitude": 120.458388,
-            "latitude": 22.649438
+            "longitude": 120.509216,
+            "latitude": 22.65903
           },
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 74
+              "students": 119
             },
             {
               "year": 108,
-              "students": 79
+              "students": 133
             },
             {
               "year": 109,
-              "students": 74
+              "students": 144
             },
             {
               "year": 110,
-              "students": 80
+              "students": 142
             },
             {
               "year": 111,
-              "students": 85
+              "students": 150
             },
             {
               "year": 112,
-              "students": 93
+              "students": 160
             },
             {
               "year": 113,
-              "students": 97
+              "students": 143
+            },
+            {
+              "year": 114,
+              "students": 126
             }
           ],
           "status": "正常",
@@ -6401,6 +6818,64 @@
             {
               "year": 113,
               "students": 93
+            },
+            {
+              "year": 114,
+              "students": 99
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "134610",
+          "code": "134610",
+          "name": "縣立前進國小",
+          "countyId": "屏東縣",
+          "townshipId": "屏東縣:屏東市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "屏東縣屏東市建國路405巷100弄39號",
+          "phone": "(08)7523291",
+          "website": "https://www.cjes.ptc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/134610/C/屏東縣/屏東市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.458388,
+            "latitude": 22.649438
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 74
+            },
+            {
+              "year": 108,
+              "students": 79
+            },
+            {
+              "year": 109,
+              "students": 74
+            },
+            {
+              "year": 110,
+              "students": 80
+            },
+            {
+              "year": 111,
+              "students": 85
+            },
+            {
+              "year": 112,
+              "students": 93
+            },
+            {
+              "year": 113,
+              "students": 97
+            },
+            {
+              "year": 114,
+              "students": 97
             }
           ],
           "status": "正常",
@@ -6459,6 +6934,10 @@
             {
               "year": 113,
               "students": 611
+            },
+            {
+              "year": 114,
+              "students": 604
             }
           ],
           "status": "正常",
@@ -6508,6 +6987,10 @@
             },
             {
               "year": 113,
+              "students": 583
+            },
+            {
+              "year": 114,
               "students": 583
             }
           ],
@@ -6559,6 +7042,10 @@
             {
               "year": 113,
               "students": 459
+            },
+            {
+              "year": 114,
+              "students": 450
             }
           ],
           "status": "正常",
@@ -6608,6 +7095,10 @@
             },
             {
               "year": 113,
+              "students": 432
+            },
+            {
+              "year": 114,
               "students": 432
             }
           ],
@@ -6659,6 +7150,10 @@
             {
               "year": 113,
               "students": 113
+            },
+            {
+              "year": 114,
+              "students": 106
             }
           ],
           "status": "正常",
@@ -6709,6 +7204,10 @@
             {
               "year": 113,
               "students": 83
+            },
+            {
+              "year": 114,
+              "students": 88
             }
           ],
           "status": "正常",
@@ -6759,6 +7258,10 @@
             {
               "year": 113,
               "students": 66
+            },
+            {
+              "year": 114,
+              "students": 62
             }
           ],
           "status": "正常",
@@ -6809,6 +7312,10 @@
             {
               "year": 113,
               "students": 43
+            },
+            {
+              "year": 114,
+              "students": 37
             }
           ],
           "status": "正常",
@@ -6859,6 +7366,10 @@
             {
               "year": 113,
               "students": 39
+            },
+            {
+              "year": 114,
+              "students": 36
             }
           ],
           "status": "正常",
@@ -6917,6 +7428,10 @@
             {
               "year": 113,
               "students": 98
+            },
+            {
+              "year": 114,
+              "students": 100
             }
           ],
           "status": "正常",
@@ -6967,6 +7482,10 @@
             {
               "year": 113,
               "students": 87
+            },
+            {
+              "year": 114,
+              "students": 94
             }
           ],
           "status": "正常",
@@ -7016,6 +7535,10 @@
             },
             {
               "year": 113,
+              "students": 51
+            },
+            {
+              "year": 114,
               "students": 51
             }
           ],
@@ -7075,6 +7598,10 @@
             {
               "year": 113,
               "students": 1052
+            },
+            {
+              "year": 114,
+              "students": 1052
             }
           ],
           "status": "正常",
@@ -7125,6 +7652,10 @@
             {
               "year": 113,
               "students": 114
+            },
+            {
+              "year": 114,
+              "students": 110
             }
           ],
           "status": "正常",
@@ -7175,6 +7706,10 @@
             {
               "year": 113,
               "students": 99
+            },
+            {
+              "year": 114,
+              "students": 88
             }
           ],
           "status": "正常",
@@ -7225,6 +7760,10 @@
             {
               "year": 113,
               "students": 92
+            },
+            {
+              "year": 114,
+              "students": 86
             }
           ],
           "status": "正常",
@@ -7283,6 +7822,10 @@
             {
               "year": 113,
               "students": 169
+            },
+            {
+              "year": 114,
+              "students": 168
             }
           ],
           "status": "正常",
@@ -7332,6 +7875,10 @@
             },
             {
               "year": 113,
+              "students": 100
+            },
+            {
+              "year": 114,
               "students": 100
             }
           ],
@@ -7383,6 +7930,10 @@
             {
               "year": 113,
               "students": 97
+            },
+            {
+              "year": 114,
+              "students": 96
             }
           ],
           "status": "正常",
@@ -7433,6 +7984,10 @@
             {
               "year": 113,
               "students": 79
+            },
+            {
+              "year": 114,
+              "students": 80
             }
           ],
           "status": "正常",
@@ -7491,6 +8046,10 @@
             {
               "year": 113,
               "students": 173
+            },
+            {
+              "year": 114,
+              "students": 173
             }
           ],
           "status": "正常",
@@ -7541,56 +8100,10 @@
             {
               "year": 113,
               "students": 116
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "134699",
-          "code": "134699",
-          "name": "縣立白沙國小",
-          "countyId": "屏東縣",
-          "townshipId": "屏東縣:琉球鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "屏東縣琉球鄉漁福村三民路124號",
-          "phone": "(08)8612510",
-          "website": "https://www.bsps.ptc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/134699/C/屏東縣/琉球鄉/縣市立/特偏/無/",
-          "coordinates": {
-            "longitude": 120.38687,
-            "latitude": 22.350417
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 106
             },
             {
-              "year": 108,
-              "students": 112
-            },
-            {
-              "year": 109,
-              "students": 106
-            },
-            {
-              "year": 110,
-              "students": 108
-            },
-            {
-              "year": 111,
-              "students": 103
-            },
-            {
-              "year": 112,
-              "students": 93
-            },
-            {
-              "year": 113,
-              "students": 96
+              "year": 114,
+              "students": 128
             }
           ],
           "status": "正常",
@@ -7641,6 +8154,64 @@
             {
               "year": 113,
               "students": 91
+            },
+            {
+              "year": 114,
+              "students": 88
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "134699",
+          "code": "134699",
+          "name": "縣立白沙國小",
+          "countyId": "屏東縣",
+          "townshipId": "屏東縣:琉球鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "屏東縣琉球鄉漁福村三民路124號",
+          "phone": "(08)8612510",
+          "website": "https://www.bsps.ptc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/134699/C/屏東縣/琉球鄉/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 120.38687,
+            "latitude": 22.350417
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 106
+            },
+            {
+              "year": 108,
+              "students": 112
+            },
+            {
+              "year": 109,
+              "students": 106
+            },
+            {
+              "year": 110,
+              "students": 108
+            },
+            {
+              "year": 111,
+              "students": 103
+            },
+            {
+              "year": 112,
+              "students": 93
+            },
+            {
+              "year": 113,
+              "students": 96
+            },
+            {
+              "year": 114,
+              "students": 82
             }
           ],
           "status": "正常",
@@ -7691,6 +8262,10 @@
             {
               "year": 113,
               "students": 82
+            },
+            {
+              "year": 114,
+              "students": 63
             }
           ],
           "status": "正常",
@@ -7749,6 +8324,10 @@
             {
               "year": 113,
               "students": 343
+            },
+            {
+              "year": 114,
+              "students": 348
             }
           ],
           "status": "正常",
@@ -7798,6 +8377,10 @@
             },
             {
               "year": 113,
+              "students": 195
+            },
+            {
+              "year": 114,
               "students": 195
             }
           ],
@@ -7849,6 +8432,10 @@
             {
               "year": 113,
               "students": 159
+            },
+            {
+              "year": 114,
+              "students": 159
             }
           ],
           "status": "正常",
@@ -7899,6 +8486,10 @@
             {
               "year": 113,
               "students": 105
+            },
+            {
+              "year": 114,
+              "students": 102
             }
           ],
           "status": "正常",
@@ -7949,6 +8540,10 @@
             {
               "year": 113,
               "students": 78
+            },
+            {
+              "year": 114,
+              "students": 74
             }
           ],
           "status": "正常",
@@ -7999,6 +8594,10 @@
             {
               "year": 113,
               "students": 68
+            },
+            {
+              "year": 114,
+              "students": 64
             }
           ],
           "status": "正常",
@@ -8049,6 +8648,10 @@
             {
               "year": 113,
               "students": 58
+            },
+            {
+              "year": 114,
+              "students": 64
             }
           ],
           "status": "正常",
@@ -8099,6 +8702,10 @@
             {
               "year": 113,
               "students": 18
+            },
+            {
+              "year": 114,
+              "students": 17
             }
           ],
           "status": "正常",
@@ -8157,6 +8764,10 @@
             {
               "year": 113,
               "students": 87
+            },
+            {
+              "year": 114,
+              "students": 99
             }
           ],
           "status": "正常",
@@ -8207,6 +8818,10 @@
             {
               "year": 113,
               "students": 85
+            },
+            {
+              "year": 114,
+              "students": 80
             }
           ],
           "status": "正常",
@@ -8257,6 +8872,10 @@
             {
               "year": 113,
               "students": 63
+            },
+            {
+              "year": 114,
+              "students": 60
             }
           ],
           "status": "正常",
@@ -8306,6 +8925,10 @@
             },
             {
               "year": 113,
+              "students": 49
+            },
+            {
+              "year": 114,
               "students": 49
             }
           ],
@@ -8357,6 +8980,10 @@
             {
               "year": 113,
               "students": 45
+            },
+            {
+              "year": 114,
+              "students": 41
             }
           ],
           "status": "正常",
@@ -8415,6 +9042,10 @@
             {
               "year": 113,
               "students": 324
+            },
+            {
+              "year": 114,
+              "students": 324
             }
           ],
           "status": "正常",
@@ -8465,6 +9096,10 @@
             {
               "year": 113,
               "students": 294
+            },
+            {
+              "year": 114,
+              "students": 302
             }
           ],
           "status": "正常",
@@ -8515,6 +9150,10 @@
             {
               "year": 113,
               "students": 242
+            },
+            {
+              "year": 114,
+              "students": 234
             }
           ],
           "status": "正常",
@@ -8565,6 +9204,10 @@
             {
               "year": 113,
               "students": 216
+            },
+            {
+              "year": 114,
+              "students": 199
             }
           ],
           "status": "正常",
@@ -8615,6 +9258,10 @@
             {
               "year": 113,
               "students": 207
+            },
+            {
+              "year": 114,
+              "students": 191
             }
           ],
           "status": "正常",
@@ -8665,6 +9312,10 @@
             {
               "year": 113,
               "students": 71
+            },
+            {
+              "year": 114,
+              "students": 67
             }
           ],
           "status": "正常",
@@ -8715,6 +9366,10 @@
             {
               "year": 113,
               "students": 70
+            },
+            {
+              "year": 114,
+              "students": 64
             }
           ],
           "status": "正常",
@@ -8773,6 +9428,10 @@
             {
               "year": 113,
               "students": 74
+            },
+            {
+              "year": 114,
+              "students": 68
             }
           ],
           "status": "正常",
@@ -8823,6 +9482,10 @@
             {
               "year": 113,
               "students": 30
+            },
+            {
+              "year": 114,
+              "students": 32
             }
           ],
           "status": "正常",
@@ -8872,6 +9535,10 @@
             },
             {
               "year": 113,
+              "students": 30
+            },
+            {
+              "year": 114,
               "students": 30
             }
           ],
@@ -8923,6 +9590,10 @@
             {
               "year": 113,
               "students": 28
+            },
+            {
+              "year": 114,
+              "students": 22
             }
           ],
           "status": "正常",
@@ -8981,6 +9652,10 @@
             {
               "year": 113,
               "students": 790
+            },
+            {
+              "year": 114,
+              "students": 783
             }
           ],
           "status": "正常",
@@ -9030,6 +9705,10 @@
             },
             {
               "year": 113,
+              "students": 641
+            },
+            {
+              "year": 114,
               "students": 641
             }
           ],
@@ -9081,6 +9760,10 @@
             {
               "year": 113,
               "students": 526
+            },
+            {
+              "year": 114,
+              "students": 522
             }
           ],
           "status": "正常",
@@ -9131,6 +9814,10 @@
             {
               "year": 113,
               "students": 458
+            },
+            {
+              "year": 114,
+              "students": 478
             }
           ],
           "status": "正常",
@@ -9180,6 +9867,10 @@
             },
             {
               "year": 113,
+              "students": 282
+            },
+            {
+              "year": 114,
               "students": 282
             }
           ],
@@ -9231,6 +9922,10 @@
             {
               "year": 113,
               "students": 216
+            },
+            {
+              "year": 114,
+              "students": 205
             }
           ],
           "status": "正常",
@@ -9281,6 +9976,10 @@
             {
               "year": 113,
               "students": 111
+            },
+            {
+              "year": 114,
+              "students": 100
             }
           ],
           "status": "正常",
@@ -9331,6 +10030,10 @@
             {
               "year": 113,
               "students": 89
+            },
+            {
+              "year": 114,
+              "students": 90
             }
           ],
           "status": "正常",
@@ -9381,6 +10084,10 @@
             {
               "year": 113,
               "students": 79
+            },
+            {
+              "year": 114,
+              "students": 78
             }
           ],
           "status": "正常",
@@ -9431,6 +10138,10 @@
             {
               "year": 113,
               "students": 76
+            },
+            {
+              "year": 114,
+              "students": 75
             }
           ],
           "status": "正常",
@@ -9489,6 +10200,10 @@
             {
               "year": 113,
               "students": 337
+            },
+            {
+              "year": 114,
+              "students": 337
             }
           ],
           "status": "正常",
@@ -9539,56 +10254,10 @@
             {
               "year": 113,
               "students": 178
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "134659",
-          "code": "134659",
-          "name": "縣立佳佐國小",
-          "countyId": "屏東縣",
-          "townshipId": "屏東縣:萬巒鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "屏東縣萬巒鄉佳和村佳興路59號",
-          "phone": "(08)7832018",
-          "website": "https://www.jtes.ptc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/134659/C/屏東縣/萬巒鄉/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.595417,
-            "latitude": 22.57164
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 188
             },
             {
-              "year": 108,
+              "year": 114,
               "students": 186
-            },
-            {
-              "year": 109,
-              "students": 186
-            },
-            {
-              "year": 110,
-              "students": 190
-            },
-            {
-              "year": 111,
-              "students": 185
-            },
-            {
-              "year": 112,
-              "students": 187
-            },
-            {
-              "year": 113,
-              "students": 174
             }
           ],
           "status": "正常",
@@ -9639,6 +10308,64 @@
             {
               "year": 113,
               "students": 170
+            },
+            {
+              "year": 114,
+              "students": 167
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "134659",
+          "code": "134659",
+          "name": "縣立佳佐國小",
+          "countyId": "屏東縣",
+          "townshipId": "屏東縣:萬巒鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "屏東縣萬巒鄉佳和村佳興路59號",
+          "phone": "(08)7832018",
+          "website": "https://www.jtes.ptc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/134659/C/屏東縣/萬巒鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.595417,
+            "latitude": 22.57164
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 188
+            },
+            {
+              "year": 108,
+              "students": 186
+            },
+            {
+              "year": 109,
+              "students": 186
+            },
+            {
+              "year": 110,
+              "students": 190
+            },
+            {
+              "year": 111,
+              "students": 185
+            },
+            {
+              "year": 112,
+              "students": 187
+            },
+            {
+              "year": 113,
+              "students": 174
+            },
+            {
+              "year": 114,
+              "students": 151
             }
           ],
           "status": "正常",
@@ -9689,6 +10416,10 @@
             {
               "year": 113,
               "students": 54
+            },
+            {
+              "year": 114,
+              "students": 48
             }
           ],
           "status": "正常",
@@ -9747,6 +10478,10 @@
             {
               "year": 113,
               "students": 74
+            },
+            {
+              "year": 114,
+              "students": 74
             }
           ],
           "status": "正常",
@@ -9797,6 +10532,10 @@
             {
               "year": 113,
               "students": 59
+            },
+            {
+              "year": 114,
+              "students": 57
             }
           ],
           "status": "正常",
@@ -9847,6 +10586,10 @@
             {
               "year": 113,
               "students": 47
+            },
+            {
+              "year": 114,
+              "students": 45
             }
           ],
           "status": "正常",
@@ -9897,6 +10640,10 @@
             {
               "year": 113,
               "students": 42
+            },
+            {
+              "year": 114,
+              "students": 33
             }
           ],
           "status": "正常",
@@ -9955,6 +10702,10 @@
             {
               "year": 113,
               "students": 160
+            },
+            {
+              "year": 114,
+              "students": 160
             }
           ],
           "status": "正常",
@@ -10005,6 +10756,10 @@
             {
               "year": 113,
               "students": 152
+            },
+            {
+              "year": 114,
+              "students": 144
             }
           ],
           "status": "正常",
@@ -10055,6 +10810,10 @@
             {
               "year": 113,
               "students": 126
+            },
+            {
+              "year": 114,
+              "students": 122
             }
           ],
           "status": "正常",
@@ -10105,6 +10864,10 @@
             {
               "year": 113,
               "students": 107
+            },
+            {
+              "year": 114,
+              "students": 101
             }
           ],
           "status": "正常",
@@ -10163,56 +10926,10 @@
             {
               "year": 113,
               "students": 1306
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "134653",
-          "code": "134653",
-          "name": "縣立光華國小",
-          "countyId": "屏東縣",
-          "townshipId": "屏東縣:潮州鎮",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "屏東縣潮州鎮光華里南進路2號",
-          "phone": "(08)7882105",
-          "website": "https://www.khps.ptc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/134653/C/屏東縣/潮州鎮/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.543356,
-            "latitude": 22.547664
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 844
             },
             {
-              "year": 108,
-              "students": 825
-            },
-            {
-              "year": 109,
-              "students": 780
-            },
-            {
-              "year": 110,
-              "students": 754
-            },
-            {
-              "year": 111,
-              "students": 751
-            },
-            {
-              "year": 112,
-              "students": 727
-            },
-            {
-              "year": 113,
-              "students": 696
+              "year": 114,
+              "students": 1306
             }
           ],
           "status": "正常",
@@ -10263,6 +10980,64 @@
             {
               "year": 113,
               "students": 675
+            },
+            {
+              "year": 114,
+              "students": 675
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "134653",
+          "code": "134653",
+          "name": "縣立光華國小",
+          "countyId": "屏東縣",
+          "townshipId": "屏東縣:潮州鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "屏東縣潮州鎮光華里南進路2號",
+          "phone": "(08)7882105",
+          "website": "https://www.khps.ptc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/134653/C/屏東縣/潮州鎮/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.543356,
+            "latitude": 22.547664
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 844
+            },
+            {
+              "year": 108,
+              "students": 825
+            },
+            {
+              "year": 109,
+              "students": 780
+            },
+            {
+              "year": 110,
+              "students": 754
+            },
+            {
+              "year": 111,
+              "students": 751
+            },
+            {
+              "year": 112,
+              "students": 727
+            },
+            {
+              "year": 113,
+              "students": 696
+            },
+            {
+              "year": 114,
+              "students": 664
             }
           ],
           "status": "正常",
@@ -10313,6 +11088,10 @@
             {
               "year": 113,
               "students": 611
+            },
+            {
+              "year": 114,
+              "students": 600
             }
           ],
           "status": "正常",
@@ -10363,6 +11142,10 @@
             {
               "year": 113,
               "students": 535
+            },
+            {
+              "year": 114,
+              "students": 540
             }
           ],
           "status": "正常",
@@ -10413,6 +11196,10 @@
             {
               "year": 113,
               "students": 503
+            },
+            {
+              "year": 114,
+              "students": 506
             }
           ],
           "status": "正常",
@@ -10463,6 +11250,10 @@
             {
               "year": 113,
               "students": 361
+            },
+            {
+              "year": 114,
+              "students": 337
             }
           ],
           "status": "正常",
@@ -10512,6 +11303,10 @@
             },
             {
               "year": 113,
+              "students": 273
+            },
+            {
+              "year": 114,
               "students": 273
             }
           ],
@@ -10563,6 +11358,10 @@
             {
               "year": 113,
               "students": 132
+            },
+            {
+              "year": 114,
+              "students": 127
             }
           ],
           "status": "正常",
@@ -10613,6 +11412,10 @@
             {
               "year": 113,
               "students": 110
+            },
+            {
+              "year": 114,
+              "students": 107
             }
           ],
           "status": "正常",
@@ -10663,6 +11466,10 @@
             {
               "year": 113,
               "students": 69
+            },
+            {
+              "year": 114,
+              "students": 64
             }
           ],
           "status": "正常",
@@ -10721,6 +11528,10 @@
             {
               "year": 113,
               "students": 105
+            },
+            {
+              "year": 114,
+              "students": 104
             }
           ],
           "status": "正常",
@@ -10779,6 +11590,10 @@
             {
               "year": 113,
               "students": 288
+            },
+            {
+              "year": 114,
+              "students": 275
             }
           ],
           "status": "正常",
@@ -10828,6 +11643,10 @@
             },
             {
               "year": 113,
+              "students": 144
+            },
+            {
+              "year": 114,
               "students": 144
             }
           ],
@@ -10887,6 +11706,10 @@
             {
               "year": 113,
               "students": 3809
+            },
+            {
+              "year": 114,
+              "students": 3809
             }
           ],
           "status": "正常",
@@ -10936,6 +11759,10 @@
             },
             {
               "year": 113,
+              "students": 665
+            },
+            {
+              "year": 114,
               "students": 665
             }
           ],
@@ -10987,6 +11814,10 @@
             {
               "year": 113,
               "students": 362
+            },
+            {
+              "year": 114,
+              "students": 380
             }
           ],
           "status": "正常",
@@ -11036,6 +11867,10 @@
             },
             {
               "year": 113,
+              "students": 297
+            },
+            {
+              "year": 114,
               "students": 297
             }
           ],
@@ -11087,32 +11922,15 @@
             {
               "year": 113,
               "students": 225
+            },
+            {
+              "year": 114,
+              "students": 221
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107,
-            108,
-            109,
-            110,
-            111,
-            112
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107、108、109、110、111、112",
-              "severity": "warning",
-              "years": [
-                107,
-                108,
-                109,
-                110,
-                111,
-                112
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "134631",
@@ -11157,6 +11975,10 @@
             },
             {
               "year": 113,
+              "students": 211
+            },
+            {
+              "year": 114,
               "students": 211
             }
           ],
@@ -11208,56 +12030,10 @@
             {
               "year": 113,
               "students": 118
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "134633",
-          "code": "134633",
-          "name": "縣立高朗國小",
-          "countyId": "屏東縣",
-          "townshipId": "屏東縣:鹽埔鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "屏東縣鹽埔鄉高朗村民治路37號",
-          "phone": "(08)7932444",
-          "website": "https://www.gles.ptc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/134633/C/屏東縣/鹽埔鄉/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.582684,
-            "latitude": 22.735358
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 98
             },
             {
-              "year": 108,
-              "students": 89
-            },
-            {
-              "year": 109,
-              "students": 97
-            },
-            {
-              "year": 110,
-              "students": 83
-            },
-            {
-              "year": 111,
-              "students": 78
-            },
-            {
-              "year": 112,
-              "students": 72
-            },
-            {
-              "year": 113,
-              "students": 75
+              "year": 114,
+              "students": 109
             }
           ],
           "status": "正常",
@@ -11308,6 +12084,64 @@
             {
               "year": 113,
               "students": 67
+            },
+            {
+              "year": 114,
+              "students": 68
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "134633",
+          "code": "134633",
+          "name": "縣立高朗國小",
+          "countyId": "屏東縣",
+          "townshipId": "屏東縣:鹽埔鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "屏東縣鹽埔鄉高朗村民治路37號",
+          "phone": "(08)7932444",
+          "website": "https://www.gles.ptc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/134633/C/屏東縣/鹽埔鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.582684,
+            "latitude": 22.735358
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 98
+            },
+            {
+              "year": 108,
+              "students": 89
+            },
+            {
+              "year": 109,
+              "students": 97
+            },
+            {
+              "year": 110,
+              "students": 83
+            },
+            {
+              "year": 111,
+              "students": 78
+            },
+            {
+              "year": 112,
+              "students": 72
+            },
+            {
+              "year": 113,
+              "students": 75
+            },
+            {
+              "year": 114,
+              "students": 65
             }
           ],
           "status": "正常",
@@ -11358,6 +12192,10 @@
             {
               "year": 113,
               "students": 64
+            },
+            {
+              "year": 114,
+              "students": 52
             }
           ],
           "status": "正常",
@@ -11365,13 +12203,7 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "鹽埔鄉 有 1 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     }
   ]
 }

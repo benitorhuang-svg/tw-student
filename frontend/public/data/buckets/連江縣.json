@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-07T17:48:54.117Z",
+  "generatedAt": "2026-03-09T18:20:24.789Z",
   "county": {
     "id": "連江縣",
     "name": "連江縣",
@@ -13,6 +13,7 @@
         "geohash": "wstkc",
         "precision": 5,
         "count": 3,
+        "totalStudents": 590,
         "latitude": 26.157916,
         "longitude": 119.949876,
         "bounds": {
@@ -50,6 +51,7 @@
         "geohash": "wstm4",
         "precision": 5,
         "count": 2,
+        "totalStudents": 112,
         "latitude": 26.223919,
         "longitude": 119.988732,
         "bounds": {
@@ -63,7 +65,7 @@
             "id": "724604",
             "name": "縣立塘岐國小",
             "townshipName": "北竿鄉",
-            "students": 76,
+            "students": 79,
             "status": "正常"
           },
           {
@@ -80,6 +82,7 @@
         "geohash": "wstwj",
         "precision": 5,
         "count": 2,
+        "totalStudents": 84,
         "latitude": 26.368213,
         "longitude": 120.488583,
         "bounds": {
@@ -93,7 +96,7 @@
             "id": "724608",
             "name": "縣立東引國(中)小",
             "townshipName": "東引鄉",
-            "students": 44,
+            "students": 53,
             "status": "正常"
           },
           {
@@ -110,6 +113,7 @@
         "geohash": "wstkb",
         "precision": 5,
         "count": 2,
+        "totalStudents": 112,
         "latitude": 26.158672,
         "longitude": 119.919551,
         "bounds": {
@@ -120,17 +124,17 @@
         },
         "topSchools": [
           {
-            "id": "724602",
-            "name": "縣立中正國(中)小",
-            "townshipName": "南竿鄉",
-            "students": 70,
-            "status": "正常"
-          },
-          {
             "id": "724502",
             "name": "縣立中正國中(小)",
             "townshipName": "南竿鄉",
             "students": 57,
+            "status": "正常"
+          },
+          {
+            "id": "724602",
+            "name": "縣立中正國(中)小",
+            "townshipName": "南竿鄉",
+            "students": 55,
             "status": "正常"
           }
         ]
@@ -140,6 +144,7 @@
         "geohash": "wst79",
         "precision": 5,
         "count": 2,
+        "totalStudents": 20,
         "latitude": 25.970314,
         "longitude": 119.934682,
         "bounds": {
@@ -160,7 +165,7 @@
             "id": "724606",
             "name": "縣立敬恆國(中)小",
             "townshipName": "莒光鄉",
-            "students": 5,
+            "students": 10,
             "status": "正常"
           }
         ]
@@ -170,6 +175,7 @@
         "geohash": "wstk8",
         "precision": 5,
         "count": 1,
+        "totalStudents": 78,
         "latitude": 26.140867,
         "longitude": 119.925781,
         "bounds": {
@@ -183,7 +189,7 @@
             "id": "724603",
             "name": "縣立仁愛國小",
             "townshipName": "南竿鄉",
-            "students": 79,
+            "students": 78,
             "status": "正常"
           }
         ]
@@ -193,6 +199,7 @@
         "geohash": "wst7d",
         "precision": 5,
         "count": 1,
+        "totalStudents": 6,
         "latitude": 25.960048,
         "longitude": 119.97367,
         "bounds": {
@@ -218,6 +225,7 @@
         "geohash": "wstwjb",
         "precision": 6,
         "count": 2,
+        "totalStudents": 84,
         "latitude": 26.368213,
         "longitude": 120.488583,
         "bounds": {
@@ -231,7 +239,7 @@
             "id": "724608",
             "name": "縣立東引國(中)小",
             "townshipName": "東引鄉",
-            "students": 44,
+            "students": 53,
             "status": "正常"
           },
           {
@@ -248,6 +256,7 @@
         "geohash": "wstkcd",
         "precision": 6,
         "count": 2,
+        "totalStudents": 333,
         "latitude": 26.159737,
         "longitude": 119.949917,
         "bounds": {
@@ -278,6 +287,7 @@
         "geohash": "wstkbf",
         "precision": 6,
         "count": 2,
+        "totalStudents": 112,
         "latitude": 26.158672,
         "longitude": 119.919551,
         "bounds": {
@@ -288,17 +298,17 @@
         },
         "topSchools": [
           {
-            "id": "724602",
-            "name": "縣立中正國(中)小",
-            "townshipName": "南竿鄉",
-            "students": 70,
-            "status": "正常"
-          },
-          {
             "id": "724502",
             "name": "縣立中正國中(小)",
             "townshipName": "南竿鄉",
             "students": 57,
+            "status": "正常"
+          },
+          {
+            "id": "724602",
+            "name": "縣立中正國(中)小",
+            "townshipName": "南竿鄉",
+            "students": 55,
             "status": "正常"
           }
         ]
@@ -308,6 +318,7 @@
         "geohash": "wst79p",
         "precision": 6,
         "count": 2,
+        "totalStudents": 20,
         "latitude": 25.970314,
         "longitude": 119.934682,
         "bounds": {
@@ -328,7 +339,7 @@
             "id": "724606",
             "name": "縣立敬恆國(中)小",
             "townshipName": "莒光鄉",
-            "students": 5,
+            "students": 10,
             "status": "正常"
           }
         ]
@@ -338,6 +349,7 @@
         "geohash": "wstm4t",
         "precision": 6,
         "count": 1,
+        "totalStudents": 79,
         "latitude": 26.223806,
         "longitude": 119.996936,
         "bounds": {
@@ -351,7 +363,7 @@
             "id": "724604",
             "name": "縣立塘岐國小",
             "townshipName": "北竿鄉",
-            "students": 76,
+            "students": 79,
             "status": "正常"
           }
         ]
@@ -361,6 +373,7 @@
         "geohash": "wstm4j",
         "precision": 6,
         "count": 1,
+        "totalStudents": 33,
         "latitude": 26.224032,
         "longitude": 119.980528,
         "bounds": {
@@ -384,6 +397,7 @@
         "geohash": "wstkc9",
         "precision": 6,
         "count": 1,
+        "totalStudents": 257,
         "latitude": 26.154275,
         "longitude": 119.949794,
         "bounds": {
@@ -407,6 +421,7 @@
         "geohash": "wstk8y",
         "precision": 6,
         "count": 1,
+        "totalStudents": 78,
         "latitude": 26.140867,
         "longitude": 119.925781,
         "bounds": {
@@ -420,7 +435,7 @@
             "id": "724603",
             "name": "縣立仁愛國小",
             "townshipName": "南竿鄉",
-            "students": 79,
+            "students": 78,
             "status": "正常"
           }
         ]
@@ -430,6 +445,7 @@
         "geohash": "wst7dj",
         "precision": 6,
         "count": 1,
+        "totalStudents": 6,
         "latitude": 25.960048,
         "longitude": 119.97367,
         "bounds": {
@@ -455,6 +471,7 @@
         "geohash": "wstwjb1",
         "precision": 7,
         "count": 2,
+        "totalStudents": 84,
         "latitude": 26.368213,
         "longitude": 120.488583,
         "bounds": {
@@ -468,7 +485,7 @@
             "id": "724608",
             "name": "縣立東引國(中)小",
             "townshipName": "東引鄉",
-            "students": 44,
+            "students": 53,
             "status": "正常"
           },
           {
@@ -485,6 +502,7 @@
         "geohash": "wstkcd0",
         "precision": 7,
         "count": 2,
+        "totalStudents": 333,
         "latitude": 26.159737,
         "longitude": 119.949917,
         "bounds": {
@@ -515,6 +533,7 @@
         "geohash": "wstkbf4",
         "precision": 7,
         "count": 2,
+        "totalStudents": 112,
         "latitude": 26.158672,
         "longitude": 119.919551,
         "bounds": {
@@ -525,17 +544,17 @@
         },
         "topSchools": [
           {
-            "id": "724602",
-            "name": "縣立中正國(中)小",
-            "townshipName": "南竿鄉",
-            "students": 70,
-            "status": "正常"
-          },
-          {
             "id": "724502",
             "name": "縣立中正國中(小)",
             "townshipName": "南竿鄉",
             "students": 57,
+            "status": "正常"
+          },
+          {
+            "id": "724602",
+            "name": "縣立中正國(中)小",
+            "townshipName": "南竿鄉",
+            "students": 55,
             "status": "正常"
           }
         ]
@@ -545,6 +564,7 @@
         "geohash": "wst79pv",
         "precision": 7,
         "count": 2,
+        "totalStudents": 20,
         "latitude": 25.970314,
         "longitude": 119.934682,
         "bounds": {
@@ -565,7 +585,7 @@
             "id": "724606",
             "name": "縣立敬恆國(中)小",
             "townshipName": "莒光鄉",
-            "students": 5,
+            "students": 10,
             "status": "正常"
           }
         ]
@@ -575,6 +595,7 @@
         "geohash": "wstm4tg",
         "precision": 7,
         "count": 1,
+        "totalStudents": 79,
         "latitude": 26.223806,
         "longitude": 119.996936,
         "bounds": {
@@ -588,7 +609,7 @@
             "id": "724604",
             "name": "縣立塘岐國小",
             "townshipName": "北竿鄉",
-            "students": 76,
+            "students": 79,
             "status": "正常"
           }
         ]
@@ -598,6 +619,7 @@
         "geohash": "wstm4jz",
         "precision": 7,
         "count": 1,
+        "totalStudents": 33,
         "latitude": 26.224032,
         "longitude": 119.980528,
         "bounds": {
@@ -621,6 +643,7 @@
         "geohash": "wstkc90",
         "precision": 7,
         "count": 1,
+        "totalStudents": 257,
         "latitude": 26.154275,
         "longitude": 119.949794,
         "bounds": {
@@ -644,6 +667,7 @@
         "geohash": "wstk8yz",
         "precision": 7,
         "count": 1,
+        "totalStudents": 78,
         "latitude": 26.140867,
         "longitude": 119.925781,
         "bounds": {
@@ -657,7 +681,7 @@
             "id": "724603",
             "name": "縣立仁愛國小",
             "townshipName": "南竿鄉",
-            "students": 79,
+            "students": 78,
             "status": "正常"
           }
         ]
@@ -667,6 +691,7 @@
         "geohash": "wst7djf",
         "precision": 7,
         "count": 1,
+        "totalStudents": 6,
         "latitude": 25.960048,
         "longitude": 119.97367,
         "bounds": {

@@ -5,13 +5,7 @@
     "shortLabel": "宜蘭",
     "region": "北部"
   },
-  "dataNotes": [
-    {
-      "type": "缺年度",
-      "message": "宜蘭縣 有 9 所學校存在年度缺漏。",
-      "severity": "warning"
-    }
-  ],
+  "dataNotes": [],
   "towns": [
     {
       "id": "宜蘭縣:三星鄉",
@@ -61,6 +55,10 @@
             },
             {
               "year": 113,
+              "students": 1416
+            },
+            {
+              "year": 114,
               "students": 1416
             }
           ],
@@ -112,6 +110,10 @@
             {
               "year": 113,
               "students": 226
+            },
+            {
+              "year": 114,
+              "students": 211
             }
           ],
           "status": "正常",
@@ -161,6 +163,10 @@
             },
             {
               "year": 113,
+              "students": 178
+            },
+            {
+              "year": 114,
               "students": 178
             }
           ],
@@ -212,6 +218,10 @@
             {
               "year": 113,
               "students": 174
+            },
+            {
+              "year": 114,
+              "students": 167
             }
           ],
           "status": "正常",
@@ -262,56 +272,10 @@
             {
               "year": 113,
               "students": 137
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "024663",
-          "code": "024663",
-          "name": "縣立憲明國小",
-          "countyId": "宜蘭縣",
-          "townshipId": "宜蘭縣:三星鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "宜蘭縣三星鄉天山村福山街119號",
-          "phone": "(03)9892049",
-          "website": "https://www.shmes.ilc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024663/C/宜蘭縣/三星鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 121.618554,
-            "latitude": 24.660762
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 75
             },
             {
-              "year": 108,
-              "students": 70
-            },
-            {
-              "year": 109,
-              "students": 72
-            },
-            {
-              "year": 110,
-              "students": 71
-            },
-            {
-              "year": 111,
-              "students": 74
-            },
-            {
-              "year": 112,
-              "students": 70
-            },
-            {
-              "year": 113,
-              "students": 71
+              "year": 114,
+              "students": 137
             }
           ],
           "status": "正常",
@@ -362,6 +326,64 @@
             {
               "year": 113,
               "students": 70
+            },
+            {
+              "year": 114,
+              "students": 73
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024663",
+          "code": "024663",
+          "name": "縣立憲明國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:三星鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣三星鄉天山村福山街119號",
+          "phone": "(03)9892049",
+          "website": "https://www.shmes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024663/C/宜蘭縣/三星鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.618554,
+            "latitude": 24.660762
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 75
+            },
+            {
+              "year": 108,
+              "students": 70
+            },
+            {
+              "year": 109,
+              "students": 72
+            },
+            {
+              "year": 110,
+              "students": 71
+            },
+            {
+              "year": 111,
+              "students": 74
+            },
+            {
+              "year": 112,
+              "students": 70
+            },
+            {
+              "year": 113,
+              "students": 71
+            },
+            {
+              "year": 114,
+              "students": 69
             }
           ],
           "status": "正常",
@@ -420,6 +442,10 @@
             {
               "year": 113,
               "students": 97
+            },
+            {
+              "year": 114,
+              "students": 87
             }
           ],
           "status": "正常",
@@ -470,6 +496,10 @@
             {
               "year": 113,
               "students": 67
+            },
+            {
+              "year": 114,
+              "students": 70
             }
           ],
           "status": "正常",
@@ -520,6 +550,10 @@
             {
               "year": 113,
               "students": 59
+            },
+            {
+              "year": 114,
+              "students": 64
             }
           ],
           "status": "正常",
@@ -570,6 +604,10 @@
             {
               "year": 113,
               "students": 46
+            },
+            {
+              "year": 114,
+              "students": 48
             }
           ],
           "status": "正常",
@@ -619,6 +657,10 @@
             },
             {
               "year": 113,
+              "students": 36
+            },
+            {
+              "year": 114,
               "students": 36
             }
           ],
@@ -678,6 +720,10 @@
             {
               "year": 113,
               "students": 530
+            },
+            {
+              "year": 114,
+              "students": 516
             }
           ],
           "status": "正常",
@@ -728,56 +774,10 @@
             {
               "year": 113,
               "students": 277
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "024650",
-          "code": "024650",
-          "name": "縣立學進國小",
-          "countyId": "宜蘭縣",
-          "townshipId": "宜蘭縣:五結鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "宜蘭縣五結鄉中正路三段151號",
-          "phone": "(03)9653801",
-          "website": "https://www.shjes.ilc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024650/C/宜蘭縣/五結鄉/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.770248,
-            "latitude": 24.706814
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 247
             },
             {
-              "year": 108,
-              "students": 249
-            },
-            {
-              "year": 109,
-              "students": 248
-            },
-            {
-              "year": 110,
-              "students": 244
-            },
-            {
-              "year": 111,
-              "students": 245
-            },
-            {
-              "year": 112,
-              "students": 265
-            },
-            {
-              "year": 113,
-              "students": 261
+              "year": 114,
+              "students": 270
             }
           ],
           "status": "正常",
@@ -828,6 +828,64 @@
             {
               "year": 113,
               "students": 243
+            },
+            {
+              "year": 114,
+              "students": 243
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024650",
+          "code": "024650",
+          "name": "縣立學進國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:五結鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣五結鄉中正路三段151號",
+          "phone": "(03)9653801",
+          "website": "https://www.shjes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024650/C/宜蘭縣/五結鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.770248,
+            "latitude": 24.706814
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 247
+            },
+            {
+              "year": 108,
+              "students": 249
+            },
+            {
+              "year": 109,
+              "students": 248
+            },
+            {
+              "year": 110,
+              "students": 244
+            },
+            {
+              "year": 111,
+              "students": 245
+            },
+            {
+              "year": 112,
+              "students": 265
+            },
+            {
+              "year": 113,
+              "students": 261
+            },
+            {
+              "year": 114,
+              "students": 232
             }
           ],
           "status": "正常",
@@ -877,6 +935,10 @@
             },
             {
               "year": 113,
+              "students": 105
+            },
+            {
+              "year": 114,
               "students": 105
             }
           ],
@@ -928,6 +990,10 @@
             {
               "year": 113,
               "students": 93
+            },
+            {
+              "year": 114,
+              "students": 101
             }
           ],
           "status": "正常",
@@ -977,6 +1043,10 @@
             },
             {
               "year": 113,
+              "students": 90
+            },
+            {
+              "year": 114,
               "students": 90
             }
           ],
@@ -1028,6 +1098,10 @@
             {
               "year": 113,
               "students": 86
+            },
+            {
+              "year": 114,
+              "students": 82
             }
           ],
           "status": "正常",
@@ -1086,22 +1160,15 @@
             {
               "year": 113,
               "students": 1218
+            },
+            {
+              "year": 114,
+              "students": 1218
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "024325",
@@ -1147,6 +1214,10 @@
             {
               "year": 113,
               "students": 844
+            },
+            {
+              "year": 114,
+              "students": 834
             }
           ],
           "status": "正常",
@@ -1197,6 +1268,10 @@
             {
               "year": 113,
               "students": 612
+            },
+            {
+              "year": 114,
+              "students": 605
             }
           ],
           "status": "正常",
@@ -1247,6 +1322,10 @@
             {
               "year": 113,
               "students": 524
+            },
+            {
+              "year": 114,
+              "students": 487
             }
           ],
           "status": "正常",
@@ -1297,6 +1376,10 @@
             {
               "year": 113,
               "students": 373
+            },
+            {
+              "year": 114,
+              "students": 379
             }
           ],
           "status": "正常",
@@ -1346,6 +1429,10 @@
             },
             {
               "year": 113,
+              "students": 269
+            },
+            {
+              "year": 114,
               "students": 269
             }
           ],
@@ -1397,6 +1484,10 @@
             {
               "year": 113,
               "students": 214
+            },
+            {
+              "year": 114,
+              "students": 214
             }
           ],
           "status": "正常",
@@ -1447,6 +1538,10 @@
             {
               "year": 113,
               "students": 74
+            },
+            {
+              "year": 114,
+              "students": 79
             }
           ],
           "status": "正常",
@@ -1497,56 +1592,10 @@
             {
               "year": 113,
               "students": 71
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "024657",
-          "code": "024657",
-          "name": "縣立武淵國小",
-          "countyId": "宜蘭縣",
-          "townshipId": "宜蘭縣:冬山鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "宜蘭縣冬山鄉武淵村富農路二段350號",
-          "phone": "(03)9505971",
-          "website": "https://www.waes.ilc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024657/C/宜蘭縣/冬山鄉/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.798791,
-            "latitude": 24.661573
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 60
             },
             {
-              "year": 108,
-              "students": 64
-            },
-            {
-              "year": 109,
-              "students": 71
-            },
-            {
-              "year": 110,
-              "students": 67
-            },
-            {
-              "year": 111,
-              "students": 67
-            },
-            {
-              "year": 112,
-              "students": 71
-            },
-            {
-              "year": 113,
-              "students": 71
+              "year": 114,
+              "students": 70
             }
           ],
           "status": "正常",
@@ -1597,6 +1646,64 @@
             {
               "year": 113,
               "students": 63
+            },
+            {
+              "year": 114,
+              "students": 63
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024657",
+          "code": "024657",
+          "name": "縣立武淵國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:冬山鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣冬山鄉武淵村富農路二段350號",
+          "phone": "(03)9505971",
+          "website": "https://www.waes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024657/C/宜蘭縣/冬山鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.798791,
+            "latitude": 24.661573
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 60
+            },
+            {
+              "year": 108,
+              "students": 64
+            },
+            {
+              "year": 109,
+              "students": 71
+            },
+            {
+              "year": 110,
+              "students": 67
+            },
+            {
+              "year": 111,
+              "students": 67
+            },
+            {
+              "year": 112,
+              "students": 71
+            },
+            {
+              "year": 113,
+              "students": 71
+            },
+            {
+              "year": 114,
+              "students": 53
             }
           ],
           "status": "正常",
@@ -1647,6 +1754,10 @@
             {
               "year": 113,
               "students": 46
+            },
+            {
+              "year": 114,
+              "students": 45
             }
           ],
           "status": "正常",
@@ -1654,13 +1765,7 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "冬山鄉 有 1 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "宜蘭縣:壯圍鄉",
@@ -1711,56 +1816,10 @@
             {
               "year": 113,
               "students": 980
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "024644",
-          "code": "024644",
-          "name": "縣立古亭國小",
-          "countyId": "宜蘭縣",
-          "townshipId": "宜蘭縣:壯圍鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "宜蘭縣壯圍鄉古亭村古亭路81號",
-          "phone": "(03)9301022",
-          "website": "https://www.gtes.ilc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024644/C/宜蘭縣/壯圍鄉/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.798239,
-            "latitude": 24.771482
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 278
             },
             {
-              "year": 108,
-              "students": 286
-            },
-            {
-              "year": 109,
-              "students": 311
-            },
-            {
-              "year": 110,
-              "students": 318
-            },
-            {
-              "year": 111,
-              "students": 330
-            },
-            {
-              "year": 112,
-              "students": 335
-            },
-            {
-              "year": 113,
-              "students": 327
+              "year": 114,
+              "students": 995
             }
           ],
           "status": "正常",
@@ -1811,6 +1870,64 @@
             {
               "year": 113,
               "students": 315
+            },
+            {
+              "year": 114,
+              "students": 315
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024644",
+          "code": "024644",
+          "name": "縣立古亭國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:壯圍鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣壯圍鄉古亭村古亭路81號",
+          "phone": "(03)9301022",
+          "website": "https://www.gtes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024644/C/宜蘭縣/壯圍鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.798239,
+            "latitude": 24.771482
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 278
+            },
+            {
+              "year": 108,
+              "students": 286
+            },
+            {
+              "year": 109,
+              "students": 311
+            },
+            {
+              "year": 110,
+              "students": 318
+            },
+            {
+              "year": 111,
+              "students": 330
+            },
+            {
+              "year": 112,
+              "students": 335
+            },
+            {
+              "year": 113,
+              "students": 327
+            },
+            {
+              "year": 114,
+              "students": 293
             }
           ],
           "status": "正常",
@@ -1861,56 +1978,10 @@
             {
               "year": 113,
               "students": 219
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "024648",
-          "code": "024648",
-          "name": "縣立新南國小",
-          "countyId": "宜蘭縣",
-          "townshipId": "宜蘭縣:壯圍鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "宜蘭縣壯圍鄉美福路一段1號",
-          "phone": "(03)9253337",
-          "website": "https://www.snes.ilc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024648/C/宜蘭縣/壯圍鄉/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.799976,
-            "latitude": 24.722599
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 62
             },
             {
-              "year": 108,
-              "students": 61
-            },
-            {
-              "year": 109,
-              "students": 60
-            },
-            {
-              "year": 110,
-              "students": 63
-            },
-            {
-              "year": 111,
-              "students": 68
-            },
-            {
-              "year": 112,
-              "students": 70
-            },
-            {
-              "year": 113,
-              "students": 72
+              "year": 114,
+              "students": 233
             }
           ],
           "status": "正常",
@@ -1961,6 +2032,64 @@
             {
               "year": 113,
               "students": 66
+            },
+            {
+              "year": 114,
+              "students": 70
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024648",
+          "code": "024648",
+          "name": "縣立新南國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:壯圍鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣壯圍鄉美福路一段1號",
+          "phone": "(03)9253337",
+          "website": "https://www.snes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024648/C/宜蘭縣/壯圍鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.799976,
+            "latitude": 24.722599
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 62
+            },
+            {
+              "year": 108,
+              "students": 61
+            },
+            {
+              "year": 109,
+              "students": 60
+            },
+            {
+              "year": 110,
+              "students": 63
+            },
+            {
+              "year": 111,
+              "students": 68
+            },
+            {
+              "year": 112,
+              "students": 70
+            },
+            {
+              "year": 113,
+              "students": 72
+            },
+            {
+              "year": 114,
+              "students": 63
             }
           ],
           "status": "正常",
@@ -2010,6 +2139,10 @@
             },
             {
               "year": 113,
+              "students": 48
+            },
+            {
+              "year": 114,
               "students": 48
             }
           ],
@@ -2061,6 +2194,10 @@
             {
               "year": 113,
               "students": 36
+            },
+            {
+              "year": 114,
+              "students": 30
             }
           ],
           "status": "正常",
@@ -2119,6 +2256,10 @@
             {
               "year": 113,
               "students": 5447
+            },
+            {
+              "year": 114,
+              "students": 5447
             }
           ],
           "status": "正常",
@@ -2169,67 +2310,10 @@
             {
               "year": 113,
               "students": 1425
-            }
-          ],
-          "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
-        },
-        {
-          "id": "024608",
-          "code": "024608",
-          "name": "縣立黎明國小",
-          "countyId": "宜蘭縣",
-          "townshipId": "宜蘭縣:宜蘭市",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "宜蘭縣宜蘭市校舍路1號",
-          "phone": "(03)9383792",
-          "website": "https://www.lmes.ilc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024608/C/宜蘭縣/宜蘭市/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.764274,
-            "latitude": 24.751634
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1308
             },
             {
-              "year": 108,
-              "students": 1307
-            },
-            {
-              "year": 109,
-              "students": 1315
-            },
-            {
-              "year": 110,
-              "students": 1346
-            },
-            {
-              "year": 111,
-              "students": 1380
-            },
-            {
-              "year": 112,
-              "students": 1436
-            },
-            {
-              "year": 113,
-              "students": 1404
+              "year": 114,
+              "students": 1425
             }
           ],
           "status": "正常",
@@ -2280,22 +2364,15 @@
             {
               "year": 113,
               "students": 1392
+            },
+            {
+              "year": 114,
+              "students": 1392
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "020302",
@@ -2341,22 +2418,69 @@
             {
               "year": 113,
               "students": 1387
+            },
+            {
+              "year": 114,
+              "students": 1387
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024608",
+          "code": "024608",
+          "name": "縣立黎明國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:宜蘭市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣宜蘭市校舍路1號",
+          "phone": "(03)9383792",
+          "website": "https://www.lmes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024608/C/宜蘭縣/宜蘭市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.764274,
+            "latitude": 24.751634
+          },
+          "yearlyStudents": [
             {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
+              "year": 107,
+              "students": 1308
+            },
+            {
+              "year": 108,
+              "students": 1307
+            },
+            {
+              "year": 109,
+              "students": 1315
+            },
+            {
+              "year": 110,
+              "students": 1346
+            },
+            {
+              "year": 111,
+              "students": 1380
+            },
+            {
+              "year": 112,
+              "students": 1436
+            },
+            {
+              "year": 113,
+              "students": 1404
+            },
+            {
+              "year": 114,
+              "students": 1369
             }
-          ]
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "024605",
@@ -2402,6 +2526,10 @@
             {
               "year": 113,
               "students": 1301
+            },
+            {
+              "year": 114,
+              "students": 1283
             }
           ],
           "status": "正常",
@@ -2451,6 +2579,10 @@
             },
             {
               "year": 113,
+              "students": 1271
+            },
+            {
+              "year": 114,
               "students": 1271
             }
           ],
@@ -2502,6 +2634,10 @@
             {
               "year": 113,
               "students": 880
+            },
+            {
+              "year": 114,
+              "students": 880
             }
           ],
           "status": "正常",
@@ -2552,6 +2688,10 @@
             {
               "year": 113,
               "students": 759
+            },
+            {
+              "year": 114,
+              "students": 732
             }
           ],
           "status": "正常",
@@ -2602,6 +2742,10 @@
             {
               "year": 113,
               "students": 626
+            },
+            {
+              "year": 114,
+              "students": 612
             }
           ],
           "status": "正常",
@@ -2652,6 +2796,10 @@
             {
               "year": 113,
               "students": 587
+            },
+            {
+              "year": 114,
+              "students": 581
             }
           ],
           "status": "正常",
@@ -2701,6 +2849,10 @@
             },
             {
               "year": 113,
+              "students": 507
+            },
+            {
+              "year": 114,
               "students": 507
             }
           ],
@@ -2752,6 +2904,10 @@
             {
               "year": 113,
               "students": 502
+            },
+            {
+              "year": 114,
+              "students": 502
             }
           ],
           "status": "正常",
@@ -2802,6 +2958,10 @@
             {
               "year": 113,
               "students": 479
+            },
+            {
+              "year": 114,
+              "students": 466
             }
           ],
           "status": "正常",
@@ -2852,6 +3012,10 @@
             {
               "year": 113,
               "students": 398
+            },
+            {
+              "year": 114,
+              "students": 366
             }
           ],
           "status": "正常",
@@ -2902,6 +3066,10 @@
             {
               "year": 113,
               "students": 318
+            },
+            {
+              "year": 114,
+              "students": 303
             }
           ],
           "status": "正常",
@@ -2952,6 +3120,10 @@
             {
               "year": 113,
               "students": 230
+            },
+            {
+              "year": 114,
+              "students": 228
             }
           ],
           "status": "正常",
@@ -2959,13 +3131,7 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "宜蘭市 有 3 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "宜蘭縣:南澳鄉",
@@ -3016,56 +3182,10 @@
             {
               "year": 113,
               "students": 240
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "024673",
-          "code": "024673",
-          "name": "縣立碧候國小",
-          "countyId": "宜蘭縣",
-          "townshipId": "宜蘭縣:南澳鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "宜蘭縣南澳鄉碧候村自覺巷38號",
-          "phone": "(03)9981634",
-          "website": "https://www.bhoes.ilc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024673/C/宜蘭縣/南澳鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 121.784702,
-            "latitude": 24.474069
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 88
             },
             {
-              "year": 108,
-              "students": 88
-            },
-            {
-              "year": 109,
-              "students": 84
-            },
-            {
-              "year": 110,
-              "students": 98
-            },
-            {
-              "year": 111,
-              "students": 97
-            },
-            {
-              "year": 112,
-              "students": 87
-            },
-            {
-              "year": 113,
-              "students": 78
+              "year": 114,
+              "students": 240
             }
           ],
           "status": "正常",
@@ -3116,6 +3236,64 @@
             {
               "year": 113,
               "students": 73
+            },
+            {
+              "year": 114,
+              "students": 78
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024673",
+          "code": "024673",
+          "name": "縣立碧候國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:南澳鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣南澳鄉碧候村自覺巷38號",
+          "phone": "(03)9981634",
+          "website": "https://www.bhoes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024673/C/宜蘭縣/南澳鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 121.784702,
+            "latitude": 24.474069
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 88
+            },
+            {
+              "year": 108,
+              "students": 88
+            },
+            {
+              "year": 109,
+              "students": 84
+            },
+            {
+              "year": 110,
+              "students": 98
+            },
+            {
+              "year": 111,
+              "students": 97
+            },
+            {
+              "year": 112,
+              "students": 87
+            },
+            {
+              "year": 113,
+              "students": 78
+            },
+            {
+              "year": 114,
+              "students": 74
             }
           ],
           "status": "正常",
@@ -3166,6 +3344,10 @@
             {
               "year": 113,
               "students": 56
+            },
+            {
+              "year": 114,
+              "students": 69
             }
           ],
           "status": "正常",
@@ -3216,56 +3398,10 @@
             {
               "year": 113,
               "students": 46
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "024677",
-          "code": "024677",
-          "name": "縣立金岳國小",
-          "countyId": "宜蘭縣",
-          "townshipId": "宜蘭縣:南澳鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "宜蘭縣南澳鄉金岳村金岳路2號",
-          "phone": "(03)9981636",
-          "website": "https://www.jyes.ilc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024677/C/宜蘭縣/南澳鄉/縣市立/特偏/無/",
-          "coordinates": {
-            "longitude": 121.777341,
-            "latitude": 24.470885
-          },
-          "yearlyStudents": [
+            },
             {
-              "year": 107,
+              "year": 114,
               "students": 46
-            },
-            {
-              "year": 108,
-              "students": 43
-            },
-            {
-              "year": 109,
-              "students": 43
-            },
-            {
-              "year": 110,
-              "students": 42
-            },
-            {
-              "year": 111,
-              "students": 42
-            },
-            {
-              "year": 112,
-              "students": 40
-            },
-            {
-              "year": 113,
-              "students": 38
             }
           ],
           "status": "正常",
@@ -3316,6 +3452,64 @@
             {
               "year": 113,
               "students": 33
+            },
+            {
+              "year": 114,
+              "students": 34
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024677",
+          "code": "024677",
+          "name": "縣立金岳國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:南澳鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣南澳鄉金岳村金岳路2號",
+          "phone": "(03)9981636",
+          "website": "https://www.jyes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024677/C/宜蘭縣/南澳鄉/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 121.777341,
+            "latitude": 24.470885
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 46
+            },
+            {
+              "year": 108,
+              "students": 43
+            },
+            {
+              "year": 109,
+              "students": 43
+            },
+            {
+              "year": 110,
+              "students": 42
+            },
+            {
+              "year": 111,
+              "students": 42
+            },
+            {
+              "year": 112,
+              "students": 40
+            },
+            {
+              "year": 113,
+              "students": 38
+            },
+            {
+              "year": 114,
+              "students": 34
             }
           ],
           "status": "正常",
@@ -3366,6 +3560,10 @@
             {
               "year": 113,
               "students": 31
+            },
+            {
+              "year": 114,
+              "students": 26
             }
           ],
           "status": "正常",
@@ -3424,6 +3622,10 @@
             {
               "year": 113,
               "students": 1496
+            },
+            {
+              "year": 114,
+              "students": 1496
             }
           ],
           "status": "正常",
@@ -3474,6 +3676,10 @@
             {
               "year": 113,
               "students": 281
+            },
+            {
+              "year": 114,
+              "students": 295
             }
           ],
           "status": "正常",
@@ -3523,6 +3729,10 @@
             },
             {
               "year": 113,
+              "students": 191
+            },
+            {
+              "year": 114,
               "students": 191
             }
           ],
@@ -3574,6 +3784,10 @@
             {
               "year": 113,
               "students": 137
+            },
+            {
+              "year": 114,
+              "students": 123
             }
           ],
           "status": "正常",
@@ -3624,6 +3838,10 @@
             {
               "year": 113,
               "students": 120
+            },
+            {
+              "year": 114,
+              "students": 114
             }
           ],
           "status": "正常",
@@ -3674,6 +3892,10 @@
             {
               "year": 113,
               "students": 100
+            },
+            {
+              "year": 114,
+              "students": 102
             }
           ],
           "status": "正常",
@@ -3724,55 +3946,9 @@
             {
               "year": 113,
               "students": 84
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "024638",
-          "code": "024638",
-          "name": "縣立湖山國小",
-          "countyId": "宜蘭縣",
-          "townshipId": "宜蘭縣:員山鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "宜蘭縣員山鄉枕山村坡城路54號",
-          "phone": "(03)9221174",
-          "website": "https://www.hses.ilc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024638/C/宜蘭縣/員山鄉/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.69916,
-            "latitude": 24.779496
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 103
             },
             {
-              "year": 108,
-              "students": 113
-            },
-            {
-              "year": 109,
-              "students": 107
-            },
-            {
-              "year": 110,
-              "students": 98
-            },
-            {
-              "year": 111,
-              "students": 98
-            },
-            {
-              "year": 112,
-              "students": 82
-            },
-            {
-              "year": 113,
+              "year": 114,
               "students": 84
             }
           ],
@@ -3824,6 +4000,64 @@
             {
               "year": 113,
               "students": 83
+            },
+            {
+              "year": 114,
+              "students": 75
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024638",
+          "code": "024638",
+          "name": "縣立湖山國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:員山鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣員山鄉枕山村坡城路54號",
+          "phone": "(03)9221174",
+          "website": "https://www.hses.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024638/C/宜蘭縣/員山鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.69916,
+            "latitude": 24.779496
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 103
+            },
+            {
+              "year": 108,
+              "students": 113
+            },
+            {
+              "year": 109,
+              "students": 107
+            },
+            {
+              "year": 110,
+              "students": 98
+            },
+            {
+              "year": 111,
+              "students": 98
+            },
+            {
+              "year": 112,
+              "students": 82
+            },
+            {
+              "year": 113,
+              "students": 84
+            },
+            {
+              "year": 114,
+              "students": 75
             }
           ],
           "status": "正常",
@@ -3874,6 +4108,10 @@
             {
               "year": 113,
               "students": 76
+            },
+            {
+              "year": 114,
+              "students": 66
             }
           ],
           "status": "正常",
@@ -3932,22 +4170,15 @@
             {
               "year": 113,
               "students": 679
+            },
+            {
+              "year": 114,
+              "students": 679
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "024623",
@@ -3993,6 +4224,10 @@
             {
               "year": 113,
               "students": 537
+            },
+            {
+              "year": 114,
+              "students": 542
             }
           ],
           "status": "正常",
@@ -4042,6 +4277,10 @@
             },
             {
               "year": 113,
+              "students": 391
+            },
+            {
+              "year": 114,
               "students": 391
             }
           ],
@@ -4093,6 +4332,10 @@
             {
               "year": 113,
               "students": 265
+            },
+            {
+              "year": 114,
+              "students": 257
             }
           ],
           "status": "正常",
@@ -4143,6 +4386,10 @@
             {
               "year": 113,
               "students": 119
+            },
+            {
+              "year": 114,
+              "students": 108
             }
           ],
           "status": "正常",
@@ -4192,6 +4439,10 @@
             },
             {
               "year": 113,
+              "students": 104
+            },
+            {
+              "year": 114,
               "students": 104
             }
           ],
@@ -4243,6 +4494,10 @@
             {
               "year": 113,
               "students": 94
+            },
+            {
+              "year": 114,
+              "students": 89
             }
           ],
           "status": "正常",
@@ -4293,56 +4548,10 @@
             {
               "year": 113,
               "students": 71
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "024628",
-          "code": "024628",
-          "name": "縣立梗枋國小",
-          "countyId": "宜蘭縣",
-          "townshipId": "宜蘭縣:頭城鎮",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "宜蘭縣頭城鎮更新路59號",
-          "phone": "(03)9771634",
-          "website": "https://www.gfes.ilc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024628/C/宜蘭縣/頭城鎮/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.862177,
-            "latitude": 24.900758
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 40
             },
             {
-              "year": 108,
-              "students": 49
-            },
-            {
-              "year": 109,
-              "students": 56
-            },
-            {
-              "year": 110,
-              "students": 65
-            },
-            {
-              "year": 111,
+              "year": 114,
               "students": 71
-            },
-            {
-              "year": 112,
-              "students": 71
-            },
-            {
-              "year": 113,
-              "students": 65
             }
           ],
           "status": "正常",
@@ -4393,6 +4602,64 @@
             {
               "year": 113,
               "students": 63
+            },
+            {
+              "year": 114,
+              "students": 60
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024628",
+          "code": "024628",
+          "name": "縣立梗枋國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:頭城鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣頭城鎮更新路59號",
+          "phone": "(03)9771634",
+          "website": "https://www.gfes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024628/C/宜蘭縣/頭城鎮/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.862177,
+            "latitude": 24.900758
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 40
+            },
+            {
+              "year": 108,
+              "students": 49
+            },
+            {
+              "year": 109,
+              "students": 56
+            },
+            {
+              "year": 110,
+              "students": 65
+            },
+            {
+              "year": 111,
+              "students": 71
+            },
+            {
+              "year": 112,
+              "students": 71
+            },
+            {
+              "year": 113,
+              "students": 65
+            },
+            {
+              "year": 114,
+              "students": 58
             }
           ],
           "status": "正常",
@@ -4400,13 +4667,7 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "頭城鎮 有 1 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "宜蘭縣:礁溪鄉",
@@ -4456,6 +4717,10 @@
             },
             {
               "year": 113,
+              "students": 2525
+            },
+            {
+              "year": 114,
               "students": 2525
             }
           ],
@@ -4507,6 +4772,10 @@
             {
               "year": 113,
               "students": 654
+            },
+            {
+              "year": 114,
+              "students": 639
             }
           ],
           "status": "正常",
@@ -4556,6 +4825,10 @@
             },
             {
               "year": 113,
+              "students": 330
+            },
+            {
+              "year": 114,
               "students": 330
             }
           ],
@@ -4607,6 +4880,10 @@
             {
               "year": 113,
               "students": 197
+            },
+            {
+              "year": 114,
+              "students": 192
             }
           ],
           "status": "正常",
@@ -4656,6 +4933,10 @@
             },
             {
               "year": 113,
+              "students": 144
+            },
+            {
+              "year": 114,
               "students": 144
             }
           ],
@@ -4707,6 +4988,10 @@
             {
               "year": 113,
               "students": 142
+            },
+            {
+              "year": 114,
+              "students": 122
             }
           ],
           "status": "正常",
@@ -4756,6 +5041,10 @@
             },
             {
               "year": 113,
+              "students": 116
+            },
+            {
+              "year": 114,
               "students": 116
             }
           ],
@@ -4807,6 +5096,10 @@
             {
               "year": 113,
               "students": 67
+            },
+            {
+              "year": 114,
+              "students": 60
             }
           ],
           "status": "正常",
@@ -4865,6 +5158,10 @@
             {
               "year": 113,
               "students": 1513
+            },
+            {
+              "year": 114,
+              "students": 1513
             }
           ],
           "status": "正常",
@@ -4915,6 +5212,10 @@
             {
               "year": 113,
               "students": 1507
+            },
+            {
+              "year": 114,
+              "students": 1468
             }
           ],
           "status": "正常",
@@ -4965,6 +5266,10 @@
             {
               "year": 113,
               "students": 1475
+            },
+            {
+              "year": 114,
+              "students": 1459
             }
           ],
           "status": "正常",
@@ -5015,22 +5320,15 @@
             {
               "year": 113,
               "students": 1295
+            },
+            {
+              "year": 114,
+              "students": 1295
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "020404",
@@ -5076,22 +5374,15 @@
             {
               "year": 113,
               "students": 1219
+            },
+            {
+              "year": 114,
+              "students": 1219
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "024506",
@@ -5136,6 +5427,10 @@
             },
             {
               "year": 113,
+              "students": 1113
+            },
+            {
+              "year": 114,
               "students": 1113
             }
           ],
@@ -5187,6 +5482,10 @@
             {
               "year": 113,
               "students": 845
+            },
+            {
+              "year": 114,
+              "students": 804
             }
           ],
           "status": "正常",
@@ -5237,6 +5536,10 @@
             {
               "year": 113,
               "students": 764
+            },
+            {
+              "year": 114,
+              "students": 801
             }
           ],
           "status": "正常",
@@ -5287,6 +5590,10 @@
             {
               "year": 113,
               "students": 548
+            },
+            {
+              "year": 114,
+              "students": 534
             }
           ],
           "status": "正常",
@@ -5337,6 +5644,10 @@
             {
               "year": 113,
               "students": 506
+            },
+            {
+              "year": 114,
+              "students": 506
             }
           ],
           "status": "正常",
@@ -5344,13 +5655,7 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "羅東鎮 有 2 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "宜蘭縣:蘇澳鎮",
@@ -5401,6 +5706,10 @@
             {
               "year": 113,
               "students": 603
+            },
+            {
+              "year": 114,
+              "students": 620
             }
           ],
           "status": "正常",
@@ -5450,6 +5759,10 @@
             },
             {
               "year": 113,
+              "students": 485
+            },
+            {
+              "year": 114,
               "students": 485
             }
           ],
@@ -5501,22 +5814,15 @@
             {
               "year": 113,
               "students": 330
+            },
+            {
+              "year": 114,
+              "students": 330
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "024615",
@@ -5562,6 +5868,10 @@
             {
               "year": 113,
               "students": 323
+            },
+            {
+              "year": 114,
+              "students": 283
             }
           ],
           "status": "正常",
@@ -5612,6 +5922,10 @@
             {
               "year": 113,
               "students": 203
+            },
+            {
+              "year": 114,
+              "students": 197
             }
           ],
           "status": "正常",
@@ -5661,6 +5975,10 @@
             },
             {
               "year": 113,
+              "students": 182
+            },
+            {
+              "year": 114,
               "students": 182
             }
           ],
@@ -5712,6 +6030,10 @@
             {
               "year": 113,
               "students": 122
+            },
+            {
+              "year": 114,
+              "students": 109
             }
           ],
           "status": "正常",
@@ -5762,6 +6084,10 @@
             {
               "year": 113,
               "students": 111
+            },
+            {
+              "year": 114,
+              "students": 109
             }
           ],
           "status": "正常",
@@ -5812,56 +6138,10 @@
             {
               "year": 113,
               "students": 101
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "024618",
-          "code": "024618",
-          "name": "縣立士敏國小",
-          "countyId": "宜蘭縣",
-          "townshipId": "宜蘭縣:蘇澳鎮",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "宜蘭縣蘇澳鎮光明路8號",
-          "phone": "(03)9962342",
-          "website": "https://www.smes.ilc.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024618/C/宜蘭縣/蘇澳鎮/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 121.853807,
-            "latitude": 24.592277
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 60
             },
             {
-              "year": 108,
-              "students": 73
-            },
-            {
-              "year": 109,
-              "students": 80
-            },
-            {
-              "year": 110,
-              "students": 83
-            },
-            {
-              "year": 111,
-              "students": 84
-            },
-            {
-              "year": 112,
-              "students": 70
-            },
-            {
-              "year": 113,
-              "students": 75
+              "year": 114,
+              "students": 89
             }
           ],
           "status": "正常",
@@ -5912,28 +6192,69 @@
             {
               "year": 113,
               "students": 64
+            },
+            {
+              "year": 114,
+              "students": 64
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107,
-            108,
-            109,
-            110
-          ],
-          "dataNotes": [
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "024618",
+          "code": "024618",
+          "name": "縣立士敏國小",
+          "countyId": "宜蘭縣",
+          "townshipId": "宜蘭縣:蘇澳鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "宜蘭縣蘇澳鎮光明路8號",
+          "phone": "(03)9962342",
+          "website": "https://www.smes.ilc.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/024618/C/宜蘭縣/蘇澳鎮/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 121.853807,
+            "latitude": 24.592277
+          },
+          "yearlyStudents": [
             {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107、108、109、110",
-              "severity": "warning",
-              "years": [
-                107,
-                108,
-                109,
-                110
-              ]
+              "year": 107,
+              "students": 60
+            },
+            {
+              "year": 108,
+              "students": 73
+            },
+            {
+              "year": 109,
+              "students": 80
+            },
+            {
+              "year": 110,
+              "students": 83
+            },
+            {
+              "year": 111,
+              "students": 84
+            },
+            {
+              "year": 112,
+              "students": 70
+            },
+            {
+              "year": 113,
+              "students": 75
+            },
+            {
+              "year": 114,
+              "students": 63
             }
-          ]
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "024510",
@@ -5978,6 +6299,10 @@
             },
             {
               "year": 113,
+              "students": 45
+            },
+            {
+              "year": 114,
               "students": 45
             }
           ],
@@ -6029,6 +6354,10 @@
             {
               "year": 113,
               "students": 40
+            },
+            {
+              "year": 114,
+              "students": 38
             }
           ],
           "status": "正常",
@@ -6036,13 +6365,7 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "蘇澳鎮 有 2 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     }
   ]
 }

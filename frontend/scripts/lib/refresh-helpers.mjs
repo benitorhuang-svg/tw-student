@@ -2,8 +2,8 @@ import { writeFile } from 'node:fs/promises'
 
 import { parse } from 'csv-parse/sync'
 
-export const CURRENT_YEAR = 113
-export const ACADEMIC_YEARS = [107, 108, 109, 110, 111, 112, 113]
+export const CURRENT_YEAR = 114
+export const ACADEMIC_YEARS = [107, 108, 109, 110, 111, 112, 113, 114]
 export const SUMMARY_EDUCATION_LEVELS = ['全部', '國小', '國中', '高中職', '大專院校']
 export const SUMMARY_MANAGEMENT_TYPES = ['全部', '公立', '私立']
 export const REGION_BY_COUNTY = {

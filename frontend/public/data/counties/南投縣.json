@@ -5,13 +5,7 @@
     "shortLabel": "南投",
     "region": "中部"
   },
-  "dataNotes": [
-    {
-      "type": "缺年度",
-      "message": "南投縣 有 11 所學校存在年度缺漏。",
-      "severity": "warning"
-    }
-  ],
+  "dataNotes": [],
   "towns": [
     {
       "id": "南投縣:中寮鄉",
@@ -62,6 +56,10 @@
             {
               "year": 113,
               "students": 114
+            },
+            {
+              "year": 114,
+              "students": 123
             }
           ],
           "status": "正常",
@@ -111,6 +109,10 @@
             },
             {
               "year": 113,
+              "students": 108
+            },
+            {
+              "year": 114,
               "students": 108
             }
           ],
@@ -162,6 +164,118 @@
             {
               "year": 113,
               "students": 91
+            },
+            {
+              "year": 114,
+              "students": 91
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "084681",
+          "code": "084681",
+          "name": "縣立清水國小",
+          "countyId": "南投縣",
+          "townshipId": "南投縣:中寮鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "南投縣中寮鄉清水村瀧林巷3號",
+          "phone": "(049)2601079",
+          "website": "https://chs.ntct.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084681/C/南投縣/中寮鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.790647,
+            "latitude": 23.945238
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 52
+            },
+            {
+              "year": 108,
+              "students": 60
+            },
+            {
+              "year": 109,
+              "students": 56
+            },
+            {
+              "year": 110,
+              "students": 55
+            },
+            {
+              "year": 111,
+              "students": 54
+            },
+            {
+              "year": 112,
+              "students": 43
+            },
+            {
+              "year": 113,
+              "students": 38
+            },
+            {
+              "year": 114,
+              "students": 41
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "084682",
+          "code": "084682",
+          "name": "縣立至誠國小",
+          "countyId": "南投縣",
+          "townshipId": "南投縣:中寮鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "南投縣中寮鄉永平路489之1號",
+          "phone": "(049)2227215",
+          "website": "https://zcu.ntct.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084682/C/南投縣/中寮鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.72084,
+            "latitude": 23.893651
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 33
+            },
+            {
+              "year": 108,
+              "students": 32
+            },
+            {
+              "year": 109,
+              "students": 31
+            },
+            {
+              "year": 110,
+              "students": 27
+            },
+            {
+              "year": 111,
+              "students": 28
+            },
+            {
+              "year": 112,
+              "students": 32
+            },
+            {
+              "year": 113,
+              "students": 30
+            },
+            {
+              "year": 114,
+              "students": 39
             }
           ],
           "status": "正常",
@@ -212,55 +326,9 @@
             {
               "year": 113,
               "students": 41
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "084681",
-          "code": "084681",
-          "name": "縣立清水國小",
-          "countyId": "南投縣",
-          "townshipId": "南投縣:中寮鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "南投縣中寮鄉清水村瀧林巷3號",
-          "phone": "(049)2601079",
-          "website": "https://chs.ntct.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084681/C/南投縣/中寮鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.790647,
-            "latitude": 23.945238
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 52
             },
             {
-              "year": 108,
-              "students": 60
-            },
-            {
-              "year": 109,
-              "students": 56
-            },
-            {
-              "year": 110,
-              "students": 55
-            },
-            {
-              "year": 111,
-              "students": 54
-            },
-            {
-              "year": 112,
-              "students": 43
-            },
-            {
-              "year": 113,
+              "year": 114,
               "students": 38
             }
           ],
@@ -312,106 +380,10 @@
             {
               "year": 113,
               "students": 36
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "084682",
-          "code": "084682",
-          "name": "縣立至誠國小",
-          "countyId": "南投縣",
-          "townshipId": "南投縣:中寮鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "南投縣中寮鄉永平路489之1號",
-          "phone": "(049)2227215",
-          "website": "https://zcu.ntct.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084682/C/南投縣/中寮鄉/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.72084,
-            "latitude": 23.893651
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 33
             },
             {
-              "year": 108,
-              "students": 32
-            },
-            {
-              "year": 109,
-              "students": 31
-            },
-            {
-              "year": 110,
-              "students": 27
-            },
-            {
-              "year": 111,
-              "students": 28
-            },
-            {
-              "year": 112,
-              "students": 32
-            },
-            {
-              "year": 113,
+              "year": 114,
               "students": 30
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "084684",
-          "code": "084684",
-          "name": "縣立廣福國小",
-          "countyId": "南投縣",
-          "townshipId": "南投縣:中寮鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "南投縣中寮鄉廣福村內城巷3之2號",
-          "phone": "(049)2691464",
-          "website": "https://kfps.ntct.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084684/C/南投縣/中寮鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.759536,
-            "latitude": 23.899427
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 42
-            },
-            {
-              "year": 108,
-              "students": 40
-            },
-            {
-              "year": 109,
-              "students": 35
-            },
-            {
-              "year": 110,
-              "students": 32
-            },
-            {
-              "year": 111,
-              "students": 28
-            },
-            {
-              "year": 112,
-              "students": 32
-            },
-            {
-              "year": 113,
-              "students": 27
             }
           ],
           "status": "正常",
@@ -462,6 +434,64 @@
             {
               "year": 113,
               "students": 26
+            },
+            {
+              "year": 114,
+              "students": 25
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "084684",
+          "code": "084684",
+          "name": "縣立廣福國小",
+          "countyId": "南投縣",
+          "townshipId": "南投縣:中寮鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "南投縣中寮鄉廣福村內城巷3之2號",
+          "phone": "(049)2691464",
+          "website": "https://kfps.ntct.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084684/C/南投縣/中寮鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.759536,
+            "latitude": 23.899427
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 42
+            },
+            {
+              "year": 108,
+              "students": 40
+            },
+            {
+              "year": 109,
+              "students": 35
+            },
+            {
+              "year": 110,
+              "students": 32
+            },
+            {
+              "year": 111,
+              "students": 28
+            },
+            {
+              "year": 112,
+              "students": 32
+            },
+            {
+              "year": 113,
+              "students": 27
+            },
+            {
+              "year": 114,
+              "students": 25
             }
           ],
           "status": "正常",
@@ -512,6 +542,10 @@
             {
               "year": 113,
               "students": 17
+            },
+            {
+              "year": 114,
+              "students": 16
             }
           ],
           "status": "正常",
@@ -570,117 +604,10 @@
             {
               "year": 113,
               "students": 168
-            }
-          ],
-          "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
-        },
-        {
-          "id": "084740",
-          "code": "084740",
-          "name": "縣立中正國小",
-          "countyId": "南投縣",
-          "townshipId": "南投縣:仁愛鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "南投縣仁愛鄉中正村平等巷114號",
-          "phone": "(049)2925114",
-          "website": "https://ccheps.ntct.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084740/C/南投縣/仁愛鄉/縣市立/極偏/無/",
-          "coordinates": {
-            "longitude": 120.991165,
-            "latitude": 23.904685
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 89
             },
             {
-              "year": 108,
-              "students": 88
-            },
-            {
-              "year": 109,
-              "students": 89
-            },
-            {
-              "year": 110,
-              "students": 97
-            },
-            {
-              "year": 111,
-              "students": 93
-            },
-            {
-              "year": 112,
-              "students": 89
-            },
-            {
-              "year": 113,
-              "students": 97
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "084531",
-          "code": "084531",
-          "name": "縣立仁愛國中",
-          "countyId": "南投縣",
-          "townshipId": "南投縣:仁愛鄉",
-          "educationLevel": "國中",
-          "managementType": "公立",
-          "address": "南投縣仁愛鄉大同村信義巷28號",
-          "phone": "(049)2802206",
-          "website": "https://jyjh.ntct.edu.tw/app/home.php",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084531/J/南投縣/仁愛鄉/縣市立/極偏/無/",
-          "coordinates": {
-            "longitude": 121.142085,
-            "latitude": 24.031109
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 163
-            },
-            {
-              "year": 108,
-              "students": 135
-            },
-            {
-              "year": 109,
-              "students": 125
-            },
-            {
-              "year": 110,
-              "students": 117
-            },
-            {
-              "year": 111,
-              "students": 125
-            },
-            {
-              "year": 112,
-              "students": 107
-            },
-            {
-              "year": 113,
-              "students": 95
+              "year": 114,
+              "students": 168
             }
           ],
           "status": "正常",
@@ -731,6 +658,118 @@
             {
               "year": 113,
               "students": 86
+            },
+            {
+              "year": 114,
+              "students": 96
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "084531",
+          "code": "084531",
+          "name": "縣立仁愛國中",
+          "countyId": "南投縣",
+          "townshipId": "南投縣:仁愛鄉",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "南投縣仁愛鄉大同村信義巷28號",
+          "phone": "(049)2802206",
+          "website": "https://jyjh.ntct.edu.tw/app/home.php",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084531/J/南投縣/仁愛鄉/縣市立/極偏/無/",
+          "coordinates": {
+            "longitude": 121.142085,
+            "latitude": 24.031109
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 163
+            },
+            {
+              "year": 108,
+              "students": 135
+            },
+            {
+              "year": 109,
+              "students": 125
+            },
+            {
+              "year": 110,
+              "students": 117
+            },
+            {
+              "year": 111,
+              "students": 125
+            },
+            {
+              "year": 112,
+              "students": 107
+            },
+            {
+              "year": 113,
+              "students": 95
+            },
+            {
+              "year": 114,
+              "students": 95
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "084740",
+          "code": "084740",
+          "name": "縣立中正國小",
+          "countyId": "南投縣",
+          "townshipId": "南投縣:仁愛鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "南投縣仁愛鄉中正村平等巷114號",
+          "phone": "(049)2925114",
+          "website": "https://ccheps.ntct.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084740/C/南投縣/仁愛鄉/縣市立/極偏/無/",
+          "coordinates": {
+            "longitude": 120.991165,
+            "latitude": 23.904685
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 89
+            },
+            {
+              "year": 108,
+              "students": 88
+            },
+            {
+              "year": 109,
+              "students": 89
+            },
+            {
+              "year": 110,
+              "students": 97
+            },
+            {
+              "year": 111,
+              "students": 93
+            },
+            {
+              "year": 112,
+              "students": 89
+            },
+            {
+              "year": 113,
+              "students": 97
+            },
+            {
+              "year": 114,
+              "students": 88
             }
           ],
           "status": "正常",
@@ -781,6 +820,10 @@
             {
               "year": 113,
               "students": 77
+            },
+            {
+              "year": 114,
+              "students": 83
             }
           ],
           "status": "正常",
@@ -831,6 +874,10 @@
             {
               "year": 113,
               "students": 72
+            },
+            {
+              "year": 114,
+              "students": 73
             }
           ],
           "status": "正常",
@@ -881,6 +928,10 @@
             {
               "year": 113,
               "students": 67
+            },
+            {
+              "year": 114,
+              "students": 64
             }
           ],
           "status": "正常",
@@ -931,6 +982,10 @@
             {
               "year": 113,
               "students": 55
+            },
+            {
+              "year": 114,
+              "students": 53
             }
           ],
           "status": "正常",
@@ -981,56 +1036,10 @@
             {
               "year": 113,
               "students": 55
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "084739",
-          "code": "084739",
-          "name": "縣立南豐國小",
-          "countyId": "南投縣",
-          "townshipId": "南投縣:仁愛鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "南投縣仁愛鄉南豐村楓林路3號",
-          "phone": "(049)2920037",
-          "website": "https://nfps.ntct.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084739/C/南投縣/仁愛鄉/縣市立/極偏/無/",
-          "coordinates": {
-            "longitude": 121.078469,
-            "latitude": 24.000156
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 39
             },
             {
-              "year": 108,
-              "students": 38
-            },
-            {
-              "year": 109,
-              "students": 44
-            },
-            {
-              "year": 110,
-              "students": 46
-            },
-            {
-              "year": 111,
-              "students": 46
-            },
-            {
-              "year": 112,
-              "students": 47
-            },
-            {
-              "year": 113,
-              "students": 49
+              "year": 114,
+              "students": 48
             }
           ],
           "status": "正常",
@@ -1081,6 +1090,64 @@
             {
               "year": 113,
               "students": 45
+            },
+            {
+              "year": 114,
+              "students": 44
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "084739",
+          "code": "084739",
+          "name": "縣立南豐國小",
+          "countyId": "南投縣",
+          "townshipId": "南投縣:仁愛鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "南投縣仁愛鄉南豐村楓林路3號",
+          "phone": "(049)2920037",
+          "website": "https://nfps.ntct.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084739/C/南投縣/仁愛鄉/縣市立/極偏/無/",
+          "coordinates": {
+            "longitude": 121.078469,
+            "latitude": 24.000156
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 39
+            },
+            {
+              "year": 108,
+              "students": 38
+            },
+            {
+              "year": 109,
+              "students": 44
+            },
+            {
+              "year": 110,
+              "students": 46
+            },
+            {
+              "year": 111,
+              "students": 46
+            },
+            {
+              "year": 112,
+              "students": 47
+            },
+            {
+              "year": 113,
+              "students": 49
+            },
+            {
+              "year": 114,
+              "students": 44
             }
           ],
           "status": "正常",
@@ -1131,6 +1198,10 @@
             {
               "year": 113,
               "students": 45
+            },
+            {
+              "year": 114,
+              "students": 36
             }
           ],
           "status": "正常",
@@ -1181,6 +1252,10 @@
             {
               "year": 113,
               "students": 38
+            },
+            {
+              "year": 114,
+              "students": 31
             }
           ],
           "status": "正常",
@@ -1231,56 +1306,10 @@
             {
               "year": 113,
               "students": 34
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "084738",
-          "code": "084738",
-          "name": "縣立力行國小",
-          "countyId": "南投縣",
-          "townshipId": "南投縣:仁愛鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "南投縣仁愛鄉力行村新望洋67號",
-          "phone": "(049)2955078",
-          "website": "https://lhes.ntct.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084738/C/南投縣/仁愛鄉/縣市立/極偏/無/",
-          "coordinates": {
-            "longitude": 121.189411,
-            "latitude": 24.148459
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 35
             },
             {
-              "year": 108,
-              "students": 29
-            },
-            {
-              "year": 109,
-              "students": 24
-            },
-            {
-              "year": 110,
-              "students": 23
-            },
-            {
-              "year": 111,
-              "students": 22
-            },
-            {
-              "year": 112,
-              "students": 22
-            },
-            {
-              "year": 113,
-              "students": 22
+              "year": 114,
+              "students": 30
             }
           ],
           "status": "正常",
@@ -1331,6 +1360,64 @@
             {
               "year": 113,
               "students": 22
+            },
+            {
+              "year": 114,
+              "students": 21
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "084738",
+          "code": "084738",
+          "name": "縣立力行國小",
+          "countyId": "南投縣",
+          "townshipId": "南投縣:仁愛鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "南投縣仁愛鄉力行村新望洋67號",
+          "phone": "(049)2955078",
+          "website": "https://lhes.ntct.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084738/C/南投縣/仁愛鄉/縣市立/極偏/無/",
+          "coordinates": {
+            "longitude": 121.189411,
+            "latitude": 24.148459
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 35
+            },
+            {
+              "year": 108,
+              "students": 29
+            },
+            {
+              "year": 109,
+              "students": 24
+            },
+            {
+              "year": 110,
+              "students": 23
+            },
+            {
+              "year": 111,
+              "students": 22
+            },
+            {
+              "year": 112,
+              "students": 22
+            },
+            {
+              "year": 113,
+              "students": 22
+            },
+            {
+              "year": 114,
+              "students": 20
             }
           ],
           "status": "正常",
@@ -1381,6 +1468,10 @@
             {
               "year": 113,
               "students": 17
+            },
+            {
+              "year": 114,
+              "students": 13
             }
           ],
           "status": "正常",
@@ -1388,13 +1479,7 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "仁愛鄉 有 1 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "南投縣:水里鄉",
@@ -1445,22 +1530,15 @@
             {
               "year": 113,
               "students": 586
+            },
+            {
+              "year": 114,
+              "students": 586
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "084706",
@@ -1506,6 +1584,10 @@
             {
               "year": 113,
               "students": 329
+            },
+            {
+              "year": 114,
+              "students": 343
             }
           ],
           "status": "正常",
@@ -1555,6 +1637,10 @@
             },
             {
               "year": 113,
+              "students": 295
+            },
+            {
+              "year": 114,
               "students": 295
             }
           ],
@@ -1606,6 +1692,10 @@
             {
               "year": 113,
               "students": 129
+            },
+            {
+              "year": 114,
+              "students": 113
             }
           ],
           "status": "正常",
@@ -1655,6 +1745,10 @@
             },
             {
               "year": 113,
+              "students": 64
+            },
+            {
+              "year": 114,
               "students": 64
             }
           ],
@@ -1706,106 +1800,10 @@
             {
               "year": 113,
               "students": 41
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "084707",
-          "code": "084707",
-          "name": "縣立郡坑國小",
-          "countyId": "南投縣",
-          "townshipId": "南投縣:水里鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "南投縣水里鄉上安村水信路3段303巷8號",
-          "phone": "(049)2821421",
-          "website": "https://gkps.ntct.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084707/C/南投縣/水里鄉/縣市立/特偏/無/",
-          "coordinates": {
-            "longitude": 120.855582,
-            "latitude": 23.737137
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 32
             },
             {
-              "year": 108,
-              "students": 28
-            },
-            {
-              "year": 109,
-              "students": 32
-            },
-            {
-              "year": 110,
-              "students": 30
-            },
-            {
-              "year": 111,
-              "students": 34
-            },
-            {
-              "year": 112,
-              "students": 35
-            },
-            {
-              "year": 113,
-              "students": 32
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "084708",
-          "code": "084708",
-          "name": "縣立民和國小",
-          "countyId": "南投縣",
-          "townshipId": "南投縣:水里鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "南投縣水里鄉民和村文明路70號",
-          "phone": "(049)2741140",
-          "website": "https://mhps.ntct.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084708/C/南投縣/水里鄉/縣市立/特偏/無/",
-          "coordinates": {
-            "longitude": 120.932783,
-            "latitude": 23.795321
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 30
-            },
-            {
-              "year": 108,
-              "students": 32
-            },
-            {
-              "year": 109,
-              "students": 33
-            },
-            {
-              "year": 110,
-              "students": 34
-            },
-            {
-              "year": 111,
-              "students": 34
-            },
-            {
-              "year": 112,
-              "students": 33
-            },
-            {
-              "year": 113,
-              "students": 32
+              "year": 114,
+              "students": 47
             }
           ],
           "status": "正常",
@@ -1856,6 +1854,118 @@
             {
               "year": 113,
               "students": 30
+            },
+            {
+              "year": 114,
+              "students": 30
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "084708",
+          "code": "084708",
+          "name": "縣立民和國小",
+          "countyId": "南投縣",
+          "townshipId": "南投縣:水里鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "南投縣水里鄉民和村文明路70號",
+          "phone": "(049)2741140",
+          "website": "https://mhps.ntct.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084708/C/南投縣/水里鄉/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 120.932783,
+            "latitude": 23.795321
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 30
+            },
+            {
+              "year": 108,
+              "students": 32
+            },
+            {
+              "year": 109,
+              "students": 33
+            },
+            {
+              "year": 110,
+              "students": 34
+            },
+            {
+              "year": 111,
+              "students": 34
+            },
+            {
+              "year": 112,
+              "students": 33
+            },
+            {
+              "year": 113,
+              "students": 32
+            },
+            {
+              "year": 114,
+              "students": 29
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "084707",
+          "code": "084707",
+          "name": "縣立郡坑國小",
+          "countyId": "南投縣",
+          "townshipId": "南投縣:水里鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "南投縣水里鄉上安村水信路3段303巷8號",
+          "phone": "(049)2821421",
+          "website": "https://gkps.ntct.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084707/C/南投縣/水里鄉/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 120.855582,
+            "latitude": 23.737137
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 32
+            },
+            {
+              "year": 108,
+              "students": 28
+            },
+            {
+              "year": 109,
+              "students": 32
+            },
+            {
+              "year": 110,
+              "students": 30
+            },
+            {
+              "year": 111,
+              "students": 34
+            },
+            {
+              "year": 112,
+              "students": 35
+            },
+            {
+              "year": 113,
+              "students": 32
+            },
+            {
+              "year": 114,
+              "students": 28
             }
           ],
           "status": "正常",
@@ -1863,13 +1973,7 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "水里鄉 有 1 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "南投縣:名間鄉",
@@ -1920,6 +2024,10 @@
             {
               "year": 113,
               "students": 460
+            },
+            {
+              "year": 114,
+              "students": 452
             }
           ],
           "status": "正常",
@@ -1970,6 +2078,10 @@
             {
               "year": 113,
               "students": 418
+            },
+            {
+              "year": 114,
+              "students": 402
             }
           ],
           "status": "正常",
@@ -2020,56 +2132,10 @@
             {
               "year": 113,
               "students": 237
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "084664",
-          "code": "084664",
-          "name": "縣立弓鞋國小",
-          "countyId": "南投縣",
-          "townshipId": "南投縣:名間鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "南投縣名間鄉名松路二段580號",
-          "phone": "(049)2581322",
-          "website": "https://khps.ntct.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084664/C/南投縣/名間鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.630953,
-            "latitude": 23.842084
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 261
             },
             {
-              "year": 108,
-              "students": 252
-            },
-            {
-              "year": 109,
-              "students": 234
-            },
-            {
-              "year": 110,
-              "students": 242
-            },
-            {
-              "year": 111,
-              "students": 232
-            },
-            {
-              "year": 112,
-              "students": 224
-            },
-            {
-              "year": 113,
-              "students": 221
+              "year": 114,
+              "students": 237
             }
           ],
           "status": "正常",
@@ -2120,6 +2186,64 @@
             {
               "year": 113,
               "students": 216
+            },
+            {
+              "year": 114,
+              "students": 216
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "084664",
+          "code": "084664",
+          "name": "縣立弓鞋國小",
+          "countyId": "南投縣",
+          "townshipId": "南投縣:名間鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "南投縣名間鄉名松路二段580號",
+          "phone": "(049)2581322",
+          "website": "https://khps.ntct.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084664/C/南投縣/名間鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.630953,
+            "latitude": 23.842084
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 261
+            },
+            {
+              "year": 108,
+              "students": 252
+            },
+            {
+              "year": 109,
+              "students": 234
+            },
+            {
+              "year": 110,
+              "students": 242
+            },
+            {
+              "year": 111,
+              "students": 232
+            },
+            {
+              "year": 112,
+              "students": 224
+            },
+            {
+              "year": 113,
+              "students": 221
+            },
+            {
+              "year": 114,
+              "students": 214
             }
           ],
           "status": "正常",
@@ -2170,6 +2294,10 @@
             {
               "year": 113,
               "students": 180
+            },
+            {
+              "year": 114,
+              "students": 176
             }
           ],
           "status": "正常",
@@ -2220,6 +2348,10 @@
             {
               "year": 113,
               "students": 83
+            },
+            {
+              "year": 114,
+              "students": 87
             }
           ],
           "status": "正常",
@@ -2270,56 +2402,10 @@
             {
               "year": 113,
               "students": 74
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "084667",
-          "code": "084667",
-          "name": "縣立新民國小",
-          "countyId": "南投縣",
-          "townshipId": "南投縣:名間鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "南投縣名間鄉新民村新民巷43號",
-          "phone": "(049)2732514",
-          "website": "https://smmups.ntct.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084667/C/南投縣/名間鄉/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.686511,
-            "latitude": 23.820665
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 35
             },
             {
-              "year": 108,
-              "students": 31
-            },
-            {
-              "year": 109,
-              "students": 29
-            },
-            {
-              "year": 110,
-              "students": 36
-            },
-            {
-              "year": 111,
-              "students": 41
-            },
-            {
-              "year": 112,
-              "students": 40
-            },
-            {
-              "year": 113,
-              "students": 50
+              "year": 114,
+              "students": 71
             }
           ],
           "status": "正常",
@@ -2370,6 +2456,64 @@
             {
               "year": 113,
               "students": 45
+            },
+            {
+              "year": 114,
+              "students": 51
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "084667",
+          "code": "084667",
+          "name": "縣立新民國小",
+          "countyId": "南投縣",
+          "townshipId": "南投縣:名間鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "南投縣名間鄉新民村新民巷43號",
+          "phone": "(049)2732514",
+          "website": "https://smmups.ntct.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084667/C/南投縣/名間鄉/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.686511,
+            "latitude": 23.820665
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 35
+            },
+            {
+              "year": 108,
+              "students": 31
+            },
+            {
+              "year": 109,
+              "students": 29
+            },
+            {
+              "year": 110,
+              "students": 36
+            },
+            {
+              "year": 111,
+              "students": 41
+            },
+            {
+              "year": 112,
+              "students": 40
+            },
+            {
+              "year": 113,
+              "students": 50
+            },
+            {
+              "year": 114,
+              "students": 50
             }
           ],
           "status": "正常",
@@ -2419,6 +2563,10 @@
             },
             {
               "year": 113,
+              "students": 31
+            },
+            {
+              "year": 114,
               "students": 31
             }
           ],
@@ -2478,22 +2626,15 @@
             {
               "year": 113,
               "students": 959
+            },
+            {
+              "year": 114,
+              "students": 959
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "084642",
@@ -2539,6 +2680,10 @@
             {
               "year": 113,
               "students": 701
+            },
+            {
+              "year": 114,
+              "students": 669
             }
           ],
           "status": "正常",
@@ -2588,6 +2733,10 @@
             },
             {
               "year": 113,
+              "students": 548
+            },
+            {
+              "year": 114,
               "students": 548
             }
           ],
@@ -2639,6 +2788,10 @@
             {
               "year": 113,
               "students": 496
+            },
+            {
+              "year": 114,
+              "students": 496
             }
           ],
           "status": "正常",
@@ -2689,6 +2842,10 @@
             {
               "year": 113,
               "students": 302
+            },
+            {
+              "year": 114,
+              "students": 294
             }
           ],
           "status": "正常",
@@ -2739,6 +2896,10 @@
             {
               "year": 113,
               "students": 291
+            },
+            {
+              "year": 114,
+              "students": 288
             }
           ],
           "status": "正常",
@@ -2789,6 +2950,10 @@
             {
               "year": 113,
               "students": 270
+            },
+            {
+              "year": 114,
+              "students": 250
             }
           ],
           "status": "正常",
@@ -2839,6 +3004,10 @@
             {
               "year": 113,
               "students": 129
+            },
+            {
+              "year": 114,
+              "students": 116
             }
           ],
           "status": "正常",
@@ -2889,6 +3058,10 @@
             {
               "year": 113,
               "students": 77
+            },
+            {
+              "year": 114,
+              "students": 75
             }
           ],
           "status": "正常",
@@ -2939,6 +3112,10 @@
             {
               "year": 113,
               "students": 64
+            },
+            {
+              "year": 114,
+              "students": 68
             }
           ],
           "status": "正常",
@@ -2989,6 +3166,10 @@
             {
               "year": 113,
               "students": 54
+            },
+            {
+              "year": 114,
+              "students": 51
             }
           ],
           "status": "正常",
@@ -3038,6 +3219,10 @@
             },
             {
               "year": 113,
+              "students": 48
+            },
+            {
+              "year": 114,
               "students": 48
             }
           ],
@@ -3089,6 +3274,10 @@
             {
               "year": 113,
               "students": 39
+            },
+            {
+              "year": 114,
+              "students": 40
             }
           ],
           "status": "正常",
@@ -3139,56 +3328,10 @@
             {
               "year": 113,
               "students": 26
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "084646",
-          "code": "084646",
-          "name": "縣立大鞍國小",
-          "countyId": "南投縣",
-          "townshipId": "南投縣:竹山鎮",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "南投縣竹山鎮大鞍里竹寮巷21號",
-          "phone": "(049)2841009",
-          "website": "https://daps.ntct.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084646/C/南投縣/竹山鎮/縣市立/特偏/無/",
-          "coordinates": {
-            "longitude": 120.716913,
-            "latitude": 23.698817
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 42
             },
             {
-              "year": 108,
-              "students": 37
-            },
-            {
-              "year": 109,
-              "students": 32
-            },
-            {
-              "year": 110,
-              "students": 25
-            },
-            {
-              "year": 111,
-              "students": 30
-            },
-            {
-              "year": 112,
-              "students": 26
-            },
-            {
-              "year": 113,
-              "students": 18
+              "year": 114,
+              "students": 28
             }
           ],
           "status": "正常",
@@ -3239,6 +3382,10 @@
             {
               "year": 113,
               "students": 18
+            },
+            {
+              "year": 114,
+              "students": 23
             }
           ],
           "status": "正常",
@@ -3288,6 +3435,64 @@
             },
             {
               "year": 113,
+              "students": 16
+            },
+            {
+              "year": 114,
+              "students": 21
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "084646",
+          "code": "084646",
+          "name": "縣立大鞍國小",
+          "countyId": "南投縣",
+          "townshipId": "南投縣:竹山鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "南投縣竹山鎮大鞍里竹寮巷21號",
+          "phone": "(049)2841009",
+          "website": "https://daps.ntct.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084646/C/南投縣/竹山鎮/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 120.716913,
+            "latitude": 23.698817
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 42
+            },
+            {
+              "year": 108,
+              "students": 37
+            },
+            {
+              "year": 109,
+              "students": 32
+            },
+            {
+              "year": 110,
+              "students": 25
+            },
+            {
+              "year": 111,
+              "students": 30
+            },
+            {
+              "year": 112,
+              "students": 26
+            },
+            {
+              "year": 113,
+              "students": 18
+            },
+            {
+              "year": 114,
               "students": 16
             }
           ],
@@ -3339,6 +3544,10 @@
             {
               "year": 113,
               "students": 12
+            },
+            {
+              "year": 114,
+              "students": 12
             }
           ],
           "status": "正常",
@@ -3346,13 +3555,7 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "竹山鎮 有 1 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "南投縣:信義鄉",
@@ -3403,6 +3606,10 @@
             {
               "year": 113,
               "students": 123
+            },
+            {
+              "year": 114,
+              "students": 121
             }
           ],
           "status": "正常",
@@ -3452,6 +3659,10 @@
             },
             {
               "year": 113,
+              "students": 86
+            },
+            {
+              "year": 114,
               "students": 86
             }
           ],
@@ -3503,56 +3714,10 @@
             {
               "year": 113,
               "students": 82
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "084721",
-          "code": "084721",
-          "name": "縣立地利國小",
-          "countyId": "南投縣",
-          "townshipId": "南投縣:信義鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "南投縣信義鄉地利村開信巷17號",
-          "phone": "(049)2741254",
-          "website": "https://dlps.ntct.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084721/C/南投縣/信義鄉/縣市立/特偏/無/",
-          "coordinates": {
-            "longitude": 120.943352,
-            "latitude": 23.794205
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 59
             },
             {
-              "year": 108,
-              "students": 59
-            },
-            {
-              "year": 109,
-              "students": 57
-            },
-            {
-              "year": 110,
-              "students": 65
-            },
-            {
-              "year": 111,
-              "students": 68
-            },
-            {
-              "year": 112,
-              "students": 72
-            },
-            {
-              "year": 113,
-              "students": 78
+              "year": 114,
+              "students": 82
             }
           ],
           "status": "正常",
@@ -3603,6 +3768,10 @@
             {
               "year": 113,
               "students": 76
+            },
+            {
+              "year": 114,
+              "students": 72
             }
           ],
           "status": "正常",
@@ -3610,49 +3779,53 @@
           "dataNotes": []
         },
         {
-          "id": "084720",
-          "code": "084720",
-          "name": "縣立人和國小",
+          "id": "084721",
+          "code": "084721",
+          "name": "縣立地利國小",
           "countyId": "南投縣",
           "townshipId": "南投縣:信義鄉",
           "educationLevel": "國小",
           "managementType": "公立",
-          "address": "南投縣信義鄉人和村民生巷3號",
-          "phone": "(049)2773259",
-          "website": "https://zhes.ntct.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084720/C/南投縣/信義鄉/縣市立/特偏/無/",
+          "address": "南投縣信義鄉地利村開信巷17號",
+          "phone": "(049)2741254",
+          "website": "https://dlps.ntct.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084721/C/南投縣/信義鄉/縣市立/特偏/無/",
           "coordinates": {
-            "longitude": 120.897069,
-            "latitude": 23.779509
+            "longitude": 120.943352,
+            "latitude": 23.794205
           },
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 74
+              "students": 59
             },
             {
               "year": 108,
-              "students": 83
+              "students": 59
             },
             {
               "year": 109,
-              "students": 82
+              "students": 57
             },
             {
               "year": 110,
-              "students": 82
+              "students": 65
             },
             {
               "year": 111,
-              "students": 83
+              "students": 68
             },
             {
               "year": 112,
-              "students": 73
+              "students": 72
             },
             {
               "year": 113,
-              "students": 69
+              "students": 78
+            },
+            {
+              "year": 114,
+              "students": 71
             }
           ],
           "status": "正常",
@@ -3703,6 +3876,64 @@
             {
               "year": 113,
               "students": 65
+            },
+            {
+              "year": 114,
+              "students": 65
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "084720",
+          "code": "084720",
+          "name": "縣立人和國小",
+          "countyId": "南投縣",
+          "townshipId": "南投縣:信義鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "南投縣信義鄉人和村民生巷3號",
+          "phone": "(049)2773259",
+          "website": "https://zhes.ntct.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084720/C/南投縣/信義鄉/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 120.897069,
+            "latitude": 23.779509
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 74
+            },
+            {
+              "year": 108,
+              "students": 83
+            },
+            {
+              "year": 109,
+              "students": 82
+            },
+            {
+              "year": 110,
+              "students": 82
+            },
+            {
+              "year": 111,
+              "students": 83
+            },
+            {
+              "year": 112,
+              "students": 73
+            },
+            {
+              "year": 113,
+              "students": 69
+            },
+            {
+              "year": 114,
+              "students": 60
             }
           ],
           "status": "正常",
@@ -3753,56 +3984,10 @@
             {
               "year": 113,
               "students": 60
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "084728",
-          "code": "084728",
-          "name": "縣立隆華國小",
-          "countyId": "南投縣",
-          "townshipId": "南投縣:信義鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "南投縣信義鄉神木村民和巷65-6號",
-          "phone": "(049)2701478",
-          "website": "https://lwps.ntct.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084728/C/南投縣/信義鄉/縣市立/極偏/無/",
-          "coordinates": {
-            "longitude": 120.867905,
-            "latitude": 23.563263
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 29
             },
             {
-              "year": 108,
-              "students": 38
-            },
-            {
-              "year": 109,
-              "students": 41
-            },
-            {
-              "year": 110,
-              "students": 45
-            },
-            {
-              "year": 111,
-              "students": 50
-            },
-            {
-              "year": 112,
-              "students": 52
-            },
-            {
-              "year": 113,
-              "students": 51
+              "year": 114,
+              "students": 55
             }
           ],
           "status": "正常",
@@ -3853,6 +4038,10 @@
             {
               "year": 113,
               "students": 48
+            },
+            {
+              "year": 114,
+              "students": 48
             }
           ],
           "status": "正常",
@@ -3860,49 +4049,53 @@
           "dataNotes": []
         },
         {
-          "id": "084716",
-          "code": "084716",
-          "name": "縣立信義國小",
+          "id": "084728",
+          "code": "084728",
+          "name": "縣立隆華國小",
           "countyId": "南投縣",
           "townshipId": "南投縣:信義鄉",
           "educationLevel": "國小",
           "managementType": "公立",
-          "address": "南投縣信義鄉明德村玉山路24號",
-          "phone": "(049)2791263",
-          "website": "https://hips.ntct.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084716/C/南投縣/信義鄉/縣市立/特偏/無/",
+          "address": "南投縣信義鄉神木村民和巷65-6號",
+          "phone": "(049)2701478",
+          "website": "https://lwps.ntct.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084728/C/南投縣/信義鄉/縣市立/極偏/無/",
           "coordinates": {
-            "longitude": 120.854714,
-            "latitude": 23.697884
+            "longitude": 120.867905,
+            "latitude": 23.563263
           },
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 54
+              "students": 29
             },
             {
               "year": 108,
-              "students": 47
+              "students": 38
             },
             {
               "year": 109,
-              "students": 48
+              "students": 41
             },
             {
               "year": 110,
-              "students": 46
+              "students": 45
             },
             {
               "year": 111,
-              "students": 44
+              "students": 50
             },
             {
               "year": 112,
-              "students": 39
+              "students": 52
             },
             {
               "year": 113,
-              "students": 42
+              "students": 51
+            },
+            {
+              "year": 114,
+              "students": 43
             }
           ],
           "status": "正常",
@@ -3953,6 +4146,10 @@
             {
               "year": 113,
               "students": 41
+            },
+            {
+              "year": 114,
+              "students": 40
             }
           ],
           "status": "正常",
@@ -4003,6 +4200,10 @@
             {
               "year": 113,
               "students": 38
+            },
+            {
+              "year": 114,
+              "students": 39
             }
           ],
           "status": "正常",
@@ -4053,6 +4254,64 @@
             {
               "year": 113,
               "students": 37
+            },
+            {
+              "year": 114,
+              "students": 38
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "084716",
+          "code": "084716",
+          "name": "縣立信義國小",
+          "countyId": "南投縣",
+          "townshipId": "南投縣:信義鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "南投縣信義鄉明德村玉山路24號",
+          "phone": "(049)2791263",
+          "website": "https://hips.ntct.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084716/C/南投縣/信義鄉/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 120.854714,
+            "latitude": 23.697884
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 54
+            },
+            {
+              "year": 108,
+              "students": 47
+            },
+            {
+              "year": 109,
+              "students": 48
+            },
+            {
+              "year": 110,
+              "students": 46
+            },
+            {
+              "year": 111,
+              "students": 44
+            },
+            {
+              "year": 112,
+              "students": 39
+            },
+            {
+              "year": 113,
+              "students": 42
+            },
+            {
+              "year": 114,
+              "students": 36
             }
           ],
           "status": "正常",
@@ -4103,6 +4362,10 @@
             {
               "year": 113,
               "students": 31
+            },
+            {
+              "year": 114,
+              "students": 28
             }
           ],
           "status": "正常",
@@ -4152,6 +4415,10 @@
             },
             {
               "year": 113,
+              "students": 21
+            },
+            {
+              "year": 114,
               "students": 21
             }
           ],
@@ -4211,6 +4478,10 @@
             {
               "year": 113,
               "students": 1445
+            },
+            {
+              "year": 114,
+              "students": 1445
             }
           ],
           "status": "正常",
@@ -4261,22 +4532,15 @@
             {
               "year": 113,
               "students": 1321
+            },
+            {
+              "year": 114,
+              "students": 1321
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "080305",
@@ -4322,67 +4586,10 @@
             {
               "year": 113,
               "students": 1178
-            }
-          ],
-          "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
-        },
-        {
-          "id": "084601",
-          "code": "084601",
-          "name": "縣立南投國小",
-          "countyId": "南投縣",
-          "townshipId": "南投縣:南投市",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "南投縣南投市彰南路一段1059號",
-          "phone": "(049)2222038",
-          "website": "https://ntes.ntct.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084601/C/南投縣/南投市/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.684278,
-            "latitude": 23.9064
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1123
             },
             {
-              "year": 108,
-              "students": 1108
-            },
-            {
-              "year": 109,
-              "students": 1051
-            },
-            {
-              "year": 110,
-              "students": 1074
-            },
-            {
-              "year": 111,
-              "students": 1000
-            },
-            {
-              "year": 112,
-              "students": 971
-            },
-            {
-              "year": 113,
-              "students": 946
+              "year": 114,
+              "students": 1178
             }
           ],
           "status": "正常",
@@ -4432,6 +4639,64 @@
             },
             {
               "year": 113,
+              "students": 894
+            },
+            {
+              "year": 114,
+              "students": 894
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "084601",
+          "code": "084601",
+          "name": "縣立南投國小",
+          "countyId": "南投縣",
+          "townshipId": "南投縣:南投市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "南投縣南投市彰南路一段1059號",
+          "phone": "(049)2222038",
+          "website": "https://ntes.ntct.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084601/C/南投縣/南投市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.684278,
+            "latitude": 23.9064
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1123
+            },
+            {
+              "year": 108,
+              "students": 1108
+            },
+            {
+              "year": 109,
+              "students": 1051
+            },
+            {
+              "year": 110,
+              "students": 1074
+            },
+            {
+              "year": 111,
+              "students": 1000
+            },
+            {
+              "year": 112,
+              "students": 971
+            },
+            {
+              "year": 113,
+              "students": 946
+            },
+            {
+              "year": 114,
               "students": 894
             }
           ],
@@ -4483,6 +4748,10 @@
             {
               "year": 113,
               "students": 886
+            },
+            {
+              "year": 114,
+              "students": 872
             }
           ],
           "status": "正常",
@@ -4533,56 +4802,10 @@
             {
               "year": 113,
               "students": 805
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "084750",
-          "code": "084750",
-          "name": "縣立康壽國小",
-          "countyId": "南投縣",
-          "townshipId": "南投縣:南投市",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "南投縣南投市南陽路269號",
-          "phone": "(049)2243457",
-          "website": "https://kses.ntct.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084750/C/南投縣/南投市/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.685239,
-            "latitude": 23.913305
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 512
             },
             {
-              "year": 108,
-              "students": 565
-            },
-            {
-              "year": 109,
-              "students": 580
-            },
-            {
-              "year": 110,
-              "students": 598
-            },
-            {
-              "year": 111,
-              "students": 612
-            },
-            {
-              "year": 112,
-              "students": 595
-            },
-            {
-              "year": 113,
-              "students": 563
+              "year": 114,
+              "students": 764
             }
           ],
           "status": "正常",
@@ -4633,6 +4856,64 @@
             {
               "year": 113,
               "students": 561
+            },
+            {
+              "year": 114,
+              "students": 561
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "084750",
+          "code": "084750",
+          "name": "縣立康壽國小",
+          "countyId": "南投縣",
+          "townshipId": "南投縣:南投市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "南投縣南投市南陽路269號",
+          "phone": "(049)2243457",
+          "website": "https://kses.ntct.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084750/C/南投縣/南投市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.685239,
+            "latitude": 23.913305
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 512
+            },
+            {
+              "year": 108,
+              "students": 565
+            },
+            {
+              "year": 109,
+              "students": 580
+            },
+            {
+              "year": 110,
+              "students": 598
+            },
+            {
+              "year": 111,
+              "students": 612
+            },
+            {
+              "year": 112,
+              "students": 595
+            },
+            {
+              "year": 113,
+              "students": 563
+            },
+            {
+              "year": 114,
+              "students": 516
             }
           ],
           "status": "正常",
@@ -4683,83 +4964,15 @@
             {
               "year": 113,
               "students": 421
+            },
+            {
+              "year": 114,
+              "students": 421
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
-        },
-        {
-          "id": "081311",
-          "code": "081311",
-          "name": "私立五育高中",
-          "countyId": "南投縣",
-          "townshipId": "南投縣:南投市",
-          "educationLevel": "高中職",
-          "managementType": "私立",
-          "address": "南投縣南投市樂利路200號",
-          "phone": "(049)2246346",
-          "website": "http://www.wu-yu.ntct.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/081311/H/南投縣/南投市/私立/否/無/",
-          "coordinates": {
-            "longitude": 120.671651,
-            "latitude": 23.892863
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 0
-            },
-            {
-              "year": 108,
-              "students": 434
-            },
-            {
-              "year": 109,
-              "students": 451
-            },
-            {
-              "year": 110,
-              "students": 404
-            },
-            {
-              "year": 111,
-              "students": 383
-            },
-            {
-              "year": 112,
-              "students": 366
-            },
-            {
-              "year": 113,
-              "students": 364
-            }
-          ],
-          "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "084748",
@@ -4805,6 +5018,10 @@
             {
               "year": 113,
               "students": 346
+            },
+            {
+              "year": 114,
+              "students": 367
             }
           ],
           "status": "正常",
@@ -4812,49 +5029,53 @@
           "dataNotes": []
         },
         {
-          "id": "084611",
-          "code": "084611",
-          "name": "縣立漳和國小",
+          "id": "081311",
+          "code": "081311",
+          "name": "私立五育高中",
           "countyId": "南投縣",
           "townshipId": "南投縣:南投市",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "南投縣南投市文林路16號",
-          "phone": "(049)2224087",
-          "website": "https://ntchps.ntct.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084611/C/南投縣/南投市/縣市立/否/無/",
+          "educationLevel": "高中職",
+          "managementType": "私立",
+          "address": "南投縣南投市樂利路200號",
+          "phone": "(049)2246346",
+          "website": "http://www.wu-yu.ntct.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoH/081311/H/南投縣/南投市/私立/否/無/",
           "coordinates": {
-            "longitude": 120.67719,
-            "latitude": 23.913231
+            "longitude": 120.671651,
+            "latitude": 23.892863
           },
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 278
+              "students": 0
             },
             {
               "year": 108,
-              "students": 275
+              "students": 434
             },
             {
               "year": 109,
-              "students": 284
+              "students": 451
             },
             {
               "year": 110,
-              "students": 290
+              "students": 404
             },
             {
               "year": 111,
-              "students": 306
+              "students": 383
             },
             {
               "year": 112,
-              "students": 350
+              "students": 366
             },
             {
               "year": 113,
-              "students": 339
+              "students": 364
+            },
+            {
+              "year": 114,
+              "students": 364
             }
           ],
           "status": "正常",
@@ -4905,6 +5126,64 @@
             {
               "year": 113,
               "students": 331
+            },
+            {
+              "year": 114,
+              "students": 347
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "084611",
+          "code": "084611",
+          "name": "縣立漳和國小",
+          "countyId": "南投縣",
+          "townshipId": "南投縣:南投市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "南投縣南投市文林路16號",
+          "phone": "(049)2224087",
+          "website": "https://ntchps.ntct.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084611/C/南投縣/南投市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.67719,
+            "latitude": 23.913231
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 278
+            },
+            {
+              "year": 108,
+              "students": 275
+            },
+            {
+              "year": 109,
+              "students": 284
+            },
+            {
+              "year": 110,
+              "students": 290
+            },
+            {
+              "year": 111,
+              "students": 306
+            },
+            {
+              "year": 112,
+              "students": 350
+            },
+            {
+              "year": 113,
+              "students": 339
+            },
+            {
+              "year": 114,
+              "students": 324
             }
           ],
           "status": "正常",
@@ -4954,6 +5233,10 @@
             },
             {
               "year": 113,
+              "students": 320
+            },
+            {
+              "year": 114,
               "students": 320
             }
           ],
@@ -5005,6 +5288,10 @@
             {
               "year": 113,
               "students": 315
+            },
+            {
+              "year": 114,
+              "students": 303
             }
           ],
           "status": "正常",
@@ -5055,6 +5342,10 @@
             {
               "year": 113,
               "students": 183
+            },
+            {
+              "year": 114,
+              "students": 165
             }
           ],
           "status": "正常",
@@ -5105,6 +5396,10 @@
             {
               "year": 113,
               "students": 138
+            },
+            {
+              "year": 114,
+              "students": 136
             }
           ],
           "status": "正常",
@@ -5155,6 +5450,10 @@
             {
               "year": 113,
               "students": 109
+            },
+            {
+              "year": 114,
+              "students": 100
             }
           ],
           "status": "正常",
@@ -5205,56 +5504,10 @@
             {
               "year": 113,
               "students": 90
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "084613",
-          "code": "084613",
-          "name": "縣立光復國小",
-          "countyId": "南投縣",
-          "townshipId": "南投縣:南投市",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "南投縣南投市光明里光明一路67號",
-          "phone": "(049)2332587",
-          "website": "https://kfups.ntct.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084613/C/南投縣/南投市/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.702431,
-            "latitude": 23.941814
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 92
             },
             {
-              "year": 108,
-              "students": 86
-            },
-            {
-              "year": 109,
-              "students": 69
-            },
-            {
-              "year": 110,
-              "students": 67
-            },
-            {
-              "year": 111,
-              "students": 73
-            },
-            {
-              "year": 112,
-              "students": 73
-            },
-            {
-              "year": 113,
-              "students": 79
+              "year": 114,
+              "students": 97
             }
           ],
           "status": "正常",
@@ -5305,6 +5558,118 @@
             {
               "year": 113,
               "students": 74
+            },
+            {
+              "year": 114,
+              "students": 69
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "084613",
+          "code": "084613",
+          "name": "縣立光復國小",
+          "countyId": "南投縣",
+          "townshipId": "南投縣:南投市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "南投縣南投市光明里光明一路67號",
+          "phone": "(049)2332587",
+          "website": "https://kfups.ntct.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084613/C/南投縣/南投市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.702431,
+            "latitude": 23.941814
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 92
+            },
+            {
+              "year": 108,
+              "students": 86
+            },
+            {
+              "year": 109,
+              "students": 69
+            },
+            {
+              "year": 110,
+              "students": 67
+            },
+            {
+              "year": 111,
+              "students": 73
+            },
+            {
+              "year": 112,
+              "students": 73
+            },
+            {
+              "year": 113,
+              "students": 79
+            },
+            {
+              "year": 114,
+              "students": 67
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "084605",
+          "code": "084605",
+          "name": "縣立西嶺國小",
+          "countyId": "南投縣",
+          "townshipId": "南投縣:南投市",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "南投縣南投市鳳鳴里八卦路894號",
+          "phone": "(049)2291354",
+          "website": "https://selnps.ntct.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084605/C/南投縣/南投市/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.638471,
+            "latitude": 23.925141
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 54
+            },
+            {
+              "year": 108,
+              "students": 47
+            },
+            {
+              "year": 109,
+              "students": 41
+            },
+            {
+              "year": 110,
+              "students": 35
+            },
+            {
+              "year": 111,
+              "students": 37
+            },
+            {
+              "year": 112,
+              "students": 29
+            },
+            {
+              "year": 113,
+              "students": 36
+            },
+            {
+              "year": 114,
+              "students": 45
             }
           ],
           "status": "正常",
@@ -5355,55 +5720,9 @@
             {
               "year": 113,
               "students": 38
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "084605",
-          "code": "084605",
-          "name": "縣立西嶺國小",
-          "countyId": "南投縣",
-          "townshipId": "南投縣:南投市",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "南投縣南投市鳳鳴里八卦路894號",
-          "phone": "(049)2291354",
-          "website": "https://selnps.ntct.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084605/C/南投縣/南投市/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.638471,
-            "latitude": 23.925141
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 54
             },
             {
-              "year": 108,
-              "students": 47
-            },
-            {
-              "year": 109,
-              "students": 41
-            },
-            {
-              "year": 110,
-              "students": 35
-            },
-            {
-              "year": 111,
-              "students": 37
-            },
-            {
-              "year": 112,
-              "students": 29
-            },
-            {
-              "year": 113,
+              "year": 114,
               "students": 36
             }
           ],
@@ -5455,6 +5774,10 @@
             {
               "year": 113,
               "students": 24
+            },
+            {
+              "year": 114,
+              "students": 24
             }
           ],
           "status": "正常",
@@ -5462,13 +5785,7 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "南投市 有 4 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "南投縣:埔里鎮",
@@ -5518,6 +5835,10 @@
             },
             {
               "year": 113,
+              "students": 6635
+            },
+            {
+              "year": 114,
               "students": 6635
             }
           ],
@@ -5569,56 +5890,10 @@
             {
               "year": 113,
               "students": 1248
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "084615",
-          "code": "084615",
-          "name": "縣立埔里國小",
-          "countyId": "南投縣",
-          "townshipId": "南投縣:埔里鎮",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "南投縣埔里鎮西門里西康路127號",
-          "phone": "(049)2982034",
-          "website": "https://ples.ntct.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084615/C/南投縣/埔里鎮/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.966743,
-            "latitude": 23.969004
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1133
             },
             {
-              "year": 108,
-              "students": 1118
-            },
-            {
-              "year": 109,
-              "students": 1048
-            },
-            {
-              "year": 110,
-              "students": 1034
-            },
-            {
-              "year": 111,
-              "students": 1101
-            },
-            {
-              "year": 112,
-              "students": 1135
-            },
-            {
-              "year": 113,
-              "students": 1098
+              "year": 114,
+              "students": 1274
             }
           ],
           "status": "正常",
@@ -5669,6 +5944,64 @@
             {
               "year": 113,
               "students": 1067
+            },
+            {
+              "year": 114,
+              "students": 1067
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "084615",
+          "code": "084615",
+          "name": "縣立埔里國小",
+          "countyId": "南投縣",
+          "townshipId": "南投縣:埔里鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "南投縣埔里鎮西門里西康路127號",
+          "phone": "(049)2982034",
+          "website": "https://ples.ntct.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084615/C/南投縣/埔里鎮/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.966743,
+            "latitude": 23.969004
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1133
+            },
+            {
+              "year": 108,
+              "students": 1118
+            },
+            {
+              "year": 109,
+              "students": 1048
+            },
+            {
+              "year": 110,
+              "students": 1034
+            },
+            {
+              "year": 111,
+              "students": 1101
+            },
+            {
+              "year": 112,
+              "students": 1135
+            },
+            {
+              "year": 113,
+              "students": 1098
+            },
+            {
+              "year": 114,
+              "students": 1044
             }
           ],
           "status": "正常",
@@ -5718,6 +6051,10 @@
             },
             {
               "year": 113,
+              "students": 913
+            },
+            {
+              "year": 114,
               "students": 913
             }
           ],
@@ -5769,6 +6106,10 @@
             {
               "year": 113,
               "students": 810
+            },
+            {
+              "year": 114,
+              "students": 810
             }
           ],
           "status": "正常",
@@ -5819,22 +6160,15 @@
             {
               "year": 113,
               "students": 778
+            },
+            {
+              "year": 114,
+              "students": 778
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "081601",
@@ -5880,6 +6214,10 @@
             {
               "year": 113,
               "students": 675
+            },
+            {
+              "year": 114,
+              "students": 605
             }
           ],
           "status": "正常",
@@ -5930,67 +6268,10 @@
             {
               "year": 113,
               "students": 560
-            }
-          ],
-          "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
-        },
-        {
-          "id": "084619",
-          "code": "084619",
-          "name": "縣立愛蘭國小",
-          "countyId": "南投縣",
-          "townshipId": "南投縣:埔里鎮",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "南投縣埔里鎮愛蘭里鐵山路7號",
-          "phone": "(049)2912514",
-          "website": "https://alps.ntct.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084619/C/南投縣/埔里鎮/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.943347,
-            "latitude": 23.973228
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 420
             },
             {
-              "year": 108,
-              "students": 416
-            },
-            {
-              "year": 109,
-              "students": 397
-            },
-            {
-              "year": 110,
-              "students": 403
-            },
-            {
-              "year": 111,
-              "students": 400
-            },
-            {
-              "year": 112,
-              "students": 389
-            },
-            {
-              "year": 113,
-              "students": 373
+              "year": 114,
+              "students": 560
             }
           ],
           "status": "正常",
@@ -6041,6 +6322,64 @@
             {
               "year": 113,
               "students": 356
+            },
+            {
+              "year": 114,
+              "students": 356
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "084619",
+          "code": "084619",
+          "name": "縣立愛蘭國小",
+          "countyId": "南投縣",
+          "townshipId": "南投縣:埔里鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "南投縣埔里鎮愛蘭里鐵山路7號",
+          "phone": "(049)2912514",
+          "website": "https://alps.ntct.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084619/C/南投縣/埔里鎮/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.943347,
+            "latitude": 23.973228
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 420
+            },
+            {
+              "year": 108,
+              "students": 416
+            },
+            {
+              "year": 109,
+              "students": 397
+            },
+            {
+              "year": 110,
+              "students": 403
+            },
+            {
+              "year": 111,
+              "students": 400
+            },
+            {
+              "year": 112,
+              "students": 389
+            },
+            {
+              "year": 113,
+              "students": 373
+            },
+            {
+              "year": 114,
+              "students": 345
             }
           ],
           "status": "正常",
@@ -6091,6 +6430,10 @@
             {
               "year": 113,
               "students": 211
+            },
+            {
+              "year": 114,
+              "students": 221
             }
           ],
           "status": "正常",
@@ -6141,6 +6484,10 @@
             {
               "year": 113,
               "students": 206
+            },
+            {
+              "year": 114,
+              "students": 194
             }
           ],
           "status": "正常",
@@ -6191,6 +6538,10 @@
             {
               "year": 113,
               "students": 194
+            },
+            {
+              "year": 114,
+              "students": 189
             }
           ],
           "status": "正常",
@@ -6240,6 +6591,10 @@
             },
             {
               "year": 113,
+              "students": 171
+            },
+            {
+              "year": 114,
               "students": 171
             }
           ],
@@ -6291,6 +6646,10 @@
             {
               "year": 113,
               "students": 140
+            },
+            {
+              "year": 114,
+              "students": 131
             }
           ],
           "status": "正常",
@@ -6341,6 +6700,10 @@
             {
               "year": 113,
               "students": 121
+            },
+            {
+              "year": 114,
+              "students": 125
             }
           ],
           "status": "正常",
@@ -6391,6 +6754,10 @@
             {
               "year": 113,
               "students": 120
+            },
+            {
+              "year": 114,
+              "students": 111
             }
           ],
           "status": "正常",
@@ -6441,6 +6808,10 @@
             {
               "year": 113,
               "students": 66
+            },
+            {
+              "year": 114,
+              "students": 57
             }
           ],
           "status": "正常",
@@ -6491,6 +6862,10 @@
             {
               "year": 113,
               "students": 61
+            },
+            {
+              "year": 114,
+              "students": 49
             }
           ],
           "status": "正常",
@@ -6541,56 +6916,10 @@
             {
               "year": 113,
               "students": 55
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "084621",
-          "code": "084621",
-          "name": "縣立水尾國小",
-          "countyId": "南投縣",
-          "townshipId": "南投縣:埔里鎮",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "南投縣埔里鎮一新里永豐路92號",
-          "phone": "(049)2932506",
-          "website": "https://sups.ntct.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084621/C/南投縣/埔里鎮/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.929696,
-            "latitude": 23.998692
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 43
             },
             {
-              "year": 108,
-              "students": 37
-            },
-            {
-              "year": 109,
-              "students": 38
-            },
-            {
-              "year": 110,
-              "students": 38
-            },
-            {
-              "year": 111,
-              "students": 38
-            },
-            {
-              "year": 112,
-              "students": 35
-            },
-            {
-              "year": 113,
-              "students": 31
+              "year": 114,
+              "students": 48
             }
           ],
           "status": "正常",
@@ -6641,6 +6970,64 @@
             {
               "year": 113,
               "students": 22
+            },
+            {
+              "year": 114,
+              "students": 24
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "084621",
+          "code": "084621",
+          "name": "縣立水尾國小",
+          "countyId": "南投縣",
+          "townshipId": "南投縣:埔里鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "南投縣埔里鎮一新里永豐路92號",
+          "phone": "(049)2932506",
+          "website": "https://sups.ntct.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084621/C/南投縣/埔里鎮/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.929696,
+            "latitude": 23.998692
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 43
+            },
+            {
+              "year": 108,
+              "students": 37
+            },
+            {
+              "year": 109,
+              "students": 38
+            },
+            {
+              "year": 110,
+              "students": 38
+            },
+            {
+              "year": 111,
+              "students": 38
+            },
+            {
+              "year": 112,
+              "students": 35
+            },
+            {
+              "year": 113,
+              "students": 31
+            },
+            {
+              "year": 114,
+              "students": 23
             }
           ],
           "status": "正常",
@@ -6648,13 +7035,7 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "埔里鎮 有 2 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "南投縣:草屯鎮",
@@ -6704,6 +7085,10 @@
             },
             {
               "year": 113,
+              "students": 2438
+            },
+            {
+              "year": 114,
               "students": 2438
             }
           ],
@@ -6755,22 +7140,15 @@
             {
               "year": 113,
               "students": 1186
+            },
+            {
+              "year": 114,
+              "students": 1186
             }
           ],
           "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
+          "missingYears": [],
+          "dataNotes": []
         },
         {
           "id": "084309",
@@ -6815,6 +7193,10 @@
             },
             {
               "year": 113,
+              "students": 1149
+            },
+            {
+              "year": 114,
               "students": 1149
             }
           ],
@@ -6866,56 +7248,10 @@
             {
               "year": 113,
               "students": 1004
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "084635",
-          "code": "084635",
-          "name": "縣立炎峰國小",
-          "countyId": "南投縣",
-          "townshipId": "南投縣:草屯鎮",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "南投縣草屯鎮中興路101號",
-          "phone": "(049)2333221",
-          "website": "https://unfps.ntct.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084635/C/南投縣/草屯鎮/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.684665,
-            "latitude": 23.975004
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 1294
             },
             {
-              "year": 108,
-              "students": 1282
-            },
-            {
-              "year": 109,
-              "students": 1214
-            },
-            {
-              "year": 110,
-              "students": 1149
-            },
-            {
-              "year": 111,
-              "students": 1141
-            },
-            {
-              "year": 112,
-              "students": 1075
-            },
-            {
-              "year": 113,
-              "students": 995
+              "year": 114,
+              "students": 1004
             }
           ],
           "status": "正常",
@@ -6966,6 +7302,64 @@
             {
               "year": 113,
               "students": 956
+            },
+            {
+              "year": 114,
+              "students": 949
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "084635",
+          "code": "084635",
+          "name": "縣立炎峰國小",
+          "countyId": "南投縣",
+          "townshipId": "南投縣:草屯鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "南投縣草屯鎮中興路101號",
+          "phone": "(049)2333221",
+          "website": "https://unfps.ntct.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084635/C/南投縣/草屯鎮/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.684665,
+            "latitude": 23.975004
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 1294
+            },
+            {
+              "year": 108,
+              "students": 1282
+            },
+            {
+              "year": 109,
+              "students": 1214
+            },
+            {
+              "year": 110,
+              "students": 1149
+            },
+            {
+              "year": 111,
+              "students": 1141
+            },
+            {
+              "year": 112,
+              "students": 1075
+            },
+            {
+              "year": 113,
+              "students": 995
+            },
+            {
+              "year": 114,
+              "students": 910
             }
           ],
           "status": "正常",
@@ -6979,7 +7373,7 @@
           "countyId": "南投縣",
           "townshipId": "南投縣:草屯鎮",
           "educationLevel": "高中職",
-          "managementType": "私立",
+          "managementType": "公立",
           "address": "南投縣草屯鎮中正路培英巷8號",
           "phone": "(049)2553109",
           "website": "http://www.tdvs.ntct.edu.tw",
@@ -7016,67 +7410,10 @@
             {
               "year": 113,
               "students": 528
-            }
-          ],
-          "status": "正常",
-          "missingYears": [
-            107
-          ],
-          "dataNotes": [
-            {
-              "type": "缺年度",
-              "message": "缺少學年度資料：107",
-              "severity": "warning",
-              "years": [
-                107
-              ]
-            }
-          ]
-        },
-        {
-          "id": "084630",
-          "code": "084630",
-          "name": "縣立敦和國小",
-          "countyId": "南投縣",
-          "townshipId": "南投縣:草屯鎮",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "南投縣草屯鎮敦和路72-6號",
-          "phone": "(049)2365074",
-          "website": "https://dhps.ntct.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084630/C/南投縣/草屯鎮/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.678046,
-            "latitude": 23.981135
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 437
             },
             {
-              "year": 108,
-              "students": 457
-            },
-            {
-              "year": 109,
-              "students": 459
-            },
-            {
-              "year": 110,
-              "students": 495
-            },
-            {
-              "year": 111,
-              "students": 497
-            },
-            {
-              "year": 112,
-              "students": 516
-            },
-            {
-              "year": 113,
-              "students": 521
+              "year": 114,
+              "students": 528
             }
           ],
           "status": "正常",
@@ -7127,6 +7464,64 @@
             {
               "year": 113,
               "students": 496
+            },
+            {
+              "year": 114,
+              "students": 524
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "084630",
+          "code": "084630",
+          "name": "縣立敦和國小",
+          "countyId": "南投縣",
+          "townshipId": "南投縣:草屯鎮",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "南投縣草屯鎮敦和路72-6號",
+          "phone": "(049)2365074",
+          "website": "https://dhps.ntct.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084630/C/南投縣/草屯鎮/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.678046,
+            "latitude": 23.981135
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 437
+            },
+            {
+              "year": 108,
+              "students": 457
+            },
+            {
+              "year": 109,
+              "students": 459
+            },
+            {
+              "year": 110,
+              "students": 495
+            },
+            {
+              "year": 111,
+              "students": 497
+            },
+            {
+              "year": 112,
+              "students": 516
+            },
+            {
+              "year": 113,
+              "students": 521
+            },
+            {
+              "year": 114,
+              "students": 505
             }
           ],
           "status": "正常",
@@ -7177,6 +7572,10 @@
             {
               "year": 113,
               "students": 456
+            },
+            {
+              "year": 114,
+              "students": 465
             }
           ],
           "status": "正常",
@@ -7227,6 +7626,10 @@
             {
               "year": 113,
               "students": 374
+            },
+            {
+              "year": 114,
+              "students": 436
             }
           ],
           "status": "正常",
@@ -7277,6 +7680,10 @@
             {
               "year": 113,
               "students": 243
+            },
+            {
+              "year": 114,
+              "students": 244
             }
           ],
           "status": "正常",
@@ -7327,6 +7734,64 @@
             {
               "year": 113,
               "students": 218
+            },
+            {
+              "year": 114,
+              "students": 226
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "084510",
+          "code": "084510",
+          "name": "縣立日新國中",
+          "countyId": "南投縣",
+          "townshipId": "南投縣:草屯鎮",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "南投縣草屯鎮新豐里稻香路45號",
+          "phone": "(049)2333480",
+          "website": "https://rsjhs.ntct.edu.tw/app/home.php",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084510/J/南投縣/草屯鎮/縣市立/否/無/",
+          "coordinates": {
+            "longitude": 120.677577,
+            "latitude": 23.995346
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 221
+            },
+            {
+              "year": 108,
+              "students": 217
+            },
+            {
+              "year": 109,
+              "students": 196
+            },
+            {
+              "year": 110,
+              "students": 195
+            },
+            {
+              "year": 111,
+              "students": 169
+            },
+            {
+              "year": 112,
+              "students": 152
+            },
+            {
+              "year": 113,
+              "students": 162
+            },
+            {
+              "year": 114,
+              "students": 162
             }
           ],
           "status": "正常",
@@ -7377,55 +7842,9 @@
             {
               "year": 113,
               "students": 167
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "084510",
-          "code": "084510",
-          "name": "縣立日新國中",
-          "countyId": "南投縣",
-          "townshipId": "南投縣:草屯鎮",
-          "educationLevel": "國中",
-          "managementType": "公立",
-          "address": "南投縣草屯鎮新豐里稻香路45號",
-          "phone": "(049)2333480",
-          "website": "https://rsjhs.ntct.edu.tw/app/home.php",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084510/J/南投縣/草屯鎮/縣市立/否/無/",
-          "coordinates": {
-            "longitude": 120.677577,
-            "latitude": 23.995346
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 221
             },
             {
-              "year": 108,
-              "students": 217
-            },
-            {
-              "year": 109,
-              "students": 196
-            },
-            {
-              "year": 110,
-              "students": 195
-            },
-            {
-              "year": 111,
-              "students": 169
-            },
-            {
-              "year": 112,
-              "students": 152
-            },
-            {
-              "year": 113,
+              "year": 114,
               "students": 162
             }
           ],
@@ -7477,6 +7896,10 @@
             {
               "year": 113,
               "students": 152
+            },
+            {
+              "year": 114,
+              "students": 141
             }
           ],
           "status": "正常",
@@ -7527,6 +7950,10 @@
             {
               "year": 113,
               "students": 43
+            },
+            {
+              "year": 114,
+              "students": 48
             }
           ],
           "status": "正常",
@@ -7577,6 +8004,10 @@
             {
               "year": 113,
               "students": 38
+            },
+            {
+              "year": 114,
+              "students": 37
             }
           ],
           "status": "正常",
@@ -7626,6 +8057,10 @@
             },
             {
               "year": 113,
+              "students": 26
+            },
+            {
+              "year": 114,
               "students": 26
             }
           ],
@@ -7677,6 +8112,10 @@
             {
               "year": 113,
               "students": 19
+            },
+            {
+              "year": 114,
+              "students": 20
             }
           ],
           "status": "正常",
@@ -7684,13 +8123,7 @@
           "dataNotes": []
         }
       ],
-      "dataNotes": [
-        {
-          "type": "缺年度",
-          "message": "草屯鎮 有 2 所學校存在年度缺漏。",
-          "severity": "warning"
-        }
-      ]
+      "dataNotes": []
     },
     {
       "id": "南投縣:國姓鄉",
@@ -7741,6 +8174,10 @@
             {
               "year": 113,
               "students": 166
+            },
+            {
+              "year": 114,
+              "students": 149
             }
           ],
           "status": "正常",
@@ -7790,6 +8227,10 @@
             },
             {
               "year": 113,
+              "students": 110
+            },
+            {
+              "year": 114,
               "students": 110
             }
           ],
@@ -7841,106 +8282,10 @@
             {
               "year": 113,
               "students": 65
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "084704",
-          "code": "084704",
-          "name": "縣立長福國小",
-          "countyId": "南投縣",
-          "townshipId": "南投縣:國姓鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "南投縣國姓鄉長福村大長路71號",
-          "phone": "(049)2431295",
-          "website": "https://cfups.ntct.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084704/C/南投縣/國姓鄉/縣市立/特偏/無/",
-          "coordinates": {
-            "longitude": 120.888219,
-            "latitude": 24.092825
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 27
             },
             {
-              "year": 108,
-              "students": 28
-            },
-            {
-              "year": 109,
-              "students": 27
-            },
-            {
-              "year": 110,
-              "students": 36
-            },
-            {
-              "year": 111,
-              "students": 47
-            },
-            {
-              "year": 112,
-              "students": 51
-            },
-            {
-              "year": 113,
-              "students": 59
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "084699",
-          "code": "084699",
-          "name": "縣立福龜國小",
-          "countyId": "南投縣",
-          "townshipId": "南投縣:國姓鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "南投縣國姓鄉福龜村長壽巷83號",
-          "phone": "(049)2721019",
-          "website": "https://vkps.ntct.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084699/C/南投縣/國姓鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.823047,
-            "latitude": 24.011663
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 40
-            },
-            {
-              "year": 108,
-              "students": 51
-            },
-            {
-              "year": 109,
-              "students": 48
-            },
-            {
-              "year": 110,
-              "students": 48
-            },
-            {
-              "year": 111,
-              "students": 49
-            },
-            {
-              "year": 112,
-              "students": 54
-            },
-            {
-              "year": 113,
-              "students": 53
+              "year": 114,
+              "students": 57
             }
           ],
           "status": "正常",
@@ -7991,6 +8336,172 @@
             {
               "year": 113,
               "students": 51
+            },
+            {
+              "year": 114,
+              "students": 51
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "084699",
+          "code": "084699",
+          "name": "縣立福龜國小",
+          "countyId": "南投縣",
+          "townshipId": "南投縣:國姓鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "南投縣國姓鄉福龜村長壽巷83號",
+          "phone": "(049)2721019",
+          "website": "https://vkps.ntct.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084699/C/南投縣/國姓鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.823047,
+            "latitude": 24.011663
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 40
+            },
+            {
+              "year": 108,
+              "students": 51
+            },
+            {
+              "year": 109,
+              "students": 48
+            },
+            {
+              "year": 110,
+              "students": 48
+            },
+            {
+              "year": 111,
+              "students": 49
+            },
+            {
+              "year": 112,
+              "students": 54
+            },
+            {
+              "year": 113,
+              "students": 53
+            },
+            {
+              "year": 114,
+              "students": 47
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "084704",
+          "code": "084704",
+          "name": "縣立長福國小",
+          "countyId": "南投縣",
+          "townshipId": "南投縣:國姓鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "南投縣國姓鄉長福村大長路71號",
+          "phone": "(049)2431295",
+          "website": "https://cfups.ntct.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084704/C/南投縣/國姓鄉/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 120.888219,
+            "latitude": 24.092825
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 27
+            },
+            {
+              "year": 108,
+              "students": 28
+            },
+            {
+              "year": 109,
+              "students": 27
+            },
+            {
+              "year": 110,
+              "students": 36
+            },
+            {
+              "year": 111,
+              "students": 47
+            },
+            {
+              "year": 112,
+              "students": 51
+            },
+            {
+              "year": 113,
+              "students": 59
+            },
+            {
+              "year": 114,
+              "students": 44
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "084700",
+          "code": "084700",
+          "name": "縣立長流國小",
+          "countyId": "南投縣",
+          "townshipId": "南投縣:國姓鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "南投縣國姓鄉長流村大長路559號",
+          "phone": "(049)2431006",
+          "website": "https://clps.ntct.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084700/C/南投縣/國姓鄉/縣市立/特偏/無/",
+          "coordinates": {
+            "longitude": 120.876791,
+            "latitude": 24.066284
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 45
+            },
+            {
+              "year": 108,
+              "students": 34
+            },
+            {
+              "year": 109,
+              "students": 41
+            },
+            {
+              "year": 110,
+              "students": 37
+            },
+            {
+              "year": 111,
+              "students": 33
+            },
+            {
+              "year": 112,
+              "students": 34
+            },
+            {
+              "year": 113,
+              "students": 32
+            },
+            {
+              "year": 114,
+              "students": 40
             }
           ],
           "status": "正常",
@@ -8041,6 +8552,10 @@
             {
               "year": 113,
               "students": 40
+            },
+            {
+              "year": 114,
+              "students": 37
             }
           ],
           "status": "正常",
@@ -8090,6 +8605,10 @@
             },
             {
               "year": 113,
+              "students": 35
+            },
+            {
+              "year": 114,
               "students": 35
             }
           ],
@@ -8141,56 +8660,10 @@
             {
               "year": 113,
               "students": 32
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "084700",
-          "code": "084700",
-          "name": "縣立長流國小",
-          "countyId": "南投縣",
-          "townshipId": "南投縣:國姓鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "南投縣國姓鄉長流村大長路559號",
-          "phone": "(049)2431006",
-          "website": "https://clps.ntct.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084700/C/南投縣/國姓鄉/縣市立/特偏/無/",
-          "coordinates": {
-            "longitude": 120.876791,
-            "latitude": 24.066284
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 45
             },
             {
-              "year": 108,
-              "students": 34
-            },
-            {
-              "year": 109,
-              "students": 41
-            },
-            {
-              "year": 110,
-              "students": 37
-            },
-            {
-              "year": 111,
-              "students": 33
-            },
-            {
-              "year": 112,
-              "students": 34
-            },
-            {
-              "year": 113,
-              "students": 32
+              "year": 114,
+              "students": 27
             }
           ],
           "status": "正常",
@@ -8241,6 +8714,10 @@
             {
               "year": 113,
               "students": 21
+            },
+            {
+              "year": 114,
+              "students": 19
             }
           ],
           "status": "正常",
@@ -8291,6 +8768,10 @@
             {
               "year": 113,
               "students": 15
+            },
+            {
+              "year": 114,
+              "students": 16
             }
           ],
           "status": "正常",
@@ -8349,6 +8830,10 @@
             {
               "year": 113,
               "students": 160
+            },
+            {
+              "year": 114,
+              "students": 152
             }
           ],
           "status": "正常",
@@ -8398,6 +8883,10 @@
             },
             {
               "year": 113,
+              "students": 131
+            },
+            {
+              "year": 114,
               "students": 131
             }
           ],
@@ -8449,6 +8938,10 @@
             {
               "year": 113,
               "students": 101
+            },
+            {
+              "year": 114,
+              "students": 90
             }
           ],
           "status": "正常",
@@ -8499,6 +8992,10 @@
             {
               "year": 113,
               "students": 89
+            },
+            {
+              "year": 114,
+              "students": 86
             }
           ],
           "status": "正常",
@@ -8549,56 +9046,10 @@
             {
               "year": 113,
               "students": 72
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "084689",
-          "code": "084689",
-          "name": "縣立東光國小",
-          "countyId": "南投縣",
-          "townshipId": "南投縣:魚池鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "南投縣魚池鄉東光村慶隆巷36號",
-          "phone": "(049)2880584",
-          "website": "https://tkps.ntct.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084689/C/南投縣/魚池鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.96672,
-            "latitude": 23.890489
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 38
             },
             {
-              "year": 108,
-              "students": 41
-            },
-            {
-              "year": 109,
-              "students": 38
-            },
-            {
-              "year": 110,
-              "students": 42
-            },
-            {
-              "year": 111,
-              "students": 49
-            },
-            {
-              "year": 112,
-              "students": 51
-            },
-            {
-              "year": 113,
-              "students": 56
+              "year": 114,
+              "students": 72
             }
           ],
           "status": "正常",
@@ -8649,6 +9100,10 @@
             {
               "year": 113,
               "students": 49
+            },
+            {
+              "year": 114,
+              "students": 49
             }
           ],
           "status": "正常",
@@ -8656,29 +9111,29 @@
           "dataNotes": []
         },
         {
-          "id": "084695",
-          "code": "084695",
-          "name": "縣立共和國小",
+          "id": "084689",
+          "code": "084689",
+          "name": "縣立東光國小",
           "countyId": "南投縣",
           "townshipId": "南投縣:魚池鄉",
           "educationLevel": "國小",
           "managementType": "公立",
-          "address": "南投縣魚池鄉共和村五馬巷57之1號",
-          "phone": "(049)2880608",
-          "website": "https://khrps.ntct.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084695/C/南投縣/魚池鄉/縣市立/偏遠/無/",
+          "address": "南投縣魚池鄉東光村慶隆巷36號",
+          "phone": "(049)2880584",
+          "website": "https://tkps.ntct.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084689/C/南投縣/魚池鄉/縣市立/偏遠/無/",
           "coordinates": {
-            "longitude": 120.96627,
-            "latitude": 23.91922
+            "longitude": 120.96672,
+            "latitude": 23.890489
           },
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 31
+              "students": 38
             },
             {
               "year": 108,
-              "students": 32
+              "students": 41
             },
             {
               "year": 109,
@@ -8686,19 +9141,23 @@
             },
             {
               "year": 110,
-              "students": 32
+              "students": 42
             },
             {
               "year": 111,
-              "students": 29
+              "students": 49
             },
             {
               "year": 112,
-              "students": 35
+              "students": 51
             },
             {
               "year": 113,
-              "students": 35
+              "students": 56
+            },
+            {
+              "year": 114,
+              "students": 47
             }
           ],
           "status": "正常",
@@ -8749,6 +9208,10 @@
             {
               "year": 113,
               "students": 31
+            },
+            {
+              "year": 114,
+              "students": 35
             }
           ],
           "status": "正常",
@@ -8756,49 +9219,53 @@
           "dataNotes": []
         },
         {
-          "id": "084690",
-          "code": "084690",
-          "name": "縣立五城國小",
+          "id": "084695",
+          "code": "084695",
+          "name": "縣立共和國小",
           "countyId": "南投縣",
           "townshipId": "南投縣:魚池鄉",
           "educationLevel": "國小",
           "managementType": "公立",
-          "address": "南投縣魚池鄉五城村華龍巷1之2號",
-          "phone": "(049)2896455",
-          "website": "https://wcps.ntct.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084690/C/南投縣/魚池鄉/縣市立/偏遠/無/",
+          "address": "南投縣魚池鄉共和村五馬巷57之1號",
+          "phone": "(049)2880608",
+          "website": "https://khrps.ntct.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084695/C/南投縣/魚池鄉/縣市立/偏遠/無/",
           "coordinates": {
-            "longitude": 120.889405,
-            "latitude": 23.890921
+            "longitude": 120.96627,
+            "latitude": 23.91922
           },
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 29
+              "students": 31
             },
             {
               "year": 108,
-              "students": 26
-            },
-            {
-              "year": 109,
-              "students": 27
-            },
-            {
-              "year": 110,
-              "students": 30
-            },
-            {
-              "year": 111,
               "students": 32
             },
             {
+              "year": 109,
+              "students": 38
+            },
+            {
+              "year": 110,
+              "students": 32
+            },
+            {
+              "year": 111,
+              "students": 29
+            },
+            {
               "year": 112,
-              "students": 26
+              "students": 35
             },
             {
               "year": 113,
-              "students": 30
+              "students": 35
+            },
+            {
+              "year": 114,
+              "students": 32
             }
           ],
           "status": "正常",
@@ -8849,6 +9316,64 @@
             {
               "year": 113,
               "students": 29
+            },
+            {
+              "year": 114,
+              "students": 27
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "084690",
+          "code": "084690",
+          "name": "縣立五城國小",
+          "countyId": "南投縣",
+          "townshipId": "南投縣:魚池鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "南投縣魚池鄉五城村華龍巷1之2號",
+          "phone": "(049)2896455",
+          "website": "https://wcps.ntct.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084690/C/南投縣/魚池鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.889405,
+            "latitude": 23.890921
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 29
+            },
+            {
+              "year": 108,
+              "students": 26
+            },
+            {
+              "year": 109,
+              "students": 27
+            },
+            {
+              "year": 110,
+              "students": 30
+            },
+            {
+              "year": 111,
+              "students": 32
+            },
+            {
+              "year": 112,
+              "students": 26
+            },
+            {
+              "year": 113,
+              "students": 30
+            },
+            {
+              "year": 114,
+              "students": 23
             }
           ],
           "status": "正常",
@@ -8907,56 +9432,10 @@
             {
               "year": 113,
               "students": 109
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "084676",
-          "code": "084676",
-          "name": "縣立廣興國小",
-          "countyId": "南投縣",
-          "townshipId": "南投縣:鹿谷鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "南投縣鹿谷鄉廣興村興產路97號",
-          "phone": "(049)2752014",
-          "website": "https://knsps.ntct.edu.tw/",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084676/C/南投縣/鹿谷鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.764492,
-            "latitude": 23.736208
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 78
             },
             {
-              "year": 108,
-              "students": 85
-            },
-            {
-              "year": 109,
-              "students": 90
-            },
-            {
-              "year": 110,
-              "students": 98
-            },
-            {
-              "year": 111,
-              "students": 96
-            },
-            {
-              "year": 112,
-              "students": 85
-            },
-            {
-              "year": 113,
-              "students": 86
+              "year": 114,
+              "students": 109
             }
           ],
           "status": "正常",
@@ -9007,6 +9486,64 @@
             {
               "year": 113,
               "students": 77
+            },
+            {
+              "year": 114,
+              "students": 80
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "084676",
+          "code": "084676",
+          "name": "縣立廣興國小",
+          "countyId": "南投縣",
+          "townshipId": "南投縣:鹿谷鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "南投縣鹿谷鄉廣興村興產路97號",
+          "phone": "(049)2752014",
+          "website": "https://knsps.ntct.edu.tw/",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084676/C/南投縣/鹿谷鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.764492,
+            "latitude": 23.736208
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 78
+            },
+            {
+              "year": 108,
+              "students": 85
+            },
+            {
+              "year": 109,
+              "students": 90
+            },
+            {
+              "year": 110,
+              "students": 98
+            },
+            {
+              "year": 111,
+              "students": 96
+            },
+            {
+              "year": 112,
+              "students": 85
+            },
+            {
+              "year": 113,
+              "students": 86
+            },
+            {
+              "year": 114,
+              "students": 79
             }
           ],
           "status": "正常",
@@ -9056,6 +9593,10 @@
             },
             {
               "year": 113,
+              "students": 67
+            },
+            {
+              "year": 114,
               "students": 67
             }
           ],
@@ -9107,56 +9648,10 @@
             {
               "year": 113,
               "students": 60
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
-          "id": "084673",
-          "code": "084673",
-          "name": "縣立初鄉國小",
-          "countyId": "南投縣",
-          "townshipId": "南投縣:鹿谷鄉",
-          "educationLevel": "國小",
-          "managementType": "公立",
-          "address": "南投縣鹿谷鄉初鄉村仁愛路259號",
-          "phone": "(049)2752513",
-          "website": "https://ches.ntct.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084673/C/南投縣/鹿谷鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 120.738131,
-            "latitude": 23.766833
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 38
             },
             {
-              "year": 108,
-              "students": 37
-            },
-            {
-              "year": 109,
-              "students": 41
-            },
-            {
-              "year": 110,
-              "students": 35
-            },
-            {
-              "year": 111,
-              "students": 47
-            },
-            {
-              "year": 112,
-              "students": 50
-            },
-            {
-              "year": 113,
-              "students": 53
+              "year": 114,
+              "students": 57
             }
           ],
           "status": "正常",
@@ -9207,6 +9702,64 @@
             {
               "year": 113,
               "students": 45
+            },
+            {
+              "year": 114,
+              "students": 43
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
+        },
+        {
+          "id": "084673",
+          "code": "084673",
+          "name": "縣立初鄉國小",
+          "countyId": "南投縣",
+          "townshipId": "南投縣:鹿谷鄉",
+          "educationLevel": "國小",
+          "managementType": "公立",
+          "address": "南投縣鹿谷鄉初鄉村仁愛路259號",
+          "phone": "(049)2752513",
+          "website": "https://ches.ntct.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/084673/C/南投縣/鹿谷鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 120.738131,
+            "latitude": 23.766833
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 38
+            },
+            {
+              "year": 108,
+              "students": 37
+            },
+            {
+              "year": 109,
+              "students": 41
+            },
+            {
+              "year": 110,
+              "students": 35
+            },
+            {
+              "year": 111,
+              "students": 47
+            },
+            {
+              "year": 112,
+              "students": 50
+            },
+            {
+              "year": 113,
+              "students": 53
+            },
+            {
+              "year": 114,
+              "students": 39
             }
           ],
           "status": "正常",
@@ -9257,6 +9810,10 @@
             {
               "year": 113,
               "students": 26
+            },
+            {
+              "year": 114,
+              "students": 23
             }
           ],
           "status": "正常",
@@ -9307,6 +9864,10 @@
             {
               "year": 113,
               "students": 14
+            },
+            {
+              "year": 114,
+              "students": 15
             }
           ],
           "status": "正常",
@@ -9356,6 +9917,10 @@
             },
             {
               "year": 113,
+              "students": 8
+            },
+            {
+              "year": 114,
               "students": 8
             }
           ],
@@ -9415,6 +9980,10 @@
             {
               "year": 113,
               "students": 128
+            },
+            {
+              "year": 114,
+              "students": 128
             }
           ],
           "status": "正常",
@@ -9464,6 +10033,10 @@
             },
             {
               "year": 113,
+              "students": 89
+            },
+            {
+              "year": 114,
               "students": 89
             }
           ],
@@ -9515,6 +10088,10 @@
             {
               "year": 113,
               "students": 71
+            },
+            {
+              "year": 114,
+              "students": 68
             }
           ],
           "status": "正常",
@@ -9564,6 +10141,10 @@
             },
             {
               "year": 113,
+              "students": 58
+            },
+            {
+              "year": 114,
               "students": 58
             }
           ],
@@ -9615,6 +10196,10 @@
             {
               "year": 113,
               "students": 28
+            },
+            {
+              "year": 114,
+              "students": 31
             }
           ],
           "status": "正常",

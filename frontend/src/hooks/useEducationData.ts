@@ -109,7 +109,7 @@ export function useEducationData(selectedCountyId: string | null) {
 
       setSummaryDataset(nextSummary)
       setCountyBoundaries(nextBoundaries)
-      setRefreshStatus('已重新抓取最新資料')
+      setRefreshStatus('已重新載入目前部署資料')
     } catch (error) {
       setRefreshStatus(error instanceof Error ? `資料更新失敗：${error.message}` : '資料更新失敗')
     } finally {

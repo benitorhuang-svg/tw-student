@@ -3,16 +3,18 @@ type AtlasFooterProps = {
   isRefreshingData: boolean
   refreshStatus: string | null
   onRefreshData: () => Promise<void>
+  onToggleGovernance: () => void
+  isGovernanceOpen: boolean
 }
 
 const SOURCE_LINKS = [
   {
-    href: 'https://depart.moe.edu.tw/ED4500/',
-    label: '教育部統計處',
+    href: 'https://depart.moe.edu.tw/ed4500/News.aspx?n=5A930C32CC6C3818&sms=91B3AAE8C6388B96',
+    label: '統計處最新公告',
   },
   {
-    href: 'https://stats.moe.gov.tw/edugis/',
-    label: '教育 GIS',
+    href: 'https://stats.moe.gov.tw/edugissys/',
+    label: '教育 GIS 圖表',
   },
   {
     href: 'https://www.nlsc.gov.tw/',
@@ -20,11 +22,17 @@ const SOURCE_LINKS = [
   },
 ]
 
-function AtlasFooter({ generatedAtLabel, isRefreshingData, refreshStatus, onRefreshData }: AtlasFooterProps) {
+function AtlasFooter({ generatedAtLabel, isRefreshingData, refreshStatus, onRefreshData, onToggleGovernance, isGovernanceOpen }: AtlasFooterProps) {
   return (
     <footer className="footer-note footer-note--official">
       <div className="footer-note__left">
-        <button type="button" className="footer-refresh-button" onClick={() => void onRefreshData()} disabled={isRefreshingData}>
+        <button
+          type="button"
+          className="footer-refresh-button"
+          onClick={() => void onRefreshData()}
+          disabled={isRefreshingData}
+          title="重新抓取目前已部署的官方切片；若教育部釋出新學年，需先執行 npm run data:refresh 重新產製資料。"
+        >
           {isRefreshingData ? '資料更新中...' : '資料更新'}
         </button>
         <span className="footer-sources__label">資料來源:</span>
@@ -34,6 +42,9 @@ function AtlasFooter({ generatedAtLabel, isRefreshingData, refreshStatus, onRefr
               {source.label}
             </a>
           ))}
+          <button type="button" className={isGovernanceOpen ? 'rank-pill rank-pill--active footer-governance-pill' : 'rank-pill footer-governance-pill'} onClick={onToggleGovernance}>
+            資料治理
+          </button>
         </div>
       </div>
       <div className="footer-note__right">

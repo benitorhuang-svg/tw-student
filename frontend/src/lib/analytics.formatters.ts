@@ -19,11 +19,12 @@ export function toGregorianYear(year: number) {
 }
 
 export function formatAcademicYear(year: AcademicYear | number) {
-  return `${toGregorianYear(Number(year))} 學年度`
+  const numericYear = Number(year)
+  return `${numericYear}學年度 (${toGregorianYear(numericYear)}-${toGregorianYear(numericYear) + 1})`
 }
 
 export function formatAcademicYearCompact(year: AcademicYear | number) {
-  return String(toGregorianYear(Number(year)))
+  return String(Number(year))
 }
 
 export function formatFileSize(bytes: number) {

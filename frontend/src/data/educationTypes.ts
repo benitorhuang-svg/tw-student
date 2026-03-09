@@ -1,6 +1,6 @@
 import type { FeatureCollection, Geometry } from 'geojson'
 
-export const ACADEMIC_YEARS = [107, 108, 109, 110, 111, 112, 113] as const
+export const ACADEMIC_YEARS = [107, 108, 109, 110, 111, 112, 113, 114] as const
 export const EDUCATION_LEVELS = ['全部', '國小', '國中', '高中職', '大專院校'] as const
 export const MANAGEMENT_TYPES = ['全部', '公立', '私立'] as const
 export const REGION_GROUPS = ['全部', '北部', '中部', '南部', '東部', '離島'] as const
@@ -95,6 +95,7 @@ export type SchoolBucketRecord = {
   geohash: string
   precision: number
   count: number
+  totalStudents: number
   latitude: number
   longitude: number
   bounds: {
@@ -136,6 +137,37 @@ export type CountySummaryRecord = {
   towns: TownshipSummaryRecord[]
 }
 
+export type SchoolCodeEntry = {
+  countyId: string
+  townshipId: string
+  name: string
+  longitude?: number
+  latitude?: number
+}
+
+export type MissingCoordinateEntry = {
+  code: string
+  name: string
+  county: string
+  township: string
+  level: SchoolLevel
+  address?: string
+  longitude?: number
+  latitude?: number
+  coordinateResolution?: '人工校正' | '地址解點' | '鄉鎮近似值'
+  coordinateMatchType?: string
+  coordinateMatchScore?: number
+}
+
+export const COORDINATE_WORKFLOW_STATUSES = ['GIS缺點位', '人工補點', '已回填'] as const
+export type CoordinateWorkflowStatus = (typeof COORDINATE_WORKFLOW_STATUSES)[number]
+
+export type CoordinateWorkflowEntry = {
+  schoolCode: string
+  status: CoordinateWorkflowStatus
+  updatedAt: string
+}
+
 export type EducationSummaryDataset = {
   generatedAt: string
   years: readonly AcademicYear[]
@@ -153,6 +185,8 @@ export type EducationSummaryDataset = {
     townshipBoundaries: string
     countyBoundaries: string
   }
+  schoolCodeIndex?: Record<string, SchoolCodeEntry>
+  missingCoordinates?: MissingCoordinateEntry[]
   counties: CountySummaryRecord[]
 }
 
@@ -175,6 +209,8 @@ export type CountyBoundaryProperties = {
   shortLabel: string
   region: RegionGroup
   townshipFile: string
+  centerLongitude: number
+  centerLatitude: number
 }
 
 export type TownshipBoundaryProperties = {
@@ -186,6 +222,8 @@ export type TownshipBoundaryProperties = {
   townName: string
   townEng: string
   region: RegionGroup
+  centerLongitude: number
+  centerLatitude: number
 }
 
 export type CountyBoundaryCollection = FeatureCollection<Geometry, CountyBoundaryProperties>

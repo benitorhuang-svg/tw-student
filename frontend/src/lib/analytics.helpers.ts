@@ -42,7 +42,7 @@ export function matchesSchoolFilters(
   }
 
   const searchText = filters.searchText.trim()
-  return [school.name, countyName, townshipName].some((value) => matchesText(value, searchText))
+  return [school.name, school.code, countyName, townshipName].some((value) => matchesText(value, searchText))
 }
 
 export function aggregateSchools(schools: SchoolRecord[], year: AcademicYear) {
@@ -97,6 +97,11 @@ export function getSummaryTrend(
 export function matchesSummarySearch(county: CountySummaryRecord, filters: Pick<DashboardFilters, 'searchText'>) {
   const searchText = filters.searchText.trim()
   if (!searchText) {
+    return true
+  }
+
+  // School code search (all digits): don't filter out counties at summary level
+  if (/^\d{4,}$/.test(searchText)) {
     return true
   }
 

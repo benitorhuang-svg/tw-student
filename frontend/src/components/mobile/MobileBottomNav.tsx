@@ -23,10 +23,23 @@ const TAB_ICONS: Record<AtlasTab, ReactNode> = {
             <rect x="14" y="14" width="7" height="7" rx="1" />
         </svg>
     ),
+    county: (
+        <svg className="mobile-bottom-nav__icon" viewBox="0 0 24 24">
+            <path d="M4 5h16v4H4z" />
+            <path d="M4 11h10v8H4z" />
+            <path d="M16 11h4v8h-4z" />
+        </svg>
+    ),
     schools: (
         <svg className="mobile-bottom-nav__icon" viewBox="0 0 24 24">
             <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
             <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+        </svg>
+    ),
+    'school-focus': (
+        <svg className="mobile-bottom-nav__icon" viewBox="0 0 24 24">
+            <circle cx="12" cy="8" r="4" />
+            <path d="M5 21c1.5-4 4.5-6 7-6s5.5 2 7 6" />
         </svg>
     ),
 }
