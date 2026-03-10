@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-09T18:20:24.767Z",
+  "generatedAt": "2026-03-10T12:31:52.809Z",
   "county": {
     "id": "花蓮縣",
     "name": "花蓮縣",
@@ -99,13 +99,58 @@
         ]
       },
       {
+        "id": "5-wsq2w",
+        "geohash": "wsq2w",
+        "precision": 5,
+        "count": 9,
+        "totalStudents": 3682,
+        "latitude": 24.000614,
+        "longitude": 121.577257,
+        "bounds": {
+          "minLatitude": 23.994942,
+          "maxLatitude": 24.009088,
+          "minLongitude": 121.55681,
+          "maxLongitude": 121.594726
+        },
+        "topSchools": [
+          {
+            "id": "151307",
+            "name": "私立四維高中",
+            "townshipName": "花蓮市",
+            "students": 897,
+            "status": "正常"
+          },
+          {
+            "id": "151312:國中",
+            "name": "私立慈大附中附設國中部",
+            "townshipName": "花蓮市",
+            "students": 640,
+            "status": "正常"
+          },
+          {
+            "id": "151312",
+            "name": "財團法人慈濟大學附中",
+            "townshipName": "花蓮市",
+            "students": 601,
+            "status": "正常"
+          },
+          {
+            "id": "151312:國小",
+            "name": "私立慈大附中附設國小部",
+            "townshipName": "花蓮市",
+            "students": 572,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "5-wsq2x",
         "geohash": "wsq2x",
         "precision": 5,
-        "count": 8,
+        "count": 9,
         "totalStudents": 3415,
-        "latitude": 24.010726,
-        "longitude": 121.612297,
+        "latitude": 24.010353,
+        "longitude": 121.612437,
         "bounds": {
           "minLatitude": 23.997831,
           "maxLatitude": 24.031787,
@@ -114,17 +159,17 @@
         },
         "topSchools": [
           {
-            "id": "151306",
-            "name": "私立海星高中",
-            "townshipName": "新城鄉",
-            "students": 976,
-            "status": "正常"
-          },
-          {
             "id": "150404",
             "name": "國立花蓮高工",
             "townshipName": "花蓮市",
             "students": 761,
+            "status": "正常"
+          },
+          {
+            "id": "151306",
+            "name": "私立海星高中",
+            "townshipName": "新城鄉",
+            "students": 729,
             "status": "正常"
           },
           {
@@ -139,51 +184,6 @@
             "name": "縣立北埔國小",
             "townshipName": "新城鄉",
             "students": 487,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "5-wsq2w",
-        "geohash": "wsq2w",
-        "precision": 5,
-        "count": 7,
-        "totalStudents": 3682,
-        "latitude": 24.000818,
-        "longitude": 121.578131,
-        "bounds": {
-          "minLatitude": 23.994942,
-          "maxLatitude": 24.009088,
-          "minLongitude": 121.55681,
-          "maxLongitude": 121.594726
-        },
-        "topSchools": [
-          {
-            "id": "151312",
-            "name": "財團法人慈濟大學附中",
-            "townshipName": "花蓮市",
-            "students": 1813,
-            "status": "正常"
-          },
-          {
-            "id": "151307",
-            "name": "私立四維高中",
-            "townshipName": "花蓮市",
-            "students": 897,
-            "status": "正常"
-          },
-          {
-            "id": "154603",
-            "name": "縣立明廉國小",
-            "townshipName": "花蓮市",
-            "students": 486,
-            "status": "正常"
-          },
-          {
-            "id": "154625",
-            "name": "縣立太昌國小",
-            "townshipName": "吉安鄉",
-            "students": 239,
             "status": "正常"
           }
         ]
@@ -229,6 +229,51 @@
             "name": "縣立松浦國小",
             "townshipName": "玉里鎮",
             "students": 34,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "5-wsnr7",
+        "geohash": "wsnr7",
+        "precision": 5,
+        "count": 5,
+        "totalStudents": 144,
+        "latitude": 23.79267,
+        "longitude": 121.452045,
+        "bounds": {
+          "minLatitude": 23.783465,
+          "maxLatitude": 23.811322,
+          "minLongitude": 121.440406,
+          "maxLongitude": 121.457521
+        },
+        "topSchools": [
+          {
+            "id": "154696",
+            "name": "縣立西林國小",
+            "townshipName": "萬榮鄉",
+            "students": 60,
+            "status": "正常"
+          },
+          {
+            "id": "154694",
+            "name": "縣立見晴國小",
+            "townshipName": "萬榮鄉",
+            "students": 38,
+            "status": "正常"
+          },
+          {
+            "id": "154642",
+            "name": "縣立林榮國小",
+            "townshipName": "鳳林鎮",
+            "students": 29,
+            "status": "正常"
+          },
+          {
+            "id": "154399",
+            "name": "縣立南平中學",
+            "townshipName": "鳳林鎮",
+            "students": 16,
             "status": "正常"
           }
         ]
@@ -364,51 +409,6 @@
             "name": "縣立萬寧國小",
             "townshipName": "富里鄉",
             "students": 13,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "5-wsnr7",
-        "geohash": "wsnr7",
-        "precision": 5,
-        "count": 4,
-        "totalStudents": 144,
-        "latitude": 23.794972,
-        "longitude": 121.450677,
-        "bounds": {
-          "minLatitude": 23.783465,
-          "maxLatitude": 23.811322,
-          "minLongitude": 121.440406,
-          "maxLongitude": 121.457521
-        },
-        "topSchools": [
-          {
-            "id": "154696",
-            "name": "縣立西林國小",
-            "townshipName": "萬榮鄉",
-            "students": 60,
-            "status": "正常"
-          },
-          {
-            "id": "154694",
-            "name": "縣立見晴國小",
-            "townshipName": "萬榮鄉",
-            "students": 38,
-            "status": "正常"
-          },
-          {
-            "id": "154642",
-            "name": "縣立林榮國小",
-            "townshipName": "鳳林鎮",
-            "students": 29,
-            "status": "正常"
-          },
-          {
-            "id": "154399",
-            "name": "縣立南平中學",
-            "townshipName": "鳳林鎮",
-            "students": 17,
             "status": "正常"
           }
         ]
@@ -1803,6 +1803,44 @@
         ]
       },
       {
+        "id": "6-wsq2w3",
+        "geohash": "wsq2w3",
+        "precision": 6,
+        "count": 3,
+        "totalStudents": 1813,
+        "latitude": 23.999901,
+        "longitude": 121.574199,
+        "bounds": {
+          "minLatitude": 23.999901,
+          "maxLatitude": 23.999901,
+          "minLongitude": 121.574199,
+          "maxLongitude": 121.574199
+        },
+        "topSchools": [
+          {
+            "id": "151312:國中",
+            "name": "私立慈大附中附設國中部",
+            "townshipName": "花蓮市",
+            "students": 640,
+            "status": "正常"
+          },
+          {
+            "id": "151312",
+            "name": "財團法人慈濟大學附中",
+            "townshipName": "花蓮市",
+            "students": 601,
+            "status": "正常"
+          },
+          {
+            "id": "151312:國小",
+            "name": "私立慈大附中附設國小部",
+            "townshipName": "花蓮市",
+            "students": 572,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "6-wsnk8w",
         "geohash": "wsnk8w",
         "precision": 6,
@@ -2082,6 +2120,37 @@
         ]
       },
       {
+        "id": "6-wsq2x6",
+        "geohash": "wsq2x6",
+        "precision": 6,
+        "count": 2,
+        "totalStudents": 976,
+        "latitude": 24.007369,
+        "longitude": 121.613555,
+        "bounds": {
+          "minLatitude": 24.007369,
+          "maxLatitude": 24.007369,
+          "minLongitude": 121.613555,
+          "maxLongitude": 121.613555
+        },
+        "topSchools": [
+          {
+            "id": "151306",
+            "name": "私立海星高中",
+            "townshipName": "新城鄉",
+            "students": 729,
+            "status": "正常"
+          },
+          {
+            "id": "151306:國中",
+            "name": "私立海星高中附設國中部",
+            "townshipName": "新城鄉",
+            "students": 247,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "6-wsq2xn",
         "geohash": "wsq2xn",
         "precision": 6,
@@ -2232,6 +2301,37 @@
             "name": "縣立鳳林國小",
             "townshipName": "鳳林鎮",
             "students": 168,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsnr7c",
+        "geohash": "wsnr7c",
+        "precision": 6,
+        "count": 2,
+        "totalStudents": 17,
+        "latitude": 23.783465,
+        "longitude": 121.457521,
+        "bounds": {
+          "minLatitude": 23.783465,
+          "maxLatitude": 23.783465,
+          "minLongitude": 121.457521,
+          "maxLongitude": 121.457521
+        },
+        "topSchools": [
+          {
+            "id": "154399",
+            "name": "縣立南平中學",
+            "townshipName": "鳳林鎮",
+            "students": 16,
+            "status": "正常"
+          },
+          {
+            "id": "154399:國中",
+            "name": "縣立南平中學附設國中部",
+            "townshipName": "鳳林鎮",
+            "students": 1,
             "status": "正常"
           }
         ]
@@ -3389,30 +3489,6 @@
         ]
       },
       {
-        "id": "6-wsq2w3",
-        "geohash": "wsq2w3",
-        "precision": 6,
-        "count": 1,
-        "totalStudents": 1813,
-        "latitude": 23.999901,
-        "longitude": 121.574199,
-        "bounds": {
-          "minLatitude": 23.999901,
-          "maxLatitude": 23.999901,
-          "minLongitude": 121.574199,
-          "maxLongitude": 121.574199
-        },
-        "topSchools": [
-          {
-            "id": "151312",
-            "name": "財團法人慈濟大學附中",
-            "townshipName": "花蓮市",
-            "students": 1813,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "6-wsq2qv",
         "geohash": "wsq2qv",
         "precision": 6,
@@ -3936,30 +4012,6 @@
             "name": "縣立永豐國小",
             "townshipName": "富里鄉",
             "students": 12,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "6-wsq2x6",
-        "geohash": "wsq2x6",
-        "precision": 6,
-        "count": 1,
-        "totalStudents": 976,
-        "latitude": 24.007369,
-        "longitude": 121.613555,
-        "bounds": {
-          "minLatitude": 24.007369,
-          "maxLatitude": 24.007369,
-          "minLongitude": 121.613555,
-          "maxLongitude": 121.613555
-        },
-        "topSchools": [
-          {
-            "id": "151306",
-            "name": "私立海星高中",
-            "townshipName": "新城鄉",
-            "students": 976,
             "status": "正常"
           }
         ]
@@ -4661,30 +4713,6 @@
         ]
       },
       {
-        "id": "6-wsnr7c",
-        "geohash": "wsnr7c",
-        "precision": 6,
-        "count": 1,
-        "totalStudents": 17,
-        "latitude": 23.783465,
-        "longitude": 121.457521,
-        "bounds": {
-          "minLatitude": 23.783465,
-          "maxLatitude": 23.783465,
-          "minLongitude": 121.457521,
-          "maxLongitude": 121.457521
-        },
-        "topSchools": [
-          {
-            "id": "154399",
-            "name": "縣立南平中學",
-            "townshipName": "鳳林鎮",
-            "students": 17,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "6-wsnrhp",
         "geohash": "wsnrhp",
         "precision": 6,
@@ -4830,6 +4858,106 @@
       }
     ],
     "7": [
+      {
+        "id": "7-wsq2w3p",
+        "geohash": "wsq2w3p",
+        "precision": 7,
+        "count": 3,
+        "totalStudents": 1813,
+        "latitude": 23.999901,
+        "longitude": 121.574199,
+        "bounds": {
+          "minLatitude": 23.999901,
+          "maxLatitude": 23.999901,
+          "minLongitude": 121.574199,
+          "maxLongitude": 121.574199
+        },
+        "topSchools": [
+          {
+            "id": "151312:國中",
+            "name": "私立慈大附中附設國中部",
+            "townshipName": "花蓮市",
+            "students": 640,
+            "status": "正常"
+          },
+          {
+            "id": "151312",
+            "name": "財團法人慈濟大學附中",
+            "townshipName": "花蓮市",
+            "students": 601,
+            "status": "正常"
+          },
+          {
+            "id": "151312:國小",
+            "name": "私立慈大附中附設國小部",
+            "townshipName": "花蓮市",
+            "students": 572,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsq2x6k",
+        "geohash": "wsq2x6k",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 976,
+        "latitude": 24.007369,
+        "longitude": 121.613555,
+        "bounds": {
+          "minLatitude": 24.007369,
+          "maxLatitude": 24.007369,
+          "minLongitude": 121.613555,
+          "maxLongitude": 121.613555
+        },
+        "topSchools": [
+          {
+            "id": "151306",
+            "name": "私立海星高中",
+            "townshipName": "新城鄉",
+            "students": 729,
+            "status": "正常"
+          },
+          {
+            "id": "151306:國中",
+            "name": "私立海星高中附設國中部",
+            "townshipName": "新城鄉",
+            "students": 247,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsnr7cd",
+        "geohash": "wsnr7cd",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 17,
+        "latitude": 23.783465,
+        "longitude": 121.457521,
+        "bounds": {
+          "minLatitude": 23.783465,
+          "maxLatitude": 23.783465,
+          "minLongitude": 121.457521,
+          "maxLongitude": 121.457521
+        },
+        "topSchools": [
+          {
+            "id": "154399",
+            "name": "縣立南平中學",
+            "townshipName": "鳳林鎮",
+            "students": 16,
+            "status": "正常"
+          },
+          {
+            "id": "154399:國中",
+            "name": "縣立南平中學附設國中部",
+            "townshipName": "鳳林鎮",
+            "students": 1,
+            "status": "正常"
+          }
+        ]
+      },
       {
         "id": "7-wsnkb81",
         "geohash": "wsnkb81",
@@ -6199,30 +6327,6 @@
         ]
       },
       {
-        "id": "7-wsq2w3p",
-        "geohash": "wsq2w3p",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 1813,
-        "latitude": 23.999901,
-        "longitude": 121.574199,
-        "bounds": {
-          "minLatitude": 23.999901,
-          "maxLatitude": 23.999901,
-          "minLongitude": 121.574199,
-          "maxLongitude": 121.574199
-        },
-        "topSchools": [
-          {
-            "id": "151312",
-            "name": "財團法人慈濟大學附中",
-            "townshipName": "花蓮市",
-            "students": 1813,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "7-wsq2qvp",
         "geohash": "wsq2qvp",
         "precision": 7,
@@ -7106,30 +7210,6 @@
             "name": "縣立永豐國小",
             "townshipName": "富里鄉",
             "students": 12,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsq2x6k",
-        "geohash": "wsq2x6k",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 976,
-        "latitude": 24.007369,
-        "longitude": 121.613555,
-        "bounds": {
-          "minLatitude": 24.007369,
-          "maxLatitude": 24.007369,
-          "minLongitude": 121.613555,
-          "maxLongitude": 121.613555
-        },
-        "topSchools": [
-          {
-            "id": "151306",
-            "name": "私立海星高中",
-            "townshipName": "新城鄉",
-            "students": 976,
             "status": "正常"
           }
         ]
@@ -8066,30 +8146,6 @@
             "name": "縣立林榮國小",
             "townshipName": "鳳林鎮",
             "students": 29,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsnr7cd",
-        "geohash": "wsnr7cd",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 17,
-        "latitude": 23.783465,
-        "longitude": 121.457521,
-        "bounds": {
-          "minLatitude": 23.783465,
-          "maxLatitude": 23.783465,
-          "minLongitude": 121.457521,
-          "maxLongitude": 121.457521
-        },
-        "topSchools": [
-          {
-            "id": "154399",
-            "name": "縣立南平中學",
-            "townshipName": "鳳林鎮",
-            "students": 17,
             "status": "正常"
           }
         ]

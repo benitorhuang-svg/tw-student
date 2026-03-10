@@ -1,6 +1,7 @@
 .footer-note{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:6px 16px;font-size:.66rem;color:var(--palette-ink-soft);flex-shrink:0;background:linear-gradient(180deg,rgba(255,255,255,.42),rgba(255,255,255,.28));border-top:1px solid rgba(55,80,106,.1)}
 .footer-note--official{font-size:.7rem}
 .footer-note__left,.footer-note__right{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.footer-refresh-cluster{display:flex;align-items:flex-start;gap:8px;flex-wrap:wrap}
 .footer-sources__label{color:rgba(55,80,106,.7)}
 .footer-sources{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .footer-governance-pill{margin-left:2px}
@@ -8,4 +9,5 @@
 .footer-sources a:hover{color:var(--palette-cyan);text-decoration:underline}
 .footer-refresh-button{padding:6px 12px;border-radius:999px;border:1px solid rgba(42,111,145,.22);background:linear-gradient(135deg,rgba(42,111,145,.14),rgba(184,135,70,.1));color:var(--palette-ink);font-size:.76rem;cursor:pointer}
 .footer-refresh-button:disabled{cursor:wait;opacity:.7}
+.footer-refresh-hint{display:inline-flex;align-items:center;min-height:30px;color:rgba(55,80,106,.72)}
 .footer-refresh-status{color:var(--palette-teal)}

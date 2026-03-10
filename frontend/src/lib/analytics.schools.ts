@@ -38,6 +38,7 @@ export function getSchoolInsights(
             delta,
             deltaRatio: previousStudents === 0 ? 0 : delta / previousStudents,
             trend: school.yearlyStudents.map((record) => ({ year: record.year, value: record.students })),
+            studentCompositions: school.studentCompositions,
             status: school.status,
             missingYears: school.missingYears,
             dataNotes: school.dataNotes,

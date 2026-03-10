@@ -11,6 +11,7 @@ const DATA_DIR = path.resolve(process.cwd(), 'public', 'data')
 const COUNTY_DETAIL_DIR = path.join(DATA_DIR, 'counties')
 const TOWNSHIP_DIR = path.join(DATA_DIR, 'townships')
 const BUCKET_DIR = path.join(DATA_DIR, 'buckets')
+const SCHOOL_ATLAS_DIR = path.join(DATA_DIR, 'school-atlas')
 
 async function prepareOutputDirectories() {
   await Promise.all([
@@ -18,17 +19,20 @@ async function prepareOutputDirectories() {
     rm(COUNTY_DETAIL_DIR, { recursive: true, force: true }),
     rm(TOWNSHIP_DIR, { recursive: true, force: true }),
     rm(BUCKET_DIR, { recursive: true, force: true }),
+    rm(SCHOOL_ATLAS_DIR, { recursive: true, force: true }),
     rm(path.join(DATA_DIR, 'county-boundaries.geojson'), { force: true }),
     rm(path.join(DATA_DIR, 'township-boundaries.geojson'), { force: true }),
     rm(path.join(DATA_DIR, 'education-dataset.json'), { force: true }),
     rm(path.join(DATA_DIR, 'education-atlas.sqlite'), { force: true }),
     rm(path.join(DATA_DIR, 'area-coordinate-lookup.json'), { force: true }),
     rm(path.join(DATA_DIR, 'school-coordinate-lookup.json'), { force: true }),
+    rm(path.join(DATA_DIR, 'school-atlas.json'), { force: true }),
   ])
 
   await mkdir(COUNTY_DETAIL_DIR, { recursive: true })
   await mkdir(TOWNSHIP_DIR, { recursive: true })
   await mkdir(BUCKET_DIR, { recursive: true })
+  await mkdir(SCHOOL_ATLAS_DIR, { recursive: true })
 }
 
 function attachAssetMetrics(datasetBundle, boundaries) {
@@ -36,10 +40,12 @@ function attachAssetMetrics(datasetBundle, boundaries) {
     const detailEntry = datasetBundle.countyDetails.find((entry) => entry.detail.county.id === county.id)
     const bucketEntry = datasetBundle.countyBuckets.find((entry) => entry.detail.county.id === county.id)
     const townshipEntry = boundaries.townshipTopologyByCounty.find((entry) => entry.countyId === county.id)
+    const schoolAtlasEntry = datasetBundle.countySchoolAtlasSlices.find((entry) => entry.countyId === county.id)
     county.assetMetrics = {
       detailBytes: detailEntry ? measurePrettyJsonBytes(detailEntry.detail) : 0,
       bucketBytes: bucketEntry ? measurePrettyJsonBytes(bucketEntry.detail) : 0,
       townshipBytes: townshipEntry ? measurePrettyJsonBytes(townshipEntry.topology) : 0,
+      schoolAtlasBytes: schoolAtlasEntry ? measurePrettyJsonBytes(schoolAtlasEntry.detail) : 0,
     }
   })
 
@@ -47,6 +53,7 @@ function attachAssetMetrics(datasetBundle, boundaries) {
     summaryBytes: measurePrettyJsonBytes(datasetBundle.summaryDataset),
     countyDetailBytes: datasetBundle.countyDetails.reduce((sum, entry) => sum + measurePrettyJsonBytes(entry.detail), 0),
     countyBucketBytes: datasetBundle.countyBuckets.reduce((sum, entry) => sum + measurePrettyJsonBytes(entry.detail), 0),
+    schoolAtlasBytes: datasetBundle.countySchoolAtlasSlices.reduce((sum, entry) => sum + measurePrettyJsonBytes(entry.detail), 0),
     countyBoundaryBytes: measurePrettyJsonBytes(boundaries.countyTopology),
     townshipBoundaryBytes: boundaries.townshipTopologyByCounty.reduce((sum, entry) => sum + measurePrettyJsonBytes(entry.topology), 0),
   }
@@ -61,12 +68,14 @@ async function writeAtlasOutputs(datasetBundle, boundaries, sqliteBuffer) {
 
   await Promise.all([
     writePrettyJson(path.join(DATA_DIR, 'education-summary.json'), datasetBundle.summaryDataset),
+    writePrettyJson(path.join(SCHOOL_ATLAS_DIR, 'index.json'), datasetBundle.schoolAtlasIndexDataset),
     writePrettyJson(path.join(DATA_DIR, 'county-boundaries.topo.json'), boundaries.countyTopology),
     writePrettyJson(path.join(DATA_DIR, 'area-coordinate-lookup.json'), areaCoordinateLookup),
     writePrettyJson(path.join(DATA_DIR, 'school-coordinate-lookup.json'), datasetBundle.schoolCoordinateLookup),
     writeFile(path.join(DATA_DIR, 'education-atlas.sqlite'), sqliteBuffer),
     ...datasetBundle.countyDetails.map((entry) => writePrettyJson(path.join(COUNTY_DETAIL_DIR, entry.fileName), entry.detail)),
     ...datasetBundle.countyBuckets.map((entry) => writePrettyJson(path.join(BUCKET_DIR, entry.fileName), entry.detail)),
+    ...datasetBundle.countySchoolAtlasSlices.map((entry) => writePrettyJson(path.join(DATA_DIR, entry.fileName), entry.detail)),
     ...boundaries.townshipTopologyByCounty.map((entry) => writePrettyJson(path.join(TOWNSHIP_DIR, entry.fileName), entry.topology)),
   ])
 }

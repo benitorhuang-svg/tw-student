@@ -175,6 +175,10 @@ function getStudentsForYear(school, year) {
   return school.yearlyStudents.find((entry) => entry.year === year)?.students ?? 0
 }
 
+function toCountySchoolAtlasFile(countyId) {
+  return `school-atlas/${countyId}.json`
+}
+
 function buildSummarySeries(schools) {
   const summaries = {}
   for (const educationLevel of SUMMARY_EDUCATION_LEVELS) {
@@ -193,6 +197,56 @@ function buildSummarySeries(schools) {
     }
   }
   return summaries
+}
+
+function mergeCount(left, right) {
+  if (left == null && right == null) return undefined
+  return (left ?? 0) + (right ?? 0)
+}
+
+function mergeBands(existingBands = [], nextBands = []) {
+  const mergedBands = new Map()
+  for (const band of [...existingBands, ...nextBands]) {
+    const key = `${band.category}:${band.id}`
+    if (!mergedBands.has(key)) {
+      mergedBands.set(key, { ...band })
+      continue
+    }
+
+    const entry = mergedBands.get(key)
+    entry.totalStudents += band.totalStudents ?? 0
+    entry.maleStudents = mergeCount(entry.maleStudents, band.maleStudents)
+    entry.femaleStudents = mergeCount(entry.femaleStudents, band.femaleStudents)
+  }
+
+  return [...mergedBands.values()]
+}
+
+function mergeComposition(existingComposition, nextComposition) {
+  if (!existingComposition) return nextComposition
+  if (!nextComposition) return existingComposition
+
+  return {
+    totalStudents: (existingComposition.totalStudents ?? 0) + (nextComposition.totalStudents ?? 0),
+    maleStudents: mergeCount(existingComposition.maleStudents, nextComposition.maleStudents),
+    femaleStudents: mergeCount(existingComposition.femaleStudents, nextComposition.femaleStudents),
+    bands: mergeBands(existingComposition.bands, nextComposition.bands),
+  }
+}
+
+function buildYearlyCompositions(entry) {
+  return ACADEMIC_YEARS.map((year) => {
+    const composition = entry.yearlyCompositions.get(year)
+    if (composition) {
+      return { year, ...composition }
+    }
+
+    return {
+      year,
+      totalStudents: entry.yearlyStudents.get(year) ?? 0,
+      bands: [],
+    }
+  })
 }
 
 async function fetchAllSchoolPoints() {
@@ -264,28 +318,39 @@ async function buildDirectoryLookup() {
 }
 
 async function buildTrendLookup() {
+  // Key by code:level so 完全中學 (schools spanning multiple levels)
+  // keep each level's students separate instead of accumulating them.
   const trendsByCode = new Map()
 
   const addTrendValue = (code, year, level, students, scope = {}) => {
     if (!code || students <= 0) return
-    if (!trendsByCode.has(code)) {
-      trendsByCode.set(code, {
+    const key = `${code}:${level}`
+    if (!trendsByCode.has(key)) {
+      trendsByCode.set(key, {
+        code,
         level,
         yearlyStudents: new Map(),
+        yearlyCompositions: new Map(),
         countyName: '',
         townName: '',
+        schoolName: '',
       })
     }
 
-    const entry = trendsByCode.get(code)
-    entry.level = level
+    const entry = trendsByCode.get(key)
     if (!entry.countyName && scope.countyName) {
       entry.countyName = normalizeCountyName(scope.countyName)
     }
     if (!entry.townName && scope.townName) {
       entry.townName = normalizeTownName(scope.townName)
     }
+    if (!entry.schoolName && scope.schoolName) {
+      entry.schoolName = normalizeText(scope.schoolName)
+    }
     entry.yearlyStudents.set(year, students + (entry.yearlyStudents.get(year) ?? 0))
+    if (scope.composition) {
+      entry.yearlyCompositions.set(year, mergeComposition(entry.yearlyCompositions.get(year), scope.composition))
+    }
   }
 
   for (const year of ACADEMIC_YEARS) {
@@ -300,6 +365,8 @@ async function buildTrendLookup() {
         rows.forEach((row) => addTrendValue(normalizeSchoolCode(row['學校代碼']), year, level, config.sumRow(row), {
           countyName: row['縣市名稱'],
           townName: row['鄉鎮市區'],
+          schoolName: row['學校名稱'],
+          composition: config.breakdownRow?.(row),
         }))
         continue
       }
@@ -314,6 +381,8 @@ async function buildTrendLookup() {
         rows.forEach((row) => addTrendValue(normalizeSchoolCode(row['學校代碼']), year, level, detailFile.sumRow(row), {
           countyName: row['縣市名稱'],
           townName: row['鄉鎮市區'],
+          schoolName: row['學校名稱'],
+          composition: detailFile.breakdownRow?.(row),
         }))
       }
     }
@@ -325,15 +394,20 @@ async function buildTrendLookup() {
 export async function buildOfficialDataset() {
   const [points, directoryLookup, trendLookup] = await Promise.all([fetchAllSchoolPoints(), buildDirectoryLookup(), buildTrendLookup()])
   const countyMap = new Map()
-  const processedCodes = new Set()
+  const processedKeys = new Set()
+  const coordinatesByCode = new Map()
+  const locationByCode = new Map()
 
   for (const feature of points) {
     const code = normalizeSchoolCode(feature.attributes['代碼'])
-    const trendEntry = trendLookup.get(code)
     const level = Object.entries(LEVEL_CONFIG).find(([, config]) => config.pointLevel === feature.attributes['學校級別'])?.[0]
+    const trendKey = `${code}:${level}`
+    const trendEntry = trendLookup.get(trendKey)
     if (!trendEntry || !level) continue
 
-    processedCodes.add(code)
+    processedKeys.add(trendKey)
+    const gisCoordinates = { longitude: Number(feature.geometry.x.toFixed(6)), latitude: Number(feature.geometry.y.toFixed(6)) }
+    coordinatesByCode.set(code, gisCoordinates)
 
     const countyName = normalizeCountyName(feature.attributes['縣市名稱'])
     const townName = normalizeTownName(feature.attributes['鄉鎮市區'])
@@ -343,6 +417,7 @@ export async function buildOfficialDataset() {
     const directoryRow = directoryLookup.get(code)
     const countyId = countyName
     const townshipId = `${countyName}:${townName}`
+    locationByCode.set(code, { countyName, townName, countyId, townshipId })
 
     if (!countyMap.has(countyId)) {
       countyMap.set(countyId, { id: countyId, name: countyName, shortLabel: shortCountyLabel(countyName), region, towns: new Map() })
@@ -354,6 +429,7 @@ export async function buildOfficialDataset() {
     }
 
     const yearlyStudents = ACADEMIC_YEARS.map((year) => ({ year, students: trendEntry.yearlyStudents.get(year) ?? 0 }))
+    const studentCompositions = buildYearlyCompositions(trendEntry)
     const annotations = buildSchoolAnnotations(yearlyStudents)
 
     county.towns.get(townshipId).schools.push({
@@ -368,8 +444,9 @@ export async function buildOfficialDataset() {
       phone: normalizeText(feature.attributes['電話'] ?? directoryRow?.['電話']),
       website: normalizeText(feature.attributes['網址'] ?? directoryRow?.['網址']),
       profileUrl: normalizeText(feature.attributes['學校概況']),
-      coordinates: { longitude: Number(feature.geometry.x.toFixed(6)), latitude: Number(feature.geometry.y.toFixed(6)) },
+      coordinates: gisCoordinates,
       yearlyStudents,
+      studentCompositions,
       status: annotations.status,
       missingYears: annotations.missingYears,
       dataNotes: annotations.dataNotes,
@@ -377,18 +454,21 @@ export async function buildOfficialDataset() {
   }
 
   // ── Second pass: include schools from trend data missing from point layer ──
+  // This also picks up the other-level side of 完全中學 (e.g. the 國中部
+  // when the GIS entry is classified as 高級中等學校).
   const missingCoordinates = []
-  for (const [code, trendEntry] of trendLookup) {
-    if (processedCodes.has(code)) continue
+  for (const [trendKey, trendEntry] of trendLookup) {
+    if (processedKeys.has(trendKey)) continue
 
+    const code = trendEntry.code
     const directoryRow = directoryLookup.get(code)
-    if (!directoryRow) continue
 
     const level = trendEntry.level
     if (!level) continue
 
-    const countyName = normalizeCountyName(trendEntry.countyName || directoryRow['縣市名稱'] || '')
-    const townName = normalizeTownName(trendEntry.townName || directoryRow['鄉鎮市區'] || '')
+    const sharedLocation = locationByCode.get(code)
+    const countyName = normalizeCountyName(trendEntry.countyName || directoryRow?.['縣市名稱'] || sharedLocation?.countyName || '')
+    const townName = normalizeTownName(trendEntry.townName || directoryRow?.['鄉鎮市區'] || sharedLocation?.townName || '')
     const region = REGION_BY_COUNTY[countyName]
     if (!region || !countyName || !townName) continue
 
@@ -404,17 +484,26 @@ export async function buildOfficialDataset() {
       county.towns.set(townshipId, { id: townshipId, name: townName, countyId, schools: [] })
     }
 
-    const address = normalizeText(directoryRow['地址'] ?? '')
-    const resolvedCoordinate = await resolveMissingSchoolCoordinate(code, address)
+    const address = normalizeText(directoryRow?.['地址'] ?? '')
+    // Reuse GIS coordinates when another level of the same school was
+    // already matched in the first pass (e.g. 完全中學 國中部 reuses
+    // the 高中部's GIS point).
+    const sharedCoord = coordinatesByCode.get(code)
+    const resolvedCoordinate = sharedCoord ? null : await resolveMissingSchoolCoordinate(code, address)
+    const finalCoordinates = sharedCoord
+      ?? (resolvedCoordinate ? { longitude: resolvedCoordinate.longitude, latitude: resolvedCoordinate.latitude } : { longitude: 0, latitude: 0 })
     const yearlyStudents = ACADEMIC_YEARS.map((year) => ({ year, students: trendEntry.yearlyStudents.get(year) ?? 0 }))
+    const studentCompositions = buildYearlyCompositions(trendEntry)
     const annotations = buildSchoolAnnotations(yearlyStudents)
-    const schoolName = normalizeText(directoryRow['學校名稱'] ?? code)
+    const schoolName = normalizeText(trendEntry.schoolName || directoryRow?.['學校名稱'] || code)
 
-    annotations.dataNotes.push({
-      type: '其他',
-      message: resolvedCoordinate?.note ?? '正式統計資料存在但 GIS 點位缺失，座標使用鄉鎮近似值。',
-      severity: 'info',
-    })
+    if (!sharedCoord) {
+      annotations.dataNotes.push({
+        type: '其他',
+        message: resolvedCoordinate?.note ?? '正式統計資料存在但 GIS 點位缺失，座標使用鄉鎮近似值。',
+        severity: 'info',
+      })
+    }
     const missingCoordinateEntry = {
       code,
       name: schoolName,
@@ -422,16 +511,20 @@ export async function buildOfficialDataset() {
       township: townName,
       level,
       address,
-      longitude: resolvedCoordinate?.longitude,
-      latitude: resolvedCoordinate?.latitude,
-      coordinateResolution: resolvedCoordinate?.resolution ?? '鄉鎮近似值',
+      longitude: finalCoordinates.longitude || resolvedCoordinate?.longitude,
+      latitude: finalCoordinates.latitude || resolvedCoordinate?.latitude,
+      coordinateResolution: sharedCoord ? '共用 GIS 點位' : (resolvedCoordinate?.resolution ?? '鄉鎮近似值'),
       coordinateMatchType: resolvedCoordinate?.matchType,
       coordinateMatchScore: resolvedCoordinate?.matchScore,
     }
     missingCoordinates.push(missingCoordinateEntry)
 
+    // Use composite id when another level of the same school was already
+    // processed (完全中學 etc.) to ensure unique React keys.
+    const schoolId = coordinatesByCode.has(code) ? `${code}:${level}` : code
+
     county.towns.get(townshipId).schools.push({
-      id: code,
+      id: schoolId,
       code,
       name: schoolName,
       countyId,
@@ -439,13 +532,12 @@ export async function buildOfficialDataset() {
       educationLevel: level,
       managementType: inferManagementType(directoryRow, schoolName),
       address,
-      phone: normalizeText(directoryRow['電話'] ?? ''),
-      website: normalizeText(directoryRow['網址'] ?? ''),
+      phone: normalizeText(directoryRow?.['電話'] ?? ''),
+      website: normalizeText(directoryRow?.['網址'] ?? ''),
       profileUrl: '',
-      coordinates: resolvedCoordinate
-        ? { longitude: resolvedCoordinate.longitude, latitude: resolvedCoordinate.latitude }
-        : { longitude: 0, latitude: 0 },
+      coordinates: finalCoordinates,
       yearlyStudents,
+      studentCompositions,
       status: annotations.status,
       missingYears: annotations.missingYears,
       dataNotes: annotations.dataNotes,
@@ -506,15 +598,21 @@ export async function buildOfficialDataset() {
   // ── Build school code index for frontend search ──
   const schoolCodeIndex = {}
   const schoolCoordinateLookup = {}
+  const levelOrder = new Map([['國小', 1], ['國中', 2], ['高中職', 3], ['大專院校', 4]])
   for (const county of counties) {
     for (const town of county.towns) {
       for (const school of town.schools) {
+        const existingIndexEntry = schoolCodeIndex[school.code]
         schoolCodeIndex[school.code] = {
-          countyId: county.id,
-          townshipId: town.id,
-          name: school.name,
-          longitude: school.coordinates.longitude,
-          latitude: school.coordinates.latitude,
+          countyId: existingIndexEntry?.countyId ?? county.id,
+          townshipId: existingIndexEntry?.townshipId ?? town.id,
+          countyName: existingIndexEntry?.countyName ?? county.name,
+          townshipName: existingIndexEntry?.townshipName ?? town.name,
+          name: existingIndexEntry?.name ?? school.name,
+          schoolIds: [...new Set([...(existingIndexEntry?.schoolIds ?? []), school.id])],
+          levels: [...new Set([...(existingIndexEntry?.levels ?? []), school.educationLevel])].sort((left, right) => (levelOrder.get(left) ?? 99) - (levelOrder.get(right) ?? 99)),
+          longitude: existingIndexEntry?.longitude ?? school.coordinates.longitude,
+          latitude: existingIndexEntry?.latitude ?? school.coordinates.latitude,
         }
         schoolCoordinateLookup[school.code] = {
           code: school.code,
@@ -528,14 +626,99 @@ export async function buildOfficialDataset() {
     }
   }
 
+  const generatedAt = new Date().toISOString()
+  const countySchoolAtlasSlices = counties.map((county) => {
+    const schoolAtlasByCode = new Map()
+
+    county.towns.forEach((town) => {
+      town.schools.forEach((school) => {
+        if (!schoolAtlasByCode.has(school.code)) {
+          schoolAtlasByCode.set(school.code, {
+            code: school.code,
+            primaryName: school.name,
+            aliases: new Set([school.name]),
+            levels: [],
+          })
+        }
+
+        const schoolAtlasEntry = schoolAtlasByCode.get(school.code)
+        schoolAtlasEntry.aliases.add(school.name)
+        schoolAtlasEntry.levels.push({
+          schoolId: school.id,
+          name: school.name,
+          educationLevel: school.educationLevel,
+          managementType: school.managementType,
+          countyId: county.id,
+          countyName: county.name,
+          townshipId: town.id,
+          townshipName: town.name,
+          coordinates: school.coordinates,
+          address: school.address,
+          phone: school.phone,
+          website: school.website,
+          profileUrl: school.profileUrl,
+          yearlyStudents: school.yearlyStudents,
+          studentCompositions: school.studentCompositions ?? [],
+          status: school.status,
+          missingYears: school.missingYears,
+          dataNotes: school.dataNotes,
+        })
+      })
+    })
+
+    const schools = [...schoolAtlasByCode.values()]
+      .map((entry) => ({
+        code: entry.code,
+        primaryName: entry.primaryName,
+        aliases: [...entry.aliases].sort((left, right) => left.localeCompare(right, 'zh-Hant')),
+        levels: entry.levels.sort((left, right) => {
+          const levelDelta = (levelOrder.get(left.educationLevel) ?? 99) - (levelOrder.get(right.educationLevel) ?? 99)
+          if (levelDelta !== 0) return levelDelta
+          return left.name.localeCompare(right.name, 'zh-Hant')
+        }),
+      }))
+      .sort((left, right) => left.code.localeCompare(right.code, 'en'))
+
+    return {
+      countyId: county.id,
+      fileName: toCountySchoolAtlasFile(county.id),
+      detail: {
+        generatedAt,
+        years: ACADEMIC_YEARS,
+        county: {
+          id: county.id,
+          name: county.name,
+          shortLabel: county.shortLabel,
+          region: county.region,
+        },
+        schools,
+      },
+    }
+  })
+
+  const schoolAtlasIndexDataset = {
+    generatedAt,
+    years: ACADEMIC_YEARS,
+    counties: countySchoolAtlasSlices.map((entry) => ({
+      countyId: entry.countyId,
+      countyName: entry.detail.county.name,
+      schoolAtlasFile: entry.fileName,
+      schoolCount: entry.detail.schools.length,
+      levelCount: entry.detail.schools.reduce((sum, school) => sum + school.levels.length, 0),
+    })),
+  }
+
   return {
-    generatedAt: new Date().toISOString(),
+    generatedAt,
     years: ACADEMIC_YEARS,
     sources,
     missingCoordinates,
+    schoolAtlasIndexDataset,
+    countySchoolAtlasSlices,
     summaryDataset: {
-      generatedAt: new Date().toISOString(),
+      generatedAt,
       years: ACADEMIC_YEARS,
+      schoolAtlasFile: 'school-atlas/index.json',
       sources,
       schoolCodeIndex,
       missingCoordinates,
@@ -547,6 +730,7 @@ export async function buildOfficialDataset() {
         townshipFile: `townships/${county.id}.topo.json`,
         detailFile: `counties/${toCountyDetailFile(county.id)}`,
         bucketFile: `buckets/${toCountyBucketFile(county.id)}`,
+        schoolAtlasFile: toCountySchoolAtlasFile(county.id),
         dataNotes: county.dataNotes,
         summaries: buildSummarySeries(county.towns.flatMap((town) => town.schools)),
         towns: county.towns.map((town) => ({ id: town.id, name: town.name, countyId: town.countyId, dataNotes: town.dataNotes, summaries: buildSummarySeries(town.schools) })),
@@ -558,7 +742,7 @@ export async function buildOfficialDataset() {
     })),
     countyBuckets: counties.map((county) => ({ fileName: toCountyBucketFile(county.id), detail: buildCountyBucketSlice(county) })),
     schoolCoordinateLookup: {
-      generatedAt: new Date().toISOString(),
+      generatedAt,
       schools: schoolCoordinateLookup,
     },
   }

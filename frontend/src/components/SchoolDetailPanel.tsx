@@ -6,6 +6,7 @@ import PieChart from './PieChart'
 import SchoolAnalysisView from './SchoolAnalysisView'
 import SchoolDataTable from './SchoolDataTable'
 import SchoolNotesView from './SchoolNotesView'
+import type { CountySchoolAtlasDataset } from '../data/educationData'
 import type { SchoolInsight } from '../lib/analytics'
 import { formatAcademicYear, formatStudents } from '../lib/analytics'
 import type { AcademicYear } from '../hooks/types'
@@ -21,6 +22,9 @@ type SchoolDetailPanelProps = {
   schoolInsights: SchoolInsight[]
   countyWideSchoolInsights: SchoolInsight[]
   selectedSchool: SchoolInsight | null
+  selectedCountySchoolAtlas?: CountySchoolAtlasDataset | null
+  isCountySchoolAtlasLoading?: boolean
+  countySchoolAtlasError?: string | null
   schoolPanelTitle?: string
   panelMode: 'workspace' | 'focus'
   activeYear: AcademicYear
@@ -42,6 +46,9 @@ function SchoolDetailPanel({
   schoolInsights,
   countyWideSchoolInsights,
   selectedSchool,
+  selectedCountySchoolAtlas = null,
+  isCountySchoolAtlasLoading = false,
+  countySchoolAtlasError = null,
   schoolPanelTitle,
   panelMode,
   activeYear,
@@ -71,8 +78,8 @@ function SchoolDetailPanel({
     : scopeAverage
   const peerSchools = selectedSchool
     ? countyWideSchoolInsights
-        .filter((school) => school.educationLevel === selectedSchool.educationLevel)
-        .slice(0, 10)
+      .filter((school) => school.educationLevel === selectedSchool.educationLevel)
+      .slice(0, 10)
     : []
   const scopeDistribution = useMemo(() => {
     const totals = new Map<string, number>()
@@ -92,6 +99,39 @@ function SchoolDetailPanel({
     })
     return [...groups.entries()].map(([label, values]) => ({ id: label, label, values }))
   }, [schoolInsights])
+  const selectedSchoolAtlasEntry = useMemo(() => {
+    if (!selectedSchool) return null
+
+    const atlasEntry = selectedCountySchoolAtlas?.schools.find((entry) => entry.code === selectedSchool.code)
+    if (atlasEntry) return atlasEntry
+
+    if ((selectedSchool.studentCompositions?.length ?? 0) === 0) return null
+
+    return {
+      code: selectedSchool.code,
+      primaryName: selectedSchool.name,
+      aliases: [],
+      levels: [{
+        schoolId: selectedSchool.id,
+        name: selectedSchool.name,
+        educationLevel: selectedSchool.educationLevel,
+        managementType: selectedSchool.managementType,
+        countyId: '',
+        countyName: selectedSchool.countyName,
+        townshipId: selectedSchool.townshipId,
+        townshipName: selectedSchool.townshipName,
+        coordinates: { longitude: 0, latitude: 0 },
+        address: selectedSchool.address,
+        phone: selectedSchool.phone,
+        website: selectedSchool.website,
+        yearlyStudents: selectedSchool.trend.map((point) => ({ year: point.year, students: point.value })),
+        studentCompositions: selectedSchool.studentCompositions ?? [],
+        status: selectedSchool.status,
+        missingYears: selectedSchool.missingYears,
+        dataNotes: selectedSchool.dataNotes,
+      }],
+    }
+  }, [selectedCountySchoolAtlas, selectedSchool])
 
   return (
     <section className="panel school-detail-panel" data-testid="school-detail-panel">
@@ -108,9 +148,9 @@ function SchoolDetailPanel({
           {panelMode === 'workspace' ? (
             <div className="school-detail-shell__topbar">
               <div>
-                <p className="eyebrow">學校工作台</p>
-                <h3>{schoolPanelTitle ?? '學校清單與分析'}</h3>
-                <p>{selectedSchool ? `目前已選取 ${selectedSchool.name}；此頁維持清單、分布與範圍比較，單校內容請切到校別概況。` : `${scopeLabel} 可先看清單與分布，再點入單一學校查看校別概況。`}</p>
+                <p className="eyebrow" style={{ color: 'var(--palette-cyan)' }}>區域陣列掃描</p>
+                <h3>{schoolPanelTitle ?? '學校清單與規模分布'}</h3>
+                <p>{selectedSchool ? `目前已捕捉 ${selectedSchool.name}。此頁維持宏觀的清單矩陣，查看該校特寫請前往「校別概況」。` : `${scopeLabel} 群像。支援散點、箱線圖及清單交叉檢視，點擊節點即可查看校別概況。`}</p>
               </div>
 
               <div className="school-detail-shell__topbar-actions">
@@ -242,6 +282,9 @@ function SchoolDetailPanel({
             selectedSchool ? (
               <SchoolAnalysisView
                 selectedSchool={selectedSchool}
+                schoolAtlasEntry={selectedSchoolAtlasEntry}
+                isSchoolAtlasLoading={isCountySchoolAtlasLoading}
+                schoolAtlasError={countySchoolAtlasError}
                 activeYear={activeYear}
                 scopeLabel={scopeLabel}
                 scopeAverage={scopeAverage}

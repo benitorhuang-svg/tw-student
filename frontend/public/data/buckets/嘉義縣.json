@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-09T18:20:24.799Z",
+  "generatedAt": "2026-03-10T12:31:52.836Z",
   "county": {
     "id": "嘉義縣",
     "name": "嘉義縣",
@@ -12,10 +12,10 @@
         "id": "5-wsjwm",
         "geohash": "wsjwm",
         "precision": 5,
-        "count": 6,
+        "count": 8,
         "totalStudents": 4074,
-        "latitude": 23.609553,
-        "longitude": 120.472095,
+        "latitude": 23.608059,
+        "longitude": 120.472301,
         "bounds": {
           "minLatitude": 23.599786,
           "maxLatitude": 23.620618,
@@ -49,6 +49,141 @@
             "name": "縣立三和國小",
             "townshipName": "大林鎮",
             "students": 226,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "5-wsjt3",
+        "geohash": "wsjt3",
+        "precision": 5,
+        "count": 7,
+        "totalStudents": 2098,
+        "latitude": 23.462003,
+        "longitude": 120.294239,
+        "bounds": {
+          "minLatitude": 23.457769,
+          "maxLatitude": 23.465513,
+          "minLongitude": 120.287674,
+          "maxLongitude": 120.30783
+        },
+        "topSchools": [
+          {
+            "id": "104742",
+            "name": "縣立祥和國小",
+            "townshipName": "朴子市",
+            "students": 562,
+            "status": "正常"
+          },
+          {
+            "id": "104326",
+            "name": "縣立永慶高中",
+            "townshipName": "太保市",
+            "students": 522,
+            "status": "正常"
+          },
+          {
+            "id": "104326:國中",
+            "name": "縣立永慶高中附設國中部",
+            "townshipName": "太保市",
+            "students": 478,
+            "status": "正常"
+          },
+          {
+            "id": "104670",
+            "name": "縣立安東國小",
+            "townshipName": "太保市",
+            "students": 294,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "5-wsjtq",
+        "geohash": "wsjtq",
+        "precision": 5,
+        "count": 6,
+        "totalStudents": 645,
+        "latitude": 23.433357,
+        "longitude": 120.521719,
+        "bounds": {
+          "minLatitude": 23.422985,
+          "maxLatitude": 23.45846,
+          "minLongitude": 120.509963,
+          "maxLongitude": 120.538903
+        },
+        "topSchools": [
+          {
+            "id": "104518",
+            "name": "縣立中埔國中",
+            "townshipName": "中埔鄉",
+            "students": 232,
+            "status": "正常"
+          },
+          {
+            "id": "104681",
+            "name": "縣立中埔國小",
+            "townshipName": "中埔鄉",
+            "students": 215,
+            "status": "正常"
+          },
+          {
+            "id": "104690",
+            "name": "縣立社口國小",
+            "townshipName": "中埔鄉",
+            "students": 158,
+            "status": "正常"
+          },
+          {
+            "id": "104694",
+            "name": "縣立內甕國小",
+            "townshipName": "番路鄉",
+            "students": 22,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "5-wsjtu",
+        "geohash": "wsjtu",
+        "precision": 5,
+        "count": 6,
+        "totalStudents": 7863,
+        "latitude": 23.532211,
+        "longitude": 120.433789,
+        "bounds": {
+          "minLatitude": 23.52679,
+          "maxLatitude": 23.539218,
+          "minLongitude": 120.420028,
+          "maxLongitude": 120.451667
+        },
+        "topSchools": [
+          {
+            "id": "1065",
+            "name": "吳鳳科技大學",
+            "townshipName": "民雄鄉",
+            "students": 3933,
+            "status": "正常"
+          },
+          {
+            "id": "101304:國中",
+            "name": "私立協同高中附設國中部",
+            "townshipName": "民雄鄉",
+            "students": 1204,
+            "status": "正常"
+          },
+          {
+            "id": "101304",
+            "name": "私立協同高中",
+            "townshipName": "民雄鄉",
+            "students": 868,
+            "status": "正常"
+          },
+          {
+            "id": "100402",
+            "name": "國立民雄農工",
+            "townshipName": "民雄鄉",
+            "students": 765,
             "status": "正常"
           }
         ]
@@ -99,91 +234,46 @@
         ]
       },
       {
-        "id": "5-wsjtq",
-        "geohash": "wsjtq",
+        "id": "5-wsjt1",
+        "geohash": "wsjt1",
         "precision": 5,
         "count": 5,
-        "totalStudents": 645,
-        "latitude": 23.434923,
-        "longitude": 120.524071,
+        "totalStudents": 313,
+        "latitude": 23.401335,
+        "longitude": 120.306845,
         "bounds": {
-          "minLatitude": 23.422985,
-          "maxLatitude": 23.45846,
-          "minLongitude": 120.512632,
-          "maxLongitude": 120.538903
+          "minLatitude": 23.393381,
+          "maxLatitude": 23.411748,
+          "minLongitude": 120.290458,
+          "maxLongitude": 120.315099
         },
         "topSchools": [
           {
-            "id": "104518",
-            "name": "縣立中埔國中",
-            "townshipName": "中埔鄉",
-            "students": 232,
+            "id": "104655",
+            "name": "縣立鹿草國小",
+            "townshipName": "鹿草鄉",
+            "students": 149,
             "status": "正常"
           },
           {
-            "id": "104681",
-            "name": "縣立中埔國小",
-            "townshipName": "中埔鄉",
-            "students": 215,
+            "id": "104514",
+            "name": "縣立鹿草國中",
+            "townshipName": "鹿草鄉",
+            "students": 112,
             "status": "正常"
           },
           {
-            "id": "104690",
-            "name": "縣立社口國小",
-            "townshipName": "中埔鄉",
-            "students": 158,
+            "id": "104656",
+            "name": "縣立重寮國小",
+            "townshipName": "鹿草鄉",
+            "students": 38,
             "status": "正常"
           },
           {
-            "id": "104694",
-            "name": "縣立內甕國小",
-            "townshipName": "番路鄉",
-            "students": 22,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "5-wsjtu",
-        "geohash": "wsjtu",
-        "precision": 5,
-        "count": 5,
-        "totalStudents": 7863,
-        "latitude": 23.532342,
-        "longitude": 120.433405,
-        "bounds": {
-          "minLatitude": 23.52679,
-          "maxLatitude": 23.539218,
-          "minLongitude": 120.420028,
-          "maxLongitude": 120.451667
-        },
-        "topSchools": [
-          {
-            "id": "1065",
-            "name": "吳鳳科技大學",
-            "townshipName": "民雄鄉",
-            "students": 3933,
-            "status": "正常"
-          },
-          {
-            "id": "101304",
-            "name": "私立協同高中",
-            "townshipName": "民雄鄉",
-            "students": 2072,
-            "status": "正常"
-          },
-          {
-            "id": "100402",
-            "name": "國立民雄農工",
-            "townshipName": "民雄鄉",
-            "students": 765,
-            "status": "正常"
-          },
-          {
-            "id": "104743",
-            "name": "縣立福樂國小",
-            "townshipName": "民雄鄉",
-            "students": 611,
+            "id": "104659",
+            "name": "縣立竹園國小",
+            "townshipName": "鹿草鄉",
+            "students": 14,
             "status": "正常"
           }
         ]
@@ -364,51 +454,6 @@
             "name": "縣立六腳國小",
             "townshipName": "六腳鄉",
             "students": 36,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "5-wsjt3",
-        "geohash": "wsjt3",
-        "precision": 5,
-        "count": 4,
-        "totalStudents": 2098,
-        "latitude": 23.461007,
-        "longitude": 120.295454,
-        "bounds": {
-          "minLatitude": 23.457769,
-          "maxLatitude": 23.465513,
-          "minLongitude": 120.287674,
-          "maxLongitude": 120.30783
-        },
-        "topSchools": [
-          {
-            "id": "104326",
-            "name": "縣立永慶高中",
-            "townshipName": "太保市",
-            "students": 1000,
-            "status": "正常"
-          },
-          {
-            "id": "104742",
-            "name": "縣立祥和國小",
-            "townshipName": "朴子市",
-            "students": 562,
-            "status": "正常"
-          },
-          {
-            "id": "104670",
-            "name": "縣立安東國小",
-            "townshipName": "太保市",
-            "students": 294,
-            "status": "正常"
-          },
-          {
-            "id": "100303",
-            "name": "國立嘉科實驗高中",
-            "townshipName": "朴子市",
-            "students": 242,
             "status": "正常"
           }
         ]
@@ -729,51 +774,6 @@
         ]
       },
       {
-        "id": "5-wsjt1",
-        "geohash": "wsjt1",
-        "precision": 5,
-        "count": 4,
-        "totalStudents": 313,
-        "latitude": 23.402182,
-        "longitude": 120.30651,
-        "bounds": {
-          "minLatitude": 23.393381,
-          "maxLatitude": 23.411748,
-          "minLongitude": 120.290458,
-          "maxLongitude": 120.315099
-        },
-        "topSchools": [
-          {
-            "id": "104655",
-            "name": "縣立鹿草國小",
-            "townshipName": "鹿草鄉",
-            "students": 149,
-            "status": "正常"
-          },
-          {
-            "id": "104514",
-            "name": "縣立鹿草國中",
-            "townshipName": "鹿草鄉",
-            "students": 112,
-            "status": "正常"
-          },
-          {
-            "id": "104656",
-            "name": "縣立重寮國小",
-            "townshipName": "鹿草鄉",
-            "students": 38,
-            "status": "正常"
-          },
-          {
-            "id": "104659",
-            "name": "縣立竹園國小",
-            "townshipName": "鹿草鄉",
-            "students": 14,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "5-wsjtm",
         "geohash": "wsjtm",
         "precision": 5,
@@ -921,6 +921,44 @@
             "name": "縣立過溝國小",
             "townshipName": "布袋鎮",
             "students": 104,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "5-wsjtz",
+        "geohash": "wsjtz",
+        "precision": 5,
+        "count": 3,
+        "totalStudents": 1440,
+        "latitude": 23.521217,
+        "longitude": 120.553244,
+        "bounds": {
+          "minLatitude": 23.520925,
+          "maxLatitude": 23.521363,
+          "minLongitude": 120.552577,
+          "maxLongitude": 120.553577
+        },
+        "topSchools": [
+          {
+            "id": "104319:國中",
+            "name": "縣立竹崎高中附設國中部",
+            "townshipName": "竹崎鄉",
+            "students": 538,
+            "status": "正常"
+          },
+          {
+            "id": "104319",
+            "name": "縣立竹崎高中",
+            "townshipName": "竹崎鄉",
+            "students": 466,
+            "status": "正常"
+          },
+          {
+            "id": "104700",
+            "name": "縣立竹崎國小",
+            "townshipName": "竹崎鄉",
+            "students": 436,
             "status": "正常"
           }
         ]
@@ -1074,6 +1112,44 @@
             "townshipName": "阿里山鄉",
             "students": 6,
             "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "5-wsjy0",
+        "geohash": "wsjy0",
+        "precision": 5,
+        "count": 3,
+        "totalStudents": 29,
+        "latitude": 23.567667,
+        "longitude": 120.602929,
+        "bounds": {
+          "minLatitude": 23.561245,
+          "maxLatitude": 23.57721,
+          "minLongitude": 120.590255,
+          "maxLongitude": 120.611643
+        },
+        "topSchools": [
+          {
+            "id": "104716",
+            "name": "縣立梅圳國小",
+            "townshipName": "梅山鄉",
+            "students": 18,
+            "status": "正常"
+          },
+          {
+            "id": "104717",
+            "name": "縣立太平國小",
+            "townshipName": "梅山鄉",
+            "students": 11,
+            "status": "正常"
+          },
+          {
+            "id": "104724",
+            "name": "縣立太和國小",
+            "townshipName": "梅山鄉",
+            "students": 0,
+            "status": "待確認"
           }
         ]
       },
@@ -1359,68 +1435,6 @@
             "name": "縣立光榮國小",
             "townshipName": "義竹鄉",
             "students": 49,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "5-wsjtz",
-        "geohash": "wsjtz",
-        "precision": 5,
-        "count": 2,
-        "totalStudents": 1440,
-        "latitude": 23.521144,
-        "longitude": 120.553077,
-        "bounds": {
-          "minLatitude": 23.520925,
-          "maxLatitude": 23.521363,
-          "minLongitude": 120.552577,
-          "maxLongitude": 120.553577
-        },
-        "topSchools": [
-          {
-            "id": "104319",
-            "name": "縣立竹崎高中",
-            "townshipName": "竹崎鄉",
-            "students": 1004,
-            "status": "正常"
-          },
-          {
-            "id": "104700",
-            "name": "縣立竹崎國小",
-            "townshipName": "竹崎鄉",
-            "students": 436,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "5-wsjy0",
-        "geohash": "wsjy0",
-        "precision": 5,
-        "count": 2,
-        "totalStudents": 29,
-        "latitude": 23.569228,
-        "longitude": 120.598572,
-        "bounds": {
-          "minLatitude": 23.561245,
-          "maxLatitude": 23.57721,
-          "minLongitude": 120.590255,
-          "maxLongitude": 120.606889
-        },
-        "topSchools": [
-          {
-            "id": "104716",
-            "name": "縣立梅圳國小",
-            "townshipName": "梅山鄉",
-            "students": 18,
-            "status": "正常"
-          },
-          {
-            "id": "104717",
-            "name": "縣立太平國小",
-            "townshipName": "梅山鄉",
-            "students": 11,
             "status": "正常"
           }
         ]
@@ -2200,6 +2214,82 @@
     ],
     "6": [
       {
+        "id": "6-wsjt3r",
+        "geohash": "wsjt3r",
+        "precision": 6,
+        "count": 5,
+        "totalStudents": 1242,
+        "latitude": 23.46355,
+        "longitude": 120.292833,
+        "bounds": {
+          "minLatitude": 23.462241,
+          "maxLatitude": 23.465513,
+          "minLongitude": 120.291544,
+          "maxLongitude": 120.294767
+        },
+        "topSchools": [
+          {
+            "id": "104326",
+            "name": "縣立永慶高中",
+            "townshipName": "太保市",
+            "students": 522,
+            "status": "正常"
+          },
+          {
+            "id": "104326:國中",
+            "name": "縣立永慶高中附設國中部",
+            "townshipName": "太保市",
+            "students": 478,
+            "status": "正常"
+          },
+          {
+            "id": "100303",
+            "name": "國立嘉科實驗高中",
+            "townshipName": "朴子市",
+            "students": 93,
+            "status": "正常"
+          },
+          {
+            "id": "100303:國小",
+            "name": "國立嘉科實驗高中附設國小部",
+            "townshipName": "朴子市",
+            "students": 81,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsjwm3",
+        "geohash": "wsjwm3",
+        "precision": 6,
+        "count": 2,
+        "totalStudents": 15,
+        "latitude": 23.604737,
+        "longitude": 120.472811,
+        "bounds": {
+          "minLatitude": 23.604737,
+          "maxLatitude": 23.604737,
+          "minLongitude": 120.472811,
+          "maxLongitude": 120.472811
+        },
+        "topSchools": [
+          {
+            "id": "101303",
+            "name": "私立同濟高中",
+            "townshipName": "大林鎮",
+            "students": 15,
+            "status": "正常"
+          },
+          {
+            "id": "101303:國中",
+            "name": "私立同濟高中附設國中部",
+            "townshipName": "大林鎮",
+            "students": 0,
+            "status": "待確認"
+          }
+        ]
+      },
+      {
         "id": "6-wsju80",
         "geohash": "wsju80",
         "precision": 6,
@@ -2257,37 +2347,6 @@
             "name": "縣立中埔國小",
             "townshipName": "中埔鄉",
             "students": 215,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "6-wsjt3r",
-        "geohash": "wsjt3r",
-        "precision": 6,
-        "count": 2,
-        "totalStudents": 1242,
-        "latitude": 23.463877,
-        "longitude": 120.293155,
-        "bounds": {
-          "minLatitude": 23.462241,
-          "maxLatitude": 23.465513,
-          "minLongitude": 120.291544,
-          "maxLongitude": 120.294767
-        },
-        "topSchools": [
-          {
-            "id": "104326",
-            "name": "縣立永慶高中",
-            "townshipName": "太保市",
-            "students": 1000,
-            "status": "正常"
-          },
-          {
-            "id": "100303",
-            "name": "國立嘉科實驗高中",
-            "townshipName": "朴子市",
-            "students": 242,
             "status": "正常"
           }
         ]
@@ -2417,6 +2476,37 @@
         ]
       },
       {
+        "id": "6-wsjtue",
+        "geohash": "wsjtue",
+        "precision": 6,
+        "count": 2,
+        "totalStudents": 2072,
+        "latitude": 23.531556,
+        "longitude": 120.435706,
+        "bounds": {
+          "minLatitude": 23.531556,
+          "maxLatitude": 23.531556,
+          "minLongitude": 120.435706,
+          "maxLongitude": 120.435706
+        },
+        "topSchools": [
+          {
+            "id": "101304:國中",
+            "name": "私立協同高中附設國中部",
+            "townshipName": "民雄鄉",
+            "students": 1204,
+            "status": "正常"
+          },
+          {
+            "id": "101304",
+            "name": "私立協同高中",
+            "townshipName": "民雄鄉",
+            "students": 868,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "6-wsjt2r",
         "geohash": "wsjt2r",
         "precision": 6,
@@ -2474,6 +2564,37 @@
             "name": "縣立朴子國中",
             "townshipName": "朴子市",
             "students": 527,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsjtz3",
+        "geohash": "wsjtz3",
+        "precision": 6,
+        "count": 2,
+        "totalStudents": 1004,
+        "latitude": 23.521363,
+        "longitude": 120.553577,
+        "bounds": {
+          "minLatitude": 23.521363,
+          "maxLatitude": 23.521363,
+          "minLongitude": 120.553577,
+          "maxLongitude": 120.553577
+        },
+        "topSchools": [
+          {
+            "id": "104319:國中",
+            "name": "縣立竹崎高中附設國中部",
+            "townshipName": "竹崎鄉",
+            "students": 538,
+            "status": "正常"
+          },
+          {
+            "id": "104319",
+            "name": "縣立竹崎高中",
+            "townshipName": "竹崎鄉",
+            "students": 466,
             "status": "正常"
           }
         ]
@@ -2826,26 +2947,26 @@
         ]
       },
       {
-        "id": "6-wsjwm3",
-        "geohash": "wsjwm3",
+        "id": "6-wsjwm2",
+        "geohash": "wsjwm2",
         "precision": 6,
         "count": 1,
-        "totalStudents": 15,
-        "latitude": 23.604737,
-        "longitude": 120.472811,
+        "totalStudents": 0,
+        "latitude": 23.602418,
+        "longitude": 120.473026,
         "bounds": {
-          "minLatitude": 23.604737,
-          "maxLatitude": 23.604737,
-          "minLongitude": 120.472811,
-          "maxLongitude": 120.472811
+          "minLatitude": 23.602418,
+          "maxLatitude": 23.602418,
+          "minLongitude": 120.473026,
+          "maxLongitude": 120.473026
         },
         "topSchools": [
           {
-            "id": "101303",
-            "name": "私立同濟高中",
+            "id": "104618",
+            "name": "縣立排路國小",
             "townshipName": "大林鎮",
-            "students": 15,
-            "status": "正常"
+            "students": 0,
+            "status": "待確認"
           }
         ]
       },
@@ -3038,6 +3159,30 @@
             "townshipName": "中埔鄉",
             "students": 18,
             "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsjtq2",
+        "geohash": "wsjtq2",
+        "precision": 6,
+        "count": 1,
+        "totalStudents": 0,
+        "latitude": 23.425527,
+        "longitude": 120.509963,
+        "bounds": {
+          "minLatitude": 23.425527,
+          "maxLatitude": 23.425527,
+          "minLongitude": 120.509963,
+          "maxLongitude": 120.509963
+        },
+        "topSchools": [
+          {
+            "id": "104692",
+            "name": "縣立灣潭國小",
+            "townshipName": "中埔鄉",
+            "students": 0,
+            "status": "待確認"
           }
         ]
       },
@@ -3738,30 +3883,6 @@
         ]
       },
       {
-        "id": "6-wsjtue",
-        "geohash": "wsjtue",
-        "precision": 6,
-        "count": 1,
-        "totalStudents": 2072,
-        "latitude": 23.531556,
-        "longitude": 120.435706,
-        "bounds": {
-          "minLatitude": 23.531556,
-          "maxLatitude": 23.531556,
-          "minLongitude": 120.435706,
-          "maxLongitude": 120.435706
-        },
-        "topSchools": [
-          {
-            "id": "101304",
-            "name": "私立協同高中",
-            "townshipName": "民雄鄉",
-            "students": 2072,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "6-wsjwh0",
         "geohash": "wsjwh0",
         "precision": 6,
@@ -4189,30 +4310,6 @@
             "name": "縣立雙溪國小",
             "townshipName": "朴子市",
             "students": 53,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "6-wsjtz3",
-        "geohash": "wsjtz3",
-        "precision": 6,
-        "count": 1,
-        "totalStudents": 1004,
-        "latitude": 23.521363,
-        "longitude": 120.553577,
-        "bounds": {
-          "minLatitude": 23.521363,
-          "maxLatitude": 23.521363,
-          "minLongitude": 120.553577,
-          "maxLongitude": 120.553577
-        },
-        "topSchools": [
-          {
-            "id": "104319",
-            "name": "縣立竹崎高中",
-            "townshipName": "竹崎鄉",
-            "students": 1004,
             "status": "正常"
           }
         ]
@@ -5082,6 +5179,30 @@
         ]
       },
       {
+        "id": "6-wsjy09",
+        "geohash": "wsjy09",
+        "precision": 6,
+        "count": 1,
+        "totalStudents": 0,
+        "latitude": 23.564545,
+        "longitude": 120.611643,
+        "bounds": {
+          "minLatitude": 23.564545,
+          "maxLatitude": 23.564545,
+          "minLongitude": 120.611643,
+          "maxLongitude": 120.611643
+        },
+        "topSchools": [
+          {
+            "id": "104724",
+            "name": "縣立太和國小",
+            "townshipName": "梅山鄉",
+            "students": 0,
+            "status": "待確認"
+          }
+        ]
+      },
+      {
         "id": "6-wsjt1t",
         "geohash": "wsjt1t",
         "precision": 6,
@@ -5222,6 +5343,30 @@
             "townshipName": "鹿草鄉",
             "students": 14,
             "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsjt1e",
+        "geohash": "wsjt1e",
+        "precision": 6,
+        "count": 1,
+        "totalStudents": 0,
+        "latitude": 23.39795,
+        "longitude": 120.308188,
+        "bounds": {
+          "minLatitude": 23.39795,
+          "maxLatitude": 23.39795,
+          "minLongitude": 120.308188,
+          "maxLongitude": 120.308188
+        },
+        "topSchools": [
+          {
+            "id": "104658",
+            "name": "縣立碧潭國小",
+            "townshipName": "鹿草鄉",
+            "students": 0,
+            "status": "待確認"
           }
         ]
       },
@@ -5732,6 +5877,75 @@
     ],
     "7": [
       {
+        "id": "7-wsjt3r1",
+        "geohash": "wsjt3r1",
+        "precision": 7,
+        "count": 3,
+        "totalStudents": 242,
+        "latitude": 23.462241,
+        "longitude": 120.291544,
+        "bounds": {
+          "minLatitude": 23.462241,
+          "maxLatitude": 23.462241,
+          "minLongitude": 120.291544,
+          "maxLongitude": 120.291544
+        },
+        "topSchools": [
+          {
+            "id": "100303",
+            "name": "國立嘉科實驗高中",
+            "townshipName": "朴子市",
+            "students": 93,
+            "status": "正常"
+          },
+          {
+            "id": "100303:國小",
+            "name": "國立嘉科實驗高中附設國小部",
+            "townshipName": "朴子市",
+            "students": 81,
+            "status": "正常"
+          },
+          {
+            "id": "100303:國中",
+            "name": "國立嘉科實驗高中附設國中部",
+            "townshipName": "朴子市",
+            "students": 68,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsjwm3j",
+        "geohash": "wsjwm3j",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 15,
+        "latitude": 23.604737,
+        "longitude": 120.472811,
+        "bounds": {
+          "minLatitude": 23.604737,
+          "maxLatitude": 23.604737,
+          "minLongitude": 120.472811,
+          "maxLongitude": 120.472811
+        },
+        "topSchools": [
+          {
+            "id": "101303",
+            "name": "私立同濟高中",
+            "townshipName": "大林鎮",
+            "students": 15,
+            "status": "正常"
+          },
+          {
+            "id": "101303:國中",
+            "name": "私立同濟高中附設國中部",
+            "townshipName": "大林鎮",
+            "students": 0,
+            "status": "待確認"
+          }
+        ]
+      },
+      {
         "id": "7-wsju807",
         "geohash": "wsju807",
         "precision": 7,
@@ -5758,6 +5972,99 @@
             "name": "縣立大埔國中(小)",
             "townshipName": "大埔鄉",
             "students": 24,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsjt3rg",
+        "geohash": "wsjt3rg",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 1000,
+        "latitude": 23.465513,
+        "longitude": 120.294767,
+        "bounds": {
+          "minLatitude": 23.465513,
+          "maxLatitude": 23.465513,
+          "minLongitude": 120.294767,
+          "maxLongitude": 120.294767
+        },
+        "topSchools": [
+          {
+            "id": "104326",
+            "name": "縣立永慶高中",
+            "townshipName": "太保市",
+            "students": 522,
+            "status": "正常"
+          },
+          {
+            "id": "104326:國中",
+            "name": "縣立永慶高中附設國中部",
+            "townshipName": "太保市",
+            "students": 478,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsjtuef",
+        "geohash": "wsjtuef",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 2072,
+        "latitude": 23.531556,
+        "longitude": 120.435706,
+        "bounds": {
+          "minLatitude": 23.531556,
+          "maxLatitude": 23.531556,
+          "minLongitude": 120.435706,
+          "maxLongitude": 120.435706
+        },
+        "topSchools": [
+          {
+            "id": "101304:國中",
+            "name": "私立協同高中附設國中部",
+            "townshipName": "民雄鄉",
+            "students": 1204,
+            "status": "正常"
+          },
+          {
+            "id": "101304",
+            "name": "私立協同高中",
+            "townshipName": "民雄鄉",
+            "students": 868,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsjtz3b",
+        "geohash": "wsjtz3b",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 1004,
+        "latitude": 23.521363,
+        "longitude": 120.553577,
+        "bounds": {
+          "minLatitude": 23.521363,
+          "maxLatitude": 23.521363,
+          "minLongitude": 120.553577,
+          "maxLongitude": 120.553577
+        },
+        "topSchools": [
+          {
+            "id": "104319:國中",
+            "name": "縣立竹崎高中附設國中部",
+            "townshipName": "竹崎鄉",
+            "students": 538,
+            "status": "正常"
+          },
+          {
+            "id": "104319",
+            "name": "縣立竹崎高中",
+            "townshipName": "竹崎鄉",
+            "students": 466,
             "status": "正常"
           }
         ]
@@ -6017,26 +6324,26 @@
         ]
       },
       {
-        "id": "7-wsjwm3j",
-        "geohash": "wsjwm3j",
+        "id": "7-wsjwm2t",
+        "geohash": "wsjwm2t",
         "precision": 7,
         "count": 1,
-        "totalStudents": 15,
-        "latitude": 23.604737,
-        "longitude": 120.472811,
+        "totalStudents": 0,
+        "latitude": 23.602418,
+        "longitude": 120.473026,
         "bounds": {
-          "minLatitude": 23.604737,
-          "maxLatitude": 23.604737,
-          "minLongitude": 120.472811,
-          "maxLongitude": 120.472811
+          "minLatitude": 23.602418,
+          "maxLatitude": 23.602418,
+          "minLongitude": 120.473026,
+          "maxLongitude": 120.473026
         },
         "topSchools": [
           {
-            "id": "101303",
-            "name": "私立同濟高中",
+            "id": "104618",
+            "name": "縣立排路國小",
             "townshipName": "大林鎮",
-            "students": 15,
-            "status": "正常"
+            "students": 0,
+            "status": "待確認"
           }
         ]
       },
@@ -6281,6 +6588,30 @@
         ]
       },
       {
+        "id": "7-wsjtq22",
+        "geohash": "wsjtq22",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 0,
+        "latitude": 23.425527,
+        "longitude": 120.509963,
+        "bounds": {
+          "minLatitude": 23.425527,
+          "maxLatitude": 23.425527,
+          "minLongitude": 120.509963,
+          "maxLongitude": 120.509963
+        },
+        "topSchools": [
+          {
+            "id": "104692",
+            "name": "縣立灣潭國小",
+            "townshipName": "中埔鄉",
+            "students": 0,
+            "status": "待確認"
+          }
+        ]
+      },
+      {
         "id": "7-wsjt9kf",
         "geohash": "wsjt9kf",
         "precision": 7,
@@ -6444,30 +6775,6 @@
             "name": "縣立六腳國小",
             "townshipName": "六腳鄉",
             "students": 36,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsjt3rg",
-        "geohash": "wsjt3rg",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 1000,
-        "latitude": 23.465513,
-        "longitude": 120.294767,
-        "bounds": {
-          "minLatitude": 23.465513,
-          "maxLatitude": 23.465513,
-          "minLongitude": 120.294767,
-          "maxLongitude": 120.294767
-        },
-        "topSchools": [
-          {
-            "id": "104326",
-            "name": "縣立永慶高中",
-            "townshipName": "太保市",
-            "students": 1000,
             "status": "正常"
           }
         ]
@@ -7169,30 +7476,6 @@
         ]
       },
       {
-        "id": "7-wsjtuef",
-        "geohash": "wsjtuef",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 2072,
-        "latitude": 23.531556,
-        "longitude": 120.435706,
-        "bounds": {
-          "minLatitude": 23.531556,
-          "maxLatitude": 23.531556,
-          "minLongitude": 120.435706,
-          "maxLongitude": 120.435706
-        },
-        "topSchools": [
-          {
-            "id": "101304",
-            "name": "私立協同高中",
-            "townshipName": "民雄鄉",
-            "students": 2072,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "7-wsjwh0x",
         "geohash": "wsjwh0x",
         "precision": 7,
@@ -7625,30 +7908,6 @@
         ]
       },
       {
-        "id": "7-wsjt3r1",
-        "geohash": "wsjt3r1",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 242,
-        "latitude": 23.462241,
-        "longitude": 120.291544,
-        "bounds": {
-          "minLatitude": 23.462241,
-          "maxLatitude": 23.462241,
-          "minLongitude": 120.291544,
-          "maxLongitude": 120.291544
-        },
-        "topSchools": [
-          {
-            "id": "100303",
-            "name": "國立嘉科實驗高中",
-            "townshipName": "朴子市",
-            "students": 242,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "7-wsjt2te",
         "geohash": "wsjt2te",
         "precision": 7,
@@ -7740,30 +7999,6 @@
             "name": "縣立雙溪國小",
             "townshipName": "朴子市",
             "students": 53,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsjtz3b",
-        "geohash": "wsjtz3b",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 1004,
-        "latitude": 23.521363,
-        "longitude": 120.553577,
-        "bounds": {
-          "minLatitude": 23.521363,
-          "maxLatitude": 23.521363,
-          "minLongitude": 120.553577,
-          "maxLongitude": 120.553577
-        },
-        "topSchools": [
-          {
-            "id": "104319",
-            "name": "縣立竹崎高中",
-            "townshipName": "竹崎鄉",
-            "students": 1004,
             "status": "正常"
           }
         ]
@@ -8705,6 +8940,30 @@
         ]
       },
       {
+        "id": "7-wsjy09f",
+        "geohash": "wsjy09f",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 0,
+        "latitude": 23.564545,
+        "longitude": 120.611643,
+        "bounds": {
+          "minLatitude": 23.564545,
+          "maxLatitude": 23.564545,
+          "minLongitude": 120.611643,
+          "maxLongitude": 120.611643
+        },
+        "topSchools": [
+          {
+            "id": "104724",
+            "name": "縣立太和國小",
+            "townshipName": "梅山鄉",
+            "students": 0,
+            "status": "待確認"
+          }
+        ]
+      },
+      {
         "id": "7-wsjt1tv",
         "geohash": "wsjt1tv",
         "precision": 7,
@@ -8845,6 +9104,30 @@
             "townshipName": "鹿草鄉",
             "students": 14,
             "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsjt1em",
+        "geohash": "wsjt1em",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 0,
+        "latitude": 23.39795,
+        "longitude": 120.308188,
+        "bounds": {
+          "minLatitude": 23.39795,
+          "maxLatitude": 23.39795,
+          "minLongitude": 120.308188,
+          "maxLongitude": 120.308188
+        },
+        "topSchools": [
+          {
+            "id": "104658",
+            "name": "縣立碧潭國小",
+            "townshipName": "鹿草鄉",
+            "students": 0,
+            "status": "待確認"
           }
         ]
       },

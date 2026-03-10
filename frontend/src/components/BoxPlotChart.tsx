@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { formatStudents } from '../lib/analytics'
 
 type BoxPlotGroup = {
@@ -10,6 +11,7 @@ type BoxPlotChartProps = {
   title: string
   subtitle: string
   groups: BoxPlotGroup[]
+  activeGroupId?: string | null
 }
 
 function percentile(values: number[], ratio: number) {
@@ -22,10 +24,18 @@ function percentile(values: number[], ratio: number) {
   return values[lowerIndex] * (1 - weight) + values[upperIndex] * weight
 }
 
-function BoxPlotChart({ title, subtitle, groups }: BoxPlotChartProps) {
+function BoxPlotChart({ title, subtitle, groups, activeGroupId = null }: BoxPlotChartProps) {
   const width = 620
   const height = 260
   const padding = { top: 20, right: 16, bottom: 42, left: 50 }
+
+  const [mounted, setMounted] = useState(false)
+  const [hoveredGroupId, setHoveredGroupId] = useState<string | null>(null)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
   const preparedGroups = groups
     .map((group) => {
       const values = [...group.values].sort((left, right) => left - right)
@@ -44,6 +54,7 @@ function BoxPlotChart({ title, subtitle, groups }: BoxPlotChartProps) {
   const stepX = (width - padding.left - padding.right) / Math.max(preparedGroups.length, 1)
   const boxWidth = Math.min(48, stepX * 0.42)
   const toY = (value: number) => height - padding.bottom - (value / maxValue) * (height - padding.top - padding.bottom)
+  const bottomY = toY(0)
 
   return (
     <section className="box-plot-chart">
@@ -61,7 +72,7 @@ function BoxPlotChart({ title, subtitle, groups }: BoxPlotChartProps) {
           const value = Math.round(maxValue * (1 - ratio))
           return (
             <g key={ratio}>
-              <line className="box-plot-chart__grid" x1={padding.left} x2={width - padding.right} y1={y} y2={y} />
+              <line className="box-plot-chart__grid" x1={padding.left} x2={width - padding.right} y1={y} y2={y} strokeDasharray="4 4" stroke="rgba(255,255,255,0.05)" />
               <text className="box-plot-chart__axis" x={padding.left - 8} y={y + 4} textAnchor="end">{formatStudents(value)}</text>
             </g>
           )
@@ -69,14 +80,46 @@ function BoxPlotChart({ title, subtitle, groups }: BoxPlotChartProps) {
 
         {preparedGroups.map((group, index) => {
           const centerX = padding.left + stepX * index + stepX / 2
+          const isActive = group.id === activeGroupId || group.id === hoveredGroupId
+          const opacity = isActive ? 1 : hoveredGroupId || activeGroupId ? 0.4 : 0.8
+          const strokeColor = isActive ? 'var(--palette-brass, #b88746)' : 'var(--palette-cyan, #2a6f91)'
+          const fillColor = isActive ? 'rgba(184, 135, 70, 0.25)' : 'rgba(42, 111, 145, 0.18)'
+
           return (
-            <g key={group.id}>
-              <line className="box-plot-chart__whisker" x1={centerX} x2={centerX} y1={toY(group.min)} y2={toY(group.max)} />
-              <line className="box-plot-chart__cap" x1={centerX - boxWidth * 0.3} x2={centerX + boxWidth * 0.3} y1={toY(group.min)} y2={toY(group.min)} />
-              <line className="box-plot-chart__cap" x1={centerX - boxWidth * 0.3} x2={centerX + boxWidth * 0.3} y1={toY(group.max)} y2={toY(group.max)} />
-              <rect className="box-plot-chart__box" x={centerX - boxWidth / 2} y={toY(group.q3)} width={boxWidth} height={Math.max(toY(group.q1) - toY(group.q3), 4)} rx={8} />
-              <line className="box-plot-chart__median" x1={centerX - boxWidth / 2} x2={centerX + boxWidth / 2} y1={toY(group.median)} y2={toY(group.median)} />
-              <text className="box-plot-chart__label" x={centerX} y={height - 12} textAnchor="middle">{group.label}</text>
+            <g
+              key={group.id}
+              onMouseEnter={() => setHoveredGroupId(group.id)}
+              onMouseLeave={() => setHoveredGroupId(null)}
+              style={{ opacity, transition: 'opacity 0.2s', cursor: 'pointer' }}
+            >
+              <line className="box-plot-chart__whisker"
+                x1={centerX} x2={centerX}
+                y1={mounted ? toY(group.min) : bottomY} y2={mounted ? toY(group.max) : bottomY}
+                stroke={strokeColor} style={{ transition: 'all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1)' }}
+              />
+              <line className="box-plot-chart__cap"
+                x1={centerX - boxWidth * 0.3} x2={centerX + boxWidth * 0.3}
+                y1={mounted ? toY(group.min) : bottomY} y2={mounted ? toY(group.min) : bottomY}
+                stroke={strokeColor} style={{ transition: 'all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1)' }}
+              />
+              <line className="box-plot-chart__cap"
+                x1={centerX - boxWidth * 0.3} x2={centerX + boxWidth * 0.3}
+                y1={mounted ? toY(group.max) : bottomY} y2={mounted ? toY(group.max) : bottomY}
+                stroke={strokeColor} style={{ transition: 'all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1)' }}
+              />
+              <rect className="box-plot-chart__box"
+                x={centerX - boxWidth / 2} y={mounted ? toY(group.q3) : bottomY}
+                width={boxWidth} height={mounted ? Math.max(toY(group.q1) - toY(group.q3), 4) : 0} rx={4}
+                fill={fillColor} stroke={strokeColor} style={{ transition: 'all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1)' }}
+              />
+              <line className="box-plot-chart__median"
+                x1={centerX - boxWidth / 2} x2={centerX + boxWidth / 2}
+                y1={mounted ? toY(group.median) : bottomY} y2={mounted ? toY(group.median) : bottomY}
+                stroke={strokeColor} style={{ transition: 'all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1)' }}
+              />
+              <text className="box-plot-chart__label" x={centerX} y={height - 12} textAnchor="middle" fill={isActive ? '#fff' : undefined} style={{ transition: 'fill 0.2s' }}>
+                {group.label}
+              </text>
             </g>
           )
         })}
@@ -84,7 +127,7 @@ function BoxPlotChart({ title, subtitle, groups }: BoxPlotChartProps) {
 
       <div className="box-plot-chart__legend">
         {preparedGroups.map((group) => (
-          <span key={group.id}>{group.label} 中位數 {formatStudents(Math.round(group.median))} 人</span>
+          <span key={group.id} style={{ opacity: hoveredGroupId === null || hoveredGroupId === group.id ? 1 : 0.4, transition: 'opacity 0.2s' }}>{group.label} 中位數 {formatStudents(Math.round(group.median))} 人</span>
         ))}
       </div>
     </section>

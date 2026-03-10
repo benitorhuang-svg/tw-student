@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-09T18:20:24.815Z",
+  "generatedAt": "2026-03-10T12:31:52.843Z",
   "county": {
     "id": "臺東縣",
     "name": "臺東縣",
@@ -57,10 +57,10 @@
         "id": "5-wsn1s",
         "geohash": "wsn1s",
         "precision": 5,
-        "count": 9,
+        "count": 11,
         "totalStudents": 2889,
-        "latitude": 22.77593,
-        "longitude": 121.130186,
+        "latitude": 22.774894,
+        "longitude": 121.129508,
         "bounds": {
           "minLatitude": 22.764076,
           "maxLatitude": 22.806236,
@@ -102,10 +102,10 @@
         "id": "5-wsn1e",
         "geohash": "wsn1e",
         "precision": 5,
-        "count": 8,
+        "count": 10,
         "totalStudents": 1353,
-        "latitude": 22.780575,
-        "longitude": 121.092175,
+        "latitude": 22.778332,
+        "longitude": 121.090416,
         "bounds": {
           "minLatitude": 22.765075,
           "maxLatitude": 22.806926,
@@ -113,13 +113,6 @@
           "maxLongitude": 121.111927
         },
         "topSchools": [
-          {
-            "id": "140301",
-            "name": "國立臺東大學附屬體育高中",
-            "townshipName": "臺東市",
-            "students": 362,
-            "status": "正常"
-          },
           {
             "id": "144504",
             "name": "縣立卑南國中",
@@ -139,6 +132,13 @@
             "name": "縣立豐田國小",
             "townshipName": "臺東市",
             "students": 219,
+            "status": "正常"
+          },
+          {
+            "id": "140301",
+            "name": "國立臺東大學附屬體育高中",
+            "townshipName": "臺東市",
+            "students": 212,
             "status": "正常"
           }
         ]
@@ -516,6 +516,44 @@
             "name": "國立關山工商",
             "townshipName": "關山鎮",
             "students": 181,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "5-weymm",
+        "geohash": "weymm",
+        "precision": 5,
+        "count": 3,
+        "totalStudents": 164,
+        "latitude": 22.048104,
+        "longitude": 121.513405,
+        "bounds": {
+          "minLatitude": 22.045395,
+          "maxLatitude": 22.049459,
+          "minLongitude": 121.511344,
+          "maxLongitude": 121.517528
+        },
+        "topSchools": [
+          {
+            "id": "144322:國中",
+            "name": "縣立蘭嶼高中附設國中部",
+            "townshipName": "蘭嶼鄉",
+            "students": 77,
+            "status": "正常"
+          },
+          {
+            "id": "144686",
+            "name": "縣立椰油國小",
+            "townshipName": "蘭嶼鄉",
+            "students": 49,
+            "status": "正常"
+          },
+          {
+            "id": "144322",
+            "name": "縣立蘭嶼高中",
+            "townshipName": "蘭嶼鄉",
+            "students": 38,
             "status": "正常"
           }
         ]
@@ -919,37 +957,6 @@
             "name": "縣立豐源國小",
             "townshipName": "臺東市",
             "students": 69,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "5-weymm",
-        "geohash": "weymm",
-        "precision": 5,
-        "count": 2,
-        "totalStudents": 164,
-        "latitude": 22.047427,
-        "longitude": 121.514436,
-        "bounds": {
-          "minLatitude": 22.045395,
-          "maxLatitude": 22.049459,
-          "minLongitude": 121.511344,
-          "maxLongitude": 121.517528
-        },
-        "topSchools": [
-          {
-            "id": "144322",
-            "name": "縣立蘭嶼高中",
-            "townshipName": "蘭嶼鄉",
-            "students": 115,
-            "status": "正常"
-          },
-          {
-            "id": "144686",
-            "name": "縣立椰油國小",
-            "townshipName": "蘭嶼鄉",
-            "students": 49,
             "status": "正常"
           }
         ]
@@ -1636,6 +1643,82 @@
     ],
     "6": [
       {
+        "id": "6-wsn1s3",
+        "geohash": "wsn1s3",
+        "precision": 6,
+        "count": 3,
+        "totalStudents": 385,
+        "latitude": 22.770233,
+        "longitude": 121.126457,
+        "bounds": {
+          "minLatitude": 22.770233,
+          "maxLatitude": 22.770233,
+          "minLongitude": 121.126457,
+          "maxLongitude": 121.126457
+        },
+        "topSchools": [
+          {
+            "id": "141301:國中",
+            "name": "私立均一高中附設國中部",
+            "townshipName": "臺東市",
+            "students": 145,
+            "status": "正常"
+          },
+          {
+            "id": "141301",
+            "name": "臺東縣均一高中",
+            "townshipName": "臺東市",
+            "students": 135,
+            "status": "正常"
+          },
+          {
+            "id": "141301:國小",
+            "name": "私立均一高中附設國小部",
+            "townshipName": "臺東市",
+            "students": 105,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-weymmj",
+        "geohash": "weymmj",
+        "precision": 6,
+        "count": 3,
+        "totalStudents": 164,
+        "latitude": 22.048104,
+        "longitude": 121.513405,
+        "bounds": {
+          "minLatitude": 22.045395,
+          "maxLatitude": 22.049459,
+          "minLongitude": 121.511344,
+          "maxLongitude": 121.517528
+        },
+        "topSchools": [
+          {
+            "id": "144322:國中",
+            "name": "縣立蘭嶼高中附設國中部",
+            "townshipName": "蘭嶼鄉",
+            "students": 77,
+            "status": "正常"
+          },
+          {
+            "id": "144686",
+            "name": "縣立椰油國小",
+            "townshipName": "蘭嶼鄉",
+            "students": 49,
+            "status": "正常"
+          },
+          {
+            "id": "144322",
+            "name": "縣立蘭嶼高中",
+            "townshipName": "蘭嶼鄉",
+            "students": 38,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "6-wevzpr",
         "geohash": "wevzpr",
         "precision": 6,
@@ -1946,6 +2029,68 @@
         ]
       },
       {
+        "id": "6-wsn1e0",
+        "geohash": "wsn1e0",
+        "precision": 6,
+        "count": 2,
+        "totalStudents": 362,
+        "latitude": 22.765075,
+        "longitude": 121.074882,
+        "bounds": {
+          "minLatitude": 22.765075,
+          "maxLatitude": 22.765075,
+          "minLongitude": 121.074882,
+          "maxLongitude": 121.074882
+        },
+        "topSchools": [
+          {
+            "id": "140301",
+            "name": "國立臺東大學附屬體育高中",
+            "townshipName": "臺東市",
+            "students": 212,
+            "status": "正常"
+          },
+          {
+            "id": "140301:國中",
+            "name": "國立臺東大學附屬體育高級中學",
+            "townshipName": "臺東市",
+            "students": 150,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsn1e9",
+        "geohash": "wsn1e9",
+        "precision": 6,
+        "count": 2,
+        "totalStudents": 90,
+        "latitude": 22.773647,
+        "longitude": 121.091881,
+        "bounds": {
+          "minLatitude": 22.773647,
+          "maxLatitude": 22.773647,
+          "minLongitude": 121.091881,
+          "maxLongitude": 121.091881
+        },
+        "topSchools": [
+          {
+            "id": "141307:國中",
+            "name": "私立育仁高中附設國中部",
+            "townshipName": "臺東市",
+            "students": 66,
+            "status": "正常"
+          },
+          {
+            "id": "141307",
+            "name": "私立育仁高中",
+            "townshipName": "臺東市",
+            "students": 24,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "6-wsn5j5",
         "geohash": "wsn5j5",
         "precision": 6,
@@ -1972,37 +2117,6 @@
             "name": "國立關山工商",
             "townshipName": "關山鎮",
             "students": 181,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "6-weymmj",
-        "geohash": "weymmj",
-        "precision": 6,
-        "count": 2,
-        "totalStudents": 164,
-        "latitude": 22.047427,
-        "longitude": 121.514436,
-        "bounds": {
-          "minLatitude": 22.045395,
-          "maxLatitude": 22.049459,
-          "minLongitude": 121.511344,
-          "maxLongitude": 121.517528
-        },
-        "topSchools": [
-          {
-            "id": "144322",
-            "name": "縣立蘭嶼高中",
-            "townshipName": "蘭嶼鄉",
-            "students": 115,
-            "status": "正常"
-          },
-          {
-            "id": "144686",
-            "name": "縣立椰油國小",
-            "townshipName": "蘭嶼鄉",
-            "students": 49,
             "status": "正常"
           }
         ]
@@ -3712,54 +3826,6 @@
         ]
       },
       {
-        "id": "6-wsn1s3",
-        "geohash": "wsn1s3",
-        "precision": 6,
-        "count": 1,
-        "totalStudents": 385,
-        "latitude": 22.770233,
-        "longitude": 121.126457,
-        "bounds": {
-          "minLatitude": 22.770233,
-          "maxLatitude": 22.770233,
-          "minLongitude": 121.126457,
-          "maxLongitude": 121.126457
-        },
-        "topSchools": [
-          {
-            "id": "141301",
-            "name": "臺東縣均一高中",
-            "townshipName": "臺東市",
-            "students": 385,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "6-wsn1e0",
-        "geohash": "wsn1e0",
-        "precision": 6,
-        "count": 1,
-        "totalStudents": 362,
-        "latitude": 22.765075,
-        "longitude": 121.074882,
-        "bounds": {
-          "minLatitude": 22.765075,
-          "maxLatitude": 22.765075,
-          "minLongitude": 121.074882,
-          "maxLongitude": 121.074882
-        },
-        "topSchools": [
-          {
-            "id": "140301",
-            "name": "國立臺東大學附屬體育高中",
-            "townshipName": "臺東市",
-            "students": 362,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "6-wsn1kn",
         "geohash": "wsn1kn",
         "precision": 6,
@@ -3971,30 +4037,6 @@
             "name": "縣立知本國中",
             "townshipName": "臺東市",
             "students": 116,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "6-wsn1e9",
-        "geohash": "wsn1e9",
-        "precision": 6,
-        "count": 1,
-        "totalStudents": 90,
-        "latitude": 22.773647,
-        "longitude": 121.091881,
-        "bounds": {
-          "minLatitude": 22.773647,
-          "maxLatitude": 22.773647,
-          "minLongitude": 121.091881,
-          "maxLongitude": 121.091881
-        },
-        "topSchools": [
-          {
-            "id": "141307",
-            "name": "私立育仁高中",
-            "townshipName": "臺東市",
-            "students": 90,
             "status": "正常"
           }
         ]
@@ -4337,6 +4379,137 @@
       }
     ],
     "7": [
+      {
+        "id": "7-wsn1s31",
+        "geohash": "wsn1s31",
+        "precision": 7,
+        "count": 3,
+        "totalStudents": 385,
+        "latitude": 22.770233,
+        "longitude": 121.126457,
+        "bounds": {
+          "minLatitude": 22.770233,
+          "maxLatitude": 22.770233,
+          "minLongitude": 121.126457,
+          "maxLongitude": 121.126457
+        },
+        "topSchools": [
+          {
+            "id": "141301:國中",
+            "name": "私立均一高中附設國中部",
+            "townshipName": "臺東市",
+            "students": 145,
+            "status": "正常"
+          },
+          {
+            "id": "141301",
+            "name": "臺東縣均一高中",
+            "townshipName": "臺東市",
+            "students": 135,
+            "status": "正常"
+          },
+          {
+            "id": "141301:國小",
+            "name": "私立均一高中附設國小部",
+            "townshipName": "臺東市",
+            "students": 105,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsn1e0k",
+        "geohash": "wsn1e0k",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 362,
+        "latitude": 22.765075,
+        "longitude": 121.074882,
+        "bounds": {
+          "minLatitude": 22.765075,
+          "maxLatitude": 22.765075,
+          "minLongitude": 121.074882,
+          "maxLongitude": 121.074882
+        },
+        "topSchools": [
+          {
+            "id": "140301",
+            "name": "國立臺東大學附屬體育高中",
+            "townshipName": "臺東市",
+            "students": 212,
+            "status": "正常"
+          },
+          {
+            "id": "140301:國中",
+            "name": "國立臺東大學附屬體育高級中學",
+            "townshipName": "臺東市",
+            "students": 150,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsn1e9b",
+        "geohash": "wsn1e9b",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 90,
+        "latitude": 22.773647,
+        "longitude": 121.091881,
+        "bounds": {
+          "minLatitude": 22.773647,
+          "maxLatitude": 22.773647,
+          "minLongitude": 121.091881,
+          "maxLongitude": 121.091881
+        },
+        "topSchools": [
+          {
+            "id": "141307:國中",
+            "name": "私立育仁高中附設國中部",
+            "townshipName": "臺東市",
+            "students": 66,
+            "status": "正常"
+          },
+          {
+            "id": "141307",
+            "name": "私立育仁高中",
+            "townshipName": "臺東市",
+            "students": 24,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-weymmjc",
+        "geohash": "weymmjc",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 115,
+        "latitude": 22.049459,
+        "longitude": 121.511344,
+        "bounds": {
+          "minLatitude": 22.049459,
+          "maxLatitude": 22.049459,
+          "minLongitude": 121.511344,
+          "maxLongitude": 121.511344
+        },
+        "topSchools": [
+          {
+            "id": "144322:國中",
+            "name": "縣立蘭嶼高中附設國中部",
+            "townshipName": "蘭嶼鄉",
+            "students": 77,
+            "status": "正常"
+          },
+          {
+            "id": "144322",
+            "name": "縣立蘭嶼高中",
+            "townshipName": "蘭嶼鄉",
+            "students": 38,
+            "status": "正常"
+          }
+        ]
+      },
       {
         "id": "7-wevzpr3",
         "geohash": "wevzpr3",
@@ -6450,54 +6623,6 @@
         ]
       },
       {
-        "id": "7-wsn1s31",
-        "geohash": "wsn1s31",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 385,
-        "latitude": 22.770233,
-        "longitude": 121.126457,
-        "bounds": {
-          "minLatitude": 22.770233,
-          "maxLatitude": 22.770233,
-          "minLongitude": 121.126457,
-          "maxLongitude": 121.126457
-        },
-        "topSchools": [
-          {
-            "id": "141301",
-            "name": "臺東縣均一高中",
-            "townshipName": "臺東市",
-            "students": 385,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsn1e0k",
-        "geohash": "wsn1e0k",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 362,
-        "latitude": 22.765075,
-        "longitude": 121.074882,
-        "bounds": {
-          "minLatitude": 22.765075,
-          "maxLatitude": 22.765075,
-          "minLongitude": 121.074882,
-          "maxLongitude": 121.074882
-        },
-        "topSchools": [
-          {
-            "id": "140301",
-            "name": "國立臺東大學附屬體育高中",
-            "townshipName": "臺東市",
-            "students": 362,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "7-wsn1kzg",
         "geohash": "wsn1kzg",
         "precision": 7,
@@ -6757,30 +6882,6 @@
             "name": "縣立光明國小",
             "townshipName": "臺東市",
             "students": 105,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsn1e9b",
-        "geohash": "wsn1e9b",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 90,
-        "latitude": 22.773647,
-        "longitude": 121.091881,
-        "bounds": {
-          "minLatitude": 22.773647,
-          "maxLatitude": 22.773647,
-          "minLongitude": 121.091881,
-          "maxLongitude": 121.091881
-        },
-        "topSchools": [
-          {
-            "id": "141307",
-            "name": "私立育仁高中",
-            "townshipName": "臺東市",
-            "students": 90,
             "status": "正常"
           }
         ]
@@ -7117,30 +7218,6 @@
             "name": "縣立月眉國小",
             "townshipName": "關山鎮",
             "students": 24,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-weymmjc",
-        "geohash": "weymmjc",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 115,
-        "latitude": 22.049459,
-        "longitude": 121.511344,
-        "bounds": {
-          "minLatitude": 22.049459,
-          "maxLatitude": 22.049459,
-          "minLongitude": 121.511344,
-          "maxLongitude": 121.511344
-        },
-        "topSchools": [
-          {
-            "id": "144322",
-            "name": "縣立蘭嶼高中",
-            "townshipName": "蘭嶼鄉",
-            "students": 115,
             "status": "正常"
           }
         ]

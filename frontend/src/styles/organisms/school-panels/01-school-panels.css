@@ -1,144 +1,1086 @@
-.school-detail-shell__topbar--focus{background:linear-gradient(135deg,rgba(42,111,145,.16),rgba(184,135,70,.12));border-color:rgba(184,135,70,.18)}
-.school-detail-shell__topbar-actions{display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap}
-.school-workbench-tabs--focus{justify-content:flex-end}
-.dashboard-canvas--overview,.dashboard-canvas--regional,.dashboard-canvas--county,.dashboard-canvas--schools,.dashboard-canvas--school-focus{grid-template-columns:var(--dashboard-map-column) var(--dashboard-side-column)}
-.dashboard-card--map .dashboard-card__head,.dashboard-card--kpi .dashboard-card__head,.dashboard-card--ranking .dashboard-card__head,.dashboard-card--comparison .dashboard-card__head,.dashboard-card--anomaly .dashboard-card__head,.dashboard-card--school-detail .dashboard-card__head{display:none}
-.dashboard-card--school-detail{height:100%}
-.dashboard-card--school-detail .dashboard-card__body{overflow-y:auto;overflow-x:hidden}
-.governance-flyout-layer{position:fixed;inset:0;z-index:900;pointer-events:none}
-.governance-flyout-backdrop{position:absolute;inset:0;border:0;background:rgba(16,32,51,.16);pointer-events:auto}
-.governance-flyout__head{display:flex;justify-content:space-between;gap:14px;align-items:flex-start}
-.governance-flyout__head h3{margin:4px 0 8px;font-family:var(--font-heading);color:#f8fafc}
-.governance-flyout__head p:last-child{margin:0;color:rgba(216,228,236,.78);line-height:1.6}
-.governance-flyout__actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}
-.governance-flyout__actions--inline{margin-bottom:12px;justify-content:flex-start}
-.governance-flyout__actions a{padding:7px 10px;border-radius:999px;border:1px solid rgba(184,135,70,.18);background:linear-gradient(135deg,rgba(42,111,145,.14),rgba(184,135,70,.1));color:#eef3f6;text-decoration:none;font-size:.76rem}
-.governance-flyout__body{min-height:0;overflow:auto;border-radius:18px;background:rgba(255,255,255,.06)}
-.school-detail-panel{padding:12px;display:grid;gap:10px;min-height:100%;align-content:start}
-.school-table-panel{display:grid;gap:8px}
-.school-table-panel__toolbar{display:flex;justify-content:space-between;gap:8px;align-items:center}
-.school-table-panel__toolbar span{color:#94a3b8ad;font-size:.8rem}
-.school-table-panel__toolbar div{display:grid;gap:2px}
-.school-table-panel__footer{display:flex;justify-content:space-between;gap:8px;font-size:.8rem;color:#94a3b8a3}
-.school-table-wrap{overflow:auto;border-radius:12px;border:1px solid rgba(148,163,184,.1);max-height:50vh}
-.school-table{width:100%;min-width:640px;border-collapse:collapse}
-.school-table th,.school-table td{padding:8px 10px;text-align:left;border-bottom:1px solid rgba(148,163,184,.1)}
-.school-table__sort{display:flex;align-items:center;gap:5px;width:100%;border:0;background:transparent;padding:0;color:#94a3b8cc;font-size:.74rem;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;transition:transform .13s ease}
-.school-table__sort:hover{transform:translateY(-1px)}
-.school-table__row{cursor:pointer;background:#ffffff05;transition:background-color .13s ease}
-.school-table__row:hover{background:#38bdf812}
-.school-table__row--active{background:#38bdf81a}
-.school-table__delta--up{color:#22c55e}
-.school-table__delta--down{color:#f97316}
-.status-pill{display:inline-flex;align-items:center;padding:3px 7px;border-radius:999px;background:#f59e0b24;color:#fbbf24;font-size:.76rem}
-.status-pill--normal{background:#22c55e24;color:#22c55e}
-.school-detail-layout{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(320px,.95fr);gap:14px;min-height:0}
-.school-detail-layout__table,.school-profile-sidebar{min-width:0;min-height:0}
-.school-profile-sidebar{display:grid;gap:12px;align-content:start}
-.school-focus{padding:12px;border-radius:16px;border:var(--border-subtle);background:#ffffff0a}
-.school-focus--overview{display:grid;gap:12px}
-.school-focus__summary{display:flex;justify-content:space-between;gap:8px;align-items:center}
-.school-focus__summary div{display:grid;gap:2px}
-.school-focus__summary h3{margin:0;font-family:var(--font-heading);font-size:.96rem;color:#f8fafc}
-.school-focus__summary p{margin:0;color:#e2e8f0a3;font-size:.82rem}
-.school-focus__statline{display:grid;gap:3px;text-align:right}
-.school-focus__statline strong{font-family:var(--font-heading);font-size:1.5rem;color:#f8fafc}
-.school-focus__statline span{color:#94a3b8ad;font-size:.8rem}
-.school-focus__meta-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
-.school-focus__meta-card{display:grid;gap:4px;padding:12px;border-radius:16px;border:1px solid rgba(148,163,184,.14);background:linear-gradient(180deg,#ffffff0f,#ffffff08)}
-.school-focus__meta-card span,.school-focus__meta-card small{color:#94a3b8bd;font-size:.74rem}
-.school-focus__meta-card strong{color:#f8fafc;font-family:var(--font-heading);font-size:1.08rem}
-.school-profile-sidebar__stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
-.school-profile-metric{display:grid;gap:4px;padding:10px;border-radius:14px;background:#ffffff0a;border:var(--border-subtle)}
-.school-profile-metric span,.school-profile-metric small,.school-profile-info-row span{color:#94a3b8b8;font-size:.76rem}
-.school-profile-metric strong,.school-profile-info-row strong{color:#f8fafc;font-family:var(--font-heading)}
-.school-profile-sidebar__info{display:grid;gap:8px;padding:12px;border-radius:16px;border:var(--border-subtle);background:#ffffff08}
-.school-profile-info-row{display:grid;gap:4px}
-.governance-missing-list{display:grid;gap:10px;max-height:320px;overflow:auto}
-.governance-missing-item{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;padding:12px 14px;border-radius:12px;background:linear-gradient(135deg,rgba(255,255,255,.08),rgba(42,111,145,.08));border:var(--border-subtle)}
-.governance-missing-item div{display:grid;gap:4px}
-.governance-missing-item span{color:rgba(216,228,236,.74);font-size:.76rem}
-.governance-workflow-note{margin:0;color:rgba(216,228,236,.78);font-size:.78rem;line-height:1.6}
-.governance-missing-item__meta{justify-items:end}
-.governance-status-tags{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px}
-.governance-status-tag{min-height:30px;padding:0 10px;border-radius:999px;border:1px solid rgba(216,228,236,.16);background:rgba(255,255,255,.08);color:#e5edf4;font-size:.74rem;cursor:pointer}
-.governance-status-tag--active{border-color:rgba(184,135,70,.32);background:linear-gradient(135deg,rgba(42,111,145,.24),rgba(184,135,70,.2));color:#f8fafc}
-.school-profile-sidebar__actions,.school-chart-tabs{display:flex;gap:8px;flex-wrap:wrap}
-.school-detail-shell{display:grid;gap:14px;min-height:0;align-content:start}
-.school-detail-shell__topbar{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;padding:12px 14px;border-radius:16px;border:1px solid rgba(148,163,184,.12);background:#ffffff0a}
-.school-detail-shell__topbar h3{margin:4px 0 6px;font-family:var(--font-heading);color:#f8fafc}
-.school-detail-shell__topbar p:last-child{margin:0;color:#e2e8f0b8;font-size:.82rem;line-height:1.55}
-.school-workbench-tabs,.chart-pill-row{display:flex;gap:8px;flex-wrap:wrap}
-.atlas-metric-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
-.atlas-metric-strip--compact{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
-.atlas-metric-tile{display:grid;gap:5px;padding:12px 14px;border-radius:16px;border:1px solid rgba(148,163,184,.14);background:#ffffff0a}
-.atlas-metric-tile--active{border-color:#38bdf847;background:linear-gradient(135deg,#2563eb2e,#0891b21f)}
-.atlas-metric-tile span,.atlas-metric-tile small{color:#94a3b8c2;font-size:.74rem}
-.atlas-metric-tile strong{color:#f8fafc;font-family:var(--font-heading);font-size:1rem}
-.atlas-storyboard__split{display:grid;grid-template-columns:minmax(220px,.8fr) minmax(0,1.2fr);gap:12px;align-items:start}
-.atlas-storyboard__chart{min-width:0;padding:12px;border-radius:18px;border:1px solid rgba(148,163,184,.14);background:#ffffff0a}
-.atlas-storyboard__chart--distribution{display:grid;justify-items:center}
-.school-analysis-panel{display:grid;gap:12px;min-height:0;align-content:start}
-.school-list-workspace{display:grid;gap:14px;min-height:0}
-.school-list-workspace__summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
-.school-list-workspace__summary-card{display:grid;gap:4px;padding:12px;border-radius:16px;border:1px solid rgba(148,163,184,.14);background:#ffffff0a}
-.school-list-workspace__summary-card span,.school-list-workspace__summary-card small{color:#94a3b8bd;font-size:.74rem}
-.school-list-workspace__summary-card strong{color:#f8fafc;font-family:var(--font-heading);font-size:1rem}
-.school-list-workspace__grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(320px,1fr);gap:12px;align-items:stretch}
-.school-list-workspace__card{display:grid;gap:12px;align-content:start;padding:12px;border-radius:18px;border:1px solid rgba(148,163,184,.14);background:#ffffff0a;min-height:100%}
-.school-list-workspace__card--distribution{align-content:start}
-.school-analysis-panel__chart-path{font-size:.72rem;color:var(--color-text-muted, #94a3b8);letter-spacing:.02em;padding:2px 0}
-.school-analysis-panel__hero{margin:0}
-.school-analysis-panel__grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.92fr);gap:12px;min-height:0}
-.school-analysis-panel__side{display:grid;gap:12px;align-content:start}
-.school-analysis-panel__note-preview,.school-notes-panel{display:grid;gap:8px}
-.school-chart-panel__section--overview,.school-moe-board{display:grid;gap:12px}
-.school-moe-board__header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
-.school-moe-board__header h3,.school-ranking-rail__header h4{margin:2px 0 0;font-family:var(--font-heading);color:#f8fafc}
-.school-moe-board__grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(280px,.9fr);gap:12px}
-.school-moe-board__chart-card,.school-ranking-rail,.school-profile-fact{padding:12px;border-radius:18px;border:1px solid rgba(148,163,184,.14);background:#ffffff0a}
-.school-ranking-rail{display:grid;gap:12px;align-content:start}
-.school-ranking-rail__hero{display:grid;gap:4px;padding:12px;border-radius:16px;background:linear-gradient(135deg,#60a5fa33,#f472b629)}
-.school-ranking-rail__hero strong{font-family:var(--font-heading);font-size:2rem;color:#f8fafc}
-.school-ranking-rail__hero span,.school-ranking-rail__hero small,.school-profile-fact span{color:#94a3b8c2}
-.school-profile-facts-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
-.school-profile-fact{display:grid;gap:4px}
-.school-profile-fact strong,.school-profile-fact a{color:#f8fafc;font-weight:700;word-break:break-word}
-.school-overview-chart{display:flex;flex-direction:column;gap:8px}
-.school-overview-chart__header{display:flex;flex-direction:column;gap:2px}
-.school-overview-chart__svg{width:100%;height:auto;min-height:160px;max-height:240px;padding:6px;border-radius:16px;background:linear-gradient(180deg,#ffffff08,#0f172a1f)}
-.school-overview-chart__legend{display:flex;gap:16px;font-size:.75rem;color:var(--color-text-muted, #94a3b8)}
-.school-overview-chart__legend-item{display:flex;align-items:center;gap:4px}
-.school-overview-chart__swatch{display:inline-block;width:12px;height:10px;border-radius:2px}
-.school-overview-chart__swatch--line{width:16px;height:3px;border-radius:2px}
-.school-overview-chart__info{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:.7rem;color:var(--color-text-muted, #94a3b8)}
-.school-overview-chart__link{color:#60a5fa;text-decoration:none}
-.school-overview-chart__table{width:100%;border-collapse:collapse;font-size:.68rem;color:var(--color-text-muted, #94a3b8);overflow-x:auto}
-.school-overview-chart__table th,.school-overview-chart__table td{padding:3px 5px;text-align:center;border-bottom:1px solid rgba(51,65,85,.3);white-space:nowrap}
-.school-overview-chart__table th{font-weight:600;color:var(--color-text, #e2e8f0)}
-.school-overview-chart__table td:first-child,.school-overview-chart__table th:first-child{text-align:left;font-weight:500}
-.school-overview-chart__table .positive{color:#34d399}
-.school-overview-chart__table .negative{color:#fb7185}
-.dashboard-side-shell .comparison-panel,.dashboard-side-shell .school-detail-panel,.dashboard-side-shell .insight-panel,.dashboard-side-shell .scope-panel{min-height:0}
-.school-profile-link{text-decoration:none}
-.school-chart-panel,.school-chart-panel__section{display:grid;gap:10px}
-.school-chart-panel{padding:12px;border-radius:18px;border:var(--border-subtle);background:#ffffff08;align-content:start}
-.dashboard-canvas .atlas-metric-tile span,.dashboard-canvas .atlas-metric-tile small,.dashboard-canvas .school-list-workspace__summary-card span,.dashboard-canvas .school-list-workspace__summary-card small{color:var(--text-soft)}
-.dashboard-canvas .atlas-metric-tile strong,.dashboard-canvas .school-list-workspace__summary-card strong{color:var(--text-main)}
-.mobile-school-card-list{display:grid;gap:8px}
-.mobile-school-card{display:grid;gap:4px;padding:12px 14px;border-radius:16px;border:var(--border-light);background:#fffc;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease}
-.mobile-school-card:active{transform:scale(.98)}
-.mobile-school-card--active{border-color:#38bdf866;box-shadow:0 0 0 2px #38bdf833}
-.mobile-school-card__header{display:flex;align-items:center;justify-content:space-between;gap:8px}
-.mobile-school-card__name{font-weight:600;color:var(--text-main);font-size:.92rem}
-.mobile-school-card__tag{padding:2px 8px;border-radius:999px;font-size:.68rem;font-weight:600}
-.mobile-school-card__tag--public{background:#22c55e1f;color:#16a34a}
-.mobile-school-card__tag--private{background:#f973161f;color:#ea580c}
-.mobile-school-card__stats{display:flex;align-items:baseline;gap:8px}
-.mobile-school-card__count{font-family:var(--font-heading);font-size:1.25rem;color:var(--text-main)}
-.mobile-school-card__delta{font-size:.78rem;font-weight:600}
-.mobile-school-card__delta--up{color:#16a34a}
-.mobile-school-card__delta--down{color:#ea580c}
-.mobile-school-card__meta{font-size:.76rem;color:var(--text-soft)}
-.mobile-school-drawer-overlay{position:fixed;inset:0;z-index:3000;background:#00000080;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);animation:fadeIn .2s ease}
-.mobile-school-drawer{position:fixed;bottom:0;left:0;right:0;z-index:3001;max-height:80dvh;overflow-y:auto;padding:20px 16px calc(24px + env(safe-area-inset-bottom,0px));border-radius:24px 24px 0 0;background:#f7f4ee;box-shadow:0 -16px 60px #0f172a33;animation:slideUp .3s cubic-bezier(.2,.8,.2,1)}
+.school-detail-shell__topbar--focus {
+    background: linear-gradient(135deg, rgba(42, 111, 145, .16), rgba(184, 135, 70, .12));
+    border-color: rgba(184, 135, 70, .18)
+}
+
+.school-detail-shell__topbar-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    flex-wrap: wrap
+}
+
+.school-workbench-tabs--focus {
+    justify-content: flex-end
+}
+
+.dashboard-canvas--overview,
+.dashboard-canvas--regional,
+.dashboard-canvas--county,
+.dashboard-canvas--schools,
+.dashboard-canvas--school-focus {
+    grid-template-columns: var(--dashboard-map-column) var(--dashboard-side-column)
+}
+
+.dashboard-card--map .dashboard-card__head,
+.dashboard-card--kpi .dashboard-card__head,
+.dashboard-card--ranking .dashboard-card__head,
+.dashboard-card--comparison .dashboard-card__head,
+.dashboard-card--anomaly .dashboard-card__head,
+.dashboard-card--school-detail .dashboard-card__head {
+    display: none
+}
+
+.dashboard-card--school-detail {
+    height: 100%
+}
+
+.dashboard-card--school-detail .dashboard-card__body {
+    overflow-y: auto;
+    overflow-x: hidden
+}
+
+.governance-flyout-layer {
+    position: fixed;
+    inset: 0;
+    z-index: 900;
+    pointer-events: none
+}
+
+.governance-flyout-backdrop {
+    position: absolute;
+    inset: 0;
+    border: 0;
+    background: rgba(16, 32, 51, .16);
+    pointer-events: auto
+}
+
+.governance-flyout__head {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    align-items: flex-start
+}
+
+.governance-flyout__head h3 {
+    margin: 4px 0 8px;
+    font-family: var(--font-heading);
+    color: #f8fafc
+}
+
+.governance-flyout__head p:last-child {
+    margin: 0;
+    color: rgba(216, 228, 236, .78);
+    line-height: 1.6
+}
+
+.governance-flyout__actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: flex-end
+}
+
+.governance-flyout__actions--inline {
+    margin-bottom: 12px;
+    justify-content: flex-start
+}
+
+.governance-flyout__actions a {
+    padding: 7px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(184, 135, 70, .18);
+    background: linear-gradient(135deg, rgba(42, 111, 145, .14), rgba(184, 135, 70, .1));
+    color: #eef3f6;
+    text-decoration: none;
+    font-size: .76rem
+}
+
+.governance-flyout__body {
+    min-height: 0;
+    overflow: auto;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, .06)
+}
+
+.school-detail-panel {
+    padding: 12px;
+    display: grid;
+    gap: 10px;
+    min-height: 100%;
+    align-content: start
+}
+
+.school-table-panel {
+    display: grid;
+    gap: 8px
+}
+
+.school-table-panel__toolbar {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    align-items: center
+}
+
+.school-table-panel__toolbar span {
+    color: #94a3b8ad;
+    font-size: .8rem
+}
+
+.school-table-panel__toolbar div {
+    display: grid;
+    gap: 2px
+}
+
+.school-table-panel__footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    font-size: .8rem;
+    color: #94a3b8a3
+}
+
+.school-table-wrap {
+    overflow: auto;
+    border-radius: 12px;
+    border: 1px solid rgba(148, 163, 184, .1);
+    max-height: 50vh
+}
+
+.school-table {
+    width: 100%;
+    min-width: 640px;
+    border-collapse: collapse
+}
+
+.school-table th,
+.school-table td {
+    padding: 8px 10px;
+    text-align: left;
+    border-bottom: 1px solid rgba(148, 163, 184, .1)
+}
+
+.school-table__sort {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    color: #94a3b8cc;
+    font-size: .74rem;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform .13s ease
+}
+
+.school-table__sort:hover {
+    transform: translateY(-1px)
+}
+
+.school-table__row {
+    cursor: pointer;
+    background: #ffffff05;
+    transition: background-color .13s ease
+}
+
+.school-table__row:hover {
+    background: #38bdf812
+}
+
+.school-table__row--active {
+    background: #38bdf81a
+}
+
+.school-table__delta--up {
+    color: #22c55e
+}
+
+.school-table__delta--down {
+    color: #f97316
+}
+
+.status-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 7px;
+    border-radius: 999px;
+    background: #f59e0b24;
+    color: #fbbf24;
+    font-size: .76rem
+}
+
+.status-pill--normal {
+    background: #22c55e24;
+    color: #22c55e
+}
+
+.school-detail-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.45fr) minmax(320px, .95fr);
+    gap: 14px;
+    min-height: 0
+}
+
+.school-detail-layout__table,
+.school-profile-sidebar {
+    min-width: 0;
+    min-height: 0
+}
+
+.school-profile-sidebar {
+    display: grid;
+    gap: 12px;
+    align-content: start
+}
+
+.school-focus {
+    padding: 12px;
+    border-radius: 16px;
+    border: var(--border-subtle);
+    background: #ffffff0a
+}
+
+.school-focus--overview {
+    display: grid;
+    gap: 12px
+}
+
+.school-focus__summary {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    align-items: center
+}
+
+.school-focus__summary div {
+    display: grid;
+    gap: 2px
+}
+
+.school-focus__summary h3 {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: .96rem;
+    color: #f8fafc
+}
+
+.school-focus__summary p {
+    margin: 0;
+    color: #e2e8f0a3;
+    font-size: .82rem
+}
+
+.school-focus__statline {
+    display: grid;
+    gap: 3px;
+    text-align: right
+}
+
+.school-focus__statline strong {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: #f8fafc
+}
+
+.school-focus__statline span {
+    color: #94a3b8ad;
+    font-size: .8rem
+}
+
+.school-focus__meta-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px
+}
+
+.school-focus__meta-card {
+    display: grid;
+    gap: 4px;
+    padding: 12px;
+    border-radius: 16px;
+    border: 1px solid rgba(148, 163, 184, .14);
+    background: linear-gradient(180deg, #ffffff0f, #ffffff08)
+}
+
+.school-focus__meta-card span,
+.school-focus__meta-card small {
+    color: #94a3b8bd;
+    font-size: .74rem
+}
+
+.school-focus__meta-card strong {
+    color: #f8fafc;
+    font-family: var(--font-heading);
+    font-size: 1.08rem
+}
+
+.school-profile-sidebar__stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px
+}
+
+.school-profile-metric {
+    display: grid;
+    gap: 4px;
+    padding: 10px;
+    border-radius: 14px;
+    background: #ffffff0a;
+    border: var(--border-subtle)
+}
+
+.school-profile-metric span,
+.school-profile-metric small,
+.school-profile-info-row span {
+    color: #94a3b8b8;
+    font-size: .76rem
+}
+
+.school-profile-metric strong,
+.school-profile-info-row strong {
+    color: #f8fafc;
+    font-family: var(--font-heading)
+}
+
+.school-profile-sidebar__info {
+    display: grid;
+    gap: 8px;
+    padding: 12px;
+    border-radius: 16px;
+    border: var(--border-subtle);
+    background: #ffffff08
+}
+
+.school-profile-info-row {
+    display: grid;
+    gap: 4px
+}
+
+.governance-missing-list {
+    display: grid;
+    gap: 10px;
+    max-height: 320px;
+    overflow: auto
+}
+
+.governance-missing-item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, .08), rgba(42, 111, 145, .08));
+    border: var(--border-subtle)
+}
+
+.governance-missing-item div {
+    display: grid;
+    gap: 4px
+}
+
+.governance-missing-item span {
+    color: rgba(216, 228, 236, .74);
+    font-size: .76rem
+}
+
+.governance-workflow-note {
+    margin: 0;
+    color: rgba(216, 228, 236, .78);
+    font-size: .78rem;
+    line-height: 1.6
+}
+
+.governance-missing-item__meta {
+    justify-items: end
+}
+
+.governance-status-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 6px
+}
+
+.governance-status-tag {
+    min-height: 30px;
+    padding: 0 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(216, 228, 236, .16);
+    background: rgba(255, 255, 255, .08);
+    color: #e5edf4;
+    font-size: .74rem;
+    cursor: pointer
+}
+
+.governance-status-tag--active {
+    border-color: rgba(184, 135, 70, .32);
+    background: linear-gradient(135deg, rgba(42, 111, 145, .24), rgba(184, 135, 70, .2));
+    color: #f8fafc
+}
+
+.school-profile-sidebar__actions,
+.school-chart-tabs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap
+}
+
+.school-detail-shell {
+    display: grid;
+    gap: 14px;
+    min-height: 0;
+    align-content: start
+}
+
+.school-detail-shell__topbar {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 12px 14px;
+    border-radius: 16px;
+    border: 1px solid rgba(148, 163, 184, .12);
+    background: #ffffff0a
+}
+
+.school-detail-shell__topbar h3 {
+    margin: 4px 0 6px;
+    font-family: var(--font-heading);
+    color: #f8fafc
+}
+
+.school-detail-shell__topbar p:last-child {
+    margin: 0;
+    color: #e2e8f0b8;
+    font-size: .82rem;
+    line-height: 1.55
+}
+
+.school-workbench-tabs,
+.chart-pill-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap
+}
+
+.atlas-metric-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 10px
+}
+
+.atlas-metric-strip--compact {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr))
+}
+
+.atlas-metric-tile {
+    display: grid;
+    gap: 5px;
+    padding: 12px 14px;
+    border-radius: 16px;
+    border: 1px solid rgba(148, 163, 184, .14);
+    background: #ffffff0a
+}
+
+.atlas-metric-tile--active {
+    border-color: #38bdf847;
+    background: linear-gradient(135deg, #2563eb2e, #0891b21f)
+}
+
+.atlas-metric-tile span,
+.atlas-metric-tile small {
+    color: #94a3b8c2;
+    font-size: .74rem
+}
+
+.atlas-metric-tile strong {
+    color: #f8fafc;
+    font-family: var(--font-heading);
+    font-size: 1rem
+}
+
+.atlas-storyboard__split {
+    display: grid;
+    grid-template-columns: minmax(220px, .8fr) minmax(0, 1.2fr);
+    gap: 12px;
+    align-items: start
+}
+
+.atlas-storyboard__split--movers {
+    grid-template-columns: minmax(0, 1.35fr) minmax(260px, .8fr);
+}
+
+.atlas-storyboard__chart {
+    min-width: 0;
+    padding: 12px;
+    border-radius: 18px;
+    border: 1px solid rgba(148, 163, 184, .14);
+    background: #ffffff0a
+}
+
+.atlas-storyboard__chart--distribution {
+    display: grid;
+    justify-items: center
+}
+
+.school-analysis-panel {
+    display: grid;
+    gap: 12px;
+    min-height: 0;
+    align-content: start
+}
+
+.school-list-workspace {
+    display: grid;
+    gap: 14px;
+    min-height: 0
+}
+
+.school-list-workspace__summary {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px
+}
+
+.school-list-workspace__summary-card {
+    display: grid;
+    gap: 4px;
+    padding: 12px;
+    border-radius: 16px;
+    border: 1px solid rgba(148, 163, 184, .14);
+    background: #ffffff0a
+}
+
+.school-list-workspace__summary-card span,
+.school-list-workspace__summary-card small {
+    color: #94a3b8bd;
+    font-size: .74rem
+}
+
+.school-list-workspace__summary-card strong {
+    color: #f8fafc;
+    font-family: var(--font-heading);
+    font-size: 1rem
+}
+
+.school-list-workspace__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(320px, 1fr);
+    gap: 12px;
+    align-items: stretch
+}
+
+.school-list-workspace__card {
+    display: grid;
+    gap: 12px;
+    align-content: start;
+    padding: 12px;
+    border-radius: 18px;
+    border: 1px solid rgba(148, 163, 184, .14);
+    background: #ffffff0a;
+    min-height: 100%
+}
+
+.school-list-workspace__card--distribution {
+    align-content: start
+}
+
+.school-analysis-panel__chart-path {
+    font-size: .72rem;
+    color: var(--color-text-muted, #94a3b8);
+    letter-spacing: .02em;
+    padding: 2px 0
+}
+
+.school-analysis-panel__hero {
+    margin: 0
+}
+
+.school-analysis-panel__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(280px, .92fr);
+    gap: 12px;
+    min-height: 0
+}
+
+.school-analysis-panel__side {
+    display: grid;
+    gap: 12px;
+    align-content: start
+}
+
+.school-analysis-panel__note-preview,
+.school-notes-panel {
+    display: grid;
+    gap: 8px
+}
+
+.school-chart-panel__section--overview,
+.school-moe-board {
+    display: grid;
+    gap: 12px
+}
+
+.school-moe-board__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px
+}
+
+.school-moe-board__header h3,
+.school-ranking-rail__header h4 {
+    margin: 2px 0 0;
+    font-family: var(--font-heading);
+    color: #f8fafc
+}
+
+.school-moe-board__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(280px, .9fr);
+    gap: 12px
+}
+
+.school-moe-board__chart-card,
+.school-moe-board__composition-card,
+.school-ranking-rail,
+.school-profile-fact {
+    padding: 12px;
+    border-radius: 18px;
+    border: 1px solid rgba(148, 163, 184, .14);
+    background: #ffffff0a
+}
+
+.school-ranking-rail {
+    display: grid;
+    gap: 12px;
+    align-content: start
+}
+
+.school-ranking-rail__hero {
+    display: grid;
+    gap: 4px;
+    padding: 12px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #60a5fa33, #f472b629)
+}
+
+.school-ranking-rail__hero strong {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: #f8fafc
+}
+
+.school-ranking-rail__hero span,
+.school-ranking-rail__hero small,
+.school-profile-fact span {
+    color: #94a3b8c2
+}
+
+.school-profile-facts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px
+}
+
+.school-profile-fact {
+    display: grid;
+    gap: 4px
+}
+
+.school-profile-fact strong,
+.school-profile-fact a {
+    color: #f8fafc;
+    font-weight: 700;
+    word-break: break-word
+}
+
+.school-overview-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 8px
+}
+
+.school-overview-chart__header {
+    display: flex;
+    flex-direction: column;
+    gap: 2px
+}
+
+.school-overview-chart__svg {
+    width: 100%;
+    height: auto;
+    min-height: 160px;
+    max-height: 240px;
+    padding: 6px;
+    border-radius: 16px;
+    background: linear-gradient(180deg, #ffffff08, #0f172a1f)
+}
+
+.school-overview-chart__legend {
+    display: flex;
+    gap: 16px;
+    font-size: .75rem;
+    color: var(--color-text-muted, #94a3b8)
+}
+
+.school-overview-chart__legend-item {
+    display: flex;
+    align-items: center;
+    gap: 4px
+}
+
+.school-overview-chart__swatch {
+    display: inline-block;
+    width: 12px;
+    height: 10px;
+    border-radius: 2px
+}
+
+.school-overview-chart__swatch--line {
+    width: 16px;
+    height: 3px;
+    border-radius: 2px
+}
+
+.school-overview-chart__info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 12px;
+    font-size: .7rem;
+    color: var(--color-text-muted, #94a3b8)
+}
+
+.school-overview-chart__link {
+    color: #60a5fa;
+    text-decoration: none
+}
+
+.school-overview-chart__table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: .68rem;
+    color: var(--color-text-muted, #94a3b8);
+    overflow-x: auto
+}
+
+.school-overview-chart__table th,
+.school-overview-chart__table td {
+    padding: 3px 5px;
+    text-align: center;
+    border-bottom: 1px solid rgba(51, 65, 85, .3);
+    white-space: nowrap
+}
+
+.school-overview-chart__table th {
+    font-weight: 600;
+    color: var(--color-text, #e2e8f0)
+}
+
+.school-overview-chart__table td:first-child,
+.school-overview-chart__table th:first-child {
+    text-align: left;
+    font-weight: 500
+}
+
+.school-overview-chart__table .positive {
+    color: #34d399
+}
+
+.school-overview-chart__table .negative {
+    color: #fb7185
+}
+
+.school-composition-chart,
+.school-composition-chart__levels,
+.school-composition-chart__bands,
+.school-composition-chart__header,
+.school-composition-chart__level,
+.school-composition-chart__level-header,
+.school-composition-chart__band-row,
+.school-composition-chart__band-label {
+    display: grid;
+    gap: 8px
+}
+
+.school-composition-chart__levels {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 12px
+}
+
+.school-composition-chart__level {
+    padding: 14px;
+    border-radius: 18px;
+    border: 1px solid rgba(148, 163, 184, .14);
+    background: linear-gradient(180deg, #ffffff08, #0f172a22)
+}
+
+.school-composition-chart__level--active {
+    border-color: rgba(96, 165, 250, .45);
+    box-shadow: inset 0 0 0 1px rgba(96, 165, 250, .24)
+}
+
+.school-composition-chart__level-header {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start
+}
+
+.school-composition-chart__level-tag {
+    display: inline-flex;
+    width: fit-content;
+    padding: 4px 8px;
+    border-radius: 999px;
+    background: rgba(34, 211, 238, .14);
+    color: #67e8f9;
+    font-size: .72rem;
+    font-weight: 700
+}
+
+.school-composition-chart__level strong,
+.school-composition-chart__level-total strong,
+.school-composition-chart__band-label strong {
+    color: #f8fafc
+}
+
+.school-composition-chart__level small,
+.school-composition-chart__gender-meta,
+.school-composition-chart__gender-meta--empty,
+.school-composition-chart__band-label span {
+    color: var(--color-text-muted, #94a3b8)
+}
+
+.school-composition-chart__level-total {
+    display: grid;
+    justify-items: end;
+    gap: 2px
+}
+
+.school-composition-chart__gender-block {
+    display: grid;
+    gap: 6px
+}
+
+.school-composition-chart__gender-bar,
+.school-composition-chart__band-rail {
+    overflow: hidden;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, .55)
+}
+
+.school-composition-chart__gender-bar {
+    display: flex;
+    height: 12px
+}
+
+.school-composition-chart__gender-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: .76rem
+}
+
+.school-composition-chart__gender-meta--empty {
+    font-size: .76rem
+}
+
+.school-composition-chart__gender-segment--male {
+    background: linear-gradient(90deg, #38bdf8, #60a5fa)
+}
+
+.school-composition-chart__gender-segment--female {
+    background: linear-gradient(90deg, #fb7185, #f472b6)
+}
+
+.school-composition-chart__band-label {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: baseline;
+    font-size: .8rem
+}
+
+.school-composition-chart__band-rail {
+    height: 10px
+}
+
+.school-composition-chart__band-fill {
+    display: flex;
+    height: 100%;
+    min-width: 6px
+}
+
+.school-composition-chart__band-fill-solid {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #22d3ee, #60a5fa)
+}
+
+.dashboard-side-shell .comparison-panel,
+.dashboard-side-shell .school-detail-panel,
+.dashboard-side-shell .insight-panel,
+.dashboard-side-shell .scope-panel {
+    min-height: 0
+}
+
+.school-profile-link {
+    text-decoration: none
+}
+
+.school-chart-panel,
+.school-chart-panel__section {
+    display: grid;
+    gap: 10px
+}
+
+.school-chart-panel {
+    padding: 12px;
+    border-radius: 18px;
+    border: var(--border-subtle);
+    background: #ffffff08;
+    align-content: start
+}
+
+.dashboard-canvas .atlas-metric-tile span,
+.dashboard-canvas .atlas-metric-tile small,
+.dashboard-canvas .school-list-workspace__summary-card span,
+.dashboard-canvas .school-list-workspace__summary-card small {
+    color: var(--text-soft)
+}
+
+.dashboard-canvas .atlas-metric-tile strong,
+.dashboard-canvas .school-list-workspace__summary-card strong {
+    color: var(--text-main)
+}
+
+.mobile-school-card-list {
+    display: grid;
+    gap: 8px
+}
+
+.mobile-school-card {
+    display: grid;
+    gap: 4px;
+    padding: 12px 14px;
+    border-radius: 16px;
+    border: var(--border-light);
+    background: #fffc;
+    cursor: pointer;
+    transition: transform .15s ease, box-shadow .15s ease
+}
+
+.mobile-school-card:active {
+    transform: scale(.98)
+}
+
+.mobile-school-card--active {
+    border-color: #38bdf866;
+    box-shadow: 0 0 0 2px #38bdf833
+}
+
+.mobile-school-card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px
+}
+
+.mobile-school-card__name {
+    font-weight: 600;
+    color: var(--text-main);
+    font-size: .92rem
+}
+
+.mobile-school-card__tag {
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: .68rem;
+    font-weight: 600
+}
+
+.mobile-school-card__tag--public {
+    background: #22c55e1f;
+    color: #16a34a
+}
+
+.mobile-school-card__tag--private {
+    background: #f973161f;
+    color: #ea580c
+}
+
+.mobile-school-card__stats {
+    display: flex;
+    align-items: baseline;
+    gap: 8px
+}
+
+.mobile-school-card__count {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    color: var(--text-main)
+}
+
+.mobile-school-card__delta {
+    font-size: .78rem;
+    font-weight: 600
+}
+
+.mobile-school-card__delta--up {
+    color: #16a34a
+}
+
+.mobile-school-card__delta--down {
+    color: #ea580c
+}
+
+.mobile-school-card__meta {
+    font-size: .76rem;
+    color: var(--text-soft)
+}
+
+.mobile-school-drawer-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    background: #00000080;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    animation: fadeIn .2s ease
+}
+
+.mobile-school-drawer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 3001;
+    max-height: 80dvh;
+    overflow-y: auto;
+    padding: 20px 16px calc(24px + env(safe-area-inset-bottom, 0px));
+    border-radius: 24px 24px 0 0;
+    background: #f7f4ee;
+    box-shadow: 0 -16px 60px #0f172a33;
+    animation: slideUp .3s cubic-bezier(.2, .8, .2, 1)
+}
+
+/* Dashboard Canvas Layout Tweaks */
+.dashboard-card--matrix {
+    position: relative;
+    z-index: 6;
+}
+
+.dashboard-card--kpi {
+    position: relative;
+    z-index: 5;
+}
+
+.dashboard-card--ranking,
+.dashboard-card--overview-movers {
+    position: relative;
+    z-index: 4;
+}

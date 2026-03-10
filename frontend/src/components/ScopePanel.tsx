@@ -44,56 +44,46 @@ function ScopePanel({
   activeYear,
   educationDistribution,
 }: ScopePanelProps) {
-  const averageStudentsPerSchool = currentScope.schools > 0
-    ? Math.round(currentScope.students / currentScope.schools)
-    : 0
 
   return (
     <section className="panel scope-panel">
-        <div className="stat-grid stat-grid--top">
-          <div data-testid="current-scope-card">
-            <StatCard
-              title={currentScope.label}
-              value={`${formatStudents(currentScope.students)} 人`}
-              numericValue={currentScope.students}
-              caption={`${currentScope.schools.toLocaleString('zh-TW')} 校 | 今年增減 ${formatDelta(currentScope.delta)} / ${formatPercent(currentScope.deltaRatio)}`}
-              tone="lagoon"
-            />
-          </div>
+      <div className="stat-grid stat-grid--top" style={{ gridTemplateColumns: '1fr 1fr' }}>
+        <div data-testid="current-scope-card">
           <StatCard
-            title="今年增減"
-            value={`${currentScope.delta >= 0 ? '+' : ''}${formatStudents(currentScope.delta)} 人`}
-            numericValue={currentScope.delta}
-            caption={`${formatAcademicYear(activeYear)} 相較前一年 ${formatPercent(currentScope.deltaRatio)}`}
-            tone="sun"
-          />
-          <StatCard
-            title="平均每校"
-            value={`${formatStudents(averageStudentsPerSchool)} 人`}
-            numericValue={averageStudentsPerSchool}
-            caption="聚焦就讀人數與校數結構，不顯示離線與快取狀態"
-            tone="coral"
+            title={currentScope.label}
+            value={`${formatStudents(currentScope.students)} 人`}
+            numericValue={currentScope.students}
+            caption={`${currentScope.schools.toLocaleString('zh-TW')} 校 | 今年增減 ${formatDelta(currentScope.delta)} / ${formatPercent(currentScope.deltaRatio)}`}
+            tone="lagoon"
           />
         </div>
+        <StatCard
+          title="今年增減"
+          value={`${currentScope.delta >= 0 ? '+' : ''}${formatStudents(currentScope.delta)} 人`}
+          numericValue={currentScope.delta}
+          caption={`${formatAcademicYear(activeYear)} 相較前一年 ${formatPercent(currentScope.deltaRatio)}`}
+          tone="sun"
+        />
+      </div>
 
-        <div className="scope-panel__visuals">
-          <div className="scope-panel__visual-card">
-            <p className="eyebrow">教育階段分布</p>
-            <PieChart slices={educationDistribution.map((row) => ({ label: row.level, value: row.students, share: row.share }))} size={108} />
-          </div>
-
-          <div className="scope-panel__visual-card scope-panel__visual-card--trend">
-            <TrendChart
-              chartId="scope-trend"
-              title={`${currentScope.label} 歷年學生數`}
-              subtitle={formatAcademicYear(activeYear)}
-              points={currentScope.trend}
-              activeYear={activeYear}
-              showHeader={false}
-            />
-          </div>
+      <div className="scope-panel__visuals">
+        <div className="scope-panel__visual-card">
+          <p className="eyebrow">教育階段分布</p>
+          <PieChart slices={educationDistribution.map((row) => ({ label: row.level, value: row.students, share: row.share }))} size={108} centerLabel="學生總數" />
         </div>
-      </section>
+
+        <div className="scope-panel__visual-card scope-panel__visual-card--trend">
+          <TrendChart
+            chartId="scope-trend"
+            title={`${currentScope.label} 歷年學生數`}
+            subtitle={formatAcademicYear(activeYear)}
+            points={currentScope.trend}
+            activeYear={activeYear}
+            showHeader={false}
+          />
+        </div>
+      </div>
+    </section>
   )
 }
 

@@ -1,22 +1,17 @@
-# specs 文件索引
+# 專案規格文件 (Specs)
 
-目前 `specs/` 已依屬性重新整理，根目錄只保留仍在維護的主線規格：
+本目錄存放專案的核心規格與技術紀錄。我們遵循 **「規格驅動開發 (SDD)」** 精神：先定義規格，再進行實作。
 
-- `001-core-atlas/`：核心互動、地圖下鑽、URL 狀態、分析工作台與學校視圖。
-- `002-platform-delivery/`：GitHub Pages、PWA、部署與交付層需求。
-- `archive/`：歷次迭代稿與已封存的實驗方向，作為設計脈絡參考，不再視為現行主規格。
+## 現行主規格 (Active Specifications)
+- **[PRODUCT_SPEC.md](./PRODUCT_SPEC.md)**：產品導向規格。包含分頁設計、主要圖表元件定義、視覺優化清單與使用者故事。
+- **[TECHNICAL_DETAILS.md](./TECHNICAL_DETAILS.md)**：技術導向細節。包含架構設計、資料模型、切片策略與 ADR 技術決策紀錄。
 
-## 舊編號對照
-
-- `001-interactive-edu-map` + `002-streamed-county-atlas` + `005-leaflet-atlas-workbench` + `006-marker-cluster-shareable-scenarios`
-  已彙整到 `001-core-atlas/` 的主規格敘述。
-- `004-pages-pwa-local-view`
-  已整理為 `002-platform-delivery/`。
-- `003-local-db-prefetch-atlas`
-  保留在 `archive/`，作為曾評估過的資料層實驗，不列為現行基線。
+## 歷史檔案庫 (Archive - 尊重歷代演進)
+為了保留專案開發的脈絡與「開發者的汗水」，原本的系列規格文件與原始 User Story 皆妥善保留於此目錄中：
+- `specs/archive/`：包含 001、002、003 系列原始稿。
+- `specs/archive/user_stories/`：包含專案初期的定位與願景原始文件。
 
 ## 維護原則
-
-- 先更新 `001-core-atlas/` 或 `002-platform-delivery/` 對應文件，再修改程式。
-- 若只是保留歷史脈絡，移入 `archive/`，不要再新增新的流水號主資料夾。
-- 所有規格文件維持繁體中文。
+1.  **規格先行**：在進行重大功能開發或視覺調整前，必須先更新 `PRODUCT_SPEC.md` 並獲得確認。
+2.  **歷史累積**：已完成或廢棄但具有策略參考價值的計畫，應移入 `archive/` 而非刪除。
+3.  **語文一致**：維持繁體中文編寫，確保產品語境一致。

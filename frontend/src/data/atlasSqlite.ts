@@ -136,6 +136,7 @@ async function loadEducationSummaryWithOptions(options: LoadDatabaseOptions = {}
       detailBytes: county.assetMetrics?.detailBytes ?? 0,
       townshipBytes: county.assetMetrics?.townshipBytes ?? 0,
       bucketBytes: county.assetMetrics?.bucketBytes ?? 0,
+      schoolAtlasBytes: county.assetMetrics?.schoolAtlasBytes ?? 0,
       sqliteBytes: bytes,
     },
   }))

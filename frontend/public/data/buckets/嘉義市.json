@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-09T18:20:24.798Z",
+  "generatedAt": "2026-03-10T12:31:52.836Z",
   "county": {
     "id": "嘉義市",
     "name": "嘉義市",
@@ -12,10 +12,10 @@
         "id": "5-wsjtt",
         "geohash": "wsjtt",
         "precision": 5,
-        "count": 20,
+        "count": 22,
         "totalStudents": 20239,
-        "latitude": 23.481009,
-        "longitude": 120.465287,
+        "latitude": 23.4815,
+        "longitude": 120.46578,
         "bounds": {
           "minLatitude": 23.46785,
           "maxLatitude": 23.493458,
@@ -57,10 +57,10 @@
         "id": "5-wsjts",
         "geohash": "wsjts",
         "precision": 5,
-        "count": 13,
+        "count": 14,
         "totalStudents": 9077,
-        "latitude": 23.482375,
-        "longitude": 120.435249,
+        "latitude": 23.484049,
+        "longitude": 120.436045,
         "bounds": {
           "minLatitude": 23.468652,
           "maxLatitude": 23.505814,
@@ -94,6 +94,51 @@
             "name": "市立世賢國小",
             "townshipName": "西區",
             "students": 760,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "5-wsjtm",
+        "geohash": "wsjtm",
+        "precision": 5,
+        "count": 5,
+        "totalStudents": 13706,
+        "latitude": 23.461486,
+        "longitude": 120.46224,
+        "bounds": {
+          "minLatitude": 23.459256,
+          "maxLatitude": 23.463817,
+          "minLongitude": 120.455135,
+          "maxLongitude": 120.483502
+        },
+        "topSchools": [
+          {
+            "id": "0018",
+            "name": "國立嘉義大學",
+            "townshipName": "東區",
+            "students": 11349,
+            "status": "正常"
+          },
+          {
+            "id": "203615",
+            "name": "市立興安國小",
+            "townshipName": "東區",
+            "students": 906,
+            "status": "正常"
+          },
+          {
+            "id": "201312:國中",
+            "name": "私立輔仁高中附設國中部",
+            "townshipName": "東區",
+            "students": 753,
+            "status": "正常"
+          },
+          {
+            "id": "201312",
+            "name": "私立輔仁高中",
+            "townshipName": "東區",
+            "students": 644,
             "status": "正常"
           }
         ]
@@ -139,51 +184,6 @@
             "name": "市立大業實驗國中",
             "townshipName": "東區",
             "students": 245,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "5-wsjtm",
-        "geohash": "wsjtm",
-        "precision": 5,
-        "count": 4,
-        "totalStudents": 13706,
-        "latitude": 23.461699,
-        "longitude": 120.46364,
-        "bounds": {
-          "minLatitude": 23.459256,
-          "maxLatitude": 23.463817,
-          "minLongitude": 120.455135,
-          "maxLongitude": 120.483502
-        },
-        "topSchools": [
-          {
-            "id": "0018",
-            "name": "國立嘉義大學",
-            "townshipName": "東區",
-            "students": 11349,
-            "status": "正常"
-          },
-          {
-            "id": "201312",
-            "name": "私立輔仁高中",
-            "townshipName": "東區",
-            "students": 1397,
-            "status": "正常"
-          },
-          {
-            "id": "203615",
-            "name": "市立興安國小",
-            "townshipName": "東區",
-            "students": 906,
-            "status": "正常"
-          },
-          {
-            "id": "201314",
-            "name": "私立立仁高中",
-            "townshipName": "東區",
-            "students": 54,
             "status": "正常"
           }
         ]
@@ -236,6 +236,51 @@
         ]
       },
       {
+        "id": "6-wsjtth",
+        "geohash": "wsjtth",
+        "precision": 6,
+        "count": 4,
+        "totalStudents": 3546,
+        "latitude": 23.490876,
+        "longitude": 120.459846,
+        "bounds": {
+          "minLatitude": 23.489587,
+          "maxLatitude": 23.493458,
+          "minLongitude": 120.454997,
+          "maxLongitude": 120.464605
+        },
+        "topSchools": [
+          {
+            "id": "203502",
+            "name": "市立北興國中",
+            "townshipName": "東區",
+            "students": 1591,
+            "status": "正常"
+          },
+          {
+            "id": "203608",
+            "name": "市立嘉北國小",
+            "townshipName": "東區",
+            "students": 1245,
+            "status": "正常"
+          },
+          {
+            "id": "201304",
+            "name": "私立興華高中",
+            "townshipName": "東區",
+            "students": 481,
+            "status": "正常"
+          },
+          {
+            "id": "201304:國中",
+            "name": "私立興華高中附設國中部",
+            "townshipName": "東區",
+            "students": 229,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "6-wsjtt1",
         "geohash": "wsjtt1",
         "precision": 6,
@@ -274,39 +319,77 @@
         ]
       },
       {
-        "id": "6-wsjtth",
-        "geohash": "wsjtth",
+        "id": "6-wsjtmn",
+        "geohash": "wsjtmn",
         "precision": 6,
         "count": 3,
-        "totalStudents": 3546,
-        "latitude": 23.491306,
-        "longitude": 120.45826,
+        "totalStudents": 2303,
+        "latitude": 23.460175,
+        "longitude": 120.456139,
         "bounds": {
-          "minLatitude": 23.489587,
-          "maxLatitude": 23.493458,
-          "minLongitude": 120.454997,
-          "maxLongitude": 120.464605
+          "minLatitude": 23.459256,
+          "maxLatitude": 23.460634,
+          "minLongitude": 120.455135,
+          "maxLongitude": 120.456641
         },
         "topSchools": [
           {
-            "id": "203502",
-            "name": "市立北興國中",
+            "id": "203615",
+            "name": "市立興安國小",
             "townshipName": "東區",
-            "students": 1591,
+            "students": 906,
             "status": "正常"
           },
           {
-            "id": "203608",
-            "name": "市立嘉北國小",
+            "id": "201312:國中",
+            "name": "私立輔仁高中附設國中部",
             "townshipName": "東區",
-            "students": 1245,
+            "students": 753,
             "status": "正常"
           },
           {
-            "id": "201304",
-            "name": "私立興華高中",
+            "id": "201312",
+            "name": "私立輔仁高中",
             "townshipName": "東區",
-            "students": 710,
+            "students": 644,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsjttd",
+        "geohash": "wsjttd",
+        "precision": 6,
+        "count": 3,
+        "totalStudents": 1683,
+        "latitude": 23.482997,
+        "longitude": 120.478462,
+        "bounds": {
+          "minLatitude": 23.482536,
+          "maxLatitude": 23.483227,
+          "minLongitude": 120.476817,
+          "maxLongitude": 120.481752
+        },
+        "topSchools": [
+          {
+            "id": "201310:國中",
+            "name": "私立嘉華高中附設國中部",
+            "townshipName": "東區",
+            "students": 652,
+            "status": "正常"
+          },
+          {
+            "id": "201310",
+            "name": "私立嘉華高中",
+            "townshipName": "東區",
+            "students": 556,
+            "status": "正常"
+          },
+          {
+            "id": "203507",
+            "name": "市立蘭潭國中",
+            "townshipName": "東區",
+            "students": 475,
             "status": "正常"
           }
         ]
@@ -436,37 +519,6 @@
         ]
       },
       {
-        "id": "6-wsjtmn",
-        "geohash": "wsjtmn",
-        "precision": 6,
-        "count": 2,
-        "totalStudents": 2303,
-        "latitude": 23.459945,
-        "longitude": 120.455888,
-        "bounds": {
-          "minLatitude": 23.459256,
-          "maxLatitude": 23.460634,
-          "minLongitude": 120.455135,
-          "maxLongitude": 120.456641
-        },
-        "topSchools": [
-          {
-            "id": "201312",
-            "name": "私立輔仁高中",
-            "townshipName": "東區",
-            "students": 1397,
-            "status": "正常"
-          },
-          {
-            "id": "203615",
-            "name": "市立興安國小",
-            "townshipName": "東區",
-            "students": 906,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "6-wsjtt4",
         "geohash": "wsjtt4",
         "precision": 6,
@@ -498,37 +550,6 @@
         ]
       },
       {
-        "id": "6-wsjttd",
-        "geohash": "wsjttd",
-        "precision": 6,
-        "count": 2,
-        "totalStudents": 1683,
-        "latitude": 23.482881,
-        "longitude": 120.479285,
-        "bounds": {
-          "minLatitude": 23.482536,
-          "maxLatitude": 23.483227,
-          "minLongitude": 120.476817,
-          "maxLongitude": 120.481752
-        },
-        "topSchools": [
-          {
-            "id": "201310",
-            "name": "私立嘉華高中",
-            "townshipName": "東區",
-            "students": 1208,
-            "status": "正常"
-          },
-          {
-            "id": "203507",
-            "name": "市立蘭潭國中",
-            "townshipName": "東區",
-            "students": 475,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "6-wsjtt5",
         "geohash": "wsjtt5",
         "precision": 6,
@@ -555,6 +576,37 @@
             "name": "市立嘉義國中",
             "townshipName": "東區",
             "students": 727,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsjtsz",
+        "geohash": "wsjtsz",
+        "precision": 6,
+        "count": 2,
+        "totalStudents": 169,
+        "latitude": 23.505814,
+        "longitude": 120.446399,
+        "bounds": {
+          "minLatitude": 23.505814,
+          "maxLatitude": 23.505814,
+          "minLongitude": 120.446399,
+          "maxLongitude": 120.446399
+        },
+        "topSchools": [
+          {
+            "id": "201313:國中",
+            "name": "私立宏仁女中附設國中部",
+            "townshipName": "東區",
+            "students": 87,
+            "status": "正常"
+          },
+          {
+            "id": "201313",
+            "name": "私立宏仁高中",
+            "townshipName": "東區",
+            "students": 82,
             "status": "正常"
           }
         ]
@@ -872,30 +924,6 @@
         ]
       },
       {
-        "id": "6-wsjtsz",
-        "geohash": "wsjtsz",
-        "precision": 6,
-        "count": 1,
-        "totalStudents": 169,
-        "latitude": 23.505814,
-        "longitude": 120.446399,
-        "bounds": {
-          "minLatitude": 23.505814,
-          "maxLatitude": 23.505814,
-          "minLongitude": 120.446399,
-          "maxLongitude": 120.446399
-        },
-        "topSchools": [
-          {
-            "id": "201313",
-            "name": "私立宏仁高中",
-            "townshipName": "東區",
-            "students": 169,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "6-wsjtmp",
         "geohash": "wsjtmp",
         "precision": 6,
@@ -921,6 +949,130 @@
       }
     ],
     "7": [
+      {
+        "id": "7-wsjtmnc",
+        "geohash": "wsjtmnc",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 1397,
+        "latitude": 23.460634,
+        "longitude": 120.456641,
+        "bounds": {
+          "minLatitude": 23.460634,
+          "maxLatitude": 23.460634,
+          "minLongitude": 120.456641,
+          "maxLongitude": 120.456641
+        },
+        "topSchools": [
+          {
+            "id": "201312:國中",
+            "name": "私立輔仁高中附設國中部",
+            "townshipName": "東區",
+            "students": 753,
+            "status": "正常"
+          },
+          {
+            "id": "201312",
+            "name": "私立輔仁高中",
+            "townshipName": "東區",
+            "students": 644,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsjttdb",
+        "geohash": "wsjttdb",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 1208,
+        "latitude": 23.483227,
+        "longitude": 120.476817,
+        "bounds": {
+          "minLatitude": 23.483227,
+          "maxLatitude": 23.483227,
+          "minLongitude": 120.476817,
+          "maxLongitude": 120.476817
+        },
+        "topSchools": [
+          {
+            "id": "201310:國中",
+            "name": "私立嘉華高中附設國中部",
+            "townshipName": "東區",
+            "students": 652,
+            "status": "正常"
+          },
+          {
+            "id": "201310",
+            "name": "私立嘉華高中",
+            "townshipName": "東區",
+            "students": 556,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsjtthp",
+        "geohash": "wsjtthp",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 710,
+        "latitude": 23.489587,
+        "longitude": 120.464605,
+        "bounds": {
+          "minLatitude": 23.489587,
+          "maxLatitude": 23.489587,
+          "minLongitude": 120.464605,
+          "maxLongitude": 120.464605
+        },
+        "topSchools": [
+          {
+            "id": "201304",
+            "name": "私立興華高中",
+            "townshipName": "東區",
+            "students": 481,
+            "status": "正常"
+          },
+          {
+            "id": "201304:國中",
+            "name": "私立興華高中附設國中部",
+            "townshipName": "東區",
+            "students": 229,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsjtsz4",
+        "geohash": "wsjtsz4",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 169,
+        "latitude": 23.505814,
+        "longitude": 120.446399,
+        "bounds": {
+          "minLatitude": 23.505814,
+          "maxLatitude": 23.505814,
+          "minLongitude": 120.446399,
+          "maxLongitude": 120.446399
+        },
+        "topSchools": [
+          {
+            "id": "201313:國中",
+            "name": "私立宏仁女中附設國中部",
+            "townshipName": "東區",
+            "students": 87,
+            "status": "正常"
+          },
+          {
+            "id": "201313",
+            "name": "私立宏仁高中",
+            "townshipName": "東區",
+            "students": 82,
+            "status": "正常"
+          }
+        ]
+      },
       {
         "id": "7-wsjtkxt",
         "geohash": "wsjtkxt",
@@ -1378,30 +1530,6 @@
         ]
       },
       {
-        "id": "7-wsjtmnc",
-        "geohash": "wsjtmnc",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 1397,
-        "latitude": 23.460634,
-        "longitude": 120.456641,
-        "bounds": {
-          "minLatitude": 23.460634,
-          "maxLatitude": 23.460634,
-          "minLongitude": 120.456641,
-          "maxLongitude": 120.456641
-        },
-        "topSchools": [
-          {
-            "id": "201312",
-            "name": "私立輔仁高中",
-            "townshipName": "東區",
-            "students": 1397,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "7-wsjtt4y",
         "geohash": "wsjtt4y",
         "precision": 7,
@@ -1469,30 +1597,6 @@
             "name": "國立華南高商",
             "townshipName": "東區",
             "students": 1223,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsjttdb",
-        "geohash": "wsjttdb",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 1208,
-        "latitude": 23.483227,
-        "longitude": 120.476817,
-        "bounds": {
-          "minLatitude": 23.483227,
-          "maxLatitude": 23.483227,
-          "minLongitude": 120.476817,
-          "maxLongitude": 120.476817
-        },
-        "topSchools": [
-          {
-            "id": "201310",
-            "name": "私立嘉華高中",
-            "townshipName": "東區",
-            "students": 1208,
             "status": "正常"
           }
         ]
@@ -1613,30 +1717,6 @@
             "name": "市立嘉義國中",
             "townshipName": "東區",
             "students": 727,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsjtthp",
-        "geohash": "wsjtthp",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 710,
-        "latitude": 23.489587,
-        "longitude": 120.464605,
-        "bounds": {
-          "minLatitude": 23.489587,
-          "maxLatitude": 23.489587,
-          "minLongitude": 120.464605,
-          "maxLongitude": 120.464605
-        },
-        "topSchools": [
-          {
-            "id": "201304",
-            "name": "私立興華高中",
-            "townshipName": "東區",
-            "students": 710,
             "status": "正常"
           }
         ]
@@ -1853,30 +1933,6 @@
             "name": "市立大業實驗國中",
             "townshipName": "東區",
             "students": 245,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsjtsz4",
-        "geohash": "wsjtsz4",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 169,
-        "latitude": 23.505814,
-        "longitude": 120.446399,
-        "bounds": {
-          "minLatitude": 23.505814,
-          "maxLatitude": 23.505814,
-          "minLongitude": 120.446399,
-          "maxLongitude": 120.446399
-        },
-        "topSchools": [
-          {
-            "id": "201313",
-            "name": "私立宏仁高中",
-            "townshipName": "東區",
-            "students": 169,
             "status": "正常"
           }
         ]

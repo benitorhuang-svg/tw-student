@@ -8,6 +8,7 @@ import type {
   ManagementTypeFilter,
   RegionGroupFilter,
   SchoolRecord,
+  StudentCompositionRecord,
 } from '../data/educationData'
 
 export type DashboardFilters = {
@@ -93,6 +94,7 @@ export type SchoolInsight = {
   delta: number
   deltaRatio: number
   trend: TrendPoint[]
+  studentCompositions?: StudentCompositionRecord[]
   status?: SchoolRecord['status']
   missingYears?: SchoolRecord['missingYears']
   dataNotes?: DataNote[]

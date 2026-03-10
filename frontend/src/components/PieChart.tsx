@@ -1,10 +1,8 @@
+import { useState } from 'react'
+import { formatStudents } from '../lib/analytics'
+
 const PIE_COLORS = [
-  'rgba(42, 111, 145, 0.88)',
-  'rgba(125, 166, 148, 0.88)',
-  'rgba(184, 135, 70, 0.88)',
-  'rgba(201, 122, 84, 0.88)',
-  'rgba(122, 107, 153, 0.82)',
-  'rgba(148, 163, 184, 0.68)',
+  '#38bdf8', '#34d399', '#fbbf24', '#fb923c', '#a855f7', '#94a3b8'
 ]
 
 type Slice = {
@@ -16,58 +14,77 @@ type Slice = {
 type PieChartProps = {
   slices: Slice[]
   size?: number
+  centerLabel?: string
 }
 
-function PieChart({ slices, size = 90 }: PieChartProps) {
+function PieChart({ slices, size = 120, centerLabel = '總計' }: PieChartProps) {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+
   const r = size / 2
-  const cx = r
-  const cy = r
-  const innerR = r * 0.52
+  const innerR = r * 0.65
+  const totalValue = slices.reduce((acc, s) => acc + s.value, 0)
 
   const startOffset = -Math.PI / 2
-  const offsets = slices.reduce<number[]>((acc, slice) => {
-    const prev = acc.length > 0 ? acc[acc.length - 1] : startOffset
-    acc.push(prev + slice.share * Math.PI * 2)
-    return acc
-  }, [])
-
-  const paths = slices.map((slice, i) => {
-    const angle = slice.share * Math.PI * 2
-    const startAngle = i === 0 ? startOffset : offsets[i - 1]
-    const endAngle = startAngle + angle
-
-    const x1 = cx + r * Math.cos(startAngle)
-    const y1 = cy + r * Math.sin(startAngle)
-    const x2 = cx + r * Math.cos(endAngle)
-    const y2 = cy + r * Math.sin(endAngle)
-    const ix1 = cx + innerR * Math.cos(endAngle)
-    const iy1 = cy + innerR * Math.sin(endAngle)
-    const ix2 = cx + innerR * Math.cos(startAngle)
-    const iy2 = cy + innerR * Math.sin(startAngle)
-    const large = angle > Math.PI ? 1 : 0
-
-    const d = [
-      `M ${x1} ${y1}`,
-      `A ${r} ${r} 0 ${large} 1 ${x2} ${y2}`,
-      `L ${ix1} ${iy1}`,
-      `A ${innerR} ${innerR} 0 ${large} 0 ${ix2} ${iy2}`,
-      'Z',
-    ].join(' ')
-
-    return <path key={slice.label} d={d} fill={PIE_COLORS[i % PIE_COLORS.length]} />
-  })
+  let currentAngle = startOffset
 
   return (
     <div className="pie-chart-wrap">
-      <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} aria-label="教育階段佔比">
-        {paths}
-      </svg>
+      <div style={{ position: 'relative', width: size, height: size }}>
+        <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
+          {slices.map((slice, i) => {
+            const angle = slice.share * Math.PI * 2
+            const endAngle = currentAngle + angle
+
+            const x1 = r + r * Math.cos(currentAngle)
+            const y1 = r + r * Math.sin(currentAngle)
+            const x2 = r + r * Math.cos(endAngle)
+            const y2 = r + r * Math.sin(endAngle)
+
+            const ix1 = r + innerR * Math.cos(endAngle)
+            const iy1 = r + innerR * Math.sin(endAngle)
+            const ix2 = r + innerR * Math.cos(currentAngle)
+            const iy2 = r + innerR * Math.sin(currentAngle)
+
+            const large = angle > Math.PI ? 1 : 0
+            const d = [`M ${x1} ${y1}`, `A ${r} ${r} 0 ${large} 1 ${x2} ${y2}`, `L ${ix1} ${iy1}`, `A ${innerR} ${innerR} 0 ${large} 0 ${ix2} ${iy2}`, 'Z'].join(' ')
+
+            const isActive = hoveredIndex === i
+            const color = PIE_COLORS[i % PIE_COLORS.length]
+
+            currentAngle += angle
+
+            return (
+              <path
+                key={slice.label}
+                d={d}
+                fill={color}
+                opacity={hoveredIndex === null || isActive ? 1 : 0.4}
+                style={{ transition: 'all 0.3s ease', cursor: 'pointer', transform: isActive ? 'scale(1.05)' : 'none', transformOrigin: 'center' }}
+                onMouseEnter={() => setHoveredIndex(i)}
+                onMouseLeave={() => setHoveredIndex(null)}
+              />
+            )
+          })}
+        </svg>
+        <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', textAlign: 'center', pointerEvents: 'none' }}>
+          <div style={{ fontSize: '0.65rem', opacity: 0.6, fontWeight: 700 }}>{hoveredIndex !== null ? slices[hoveredIndex].label : centerLabel}</div>
+          <div style={{ fontSize: '0.9rem', fontWeight: 800, color: 'var(--text-main)' }}>
+            {hoveredIndex !== null ? (slices[hoveredIndex].share * 100).toFixed(0) + '%' : formatStudents(totalValue)}
+          </div>
+        </div>
+      </div>
+
       <div className="pie-chart-legend">
         {slices.map((slice, i) => (
-          <div key={slice.label} className="pie-chart-legend__row">
-            <span className="pie-chart-legend__swatch" style={{ background: PIE_COLORS[i % PIE_COLORS.length] }} />
-            <span className="pie-chart-legend__label">{slice.label}</span>
-            <span className="pie-chart-legend__value">{(slice.share * 100).toFixed(0)}%</span>
+          <div
+            key={slice.label}
+            className="pie-chart-legend__row"
+            style={{ opacity: hoveredIndex === null || hoveredIndex === i ? 1 : 0.4, borderLeft: `3px solid ${PIE_COLORS[i % PIE_COLORS.length]}` }}
+            onMouseEnter={() => setHoveredIndex(i)}
+            onMouseLeave={() => setHoveredIndex(null)}
+          >
+            <span className="pie-chart-legend__label" style={{ paddingLeft: '4px' }}>{slice.label}</span>
+            <span className="pie-chart-legend__value">{(slice.share * 100).toFixed(1)}%</span>
           </div>
         ))}
       </div>

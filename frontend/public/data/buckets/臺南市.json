@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-09T18:20:24.816Z",
+  "generatedAt": "2026-03-10T12:31:52.845Z",
   "county": {
     "id": "臺南市",
     "name": "臺南市",
@@ -12,10 +12,10 @@
         "id": "5-wsj6z",
         "geohash": "wsj6z",
         "precision": 5,
-        "count": 40,
+        "count": 44,
         "totalStudents": 85067,
-        "latitude": 23.000175,
-        "longitude": 120.213838,
+        "latitude": 23.000239,
+        "longitude": 120.214582,
         "bounds": {
           "minLatitude": 22.984088,
           "maxLatitude": 23.022424,
@@ -57,10 +57,10 @@
         "id": "5-wsj6x",
         "geohash": "wsj6x",
         "precision": 5,
-        "count": 15,
+        "count": 16,
         "totalStudents": 14945,
-        "latitude": 22.973903,
-        "longitude": 120.212872,
+        "latitude": 22.974274,
+        "longitude": 120.213414,
         "bounds": {
           "minLatitude": 22.945459,
           "maxLatitude": 22.981606,
@@ -68,13 +68,6 @@
           "maxLongitude": 120.230567
         },
         "topSchools": [
-          {
-            "id": "211318",
-            "name": "私立德光高中",
-            "townshipName": "東區",
-            "students": 2425,
-            "status": "正常"
-          },
           {
             "id": "213640",
             "name": "市立崇明國小",
@@ -95,6 +88,13 @@
             "townshipName": "中西區",
             "students": 1704,
             "status": "正常"
+          },
+          {
+            "id": "213606",
+            "name": "市立崇學國小",
+            "townshipName": "東區",
+            "students": 1561,
+            "status": "正常"
           }
         ]
       },
@@ -102,10 +102,10 @@
         "id": "5-wsjdb",
         "geohash": "wsjdb",
         "precision": 5,
-        "count": 13,
+        "count": 15,
         "totalStudents": 22133,
-        "latitude": 23.007187,
-        "longitude": 120.253941,
+        "latitude": 23.006835,
+        "longitude": 120.254286,
         "bounds": {
           "minLatitude": 22.989685,
           "maxLatitude": 23.026035,
@@ -128,17 +128,17 @@
             "status": "正常"
           },
           {
-            "id": "114306",
-            "name": "市立大灣高中",
-            "townshipName": "永康區",
-            "students": 1843,
-            "status": "正常"
-          },
-          {
             "id": "114782",
             "name": "市立永信國小",
             "townshipName": "永康區",
             "students": 1820,
+            "status": "正常"
+          },
+          {
+            "id": "114624",
+            "name": "市立大灣國小",
+            "townshipName": "永康區",
+            "students": 1547,
             "status": "正常"
           }
         ]
@@ -147,10 +147,10 @@
         "id": "5-wsj6y",
         "geohash": "wsj6y",
         "precision": 5,
-        "count": 13,
+        "count": 15,
         "totalStudents": 11276,
-        "latitude": 23.00121,
-        "longitude": 120.174138,
+        "latitude": 22.999304,
+        "longitude": 120.17485,
         "bounds": {
           "minLatitude": 22.986916,
           "maxLatitude": 23.022711,
@@ -166,13 +166,6 @@
             "status": "正常"
           },
           {
-            "id": "211320",
-            "name": "財團法人慈濟高中",
-            "townshipName": "安平區",
-            "students": 1785,
-            "status": "正常"
-          },
-          {
             "id": "213511",
             "name": "市立安平國中",
             "townshipName": "安平區",
@@ -185,6 +178,13 @@
             "townshipName": "安平區",
             "students": 1031,
             "status": "正常"
+          },
+          {
+            "id": "213647",
+            "name": "市立九份子國(中)小",
+            "townshipName": "安南區",
+            "students": 1013,
+            "status": "正常"
           }
         ]
       },
@@ -192,10 +192,10 @@
         "id": "5-wsjs9",
         "geohash": "wsjs9",
         "precision": 5,
-        "count": 10,
+        "count": 11,
         "totalStudents": 7985,
-        "latitude": 23.307474,
-        "longitude": 120.311942,
+        "latitude": 23.306688,
+        "longitude": 120.312216,
         "bounds": {
           "minLatitude": 23.298027,
           "maxLatitude": 23.316151,
@@ -203,13 +203,6 @@
           "maxLongitude": 120.318964
         },
         "topSchools": [
-          {
-            "id": "111313",
-            "name": "私立南光高中",
-            "townshipName": "新營區",
-            "students": 1644,
-            "status": "正常"
-          },
           {
             "id": "114728",
             "name": "市立新營國小",
@@ -230,6 +223,13 @@
             "townshipName": "新營區",
             "students": 990,
             "status": "正常"
+          },
+          {
+            "id": "110406",
+            "name": "國立新營高工",
+            "townshipName": "新營區",
+            "students": 837,
+            "status": "正常"
           }
         ]
       },
@@ -237,10 +237,10 @@
         "id": "5-wsjs8",
         "geohash": "wsjs8",
         "precision": 5,
-        "count": 10,
+        "count": 11,
         "totalStudents": 1437,
-        "latitude": 23.311798,
-        "longitude": 120.263458,
+        "latitude": 23.311644,
+        "longitude": 120.264477,
         "bounds": {
           "minLatitude": 23.29122,
           "maxLatitude": 23.329645,
@@ -256,13 +256,6 @@
             "status": "正常"
           },
           {
-            "id": "111322",
-            "name": "私立明達高中",
-            "townshipName": "鹽水區",
-            "students": 330,
-            "status": "正常"
-          },
-          {
             "id": "114534",
             "name": "市立鹽水國中",
             "townshipName": "鹽水區",
@@ -270,10 +263,17 @@
             "status": "正常"
           },
           {
-            "id": "114740",
-            "name": "市立月津國小",
+            "id": "111322",
+            "name": "私立明達高中",
             "townshipName": "鹽水區",
-            "students": 111,
+            "students": 170,
+            "status": "正常"
+          },
+          {
+            "id": "111322:國中",
+            "name": "私立明達高中附設國中",
+            "townshipName": "鹽水區",
+            "students": 160,
             "status": "正常"
           }
         ]
@@ -282,10 +282,10 @@
         "id": "5-wsj7p",
         "geohash": "wsj7p",
         "precision": 5,
-        "count": 9,
+        "count": 10,
         "totalStudents": 10672,
-        "latitude": 23.047529,
-        "longitude": 120.208524,
+        "latitude": 23.046273,
+        "longitude": 120.208854,
         "bounds": {
           "minLatitude": 23.027906,
           "maxLatitude": 23.067144,
@@ -301,13 +301,6 @@
             "status": "正常"
           },
           {
-            "id": "211315",
-            "name": "私立瀛海高中",
-            "townshipName": "安南區",
-            "students": 1946,
-            "status": "正常"
-          },
-          {
             "id": "213626",
             "name": "市立安順國小",
             "townshipName": "安南區",
@@ -319,6 +312,13 @@
             "name": "市立和順國小",
             "townshipName": "安南區",
             "students": 1363,
+            "status": "正常"
+          },
+          {
+            "id": "213629",
+            "name": "市立安慶國小",
+            "townshipName": "安南區",
+            "students": 1333,
             "status": "正常"
           }
         ]
@@ -369,6 +369,51 @@
         ]
       },
       {
+        "id": "5-wsjeb",
+        "geohash": "wsjeb",
+        "precision": 5,
+        "count": 8,
+        "totalStudents": 5916,
+        "latitude": 23.180905,
+        "longitude": 120.253217,
+        "bounds": {
+          "minLatitude": 23.17289,
+          "maxLatitude": 23.188472,
+          "minLongitude": 120.243597,
+          "maxLongitude": 120.266056
+        },
+        "topSchools": [
+          {
+            "id": "111323:國中",
+            "name": "方濟會學校財團法人臺南市黎明高中附設國中部",
+            "townshipName": "麻豆區",
+            "students": 1115,
+            "status": "正常"
+          },
+          {
+            "id": "110410",
+            "name": "國立曾文農工",
+            "townshipName": "麻豆區",
+            "students": 932,
+            "status": "正常"
+          },
+          {
+            "id": "114659",
+            "name": "市立麻豆國小",
+            "townshipName": "麻豆區",
+            "students": 908,
+            "status": "正常"
+          },
+          {
+            "id": "110405",
+            "name": "國立曾文家商",
+            "townshipName": "麻豆區",
+            "students": 860,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "5-wsje9",
         "geohash": "wsje9",
         "precision": 5,
@@ -414,46 +459,91 @@
         ]
       },
       {
-        "id": "5-wsjeb",
-        "geohash": "wsjeb",
+        "id": "5-wsj7x",
+        "geohash": "wsj7x",
         "precision": 5,
         "count": 7,
-        "totalStudents": 5916,
-        "latitude": 23.18205,
-        "longitude": 120.254123,
+        "totalStudents": 4489,
+        "latitude": 23.126337,
+        "longitude": 120.207193,
         "bounds": {
-          "minLatitude": 23.17289,
-          "maxLatitude": 23.188472,
-          "minLongitude": 120.243597,
-          "maxLongitude": 120.266056
+          "minLatitude": 23.119326,
+          "maxLatitude": 23.140764,
+          "minLongitude": 120.196172,
+          "maxLongitude": 120.229727
         },
         "topSchools": [
           {
-            "id": "111323",
-            "name": "私立黎明高中",
-            "townshipName": "麻豆區",
-            "students": 1935,
+            "id": "111320:國中",
+            "name": "私立港明高中附設國中",
+            "townshipName": "西港區",
+            "students": 1628,
             "status": "正常"
           },
           {
-            "id": "110410",
-            "name": "國立曾文農工",
-            "townshipName": "麻豆區",
-            "students": 932,
+            "id": "111320",
+            "name": "私立港明高中",
+            "townshipName": "西港區",
+            "students": 1620,
             "status": "正常"
           },
           {
-            "id": "114659",
-            "name": "市立麻豆國小",
-            "townshipName": "麻豆區",
-            "students": 908,
+            "id": "114675",
+            "name": "市立西港國小",
+            "townshipName": "西港區",
+            "students": 663,
             "status": "正常"
           },
           {
-            "id": "110405",
-            "name": "國立曾文家商",
-            "townshipName": "麻豆區",
-            "students": 860,
+            "id": "114526",
+            "name": "市立西港國中",
+            "townshipName": "西港區",
+            "students": 253,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "5-wsjsd",
+        "geohash": "wsjsd",
+        "precision": 5,
+        "count": 7,
+        "totalStudents": 2818,
+        "latitude": 23.316163,
+        "longitude": 120.337709,
+        "bounds": {
+          "minLatitude": 23.305947,
+          "maxLatitude": 23.333437,
+          "minLongitude": 120.322408,
+          "maxLongitude": 120.362564
+        },
+        "topSchools": [
+          {
+            "id": "114533",
+            "name": "市立新東國中",
+            "townshipName": "新營區",
+            "students": 1004,
+            "status": "正常"
+          },
+          {
+            "id": "114781",
+            "name": "市立新泰國小",
+            "townshipName": "新營區",
+            "students": 685,
+            "status": "正常"
+          },
+          {
+            "id": "111321",
+            "name": "臺南市興國高中",
+            "townshipName": "新營區",
+            "students": 521,
+            "status": "正常"
+          },
+          {
+            "id": "111321:國中",
+            "name": "私立興國高中附設國中",
+            "townshipName": "新營區",
+            "students": 483,
             "status": "正常"
           }
         ]
@@ -684,46 +774,46 @@
         ]
       },
       {
-        "id": "5-wsj7x",
-        "geohash": "wsj7x",
+        "id": "5-wsj7n",
+        "geohash": "wsj7n",
         "precision": 5,
         "count": 6,
-        "totalStudents": 4489,
-        "latitude": 23.127506,
-        "longitude": 120.20903,
+        "totalStudents": 5139,
+        "latitude": 23.056715,
+        "longitude": 120.164802,
         "bounds": {
-          "minLatitude": 23.119326,
-          "maxLatitude": 23.140764,
-          "minLongitude": 120.196172,
-          "maxLongitude": 120.229727
+          "minLatitude": 23.048793,
+          "maxLatitude": 23.064459,
+          "minLongitude": 120.150409,
+          "maxLongitude": 120.178239
         },
         "topSchools": [
           {
-            "id": "111320",
-            "name": "私立港明高中",
-            "townshipName": "西港區",
-            "students": 3248,
+            "id": "213628",
+            "name": "市立海東國小",
+            "townshipName": "安南區",
+            "students": 2099,
             "status": "正常"
           },
           {
-            "id": "114675",
-            "name": "市立西港國小",
-            "townshipName": "西港區",
-            "students": 663,
+            "id": "213512",
+            "name": "市立安南國中",
+            "townshipName": "安南區",
+            "students": 1379,
             "status": "正常"
           },
           {
-            "id": "114526",
-            "name": "市立西港國中",
-            "townshipName": "西港區",
-            "students": 253,
+            "id": "1125",
+            "name": "中信金融管理學院",
+            "townshipName": "安南區",
+            "students": 917,
             "status": "正常"
           },
           {
-            "id": "114680",
-            "name": "市立松林國小",
-            "townshipName": "西港區",
-            "students": 123,
+            "id": "213636",
+            "name": "市立安佃國小",
+            "townshipName": "安南區",
+            "students": 314,
             "status": "正常"
           }
         ]
@@ -774,51 +864,6 @@
         ]
       },
       {
-        "id": "5-wsjsd",
-        "geohash": "wsjsd",
-        "precision": 5,
-        "count": 6,
-        "totalStudents": 2818,
-        "latitude": 23.316739,
-        "longitude": 120.340259,
-        "bounds": {
-          "minLatitude": 23.305947,
-          "maxLatitude": 23.333437,
-          "minLongitude": 120.322408,
-          "maxLongitude": 120.362564
-        },
-        "topSchools": [
-          {
-            "id": "111321",
-            "name": "臺南市興國高中",
-            "townshipName": "新營區",
-            "students": 1004,
-            "status": "正常"
-          },
-          {
-            "id": "114533",
-            "name": "市立新東國中",
-            "townshipName": "新營區",
-            "students": 1004,
-            "status": "正常"
-          },
-          {
-            "id": "114781",
-            "name": "市立新泰國小",
-            "townshipName": "新營區",
-            "students": 685,
-            "status": "正常"
-          },
-          {
-            "id": "114765",
-            "name": "市立安溪國小",
-            "townshipName": "後壁區",
-            "students": 54,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "5-wsjkn",
         "geohash": "wsjkn",
         "precision": 5,
@@ -859,6 +904,51 @@
             "name": "市立將軍國中",
             "townshipName": "將軍區",
             "students": 115,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "5-wsje3",
+        "geohash": "wsje3",
+        "precision": 5,
+        "count": 6,
+        "totalStudents": 5082,
+        "latitude": 23.095042,
+        "longitude": 120.298014,
+        "bounds": {
+          "minLatitude": 23.078928,
+          "maxLatitude": 23.107038,
+          "minLongitude": 120.290937,
+          "maxLongitude": 120.319015
+        },
+        "topSchools": [
+          {
+            "id": "114654",
+            "name": "市立新市國小",
+            "townshipName": "新市區",
+            "students": 1601,
+            "status": "正常"
+          },
+          {
+            "id": "110328:國小",
+            "name": "國立南科高級實驗中學附設國小部",
+            "townshipName": "新市區",
+            "students": 1420,
+            "status": "正常"
+          },
+          {
+            "id": "110328:國中",
+            "name": "國立南科高級實驗中學附設國中部",
+            "townshipName": "新市區",
+            "students": 735,
+            "status": "正常"
+          },
+          {
+            "id": "114515",
+            "name": "市立新市國中",
+            "townshipName": "新市區",
+            "students": 657,
             "status": "正常"
           }
         ]
@@ -1039,51 +1129,6 @@
             "name": "市立龍潭國小",
             "townshipName": "永康區",
             "students": 671,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "5-wsj7n",
-        "geohash": "wsj7n",
-        "precision": 5,
-        "count": 5,
-        "totalStudents": 5139,
-        "latitude": 23.056637,
-        "longitude": 120.167681,
-        "bounds": {
-          "minLatitude": 23.048793,
-          "maxLatitude": 23.064459,
-          "minLongitude": 120.150409,
-          "maxLongitude": 120.178239
-        },
-        "topSchools": [
-          {
-            "id": "213628",
-            "name": "市立海東國小",
-            "townshipName": "安南區",
-            "students": 2099,
-            "status": "正常"
-          },
-          {
-            "id": "213512",
-            "name": "市立安南國中",
-            "townshipName": "安南區",
-            "students": 1379,
-            "status": "正常"
-          },
-          {
-            "id": "1125",
-            "name": "中信金融管理學院",
-            "townshipName": "安南區",
-            "students": 917,
-            "status": "正常"
-          },
-          {
-            "id": "213316",
-            "name": "市立土城高中",
-            "townshipName": "安南區",
-            "students": 430,
             "status": "正常"
           }
         ]
@@ -1494,51 +1539,6 @@
         ]
       },
       {
-        "id": "5-wsje3",
-        "geohash": "wsje3",
-        "precision": 5,
-        "count": 4,
-        "totalStudents": 5082,
-        "latitude": 23.089044,
-        "longitude": 120.301552,
-        "bounds": {
-          "minLatitude": 23.078928,
-          "maxLatitude": 23.107038,
-          "minLongitude": 120.290937,
-          "maxLongitude": 120.319015
-        },
-        "topSchools": [
-          {
-            "id": "110328",
-            "name": "國立南科國際實驗高中",
-            "townshipName": "新市區",
-            "students": 2555,
-            "status": "正常"
-          },
-          {
-            "id": "114654",
-            "name": "市立新市國小",
-            "townshipName": "新市區",
-            "students": 1601,
-            "status": "正常"
-          },
-          {
-            "id": "114515",
-            "name": "市立新市國中",
-            "townshipName": "新市區",
-            "students": 657,
-            "status": "正常"
-          },
-          {
-            "id": "114655",
-            "name": "市立大社國小",
-            "townshipName": "新市區",
-            "students": 269,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "5-wsj7q",
         "geohash": "wsj7q",
         "precision": 5,
@@ -1838,6 +1838,44 @@
             "name": "市立渡拔國小",
             "townshipName": "官田區",
             "students": 42,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "5-wsj6q",
+        "geohash": "wsj6q",
+        "precision": 5,
+        "count": 3,
+        "totalStudents": 1255,
+        "latitude": 22.934931,
+        "longitude": 120.184162,
+        "bounds": {
+          "minLatitude": 22.932338,
+          "maxLatitude": 22.936228,
+          "minLongitude": 120.180173,
+          "maxLongitude": 120.186156
+        },
+        "topSchools": [
+          {
+            "id": "213609",
+            "name": "市立省躬國小",
+            "townshipName": "南區",
+            "students": 566,
+            "status": "正常"
+          },
+          {
+            "id": "213303:國中",
+            "name": "市立南寧高中附設國中部",
+            "townshipName": "南區",
+            "students": 353,
+            "status": "正常"
+          },
+          {
+            "id": "213303",
+            "name": "市立南寧高中",
+            "townshipName": "南區",
+            "students": 336,
             "status": "正常"
           }
         ]
@@ -2153,37 +2191,6 @@
         ]
       },
       {
-        "id": "5-wsj6q",
-        "geohash": "wsj6q",
-        "precision": 5,
-        "count": 2,
-        "totalStudents": 1255,
-        "latitude": 22.934283,
-        "longitude": 120.183165,
-        "bounds": {
-          "minLatitude": 22.932338,
-          "maxLatitude": 22.936228,
-          "minLongitude": 120.180173,
-          "maxLongitude": 120.186156
-        },
-        "topSchools": [
-          {
-            "id": "213303",
-            "name": "市立南寧高中",
-            "townshipName": "南區",
-            "students": 689,
-            "status": "正常"
-          },
-          {
-            "id": "213609",
-            "name": "市立省躬國小",
-            "townshipName": "南區",
-            "students": 566,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "5-wsjsc",
         "geohash": "wsjsc",
         "precision": 5,
@@ -2331,7 +2338,7 @@
           },
           {
             "id": "114344",
-            "name": "市立沙崙國際高中",
+            "name": "市立沙崙國際高中附設國小",
             "townshipName": "歸仁區",
             "students": 66,
             "status": "正常"
@@ -2859,6 +2866,51 @@
     ],
     "6": [
       {
+        "id": "6-wsj6z9",
+        "geohash": "wsj6z9",
+        "precision": 6,
+        "count": 7,
+        "totalStudents": 5764,
+        "latitude": 22.990542,
+        "longitude": 120.218642,
+        "bounds": {
+          "minLatitude": 22.988924,
+          "maxLatitude": 22.994172,
+          "minLongitude": 120.213594,
+          "maxLongitude": 120.222811
+        },
+        "topSchools": [
+          {
+            "id": "210305",
+            "name": "國立臺南一中",
+            "townshipName": "東區",
+            "students": 2072,
+            "status": "正常"
+          },
+          {
+            "id": "211301",
+            "name": "私立長榮高中",
+            "townshipName": "東區",
+            "students": 1464,
+            "status": "正常"
+          },
+          {
+            "id": "211310",
+            "name": "臺南市光華高中",
+            "townshipName": "東區",
+            "students": 1241,
+            "status": "正常"
+          },
+          {
+            "id": "211302",
+            "name": "私立長榮女中",
+            "townshipName": "東區",
+            "students": 539,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "6-wsj6z2",
         "geohash": "wsj6z2",
         "precision": 6,
@@ -2899,51 +2951,6 @@
             "name": "市立中山國中",
             "townshipName": "中西區",
             "students": 1114,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "6-wsj6z9",
-        "geohash": "wsj6z9",
-        "precision": 6,
-        "count": 5,
-        "totalStudents": 5764,
-        "latitude": 22.991181,
-        "longitude": 120.218083,
-        "bounds": {
-          "minLatitude": 22.988924,
-          "maxLatitude": 22.994172,
-          "minLongitude": 120.213594,
-          "maxLongitude": 120.222811
-        },
-        "topSchools": [
-          {
-            "id": "210305",
-            "name": "國立臺南一中",
-            "townshipName": "東區",
-            "students": 2072,
-            "status": "正常"
-          },
-          {
-            "id": "211301",
-            "name": "私立長榮高中",
-            "townshipName": "東區",
-            "students": 1658,
-            "status": "正常"
-          },
-          {
-            "id": "211310",
-            "name": "臺南市光華高中",
-            "townshipName": "東區",
-            "students": 1279,
-            "status": "正常"
-          },
-          {
-            "id": "211302",
-            "name": "私立長榮女中",
-            "townshipName": "東區",
-            "students": 539,
             "status": "正常"
           }
         ]
@@ -3032,6 +3039,196 @@
         ]
       },
       {
+        "id": "6-wsj6zt",
+        "geohash": "wsj6zt",
+        "precision": 6,
+        "count": 3,
+        "totalStudents": 2323,
+        "latitude": 23.013967,
+        "longitude": 120.220146,
+        "bounds": {
+          "minLatitude": 23.012572,
+          "maxLatitude": 23.014664,
+          "minLongitude": 120.2178,
+          "maxLongitude": 120.221319
+        },
+        "topSchools": [
+          {
+            "id": "213619",
+            "name": "市立大光國小",
+            "townshipName": "北區",
+            "students": 861,
+            "status": "正常"
+          },
+          {
+            "id": "211304",
+            "name": "財團法人聖功女中",
+            "townshipName": "北區",
+            "students": 784,
+            "status": "正常"
+          },
+          {
+            "id": "211304:國中",
+            "name": "私立聖功女中附設國中部",
+            "townshipName": "北區",
+            "students": 678,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsj6zv",
+        "geohash": "wsj6zv",
+        "precision": 6,
+        "count": 3,
+        "totalStudents": 2575,
+        "latitude": 23.012374,
+        "longitude": 120.22893,
+        "bounds": {
+          "minLatitude": 23.010952,
+          "maxLatitude": 23.015219,
+          "minLongitude": 120.226678,
+          "maxLongitude": 120.233433
+        },
+        "topSchools": [
+          {
+            "id": "110409",
+            "name": "國立成大附屬南工",
+            "townshipName": "永康區",
+            "students": 2543,
+            "status": "正常"
+          },
+          {
+            "id": "211317",
+            "name": "臺南市崑山高中",
+            "townshipName": "北區",
+            "students": 21,
+            "status": "正常"
+          },
+          {
+            "id": "211317:國中",
+            "name": "私立崑山高中附設國中部",
+            "townshipName": "北區",
+            "students": 11,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsjdb5",
+        "geohash": "wsjdb5",
+        "precision": 6,
+        "count": 3,
+        "totalStudents": 1281,
+        "latitude": 23.00257,
+        "longitude": 120.239844,
+        "bounds": {
+          "minLatitude": 23.001113,
+          "maxLatitude": 23.003299,
+          "minLongitude": 120.239025,
+          "maxLongitude": 120.240254
+        },
+        "topSchools": [
+          {
+            "id": "114627",
+            "name": "市立永康區復興國小",
+            "townshipName": "永康區",
+            "students": 508,
+            "status": "正常"
+          },
+          {
+            "id": "114307",
+            "name": "市立永仁高中",
+            "townshipName": "永康區",
+            "students": 395,
+            "status": "正常"
+          },
+          {
+            "id": "114307:國中",
+            "name": "市立永仁高中附設國中部",
+            "townshipName": "永康區",
+            "students": 378,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsj6yb",
+        "geohash": "wsj6yb",
+        "precision": 6,
+        "count": 3,
+        "totalStudents": 1785,
+        "latitude": 22.986916,
+        "longitude": 120.179475,
+        "bounds": {
+          "minLatitude": 22.986916,
+          "maxLatitude": 22.986916,
+          "minLongitude": 120.179475,
+          "maxLongitude": 120.179475
+        },
+        "topSchools": [
+          {
+            "id": "211320:國小",
+            "name": "慈濟學校財團法人臺南市私立慈濟高級中學附設國小部",
+            "townshipName": "安平區",
+            "students": 645,
+            "status": "正常"
+          },
+          {
+            "id": "211320",
+            "name": "財團法人慈濟高中",
+            "townshipName": "安平區",
+            "students": 615,
+            "status": "正常"
+          },
+          {
+            "id": "211320:國中",
+            "name": "慈濟學校財團法人臺南市私立慈濟高級中學附設國中部",
+            "townshipName": "安平區",
+            "students": 525,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsj6xx",
+        "geohash": "wsj6xx",
+        "precision": 6,
+        "count": 3,
+        "totalStudents": 3128,
+        "latitude": 22.980411,
+        "longitude": 120.221855,
+        "bounds": {
+          "minLatitude": 22.979837,
+          "maxLatitude": 22.98156,
+          "minLongitude": 120.221535,
+          "maxLongitude": 120.222495
+        },
+        "topSchools": [
+          {
+            "id": "211318:國中",
+            "name": "私立德光高中附設國中部",
+            "townshipName": "東區",
+            "students": 1313,
+            "status": "正常"
+          },
+          {
+            "id": "211318",
+            "name": "私立德光高中",
+            "townshipName": "東區",
+            "students": 1112,
+            "status": "正常"
+          },
+          {
+            "id": "213502",
+            "name": "市立忠孝國中",
+            "townshipName": "東區",
+            "students": 703,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "6-wsj6xq",
         "geohash": "wsj6xq",
         "precision": 6,
@@ -3065,6 +3262,82 @@
             "name": "市立志開實驗小學",
             "townshipName": "南區",
             "students": 170,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsje3q",
+        "geohash": "wsje3q",
+        "precision": 6,
+        "count": 3,
+        "totalStudents": 2555,
+        "latitude": 23.107038,
+        "longitude": 120.290937,
+        "bounds": {
+          "minLatitude": 23.107038,
+          "maxLatitude": 23.107038,
+          "minLongitude": 120.290937,
+          "maxLongitude": 120.290937
+        },
+        "topSchools": [
+          {
+            "id": "110328:國小",
+            "name": "國立南科高級實驗中學附設國小部",
+            "townshipName": "新市區",
+            "students": 1420,
+            "status": "正常"
+          },
+          {
+            "id": "110328:國中",
+            "name": "國立南科高級實驗中學附設國中部",
+            "townshipName": "新市區",
+            "students": 735,
+            "status": "正常"
+          },
+          {
+            "id": "110328",
+            "name": "國立南科國際實驗高中",
+            "townshipName": "新市區",
+            "students": 400,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsjsd5",
+        "geohash": "wsjsd5",
+        "precision": 6,
+        "count": 3,
+        "totalStudents": 2008,
+        "latitude": 23.312533,
+        "longitude": 120.323186,
+        "bounds": {
+          "minLatitude": 23.312184,
+          "maxLatitude": 23.312707,
+          "minLongitude": 120.322408,
+          "maxLongitude": 120.324743
+        },
+        "topSchools": [
+          {
+            "id": "114533",
+            "name": "市立新東國中",
+            "townshipName": "新營區",
+            "students": 1004,
+            "status": "正常"
+          },
+          {
+            "id": "111321",
+            "name": "臺南市興國高中",
+            "townshipName": "新營區",
+            "students": 521,
+            "status": "正常"
+          },
+          {
+            "id": "111321:國中",
+            "name": "私立興國高中附設國中",
+            "townshipName": "新營區",
+            "students": 483,
             "status": "正常"
           }
         ]
@@ -3332,37 +3605,6 @@
         ]
       },
       {
-        "id": "6-wsj6zt",
-        "geohash": "wsj6zt",
-        "precision": 6,
-        "count": 2,
-        "totalStudents": 2323,
-        "latitude": 23.013618,
-        "longitude": 120.21956,
-        "bounds": {
-          "minLatitude": 23.012572,
-          "maxLatitude": 23.014664,
-          "minLongitude": 120.2178,
-          "maxLongitude": 120.221319
-        },
-        "topSchools": [
-          {
-            "id": "211304",
-            "name": "財團法人聖功女中",
-            "townshipName": "北區",
-            "students": 1462,
-            "status": "正常"
-          },
-          {
-            "id": "213619",
-            "name": "市立大光國小",
-            "townshipName": "北區",
-            "students": 861,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "6-wsj6zu",
         "geohash": "wsj6zu",
         "precision": 6,
@@ -3451,37 +3693,6 @@
             "name": "市立中西區成功國小",
             "townshipName": "北區",
             "students": 255,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "6-wsj6zv",
-        "geohash": "wsj6zv",
-        "precision": 6,
-        "count": 2,
-        "totalStudents": 2575,
-        "latitude": 23.013085,
-        "longitude": 120.230056,
-        "bounds": {
-          "minLatitude": 23.010952,
-          "maxLatitude": 23.015219,
-          "minLongitude": 120.226678,
-          "maxLongitude": 120.233433
-        },
-        "topSchools": [
-          {
-            "id": "110409",
-            "name": "國立成大附屬南工",
-            "townshipName": "永康區",
-            "students": 2543,
-            "status": "正常"
-          },
-          {
-            "id": "211317",
-            "name": "臺南市崑山高中",
-            "townshipName": "北區",
-            "students": 32,
             "status": "正常"
           }
         ]
@@ -3611,32 +3822,32 @@
         ]
       },
       {
-        "id": "6-wsjdb5",
-        "geohash": "wsjdb5",
+        "id": "6-wsjdbu",
+        "geohash": "wsjdbu",
         "precision": 6,
         "count": 2,
-        "totalStudents": 1281,
-        "latitude": 23.002206,
-        "longitude": 120.239639,
+        "totalStudents": 1843,
+        "latitude": 23.005804,
+        "longitude": 120.272791,
         "bounds": {
-          "minLatitude": 23.001113,
-          "maxLatitude": 23.003299,
-          "minLongitude": 120.239025,
-          "maxLongitude": 120.240254
+          "minLatitude": 23.005804,
+          "maxLatitude": 23.005804,
+          "minLongitude": 120.272791,
+          "maxLongitude": 120.272791
         },
         "topSchools": [
           {
-            "id": "114307",
-            "name": "市立永仁高中",
+            "id": "114306:國中",
+            "name": "市立大灣高中附設國中",
             "townshipName": "永康區",
-            "students": 773,
+            "students": 1197,
             "status": "正常"
           },
           {
-            "id": "114627",
-            "name": "市立永康區復興國小",
+            "id": "114306",
+            "name": "市立大灣高中",
             "townshipName": "永康區",
-            "students": 508,
+            "students": 646,
             "status": "正常"
           }
         ]
@@ -3828,6 +4039,37 @@
         ]
       },
       {
+        "id": "6-wsj7p3",
+        "geohash": "wsj7p3",
+        "precision": 6,
+        "count": 2,
+        "totalStudents": 1946,
+        "latitude": 23.034971,
+        "longitude": 120.211827,
+        "bounds": {
+          "minLatitude": 23.034971,
+          "maxLatitude": 23.034971,
+          "minLongitude": 120.211827,
+          "maxLongitude": 120.211827
+        },
+        "topSchools": [
+          {
+            "id": "211315",
+            "name": "私立瀛海高中",
+            "townshipName": "安南區",
+            "students": 1074,
+            "status": "正常"
+          },
+          {
+            "id": "211315:國中",
+            "name": "私立瀛海高中附設國中部",
+            "townshipName": "安南區",
+            "students": 872,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "6-wsj6yz",
         "geohash": "wsj6yz",
         "precision": 6,
@@ -3854,6 +4096,68 @@
             "name": "市立九份子國中(小)",
             "townshipName": "安南區",
             "students": 356,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsj7nj",
+        "geohash": "wsj7nj",
+        "precision": 6,
+        "count": 2,
+        "totalStudents": 430,
+        "latitude": 23.057104,
+        "longitude": 120.150409,
+        "bounds": {
+          "minLatitude": 23.057104,
+          "maxLatitude": 23.057104,
+          "minLongitude": 120.150409,
+          "maxLongitude": 120.150409
+        },
+        "topSchools": [
+          {
+            "id": "213316",
+            "name": "市立土城高中",
+            "townshipName": "安南區",
+            "students": 241,
+            "status": "正常"
+          },
+          {
+            "id": "213316:國中",
+            "name": "市立土城高中附設國中部",
+            "townshipName": "安南區",
+            "students": 189,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsj7x0",
+        "geohash": "wsj7x0",
+        "precision": 6,
+        "count": 2,
+        "totalStudents": 3248,
+        "latitude": 23.119326,
+        "longitude": 120.196172,
+        "bounds": {
+          "minLatitude": 23.119326,
+          "maxLatitude": 23.119326,
+          "minLongitude": 120.196172,
+          "maxLongitude": 120.196172
+        },
+        "topSchools": [
+          {
+            "id": "111320:國中",
+            "name": "私立港明高中附設國中",
+            "townshipName": "西港區",
+            "students": 1628,
+            "status": "正常"
+          },
+          {
+            "id": "111320",
+            "name": "私立港明高中",
+            "townshipName": "西港區",
+            "students": 1620,
             "status": "正常"
           }
         ]
@@ -3921,37 +4225,6 @@
         ]
       },
       {
-        "id": "6-wsj6xx",
-        "geohash": "wsj6xx",
-        "precision": 6,
-        "count": 2,
-        "totalStudents": 3128,
-        "latitude": 22.980699,
-        "longitude": 120.222015,
-        "bounds": {
-          "minLatitude": 22.979837,
-          "maxLatitude": 22.98156,
-          "minLongitude": 120.221535,
-          "maxLongitude": 120.222495
-        },
-        "topSchools": [
-          {
-            "id": "211318",
-            "name": "私立德光高中",
-            "townshipName": "東區",
-            "students": 2425,
-            "status": "正常"
-          },
-          {
-            "id": "213502",
-            "name": "市立忠孝國中",
-            "townshipName": "東區",
-            "students": 703,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "6-wsj6xv",
         "geohash": "wsj6xv",
         "precision": 6,
@@ -3978,6 +4251,37 @@
             "name": "市立崇明國中",
             "townshipName": "東區",
             "students": 1456,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsj6qz",
+        "geohash": "wsj6qz",
+        "precision": 6,
+        "count": 2,
+        "totalStudents": 689,
+        "latitude": 22.936228,
+        "longitude": 120.186156,
+        "bounds": {
+          "minLatitude": 22.936228,
+          "maxLatitude": 22.936228,
+          "minLongitude": 120.186156,
+          "maxLongitude": 120.186156
+        },
+        "topSchools": [
+          {
+            "id": "213303:國中",
+            "name": "市立南寧高中附設國中部",
+            "townshipName": "南區",
+            "students": 353,
+            "status": "正常"
+          },
+          {
+            "id": "213303",
+            "name": "市立南寧高中",
+            "townshipName": "南區",
+            "students": 336,
             "status": "正常"
           }
         ]
@@ -4040,6 +4344,37 @@
             "name": "市立柳營國中",
             "townshipName": "柳營區",
             "students": 50,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsjeb6",
+        "geohash": "wsjeb6",
+        "precision": 6,
+        "count": 2,
+        "totalStudents": 1935,
+        "latitude": 23.17289,
+        "longitude": 120.246873,
+        "bounds": {
+          "minLatitude": 23.17289,
+          "maxLatitude": 23.17289,
+          "minLongitude": 120.246873,
+          "maxLongitude": 120.246873
+        },
+        "topSchools": [
+          {
+            "id": "111323:國中",
+            "name": "方濟會學校財團法人臺南市黎明高中附設國中部",
+            "townshipName": "麻豆區",
+            "students": 1115,
+            "status": "正常"
+          },
+          {
+            "id": "111323",
+            "name": "私立黎明高中",
+            "townshipName": "麻豆區",
+            "students": 820,
             "status": "正常"
           }
         ]
@@ -4231,32 +4566,32 @@
         ]
       },
       {
-        "id": "6-wsjsd5",
-        "geohash": "wsjsd5",
+        "id": "6-wsjs9c",
+        "geohash": "wsjs9c",
         "precision": 6,
         "count": 2,
-        "totalStudents": 2008,
-        "latitude": 23.312445,
-        "longitude": 120.323576,
+        "totalStudents": 1644,
+        "latitude": 23.29883,
+        "longitude": 120.314953,
         "bounds": {
-          "minLatitude": 23.312184,
-          "maxLatitude": 23.312707,
-          "minLongitude": 120.322408,
-          "maxLongitude": 120.324743
+          "minLatitude": 23.29883,
+          "maxLatitude": 23.29883,
+          "minLongitude": 120.314953,
+          "maxLongitude": 120.314953
         },
         "topSchools": [
           {
-            "id": "111321",
-            "name": "臺南市興國高中",
+            "id": "111313:國中",
+            "name": "私立南光高中附設國中",
             "townshipName": "新營區",
-            "students": 1004,
+            "students": 830,
             "status": "正常"
           },
           {
-            "id": "114533",
-            "name": "市立新東國中",
+            "id": "111313",
+            "name": "私立南光高中",
             "townshipName": "新營區",
-            "students": 1004,
+            "students": 814,
             "status": "正常"
           }
         ]
@@ -4285,9 +4620,40 @@
           },
           {
             "id": "114344",
-            "name": "市立沙崙國際高中",
+            "name": "市立沙崙國際高中附設國小",
             "townshipName": "歸仁區",
             "students": 66,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsjs8g",
+        "geohash": "wsjs8g",
+        "precision": 6,
+        "count": 2,
+        "totalStudents": 330,
+        "latitude": 23.310104,
+        "longitude": 120.274666,
+        "bounds": {
+          "minLatitude": 23.310104,
+          "maxLatitude": 23.310104,
+          "minLongitude": 120.274666,
+          "maxLongitude": 120.274666
+        },
+        "topSchools": [
+          {
+            "id": "111322",
+            "name": "私立明達高中",
+            "townshipName": "鹽水區",
+            "students": 170,
+            "status": "正常"
+          },
+          {
+            "id": "111322:國中",
+            "name": "私立明達高中附設國中",
+            "townshipName": "鹽水區",
+            "students": 160,
             "status": "正常"
           }
         ]
@@ -5469,30 +5835,6 @@
         ]
       },
       {
-        "id": "6-wsjdbu",
-        "geohash": "wsjdbu",
-        "precision": 6,
-        "count": 1,
-        "totalStudents": 1843,
-        "latitude": 23.005804,
-        "longitude": 120.272791,
-        "bounds": {
-          "minLatitude": 23.005804,
-          "maxLatitude": 23.005804,
-          "minLongitude": 120.272791,
-          "maxLongitude": 120.272791
-        },
-        "topSchools": [
-          {
-            "id": "114306",
-            "name": "市立大灣高中",
-            "townshipName": "永康區",
-            "students": 1843,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "6-wsjdbq",
         "geohash": "wsjdbq",
         "precision": 6,
@@ -5949,30 +6291,6 @@
         ]
       },
       {
-        "id": "6-wsj6yb",
-        "geohash": "wsj6yb",
-        "precision": 6,
-        "count": 1,
-        "totalStudents": 1785,
-        "latitude": 22.986916,
-        "longitude": 120.179475,
-        "bounds": {
-          "minLatitude": 22.986916,
-          "maxLatitude": 22.986916,
-          "minLongitude": 120.179475,
-          "maxLongitude": 120.179475
-        },
-        "topSchools": [
-          {
-            "id": "211320",
-            "name": "財團法人慈濟高中",
-            "townshipName": "安平區",
-            "students": 1785,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "6-wsj6y9",
         "geohash": "wsj6y9",
         "precision": 6,
@@ -6141,30 +6459,6 @@
         ]
       },
       {
-        "id": "6-wsj7p3",
-        "geohash": "wsj7p3",
-        "precision": 6,
-        "count": 1,
-        "totalStudents": 1946,
-        "latitude": 23.034971,
-        "longitude": 120.211827,
-        "bounds": {
-          "minLatitude": 23.034971,
-          "maxLatitude": 23.034971,
-          "minLongitude": 120.211827,
-          "maxLongitude": 120.211827
-        },
-        "topSchools": [
-          {
-            "id": "211315",
-            "name": "私立瀛海高中",
-            "townshipName": "安南區",
-            "students": 1946,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "6-wsj7pe",
         "geohash": "wsj7pe",
         "precision": 6,
@@ -6280,30 +6574,6 @@
             "name": "市立土城國小",
             "townshipName": "安南區",
             "students": 439,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "6-wsj7nj",
-        "geohash": "wsj7nj",
-        "precision": 6,
-        "count": 1,
-        "totalStudents": 430,
-        "latitude": 23.057104,
-        "longitude": 120.150409,
-        "bounds": {
-          "minLatitude": 23.057104,
-          "maxLatitude": 23.057104,
-          "minLongitude": 120.150409,
-          "maxLongitude": 120.150409
-        },
-        "topSchools": [
-          {
-            "id": "213316",
-            "name": "市立土城高中",
-            "townshipName": "安南區",
-            "students": 430,
             "status": "正常"
           }
         ]
@@ -6472,30 +6742,6 @@
             "name": "市立顯宮國小",
             "townshipName": "安南區",
             "students": 54,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "6-wsj7x0",
-        "geohash": "wsj7x0",
-        "precision": 6,
-        "count": 1,
-        "totalStudents": 3248,
-        "latitude": 23.119326,
-        "longitude": 120.196172,
-        "bounds": {
-          "minLatitude": 23.119326,
-          "maxLatitude": 23.119326,
-          "minLongitude": 120.196172,
-          "maxLongitude": 120.196172
-        },
-        "topSchools": [
-          {
-            "id": "111320",
-            "name": "私立港明高中",
-            "townshipName": "西港區",
-            "students": 3248,
             "status": "正常"
           }
         ]
@@ -7629,30 +7875,6 @@
         ]
       },
       {
-        "id": "6-wsj6qz",
-        "geohash": "wsj6qz",
-        "precision": 6,
-        "count": 1,
-        "totalStudents": 689,
-        "latitude": 22.936228,
-        "longitude": 120.186156,
-        "bounds": {
-          "minLatitude": 22.936228,
-          "maxLatitude": 22.936228,
-          "minLongitude": 120.186156,
-          "maxLongitude": 120.186156
-        },
-        "topSchools": [
-          {
-            "id": "213303",
-            "name": "市立南寧高中",
-            "townshipName": "南區",
-            "students": 689,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "6-wsj6qy",
         "geohash": "wsj6qy",
         "precision": 6,
@@ -8229,30 +8451,6 @@
         ]
       },
       {
-        "id": "6-wsjeb6",
-        "geohash": "wsjeb6",
-        "precision": 6,
-        "count": 1,
-        "totalStudents": 1935,
-        "latitude": 23.17289,
-        "longitude": 120.246873,
-        "bounds": {
-          "minLatitude": 23.17289,
-          "maxLatitude": 23.17289,
-          "minLongitude": 120.246873,
-          "maxLongitude": 120.246873
-        },
-        "topSchools": [
-          {
-            "id": "111323",
-            "name": "私立黎明高中",
-            "townshipName": "麻豆區",
-            "students": 1935,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "6-wsjebk",
         "geohash": "wsjebk",
         "precision": 6,
@@ -8757,30 +8955,6 @@
         ]
       },
       {
-        "id": "6-wsje3q",
-        "geohash": "wsje3q",
-        "precision": 6,
-        "count": 1,
-        "totalStudents": 2555,
-        "latitude": 23.107038,
-        "longitude": 120.290937,
-        "bounds": {
-          "minLatitude": 23.107038,
-          "maxLatitude": 23.107038,
-          "minLongitude": 120.290937,
-          "maxLongitude": 120.290937
-        },
-        "topSchools": [
-          {
-            "id": "110328",
-            "name": "國立南科國際實驗高中",
-            "townshipName": "新市區",
-            "students": 2555,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "6-wsje1q",
         "geohash": "wsje1q",
         "precision": 6,
@@ -8872,30 +9046,6 @@
             "name": "市立大社國小",
             "townshipName": "新市區",
             "students": 269,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "6-wsjs9c",
-        "geohash": "wsjs9c",
-        "precision": 6,
-        "count": 1,
-        "totalStudents": 1644,
-        "latitude": 23.29883,
-        "longitude": 120.314953,
-        "bounds": {
-          "minLatitude": 23.29883,
-          "maxLatitude": 23.29883,
-          "minLongitude": 120.314953,
-          "maxLongitude": 120.314953
-        },
-        "topSchools": [
-          {
-            "id": "111313",
-            "name": "私立南光高中",
-            "townshipName": "新營區",
-            "students": 1644,
             "status": "正常"
           }
         ]
@@ -9693,30 +9843,6 @@
         ]
       },
       {
-        "id": "6-wsjs8g",
-        "geohash": "wsjs8g",
-        "precision": 6,
-        "count": 1,
-        "totalStudents": 330,
-        "latitude": 23.310104,
-        "longitude": 120.274666,
-        "bounds": {
-          "minLatitude": 23.310104,
-          "maxLatitude": 23.310104,
-          "minLongitude": 120.274666,
-          "maxLongitude": 120.274666
-        },
-        "topSchools": [
-          {
-            "id": "111322",
-            "name": "私立明達高中",
-            "townshipName": "鹽水區",
-            "students": 330,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "6-wsjs8t",
         "geohash": "wsjs8t",
         "precision": 6,
@@ -9935,6 +10061,113 @@
     ],
     "7": [
       {
+        "id": "7-wsj6yb8",
+        "geohash": "wsj6yb8",
+        "precision": 7,
+        "count": 3,
+        "totalStudents": 1785,
+        "latitude": 22.986916,
+        "longitude": 120.179475,
+        "bounds": {
+          "minLatitude": 22.986916,
+          "maxLatitude": 22.986916,
+          "minLongitude": 120.179475,
+          "maxLongitude": 120.179475
+        },
+        "topSchools": [
+          {
+            "id": "211320:國小",
+            "name": "慈濟學校財團法人臺南市私立慈濟高級中學附設國小部",
+            "townshipName": "安平區",
+            "students": 645,
+            "status": "正常"
+          },
+          {
+            "id": "211320",
+            "name": "財團法人慈濟高中",
+            "townshipName": "安平區",
+            "students": 615,
+            "status": "正常"
+          },
+          {
+            "id": "211320:國中",
+            "name": "慈濟學校財團法人臺南市私立慈濟高級中學附設國中部",
+            "townshipName": "安平區",
+            "students": 525,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsje3q9",
+        "geohash": "wsje3q9",
+        "precision": 7,
+        "count": 3,
+        "totalStudents": 2555,
+        "latitude": 23.107038,
+        "longitude": 120.290937,
+        "bounds": {
+          "minLatitude": 23.107038,
+          "maxLatitude": 23.107038,
+          "minLongitude": 120.290937,
+          "maxLongitude": 120.290937
+        },
+        "topSchools": [
+          {
+            "id": "110328:國小",
+            "name": "國立南科高級實驗中學附設國小部",
+            "townshipName": "新市區",
+            "students": 1420,
+            "status": "正常"
+          },
+          {
+            "id": "110328:國中",
+            "name": "國立南科高級實驗中學附設國中部",
+            "townshipName": "新市區",
+            "students": 735,
+            "status": "正常"
+          },
+          {
+            "id": "110328",
+            "name": "國立南科國際實驗高中",
+            "townshipName": "新市區",
+            "students": 400,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsj6ztw",
+        "geohash": "wsj6ztw",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 1462,
+        "latitude": 23.014664,
+        "longitude": 120.221319,
+        "bounds": {
+          "minLatitude": 23.014664,
+          "maxLatitude": 23.014664,
+          "minLongitude": 120.221319,
+          "maxLongitude": 120.221319
+        },
+        "topSchools": [
+          {
+            "id": "211304",
+            "name": "財團法人聖功女中",
+            "townshipName": "北區",
+            "students": 784,
+            "status": "正常"
+          },
+          {
+            "id": "211304:國中",
+            "name": "私立聖功女中附設國中部",
+            "townshipName": "北區",
+            "students": 678,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "7-wsj6zhh",
         "geohash": "wsj6zhh",
         "precision": 7,
@@ -9961,6 +10194,130 @@
             "name": "市立中西區成功國小",
             "townshipName": "北區",
             "students": 255,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsj6zv4",
+        "geohash": "wsj6zv4",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 32,
+        "latitude": 23.010952,
+        "longitude": 120.226678,
+        "bounds": {
+          "minLatitude": 23.010952,
+          "maxLatitude": 23.010952,
+          "minLongitude": 120.226678,
+          "maxLongitude": 120.226678
+        },
+        "topSchools": [
+          {
+            "id": "211317",
+            "name": "臺南市崑山高中",
+            "townshipName": "北區",
+            "students": 21,
+            "status": "正常"
+          },
+          {
+            "id": "211317:國中",
+            "name": "私立崑山高中附設國中部",
+            "townshipName": "北區",
+            "students": 11,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsjdbu5",
+        "geohash": "wsjdbu5",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 1843,
+        "latitude": 23.005804,
+        "longitude": 120.272791,
+        "bounds": {
+          "minLatitude": 23.005804,
+          "maxLatitude": 23.005804,
+          "minLongitude": 120.272791,
+          "maxLongitude": 120.272791
+        },
+        "topSchools": [
+          {
+            "id": "114306:國中",
+            "name": "市立大灣高中附設國中",
+            "townshipName": "永康區",
+            "students": 1197,
+            "status": "正常"
+          },
+          {
+            "id": "114306",
+            "name": "市立大灣高中",
+            "townshipName": "永康區",
+            "students": 646,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsjdb5s",
+        "geohash": "wsjdb5s",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 773,
+        "latitude": 23.003299,
+        "longitude": 120.240254,
+        "bounds": {
+          "minLatitude": 23.003299,
+          "maxLatitude": 23.003299,
+          "minLongitude": 120.240254,
+          "maxLongitude": 120.240254
+        },
+        "topSchools": [
+          {
+            "id": "114307",
+            "name": "市立永仁高中",
+            "townshipName": "永康區",
+            "students": 395,
+            "status": "正常"
+          },
+          {
+            "id": "114307:國中",
+            "name": "市立永仁高中附設國中部",
+            "townshipName": "永康區",
+            "students": 378,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsj7p3r",
+        "geohash": "wsj7p3r",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 1946,
+        "latitude": 23.034971,
+        "longitude": 120.211827,
+        "bounds": {
+          "minLatitude": 23.034971,
+          "maxLatitude": 23.034971,
+          "minLongitude": 120.211827,
+          "maxLongitude": 120.211827
+        },
+        "topSchools": [
+          {
+            "id": "211315",
+            "name": "私立瀛海高中",
+            "townshipName": "安南區",
+            "students": 1074,
+            "status": "正常"
+          },
+          {
+            "id": "211315:國中",
+            "name": "私立瀛海高中附設國中部",
+            "townshipName": "安南區",
+            "students": 872,
             "status": "正常"
           }
         ]
@@ -9997,6 +10354,161 @@
         ]
       },
       {
+        "id": "7-wsj7nj6",
+        "geohash": "wsj7nj6",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 430,
+        "latitude": 23.057104,
+        "longitude": 120.150409,
+        "bounds": {
+          "minLatitude": 23.057104,
+          "maxLatitude": 23.057104,
+          "minLongitude": 120.150409,
+          "maxLongitude": 120.150409
+        },
+        "topSchools": [
+          {
+            "id": "213316",
+            "name": "市立土城高中",
+            "townshipName": "安南區",
+            "students": 241,
+            "status": "正常"
+          },
+          {
+            "id": "213316:國中",
+            "name": "市立土城高中附設國中部",
+            "townshipName": "安南區",
+            "students": 189,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsj7x0s",
+        "geohash": "wsj7x0s",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 3248,
+        "latitude": 23.119326,
+        "longitude": 120.196172,
+        "bounds": {
+          "minLatitude": 23.119326,
+          "maxLatitude": 23.119326,
+          "minLongitude": 120.196172,
+          "maxLongitude": 120.196172
+        },
+        "topSchools": [
+          {
+            "id": "111320:國中",
+            "name": "私立港明高中附設國中",
+            "townshipName": "西港區",
+            "students": 1628,
+            "status": "正常"
+          },
+          {
+            "id": "111320",
+            "name": "私立港明高中",
+            "townshipName": "西港區",
+            "students": 1620,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsj6z9p",
+        "geohash": "wsj6z9p",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 1658,
+        "latitude": 22.988924,
+        "longitude": 120.222811,
+        "bounds": {
+          "minLatitude": 22.988924,
+          "maxLatitude": 22.988924,
+          "minLongitude": 120.222811,
+          "maxLongitude": 120.222811
+        },
+        "topSchools": [
+          {
+            "id": "211301",
+            "name": "私立長榮高中",
+            "townshipName": "東區",
+            "students": 1464,
+            "status": "正常"
+          },
+          {
+            "id": "211301:國中",
+            "name": "私立長榮高中附設國中部",
+            "townshipName": "東區",
+            "students": 194,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsj6xxq",
+        "geohash": "wsj6xxq",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 2425,
+        "latitude": 22.979837,
+        "longitude": 120.221535,
+        "bounds": {
+          "minLatitude": 22.979837,
+          "maxLatitude": 22.979837,
+          "minLongitude": 120.221535,
+          "maxLongitude": 120.221535
+        },
+        "topSchools": [
+          {
+            "id": "211318:國中",
+            "name": "私立德光高中附設國中部",
+            "townshipName": "東區",
+            "students": 1313,
+            "status": "正常"
+          },
+          {
+            "id": "211318",
+            "name": "私立德光高中",
+            "townshipName": "東區",
+            "students": 1112,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsj6z95",
+        "geohash": "wsj6z95",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 1279,
+        "latitude": 22.988963,
+        "longitude": 120.21727,
+        "bounds": {
+          "minLatitude": 22.988963,
+          "maxLatitude": 22.988963,
+          "minLongitude": 120.21727,
+          "maxLongitude": 120.21727
+        },
+        "topSchools": [
+          {
+            "id": "211310",
+            "name": "臺南市光華高中",
+            "townshipName": "東區",
+            "students": 1241,
+            "status": "正常"
+          },
+          {
+            "id": "211310:國中",
+            "name": "臺南光華學校財團法人臺南市光華高中附設國中",
+            "townshipName": "東區",
+            "students": 38,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "7-wsj6xq2",
         "geohash": "wsj6xq2",
         "precision": 7,
@@ -10023,6 +10535,68 @@
             "name": "私立六信高中",
             "townshipName": "南區",
             "students": 433,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsj6qzk",
+        "geohash": "wsj6qzk",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 689,
+        "latitude": 22.936228,
+        "longitude": 120.186156,
+        "bounds": {
+          "minLatitude": 22.936228,
+          "maxLatitude": 22.936228,
+          "minLongitude": 120.186156,
+          "maxLongitude": 120.186156
+        },
+        "topSchools": [
+          {
+            "id": "213303:國中",
+            "name": "市立南寧高中附設國中部",
+            "townshipName": "南區",
+            "students": 353,
+            "status": "正常"
+          },
+          {
+            "id": "213303",
+            "name": "市立南寧高中",
+            "townshipName": "南區",
+            "students": 336,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsjeb63",
+        "geohash": "wsjeb63",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 1935,
+        "latitude": 23.17289,
+        "longitude": 120.246873,
+        "bounds": {
+          "minLatitude": 23.17289,
+          "maxLatitude": 23.17289,
+          "minLongitude": 120.246873,
+          "maxLongitude": 120.246873
+        },
+        "topSchools": [
+          {
+            "id": "111323:國中",
+            "name": "方濟會學校財團法人臺南市黎明高中附設國中部",
+            "townshipName": "麻豆區",
+            "students": 1115,
+            "status": "正常"
+          },
+          {
+            "id": "111323",
+            "name": "私立黎明高中",
+            "townshipName": "麻豆區",
+            "students": 820,
             "status": "正常"
           }
         ]
@@ -10059,6 +10633,68 @@
         ]
       },
       {
+        "id": "7-wsjs9c6",
+        "geohash": "wsjs9c6",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 1644,
+        "latitude": 23.29883,
+        "longitude": 120.314953,
+        "bounds": {
+          "minLatitude": 23.29883,
+          "maxLatitude": 23.29883,
+          "minLongitude": 120.314953,
+          "maxLongitude": 120.314953
+        },
+        "topSchools": [
+          {
+            "id": "111313:國中",
+            "name": "私立南光高中附設國中",
+            "townshipName": "新營區",
+            "students": 830,
+            "status": "正常"
+          },
+          {
+            "id": "111313",
+            "name": "私立南光高中",
+            "townshipName": "新營區",
+            "students": 814,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsjsd5b",
+        "geohash": "wsjsd5b",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 1004,
+        "latitude": 23.312707,
+        "longitude": 120.322408,
+        "bounds": {
+          "minLatitude": 23.312707,
+          "maxLatitude": 23.312707,
+          "minLongitude": 120.322408,
+          "maxLongitude": 120.322408
+        },
+        "topSchools": [
+          {
+            "id": "111321",
+            "name": "臺南市興國高中",
+            "townshipName": "新營區",
+            "students": 521,
+            "status": "正常"
+          },
+          {
+            "id": "111321:國中",
+            "name": "私立興國高中附設國中",
+            "townshipName": "新營區",
+            "students": 483,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "7-wsjd3n4",
         "geohash": "wsjd3n4",
         "precision": 7,
@@ -10082,9 +10718,40 @@
           },
           {
             "id": "114344",
-            "name": "市立沙崙國際高中",
+            "name": "市立沙崙國際高中附設國小",
             "townshipName": "歸仁區",
             "students": 66,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsjs8gm",
+        "geohash": "wsjs8gm",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 330,
+        "latitude": 23.310104,
+        "longitude": 120.274666,
+        "bounds": {
+          "minLatitude": 23.310104,
+          "maxLatitude": 23.310104,
+          "minLongitude": 120.274666,
+          "maxLongitude": 120.274666
+        },
+        "topSchools": [
+          {
+            "id": "111322",
+            "name": "私立明達高中",
+            "townshipName": "鹽水區",
+            "students": 170,
+            "status": "正常"
+          },
+          {
+            "id": "111322:國中",
+            "name": "私立明達高中附設國中",
+            "townshipName": "鹽水區",
+            "students": 160,
             "status": "正常"
           }
         ]
@@ -11554,30 +12221,6 @@
         ]
       },
       {
-        "id": "7-wsj6ztw",
-        "geohash": "wsj6ztw",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 1462,
-        "latitude": 23.014664,
-        "longitude": 120.221319,
-        "bounds": {
-          "minLatitude": 23.014664,
-          "maxLatitude": 23.014664,
-          "minLongitude": 120.221319,
-          "maxLongitude": 120.221319
-        },
-        "topSchools": [
-          {
-            "id": "211304",
-            "name": "財團法人聖功女中",
-            "townshipName": "北區",
-            "students": 1462,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "7-wsj6zu4",
         "geohash": "wsj6zu4",
         "precision": 7,
@@ -11818,30 +12461,6 @@
         ]
       },
       {
-        "id": "7-wsj6zv4",
-        "geohash": "wsj6zv4",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 32,
-        "latitude": 23.010952,
-        "longitude": 120.226678,
-        "bounds": {
-          "minLatitude": 23.010952,
-          "maxLatitude": 23.010952,
-          "minLongitude": 120.226678,
-          "maxLongitude": 120.226678
-        },
-        "topSchools": [
-          {
-            "id": "211317",
-            "name": "臺南市崑山高中",
-            "townshipName": "北區",
-            "students": 32,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "7-wsje5v5",
         "geohash": "wsje5v5",
         "precision": 7,
@@ -12058,30 +12677,6 @@
         ]
       },
       {
-        "id": "7-wsjdbu5",
-        "geohash": "wsjdbu5",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 1843,
-        "latitude": 23.005804,
-        "longitude": 120.272791,
-        "bounds": {
-          "minLatitude": 23.005804,
-          "maxLatitude": 23.005804,
-          "minLongitude": 120.272791,
-          "maxLongitude": 120.272791
-        },
-        "topSchools": [
-          {
-            "id": "114306",
-            "name": "市立大灣高中",
-            "townshipName": "永康區",
-            "students": 1843,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "7-wsjdbq4",
         "geohash": "wsjdbq4",
         "precision": 7,
@@ -12269,30 +12864,6 @@
             "name": "市立五王國小",
             "townshipName": "永康區",
             "students": 859,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsjdb5s",
-        "geohash": "wsjdb5s",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 773,
-        "latitude": 23.003299,
-        "longitude": 120.240254,
-        "bounds": {
-          "minLatitude": 23.003299,
-          "maxLatitude": 23.003299,
-          "minLongitude": 120.240254,
-          "maxLongitude": 120.240254
-        },
-        "topSchools": [
-          {
-            "id": "114307",
-            "name": "市立永仁高中",
-            "townshipName": "永康區",
-            "students": 773,
             "status": "正常"
           }
         ]
@@ -12754,30 +13325,6 @@
         ]
       },
       {
-        "id": "7-wsj6yb8",
-        "geohash": "wsj6yb8",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 1785,
-        "latitude": 22.986916,
-        "longitude": 120.179475,
-        "bounds": {
-          "minLatitude": 22.986916,
-          "maxLatitude": 22.986916,
-          "minLongitude": 120.179475,
-          "maxLongitude": 120.179475
-        },
-        "topSchools": [
-          {
-            "id": "211320",
-            "name": "財團法人慈濟高中",
-            "townshipName": "安平區",
-            "students": 1785,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "7-wsj6y6r",
         "geohash": "wsj6y6r",
         "precision": 7,
@@ -13090,30 +13637,6 @@
         ]
       },
       {
-        "id": "7-wsj7p3r",
-        "geohash": "wsj7p3r",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 1946,
-        "latitude": 23.034971,
-        "longitude": 120.211827,
-        "bounds": {
-          "minLatitude": 23.034971,
-          "maxLatitude": 23.034971,
-          "minLongitude": 120.211827,
-          "maxLongitude": 120.211827
-        },
-        "topSchools": [
-          {
-            "id": "211315",
-            "name": "私立瀛海高中",
-            "townshipName": "安南區",
-            "students": 1946,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "7-wsj7peu",
         "geohash": "wsj7peu",
         "precision": 7,
@@ -13330,30 +13853,6 @@
         ]
       },
       {
-        "id": "7-wsj7nj6",
-        "geohash": "wsj7nj6",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 430,
-        "latitude": 23.057104,
-        "longitude": 120.150409,
-        "bounds": {
-          "minLatitude": 23.057104,
-          "maxLatitude": 23.057104,
-          "minLongitude": 120.150409,
-          "maxLongitude": 120.150409
-        },
-        "topSchools": [
-          {
-            "id": "213316",
-            "name": "市立土城高中",
-            "townshipName": "安南區",
-            "students": 430,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "7-wsj7pnv",
         "geohash": "wsj7pnv",
         "precision": 7,
@@ -13517,30 +14016,6 @@
             "name": "市立顯宮國小",
             "townshipName": "安南區",
             "students": 54,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsj7x0s",
-        "geohash": "wsj7x0s",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 3248,
-        "latitude": 23.119326,
-        "longitude": 120.196172,
-        "bounds": {
-          "minLatitude": 23.119326,
-          "maxLatitude": 23.119326,
-          "minLongitude": 120.196172,
-          "maxLongitude": 120.196172
-        },
-        "topSchools": [
-          {
-            "id": "111320",
-            "name": "私立港明高中",
-            "townshipName": "西港區",
-            "students": 3248,
             "status": "正常"
           }
         ]
@@ -14338,30 +14813,6 @@
         ]
       },
       {
-        "id": "7-wsj6xxq",
-        "geohash": "wsj6xxq",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 2425,
-        "latitude": 22.979837,
-        "longitude": 120.221535,
-        "bounds": {
-          "minLatitude": 22.979837,
-          "maxLatitude": 22.979837,
-          "minLongitude": 120.221535,
-          "maxLongitude": 120.221535
-        },
-        "topSchools": [
-          {
-            "id": "211318",
-            "name": "私立德光高中",
-            "townshipName": "東區",
-            "students": 2425,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "7-wsj6zf3",
         "geohash": "wsj6zf3",
         "precision": 7,
@@ -14458,30 +14909,6 @@
         ]
       },
       {
-        "id": "7-wsj6z9p",
-        "geohash": "wsj6z9p",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 1658,
-        "latitude": 22.988924,
-        "longitude": 120.222811,
-        "bounds": {
-          "minLatitude": 22.988924,
-          "maxLatitude": 22.988924,
-          "minLongitude": 120.222811,
-          "maxLongitude": 120.222811
-        },
-        "topSchools": [
-          {
-            "id": "211301",
-            "name": "私立長榮高中",
-            "townshipName": "東區",
-            "students": 1658,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "7-wsj6xz2",
         "geohash": "wsj6xz2",
         "precision": 7,
@@ -14549,30 +14976,6 @@
             "name": "市立崇明國中",
             "townshipName": "東區",
             "students": 1456,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsj6z95",
-        "geohash": "wsj6z95",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 1279,
-        "latitude": 22.988963,
-        "longitude": 120.21727,
-        "bounds": {
-          "minLatitude": 22.988963,
-          "maxLatitude": 22.988963,
-          "minLongitude": 120.21727,
-          "maxLongitude": 120.21727
-        },
-        "topSchools": [
-          {
-            "id": "211310",
-            "name": "臺南市光華高中",
-            "townshipName": "東區",
-            "students": 1279,
             "status": "正常"
           }
         ]
@@ -14981,30 +15384,6 @@
             "name": "市立永華國小",
             "townshipName": "南區",
             "students": 715,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsj6qzk",
-        "geohash": "wsj6qzk",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 689,
-        "latitude": 22.936228,
-        "longitude": 120.186156,
-        "bounds": {
-          "minLatitude": 22.936228,
-          "maxLatitude": 22.936228,
-          "minLongitude": 120.186156,
-          "maxLongitude": 120.186156
-        },
-        "topSchools": [
-          {
-            "id": "213303",
-            "name": "市立南寧高中",
-            "townshipName": "南區",
-            "students": 689,
             "status": "正常"
           }
         ]
@@ -15754,30 +16133,6 @@
         ]
       },
       {
-        "id": "7-wsjeb63",
-        "geohash": "wsjeb63",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 1935,
-        "latitude": 23.17289,
-        "longitude": 120.246873,
-        "bounds": {
-          "minLatitude": 23.17289,
-          "maxLatitude": 23.17289,
-          "minLongitude": 120.246873,
-          "maxLongitude": 120.246873
-        },
-        "topSchools": [
-          {
-            "id": "111323",
-            "name": "私立黎明高中",
-            "townshipName": "麻豆區",
-            "students": 1935,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "7-wsjebtk",
         "geohash": "wsjebtk",
         "precision": 7,
@@ -16426,30 +16781,6 @@
         ]
       },
       {
-        "id": "7-wsje3q9",
-        "geohash": "wsje3q9",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 2555,
-        "latitude": 23.107038,
-        "longitude": 120.290937,
-        "bounds": {
-          "minLatitude": 23.107038,
-          "maxLatitude": 23.107038,
-          "minLongitude": 120.290937,
-          "maxLongitude": 120.290937
-        },
-        "topSchools": [
-          {
-            "id": "110328",
-            "name": "國立南科國際實驗高中",
-            "townshipName": "新市區",
-            "students": 2555,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "7-wsje1qg",
         "geohash": "wsje1qg",
         "precision": 7,
@@ -16546,30 +16877,6 @@
         ]
       },
       {
-        "id": "7-wsjs9c6",
-        "geohash": "wsjs9c6",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 1644,
-        "latitude": 23.29883,
-        "longitude": 120.314953,
-        "bounds": {
-          "minLatitude": 23.29883,
-          "maxLatitude": 23.29883,
-          "minLongitude": 120.314953,
-          "maxLongitude": 120.314953
-        },
-        "topSchools": [
-          {
-            "id": "111313",
-            "name": "私立南光高中",
-            "townshipName": "新營區",
-            "students": 1644,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "7-wsjs9fe",
         "geohash": "wsjs9fe",
         "precision": 7,
@@ -16613,30 +16920,6 @@
             "name": "國立新營高中",
             "townshipName": "新營區",
             "students": 1006,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsjsd5b",
-        "geohash": "wsjsd5b",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 1004,
-        "latitude": 23.312707,
-        "longitude": 120.322408,
-        "bounds": {
-          "minLatitude": 23.312707,
-          "maxLatitude": 23.312707,
-          "minLongitude": 120.322408,
-          "maxLongitude": 120.322408
-        },
-        "topSchools": [
-          {
-            "id": "111321",
-            "name": "臺南市興國高中",
-            "townshipName": "新營區",
-            "students": 1004,
             "status": "正常"
           }
         ]
@@ -17645,30 +17928,6 @@
             "name": "市立鹽水國小",
             "townshipName": "鹽水區",
             "students": 435,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsjs8gm",
-        "geohash": "wsjs8gm",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 330,
-        "latitude": 23.310104,
-        "longitude": 120.274666,
-        "bounds": {
-          "minLatitude": 23.310104,
-          "maxLatitude": 23.310104,
-          "minLongitude": 120.274666,
-          "maxLongitude": 120.274666
-        },
-        "topSchools": [
-          {
-            "id": "111322",
-            "name": "私立明達高中",
-            "townshipName": "鹽水區",
-            "students": 330,
             "status": "正常"
           }
         ]

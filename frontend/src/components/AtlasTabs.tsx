@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react'
 import type { AtlasTab } from '../hooks/useAtlasQueryState'
 
 export type AtlasTabItem = {
@@ -13,15 +14,39 @@ type AtlasTabsProps = {
 }
 
 function AtlasTabs({ activeTab, items, onSelectTab }: AtlasTabsProps) {
+  const containerRef = useRef<HTMLElement>(null)
+  const [indicatorStyle, setIndicatorStyle] = useState({ width: 0, left: 0, opacity: 0 })
+
+  useEffect(() => {
+    if (!containerRef.current) return
+    const activeEl = containerRef.current.querySelector('[aria-selected="true"]') as HTMLElement
+    if (activeEl) {
+      setIndicatorStyle({
+        width: activeEl.offsetWidth,
+        left: activeEl.offsetLeft,
+        opacity: 1,
+      })
+    }
+  }, [activeTab, items])
+
   return (
-    <nav className="atlas-tabs atlas-tabs--sidebar" role="tablist" aria-label="分析頁籤">
+    <nav className="atlas-tabs" role="tablist" ref={containerRef}>
+      <div
+        className="atlas-tabs__indicator"
+        style={{
+          width: indicatorStyle.width,
+          transform: `translateX(${indicatorStyle.left}px)`,
+          opacity: indicatorStyle.opacity
+        }}
+        aria-hidden="true"
+      />
       {items.map((tab) => (
         <button
           key={tab.key}
           role="tab"
           type="button"
           aria-selected={activeTab === tab.key}
-          className={activeTab === tab.key ? 'atlas-tab atlas-tab--active atlas-tab--sidebar' : 'atlas-tab atlas-tab--sidebar'}
+          className={activeTab === tab.key ? 'atlas-tab atlas-tab--active' : 'atlas-tab'}
           onClick={() => onSelectTab(tab.key)}
         >
           {tab.label}

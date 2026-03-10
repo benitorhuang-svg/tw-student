@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-09T18:20:24.771Z",
+  "generatedAt": "2026-03-10T12:31:52.813Z",
   "county": {
     "id": "南投縣",
     "name": "南投縣",
@@ -8,6 +8,51 @@
   },
   "precisions": {
     "5": [
+      {
+        "id": "5-wsmb6",
+        "geohash": "wsmb6",
+        "precision": 5,
+        "count": 13,
+        "totalStudents": 10642,
+        "latitude": 23.97296,
+        "longitude": 120.689647,
+        "bounds": {
+          "minLatitude": 23.950269,
+          "maxLatitude": 23.993517,
+          "minLongitude": 120.678046,
+          "maxLongitude": 120.698217
+        },
+        "topSchools": [
+          {
+            "id": "1060",
+            "name": "南開科技大學",
+            "townshipName": "草屯鎮",
+            "students": 2438,
+            "status": "正常"
+          },
+          {
+            "id": "080305",
+            "name": "國立中興高中",
+            "townshipName": "南投市",
+            "students": 1178,
+            "status": "正常"
+          },
+          {
+            "id": "084508",
+            "name": "縣立草屯國中",
+            "townshipName": "草屯鎮",
+            "students": 1004,
+            "status": "正常"
+          },
+          {
+            "id": "084629",
+            "name": "縣立草屯國小",
+            "townshipName": "草屯鎮",
+            "students": 949,
+            "status": "正常"
+          }
+        ]
+      },
       {
         "id": "5-wsmb4",
         "geohash": "wsmb4",
@@ -49,51 +94,6 @@
             "name": "縣立平和國小",
             "townshipName": "南投市",
             "students": 872,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "5-wsmb6",
-        "geohash": "wsmb6",
-        "precision": 5,
-        "count": 12,
-        "totalStudents": 10642,
-        "latitude": 23.972368,
-        "longitude": 120.689227,
-        "bounds": {
-          "minLatitude": 23.950269,
-          "maxLatitude": 23.993517,
-          "minLongitude": 120.678046,
-          "maxLongitude": 120.698217
-        },
-        "topSchools": [
-          {
-            "id": "1060",
-            "name": "南開科技大學",
-            "townshipName": "草屯鎮",
-            "students": 2438,
-            "status": "正常"
-          },
-          {
-            "id": "080305",
-            "name": "國立中興高中",
-            "townshipName": "南投市",
-            "students": 1178,
-            "status": "正常"
-          },
-          {
-            "id": "084309",
-            "name": "縣立旭光高中",
-            "townshipName": "草屯鎮",
-            "students": 1149,
-            "status": "正常"
-          },
-          {
-            "id": "084508",
-            "name": "縣立草屯國中",
-            "townshipName": "草屯鎮",
-            "students": 1004,
             "status": "正常"
           }
         ]
@@ -189,6 +189,51 @@
         ]
       },
       {
+        "id": "5-wsjzd",
+        "geohash": "wsjzd",
+        "precision": 5,
+        "count": 7,
+        "totalStudents": 1192,
+        "latitude": 23.848816,
+        "longitude": 120.694855,
+        "bounds": {
+          "minLatitude": 23.820665,
+          "maxLatitude": 23.858268,
+          "minLongitude": 120.686511,
+          "maxLongitude": 120.697356
+        },
+        "topSchools": [
+          {
+            "id": "084660",
+            "name": "縣立名間國小",
+            "townshipName": "名間鄉",
+            "students": 402,
+            "status": "正常"
+          },
+          {
+            "id": "081313:國小",
+            "name": "私立弘明實驗高中國小部",
+            "townshipName": "名間鄉",
+            "students": 269,
+            "status": "正常"
+          },
+          {
+            "id": "084516",
+            "name": "縣立名間國中",
+            "townshipName": "名間鄉",
+            "students": 237,
+            "status": "正常"
+          },
+          {
+            "id": "081313:國中",
+            "name": "私立弘明實驗高中國中部",
+            "townshipName": "名間鄉",
+            "students": 111,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "5-wsjzf",
         "geohash": "wsjzf",
         "precision": 5,
@@ -229,51 +274,6 @@
             "name": "縣立新街國小",
             "townshipName": "名間鄉",
             "students": 176,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "5-wsjzd",
-        "geohash": "wsjzd",
-        "precision": 5,
-        "count": 5,
-        "totalStudents": 1192,
-        "latitude": 23.845308,
-        "longitude": 120.693924,
-        "bounds": {
-          "minLatitude": 23.820665,
-          "maxLatitude": 23.858268,
-          "minLongitude": 120.686511,
-          "maxLongitude": 120.697356
-        },
-        "topSchools": [
-          {
-            "id": "081313",
-            "name": "私立弘明實驗高中",
-            "townshipName": "名間鄉",
-            "students": 452,
-            "status": "正常"
-          },
-          {
-            "id": "084660",
-            "name": "縣立名間國小",
-            "townshipName": "名間鄉",
-            "students": 402,
-            "status": "正常"
-          },
-          {
-            "id": "084516",
-            "name": "縣立名間國中",
-            "townshipName": "名間鄉",
-            "students": 237,
-            "status": "正常"
-          },
-          {
-            "id": "084666",
-            "name": "縣立僑興國小",
-            "townshipName": "名間鄉",
-            "students": 51,
             "status": "正常"
           }
         ]
@@ -454,6 +454,51 @@
             "name": "縣立桐林國小",
             "townshipName": "信義鄉",
             "students": 28,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "5-wsmbx",
+        "geohash": "wsmbx",
+        "precision": 5,
+        "count": 4,
+        "totalStudents": 1147,
+        "latitude": 24.003588,
+        "longitude": 120.930772,
+        "bounds": {
+          "minLatitude": 23.994553,
+          "maxLatitude": 24.026553,
+          "minLongitude": 120.921649,
+          "maxLongitude": 120.935872
+        },
+        "topSchools": [
+          {
+            "id": "081314:國中",
+            "name": "私立普臺中學國中部",
+            "townshipName": "埔里鎮",
+            "students": 623,
+            "status": "正常"
+          },
+          {
+            "id": "081314",
+            "name": "私立普臺高中",
+            "townshipName": "埔里鎮",
+            "students": 444,
+            "status": "正常"
+          },
+          {
+            "id": "084624",
+            "name": "縣立太平國小",
+            "townshipName": "埔里鎮",
+            "students": 57,
+            "status": "正常"
+          },
+          {
+            "id": "084621",
+            "name": "縣立水尾國小",
+            "townshipName": "埔里鎮",
+            "students": 23,
             "status": "正常"
           }
         ]
@@ -898,39 +943,77 @@
         ]
       },
       {
-        "id": "5-wsmbx",
-        "geohash": "wsmbx",
+        "id": "5-wsmbp",
+        "geohash": "wsmbp",
         "precision": 5,
         "count": 3,
-        "totalStudents": 1147,
-        "latitude": 24.006599,
-        "longitude": 120.929072,
+        "totalStudents": 155,
+        "latitude": 23.918688,
+        "longitude": 120.931137,
         "bounds": {
-          "minLatitude": 23.994553,
-          "maxLatitude": 24.026553,
-          "minLongitude": 120.921649,
-          "maxLongitude": 120.935872
+          "minLatitude": 23.906992,
+          "maxLatitude": 23.942081,
+          "minLongitude": 120.925778,
+          "maxLongitude": 120.933817
         },
         "topSchools": [
           {
-            "id": "081314",
-            "name": "私立普臺高中",
-            "townshipName": "埔里鎮",
-            "students": 1067,
+            "id": "081312",
+            "name": "私立三育高中",
+            "townshipName": "魚池鄉",
+            "students": 67,
             "status": "正常"
           },
           {
-            "id": "084624",
-            "name": "縣立太平國小",
-            "townshipName": "埔里鎮",
-            "students": 57,
+            "id": "081312:國中",
+            "name": "私立三育高中附設國中部",
+            "townshipName": "魚池鄉",
+            "students": 64,
             "status": "正常"
           },
           {
-            "id": "084621",
-            "name": "縣立水尾國小",
+            "id": "084622",
+            "name": "縣立桃源國小",
             "townshipName": "埔里鎮",
-            "students": 23,
+            "students": 24,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "5-wsmbd",
+        "geohash": "wsmbd",
+        "precision": 5,
+        "count": 3,
+        "totalStudents": 690,
+        "latitude": 23.997129,
+        "longitude": 120.689313,
+        "bounds": {
+          "minLatitude": 23.995346,
+          "maxLatitude": 23.99802,
+          "minLongitude": 120.677577,
+          "maxLongitude": 120.695181
+        },
+        "topSchools": [
+          {
+            "id": "081409",
+            "name": "南投縣同德高中",
+            "townshipName": "草屯鎮",
+            "students": 449,
+            "status": "正常"
+          },
+          {
+            "id": "084510",
+            "name": "縣立日新國中",
+            "townshipName": "草屯鎮",
+            "students": 162,
+            "status": "正常"
+          },
+          {
+            "id": "081409:國中",
+            "name": "私立同德高中附設國中部",
+            "townshipName": "草屯鎮",
+            "students": 79,
             "status": "正常"
           }
         ]
@@ -1374,37 +1457,6 @@
         ]
       },
       {
-        "id": "5-wsmbp",
-        "geohash": "wsmbp",
-        "precision": 5,
-        "count": 2,
-        "totalStudents": 155,
-        "latitude": 23.924537,
-        "longitude": 120.929798,
-        "bounds": {
-          "minLatitude": 23.906992,
-          "maxLatitude": 23.942081,
-          "minLongitude": 120.925778,
-          "maxLongitude": 120.933817
-        },
-        "topSchools": [
-          {
-            "id": "081312",
-            "name": "私立三育高中",
-            "townshipName": "魚池鄉",
-            "students": 131,
-            "status": "正常"
-          },
-          {
-            "id": "084622",
-            "name": "縣立桃源國小",
-            "townshipName": "埔里鎮",
-            "students": 24,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "5-wsmb9",
         "geohash": "wsmb9",
         "precision": 5,
@@ -1431,37 +1483,6 @@
             "name": "縣立新庄國小",
             "townshipName": "草屯鎮",
             "students": 141,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "5-wsmbd",
-        "geohash": "wsmbd",
-        "precision": 5,
-        "count": 2,
-        "totalStudents": 690,
-        "latitude": 23.996683,
-        "longitude": 120.686379,
-        "bounds": {
-          "minLatitude": 23.995346,
-          "maxLatitude": 23.99802,
-          "minLongitude": 120.677577,
-          "maxLongitude": 120.695181
-        },
-        "topSchools": [
-          {
-            "id": "081409",
-            "name": "南投縣同德高中",
-            "townshipName": "草屯鎮",
-            "students": 528,
-            "status": "正常"
-          },
-          {
-            "id": "084510",
-            "name": "縣立日新國中",
-            "townshipName": "草屯鎮",
-            "students": 162,
             "status": "正常"
           }
         ]
@@ -2236,6 +2257,30 @@
         ]
       },
       {
+        "id": "5-wsmbw",
+        "geohash": "wsmbw",
+        "precision": 5,
+        "count": 1,
+        "totalStudents": 0,
+        "latitude": 24.026919,
+        "longitude": 120.868256,
+        "bounds": {
+          "minLatitude": 24.026919,
+          "maxLatitude": 24.026919,
+          "minLongitude": 120.868256,
+          "maxLongitude": 120.868256
+        },
+        "topSchools": [
+          {
+            "id": "084703",
+            "name": "縣立港源國小",
+            "townshipName": "國姓鄉",
+            "students": 0,
+            "status": "待確認"
+          }
+        ]
+      },
+      {
         "id": "5-wsjyg",
         "geohash": "wsjyg",
         "precision": 5,
@@ -2310,6 +2355,44 @@
     ],
     "6": [
       {
+        "id": "6-wsjzdx",
+        "geohash": "wsjzdx",
+        "precision": 6,
+        "count": 3,
+        "totalStudents": 452,
+        "latitude": 23.857587,
+        "longitude": 120.697182,
+        "bounds": {
+          "minLatitude": 23.857587,
+          "maxLatitude": 23.857587,
+          "minLongitude": 120.697182,
+          "maxLongitude": 120.697182
+        },
+        "topSchools": [
+          {
+            "id": "081313:國小",
+            "name": "私立弘明實驗高中國小部",
+            "townshipName": "名間鄉",
+            "students": 269,
+            "status": "正常"
+          },
+          {
+            "id": "081313:國中",
+            "name": "私立弘明實驗高中國中部",
+            "townshipName": "名間鄉",
+            "students": 111,
+            "status": "正常"
+          },
+          {
+            "id": "081313",
+            "name": "私立弘明實驗高中",
+            "townshipName": "名間鄉",
+            "students": 72,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "6-wsmb62",
         "geohash": "wsmb62",
         "precision": 6,
@@ -2343,6 +2426,82 @@
             "name": "縣立營北國中",
             "townshipName": "南投市",
             "students": 320,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsmbxb",
+        "geohash": "wsmbxb",
+        "precision": 6,
+        "count": 3,
+        "totalStudents": 1090,
+        "latitude": 23.995933,
+        "longitude": 120.933813,
+        "bounds": {
+          "minLatitude": 23.994553,
+          "maxLatitude": 23.998692,
+          "minLongitude": 120.929696,
+          "maxLongitude": 120.935872
+        },
+        "topSchools": [
+          {
+            "id": "081314:國中",
+            "name": "私立普臺中學國中部",
+            "townshipName": "埔里鎮",
+            "students": 623,
+            "status": "正常"
+          },
+          {
+            "id": "081314",
+            "name": "私立普臺高中",
+            "townshipName": "埔里鎮",
+            "students": 444,
+            "status": "正常"
+          },
+          {
+            "id": "084621",
+            "name": "縣立水尾國小",
+            "townshipName": "埔里鎮",
+            "students": 23,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsmb6m",
+        "geohash": "wsmb6m",
+        "precision": 6,
+        "count": 3,
+        "totalStudents": 2098,
+        "latitude": 23.980698,
+        "longitude": 120.692093,
+        "bounds": {
+          "minLatitude": 23.980065,
+          "maxLatitude": 23.981964,
+          "minLongitude": 120.686908,
+          "maxLongitude": 120.694686
+        },
+        "topSchools": [
+          {
+            "id": "084629",
+            "name": "縣立草屯國小",
+            "townshipName": "草屯鎮",
+            "students": 949,
+            "status": "正常"
+          },
+          {
+            "id": "084309:國中",
+            "name": "縣立旭光高中附設國中部",
+            "townshipName": "草屯鎮",
+            "students": 620,
+            "status": "正常"
+          },
+          {
+            "id": "084309",
+            "name": "縣立旭光高中",
+            "townshipName": "草屯鎮",
+            "students": 529,
             "status": "正常"
           }
         ]
@@ -2782,37 +2941,6 @@
         ]
       },
       {
-        "id": "6-wsmbxb",
-        "geohash": "wsmbxb",
-        "precision": 6,
-        "count": 2,
-        "totalStudents": 1090,
-        "latitude": 23.996623,
-        "longitude": 120.932784,
-        "bounds": {
-          "minLatitude": 23.994553,
-          "maxLatitude": 23.998692,
-          "minLongitude": 120.929696,
-          "maxLongitude": 120.935872
-        },
-        "topSchools": [
-          {
-            "id": "081314",
-            "name": "私立普臺高中",
-            "townshipName": "埔里鎮",
-            "students": 1067,
-            "status": "正常"
-          },
-          {
-            "id": "084621",
-            "name": "縣立水尾國小",
-            "townshipName": "埔里鎮",
-            "students": 23,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "6-wsq02e",
         "geohash": "wsq02e",
         "precision": 6,
@@ -2968,32 +3096,32 @@
         ]
       },
       {
-        "id": "6-wsmb6m",
-        "geohash": "wsmb6m",
+        "id": "6-wsmbd2",
+        "geohash": "wsmbd2",
         "precision": 6,
         "count": 2,
-        "totalStudents": 2098,
-        "latitude": 23.981015,
-        "longitude": 120.690797,
+        "totalStudents": 528,
+        "latitude": 23.99802,
+        "longitude": 120.695181,
         "bounds": {
-          "minLatitude": 23.980065,
-          "maxLatitude": 23.981964,
-          "minLongitude": 120.686908,
-          "maxLongitude": 120.694686
+          "minLatitude": 23.99802,
+          "maxLatitude": 23.99802,
+          "minLongitude": 120.695181,
+          "maxLongitude": 120.695181
         },
         "topSchools": [
           {
-            "id": "084309",
-            "name": "縣立旭光高中",
+            "id": "081409",
+            "name": "南投縣同德高中",
             "townshipName": "草屯鎮",
-            "students": 1149,
+            "students": 449,
             "status": "正常"
           },
           {
-            "id": "084629",
-            "name": "縣立草屯國小",
+            "id": "081409:國中",
+            "name": "私立同德高中附設國中部",
             "townshipName": "草屯鎮",
-            "students": 949,
+            "students": 79,
             "status": "正常"
           }
         ]
@@ -3118,6 +3246,37 @@
             "name": "縣立明潭國中",
             "townshipName": "魚池鄉",
             "students": 49,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsmbpb",
+        "geohash": "wsmbpb",
+        "precision": 6,
+        "count": 2,
+        "totalStudents": 131,
+        "latitude": 23.906992,
+        "longitude": 120.933817,
+        "bounds": {
+          "minLatitude": 23.906992,
+          "maxLatitude": 23.906992,
+          "minLongitude": 120.933817,
+          "maxLongitude": 120.933817
+        },
+        "topSchools": [
+          {
+            "id": "081312",
+            "name": "私立三育高中",
+            "townshipName": "魚池鄉",
+            "students": 67,
+            "status": "正常"
+          },
+          {
+            "id": "081312:國中",
+            "name": "私立三育高中附設國中部",
+            "townshipName": "魚池鄉",
+            "students": 64,
             "status": "正常"
           }
         ]
@@ -3852,30 +4011,6 @@
             "name": "縣立郡坑國小",
             "townshipName": "水里鄉",
             "students": 28,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "6-wsjzdx",
-        "geohash": "wsjzdx",
-        "precision": 6,
-        "count": 1,
-        "totalStudents": 452,
-        "latitude": 23.857587,
-        "longitude": 120.697182,
-        "bounds": {
-          "minLatitude": 23.857587,
-          "maxLatitude": 23.857587,
-          "minLongitude": 120.697182,
-          "maxLongitude": 120.697182
-        },
-        "topSchools": [
-          {
-            "id": "081313",
-            "name": "私立弘明實驗高中",
-            "townshipName": "名間鄉",
-            "students": 452,
             "status": "正常"
           }
         ]
@@ -5393,30 +5528,6 @@
         ]
       },
       {
-        "id": "6-wsmbd2",
-        "geohash": "wsmbd2",
-        "precision": 6,
-        "count": 1,
-        "totalStudents": 528,
-        "latitude": 23.99802,
-        "longitude": 120.695181,
-        "bounds": {
-          "minLatitude": 23.99802,
-          "maxLatitude": 23.99802,
-          "minLongitude": 120.695181,
-          "maxLongitude": 120.695181
-        },
-        "topSchools": [
-          {
-            "id": "081409",
-            "name": "南投縣同德高中",
-            "townshipName": "草屯鎮",
-            "students": 528,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "6-wsmb64",
         "geohash": "wsmb64",
         "precision": 6,
@@ -5825,6 +5936,30 @@
         ]
       },
       {
+        "id": "6-wsmbwm",
+        "geohash": "wsmbwm",
+        "precision": 6,
+        "count": 1,
+        "totalStudents": 0,
+        "latitude": 24.026919,
+        "longitude": 120.868256,
+        "bounds": {
+          "minLatitude": 24.026919,
+          "maxLatitude": 24.026919,
+          "minLongitude": 120.868256,
+          "maxLongitude": 120.868256
+        },
+        "topSchools": [
+          {
+            "id": "084703",
+            "name": "縣立港源國小",
+            "townshipName": "國姓鄉",
+            "students": 0,
+            "status": "待確認"
+          }
+        ]
+      },
+      {
         "id": "6-wsnpbn",
         "geohash": "wsnpbn",
         "precision": 6,
@@ -5844,30 +5979,6 @@
             "name": "縣立魚池國小",
             "townshipName": "魚池鄉",
             "students": 152,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "6-wsmbpb",
-        "geohash": "wsmbpb",
-        "precision": 6,
-        "count": 1,
-        "totalStudents": 131,
-        "latitude": 23.906992,
-        "longitude": 120.933817,
-        "bounds": {
-          "minLatitude": 23.906992,
-          "maxLatitude": 23.906992,
-          "minLongitude": 120.933817,
-          "maxLongitude": 120.933817
-        },
-        "topSchools": [
-          {
-            "id": "081312",
-            "name": "私立三育高中",
-            "townshipName": "魚池鄉",
-            "students": 131,
             "status": "正常"
           }
         ]
@@ -6307,6 +6418,44 @@
     ],
     "7": [
       {
+        "id": "7-wsjzdx1",
+        "geohash": "wsjzdx1",
+        "precision": 7,
+        "count": 3,
+        "totalStudents": 452,
+        "latitude": 23.857587,
+        "longitude": 120.697182,
+        "bounds": {
+          "minLatitude": 23.857587,
+          "maxLatitude": 23.857587,
+          "minLongitude": 120.697182,
+          "maxLongitude": 120.697182
+        },
+        "topSchools": [
+          {
+            "id": "081313:國小",
+            "name": "私立弘明實驗高中國小部",
+            "townshipName": "名間鄉",
+            "students": 269,
+            "status": "正常"
+          },
+          {
+            "id": "081313:國中",
+            "name": "私立弘明實驗高中國中部",
+            "townshipName": "名間鄉",
+            "students": 111,
+            "status": "正常"
+          },
+          {
+            "id": "081313",
+            "name": "私立弘明實驗高中",
+            "townshipName": "名間鄉",
+            "students": 72,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "7-wsq0sky",
         "geohash": "wsq0sky",
         "precision": 7,
@@ -6333,6 +6482,37 @@
             "name": "縣立仁愛國小",
             "townshipName": "仁愛鄉",
             "students": 44,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsmbxbn",
+        "geohash": "wsmbxbn",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 1067,
+        "latitude": 23.994553,
+        "longitude": 120.935872,
+        "bounds": {
+          "minLatitude": 23.994553,
+          "maxLatitude": 23.994553,
+          "minLongitude": 120.935872,
+          "maxLongitude": 120.935872
+        },
+        "topSchools": [
+          {
+            "id": "081314:國中",
+            "name": "私立普臺中學國中部",
+            "townshipName": "埔里鎮",
+            "students": 623,
+            "status": "正常"
+          },
+          {
+            "id": "081314",
+            "name": "私立普臺高中",
+            "townshipName": "埔里鎮",
+            "students": 444,
             "status": "正常"
           }
         ]
@@ -6369,6 +6549,68 @@
         ]
       },
       {
+        "id": "7-wsmb6mr",
+        "geohash": "wsmb6mr",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 1149,
+        "latitude": 23.980065,
+        "longitude": 120.694686,
+        "bounds": {
+          "minLatitude": 23.980065,
+          "maxLatitude": 23.980065,
+          "minLongitude": 120.694686,
+          "maxLongitude": 120.694686
+        },
+        "topSchools": [
+          {
+            "id": "084309:國中",
+            "name": "縣立旭光高中附設國中部",
+            "townshipName": "草屯鎮",
+            "students": 620,
+            "status": "正常"
+          },
+          {
+            "id": "084309",
+            "name": "縣立旭光高中",
+            "townshipName": "草屯鎮",
+            "students": 529,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsmbd2x",
+        "geohash": "wsmbd2x",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 528,
+        "latitude": 23.99802,
+        "longitude": 120.695181,
+        "bounds": {
+          "minLatitude": 23.99802,
+          "maxLatitude": 23.99802,
+          "minLongitude": 120.695181,
+          "maxLongitude": 120.695181
+        },
+        "topSchools": [
+          {
+            "id": "081409",
+            "name": "南投縣同德高中",
+            "townshipName": "草屯鎮",
+            "students": 449,
+            "status": "正常"
+          },
+          {
+            "id": "081409:國中",
+            "name": "私立同德高中附設國中部",
+            "townshipName": "草屯鎮",
+            "students": 79,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "7-wsjzz3h",
         "geohash": "wsjzz3h",
         "precision": 7,
@@ -6395,6 +6637,37 @@
             "name": "縣立明潭國中",
             "townshipName": "魚池鄉",
             "students": 49,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsmbpbj",
+        "geohash": "wsmbpbj",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 131,
+        "latitude": 23.906992,
+        "longitude": 120.933817,
+        "bounds": {
+          "minLatitude": 23.906992,
+          "maxLatitude": 23.906992,
+          "minLongitude": 120.933817,
+          "maxLongitude": 120.933817
+        },
+        "topSchools": [
+          {
+            "id": "081312",
+            "name": "私立三育高中",
+            "townshipName": "魚池鄉",
+            "students": 67,
+            "status": "正常"
+          },
+          {
+            "id": "081312:國中",
+            "name": "私立三育高中附設國中部",
+            "townshipName": "魚池鄉",
+            "students": 64,
             "status": "正常"
           }
         ]
@@ -7211,30 +7484,6 @@
             "name": "縣立郡坑國小",
             "townshipName": "水里鄉",
             "students": 28,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsjzdx1",
-        "geohash": "wsjzdx1",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 452,
-        "latitude": 23.857587,
-        "longitude": 120.697182,
-        "bounds": {
-          "minLatitude": 23.857587,
-          "maxLatitude": 23.857587,
-          "minLongitude": 120.697182,
-          "maxLongitude": 120.697182
-        },
-        "topSchools": [
-          {
-            "id": "081313",
-            "name": "私立弘明實驗高中",
-            "townshipName": "名間鄉",
-            "students": 452,
             "status": "正常"
           }
         ]
@@ -8944,30 +9193,6 @@
         ]
       },
       {
-        "id": "7-wsmbxbn",
-        "geohash": "wsmbxbn",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 1067,
-        "latitude": 23.994553,
-        "longitude": 120.935872,
-        "bounds": {
-          "minLatitude": 23.994553,
-          "maxLatitude": 23.994553,
-          "minLongitude": 120.935872,
-          "maxLongitude": 120.935872
-        },
-        "topSchools": [
-          {
-            "id": "081314",
-            "name": "私立普臺高中",
-            "townshipName": "埔里鎮",
-            "students": 1067,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "7-wsq02em",
         "geohash": "wsq02em",
         "precision": 7,
@@ -9448,30 +9673,6 @@
         ]
       },
       {
-        "id": "7-wsmb6mr",
-        "geohash": "wsmb6mr",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 1149,
-        "latitude": 23.980065,
-        "longitude": 120.694686,
-        "bounds": {
-          "minLatitude": 23.980065,
-          "maxLatitude": 23.980065,
-          "minLongitude": 120.694686,
-          "maxLongitude": 120.694686
-        },
-        "topSchools": [
-          {
-            "id": "084309",
-            "name": "縣立旭光高中",
-            "townshipName": "草屯鎮",
-            "students": 1149,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "7-wsmb6kc",
         "geohash": "wsmb6kc",
         "precision": 7,
@@ -9539,30 +9740,6 @@
             "name": "縣立炎峰國小",
             "townshipName": "草屯鎮",
             "students": 910,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsmbd2x",
-        "geohash": "wsmbd2x",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 528,
-        "latitude": 23.99802,
-        "longitude": 120.695181,
-        "bounds": {
-          "minLatitude": 23.99802,
-          "maxLatitude": 23.99802,
-          "minLongitude": 120.695181,
-          "maxLongitude": 120.695181
-        },
-        "topSchools": [
-          {
-            "id": "081409",
-            "name": "南投縣同德高中",
-            "townshipName": "草屯鎮",
-            "students": 528,
             "status": "正常"
           }
         ]
@@ -10168,6 +10345,30 @@
         ]
       },
       {
+        "id": "7-wsmbwmv",
+        "geohash": "wsmbwmv",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 0,
+        "latitude": 24.026919,
+        "longitude": 120.868256,
+        "bounds": {
+          "minLatitude": 24.026919,
+          "maxLatitude": 24.026919,
+          "minLongitude": 120.868256,
+          "maxLongitude": 120.868256
+        },
+        "topSchools": [
+          {
+            "id": "084703",
+            "name": "縣立港源國小",
+            "townshipName": "國姓鄉",
+            "students": 0,
+            "status": "待確認"
+          }
+        ]
+      },
+      {
         "id": "7-wsnpbn8",
         "geohash": "wsnpbn8",
         "precision": 7,
@@ -10187,30 +10388,6 @@
             "name": "縣立魚池國小",
             "townshipName": "魚池鄉",
             "students": 152,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsmbpbj",
-        "geohash": "wsmbpbj",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 131,
-        "latitude": 23.906992,
-        "longitude": 120.933817,
-        "bounds": {
-          "minLatitude": 23.906992,
-          "maxLatitude": 23.906992,
-          "minLongitude": 120.933817,
-          "maxLongitude": 120.933817
-        },
-        "topSchools": [
-          {
-            "id": "081312",
-            "name": "私立三育高中",
-            "townshipName": "魚池鄉",
-            "students": 131,
             "status": "正常"
           }
         ]

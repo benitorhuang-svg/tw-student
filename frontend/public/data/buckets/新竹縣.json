@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-09T18:20:24.796Z",
+  "generatedAt": "2026-03-10T12:31:52.835Z",
   "county": {
     "id": "新竹縣",
     "name": "新竹縣",
@@ -12,10 +12,10 @@
         "id": "5-wsqj3",
         "geohash": "wsqj3",
         "precision": 5,
-        "count": 13,
+        "count": 14,
         "totalStudents": 25872,
-        "latitude": 24.843971,
-        "longitude": 121.003704,
+        "latitude": 24.843595,
+        "longitude": 121.003725,
         "bounds": {
           "minLatitude": 24.830191,
           "maxLatitude": 24.872126,
@@ -31,17 +31,17 @@
             "status": "正常"
           },
           {
-            "id": "041303",
-            "name": "私立義民高中",
-            "townshipName": "竹北市",
-            "students": 2811,
-            "status": "正常"
-          },
-          {
             "id": "040308",
             "name": "國立竹北高中",
             "townshipName": "竹北市",
             "students": 1890,
+            "status": "正常"
+          },
+          {
+            "id": "041303",
+            "name": "私立義民高中",
+            "townshipName": "竹北市",
+            "students": 1879,
             "status": "正常"
           },
           {
@@ -57,10 +57,10 @@
         "id": "5-wsqj4",
         "geohash": "wsqj4",
         "precision": 5,
-        "count": 12,
+        "count": 13,
         "totalStudents": 10713,
-        "latitude": 24.811662,
-        "longitude": 121.036828,
+        "latitude": 24.812364,
+        "longitude": 121.036482,
         "bounds": {
           "minLatitude": 24.802387,
           "maxLatitude": 24.82714,
@@ -102,10 +102,10 @@
         "id": "5-wsqhe",
         "geohash": "wsqhe",
         "precision": 5,
-        "count": 11,
+        "count": 12,
         "totalStudents": 7704,
-        "latitude": 24.723525,
-        "longitude": 121.094905,
+        "latitude": 24.722508,
+        "longitude": 121.095224,
         "bounds": {
           "minLatitude": 24.705431,
           "maxLatitude": 24.740895,
@@ -117,7 +117,7 @@
             "id": "041306",
             "name": "私立東泰高中",
             "townshipName": "竹東鎮",
-            "students": 1689,
+            "students": 1612,
             "status": "正常"
           },
           {
@@ -147,10 +147,10 @@
         "id": "5-wsqj9",
         "geohash": "wsqj9",
         "precision": 5,
-        "count": 8,
+        "count": 10,
         "totalStudents": 5481,
-        "latitude": 24.888278,
-        "longitude": 121.004434,
+        "latitude": 24.886965,
+        "longitude": 121.004346,
         "bounds": {
           "minLatitude": 24.873502,
           "maxLatitude": 24.911862,
@@ -162,14 +162,7 @@
             "id": "041307",
             "name": "私立仰德高中",
             "townshipName": "新豐鄉",
-            "students": 1833,
-            "status": "正常"
-          },
-          {
-            "id": "041305",
-            "name": "私立忠信高中",
-            "townshipName": "新豐鄉",
-            "students": 960,
+            "students": 1350,
             "status": "正常"
           },
           {
@@ -184,6 +177,13 @@
             "name": "縣立新豐國小",
             "townshipName": "新豐鄉",
             "students": 878,
+            "status": "正常"
+          },
+          {
+            "id": "041305",
+            "name": "私立忠信高中",
+            "townshipName": "新豐鄉",
+            "students": 755,
             "status": "正常"
           }
         ]
@@ -229,6 +229,51 @@
             "name": "私立上智國小",
             "townshipName": "竹東鎮",
             "students": 238,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "5-wsqjd",
+        "geohash": "wsqjd",
+        "precision": 5,
+        "count": 6,
+        "totalStudents": 6047,
+        "latitude": 24.894734,
+        "longitude": 121.048228,
+        "bounds": {
+          "minLatitude": 24.87839,
+          "maxLatitude": 24.905726,
+          "minLongitude": 121.035791,
+          "maxLongitude": 121.061015
+        },
+        "topSchools": [
+          {
+            "id": "044637",
+            "name": "縣立新湖國小",
+            "townshipName": "湖口鄉",
+            "students": 2108,
+            "status": "正常"
+          },
+          {
+            "id": "044639",
+            "name": "縣立信勢國小",
+            "townshipName": "湖口鄉",
+            "students": 1482,
+            "status": "正常"
+          },
+          {
+            "id": "044320:國中",
+            "name": "縣立湖口高中附設國中部",
+            "townshipName": "湖口鄉",
+            "students": 1211,
+            "status": "正常"
+          },
+          {
+            "id": "044320",
+            "name": "縣立湖口高中",
+            "townshipName": "湖口鄉",
+            "students": 632,
             "status": "正常"
           }
         ]
@@ -324,46 +369,46 @@
         ]
       },
       {
-        "id": "5-wsqjd",
-        "geohash": "wsqjd",
+        "id": "5-wsqj5",
+        "geohash": "wsqj5",
         "precision": 5,
         "count": 5,
-        "totalStudents": 6047,
-        "latitude": 24.895512,
-        "longitude": 121.047244,
+        "totalStudents": 2257,
+        "latitude": 24.826157,
+        "longitude": 121.078719,
         "bounds": {
-          "minLatitude": 24.87839,
-          "maxLatitude": 24.905726,
-          "minLongitude": 121.035791,
-          "maxLongitude": 121.061015
+          "minLatitude": 24.816638,
+          "maxLatitude": 24.828941,
+          "minLongitude": 121.071028,
+          "maxLongitude": 121.082102
         },
         "topSchools": [
           {
-            "id": "044637",
-            "name": "縣立新湖國小",
-            "townshipName": "湖口鄉",
-            "students": 2108,
+            "id": "041401",
+            "name": "私立內思高工",
+            "townshipName": "新埔鎮",
+            "students": 1089,
             "status": "正常"
           },
           {
-            "id": "044320",
-            "name": "縣立湖口高中",
-            "townshipName": "湖口鄉",
-            "students": 1843,
+            "id": "044610",
+            "name": "縣立新埔國小",
+            "townshipName": "新埔鎮",
+            "students": 719,
             "status": "正常"
           },
           {
-            "id": "044639",
-            "name": "縣立信勢國小",
-            "townshipName": "湖口鄉",
-            "students": 1482,
+            "id": "044507",
+            "name": "縣立新埔國中",
+            "townshipName": "新埔鎮",
+            "students": 229,
             "status": "正常"
           },
           {
-            "id": "044521",
-            "name": "縣立新湖國中",
-            "townshipName": "湖口鄉",
-            "students": 412,
+            "id": "041401:國中",
+            "name": "私立內思高工附設國中部",
+            "townshipName": "新埔鎮",
+            "students": 154,
             "status": "正常"
           }
         ]
@@ -454,51 +499,6 @@
             "name": "縣立五龍國小",
             "townshipName": "芎林鄉",
             "students": 69,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "5-wsqj5",
-        "geohash": "wsqj5",
-        "precision": 5,
-        "count": 4,
-        "totalStudents": 2257,
-        "latitude": 24.825634,
-        "longitude": 121.077873,
-        "bounds": {
-          "minLatitude": 24.816638,
-          "maxLatitude": 24.828941,
-          "minLongitude": 121.071028,
-          "maxLongitude": 121.082102
-        },
-        "topSchools": [
-          {
-            "id": "041401",
-            "name": "私立內思高工",
-            "townshipName": "新埔鎮",
-            "students": 1243,
-            "status": "正常"
-          },
-          {
-            "id": "044610",
-            "name": "縣立新埔國小",
-            "townshipName": "新埔鎮",
-            "students": 719,
-            "status": "正常"
-          },
-          {
-            "id": "044507",
-            "name": "縣立新埔國中",
-            "townshipName": "新埔鎮",
-            "students": 229,
-            "status": "正常"
-          },
-          {
-            "id": "044617",
-            "name": "縣立寶石國小",
-            "townshipName": "新埔鎮",
-            "students": 66,
             "status": "正常"
           }
         ]
@@ -1339,10 +1339,10 @@
         "id": "6-wsqj39",
         "geohash": "wsqj39",
         "precision": 6,
-        "count": 3,
+        "count": 4,
         "totalStudents": 5755,
-        "latitude": 24.837294,
-        "longitude": 121.006932,
+        "latitude": 24.837647,
+        "longitude": 121.006197,
         "bounds": {
           "minLatitude": 24.836546,
           "maxLatitude": 24.838707,
@@ -1351,13 +1351,6 @@
         },
         "topSchools": [
           {
-            "id": "041303",
-            "name": "私立義民高中",
-            "townshipName": "竹北市",
-            "students": 2811,
-            "status": "正常"
-          },
-          {
             "id": "040308",
             "name": "國立竹北高中",
             "townshipName": "竹北市",
@@ -1365,10 +1358,24 @@
             "status": "正常"
           },
           {
+            "id": "041303",
+            "name": "私立義民高中",
+            "townshipName": "竹北市",
+            "students": 1879,
+            "status": "正常"
+          },
+          {
             "id": "044629",
             "name": "縣立竹仁國小",
             "townshipName": "竹北市",
             "students": 1054,
+            "status": "正常"
+          },
+          {
+            "id": "041303:國中",
+            "name": "私立義民高中附設國中部",
+            "townshipName": "竹北市",
+            "students": 932,
             "status": "正常"
           }
         ]
@@ -1407,6 +1414,44 @@
             "name": "私立康乃薾國中(小)",
             "townshipName": "竹北市",
             "students": 362,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsqj93",
+        "geohash": "wsqj93",
+        "precision": 6,
+        "count": 3,
+        "totalStudents": 1863,
+        "latitude": 24.881043,
+        "longitude": 121.001993,
+        "bounds": {
+          "minLatitude": 24.879203,
+          "maxLatitude": 24.881963,
+          "minLongitude": 121.00025,
+          "maxLongitude": 121.002864
+        },
+        "topSchools": [
+          {
+            "id": "044525",
+            "name": "縣立忠孝國中",
+            "townshipName": "新豐鄉",
+            "students": 903,
+            "status": "正常"
+          },
+          {
+            "id": "041305",
+            "name": "私立忠信高中",
+            "townshipName": "新豐鄉",
+            "students": 755,
+            "status": "正常"
+          },
+          {
+            "id": "041305:國中",
+            "name": "私立忠信高中附設國中部",
+            "townshipName": "新豐鄉",
+            "students": 205,
             "status": "正常"
           }
         ]
@@ -1567,6 +1612,37 @@
         ]
       },
       {
+        "id": "6-wsqj4n",
+        "geohash": "wsqj4n",
+        "precision": 6,
+        "count": 2,
+        "totalStudents": 1240,
+        "latitude": 24.820783,
+        "longitude": 121.032328,
+        "bounds": {
+          "minLatitude": 24.820783,
+          "maxLatitude": 24.820783,
+          "minLongitude": 121.032328,
+          "maxLongitude": 121.032328
+        },
+        "topSchools": [
+          {
+            "id": "044311",
+            "name": "縣立六家高級中學",
+            "townshipName": "竹北市",
+            "students": 864,
+            "status": "正常"
+          },
+          {
+            "id": "044311:國中",
+            "name": "縣立六家高中附設國中部",
+            "townshipName": "竹北市",
+            "students": 376,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "6-wsqj47",
         "geohash": "wsqj47",
         "precision": 6,
@@ -1624,6 +1700,37 @@
             "name": "縣立二重國中",
             "townshipName": "竹東鎮",
             "students": 819,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsqhed",
+        "geohash": "wsqhed",
+        "precision": 6,
+        "count": 2,
+        "totalStudents": 1689,
+        "latitude": 24.71132,
+        "longitude": 121.098742,
+        "bounds": {
+          "minLatitude": 24.71132,
+          "maxLatitude": 24.71132,
+          "minLongitude": 121.098742,
+          "maxLongitude": 121.098742
+        },
+        "topSchools": [
+          {
+            "id": "041306",
+            "name": "私立東泰高中",
+            "townshipName": "竹東鎮",
+            "students": 1612,
+            "status": "正常"
+          },
+          {
+            "id": "041306:國中",
+            "name": "私立東泰中學附設國中部",
+            "townshipName": "竹東鎮",
+            "students": 77,
             "status": "正常"
           }
         ]
@@ -1784,6 +1891,37 @@
         ]
       },
       {
+        "id": "6-wsqjde",
+        "geohash": "wsqjde",
+        "precision": 6,
+        "count": 2,
+        "totalStudents": 1843,
+        "latitude": 24.890843,
+        "longitude": 121.053145,
+        "bounds": {
+          "minLatitude": 24.890843,
+          "maxLatitude": 24.890843,
+          "minLongitude": 121.053145,
+          "maxLongitude": 121.053145
+        },
+        "topSchools": [
+          {
+            "id": "044320:國中",
+            "name": "縣立湖口高中附設國中部",
+            "townshipName": "湖口鄉",
+            "students": 1211,
+            "status": "正常"
+          },
+          {
+            "id": "044320",
+            "name": "縣立湖口高中",
+            "townshipName": "湖口鄉",
+            "students": 632,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "6-wsqj9b",
         "geohash": "wsqj9b",
         "precision": 6,
@@ -1810,6 +1948,37 @@
             "name": "縣立華興國小",
             "townshipName": "湖口鄉",
             "students": 191,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsqj5r",
+        "geohash": "wsqj5r",
+        "precision": 6,
+        "count": 2,
+        "totalStudents": 1243,
+        "latitude": 24.828251,
+        "longitude": 121.082102,
+        "bounds": {
+          "minLatitude": 24.828251,
+          "maxLatitude": 24.828251,
+          "minLongitude": 121.082102,
+          "maxLongitude": 121.082102
+        },
+        "topSchools": [
+          {
+            "id": "041401",
+            "name": "私立內思高工",
+            "townshipName": "新埔鎮",
+            "students": 1089,
+            "status": "正常"
+          },
+          {
+            "id": "041401:國中",
+            "name": "私立內思高工附設國中部",
+            "townshipName": "新埔鎮",
+            "students": 154,
             "status": "正常"
           }
         ]
@@ -1877,32 +2046,32 @@
         ]
       },
       {
-        "id": "6-wsqj93",
-        "geohash": "wsqj93",
+        "id": "6-wsqj99",
+        "geohash": "wsqj99",
         "precision": 6,
         "count": 2,
-        "totalStudents": 1863,
-        "latitude": 24.880583,
-        "longitude": 121.001557,
+        "totalStudents": 1833,
+        "latitude": 24.881459,
+        "longitude": 121.00512,
         "bounds": {
-          "minLatitude": 24.879203,
-          "maxLatitude": 24.881963,
-          "minLongitude": 121.00025,
-          "maxLongitude": 121.002864
+          "minLatitude": 24.881459,
+          "maxLatitude": 24.881459,
+          "minLongitude": 121.00512,
+          "maxLongitude": 121.00512
         },
         "topSchools": [
           {
-            "id": "041305",
-            "name": "私立忠信高中",
+            "id": "041307",
+            "name": "私立仰德高中",
             "townshipName": "新豐鄉",
-            "students": 960,
+            "students": 1350,
             "status": "正常"
           },
           {
-            "id": "044525",
-            "name": "縣立忠孝國中",
+            "id": "041307:國中",
+            "name": "私立仰德高中附設國中部",
             "townshipName": "新豐鄉",
-            "students": 903,
+            "students": 483,
             "status": "正常"
           }
         ]
@@ -2591,30 +2760,6 @@
         ]
       },
       {
-        "id": "6-wsqj4n",
-        "geohash": "wsqj4n",
-        "precision": 6,
-        "count": 1,
-        "totalStudents": 1240,
-        "latitude": 24.820783,
-        "longitude": 121.032328,
-        "bounds": {
-          "minLatitude": 24.820783,
-          "maxLatitude": 24.820783,
-          "minLongitude": 121.032328,
-          "maxLongitude": 121.032328
-        },
-        "topSchools": [
-          {
-            "id": "044311",
-            "name": "縣立六家高級中學",
-            "townshipName": "竹北市",
-            "students": 1240,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "6-wsqj3b",
         "geohash": "wsqj3b",
         "precision": 6,
@@ -2778,30 +2923,6 @@
             "name": "縣立豐田國小",
             "townshipName": "竹北市",
             "students": 77,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "6-wsqhed",
-        "geohash": "wsqhed",
-        "precision": 6,
-        "count": 1,
-        "totalStudents": 1689,
-        "latitude": 24.71132,
-        "longitude": 121.098742,
-        "bounds": {
-          "minLatitude": 24.71132,
-          "maxLatitude": 24.71132,
-          "minLongitude": 121.098742,
-          "maxLongitude": 121.098742
-        },
-        "topSchools": [
-          {
-            "id": "041306",
-            "name": "私立東泰高中",
-            "townshipName": "竹東鎮",
-            "students": 1689,
             "status": "正常"
           }
         ]
@@ -3095,30 +3216,6 @@
         ]
       },
       {
-        "id": "6-wsqjde",
-        "geohash": "wsqjde",
-        "precision": 6,
-        "count": 1,
-        "totalStudents": 1843,
-        "latitude": 24.890843,
-        "longitude": 121.053145,
-        "bounds": {
-          "minLatitude": 24.890843,
-          "maxLatitude": 24.890843,
-          "minLongitude": 121.053145,
-          "maxLongitude": 121.053145
-        },
-        "topSchools": [
-          {
-            "id": "044320",
-            "name": "縣立湖口高中",
-            "townshipName": "湖口鄉",
-            "students": 1843,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "6-wsqjdk",
         "geohash": "wsqjdk",
         "precision": 6,
@@ -3258,30 +3355,6 @@
             "name": "縣立長安國小",
             "townshipName": "湖口鄉",
             "students": 65,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "6-wsqj5r",
-        "geohash": "wsqj5r",
-        "precision": 6,
-        "count": 1,
-        "totalStudents": 1243,
-        "latitude": 24.828251,
-        "longitude": 121.082102,
-        "bounds": {
-          "minLatitude": 24.828251,
-          "maxLatitude": 24.828251,
-          "minLongitude": 121.082102,
-          "maxLongitude": 121.082102
-        },
-        "topSchools": [
-          {
-            "id": "041401",
-            "name": "私立內思高工",
-            "townshipName": "新埔鎮",
-            "students": 1243,
             "status": "正常"
           }
         ]
@@ -3498,30 +3571,6 @@
             "name": "明新科技大學",
             "townshipName": "新豐鄉",
             "students": 9909,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "6-wsqj99",
-        "geohash": "wsqj99",
-        "precision": 6,
-        "count": 1,
-        "totalStudents": 1833,
-        "latitude": 24.881459,
-        "longitude": 121.00512,
-        "bounds": {
-          "minLatitude": 24.881459,
-          "maxLatitude": 24.881459,
-          "minLongitude": 121.00512,
-          "maxLongitude": 121.00512
-        },
-        "topSchools": [
-          {
-            "id": "041307",
-            "name": "私立仰德高中",
-            "townshipName": "新豐鄉",
-            "students": 1833,
             "status": "正常"
           }
         ]
@@ -4081,6 +4130,37 @@
     ],
     "7": [
       {
+        "id": "7-wsqj398",
+        "geohash": "wsqj398",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 2811,
+        "latitude": 24.838707,
+        "longitude": 121.003993,
+        "bounds": {
+          "minLatitude": 24.838707,
+          "maxLatitude": 24.838707,
+          "minLongitude": 121.003993,
+          "maxLongitude": 121.003993
+        },
+        "topSchools": [
+          {
+            "id": "041303",
+            "name": "私立義民高中",
+            "townshipName": "竹北市",
+            "students": 1879,
+            "status": "正常"
+          },
+          {
+            "id": "041303:國中",
+            "name": "私立義民高中附設國中部",
+            "townshipName": "竹北市",
+            "students": 932,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "7-wsqj45x",
         "geohash": "wsqj45x",
         "precision": 7,
@@ -4112,6 +4192,130 @@
         ]
       },
       {
+        "id": "7-wsqj4nm",
+        "geohash": "wsqj4nm",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 1240,
+        "latitude": 24.820783,
+        "longitude": 121.032328,
+        "bounds": {
+          "minLatitude": 24.820783,
+          "maxLatitude": 24.820783,
+          "minLongitude": 121.032328,
+          "maxLongitude": 121.032328
+        },
+        "topSchools": [
+          {
+            "id": "044311",
+            "name": "縣立六家高級中學",
+            "townshipName": "竹北市",
+            "students": 864,
+            "status": "正常"
+          },
+          {
+            "id": "044311:國中",
+            "name": "縣立六家高中附設國中部",
+            "townshipName": "竹北市",
+            "students": 376,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsqhedt",
+        "geohash": "wsqhedt",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 1689,
+        "latitude": 24.71132,
+        "longitude": 121.098742,
+        "bounds": {
+          "minLatitude": 24.71132,
+          "maxLatitude": 24.71132,
+          "minLongitude": 121.098742,
+          "maxLongitude": 121.098742
+        },
+        "topSchools": [
+          {
+            "id": "041306",
+            "name": "私立東泰高中",
+            "townshipName": "竹東鎮",
+            "students": 1612,
+            "status": "正常"
+          },
+          {
+            "id": "041306:國中",
+            "name": "私立東泰中學附設國中部",
+            "townshipName": "竹東鎮",
+            "students": 77,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsqjdeh",
+        "geohash": "wsqjdeh",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 1843,
+        "latitude": 24.890843,
+        "longitude": 121.053145,
+        "bounds": {
+          "minLatitude": 24.890843,
+          "maxLatitude": 24.890843,
+          "minLongitude": 121.053145,
+          "maxLongitude": 121.053145
+        },
+        "topSchools": [
+          {
+            "id": "044320:國中",
+            "name": "縣立湖口高中附設國中部",
+            "townshipName": "湖口鄉",
+            "students": 1211,
+            "status": "正常"
+          },
+          {
+            "id": "044320",
+            "name": "縣立湖口高中",
+            "townshipName": "湖口鄉",
+            "students": 632,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsqj5rc",
+        "geohash": "wsqj5rc",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 1243,
+        "latitude": 24.828251,
+        "longitude": 121.082102,
+        "bounds": {
+          "minLatitude": 24.828251,
+          "maxLatitude": 24.828251,
+          "minLongitude": 121.082102,
+          "maxLongitude": 121.082102
+        },
+        "topSchools": [
+          {
+            "id": "041401",
+            "name": "私立內思高工",
+            "townshipName": "新埔鎮",
+            "students": 1089,
+            "status": "正常"
+          },
+          {
+            "id": "041401:國中",
+            "name": "私立內思高工附設國中部",
+            "townshipName": "新埔鎮",
+            "students": 154,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "7-wsqj7kk",
         "geohash": "wsqj7kk",
         "precision": 7,
@@ -4138,6 +4342,68 @@
             "name": "縣立北平華德福實驗學校(國中)",
             "townshipName": "新埔鎮",
             "students": 43,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsqj999",
+        "geohash": "wsqj999",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 1833,
+        "latitude": 24.881459,
+        "longitude": 121.00512,
+        "bounds": {
+          "minLatitude": 24.881459,
+          "maxLatitude": 24.881459,
+          "minLongitude": 121.00512,
+          "maxLongitude": 121.00512
+        },
+        "topSchools": [
+          {
+            "id": "041307",
+            "name": "私立仰德高中",
+            "townshipName": "新豐鄉",
+            "students": 1350,
+            "status": "正常"
+          },
+          {
+            "id": "041307:國中",
+            "name": "私立仰德高中附設國中部",
+            "townshipName": "新豐鄉",
+            "students": 483,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsqj93x",
+        "geohash": "wsqj93x",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 960,
+        "latitude": 24.881963,
+        "longitude": 121.002864,
+        "bounds": {
+          "minLatitude": 24.881963,
+          "maxLatitude": 24.881963,
+          "minLongitude": 121.002864,
+          "maxLongitude": 121.002864
+        },
+        "topSchools": [
+          {
+            "id": "041305",
+            "name": "私立忠信高中",
+            "townshipName": "新豐鄉",
+            "students": 755,
+            "status": "正常"
+          },
+          {
+            "id": "041305:國中",
+            "name": "私立忠信高中附設國中部",
+            "townshipName": "新豐鄉",
+            "students": 205,
             "status": "正常"
           }
         ]
@@ -4551,30 +4817,6 @@
         ]
       },
       {
-        "id": "7-wsqj398",
-        "geohash": "wsqj398",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 2811,
-        "latitude": 24.838707,
-        "longitude": 121.003993,
-        "bounds": {
-          "minLatitude": 24.838707,
-          "maxLatitude": 24.838707,
-          "minLongitude": 121.003993,
-          "maxLongitude": 121.003993
-        },
-        "topSchools": [
-          {
-            "id": "041303",
-            "name": "私立義民高中",
-            "townshipName": "竹北市",
-            "students": 2811,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "7-wsqj392",
         "geohash": "wsqj392",
         "precision": 7,
@@ -4858,30 +5100,6 @@
             "name": "縣立竹北國小",
             "townshipName": "竹北市",
             "students": 1316,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsqj4nm",
-        "geohash": "wsqj4nm",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 1240,
-        "latitude": 24.820783,
-        "longitude": 121.032328,
-        "bounds": {
-          "minLatitude": 24.820783,
-          "maxLatitude": 24.820783,
-          "minLongitude": 121.032328,
-          "maxLongitude": 121.032328
-        },
-        "topSchools": [
-          {
-            "id": "044311",
-            "name": "縣立六家高級中學",
-            "townshipName": "竹北市",
-            "students": 1240,
             "status": "正常"
           }
         ]
@@ -5266,30 +5484,6 @@
             "name": "縣立二重國小",
             "townshipName": "竹東鎮",
             "students": 1692,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsqhedt",
-        "geohash": "wsqhedt",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 1689,
-        "latitude": 24.71132,
-        "longitude": 121.098742,
-        "bounds": {
-          "minLatitude": 24.71132,
-          "maxLatitude": 24.71132,
-          "minLongitude": 121.098742,
-          "maxLongitude": 121.098742
-        },
-        "topSchools": [
-          {
-            "id": "041306",
-            "name": "私立東泰高中",
-            "townshipName": "竹東鎮",
-            "students": 1689,
             "status": "正常"
           }
         ]
@@ -5847,30 +6041,6 @@
         ]
       },
       {
-        "id": "7-wsqjdeh",
-        "geohash": "wsqjdeh",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 1843,
-        "latitude": 24.890843,
-        "longitude": 121.053145,
-        "bounds": {
-          "minLatitude": 24.890843,
-          "maxLatitude": 24.890843,
-          "minLongitude": 121.053145,
-          "maxLongitude": 121.053145
-        },
-        "topSchools": [
-          {
-            "id": "044320",
-            "name": "縣立湖口高中",
-            "townshipName": "湖口鄉",
-            "students": 1843,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "7-wsqjdkc",
         "geohash": "wsqjdkc",
         "precision": 7,
@@ -6058,30 +6228,6 @@
             "name": "縣立長安國小",
             "townshipName": "湖口鄉",
             "students": 65,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsqj5rc",
-        "geohash": "wsqj5rc",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 1243,
-        "latitude": 24.828251,
-        "longitude": 121.082102,
-        "bounds": {
-          "minLatitude": 24.828251,
-          "maxLatitude": 24.828251,
-          "minLongitude": 121.082102,
-          "maxLongitude": 121.082102
-        },
-        "topSchools": [
-          {
-            "id": "041401",
-            "name": "私立內思高工",
-            "townshipName": "新埔鎮",
-            "students": 1243,
             "status": "正常"
           }
         ]
@@ -6351,30 +6497,6 @@
         ]
       },
       {
-        "id": "7-wsqj999",
-        "geohash": "wsqj999",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 1833,
-        "latitude": 24.881459,
-        "longitude": 121.00512,
-        "bounds": {
-          "minLatitude": 24.881459,
-          "maxLatitude": 24.881459,
-          "minLongitude": 121.00512,
-          "maxLongitude": 121.00512
-        },
-        "topSchools": [
-          {
-            "id": "041307",
-            "name": "私立仰德高中",
-            "townshipName": "新豐鄉",
-            "students": 1833,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "7-wsqj3pq",
         "geohash": "wsqj3pq",
         "precision": 7,
@@ -6418,30 +6540,6 @@
             "name": "縣立山崎國小",
             "townshipName": "新豐鄉",
             "students": 1418,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsqj93x",
-        "geohash": "wsqj93x",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 960,
-        "latitude": 24.881963,
-        "longitude": 121.002864,
-        "bounds": {
-          "minLatitude": 24.881963,
-          "maxLatitude": 24.881963,
-          "minLongitude": 121.002864,
-          "maxLongitude": 121.002864
-        },
-        "topSchools": [
-          {
-            "id": "041305",
-            "name": "私立忠信高中",
-            "townshipName": "新豐鄉",
-            "students": 960,
             "status": "正常"
           }
         ]

@@ -86,83 +86,61 @@ function RegionalTabPanel({
 
       <section className="dashboard-card dashboard-card--regional-story">
         <div className="dashboard-card__body dashboard-card__insight-body">
-          <div className="panel-heading">
+          <div className="panel-heading" style={{ marginBottom: '16px' }}>
             <div>
-              <p className="eyebrow">區域量體</p>
-              <h3>{region === '全部' ? '全台區域分布' : `${region} 量體快照`}</h3>
+              <p className="eyebrow" style={{ color: 'var(--palette-cyan)' }}>區域結構剖析</p>
+              <h3>{region === '全部' ? '全台四大區域板塊分布' : `${region} 結構快照`}</h3>
             </div>
-            <p className="panel-heading__meta">先用區域量體切地圖範圍，再往下比較區域內縣市差異。</p>
+            <p className="panel-heading__meta">上方卡片為區域彙整，點選可過濾地圖；下方圖表則探索公私立佔比結構。</p>
           </div>
 
-          <div className="atlas-metric-strip">
+          <div className="atlas-metric-strip" style={{ marginBottom: '16px' }}>
             {regionSummaries.map((item) => (
-              <article key={item.id} className={region === item.id ? 'atlas-metric-tile atlas-metric-tile--active' : 'atlas-metric-tile'}>
+              <article key={item.id} className={region === item.id ? 'atlas-metric-tile atlas-metric-tile--active' : 'atlas-metric-tile'} style={{ cursor: 'pointer', transition: 'all 0.2s ease' }} onClick={() => scenarioActions.handleRegionSelect(item.id as RegionGroupFilter)}>
                 <span>{item.label}</span>
                 <strong>{formatStudents(item.students)} 人</strong>
-                <small>{item.countyCount} 縣市 / 年增減 {formatPercent(item.delta / Math.max(item.students - item.delta, 1))}</small>
+                <small>{item.countyCount} 縣市 / 年增減 {item.delta > 0 ? '+' : ''}{formatPercent(item.delta / Math.max(item.students - item.delta, 1))}</small>
               </article>
             ))}
           </div>
 
-          <ComparisonBarChart
-            items={regionSummaries.map((item) => ({ id: item.id, label: item.label, value: item.students }))}
-            activeItemId={region === '全部' ? null : region}
-            onSelectItem={(regionId) => scenarioActions.handleRegionSelect(regionId as RegionGroupFilter)}
-          />
-
-          <StackedShareBarChart
-            title="各區公私立學生占比"
-            subtitle="輔圖改看公私立結構，避免區域分析只剩總量比較。"
-            items={regionSummaries.map((item) => ({
-              id: item.id,
-              label: item.label,
-              total: item.publicStudents + item.privateStudents,
-              segments: [
-                { label: '公立', value: item.publicStudents, share: item.publicShare, color: 'linear-gradient(90deg, #2563eb, #38bdf8)' },
-                { label: '私立', value: item.privateStudents, share: item.privateShare, color: 'linear-gradient(90deg, #f97316, #fb7185)' },
-              ],
-            }))}
-            activeItemId={region === '全部' ? null : region}
-            onSelectItem={(regionId) => scenarioActions.handleRegionSelect(regionId as RegionGroupFilter)}
-          />
-        </div>
-      </section>
-
-      <section className="dashboard-card dashboard-card--comparison">
-        <div className="dashboard-card__body dashboard-card__insight-body">
-          <ComparisonPanel
-            comparisonScenarioName={comparisonScenarioName}
-            onChangeScenarioName={setComparisonScenarioName}
-            effectiveComparisonCountyIds={derived.effectiveComparisonCountyIds}
-            comparisonCandidates={derived.comparisonCandidates}
-            comparisonSummaries={derived.comparisonSummaries}
-            favoriteScenarios={favoriteScenarios}
-            recentScenarios={recentScenarios}
-            activeScenarioSnapshot={activeScenarioSnapshot}
-            favoriteScenarioIds={scenarioActions.favoriteScenarioIds}
-            copyFeedback={copyFeedbackMessage}
-            scenarioFeedback={scenarioFeedbackMessage}
-            onToggleCounty={scenarioActions.toggleComparisonCounty}
-            onCopyLink={scenarioActions.handleCopyComparisonLink}
-            onSaveScenario={scenarioActions.handleSaveFavoriteScenario}
-            onExportScenarios={scenarioActions.handleExportFavoriteScenarios}
-            onImportScenarios={scenarioActions.handleImportFavoriteScenarios}
-            onApplyScenario={scenarioActions.applySavedScenario}
-            onTogglePinScenario={scenarioActions.handleTogglePinScenario}
-            onRenameScenario={scenarioActions.handleRenameFavoriteScenario}
-            onRemoveScenario={scenarioActions.handleRemoveFavoriteScenario}
-          />
+          <div className="atlas-storyboard__split">
+            <div className="atlas-storyboard__chart">
+              <ComparisonBarChart
+                items={regionSummaries.map((item) => ({ id: item.id, label: item.label, value: item.students }))}
+                activeItemId={region === '全部' ? null : region}
+                onSelectItem={(regionId) => scenarioActions.handleRegionSelect(regionId as RegionGroupFilter)}
+              />
+            </div>
+            <div className="atlas-storyboard__chart">
+              <StackedShareBarChart
+                title="各區公私立學生占比"
+                subtitle="觀察區域教育資源是依賴公家還是民間力量補足。"
+                items={regionSummaries.map((item) => ({
+                  id: item.id,
+                  label: item.label,
+                  total: item.publicStudents + item.privateStudents,
+                  segments: [
+                    { label: '公立', value: item.publicStudents, share: item.publicShare, color: 'linear-gradient(90deg, rgba(42, 111, 145, 0.8), var(--palette-cyan))' },
+                    { label: '私立', value: item.privateStudents, share: item.privateShare, color: 'linear-gradient(90deg, rgba(184, 135, 70, 0.8), var(--palette-brass))' },
+                  ],
+                }))}
+                activeItemId={region === '全部' ? null : region}
+                onSelectItem={(regionId) => scenarioActions.handleRegionSelect(regionId as RegionGroupFilter)}
+              />
+            </div>
+          </div>
         </div>
       </section>
 
       <section className="dashboard-card dashboard-card--ranking">
         <div className="dashboard-card__body dashboard-card__ranking-body">
-          <div className="panel-heading">
+          <div className="panel-heading" style={{ marginBottom: '16px' }}>
             <div>
-              <p className="eyebrow">區域對照</p>
-              <h3>{region === '全部' ? '全台縣市比較' : `${region} 各縣市聚焦`}</h3>
+              <p className="eyebrow" style={{ color: 'var(--palette-brass)' }}>下鑽入口</p>
+              <h3>{region === '全部' ? '全台縣市聚焦' : `${region} 縣市落差`}</h3>
             </div>
-            <p className="panel-heading__meta">先看區域年度趨勢，再用排行與長條比較掌握縣市落差。</p>
+            <p className="panel-heading__meta">點選列表中的縣市，地圖將自動切換並進入該縣市分析。右上方可切換顯示量體長條或詳細排行。</p>
           </div>
           <div className="chart-pill-row" role="tablist" aria-label="區域分析圖表切換">
             <button
@@ -189,7 +167,7 @@ function RegionalTabPanel({
           ) : (
             <InsightPanel
               title={region === '全部' ? '全台縣市排行' : `${region} 縣市排行`}
-              subtitle="點擊縣市可直接進入縣市分析"
+              subtitle=""
               showHeader={false}
               rows={derived.countySummaries.filter((row) => !row.filteredOut).map((row) => ({ id: row.id, label: row.name, subLabel: row.region, students: row.students, schools: row.schools, delta: row.delta, deltaRatio: row.deltaRatio, trend: row.trend }))}
               activeRowId={selectedCountyId}
@@ -201,6 +179,40 @@ function RegionalTabPanel({
               emptyMessage="目前區域條件沒有可比較的縣市資料。"
             />
           )}
+        </div>
+      </section>
+
+      <section className="dashboard-card dashboard-card--comparison">
+        <div className="dashboard-card__body dashboard-card__insight-body">
+          <div className="panel-heading" style={{ marginBottom: '16px' }}>
+            <div>
+              <p className="eyebrow">自帶分析台</p>
+              <h3>自訂縣市對焦</h3>
+            </div>
+            <p className="panel-heading__meta">在左側地圖多選縣市，或是使用上方的自訂群組，比較沒有被行政區界線綁定的客製化趨勢。</p>
+          </div>
+          <ComparisonPanel
+            comparisonScenarioName={comparisonScenarioName}
+            onChangeScenarioName={setComparisonScenarioName}
+            effectiveComparisonCountyIds={derived.effectiveComparisonCountyIds}
+            comparisonCandidates={derived.comparisonCandidates}
+            comparisonSummaries={derived.comparisonSummaries}
+            favoriteScenarios={favoriteScenarios}
+            recentScenarios={recentScenarios}
+            activeScenarioSnapshot={activeScenarioSnapshot}
+            favoriteScenarioIds={scenarioActions.favoriteScenarioIds}
+            copyFeedback={copyFeedbackMessage}
+            scenarioFeedback={scenarioFeedbackMessage}
+            onToggleCounty={scenarioActions.toggleComparisonCounty}
+            onCopyLink={scenarioActions.handleCopyComparisonLink}
+            onSaveScenario={scenarioActions.handleSaveFavoriteScenario}
+            onExportScenarios={scenarioActions.handleExportFavoriteScenarios}
+            onImportScenarios={scenarioActions.handleImportFavoriteScenarios}
+            onApplyScenario={scenarioActions.applySavedScenario}
+            onTogglePinScenario={scenarioActions.handleTogglePinScenario}
+            onRenameScenario={scenarioActions.handleRenameFavoriteScenario}
+            onRemoveScenario={scenarioActions.handleRemoveFavoriteScenario}
+          />
         </div>
       </section>
     </div>

@@ -1,3 +1,4 @@
+import { useState, useRef, useEffect } from 'react'
 import { formatAcademicYearCompact, type TrendPoint, formatStudents } from '../lib/analytics'
 
 type TrendChartProps = {
@@ -5,20 +6,17 @@ type TrendChartProps = {
   title: string
   subtitle: string
   points: TrendPoint[]
+  benchmarkPoints?: TrendPoint[]
   activeYear: number
   showHeader?: boolean
   formatValue?: (value: number) => string
 }
 
 function buildLinePath(points: Array<{ x: number; y: number }>) {
-  if (points.length === 0) {
-    return ''
-  }
-
+  if (points.length === 0) return ''
   return points.map((point, index) => `${index === 0 ? 'M' : 'L'} ${point.x} ${point.y}`).join(' ')
 }
 
-/** Simple linear regression: returns { slope, intercept } */
 function linearRegression(xs: number[], ys: number[]): { slope: number; intercept: number } | null {
   const n = xs.length
   if (n < 2) return null
@@ -33,24 +31,36 @@ function linearRegression(xs: number[], ys: number[]): { slope: number; intercep
   return { slope, intercept }
 }
 
-function TrendChart({ chartId, title, subtitle, points, activeYear, showHeader = true, formatValue = (value) => `${formatStudents(Math.round(value))} 人` }: TrendChartProps) {
+function TrendChart({
+  chartId, title, subtitle, points, benchmarkPoints, activeYear, showHeader = true,
+  formatValue = (value) => `${formatStudents(Math.round(value))} 人`
+}: TrendChartProps) {
   const PREDICT_YEARS = 2
   const width = 620
   const height = 240
   const paddingX = 36
   const paddingY = 28
-  const values = points.map((point) => point.value)
 
-  // Compute regression for prediction values
-  const reg = linearRegression(
-    points.map((_, i) => i),
-    values,
-  )
+  const [hoverIndex, setHoverIndex] = useState<number | null>(null)
+  const [dashArray, setDashArray] = useState<string | number>('0 1000')
+  const pathRef = useRef<SVGPathElement>(null)
+
+  useEffect(() => {
+    if (pathRef.current) {
+      const length = pathRef.current.getTotalLength()
+      setDashArray(length)
+    }
+  }, [points])
+
+  const values = points.map((point) => point.value)
+  const benchValues = benchmarkPoints?.map(p => p.value) ?? []
+
+  const reg = linearRegression(points.map((_, i) => i), values)
   const predictionValues = reg
     ? Array.from({ length: PREDICT_YEARS }, (_, k) => reg.slope * (points.length + k) + reg.intercept)
     : []
 
-  const allValues = [...values, ...predictionValues]
+  const allValues = [...values, ...predictionValues, ...benchValues]
   const maxValue = Math.max(...allValues, 1)
   const minValue = Math.min(...allValues, 0)
   const valueRange = Math.max(maxValue - minValue, 1)
@@ -65,90 +75,99 @@ function TrendChart({ chartId, title, subtitle, points, activeYear, showHeader =
     y: toY(point.value),
   }))
 
-  const predictionPoints = predictionValues.map((v, k) => ({
-    x: toX(points.length + k),
-    y: toY(v),
-    year: (points.at(-1)?.year ?? activeYear) + k + 1,
-    value: Math.round(v),
+  const normalizedBench = benchmarkPoints?.map((p, i) => ({
+    x: toX(i),
+    y: toY(p.value)
   }))
 
   const linePath = buildLinePath(normalizedPoints)
-  const areaPath = `${linePath} L ${normalizedPoints.at(-1)?.x ?? paddingX} ${height - paddingY} L ${paddingX} ${height - paddingY} Z`
+  const benchPath = normalizedBench ? buildLinePath(normalizedBench) : ''
 
-  // Regression line covering actual data range
-  const regLinePath =
-    reg && normalizedPoints.length >= 2
-      ? buildLinePath(
-          normalizedPoints.map((_, i) => ({
-            x: toX(i),
-            y: toY(reg.slope * i + reg.intercept),
-          })),
-        )
-      : ''
+  const handleMouseMove = (e: React.MouseEvent<SVGSVGElement>) => {
+    const svg = e.currentTarget
+    const rect = svg.getBoundingClientRect()
+    const mouseX = e.clientX - rect.left
+    const svgMouseX = (mouseX / rect.width) * width
 
-  // Prediction dashed path (extends from last actual point)
-  const predLinePath =
-    normalizedPoints.length > 0 && predictionPoints.length > 0
-      ? buildLinePath([
-          { x: normalizedPoints.at(-1)!.x, y: normalizedPoints.at(-1)!.y },
-          ...predictionPoints,
-        ])
-      : ''
+    let closestIndex = 0
+    let minDistance = Infinity
+    normalizedPoints.forEach((p, i) => {
+      const distance = Math.abs(p.x - svgMouseX)
+      if (distance < minDistance) {
+        minDistance = distance
+        closestIndex = i
+      }
+    })
+    setHoverIndex(closestIndex)
+  }
 
   return (
     <section className="trend-panel">
-      {showHeader ? (
+      {showHeader && (
         <div className="panel-heading">
           <div>
-            <p className="eyebrow">趨勢視窗</p>
+            <p className="eyebrow">歷年趨勢儀表</p>
             <h3>{title}</h3>
           </div>
           <p className="panel-heading__meta">{subtitle}</p>
         </div>
-      ) : null}
-      <svg className="trend-chart" viewBox={`0 0 ${width} ${height}`} role="img" aria-label={title}>
+      )}
+      <svg
+        className="trend-chart"
+        viewBox={`0 0 ${width} ${height}`}
+        role="img"
+        onMouseMove={handleMouseMove}
+        onMouseLeave={() => setHoverIndex(null)}
+      >
         <defs>
           <linearGradient id={`${chartId}-area`} x1="0" x2="0" y1="0" y2="1">
-            <stop offset="0%" stopColor="rgba(42, 111, 145, 0.32)" />
-            <stop offset="60%" stopColor="rgba(120, 165, 188, 0.12)" />
-            <stop offset="100%" stopColor="rgba(42, 111, 145, 0.02)" />
+            <stop offset="0%" stopColor="rgba(42, 111, 145, 0.4)" />
+            <stop offset="100%" stopColor="rgba(42, 111, 145, 0)" />
           </linearGradient>
         </defs>
+
         {[0, 0.33, 0.66, 1].map((ratio) => {
           const y = paddingY + ratio * (height - paddingY * 2)
           return <line key={ratio} className="trend-chart__grid" x1={paddingX} x2={width - paddingX} y1={y} y2={y} />
         })}
-        <path className="trend-chart__area" d={areaPath} fill={`url(#${chartId}-area)`} />
-        <path className="trend-chart__line" d={linePath} />
-        {regLinePath && <path className="trend-chart__regression" d={regLinePath} />}
-        {predLinePath && <path className="trend-chart__prediction" d={predLinePath} />}
-        {normalizedPoints.map((point) => (
-          <g key={point.year}>
-            <circle
-              className={point.year === activeYear ? 'trend-chart__point trend-chart__point--active' : 'trend-chart__point'}
-              cx={point.x}
-              cy={point.y}
-              r={point.year === activeYear ? 6 : 4}
-            />
-            <text className="trend-chart__label" x={point.x} y={height - 6} textAnchor="middle">
-              {formatAcademicYearCompact(point.year)}
-            </text>
-          </g>
+
+        {benchPath && (
+          <path className="trend-chart__bench" d={benchPath} fill="none" stroke="rgba(255,255,255,0.1)" strokeDasharray="4 2" />
+        )}
+
+        <path className="trend-chart__line" d={linePath} ref={pathRef} style={{ strokeDasharray: dashArray }} />
+
+        {normalizedPoints.map((p, i) => (
+          <circle
+            key={i}
+            cx={p.x} cy={p.y} r={p.year === activeYear ? 5 : 3}
+            className={p.year === activeYear ? 'trend-chart__point trend-chart__point--active' : 'trend-chart__point'}
+          />
         ))}
-        {predictionPoints.map((point) => (
-          <g key={point.year}>
-            <circle className="trend-chart__point trend-chart__point--predicted" cx={point.x} cy={point.y} r={4} />
-            <text className="trend-chart__label trend-chart__label--predicted" x={point.x} y={height - 6} textAnchor="middle">
-              {formatAcademicYearCompact(point.year)}?
-            </text>
+
+        {hoverIndex !== null && (
+          <g className="trend-chart__crosshair">
+            <line x1={normalizedPoints[hoverIndex].x} x2={normalizedPoints[hoverIndex].x} y1={paddingY} y2={height - paddingY} />
+            <circle cx={normalizedPoints[hoverIndex].x} cy={normalizedPoints[hoverIndex].y} r={6} fill="none" stroke="var(--palette-cyan)" />
+            <g transform={`translate(${normalizedPoints[hoverIndex].x > width - 100 ? normalizedPoints[hoverIndex].x - 110 : normalizedPoints[hoverIndex].x + 10}, ${normalizedPoints[hoverIndex].y - 20})`}>
+              <rect width="100" height="40" rx="4" fill="rgba(8, 17, 31, 0.9)" />
+              <text x="10" y="16" fill="#fff" fontSize="10">{formatAcademicYearCompact(normalizedPoints[hoverIndex].year)}</text>
+              <text x="10" y="30" fill="var(--palette-cyan)" fontSize="12" fontWeight="bold">{formatValue(normalizedPoints[hoverIndex].value)}</text>
+            </g>
           </g>
+        )}
+
+        {normalizedPoints.map((point) => (
+          <text key={point.year} className="trend-chart__label" x={point.x} y={height - 6} textAnchor="middle">
+            {formatAcademicYearCompact(point.year)}
+          </text>
         ))}
       </svg>
-      <div className="trend-chart__footnote">
-        <span>最高值 {formatValue(Math.max(...values, 1))}</span>
-        <span>最低值 {formatValue(Math.min(...values, 0))}</span>
-        {reg ? <span>年均變化 {formatValue(Math.round(reg.slope))}</span> : null}
-      </div>
+      {benchmarkPoints && benchmarkPoints.length > 0 && (
+        <div className="trend-chart__footnote">
+          <span>區域平均比較：實線代表選定範圍，虛線為所在區域參考值。</span>
+        </div>
+      )}
     </section>
   )
 }

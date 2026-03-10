@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-09T18:20:24.800Z",
+  "generatedAt": "2026-03-10T12:31:52.837Z",
   "county": {
     "id": "彰化縣",
     "name": "彰化縣",
@@ -57,10 +57,10 @@
         "id": "5-wsm8y",
         "geohash": "wsm8y",
         "precision": 5,
-        "count": 11,
+        "count": 14,
         "totalStudents": 9419,
-        "latitude": 24.061939,
-        "longitude": 120.526825,
+        "latitude": 24.062287,
+        "longitude": 120.525715,
         "bounds": {
           "minLatitude": 24.038571,
           "maxLatitude": 24.073385,
@@ -69,10 +69,10 @@
         },
         "topSchools": [
           {
-            "id": "071311",
-            "name": "私立精誠高中",
+            "id": "071311:國中",
+            "name": "私立精誠高中附設國中部",
             "townshipName": "彰化市",
-            "students": 3306,
+            "students": 1898,
             "status": "正常"
           },
           {
@@ -83,17 +83,17 @@
             "status": "正常"
           },
           {
+            "id": "071311",
+            "name": "私立精誠高中",
+            "townshipName": "彰化市",
+            "students": 1408,
+            "status": "正常"
+          },
+          {
             "id": "074603",
             "name": "縣立平和國小",
             "townshipName": "彰化市",
             "students": 1165,
-            "status": "正常"
-          },
-          {
-            "id": "074506",
-            "name": "縣立彰安國中",
-            "townshipName": "彰化市",
-            "students": 699,
             "status": "正常"
           }
         ]
@@ -102,10 +102,10 @@
         "id": "5-wsm8m",
         "geohash": "wsm8m",
         "precision": 5,
-        "count": 11,
+        "count": 12,
         "totalStudents": 6704,
-        "latitude": 23.968191,
-        "longitude": 120.4822,
+        "latitude": 23.966812,
+        "longitude": 120.481299,
         "bounds": {
           "minLatitude": 23.951641,
           "maxLatitude": 23.993017,
@@ -135,10 +135,10 @@
             "status": "正常"
           },
           {
-            "id": "074339",
-            "name": "縣立成功高中",
+            "id": "074777",
+            "name": "縣立湖北國小",
             "townshipName": "溪湖鎮",
-            "students": 873,
+            "students": 829,
             "status": "正常"
           }
         ]
@@ -234,6 +234,51 @@
         ]
       },
       {
+        "id": "5-wsm8z",
+        "geohash": "wsm8z",
+        "precision": 5,
+        "count": 9,
+        "totalStudents": 14036,
+        "latitude": 24.072171,
+        "longitude": 120.549503,
+        "bounds": {
+          "minLatitude": 24.047846,
+          "maxLatitude": 24.081826,
+          "minLongitude": 120.543483,
+          "maxLongitude": 120.554533
+        },
+        "topSchools": [
+          {
+            "id": "1040",
+            "name": "建國科技大學",
+            "townshipName": "彰化市",
+            "students": 3497,
+            "status": "正常"
+          },
+          {
+            "id": "074604",
+            "name": "縣立南郭國小",
+            "townshipName": "彰化市",
+            "students": 2313,
+            "status": "正常"
+          },
+          {
+            "id": "070307",
+            "name": "國立彰化高中",
+            "townshipName": "彰化市",
+            "students": 2090,
+            "status": "正常"
+          },
+          {
+            "id": "070406",
+            "name": "國立彰化高商",
+            "townshipName": "彰化市",
+            "students": 2007,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "5-wsm9p",
         "geohash": "wsm9p",
         "precision": 5,
@@ -279,46 +324,91 @@
         ]
       },
       {
-        "id": "5-wsm8z",
-        "geohash": "wsm8z",
+        "id": "5-wsjz8",
+        "geohash": "wsjz8",
         "precision": 5,
         "count": 8,
-        "totalStudents": 14036,
-        "latitude": 24.071346,
-        "longitude": 120.548875,
+        "totalStudents": 3229,
+        "latitude": 23.850467,
+        "longitude": 120.595424,
         "bounds": {
-          "minLatitude": 24.047846,
-          "maxLatitude": 24.081826,
-          "minLongitude": 120.543483,
-          "maxLongitude": 120.554533
+          "minLatitude": 23.829568,
+          "maxLatitude": 23.85953,
+          "minLongitude": 120.587504,
+          "maxLongitude": 120.609552
         },
         "topSchools": [
           {
-            "id": "1040",
-            "name": "建國科技大學",
-            "townshipName": "彰化市",
-            "students": 3497,
+            "id": "071414",
+            "name": "私立達德商工",
+            "townshipName": "田中鎮",
+            "students": 1572,
             "status": "正常"
           },
           {
-            "id": "074604",
-            "name": "縣立南郭國小",
-            "townshipName": "彰化市",
-            "students": 2313,
+            "id": "074698",
+            "name": "縣立田中國小",
+            "townshipName": "田中鎮",
+            "students": 653,
             "status": "正常"
           },
           {
-            "id": "070307",
-            "name": "國立彰化高中",
-            "townshipName": "彰化市",
-            "students": 2090,
+            "id": "074328:國中",
+            "name": "縣立田中高中附設國中部",
+            "townshipName": "田中鎮",
+            "students": 567,
             "status": "正常"
           },
           {
-            "id": "070406",
-            "name": "國立彰化高商",
-            "townshipName": "彰化市",
-            "students": 2007,
+            "id": "074328",
+            "name": "縣立田中高中",
+            "townshipName": "田中鎮",
+            "students": 255,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "5-wsm9j",
+        "geohash": "wsm9j",
+        "precision": 5,
+        "count": 8,
+        "totalStudents": 4932,
+        "latitude": 24.107129,
+        "longitude": 120.483514,
+        "bounds": {
+          "minLatitude": 24.0886,
+          "maxLatitude": 24.121591,
+          "minLongitude": 120.461548,
+          "maxLongitude": 120.495477
+        },
+        "topSchools": [
+          {
+            "id": "074323:國中",
+            "name": "縣立和美高中附設國中部",
+            "townshipName": "和美鎮",
+            "students": 959,
+            "status": "正常"
+          },
+          {
+            "id": "074769",
+            "name": "縣立和仁國小",
+            "townshipName": "和美鎮",
+            "students": 846,
+            "status": "正常"
+          },
+          {
+            "id": "074645",
+            "name": "縣立頂番國小",
+            "townshipName": "鹿港鎮",
+            "students": 758,
+            "status": "正常"
+          },
+          {
+            "id": "074627",
+            "name": "縣立和美國小",
+            "townshipName": "和美鎮",
+            "students": 721,
             "status": "正常"
           }
         ]
@@ -364,6 +454,51 @@
             "name": "縣立永興國小",
             "townshipName": "永靖鄉",
             "students": 229,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "5-wsjzb",
+        "geohash": "wsjzb",
+        "precision": 5,
+        "count": 7,
+        "totalStudents": 2801,
+        "latitude": 23.882883,
+        "longitude": 120.593454,
+        "bounds": {
+          "minLatitude": 23.867468,
+          "maxLatitude": 23.900745,
+          "minLongitude": 120.586473,
+          "maxLongitude": 120.609979
+        },
+        "topSchools": [
+          {
+            "id": "071317:國中",
+            "name": "私立文興高中附設國中部",
+            "townshipName": "田中鎮",
+            "students": 913,
+            "status": "正常"
+          },
+          {
+            "id": "074704",
+            "name": "縣立社頭國小",
+            "townshipName": "社頭鄉",
+            "students": 801,
+            "status": "正常"
+          },
+          {
+            "id": "071317",
+            "name": "私立文興高中",
+            "townshipName": "田中鎮",
+            "students": 427,
+            "status": "正常"
+          },
+          {
+            "id": "074772",
+            "name": "縣立舊社國小",
+            "townshipName": "社頭鄉",
+            "students": 277,
             "status": "正常"
           }
         ]
@@ -459,51 +594,6 @@
         ]
       },
       {
-        "id": "5-wsm9j",
-        "geohash": "wsm9j",
-        "precision": 5,
-        "count": 7,
-        "totalStudents": 4932,
-        "latitude": 24.106315,
-        "longitude": 120.482052,
-        "bounds": {
-          "minLatitude": 24.0886,
-          "maxLatitude": 24.121591,
-          "minLongitude": 120.461548,
-          "maxLongitude": 120.495477
-        },
-        "topSchools": [
-          {
-            "id": "074323",
-            "name": "縣立和美高中",
-            "townshipName": "和美鎮",
-            "students": 1531,
-            "status": "正常"
-          },
-          {
-            "id": "074769",
-            "name": "縣立和仁國小",
-            "townshipName": "和美鎮",
-            "students": 846,
-            "status": "正常"
-          },
-          {
-            "id": "074645",
-            "name": "縣立頂番國小",
-            "townshipName": "鹿港鎮",
-            "students": 758,
-            "status": "正常"
-          },
-          {
-            "id": "074627",
-            "name": "縣立和美國小",
-            "townshipName": "和美鎮",
-            "students": 721,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "5-wsjxt",
         "geohash": "wsjxt",
         "precision": 5,
@@ -544,51 +634,6 @@
             "name": "縣立南州國小",
             "townshipName": "溪州鄉",
             "students": 76,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "5-wsjz8",
-        "geohash": "wsjz8",
-        "precision": 5,
-        "count": 6,
-        "totalStudents": 3229,
-        "latitude": 23.848172,
-        "longitude": 120.597409,
-        "bounds": {
-          "minLatitude": 23.829568,
-          "maxLatitude": 23.857275,
-          "minLongitude": 120.587504,
-          "maxLongitude": 120.609552
-        },
-        "topSchools": [
-          {
-            "id": "071414",
-            "name": "私立達德商工",
-            "townshipName": "田中鎮",
-            "students": 1572,
-            "status": "正常"
-          },
-          {
-            "id": "074328",
-            "name": "縣立田中高中",
-            "townshipName": "田中鎮",
-            "students": 822,
-            "status": "正常"
-          },
-          {
-            "id": "074698",
-            "name": "縣立田中國小",
-            "townshipName": "田中鎮",
-            "students": 653,
-            "status": "正常"
-          },
-          {
-            "id": "074701",
-            "name": "縣立內安國小",
-            "townshipName": "田中鎮",
-            "students": 99,
             "status": "正常"
           }
         ]
@@ -679,51 +724,6 @@
             "name": "縣立陸豐國小",
             "townshipName": "田尾鄉",
             "students": 61,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "5-wsjzb",
-        "geohash": "wsjzb",
-        "precision": 5,
-        "count": 6,
-        "totalStudents": 2801,
-        "latitude": 23.885452,
-        "longitude": 120.594607,
-        "bounds": {
-          "minLatitude": 23.867468,
-          "maxLatitude": 23.900745,
-          "minLongitude": 120.586473,
-          "maxLongitude": 120.609979
-        },
-        "topSchools": [
-          {
-            "id": "071317",
-            "name": "私立文興高中",
-            "townshipName": "田中鎮",
-            "students": 1340,
-            "status": "正常"
-          },
-          {
-            "id": "074704",
-            "name": "縣立社頭國小",
-            "townshipName": "社頭鄉",
-            "students": 801,
-            "status": "正常"
-          },
-          {
-            "id": "074772",
-            "name": "縣立舊社國小",
-            "townshipName": "社頭鄉",
-            "students": 277,
-            "status": "正常"
-          },
-          {
-            "id": "074773",
-            "name": "縣立崙雅國小",
-            "townshipName": "社頭鄉",
-            "students": 248,
             "status": "正常"
           }
         ]
@@ -949,6 +949,51 @@
             "name": "縣立同安國小",
             "townshipName": "芬園鄉",
             "students": 63,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "5-wsjxf",
+        "geohash": "wsjxf",
+        "precision": 5,
+        "count": 4,
+        "totalStudents": 1120,
+        "latitude": 23.888061,
+        "longitude": 120.352467,
+        "bounds": {
+          "minLatitude": 23.876141,
+          "maxLatitude": 23.896153,
+          "minLongitude": 120.328359,
+          "maxLongitude": 120.362706
+        },
+        "topSchools": [
+          {
+            "id": "074313:國中",
+            "name": "縣立二林高中附設國中部",
+            "townshipName": "二林鎮",
+            "students": 633,
+            "status": "正常"
+          },
+          {
+            "id": "074313",
+            "name": "縣立二林高中",
+            "townshipName": "二林鎮",
+            "students": 304,
+            "status": "正常"
+          },
+          {
+            "id": "074741",
+            "name": "縣立廣興國小",
+            "townshipName": "二林鎮",
+            "students": 115,
+            "status": "正常"
+          },
+          {
+            "id": "074767",
+            "name": "縣立路上國小",
+            "townshipName": "芳苑鄉",
+            "students": 68,
             "status": "正常"
           }
         ]
@@ -1359,40 +1404,40 @@
         ]
       },
       {
-        "id": "5-wsjxf",
-        "geohash": "wsjxf",
+        "id": "5-wsjxc",
+        "geohash": "wsjxc",
         "precision": 5,
         "count": 3,
-        "totalStudents": 1120,
-        "latitude": 23.887423,
-        "longitude": 120.350155,
+        "totalStudents": 31,
+        "latitude": 23.870616,
+        "longitude": 120.306667,
         "bounds": {
-          "minLatitude": 23.876141,
-          "maxLatitude": 23.896153,
-          "minLongitude": 120.328359,
-          "maxLongitude": 120.362706
+          "minLatitude": 23.863215,
+          "maxLatitude": 23.885417,
+          "minLongitude": 120.302186,
+          "maxLongitude": 120.308908
         },
         "topSchools": [
           {
-            "id": "074313",
-            "name": "縣立二林高中",
-            "townshipName": "二林鎮",
-            "students": 937,
+            "id": "074750",
+            "name": "縣立美豐國小",
+            "townshipName": "大城鄉",
+            "students": 31,
             "status": "正常"
           },
           {
-            "id": "074741",
-            "name": "縣立廣興國小",
-            "townshipName": "二林鎮",
-            "students": 115,
-            "status": "正常"
+            "id": "074751",
+            "name": "縣立頂庄國小",
+            "townshipName": "大城鄉",
+            "students": 0,
+            "status": "待確認"
           },
           {
-            "id": "074767",
-            "name": "縣立路上國小",
-            "townshipName": "芳苑鄉",
-            "students": 68,
-            "status": "正常"
+            "id": "074752",
+            "name": "縣立潭墘國小",
+            "townshipName": "大城鄉",
+            "students": 0,
+            "status": "待確認"
           }
         ]
       },
@@ -1838,30 +1883,6 @@
         ]
       },
       {
-        "id": "5-wsjxc",
-        "geohash": "wsjxc",
-        "precision": 5,
-        "count": 1,
-        "totalStudents": 31,
-        "latitude": 23.885417,
-        "longitude": 120.302186,
-        "bounds": {
-          "minLatitude": 23.885417,
-          "maxLatitude": 23.885417,
-          "minLongitude": 120.302186,
-          "maxLongitude": 120.302186
-        },
-        "topSchools": [
-          {
-            "id": "074750",
-            "name": "縣立美豐國小",
-            "townshipName": "大城鄉",
-            "students": 31,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "5-wsm9q",
         "geohash": "wsm9q",
         "precision": 5,
@@ -2118,6 +2139,82 @@
         ]
       },
       {
+        "id": "6-wsm9jv",
+        "geohash": "wsm9jv",
+        "precision": 6,
+        "count": 3,
+        "totalStudents": 2252,
+        "latitude": 24.112628,
+        "longitude": 120.494326,
+        "bounds": {
+          "minLatitude": 24.112225,
+          "maxLatitude": 24.11283,
+          "minLongitude": 120.493751,
+          "maxLongitude": 120.495477
+        },
+        "topSchools": [
+          {
+            "id": "074323:國中",
+            "name": "縣立和美高中附設國中部",
+            "townshipName": "和美鎮",
+            "students": 959,
+            "status": "正常"
+          },
+          {
+            "id": "074627",
+            "name": "縣立和美國小",
+            "townshipName": "和美鎮",
+            "students": 721,
+            "status": "正常"
+          },
+          {
+            "id": "074323",
+            "name": "縣立和美高中",
+            "townshipName": "和美鎮",
+            "students": 572,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsm8y7",
+        "geohash": "wsm8y7",
+        "precision": 6,
+        "count": 3,
+        "totalStudents": 364,
+        "latitude": 24.058651,
+        "longitude": 120.518457,
+        "bounds": {
+          "minLatitude": 24.058651,
+          "maxLatitude": 24.058651,
+          "minLongitude": 120.518457,
+          "maxLongitude": 120.518457
+        },
+        "topSchools": [
+          {
+            "id": "071318",
+            "name": "財團法人正德高中",
+            "townshipName": "彰化市",
+            "students": 252,
+            "status": "正常"
+          },
+          {
+            "id": "071318:國小",
+            "name": "私立正德高中附設國小部",
+            "townshipName": "彰化市",
+            "students": 81,
+            "status": "正常"
+          },
+          {
+            "id": "071318:國中",
+            "name": "私立正德高中附設國中部",
+            "townshipName": "彰化市",
+            "students": 31,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "6-wsjxgn",
         "geohash": "wsjxgn",
         "precision": 6,
@@ -2144,6 +2241,37 @@
             "name": "縣立中正國小",
             "townshipName": "二林鎮",
             "students": 580,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsjxfv",
+        "geohash": "wsjxfv",
+        "precision": 6,
+        "count": 2,
+        "totalStudents": 937,
+        "latitude": 23.889976,
+        "longitude": 120.359401,
+        "bounds": {
+          "minLatitude": 23.889976,
+          "maxLatitude": 23.889976,
+          "minLongitude": 120.359401,
+          "maxLongitude": 120.359401
+        },
+        "topSchools": [
+          {
+            "id": "074313:國中",
+            "name": "縣立二林高中附設國中部",
+            "townshipName": "二林鎮",
+            "students": 633,
+            "status": "正常"
+          },
+          {
+            "id": "074313",
+            "name": "縣立二林高中",
+            "townshipName": "二林鎮",
+            "students": 304,
             "status": "正常"
           }
         ]
@@ -2180,6 +2308,37 @@
         ]
       },
       {
+        "id": "6-wsjxc8",
+        "geohash": "wsjxc8",
+        "precision": 6,
+        "count": 2,
+        "totalStudents": 0,
+        "latitude": 23.863215,
+        "longitude": 120.308908,
+        "bounds": {
+          "minLatitude": 23.863215,
+          "maxLatitude": 23.863215,
+          "minLongitude": 120.308908,
+          "maxLongitude": 120.308908
+        },
+        "topSchools": [
+          {
+            "id": "074751",
+            "name": "縣立頂庄國小",
+            "townshipName": "大城鄉",
+            "students": 0,
+            "status": "待確認"
+          },
+          {
+            "id": "074752",
+            "name": "縣立潭墘國小",
+            "townshipName": "大城鄉",
+            "students": 0,
+            "status": "待確認"
+          }
+        ]
+      },
+      {
         "id": "6-wsjxyd",
         "geohash": "wsjxyd",
         "precision": 6,
@@ -2211,6 +2370,99 @@
         ]
       },
       {
+        "id": "6-wsjzb0",
+        "geohash": "wsjzb0",
+        "precision": 6,
+        "count": 2,
+        "totalStudents": 1340,
+        "latitude": 23.867468,
+        "longitude": 120.586536,
+        "bounds": {
+          "minLatitude": 23.867468,
+          "maxLatitude": 23.867468,
+          "minLongitude": 120.586536,
+          "maxLongitude": 120.586536
+        },
+        "topSchools": [
+          {
+            "id": "071317:國中",
+            "name": "私立文興高中附設國中部",
+            "townshipName": "田中鎮",
+            "students": 913,
+            "status": "正常"
+          },
+          {
+            "id": "071317",
+            "name": "私立文興高中",
+            "townshipName": "田中鎮",
+            "students": 427,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsjz8p",
+        "geohash": "wsjz8p",
+        "precision": 6,
+        "count": 2,
+        "totalStudents": 653,
+        "latitude": 23.858403,
+        "longitude": 120.58896,
+        "bounds": {
+          "minLatitude": 23.857275,
+          "maxLatitude": 23.85953,
+          "minLongitude": 120.587504,
+          "maxLongitude": 120.590416
+        },
+        "topSchools": [
+          {
+            "id": "074698",
+            "name": "縣立田中國小",
+            "townshipName": "田中鎮",
+            "students": 653,
+            "status": "正常"
+          },
+          {
+            "id": "07C301",
+            "name": "誠正中學彰化分校附設國中部",
+            "townshipName": "田中鎮",
+            "students": 0,
+            "status": "待確認"
+          }
+        ]
+      },
+      {
+        "id": "6-wsjz8n",
+        "geohash": "wsjz8n",
+        "precision": 6,
+        "count": 2,
+        "totalStudents": 822,
+        "latitude": 23.855173,
+        "longitude": 120.588525,
+        "bounds": {
+          "minLatitude": 23.855173,
+          "maxLatitude": 23.855173,
+          "minLongitude": 120.588525,
+          "maxLongitude": 120.588525
+        },
+        "topSchools": [
+          {
+            "id": "074328:國中",
+            "name": "縣立田中高中附設國中部",
+            "townshipName": "田中鎮",
+            "students": 567,
+            "status": "正常"
+          },
+          {
+            "id": "074328",
+            "name": "縣立田中高中",
+            "townshipName": "田中鎮",
+            "students": 255,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "6-wsm9ms",
         "geohash": "wsm9ms",
         "precision": 6,
@@ -2237,37 +2489,6 @@
             "name": "縣立新港國小",
             "townshipName": "伸港鄉",
             "students": 723,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "6-wsm9jv",
-        "geohash": "wsm9jv",
-        "precision": 6,
-        "count": 2,
-        "totalStudents": 2252,
-        "latitude": 24.112527,
-        "longitude": 120.494614,
-        "bounds": {
-          "minLatitude": 24.112225,
-          "maxLatitude": 24.11283,
-          "minLongitude": 120.493751,
-          "maxLongitude": 120.495477
-        },
-        "topSchools": [
-          {
-            "id": "074323",
-            "name": "縣立和美高中",
-            "townshipName": "和美鎮",
-            "students": 1531,
-            "status": "正常"
-          },
-          {
-            "id": "074627",
-            "name": "縣立和美國小",
-            "townshipName": "和美鎮",
-            "students": 721,
             "status": "正常"
           }
         ]
@@ -2707,6 +2928,37 @@
         ]
       },
       {
+        "id": "6-wsm8m2",
+        "geohash": "wsm8m2",
+        "precision": 6,
+        "count": 2,
+        "totalStudents": 873,
+        "latitude": 23.951641,
+        "longitude": 120.471392,
+        "bounds": {
+          "minLatitude": 23.951641,
+          "maxLatitude": 23.951641,
+          "minLongitude": 120.471392,
+          "maxLongitude": 120.471392
+        },
+        "topSchools": [
+          {
+            "id": "074339:國中",
+            "name": "縣立成功高中附設國中部",
+            "townshipName": "溪湖鎮",
+            "students": 515,
+            "status": "正常"
+          },
+          {
+            "id": "074339",
+            "name": "縣立成功高中",
+            "townshipName": "溪湖鎮",
+            "students": 358,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "6-wsm9p2",
         "geohash": "wsm9p2",
         "precision": 6,
@@ -2764,6 +3016,37 @@
             "name": "國立彰化高中",
             "townshipName": "彰化市",
             "students": 2090,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsm8yw",
+        "geohash": "wsm8yw",
+        "precision": 6,
+        "count": 2,
+        "totalStudents": 3306,
+        "latitude": 24.073385,
+        "longitude": 120.528026,
+        "bounds": {
+          "minLatitude": 24.073385,
+          "maxLatitude": 24.073385,
+          "minLongitude": 120.528026,
+          "maxLongitude": 120.528026
+        },
+        "topSchools": [
+          {
+            "id": "071311:國中",
+            "name": "私立精誠高中附設國中部",
+            "townshipName": "彰化市",
+            "students": 1898,
+            "status": "正常"
+          },
+          {
+            "id": "071311",
+            "name": "私立精誠高中",
+            "townshipName": "彰化市",
+            "students": 1408,
             "status": "正常"
           }
         ]
@@ -2888,6 +3171,37 @@
             "name": "縣立民生國小",
             "townshipName": "彰化市",
             "students": 967,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsm8zr",
+        "geohash": "wsm8zr",
+        "precision": 6,
+        "count": 2,
+        "totalStudents": 949,
+        "latitude": 24.07877,
+        "longitude": 120.554533,
+        "bounds": {
+          "minLatitude": 24.07877,
+          "maxLatitude": 24.07877,
+          "minLongitude": 120.554533,
+          "maxLongitude": 120.554533
+        },
+        "topSchools": [
+          {
+            "id": "074308",
+            "name": "縣立彰化藝術高中",
+            "townshipName": "彰化市",
+            "students": 678,
+            "status": "正常"
+          },
+          {
+            "id": "074308:國中",
+            "name": "縣立彰化藝術高中附設國中部",
+            "townshipName": "彰化市",
+            "students": 271,
             "status": "正常"
           }
         ]
@@ -3039,30 +3353,6 @@
             "name": "國立二林工商",
             "townshipName": "二林鎮",
             "students": 1071,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "6-wsjxfv",
-        "geohash": "wsjxfv",
-        "precision": 6,
-        "count": 1,
-        "totalStudents": 937,
-        "latitude": 23.889976,
-        "longitude": 120.359401,
-        "bounds": {
-          "minLatitude": 23.889976,
-          "maxLatitude": 23.889976,
-          "minLongitude": 120.359401,
-          "maxLongitude": 120.359401
-        },
-        "topSchools": [
-          {
-            "id": "074313",
-            "name": "縣立二林高中",
-            "townshipName": "二林鎮",
-            "students": 937,
             "status": "正常"
           }
         ]
@@ -3831,78 +4121,6 @@
             "name": "私立達德商工",
             "townshipName": "田中鎮",
             "students": 1572,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "6-wsjzb0",
-        "geohash": "wsjzb0",
-        "precision": 6,
-        "count": 1,
-        "totalStudents": 1340,
-        "latitude": 23.867468,
-        "longitude": 120.586536,
-        "bounds": {
-          "minLatitude": 23.867468,
-          "maxLatitude": 23.867468,
-          "minLongitude": 120.586536,
-          "maxLongitude": 120.586536
-        },
-        "topSchools": [
-          {
-            "id": "071317",
-            "name": "私立文興高中",
-            "townshipName": "田中鎮",
-            "students": 1340,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "6-wsjz8n",
-        "geohash": "wsjz8n",
-        "precision": 6,
-        "count": 1,
-        "totalStudents": 822,
-        "latitude": 23.855173,
-        "longitude": 120.588525,
-        "bounds": {
-          "minLatitude": 23.855173,
-          "maxLatitude": 23.855173,
-          "minLongitude": 120.588525,
-          "maxLongitude": 120.588525
-        },
-        "topSchools": [
-          {
-            "id": "074328",
-            "name": "縣立田中高中",
-            "townshipName": "田中鎮",
-            "students": 822,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "6-wsjz8p",
-        "geohash": "wsjz8p",
-        "precision": 6,
-        "count": 1,
-        "totalStudents": 653,
-        "latitude": 23.857275,
-        "longitude": 120.587504,
-        "bounds": {
-          "minLatitude": 23.857275,
-          "maxLatitude": 23.857275,
-          "minLongitude": 120.587504,
-          "maxLongitude": 120.587504
-        },
-        "topSchools": [
-          {
-            "id": "074698",
-            "name": "縣立田中國小",
-            "townshipName": "田中鎮",
-            "students": 653,
             "status": "正常"
           }
         ]
@@ -6500,30 +6718,6 @@
         ]
       },
       {
-        "id": "6-wsm8m2",
-        "geohash": "wsm8m2",
-        "precision": 6,
-        "count": 1,
-        "totalStudents": 873,
-        "latitude": 23.951641,
-        "longitude": 120.471392,
-        "bounds": {
-          "minLatitude": 23.951641,
-          "maxLatitude": 23.951641,
-          "minLongitude": 120.471392,
-          "maxLongitude": 120.471392
-        },
-        "topSchools": [
-          {
-            "id": "074339",
-            "name": "縣立成功高中",
-            "townshipName": "溪湖鎮",
-            "students": 873,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "6-wsm8m9",
         "geohash": "wsm8m9",
         "precision": 6,
@@ -6668,30 +6862,6 @@
         ]
       },
       {
-        "id": "6-wsm8yw",
-        "geohash": "wsm8yw",
-        "precision": 6,
-        "count": 1,
-        "totalStudents": 3306,
-        "latitude": 24.073385,
-        "longitude": 120.528026,
-        "bounds": {
-          "minLatitude": 24.073385,
-          "maxLatitude": 24.073385,
-          "minLongitude": 120.528026,
-          "maxLongitude": 120.528026
-        },
-        "topSchools": [
-          {
-            "id": "071311",
-            "name": "私立精誠高中",
-            "townshipName": "彰化市",
-            "students": 3306,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "6-wsm8zq",
         "geohash": "wsm8zq",
         "precision": 6,
@@ -6759,30 +6929,6 @@
             "name": "縣立平和國小",
             "townshipName": "彰化市",
             "students": 1165,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "6-wsm8zr",
-        "geohash": "wsm8zr",
-        "precision": 6,
-        "count": 1,
-        "totalStudents": 949,
-        "latitude": 24.07877,
-        "longitude": 120.554533,
-        "bounds": {
-          "minLatitude": 24.07877,
-          "maxLatitude": 24.07877,
-          "minLongitude": 120.554533,
-          "maxLongitude": 120.554533
-        },
-        "topSchools": [
-          {
-            "id": "074308",
-            "name": "縣立彰化藝術高中",
-            "townshipName": "彰化市",
-            "students": 949,
             "status": "正常"
           }
         ]
@@ -6903,30 +7049,6 @@
             "name": "縣立彰德國中",
             "townshipName": "彰化市",
             "students": 435,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "6-wsm8y7",
-        "geohash": "wsm8y7",
-        "precision": 6,
-        "count": 1,
-        "totalStudents": 364,
-        "latitude": 24.058651,
-        "longitude": 120.518457,
-        "bounds": {
-          "minLatitude": 24.058651,
-          "maxLatitude": 24.058651,
-          "minLongitude": 120.518457,
-          "maxLongitude": 120.518457
-        },
-        "topSchools": [
-          {
-            "id": "071318",
-            "name": "財團法人正德高中",
-            "townshipName": "彰化市",
-            "students": 364,
             "status": "正常"
           }
         ]
@@ -7318,6 +7440,75 @@
     ],
     "7": [
       {
+        "id": "7-wsm8y7w",
+        "geohash": "wsm8y7w",
+        "precision": 7,
+        "count": 3,
+        "totalStudents": 364,
+        "latitude": 24.058651,
+        "longitude": 120.518457,
+        "bounds": {
+          "minLatitude": 24.058651,
+          "maxLatitude": 24.058651,
+          "minLongitude": 120.518457,
+          "maxLongitude": 120.518457
+        },
+        "topSchools": [
+          {
+            "id": "071318",
+            "name": "財團法人正德高中",
+            "townshipName": "彰化市",
+            "students": 252,
+            "status": "正常"
+          },
+          {
+            "id": "071318:國小",
+            "name": "私立正德高中附設國小部",
+            "townshipName": "彰化市",
+            "students": 81,
+            "status": "正常"
+          },
+          {
+            "id": "071318:國中",
+            "name": "私立正德高中附設國中部",
+            "townshipName": "彰化市",
+            "students": 31,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsjxfv5",
+        "geohash": "wsjxfv5",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 937,
+        "latitude": 23.889976,
+        "longitude": 120.359401,
+        "bounds": {
+          "minLatitude": 23.889976,
+          "maxLatitude": 23.889976,
+          "minLongitude": 120.359401,
+          "maxLongitude": 120.359401
+        },
+        "topSchools": [
+          {
+            "id": "074313:國中",
+            "name": "縣立二林高中附設國中部",
+            "townshipName": "二林鎮",
+            "students": 633,
+            "status": "正常"
+          },
+          {
+            "id": "074313",
+            "name": "縣立二林高中",
+            "townshipName": "二林鎮",
+            "students": 304,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "7-wsjxumu",
         "geohash": "wsjxumu",
         "precision": 7,
@@ -7344,6 +7535,130 @@
             "name": "縣立原斗國中(小)",
             "townshipName": "二林鎮",
             "students": 46,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsjxc8n",
+        "geohash": "wsjxc8n",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 0,
+        "latitude": 23.863215,
+        "longitude": 120.308908,
+        "bounds": {
+          "minLatitude": 23.863215,
+          "maxLatitude": 23.863215,
+          "minLongitude": 120.308908,
+          "maxLongitude": 120.308908
+        },
+        "topSchools": [
+          {
+            "id": "074751",
+            "name": "縣立頂庄國小",
+            "townshipName": "大城鄉",
+            "students": 0,
+            "status": "待確認"
+          },
+          {
+            "id": "074752",
+            "name": "縣立潭墘國小",
+            "townshipName": "大城鄉",
+            "students": 0,
+            "status": "待確認"
+          }
+        ]
+      },
+      {
+        "id": "7-wsjzb0b",
+        "geohash": "wsjzb0b",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 1340,
+        "latitude": 23.867468,
+        "longitude": 120.586536,
+        "bounds": {
+          "minLatitude": 23.867468,
+          "maxLatitude": 23.867468,
+          "minLongitude": 120.586536,
+          "maxLongitude": 120.586536
+        },
+        "topSchools": [
+          {
+            "id": "071317:國中",
+            "name": "私立文興高中附設國中部",
+            "townshipName": "田中鎮",
+            "students": 913,
+            "status": "正常"
+          },
+          {
+            "id": "071317",
+            "name": "私立文興高中",
+            "townshipName": "田中鎮",
+            "students": 427,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsjz8n9",
+        "geohash": "wsjz8n9",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 822,
+        "latitude": 23.855173,
+        "longitude": 120.588525,
+        "bounds": {
+          "minLatitude": 23.855173,
+          "maxLatitude": 23.855173,
+          "minLongitude": 120.588525,
+          "maxLongitude": 120.588525
+        },
+        "topSchools": [
+          {
+            "id": "074328:國中",
+            "name": "縣立田中高中附設國中部",
+            "townshipName": "田中鎮",
+            "students": 567,
+            "status": "正常"
+          },
+          {
+            "id": "074328",
+            "name": "縣立田中高中",
+            "townshipName": "田中鎮",
+            "students": 255,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsm9jvs",
+        "geohash": "wsm9jvs",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 1531,
+        "latitude": 24.11283,
+        "longitude": 120.493751,
+        "bounds": {
+          "minLatitude": 24.11283,
+          "maxLatitude": 24.11283,
+          "minLongitude": 120.493751,
+          "maxLongitude": 120.493751
+        },
+        "topSchools": [
+          {
+            "id": "074323:國中",
+            "name": "縣立和美高中附設國中部",
+            "townshipName": "和美鎮",
+            "students": 959,
+            "status": "正常"
+          },
+          {
+            "id": "074323",
+            "name": "縣立和美高中",
+            "townshipName": "和美鎮",
+            "students": 572,
             "status": "正常"
           }
         ]
@@ -7406,6 +7721,99 @@
             "name": "縣立鹿江國際國(中)小",
             "townshipName": "鹿港鎮",
             "students": 116,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsm8m2k",
+        "geohash": "wsm8m2k",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 873,
+        "latitude": 23.951641,
+        "longitude": 120.471392,
+        "bounds": {
+          "minLatitude": 23.951641,
+          "maxLatitude": 23.951641,
+          "minLongitude": 120.471392,
+          "maxLongitude": 120.471392
+        },
+        "topSchools": [
+          {
+            "id": "074339:國中",
+            "name": "縣立成功高中附設國中部",
+            "townshipName": "溪湖鎮",
+            "students": 515,
+            "status": "正常"
+          },
+          {
+            "id": "074339",
+            "name": "縣立成功高中",
+            "townshipName": "溪湖鎮",
+            "students": 358,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsm8ywm",
+        "geohash": "wsm8ywm",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 3306,
+        "latitude": 24.073385,
+        "longitude": 120.528026,
+        "bounds": {
+          "minLatitude": 24.073385,
+          "maxLatitude": 24.073385,
+          "minLongitude": 120.528026,
+          "maxLongitude": 120.528026
+        },
+        "topSchools": [
+          {
+            "id": "071311:國中",
+            "name": "私立精誠高中附設國中部",
+            "townshipName": "彰化市",
+            "students": 1898,
+            "status": "正常"
+          },
+          {
+            "id": "071311",
+            "name": "私立精誠高中",
+            "townshipName": "彰化市",
+            "students": 1408,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsm8zr3",
+        "geohash": "wsm8zr3",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 949,
+        "latitude": 24.07877,
+        "longitude": 120.554533,
+        "bounds": {
+          "minLatitude": 24.07877,
+          "maxLatitude": 24.07877,
+          "minLongitude": 120.554533,
+          "maxLongitude": 120.554533
+        },
+        "topSchools": [
+          {
+            "id": "074308",
+            "name": "縣立彰化藝術高中",
+            "townshipName": "彰化市",
+            "students": 678,
+            "status": "正常"
+          },
+          {
+            "id": "074308:國中",
+            "name": "縣立彰化藝術高中附設國中部",
+            "townshipName": "彰化市",
+            "students": 271,
             "status": "正常"
           }
         ]
@@ -7557,30 +7965,6 @@
             "name": "國立二林工商",
             "townshipName": "二林鎮",
             "students": 1071,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsjxfv5",
-        "geohash": "wsjxfv5",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 937,
-        "latitude": 23.889976,
-        "longitude": 120.359401,
-        "bounds": {
-          "minLatitude": 23.889976,
-          "maxLatitude": 23.889976,
-          "minLongitude": 120.359401,
-          "maxLongitude": 120.359401
-        },
-        "topSchools": [
-          {
-            "id": "074313",
-            "name": "縣立二林高中",
-            "townshipName": "二林鎮",
-            "students": 937,
             "status": "正常"
           }
         ]
@@ -8450,54 +8834,6 @@
         ]
       },
       {
-        "id": "7-wsjzb0b",
-        "geohash": "wsjzb0b",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 1340,
-        "latitude": 23.867468,
-        "longitude": 120.586536,
-        "bounds": {
-          "minLatitude": 23.867468,
-          "maxLatitude": 23.867468,
-          "minLongitude": 120.586536,
-          "maxLongitude": 120.586536
-        },
-        "topSchools": [
-          {
-            "id": "071317",
-            "name": "私立文興高中",
-            "townshipName": "田中鎮",
-            "students": 1340,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsjz8n9",
-        "geohash": "wsjz8n9",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 822,
-        "latitude": 23.855173,
-        "longitude": 120.588525,
-        "bounds": {
-          "minLatitude": 23.855173,
-          "maxLatitude": 23.855173,
-          "minLongitude": 120.588525,
-          "maxLongitude": 120.588525
-        },
-        "topSchools": [
-          {
-            "id": "074328",
-            "name": "縣立田中高中",
-            "townshipName": "田中鎮",
-            "students": 822,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "7-wsjz8p1",
         "geohash": "wsjz8p1",
         "precision": 7,
@@ -8662,6 +8998,30 @@
             "townshipName": "田中鎮",
             "students": 41,
             "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsjz8p7",
+        "geohash": "wsjz8p7",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 0,
+        "latitude": 23.85953,
+        "longitude": 120.590416,
+        "bounds": {
+          "minLatitude": 23.85953,
+          "maxLatitude": 23.85953,
+          "minLongitude": 120.590416,
+          "maxLongitude": 120.590416
+        },
+        "topSchools": [
+          {
+            "id": "07C301",
+            "name": "誠正中學彰化分校附設國中部",
+            "townshipName": "田中鎮",
+            "students": 0,
+            "status": "待確認"
           }
         ]
       },
@@ -9237,30 +9597,6 @@
             "name": "縣立育民國小",
             "townshipName": "秀水鄉",
             "students": 77,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsm9jvs",
-        "geohash": "wsm9jvs",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 1531,
-        "latitude": 24.11283,
-        "longitude": 120.493751,
-        "bounds": {
-          "minLatitude": 24.11283,
-          "maxLatitude": 24.11283,
-          "minLongitude": 120.493751,
-          "maxLongitude": 120.493751
-        },
-        "topSchools": [
-          {
-            "id": "074323",
-            "name": "縣立和美高中",
-            "townshipName": "和美鎮",
-            "students": 1531,
             "status": "正常"
           }
         ]
@@ -11810,30 +12146,6 @@
         ]
       },
       {
-        "id": "7-wsm8m2k",
-        "geohash": "wsm8m2k",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 873,
-        "latitude": 23.951641,
-        "longitude": 120.471392,
-        "bounds": {
-          "minLatitude": 23.951641,
-          "maxLatitude": 23.951641,
-          "minLongitude": 120.471392,
-          "maxLongitude": 120.471392
-        },
-        "topSchools": [
-          {
-            "id": "074339",
-            "name": "縣立成功高中",
-            "townshipName": "溪湖鎮",
-            "students": 873,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "7-wsm8mdb",
         "geohash": "wsm8mdb",
         "precision": 7,
@@ -12021,30 +12333,6 @@
             "name": "建國科技大學",
             "townshipName": "彰化市",
             "students": 3497,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsm8ywm",
-        "geohash": "wsm8ywm",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 3306,
-        "latitude": 24.073385,
-        "longitude": 120.528026,
-        "bounds": {
-          "minLatitude": 24.073385,
-          "maxLatitude": 24.073385,
-          "minLongitude": 120.528026,
-          "maxLongitude": 120.528026
-        },
-        "topSchools": [
-          {
-            "id": "071311",
-            "name": "私立精誠高中",
-            "townshipName": "彰化市",
-            "students": 3306,
             "status": "正常"
           }
         ]
@@ -12362,30 +12650,6 @@
         ]
       },
       {
-        "id": "7-wsm8zr3",
-        "geohash": "wsm8zr3",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 949,
-        "latitude": 24.07877,
-        "longitude": 120.554533,
-        "bounds": {
-          "minLatitude": 24.07877,
-          "maxLatitude": 24.07877,
-          "minLongitude": 120.554533,
-          "maxLongitude": 120.554533
-        },
-        "topSchools": [
-          {
-            "id": "074308",
-            "name": "縣立彰化藝術高中",
-            "townshipName": "彰化市",
-            "students": 949,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "7-wsm9pb7",
         "geohash": "wsm9pb7",
         "precision": 7,
@@ -12525,30 +12789,6 @@
             "name": "縣立彰德國中",
             "townshipName": "彰化市",
             "students": 435,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsm8y7w",
-        "geohash": "wsm8y7w",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 364,
-        "latitude": 24.058651,
-        "longitude": 120.518457,
-        "bounds": {
-          "minLatitude": 24.058651,
-          "maxLatitude": 24.058651,
-          "minLongitude": 120.518457,
-          "maxLongitude": 120.518457
-        },
-        "topSchools": [
-          {
-            "id": "071318",
-            "name": "財團法人正德高中",
-            "townshipName": "彰化市",
-            "students": 364,
             "status": "正常"
           }
         ]

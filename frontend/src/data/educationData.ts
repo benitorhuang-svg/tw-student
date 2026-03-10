@@ -11,6 +11,7 @@ export {
   loadCountyBuckets,
   resetAtlasSqliteCache,
 } from './atlasSqlite'
+export { loadCountySchoolAtlas, resetSchoolAtlasCache } from './schoolAtlas'
 export {
   loadCountyBoundaries,
   loadTownshipBoundaries,
@@ -19,13 +20,15 @@ export {
 
 import { loadTownshipBoundaries } from './atlasBoundaries'
 import { loadCountyBuckets, loadCountyDetail } from './atlasSqlite'
+import { loadCountySchoolAtlas } from './schoolAtlas'
 import type { CountySummaryRecord } from './educationTypes'
 
 export async function prefetchCountyResources(
-  county: Pick<CountySummaryRecord, 'id' | 'detailFile' | 'townshipFile' | 'bucketFile'>,
+  county: Pick<CountySummaryRecord, 'id' | 'detailFile' | 'townshipFile' | 'bucketFile' | 'schoolAtlasFile'>,
   options?: {
     includeTownshipSlice?: boolean
     includeBucketSlice?: boolean
+    includeSchoolAtlasSlice?: boolean
   },
 ) {
   const tasks: Array<Promise<unknown>> = [loadCountyDetail(county.detailFile, county.id)]
@@ -34,6 +37,9 @@ export async function prefetchCountyResources(
   }
   if (options?.includeBucketSlice) {
     tasks.push(loadCountyBuckets(county.bucketFile, county.id))
+  }
+  if (options?.includeSchoolAtlasSlice) {
+    tasks.push(loadCountySchoolAtlas(county.schoolAtlasFile, county.id))
   }
 
   await Promise.allSettled(tasks)

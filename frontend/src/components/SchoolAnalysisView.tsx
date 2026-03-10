@@ -1,12 +1,17 @@
 import ComparisonBarChart from './ComparisonBarChart'
+import SchoolCompositionChart from './SchoolCompositionChart'
 import SchoolOverviewChart from './SchoolOverviewChart'
 import TrendChart from './TrendChart'
 import { useMemo, useState } from 'react'
+import type { SchoolCodeAtlasEntry } from '../data/educationData'
 import { formatAcademicYear, formatDelta, formatPercent, formatStudents, type SchoolInsight } from '../lib/analytics'
 import type { AcademicYear } from '../hooks/types'
 
 type SchoolAnalysisViewProps = {
   selectedSchool: SchoolInsight; activeYear: AcademicYear
+  schoolAtlasEntry?: SchoolCodeAtlasEntry | null
+  isSchoolAtlasLoading?: boolean
+  schoolAtlasError?: string | null
   scopeLabel: string; scopeAverage: number; scopeMedian: number; countyAverage: number
   selectedSchoolRank: number; sortedSchoolsCount: number; sortedSchoolsMax: number
   peerSchools: SchoolInsight[]
@@ -18,7 +23,8 @@ type SchoolAnalysisViewProps = {
 }
 
 function SchoolAnalysisView({
-  selectedSchool, activeYear, scopeLabel, scopeAverage, scopeMedian, countyAverage,
+  selectedSchool, activeYear, schoolAtlasEntry = null, isSchoolAtlasLoading = false, schoolAtlasError = null,
+  scopeLabel, scopeAverage, scopeMedian, countyAverage,
   selectedSchoolRank, sortedSchoolsCount, sortedSchoolsMax, peerSchools,
   selectedTownshipSummary, highlightedSchoolId = null,
   onHoverSchool, onSelectSchool, onSetWorkbenchView,
@@ -124,10 +130,10 @@ function SchoolAnalysisView({
               <div className="school-moe-board">
                 <div className="school-moe-board__header">
                   <div>
-                    <p className="eyebrow">校別概況</p>
-                    <h3>{selectedSchool.name} {activeYear} 學年度概況</h3>
+                    <p className="eyebrow" style={{ color: 'var(--palette-cyan)' }}>公部門儀表板視野</p>
+                    <h3>{selectedSchool.name}（{activeYear}學年度）</h3>
                   </div>
-                  <p className="panel-heading__meta">參考教育部校別概況的閱讀順序，先看歷年規模，再看同範圍比較與基本資料。</p>
+                  <p className="panel-heading__meta">參考教育部校別概況的閱讀動線，從單校歷年變數、基本資料到同段比較。</p>
                 </div>
 
                 <div className="school-moe-board__grid">
@@ -162,6 +168,16 @@ function SchoolAnalysisView({
                       onSelectItem={peerRankingItems.length > 0 ? (schoolId) => onSelectSchool(schoolId) : undefined}
                     />
                   </aside>
+                </div>
+
+                <div className="school-moe-board__composition-card">
+                  <SchoolCompositionChart
+                    schoolAtlasEntry={schoolAtlasEntry}
+                    selectedSchool={selectedSchool}
+                    activeYear={activeYear}
+                    isLoading={isSchoolAtlasLoading}
+                    loadError={schoolAtlasError}
+                  />
                 </div>
 
                 <div className="school-profile-facts-grid">

@@ -10,6 +10,10 @@ function encodeJson(value) {
   return JSON.stringify(value ?? null)
 }
 
+function toSchoolRowId(school) {
+  return `${school.code}:${school.educationLevel}`
+}
+
 function insertCountySummaryRows(statement, countyId, summaries) {
   Object.entries(summaries).forEach(([bucketKey, rows]) => {
     const [educationLevel, managementType] = bucketKey.split('|')
@@ -182,8 +186,9 @@ export async function buildAtlasSqliteBuffer(datasetBundle) {
     datasetBundle.countyDetails.forEach(({ detail }) => {
       detail.towns.forEach((town) => {
         town.schools.forEach((school) => {
+          const schoolRowId = toSchoolRowId(school)
           insertSchool.run([
-            school.id,
+            schoolRowId,
             school.code,
             school.name,
             school.countyId,
@@ -201,7 +206,7 @@ export async function buildAtlasSqliteBuffer(datasetBundle) {
             encodeJson(school.dataNotes ?? []),
           ])
           school.yearlyStudents.forEach((entry) => {
-            insertYearly.run([school.id, entry.year, entry.students])
+            insertYearly.run([schoolRowId, entry.year, entry.students])
           })
         })
       })

@@ -20,6 +20,23 @@ export type TrendRecord = {
   isMissing?: boolean
 }
 
+export type StudentBandRecord = {
+  id: string
+  label: string
+  category: 'grade' | 'degree' | 'track' | 'other'
+  totalStudents: number
+  maleStudents?: number
+  femaleStudents?: number
+}
+
+export type StudentCompositionRecord = {
+  year: AcademicYear
+  totalStudents: number
+  maleStudents?: number
+  femaleStudents?: number
+  bands: StudentBandRecord[]
+}
+
 export type SummaryTrendRecord = {
   year: AcademicYear
   students: number
@@ -50,6 +67,7 @@ export type SchoolRecord = {
     latitude: number
   }
   yearlyStudents: TrendRecord[]
+  studentCompositions?: StudentCompositionRecord[]
   status?: '正常' | '停辦' | '整併' | '待確認'
   missingYears?: AcademicYear[]
   dataNotes?: DataNote[]
@@ -126,11 +144,13 @@ export type CountySummaryRecord = {
   townshipFile: string
   detailFile: string
   bucketFile: string
+  schoolAtlasFile: string
   assetMetrics?: {
     sqliteBytes?: number
     detailBytes: number
     townshipBytes: number
     bucketBytes: number
+    schoolAtlasBytes: number
   }
   dataNotes?: DataNote[]
   summaries: Record<SummaryBucketKey, SummaryTrendRecord[]>
@@ -141,8 +161,73 @@ export type SchoolCodeEntry = {
   countyId: string
   townshipId: string
   name: string
+  countyName?: string
+  townshipName?: string
+  levels?: SchoolLevel[]
+  schoolIds?: string[]
   longitude?: number
   latitude?: number
+}
+
+export type SchoolCodeAtlasLevelEntry = {
+  schoolId: string
+  name: string
+  educationLevel: SchoolLevel
+  managementType: SchoolManagementType
+  countyId: string
+  countyName: string
+  townshipId: string
+  townshipName: string
+  coordinates: {
+    longitude: number
+    latitude: number
+  }
+  address: string
+  phone: string
+  website: string
+  profileUrl?: string
+  yearlyStudents: TrendRecord[]
+  studentCompositions: StudentCompositionRecord[]
+  status?: '正常' | '停辦' | '整併' | '待確認'
+  missingYears?: AcademicYear[]
+  dataNotes?: DataNote[]
+}
+
+export type SchoolCodeAtlasEntry = {
+  code: string
+  primaryName: string
+  aliases: string[]
+  levels: SchoolCodeAtlasLevelEntry[]
+}
+
+export type SchoolAtlasDataset = {
+  generatedAt: string
+  years: readonly AcademicYear[]
+  schools: SchoolCodeAtlasEntry[]
+}
+
+export type CountySchoolAtlasDataset = {
+  generatedAt: string
+  years: readonly AcademicYear[]
+  county: {
+    id: string
+    name: string
+    shortLabel: string
+    region: RegionGroup
+  }
+  schools: SchoolCodeAtlasEntry[]
+}
+
+export type SchoolAtlasIndexDataset = {
+  generatedAt: string
+  years: readonly AcademicYear[]
+  counties: Array<{
+    countyId: string
+    countyName: string
+    schoolAtlasFile: string
+    schoolCount: number
+    levelCount: number
+  }>
 }
 
 export type MissingCoordinateEntry = {
@@ -171,12 +256,14 @@ export type CoordinateWorkflowEntry = {
 export type EducationSummaryDataset = {
   generatedAt: string
   years: readonly AcademicYear[]
+  schoolAtlasFile?: string
   assetMetrics?: {
     sqliteBytes?: number
     summaryBytes?: number
     countyBoundaryBytes: number
     countyDetailBytes: number
     countyBucketBytes?: number
+    schoolAtlasBytes?: number
     townshipBoundaryBytes: number
   }
   sources: {

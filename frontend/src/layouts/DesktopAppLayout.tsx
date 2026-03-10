@@ -7,7 +7,7 @@ import DashboardHeader from '../components/DashboardHeader'
 import DataGovernanceFlyout from '../components/DataGovernanceFlyout'
 import type { useAtlasDerivedState } from '../hooks/useAtlasDerivedState'
 import type { useAtlasScenarioActions } from '../hooks/useAtlasScenarioActions'
-import type { AcademicYear, EducationLevelFilter, ManagementTypeFilter, RegionGroupFilter } from '../data/educationData'
+import type { AcademicYear, CountySchoolAtlasDataset, EducationLevelFilter, ManagementTypeFilter, RegionGroupFilter } from '../data/educationData'
 import type { AtlasTab } from '../hooks/useAtlasQueryState'
 import type { SavedComparisonScenario, InvestigationFilter } from '../hooks/types'
 import type { AtlasTheme } from '../lib/constants'
@@ -49,8 +49,10 @@ type DesktopAppLayoutProps = {
   copyFeedbackMessage: string | null
   scenarioFeedbackMessage: string | null
   countyDetailError: string | null
+  countySchoolAtlasError: string | null
   selectedCountyId: string | null
   selectedTownshipId: string | null
+  countySchoolAtlasCache: Record<string, CountySchoolAtlasDataset>
   schoolWorkbenchView: 'list' | 'analysis' | 'notes'
   onSetSchoolWorkbenchView: (view: 'list' | 'analysis' | 'notes') => void
   hoveredCountyId: string | null
@@ -116,8 +118,10 @@ function DesktopAppLayout(props: DesktopAppLayoutProps) {
         copyFeedbackMessage={props.copyFeedbackMessage}
         scenarioFeedbackMessage={props.scenarioFeedbackMessage}
         countyDetailError={props.countyDetailError}
+        countySchoolAtlasError={props.countySchoolAtlasError}
         selectedCountyId={props.selectedCountyId}
         selectedTownshipId={props.selectedTownshipId}
+        countySchoolAtlasCache={props.countySchoolAtlasCache}
         schoolWorkbenchView={props.schoolWorkbenchView}
         onSetSchoolWorkbenchView={props.onSetSchoolWorkbenchView}
         hoveredCountyId={props.hoveredCountyId}
@@ -133,6 +137,9 @@ function DesktopAppLayout(props: DesktopAppLayoutProps) {
         handlePrefetchCounty={props.handlePrefetchCounty}
         handleSchoolSelect={props.handleSchoolSelect}
         onHoverSchool={props.setHoveredSchoolId}
+        onSetActiveYear={props.setActiveYear}
+        onSetIsYearPlaybackActive={props.setIsYearPlaybackActive}
+        summaryYears={[...props.summaryDataset.years]}
       />
 
       <AtlasFooter

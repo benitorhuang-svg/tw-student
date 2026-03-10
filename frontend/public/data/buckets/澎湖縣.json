@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-09T18:20:24.819Z",
+  "generatedAt": "2026-03-10T12:31:52.849Z",
   "county": {
     "id": "澎湖縣",
     "name": "澎湖縣",
@@ -12,10 +12,10 @@
         "id": "5-wsjn1",
         "geohash": "wsjn1",
         "precision": 5,
-        "count": 10,
+        "count": 11,
         "totalStudents": 5902,
-        "latitude": 23.571757,
-        "longitude": 119.593566,
+        "latitude": 23.570509,
+        "longitude": 119.592457,
         "bounds": {
           "minLatitude": 23.556643,
           "maxLatitude": 23.595114,
@@ -140,6 +140,51 @@
             "townshipName": "湖西鄉",
             "students": 51,
             "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "5-wshyr",
+        "geohash": "wshyr",
+        "precision": 5,
+        "count": 4,
+        "totalStudents": 127,
+        "latitude": 23.603803,
+        "longitude": 119.509291,
+        "bounds": {
+          "minLatitude": 23.598835,
+          "maxLatitude": 23.614138,
+          "minLongitude": 119.506279,
+          "maxLongitude": 119.513454
+        },
+        "topSchools": [
+          {
+            "id": "164509",
+            "name": "縣立西嶼國中",
+            "townshipName": "西嶼鄉",
+            "students": 62,
+            "status": "正常"
+          },
+          {
+            "id": "164634",
+            "name": "縣立池東國小",
+            "townshipName": "西嶼鄉",
+            "students": 51,
+            "status": "正常"
+          },
+          {
+            "id": "164633",
+            "name": "縣立大池國小",
+            "townshipName": "西嶼鄉",
+            "students": 14,
+            "status": "正常"
+          },
+          {
+            "id": "164631",
+            "name": "縣立竹灣國小",
+            "townshipName": "西嶼鄉",
+            "students": 0,
+            "status": "待確認"
           }
         ]
       },
@@ -272,56 +317,18 @@
         ]
       },
       {
-        "id": "5-wshyr",
-        "geohash": "wshyr",
-        "precision": 5,
-        "count": 3,
-        "totalStudents": 127,
-        "latitude": 23.605459,
-        "longitude": 119.510131,
-        "bounds": {
-          "minLatitude": 23.600335,
-          "maxLatitude": 23.614138,
-          "minLongitude": 119.506279,
-          "maxLongitude": 119.513454
-        },
-        "topSchools": [
-          {
-            "id": "164509",
-            "name": "縣立西嶼國中",
-            "townshipName": "西嶼鄉",
-            "students": 62,
-            "status": "正常"
-          },
-          {
-            "id": "164634",
-            "name": "縣立池東國小",
-            "townshipName": "西嶼鄉",
-            "students": 51,
-            "status": "正常"
-          },
-          {
-            "id": "164633",
-            "name": "縣立大池國小",
-            "townshipName": "西嶼鄉",
-            "students": 14,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "5-wsjn9",
         "geohash": "wsjn9",
         "precision": 5,
-        "count": 2,
+        "count": 3,
         "totalStudents": 95,
-        "latitude": 23.667061,
-        "longitude": 119.597913,
+        "latitude": 23.668482,
+        "longitude": 119.602695,
         "bounds": {
           "minLatitude": 23.66582,
-          "maxLatitude": 23.668302,
+          "maxLatitude": 23.671324,
           "minLongitude": 119.597715,
-          "maxLongitude": 119.59811
+          "maxLongitude": 119.612259
         },
         "topSchools": [
           {
@@ -337,6 +344,13 @@
             "townshipName": "白沙鄉",
             "students": 35,
             "status": "正常"
+          },
+          {
+            "id": "164506",
+            "name": "縣立鎮海國中",
+            "townshipName": "白沙鄉",
+            "students": 0,
+            "status": "待確認"
           }
         ]
       },
@@ -749,6 +763,37 @@
         ]
       },
       {
+        "id": "6-wshyr2",
+        "geohash": "wshyr2",
+        "precision": 6,
+        "count": 2,
+        "totalStudents": 51,
+        "latitude": 23.600369,
+        "longitude": 119.506525,
+        "bounds": {
+          "minLatitude": 23.598835,
+          "maxLatitude": 23.601904,
+          "minLongitude": 119.506279,
+          "maxLongitude": 119.506771
+        },
+        "topSchools": [
+          {
+            "id": "164634",
+            "name": "縣立池東國小",
+            "townshipName": "西嶼鄉",
+            "students": 51,
+            "status": "正常"
+          },
+          {
+            "id": "164631",
+            "name": "縣立竹灣國小",
+            "townshipName": "西嶼鄉",
+            "students": 0,
+            "status": "待確認"
+          }
+        ]
+      },
+      {
         "id": "6-wsjn15",
         "geohash": "wsjn15",
         "precision": 6,
@@ -807,6 +852,37 @@
             "townshipName": "馬公市",
             "students": 228,
             "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsjn10",
+        "geohash": "wsjn10",
+        "precision": 6,
+        "count": 2,
+        "totalStudents": 164,
+        "latitude": 23.557341,
+        "longitude": 119.582193,
+        "bounds": {
+          "minLatitude": 23.556643,
+          "maxLatitude": 23.558039,
+          "minLongitude": 119.581365,
+          "maxLongitude": 119.58302
+        },
+        "topSchools": [
+          {
+            "id": "164604",
+            "name": "縣立中山國小",
+            "townshipName": "馬公市",
+            "students": 164,
+            "status": "正常"
+          },
+          {
+            "id": "164612",
+            "name": "縣立虎井國小",
+            "townshipName": "馬公市",
+            "students": 0,
+            "status": "待確認"
           }
         ]
       },
@@ -1048,6 +1124,30 @@
         ]
       },
       {
+        "id": "6-wsjn9v",
+        "geohash": "wsjn9v",
+        "precision": 6,
+        "count": 1,
+        "totalStudents": 0,
+        "latitude": 23.671324,
+        "longitude": 119.612259,
+        "bounds": {
+          "minLatitude": 23.671324,
+          "maxLatitude": 23.671324,
+          "minLongitude": 119.612259,
+          "maxLongitude": 119.612259
+        },
+        "topSchools": [
+          {
+            "id": "164506",
+            "name": "縣立鎮海國中",
+            "townshipName": "白沙鄉",
+            "students": 0,
+            "status": "待確認"
+          }
+        ]
+      },
+      {
         "id": "6-wshyr8",
         "geohash": "wshyr8",
         "precision": 6,
@@ -1067,30 +1167,6 @@
             "name": "縣立西嶼國中",
             "townshipName": "西嶼鄉",
             "students": 62,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "6-wshyr2",
-        "geohash": "wshyr2",
-        "precision": 6,
-        "count": 1,
-        "totalStudents": 51,
-        "latitude": 23.601904,
-        "longitude": 119.506279,
-        "bounds": {
-          "minLatitude": 23.601904,
-          "maxLatitude": 23.601904,
-          "minLongitude": 119.506279,
-          "maxLongitude": 119.506279
-        },
-        "topSchools": [
-          {
-            "id": "164634",
-            "name": "縣立池東國小",
-            "townshipName": "西嶼鄉",
-            "students": 51,
             "status": "正常"
           }
         ]
@@ -1283,30 +1359,6 @@
             "name": "縣立中正國中",
             "townshipName": "馬公市",
             "students": 266,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "6-wsjn10",
-        "geohash": "wsjn10",
-        "precision": 6,
-        "count": 1,
-        "totalStudents": 164,
-        "latitude": 23.556643,
-        "longitude": 119.58302,
-        "bounds": {
-          "minLatitude": 23.556643,
-          "maxLatitude": 23.556643,
-          "minLongitude": 119.58302,
-          "maxLongitude": 119.58302
-        },
-        "topSchools": [
-          {
-            "id": "164604",
-            "name": "縣立中山國小",
-            "townshipName": "馬公市",
-            "students": 164,
             "status": "正常"
           }
         ]
@@ -1938,6 +1990,30 @@
         ]
       },
       {
+        "id": "7-wsjn9v4",
+        "geohash": "wsjn9v4",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 0,
+        "latitude": 23.671324,
+        "longitude": 119.612259,
+        "bounds": {
+          "minLatitude": 23.671324,
+          "maxLatitude": 23.671324,
+          "minLongitude": 119.612259,
+          "maxLongitude": 119.612259
+        },
+        "topSchools": [
+          {
+            "id": "164506",
+            "name": "縣立鎮海國中",
+            "townshipName": "白沙鄉",
+            "students": 0,
+            "status": "待確認"
+          }
+        ]
+      },
+      {
         "id": "7-wshyr83",
         "geohash": "wshyr83",
         "precision": 7,
@@ -2078,6 +2154,30 @@
             "townshipName": "西嶼鄉",
             "students": 14,
             "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wshyr2n",
+        "geohash": "wshyr2n",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 0,
+        "latitude": 23.598835,
+        "longitude": 119.506771,
+        "bounds": {
+          "minLatitude": 23.598835,
+          "maxLatitude": 23.598835,
+          "minLongitude": 119.506771,
+          "maxLongitude": 119.506771
+        },
+        "topSchools": [
+          {
+            "id": "164631",
+            "name": "縣立竹灣國小",
+            "townshipName": "西嶼鄉",
+            "students": 0,
+            "status": "待確認"
           }
         ]
       },
@@ -2558,6 +2658,30 @@
             "townshipName": "馬公市",
             "students": 28,
             "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsjn10s",
+        "geohash": "wsjn10s",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 0,
+        "latitude": 23.558039,
+        "longitude": 119.581365,
+        "bounds": {
+          "minLatitude": 23.558039,
+          "maxLatitude": 23.558039,
+          "minLongitude": 119.581365,
+          "maxLongitude": 119.581365
+        },
+        "topSchools": [
+          {
+            "id": "164612",
+            "name": "縣立虎井國小",
+            "townshipName": "馬公市",
+            "students": 0,
+            "status": "待確認"
           }
         ]
       },

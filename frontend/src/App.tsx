@@ -71,6 +71,7 @@ function App() {
   const educationData = useEducationData(selectedCountyId)
   const {
     summaryDataset, countyBoundaries, loadError, countyDetailError,
+    countySchoolAtlasCache, countySchoolAtlasError,
     prefetchCounty, refreshData, isRefreshingData, refreshStatus,
   } = educationData
 
@@ -274,6 +275,7 @@ function App() {
           copyFeedbackMessage={copyFeedback.message}
           scenarioFeedbackMessage={scenarioFeedback.message}
           countyDetailError={countyDetailError}
+          countySchoolAtlasError={countySchoolAtlasError}
           selectedCountyId={selectedCountyId}
           selectedTownshipId={selectedTownshipId}
           schoolWorkbenchView={schoolWorkbenchView}
@@ -291,6 +293,7 @@ function App() {
           handlePrefetchCounty={handlePrefetchCounty}
           handleSchoolSelect={handleSchoolSelect}
           setHoveredSchoolId={setHoveredSchoolId}
+          countySchoolAtlasCache={countySchoolAtlasCache}
           isRefreshingData={isRefreshingData}
           refreshStatus={refreshStatus}
           refreshData={refreshData}

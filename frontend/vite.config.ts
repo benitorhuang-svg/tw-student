@@ -63,7 +63,7 @@ export default defineConfig({
         ],
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,svg,png,json,topo.json,ico,txt,woff2}'],
+        globPatterns: ['**/*.{js,css,html,svg,png,ico,txt,woff2}'],
         navigateFallback: 'index.html',
         navigateFallbackDenylist: [/\/data\//, /\.json$/],
         maximumFileSizeToCacheInBytes: 7 * 1024 * 1024,

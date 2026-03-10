@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-09T18:20:24.775Z",
+  "generatedAt": "2026-03-10T12:31:52.815Z",
   "county": {
     "id": "屏東縣",
     "name": "屏東縣",
@@ -12,10 +12,10 @@
         "id": "5-wsj8v",
         "geohash": "wsj8v",
         "precision": 5,
-        "count": 13,
+        "count": 14,
         "totalStudents": 7712,
-        "latitude": 22.661204,
-        "longitude": 120.482781,
+        "latitude": 22.662026,
+        "longitude": 120.483586,
         "bounds": {
           "minLatitude": 22.638053,
           "maxLatitude": 22.674694,
@@ -57,10 +57,10 @@
         "id": "5-wsj8y",
         "geohash": "wsj8y",
         "precision": 5,
-        "count": 10,
+        "count": 12,
         "totalStudents": 13944,
-        "latitude": 22.662431,
-        "longitude": 120.511095,
+        "latitude": 22.664428,
+        "longitude": 120.509598,
         "bounds": {
           "minLatitude": 22.641406,
           "maxLatitude": 22.674512,
@@ -79,7 +79,7 @@
             "id": "131307",
             "name": "財團法人屏榮高中",
             "townshipName": "屏東市",
-            "students": 1801,
+            "students": 1709,
             "status": "正常"
           },
           {
@@ -102,10 +102,10 @@
         "id": "5-wsj9j",
         "geohash": "wsj9j",
         "precision": 5,
-        "count": 9,
+        "count": 10,
         "totalStudents": 8826,
-        "latitude": 22.686694,
-        "longitude": 120.487868,
+        "latitude": 22.685827,
+        "longitude": 120.486709,
         "bounds": {
           "minLatitude": 22.676618,
           "maxLatitude": 22.717798,
@@ -135,10 +135,10 @@
             "status": "正常"
           },
           {
-            "id": "134304",
-            "name": "縣立大同高中",
+            "id": "134774",
+            "name": "縣立崇蘭國小",
             "townshipName": "屏東市",
-            "students": 1219,
+            "students": 989,
             "status": "正常"
           }
         ]
@@ -147,10 +147,10 @@
         "id": "5-wevxv",
         "geohash": "wevxv",
         "precision": 5,
-        "count": 9,
+        "count": 10,
         "totalStudents": 5943,
-        "latitude": 22.472151,
-        "longitude": 120.467178,
+        "latitude": 22.471459,
+        "longitude": 120.466004,
         "bounds": {
           "minLatitude": 22.456819,
           "maxLatitude": 22.48784,
@@ -166,10 +166,10 @@
             "status": "正常"
           },
           {
-            "id": "134324",
-            "name": "縣立東港高中",
+            "id": "134324:國中",
+            "name": "縣立東港高中附設國中部",
             "townshipName": "東港鎮",
-            "students": 1612,
+            "students": 1010,
             "status": "正常"
           },
           {
@@ -180,10 +180,55 @@
             "status": "正常"
           },
           {
-            "id": "134779",
-            "name": "縣立東興國小",
+            "id": "134324",
+            "name": "縣立東港高中",
             "townshipName": "東港鎮",
-            "students": 494,
+            "students": 602,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "5-wsj9r",
+        "geohash": "wsj9r",
+        "precision": 5,
+        "count": 10,
+        "totalStudents": 5700,
+        "latitude": 22.740688,
+        "longitude": 120.55639,
+        "bounds": {
+          "minLatitude": 22.726824,
+          "maxLatitude": 22.75935,
+          "minLongitude": 120.542721,
+          "maxLongitude": 120.582684
+        },
+        "topSchools": [
+          {
+            "id": "1043",
+            "name": "大仁科技大學",
+            "townshipName": "鹽埔鄉",
+            "students": 3809,
+            "status": "正常"
+          },
+          {
+            "id": "130322",
+            "name": "國立屏北高中",
+            "townshipName": "鹽埔鄉",
+            "students": 665,
+            "status": "正常"
+          },
+          {
+            "id": "134634",
+            "name": "縣立新圍國小",
+            "townshipName": "鹽埔鄉",
+            "students": 380,
+            "status": "正常"
+          },
+          {
+            "id": "134511",
+            "name": "縣立鹽埔國中",
+            "townshipName": "鹽埔鄉",
+            "students": 297,
             "status": "正常"
           }
         ]
@@ -234,51 +279,6 @@
         ]
       },
       {
-        "id": "5-wsj9r",
-        "geohash": "wsj9r",
-        "precision": 5,
-        "count": 8,
-        "totalStudents": 5700,
-        "latitude": 22.744034,
-        "longitude": 120.559525,
-        "bounds": {
-          "minLatitude": 22.726824,
-          "maxLatitude": 22.75935,
-          "minLongitude": 120.542721,
-          "maxLongitude": 120.582684
-        },
-        "topSchools": [
-          {
-            "id": "1043",
-            "name": "大仁科技大學",
-            "townshipName": "鹽埔鄉",
-            "students": 3809,
-            "status": "正常"
-          },
-          {
-            "id": "130322",
-            "name": "國立屏北高中",
-            "townshipName": "鹽埔鄉",
-            "students": 665,
-            "status": "正常"
-          },
-          {
-            "id": "134634",
-            "name": "縣立新圍國小",
-            "townshipName": "鹽埔鄉",
-            "students": 380,
-            "status": "正常"
-          },
-          {
-            "id": "134511",
-            "name": "縣立鹽埔國中",
-            "townshipName": "鹽埔鄉",
-            "students": 297,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "5-wsj8m",
         "geohash": "wsj8m",
         "precision": 5,
@@ -319,6 +319,96 @@
             "name": "縣立萬新國中",
             "townshipName": "萬丹鄉",
             "students": 282,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "5-wsj8x",
+        "geohash": "wsj8x",
+        "precision": 5,
+        "count": 6,
+        "totalStudents": 6939,
+        "latitude": 22.607101,
+        "longitude": 120.5631,
+        "bounds": {
+          "minLatitude": 22.601107,
+          "maxLatitude": 22.615954,
+          "minLongitude": 120.559172,
+          "maxLongitude": 120.570544
+        },
+        "topSchools": [
+          {
+            "id": "1064",
+            "name": "美和科技大學",
+            "townshipName": "內埔鄉",
+            "students": 4460,
+            "status": "正常"
+          },
+          {
+            "id": "131311:國中",
+            "name": "私立美和高中附設國中部",
+            "townshipName": "內埔鄉",
+            "students": 673,
+            "status": "正常"
+          },
+          {
+            "id": "134662",
+            "name": "縣立內埔國小",
+            "townshipName": "內埔鄉",
+            "students": 522,
+            "status": "正常"
+          },
+          {
+            "id": "131311",
+            "name": "私立美和高中",
+            "townshipName": "內埔鄉",
+            "students": 484,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "5-wevxx",
+        "geohash": "wevxx",
+        "precision": 5,
+        "count": 6,
+        "totalStudents": 1214,
+        "latitude": 22.42702,
+        "longitude": 120.560071,
+        "bounds": {
+          "minLatitude": 22.413645,
+          "maxLatitude": 22.446162,
+          "minLongitude": 120.551584,
+          "maxLongitude": 120.566753
+        },
+        "topSchools": [
+          {
+            "id": "130404",
+            "name": "國立佳冬高農",
+            "townshipName": "佳冬鄉",
+            "students": 641,
+            "status": "正常"
+          },
+          {
+            "id": "134711",
+            "name": "縣立佳冬國小",
+            "townshipName": "佳冬鄉",
+            "students": 265,
+            "status": "正常"
+          },
+          {
+            "id": "134716",
+            "name": "縣立玉光國小",
+            "townshipName": "佳冬鄉",
+            "students": 134,
+            "status": "正常"
+          },
+          {
+            "id": "134527",
+            "name": "縣立佳冬國中",
+            "townshipName": "佳冬鄉",
+            "students": 130,
             "status": "正常"
           }
         ]
@@ -459,51 +549,6 @@
         ]
       },
       {
-        "id": "5-wsj8x",
-        "geohash": "wsj8x",
-        "precision": 5,
-        "count": 5,
-        "totalStudents": 6939,
-        "latitude": 22.6083,
-        "longitude": 120.563886,
-        "bounds": {
-          "minLatitude": 22.601107,
-          "maxLatitude": 22.615954,
-          "minLongitude": 120.559172,
-          "maxLongitude": 120.570544
-        },
-        "topSchools": [
-          {
-            "id": "1064",
-            "name": "美和科技大學",
-            "townshipName": "內埔鄉",
-            "students": 4460,
-            "status": "正常"
-          },
-          {
-            "id": "131311",
-            "name": "私立美和高中",
-            "townshipName": "內埔鄉",
-            "students": 1157,
-            "status": "正常"
-          },
-          {
-            "id": "134662",
-            "name": "縣立內埔國小",
-            "townshipName": "內埔鄉",
-            "students": 522,
-            "status": "正常"
-          },
-          {
-            "id": "134776",
-            "name": "縣立東寧國小",
-            "townshipName": "內埔鄉",
-            "students": 479,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "5-wsj9t",
         "geohash": "wsj9t",
         "precision": 5,
@@ -544,51 +589,6 @@
             "name": "縣立土庫國小",
             "townshipName": "里港鄉",
             "students": 77,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "5-wevxx",
-        "geohash": "wevxx",
-        "precision": 5,
-        "count": 5,
-        "totalStudents": 1214,
-        "latitude": 22.427464,
-        "longitude": 120.561769,
-        "bounds": {
-          "minLatitude": 22.413645,
-          "maxLatitude": 22.446162,
-          "minLongitude": 120.552149,
-          "maxLongitude": 120.566753
-        },
-        "topSchools": [
-          {
-            "id": "130404",
-            "name": "國立佳冬高農",
-            "townshipName": "佳冬鄉",
-            "students": 641,
-            "status": "正常"
-          },
-          {
-            "id": "134711",
-            "name": "縣立佳冬國小",
-            "townshipName": "佳冬鄉",
-            "students": 265,
-            "status": "正常"
-          },
-          {
-            "id": "134716",
-            "name": "縣立玉光國小",
-            "townshipName": "佳冬鄉",
-            "students": 134,
-            "status": "正常"
-          },
-          {
-            "id": "134527",
-            "name": "縣立佳冬國中",
-            "townshipName": "佳冬鄉",
-            "students": 130,
             "status": "正常"
           }
         ]
@@ -679,6 +679,51 @@
             "name": "縣立同安國小",
             "townshipName": "南州鄉",
             "students": 69,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "5-wsj9p",
+        "geohash": "wsj9p",
+        "precision": 5,
+        "count": 5,
+        "totalStudents": 553,
+        "latitude": 22.688261,
+        "longitude": 120.55139,
+        "bounds": {
+          "minLatitude": 22.681928,
+          "maxLatitude": 22.702305,
+          "minLongitude": 120.544334,
+          "maxLongitude": 120.572181
+        },
+        "topSchools": [
+          {
+            "id": "134629",
+            "name": "縣立繁華國小",
+            "townshipName": "長治鄉",
+            "students": 275,
+            "status": "正常"
+          },
+          {
+            "id": "134507",
+            "name": "縣立長治國中",
+            "townshipName": "長治鄉",
+            "students": 219,
+            "status": "正常"
+          },
+          {
+            "id": "131601",
+            "name": "私立崇華國小",
+            "townshipName": "長治鄉",
+            "students": 50,
+            "status": "正常"
+          },
+          {
+            "id": "131302:國中",
+            "name": "私立崇華國中附設國中",
+            "townshipName": "長治鄉",
+            "students": 6,
             "status": "正常"
           }
         ]
@@ -864,6 +909,51 @@
         ]
       },
       {
+        "id": "5-wsjb0",
+        "geohash": "wsjb0",
+        "precision": 5,
+        "count": 4,
+        "totalStudents": 440,
+        "latitude": 22.521788,
+        "longitude": 120.618542,
+        "bounds": {
+          "minLatitude": 22.507699,
+          "maxLatitude": 22.528254,
+          "minLongitude": 120.587959,
+          "maxLongitude": 120.62936
+        },
+        "topSchools": [
+          {
+            "id": "134334:國中",
+            "name": "縣立來義中學附設國中部",
+            "townshipName": "來義鄉",
+            "students": 204,
+            "status": "正常"
+          },
+          {
+            "id": "134334",
+            "name": "縣立來義高中",
+            "townshipName": "來義鄉",
+            "students": 136,
+            "status": "正常"
+          },
+          {
+            "id": "134758",
+            "name": "縣立古樓國小",
+            "townshipName": "來義鄉",
+            "students": 59,
+            "status": "正常"
+          },
+          {
+            "id": "134679",
+            "name": "縣立萬隆國小",
+            "townshipName": "新埤鄉",
+            "students": 41,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "5-wevxu",
         "geohash": "wevxu",
         "precision": 5,
@@ -954,46 +1044,46 @@
         ]
       },
       {
-        "id": "5-wsj9p",
-        "geohash": "wsj9p",
+        "id": "5-wevz2",
+        "geohash": "wevz2",
         "precision": 5,
         "count": 4,
-        "totalStudents": 553,
-        "latitude": 22.689833,
-        "longitude": 120.552533,
+        "totalStudents": 1279,
+        "latitude": 22.374739,
+        "longitude": 120.602455,
         "bounds": {
-          "minLatitude": 22.681928,
-          "maxLatitude": 22.702305,
-          "minLongitude": 120.544334,
-          "maxLongitude": 120.572181
+          "minLatitude": 22.37029,
+          "maxLatitude": 22.386497,
+          "minLongitude": 120.590665,
+          "maxLongitude": 120.627012
         },
         "topSchools": [
           {
-            "id": "134629",
-            "name": "縣立繁華國小",
-            "townshipName": "長治鄉",
-            "students": 275,
+            "id": "134321:國中",
+            "name": "縣立枋寮高中附設國中部",
+            "townshipName": "枋寮鄉",
+            "students": 496,
             "status": "正常"
           },
           {
-            "id": "134507",
-            "name": "縣立長治國中",
-            "townshipName": "長治鄉",
-            "students": 219,
+            "id": "134683",
+            "name": "縣立建興國小",
+            "townshipName": "枋寮鄉",
+            "students": 439,
             "status": "正常"
           },
           {
-            "id": "131601",
-            "name": "私立崇華國小",
-            "townshipName": "長治鄉",
-            "students": 50,
+            "id": "134321",
+            "name": "縣立枋寮高中",
+            "townshipName": "枋寮鄉",
+            "students": 250,
             "status": "正常"
           },
           {
-            "id": "131302",
-            "name": "屏東縣崇華高中",
-            "townshipName": "長治鄉",
-            "students": 9,
+            "id": "134759",
+            "name": "縣立春日國小",
+            "townshipName": "春日鄉",
+            "students": 94,
             "status": "正常"
           }
         ]
@@ -1085,6 +1175,51 @@
             "townshipName": "琉球鄉",
             "students": 82,
             "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "5-wsjc8",
+        "geohash": "wsjc8",
+        "precision": 5,
+        "count": 4,
+        "totalStudents": 233,
+        "latitude": 22.795531,
+        "longitude": 120.607712,
+        "bounds": {
+          "minLatitude": 22.78771,
+          "maxLatitude": 22.801706,
+          "minLongitude": 120.60264,
+          "maxLongitude": 120.614279
+        },
+        "topSchools": [
+          {
+            "id": "134513",
+            "name": "縣立高泰國中",
+            "townshipName": "高樹鄉",
+            "students": 159,
+            "status": "正常"
+          },
+          {
+            "id": "134642",
+            "name": "縣立泰山國小",
+            "townshipName": "高樹鄉",
+            "students": 74,
+            "status": "正常"
+          },
+          {
+            "id": "134638",
+            "name": "縣立舊寮國小",
+            "townshipName": "高樹鄉",
+            "students": 0,
+            "status": "待確認"
+          },
+          {
+            "id": "134543",
+            "name": "縣立大路關國中(小)",
+            "townshipName": "高樹鄉",
+            "students": 0,
+            "status": "待確認"
           }
         ]
       },
@@ -1203,40 +1338,40 @@
         ]
       },
       {
-        "id": "5-wsjb0",
-        "geohash": "wsjb0",
+        "id": "5-wsj8z",
+        "geohash": "wsj8z",
         "precision": 5,
         "count": 3,
-        "totalStudents": 440,
-        "latitude": 22.520517,
-        "longitude": 120.614936,
+        "totalStudents": 145,
+        "latitude": 22.646871,
+        "longitude": 120.573519,
         "bounds": {
-          "minLatitude": 22.507699,
-          "maxLatitude": 22.528254,
-          "minLongitude": 120.587959,
-          "maxLongitude": 120.62936
+          "minLatitude": 22.637131,
+          "maxLatitude": 22.660814,
+          "minLongitude": 120.564626,
+          "maxLongitude": 120.581718
         },
         "topSchools": [
           {
-            "id": "134334",
-            "name": "縣立來義高中",
-            "townshipName": "來義鄉",
-            "students": 340,
+            "id": "134671",
+            "name": "縣立東勢國小",
+            "townshipName": "內埔鄉",
+            "students": 88,
             "status": "正常"
           },
           {
-            "id": "134758",
-            "name": "縣立古樓國小",
-            "townshipName": "來義鄉",
-            "students": 59,
+            "id": "134667",
+            "name": "縣立榮華國小",
+            "townshipName": "內埔鄉",
+            "students": 57,
             "status": "正常"
           },
           {
-            "id": "134679",
-            "name": "縣立萬隆國小",
-            "townshipName": "新埤鄉",
-            "students": 41,
-            "status": "正常"
+            "id": "134664",
+            "name": "縣立僑智國小",
+            "townshipName": "內埔鄉",
+            "students": 0,
+            "status": "待確認"
           }
         ]
       },
@@ -1274,44 +1409,6 @@
             "name": "縣立文樂國小",
             "townshipName": "來義鄉",
             "students": 55,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "5-wevz2",
-        "geohash": "wevz2",
-        "precision": 5,
-        "count": 3,
-        "totalStudents": 1279,
-        "latitude": 22.375957,
-        "longitude": 120.606386,
-        "bounds": {
-          "minLatitude": 22.37029,
-          "maxLatitude": 22.386497,
-          "minLongitude": 120.590665,
-          "maxLongitude": 120.627012
-        },
-        "topSchools": [
-          {
-            "id": "134321",
-            "name": "縣立枋寮高中",
-            "townshipName": "枋寮鄉",
-            "students": 746,
-            "status": "正常"
-          },
-          {
-            "id": "134683",
-            "name": "縣立建興國小",
-            "townshipName": "枋寮鄉",
-            "students": 439,
-            "status": "正常"
-          },
-          {
-            "id": "134759",
-            "name": "縣立春日國小",
-            "townshipName": "春日鄉",
-            "students": 94,
             "status": "正常"
           }
         ]
@@ -1412,37 +1509,6 @@
             "name": "縣立青葉國小",
             "townshipName": "三地門鄉",
             "students": 37,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "5-wsj8z",
-        "geohash": "wsj8z",
-        "precision": 5,
-        "count": 2,
-        "totalStudents": 145,
-        "latitude": 22.648972,
-        "longitude": 120.56942,
-        "bounds": {
-          "minLatitude": 22.637131,
-          "maxLatitude": 22.660814,
-          "minLongitude": 120.564626,
-          "maxLongitude": 120.574214
-        },
-        "topSchools": [
-          {
-            "id": "134671",
-            "name": "縣立東勢國小",
-            "townshipName": "內埔鄉",
-            "students": 88,
-            "status": "正常"
-          },
-          {
-            "id": "134667",
-            "name": "縣立榮華國小",
-            "townshipName": "內埔鄉",
-            "students": 57,
             "status": "正常"
           }
         ]
@@ -1660,37 +1726,6 @@
             "name": "縣立高樹國中",
             "townshipName": "高樹鄉",
             "students": 195,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "5-wsjc8",
-        "geohash": "wsjc8",
-        "precision": 5,
-        "count": 2,
-        "totalStudents": 233,
-        "latitude": 22.789357,
-        "longitude": 120.612783,
-        "bounds": {
-          "minLatitude": 22.78771,
-          "maxLatitude": 22.791003,
-          "minLongitude": 120.611287,
-          "maxLongitude": 120.614279
-        },
-        "topSchools": [
-          {
-            "id": "134513",
-            "name": "縣立高泰國中",
-            "townshipName": "高樹鄉",
-            "students": 159,
-            "status": "正常"
-          },
-          {
-            "id": "134642",
-            "name": "縣立泰山國小",
-            "townshipName": "高樹鄉",
-            "students": 74,
             "status": "正常"
           }
         ]
@@ -2487,6 +2522,255 @@
     ],
     "6": [
       {
+        "id": "6-wsj8yp",
+        "geohash": "wsj8yp",
+        "precision": 6,
+        "count": 4,
+        "totalStudents": 2052,
+        "latitude": 22.674414,
+        "longitude": 120.502112,
+        "bounds": {
+          "minLatitude": 22.674317,
+          "maxLatitude": 22.674512,
+          "minLongitude": 120.500506,
+          "maxLongitude": 120.503718
+        },
+        "topSchools": [
+          {
+            "id": "131307",
+            "name": "財團法人屏榮高中",
+            "townshipName": "屏東市",
+            "students": 1709,
+            "status": "正常"
+          },
+          {
+            "id": "131308:國中",
+            "name": "私立陸興高中附設國中部",
+            "townshipName": "屏東市",
+            "students": 142,
+            "status": "正常"
+          },
+          {
+            "id": "131308",
+            "name": "私立陸興高中",
+            "townshipName": "屏東市",
+            "students": 109,
+            "status": "正常"
+          },
+          {
+            "id": "131307:國中",
+            "name": "私立屏榮高中附設國中",
+            "townshipName": "屏東市",
+            "students": 92,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsj8vz",
+        "geohash": "wsj8vz",
+        "precision": 6,
+        "count": 4,
+        "totalStudents": 2717,
+        "latitude": 22.672925,
+        "longitude": 120.493106,
+        "bounds": {
+          "minLatitude": 22.670526,
+          "maxLatitude": 22.674694,
+          "minLongitude": 120.48836,
+          "maxLongitude": 120.495833
+        },
+        "topSchools": [
+          {
+            "id": "130302",
+            "name": "國立屏東女中",
+            "townshipName": "屏東市",
+            "students": 1568,
+            "status": "正常"
+          },
+          {
+            "id": "134601",
+            "name": "縣立中正國小",
+            "townshipName": "屏東市",
+            "students": 784,
+            "status": "正常"
+          },
+          {
+            "id": "134612",
+            "name": "縣立民和國小",
+            "townshipName": "屏東市",
+            "students": 365,
+            "status": "正常"
+          },
+          {
+            "id": "134607",
+            "name": "縣立凌雲國小",
+            "townshipName": "屏東市",
+            "students": 0,
+            "status": "待確認"
+          }
+        ]
+      },
+      {
+        "id": "6-wsj9r1",
+        "geohash": "wsj9r1",
+        "precision": 6,
+        "count": 4,
+        "totalStudents": 4030,
+        "latitude": 22.727184,
+        "longitude": 120.543567,
+        "bounds": {
+          "minLatitude": 22.726824,
+          "maxLatitude": 22.727304,
+          "minLongitude": 120.542721,
+          "maxLongitude": 120.543849
+        },
+        "topSchools": [
+          {
+            "id": "1043",
+            "name": "大仁科技大學",
+            "townshipName": "鹽埔鄉",
+            "students": 3809,
+            "status": "正常"
+          },
+          {
+            "id": "130307:國小",
+            "name": "國立屏科實驗高中附設國小部",
+            "townshipName": "屏東市",
+            "students": 92,
+            "status": "正常"
+          },
+          {
+            "id": "130307",
+            "name": "國立屏科實驗高中",
+            "townshipName": "鹽埔鄉",
+            "students": 90,
+            "status": "正常"
+          },
+          {
+            "id": "130307:國中",
+            "name": "國立屏科實驗高中附設國中部",
+            "townshipName": "鹽埔鄉",
+            "students": 39,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsj8x6",
+        "geohash": "wsj8x6",
+        "precision": 6,
+        "count": 3,
+        "totalStudents": 5617,
+        "latitude": 22.601863,
+        "longitude": 120.559563,
+        "bounds": {
+          "minLatitude": 22.601107,
+          "maxLatitude": 22.603376,
+          "minLongitude": 120.559172,
+          "maxLongitude": 120.560344
+        },
+        "topSchools": [
+          {
+            "id": "1064",
+            "name": "美和科技大學",
+            "townshipName": "內埔鄉",
+            "students": 4460,
+            "status": "正常"
+          },
+          {
+            "id": "131311:國中",
+            "name": "私立美和高中附設國中部",
+            "townshipName": "內埔鄉",
+            "students": 673,
+            "status": "正常"
+          },
+          {
+            "id": "131311",
+            "name": "私立美和高中",
+            "townshipName": "內埔鄉",
+            "students": 484,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wevxv1",
+        "geohash": "wevxv1",
+        "precision": 6,
+        "count": 3,
+        "totalStudents": 1791,
+        "latitude": 22.464291,
+        "longitude": 120.457373,
+        "bounds": {
+          "minLatitude": 22.46241,
+          "maxLatitude": 22.465231,
+          "minLongitude": 120.455438,
+          "maxLongitude": 120.461243
+        },
+        "topSchools": [
+          {
+            "id": "134324:國中",
+            "name": "縣立東港高中附設國中部",
+            "townshipName": "東港鎮",
+            "students": 1010,
+            "status": "正常"
+          },
+          {
+            "id": "134324",
+            "name": "縣立東港高中",
+            "townshipName": "東港鎮",
+            "students": 602,
+            "status": "正常"
+          },
+          {
+            "id": "134689",
+            "name": "縣立以栗國小",
+            "townshipName": "東港鎮",
+            "students": 179,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsj9p1",
+        "geohash": "wsj9p1",
+        "precision": 6,
+        "count": 3,
+        "totalStudents": 59,
+        "latitude": 22.681955,
+        "longitude": 120.546812,
+        "bounds": {
+          "minLatitude": 22.681928,
+          "maxLatitude": 22.681969,
+          "minLongitude": 120.546795,
+          "maxLongitude": 120.54682
+        },
+        "topSchools": [
+          {
+            "id": "131601",
+            "name": "私立崇華國小",
+            "townshipName": "長治鄉",
+            "students": 50,
+            "status": "正常"
+          },
+          {
+            "id": "131302:國中",
+            "name": "私立崇華國中附設國中",
+            "townshipName": "長治鄉",
+            "students": 6,
+            "status": "正常"
+          },
+          {
+            "id": "131302",
+            "name": "屏東縣崇華高中",
+            "townshipName": "長治鄉",
+            "students": 3,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "6-wsj8vt",
         "geohash": "wsj8vt",
         "precision": 6,
@@ -2525,70 +2809,39 @@
         ]
       },
       {
-        "id": "6-wsj8vz",
-        "geohash": "wsj8vz",
+        "id": "6-wsj9j8",
+        "geohash": "wsj9j8",
         "precision": 6,
         "count": 3,
-        "totalStudents": 2717,
-        "latitude": 22.672994,
-        "longitude": 120.492791,
+        "totalStudents": 1835,
+        "latitude": 22.679093,
+        "longitude": 120.479397,
         "bounds": {
-          "minLatitude": 22.670526,
-          "maxLatitude": 22.674694,
-          "minLongitude": 120.48836,
-          "maxLongitude": 120.495833
+          "minLatitude": 22.678023,
+          "maxLatitude": 22.681232,
+          "minLongitude": 120.476273,
+          "maxLongitude": 120.485644
         },
         "topSchools": [
           {
-            "id": "130302",
-            "name": "國立屏東女中",
+            "id": "134304:國中",
+            "name": "縣立大同高中附設國中部",
             "townshipName": "屏東市",
-            "students": 1568,
+            "students": 679,
             "status": "正常"
           },
           {
-            "id": "134601",
-            "name": "縣立中正國小",
+            "id": "134608",
+            "name": "縣立勝利國小",
             "townshipName": "屏東市",
-            "students": 784,
+            "students": 616,
             "status": "正常"
           },
           {
-            "id": "134612",
-            "name": "縣立民和國小",
+            "id": "134304",
+            "name": "縣立大同高中",
             "townshipName": "屏東市",
-            "students": 365,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "6-wsj8x6",
-        "geohash": "wsj8x6",
-        "precision": 6,
-        "count": 2,
-        "totalStudents": 5617,
-        "latitude": 22.602241,
-        "longitude": 120.559758,
-        "bounds": {
-          "minLatitude": 22.601107,
-          "maxLatitude": 22.603376,
-          "minLongitude": 120.559172,
-          "maxLongitude": 120.560344
-        },
-        "topSchools": [
-          {
-            "id": "1064",
-            "name": "美和科技大學",
-            "townshipName": "內埔鄉",
-            "students": 4460,
-            "status": "正常"
-          },
-          {
-            "id": "131311",
-            "name": "私立美和高中",
-            "townshipName": "內埔鄉",
-            "students": 1157,
+            "students": 540,
             "status": "正常"
           }
         ]
@@ -2687,32 +2940,32 @@
         ]
       },
       {
-        "id": "6-wevxv1",
-        "geohash": "wevxv1",
+        "id": "6-wsjb0u",
+        "geohash": "wsjb0u",
         "precision": 6,
         "count": 2,
-        "totalStudents": 1791,
-        "latitude": 22.46382,
-        "longitude": 120.45834,
+        "totalStudents": 340,
+        "latitude": 22.525599,
+        "longitude": 120.62936,
         "bounds": {
-          "minLatitude": 22.46241,
-          "maxLatitude": 22.465231,
-          "minLongitude": 120.455438,
-          "maxLongitude": 120.461243
+          "minLatitude": 22.525599,
+          "maxLatitude": 22.525599,
+          "minLongitude": 120.62936,
+          "maxLongitude": 120.62936
         },
         "topSchools": [
           {
-            "id": "134324",
-            "name": "縣立東港高中",
-            "townshipName": "東港鎮",
-            "students": 1612,
+            "id": "134334:國中",
+            "name": "縣立來義中學附設國中部",
+            "townshipName": "來義鄉",
+            "students": 204,
             "status": "正常"
           },
           {
-            "id": "134689",
-            "name": "縣立以栗國小",
-            "townshipName": "東港鎮",
-            "students": 179,
+            "id": "134334",
+            "name": "縣立來義高中",
+            "townshipName": "來義鄉",
+            "students": 136,
             "status": "正常"
           }
         ]
@@ -2780,6 +3033,37 @@
         ]
       },
       {
+        "id": "6-wevz20",
+        "geohash": "wevz20",
+        "precision": 6,
+        "count": 2,
+        "totalStudents": 746,
+        "latitude": 22.371085,
+        "longitude": 120.590665,
+        "bounds": {
+          "minLatitude": 22.371085,
+          "maxLatitude": 22.371085,
+          "minLongitude": 120.590665,
+          "maxLongitude": 120.590665
+        },
+        "topSchools": [
+          {
+            "id": "134321:國中",
+            "name": "縣立枋寮高中附設國中部",
+            "townshipName": "枋寮鄉",
+            "students": 496,
+            "status": "正常"
+          },
+          {
+            "id": "134321",
+            "name": "縣立枋寮高中",
+            "townshipName": "枋寮鄉",
+            "students": 250,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "6-wevxw7",
         "geohash": "wevxw7",
         "precision": 6,
@@ -2811,37 +3095,6 @@
         ]
       },
       {
-        "id": "6-wsj9p1",
-        "geohash": "wsj9p1",
-        "precision": 6,
-        "count": 2,
-        "totalStudents": 59,
-        "latitude": 22.681948,
-        "longitude": 120.546807,
-        "bounds": {
-          "minLatitude": 22.681928,
-          "maxLatitude": 22.681969,
-          "minLongitude": 120.546795,
-          "maxLongitude": 120.54682
-        },
-        "topSchools": [
-          {
-            "id": "131601",
-            "name": "私立崇華國小",
-            "townshipName": "長治鄉",
-            "students": 50,
-            "status": "正常"
-          },
-          {
-            "id": "131302",
-            "name": "屏東縣崇華高中",
-            "townshipName": "長治鄉",
-            "students": 9,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "6-wevxyj",
         "geohash": "wevxyj",
         "precision": 6,
@@ -2868,37 +3121,6 @@
             "name": "縣立南州國小",
             "townshipName": "南州鄉",
             "students": 95,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "6-wsj8yp",
-        "geohash": "wsj8yp",
-        "precision": 6,
-        "count": 2,
-        "totalStudents": 2052,
-        "latitude": 22.674414,
-        "longitude": 120.502112,
-        "bounds": {
-          "minLatitude": 22.674317,
-          "maxLatitude": 22.674512,
-          "minLongitude": 120.500506,
-          "maxLongitude": 120.503718
-        },
-        "topSchools": [
-          {
-            "id": "131307",
-            "name": "財團法人屏榮高中",
-            "townshipName": "屏東市",
-            "students": 1801,
-            "status": "正常"
-          },
-          {
-            "id": "131308",
-            "name": "私立陸興高中",
-            "townshipName": "屏東市",
-            "students": 251,
             "status": "正常"
           }
         ]
@@ -2961,37 +3183,6 @@
             "name": "縣立信義國小",
             "townshipName": "屏東市",
             "students": 696,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "6-wsj9j8",
-        "geohash": "wsj9j8",
-        "precision": 6,
-        "count": 2,
-        "totalStudents": 1835,
-        "latitude": 22.679628,
-        "longitude": 120.480958,
-        "bounds": {
-          "minLatitude": 22.678023,
-          "maxLatitude": 22.681232,
-          "minLongitude": 120.476273,
-          "maxLongitude": 120.485644
-        },
-        "topSchools": [
-          {
-            "id": "134304",
-            "name": "縣立大同高中",
-            "townshipName": "屏東市",
-            "students": 1219,
-            "status": "正常"
-          },
-          {
-            "id": "134608",
-            "name": "縣立勝利國小",
-            "townshipName": "屏東市",
-            "students": 616,
             "status": "正常"
           }
         ]
@@ -3183,6 +3374,37 @@
         ]
       },
       {
+        "id": "6-wsjc8q",
+        "geohash": "wsjc8q",
+        "precision": 6,
+        "count": 2,
+        "totalStudents": 0,
+        "latitude": 22.801706,
+        "longitude": 120.60264,
+        "bounds": {
+          "minLatitude": 22.801706,
+          "maxLatitude": 22.801706,
+          "minLongitude": 120.60264,
+          "maxLongitude": 120.60264
+        },
+        "topSchools": [
+          {
+            "id": "134638",
+            "name": "縣立舊寮國小",
+            "townshipName": "高樹鄉",
+            "students": 0,
+            "status": "待確認"
+          },
+          {
+            "id": "134543",
+            "name": "縣立大路關國中(小)",
+            "townshipName": "高樹鄉",
+            "students": 0,
+            "status": "待確認"
+          }
+        ]
+      },
+      {
         "id": "6-wsj8m0",
         "geohash": "wsj8m0",
         "precision": 6,
@@ -3271,37 +3493,6 @@
             "name": "縣立光華國小",
             "townshipName": "潮州鎮",
             "students": 664,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "6-wsj9r1",
-        "geohash": "wsj9r1",
-        "precision": 6,
-        "count": 2,
-        "totalStudents": 4030,
-        "latitude": 22.727064,
-        "longitude": 120.543285,
-        "bounds": {
-          "minLatitude": 22.726824,
-          "maxLatitude": 22.727304,
-          "minLongitude": 120.542721,
-          "maxLongitude": 120.543849
-        },
-        "topSchools": [
-          {
-            "id": "1043",
-            "name": "大仁科技大學",
-            "townshipName": "鹽埔鄉",
-            "students": 3809,
-            "status": "正常"
-          },
-          {
-            "id": "130307",
-            "name": "國立屏科實驗高中",
-            "townshipName": "鹽埔鄉",
-            "students": 221,
             "status": "正常"
           }
         ]
@@ -3907,6 +4098,30 @@
         ]
       },
       {
+        "id": "6-wsj8zc",
+        "geohash": "wsj8zc",
+        "precision": 6,
+        "count": 1,
+        "totalStudents": 0,
+        "latitude": 22.642669,
+        "longitude": 120.581718,
+        "bounds": {
+          "minLatitude": 22.642669,
+          "maxLatitude": 22.642669,
+          "minLongitude": 120.581718,
+          "maxLongitude": 120.581718
+        },
+        "topSchools": [
+          {
+            "id": "134664",
+            "name": "縣立僑智國小",
+            "townshipName": "內埔鄉",
+            "students": 0,
+            "status": "待確認"
+          }
+        ]
+      },
+      {
         "id": "6-wsj8wt",
         "geohash": "wsj8wt",
         "precision": 6,
@@ -4339,26 +4554,26 @@
         ]
       },
       {
-        "id": "6-wsjb0u",
-        "geohash": "wsjb0u",
+        "id": "6-wevxx4",
+        "geohash": "wevxx4",
         "precision": 6,
         "count": 1,
-        "totalStudents": 340,
-        "latitude": 22.525599,
-        "longitude": 120.62936,
+        "totalStudents": 0,
+        "latitude": 22.424797,
+        "longitude": 120.551584,
         "bounds": {
-          "minLatitude": 22.525599,
-          "maxLatitude": 22.525599,
-          "minLongitude": 120.62936,
-          "maxLongitude": 120.62936
+          "minLatitude": 22.424797,
+          "maxLatitude": 22.424797,
+          "minLongitude": 120.551584,
+          "maxLongitude": 120.551584
         },
         "topSchools": [
           {
-            "id": "134334",
-            "name": "縣立來義高中",
-            "townshipName": "來義鄉",
-            "students": 340,
-            "status": "正常"
+            "id": "134715",
+            "name": "縣立大新國小",
+            "townshipName": "佳冬鄉",
+            "students": 0,
+            "status": "待確認"
           }
         ]
       },
@@ -4646,30 +4861,6 @@
             "name": "縣立獅子國中",
             "townshipName": "枋山鄉",
             "students": 40,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "6-wevz20",
-        "geohash": "wevz20",
-        "precision": 6,
-        "count": 1,
-        "totalStudents": 746,
-        "latitude": 22.371085,
-        "longitude": 120.590665,
-        "bounds": {
-          "minLatitude": 22.371085,
-          "maxLatitude": 22.371085,
-          "minLongitude": 120.590665,
-          "maxLongitude": 120.590665
-        },
-        "topSchools": [
-          {
-            "id": "134321",
-            "name": "縣立枋寮高中",
-            "townshipName": "枋寮鄉",
-            "students": 746,
             "status": "正常"
           }
         ]
@@ -7317,6 +7508,175 @@
     ],
     "7": [
       {
+        "id": "7-wsj9p15",
+        "geohash": "wsj9p15",
+        "precision": 7,
+        "count": 3,
+        "totalStudents": 59,
+        "latitude": 22.681955,
+        "longitude": 120.546812,
+        "bounds": {
+          "minLatitude": 22.681928,
+          "maxLatitude": 22.681969,
+          "minLongitude": 120.546795,
+          "maxLongitude": 120.54682
+        },
+        "topSchools": [
+          {
+            "id": "131601",
+            "name": "私立崇華國小",
+            "townshipName": "長治鄉",
+            "students": 50,
+            "status": "正常"
+          },
+          {
+            "id": "131302:國中",
+            "name": "私立崇華國中附設國中",
+            "townshipName": "長治鄉",
+            "students": 6,
+            "status": "正常"
+          },
+          {
+            "id": "131302",
+            "name": "屏東縣崇華高中",
+            "townshipName": "長治鄉",
+            "students": 3,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsj9r13",
+        "geohash": "wsj9r13",
+        "precision": 7,
+        "count": 3,
+        "totalStudents": 221,
+        "latitude": 22.727304,
+        "longitude": 120.543849,
+        "bounds": {
+          "minLatitude": 22.727304,
+          "maxLatitude": 22.727304,
+          "minLongitude": 120.543849,
+          "maxLongitude": 120.543849
+        },
+        "topSchools": [
+          {
+            "id": "130307:國小",
+            "name": "國立屏科實驗高中附設國小部",
+            "townshipName": "屏東市",
+            "students": 92,
+            "status": "正常"
+          },
+          {
+            "id": "130307",
+            "name": "國立屏科實驗高中",
+            "townshipName": "鹽埔鄉",
+            "students": 90,
+            "status": "正常"
+          },
+          {
+            "id": "130307:國中",
+            "name": "國立屏科實驗高中附設國中部",
+            "townshipName": "鹽埔鄉",
+            "students": 39,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsj8x6k",
+        "geohash": "wsj8x6k",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 1157,
+        "latitude": 22.601107,
+        "longitude": 120.559172,
+        "bounds": {
+          "minLatitude": 22.601107,
+          "maxLatitude": 22.601107,
+          "minLongitude": 120.559172,
+          "maxLongitude": 120.559172
+        },
+        "topSchools": [
+          {
+            "id": "131311:國中",
+            "name": "私立美和高中附設國中部",
+            "townshipName": "內埔鄉",
+            "students": 673,
+            "status": "正常"
+          },
+          {
+            "id": "131311",
+            "name": "私立美和高中",
+            "townshipName": "內埔鄉",
+            "students": 484,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsjb0ux",
+        "geohash": "wsjb0ux",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 340,
+        "latitude": 22.525599,
+        "longitude": 120.62936,
+        "bounds": {
+          "minLatitude": 22.525599,
+          "maxLatitude": 22.525599,
+          "minLongitude": 120.62936,
+          "maxLongitude": 120.62936
+        },
+        "topSchools": [
+          {
+            "id": "134334:國中",
+            "name": "縣立來義中學附設國中部",
+            "townshipName": "來義鄉",
+            "students": 204,
+            "status": "正常"
+          },
+          {
+            "id": "134334",
+            "name": "縣立來義高中",
+            "townshipName": "來義鄉",
+            "students": 136,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wevxv18",
+        "geohash": "wevxv18",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 1612,
+        "latitude": 22.465231,
+        "longitude": 120.455438,
+        "bounds": {
+          "minLatitude": 22.465231,
+          "maxLatitude": 22.465231,
+          "minLongitude": 120.455438,
+          "maxLongitude": 120.455438
+        },
+        "topSchools": [
+          {
+            "id": "134324:國中",
+            "name": "縣立東港高中附設國中部",
+            "townshipName": "東港鎮",
+            "students": 1010,
+            "status": "正常"
+          },
+          {
+            "id": "134324",
+            "name": "縣立東港高中",
+            "townshipName": "東港鎮",
+            "students": 602,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "7-wevxu9x",
         "geohash": "wevxu9x",
         "precision": 7,
@@ -7348,33 +7708,157 @@
         ]
       },
       {
-        "id": "7-wsj9p15",
-        "geohash": "wsj9p15",
+        "id": "7-wevz20e",
+        "geohash": "wevz20e",
         "precision": 7,
         "count": 2,
-        "totalStudents": 59,
-        "latitude": 22.681948,
-        "longitude": 120.546807,
+        "totalStudents": 746,
+        "latitude": 22.371085,
+        "longitude": 120.590665,
         "bounds": {
-          "minLatitude": 22.681928,
-          "maxLatitude": 22.681969,
-          "minLongitude": 120.546795,
-          "maxLongitude": 120.54682
+          "minLatitude": 22.371085,
+          "maxLatitude": 22.371085,
+          "minLongitude": 120.590665,
+          "maxLongitude": 120.590665
         },
         "topSchools": [
           {
-            "id": "131601",
-            "name": "私立崇華國小",
-            "townshipName": "長治鄉",
-            "students": 50,
+            "id": "134321:國中",
+            "name": "縣立枋寮高中附設國中部",
+            "townshipName": "枋寮鄉",
+            "students": 496,
             "status": "正常"
           },
           {
-            "id": "131302",
-            "name": "屏東縣崇華高中",
-            "townshipName": "長治鄉",
-            "students": 9,
+            "id": "134321",
+            "name": "縣立枋寮高中",
+            "townshipName": "枋寮鄉",
+            "students": 250,
             "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsj8yps",
+        "geohash": "wsj8yps",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 1801,
+        "latitude": 22.674317,
+        "longitude": 120.503718,
+        "bounds": {
+          "minLatitude": 22.674317,
+          "maxLatitude": 22.674317,
+          "minLongitude": 120.503718,
+          "maxLongitude": 120.503718
+        },
+        "topSchools": [
+          {
+            "id": "131307",
+            "name": "財團法人屏榮高中",
+            "townshipName": "屏東市",
+            "students": 1709,
+            "status": "正常"
+          },
+          {
+            "id": "131307:國中",
+            "name": "私立屏榮高中附設國中",
+            "townshipName": "屏東市",
+            "students": 92,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsj9j82",
+        "geohash": "wsj9j82",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 1219,
+        "latitude": 22.678023,
+        "longitude": 120.476273,
+        "bounds": {
+          "minLatitude": 22.678023,
+          "maxLatitude": 22.678023,
+          "minLongitude": 120.476273,
+          "maxLongitude": 120.476273
+        },
+        "topSchools": [
+          {
+            "id": "134304:國中",
+            "name": "縣立大同高中附設國中部",
+            "townshipName": "屏東市",
+            "students": 679,
+            "status": "正常"
+          },
+          {
+            "id": "134304",
+            "name": "縣立大同高中",
+            "townshipName": "屏東市",
+            "students": 540,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsj8ypc",
+        "geohash": "wsj8ypc",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 251,
+        "latitude": 22.674512,
+        "longitude": 120.500506,
+        "bounds": {
+          "minLatitude": 22.674512,
+          "maxLatitude": 22.674512,
+          "minLongitude": 120.500506,
+          "maxLongitude": 120.500506
+        },
+        "topSchools": [
+          {
+            "id": "131308:國中",
+            "name": "私立陸興高中附設國中部",
+            "townshipName": "屏東市",
+            "students": 142,
+            "status": "正常"
+          },
+          {
+            "id": "131308",
+            "name": "私立陸興高中",
+            "townshipName": "屏東市",
+            "students": 109,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsjc8qu",
+        "geohash": "wsjc8qu",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 0,
+        "latitude": 22.801706,
+        "longitude": 120.60264,
+        "bounds": {
+          "minLatitude": 22.801706,
+          "maxLatitude": 22.801706,
+          "minLongitude": 120.60264,
+          "maxLongitude": 120.60264
+        },
+        "topSchools": [
+          {
+            "id": "134638",
+            "name": "縣立舊寮國小",
+            "townshipName": "高樹鄉",
+            "students": 0,
+            "status": "待確認"
+          },
+          {
+            "id": "134543",
+            "name": "縣立大路關國中(小)",
+            "townshipName": "高樹鄉",
+            "students": 0,
+            "status": "待確認"
           }
         ]
       },
@@ -7693,30 +8177,6 @@
             "name": "美和科技大學",
             "townshipName": "內埔鄉",
             "students": 4460,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsj8x6k",
-        "geohash": "wsj8x6k",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 1157,
-        "latitude": 22.601107,
-        "longitude": 120.559172,
-        "bounds": {
-          "minLatitude": 22.601107,
-          "maxLatitude": 22.601107,
-          "minLongitude": 120.559172,
-          "maxLongitude": 120.559172
-        },
-        "topSchools": [
-          {
-            "id": "131311",
-            "name": "私立美和高中",
-            "townshipName": "內埔鄉",
-            "students": 1157,
             "status": "正常"
           }
         ]
@@ -8054,6 +8514,30 @@
             "townshipName": "內埔鄉",
             "students": 31,
             "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsj8zcu",
+        "geohash": "wsj8zcu",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 0,
+        "latitude": 22.642669,
+        "longitude": 120.581718,
+        "bounds": {
+          "minLatitude": 22.642669,
+          "maxLatitude": 22.642669,
+          "minLongitude": 120.581718,
+          "maxLongitude": 120.581718
+        },
+        "topSchools": [
+          {
+            "id": "134664",
+            "name": "縣立僑智國小",
+            "townshipName": "內埔鄉",
+            "students": 0,
+            "status": "待確認"
           }
         ]
       },
@@ -8634,26 +9118,26 @@
         ]
       },
       {
-        "id": "7-wsjb0ux",
-        "geohash": "wsjb0ux",
+        "id": "7-wevxx4q",
+        "geohash": "wevxx4q",
         "precision": 7,
         "count": 1,
-        "totalStudents": 340,
-        "latitude": 22.525599,
-        "longitude": 120.62936,
+        "totalStudents": 0,
+        "latitude": 22.424797,
+        "longitude": 120.551584,
         "bounds": {
-          "minLatitude": 22.525599,
-          "maxLatitude": 22.525599,
-          "minLongitude": 120.62936,
-          "maxLongitude": 120.62936
+          "minLatitude": 22.424797,
+          "maxLatitude": 22.424797,
+          "minLongitude": 120.551584,
+          "maxLongitude": 120.551584
         },
         "topSchools": [
           {
-            "id": "134334",
-            "name": "縣立來義高中",
-            "townshipName": "來義鄉",
-            "students": 340,
-            "status": "正常"
+            "id": "134715",
+            "name": "縣立大新國小",
+            "townshipName": "佳冬鄉",
+            "students": 0,
+            "status": "待確認"
           }
         ]
       },
@@ -8773,30 +9257,6 @@
             "name": "縣立文樂國小",
             "townshipName": "來義鄉",
             "students": 55,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wevxv18",
-        "geohash": "wevxv18",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 1612,
-        "latitude": 22.465231,
-        "longitude": 120.455438,
-        "bounds": {
-          "minLatitude": 22.465231,
-          "maxLatitude": 22.465231,
-          "minLongitude": 120.455438,
-          "maxLongitude": 120.455438
-        },
-        "topSchools": [
-          {
-            "id": "134324",
-            "name": "縣立東港高中",
-            "townshipName": "東港鎮",
-            "students": 1612,
             "status": "正常"
           }
         ]
@@ -9037,30 +9497,6 @@
             "name": "縣立獅子國中",
             "townshipName": "枋山鄉",
             "students": 40,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wevz20e",
-        "geohash": "wevz20e",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 746,
-        "latitude": 22.371085,
-        "longitude": 120.590665,
-        "bounds": {
-          "minLatitude": 22.371085,
-          "maxLatitude": 22.371085,
-          "minLongitude": 120.590665,
-          "maxLongitude": 120.590665
-        },
-        "topSchools": [
-          {
-            "id": "134321",
-            "name": "縣立枋寮高中",
-            "townshipName": "枋寮鄉",
-            "students": 746,
             "status": "正常"
           }
         ]
@@ -9546,30 +9982,6 @@
         ]
       },
       {
-        "id": "7-wsj8yps",
-        "geohash": "wsj8yps",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 1801,
-        "latitude": 22.674317,
-        "longitude": 120.503718,
-        "bounds": {
-          "minLatitude": 22.674317,
-          "maxLatitude": 22.674317,
-          "minLongitude": 120.503718,
-          "maxLongitude": 120.503718
-        },
-        "topSchools": [
-          {
-            "id": "131307",
-            "name": "財團法人屏榮高中",
-            "townshipName": "屏東市",
-            "students": 1801,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "7-wsj9jbx",
         "geohash": "wsj9jbx",
         "precision": 7,
@@ -9733,30 +10145,6 @@
             "name": "縣立鶴聲國小",
             "townshipName": "屏東市",
             "students": 1232,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsj9j82",
-        "geohash": "wsj9j82",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 1219,
-        "latitude": 22.678023,
-        "longitude": 120.476273,
-        "bounds": {
-          "minLatitude": 22.678023,
-          "maxLatitude": 22.678023,
-          "minLongitude": 120.476273,
-          "maxLongitude": 120.476273
-        },
-        "topSchools": [
-          {
-            "id": "134304",
-            "name": "縣立大同高中",
-            "townshipName": "屏東市",
-            "students": 1219,
             "status": "正常"
           }
         ]
@@ -10074,30 +10462,6 @@
         ]
       },
       {
-        "id": "7-wsj8ypc",
-        "geohash": "wsj8ypc",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 251,
-        "latitude": 22.674512,
-        "longitude": 120.500506,
-        "bounds": {
-          "minLatitude": 22.674512,
-          "maxLatitude": 22.674512,
-          "minLongitude": 120.500506,
-          "maxLongitude": 120.500506
-        },
-        "topSchools": [
-          {
-            "id": "131308",
-            "name": "私立陸興高中",
-            "townshipName": "屏東市",
-            "students": 251,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "7-wsj8v9t",
         "geohash": "wsj8v9t",
         "precision": 7,
@@ -10310,6 +10674,30 @@
             "townshipName": "屏東市",
             "students": 97,
             "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsj8vzm",
+        "geohash": "wsj8vzm",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 0,
+        "latitude": 22.672716,
+        "longitude": 120.494051,
+        "bounds": {
+          "minLatitude": 22.672716,
+          "maxLatitude": 22.672716,
+          "minLongitude": 120.494051,
+          "maxLongitude": 120.494051
+        },
+        "topSchools": [
+          {
+            "id": "134607",
+            "name": "縣立凌雲國小",
+            "townshipName": "屏東市",
+            "students": 0,
+            "status": "待確認"
           }
         ]
       },
@@ -12421,30 +12809,6 @@
             "name": "縣立鹽埔國中",
             "townshipName": "鹽埔鄉",
             "students": 297,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsj9r13",
-        "geohash": "wsj9r13",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 221,
-        "latitude": 22.727304,
-        "longitude": 120.543849,
-        "bounds": {
-          "minLatitude": 22.727304,
-          "maxLatitude": 22.727304,
-          "minLongitude": 120.543849,
-          "maxLongitude": 120.543849
-        },
-        "topSchools": [
-          {
-            "id": "130307",
-            "name": "國立屏科實驗高中",
-            "townshipName": "鹽埔鄉",
-            "students": 221,
             "status": "正常"
           }
         ]

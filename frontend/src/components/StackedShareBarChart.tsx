@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { formatPercent, formatStudents } from '../lib/analytics'
 
 type ShareItem = {
@@ -16,6 +17,12 @@ type StackedShareBarChartProps = {
 }
 
 function StackedShareBarChart({ title, subtitle, items, activeItemId = null, onSelectItem }: StackedShareBarChartProps) {
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
   return (
     <section className="stacked-share-chart">
       <div className="panel-heading">
@@ -27,34 +34,42 @@ function StackedShareBarChart({ title, subtitle, items, activeItemId = null, onS
       </div>
 
       <div className="stacked-share-chart__rows">
-        {items.map((item) => (
-          <button
-            key={item.id}
-            type="button"
-            className={item.id === activeItemId ? 'stacked-share-chart__row stacked-share-chart__row--active' : 'stacked-share-chart__row'}
-            onClick={() => onSelectItem?.(item.id)}
-          >
-            <div className="stacked-share-chart__label-group">
-              <span className="stacked-share-chart__label">{item.label}</span>
-              <span className="stacked-share-chart__meta">{formatStudents(item.total)} 人</span>
-            </div>
-            <div className="stacked-share-chart__track">
-              {item.segments.map((segment) => (
-                <div
-                  key={`${item.id}-${segment.label}`}
-                  className="stacked-share-chart__segment"
-                  style={{ width: `${Math.max(segment.share * 100, segment.value > 0 ? 4 : 0)}%`, background: segment.color }}
-                  title={`${segment.label} ${formatPercent(segment.share)} / ${formatStudents(segment.value)} 人`}
-                />
-              ))}
-            </div>
-            <div className="stacked-share-chart__values">
-              {item.segments.map((segment) => (
-                <span key={`${item.id}-${segment.label}-value`}>{segment.label} {formatPercent(segment.share)}</span>
-              ))}
-            </div>
-          </button>
-        ))}
+        {items.map((item) => {
+          const isActive = item.id === activeItemId
+          return (
+            <button
+              key={item.id}
+              type="button"
+              className={isActive ? 'stacked-share-chart__row stacked-share-chart__row--active' : 'stacked-share-chart__row'}
+              onClick={() => onSelectItem?.(item.id)}
+            >
+              <div className="stacked-share-chart__label-group">
+                <span className="stacked-share-chart__label">{item.label}</span>
+                <span className="stacked-share-chart__meta">{formatStudents(item.total)} 人</span>
+              </div>
+              <div className="stacked-share-chart__track">
+                {item.segments.map((segment) => (
+                  <div
+                    key={`${item.id}-${segment.label}`}
+                    className="stacked-share-chart__segment"
+                    style={{
+                      width: mounted ? `${Math.max(segment.share * 100, segment.value > 0 ? 4 : 0)}%` : '0%',
+                      background: segment.color,
+                      transition: 'width 0.8s cubic-bezier(0.2, 0.8, 0.2, 1)',
+                      opacity: isActive || activeItemId === null ? 1 : 0.4
+                    }}
+                    title={`${segment.label} ${formatPercent(segment.share)} / ${formatStudents(segment.value)} 人`}
+                  />
+                ))}
+              </div>
+              <div className="stacked-share-chart__values" style={{ opacity: isActive || activeItemId === null ? 1 : 0.4 }}>
+                {item.segments.map((segment) => (
+                  <span key={`${item.id}-${segment.label}-value`}>{segment.label} {formatPercent(segment.share)}</span>
+                ))}
+              </div>
+            </button>
+          )
+        })}
       </div>
     </section>
   )

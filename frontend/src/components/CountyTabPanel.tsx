@@ -61,12 +61,12 @@ function CountyTabPanel({
 
       <section className="dashboard-card dashboard-card--county-story">
         <div className="dashboard-card__body dashboard-card__insight-body">
-          <div className="panel-heading">
+          <div className="panel-heading" style={{ marginBottom: '16px' }}>
             <div>
-              <p className="eyebrow">縣市結構</p>
-              <h3>{derived.selectedCounty?.name ?? '縣市'} 教育結構</h3>
+              <p className="eyebrow" style={{ color: 'var(--palette-cyan)' }}>縣市結構掃描</p>
+              <h3>{derived.selectedCounty?.name ?? '縣市'}發展概覽</h3>
             </div>
-            <p className="panel-heading__meta">從教育階段分布、縣內熱區與鄉鎮平均規模切入縣市分析。</p>
+            <p className="panel-heading__meta">左側顯示縣內前六大鄉鎮人口體量；右側透過矩陣總結該縣市各鄉鎮的成長動能。</p>
           </div>
 
           <div className="atlas-storyboard__split">
@@ -128,12 +128,12 @@ function CountyTabPanel({
 
       <section className="dashboard-card dashboard-card--ranking">
         <div className="dashboard-card__body dashboard-card__ranking-body">
-          <div className="panel-heading">
+          <div className="panel-heading" style={{ marginBottom: '16px' }}>
             <div>
-              <p className="eyebrow">鄉鎮聚焦</p>
-              <h3>{derived.selectedCounty?.name ?? '縣市'} 鄉鎮排行</h3>
+              <p className="eyebrow" style={{ color: 'var(--palette-brass)' }}>下鑽入口</p>
+              <h3>鄉鎮排行與熱區掃描</h3>
             </div>
-            <p className="panel-heading__meta">點選鄉鎮後，地圖會放大到各校層級並同步切到學校分析。</p>
+            <p className="panel-heading__meta">點選鄉鎮地圖會放大到在地層級，並自動展開「學校分析」工作台。</p>
           </div>
           <div className="chart-pill-row" role="tablist" aria-label="縣市分析圖表切換">
             <button
@@ -171,7 +171,7 @@ function CountyTabPanel({
           )}
         </div>
       </section>
-    </div>
+    </div >
   )
 }
 
