@@ -69,7 +69,7 @@ function TownshipDotMarkers({ townshipRows, activeTownshipId, townshipCenterLook
             <Marker
               key={`township-label-${township.id}`}
               position={center}
-              icon={renderScopeMarkerIcon(township.label, 0, growthChoroplethColor(township.deltaRatio), variant === 'compact' ? 30 : 42, 'township', variant === 'compact')}
+              icon={renderScopeMarkerIcon(township.label, 0, growthChoroplethColor(township.deltaRatio), variant === 'compact' ? 24 : 32, 'township', variant === 'compact')}
               eventHandlers={{ click: () => onSelectTownship(township.id) }}
             >
               <Tooltip direction="top" offset={[0, variant === 'compact' ? -6 : -10]} className="atlas-map-tooltip atlas-map-tooltip--preview">

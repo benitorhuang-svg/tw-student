@@ -79,7 +79,7 @@ export function renderScopeMarkerIcon(label: string, value: number, color: strin
       : label.length > 4
         ? `${label.slice(0, 4)}…`
         : label
-  const hideValue = compact || nameOnly
+  const hideValue = true
 
   return L.divIcon({
     className: 'atlas-region-dot-wrapper',

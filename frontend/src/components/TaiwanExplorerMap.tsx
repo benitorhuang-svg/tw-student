@@ -19,8 +19,8 @@ import {
   choroplethColor,
   choroplethOpacity,
   DARK_TILE_URL,
-  growthChoroplethColor,
   LIGHT_TILE_URL,
+  growthChoroplethColor,
   renderHoverPreview,
   renderScopeMarkerIcon,
 } from './map/mapStyles'
@@ -84,7 +84,7 @@ function TaiwanExplorerMap({
 }: TaiwanExplorerMapProps) {
   const [hoveredFeatureId, setHoveredFeatureId] = useState<string | null>(null)
   const tileUrl = theme === 'dark' ? DARK_TILE_URL : LIGHT_TILE_URL
-  const tileOpacity = theme === 'dark' ? 0.32 : 0.18
+  const tileOpacity = theme === 'dark' ? 0.32 : 1
   const selectedSchool = selectedSchoolId ? schoolPoints.find((school) => school.id === selectedSchoolId) ?? null : null
   const previewTipOpts = { direction: 'top' as const, offset: [0, -8] as [number, number], className: 'atlas-map-tooltip atlas-map-tooltip--preview', opacity: 1 }
 
@@ -118,8 +118,8 @@ function TaiwanExplorerMap({
             {selectedSchool ? `目前地圖聚焦：${selectedSchool.name}` : activeCounty ? `目前地圖聚焦：${activeCounty.name}` : '目前地圖聚焦：全台灣'}
           </div>
           <MapContainer
-            center={[initialMapLat ?? 23.7, initialMapLon ?? 121]}
-            zoom={initialMapZoom ?? 7.4}
+            center={[initialMapLat ?? 24.3026, initialMapLon ?? 119.6693]}
+            zoom={initialMapZoom ?? 7}
             minZoom={7}
             maxZoom={18}
             zoomControl={false}
@@ -140,15 +140,15 @@ function TaiwanExplorerMap({
 
                 if (!summary || summary.filteredOut) {
                   return {
-                    color: theme === 'dark' ? '#334155' : 'rgba(115, 145, 123, 0.34)',
+                    color: theme === 'dark' ? '#334155' : '#94a3b8',
                     weight: 1,
-                    fillColor: theme === 'dark' ? '#0f172a' : '#edf7ee',
-                    fillOpacity: theme === 'dark' ? 0.12 : 0.72,
+                    fillColor: theme === 'dark' ? '#0f172a' : '#f8fafc',
+                    fillOpacity: theme === 'dark' ? 0.12 : 0.6,
                   }
                 }
 
                 return {
-                  color: isActive || isHovered ? (theme === 'dark' ? '#e2e8f0' : '#f8fffb') : 'rgba(126, 168, 137, 0.42)',
+                  color: isActive || isHovered ? (theme === 'dark' ? '#e2e8f0' : '#ffffff') : (theme === 'dark' ? 'rgba(126, 168, 137, 0.42)' : '#94a3b8'),
                   weight: isActive ? 2.2 : isHovered ? 1.8 : 1.1,
                   fillColor: isActive ? '#b8d7be' : choroplethColor(summary.students),
                   fillOpacity: activeCountyId && !isActive ? 0.1 : choroplethOpacity(summary.students),
@@ -187,7 +187,7 @@ function TaiwanExplorerMap({
                   const isHovered = townshipId === hoveredFeatureId || townshipId === highlightedTownshipId
 
                   return {
-                    color: isActive || isHovered ? (theme === 'dark' ? '#f8fafc' : '#fbfffd') : 'rgba(124, 158, 133, 0.38)',
+                    color: isActive || isHovered ? (theme === 'dark' ? '#f8fafc' : '#ffffff') : (theme === 'dark' ? 'rgba(124, 158, 133, 0.38)' : 'rgba(100, 116, 139, 0.35)'),
                     weight: isActive ? 2.1 : isHovered ? 1.7 : 1,
                     fillColor: isActive ? '#cfe6d3' : choroplethColor(summary?.students ?? 0),
                     fillOpacity: summary ? Math.max(0.07, choroplethOpacity(summary.students) - 0.04) : 0.08,
@@ -215,22 +215,44 @@ function TaiwanExplorerMap({
             ) : null}
 
             {showCountyMarkers
-              ? counties.map((county) => {
-                  const center = countyCenterLookup.get(county.id)
-                  if (!center) return null
-                  return (
-                    <Marker
-                      key={`county-marker-${county.id}`}
-                      position={center}
-                      icon={renderScopeMarkerIcon(county.shortLabel, county.students, growthChoroplethColor(county.deltaRatio), 72, 'county')}
-                      eventHandlers={{ click: () => onSelectCounty(county.id) }}
-                    >
-                      <Tooltip direction="top" offset={[0, -10]} className="atlas-map-tooltip atlas-map-tooltip--preview">
-                        {renderHoverPreview(county.name, county.students, county.schools, county.delta, county.region)}
-                      </Tooltip>
-                    </Marker>
-                  )
-                })
+              ? (() => {
+                  const filteredCounties = counties.filter((c) => c.shortLabel !== '嘉市')
+                  return filteredCounties.map((county) => {
+                    const isChiayi = county.shortLabel === '嘉縣'
+                    const displayLabel = isChiayi ? '嘉義' : county.shortLabel
+                    let displayStudents = county.students
+                    let displaySchools = county.schools
+                    let displayDelta = county.delta
+                    let displayDeltaRatio = county.deltaRatio
+
+                    if (isChiayi) {
+                      const chiayiCity = counties.find((c) => c.shortLabel === '嘉市')
+                      if (chiayiCity) {
+                        displayStudents += chiayiCity.students
+                        displaySchools += chiayiCity.schools
+                        displayDelta += chiayiCity.delta
+                        const oldRaw = county.students - county.delta + (chiayiCity.students - chiayiCity.delta)
+                        displayDeltaRatio = oldRaw > 0 ? displayDelta / oldRaw : 0
+                      }
+                    }
+
+                    // Use the original center for Chiayi County, or slightly adjust it? Original is fine.
+                    const center = countyCenterLookup.get(county.id)
+                    if (!center) return null
+                    return (
+                      <Marker
+                        key={`county-marker-${county.id}`}
+                        position={center}
+                        icon={renderScopeMarkerIcon(displayLabel, displayStudents, growthChoroplethColor(displayDeltaRatio), 54, 'county')}
+                        eventHandlers={{ click: () => onSelectCounty(county.id) }}
+                      >
+                        <Tooltip direction="top" offset={[0, -10]} className="atlas-map-tooltip atlas-map-tooltip--preview">
+                          {renderHoverPreview(isChiayi ? '嘉義' : county.name, displayStudents, displaySchools, displayDelta, county.region)}
+                        </Tooltip>
+                      </Marker>
+                    )
+                  })
+                })()
               : null}
 
             {showTownshipMarkers
