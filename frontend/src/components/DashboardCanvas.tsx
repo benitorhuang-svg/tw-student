@@ -6,7 +6,9 @@ import RegionalTabPanel from './RegionalTabPanel'
 import SchoolDetailPanel from './SchoolDetailPanel'
 import StackedAreaTrendChart from './StackedAreaTrendChart'
 import ScatterPlotChart from './ScatterPlotChart'
+import TreemapChart from './TreemapChart'
 import AtlasTabs from './AtlasTabs'
+import DashboardYearNavigator from './DashboardYearNavigator'
 import type { AtlasTab } from '../hooks/useAtlasQueryState'
 import type { useAtlasDerivedState } from '../hooks/useAtlasDerivedState'
 import type { AcademicYear, CountySchoolAtlasDataset, ManagementTypeFilter, RegionGroupFilter } from '../data/educationData'
@@ -143,6 +145,26 @@ function DashboardCanvas({
       trend: row.trend,
     }))
 
+  const overviewTreemapGroups = ['北部', '中部', '南部', '東部', '離島']
+    .map((regionName, index) => {
+      const regionCounties = visibleCountyRows.filter((row) => row.region === regionName)
+      const students = regionCounties.reduce((sum, row) => sum + row.students, 0)
+
+      return {
+        id: regionName,
+        label: regionName,
+        value: students,
+        accentColor: `var(--chart-series-${index})`,
+        children: regionCounties.map((row) => ({
+          id: row.id,
+          label: row.shortLabel,
+          value: row.students,
+          meta: `${row.deltaRatio >= 0 ? '+' : ''}${(row.deltaRatio * 100).toFixed(1)}%`,
+        })),
+      }
+    })
+    .filter((group) => group.children.length > 0)
+
   const overviewMatrixSection = (
     <section className="dashboard-card dashboard-card--matrix">
       <div className="dashboard-card__body dashboard-card__insight-body">
@@ -166,48 +188,13 @@ function DashboardCanvas({
             }}
             onSelectPoint={scenarioActions.handleCountySelect}
           >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', whiteSpace: 'nowrap' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '4px', background: 'rgba(255,255,255,0.05)', borderRadius: '8px', padding: '2px 4px' }}>
-                {summaryYears.indexOf(activeYear) > 0 ? (
-                  <button
-                    className="ghost-button"
-                    style={{ padding: '2px 8px', minHeight: '26px', border: 'none', whiteSpace: 'nowrap' }}
-                    onClick={() => {
-                      const idx = summaryYears.indexOf(activeYear)
-                      if (idx > 0) onSetActiveYear(summaryYears[idx - 1] as AcademicYear)
-                    }}
-                  >
-                    ‹
-                  </button>
-                ) : (
-                  <div style={{ width: '24px' }} />
-                )}
-                <span style={{ fontSize: '0.8rem', fontWeight: '800', minWidth: '40px', textAlign: 'center' }}>
-                  {activeYear}
-                </span>
-                {summaryYears.indexOf(activeYear) < summaryYears.length - 1 ? (
-                  <button
-                    className="ghost-button"
-                    style={{ padding: '2px 8px', minHeight: '26px', border: 'none', whiteSpace: 'nowrap' }}
-                    onClick={() => {
-                      const idx = summaryYears.indexOf(activeYear)
-                      if (idx < summaryYears.length - 1) onSetActiveYear(summaryYears[idx + 1] as AcademicYear)
-                    }}
-                  >
-                    ›
-                  </button>
-                ) : (
-                  <div style={{ width: '24px' }} />
-                )}
-              </div>
-              <button
-                className={isYearPlaybackActive ? 'ghost-button ghost-button--active' : 'ghost-button'}
-                style={{ padding: '2px 10px', fontSize: '0.76rem', minHeight: '26px', borderRadius: '8px', whiteSpace: 'nowrap' }}
-                onClick={() => onSetIsYearPlaybackActive(!isYearPlaybackActive)}
-              >
-                {isYearPlaybackActive ? '停止播放' : '全部播放'}
-              </button>
-            </div>
+            <DashboardYearNavigator
+              activeYear={activeYear}
+              isYearPlaybackActive={isYearPlaybackActive}
+              summaryYears={summaryYears}
+              onSetActiveYear={onSetActiveYear}
+              onTogglePlayback={() => onSetIsYearPlaybackActive(!isYearPlaybackActive)}
+            />
           </ScatterPlotChart>
         </div>
       </div>
@@ -291,6 +278,21 @@ function DashboardCanvas({
     </section>
   )
 
+  const overviewTreemapSection = (
+    <section className="dashboard-card dashboard-card--overview-treemap">
+      <div className="dashboard-card__body dashboard-card__insight-body">
+        <TreemapChart
+          title="全台區域與縣市量體"
+          subtitle="先看區域板塊，再往縣市量體下鑽；面積愈大代表目前學生總量愈高。"
+          groups={overviewTreemapGroups}
+          activeLeafId={selectedCountyId}
+          onSelectLeaf={scenarioActions.handleCountySelect}
+          onSelectGroup={(nextRegion) => scenarioActions.handleRegionSelect(nextRegion as RegionGroupFilter)}
+        />
+      </div>
+    </section>
+  )
+
   return (
     <main className={`dashboard-canvas dashboard-canvas--${activeTab}`}>
       <section className="dashboard-card dashboard-card--map">
@@ -310,6 +312,7 @@ function DashboardCanvas({
           <div className="dashboard-side-shell__content dashboard-side-shell__content--overview">
             {/* 原子版面排列：您可在此直接調整大區塊的順序 */}
             {overviewTrendSection}
+            {overviewTreemapSection}
             {overviewMatrixSection}
             {overviewRankingSection}
           </div>
@@ -364,8 +367,8 @@ function DashboardCanvas({
                   schoolInsights={derived.schoolInsights}
                   countyWideSchoolInsights={derived.countyWideSchoolInsights}
                   selectedSchool={derived.selectedSchool}
-                  selectedCountySchoolAtlas={selectedCountyId ? countySchoolAtlasCache[selectedCountyId] ?? null : null}
-                  isCountySchoolAtlasLoading={selectedCountyId ? !countySchoolAtlasCache[selectedCountyId] && !countySchoolAtlasError : false}
+                  selectedCountySchoolAtlas={derived.activeCountyId ? countySchoolAtlasCache[derived.activeCountyId] ?? null : null}
+                  isCountySchoolAtlasLoading={derived.activeCountyId ? !countySchoolAtlasCache[derived.activeCountyId] && !countySchoolAtlasError : false}
                   countySchoolAtlasError={countySchoolAtlasError}
                   schoolPanelTitle={activeTab === 'school-focus' && derived.selectedSchool ? derived.selectedSchool.name : derived.schoolPanelTitle}
                   panelMode={activeTab === 'school-focus' ? 'focus' : 'workspace'}

@@ -1,6 +1,50 @@
+import path from 'node:path'
+import fs from 'node:fs'
 import { defineConfig } from 'vite'
+import type { Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
+
+const backendDataDir = path.resolve(__dirname, '..', 'backend', 'data')
+
+/** Serve backend/data/ as /data/ in dev and copy to dist/data/ in build. */
+function backendDataPlugin(): Plugin {
+  return {
+    name: 'backend-data',
+    configureServer(server) {
+      server.middlewares.use('/data', (req, res) => {
+        const requestUrl = new URL(req.url ?? '/', 'http://localhost')
+        const relativePath = decodeURIComponent(requestUrl.pathname.replace(/^\/+/, ''))
+        const filePath = path.join(backendDataDir, relativePath)
+        if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
+          res.setHeader('Content-Type', filePath.endsWith('.json') ? 'application/json' : 'application/octet-stream')
+          fs.createReadStream(filePath).pipe(res)
+        } else {
+          res.statusCode = 404
+          res.setHeader('Content-Type', 'text/plain; charset=utf-8')
+          res.end(`Missing data asset: ${requestUrl.pathname}`)
+        }
+      })
+    },
+    closeBundle() {
+      const distDataDir = path.resolve(__dirname, 'dist', 'data')
+      copyDirSync(backendDataDir, distDataDir)
+    },
+  }
+}
+
+function copyDirSync(src: string, dest: string) {
+  fs.mkdirSync(dest, { recursive: true })
+  for (const entry of fs.readdirSync(src, { withFileTypes: true })) {
+    const srcPath = path.join(src, entry.name)
+    const destPath = path.join(dest, entry.name)
+    if (entry.isDirectory()) {
+      copyDirSync(srcPath, destPath)
+    } else {
+      fs.copyFileSync(srcPath, destPath)
+    }
+  }
+}
 
 const repositoryName = process.env.GITHUB_REPOSITORY?.split('/')[1] ?? 'student_counting_analysis_TW'
 const isGithubPagesBuild = process.env.GITHUB_ACTIONS === 'true'
@@ -25,6 +69,7 @@ export default defineConfig({
     },
   },
   plugins: [
+    backendDataPlugin(),
     react(),
     VitePWA({
       registerType: 'autoUpdate',

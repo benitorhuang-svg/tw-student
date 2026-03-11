@@ -1,3 +1,4 @@
+import PRIndicatorChart from './PRIndicatorChart'
 import ComparisonBarChart from './ComparisonBarChart'
 import SchoolCompositionChart from './SchoolCompositionChart'
 import SchoolOverviewChart from './SchoolOverviewChart'
@@ -14,6 +15,7 @@ type SchoolAnalysisViewProps = {
   schoolAtlasError?: string | null
   scopeLabel: string; scopeAverage: number; scopeMedian: number; countyAverage: number
   selectedSchoolRank: number; sortedSchoolsCount: number; sortedSchoolsMax: number
+  cohortRank: number; cohortCount: number
   peerSchools: SchoolInsight[]
   selectedTownshipSummary: { label: string } | null
   highlightedSchoolId?: string | null
@@ -25,7 +27,7 @@ type SchoolAnalysisViewProps = {
 function SchoolAnalysisView({
   selectedSchool, activeYear, schoolAtlasEntry = null, isSchoolAtlasLoading = false, schoolAtlasError = null,
   scopeLabel, scopeAverage, scopeMedian, countyAverage,
-  selectedSchoolRank, sortedSchoolsCount, sortedSchoolsMax, peerSchools,
+  selectedSchoolRank, sortedSchoolsCount, sortedSchoolsMax, cohortRank, cohortCount, peerSchools,
   selectedTownshipSummary, highlightedSchoolId = null,
   onHoverSchool, onSelectSchool, onSetWorkbenchView,
 }: SchoolAnalysisViewProps) {
@@ -251,15 +253,23 @@ function SchoolAnalysisView({
                 </div>
                 <p className="panel-heading__meta">用單校、平均、中位數與最高值快速判讀目前規模。</p>
               </div>
-              <ComparisonBarChart
-                items={[
-                  { id: 'selected', label: '目前學校', value: selectedSchool.currentStudents },
-                  { id: 'average', label: '範圍平均', value: scopeAverage },
-                  { id: 'median', label: '範圍中位數', value: scopeMedian },
-                  { id: 'max', label: '範圍最高值', value: sortedSchoolsMax },
-                ]}
-                activeItemId="selected"
-              />
+              <div className="school-positioning-grid">
+                <PRIndicatorChart
+                  schoolName={selectedSchool.name}
+                  rank={cohortRank}
+                  total={cohortCount}
+                  scopeLabel={`${selectedSchool.countyName} ${selectedSchool.educationLevel}`}
+                />
+                <ComparisonBarChart
+                  items={[
+                    { id: 'selected', label: '目前學校', value: selectedSchool.currentStudents },
+                    { id: 'average', label: '範圍平均', value: scopeAverage },
+                    { id: 'median', label: '範圍中位數', value: scopeMedian },
+                    { id: 'max', label: '範圍最高值', value: sortedSchoolsMax },
+                  ]}
+                  activeItemId="selected"
+                />
+              </div>
             </div>
           ) : null}
         </div>

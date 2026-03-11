@@ -3,6 +3,7 @@ import { useMemo } from 'react'
 import type { TrendPoint } from '../lib/analytics.types'
 import type { AcademicYear } from '../hooks/types'
 import { formatAcademicYear, formatDelta, formatStudents } from '../lib/analytics'
+import { useChartAnimation } from '../hooks/useChartAnimation'
 
 type SchoolOverviewChartProps = {
   trend: TrendPoint[]
@@ -21,11 +22,12 @@ const CHART_H = 200
 const PAD = { top: 16, right: 24, bottom: 28, left: 52 }
 const INNER_W = CHART_W - PAD.left - PAD.right
 const INNER_H = CHART_H - PAD.top - PAD.bottom
-const BAR_FILL = '#f0abfc'
-const BAR_FILL_ACTIVE = '#93c5fd'
-const RATE_STROKE = '#fb7185'
+const BAR_FILL = 'var(--chart-bar-primary, #f0abfc)'
+const BAR_FILL_ACTIVE = 'var(--chart-bar-active, #93c5fd)'
+const RATE_STROKE = 'var(--chart-rate-stroke, #fb7185)'
 
 function SchoolOverviewChart({ trend, activeYear, schoolName, schoolCode, educationLevel, managementType, address, phone, website }: SchoolOverviewChartProps) {
+  const { ref, isVisible: mounted } = useChartAnimation()
   const bars = useMemo(() => {
     if (trend.length === 0) return []
     const maxVal = Math.max(...trend.map((p) => p.value), 1)
@@ -85,7 +87,7 @@ function SchoolOverviewChart({ trend, activeYear, schoolName, schoolCode, educat
   const activeRate = prevBar && prevBar.value > 0 ? ((activeDelta) / prevBar.value) * 100 : 0
 
   return (
-    <div className="school-overview-chart">
+    <div className="school-overview-chart" ref={ref as React.RefObject<HTMLDivElement>}>
       <div className="school-overview-chart__header">
         <p className="eyebrow">MOE 校別概況</p>
         <h3>{schoolName} 歷年學生數</h3>
@@ -104,7 +106,7 @@ function SchoolOverviewChart({ trend, activeYear, schoolName, schoolCode, educat
         </p>
       </div>
 
-      <svg viewBox={`0 0 ${CHART_W} ${CHART_H}`} className="school-overview-chart__svg" role="img" aria-label={`${schoolName} 歷年學生數柱狀圖`}>
+      <svg viewBox={`0 0 ${CHART_W} ${CHART_H}`} preserveAspectRatio="xMidYMid meet" className="school-overview-chart__svg" role="img" aria-label={`${schoolName} 歷年學生數柱狀圖`}>
         {yTicks.map((tick) => (
           <g key={tick.value}>
             <line x1={PAD.left} x2={CHART_W - PAD.right} y1={tick.y} y2={tick.y} stroke="var(--color-border, #334155)" strokeOpacity={0.3} />
@@ -119,12 +121,13 @@ function SchoolOverviewChart({ trend, activeYear, schoolName, schoolCode, educat
             <g key={bar.year}>
               <rect
                 x={bar.x}
-                y={bar.y}
+                y={mounted ? bar.y : PAD.top + INNER_H}
                 width={bar.w}
-                height={bar.h}
+                height={mounted ? bar.h : 0}
                 rx={2}
                 fill={bar.year === activeYear ? BAR_FILL_ACTIVE : BAR_FILL}
                 opacity={bar.year === activeYear ? 1 : 0.7}
+                style={{ transition: 'y 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), height 0.6s cubic-bezier(0.2, 0.8, 0.2, 1)' }}
               />
               {bar.year === activeYear && delta != null ? (
                 <text x={bar.cx} y={bar.y - 4} textAnchor="middle" fontSize={7} fill={delta >= 0 ? '#34d399' : '#fb7185'} fontWeight={600}>
@@ -140,7 +143,17 @@ function SchoolOverviewChart({ trend, activeYear, schoolName, schoolCode, educat
 
         {ratePath ? (
           <>
-            <path d={ratePath} fill="none" stroke={RATE_STROKE} strokeWidth={1.8} strokeLinejoin="round" opacity={0.85} />
+            <path
+              d={ratePath}
+              fill="none"
+              stroke={RATE_STROKE}
+              strokeWidth={1.8}
+              strokeLinejoin="round"
+              opacity={0.85}
+              strokeDasharray="500"
+              strokeDashoffset={mounted ? 0 : 500}
+              style={{ transition: 'stroke-dashoffset 1.2s ease-out 0.3s' }}
+            />
             {ratePoints.map((p) => (
               <circle key={p.year} cx={p.cx} cy={p.y} r={2.5} fill={RATE_STROKE} opacity={0.9} />
             ))}

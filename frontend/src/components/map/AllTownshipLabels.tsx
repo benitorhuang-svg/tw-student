@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import L from 'leaflet'
 import { Marker, Tooltip, useMap, useMapEvents } from 'react-leaflet'
+import { buildDataAssetUrl } from '../../data/dataAsset'
 
 type TownshipCoord = {
   countyId: string
@@ -38,7 +39,7 @@ function AllTownshipLabels({ onSelectTownship, hiddenTownshipId = null, visibleT
   const [, setVersion] = useState(0)
 
   useEffect(() => {
-    fetch('./data/area-coordinate-lookup.json')
+    fetch(buildDataAssetUrl('area-coordinate-lookup.json'))
       .then((res) => res.json())
       .then((json: AreaLookup) => setData(Object.values(json.townships)))
       .catch(() => {})

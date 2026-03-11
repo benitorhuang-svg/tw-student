@@ -1,6 +1,7 @@
 import { useMemo } from 'react'
 
 import type { SchoolCodeAtlasEntry, StudentBandRecord, StudentCompositionRecord } from '../data/educationData'
+import { useChartAnimation } from '../hooks/useChartAnimation'
 import type { AcademicYear } from '../hooks/types'
 import { formatAcademicYear, formatStudents, type SchoolInsight } from '../lib/analytics'
 
@@ -74,9 +75,10 @@ function SchoolCompositionChart({ schoolAtlasEntry, selectedSchool, activeYear, 
   }, [levelRows])
 
   const totalByCode = levelRows.reduce((sum, level) => sum + level.totalStudents, 0)
+  const { ref: animRef, isVisible } = useChartAnimation()
 
   return (
-    <section className="school-composition-chart">
+    <section className={`school-composition-chart${isVisible ? ' chart-enter' : ''}`} ref={animRef as React.RefObject<HTMLElement>}>
       <div className="school-composition-chart__header">
         <div>
           <p className="eyebrow" style={{ color: 'var(--palette-cyan)' }}>校代碼完整結構</p>

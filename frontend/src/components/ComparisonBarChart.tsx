@@ -1,12 +1,19 @@
-import { useEffect, useState } from 'react'
+import { useChartAnimation } from '../hooks/useChartAnimation'
 import { formatStudents } from '../lib/analytics'
 
 const BAR_COLORS = [
-  'var(--palette-cyan, #2a6f91)',
-  'var(--palette-brass, #b88746)',
-  '#7da694',
-  '#c97a54',
-  '#6b7280'
+  'var(--chart-series-0, #2a6f91)',
+  'var(--chart-series-1, #2d8f6f)',
+  'var(--chart-series-2, #b88746)',
+  'var(--chart-series-3, #c96a4b)',
+  'var(--chart-series-4, #7c5cbf)',
+  'var(--chart-series-5, #38bdf8)',
+  'var(--chart-series-6, #34d399)',
+  'var(--chart-series-7, #fbbf24)',
+  'var(--chart-series-8, #f87171)',
+  'var(--chart-series-9, #a78bfa)',
+  'var(--chart-series-10, #22d3ee)',
+  'var(--chart-series-11, #fb923c)',
 ]
 
 type ComparisonBarChartProps = {
@@ -18,15 +25,18 @@ type ComparisonBarChartProps = {
 
 function ComparisonBarChart({ items, activeItemId = null, onHoverItem, onSelectItem }: ComparisonBarChartProps) {
   const max = Math.max(...items.map((i) => i.value), 1)
-  const [mounted, setMounted] = useState(false)
+  const { ref, isVisible } = useChartAnimation()
 
-  useEffect(() => {
-    // 確保組件渲染後再觸發寬度動畫，製造進場效果
-    setMounted(true)
-  }, [])
+  if (items.length === 0) {
+    return (
+      <div ref={ref as React.RefObject<HTMLDivElement>} className="comparison-bar-chart">
+        <div className="chart-empty-state">尚無資料</div>
+      </div>
+    )
+  }
 
   return (
-    <div className="comparison-bar-chart">
+    <div ref={ref as React.RefObject<HTMLDivElement>} className={isVisible ? 'comparison-bar-chart chart-enter chart-enter--visible' : 'comparison-bar-chart chart-enter'}>
       {items.map((item, idx) => {
         const targetWidth = Math.max((item.value / max) * 100, 2)
         const isActive = item.id === activeItemId
@@ -50,7 +60,7 @@ function ComparisonBarChart({ items, activeItemId = null, onHoverItem, onSelectI
               <div
                 className="comparison-bar-chart__fill"
                 style={{
-                  width: mounted ? `${targetWidth}%` : '0%',
+                  width: isVisible ? `${targetWidth}%` : '0%',
                   background: color,
                   transition: 'width 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), background-color 0.3s ease',
                   opacity: isActive || activeItemId === null ? 1 : 0.4

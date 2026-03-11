@@ -11,6 +11,12 @@ export {
   loadCountyBuckets,
   resetAtlasSqliteCache,
 } from './atlasSqlite'
+export {
+  loadDataManifest,
+  loadValidationReport,
+  diffManifestAssets,
+  resetAtlasManifestCache,
+} from './atlasManifest'
 export { loadCountySchoolAtlas, resetSchoolAtlasCache } from './schoolAtlas'
 export {
   loadCountyBoundaries,

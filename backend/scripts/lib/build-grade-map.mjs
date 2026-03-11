@@ -1,0 +1,71 @@
+export const DATA_SCHEMA_VERSION = '2026.03.p0'
+
+export function buildGradeMap(generatedAt) {
+  return {
+    schemaVersion: DATA_SCHEMA_VERSION,
+    generatedAt,
+    levels: [
+      {
+        levelCode: 'elementary',
+        label: '國小',
+        legacyLabels: ['國小'],
+        dimensions: [
+          {
+            dimensionType: 'grade',
+            bands: [
+              { bandId: 'grade-1', label: '1年級', sortOrder: 1 },
+              { bandId: 'grade-2', label: '2年級', sortOrder: 2 },
+              { bandId: 'grade-3', label: '3年級', sortOrder: 3 },
+              { bandId: 'grade-4', label: '4年級', sortOrder: 4 },
+              { bandId: 'grade-5', label: '5年級', sortOrder: 5 },
+              { bandId: 'grade-6', label: '6年級', sortOrder: 6 },
+            ],
+          },
+        ],
+      },
+      {
+        levelCode: 'junior-high',
+        label: '國中',
+        legacyLabels: ['國中'],
+        dimensions: [
+          {
+            dimensionType: 'grade',
+            bands: [
+              { bandId: 'grade-7', label: '7年級', sortOrder: 1 },
+              { bandId: 'grade-8', label: '8年級', sortOrder: 2 },
+              { bandId: 'grade-9', label: '9年級', sortOrder: 3 },
+            ],
+          },
+        ],
+      },
+      {
+        levelCode: 'senior-high',
+        label: '高中職',
+        legacyLabels: ['高中職'],
+        dimensions: [],
+      },
+      {
+        levelCode: 'higher-education',
+        label: '大專院校',
+        legacyLabels: ['大專院校'],
+        dimensions: [
+          {
+            dimensionType: 'degree',
+            bands: [
+              { bandId: 'degree-2y-college', label: '二專', sortOrder: 1 },
+              { bandId: 'degree-2y-tech', label: '二技(大學)', sortOrder: 2 },
+              { bandId: 'degree-bachelor', label: '學士', sortOrder: 3 },
+              { bandId: 'degree-master', label: '碩士', sortOrder: 4 },
+              { bandId: 'degree-doctoral', label: '博士', sortOrder: 5 },
+            ],
+          },
+        ],
+      },
+    ],
+    genderDimensions: [
+      { key: 'male', label: '男生' },
+      { key: 'female', label: '女生' },
+      { key: 'total', label: '合計' },
+    ],
+  }
+}

@@ -16,6 +16,7 @@ export type RegionGroup = Exclude<RegionGroupFilter, '全部'>
 export type TrendRecord = {
   year: AcademicYear
   students: number
+  valueStatus?: 'official' | 'estimated' | 'zero' | 'missing' | 'year-not-applicable'
   isEstimated?: boolean
   isMissing?: boolean
 }
@@ -37,6 +38,112 @@ export type StudentCompositionRecord = {
   bands: StudentBandRecord[]
 }
 
+export type DataAssetGroup =
+  | 'summary'
+  | 'validation'
+  | 'schema'
+  | 'school-atlas-index'
+  | 'county-boundary'
+  | 'lookup'
+  | 'sqlite'
+  | 'county-detail'
+  | 'county-bucket'
+  | 'school-atlas'
+  | 'township-boundary'
+
+export type ValidationSeverity = 'blocking' | 'warning' | 'info'
+export type ValidationStatus = 'pass' | 'warning' | 'fail'
+
+export type ValidationReportItem = {
+  ruleId: string
+  severity: ValidationSeverity
+  status: ValidationStatus
+  scope: string
+  affectedAssets: string[]
+  affectedRecordCount: number
+  samples?: Array<Record<string, string | number | boolean | null | undefined>>
+  recommendedAction: string
+}
+
+export type ValidationSummary = {
+  overallStatus: ValidationStatus
+  blockingCount: number
+  warningCount: number
+  infoCount: number
+}
+
+export type ValidationReport = {
+  generatedAt: string
+  schemaVersion: string
+  overallStatus: ValidationStatus
+  items: ValidationReportItem[]
+}
+
+export type DataManifestAsset = {
+  path: string
+  assetGroup: DataAssetGroup
+  hash: string
+  bytes: number
+  dependsOnSchemaVersion: string
+  critical: boolean
+  countyId?: string
+  countyCode?: string
+  legacyAliases?: string[]
+}
+
+export type DataManifest = {
+  schemaVersion: string
+  generatedAt: string
+  buildId: string
+  contentHash: string
+  previousCompatibleSchemaVersions: string[]
+  validationSummary: ValidationSummary
+  assets: DataManifestAsset[]
+}
+
+export type GradeMapBand = {
+  bandId: string
+  label: string
+  sortOrder: number
+}
+
+export type GradeMapDimension = {
+  dimensionType: 'grade' | 'degree' | 'track' | 'other'
+  bands: GradeMapBand[]
+}
+
+export type GradeMapLevel = {
+  levelCode: string
+  label: string
+  legacyLabels: string[]
+  dimensions: GradeMapDimension[]
+}
+
+export type GradeMapSchema = {
+  schemaVersion: string
+  generatedAt: string
+  levels: GradeMapLevel[]
+  genderDimensions: Array<{
+    key: 'male' | 'female' | 'total'
+    label: string
+  }>
+}
+
+export type DataRefreshSummary = {
+  checkedAt: string
+  overallStatus: 'idle' | 'up-to-date' | 'updated' | 'partial-failure' | 'failed' | 'fallback'
+  localGeneratedAt?: string
+  remoteGeneratedAt?: string
+  localContentHash?: string
+  remoteContentHash?: string
+  schemaVersion?: string
+  updatedAssets: string[]
+  skippedAssets: string[]
+  failedAssets: string[]
+  rolledBackAssets: string[]
+  message: string
+}
+
 export type SummaryTrendRecord = {
   year: AcademicYear
   students: number
@@ -52,10 +159,15 @@ export type DataNote = {
 
 export type SchoolRecord = {
   id: string
+  schoolLevelId?: string
   code: string
   name: string
   countyId: string
   townshipId: string
+  countyCode?: string
+  townCode?: string
+  legacyCountyId?: string
+  legacyTownshipId?: string
   educationLevel: SchoolLevel
   managementType: SchoolManagementType
   address: string
@@ -77,6 +189,9 @@ export type TownshipRecord = {
   id: string
   name: string
   countyId: string
+  countyCode?: string
+  townCode?: string
+  legacyTownshipId?: string
   schools: SchoolRecord[]
   dataNotes?: DataNote[]
 }
@@ -86,6 +201,8 @@ export type CountyRecord = {
   name: string
   shortLabel: string
   region: RegionGroup
+  countyCode?: string
+  legacyCountyId?: string
   towns: TownshipRecord[]
   dataNotes?: DataNote[]
 }
@@ -96,6 +213,9 @@ export type TownshipSummaryRecord = {
   id: string
   name: string
   countyId: string
+  countyCode?: string
+  townCode?: string
+  legacyTownshipId?: string
   dataNotes?: DataNote[]
   summaries: Record<SummaryBucketKey, SummaryTrendRecord[]>
 }
@@ -129,6 +249,8 @@ export type CountyBucketDataset = {
   generatedAt: string
   county: {
     id: string
+    countyCode?: string
+    legacyCountyId?: string
     name: string
     shortLabel: string
     region: RegionGroup
@@ -138,6 +260,8 @@ export type CountyBucketDataset = {
 
 export type CountySummaryRecord = {
   id: string
+  countyCode?: string
+  legacyCountyId?: string
   name: string
   shortLabel: string
   region: RegionGroup
@@ -160,6 +284,8 @@ export type CountySummaryRecord = {
 export type SchoolCodeEntry = {
   countyId: string
   townshipId: string
+  countyCode?: string
+  townCode?: string
   name: string
   countyName?: string
   townshipName?: string
@@ -171,12 +297,15 @@ export type SchoolCodeEntry = {
 
 export type SchoolCodeAtlasLevelEntry = {
   schoolId: string
+  schoolLevelId?: string
   name: string
   educationLevel: SchoolLevel
   managementType: SchoolManagementType
   countyId: string
+  countyCode?: string
   countyName: string
   townshipId: string
+  townCode?: string
   townshipName: string
   coordinates: {
     longitude: number
@@ -211,6 +340,8 @@ export type CountySchoolAtlasDataset = {
   years: readonly AcademicYear[]
   county: {
     id: string
+    countyCode?: string
+    legacyCountyId?: string
     name: string
     shortLabel: string
     region: RegionGroup
@@ -223,6 +354,7 @@ export type SchoolAtlasIndexDataset = {
   years: readonly AcademicYear[]
   counties: Array<{
     countyId: string
+    countyCode?: string
     countyName: string
     schoolAtlasFile: string
     schoolCount: number
@@ -235,11 +367,13 @@ export type MissingCoordinateEntry = {
   name: string
   county: string
   township: string
+  countyCode?: string
+  townCode?: string
   level: SchoolLevel
   address?: string
   longitude?: number
   latitude?: number
-  coordinateResolution?: '人工校正' | '地址解點' | '鄉鎮近似值'
+  coordinateResolution?: '人工校正' | '地址解點' | '鄉鎮近似值' | '共用 GIS 點位'
   coordinateMatchType?: string
   coordinateMatchScore?: number
 }
@@ -280,6 +414,8 @@ export type EducationSummaryDataset = {
 export type CountyDetailDataset = {
   county: {
     id: string
+    countyCode?: string
+    legacyCountyId?: string
     name: string
     shortLabel: string
     region: RegionGroup

@@ -3,6 +3,7 @@ import type { FeatureCollection, Geometry } from 'geojson'
 import { feature } from 'topojson-client'
 
 import { recordResourceLoad } from './atlasLoadObservation'
+import { buildDataAssetUrl, parseJsonDataResponse } from './dataAsset'
 import type {
   CountyBoundaryCollection,
   CountyBoundaryProperties,
@@ -20,7 +21,6 @@ type TopologyCollection = {
   }
 }
 
-const DATA_BASE_URL = import.meta.env.BASE_URL.replace(/\/$/, '')
 let countyBoundaryCache: CountyBoundaryCollection | null = null
 const townshipBoundaryMemoryCache = new Map<string, TownshipBoundaryCollection>()
 const pendingTownshipBoundaryRequests = new Map<string, Promise<TownshipBoundaryCollection>>()
@@ -46,19 +46,14 @@ function byteLengthOfText(text: string) {
 }
 
 async function fetchJsonWithMetrics<T>(resourcePath: string, options: BoundaryLoadOptions = {}) {
-  const url = resourcePath.startsWith('/') ? `${DATA_BASE_URL}${resourcePath}` : `${DATA_BASE_URL}/${resourcePath}`
-  const resolvedUrl = options.forceRefresh ? `${url}${url.includes('?') ? '&' : '?'}refresh=${Date.now()}` : url
+  const resolvedUrl = buildDataAssetUrl(resourcePath, options.forceRefresh)
   const response = await fetch(resolvedUrl, {
     cache: options.forceRefresh ? 'no-store' : 'default',
   })
 
-  if (!response.ok) {
-    throw new Error(`無法載入資料 (${response.status})`)
-  }
-
   const text = await response.text()
   return {
-    value: JSON.parse(text) as T,
+    value: await parseJsonDataResponse<T>(new Response(text, { status: response.status, statusText: response.statusText, headers: response.headers }), resourcePath, resolvedUrl),
     bytes: byteLengthOfText(text),
   }
 }
@@ -84,7 +79,7 @@ export async function loadCountyBoundaries(options: BoundaryLoadOptions = {}) {
     return countyBoundaryCache
   }
 
-  const { value, bytes } = await fetchJsonWithMetrics<TopologyCollection>('/data/county-boundaries.topo.json', options)
+  const { value, bytes } = await fetchJsonWithMetrics<TopologyCollection>('county-boundaries.topo.json', options)
   countyBoundaryCache = decodeFeatureCollection<CountyBoundaryProperties>(value, 'counties')
   recordResourceLoad({
     source: 'network',
@@ -118,7 +113,7 @@ export async function loadTownshipBoundaries(countyId: string, townshipFile?: st
   }
 
   const nextRequest = (async () => {
-    const { value, bytes } = await fetchJsonWithMetrics<TopologyCollection>(`/data/${resolvedTownshipFile}`, options)
+    const { value, bytes } = await fetchJsonWithMetrics<TopologyCollection>(resolvedTownshipFile, options)
     const decoded = decodeFeatureCollection<TownshipBoundaryProperties>(value, 'townships')
     townshipBoundaryMemoryCache.set(countyId, decoded)
     recordResourceLoad({

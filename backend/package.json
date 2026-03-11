@@ -1,0 +1,16 @@
+{
+  "name": "backend",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "data:refresh": "node ./scripts/refresh-official-data.mjs"
+  },
+  "dependencies": {
+    "csv-parse": "^6.1.0",
+    "shpjs": "^6.2.0",
+    "sql.js": "^1.14.1",
+    "topojson-client": "^3.1.0",
+    "topojson-server": "^3.0.1"
+  }
+}

@@ -1,6 +1,7 @@
 import { useMemo } from 'react'
 
 import BoxPlotChart from './BoxPlotChart'
+import HistogramChart from './HistogramChart'
 import ScatterPlotChart from './ScatterPlotChart'
 import PieChart from './PieChart'
 import SchoolAnalysisView from './SchoolAnalysisView'
@@ -81,6 +82,12 @@ function SchoolDetailPanel({
       .filter((school) => school.educationLevel === selectedSchool.educationLevel)
       .slice(0, 10)
     : []
+  const peerCohort = selectedSchool
+    ? countyWideSchoolInsights
+      .filter((school) => school.educationLevel === selectedSchool.educationLevel)
+      .sort((left, right) => right.currentStudents - left.currentStudents)
+    : []
+  const cohortRank = selectedSchool ? peerCohort.findIndex((school) => school.id === selectedSchool.id) + 1 : 0
   const scopeDistribution = useMemo(() => {
     const totals = new Map<string, number>()
     schoolInsights.forEach((school) => {
@@ -254,12 +261,22 @@ function SchoolDetailPanel({
                 </section>
 
                 <section className="school-list-workspace__card school-list-workspace__card--distribution">
-                  {sizeDistributionGroups.length > 0 ? (
-                    <BoxPlotChart
-                      title={`${scopeLabel} 學校規模箱形圖`}
-                      subtitle="依學制比較各校學生數分布，補足散點圖看不出的群體差異。"
-                      groups={sizeDistributionGroups}
-                    />
+                  {schoolInsights.length > 0 ? (
+                    <div className="school-distribution-stack">
+                      <HistogramChart
+                        title={`${scopeLabel} 學校規模分布`}
+                        subtitle="以真正的直方圖揭露規模集中區間，再用盒鬚圖補充各學制群體差異。"
+                        values={schoolInsights.map((school) => school.currentStudents)}
+                        activeValue={selectedSchool?.currentStudents ?? null}
+                      />
+                      {sizeDistributionGroups.length > 0 ? (
+                        <BoxPlotChart
+                          title={`${scopeLabel} 學制箱形摘要`}
+                          subtitle="以盒鬚圖補充不同學制的中位數、四分位距與離散程度。"
+                          groups={sizeDistributionGroups}
+                        />
+                      ) : null}
+                    </div>
                   ) : scopeDistribution.length > 0 ? (
                     <PieChart slices={scopeDistribution} size={124} />
                   ) : (
@@ -293,6 +310,8 @@ function SchoolDetailPanel({
                 selectedSchoolRank={selectedSchoolRank}
                 sortedSchoolsCount={sortedSchools.length}
                 sortedSchoolsMax={sortedSchools[0]?.currentStudents ?? 0}
+                cohortRank={cohortRank}
+                cohortCount={peerCohort.length}
                 peerSchools={peerSchools}
                 selectedTownshipSummary={selectedTownshipSummary}
                 highlightedSchoolId={highlightedSchoolId}

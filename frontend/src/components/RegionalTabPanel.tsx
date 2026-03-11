@@ -1,10 +1,10 @@
 import { useMemo } from 'react'
 
+import ButterflyChart from './ButterflyChart'
 import ComparisonBarChart from './ComparisonBarChart'
 import ComparisonPanel from './ComparisonPanel'
 import InsightPanel from './InsightPanel'
 import ScopePanel from './ScopePanel'
-import StackedShareBarChart from './StackedShareBarChart'
 import type { useAtlasDerivedState } from '../hooks/useAtlasDerivedState'
 import type { AcademicYear, RegionGroupFilter } from '../data/educationData'
 import { formatPercent, formatStudents } from '../lib/analytics'
@@ -113,17 +113,16 @@ function RegionalTabPanel({
               />
             </div>
             <div className="atlas-storyboard__chart">
-              <StackedShareBarChart
+              <ButterflyChart
                 title="各區公私立學生占比"
-                subtitle="觀察區域教育資源是依賴公家還是民間力量補足。"
+                subtitle="左右對照各區公私立量體，快速辨識依賴公部門或民間補位的區域結構。"
                 items={regionSummaries.map((item) => ({
                   id: item.id,
                   label: item.label,
-                  total: item.publicStudents + item.privateStudents,
-                  segments: [
-                    { label: '公立', value: item.publicStudents, share: item.publicShare, color: 'linear-gradient(90deg, rgba(42, 111, 145, 0.8), var(--palette-cyan))' },
-                    { label: '私立', value: item.privateStudents, share: item.privateShare, color: 'linear-gradient(90deg, rgba(184, 135, 70, 0.8), var(--palette-brass))' },
-                  ],
+                  leftLabel: '公立',
+                  rightLabel: '私立',
+                  leftValue: item.publicStudents,
+                  rightValue: item.privateStudents,
                 }))}
                 activeItemId={region === '全部' ? null : region}
                 onSelectItem={(regionId) => scenarioActions.handleRegionSelect(regionId as RegionGroupFilter)}

@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import type { TrendPoint } from '../lib/analytics'
 import { formatAcademicYearCompact } from '../lib/analytics'
+import { useChartAnimation } from '../hooks/useChartAnimation'
+import { useResponsiveSvg } from '../hooks/useResponsiveSvg'
 
 const formatWan = (val: number) => {
   if (val === 0) return '0'
@@ -20,26 +22,46 @@ type StackedAreaTrendChartProps = {
   series: Series[]
 }
 
-const SERIES_COLORS = ['#38bdf8', '#34d399', '#fbbf24', '#f87171', '#a855f7']
+const SERIES_COLORS = [
+  'var(--chart-area-0, #38bdf8)',
+  'var(--chart-area-1, #34d399)',
+  'var(--chart-area-2, #fbbf24)',
+  'var(--chart-area-3, #f87171)',
+  'var(--chart-area-4, #a855f7)',
+]
 
 function StackedAreaTrendChart({ title, subtitle, series }: StackedAreaTrendChartProps) {
-  const width = 680
-  const height = 240
+  const { containerRef, width, height } = useResponsiveSvg(680, 240, { minWidth: 340 })
   const paddingLeft = 110
   const paddingRight = 40
   const paddingY = 35
 
   const [hoverIndex, setHoverIndex] = useState<number | null>(null)
   const [viewMode, setViewMode] = useState<'absolute' | 'share' | 'line'>('absolute')
+  const [hiddenSeries, setHiddenSeries] = useState<Set<string>>(new Set())
+  const { ref: animRef, isVisible } = useChartAnimation()
 
-  // Filter series data to start from year 108
-  const filteredSeries = series.map(s => ({
-    ...s,
-    points: s.points.filter(p => p.year >= 108)
-  }))
+  // Filter series data to start from year 108, exclude hidden
+  const filteredSeries = series
+    .filter(s => !hiddenSeries.has(s.label))
+    .map(s => ({
+      ...s,
+      points: s.points.filter(p => p.year >= 108)
+    }))
 
   // Years to display data for
   const dataYears = Array.from(new Set(filteredSeries.flatMap((item) => item.points.map((point) => point.year)))).sort((left, right) => left - right)
+
+  if (dataYears.length === 0) {
+    return (
+      <section className="stacked-area-chart" style={{ padding: '12px 14px' }}>
+        <div className="panel-heading" style={{ marginBottom: '14px', paddingLeft: '4px' }}>
+          <h3 style={{ margin: 0 }}>{title}</h3>
+        </div>
+        <div className="chart-empty-state">尚無資料</div>
+      </section>
+    )
+  }
 
   // Full range including padding for breathing room
   const displayYears: number[] = [107, ...dataYears, 115]
@@ -113,7 +135,7 @@ function StackedAreaTrendChart({ title, subtitle, series }: StackedAreaTrendChar
   })
 
   return (
-    <section className="stacked-area-chart" style={{ padding: '12px 14px', position: 'relative' }}>
+    <section className="stacked-area-chart" ref={animRef as React.RefObject<HTMLElement>} style={{ padding: '12px 14px', position: 'relative' }}>
       <div className="panel-heading" style={{ marginBottom: '14px', paddingLeft: '4px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
           <h3 style={{ margin: 0 }}>{title}</h3>
@@ -135,17 +157,19 @@ function StackedAreaTrendChart({ title, subtitle, series }: StackedAreaTrendChar
         </p>
       </div>
 
+      <div className="chart-svg-frame" ref={containerRef}>
       <svg
-        className="stacked-area-chart__svg"
+        className={`stacked-area-chart__svg${isVisible ? ' chart-enter' : ''}`}
         viewBox={`0 0 ${width} ${height}`}
+        preserveAspectRatio="xMidYMid meet"
         style={{ overflow: 'visible' }}
         onMouseMove={(e) => {
           const rect = e.currentTarget.getBoundingClientRect()
           const x = (e.clientX - rect.left) * (width / rect.width)
           const index = Math.round(((x - paddingLeft) * (displayYears.length - 1)) / (width - paddingLeft - paddingRight))
           const hoveredYear = displayYears[index]
-          if (dataYears.includes(hoveredYear as any)) {
-            setHoverIndex(dataYears.indexOf(hoveredYear as any))
+          if (hoveredYear !== undefined && (dataYears as number[]).includes(hoveredYear)) {
+            setHoverIndex((dataYears as number[]).indexOf(hoveredYear))
           } else {
             setHoverIndex(null)
           }
@@ -319,6 +343,7 @@ function StackedAreaTrendChart({ title, subtitle, series }: StackedAreaTrendChar
                   textAnchor="middle"
                 >
                   {(() => {
+                    if (totals[i - 1] === 0) return ''
                     const pct = ((totals[i] - totals[i - 1]) / totals[i - 1]) * 100
                     return `(${pct > 0 ? '+' : ''}${pct.toFixed(1)}%)`
                   })()}
@@ -366,6 +391,34 @@ function StackedAreaTrendChart({ title, subtitle, series }: StackedAreaTrendChar
           )
         })}
       </svg>
+      </div>
+
+      {/* Interactive legend — click to toggle series visibility */}
+      <div className="stacked-area-chart__legend">
+        {series.filter(s => s.points.some(p => p.year >= 108)).map((s, i) => {
+          const isHidden = hiddenSeries.has(s.label)
+          const color = SERIES_COLORS[i % SERIES_COLORS.length]
+          return (
+            <button
+              key={s.label}
+              type="button"
+              className={`stacked-area-chart__legend-item${isHidden ? ' stacked-area-chart__legend-item--hidden' : ''}`}
+              style={{ opacity: isHidden ? 0.4 : 1 }}
+              onClick={() => {
+                setHiddenSeries(prev => {
+                  const next = new Set(prev)
+                  if (next.has(s.label)) next.delete(s.label)
+                  else next.add(s.label)
+                  return next
+                })
+              }}
+            >
+              <span className="stacked-area-chart__swatch" style={{ background: color, opacity: isHidden ? 0.3 : 1 }} />
+              <strong>{s.label.replace('院校', '')}</strong>
+            </button>
+          )
+        })}
+      </div>
     </section>
   )
 }

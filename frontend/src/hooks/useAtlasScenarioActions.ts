@@ -8,6 +8,7 @@ import {
   type RegionGroupFilter,
   type EducationSummaryDataset,
 } from '../data/educationData'
+import { normalizeCountyIds, toCanonicalCountyIds } from './atlasIdentity'
 import { createSavedComparisonScenario, writeStoredScenarios } from './atlasHelpers'
 import type { InvestigationItem, SavedComparisonScenario } from './types'
 import { useAtlasScenarioCrud } from './useAtlasScenarioCrud'
@@ -85,9 +86,11 @@ export function useAtlasScenarioActions({
 }: ScenarioActionsArgs) {
   const pushRecentScenario = (countyIds: string[], scenarioName: string) => {
     if (!summaryDataset) return
+    const normalizedCountyIds = normalizeCountyIds(summaryDataset, countyIds).slice(0, 4)
+    const storedCountyIds = toCanonicalCountyIds(summaryDataset, normalizedCountyIds)
     const snapshot = createSavedComparisonScenario({
       name: scenarioName.trim() || `比較 ${countyIds.length} 縣市`,
-      countyIds: countyIds.filter((countyId) => summaryDataset.counties.some((county) => county.id === countyId)).slice(0, 4),
+      countyIds: storedCountyIds,
       activeYear,
       educationLevel,
       managementType,
@@ -192,9 +195,10 @@ export function useAtlasScenarioActions({
   const applySavedScenario = (scenario: SavedComparisonScenario) => {
     if (!summaryDataset) return
     pushRecentScenario(scenario.countyIds, scenario.name)
+    const normalizedCountyIds = normalizeCountyIds(summaryDataset, scenario.countyIds).slice(0, 4)
     startTransition(() => {
       setComparisonScenarioName(scenario.name)
-      setComparisonCountyIds(scenario.countyIds.filter((countyId) => summaryDataset.counties.some((county) => county.id === countyId)).slice(0, 4))
+      setComparisonCountyIds(normalizedCountyIds)
       setActiveYear(summaryDataset.years.includes(scenario.activeYear) ? scenario.activeYear : (summaryDataset.years.at(-1) ?? DEFAULT_YEAR))
       setEducationLevel(EDUCATION_LEVELS.includes(scenario.educationLevel) ? scenario.educationLevel : '全部')
       setManagementType(MANAGEMENT_TYPES.includes(scenario.managementType) ? scenario.managementType : '全部')

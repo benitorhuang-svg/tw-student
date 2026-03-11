@@ -1,5 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { formatAcademicYearCompact, type TrendPoint, formatStudents } from '../lib/analytics'
+import { useChartAnimation } from '../hooks/useChartAnimation'
+import { useResponsiveSvg } from '../hooks/useResponsiveSvg'
 
 type TrendChartProps = {
   chartId: string
@@ -36,21 +38,21 @@ function TrendChart({
   formatValue = (value) => `${formatStudents(Math.round(value))} 人`
 }: TrendChartProps) {
   const PREDICT_YEARS = 2
-  const width = 620
-  const height = 240
+  const { containerRef, width, height } = useResponsiveSvg(620, 240, { minWidth: 320 })
   const paddingX = 36
   const paddingY = 28
 
   const [hoverIndex, setHoverIndex] = useState<number | null>(null)
   const [dashArray, setDashArray] = useState<string | number>('0 1000')
   const pathRef = useRef<SVGPathElement>(null)
+  const { ref: animRef, isVisible } = useChartAnimation()
 
   useEffect(() => {
-    if (pathRef.current) {
+    if (pathRef.current && isVisible) {
       const length = pathRef.current.getTotalLength()
       setDashArray(length)
     }
-  }, [points])
+  }, [points, isVisible])
 
   const values = points.map((point) => point.value)
   const benchValues = benchmarkPoints?.map(p => p.value) ?? []
@@ -80,8 +82,18 @@ function TrendChart({
     y: toY(p.value)
   }))
 
+  const normalizedPrediction = predictionValues.map((value, index) => ({
+    year: points.at(-1)?.year ? points[points.length - 1].year + index + 1 : activeYear + index + 1,
+    x: toX(points.length + index),
+    y: toY(value),
+    value,
+  }))
+
   const linePath = buildLinePath(normalizedPoints)
   const benchPath = normalizedBench ? buildLinePath(normalizedBench) : ''
+  const predictionPath = normalizedPrediction.length > 0
+    ? buildLinePath([{ x: normalizedPoints.at(-1)?.x ?? 0, y: normalizedPoints.at(-1)?.y ?? 0 }, ...normalizedPrediction])
+    : ''
 
   const handleMouseMove = (e: React.MouseEvent<SVGSVGElement>) => {
     const svg = e.currentTarget
@@ -101,8 +113,17 @@ function TrendChart({
     setHoverIndex(closestIndex)
   }
 
+  if (points.length === 0) {
+    return (
+      <section className="trend-panel" ref={animRef as React.RefObject<HTMLElement>}>
+        {showHeader && <div className="panel-heading"><div><h3>{title}</h3></div></div>}
+        <div className="chart-empty-state">尚無資料</div>
+      </section>
+    )
+  }
+
   return (
-    <section className="trend-panel">
+    <section className="trend-panel" ref={animRef as React.RefObject<HTMLElement>}>
       {showHeader && (
         <div className="panel-heading">
           <div>
@@ -112,9 +133,11 @@ function TrendChart({
           <p className="panel-heading__meta">{subtitle}</p>
         </div>
       )}
+      <div className="chart-svg-frame" ref={containerRef}>
       <svg
         className="trend-chart"
         viewBox={`0 0 ${width} ${height}`}
+        preserveAspectRatio="xMidYMid meet"
         role="img"
         onMouseMove={handleMouseMove}
         onMouseLeave={() => setHoverIndex(null)}
@@ -137,12 +160,34 @@ function TrendChart({
 
         <path className="trend-chart__line" d={linePath} ref={pathRef} style={{ strokeDasharray: dashArray }} />
 
+        {predictionPath ? <path className="trend-chart__prediction" d={predictionPath} /> : null}
+
         {normalizedPoints.map((p, i) => (
           <circle
             key={i}
             cx={p.x} cy={p.y} r={p.year === activeYear ? 5 : 3}
             className={p.year === activeYear ? 'trend-chart__point trend-chart__point--active' : 'trend-chart__point'}
+            tabIndex={0}
+            role="button"
+            aria-label={`${formatAcademicYearCompact(p.year)} ${formatValue(p.value)}`}
+            onFocus={() => setHoverIndex(i)}
+            onBlur={() => setHoverIndex(null)}
+            onKeyDown={(event) => {
+              if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault()
+                setHoverIndex(i)
+              }
+            }}
           />
+        ))}
+
+        {normalizedPrediction.map((point) => (
+          <g key={`prediction-${point.year}`}>
+            <circle cx={point.x} cy={point.y} r={3} className="trend-chart__point trend-chart__point--predicted" />
+            <text className="trend-chart__label trend-chart__label--predicted" x={point.x} y={height - 6} textAnchor="middle">
+              {formatAcademicYearCompact(point.year)}
+            </text>
+          </g>
         ))}
 
         {hoverIndex !== null && (
@@ -150,9 +195,9 @@ function TrendChart({
             <line x1={normalizedPoints[hoverIndex].x} x2={normalizedPoints[hoverIndex].x} y1={paddingY} y2={height - paddingY} />
             <circle cx={normalizedPoints[hoverIndex].x} cy={normalizedPoints[hoverIndex].y} r={6} fill="none" stroke="var(--palette-cyan)" />
             <g transform={`translate(${normalizedPoints[hoverIndex].x > width - 100 ? normalizedPoints[hoverIndex].x - 110 : normalizedPoints[hoverIndex].x + 10}, ${normalizedPoints[hoverIndex].y - 20})`}>
-              <rect width="100" height="40" rx="4" fill="rgba(8, 17, 31, 0.9)" />
-              <text x="10" y="16" fill="#fff" fontSize="10">{formatAcademicYearCompact(normalizedPoints[hoverIndex].year)}</text>
-              <text x="10" y="30" fill="var(--palette-cyan)" fontSize="12" fontWeight="bold">{formatValue(normalizedPoints[hoverIndex].value)}</text>
+              <rect className="chart-svg-tooltip__surface" width="100" height="40" rx="6" />
+              <text className="chart-svg-tooltip__title" x="10" y="16">{formatAcademicYearCompact(normalizedPoints[hoverIndex].year)}</text>
+              <text className="chart-svg-tooltip__value" x="10" y="30">{formatValue(normalizedPoints[hoverIndex].value)}</text>
             </g>
           </g>
         )}
@@ -163,6 +208,7 @@ function TrendChart({
           </text>
         ))}
       </svg>
+      </div>
       {benchmarkPoints && benchmarkPoints.length > 0 && (
         <div className="trend-chart__footnote">
           <span>區域平均比較：實線代表選定範圍，虛線為所在區域參考值。</span>

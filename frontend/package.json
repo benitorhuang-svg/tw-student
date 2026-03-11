@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "data:refresh": "node ./scripts/refresh-official-data.mjs",
+    "data:refresh": "node ../backend/scripts/refresh-official-data.mjs",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",

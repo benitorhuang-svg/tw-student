@@ -72,6 +72,7 @@ function App() {
   const {
     summaryDataset, countyBoundaries, loadError, countyDetailError,
     countySchoolAtlasCache, countySchoolAtlasError,
+    localManifest, remoteManifest, validationReport, refreshSummary,
     prefetchCounty, refreshData, isRefreshingData, refreshStatus,
   } = educationData
 
@@ -294,6 +295,10 @@ function App() {
           handleSchoolSelect={handleSchoolSelect}
           setHoveredSchoolId={setHoveredSchoolId}
           countySchoolAtlasCache={countySchoolAtlasCache}
+          localManifest={localManifest}
+          remoteManifest={remoteManifest}
+          validationReport={validationReport}
+          refreshSummary={refreshSummary}
           isRefreshingData={isRefreshingData}
           refreshStatus={refreshStatus}
           refreshData={refreshData}

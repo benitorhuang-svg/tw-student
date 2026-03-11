@@ -27,6 +27,7 @@ import {
   getTownshipScopeSummaryFromSummary,
   getTownshipSummaries,
 } from '../lib/analytics'
+import { normalizeCountyId, normalizeCountyIds, normalizeTownshipId, resolveCountyRecord, toCanonicalCountyIds } from './atlasIdentity'
 import { buildInvestigationItems, classifyInvestigation } from './buildInvestigationItems'
 import type { InvestigationFilter } from './types'
 import { DEFAULT_YEAR } from './useAtlasQueryState'
@@ -125,10 +126,10 @@ export function useAtlasDerivedState({
     searchText: deferredSearchText,
   }
 
-  const selectedCountyFromDataset = summaryDataset.counties.find((county) => county.id === selectedCountyId) ?? null
+  const selectedCountyFromDataset = resolveCountyRecord(summaryDataset, selectedCountyId)
   const countySummaries = getCountySummaries(summaryDataset.counties, filters)
   const countyRankingRows = getCountyRankingRows(countySummaries)
-  const activeCountyId = selectedCountyFromDataset ? selectedCountyId : null
+  const activeCountyId = selectedCountyFromDataset ? normalizeCountyId(summaryDataset, selectedCountyId) : null
   const activeTownshipBoundaries = activeCountyId ? townshipBoundaryCache[activeCountyId] ?? null : null
   const activeCountyBuckets = activeCountyId ? countyBucketCache[activeCountyId] ?? null : null
   const isTownshipBoundaryLoading = Boolean(activeCountyId && !activeTownshipBoundaries)
@@ -137,7 +138,7 @@ export function useAtlasDerivedState({
   const isCountyDetailLoading = Boolean(activeCountyId && !selectedCountyDetail && !countyDetailError)
   const selectedCountySummary = selectedCounty ? getCountyScopeSummaryFromSummary(selectedCounty, filters) : null
   const townshipRows = selectedCounty ? getTownshipSummaries(selectedCounty, filters) : []
-  const activeTownshipId = selectedCounty && townshipRows.some((township) => township.id === selectedTownshipId) ? selectedTownshipId : null
+  const activeTownshipId = selectedCounty ? normalizeTownshipId(summaryDataset, activeCountyId, selectedTownshipId) : null
   const selectedTownshipSummary = selectedCounty && activeTownshipId
     ? getTownshipScopeSummaryFromSummary(selectedCounty, activeTownshipId, filters)
     : null
@@ -161,7 +162,7 @@ export function useAtlasDerivedState({
   if (selectedCountySummary) scopePath.push(selectedCountySummary.label)
   if (selectedTownshipSummary) scopePath.push(selectedTownshipSummary.label)
 
-  const validComparisonIds = comparisonCountyIds.filter((countyId) => summaryDataset.counties.some((county) => county.id === countyId))
+  const validComparisonIds = normalizeCountyIds(summaryDataset, comparisonCountyIds)
   const effectiveComparisonCountyIds = (validComparisonIds.length > 0 ? validComparisonIds : countyRankingRows.map((row) => row.id).slice(0, 4)).slice(0, 4)
   const comparisonSummaries = getCountyComparisonSummaries(summaryDataset.counties, effectiveComparisonCountyIds, filters)
   const comparisonCandidateIds = [...new Set([...effectiveComparisonCountyIds, ...countyRankingRows.slice(0, 8).map((row) => row.id)])]
@@ -190,7 +191,7 @@ export function useAtlasDerivedState({
   const activeScenarioSnapshot = comparisonCountyIds.length > 0
     ? {
         name: comparisonScenarioName.trim() || `比較 ${comparisonCountyIds.length} 縣市`,
-        countyIds: comparisonCountyIds.filter((countyId) => summaryDataset.counties.some((county) => county.id === countyId)).slice(0, 4),
+        countyIds: toCanonicalCountyIds(summaryDataset, comparisonCountyIds).slice(0, 4),
         activeYear: filters.year,
         educationLevel,
         managementType,

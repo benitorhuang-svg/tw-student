@@ -2,11 +2,11 @@
   "name": "student-counting-analysis-tw",
   "private": true,
   "scripts": {
-    "postinstall": "npm --prefix frontend install",
+    "postinstall": "npm --prefix frontend install && npm --prefix backend install",
     "dev": "npm --prefix frontend run dev",
     "build": "npm --prefix frontend run build",
     "lint": "npm --prefix frontend run lint",
-    "data:refresh": "npm --prefix frontend run data:refresh",
+    "data:refresh": "npm --prefix backend run data:refresh",
     "test:e2e": "npm --prefix frontend run test:e2e"
   }
 }

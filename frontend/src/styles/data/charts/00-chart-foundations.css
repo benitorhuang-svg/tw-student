@@ -1,0 +1,192 @@
+/* ─── Chart Design System: Color Tokens & Shared Styles ─── */
+
+:root {
+  /* 12-color series palette for charts */
+  --chart-series-0: #2a6f91;   /* cyan */
+  --chart-series-1: #2d8f6f;   /* jade */
+  --chart-series-2: #b88746;   /* brass */
+  --chart-series-3: #c96a4b;   /* coral */
+  --chart-series-4: #7c5cbf;   /* violet */
+  --chart-series-5: #38bdf8;   /* sky */
+  --chart-series-6: #34d399;   /* emerald */
+  --chart-series-7: #fbbf24;   /* amber */
+  --chart-series-8: #f87171;   /* rose */
+  --chart-series-9: #a78bfa;   /* lavender */
+  --chart-series-10: #22d3ee;  /* teal */
+  --chart-series-11: #fb923c;  /* tangerine */
+
+  /* Stacked Area series (brighter for area fills) */
+  --chart-area-0: #38bdf8;
+  --chart-area-1: #34d399;
+  --chart-area-2: #fbbf24;
+  --chart-area-3: #f87171;
+  --chart-area-4: #a855f7;
+
+  /* Pie / donut   */
+  --chart-pie-0: #38bdf8;
+  --chart-pie-1: #34d399;
+  --chart-pie-2: #fbbf24;
+  --chart-pie-3: #fb923c;
+  --chart-pie-4: #a855f7;
+  --chart-pie-5: #94a3b8;
+
+  /* Scatter quadrant backgrounds */
+  --chart-quadrant-tl: rgba(42, 111, 145, 0.06);
+  --chart-quadrant-tr: rgba(45, 143, 111, 0.06);
+  --chart-quadrant-bl: rgba(184, 79, 70, 0.06);
+  --chart-quadrant-br: rgba(184, 135, 70, 0.06);
+
+  /* Tooltip surface */
+  --chart-tooltip-bg: rgba(8, 17, 31, 0.82);
+  --chart-tooltip-border: rgba(148, 163, 184, 0.18);
+  --chart-tooltip-shadow: 0 8px 32px rgba(0, 0, 0, 0.28);
+
+  /* Chart school bars */
+  --chart-bar-primary: #f0abfc;
+  --chart-bar-active: #93c5fd;
+  --chart-rate-stroke: #fb7185;
+}
+
+/* ─── Glassmorphism Tooltip ─── */
+
+.chart-tooltip {
+  position: absolute;
+  z-index: 50;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: var(--chart-tooltip-bg);
+  border: 1px solid var(--chart-tooltip-border);
+  box-shadow: var(--chart-tooltip-shadow);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #f1f5f9;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.chart-tooltip--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.chart-tooltip__title {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.chart-tooltip__row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.chart-tooltip__swatch {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.chart-tooltip__value {
+  margin-left: auto;
+  font-weight: 700;
+  color: var(--palette-cyan);
+}
+
+/* ─── Shared Chart Enter Animation ─── */
+
+.chart-enter {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.chart-enter--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Chart Empty State ─── */
+
+.chart-empty-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+  color: var(--text-muted, rgba(255, 255, 255, 0.4));
+  font-size: 0.875rem;
+  letter-spacing: 0.5px;
+}
+
+.chart-svg-frame {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+
+.chart-data-focusable:focus-visible {
+  outline: none;
+  filter: drop-shadow(0 0 0 3px rgba(56, 189, 248, 0.3));
+}
+
+.chart-svg-tooltip__surface {
+  fill: var(--chart-tooltip-bg);
+  stroke: var(--chart-tooltip-border);
+  stroke-width: 1;
+}
+
+.chart-svg-tooltip__title {
+  fill: #f1f5f9;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.chart-svg-tooltip__value {
+  fill: var(--palette-cyan);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* ─── PieChart Center & Slice ─── */
+
+.pie-chart__slice {
+  transition: opacity 0.3s ease, stroke-width 0.2s ease;
+  cursor: pointer;
+  transform-origin: center;
+}
+
+.pie-chart__slice:hover {
+  transform: scale(1.04);
+}
+
+.pie-chart__center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  pointer-events: none;
+}
+
+.pie-chart__center-label {
+  font-size: 0.7rem;
+  opacity: 0.6;
+  font-weight: 700;
+}
+
+.pie-chart__center-value {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+/* ─── Legend Toggle (hidden state) ─── */
+
+.stacked-area-chart__legend-item--hidden {
+  text-decoration: line-through;
+  filter: grayscale(0.6);
+}

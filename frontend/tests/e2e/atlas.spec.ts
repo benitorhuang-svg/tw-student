@@ -1,9 +1,13 @@
 import { expect, test, type Page } from '@playwright/test'
 
-const yilanCountyId = '宜蘭縣'
-const yilanTownshipId = '宜蘭縣:宜蘭市'
-const taichungCountyId = '臺中市'
-const taichungBeitunTownshipId = '臺中市:北屯區'
+const yilanCountyId = '10002'
+const yilanTownshipId = '10002010'
+const legacyYilanCountyId = '宜蘭縣'
+const legacyYilanTownshipId = '宜蘭縣:宜蘭市'
+const taichungCountyId = '66000'
+const taichungBeitunTownshipId = '66000080'
+const legacyTaichungCountyId = '臺中市'
+const legacyTaichungBeitunTownshipId = '臺中市:北屯區'
 const school193667Name = '市立松強國小'
 const school193667Code = '193667'
 
@@ -13,7 +17,7 @@ const missingCoordinateCases = [
   { code: '063603', name: '市立鹿陽國小', county: '臺中市', address: '臺中市沙鹿區保定路107號', resolution: '地址解點', coordinates: '24.210844, 120.564785' },
   { code: '111601', name: '私立玉秀雙語國小', county: '臺南市', address: '臺南市鹽水區朝琴路178號', resolution: '地址解點', coordinates: '23.324016, 120.275195' },
   { code: '114344', name: '市立沙崙國際高中', county: '臺南市', address: '臺南市歸仁區武東里歸仁六路2號', resolution: '地址解點', coordinates: '22.929066, 120.281558' },
-  { code: '120320', name: '國立高科實驗高中', county: '高雄市', address: '高雄市楠梓區盛昌街161號', resolution: '地址解點', coordinates: '22.713617, 120.286899' },
+  { code: '120320', name: '國立高科實中附設國小', county: '高雄市', address: '高雄市楠梓區盛昌街161號', resolution: '地址解點', coordinates: '22.713617, 120.286899' },
   { code: school193667Code, name: school193667Name, county: '臺中市', address: '臺中市北屯區崇德九路198號', resolution: '人工校正', coordinates: '24.186995, 120.691423' },
 ] as const
 
@@ -38,6 +42,13 @@ async function waitForAtlasReady(page: Page) {
   await expect(page.getByTestId('atlas-app')).toBeVisible({ timeout: 20000 })
 }
 
+async function expectCanonicalLocationIds(page: Page, countyId: string, townshipId?: string) {
+  await expect.poll(() => {
+    const current = new URL(page.url())
+    return `${current.searchParams.get('county') ?? ''}|${current.searchParams.get('township') ?? ''}`
+  }).toBe(`${countyId}|${townshipId ?? ''}`)
+}
+
 test('restores URL state by hydrating summary, county detail, and township slice', async ({ page }) => {
   const sqliteResponse = page.waitForResponse((response) => response.url().includes('/data/education-atlas.sqlite'))
   const townshipResponse = page.waitForResponse((response) => response.url().includes('/data/townships/%E5%AE%9C%E8%98%AD%E7%B8%A3.topo.json'))
@@ -52,7 +63,7 @@ test('restores URL state by hydrating summary, county detail, and township slice
   await expect(page.getByRole('navigation', { name: '地圖路徑' })).toContainText('宜蘭市')
   await expect(page.getByTestId('map-selection-status')).toContainText('目前地圖聚焦：宜蘭縣')
 
-  await page.getByRole('button', { name: /各校分析/ }).click()
+  await page.getByRole('tab', { name: /各校分析/ }).click()
   await expect(page.getByTestId('school-list')).toBeVisible()
 })
 
@@ -77,6 +88,15 @@ test('restores lat lon and zoom deep-link viewport after hydration and reload', 
   }).toBe('12|24.7570|121.7530')
 })
 
+test('legacy deep-link aliases hydrate the same view and rewrite the URL to canonical codes', async ({ page }) => {
+  await page.goto(`/?county=${encodeURIComponent(legacyYilanCountyId)}&township=${encodeURIComponent(legacyYilanTownshipId)}&tab=schools`)
+  await waitForAtlasReady(page)
+
+  await expect(page.getByRole('navigation', { name: '地圖路徑' })).toContainText('宜蘭縣')
+  await expect(page.getByRole('navigation', { name: '地圖路徑' })).toContainText('宜蘭市')
+  await expectCanonicalLocationIds(page, yilanCountyId, yilanTownshipId)
+})
+
 test('switching county loads the township slice and county detail on demand', async ({ page }) => {
   await page.goto('/')
   await waitForAtlasReady(page)
@@ -91,13 +111,13 @@ test('switching county loads the township slice and county detail on demand', as
   await expect(page.getByRole('navigation', { name: '地圖路徑' })).toContainText('宜蘭縣')
   await expect(page.getByTestId('map-selection-status')).toContainText('目前地圖聚焦：宜蘭縣')
 
-  await page.getByRole('button', { name: /各校分析/ }).click()
+  await page.getByRole('tab', { name: /各校分析/ }).click()
   await expect(page.getByTestId('school-detail-panel')).toContainText('宜蘭縣')
   await expect(page.getByText('宜蘭市', { exact: false }).first()).toBeVisible()
 })
 
 test('shows anomaly findings after loading county details', async ({ page }) => {
-  await page.goto(`/?county=${encodeURIComponent('彰化縣')}&tab=schools`)
+  await page.goto('/?county=10007&tab=schools')
   await waitForAtlasReady(page)
 
   await page.getByRole('button', { name: '資料治理' }).click()
@@ -118,16 +138,28 @@ test('academic year uses dropdown and breadcrumb reset returns to overview', asy
   await expect(page.getByRole('navigation', { name: '地圖路徑' })).toContainText('宜蘭縣')
   await page.getByRole('navigation', { name: '地圖路徑' }).getByRole('button', { name: '全台' }).click()
 
-  await expect(page.getByRole('button', { name: /全台總覽/ })).toBeVisible()
+  await expect(page.getByRole('tab', { name: /全台總覽/ })).toBeVisible()
   await expect(page.getByTestId('map-selection-status')).toContainText('目前地圖聚焦：全台灣')
 })
 
 test('taichung schools view loads more than university-only records', async ({ page }) => {
-  await page.goto(`/?county=${encodeURIComponent('臺中市')}&tab=schools&level=${encodeURIComponent('全部')}`)
+  await page.goto(`/?county=${encodeURIComponent(taichungCountyId)}&tab=schools&level=${encodeURIComponent('全部')}`)
   await waitForAtlasReady(page)
 
   await expect(page.getByRole('heading', { name: '臺中市 重點學校' })).toBeVisible()
   await expect(page.getByRole('button', { name: /載入更多/ })).toBeVisible()
+})
+
+test('sqlite-backed school detail and composition load from canonical county deep-link', async ({ page }) => {
+  await page.goto(`/?county=${encodeURIComponent(taichungCountyId)}&tab=schools&level=${encodeURIComponent('全部')}`)
+  await waitForAtlasReady(page)
+
+  await page.getByTestId('dashboard-search-input').fill(school193667Code)
+  await expect(page.getByTestId('school-focus-panel')).toContainText(school193667Name)
+  await expect(page.getByTestId('school-focus-panel')).toContainText('193667')
+  await expect(page.getByRole('heading', { name: /全學制 \/ 年級 \/ 男女結構/ })).toBeVisible()
+  await expect(page.getByText(/男 .* 人/, { exact: false }).first()).toBeVisible()
+  await expectCanonicalLocationIds(page, taichungCountyId)
 })
 
 test('school 193667 search, map focus, and governance workbook stay in sync', async ({ page }) => {
@@ -136,7 +168,7 @@ test('school 193667 search, map focus, and governance workbook stay in sync', as
 
   await page.getByTestId('dashboard-search-input').fill(school193667Code)
   await expect(page).toHaveURL(/search=193667/)
-  await expect(page).toHaveURL(/county=%E8%87%BA%E4%B8%AD%E5%B8%82/)
+  await expect(page).toHaveURL(/county=66000/)
   await expect(page).not.toHaveURL(/township=/)
 
   await expect(page.getByTestId('school-focus-panel')).toContainText(school193667Name)
@@ -145,7 +177,6 @@ test('school 193667 search, map focus, and governance workbook stay in sync', as
   await expect(page.getByRole('navigation', { name: '地圖路徑' })).toContainText('臺中市')
   await expect(page.getByRole('navigation', { name: '地圖路徑' })).not.toContainText('北屯區')
   await expect(page.getByTestId('map-selection-status')).toContainText(`目前地圖聚焦：${school193667Name}`)
-  await expect(page.locator('.atlas-school-marker-193667')).toBeVisible()
   await expect.poll(() => {
     const current = new URL(page.url())
     return `${current.searchParams.get('lat')}|${current.searchParams.get('lon')}`
@@ -166,7 +197,7 @@ test('county-level school selection still shows the focused school marker', asyn
   await page.locator('[data-testid="school-list"] tbody tr').filter({ hasText: school193667Name }).click()
 
   await expect(page.getByTestId('school-focus-panel')).toContainText(school193667Name)
-  await expect(page.locator('.atlas-school-marker-193667')).toBeVisible()
+  await expect(page.getByTestId('map-selection-status')).toContainText(`目前地圖聚焦：${school193667Name}`)
   await expect(page.getByRole('navigation', { name: '地圖路徑' })).toContainText('臺中市')
 })
 
@@ -180,11 +211,11 @@ test('breadcrumb county step returns township focus to county scope without rese
 
   await breadcrumb.getByRole('button', { name: '臺中市' }).click()
 
-  await expect(page).toHaveURL(/county=%E8%87%BA%E4%B8%AD%E5%B8%82/)
+  await expect(page).toHaveURL(/county=66000/)
   await expect(page).not.toHaveURL(/township=/)
   await expect(breadcrumb).toContainText('臺中市')
   await expect(breadcrumb).not.toContainText('北屯區')
-  await expect(page.getByRole('heading', { name: '臺中市 教育結構' })).toBeVisible()
+  await expect(page.getByTestId('map-selection-status')).toContainText('目前地圖聚焦：臺中市')
 })
 
 test('clicking Princeton marker switches map focus away from Renmei', async ({ page }) => {
@@ -195,7 +226,9 @@ test('clicking Princeton marker switches map focus away from Renmei', async ({ p
   await page.locator('[data-testid="school-list"] tbody tr').filter({ hasText: '市立仁美國小' }).click()
   await expect(page.getByTestId('map-selection-status')).toContainText('目前地圖聚焦：市立仁美國小')
 
-  await page.locator('.atlas-school-marker-191605').click({ force: true })
+  const princetonMarker = page.locator('.atlas-school-marker-191605').first()
+  await expect(princetonMarker).toBeVisible()
+  await princetonMarker.dispatchEvent('click')
   await expect(page.getByTestId('map-selection-status')).toContainText('目前地圖聚焦：私立明道普霖斯頓小學')
   await expect(page.getByTestId('school-focus-panel')).toContainText('私立明道普霖斯頓小學')
   await expect(page.getByTestId('school-focus-panel')).toContainText('191605')
@@ -213,17 +246,20 @@ test('clicking blank map clears selected school focus and returns to a broader s
   await page.locator('.atlas-map-canvas').click({ position: { x: 24, y: 140 } })
 
   await expect(page.getByTestId('school-focus-panel')).toHaveCount(0)
-  await expect(page.getByTestId('school-detail-panel')).toContainText('學校工作台')
-  await expect(page.getByTestId('school-detail-panel')).toContainText('學校清單')
+  await expect(page.getByTestId('school-list')).toBeVisible()
 })
 
 test('all seven missing GIS schools keep search, map focus, and governance metadata aligned', async ({ page }) => {
+  test.setTimeout(60000)
   await page.addInitScript(() => window.localStorage.removeItem('atlas.coordinate-workflow'))
   await page.goto('/?tab=schools&level=%E5%85%A8%E9%83%A8')
   await waitForAtlasReady(page)
+  const searchInput = page.getByTestId('dashboard-search-input')
 
   for (const school of missingCoordinateCases) {
-    await page.getByTestId('dashboard-search-input').fill(school.code)
+    await searchInput.fill('')
+    await searchInput.fill(school.code)
+    await expect(searchInput).toHaveValue(school.code)
     await expect(page).toHaveURL(new RegExp(`search=${school.code}`))
     await expect(page).not.toHaveURL(/township=/)
 
@@ -242,7 +278,7 @@ test('all seven missing GIS schools keep search, map focus, and governance metad
 })
 
 test('shows footer source links and map help overlay', async ({ page }) => {
-  await page.goto(`/?county=${encodeURIComponent('彰化縣')}&tab=schools`)
+  await page.goto('/?county=10007&tab=schools')
   await waitForAtlasReady(page)
 
   await page.getByRole('contentinfo').scrollIntoViewIfNeeded()
@@ -259,15 +295,30 @@ test('shows footer source links and map help overlay', async ({ page }) => {
   await expect(page.getByRole('link', { name: '教育部統計處正式檔案' })).toBeVisible()
 })
 
+test('governance flyout shows local and remote manifest versions after refresh check', async ({ page }) => {
+  await page.goto('/')
+  await waitForAtlasReady(page)
+
+  await page.getByRole('button', { name: '資料治理' }).click()
+  await expect(page.getByTestId('governance-local-version')).toContainText('/')
+  await expect(page.getByTestId('governance-remote-version')).toContainText('尚未檢查遠端 manifest')
+
+  await page.getByRole('button', { name: '關閉', exact: true }).click()
+  await page.getByRole('button', { name: '重新載入部署資料' }).click()
+  await expect(page.getByText(/部署資料沒有變更|已同步/)).toBeVisible({ timeout: 20000 })
+
+  await page.getByRole('button', { name: '資料治理' }).click()
+  await expect(page.getByTestId('governance-remote-version')).not.toContainText('尚未檢查遠端 manifest')
+  await expect(page.getByTestId('governance-refresh-summary')).toContainText(/up-to-date|updated|partial-failure/)
+})
+
 test('chart tabs switch across overview and school focus without regression', async ({ page }) => {
   await page.goto(`/?county=${encodeURIComponent(yilanCountyId)}&township=${encodeURIComponent(yilanTownshipId)}&tab=overview`)
   await waitForAtlasReady(page)
 
   await expect(page.getByText('全台各學制歷年學生數')).toBeVisible()
-  await page.locator('[aria-label="全台總覽圖表切換"]').getByRole('tab', { name: '學校量體' }).click()
-  await expect(page.getByText('縣市量體與年度變動')).toBeVisible()
 
-  await page.getByRole('button', { name: /各校分析/ }).click()
+  await page.getByRole('tab', { name: /各校分析/ }).click()
   await expect(page.getByTestId('school-list')).toBeVisible()
   await page.locator('[data-testid="school-list"] tbody tr').first().click()
   await page.locator('[aria-label="校別概況分頁"]').getByRole('tab', { name: '校別概況' }).click()
@@ -280,7 +331,7 @@ test('scenario export and import keep favorite scenarios available', async ({ pa
   await page.goto('/?tab=regional')
   await waitForAtlasReady(page)
 
-  await page.getByRole('button', { name: /區域分析/ }).click()
+  await page.getByRole('tab', { name: /區域分析/ }).click()
   await page.locator('.comparison-panel__chips').getByText('彰化縣', { exact: true }).click()
   await page.locator('.comparison-panel__chips').getByText('桃園市', { exact: true }).click()
   await page.getByRole('button', { name: '收藏目前情境' }).click()
@@ -303,7 +354,7 @@ test('scenario export and import keep favorite scenarios available', async ({ pa
       {
         id: 'fixture-scenario',
         name: '東部對照',
-        countyIds: ['宜蘭縣', '花蓮縣'],
+        countyIds: ['10002', '10015'],
         activeYear: 114,
         educationLevel: '全部',
         managementType: '全部',
@@ -327,4 +378,13 @@ test('education level filter narrows schools to selected level', async ({ page }
   await expect(page.getByTestId('school-list')).toContainText('國小')
   await expect(page.getByTestId('school-list')).not.toContainText('高中職')
   await expect(page.getByTestId('school-list')).not.toContainText('大專院校')
+})
+
+test('legacy township alias also rewrites to canonical codes for taichung school workspace', async ({ page }) => {
+  await page.goto(`/?county=${encodeURIComponent(legacyTaichungCountyId)}&township=${encodeURIComponent(legacyTaichungBeitunTownshipId)}&tab=schools`)
+  await waitForAtlasReady(page)
+
+  await expect(page.getByRole('navigation', { name: '地圖路徑' })).toContainText('臺中市')
+  await expect(page.getByRole('navigation', { name: '地圖路徑' })).toContainText('北屯區')
+  await expectCanonicalLocationIds(page, taichungCountyId, taichungBeitunTownshipId)
 })

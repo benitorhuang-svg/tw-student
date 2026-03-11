@@ -1,4 +1,6 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
+import { useChartAnimation } from '../hooks/useChartAnimation'
+import { useResponsiveSvg } from '../hooks/useResponsiveSvg'
 import { formatStudents } from '../lib/analytics'
 
 type BoxPlotGroup = {
@@ -25,16 +27,11 @@ function percentile(values: number[], ratio: number) {
 }
 
 function BoxPlotChart({ title, subtitle, groups, activeGroupId = null }: BoxPlotChartProps) {
-  const width = 620
-  const height = 260
+  const { containerRef, width, height } = useResponsiveSvg(620, 260, { minWidth: 320 })
   const padding = { top: 20, right: 16, bottom: 42, left: 50 }
 
-  const [mounted, setMounted] = useState(false)
+  const { ref, isVisible } = useChartAnimation()
   const [hoveredGroupId, setHoveredGroupId] = useState<string | null>(null)
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
 
   const preparedGroups = groups
     .map((group) => {
@@ -57,7 +54,7 @@ function BoxPlotChart({ title, subtitle, groups, activeGroupId = null }: BoxPlot
   const bottomY = toY(0)
 
   return (
-    <section className="box-plot-chart">
+    <section ref={ref as React.RefObject<HTMLElement>} className={isVisible ? 'box-plot-chart chart-enter chart-enter--visible' : 'box-plot-chart chart-enter'}>
       <div className="panel-heading">
         <div>
           <p className="eyebrow">分布箱形</p>
@@ -66,7 +63,8 @@ function BoxPlotChart({ title, subtitle, groups, activeGroupId = null }: BoxPlot
         <p className="panel-heading__meta">{subtitle}</p>
       </div>
 
-      <svg className="box-plot-chart__svg" viewBox={`0 0 ${width} ${height}`} role="img" aria-label={title}>
+      <div className="chart-svg-frame" ref={containerRef}>
+      <svg className="box-plot-chart__svg" viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="xMidYMid meet" role="img" aria-label={title}>
         {[0, 0.25, 0.5, 0.75, 1].map((ratio) => {
           const y = padding.top + ratio * (height - padding.top - padding.bottom)
           const value = Math.round(maxValue * (1 - ratio))
@@ -90,33 +88,50 @@ function BoxPlotChart({ title, subtitle, groups, activeGroupId = null }: BoxPlot
               key={group.id}
               onMouseEnter={() => setHoveredGroupId(group.id)}
               onMouseLeave={() => setHoveredGroupId(null)}
+              tabIndex={0}
+              role="img"
+              aria-label={`${group.label} 中位數 ${formatStudents(Math.round(group.median))} 人`}
+              onFocus={() => setHoveredGroupId(group.id)}
+              onBlur={() => setHoveredGroupId(null)}
               style={{ opacity, transition: 'opacity 0.2s', cursor: 'pointer' }}
             >
               <line className="box-plot-chart__whisker"
                 x1={centerX} x2={centerX}
-                y1={mounted ? toY(group.min) : bottomY} y2={mounted ? toY(group.max) : bottomY}
+                y1={isVisible ? toY(group.min) : bottomY} y2={isVisible ? toY(group.max) : bottomY}
                 stroke={strokeColor} style={{ transition: 'all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1)' }}
               />
               <line className="box-plot-chart__cap"
                 x1={centerX - boxWidth * 0.3} x2={centerX + boxWidth * 0.3}
-                y1={mounted ? toY(group.min) : bottomY} y2={mounted ? toY(group.min) : bottomY}
+                y1={isVisible ? toY(group.min) : bottomY} y2={isVisible ? toY(group.min) : bottomY}
                 stroke={strokeColor} style={{ transition: 'all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1)' }}
               />
               <line className="box-plot-chart__cap"
                 x1={centerX - boxWidth * 0.3} x2={centerX + boxWidth * 0.3}
-                y1={mounted ? toY(group.max) : bottomY} y2={mounted ? toY(group.max) : bottomY}
+                y1={isVisible ? toY(group.max) : bottomY} y2={isVisible ? toY(group.max) : bottomY}
                 stroke={strokeColor} style={{ transition: 'all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1)' }}
               />
               <rect className="box-plot-chart__box"
-                x={centerX - boxWidth / 2} y={mounted ? toY(group.q3) : bottomY}
-                width={boxWidth} height={mounted ? Math.max(toY(group.q1) - toY(group.q3), 4) : 0} rx={4}
+                x={centerX - boxWidth / 2} y={isVisible ? toY(group.q3) : bottomY}
+                width={boxWidth} height={isVisible ? Math.max(toY(group.q1) - toY(group.q3), 4) : 0} rx={4}
                 fill={fillColor} stroke={strokeColor} style={{ transition: 'all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1)' }}
               />
               <line className="box-plot-chart__median"
                 x1={centerX - boxWidth / 2} x2={centerX + boxWidth / 2}
-                y1={mounted ? toY(group.median) : bottomY} y2={mounted ? toY(group.median) : bottomY}
+                y1={isVisible ? toY(group.median) : bottomY} y2={isVisible ? toY(group.median) : bottomY}
                 stroke={strokeColor} style={{ transition: 'all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1)' }}
               />
+              {/* Median value label */}
+              <text
+                className="box-plot-chart__median-label"
+                x={centerX + boxWidth / 2 + 6}
+                y={isVisible ? toY(group.median) + 3 : bottomY}
+                fill={strokeColor}
+                fontSize="9"
+                fontWeight="700"
+                style={{ transition: 'all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1)', opacity: isActive ? 1 : 0 }}
+              >
+                {formatStudents(Math.round(group.median))}
+              </text>
               <text className="box-plot-chart__label" x={centerX} y={height - 12} textAnchor="middle" fill={isActive ? '#fff' : undefined} style={{ transition: 'fill 0.2s' }}>
                 {group.label}
               </text>
@@ -124,6 +139,7 @@ function BoxPlotChart({ title, subtitle, groups, activeGroupId = null }: BoxPlot
           )
         })}
       </svg>
+      </div>
 
       <div className="box-plot-chart__legend">
         {preparedGroups.map((group) => (

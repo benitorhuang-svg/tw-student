@@ -11,7 +11,7 @@ import type { AcademicYear, CountySchoolAtlasDataset, EducationLevelFilter, Mana
 import type { AtlasTab } from '../hooks/useAtlasQueryState'
 import type { SavedComparisonScenario, InvestigationFilter } from '../hooks/types'
 import type { AtlasTheme } from '../lib/constants'
-import type { EducationSummaryDataset } from '../data/educationTypes'
+import type { DataManifest, DataRefreshSummary, EducationSummaryDataset, ValidationReport } from '../data/educationTypes'
 
 type DesktopAppLayoutProps = {
   theme: AtlasTheme
@@ -70,6 +70,10 @@ type DesktopAppLayoutProps = {
   setHoveredSchoolId: (id: string | null) => void
 
   // Footer / Governance
+  localManifest: DataManifest | null
+  remoteManifest: DataManifest | null
+  validationReport: ValidationReport | null
+  refreshSummary: DataRefreshSummary | null
   isRefreshingData: boolean
   refreshStatus: string | null
   refreshData: () => Promise<void>
@@ -163,6 +167,10 @@ function DesktopAppLayout(props: DesktopAppLayoutProps) {
           townshipBoundaries: 'https://www.nlsc.gov.tw/',
           countyBoundaries: 'https://www.nlsc.gov.tw/',
         }}
+        localManifest={props.localManifest}
+        remoteManifest={props.remoteManifest}
+        validationReport={props.validationReport}
+        refreshSummary={props.refreshSummary}
         assetMetrics={props.summaryDataset?.assetMetrics}
         anomalyCount={props.derived.filteredAnomalies.length}
         scopeNoteCount={props.derived.scopeNotes.length}

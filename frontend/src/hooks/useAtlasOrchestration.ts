@@ -7,6 +7,7 @@ import type { AtlasLoadObservationSnapshot, InvestigationFilter, SavedComparison
 import type { AtlasTab } from './useAtlasQueryState'
 import type { useFeedbackMessage } from './useFeedbackMessage'
 import { createSavedComparisonScenario } from './atlasHelpers'
+import { normalizeCountyId, normalizeCountyIds, normalizeTownshipId } from './atlasIdentity'
 import { useAtlasDerivedState } from './useAtlasDerivedState'
 import { useAtlasScenarioActions } from './useAtlasScenarioActions'
 import { useAtlasTopPrefetch } from './useAtlasTopPrefetch'
@@ -74,6 +75,25 @@ export function useAtlasOrchestration(input: OrchestrationInput) {
 
   const { summaryDataset, countyDetailCache, countyBucketCache, townshipBoundaryCache, countyDetailError, clearCountyDetailError } = educationData
 
+  useEffect(() => {
+    if (!summaryDataset) return
+
+    const normalizedCountyId = normalizeCountyId(summaryDataset, selectedCountyId)
+    const normalizedTownshipId = normalizedCountyId ? normalizeTownshipId(summaryDataset, normalizedCountyId, selectedTownshipId) : null
+    const normalizedComparisonIds = normalizeCountyIds(summaryDataset, comparisonCountyIds).slice(0, 4)
+    const comparisonIdsChanged = normalizedComparisonIds.length !== comparisonCountyIds.length || normalizedComparisonIds.some((countyId, index) => countyId !== comparisonCountyIds[index])
+
+    if (selectedCountyId !== normalizedCountyId) {
+      setSelectedCountyId(normalizedCountyId)
+    }
+    if (selectedTownshipId !== normalizedTownshipId) {
+      setSelectedTownshipId(normalizedTownshipId)
+    }
+    if (comparisonIdsChanged) {
+      setComparisonCountyIds(normalizedComparisonIds)
+    }
+  }, [comparisonCountyIds, selectedCountyId, selectedTownshipId, setComparisonCountyIds, setSelectedCountyId, setSelectedTownshipId, summaryDataset])
+
   useAtlasUrlSync({
     summaryDataset, activeTab, activeYear, educationLevel, managementType,
     deferredSearchText, comparisonCountyIds, comparisonScenarioName,
@@ -129,12 +149,13 @@ export function useAtlasOrchestration(input: OrchestrationInput) {
     if (!entry) return
     lastCodeNavRef.current = code
     startTransition(() => {
-      if (selectedCountyId !== entry.countyId) {
-        setSelectedCountyId(entry.countyId)
+      const nextCountyId = entry.countyId ?? entry.countyCode ?? null
+      if (selectedCountyId !== nextCountyId) {
+        setSelectedCountyId(nextCountyId)
       }
       setRegion('全部')
       setSelectedTownshipId(null)
-      setSelectedSchoolId(code)
+      setSelectedSchoolId(entry.schoolIds?.[0] ?? code)
     })
     setActiveTab('school-focus', 0)
   }, [deferredSearchText, summaryDataset, selectedCountyId, startTransition, setSelectedCountyId, setSelectedTownshipId, setSelectedSchoolId, setRegion, setActiveTab])

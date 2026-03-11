@@ -4,7 +4,10 @@ import {
   COORDINATE_WORKFLOW_STATUSES,
   type CoordinateWorkflowEntry,
   type CoordinateWorkflowStatus,
+  type DataManifest,
+  type DataRefreshSummary,
   type MissingCoordinateEntry,
+  type ValidationReport,
 } from '../data/educationTypes'
 
 const COORDINATE_WORKFLOW_STORAGE_KEY = 'atlas.coordinate-workflow'
@@ -15,6 +18,10 @@ type DataGovernanceFlyoutProps = {
   generatedAtLabel: string
   refreshStatus: string | null
   isRefreshingData: boolean
+  localManifest: DataManifest | null
+  remoteManifest: DataManifest | null
+  validationReport: ValidationReport | null
+  refreshSummary: DataRefreshSummary | null
   sources: {
     points: string
     statistics: string
@@ -95,12 +102,28 @@ function formatBytes(bytes: number | undefined) {
   return `${(bytes / (1024 * 1024)).toFixed(2)} MB`
 }
 
+function formatVersionLabel(manifest: DataManifest | null) {
+  if (!manifest) return '尚未載入'
+  return `${new Date(manifest.generatedAt).toLocaleString('zh-TW')} / ${manifest.buildId}`
+}
+
+function formatValidationStatus(validationReport: ValidationReport | null) {
+  if (!validationReport) return '尚未載入'
+  if (validationReport.overallStatus === 'fail') return '阻擋異常'
+  if (validationReport.overallStatus === 'warning') return '含警示'
+  return '通過'
+}
+
 function DataGovernanceFlyout({
   open,
   onClose,
   generatedAtLabel,
   refreshStatus,
   isRefreshingData,
+  localManifest,
+  remoteManifest,
+  validationReport,
+  refreshSummary,
   sources,
   assetMetrics,
   anomalyCount,
@@ -187,6 +210,16 @@ function DataGovernanceFlyout({
                   <strong>{generatedAtLabel}</strong>
                   <small>{isRefreshingData ? '目前正在重新載入部署資料' : '目前顯示前端已部署切片'}</small>
                 </div>
+                <div className="school-profile-metric" data-testid="governance-local-version">
+                  <span>本地版本</span>
+                  <strong>{formatVersionLabel(localManifest)}</strong>
+                  <small>{localManifest ? localManifest.contentHash.slice(0, 18) : '尚未取得 manifest'}</small>
+                </div>
+                <div className="school-profile-metric" data-testid="governance-remote-version">
+                  <span>遠端版本</span>
+                  <strong>{formatVersionLabel(remoteManifest)}</strong>
+                  <small>{remoteManifest ? remoteManifest.contentHash.slice(0, 18) : '尚未檢查遠端 manifest'}</small>
+                </div>
                 <div className="school-profile-metric">
                   <span>異常筆數</span>
                   <strong>{anomalyCount.toLocaleString('zh-TW')}</strong>
@@ -196,6 +229,52 @@ function DataGovernanceFlyout({
                   <span>正式註記</span>
                   <strong>{scopeNoteCount.toLocaleString('zh-TW')}</strong>
                   <small>{refreshStatus ?? '尚未執行前端重新載入'}</small>
+                </div>
+                <div className="school-profile-metric">
+                  <span>Schema 版本</span>
+                  <strong>{remoteManifest?.schemaVersion ?? localManifest?.schemaVersion ?? '未提供'}</strong>
+                  <small>差異刷新與共用 grade-map 契約</small>
+                </div>
+                <div className="school-profile-metric">
+                  <span>驗證狀態</span>
+                  <strong>{formatValidationStatus(validationReport)}</strong>
+                  <small>
+                    {validationReport
+                      ? `blocking ${validationReport.items.filter((item) => item.severity === 'blocking' && item.status !== 'pass').length} / warning ${validationReport.items.filter((item) => item.severity === 'warning' && item.status !== 'pass').length}`
+                      : '尚未載入 validation-report'}
+                  </small>
+                </div>
+              </div>
+            </section>
+
+            <section className="school-chart-panel__section" data-testid="governance-refresh-summary">
+              <div className="panel-heading">
+                <div>
+                  <p className="eyebrow">部署刷新</p>
+                  <h3>版本比較與差異結果</h3>
+                </div>
+                <p className="panel-heading__meta">重新載入部署資料時，會先比對 manifest，再只刷新已變更資產；失敗資產會保留 last-known-good 狀態。</p>
+              </div>
+              <div className="school-profile-sidebar__stats">
+                <div className="school-profile-metric">
+                  <span>刷新結果</span>
+                  <strong>{refreshSummary?.overallStatus ?? 'idle'}</strong>
+                  <small>{refreshSummary?.message ?? '尚未執行差異刷新'}</small>
+                </div>
+                <div className="school-profile-metric">
+                  <span>已更新</span>
+                  <strong>{refreshSummary?.updatedAssets.length.toLocaleString('zh-TW') ?? '0'}</strong>
+                  <small>{refreshSummary?.updatedAssets.slice(0, 2).join('、') || '目前沒有已更新資產'}</small>
+                </div>
+                <div className="school-profile-metric">
+                  <span>略過</span>
+                  <strong>{refreshSummary?.skippedAssets.length.toLocaleString('zh-TW') ?? '0'}</strong>
+                  <small>{refreshSummary?.skippedAssets.length ? '代表 manifest 判定未變更或非當前作用中的切片' : '無略過資產'}</small>
+                </div>
+                <div className="school-profile-metric">
+                  <span>失敗 / 回退</span>
+                  <strong>{`${refreshSummary?.failedAssets.length ?? 0} / ${refreshSummary?.rolledBackAssets.length ?? 0}`}</strong>
+                  <small>{refreshSummary?.failedAssets.slice(0, 2).join('、') || '目前沒有需要回退的資產'}</small>
                 </div>
               </div>
             </section>

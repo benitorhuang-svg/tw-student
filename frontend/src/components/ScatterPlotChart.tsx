@@ -1,4 +1,7 @@
 
+import { useChartAnimation } from '../hooks/useChartAnimation'
+import { useResponsiveSvg } from '../hooks/useResponsiveSvg'
+
 const formatWan = (val: number) => {
   if (val === 0) return '0'
   const absoluteVal = Math.abs(val)
@@ -39,9 +42,20 @@ function ScatterPlotChart({
   onHoverPoint, onSelectPoint,
   children,
 }: ScatterPlotChartProps) {
-  const width = 620
-  const height = 240
+  const { ref: animRef, isVisible } = useChartAnimation()
+  const { containerRef, width, height } = useResponsiveSvg(620, 240, { minWidth: 320 })
   const padding = { top: 20, right: 50, bottom: 40, left: 100 }
+  
+  if (points.length === 0) {
+    return (
+      <section className="scatter-chart" style={{ padding: '12px 14px' }}>
+        <div className="panel-heading" style={{ marginBottom: '10px', paddingLeft: '4px' }}>
+          <h3 style={{ margin: 0 }}>{title}</h3>
+        </div>
+        <div className="chart-empty-state">尚無資料</div>
+      </section>
+    )
+  }
 
   const valuesX = points.map((p) => p.x)
   const valuesY = points.map((p) => p.y)
@@ -56,7 +70,7 @@ function ScatterPlotChart({
   const rawMaxX = Math.max(...valuesX, 0)
   const maxX = Math.max(Math.ceil(rawMaxX / 50000) * 50000, 100000)
 
-  const avgX = valuesX.length ? valuesX.reduce((a, b) => a + b, 0) / valuesX.length : 0
+  const avgX = valuesX.reduce((a, b) => a + b, 0) / valuesX.length
 
   const rangeX = Math.max(maxX - minX, 1)
   const rangeY = Math.max(maxY - minY, 1)
@@ -70,7 +84,7 @@ function ScatterPlotChart({
   const midY = toY(0)
 
   return (
-    <section className="scatter-chart" style={{ padding: '12px 14px' }}>
+    <section className="scatter-chart" ref={animRef as React.RefObject<HTMLElement>} style={{ padding: '12px 14px' }}>
       <div className="panel-heading" style={{ marginBottom: '10px', paddingLeft: '4px', alignItems: 'flex-start' }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
           <h3 style={{ margin: 0 }}>{title}</h3>
@@ -81,7 +95,14 @@ function ScatterPlotChart({
         </p>
       </div>
 
-      <svg className="scatter-chart__svg" viewBox={`0 0 ${width} ${height}`} role="img">
+  <div className="chart-svg-frame" ref={containerRef}>
+  <svg className={`scatter-chart__svg${isVisible ? ' chart-enter chart-enter--visible' : ' chart-enter'}`} viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="xMidYMid meet" role="img" aria-label={`${title} 散佈圖`}>
+        {/* 四象限淡色背景 */}
+        <rect x={padding.left} y={padding.top} width={midX - padding.left} height={midY - padding.top} fill="var(--chart-quadrant-tl)" rx="2" />
+        <rect x={midX} y={padding.top} width={width - padding.right - midX} height={midY - padding.top} fill="var(--chart-quadrant-tr)" rx="2" />
+        <rect x={padding.left} y={midY} width={midX - padding.left} height={height - padding.bottom - midY} fill="var(--chart-quadrant-bl)" rx="2" />
+        <rect x={midX} y={midY} width={width - padding.right - midX} height={height - padding.bottom - midY} fill="var(--chart-quadrant-br)" rx="2" />
+
         {/* 四象限格線 */}
         <line className="scatter-chart__zero" x1={midX} x2={midX} y1={padding.top} y2={height - padding.bottom} />
         <line className="scatter-chart__zero" x1={padding.left} x2={width - padding.right} y1={midY} y2={midY} />
@@ -140,16 +161,22 @@ function ScatterPlotChart({
           return (
             <g key={p.id}>
               <circle
-                className={active ? 'scatter-chart__point scatter-chart__point--active' : 'scatter-chart__point'}
+                className={active ? 'scatter-chart__point scatter-chart__point--active chart-data-focusable' : 'scatter-chart__point chart-data-focusable'}
                 cx={toX(p.x)} cy={toY(p.y)} r={active ? r + 2 : r}
+                tabIndex={0}
+                role="listitem"
+                aria-label={`${p.label}: ${formatX(p.x)}, ${formatY(p.y)}`}
                 onMouseEnter={() => onHoverPoint?.(p.id)}
                 onMouseLeave={() => onHoverPoint?.(null)}
                 onClick={() => onSelectPoint?.(p.id)}
+                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onSelectPoint?.(p.id) } }}
+                onFocus={() => onHoverPoint?.(p.id)}
+                onBlur={() => onHoverPoint?.(null)}
               />
               {active && (
                 <g style={{ pointerEvents: 'none' }}>
-                  <rect x={toX(p.x) - 40} y={toY(p.y) - r - 25} width="80" height="20" rx="4" fill="rgba(8, 17, 31, 0.8)" />
-                  <text className="scatter-chart__label" x={toX(p.x)} y={toY(p.y) - r - 12} textAnchor="middle" fill="#fff" fontSize="10">{p.label}</text>
+                  <rect className="chart-svg-tooltip__surface" x={toX(p.x) - 40} y={toY(p.y) - r - 25} width="80" height="20" rx="6" />
+                  <text className="chart-svg-tooltip__title" x={toX(p.x)} y={toY(p.y) - r - 12} textAnchor="middle">{p.label}</text>
                 </g>
               )}
             </g>
@@ -160,6 +187,7 @@ function ScatterPlotChart({
         <text className="scatter-chart__axis-title" transform={`translate(15 ${height / 2}) rotate(-90)`} textAnchor="middle" fontSize="11">{yLabel}</text>
 
       </svg>
+      </div>
     </section>
   )
 }

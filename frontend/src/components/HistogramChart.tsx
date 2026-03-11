@@ -1,0 +1,128 @@
+import { useMemo } from 'react'
+
+import { useChartAnimation } from '../hooks/useChartAnimation'
+import { formatStudents } from '../lib/analytics'
+
+type HistogramChartProps = {
+  title: string
+  subtitle: string
+  values: number[]
+  activeValue?: number | null
+}
+
+type Bin = {
+  start: number
+  end: number
+  count: number
+}
+
+function formatRange(start: number, end: number) {
+  if (start === end) return formatStudents(start)
+  return `${formatStudents(start)}-${formatStudents(end)}`
+}
+
+function buildBins(values: number[]) {
+  if (values.length === 0) return [] as Bin[]
+
+  const min = Math.min(...values)
+  const max = Math.max(...values)
+  if (min === max) {
+    return [{ start: min, end: max, count: values.length }]
+  }
+
+  const binCount = Math.min(Math.max(Math.round(Math.sqrt(values.length)), 4), 8)
+  const range = max - min
+  const rawBinSize = range / binCount
+  const magnitude = 10 ** Math.max(Math.floor(Math.log10(rawBinSize)), 0)
+  const binSize = Math.max(Math.ceil(rawBinSize / magnitude) * magnitude, 1)
+  const startBase = Math.floor(min / binSize) * binSize
+  const bins = Array.from({ length: binCount }, (_, index) => ({
+    start: startBase + index * binSize,
+    end: startBase + (index + 1) * binSize,
+    count: 0,
+  }))
+
+  values.forEach((value) => {
+    const roughIndex = Math.floor((value - startBase) / binSize)
+    const index = Math.min(Math.max(roughIndex, 0), bins.length - 1)
+    bins[index].count += 1
+  })
+
+  bins[bins.length - 1].end = Math.max(bins[bins.length - 1].end, max)
+  return bins
+}
+
+function HistogramChart({ title, subtitle, values, activeValue = null }: HistogramChartProps) {
+  const { ref, isVisible } = useChartAnimation()
+  const bins = useMemo(() => buildBins(values), [values])
+  const maxCount = Math.max(...bins.map((bin) => bin.count), 1)
+  const average = values.length > 0 ? Math.round(values.reduce((sum, value) => sum + value, 0) / values.length) : 0
+  const sortedValues = [...values].sort((left, right) => left - right)
+  const median = sortedValues.length > 0 ? sortedValues[Math.floor((sortedValues.length - 1) / 2)] : 0
+
+  if (values.length < 4) {
+    return (
+      <section className="histogram-chart histogram-chart--compact">
+        <div className="panel-heading histogram-chart__heading">
+          <div>
+            <p className="eyebrow">學校規模分布</p>
+            <h3>{title}</h3>
+          </div>
+          <p className="panel-heading__meta">{subtitle}</p>
+        </div>
+        <div className="histogram-chart__compact-grid">
+          <article>
+            <span>樣本數</span>
+            <strong>{values.length} 校</strong>
+          </article>
+          <article>
+            <span>平均</span>
+            <strong>{formatStudents(average)} 人</strong>
+          </article>
+          <article>
+            <span>中位數</span>
+            <strong>{formatStudents(median)} 人</strong>
+          </article>
+        </div>
+      </section>
+    )
+  }
+
+  return (
+    <section
+      ref={ref as React.RefObject<HTMLElement>}
+      className={isVisible ? 'histogram-chart chart-enter chart-enter--visible' : 'histogram-chart chart-enter'}
+    >
+      <div className="panel-heading histogram-chart__heading">
+        <div>
+          <p className="eyebrow">學校規模直方圖</p>
+          <h3>{title}</h3>
+        </div>
+        <p className="panel-heading__meta">{subtitle}</p>
+      </div>
+
+      <div className="histogram-chart__summary" aria-hidden="true">
+        <span>平均 {formatStudents(average)} 人</span>
+        <span>中位數 {formatStudents(median)} 人</span>
+        <span>{values.length} 校樣本</span>
+      </div>
+
+      <div className="histogram-chart__bars" role="list" aria-label={title}>
+        {bins.map((bin, index) => {
+          const isActive = activeValue !== null && activeValue >= bin.start && (index === bins.length - 1 ? activeValue <= bin.end : activeValue < bin.end)
+          return (
+            <div key={`${bin.start}-${bin.end}`} className={isActive ? 'histogram-chart__bin histogram-chart__bin--active' : 'histogram-chart__bin'} role="listitem">
+              <div className="histogram-chart__bar-track">
+                <div className="histogram-chart__bar-fill" style={{ height: isVisible ? `${(bin.count / maxCount) * 100}%` : '0%' }} />
+              </div>
+              <strong className="histogram-chart__count">{bin.count}</strong>
+              <span className="histogram-chart__range">{formatRange(bin.start, bin.end)}</span>
+            </div>
+          )
+        })}
+      </div>
+    </section>
+  )
+}
+
+export default HistogramChart

@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
 import { formatDelta, formatPercent, formatStudents, type RankingSummary, type TrendPoint } from '../lib/analytics'
+import { useChartAnimation } from '../hooks/useChartAnimation'
 
 function Sparkline({ points, width = 60, height = 20 }: { points: TrendPoint[]; width?: number; height?: number }) {
   if (points.length < 2) return null
@@ -43,14 +43,10 @@ function InsightPanel({
   onSelectRow, onHoverRow, emptyMessage,
 }: InsightPanelProps) {
   const maxStudents = Math.max(...rows.map((row) => row.students), 1)
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
+  const { ref, isVisible: mounted } = useChartAnimation()
 
   return (
-    <section className="panel insight-panel">
+    <section className="panel insight-panel" ref={ref as React.RefObject<HTMLElement>}>
       {showHeader && (
         <div className="panel-heading">
           <div>

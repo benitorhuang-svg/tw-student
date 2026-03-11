@@ -6,6 +6,7 @@ import type {
   EducationSummaryDataset,
   ManagementTypeFilter,
 } from '../data/educationData'
+import { toCanonicalCountyId, toCanonicalCountyIds, toCanonicalTownshipId } from './atlasIdentity'
 import type { AtlasTab } from './useAtlasQueryState'
 
 type UseAtlasUrlSyncArgs = {
@@ -49,16 +50,14 @@ export function useAtlasUrlSync({
     if (managementType !== '全部') params.set('management', managementType)
     if (deferredSearchText.trim()) params.set('search', deferredSearchText.trim())
 
-    const cleanedComparisonIds = comparisonCountyIds.filter((countyId) => summaryDataset.counties.some((county) => county.id === countyId))
+    const cleanedComparisonIds = toCanonicalCountyIds(summaryDataset, comparisonCountyIds)
     if (cleanedComparisonIds.length > 0) params.set('compare', cleanedComparisonIds.join(','))
     if (comparisonScenarioName.trim()) params.set('scenario', comparisonScenarioName.trim())
 
-    const countyIdForUrl = summaryDataset.counties.some((county) => county.id === selectedCountyId) ? selectedCountyId : null
+    const countyIdForUrl = toCanonicalCountyId(summaryDataset, selectedCountyId)
     if (countyIdForUrl) params.set('county', countyIdForUrl)
 
-    const townshipIdForUrl = countyIdForUrl
-      ? summaryDataset.counties.find((county) => county.id === countyIdForUrl)?.towns.some((town) => town.id === selectedTownshipId) ? selectedTownshipId : null
-      : null
+    const townshipIdForUrl = countyIdForUrl ? toCanonicalTownshipId(summaryDataset, selectedCountyId, selectedTownshipId) : null
     if (townshipIdForUrl) params.set('township', townshipIdForUrl)
 
     if (activeTab !== 'overview') params.set('tab', activeTab)

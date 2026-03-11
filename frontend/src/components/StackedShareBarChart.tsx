@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
 import { formatPercent, formatStudents } from '../lib/analytics'
+import { useChartAnimation } from '../hooks/useChartAnimation'
 
 type ShareItem = {
   id: string
@@ -17,14 +17,19 @@ type StackedShareBarChartProps = {
 }
 
 function StackedShareBarChart({ title, subtitle, items, activeItemId = null, onSelectItem }: StackedShareBarChartProps) {
-  const [mounted, setMounted] = useState(false)
+  const { ref, isVisible: mounted } = useChartAnimation()
 
-  useEffect(() => {
-    setMounted(true)
-  }, [])
+  if (items.length === 0) {
+    return (
+      <section className="stacked-share-chart" ref={ref as React.RefObject<HTMLElement>}>
+        <div className="panel-heading"><div><h3>{title}</h3></div></div>
+        <div className="chart-empty-state">尚無資料</div>
+      </section>
+    )
+  }
 
   return (
-    <section className="stacked-share-chart">
+    <section className="stacked-share-chart" ref={ref as React.RefObject<HTMLElement>}>
       <div className="panel-heading">
         <div>
           <p className="eyebrow">區域分析</p>

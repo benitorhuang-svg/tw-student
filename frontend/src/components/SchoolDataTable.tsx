@@ -52,7 +52,12 @@ function compareSchoolRows(left: SchoolInsight, right: SchoolInsight, sortKey: S
 }
 
 function escapeCsv(value: string) {
-  const escaped = value.replaceAll('"', '""')
+  let safe = value
+  // Prevent CSV formula injection — prefix formula-triggering characters
+  if (/^[=+\-@\t\r]/.test(safe)) {
+    safe = "'" + safe
+  }
+  const escaped = safe.replaceAll('"', '""')
   return `"${escaped}"`
 }
 
@@ -105,6 +110,14 @@ function SchoolDataTable({ schools, selectedSchoolId, onSelectSchool, onHoverSch
     anchor.download = `${scopeLabel}-學校表格.csv`
     anchor.click()
     URL.revokeObjectURL(url)
+  }
+
+  if (schools.length === 0) {
+    return (
+      <section className="school-table-panel">
+        <div className="chart-empty-state">尚無學校資料</div>
+      </section>
+    )
   }
 
   return (

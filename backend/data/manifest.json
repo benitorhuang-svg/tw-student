@@ -1,0 +1,959 @@
+{
+  "schemaVersion": "2026.03.p0",
+  "generatedAt": "2026-03-10T16:03:19.244Z",
+  "buildId": "20260310160319",
+  "contentHash": "sha256-3d39483f5203e5be9dea4e3c292f31367a2e8c33951bbbd79589f87ec25909de",
+  "previousCompatibleSchemaVersions": [],
+  "validationSummary": {
+    "overallStatus": "pass",
+    "blockingCount": 0,
+    "warningCount": 0,
+    "infoCount": 0
+  },
+  "assets": [
+    {
+      "path": "education-summary.json",
+      "assetGroup": "summary",
+      "hash": "sha256-5514211b42bfd5b82e07c9fa7a76d0f2d476f9c9f4ca4bf2329f399214bfa189",
+      "bytes": 7935011,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": true
+    },
+    {
+      "path": "validation-report.json",
+      "assetGroup": "validation",
+      "hash": "sha256-1a7f74b2bcc4a78566a896530deaf257e77ad53f327824a0e6186de5afbe596a",
+      "bytes": 7546,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": true
+    },
+    {
+      "path": "schema/grade-map.json",
+      "assetGroup": "schema",
+      "hash": "sha256-6c6834b1edd5318c8e423004590224ee8311cea8b3c8850020c97b4097e2c884",
+      "bytes": 3012,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": true
+    },
+    {
+      "path": "school-atlas/index.json",
+      "assetGroup": "school-atlas-index",
+      "hash": "sha256-d40f06f4fe48bc1769d3d8d6e64b344d2d1349d65ab17df6a7334759f642c7f5",
+      "bytes": 4809,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false
+    },
+    {
+      "path": "county-boundaries.topo.json",
+      "assetGroup": "county-boundary",
+      "hash": "sha256-7fac71b5fed80dd3896ba092c59a59df6abb7e603462dbb66e53aaf121c57052",
+      "bytes": 6487853,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": true
+    },
+    {
+      "path": "area-coordinate-lookup.json",
+      "assetGroup": "lookup",
+      "hash": "sha256-0aae5134962f2041571f857b641de63664be49b83a46c728709ea53835bb4f72",
+      "bytes": 150919,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false
+    },
+    {
+      "path": "school-coordinate-lookup.json",
+      "assetGroup": "lookup",
+      "hash": "sha256-3eb0c92f9f33e671e800263362f71cda1a69757be90316fb114f55a43054005c",
+      "bytes": 1113130,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false
+    },
+    {
+      "path": "education-atlas.sqlite",
+      "assetGroup": "sqlite",
+      "hash": "sha256-6aab8e5d4125df326d5e0ec0d3ab3abe950cfc3b4d71a6855a0d2a3da03a6013",
+      "bytes": 32387072,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": true
+    },
+    {
+      "path": "counties/宜蘭縣.json",
+      "assetGroup": "county-detail",
+      "hash": "sha256-9309f78727292d743accdbd4bdaf952a663abe33913d6d705f14d47fb2c6571c",
+      "bytes": 1607339,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "宜蘭縣",
+      "countyCode": "10002"
+    },
+    {
+      "path": "counties/花蓮縣.json",
+      "assetGroup": "county-detail",
+      "hash": "sha256-e7113db68d78c94c882174fb19e714dc9333527662cf594924740bc397b4ebd7",
+      "bytes": 1994606,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "花蓮縣",
+      "countyCode": "10015"
+    },
+    {
+      "path": "counties/金門縣.json",
+      "assetGroup": "county-detail",
+      "hash": "sha256-2f11ea08e34b4fb03174ccb732bccffc9425a6496b8ddeb02b7575c592f569eb",
+      "bytes": 373966,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "金門縣",
+      "countyCode": "09020"
+    },
+    {
+      "path": "counties/南投縣.json",
+      "assetGroup": "county-detail",
+      "hash": "sha256-e5447e9304a9458c1867a802549403d9195bace5c956ef64a34deffe1f4c87e5",
+      "bytes": 2674844,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "南投縣",
+      "countyCode": "10008"
+    },
+    {
+      "path": "counties/屏東縣.json",
+      "assetGroup": "county-detail",
+      "hash": "sha256-4f977f6dfedb47dd9c9644cabf37e7c19b83abf49f83e29918657390598a526b",
+      "bytes": 3227718,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "屏東縣",
+      "countyCode": "10013"
+    },
+    {
+      "path": "counties/苗栗縣.json",
+      "assetGroup": "county-detail",
+      "hash": "sha256-877157e7181f2c57f68f015e3931e1843243baf3429dc661ed0a0782a8af7206",
+      "bytes": 2299763,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "苗栗縣",
+      "countyCode": "10005"
+    },
+    {
+      "path": "counties/桃園市.json",
+      "assetGroup": "county-detail",
+      "hash": "sha256-2ffba043212c2e5554d0b6071e8631f779dc168c824bf21b781ad197ab736b97",
+      "bytes": 4079925,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "桃園市",
+      "countyCode": "68000"
+    },
+    {
+      "path": "counties/高雄市.json",
+      "assetGroup": "county-detail",
+      "hash": "sha256-be2d1abcaa70d137759fd29d0e5404057cf93f80b0c94087364ad3849483c103",
+      "bytes": 5435212,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "高雄市",
+      "countyCode": "64000"
+    },
+    {
+      "path": "counties/基隆市.json",
+      "assetGroup": "county-detail",
+      "hash": "sha256-703066120ab789e40bd013c7a5f2c51dec65272ea5c9fb75ab06bcbaf3b62afa",
+      "bytes": 920567,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "基隆市",
+      "countyCode": "10017"
+    },
+    {
+      "path": "counties/連江縣.json",
+      "assetGroup": "county-detail",
+      "hash": "sha256-7d4ce4e28027fe600e7310ed18d78da4f228ea2b9b119e5d9c381a5cff51db06",
+      "bytes": 164326,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "連江縣",
+      "countyCode": "09007"
+    },
+    {
+      "path": "counties/雲林縣.json",
+      "assetGroup": "county-detail",
+      "hash": "sha256-e1a7f92486a5bc2df556d9fc5f1401a3d4bf5182ced4070450807fda0694c741",
+      "bytes": 3024559,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "雲林縣",
+      "countyCode": "10009"
+    },
+    {
+      "path": "counties/新北市.json",
+      "assetGroup": "county-detail",
+      "hash": "sha256-421ee0cc2ce7a10ed8a765ee1509b6a3c5e6fd004ac1460cd21fb40da4d9750f",
+      "bytes": 5042368,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "新北市",
+      "countyCode": "65000"
+    },
+    {
+      "path": "counties/新竹市.json",
+      "assetGroup": "county-detail",
+      "hash": "sha256-b821540335261bf72d19cc9437c78b37e74c659b02481b08c9ff703a644c53d0",
+      "bytes": 886906,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "新竹市",
+      "countyCode": "10018"
+    },
+    {
+      "path": "counties/新竹縣.json",
+      "assetGroup": "county-detail",
+      "hash": "sha256-7a3bd3d4cf4c119e7805871fb959ff053eb2514471ec6ee716c1c930209fbcb5",
+      "bytes": 1834245,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "新竹縣",
+      "countyCode": "10004"
+    },
+    {
+      "path": "counties/嘉義市.json",
+      "assetGroup": "county-detail",
+      "hash": "sha256-631eadb21d97e7a878b6f19962840e9f4fb4cc0c7157e0f2730b9fa895d0d8c7",
+      "bytes": 494893,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "嘉義市",
+      "countyCode": "10020"
+    },
+    {
+      "path": "counties/嘉義縣.json",
+      "assetGroup": "county-detail",
+      "hash": "sha256-0cb55f387f037eb7302d897509887c4b98c714c6fa7031fcb8c99701b5eb8f5f",
+      "bytes": 2322544,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "嘉義縣",
+      "countyCode": "10010"
+    },
+    {
+      "path": "counties/彰化縣.json",
+      "assetGroup": "county-detail",
+      "hash": "sha256-aa8c0af458582b92210c04c1131a7f3cca623b0720b027bfe14bc6e5b4768a6e",
+      "bytes": 3386485,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "彰化縣",
+      "countyCode": "10007"
+    },
+    {
+      "path": "counties/臺中市.json",
+      "assetGroup": "county-detail",
+      "hash": "sha256-3d2213ace5c4ead7c6d5722de07120b8a3a76c49a27ff567ef832d2dc5058944",
+      "bytes": 5336942,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "臺中市",
+      "countyCode": "66000"
+    },
+    {
+      "path": "counties/臺北市.json",
+      "assetGroup": "county-detail",
+      "hash": "sha256-f7cfd62e962554eecc357c9a1238b332269e2d5d6af4dc603dcc75d0c46e8176",
+      "bytes": 3989591,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "臺北市",
+      "countyCode": "63000"
+    },
+    {
+      "path": "counties/臺東縣.json",
+      "assetGroup": "county-detail",
+      "hash": "sha256-4b685e2443887e912559500cccccc7e34ab6ee7736286bf4c6cc5085c0f15b9e",
+      "bytes": 1728056,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "臺東縣",
+      "countyCode": "10014"
+    },
+    {
+      "path": "counties/臺南市.json",
+      "assetGroup": "county-detail",
+      "hash": "sha256-a3b750df289eb0fae835e4c0a78da60a9b18ca1ccf440e60a0504f6e170a7869",
+      "bytes": 4557271,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "臺南市",
+      "countyCode": "67000"
+    },
+    {
+      "path": "counties/澎湖縣.json",
+      "assetGroup": "county-detail",
+      "hash": "sha256-aeb33163e9b045a3aa41a26e5cd1dfb79b42500330f470bc969ec67e23366769",
+      "bytes": 742516,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "澎湖縣",
+      "countyCode": "10016"
+    },
+    {
+      "path": "buckets/宜蘭縣.json",
+      "assetGroup": "county-bucket",
+      "hash": "sha256-8f1532049b107f663f21ee46b8c73868e9d2f0886a24bcfe7c231b126f55d242",
+      "bytes": 167633,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "宜蘭縣",
+      "countyCode": "10002"
+    },
+    {
+      "path": "buckets/花蓮縣.json",
+      "assetGroup": "county-bucket",
+      "hash": "sha256-44033f23bc503e277b75c46d68717a11911c05e658eedfe236fae64557284d88",
+      "bytes": 214483,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "花蓮縣",
+      "countyCode": "10015"
+    },
+    {
+      "path": "buckets/金門縣.json",
+      "assetGroup": "county-bucket",
+      "hash": "sha256-515723959da096b1ef0623d9ee7cd911461d688aee6cae83a468e7f907efc2df",
+      "bytes": 41662,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "金門縣",
+      "countyCode": "09020"
+    },
+    {
+      "path": "buckets/南投縣.json",
+      "assetGroup": "county-bucket",
+      "hash": "sha256-7fc92b53c6cf7afb0eb7018dba7f8a6b15a176d9894fd47eb5fa262a12042cff",
+      "bytes": 282361,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "南投縣",
+      "countyCode": "10008"
+    },
+    {
+      "path": "buckets/屏東縣.json",
+      "assetGroup": "county-bucket",
+      "hash": "sha256-a49b0544d794a9c0341469c297534dc427f6be80a51d4a0a92b60396097e751c",
+      "bytes": 336412,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "屏東縣",
+      "countyCode": "10013"
+    },
+    {
+      "path": "buckets/苗栗縣.json",
+      "assetGroup": "county-bucket",
+      "hash": "sha256-a0d93f7d40dd315f446f2e490e801db52ad191f0bd3ac9c41dd87625c22256f0",
+      "bytes": 242615,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "苗栗縣",
+      "countyCode": "10005"
+    },
+    {
+      "path": "buckets/桃園市.json",
+      "assetGroup": "county-bucket",
+      "hash": "sha256-097a8e80720daf5a98758f80e030f2f64824d07b8d723160302eed2c3727da20",
+      "bytes": 394888,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "桃園市",
+      "countyCode": "68000"
+    },
+    {
+      "path": "buckets/高雄市.json",
+      "assetGroup": "county-bucket",
+      "hash": "sha256-4c1247e320e5fce031e7d1fe270d47f886b2b525df9d13b1db6ef04b3028b492",
+      "bytes": 527425,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "高雄市",
+      "countyCode": "64000"
+    },
+    {
+      "path": "buckets/基隆市.json",
+      "assetGroup": "county-bucket",
+      "hash": "sha256-5f7b1cc3860b91d6d3e760934eabaa7d8406a1ee27c75eb86142d4c614d457b8",
+      "bytes": 82610,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "基隆市",
+      "countyCode": "10017"
+    },
+    {
+      "path": "buckets/連江縣.json",
+      "assetGroup": "county-bucket",
+      "hash": "sha256-41e5573ad80ef71d9177286f6d45018f65e0af72b67cec1e82fc7cb62d57cfaf",
+      "bytes": 18533,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "連江縣",
+      "countyCode": "09007"
+    },
+    {
+      "path": "buckets/雲林縣.json",
+      "assetGroup": "county-bucket",
+      "hash": "sha256-22d5523d1beeba6cd62e52f1f44874e4ada5cedfb81da1b936b2a0b37ece9417",
+      "bytes": 314874,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "雲林縣",
+      "countyCode": "10009"
+    },
+    {
+      "path": "buckets/新北市.json",
+      "assetGroup": "county-bucket",
+      "hash": "sha256-90929a9ae57eb7fad4b10373525698751a8c0707b6b45e3e9c9be89f4c9495e0",
+      "bytes": 486610,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "新北市",
+      "countyCode": "65000"
+    },
+    {
+      "path": "buckets/新竹市.json",
+      "assetGroup": "county-bucket",
+      "hash": "sha256-4bc0b6f104e26c43e73143e56f2c0b37a97d82b2ec56c4502d6a3f0fa4ccbc67",
+      "bytes": 83929,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "新竹市",
+      "countyCode": "10018"
+    },
+    {
+      "path": "buckets/新竹縣.json",
+      "assetGroup": "county-bucket",
+      "hash": "sha256-bcd81cbd52f43baa2debae494e2efdbe6e0a2996452c5123337b8f6e6b9c8375",
+      "bytes": 189953,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "新竹縣",
+      "countyCode": "10004"
+    },
+    {
+      "path": "buckets/嘉義市.json",
+      "assetGroup": "county-bucket",
+      "hash": "sha256-b61cd5d5f657722a2bc72e8f15d313dfe824f0a39d680904814c164d4a3f71e1",
+      "bytes": 50958,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "嘉義市",
+      "countyCode": "10020"
+    },
+    {
+      "path": "buckets/嘉義縣.json",
+      "assetGroup": "county-bucket",
+      "hash": "sha256-2a537019c04f556226f727b09915c75773a1a4ba635adcbd6baa03f76316f81c",
+      "bytes": 252611,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "嘉義縣",
+      "countyCode": "10010"
+    },
+    {
+      "path": "buckets/彰化縣.json",
+      "assetGroup": "county-bucket",
+      "hash": "sha256-4c6232d6bedd7e78454855aae9acf4133ce473abcbc3f05670b09cb67553697f",
+      "bytes": 344419,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "彰化縣",
+      "countyCode": "10007"
+    },
+    {
+      "path": "buckets/臺中市.json",
+      "assetGroup": "county-bucket",
+      "hash": "sha256-a2137f7baff52b733d480a0098790d436f144c11fc6f6a172080c9e8e2687f31",
+      "bytes": 512721,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "臺中市",
+      "countyCode": "66000"
+    },
+    {
+      "path": "buckets/臺北市.json",
+      "assetGroup": "county-bucket",
+      "hash": "sha256-f8ccf5aec1839da47f3e59e634e5d4b63e9d572cc30c38185e260825befa02ca",
+      "bytes": 345106,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "臺北市",
+      "countyCode": "63000"
+    },
+    {
+      "path": "buckets/臺東縣.json",
+      "assetGroup": "county-bucket",
+      "hash": "sha256-18c327652e32a43dbd880eb9009eb7c1b6ea4bad207ecac577428f589d76af1c",
+      "bytes": 189239,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "臺東縣",
+      "countyCode": "10014"
+    },
+    {
+      "path": "buckets/臺南市.json",
+      "assetGroup": "county-bucket",
+      "hash": "sha256-6ec07954283610648d8586213ce0ad6fe3d579f2b80e8476290264c1ceb76590",
+      "bytes": 471726,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "臺南市",
+      "countyCode": "67000"
+    },
+    {
+      "path": "buckets/澎湖縣.json",
+      "assetGroup": "county-bucket",
+      "hash": "sha256-d0961fd030a109201a34c7771afa3473879cd505d5617e82550ece0008a67791",
+      "bytes": 79019,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "澎湖縣",
+      "countyCode": "10016"
+    },
+    {
+      "path": "school-atlas/宜蘭縣.json",
+      "assetGroup": "school-atlas",
+      "hash": "sha256-4241dec08661b80a7e1d145ee78a61e48676a053fa18aa7796c9996bb2753183",
+      "bytes": 1615632,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "宜蘭縣",
+      "countyCode": "10002"
+    },
+    {
+      "path": "school-atlas/花蓮縣.json",
+      "assetGroup": "school-atlas",
+      "hash": "sha256-1d4b04ce31b6511b54e3441d82e57ecb226d651fe10ef9a20d2ee5c2b6215c82",
+      "bytes": 2006576,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "花蓮縣",
+      "countyCode": "10015"
+    },
+    {
+      "path": "school-atlas/金門縣.json",
+      "assetGroup": "school-atlas",
+      "hash": "sha256-a80b854981554c50add1e5c694d09d2c4039abdf7c887f9a8ed98b477a2c26c6",
+      "bytes": 376082,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "金門縣",
+      "countyCode": "09020"
+    },
+    {
+      "path": "school-atlas/南投縣.json",
+      "assetGroup": "school-atlas",
+      "hash": "sha256-41cd400df758c191ab28e4daa0a7b55696650c1787b05c3e94dfcfb4038fafd3",
+      "bytes": 2690576,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "南投縣",
+      "countyCode": "10008"
+    },
+    {
+      "path": "school-atlas/屏東縣.json",
+      "assetGroup": "school-atlas",
+      "hash": "sha256-da0c36a452689e7c975b32aa9192231cc6e04500e20d38799c76acb4ede49a40",
+      "bytes": 3237663,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "屏東縣",
+      "countyCode": "10013"
+    },
+    {
+      "path": "school-atlas/苗栗縣.json",
+      "assetGroup": "school-atlas",
+      "hash": "sha256-75c627549a3f642fb99a76ec8baf14cbbae87787a3bdd3b3da857e1f813020a7",
+      "bytes": 2309470,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "苗栗縣",
+      "countyCode": "10005"
+    },
+    {
+      "path": "school-atlas/桃園市.json",
+      "assetGroup": "school-atlas",
+      "hash": "sha256-9d9ef1e1ac511b789b4c1ea76b29fa8fb6c6461b348e8362bd6ef3a974c1f3c1",
+      "bytes": 4101557,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "桃園市",
+      "countyCode": "68000"
+    },
+    {
+      "path": "school-atlas/高雄市.json",
+      "assetGroup": "school-atlas",
+      "hash": "sha256-e503bc4a2d1069a37d1f8eaf3dcf1935838ead3ad51a7fca3a630abd642881b9",
+      "bytes": 5450563,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "高雄市",
+      "countyCode": "64000"
+    },
+    {
+      "path": "school-atlas/基隆市.json",
+      "assetGroup": "school-atlas",
+      "hash": "sha256-4019464b7c383ef42a5b51bfe59f73a7a65100dc39210322afd5a2458b774884",
+      "bytes": 921775,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "基隆市",
+      "countyCode": "10017"
+    },
+    {
+      "path": "school-atlas/連江縣.json",
+      "assetGroup": "school-atlas",
+      "hash": "sha256-b11b1334841a695fcb0dcd7aa037da4ae97bdfe28832b18bcbdd51a8bbe4e125",
+      "bytes": 165057,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "連江縣",
+      "countyCode": "09007"
+    },
+    {
+      "path": "school-atlas/雲林縣.json",
+      "assetGroup": "school-atlas",
+      "hash": "sha256-c81ffb378502b08401fda7db364c3f85e70d76b14c96a5145919cc7cfb8ec342",
+      "bytes": 3040153,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "雲林縣",
+      "countyCode": "10009"
+    },
+    {
+      "path": "school-atlas/新北市.json",
+      "assetGroup": "school-atlas",
+      "hash": "sha256-97b588c3d03b23190c87c0b6814523867931cc6243af0efdb7810ececa2bbf41",
+      "bytes": 5056889,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "新北市",
+      "countyCode": "65000"
+    },
+    {
+      "path": "school-atlas/新竹市.json",
+      "assetGroup": "school-atlas",
+      "hash": "sha256-0b8e8483591cc4d22cbd4a7ddffadf42de00b314712c826e35bee465c920ae26",
+      "bytes": 890193,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "新竹市",
+      "countyCode": "10018"
+    },
+    {
+      "path": "school-atlas/新竹縣.json",
+      "assetGroup": "school-atlas",
+      "hash": "sha256-26cefe67c30346deb7ae949071e408f2d743b8e0b9c4283a590361c32400b0b2",
+      "bytes": 1843134,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "新竹縣",
+      "countyCode": "10004"
+    },
+    {
+      "path": "school-atlas/嘉義市.json",
+      "assetGroup": "school-atlas",
+      "hash": "sha256-93ecfb852011bb55f6d63759868d4fb327e46f71b7a269057f5af2164df6ad0c",
+      "bytes": 497481,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "嘉義市",
+      "countyCode": "10020"
+    },
+    {
+      "path": "school-atlas/嘉義縣.json",
+      "assetGroup": "school-atlas",
+      "hash": "sha256-c7096a1e81aeb34ac2e953c74c1b629e45ff490cc9cec04dc4fde1e28711062d",
+      "bytes": 2330865,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "嘉義縣",
+      "countyCode": "10010"
+    },
+    {
+      "path": "school-atlas/彰化縣.json",
+      "assetGroup": "school-atlas",
+      "hash": "sha256-04868ff8d4af99b7aadb66528cf7e476801267ab90035d0e70e868097b6149d3",
+      "bytes": 3401855,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "彰化縣",
+      "countyCode": "10007"
+    },
+    {
+      "path": "school-atlas/臺中市.json",
+      "assetGroup": "school-atlas",
+      "hash": "sha256-0ac28449076f3448c56b801a56438530fd9460aa66035ea481b370e85b7572d4",
+      "bytes": 5357640,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "臺中市",
+      "countyCode": "66000"
+    },
+    {
+      "path": "school-atlas/臺北市.json",
+      "assetGroup": "school-atlas",
+      "hash": "sha256-f818185511adb70285ca39698bb91e79d02bd3675e35878d5421506003fe6e72",
+      "bytes": 3997294,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "臺北市",
+      "countyCode": "63000"
+    },
+    {
+      "path": "school-atlas/臺東縣.json",
+      "assetGroup": "school-atlas",
+      "hash": "sha256-eb0e4e42a3ceafc20c5826584f7492c8ca39dd493598d5433f11eed86a311a10",
+      "bytes": 1736176,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "臺東縣",
+      "countyCode": "10014"
+    },
+    {
+      "path": "school-atlas/臺南市.json",
+      "assetGroup": "school-atlas",
+      "hash": "sha256-ecf21bf31ab621a0b1a31a62e9bd7074c9c9d3ba9f9ad18f369b232bb754b609",
+      "bytes": 4576879,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "臺南市",
+      "countyCode": "67000"
+    },
+    {
+      "path": "school-atlas/澎湖縣.json",
+      "assetGroup": "school-atlas",
+      "hash": "sha256-15ccdeb0906f23a3c99d61e525d712054aaa17d1c25c7b5174d99f0df584a8e2",
+      "bytes": 745021,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "澎湖縣",
+      "countyCode": "10016"
+    },
+    {
+      "path": "townships/連江縣.topo.json",
+      "assetGroup": "township-boundary",
+      "hash": "sha256-1bc8343cbf504c23e6d46ead8a062ae245101cf8aa29a7965862b630cf897915",
+      "bytes": 813502,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "連江縣",
+      "countyCode": "09007"
+    },
+    {
+      "path": "townships/宜蘭縣.topo.json",
+      "assetGroup": "township-boundary",
+      "hash": "sha256-b24913eda15ea3ec36776a2d0e69477f670da46c71e96118b23c594062077ef7",
+      "bytes": 1688129,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "宜蘭縣",
+      "countyCode": "10002"
+    },
+    {
+      "path": "townships/彰化縣.topo.json",
+      "assetGroup": "township-boundary",
+      "hash": "sha256-267b8f39c6fca523a9da66adcbb7a41a9c7d9320a43f7bf89ac33df86edef952",
+      "bytes": 1081596,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "彰化縣",
+      "countyCode": "10007"
+    },
+    {
+      "path": "townships/南投縣.topo.json",
+      "assetGroup": "township-boundary",
+      "hash": "sha256-6ba3995be761e82cc2b61763122cdbd88e4dd3f8be9d9c229abb3aa70e34c2cd",
+      "bytes": 1700232,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "南投縣",
+      "countyCode": "10008"
+    },
+    {
+      "path": "townships/雲林縣.topo.json",
+      "assetGroup": "township-boundary",
+      "hash": "sha256-f52509cefd2e5a0f362bbdcbe369ac9da77b9419b533266e7865242c673e799b",
+      "bytes": 1369253,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "雲林縣",
+      "countyCode": "10009"
+    },
+    {
+      "path": "townships/屏東縣.topo.json",
+      "assetGroup": "township-boundary",
+      "hash": "sha256-e4bfc13dc995c3df297193251764c80cf2fef70bd9317803c0dbeeba7b68f816",
+      "bytes": 2448713,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "屏東縣",
+      "countyCode": "10013"
+    },
+    {
+      "path": "townships/基隆市.topo.json",
+      "assetGroup": "township-boundary",
+      "hash": "sha256-8197cf19565699d2f73935ce8f11bb56d94274c68e8eda6aa596cd4d9bf848a9",
+      "bytes": 358256,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "基隆市",
+      "countyCode": "10017"
+    },
+    {
+      "path": "townships/臺北市.topo.json",
+      "assetGroup": "township-boundary",
+      "hash": "sha256-f31a7693d0f4f7b14f0ea01680490bcc1c1c27b69a9f5ecf714efcaf64383446",
+      "bytes": 518207,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "臺北市",
+      "countyCode": "63000"
+    },
+    {
+      "path": "townships/新北市.topo.json",
+      "assetGroup": "township-boundary",
+      "hash": "sha256-5984b09b9e4e31f3c505c57e12fbb5aa7cd855516d37438ec4b2bd772e57277b",
+      "bytes": 2809348,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "新北市",
+      "countyCode": "65000"
+    },
+    {
+      "path": "townships/臺南市.topo.json",
+      "assetGroup": "township-boundary",
+      "hash": "sha256-a215bcacca3b03827415e368aada2d8e9ab946542461f12adfe725a32ca8c65d",
+      "bytes": 1924743,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "臺南市",
+      "countyCode": "67000"
+    },
+    {
+      "path": "townships/桃園市.topo.json",
+      "assetGroup": "township-boundary",
+      "hash": "sha256-1e701327830f06f4470ecc91b60e68bba8168ed1aec5d29c4f8fea6e24c1696e",
+      "bytes": 1506419,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "桃園市",
+      "countyCode": "68000"
+    },
+    {
+      "path": "townships/嘉義市.topo.json",
+      "assetGroup": "township-boundary",
+      "hash": "sha256-a8dd0d2bca1b7d2fe75216579c5b524020bc85e86c7e8d4f535afd60944a11ea",
+      "bytes": 91592,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "嘉義市",
+      "countyCode": "10020"
+    },
+    {
+      "path": "townships/嘉義縣.topo.json",
+      "assetGroup": "township-boundary",
+      "hash": "sha256-db40d572ce64ee6af890fd65723e2234f0763b1c86f1d5346239b7b022de189a",
+      "bytes": 1892965,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "嘉義縣",
+      "countyCode": "10010"
+    },
+    {
+      "path": "townships/金門縣.topo.json",
+      "assetGroup": "township-boundary",
+      "hash": "sha256-d4f64fba8f681c40d6553f7e3e6bb2616266afa5790365bcb4346406d6253c21",
+      "bytes": 318818,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "金門縣",
+      "countyCode": "09020"
+    },
+    {
+      "path": "townships/高雄市.topo.json",
+      "assetGroup": "township-boundary",
+      "hash": "sha256-eaf6807a82aebb0f0dce56712838227f8a2b12f7eba3978340376adb7a2e1eef",
+      "bytes": 1646102,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "高雄市",
+      "countyCode": "64000"
+    },
+    {
+      "path": "townships/臺東縣.topo.json",
+      "assetGroup": "township-boundary",
+      "hash": "sha256-2debc0f53209a4b34531ffda9daf723d03a72d6383004ec0ee94d0de22229404",
+      "bytes": 1374194,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "臺東縣",
+      "countyCode": "10014"
+    },
+    {
+      "path": "townships/花蓮縣.topo.json",
+      "assetGroup": "township-boundary",
+      "hash": "sha256-08f6e9028d0acc84d14d24a27c8221de63fcbe947eafdc1912c4d65b116b1b5e",
+      "bytes": 1497369,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "花蓮縣",
+      "countyCode": "10015"
+    },
+    {
+      "path": "townships/澎湖縣.topo.json",
+      "assetGroup": "township-boundary",
+      "hash": "sha256-ffa0feff3d64871449dab61cd8085da6f7d5c0795158f27ff6ffb522bb67bfb4",
+      "bytes": 1768977,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "澎湖縣",
+      "countyCode": "10016"
+    },
+    {
+      "path": "townships/新竹市.topo.json",
+      "assetGroup": "township-boundary",
+      "hash": "sha256-cc79bc761be620ce9b340df9ac67de51f065ca42215317cb0f286f8a835f11f0",
+      "bytes": 192083,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "新竹市",
+      "countyCode": "10018"
+    },
+    {
+      "path": "townships/臺中市.topo.json",
+      "assetGroup": "township-boundary",
+      "hash": "sha256-da1beddb0f982bd06c808ebc57a516bc97eec01ce7507c01ebe68e493c610dd9",
+      "bytes": 1171805,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "臺中市",
+      "countyCode": "66000"
+    },
+    {
+      "path": "townships/苗栗縣.topo.json",
+      "assetGroup": "township-boundary",
+      "hash": "sha256-80ef609e4117c436b553a136bfe66f1f106e73ceb812fa44a5a4c6c8616cb4fd",
+      "bytes": 1500979,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "苗栗縣",
+      "countyCode": "10005"
+    },
+    {
+      "path": "townships/新竹縣.topo.json",
+      "assetGroup": "township-boundary",
+      "hash": "sha256-dd60c88049d28f361f9bd41e7c36b7005e63443e6a3c7d9247704626026ebfbe",
+      "bytes": 1355401,
+      "dependsOnSchemaVersion": "2026.03.p0",
+      "critical": false,
+      "countyId": "新竹縣",
+      "countyCode": "10004"
+    }
+  ]
+}

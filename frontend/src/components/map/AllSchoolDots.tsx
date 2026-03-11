@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { CircleMarker, Tooltip, useMap, useMapEvents } from 'react-leaflet'
+import { buildDataAssetUrl } from '../../data/dataAsset'
 
 type SchoolCoord = {
   code: string
@@ -24,7 +25,7 @@ function AllSchoolDots({ onSelectSchool }: AllSchoolDotsProps) {
   const [, setVersion] = useState(0)
 
   useEffect(() => {
-    fetch('./data/school-coordinate-lookup.json')
+    fetch(buildDataAssetUrl('school-coordinate-lookup.json'))
       .then((res) => res.json())
       .then((json: SchoolLookup) => setData(Object.values(json.schools)))
       .catch(() => {})
