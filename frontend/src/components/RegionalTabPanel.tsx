@@ -86,17 +86,17 @@ function RegionalTabPanel({
 
       <section className="dashboard-card dashboard-card--regional-story">
         <div className="dashboard-card__body dashboard-card__insight-body">
-          <div className="panel-heading" style={{ marginBottom: '16px' }}>
-            <div>
-              <p className="eyebrow" style={{ color: 'var(--palette-cyan)' }}>區域結構剖析</p>
+          <div className="panel-heading panel-heading--section">
+            <div className="panel-heading__stack">
+              <p className="eyebrow eyebrow--cyan">區域結構剖析</p>
               <h3>{region === '全部' ? '全台四大區域板塊分布' : `${region} 結構快照`}</h3>
             </div>
             <p className="panel-heading__meta">上方卡片為區域彙整，點選可過濾地圖；下方圖表則探索公私立佔比結構。</p>
           </div>
 
-          <div className="atlas-metric-strip" style={{ marginBottom: '16px' }}>
+          <div className="atlas-metric-strip atlas-metric-strip--spaced">
             {regionSummaries.map((item) => (
-              <article key={item.id} className={region === item.id ? 'atlas-metric-tile atlas-metric-tile--active' : 'atlas-metric-tile'} style={{ cursor: 'pointer', transition: 'all 0.2s ease' }} onClick={() => scenarioActions.handleRegionSelect(item.id as RegionGroupFilter)}>
+              <article key={item.id} className={region === item.id ? 'atlas-metric-tile atlas-metric-tile--interactive atlas-metric-tile--active' : 'atlas-metric-tile atlas-metric-tile--interactive'} onClick={() => scenarioActions.handleRegionSelect(item.id as RegionGroupFilter)}>
                 <span>{item.label}</span>
                 <strong>{formatStudents(item.students)} 人</strong>
                 <small>{item.countyCount} 縣市 / 年增減 {formatPercent(item.deltaRatio)}</small>
@@ -134,9 +134,9 @@ function RegionalTabPanel({
 
       <section className="dashboard-card dashboard-card--ranking">
         <div className="dashboard-card__body dashboard-card__ranking-body">
-          <div className="panel-heading" style={{ marginBottom: '16px' }}>
-            <div>
-              <p className="eyebrow" style={{ color: 'var(--palette-brass)' }}>下鑽入口</p>
+          <div className="panel-heading panel-heading--section">
+            <div className="panel-heading__stack">
+              <p className="eyebrow eyebrow--brass">下鑽入口</p>
               <h3>{region === '全部' ? '全台縣市聚焦' : `${region} 縣市落差`}</h3>
             </div>
             <p className="panel-heading__meta">點選列表中的縣市，地圖將自動切換並進入該縣市分析。右上方可切換顯示量體長條或詳細排行。</p>
@@ -183,8 +183,8 @@ function RegionalTabPanel({
 
       <section className="dashboard-card dashboard-card--comparison">
         <div className="dashboard-card__body dashboard-card__insight-body">
-          <div className="panel-heading" style={{ marginBottom: '16px' }}>
-            <div>
+          <div className="panel-heading panel-heading--section">
+            <div className="panel-heading__stack">
               <p className="eyebrow">自帶分析台</p>
               <h3>自訂縣市對焦</h3>
             </div>

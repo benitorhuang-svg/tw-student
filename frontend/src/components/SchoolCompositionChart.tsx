@@ -38,6 +38,23 @@ function inferGenderTotal(composition: StudentCompositionRecord | null, key: 'ma
   return total > 0 ? total : undefined
 }
 
+function createLabelLines(label: string) {
+  const compactLabel = label.replace(/臺/g, '台').trim()
+
+  if (compactLabel.length <= 8) {
+    return [compactLabel]
+  }
+
+  const splitIndex = [...compactLabel].findIndex((char, index) => index < compactLabel.length - 2 && ['縣', '市', '區', '鄉', '鎮'].includes(char))
+
+  if (splitIndex >= 1) {
+    return [compactLabel.slice(0, splitIndex + 1), compactLabel.slice(splitIndex + 1)]
+  }
+
+  const middle = Math.ceil(compactLabel.length / 2)
+  return [compactLabel.slice(0, middle), compactLabel.slice(middle)]
+}
+
 function SchoolCompositionChart({ schoolAtlasEntry, selectedSchool, activeYear, isLoading = false, loadError = null }: SchoolCompositionChartProps) {
   const [detailLevelKey, setDetailLevelKey] = useState<string | null>(null)
   const levelRows = useMemo(() => {
@@ -79,7 +96,7 @@ function SchoolCompositionChart({ schoolAtlasEntry, selectedSchool, activeYear, 
   const { ref: animRef, isVisible } = useChartAnimation()
 
   return (
-    <section className={`school-composition-chart${isVisible ? ' chart-enter' : ''}`} ref={animRef as React.RefObject<HTMLElement>}>
+    <section className={isVisible ? 'school-composition-chart chart-enter chart-enter--visible' : 'school-composition-chart chart-enter'} ref={animRef as React.RefObject<HTMLElement>}>
       <div className="school-composition-chart__header">
         <div>
           <p className="eyebrow eyebrow--cyan">校代碼完整結構</p>
@@ -101,6 +118,7 @@ function SchoolCompositionChart({ schoolAtlasEntry, selectedSchool, activeYear, 
             const genderTotal = (level.maleStudents ?? 0) + (level.femaleStudents ?? 0)
             const maleShare = genderTotal > 0 ? ((level.maleStudents ?? 0) / genderTotal) * 100 : 0
             const femaleShare = genderTotal > 0 ? ((level.femaleStudents ?? 0) / genderTotal) * 100 : 0
+            const labelLines = createLabelLines(level.name)
 
             return (
               <article
@@ -123,7 +141,11 @@ function SchoolCompositionChart({ schoolAtlasEntry, selectedSchool, activeYear, 
                 <div className="school-composition-chart__level-header">
                   <div>
                     <span className="school-composition-chart__level-tag">{level.managementType}{level.educationLevel}</span>
-                    <strong>{level.name}</strong>
+                    <strong className="school-composition-chart__level-name" title={level.name}>
+                      {labelLines.map((line) => (
+                        <span key={`${level.schoolId}-${level.educationLevel}-${line}`} className="school-composition-chart__level-name-line">{line}</span>
+                      ))}
+                    </strong>
                     <small>{level.townshipName} / {level.displayYear === activeYear ? formatAcademicYear(activeYear) : `${formatAcademicYear(level.displayYear)}（最近有資料）`}</small>
                   </div>
                   <div className="school-composition-chart__level-total">

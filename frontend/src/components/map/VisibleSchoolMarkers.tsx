@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 
 import L from 'leaflet'
 import { CircleMarker, Tooltip, useMap, useMapEvents } from 'react-leaflet'
@@ -66,6 +66,106 @@ type VisibleSchoolMarkersProps = {
   selectedSchoolId: string | null
   highlightedSchoolId?: string | null
   onSelectSchool: (schoolId: string | null) => void
+}
+
+type AccessibleCircleMarkerProps = {
+  ariaLabel: string
+  center: [number, number]
+  isPressed?: boolean
+  onActivate: () => void
+  pathOptions: L.PathOptions
+  radius: number
+  tooltipContent: ReactNode
+}
+
+function AccessibleCircleMarker({
+  ariaLabel,
+  center,
+  isPressed = false,
+  onActivate,
+  pathOptions,
+  radius,
+  tooltipContent,
+}: AccessibleCircleMarkerProps) {
+  const markerRef = useRef<L.CircleMarker | null>(null)
+
+  useEffect(() => {
+    const marker = markerRef.current
+    if (!marker) {
+      return
+    }
+
+    let frameId = 0
+    let element: SVGElement | null = null
+
+    const attachAccessibility = () => {
+      element = marker.getElement() as SVGElement | null
+      if (!element) {
+        frameId = window.requestAnimationFrame(attachAccessibility)
+        return
+      }
+
+      element.setAttribute('tabindex', '0')
+      element.setAttribute('role', 'button')
+      element.setAttribute('aria-label', ariaLabel)
+      if (isPressed) {
+        element.setAttribute('aria-pressed', 'true')
+      } else {
+        element.removeAttribute('aria-pressed')
+      }
+
+      const handleFocus = () => marker.openTooltip()
+      const handleBlur = () => marker.closeTooltip()
+      const handleKeyDown = (event: KeyboardEvent) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault()
+          marker.openTooltip()
+          onActivate()
+        }
+
+        if (event.key === 'Escape') {
+          marker.closeTooltip()
+        }
+      }
+
+      element.addEventListener('focus', handleFocus)
+      element.addEventListener('blur', handleBlur)
+      element.addEventListener('keydown', handleKeyDown)
+
+      return () => {
+        element?.removeEventListener('focus', handleFocus)
+        element?.removeEventListener('blur', handleBlur)
+        element?.removeEventListener('keydown', handleKeyDown)
+      }
+    }
+
+    const cleanup = attachAccessibility()
+
+    return () => {
+      window.cancelAnimationFrame(frameId)
+      cleanup?.()
+    }
+  }, [ariaLabel, isPressed, onActivate])
+
+  return (
+    <CircleMarker
+      ref={markerRef}
+      center={center}
+      radius={radius}
+      pathOptions={pathOptions}
+      eventHandlers={{
+        click: (event) => {
+          L.DomEvent.stopPropagation(event.originalEvent)
+          markerRef.current?.openTooltip()
+          onActivate()
+        },
+      }}
+    >
+      <Tooltip direction="top" offset={[0, -6]} className="atlas-map-tooltip atlas-map-tooltip--preview">
+        {tooltipContent}
+      </Tooltip>
+    </CircleMarker>
+  )
 }
 
 function VisibleSchoolMarkers({
@@ -210,9 +310,11 @@ function VisibleSchoolMarkers({
                 interactive={false}
               />
             ) : null,
-            <CircleMarker
+            <AccessibleCircleMarker
               key={`school-${school.id}`}
+              ariaLabel={`${school.name}，${school.townshipName}，${school.educationLevel}，${formatStudents(school.currentStudents)} 人，按 Enter 查看學校分析`}
               center={[school.latitude, school.longitude]}
+              isPressed={isSelected}
               radius={baseRadius}
               pathOptions={{
                 className: `atlas-school-marker atlas-school-marker-${school.id}`,
@@ -221,45 +323,36 @@ function VisibleSchoolMarkers({
                 fillColor: growthChoroplethColor(school.deltaRatio),
                 fillOpacity: isHighlighted ? 0.94 : Math.max(0.58, growthChoroplethOpacity(school.deltaRatio) + 0.12),
               }}
-              eventHandlers={{
-                click: (event) => {
-                  L.DomEvent.stopPropagation(event.originalEvent)
-                  suppressNextMapClearRef.current = true
-                  stableSelectSchool(school.id)
-                },
+              onActivate={() => {
+                suppressNextMapClearRef.current = true
+                stableSelectSchool(school.id)
               }}
-            >
-              <Tooltip direction="top" offset={[0, -6]} className="atlas-map-tooltip atlas-map-tooltip--preview">
-                {renderSchoolHoverCard(school)}
-              </Tooltip>
-            </CircleMarker>,
+              tooltipContent={renderSchoolHoverCard(school)}
+            />,
           ]
         }
 
         return (
-          <CircleMarker
+          <AccessibleCircleMarker
             key={cluster.id}
+            ariaLabel={`${cluster.count.toLocaleString('zh-TW')} 所學校分群，學生總量 ${formatStudents(cluster.totalStudents)} 人，按 Enter 放大地圖`}
             center={[cluster.latitude, cluster.longitude]}
-              radius={getClusterRadius(cluster.count, cluster.totalStudents, maxClusterStudents, zoom)}
+            radius={getClusterRadius(cluster.count, cluster.totalStudents, maxClusterStudents, zoom)}
             pathOptions={{
+              className: 'atlas-school-cluster-marker',
               color: 'rgba(15, 23, 42, 0.78)',
               weight: 1.5,
               fillColor: getSchoolLevelColor(cluster.dominantEducationLevel),
-                fillOpacity: Math.max(0.7, Math.min(0.94, cluster.totalStudents / maxClusterStudents)),
+              fillOpacity: Math.max(0.7, Math.min(0.94, cluster.totalStudents / maxClusterStudents)),
             }}
-            eventHandlers={{
-              click: () => {
-                suppressNextMapClearRef.current = true
-                map.flyTo([cluster.latitude, cluster.longitude], Math.min(map.getZoom() + 1, 12), {
-                  duration: 0.35,
-                })
-              },
+            onActivate={() => {
+              suppressNextMapClearRef.current = true
+              map.flyTo([cluster.latitude, cluster.longitude], Math.min(map.getZoom() + 1, 12), {
+                duration: 0.35,
+              })
             }}
-          >
-            <Tooltip direction="top" offset={[0, -6]} className="atlas-map-tooltip atlas-map-tooltip--preview">
-              {renderClusterHoverCard(cluster.count, cluster.totalStudents, cluster.dominantEducationLevel, cluster.schoolNames)}
-            </Tooltip>
-          </CircleMarker>
+            tooltipContent={renderClusterHoverCard(cluster.count, cluster.totalStudents, cluster.dominantEducationLevel, cluster.schoolNames)}
+          />
         )
       })}
     </>

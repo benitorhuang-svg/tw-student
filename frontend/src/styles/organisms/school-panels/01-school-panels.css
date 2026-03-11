@@ -242,8 +242,9 @@
 .school-focus {
     padding: 12px;
     border-radius: 16px;
-    border: var(--border-subtle);
-    background: #ffffff0a
+    border: 1px solid var(--atlas-border-strong);
+    background: var(--atlas-surface-primary);
+    box-shadow: var(--atlas-shadow-soft)
 }
 
 .school-focus--overview {
@@ -255,25 +256,33 @@
     display: flex;
     justify-content: space-between;
     gap: 8px;
-    align-items: center
+    align-items: center;
+    min-width: 0;
 }
 
 .school-focus__summary div {
     display: grid;
-    gap: 2px
+    gap: 2px;
+    min-width: 0;
 }
 
 .school-focus__summary h3 {
     margin: 0;
     font-family: var(--font-heading);
     font-size: .96rem;
-    color: #f8fafc
+    color: var(--atlas-text-strong);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .school-focus__summary p {
     margin: 0;
-    color: #e2e8f0a3;
-    font-size: .82rem
+    color: var(--atlas-text-muted);
+    font-size: .82rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .school-focus__statline {
@@ -285,11 +294,11 @@
 .school-focus__statline strong {
     font-family: var(--font-heading);
     font-size: 1.5rem;
-    color: #f8fafc
+    color: var(--atlas-text-strong)
 }
 
 .school-focus__statline span {
-    color: #94a3b8ad;
+    color: var(--atlas-text-subtle);
     font-size: .8rem
 }
 
@@ -304,18 +313,18 @@
     gap: 4px;
     padding: 12px;
     border-radius: 16px;
-    border: 1px solid rgba(148, 163, 184, .14);
-    background: linear-gradient(180deg, #ffffff0f, #ffffff08)
+    border: 1px solid var(--atlas-border-soft);
+    background: var(--atlas-surface-secondary)
 }
 
 .school-focus__meta-card span,
 .school-focus__meta-card small {
-    color: #94a3b8bd;
+    color: var(--atlas-text-subtle);
     font-size: .74rem
 }
 
 .school-focus__meta-card strong {
-    color: #f8fafc;
+    color: var(--atlas-text-strong);
     font-family: var(--font-heading);
     font-size: 1.08rem
 }
@@ -331,20 +340,20 @@
     gap: 4px;
     padding: 10px;
     border-radius: 14px;
-    background: #ffffff0a;
-    border: var(--border-subtle)
+    background: var(--atlas-surface-secondary);
+    border: 1px solid var(--atlas-border-soft)
 }
 
 .school-profile-metric span,
 .school-profile-metric small,
 .school-profile-info-row span {
-    color: #94a3b8b8;
+    color: var(--atlas-text-subtle);
     font-size: .76rem
 }
 
 .school-profile-metric strong,
 .school-profile-info-row strong {
-    color: #f8fafc;
+    color: var(--atlas-text-strong);
     font-family: var(--font-heading)
 }
 
@@ -353,8 +362,8 @@
     gap: 8px;
     padding: 12px;
     border-radius: 16px;
-    border: var(--border-subtle);
-    background: #ffffff08
+    border: 1px solid var(--atlas-border-soft);
+    background: var(--atlas-surface-secondary)
 }
 
 .school-profile-info-row {
@@ -432,6 +441,32 @@
     flex-wrap: wrap
 }
 
+.dashboard-side-shell {
+    --atlas-surface-primary: linear-gradient(180deg, rgba(255, 255, 255, .96), rgba(248, 250, 252, .92));
+    --atlas-surface-secondary: linear-gradient(180deg, rgba(255, 255, 255, .84), rgba(241, 245, 249, .78));
+    --atlas-surface-interactive: linear-gradient(135deg, rgba(42, 111, 145, .12), rgba(184, 135, 70, .08));
+    --atlas-surface-interactive-strong: linear-gradient(135deg, rgba(42, 111, 145, .18), rgba(184, 135, 70, .14));
+    --atlas-border-strong: rgba(148, 163, 184, .22);
+    --atlas-border-soft: rgba(148, 163, 184, .16);
+    --atlas-text-strong: var(--text-main);
+    --atlas-text-muted: var(--text-soft);
+    --atlas-text-subtle: rgba(71, 85, 105, .86);
+    --atlas-shadow-soft: 0 16px 38px rgba(15, 23, 42, .08)
+}
+
+.app-shell[data-theme=dark] .dashboard-side-shell {
+    --atlas-surface-primary: linear-gradient(180deg, rgba(15, 23, 42, .72), rgba(15, 23, 42, .62));
+    --atlas-surface-secondary: linear-gradient(180deg, rgba(255, 255, 255, .08), rgba(255, 255, 255, .05));
+    --atlas-surface-interactive: linear-gradient(135deg, rgba(42, 111, 145, .18), rgba(184, 135, 70, .12));
+    --atlas-surface-interactive-strong: linear-gradient(135deg, rgba(37, 99, 235, .24), rgba(8, 145, 178, .18));
+    --atlas-border-strong: rgba(148, 163, 184, .2);
+    --atlas-border-soft: rgba(148, 163, 184, .14);
+    --atlas-text-strong: #f8fafc;
+    --atlas-text-muted: rgba(226, 232, 240, .78);
+    --atlas-text-subtle: rgba(148, 163, 184, .82);
+    --atlas-shadow-soft: 0 16px 38px rgba(2, 6, 23, .26)
+}
+
 .school-detail-shell {
     display: grid;
     gap: 14px;
@@ -446,21 +481,35 @@
     gap: 14px;
     padding: 12px 14px;
     border-radius: 16px;
-    border: 1px solid rgba(148, 163, 184, .12);
-    background: #ffffff0a
+    border: 1px solid var(--atlas-border-strong);
+    background: var(--atlas-surface-interactive);
+    box-shadow: var(--atlas-shadow-soft);
+    min-width: 0;
+}
+
+.school-detail-shell__topbar > div {
+    min-width: 0;
 }
 
 .school-detail-shell__topbar h3 {
     margin: 4px 0 6px;
     font-family: var(--font-heading);
-    color: #f8fafc
+    color: var(--atlas-text-strong);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .school-detail-shell__topbar p:last-child {
     margin: 0;
-    color: #e2e8f0b8;
+    color: var(--atlas-text-muted);
     font-size: .82rem;
-    line-height: 1.55
+    line-height: 1.55;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
 .school-workbench-tabs,
@@ -476,6 +525,10 @@
     gap: 10px
 }
 
+.atlas-metric-strip--spaced {
+    margin-bottom: 16px
+}
+
 .atlas-metric-strip--compact {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr))
 }
@@ -485,23 +538,36 @@
     gap: 5px;
     padding: 12px 14px;
     border-radius: 16px;
-    border: 1px solid rgba(148, 163, 184, .14);
-    background: #ffffff0a
+    border: 1px solid var(--atlas-border-soft);
+    background: var(--atlas-surface-secondary);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08)
+}
+
+.atlas-metric-tile--interactive {
+    cursor: pointer;
+    transition: transform .18s ease, border-color .18s ease, background .18s ease, box-shadow .18s ease
+}
+
+.atlas-metric-tile--interactive:hover {
+    transform: translateY(-1px);
+    border-color: rgba(42, 111, 145, .28);
+    background: var(--atlas-surface-primary);
+    box-shadow: var(--atlas-shadow-soft)
 }
 
 .atlas-metric-tile--active {
-    border-color: #38bdf847;
-    background: linear-gradient(135deg, #2563eb2e, #0891b21f)
+    border-color: rgba(42, 111, 145, .34);
+    background: var(--atlas-surface-interactive-strong)
 }
 
 .atlas-metric-tile span,
 .atlas-metric-tile small {
-    color: #94a3b8c2;
+    color: var(--atlas-text-subtle);
     font-size: .74rem
 }
 
 .atlas-metric-tile strong {
-    color: #f8fafc;
+    color: var(--atlas-text-strong);
     font-family: var(--font-heading);
     font-size: 1rem
 }
@@ -521,8 +587,16 @@
     min-width: 0;
     padding: 12px;
     border-radius: 18px;
-    border: 1px solid rgba(148, 163, 184, .14);
-    background: #ffffff0a
+    border: 1px solid var(--atlas-border-soft);
+    background: var(--atlas-surface-primary);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08)
+}
+
+.atlas-storyboard__chart--flush {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none
 }
 
 .dashboard-year-nav {
@@ -596,18 +670,18 @@
     gap: 4px;
     padding: 12px;
     border-radius: 16px;
-    border: 1px solid rgba(148, 163, 184, .14);
-    background: #ffffff0a
+    border: 1px solid var(--atlas-border-soft);
+    background: var(--atlas-surface-secondary)
 }
 
 .school-list-workspace__summary-card span,
 .school-list-workspace__summary-card small {
-    color: #94a3b8bd;
+    color: var(--atlas-text-subtle);
     font-size: .74rem
 }
 
 .school-list-workspace__summary-card strong {
-    color: #f8fafc;
+    color: var(--atlas-text-strong);
     font-family: var(--font-heading);
     font-size: 1rem
 }
@@ -625,8 +699,8 @@
     align-content: start;
     padding: 12px;
     border-radius: 18px;
-    border: 1px solid rgba(148, 163, 184, .14);
-    background: #ffffff0a;
+    border: 1px solid var(--atlas-border-soft);
+    background: var(--atlas-surface-primary);
     min-height: 100%
 }
 
@@ -635,14 +709,51 @@
 }
 
 .school-analysis-panel__chart-path {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--atlas-border-soft);
+    background: var(--atlas-surface-secondary);
     font-size: .72rem;
-    color: var(--color-text-muted, #94a3b8);
+    color: var(--atlas-text-subtle);
     letter-spacing: .02em;
-    padding: 2px 0
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08);
+    overflow: hidden;
+}
+
+.school-analysis-panel__chart-path-sep {
+    flex-shrink: 0;
+    opacity: .5;
+}
+
+.school-analysis-panel__chart-path-segment {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 18ch;
+}
+
+.school-analysis-panel__chart-path-segment--current {
+    max-width: 22ch;
+    font-weight: 700;
+    color: var(--atlas-text-strong);
+}
+
+@media (max-width: 640px) {
+    .school-analysis-panel__chart-path-segment {
+        max-width: 10ch;
+    }
+    .school-analysis-panel__chart-path-segment--current {
+        max-width: 14ch;
+    }
 }
 
 .school-analysis-panel__hero {
-    margin: 0
+    margin: 0;
+    background: var(--atlas-surface-interactive)
 }
 
 .school-analysis-panel__grid {
@@ -912,136 +1023,6 @@
     color: #fb7185
 }
 
-.school-composition-chart,
-.school-composition-chart__levels,
-.school-composition-chart__bands,
-.school-composition-chart__header,
-.school-composition-chart__level,
-.school-composition-chart__level-header,
-.school-composition-chart__band-row,
-.school-composition-chart__band-label {
-    display: grid;
-    gap: 8px
-}
-
-.school-composition-chart__levels {
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 12px
-}
-
-.school-composition-chart__level {
-    padding: 14px;
-    border-radius: 18px;
-    border: 1px solid rgba(148, 163, 184, .14);
-    background: linear-gradient(180deg, #ffffff08, #0f172a22)
-}
-
-.school-composition-chart__level--active {
-    border-color: rgba(96, 165, 250, .45);
-    box-shadow: inset 0 0 0 1px rgba(96, 165, 250, .24)
-}
-
-.school-composition-chart__level-header {
-    grid-template-columns: minmax(0, 1fr) auto;
-    align-items: start
-}
-
-.school-composition-chart__level-tag {
-    display: inline-flex;
-    width: fit-content;
-    padding: 4px 8px;
-    border-radius: 999px;
-    background: rgba(34, 211, 238, .14);
-    color: #67e8f9;
-    font-size: .72rem;
-    font-weight: 700
-}
-
-.school-composition-chart__level strong,
-.school-composition-chart__level-total strong,
-.school-composition-chart__band-label strong {
-    color: #f8fafc
-}
-
-.school-composition-chart__level small,
-.school-composition-chart__gender-meta,
-.school-composition-chart__gender-meta--empty,
-.school-composition-chart__band-label span {
-    color: var(--color-text-muted, #94a3b8)
-}
-
-.school-composition-chart__level-total {
-    display: grid;
-    justify-items: end;
-    gap: 2px
-}
-
-.school-composition-chart__gender-block {
-    display: grid;
-    gap: 6px
-}
-
-.school-composition-chart__gender-bar,
-.school-composition-chart__band-rail {
-    overflow: hidden;
-    border-radius: 999px;
-    background: rgba(15, 23, 42, .55)
-}
-
-.school-composition-chart__gender-bar {
-    display: flex;
-    height: 12px
-}
-
-.school-composition-chart__gender-meta {
-    display: flex;
-    justify-content: space-between;
-    gap: 12px;
-    font-size: .76rem
-}
-
-.school-composition-chart__gender-meta--empty {
-    font-size: .76rem
-}
-
-.school-composition-chart__gender-segment--male {
-    background: linear-gradient(90deg, #38bdf8, #60a5fa)
-}
-
-.school-composition-chart__gender-segment--female {
-    background: linear-gradient(90deg, #fb7185, #f472b6)
-}
-
-.school-composition-chart__band-label {
-    grid-template-columns: minmax(0, 1fr) auto;
-    align-items: baseline;
-    font-size: .8rem
-}
-
-.school-composition-chart__band-rail {
-    height: 10px
-}
-
-.school-composition-chart__band-fill {
-    display: flex;
-    height: 100%;
-    min-width: 6px
-}
-
-.school-composition-chart__tooltip {
-    position: static;
-    margin-top: 4px;
-    opacity: 1;
-    transform: none;
-}
-
-.school-composition-chart__band-fill-solid {
-    display: block;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, #22d3ee, #60a5fa)
-}
-
 .dashboard-side-shell .comparison-panel,
 .dashboard-side-shell .school-detail-panel,
 .dashboard-side-shell .insight-panel,
@@ -1062,8 +1043,8 @@
 .school-chart-panel {
     padding: 12px;
     border-radius: 18px;
-    border: var(--border-subtle);
-    background: #ffffff08;
+    border: 1px solid var(--atlas-border-soft);
+    background: var(--atlas-surface-primary);
     align-content: start
 }
 

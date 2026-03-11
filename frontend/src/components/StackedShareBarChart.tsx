@@ -64,18 +64,16 @@ function StackedShareBarChart({ title, subtitle, items, activeItemId = null, onS
                 {item.segments.map((segment) => (
                   <div
                     key={`${item.id}-${segment.label}`}
-                    className="stacked-share-chart__segment"
+                    className={`stacked-share-chart__segment${isActive || activeItemId === null ? '' : ' stacked-share-chart__segment--muted'}`}
                     style={{
                       width: mounted ? `${Math.max(segment.share * 100, segment.value > 0 ? 4 : 0)}%` : '0%',
                       background: segment.color,
-                      transition: 'width 0.8s cubic-bezier(0.2, 0.8, 0.2, 1)',
-                      opacity: isActive || activeItemId === null ? 1 : 0.4
                     }}
                     aria-hidden="true"
                   />
                 ))}
               </div>
-              <div className="stacked-share-chart__values" style={{ opacity: isActive || activeItemId === null ? 1 : 0.4 }}>
+              <div className={`stacked-share-chart__values${isActive || activeItemId === null ? '' : ' stacked-share-chart__values--muted'}`}>
                 {item.segments.map((segment) => (
                   <span key={`${item.id}-${segment.label}-value`}>{segment.label} {formatPercent(segment.share)}</span>
                 ))}

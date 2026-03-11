@@ -1,0 +1,45 @@
+{
+  "ci": {
+    "collect": {
+      "numberOfRuns": 1,
+      "startServerCommand": "npm run preview -- --host 127.0.0.1 --port 4173 --strictPort",
+      "url": [
+        "http://127.0.0.1:4173/?tab=overview",
+        "http://127.0.0.1:4173/?tab=regional",
+        "http://127.0.0.1:4173/?county=66000&tab=schools&level=%E5%85%A8%E9%83%A8"
+      ],
+      "settings": {
+        "chromeFlags": "--headless=new --no-sandbox"
+      }
+    },
+    "assert": {
+      "preset": "lighthouse:recommended",
+      "assertions": {
+        "categories:performance": [
+          "warn",
+          {
+            "minScore": 0.75
+          }
+        ],
+        "categories:accessibility": [
+          "warn",
+          {
+            "minScore": 0.9
+          }
+        ],
+        "categories:best-practices": [
+          "warn",
+          {
+            "minScore": 0.9
+          }
+        ],
+        "categories:seo": "off",
+        "uses-http2": "off"
+      }
+    },
+    "upload": {
+      "target": "filesystem",
+      "outputDir": "./lighthouse-results"
+    }
+  }
+}

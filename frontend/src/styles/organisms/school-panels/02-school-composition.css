@@ -1,0 +1,161 @@
+.school-composition-chart,
+.school-composition-chart__levels,
+.school-composition-chart__bands,
+.school-composition-chart__header,
+.school-composition-chart__level,
+.school-composition-chart__level-header,
+.school-composition-chart__band-row,
+.school-composition-chart__band-label {
+    display: grid;
+    gap: 8px
+}
+
+.school-composition-chart__levels {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 12px
+}
+
+.school-composition-chart__level {
+    padding: 14px;
+    border-radius: 18px;
+    border: 1px solid rgba(148, 163, 184, .14);
+    background: linear-gradient(180deg, #ffffff08, #0f172a22)
+}
+
+.school-composition-chart__level--active {
+    border-color: rgba(96, 165, 250, .45);
+    box-shadow: inset 0 0 0 1px rgba(96, 165, 250, .24)
+}
+
+.school-composition-chart__level-header {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start
+}
+
+.school-composition-chart__level-tag {
+    display: inline-flex;
+    width: fit-content;
+    padding: 4px 8px;
+    border-radius: 999px;
+    background: rgba(34, 211, 238, .14);
+    color: #67e8f9;
+    font-size: .72rem;
+    font-weight: 700
+}
+
+.school-composition-chart__level strong,
+.school-composition-chart__level-total strong,
+.school-composition-chart__band-label strong {
+    color: #f8fafc
+}
+
+.school-composition-chart__level-name {
+    display: grid;
+    gap: 2px;
+    line-height: 1.2
+}
+
+.school-composition-chart__level-name-line {
+    display: block
+}
+
+.school-composition-chart__level small,
+.school-composition-chart__gender-meta,
+.school-composition-chart__gender-meta--empty,
+.school-composition-chart__band-label span {
+    color: var(--color-text-muted, #94a3b8)
+}
+
+.school-composition-chart__level-total {
+    display: grid;
+    justify-items: end;
+    gap: 2px
+}
+
+.school-composition-chart__gender-block {
+    display: grid;
+    gap: 6px
+}
+
+.school-composition-chart__gender-bar,
+.school-composition-chart__band-rail {
+    overflow: hidden;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, .55)
+}
+
+.school-composition-chart__gender-bar {
+    display: flex;
+    height: 12px
+}
+
+.school-composition-chart__gender-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: .76rem
+}
+
+.school-composition-chart__gender-meta--empty {
+    font-size: .76rem
+}
+
+.school-composition-chart__gender-segment--male {
+    background: linear-gradient(90deg, #38bdf8, #60a5fa)
+}
+
+.school-composition-chart__gender-segment--female {
+    background: linear-gradient(90deg, #fb7185, #f472b6)
+}
+
+.school-composition-chart__band-label {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: baseline;
+    font-size: .8rem
+}
+
+.school-composition-chart__band-rail {
+    height: 10px
+}
+
+.school-composition-chart__band-fill {
+    display: flex;
+    height: 100%;
+    min-width: 6px
+}
+
+.school-composition-chart__tooltip {
+    position: static;
+    margin-top: 4px;
+    opacity: 1;
+    transform: none;
+}
+
+.school-composition-chart__band-fill-solid {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #22d3ee, #60a5fa)
+}
+
+@media (max-width: 640px) {
+    .school-composition-chart__header,
+    .school-composition-chart__level-header,
+    .school-composition-chart__band-label {
+        grid-template-columns: 1fr
+    }
+
+    .school-composition-chart__level-total {
+        justify-items: start
+    }
+
+    .school-composition-chart__gender-meta {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 6px 12px
+    }
+
+    .school-composition-chart__levels {
+        grid-template-columns: 1fr
+    }
+}

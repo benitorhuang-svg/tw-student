@@ -159,7 +159,7 @@ function StackedAreaTrendChart({ title, subtitle, series }: StackedAreaTrendChar
 
       <div className="chart-svg-frame" ref={containerRef}>
       <svg
-        className={`stacked-area-chart__svg${isVisible ? ' chart-enter' : ''}`}
+        className={`stacked-area-chart__svg${isVisible ? ' chart-enter chart-enter--visible' : ' chart-enter'}`}
         viewBox={`0 0 ${width} ${height}`}
         preserveAspectRatio="xMidYMid meet"
         role="img"
@@ -356,26 +356,52 @@ function StackedAreaTrendChart({ title, subtitle, series }: StackedAreaTrendChar
           </g>
         ))}
 
-        {/* 左側學制標籤 */}
-        {processedSeries.map((layer) => {
-          const p = layer.points[0]
-          const midY = viewMode === 'line' ? p.y : (toY(p.stackedTop) + toY(p.stackedBottom)) / 2
+        {/* 左側學制標籤 — 碰撞偵測與窄寬度縮寫 */}
+        {(() => {
+          const MIN_GAP = 14
+          const rawLabels = processedSeries.map((layer) => {
+            const p = layer.points[0]
+            const midY = viewMode === 'line' ? p.y : (toY(p.stackedTop) + toY(p.stackedBottom)) / 2
+            return { label: layer.label, color: layer.color, y: midY }
+          })
+          // Sort by Y ascending for greedy spread
+          const sorted = [...rawLabels].sort((a, b) => a.y - b.y)
+          const adjustedY: number[] = []
+          for (let i = 0; i < sorted.length; i++) {
+            let y = sorted[i].y
+            if (i > 0 && y - adjustedY[i - 1] < MIN_GAP) {
+              y = adjustedY[i - 1] + MIN_GAP
+            }
+            // Clamp within chart area
+            y = Math.max(paddingY + 6, Math.min(y, height - paddingY - 6))
+            adjustedY.push(y)
+          }
+          // Rebuild map: original label → adjusted Y
+          const yMap = new Map(sorted.map((item, i) => [item.label, adjustedY[i]]))
 
-          return (
-            <g key={`labels-${layer.label}`}>
+          // Abbreviation table for narrow widths
+          const abbreviate = (text: string) => {
+            const short = text.replace('院校', '')
+            if (width >= 420) return short
+            // Ultra-narrow: truncate to 2 chars + …
+            return short.length > 3 ? short.slice(0, 2) + '…' : short
+          }
+
+          return rawLabels.map((item) => (
+            <g key={`labels-${item.label}`}>
               <text
                 className="stacked-area-chart__series-label"
                 x={paddingLeft - 18}
-                y={midY}
-                fill={layer.color}
+                y={yMap.get(item.label) ?? item.y}
+                fill={item.color}
                 textAnchor="end"
                 dominantBaseline="middle"
               >
-                {layer.label.replace('院校', '')}
+                {abbreviate(item.label)}
               </text>
             </g>
-          )
-        })}
+          ))
+        })()}
       </svg>
       </div>
 

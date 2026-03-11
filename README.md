@@ -56,7 +56,7 @@ cd backend && node scripts/refresh-official-data.mjs
 | **手刻 SVG** | 所有圖表不依賴 D3/Recharts，以 `<svg viewBox>` + CSS 變數實現 |
 | **共用動畫** | `useChartAnimation` hook (IntersectionObserver) 統一進場動畫 |
 | **共用響應式尺寸** | `useResponsiveSvg` 以 `ResizeObserver` 將容器寬度映射成 SVG 座標系 |
-| **互動契約** | `chart-tooltip` + keyboard focus 規則已作為第一波基線，第二波正擴散到 Treemap / Butterfly / Histogram / PRIndicator / SchoolComposition |
+| **互動契約** | `chart-tooltip` + keyboard focus 規則已擴散到第二波圖表，並以 Playwright 守住 TrendChart、County storyboard、Schools workspace、Leaflet marker、SchoolComposition、PRIndicator 的 regression |
 | **PWA 離線** | vite-plugin-pwa + service worker，全靜態 precache |
 | **CSS 設計系統** | `00-chart-foundations.css` 統一色彩 token、tooltip、動畫、空狀態；目前持續將狀態樣式從 inline style 收斂回 CSS class |
 
@@ -72,24 +72,23 @@ cd backend && node scripts/refresh-official-data.mjs
 
 ### P2 — 圖表品質提升
 
-1. **第二波 shared interaction contract**：Treemap / Butterfly / Histogram / PRIndicator / SchoolComposition 與第一波圖表收斂成相同的 hover、focus、Enter/Space、non-hover disclosure。
-2. **真正容器驅動的 Pie / SchoolOverview**：不只 mobile-friendly，而是可在 split view / 窄欄位維持 legend、標籤與 active state 可讀。
-3. **Inline style 清理**：ScatterPlotChart、StackedAreaTrendChart、PieChart legend 與 panel heading fragment 的狀態樣式回到 CSS token / class。
-4. **Interaction E2E + screenshot baseline**：以自動化驗證 hover、Tab focus、Enter/Space 與窄寬度 screenshot，降低多輪 refinement 的回退風險。
-5. **跨頁 chart audit**：對所有圖表建立現況、風險、建議與優先級清單，讓後續迭代可持續收斂。
+1. **中斷帶密度微調**：County storyboard 與 school focus sidebar 在 720–960px 之間仍有進一步壓縮空白與整理資訊節奏的空間。
+2. **軸線與標籤 token 收斂**：Scatter / Trend / Histogram 目前已可讀，但 axis label、tooltip 內文與圖例字級仍未完全共用同一套 token 範圍。
+3. **Map + chart 混合場景 baselines**：目前已守住單圖表與工作台 regression，下一輪可補「地圖 + 右側分析卡」的窄寬度與 dark-theme 組合基準。
+4. **跨頁 chart audit 持續收斂**：將 overview、regional、county、schools、school-focus 剩餘的視覺密度問題持續轉成 spec、實作與 regression。
 
 ### P2 — 可及性 (a11y)
 
-5. **鍵盤導航**：目前第一波圖表已有基礎等價揭露，第二波 5 張圖仍需補 keyboard handler、focus ring 與 Enter/Space。
-6. **ARIA 標注**：所有 SVG 圖表補 `role="img"` + 描述性 `aria-label`
-7. **焦點樣式**：所有可互動元素補 `:focus-visible` outline
+5. **ARIA 摘要深化**：Trend / Scatter / Histogram 已可操作，下一輪可為 remaining charts 補更具體的狀態摘要與資料語意。
+6. **焦點樣式**：統一 SVG / Leaflet / list-row 的 `:focus-visible` 規則與主題對比。
+7. **鍵盤捷徑一致性**：整理 Space / Enter 在 chart disclosure 與 drill-down 行為上的一致規範。
 
 ### P3 — 架構整理
 
 8. **面板責任拆分延伸**：DashboardCanvas 已先拆出 `DashboardYearNavigator.tsx`，SchoolDetailPanel / SchoolAnalysisView 已完成 section-level 拆分；下一輪可把共用 panel heading / chip tab 邏輯再抽成 helper component。
 9. **共用 `formatWan`**：該函式在 ScatterPlotChart / StackedAreaTrendChart 各自重複定義，應抽取至 `lib/analytics`
-10. **E2E 擴充**：新增圖表互動 + 手機版面的 Playwright 視覺迴歸測試
-11. **圖表互動樣式收斂**：目前 tooltip 契約已建立，但第二波圖表與 responsive legend 的視覺密度仍有差異，建議下一輪做純樣式微調與 QA 收斂
+10. **E2E helper 收斂**：`chart-interactions.spec.ts` 已擴充到 9 個案例，下一輪可抽出 chart focus / screenshot helper，降低維護成本。
+11. **圖表互動樣式收斂**：tooltip 契約與 regression 已建立，但 responsive legend / axis / disclosure badge 的視覺密度仍可再做純樣式 QA 收斂。
 
 ## 維護原則
 

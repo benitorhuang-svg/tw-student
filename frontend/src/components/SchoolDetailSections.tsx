@@ -70,7 +70,7 @@ export function SchoolDetailWorkspace(props: {
         </div>
 
         <div className="school-list-workspace__grid">
-          <section className="school-list-workspace__card">
+          <section className="school-list-workspace__card" data-testid="schools-peer-scatter">
             <ScatterPlotChart
               title={`${scopeLabel} 各校規模散點圖`}
               subtitle="X 軸看學生數，Y 軸看年變動率，協助先找出規模與趨勢的離群校。"
@@ -90,16 +90,18 @@ export function SchoolDetailWorkspace(props: {
             />
           </section>
 
-          <section className="school-list-workspace__card school-list-workspace__card--distribution">
+          <section className="school-list-workspace__card school-list-workspace__card--distribution" data-testid="schools-distribution-card">
             {schoolInsights.length > 0 ? (
-              <div className="school-distribution-stack">
+              <div className="school-distribution-stack school-distribution-stack--workspace" data-testid="schools-distribution-stack">
                 <HistogramChart title={`${scopeLabel} 學校規模分布`} subtitle="以真正的直方圖揭露規模集中區間，再用盒鬚圖補充各學制群體差異。" values={schoolInsights.map((school) => school.currentStudents)} activeValue={selectedSchool?.currentStudents ?? null} />
                 {sizeDistributionGroups.length > 0 ? (
                   <BoxPlotChart title={`${scopeLabel} 學制箱形摘要`} subtitle="以盒鬚圖補充不同學制的中位數、四分位距與離散程度。" groups={sizeDistributionGroups} />
                 ) : null}
               </div>
             ) : scopeDistribution.length > 0 ? (
-              <PieChart slices={scopeDistribution} size={124} />
+              <div data-testid="schools-fallback-pie">
+                <PieChart slices={scopeDistribution} size={124} />
+              </div>
             ) : (
               <div className="empty-state">目前條件沒有可顯示的學校分布。</div>
             )}

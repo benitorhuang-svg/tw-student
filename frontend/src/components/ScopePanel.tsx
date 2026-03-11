@@ -47,7 +47,7 @@ function ScopePanel({
 
   return (
     <section className="panel scope-panel">
-      <div className="stat-grid stat-grid--top" style={{ gridTemplateColumns: '1fr 1fr' }}>
+      <div className="stat-grid stat-grid--top stat-grid--cols-2">
         <div data-testid="current-scope-card">
           <StatCard
             title={currentScope.label}

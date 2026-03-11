@@ -32,6 +32,24 @@ type ScatterPlotChartProps = {
   children?: React.ReactNode
 }
 
+function getQuadrantLabels(width: number) {
+  if (width < 420) {
+    return {
+      topLeft: '擴張',
+      topRight: '成長',
+      bottomLeft: '警示',
+      bottomRight: '穩定',
+    }
+  }
+
+  return {
+    topLeft: '快速擴張',
+    topRight: '潛力成長',
+    bottomLeft: '轉型警示',
+    bottomRight: '穩定飽和',
+  }
+}
+
 function ScatterPlotChart({
   title, subtitle, xLabel, yLabel, points, activePointId = null,
   formatX = (value) => `${formatWan(Math.round(value))}人`,
@@ -45,6 +63,7 @@ function ScatterPlotChart({
   const { ref: animRef, isVisible } = useChartAnimation()
   const { containerRef, width, height } = useResponsiveSvg(620, 240, { minWidth: 320 })
   const padding = { top: 20, right: width < 400 ? 24 : 50, bottom: 40, left: width < 400 ? 56 : 100 }
+  const quadrantLabels = getQuadrantLabels(width)
   
   if (points.length === 0) {
     return (
@@ -96,7 +115,7 @@ function ScatterPlotChart({
       </div>
 
   <div className="chart-svg-frame" ref={containerRef}>
-  <svg className={`scatter-chart__svg${isVisible ? ' chart-enter chart-enter--visible' : ' chart-enter'}`} viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="xMidYMid meet" role="img" aria-label={`${title} 散佈圖`}>
+  <svg className={`scatter-chart__svg${width < 420 ? ' scatter-chart__svg--compact' : ''}${isVisible ? ' chart-enter chart-enter--visible' : ' chart-enter'}`} viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="xMidYMid meet" role="img" aria-label={`${title} 散佈圖`}>
         {/* 四象限淡色背景 */}
         <rect className="scatter-chart__quadrant scatter-chart__quadrant--tl" x={padding.left} y={padding.top} width={midX - padding.left} height={midY - padding.top} rx="2" />
         <rect className="scatter-chart__quadrant scatter-chart__quadrant--tr" x={midX} y={padding.top} width={width - padding.right - midX} height={midY - padding.top} rx="2" />
@@ -116,10 +135,10 @@ function ScatterPlotChart({
         </text>
 
         {/* 象限標籤 */}
-        <text className="scatter-chart__quadrant-label" x={width - padding.right - 5} y={padding.top + 15} textAnchor="end">潛力成長</text>
-        <text className="scatter-chart__quadrant-label" x={padding.left + 5} y={padding.top + 15}>快速擴張</text>
-        <text className="scatter-chart__quadrant-label" x={padding.left + 5} y={height - padding.bottom - 10}>轉型警示</text>
-        <text className="scatter-chart__quadrant-label" x={width - padding.right - 5} y={height - padding.bottom - 10} textAnchor="end">穩定飽和</text>
+        <text className="scatter-chart__quadrant-label" x={width - padding.right - 5} y={padding.top + 15} textAnchor="end">{quadrantLabels.topRight}</text>
+        <text className="scatter-chart__quadrant-label" x={padding.left + 5} y={padding.top + 15}>{quadrantLabels.topLeft}</text>
+        <text className="scatter-chart__quadrant-label" x={padding.left + 5} y={height - padding.bottom - 10}>{quadrantLabels.bottomLeft}</text>
+        <text className="scatter-chart__quadrant-label" x={width - padding.right - 5} y={height - padding.bottom - 10} textAnchor="end">{quadrantLabels.bottomRight}</text>
 
         {/* 座標軸線與標註 */}
         {(() => {
@@ -164,7 +183,7 @@ function ScatterPlotChart({
                 className={active ? 'scatter-chart__point scatter-chart__point--active chart-data-focusable' : 'scatter-chart__point chart-data-focusable'}
                 cx={toX(p.x)} cy={toY(p.y)} r={active ? r + 2 : r}
                 tabIndex={0}
-                role="listitem"
+                role="button"
                 aria-label={`${p.label}: ${formatX(p.x)}, ${formatY(p.y)}`}
                 onMouseEnter={() => onHoverPoint?.(p.id)}
                 onMouseLeave={() => onHoverPoint?.(null)}
@@ -175,8 +194,8 @@ function ScatterPlotChart({
               />
               {active && (
                 <g className="chart-svg-tooltip__group">
-                  <rect className="chart-svg-tooltip__surface" x={toX(p.x) - 40} y={toY(p.y) - r - 25} width="80" height="20" rx="6" />
-                  <text className="chart-svg-tooltip__title" x={toX(p.x)} y={toY(p.y) - r - 12} textAnchor="middle">{p.label}</text>
+                  <rect className="chart-svg-tooltip__surface" x={Math.min(Math.max(toX(p.x) - 46, padding.left + 4), width - padding.right - 92)} y={Math.max(toY(p.y) - r - 28, padding.top + 4)} width="92" height="22" rx="6" />
+                  <text className="chart-svg-tooltip__title" x={Math.min(Math.max(toX(p.x), padding.left + 50), width - padding.right - 46)} y={Math.max(toY(p.y) - r - 14, padding.top + 18)} textAnchor="middle">{p.label}</text>
                 </g>
               )}
             </g>

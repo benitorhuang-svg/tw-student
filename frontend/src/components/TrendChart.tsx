@@ -12,6 +12,8 @@ type TrendChartProps = {
   activeYear: number
   showHeader?: boolean
   formatValue?: (value: number) => string
+  benchmarkLabel?: string
+  predictionLabel?: string
 }
 
 function buildLinePath(points: Array<{ x: number; y: number }>) {
@@ -35,7 +37,9 @@ function linearRegression(xs: number[], ys: number[]): { slope: number; intercep
 
 function TrendChart({
   chartId, title, subtitle, points, benchmarkPoints, activeYear, showHeader = true,
-  formatValue = (value) => `${formatStudents(Math.round(value))} 人`
+  formatValue = (value) => `${formatStudents(Math.round(value))} 人`,
+  benchmarkLabel = '基準參考',
+  predictionLabel = '線性預測',
 }: TrendChartProps) {
   const PREDICT_YEARS = 2
   const { containerRef, width, height } = useResponsiveSvg(620, 240, { minWidth: 320 })
@@ -94,6 +98,8 @@ function TrendChart({
   const predictionPath = normalizedPrediction.length > 0
     ? buildLinePath([{ x: normalizedPoints.at(-1)?.x ?? 0, y: normalizedPoints.at(-1)?.y ?? 0 }, ...normalizedPrediction])
     : ''
+  const compactYearLabels = width < 460 && normalizedPoints.length > 5
+  const compactPredictionLabels = width < 460 && normalizedPrediction.length > 1
 
   const handleMouseMove = (e: React.MouseEvent<SVGSVGElement>) => {
     const svg = e.currentTarget
@@ -112,6 +118,8 @@ function TrendChart({
     })
     setHoverIndex(closestIndex)
   }
+
+  const activeBenchmarkPoint = hoverIndex !== null ? benchmarkPoints?.[hoverIndex] ?? null : null
 
   if (points.length === 0) {
     return (
@@ -195,26 +203,69 @@ function TrendChart({
           <g className="trend-chart__crosshair">
             <line x1={normalizedPoints[hoverIndex].x} x2={normalizedPoints[hoverIndex].x} y1={paddingY} y2={height - paddingY} />
             <circle cx={normalizedPoints[hoverIndex].x} cy={normalizedPoints[hoverIndex].y} r={6} fill="none" className="trend-chart__crosshair-ring" />
-            <g transform={`translate(${normalizedPoints[hoverIndex].x > width - 100 ? normalizedPoints[hoverIndex].x - 110 : normalizedPoints[hoverIndex].x + 10}, ${normalizedPoints[hoverIndex].y - 20})`}>
-              <rect className="chart-svg-tooltip__surface" width="100" height="40" rx="6" />
-              <text className="chart-svg-tooltip__title" x="10" y="16">{formatAcademicYearCompact(normalizedPoints[hoverIndex].year)}</text>
-              <text className="chart-svg-tooltip__value" x="10" y="30">{formatValue(normalizedPoints[hoverIndex].value)}</text>
-            </g>
+            {(() => {
+              const px = normalizedPoints[hoverIndex].x
+              const py = normalizedPoints[hoverIndex].y
+              const tooltipW = 100
+              const tooltipH = activeBenchmarkPoint ? 60 : 40
+              // X boundary: flip left if too close to right edge
+              const tx = px > width - tooltipW - 20 ? px - tooltipW - 10 : px + 10
+              // Y boundary: ensure tooltip stays within chart area
+              let ty = py - 20
+              if (ty < paddingY) ty = paddingY
+              if (ty + tooltipH > height - paddingY) ty = height - paddingY - tooltipH
+              return (
+                <g transform={`translate(${tx}, ${ty})`}>
+                  <rect className="chart-svg-tooltip__surface" width={tooltipW} height={tooltipH} rx="6" />
+                  <text className="chart-svg-tooltip__title" x="10" y="16">{formatAcademicYearCompact(normalizedPoints[hoverIndex].year)}</text>
+                  <text className="chart-svg-tooltip__value" x="10" y="30">{formatValue(normalizedPoints[hoverIndex].value)}</text>
+                  {activeBenchmarkPoint ? (
+                    <text className="trend-chart__tooltip-row" x="10" y="46">{benchmarkLabel} {formatValue(activeBenchmarkPoint.value)}</text>
+                  ) : null}
+                </g>
+              )
+            })()}
           </g>
         )}
 
-        {normalizedPoints.map((point) => (
-          <text key={point.year} className="trend-chart__label" x={point.x} y={height - 6} textAnchor="middle">
-            {formatAcademicYearCompact(point.year)}
-          </text>
-        ))}
+        {normalizedPoints.map((point, index) => {
+          const showLabel = !compactYearLabels || index === 0 || index === normalizedPoints.length - 1 || index % 2 === 0
+          if (!showLabel) {
+            return null
+          }
+
+          return (
+            <text key={point.year} className="trend-chart__label" x={point.x} y={height - 6} textAnchor="middle">
+              {formatAcademicYearCompact(point.year)}
+            </text>
+          )
+        })}
       </svg>
       </div>
-      {benchmarkPoints && benchmarkPoints.length > 0 && (
-        <div className="trend-chart__footnote">
-          <span>區域平均比較：實線代表選定範圍，虛線為所在區域參考值。</span>
+      {(benchmarkPoints && benchmarkPoints.length > 0) || normalizedPrediction.length > 0 ? (
+        <div className="trend-chart__legend" aria-hidden="true">
+          <span className="trend-chart__legend-item">
+            <span className="trend-chart__legend-swatch trend-chart__legend-swatch--primary" />
+            <span>主要趨勢</span>
+          </span>
+          {benchmarkPoints && benchmarkPoints.length > 0 ? (
+            <span className="trend-chart__legend-item">
+              <span className="trend-chart__legend-swatch trend-chart__legend-swatch--benchmark" />
+              <span>{benchmarkLabel}</span>
+            </span>
+          ) : null}
+          {normalizedPrediction.length > 0 ? (
+            <span className="trend-chart__legend-item">
+              <span className="trend-chart__legend-swatch trend-chart__legend-swatch--prediction" />
+              <span>{predictionLabel}</span>
+            </span>
+          ) : null}
         </div>
-      )}
+      ) : null}
+      <div className="trend-chart__footnote">
+        <span>{benchmarkPoints && benchmarkPoints.length > 0 ? '實線為目前趨勢，藍綠點虛線為基準參考，琥珀虛線為線性預測。' : '實線為目前趨勢；若延伸虛線出現，代表未來兩學年的線性預測。'}</span>
+        {compactPredictionLabels ? <span>窄寬度已自動稀疏年份標籤，避免底部擁擠。</span> : null}
+      </div>
     </section>
   )
 }

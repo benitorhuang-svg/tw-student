@@ -61,16 +61,16 @@ function CountyTabPanel({
 
       <section className="dashboard-card dashboard-card--county-story">
         <div className="dashboard-card__body dashboard-card__insight-body">
-          <div className="panel-heading" style={{ marginBottom: '16px' }}>
-            <div>
-              <p className="eyebrow" style={{ color: 'var(--palette-cyan)' }}>縣市結構掃描</p>
+          <div className="panel-heading panel-heading--section">
+            <div className="panel-heading__stack">
+              <p className="eyebrow eyebrow--cyan">縣市結構掃描</p>
               <h3>{derived.selectedCounty?.name ?? '縣市'}發展概覽</h3>
             </div>
             <p className="panel-heading__meta">左側顯示縣內前六大鄉鎮人口體量；右側透過矩陣總結該縣市各鄉鎮的成長動能。</p>
           </div>
 
-          <div className="atlas-storyboard__split">
-            <div className="atlas-storyboard__chart">
+          <div className="atlas-storyboard__split atlas-storyboard__split--county" data-testid="county-storyboard-split">
+            <div className="atlas-storyboard__chart atlas-storyboard__chart--county-comparison">
               <ComparisonBarChart
                 items={derived.townshipRows.slice(0, 6).map((row) => ({ id: row.id, label: row.label, value: row.students }))}
                 activeItemId={hoveredTownshipId ?? selectedTownshipId}
@@ -79,7 +79,7 @@ function CountyTabPanel({
               />
             </div>
 
-            <div className="atlas-storyboard__chart atlas-storyboard__chart--distribution">
+            <div className="atlas-storyboard__chart atlas-storyboard__chart--distribution atlas-storyboard__chart--county-distribution" data-testid="county-distribution-chart">
               {derived.townshipRows.length > 0 ? (
                 <ScatterPlotChart
                   title="鄉鎮規模與變動率"
@@ -99,7 +99,10 @@ function CountyTabPanel({
                   onSelectPoint={onSelectTownship}
                 />
               ) : countyDistribution.length > 0 ? (
-                <PieChart slices={countyDistribution.map((row) => ({ label: row.level, value: row.students, share: row.share }))} size={124} />
+                <div className="county-storyboard__fallback-pie" data-testid="county-fallback-pie">
+                  <p className="eyebrow eyebrow--brass">條件降級摘要</p>
+                  <PieChart slices={countyDistribution.map((row) => ({ label: row.level, value: row.students, share: row.share }))} size={124} />
+                </div>
               ) : (
                 <div className="empty-state">目前條件沒有可顯示的鄉鎮分布。</div>
               )}
@@ -128,9 +131,9 @@ function CountyTabPanel({
 
       <section className="dashboard-card dashboard-card--ranking">
         <div className="dashboard-card__body dashboard-card__ranking-body">
-          <div className="panel-heading" style={{ marginBottom: '16px' }}>
-            <div>
-              <p className="eyebrow" style={{ color: 'var(--palette-brass)' }}>下鑽入口</p>
+          <div className="panel-heading panel-heading--section">
+            <div className="panel-heading__stack">
+              <p className="eyebrow eyebrow--brass">下鑽入口</p>
               <h3>鄉鎮排行與熱區掃描</h3>
             </div>
             <p className="panel-heading__meta">點選鄉鎮地圖會放大到在地層級，並自動展開「學校分析」工作台。</p>

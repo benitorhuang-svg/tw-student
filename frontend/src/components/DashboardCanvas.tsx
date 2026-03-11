@@ -168,7 +168,7 @@ function DashboardCanvas({
   const overviewMatrixSection = (
     <section className="dashboard-card dashboard-card--matrix">
       <div className="dashboard-card__body dashboard-card__insight-body">
-        <div className="atlas-storyboard__chart" style={{ padding: 0, border: 'none' }}>
+        <div className="atlas-storyboard__chart atlas-storyboard__chart--flush">
           <ScatterPlotChart
             title="發展熱點分析矩陣"
             subtitle="縣市學生人數分布，圓點越大代表學生總數越多"
@@ -219,9 +219,9 @@ function DashboardCanvas({
       <div className="dashboard-card__body dashboard-card__insight-body">
         <div className="atlas-storyboard__split">
           <div className="atlas-storyboard__chart">
-            <div className="panel-heading" style={{ marginBottom: '16px' }}>
-              <div>
-                <p className="eyebrow" style={{ color: 'var(--palette-cyan)' }}>下鑽入口</p>
+            <div className="panel-heading panel-heading--section">
+              <div className="panel-heading__stack">
+                <p className="eyebrow eyebrow--cyan">下鑽入口</p>
                 <h3>{derived.selectedCounty?.name ? `${derived.selectedCounty.name} 鄉鎮排行` : '全台縣市排行'}</h3>
               </div>
               <p className="panel-heading__meta">{derived.selectedCounty?.name ? '點擊鄉鎮即可同步切換至鄉鎮範圍' : '點選縣市列，地圖將展開下鑽'}</p>
@@ -252,8 +252,8 @@ function DashboardCanvas({
           </div>
 
           <div className="atlas-storyboard__chart">
-            <div className="panel-heading" style={{ marginBottom: '16px' }}>
-              <div>
+            <div className="panel-heading panel-heading--section">
+              <div className="panel-heading__stack">
                 <p className="eyebrow">變動焦點</p>
                 <h3>年度增幅異動</h3>
               </div>

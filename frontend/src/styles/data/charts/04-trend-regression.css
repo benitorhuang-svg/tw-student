@@ -1,0 +1,114 @@
+.trend-chart__bench {
+    stroke: color-mix(in srgb, var(--palette-cyan, #2a6f91) 70%, white);
+    stroke-width: 2.4;
+    stroke-dasharray: 8 4;
+    opacity: 0.95;
+}
+
+.trend-chart__prediction {
+    stroke: color-mix(in srgb, var(--palette-brass, #b88746) 82%, #f59e0b);
+    stroke-width: 2.6;
+    stroke-dasharray: 3 7;
+    opacity: 0.98;
+}
+
+.trend-chart__point--predicted {
+    fill: color-mix(in srgb, var(--palette-brass, #b88746) 18%, white);
+    stroke: color-mix(in srgb, var(--palette-brass, #b88746) 88%, #8b5e34);
+    stroke-width: 2.4;
+}
+
+.trend-chart__tooltip-row {
+    fill: var(--text-soft);
+    font-size: .7rem;
+    font-weight: 600;
+}
+
+.trend-chart__legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.trend-chart__legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, .16);
+    background: rgba(255, 255, 255, .66);
+    color: var(--text-main);
+    font-size: .76rem;
+    font-weight: 700;
+}
+
+.trend-chart__legend-swatch {
+    width: 18px;
+    height: 0;
+    border-top-width: 3px;
+    border-top-style: solid;
+}
+
+.trend-chart__legend-swatch--primary {
+    border-color: var(--palette-cyan, #2a6f91);
+}
+
+.trend-chart__legend-swatch--benchmark {
+    border-color: color-mix(in srgb, var(--palette-cyan, #2a6f91) 70%, white);
+    border-top-style: dashed;
+}
+
+.trend-chart__legend-swatch--prediction {
+    border-color: color-mix(in srgb, var(--palette-brass, #b88746) 82%, #f59e0b);
+    border-top-style: dashed;
+}
+
+.scatter-chart__svg--compact .scatter-chart__quadrant-label {
+    font-size: 9px;
+    letter-spacing: 0.03em;
+}
+
+.box-plot-chart__median-label {
+    fill: var(--text-soft);
+    paint-order: stroke;
+    stroke: rgba(255, 255, 255, .86);
+    stroke-width: 3px;
+    stroke-linejoin: round;
+}
+
+.histogram-chart__range {
+    min-height: 2.2em;
+}
+
+.histogram-chart__range--condensed {
+    opacity: .42;
+}
+
+.app-shell[data-theme=dark] .trend-chart__legend-item {
+    background: rgba(15, 23, 42, .72);
+    border-color: rgba(148, 163, 184, .18);
+}
+
+.app-shell[data-theme=dark] .trend-chart__bench {
+    stroke: color-mix(in srgb, var(--palette-cyan, #38bdf8) 80%, #dbeafe);
+}
+
+.app-shell[data-theme=dark] .trend-chart__prediction {
+    stroke: color-mix(in srgb, var(--palette-brass, #f59e0b) 88%, #fde68a);
+}
+
+@media (max-width: 460px) {
+    .trend-chart__legend {
+        gap: 6px;
+    }
+
+    .trend-chart__legend-item {
+        font-size: .72rem;
+        padding: 5px 8px;
+    }
+
+    .trend-chart__footnote {
+        font-size: .76rem;
+    }
+}

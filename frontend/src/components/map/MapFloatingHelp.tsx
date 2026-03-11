@@ -69,7 +69,7 @@ function MapFloatingHelp({ activeTab, activeCountyName }: MapFloatingHelpProps) 
               <>
                 {SCHOOL_LEVEL_LEGEND.map((item) => (
                   <div key={item.label} className="map-stage__legend-row">
-                    <span className="map-stage__legend-swatch map-stage__legend-swatch--dot" style={{ background: item.color, opacity: 1 }} />
+                    <span className="map-stage__legend-swatch map-stage__legend-swatch--dot" style={{ '--swatch-color': item.color } as React.CSSProperties} />
                     <span>{item.label}</span>
                   </div>
                 ))}
@@ -79,7 +79,7 @@ function MapFloatingHelp({ activeTab, activeCountyName }: MapFloatingHelpProps) 
               <>
                 {COUNTY_LEGEND.map((step) => (
                   <div key={step.id} className="map-stage__legend-row">
-                    <span className="map-stage__legend-swatch" style={{ background: step.color, opacity: step.opacity }} />
+                    <span className="map-stage__legend-swatch" style={{ '--swatch-color': step.color, '--swatch-opacity': step.opacity } as React.CSSProperties} />
                     <span>{step.label}</span>
                   </div>
                 ))}

@@ -104,8 +104,9 @@ export function SchoolAnalysisTrendSection(props: {
   trendMetric: TrendMetric
   onSetTrendMetric: (metric: TrendMetric) => void
   trendPoints: TrendPoint[]
+  benchmarkPoints: TrendPoint[]
 }) {
-  const { selectedSchool, activeYear, trendMetric, onSetTrendMetric, trendPoints } = props
+  const { selectedSchool, activeYear, trendMetric, onSetTrendMetric, trendPoints, benchmarkPoints } = props
   return (
     <div className="school-chart-panel__section">
       <div className="panel-heading">
@@ -122,10 +123,13 @@ export function SchoolAnalysisTrendSection(props: {
       <TrendChart
         chartId="school-trend"
         title={`${selectedSchool.name}${trendMetric === 'students' ? ' 歷年學生數' : trendMetric === 'delta' ? ' 歷年今年增減' : ' 歷年成長率'}`}
-        subtitle="同一張圖表容器支援學生數、今年增減與成長率三態切換。"
+        subtitle="同一張圖表容器支援學生數、今年增減與成長率三態切換，並對照同學制平均。"
         points={trendPoints}
+        benchmarkPoints={benchmarkPoints}
         activeYear={activeYear}
         formatValue={trendMetric === 'ratio' ? (value) => `${value.toFixed(1)}%` : (value) => `${formatDelta(Math.round(value))} 人`}
+        benchmarkLabel="同學制平均"
+        predictionLabel="趨勢預測"
       />
     </div>
   )

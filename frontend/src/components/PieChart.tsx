@@ -49,7 +49,7 @@ function PieChart({ slices, size = 160, centerLabel = '總計' }: PieChartProps)
   return (
     <div className="pie-chart-wrap" ref={animRef as React.RefObject<HTMLDivElement>}>
       <div className="pie-chart__canvas" ref={containerRef}>
-        <svg className={isVisible ? 'chart-enter chart-enter--visible' : 'chart-enter'} width={chartSize} height={chartSize} viewBox={`0 0 ${chartSize} ${chartSize}`} role="img" aria-label="比例圓餅圖">
+        <svg className={isVisible ? 'chart-enter chart-enter--visible' : 'chart-enter'} width={chartSize} height={chartSize} viewBox={`0 0 ${chartSize} ${chartSize}`} role="img" aria-label={`比例圓餅圖，總計 ${formatStudents(totalValue)} 人。${slices.slice(0, 3).map(s => `${s.label} ${(s.share * 100).toFixed(1)}%`).join('、')}${slices.length > 3 ? ` 等 ${slices.length} 項` : ''}`}>
           {slices.map((slice, i) => {
             let angle = slice.share * Math.PI * 2
             // Clamp near-full-circle arcs to avoid degenerate SVG path (start == end)

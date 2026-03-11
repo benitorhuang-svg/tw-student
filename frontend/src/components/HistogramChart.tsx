@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 
 import { useChartAnimation } from '../hooks/useChartAnimation'
 import { formatStudents } from '../lib/analytics'
@@ -21,7 +21,18 @@ function formatRange(start: number, end: number) {
   return `${formatStudents(start)}-${formatStudents(end)}`
 }
 
-function buildBins(values: number[]) {
+function getResponsiveBinCount(valueCount: number, containerWidth: number) {
+  const idealBinCount = Math.round(Math.sqrt(valueCount))
+  if (containerWidth <= 0) {
+    return Math.min(Math.max(idealBinCount, 4), 8)
+  }
+
+  const maxBins = containerWidth < 360 ? 4 : containerWidth < 520 ? 5 : containerWidth < 720 ? 6 : 8
+  const minBins = 4
+  return Math.min(Math.max(idealBinCount, minBins), maxBins)
+}
+
+function buildBins(values: number[], containerWidth: number) {
   if (values.length === 0) return [] as Bin[]
 
   const min = Math.min(...values)
@@ -30,7 +41,7 @@ function buildBins(values: number[]) {
     return [{ start: min, end: max, count: values.length }]
   }
 
-  const binCount = Math.min(Math.max(Math.round(Math.sqrt(values.length)), 4), 8)
+  const binCount = getResponsiveBinCount(values.length, containerWidth)
   const range = max - min
   const rawBinSize = range / binCount
   const magnitude = 10 ** Math.max(Math.floor(Math.log10(rawBinSize)), 0)
@@ -54,12 +65,39 @@ function buildBins(values: number[]) {
 
 function HistogramChart({ title, subtitle, values, activeValue = null }: HistogramChartProps) {
   const { ref, isVisible } = useChartAnimation()
-  const bins = useMemo(() => buildBins(values), [values])
+  const barsRef = useRef<HTMLDivElement | null>(null)
+  const [barsWidth, setBarsWidth] = useState(0)
+  const bins = useMemo(() => buildBins(values, barsWidth), [barsWidth, values])
   const [detailIndex, setDetailIndex] = useState<number | null>(null)
   const maxCount = Math.max(...bins.map((bin) => bin.count), 1)
   const average = values.length > 0 ? Math.round(values.reduce((sum, value) => sum + value, 0) / values.length) : 0
   const sortedValues = [...values].sort((left, right) => left - right)
   const median = sortedValues.length > 0 ? sortedValues[Math.floor((sortedValues.length - 1) / 2)] : 0
+  const condensedRangeLabels = barsWidth < 420 && bins.length > 4
+
+  useEffect(() => {
+    const node = barsRef.current
+    if (!node || typeof ResizeObserver === 'undefined') {
+      return
+    }
+
+    const updateWidth = (nextWidth: number) => {
+      setBarsWidth((currentWidth) => {
+        const roundedWidth = Math.round(nextWidth)
+        return currentWidth === roundedWidth ? currentWidth : roundedWidth
+      })
+    }
+
+    updateWidth(node.clientWidth)
+
+    const observer = new ResizeObserver((entries) => {
+      const nextWidth = entries[0]?.contentRect.width ?? node.clientWidth
+      updateWidth(nextWidth)
+    })
+
+    observer.observe(node)
+    return () => observer.disconnect()
+  }, [])
 
   if (values.length < 4) {
     return (
@@ -108,10 +146,11 @@ function HistogramChart({ title, subtitle, values, activeValue = null }: Histogr
         <span>{values.length} 校樣本</span>
       </div>
 
-      <div className="histogram-chart__bars" role="list" aria-label={title}>
+      <div ref={barsRef} className="histogram-chart__bars" role="list" aria-label={title}>
         {bins.map((bin, index) => {
           const isActive = activeValue !== null && activeValue >= bin.start && (index === bins.length - 1 ? activeValue <= bin.end : activeValue < bin.end)
           const isDetailed = detailIndex === index || isActive
+          const showRangeLabel = !condensedRangeLabels || isDetailed || index === 0 || index === bins.length - 1 || index % 2 === 0
           return (
             <button
               key={`${bin.start}-${bin.end}`}
@@ -122,13 +161,14 @@ function HistogramChart({ title, subtitle, values, activeValue = null }: Histogr
               onMouseLeave={() => setDetailIndex(null)}
               onFocus={() => setDetailIndex(index)}
               onBlur={() => setDetailIndex(null)}
+              aria-pressed={isDetailed}
               aria-label={`${formatRange(bin.start, bin.end)}，${bin.count} 校`}
             >
               <div className="histogram-chart__bar-track">
                 <div className="histogram-chart__bar-fill" style={{ height: isVisible ? `${(bin.count / maxCount) * 100}%` : '0%' }} />
               </div>
               <strong className="histogram-chart__count">{bin.count}</strong>
-              <span className="histogram-chart__range">{formatRange(bin.start, bin.end)}</span>
+              <span className={showRangeLabel ? 'histogram-chart__range' : 'histogram-chart__range histogram-chart__range--condensed'}>{showRangeLabel ? formatRange(bin.start, bin.end) : ' '}</span>
               {isDetailed ? (
                 <div className="chart-tooltip chart-tooltip--visible histogram-chart__tooltip" role="note" aria-live="polite">
                   <div className="chart-tooltip__title">{formatRange(bin.start, bin.end)}</div>

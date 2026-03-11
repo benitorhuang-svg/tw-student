@@ -24,6 +24,25 @@ type ComparisonBarChartProps = {
   onSelectItem?: (id: string) => void
 }
 
+function splitAdminLabel(label: string) {
+  const normalized = label.trim()
+  if (normalized.length <= 6) {
+    return [normalized]
+  }
+
+  const suffixIndex = [...normalized].findIndex((char, index) => index < normalized.length - 2 && ['縣', '市', '區', '鄉', '鎮'].includes(char))
+  if (suffixIndex >= 1) {
+    return [normalized.slice(0, suffixIndex + 1), normalized.slice(suffixIndex + 1)]
+  }
+
+  if (normalized.length <= 10) {
+    const middle = Math.ceil(normalized.length / 2)
+    return [normalized.slice(0, middle), normalized.slice(middle)]
+  }
+
+  return [`${normalized.slice(0, 5)}…`, normalized.slice(5, 10)]
+}
+
 function ComparisonBarChart({ items, activeItemId = null, onHoverItem, onSelectItem }: ComparisonBarChartProps) {
   const max = Math.max(...items.map((i) => i.value), 1)
   const { ref, isVisible } = useChartAnimation()
@@ -44,6 +63,7 @@ function ComparisonBarChart({ items, activeItemId = null, onHoverItem, onSelectI
         const isActive = item.id === activeItemId
         const isDetailed = item.id === detailItemId || isActive
         const color = isActive ? 'var(--palette-brass, #b88746)' : BAR_COLORS[idx % BAR_COLORS.length]
+        const labelLines = splitAdminLabel(item.label)
 
         return (
           <button
@@ -57,23 +77,23 @@ function ComparisonBarChart({ items, activeItemId = null, onHoverItem, onSelectI
             onFocus={() => { onHoverItem?.(item.id); setDetailItemId(item.id) }}
             onBlur={() => { onHoverItem?.(null); setDetailItemId(null) }}
             onClick={() => onSelectItem?.(item.id)}
-            style={{
-              borderColor: isActive ? color : undefined,
-              background: isActive ? 'var(--chart-bg-active)' : undefined,
-            }}
+            data-bar-color={color}
           >
-            <span className="comparison-bar-chart__label" title={item.label} style={{ color: isActive ? color : undefined }}>{item.label}</span>
+            <span className={isActive ? 'comparison-bar-chart__label comparison-bar-chart__label--active' : 'comparison-bar-chart__label'} title={item.label}>
+              {labelLines.map((line) => (
+                <span key={`${item.id}-${line}`} className="comparison-bar-chart__label-line">{line}</span>
+              ))}
+            </span>
             <div className="comparison-bar-chart__track">
               <div
-                className="comparison-bar-chart__fill"
+                className={`comparison-bar-chart__fill${isActive || activeItemId === null ? '' : ' comparison-bar-chart__fill--muted'}`}
                 style={{
                   width: isVisible ? `${targetWidth}%` : '0%',
                   background: color,
-                  opacity: isActive || activeItemId === null ? 1 : 0.4
                 }}
               />
             </div>
-            <span className="comparison-bar-chart__value" style={{ color: isActive ? color : undefined }}>{formatStudents(item.value)}</span>
+            <span className={isActive ? 'comparison-bar-chart__value comparison-bar-chart__value--active' : 'comparison-bar-chart__value'}>{formatStudents(item.value)}</span>
             {isDetailed ? (
               <div className="chart-tooltip chart-tooltip--visible comparison-bar-chart__tooltip" role="note" aria-live="polite">
                 <div className="chart-tooltip__title">{item.label}</div>

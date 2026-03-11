@@ -43,7 +43,7 @@ function MapSidebar({
           <span className="map-stage__legend-title">地圖圖例</span>
           {legendSteps.map((step) => (
             <div key={step.id} className="map-stage__legend-row">
-              <span className="map-stage__legend-swatch" style={{ background: step.color, opacity: step.opacity }} />
+              <span className="map-stage__legend-swatch" style={{ '--swatch-color': step.color, '--swatch-opacity': step.opacity } as React.CSSProperties} />
               <span>{step.label}</span>
             </div>
           ))}

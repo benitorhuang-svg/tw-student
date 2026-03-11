@@ -92,10 +92,9 @@ function InsightPanel({
                 </div>
                 <div className="insight-row__bar-track">
                   <div
-                    className="insight-row__bar-fill"
+                    className={`insight-row__bar-fill${isActive ? ' insight-row__bar-fill--active' : ''}`}
                     style={{
                       width: mounted ? `${Math.max((row.students / maxStudents) * 100, 2)}%` : '0%',
-                      opacity: isActive ? 1 : 0.6,
                     }}
                   />
                 </div>

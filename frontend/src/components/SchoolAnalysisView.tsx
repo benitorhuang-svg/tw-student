@@ -8,6 +8,24 @@ import {
 import type { SchoolCodeAtlasEntry } from '../data/educationData'
 import { formatAcademicYear, formatDelta, formatPercent, formatStudents, type SchoolInsight } from '../lib/analytics'
 import type { AcademicYear } from '../hooks/types'
+import type { TrendPoint } from '../lib/analytics.types'
+
+function buildTrendMetricSeries(trend: TrendPoint[], metric: 'students' | 'delta' | 'ratio') {
+  return trend.map((point, index) => {
+    if (metric === 'students') {
+      return point
+    }
+
+    const previousPoint = trend[index - 1]
+    const delta = previousPoint ? point.value - previousPoint.value : 0
+    if (metric === 'delta') {
+      return { year: point.year, value: delta }
+    }
+
+    const ratio = previousPoint && previousPoint.value > 0 ? delta / previousPoint.value : 0
+    return { year: point.year, value: Number((ratio * 100).toFixed(2)) }
+  })
+}
 
 type SchoolAnalysisViewProps = {
   selectedSchool: SchoolInsight; activeYear: AcademicYear
@@ -37,17 +55,33 @@ function SchoolAnalysisView({
   const [trendMetric, setTrendMetric] = useState<'students' | 'delta' | 'ratio'>('students')
 
   const trendPoints = useMemo(
-    () =>
-      selectedSchool.trend.map((point, index, trend) => {
-        if (trendMetric === 'students') return point
-        const previousPoint = trend[index - 1]
-        const delta = previousPoint ? point.value - previousPoint.value : 0
-        if (trendMetric === 'delta') return { year: point.year, value: delta }
-        const ratio = previousPoint && previousPoint.value > 0 ? delta / previousPoint.value : 0
-        return { year: point.year, value: Number((ratio * 100).toFixed(2)) }
-      }),
+    () => buildTrendMetricSeries(selectedSchool.trend, trendMetric),
     [selectedSchool.trend, trendMetric],
   )
+
+  const benchmarkTrendPoints = useMemo(() => {
+    const comparisonSchools = peerSchools.filter((school) => school.id !== selectedSchool.id)
+    const sourceSchools = comparisonSchools.length > 0 ? comparisonSchools : peerSchools
+
+    if (sourceSchools.length === 0) {
+      return trendPoints
+    }
+
+    return selectedSchool.trend.map((point) => {
+      const yearValues = sourceSchools
+        .map((school) => buildTrendMetricSeries(school.trend, trendMetric).find((trendPoint) => trendPoint.year === point.year)?.value)
+        .filter((value): value is number => Number.isFinite(value))
+
+      const averageValue = yearValues.length > 0
+        ? yearValues.reduce((sum, value) => sum + value, 0) / yearValues.length
+        : trendPoints.find((trendPoint) => trendPoint.year === point.year)?.value ?? point.value
+
+      return {
+        year: point.year,
+        value: Number(averageValue.toFixed(trendMetric === 'ratio' ? 2 : 0)),
+      }
+    })
+  }, [peerSchools, selectedSchool.id, selectedSchool.trend, trendMetric, trendPoints])
 
   const benchmarkItems = useMemo(() => {
     if (activeBenchmarkView === 'peers') {
@@ -89,9 +123,15 @@ function SchoolAnalysisView({
 
   return (
     <div className="school-analysis-panel" data-testid="school-focus-panel">
-      <div className="school-analysis-panel__chart-path">
-        全台總覽 → {selectedSchool.countyName}縣市分析 → {selectedSchool.townshipName}各校分析 → {selectedSchool.name}校別概況
-      </div>
+      <nav className="school-analysis-panel__chart-path" aria-label="目前導覽路徑">
+        <span>全台總覽</span>
+        <span className="school-analysis-panel__chart-path-sep" aria-hidden="true">→</span>
+        <span className="school-analysis-panel__chart-path-segment">{selectedSchool.countyName} 縣市分析</span>
+        <span className="school-analysis-panel__chart-path-sep" aria-hidden="true">→</span>
+        <span className="school-analysis-panel__chart-path-segment">{selectedSchool.townshipName} 各校分析</span>
+        <span className="school-analysis-panel__chart-path-sep" aria-hidden="true">→</span>
+        <span className="school-analysis-panel__chart-path-segment school-analysis-panel__chart-path-segment--current">{selectedSchool.name}</span>
+      </nav>
       <section className="school-focus school-analysis-panel__hero school-focus--overview">
         <div className="school-focus__summary">
           <div>
@@ -146,7 +186,7 @@ function SchoolAnalysisView({
           ) : null}
 
           {activeChartTab === 'trend' ? (
-            <SchoolAnalysisTrendSection selectedSchool={selectedSchool} activeYear={activeYear} trendMetric={trendMetric} onSetTrendMetric={setTrendMetric} trendPoints={trendPoints} />
+            <SchoolAnalysisTrendSection selectedSchool={selectedSchool} activeYear={activeYear} trendMetric={trendMetric} onSetTrendMetric={setTrendMetric} trendPoints={trendPoints} benchmarkPoints={benchmarkTrendPoints} />
           ) : null}
 
           {activeChartTab === 'ranking' ? (

@@ -79,6 +79,7 @@ function BoxPlotChart({ title, subtitle, groups, activeGroupId = null }: BoxPlot
         {preparedGroups.map((group, index) => {
           const centerX = padding.left + stepX * index + stepX / 2
           const isActive = group.id === activeGroupId || group.id === hoveredGroupId
+          const medianLabelY = Math.max((isVisible ? toY(group.q3) : bottomY) - 8, padding.top + 12)
 
           return (
             <g
@@ -116,8 +117,9 @@ function BoxPlotChart({ title, subtitle, groups, activeGroupId = null }: BoxPlot
               {/* Median value label */}
               <text
                 className={`box-plot-chart__median-label${isActive ? ' box-plot-chart__median-label--visible' : ''}`}
-                x={centerX + boxWidth / 2 + 6}
-                y={isVisible ? toY(group.median) + 3 : bottomY}
+                x={centerX}
+                y={medianLabelY}
+                textAnchor="middle"
               >
                 {formatStudents(Math.round(group.median))}
               </text>
