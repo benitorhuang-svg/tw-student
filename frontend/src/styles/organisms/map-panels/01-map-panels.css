@@ -62,7 +62,10 @@
 .atlas-map-focus-label{display:inline-flex;align-items:center;justify-content:center;min-width:120px;padding:8px 14px;border-radius:999px;background:#08111fe0;border:1px solid rgba(148,163,184,.22);box-shadow:0 16px 28px #0206173d;color:#f8fafc;font-family:var(--font-heading);font-size:.88rem;font-weight:700;letter-spacing:.02em}
 .atlas-map-township-label-wrapper{background:transparent;border:0;pointer-events:none}
 .atlas-map-township-label{display:inline-flex;align-items:center;justify-content:center;min-width:92px;max-width:132px;padding:5px 10px;border-radius:999px;background:#08111fd1;border:1px solid rgba(148,163,184,.18);box-shadow:0 12px 20px #02061729;color:#f8fafc;font-size:.78rem;font-weight:700;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
-.leaflet-tooltip.atlas-map-tooltip--region,.leaflet-tooltip.atlas-map-tooltip--preview{background:transparent;border:0;box-shadow:none;pointer-events:none}
+.leaflet-tooltip.atlas-map-tooltip{border:0;border-radius:999px;padding:2px 7px;background:#0f172ab8;color:#f8fafc;box-shadow:none;font-size:.76rem}
+.leaflet-tooltip.atlas-map-tooltip:before{display:none}
+.leaflet-tooltip.atlas-map-tooltip--label{font-weight:700;letter-spacing:.02em}
+.leaflet-tooltip.atlas-map-tooltip--region,.leaflet-tooltip.atlas-map-tooltip--preview{background:transparent !important;border:0 !important;box-shadow:none !important;border-radius:0 !important;padding:0;pointer-events:none}
 .atlas-map-hover-card{pointer-events:none;display:grid;gap:4px;min-width:168px;padding:10px 12px;border-radius:16px;background:#08111ff0;border:1px solid rgba(148,163,184,.18);box-shadow:0 18px 40px #02061747}
 .atlas-map-hover-card strong{color:#f8fafc}
 .atlas-map-hover-card span{color:#e2e8f0cc;font-size:.8rem;line-height:1.45}
@@ -71,9 +74,6 @@
 .atlas-map-loading{position:absolute;top:10px;left:10px;z-index:500;padding:6px 10px;border-radius:999px;background:#0f172ad1;color:#f8fafc;font-size:.8rem}
 .leaflet-control-zoom{border:0;box-shadow:0 6px 16px #0f172a2e}
 .leaflet-control-zoom a{color:#0f172a}
-.leaflet-tooltip.atlas-map-tooltip{border:0;border-radius:999px;padding:2px 7px;background:#0f172ab8;color:#f8fafc;box-shadow:none;font-size:.76rem}
-.leaflet-tooltip.atlas-map-tooltip:before{display:none}
-.leaflet-tooltip.atlas-map-tooltip--label{font-weight:700;letter-spacing:.02em}
 .atlas-school-marker:focus-visible,.atlas-school-cluster-marker:focus-visible{outline:none;stroke:#f8fafc;stroke-width:3px;filter:drop-shadow(0 0 0.35rem rgba(56,189,248,.48))}
 .app-shell[data-theme=light] .atlas-school-marker:focus-visible,.app-shell[data-theme=light] .atlas-school-cluster-marker:focus-visible{stroke:#0f172a;filter:drop-shadow(0 0 0.35rem rgba(15,23,42,.28))}
 .atlas-map-popup{display:grid;gap:4px;min-width:176px}
