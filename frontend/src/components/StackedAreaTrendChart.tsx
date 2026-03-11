@@ -32,8 +32,8 @@ const SERIES_COLORS = [
 
 function StackedAreaTrendChart({ title, subtitle, series }: StackedAreaTrendChartProps) {
   const { containerRef, width, height } = useResponsiveSvg(680, 240, { minWidth: 340 })
-  const paddingLeft = 110
-  const paddingRight = 40
+  const paddingLeft = width < 420 ? 64 : 110
+  const paddingRight = width < 420 ? 20 : 40
   const paddingY = 35
 
   const [hoverIndex, setHoverIndex] = useState<number | null>(null)
@@ -54,9 +54,9 @@ function StackedAreaTrendChart({ title, subtitle, series }: StackedAreaTrendChar
 
   if (dataYears.length === 0) {
     return (
-      <section className="stacked-area-chart" style={{ padding: '12px 14px' }}>
-        <div className="panel-heading" style={{ marginBottom: '14px', paddingLeft: '4px' }}>
-          <h3 style={{ margin: 0 }}>{title}</h3>
+      <section className="stacked-area-chart stacked-area-chart--framed">
+        <div className="panel-heading stacked-area-chart__heading">
+          <h3 className="stacked-area-chart__title">{title}</h3>
         </div>
         <div className="chart-empty-state">尚無資料</div>
       </section>
@@ -135,16 +135,16 @@ function StackedAreaTrendChart({ title, subtitle, series }: StackedAreaTrendChar
   })
 
   return (
-    <section className="stacked-area-chart" ref={animRef as React.RefObject<HTMLElement>} style={{ padding: '12px 14px', position: 'relative' }}>
-      <div className="panel-heading" style={{ marginBottom: '14px', paddingLeft: '4px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-          <h3 style={{ margin: 0 }}>{title}</h3>
-          <div className="chart-toggle" style={{ display: 'flex', background: 'rgba(255,255,255,0.05)', borderRadius: '8px', padding: '2px', width: 'fit-content' }}>
+    <section className="stacked-area-chart stacked-area-chart--framed" ref={animRef as React.RefObject<HTMLElement>}>
+      <div className="panel-heading stacked-area-chart__heading stacked-area-chart__heading--split">
+        <div className="stacked-area-chart__heading-copy">
+          <h3 className="stacked-area-chart__title">{title}</h3>
+          <div className="chart-toggle stacked-area-chart__toggle">
             {(['absolute', 'share', 'line'] as const).map(mode => (
               <button
                 key={mode}
-                className={`ghost-button ${viewMode === mode ? 'ghost-button--active' : ''}`}
-                style={{ fontSize: '11px', padding: '4px 12px', borderRadius: '6px', minWidth: '48px' }}
+                data-view-mode={mode}
+                className={`ghost-button stacked-area-chart__toggle-button ${viewMode === mode ? 'ghost-button--active' : ''}`}
                 onClick={() => setViewMode(mode)}
               >
                 {mode === 'absolute' ? '數量' : mode === 'share' ? '比例' : '趨勢'}
@@ -152,7 +152,7 @@ function StackedAreaTrendChart({ title, subtitle, series }: StackedAreaTrendChar
             ))}
           </div>
         </div>
-        <p className="panel-heading__meta" style={{ margin: 0, opacity: 0.8, whiteSpace: 'nowrap', textAlign: 'right' }}>
+        <p className="panel-heading__meta stacked-area-chart__meta">
           {subtitle}
         </p>
       </div>
@@ -162,7 +162,8 @@ function StackedAreaTrendChart({ title, subtitle, series }: StackedAreaTrendChar
         className={`stacked-area-chart__svg${isVisible ? ' chart-enter' : ''}`}
         viewBox={`0 0 ${width} ${height}`}
         preserveAspectRatio="xMidYMid meet"
-        style={{ overflow: 'visible' }}
+        role="img"
+        aria-label={`${title} 堆疊面積趨勢圖`}
         onMouseMove={(e) => {
           const rect = e.currentTarget.getBoundingClientRect()
           const x = (e.clientX - rect.left) * (width / rect.width)
@@ -183,8 +184,8 @@ function StackedAreaTrendChart({ title, subtitle, series }: StackedAreaTrendChar
             const y = toY(val)
             return (
               <g key={r}>
-                <line x1={paddingLeft} x2={width - paddingRight} y1={y} y2={y} stroke="rgba(255,255,255,0.05)" />
-                <text x={paddingLeft - 12} y={y + 4} fill="rgba(255,255,255,0.4)" fontSize="10" textAnchor="end">
+                <line className="stacked-area-chart__grid" x1={paddingLeft} x2={width - paddingRight} y1={y} y2={y} />
+                <text className="stacked-area-chart__axis" x={paddingLeft - 12} y={y + 4} textAnchor="end">
                   {viewMode === 'share' ? `${r}%` : formatWan(val)}
                 </text>
               </g>
@@ -196,9 +197,9 @@ function StackedAreaTrendChart({ title, subtitle, series }: StackedAreaTrendChar
           <path
             key={layer.label}
             d={layer.areaPath}
+            className={`stacked-area-chart__area-path stacked-area-chart__series-${processedSeries.indexOf(layer)}`}
             fill={layer.color}
             fillOpacity={hoverIndex === null ? 0.8 : 0.25}
-            style={{ transition: 'd 0.3s ease, fill-opacity 0.2s' }}
           />
         ))}
 
@@ -207,20 +208,16 @@ function StackedAreaTrendChart({ title, subtitle, series }: StackedAreaTrendChar
             <path
               d={layer.linePath}
               stroke={layer.color}
-              strokeWidth="3.5"
               fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+              className={`stacked-area-chart__line-path stacked-area-chart__series-${processedSeries.indexOf(layer)}`}
               strokeOpacity={hoverIndex === null ? 0.9 : 0.3}
-              style={{ transition: 'stroke-opacity 0.2s' }}
             />
             {layer.points.map((p, i) => (
               <circle
                 key={i}
+                className="stacked-area-chart__dot"
                 cx={p.x} cy={p.y} r={hoverIndex === i ? 5 : 3}
                 fill={layer.color}
-                stroke="#fff"
-                strokeWidth="1.5"
                 opacity={hoverIndex === null || hoverIndex === i ? 1 : 0.3}
               />
             ))}
@@ -232,9 +229,9 @@ function StackedAreaTrendChart({ title, subtitle, series }: StackedAreaTrendChar
           return (
             <path
               key={`hover-${layer.label}`}
+              className="stacked-area-chart__hover-clip"
               d={layer.areaPath}
               fill={layer.color}
-              fillOpacity={0.95}
               pointerEvents="none"
               clipPath={`inset(0 ${width - toX(hoverIndex + 0.5)}px 0 ${toX(hoverIndex - 0.5)}px)`}
             />
@@ -255,7 +252,7 @@ function StackedAreaTrendChart({ title, subtitle, series }: StackedAreaTrendChar
           })).sort((a, b) => a.p.y - b.p.y)
 
           return (
-            <g key={`values-${year}`} opacity={1}>
+            <g key={`values-${year}`}>
               {yearPoints.map((item, idx) => {
                 const { p, color, label } = item
                 const rectHeight = viewMode === 'line' ? 20 : (toY(p.stackedBottom) - toY(p.stackedTop))
@@ -273,26 +270,22 @@ function StackedAreaTrendChart({ title, subtitle, series }: StackedAreaTrendChar
                 if (rectHeight < 14 && !isHovered && viewMode !== 'line') return null
 
                 return (
-                  <g key={label} style={{ pointerEvents: 'none' }}>
+                  <g key={label} className="chart-svg-tooltip__group">
                     <text
+                      className="stacked-area-chart__value-label"
                       x={p.x}
                       y={activeY - (yearIdx > 0 && rectHeight > 24 && viewMode !== 'line' ? 6 : 0)}
-                      fill={viewMode === 'line' ? color : "#fff"}
-                      fontSize="10"
-                      fontWeight="700"
+                      fill={viewMode === 'line' ? color : '#fff'}
                       textAnchor="middle"
                       dominantBaseline="middle"
-                      style={{ filter: viewMode === 'line' ? 'none' : 'drop-shadow(0 1px 2px rgba(0,0,0,0.5))' }}
                     >
                       {viewMode === 'share' ? p.shareLabel : p.absLabel}
                     </text>
                     {yearIdx > 0 && rectHeight > 24 && viewMode === 'absolute' && (
                       <text
+                        className="stacked-area-chart__delta-label"
                         x={p.x}
                         y={activeY + 6}
-                        fill="rgba(0,0,0,0.4)"
-                        fontSize="9"
-                        fontWeight="800"
                         textAnchor="middle"
                         dominantBaseline="middle"
                       >
@@ -321,25 +314,21 @@ function StackedAreaTrendChart({ title, subtitle, series }: StackedAreaTrendChar
             <g
               key={`total-${year}`}
               opacity={hoverIndex === null || hoverIndex === i ? 1 : 0.3}
-              style={{ transition: 'opacity 0.2s', pointerEvents: 'none' }}
+              className="chart-svg-tooltip__group"
             >
               <text
+                className="stacked-area-chart__total-label"
                 x={xPos}
                 y={topY - (i > 0 ? 18 : 10)}
-                fill="var(--text-main)"
-                fontSize="11"
-                fontWeight="900"
                 textAnchor="middle"
               >
                 {formatWan(totals[i])}
               </text>
               {i > 0 && (
                 <text
+                  className={totals[i] > totals[i - 1] ? 'stacked-area-chart__total-delta stacked-area-chart__total-delta--up' : 'stacked-area-chart__total-delta stacked-area-chart__total-delta--down'}
                   x={xPos}
                   y={topY - 6}
-                  fill={totals[i] > totals[i - 1] ? '#10b981' : '#ef4444'}
-                  fontSize="10"
-                  fontWeight="700"
                   textAnchor="middle"
                 >
                   {(() => {
@@ -361,8 +350,6 @@ function StackedAreaTrendChart({ title, subtitle, series }: StackedAreaTrendChar
               x={toX(year)}
               y={height - 8}
               textAnchor="middle"
-              fill="rgba(255,255,255,0.6)"
-              fontSize="10"
             >
               {formatAcademicYearCompact(year)}
             </text>
@@ -377,11 +364,10 @@ function StackedAreaTrendChart({ title, subtitle, series }: StackedAreaTrendChar
           return (
             <g key={`labels-${layer.label}`}>
               <text
+                className="stacked-area-chart__series-label"
                 x={paddingLeft - 18}
                 y={midY}
                 fill={layer.color}
-                fontSize="11"
-                fontWeight="900"
                 textAnchor="end"
                 dominantBaseline="middle"
               >
@@ -397,13 +383,12 @@ function StackedAreaTrendChart({ title, subtitle, series }: StackedAreaTrendChar
       <div className="stacked-area-chart__legend">
         {series.filter(s => s.points.some(p => p.year >= 108)).map((s, i) => {
           const isHidden = hiddenSeries.has(s.label)
-          const color = SERIES_COLORS[i % SERIES_COLORS.length]
           return (
             <button
               key={s.label}
               type="button"
               className={`stacked-area-chart__legend-item${isHidden ? ' stacked-area-chart__legend-item--hidden' : ''}`}
-              style={{ opacity: isHidden ? 0.4 : 1 }}
+              data-hidden={isHidden ? 'true' : 'false'}
               onClick={() => {
                 setHiddenSeries(prev => {
                   const next = new Set(prev)
@@ -413,7 +398,7 @@ function StackedAreaTrendChart({ title, subtitle, series }: StackedAreaTrendChar
                 })
               }}
             >
-              <span className="stacked-area-chart__swatch" style={{ background: color, opacity: isHidden ? 0.3 : 1 }} />
+              <span className={`stacked-area-chart__swatch stacked-area-chart__series-${i}`} />
               <strong>{s.label.replace('院校', '')}</strong>
             </button>
           )

@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 
 import { useChartAnimation } from '../hooks/useChartAnimation'
 import { formatStudents } from '../lib/analytics'
@@ -55,6 +55,7 @@ function buildBins(values: number[]) {
 function HistogramChart({ title, subtitle, values, activeValue = null }: HistogramChartProps) {
   const { ref, isVisible } = useChartAnimation()
   const bins = useMemo(() => buildBins(values), [values])
+  const [detailIndex, setDetailIndex] = useState<number | null>(null)
   const maxCount = Math.max(...bins.map((bin) => bin.count), 1)
   const average = values.length > 0 ? Math.round(values.reduce((sum, value) => sum + value, 0) / values.length) : 0
   const sortedValues = [...values].sort((left, right) => left - right)
@@ -110,14 +111,34 @@ function HistogramChart({ title, subtitle, values, activeValue = null }: Histogr
       <div className="histogram-chart__bars" role="list" aria-label={title}>
         {bins.map((bin, index) => {
           const isActive = activeValue !== null && activeValue >= bin.start && (index === bins.length - 1 ? activeValue <= bin.end : activeValue < bin.end)
+          const isDetailed = detailIndex === index || isActive
           return (
-            <div key={`${bin.start}-${bin.end}`} className={isActive ? 'histogram-chart__bin histogram-chart__bin--active' : 'histogram-chart__bin'} role="listitem">
+            <button
+              key={`${bin.start}-${bin.end}`}
+              type="button"
+              className={isActive ? 'histogram-chart__bin histogram-chart__bin--active' : 'histogram-chart__bin'}
+              onClick={() => setDetailIndex(index)}
+              onMouseEnter={() => setDetailIndex(index)}
+              onMouseLeave={() => setDetailIndex(null)}
+              onFocus={() => setDetailIndex(index)}
+              onBlur={() => setDetailIndex(null)}
+              aria-label={`${formatRange(bin.start, bin.end)}，${bin.count} 校`}
+            >
               <div className="histogram-chart__bar-track">
                 <div className="histogram-chart__bar-fill" style={{ height: isVisible ? `${(bin.count / maxCount) * 100}%` : '0%' }} />
               </div>
               <strong className="histogram-chart__count">{bin.count}</strong>
               <span className="histogram-chart__range">{formatRange(bin.start, bin.end)}</span>
-            </div>
+              {isDetailed ? (
+                <div className="chart-tooltip chart-tooltip--visible histogram-chart__tooltip" role="note" aria-live="polite">
+                  <div className="chart-tooltip__title">{formatRange(bin.start, bin.end)}</div>
+                  <div className="chart-tooltip__row">
+                    <span>樣本數</span>
+                    <span className="chart-tooltip__value">{bin.count} 校</span>
+                  </div>
+                </div>
+              ) : null}
+            </button>
           )
         })}
       </div>

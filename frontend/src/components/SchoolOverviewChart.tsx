@@ -1,9 +1,10 @@
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 
 import type { TrendPoint } from '../lib/analytics.types'
 import type { AcademicYear } from '../hooks/types'
 import { formatAcademicYear, formatDelta, formatStudents } from '../lib/analytics'
 import { useChartAnimation } from '../hooks/useChartAnimation'
+import { useResponsiveSvg } from '../hooks/useResponsiveSvg'
 
 type SchoolOverviewChartProps = {
   trend: TrendPoint[]
@@ -19,15 +20,21 @@ type SchoolOverviewChartProps = {
 
 const CHART_W = 520
 const CHART_H = 200
-const PAD = { top: 16, right: 24, bottom: 28, left: 52 }
-const INNER_W = CHART_W - PAD.left - PAD.right
-const INNER_H = CHART_H - PAD.top - PAD.bottom
 const BAR_FILL = 'var(--chart-bar-primary, #f0abfc)'
 const BAR_FILL_ACTIVE = 'var(--chart-bar-active, #93c5fd)'
-const RATE_STROKE = 'var(--chart-rate-stroke, #fb7185)'
 
 function SchoolOverviewChart({ trend, activeYear, schoolName, schoolCode, educationLevel, managementType, address, phone, website }: SchoolOverviewChartProps) {
   const { ref, isVisible: mounted } = useChartAnimation()
+  const { containerRef, width, height } = useResponsiveSvg(CHART_W, CHART_H, { minWidth: 240, minHeight: 180 })
+  const [detailYear, setDetailYear] = useState<number | null>(null)
+  const PAD = useMemo(() => ({
+    top: 16,
+    right: width < 360 ? 16 : 24,
+    bottom: width < 360 ? 34 : 28,
+    left: width < 360 ? 40 : 52,
+  }), [width])
+  const INNER_W = width - PAD.left - PAD.right
+  const INNER_H = height - PAD.top - PAD.bottom
   const bars = useMemo(() => {
     if (trend.length === 0) return []
     const maxVal = Math.max(...trend.map((p) => p.value), 1)
@@ -46,7 +53,7 @@ function SchoolOverviewChart({ trend, activeYear, schoolName, schoolCode, educat
         cx: PAD.left + stepX * i + stepX / 2,
       }
     })
-  }, [trend])
+  }, [INNER_H, INNER_W, PAD.left, PAD.top, trend])
 
   const ratePoints = useMemo(() => {
     if (bars.length < 2) return []
@@ -59,32 +66,36 @@ function SchoolOverviewChart({ trend, activeYear, schoolName, schoolCode, educat
     const midY = PAD.top + INNER_H * 0.5
     const scale = (INNER_H * 0.35) / maxAbs
     return rates.map((r) => ({ ...r, y: midY - r.rate * scale }))
-  }, [bars])
+  }, [INNER_H, PAD.top, bars])
 
   const ratePath = ratePoints.length >= 2
     ? `M${ratePoints.map((p) => `${p.cx},${p.y}`).join(' L')}`
     : ''
 
-  const yTicks = useMemo(() => {
-    if (bars.length === 0) return []
-    const maxVal = Math.max(...bars.map((b) => b.value), 1)
+  const yTicks = bars.length === 0 ? [] : (() => {
+    const maxVal = Math.max(...bars.map((bar) => bar.value), 1)
     const step = Math.pow(10, Math.floor(Math.log10(maxVal)))
     const ticks: number[] = []
-    for (let v = 0; v <= maxVal + step; v += step) {
-      ticks.push(v)
+    for (let value = 0; value <= maxVal + step; value += step) {
+      ticks.push(value)
       if (ticks.length >= 5) break
     }
-    return ticks.map((v) => ({
-      value: v,
-      y: PAD.top + INNER_H - (v / maxVal) * INNER_H,
-      label: v >= 1000 ? `${(v / 1000).toFixed(0)}k` : String(v),
+
+    return ticks.map((value) => ({
+      value,
+      y: PAD.top + INNER_H - (value / maxVal) * INNER_H,
+      label: value >= 1000 ? `${(value / 1000).toFixed(0)}k` : String(value),
     }))
-  }, [bars])
+  })()
 
   const activeBar = bars.find((b) => b.year === activeYear)
   const prevBar = activeBar ? bars[bars.indexOf(activeBar) - 1] : undefined
   const activeDelta = activeBar && prevBar ? activeBar.value - prevBar.value : 0
   const activeRate = prevBar && prevBar.value > 0 ? ((activeDelta) / prevBar.value) * 100 : 0
+  const detailedBar = bars.find((bar) => bar.year === (detailYear ?? activeYear)) ?? activeBar ?? null
+  const detailedBarIndex = detailedBar ? bars.findIndex((bar) => bar.year === detailedBar.year) : -1
+  const detailedPrevBar = detailedBarIndex > 0 ? bars[detailedBarIndex - 1] : undefined
+  const detailedDelta = detailedBar && detailedPrevBar ? detailedBar.value - detailedPrevBar.value : 0
 
   return (
     <div className="school-overview-chart" ref={ref as React.RefObject<HTMLDivElement>}>
@@ -106,11 +117,12 @@ function SchoolOverviewChart({ trend, activeYear, schoolName, schoolCode, educat
         </p>
       </div>
 
-      <svg viewBox={`0 0 ${CHART_W} ${CHART_H}`} preserveAspectRatio="xMidYMid meet" className="school-overview-chart__svg" role="img" aria-label={`${schoolName} 歷年學生數柱狀圖`}>
+      <div className="chart-svg-frame" ref={containerRef}>
+      <svg viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="xMidYMid meet" className="school-overview-chart__svg" role="img" aria-label={`${schoolName} 歷年學生數柱狀圖`}>
         {yTicks.map((tick) => (
           <g key={tick.value}>
-            <line x1={PAD.left} x2={CHART_W - PAD.right} y1={tick.y} y2={tick.y} stroke="var(--color-border, #334155)" strokeOpacity={0.3} />
-            <text x={PAD.left - 6} y={tick.y + 3} textAnchor="end" fontSize={9} fill="var(--color-text-muted, #94a3b8)">{tick.label}</text>
+            <line x1={PAD.left} x2={width - PAD.right} y1={tick.y} y2={tick.y} className="school-overview-chart__grid" />
+            <text className="school-overview-chart__axis" x={PAD.left - 6} y={tick.y + 3} textAnchor="end">{tick.label}</text>
           </g>
         ))}
 
@@ -125,18 +137,22 @@ function SchoolOverviewChart({ trend, activeYear, schoolName, schoolCode, educat
                 width={bar.w}
                 height={mounted ? bar.h : 0}
                 rx={2}
+                className={bar.year === activeYear ? 'school-overview-chart__bar school-overview-chart__bar--active chart-data-focusable' : 'school-overview-chart__bar chart-data-focusable'}
                 fill={bar.year === activeYear ? BAR_FILL_ACTIVE : BAR_FILL}
-                opacity={bar.year === activeYear ? 1 : 0.7}
-                style={{ transition: 'y 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), height 0.6s cubic-bezier(0.2, 0.8, 0.2, 1)' }}
+                tabIndex={0}
+                role="button"
+                aria-label={`${bar.year} 學年，${formatStudents(bar.value)} 人`}
+                onMouseEnter={() => setDetailYear(bar.year)}
+                onMouseLeave={() => setDetailYear(null)}
+                onFocus={() => setDetailYear(bar.year)}
+                onBlur={() => setDetailYear(null)}
               />
               {bar.year === activeYear && delta != null ? (
-                <text x={bar.cx} y={bar.y - 4} textAnchor="middle" fontSize={7} fill={delta >= 0 ? '#34d399' : '#fb7185'} fontWeight={600}>
+                <text x={bar.cx} y={bar.y - 4} textAnchor="middle" className={delta >= 0 ? 'school-overview-chart__delta school-overview-chart__delta--positive' : 'school-overview-chart__delta school-overview-chart__delta--negative'}>
                   {delta >= 0 ? '+' : ''}{delta}
                 </text>
               ) : null}
-              <text x={bar.cx} y={CHART_H - 6} textAnchor="middle" fontSize={8} fill="var(--color-text-muted, #94a3b8)">
-                {bar.year}
-              </text>
+              {(width >= 320 || i % 2 === 0) ? <text className="school-overview-chart__year-label" x={bar.cx} y={height - 6} textAnchor="middle">{bar.year}</text> : null}
             </g>
           )
         })}
@@ -146,32 +162,45 @@ function SchoolOverviewChart({ trend, activeYear, schoolName, schoolCode, educat
             <path
               d={ratePath}
               fill="none"
-              stroke={RATE_STROKE}
-              strokeWidth={1.8}
               strokeLinejoin="round"
-              opacity={0.85}
+              className="school-overview-chart__rate-line"
               strokeDasharray="500"
               strokeDashoffset={mounted ? 0 : 500}
-              style={{ transition: 'stroke-dashoffset 1.2s ease-out 0.3s' }}
             />
             {ratePoints.map((p) => (
-              <circle key={p.year} cx={p.cx} cy={p.y} r={2.5} fill={RATE_STROKE} opacity={0.9} />
+              <circle key={p.year} className="school-overview-chart__rate-dot" cx={p.cx} cy={p.y} r={2.5} tabIndex={0} role="button" aria-label={`${p.year} 年增率 ${p.rate.toFixed(1)}%`} onFocus={() => setDetailYear(p.year)} onBlur={() => setDetailYear(null)} onMouseEnter={() => setDetailYear(p.year)} onMouseLeave={() => setDetailYear(null)} />
             ))}
           </>
         ) : null}
 
         {activeBar ? (
-          <line x1={activeBar.cx} x2={activeBar.cx} y1={PAD.top} y2={PAD.top + INNER_H} stroke="#f59e0b" strokeWidth={1.2} strokeDasharray="3 3" opacity={0.6} />
+          <line x1={activeBar.cx} x2={activeBar.cx} y1={PAD.top} y2={PAD.top + INNER_H} className="school-overview-chart__active-line" />
         ) : null}
       </svg>
+      {detailedBar ? (
+        <div className="chart-tooltip chart-tooltip--visible school-overview-chart__tooltip" role="note" aria-live="polite">
+          <div className="chart-tooltip__title">{detailedBar.year} 學年</div>
+          <div className="chart-tooltip__row">
+            <span>學生數</span>
+            <span className="chart-tooltip__value">{formatStudents(detailedBar.value)} 人</span>
+          </div>
+          {detailedPrevBar ? (
+            <div className="chart-tooltip__row">
+              <span>年增減</span>
+              <span className="chart-tooltip__value">{formatDelta(detailedDelta)} 人</span>
+            </div>
+          ) : null}
+        </div>
+      ) : null}
+      </div>
 
       <div className="school-overview-chart__legend">
         <span className="school-overview-chart__legend-item">
-          <span className="school-overview-chart__swatch" style={{ background: BAR_FILL }} />
+          <span className="school-overview-chart__swatch school-overview-chart__swatch--bar" />
           學生數
         </span>
         <span className="school-overview-chart__legend-item">
-          <span className="school-overview-chart__swatch school-overview-chart__swatch--line" style={{ background: RATE_STROKE }} />
+          <span className="school-overview-chart__swatch school-overview-chart__swatch--line" />
           年增率
         </span>
       </div>

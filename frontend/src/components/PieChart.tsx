@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { formatStudents } from '../lib/analytics'
 import { useChartAnimation } from '../hooks/useChartAnimation'
+import { useResponsiveSvg } from '../hooks/useResponsiveSvg'
 
 const PIE_COLORS = [
   'var(--chart-pie-0, #38bdf8)', 'var(--chart-pie-1, #34d399)',
@@ -24,7 +25,9 @@ function PieChart({ slices, size = 160, centerLabel = '總計' }: PieChartProps)
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
   const { ref: animRef, isVisible } = useChartAnimation()
-  const r = size / 2
+  const { containerRef, width } = useResponsiveSvg(size, size, { minWidth: 120, minHeight: 120 })
+  const chartSize = Math.max(width, 120)
+  const r = chartSize / 2
   const innerR = r * 0.65
   const totalValue = slices.reduce((acc, s) => acc + s.value, 0)
 
@@ -45,8 +48,8 @@ function PieChart({ slices, size = 160, centerLabel = '總計' }: PieChartProps)
 
   return (
     <div className="pie-chart-wrap" ref={animRef as React.RefObject<HTMLDivElement>}>
-      <div style={{ position: 'relative', width: size, height: size, maxWidth: '100%', aspectRatio: '1' }}>
-        <svg className={isVisible ? 'chart-enter' : ''} width={size} height={size} viewBox={`0 0 ${size} ${size}`} style={{ width: '100%', height: '100%' }}>
+      <div className="pie-chart__canvas" ref={containerRef}>
+        <svg className={isVisible ? 'chart-enter chart-enter--visible' : 'chart-enter'} width={chartSize} height={chartSize} viewBox={`0 0 ${chartSize} ${chartSize}`} role="img" aria-label="比例圓餅圖">
           {slices.map((slice, i) => {
             let angle = slice.share * Math.PI * 2
             // Clamp near-full-circle arcs to avoid degenerate SVG path (start == end)
@@ -68,17 +71,12 @@ function PieChart({ slices, size = 160, centerLabel = '總計' }: PieChartProps)
             const d = [`M ${x1} ${y1}`, `A ${r} ${r} 0 ${large} 1 ${x2} ${y2}`, `L ${ix1} ${iy1}`, `A ${innerR} ${innerR} 0 ${large} 0 ${ix2} ${iy2}`, 'Z'].join(' ')
 
             const isActive = hoveredIndex === i
-            const color = PIE_COLORS[i % PIE_COLORS.length]
 
             return (
               <path
                 key={slice.label}
                 d={d}
-                fill={color}
-                stroke={isActive ? '#fff' : 'none'}
-                strokeWidth={isActive ? 2 : 0}
-                opacity={hoveredIndex === null || isActive ? 1 : 0.4}
-                className="pie-chart__slice"
+                className={`pie-chart__slice pie-chart__slice--${i % PIE_COLORS.length}${isActive ? ' pie-chart__slice--active' : ''}${hoveredIndex !== null && !isActive ? ' pie-chart__slice--muted' : ''}`}
                 tabIndex={0}
                 role="listitem"
                 aria-label={`${slice.label}: ${(slice.share * 100).toFixed(1)}%`}
@@ -86,10 +84,25 @@ function PieChart({ slices, size = 160, centerLabel = '總計' }: PieChartProps)
                 onMouseLeave={() => setHoveredIndex(null)}
                 onFocus={() => setHoveredIndex(i)}
                 onBlur={() => setHoveredIndex(null)}
+                onKeyDown={(event) => {
+                  if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault()
+                    setHoveredIndex(i)
+                  }
+                }}
               />
             )
           })}
         </svg>
+        {hoveredIndex !== null ? (
+          <div className="chart-tooltip chart-tooltip--visible pie-chart__tooltip" role="note" aria-live="polite">
+            <div className="chart-tooltip__title">{slices[hoveredIndex].label}</div>
+            <div className="chart-tooltip__row">
+              <span className="chart-tooltip__value">{(slices[hoveredIndex].share * 100).toFixed(1)}%</span>
+              <span>{formatStudents(slices[hoveredIndex].value)} 人</span>
+            </div>
+          </div>
+        ) : null}
         <div className="pie-chart__center">
           <div className="pie-chart__center-label">{hoveredIndex !== null ? slices[hoveredIndex].label : centerLabel}</div>
           <div className="pie-chart__center-value">
@@ -100,16 +113,19 @@ function PieChart({ slices, size = 160, centerLabel = '總計' }: PieChartProps)
 
       <div className="pie-chart-legend">
         {slices.map((slice, i) => (
-          <div
+          <button
             key={slice.label}
-            className="pie-chart-legend__row"
-            style={{ opacity: hoveredIndex === null || hoveredIndex === i ? 1 : 0.4, borderLeft: `3px solid ${PIE_COLORS[i % PIE_COLORS.length]}` }}
+            type="button"
+            className={hoveredIndex === null || hoveredIndex === i ? 'pie-chart-legend__row pie-chart-legend__button' : 'pie-chart-legend__row pie-chart-legend__button pie-chart-legend__row--muted'}
             onMouseEnter={() => setHoveredIndex(i)}
             onMouseLeave={() => setHoveredIndex(null)}
+            onFocus={() => setHoveredIndex(i)}
+            onBlur={() => setHoveredIndex(null)}
           >
-            <span className="pie-chart-legend__label" style={{ paddingLeft: '4px' }}>{slice.label}</span>
+            <span className={`pie-chart-legend__swatch pie-chart-legend__swatch--${i % PIE_COLORS.length}`} />
+            <span className="pie-chart-legend__label">{slice.label}</span>
             <span className="pie-chart-legend__value">{(slice.share * 100).toFixed(1)}%</span>
-          </div>
+          </button>
         ))}
       </div>
     </div>

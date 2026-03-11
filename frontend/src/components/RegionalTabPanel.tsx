@@ -99,7 +99,7 @@ function RegionalTabPanel({
               <article key={item.id} className={region === item.id ? 'atlas-metric-tile atlas-metric-tile--active' : 'atlas-metric-tile'} style={{ cursor: 'pointer', transition: 'all 0.2s ease' }} onClick={() => scenarioActions.handleRegionSelect(item.id as RegionGroupFilter)}>
                 <span>{item.label}</span>
                 <strong>{formatStudents(item.students)} 人</strong>
-                <small>{item.countyCount} 縣市 / 年增減 {item.delta > 0 ? '+' : ''}{formatPercent(item.delta / Math.max(item.students - item.delta, 1))}</small>
+                <small>{item.countyCount} 縣市 / 年增減 {formatPercent(item.deltaRatio)}</small>
               </article>
             ))}
           </div>

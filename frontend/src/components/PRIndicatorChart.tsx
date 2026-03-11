@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 
 import { useChartAnimation } from '../hooks/useChartAnimation'
 
@@ -19,6 +19,7 @@ function getBandLabel(percentile: number) {
 
 function PRIndicatorChart({ schoolName, rank, total, scopeLabel }: PRIndicatorChartProps) {
   const { ref, isVisible } = useChartAnimation()
+  const [showDetail, setShowDetail] = useState(false)
   const hasComparableCohort = total >= 3
   const percentile = useMemo(() => {
     if (!hasComparableCohort) return 0
@@ -56,12 +57,37 @@ function PRIndicatorChart({ schoolName, rank, total, scopeLabel }: PRIndicatorCh
         </div>
       </div>
 
-      <div className="pr-indicator__track" aria-hidden="true">
-        <span className="pr-indicator__band pr-indicator__band--low" />
-        <span className="pr-indicator__band pr-indicator__band--mid" />
-        <span className="pr-indicator__band pr-indicator__band--high" />
-        {hasComparableCohort ? <span className="pr-indicator__marker" style={{ left: isVisible ? `${percentile}%` : '0%' }} /> : null}
-      </div>
+      <button
+        type="button"
+        className="pr-indicator__track-button"
+        onClick={() => setShowDetail(true)}
+        onMouseEnter={() => setShowDetail(true)}
+        onMouseLeave={() => setShowDetail(false)}
+        onFocus={() => setShowDetail(true)}
+        onBlur={() => setShowDetail(false)}
+        aria-label={`${schoolName} 在 ${scopeLabel} 的 PR ${hasComparableCohort ? percentile : '不可計算'}`}
+      >
+        <div className="pr-indicator__track" aria-hidden="true">
+          <span className="pr-indicator__band pr-indicator__band--low" />
+          <span className="pr-indicator__band pr-indicator__band--mid" />
+          <span className="pr-indicator__band pr-indicator__band--high" />
+          {hasComparableCohort ? <span className="pr-indicator__marker" style={{ left: isVisible ? `${percentile}%` : '0%' }} /> : null}
+        </div>
+      </button>
+
+      {showDetail ? (
+        <div className="chart-tooltip chart-tooltip--visible pr-indicator__tooltip" role="note" aria-live="polite">
+          <div className="chart-tooltip__title">{schoolName}</div>
+          <div className="chart-tooltip__row">
+            <span>百分等級</span>
+            <span className="chart-tooltip__value">{hasComparableCohort ? `${percentile}` : '不可計算'}</span>
+          </div>
+          <div className="chart-tooltip__row">
+            <span>樣本</span>
+            <span className="chart-tooltip__value">{total} 所</span>
+          </div>
+        </div>
+      ) : null}
 
       <div className="pr-indicator__ticks" aria-hidden="true">
         <span>0</span>

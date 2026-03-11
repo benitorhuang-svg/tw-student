@@ -773,6 +773,78 @@
     color: var(--color-text-muted, #94a3b8)
 }
 
+.school-overview-chart__tooltip {
+    position: static;
+    margin-top: 8px;
+    opacity: 1;
+    transform: none;
+}
+
+.school-overview-chart__bar {
+    opacity: 0.7;
+    transition: y .6s cubic-bezier(.2, .8, .2, 1), height .6s cubic-bezier(.2, .8, .2, 1)
+}
+
+.school-overview-chart__bar--active {
+    opacity: 1;
+}
+
+.school-overview-chart__rate-line {
+    stroke: var(--chart-rate-stroke, #fb7185);
+    stroke-width: 1.8;
+    opacity: 0.85;
+    transition: stroke-dashoffset 1.2s ease-out .3s
+}
+
+.school-overview-chart__rate-dot {
+    fill: var(--chart-rate-stroke, #fb7185);
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.school-overview-chart__grid {
+    stroke: var(--color-border, #334155);
+    stroke-opacity: 0.3;
+}
+
+.school-overview-chart__active-line {
+    stroke: #f59e0b;
+    stroke-width: 1.2;
+    stroke-dasharray: 3 3;
+    opacity: 0.6;
+}
+
+.school-overview-chart__delta--positive {
+    fill: #34d399
+}
+
+.school-overview-chart__delta--negative {
+    fill: #fb7185
+}
+
+.school-overview-chart__delta {
+    font-size: var(--chart-text-2xs, 7px);
+    font-weight: 600;
+}
+
+.school-overview-chart__axis {
+    fill: var(--color-text-muted, #94a3b8);
+    font-size: var(--chart-text-sm, 9px);
+}
+
+.school-overview-chart__year-label {
+    fill: var(--color-text-muted, #94a3b8);
+    font-size: var(--chart-text-xs, 8px);
+}
+
+.school-overview-chart__swatch--bar {
+    background: var(--chart-bar-primary)
+}
+
+.school-overview-chart__swatch--line {
+    background: var(--chart-rate-stroke)
+}
+
 .school-overview-chart__legend-item {
     display: flex;
     align-items: center;
@@ -954,6 +1026,13 @@
     display: flex;
     height: 100%;
     min-width: 6px
+}
+
+.school-composition-chart__tooltip {
+    position: static;
+    margin-top: 4px;
+    opacity: 1;
+    transform: none;
 }
 
 .school-composition-chart__band-fill-solid {

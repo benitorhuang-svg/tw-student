@@ -56,8 +56,9 @@ cd backend && node scripts/refresh-official-data.mjs
 | **手刻 SVG** | 所有圖表不依賴 D3/Recharts，以 `<svg viewBox>` + CSS 變數實現 |
 | **共用動畫** | `useChartAnimation` hook (IntersectionObserver) 統一進場動畫 |
 | **共用響應式尺寸** | `useResponsiveSvg` 以 `ResizeObserver` 將容器寬度映射成 SVG 座標系 |
+| **互動契約** | `chart-tooltip` + keyboard focus 規則已作為第一波基線，第二波正擴散到 Treemap / Butterfly / Histogram / PRIndicator / SchoolComposition |
 | **PWA 離線** | vite-plugin-pwa + service worker，全靜態 precache |
-| **CSS 設計系統** | `00-chart-foundations.css` 統一色彩 token、tooltip、動畫、空狀態 |
+| **CSS 設計系統** | `00-chart-foundations.css` 統一色彩 token、tooltip、動畫、空狀態；目前持續將狀態樣式從 inline style 收斂回 CSS class |
 
 ## 規格文件
 
@@ -71,24 +72,24 @@ cd backend && node scripts/refresh-official-data.mjs
 
 ### P2 — 圖表品質提升
 
-1. **擴散 `useResponsiveSvg`**：本輪已覆蓋 BoxPlot/Scatter/StackedArea/TrendChart，下一輪補到 SchoolOverviewChart、PieChart 與其餘固定尺寸圖
-2. **統一 Tooltip 模式**：Scatter/Trend 已收斂到共用 SVG tooltip class；下一輪把 title-only / center-label-only 圖表全部收斂
-3. **Inline Style 清理**：ScatterPlotChart、StackedAreaTrendChart 與 DashboardCanvas 仍有殘留 inline style，遷移至 `01-charts.css`
-4. **InsightPanel Sparkline 色彩**：hardcoded `#f97316` / `#10b981` 遷移至 CSS 變數
+1. **第二波 shared interaction contract**：Treemap / Butterfly / Histogram / PRIndicator / SchoolComposition 與第一波圖表收斂成相同的 hover、focus、Enter/Space、non-hover disclosure。
+2. **真正容器驅動的 Pie / SchoolOverview**：不只 mobile-friendly，而是可在 split view / 窄欄位維持 legend、標籤與 active state 可讀。
+3. **Inline style 清理**：ScatterPlotChart、StackedAreaTrendChart、PieChart legend 與 panel heading fragment 的狀態樣式回到 CSS token / class。
+4. **Interaction E2E + screenshot baseline**：以自動化驗證 hover、Tab focus、Enter/Space 與窄寬度 screenshot，降低多輪 refinement 的回退風險。
+5. **跨頁 chart audit**：對所有圖表建立現況、風險、建議與優先級清單，讓後續迭代可持續收斂。
 
 ### P2 — 可及性 (a11y)
 
-5. **鍵盤導航**：僅 ScatterPlot/PieChart/SchoolDataTable 有 tabIndex，其餘圖表資料點需補上 keyboard handler
+5. **鍵盤導航**：目前第一波圖表已有基礎等價揭露，第二波 5 張圖仍需補 keyboard handler、focus ring 與 Enter/Space。
 6. **ARIA 標注**：所有 SVG 圖表補 `role="img"` + 描述性 `aria-label`
 7. **焦點樣式**：所有可互動元素補 `:focus-visible` outline
 
 ### P3 — 架構整理
 
-8. **面板責任拆分**：DashboardCanvas (~290 行)、SchoolDetailPanel (~290 行)、SchoolAnalysisView (~260 行) 各自過大，考慮拆分子元件
-目前已先拆出 `DashboardYearNavigator.tsx`；下一輪可沿相同方式拆 section-level 子元件。
+8. **面板責任拆分延伸**：DashboardCanvas 已先拆出 `DashboardYearNavigator.tsx`，SchoolDetailPanel / SchoolAnalysisView 已完成 section-level 拆分；下一輪可把共用 panel heading / chip tab 邏輯再抽成 helper component。
 9. **共用 `formatWan`**：該函式在 ScatterPlotChart / StackedAreaTrendChart 各自重複定義，應抽取至 `lib/analytics`
 10. **E2E 擴充**：新增圖表互動 + 手機版面的 Playwright 視覺迴歸測試
-11. **RegionalTabPanel 計算修正**：年增率分母疑似使用 `students - delta` 而非前一年度實際總數，需驗證
+11. **圖表互動樣式收斂**：目前 tooltip 契約已建立，但第二波圖表與 responsive legend 的視覺密度仍有差異，建議下一輪做純樣式微調與 QA 收斂
 
 ## 維護原則
 

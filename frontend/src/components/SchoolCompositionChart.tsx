@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 
 import type { SchoolCodeAtlasEntry, StudentBandRecord, StudentCompositionRecord } from '../data/educationData'
 import { useChartAnimation } from '../hooks/useChartAnimation'
@@ -39,6 +39,7 @@ function inferGenderTotal(composition: StudentCompositionRecord | null, key: 'ma
 }
 
 function SchoolCompositionChart({ schoolAtlasEntry, selectedSchool, activeYear, isLoading = false, loadError = null }: SchoolCompositionChartProps) {
+  const [detailLevelKey, setDetailLevelKey] = useState<string | null>(null)
   const levelRows = useMemo(() => {
     if (!schoolAtlasEntry) return []
 
@@ -81,7 +82,7 @@ function SchoolCompositionChart({ schoolAtlasEntry, selectedSchool, activeYear, 
     <section className={`school-composition-chart${isVisible ? ' chart-enter' : ''}`} ref={animRef as React.RefObject<HTMLElement>}>
       <div className="school-composition-chart__header">
         <div>
-          <p className="eyebrow" style={{ color: 'var(--palette-cyan)' }}>校代碼完整結構</p>
+          <p className="eyebrow eyebrow--cyan">校代碼完整結構</p>
           <h3>{selectedSchool.code} 全學制 / 年級 / 男女結構</h3>
         </div>
         <p className="panel-heading__meta">
@@ -102,7 +103,23 @@ function SchoolCompositionChart({ schoolAtlasEntry, selectedSchool, activeYear, 
             const femaleShare = genderTotal > 0 ? ((level.femaleStudents ?? 0) / genderTotal) * 100 : 0
 
             return (
-              <article key={`${level.schoolId}-${level.educationLevel}`} className={level.isSelectedLevel ? 'school-composition-chart__level school-composition-chart__level--active' : 'school-composition-chart__level'}>
+              <article
+                key={`${level.schoolId}-${level.educationLevel}`}
+                className={level.isSelectedLevel ? 'school-composition-chart__level school-composition-chart__level--active' : 'school-composition-chart__level'}
+                tabIndex={0}
+                role="button"
+                onMouseEnter={() => setDetailLevelKey(`${level.schoolId}-${level.educationLevel}`)}
+                onMouseLeave={() => setDetailLevelKey(null)}
+                onFocus={() => setDetailLevelKey(`${level.schoolId}-${level.educationLevel}`)}
+                onBlur={() => setDetailLevelKey(null)}
+                onKeyDown={(event) => {
+                  if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault()
+                    setDetailLevelKey(`${level.schoolId}-${level.educationLevel}`)
+                  }
+                }}
+                aria-label={`${level.name}，${formatStudents(level.totalStudents)} 人`}
+              >
                 <div className="school-composition-chart__level-header">
                   <div>
                     <span className="school-composition-chart__level-tag">{level.managementType}{level.educationLevel}</span>
@@ -163,6 +180,19 @@ function SchoolCompositionChart({ schoolAtlasEntry, selectedSchool, activeYear, 
                 ) : (
                   <div className="school-composition-chart__gender-meta school-composition-chart__gender-meta--empty">此學制目前只有總量，沒有更細的年級或學位帶拆分。</div>
                 )}
+                {detailLevelKey === `${level.schoolId}-${level.educationLevel}` ? (
+                  <div className="chart-tooltip chart-tooltip--visible school-composition-chart__tooltip" role="note" aria-live="polite">
+                    <div className="chart-tooltip__title">{level.name}</div>
+                    <div className="chart-tooltip__row">
+                      <span>{level.managementType}{level.educationLevel}</span>
+                      <span className="chart-tooltip__value">{formatStudents(level.totalStudents)} 人</span>
+                    </div>
+                    <div className="chart-tooltip__row">
+                      <span>{formatAcademicYear(level.displayYear)}</span>
+                      <span className="chart-tooltip__value">男 {formatStudents(level.maleStudents ?? 0)} / 女 {formatStudents(level.femaleStudents ?? 0)}</span>
+                    </div>
+                  </div>
+                ) : null}
               </article>
             )
           })}

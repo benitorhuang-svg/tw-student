@@ -139,13 +139,14 @@ function TrendChart({
         viewBox={`0 0 ${width} ${height}`}
         preserveAspectRatio="xMidYMid meet"
         role="img"
+        aria-label={`${title} 歷年趨勢折線圖`}
         onMouseMove={handleMouseMove}
         onMouseLeave={() => setHoverIndex(null)}
       >
         <defs>
           <linearGradient id={`${chartId}-area`} x1="0" x2="0" y1="0" y2="1">
-            <stop offset="0%" stopColor="rgba(42, 111, 145, 0.4)" />
-            <stop offset="100%" stopColor="rgba(42, 111, 145, 0)" />
+            <stop offset="0%" stopColor="var(--chart-trend-gradient-start)" />
+            <stop offset="100%" stopColor="var(--chart-trend-gradient-end)" />
           </linearGradient>
         </defs>
 
@@ -155,7 +156,7 @@ function TrendChart({
         })}
 
         {benchPath && (
-          <path className="trend-chart__bench" d={benchPath} fill="none" stroke="rgba(255,255,255,0.1)" strokeDasharray="4 2" />
+          <path className="trend-chart__bench" d={benchPath} fill="none" strokeDasharray="4 2" />
         )}
 
         <path className="trend-chart__line" d={linePath} ref={pathRef} style={{ strokeDasharray: dashArray }} />
@@ -193,7 +194,7 @@ function TrendChart({
         {hoverIndex !== null && (
           <g className="trend-chart__crosshair">
             <line x1={normalizedPoints[hoverIndex].x} x2={normalizedPoints[hoverIndex].x} y1={paddingY} y2={height - paddingY} />
-            <circle cx={normalizedPoints[hoverIndex].x} cy={normalizedPoints[hoverIndex].y} r={6} fill="none" stroke="var(--palette-cyan)" />
+            <circle cx={normalizedPoints[hoverIndex].x} cy={normalizedPoints[hoverIndex].y} r={6} fill="none" className="trend-chart__crosshair-ring" />
             <g transform={`translate(${normalizedPoints[hoverIndex].x > width - 100 ? normalizedPoints[hoverIndex].x - 110 : normalizedPoints[hoverIndex].x + 10}, ${normalizedPoints[hoverIndex].y - 20})`}>
               <rect className="chart-svg-tooltip__surface" width="100" height="40" rx="6" />
               <text className="chart-svg-tooltip__title" x="10" y="16">{formatAcademicYearCompact(normalizedPoints[hoverIndex].year)}</text>

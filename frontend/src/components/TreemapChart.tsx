@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 
 import { useChartAnimation } from '../hooks/useChartAnimation'
 import { formatStudents } from '../lib/analytics'
@@ -75,6 +75,32 @@ function TreemapChart({
   onSelectGroup,
 }: TreemapChartProps) {
   const { ref, isVisible } = useChartAnimation()
+  const [detailKey, setDetailKey] = useState<string | null>(null)
+  const groupLayouts = useMemo(
+    () => buildSliceDiceLayout(groups, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT, true),
+    [groups],
+  )
+  const detail = useMemo(() => {
+    if (!detailKey) return null
+    if (detailKey.startsWith('group:')) {
+      const group = groups.find((item) => item.id === detailKey.replace('group:', ''))
+      return group ? { title: group.label, value: `${formatStudents(group.value)} 人`, meta: `${group.children.length} 個縣市 / 區塊` } : null
+    }
+
+    const leafId = detailKey.replace('leaf:', '')
+    for (const group of groups) {
+      const leaf = group.children.find((item) => item.id === leafId)
+      if (leaf) {
+        return {
+          title: leaf.label,
+          value: `${formatStudents(leaf.value)} 人`,
+          meta: leaf.meta ?? `${group.label} / 子層級資料項`,
+        }
+      }
+    }
+
+    return null
+  }, [detailKey, groups])
 
   if (groups.length === 0) {
     return (
@@ -84,11 +110,6 @@ function TreemapChart({
       </section>
     )
   }
-
-  const groupLayouts = useMemo(
-    () => buildSliceDiceLayout(groups, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT, true),
-    [groups],
-  )
 
   return (
     <section
@@ -134,7 +155,14 @@ function TreemapChart({
               <button
                 type="button"
                 className="treemap-chart__group-header"
-                onClick={() => onSelectGroup?.(group.id)}
+                onClick={() => {
+                  setDetailKey(`group:${group.id}`)
+                  onSelectGroup?.(group.id)
+                }}
+                onMouseEnter={() => setDetailKey(`group:${group.id}`)}
+                onMouseLeave={() => setDetailKey(null)}
+                onFocus={() => setDetailKey(`group:${group.id}`)}
+                onBlur={() => setDetailKey(null)}
               >
                 <span>{group.label}</span>
                 <strong>{formatStudents(group.value)} 人</strong>
@@ -155,7 +183,14 @@ function TreemapChart({
                         width: `${(childLayout.width / Math.max(childrenWidth, 1)) * 100}%`,
                         height: `${(childLayout.height / Math.max(childrenHeight, 1)) * 100}%`,
                       }}
-                      onClick={() => onSelectLeaf?.(child.id)}
+                      onClick={() => {
+                        setDetailKey(`leaf:${child.id}`)
+                        onSelectLeaf?.(child.id)
+                      }}
+                      onMouseEnter={() => setDetailKey(`leaf:${child.id}`)}
+                      onMouseLeave={() => setDetailKey(null)}
+                      onFocus={() => setDetailKey(`leaf:${child.id}`)}
+                      onBlur={() => setDetailKey(null)}
                       aria-label={`${group.label} ${child.label} ${formatStudents(child.value)} 人`}
                     >
                       <span className="treemap-chart__leaf-label">{child.label}</span>
@@ -169,6 +204,15 @@ function TreemapChart({
           )
         })}
       </div>
+      {detail ? (
+        <div className="chart-tooltip chart-tooltip--visible treemap-chart__tooltip" role="note" aria-live="polite">
+          <div className="chart-tooltip__title">{detail.title}</div>
+          <div className="chart-tooltip__row">
+            <span>{detail.meta}</span>
+            <span className="chart-tooltip__value">{detail.value}</span>
+          </div>
+        </div>
+      ) : null}
     </section>
   )
 }

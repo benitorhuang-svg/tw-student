@@ -18,7 +18,7 @@ function Sparkline({ points, width = 60, height = 20 }: { points: TrendPoint[]; 
       <polyline
         points={coords.join(' ')}
         fill="none"
-        stroke={isDown ? '#f97316' : '#10b981'}
+        stroke={isDown ? 'var(--chart-trend-down, #f97316)' : 'var(--chart-trend-up, #10b981)'}
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -68,9 +68,12 @@ function InsightPanel({
                 key={row.id}
                 className={isActive ? 'insight-row insight-row--active' : 'insight-row'}
                 type="button"
+                aria-label={`${row.label}，${formatStudents(row.students)} 人，${row.schools} 校`}
                 onClick={() => onSelectRow(row.id)}
                 onMouseEnter={() => onHoverRow?.(row.id)}
                 onMouseLeave={() => onHoverRow?.(null)}
+                onFocus={() => onHoverRow?.(row.id)}
+                onBlur={() => onHoverRow?.(null)}
               >
                 <div className="insight-row__meta">
                   <span className="insight-row__index">#{String(index + 1).padStart(2, '0')}</span>
@@ -92,9 +95,7 @@ function InsightPanel({
                     className="insight-row__bar-fill"
                     style={{
                       width: mounted ? `${Math.max((row.students / maxStudents) * 100, 2)}%` : '0%',
-                      background: isActive ? 'var(--palette-cyan)' : 'var(--palette-cyan)',
                       opacity: isActive ? 1 : 0.6,
-                      transition: 'width 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), background-color 0.3s ease, opacity 0.3s ease'
                     }}
                   />
                 </div>

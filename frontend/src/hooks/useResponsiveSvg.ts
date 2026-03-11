@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 
 type UseResponsiveSvgOptions = {
   minWidth?: number
+  minHeight?: number
 }
 
 export function useResponsiveSvg(baseWidth: number, baseHeight: number, options: UseResponsiveSvgOptions = {}) {
@@ -13,9 +14,10 @@ export function useResponsiveSvg(baseWidth: number, baseHeight: number, options:
     if (!element || typeof ResizeObserver === 'undefined') return
 
     const minWidth = options.minWidth ?? 320
+    const minHeight = options.minHeight ?? 180
     const updateSize = (nextWidth: number) => {
       const width = Math.max(Math.round(nextWidth), minWidth)
-      const height = Math.max(Math.round((width * baseHeight) / baseWidth), 180)
+      const height = Math.max(Math.round((width * baseHeight) / baseWidth), minHeight)
       setSize({ width, height })
     }
 
@@ -29,7 +31,7 @@ export function useResponsiveSvg(baseWidth: number, baseHeight: number, options:
 
     observer.observe(element)
     return () => observer.disconnect()
-  }, [baseHeight, baseWidth, options.minWidth])
+  }, [baseHeight, baseWidth, options.minHeight, options.minWidth])
 
   return {
     containerRef,

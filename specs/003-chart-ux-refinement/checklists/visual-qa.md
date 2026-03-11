@@ -21,6 +21,8 @@
 | A2 | StackedArea 除以零 | 概況總覽 → 隱藏所有系列再逐一開啟 | 百分比標註不顯示 NaN/Infinity |
 | A3 | PieChart 100% slice | 篩選至僅剩單一學制的鄉鎮 | 圓餅圖正常渲染完整圓環 |
 | A4 | CSV 匯出安全性 | 學校列表 → 匯出 CSV → Excel 開啟 | 校名含 `=`/`+` 前綴的儲存格不觸發公式 |
+| A5 | 區域成長率分母語意 | 區域分析 → 比對摘要 tile 的年增率與前一學年總數 | 100% 以前一學年實際總數為分母 |
+| A6 | 資料載入診斷 | 人工破壞一個 `/data/*` 資產路徑 | UI 顯示資產脈絡錯誤，不顯示 raw parser exception |
 
 ## B. 進場動畫一致性
 
@@ -79,6 +81,29 @@
 | F3 | SchoolDataTable 鍵盤 | Tab 到列 → Enter | 選取學校並同步右側面板 |
 | F4 | StackedArea 圖例點擊 | 點擊圖例 toggle 系列 | 系列隱藏/顯示、面積重新計算 |
 | F5 | TrendChart hover | 滑鼠移動至折線 | 玻璃態 tooltip 跟隨游標 |
+| F6 | StackedShare keyboard | Tab 到 row / segment | 顯示與 hover 等價的比例與人數資訊 |
+| F7 | PieChart keyboard | Tab 到 legend / slice | 顯示與 hover 等價的分類名稱與佔比 |
+| F8 | SchoolOverview keyboard | Tab 到年度 bar / 折線點 | 顯示年度、學生數、增減資訊 |
+| F9 | Treemap hover / focus | Hover 或 Tab 到群組 / 葉節點 | 顯示區域或縣市名稱、總量與補充資訊 |
+| F10 | Butterfly keyboard | Tab 到 row → Enter / Space | 顯示公私立左右值與比例摘要 |
+| F11 | Histogram keyboard | Tab 到 bin → Enter / Space | 顯示區間、樣本數與 active state |
+| F12 | PRIndicator keyboard | Tab 到 marker 區域 → Enter / Space | 顯示 PR、band 與樣本脈絡 |
+| F13 | SchoolComposition keyboard | Tab 到學制卡片 → Enter / Space | 顯示該學制總量、男女比例與資料年別 |
+
+## G. 窄容器 / Split View 驗證
+
+| # | 元件 | 步驟 | 預期結果 |
+|---|------|------|---------|
+| G1 | PieChart | 縮窄右側 panel 或手機寬度 | legend 不重疊、tooltip 對應正確 |
+| G2 | SchoolOverviewChart | 縮窄單校聚焦圖卡 | 年度標籤、bar、line、tooltip 仍可讀 |
+| G3 | 窄寬度 screenshot | 執行 Playwright screenshot comparison | 無明顯裁切、重疊或 active-state 斷裂 |
+
+## H. Cross-page Audit
+
+| # | 檢查項目 | 步驟 | 預期結果 |
+|---|---------|------|---------|
+| H1 | 全圖表 audit 完整性 | 逐頁檢查所有現存圖表 | 每個元件皆有現況、風險、建議、優先級 |
+| H2 | README 對齊 | 比對 README 與 003 任務 | 已完成項與下一輪建議一致 |
 
 ---
 
@@ -87,6 +112,9 @@
 - [ ] 桌機 QA 完成 (D1–D9)
 - [ ] 手機 QA 完成 (E1–E8)
 - [ ] P0 修復驗證通過 (A1–A4)
+- [ ] P0/P1 語意與診斷驗證通過 (A1–A6)
 - [ ] 動畫一致性通過 (B1–B5)
 - [ ] 空狀態通過 (C1–C6)
-- [ ] 互動品質通過 (F1–F5)
+- [ ] 互動品質通過 (F1–F13)
+- [ ] 窄容器驗證通過 (G1–G3)
+- [ ] Cross-page audit 完成 (H1–H2)

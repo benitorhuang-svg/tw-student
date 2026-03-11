@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useChartAnimation } from '../hooks/useChartAnimation'
 import { formatStudents } from '../lib/analytics'
 
@@ -26,6 +27,7 @@ function ButterflyChart({
   onSelectItem,
 }: ButterflyChartProps) {
   const { ref, isVisible } = useChartAnimation()
+  const [detailItemId, setDetailItemId] = useState<string | null>(null)
 
   if (items.length === 0) {
     return (
@@ -60,6 +62,7 @@ function ButterflyChart({
       <div className="butterfly-chart__rows" role="list" aria-label={title}>
         {items.map((item) => {
           const isActive = item.id === activeItemId
+          const isDetailed = detailItemId === item.id || isActive
           const leftWidth = `${(item.leftValue / maxSide) * 100}%`
           const rightWidth = `${(item.rightValue / maxSide) * 100}%`
 
@@ -69,6 +72,10 @@ function ButterflyChart({
               type="button"
               className={isActive ? 'butterfly-chart__row butterfly-chart__row--active' : 'butterfly-chart__row'}
               onClick={() => onSelectItem?.(item.id)}
+              onMouseEnter={() => setDetailItemId(item.id)}
+              onMouseLeave={() => setDetailItemId(null)}
+              onFocus={() => setDetailItemId(item.id)}
+              onBlur={() => setDetailItemId(null)}
               aria-label={`${item.label}，${item.leftLabel} ${formatStudents(item.leftValue)} 人，${item.rightLabel} ${formatStudents(item.rightValue)} 人`}
             >
               <div className="butterfly-chart__track butterfly-chart__track--left">
@@ -89,6 +96,19 @@ function ButterflyChart({
                 <div className="butterfly-chart__fill butterfly-chart__fill--right" style={{ width: isVisible ? rightWidth : '0%' }} />
                 <span className="butterfly-chart__value butterfly-chart__value--right">{formatStudents(item.rightValue)}</span>
               </div>
+              {isDetailed ? (
+                <div className="chart-tooltip chart-tooltip--visible butterfly-chart__tooltip" role="note" aria-live="polite">
+                  <div className="chart-tooltip__title">{item.label}</div>
+                  <div className="chart-tooltip__row">
+                    <span>{item.leftLabel}</span>
+                    <span className="chart-tooltip__value">{formatStudents(item.leftValue)} 人</span>
+                  </div>
+                  <div className="chart-tooltip__row">
+                    <span>{item.rightLabel}</span>
+                    <span className="chart-tooltip__value">{formatStudents(item.rightValue)} 人</span>
+                  </div>
+                </div>
+              ) : null}
             </button>
           )
         })}

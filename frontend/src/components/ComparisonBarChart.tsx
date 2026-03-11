@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useChartAnimation } from '../hooks/useChartAnimation'
 import { formatStudents } from '../lib/analytics'
 
@@ -26,6 +27,7 @@ type ComparisonBarChartProps = {
 function ComparisonBarChart({ items, activeItemId = null, onHoverItem, onSelectItem }: ComparisonBarChartProps) {
   const max = Math.max(...items.map((i) => i.value), 1)
   const { ref, isVisible } = useChartAnimation()
+  const [detailItemId, setDetailItemId] = useState<string | null>(null)
 
   if (items.length === 0) {
     return (
@@ -36,23 +38,28 @@ function ComparisonBarChart({ items, activeItemId = null, onHoverItem, onSelectI
   }
 
   return (
-    <div ref={ref as React.RefObject<HTMLDivElement>} className={isVisible ? 'comparison-bar-chart chart-enter chart-enter--visible' : 'comparison-bar-chart chart-enter'}>
+    <div ref={ref as React.RefObject<HTMLDivElement>} className={isVisible ? 'comparison-bar-chart chart-enter chart-enter--visible' : 'comparison-bar-chart chart-enter'} role="list" aria-label="比較柱狀圖">
       {items.map((item, idx) => {
         const targetWidth = Math.max((item.value / max) * 100, 2)
         const isActive = item.id === activeItemId
+        const isDetailed = item.id === detailItemId || isActive
         const color = isActive ? 'var(--palette-brass, #b88746)' : BAR_COLORS[idx % BAR_COLORS.length]
 
         return (
           <button
             key={item.id}
             type="button"
+            role="listitem"
             className={isActive ? 'comparison-bar-chart__row comparison-bar-chart__row--active' : 'comparison-bar-chart__row'}
-            onMouseEnter={() => onHoverItem?.(item.id)}
-            onMouseLeave={() => onHoverItem?.(null)}
+            aria-label={`${item.label}，${formatStudents(item.value)} 人`}
+            onMouseEnter={() => { onHoverItem?.(item.id); setDetailItemId(item.id) }}
+            onMouseLeave={() => { onHoverItem?.(null); setDetailItemId(null) }}
+            onFocus={() => { onHoverItem?.(item.id); setDetailItemId(item.id) }}
+            onBlur={() => { onHoverItem?.(null); setDetailItemId(null) }}
             onClick={() => onSelectItem?.(item.id)}
             style={{
               borderColor: isActive ? color : undefined,
-              background: isActive ? `linear-gradient(135deg, rgba(255,255,255,0.9), rgba(243,239,232,1))` : undefined,
+              background: isActive ? 'var(--chart-bg-active)' : undefined,
             }}
           >
             <span className="comparison-bar-chart__label" title={item.label} style={{ color: isActive ? color : undefined }}>{item.label}</span>
@@ -62,12 +69,20 @@ function ComparisonBarChart({ items, activeItemId = null, onHoverItem, onSelectI
                 style={{
                   width: isVisible ? `${targetWidth}%` : '0%',
                   background: color,
-                  transition: 'width 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), background-color 0.3s ease',
                   opacity: isActive || activeItemId === null ? 1 : 0.4
                 }}
               />
             </div>
             <span className="comparison-bar-chart__value" style={{ color: isActive ? color : undefined }}>{formatStudents(item.value)}</span>
+            {isDetailed ? (
+              <div className="chart-tooltip chart-tooltip--visible comparison-bar-chart__tooltip" role="note" aria-live="polite">
+                <div className="chart-tooltip__title">{item.label}</div>
+                <div className="chart-tooltip__row">
+                  <span>人數</span>
+                  <span className="chart-tooltip__value">{formatStudents(item.value)} 人</span>
+                </div>
+              </div>
+            ) : null}
           </button>
         )
       })}

@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { formatPercent, formatStudents } from '../lib/analytics'
 import { useChartAnimation } from '../hooks/useChartAnimation'
 
@@ -18,6 +19,7 @@ type StackedShareBarChartProps = {
 
 function StackedShareBarChart({ title, subtitle, items, activeItemId = null, onSelectItem }: StackedShareBarChartProps) {
   const { ref, isVisible: mounted } = useChartAnimation()
+  const [detailItemId, setDetailItemId] = useState<string | null>(null)
 
   if (items.length === 0) {
     return (
@@ -41,12 +43,18 @@ function StackedShareBarChart({ title, subtitle, items, activeItemId = null, onS
       <div className="stacked-share-chart__rows">
         {items.map((item) => {
           const isActive = item.id === activeItemId
+          const isDetailed = detailItemId === item.id || isActive
           return (
             <button
               key={item.id}
               type="button"
               className={isActive ? 'stacked-share-chart__row stacked-share-chart__row--active' : 'stacked-share-chart__row'}
               onClick={() => onSelectItem?.(item.id)}
+              onMouseEnter={() => setDetailItemId(item.id)}
+              onMouseLeave={() => setDetailItemId(null)}
+              onFocus={() => setDetailItemId(item.id)}
+              onBlur={() => setDetailItemId(null)}
+              aria-label={`${item.label}，總數 ${formatStudents(item.total)} 人`}
             >
               <div className="stacked-share-chart__label-group">
                 <span className="stacked-share-chart__label">{item.label}</span>
@@ -63,7 +71,7 @@ function StackedShareBarChart({ title, subtitle, items, activeItemId = null, onS
                       transition: 'width 0.8s cubic-bezier(0.2, 0.8, 0.2, 1)',
                       opacity: isActive || activeItemId === null ? 1 : 0.4
                     }}
-                    title={`${segment.label} ${formatPercent(segment.share)} / ${formatStudents(segment.value)} 人`}
+                    aria-hidden="true"
                   />
                 ))}
               </div>
@@ -72,6 +80,18 @@ function StackedShareBarChart({ title, subtitle, items, activeItemId = null, onS
                   <span key={`${item.id}-${segment.label}-value`}>{segment.label} {formatPercent(segment.share)}</span>
                 ))}
               </div>
+              {isDetailed ? (
+                <div className="stacked-share-chart__tooltip chart-tooltip chart-tooltip--visible" role="note" aria-live="polite">
+                  <div className="chart-tooltip__title">{item.label}</div>
+                  {item.segments.map((segment) => (
+                    <div key={`${item.id}-${segment.label}-tooltip`} className="chart-tooltip__row">
+                      <span className="chart-tooltip__swatch" style={{ background: segment.color }} />
+                      <span>{segment.label}</span>
+                      <span className="chart-tooltip__value">{formatPercent(segment.share)} / {formatStudents(segment.value)} 人</span>
+                    </div>
+                  ))}
+                </div>
+              ) : null}
             </button>
           )
         })}

@@ -44,13 +44,13 @@ function ScatterPlotChart({
 }: ScatterPlotChartProps) {
   const { ref: animRef, isVisible } = useChartAnimation()
   const { containerRef, width, height } = useResponsiveSvg(620, 240, { minWidth: 320 })
-  const padding = { top: 20, right: 50, bottom: 40, left: 100 }
+  const padding = { top: 20, right: width < 400 ? 24 : 50, bottom: 40, left: width < 400 ? 56 : 100 }
   
   if (points.length === 0) {
     return (
-      <section className="scatter-chart" style={{ padding: '12px 14px' }}>
-        <div className="panel-heading" style={{ marginBottom: '10px', paddingLeft: '4px' }}>
-          <h3 style={{ margin: 0 }}>{title}</h3>
+      <section className="scatter-chart scatter-chart--framed">
+        <div className="panel-heading scatter-chart__heading">
+          <h3 className="scatter-chart__title">{title}</h3>
         </div>
         <div className="chart-empty-state">尚無資料</div>
       </section>
@@ -84,13 +84,13 @@ function ScatterPlotChart({
   const midY = toY(0)
 
   return (
-    <section className="scatter-chart" ref={animRef as React.RefObject<HTMLElement>} style={{ padding: '12px 14px' }}>
-      <div className="panel-heading" style={{ marginBottom: '10px', paddingLeft: '4px', alignItems: 'flex-start' }}>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-          <h3 style={{ margin: 0 }}>{title}</h3>
+    <section className="scatter-chart scatter-chart--framed" ref={animRef as React.RefObject<HTMLElement>}>
+      <div className="panel-heading scatter-chart__heading scatter-chart__heading--split">
+        <div className="scatter-chart__heading-copy">
+          <h3 className="scatter-chart__title">{title}</h3>
           {children}
         </div>
-        <p className="panel-heading__meta" style={{ margin: 0, opacity: 0.7, lineHeight: 1.4, maxWidth: '400px' }}>
+        <p className="panel-heading__meta scatter-chart__meta">
           {subtitle}
         </p>
       </div>
@@ -98,20 +98,20 @@ function ScatterPlotChart({
   <div className="chart-svg-frame" ref={containerRef}>
   <svg className={`scatter-chart__svg${isVisible ? ' chart-enter chart-enter--visible' : ' chart-enter'}`} viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="xMidYMid meet" role="img" aria-label={`${title} 散佈圖`}>
         {/* 四象限淡色背景 */}
-        <rect x={padding.left} y={padding.top} width={midX - padding.left} height={midY - padding.top} fill="var(--chart-quadrant-tl)" rx="2" />
-        <rect x={midX} y={padding.top} width={width - padding.right - midX} height={midY - padding.top} fill="var(--chart-quadrant-tr)" rx="2" />
-        <rect x={padding.left} y={midY} width={midX - padding.left} height={height - padding.bottom - midY} fill="var(--chart-quadrant-bl)" rx="2" />
-        <rect x={midX} y={midY} width={width - padding.right - midX} height={height - padding.bottom - midY} fill="var(--chart-quadrant-br)" rx="2" />
+        <rect className="scatter-chart__quadrant scatter-chart__quadrant--tl" x={padding.left} y={padding.top} width={midX - padding.left} height={midY - padding.top} rx="2" />
+        <rect className="scatter-chart__quadrant scatter-chart__quadrant--tr" x={midX} y={padding.top} width={width - padding.right - midX} height={midY - padding.top} rx="2" />
+        <rect className="scatter-chart__quadrant scatter-chart__quadrant--bl" x={padding.left} y={midY} width={midX - padding.left} height={height - padding.bottom - midY} rx="2" />
+        <rect className="scatter-chart__quadrant scatter-chart__quadrant--br" x={midX} y={midY} width={width - padding.right - midX} height={height - padding.bottom - midY} rx="2" />
 
         {/* 四象限格線 */}
         <line className="scatter-chart__zero" x1={midX} x2={midX} y1={padding.top} y2={height - padding.bottom} />
         <line className="scatter-chart__zero" x1={padding.left} x2={width - padding.right} y1={midY} y2={midY} />
 
         {/* 十字線數值標註 */}
-        <text className="scatter-chart__axis" x={midX} y={padding.top - 6} textAnchor="middle" fill="var(--palette-cyan)" fontSize="10" fontWeight="bold">
+        <text className="scatter-chart__axis scatter-chart__axis--highlight-cyan" x={midX} y={padding.top - 6} textAnchor="middle">
           平均: {formatX(avgX)}
         </text>
-        <text className="scatter-chart__axis" x={width - padding.right + 5} y={midY + 4} fill="var(--palette-brass)" fontSize="10" fontWeight="bold">
+        <text className="scatter-chart__axis scatter-chart__axis--highlight-brass" x={width - padding.right + 5} y={midY + 4}>
           {formatY(0)}
         </text>
 
@@ -174,7 +174,7 @@ function ScatterPlotChart({
                 onBlur={() => onHoverPoint?.(null)}
               />
               {active && (
-                <g style={{ pointerEvents: 'none' }}>
+                <g className="chart-svg-tooltip__group">
                   <rect className="chart-svg-tooltip__surface" x={toX(p.x) - 40} y={toY(p.y) - r - 25} width="80" height="20" rx="6" />
                   <text className="chart-svg-tooltip__title" x={toX(p.x)} y={toY(p.y) - r - 12} textAnchor="middle">{p.label}</text>
                 </g>
@@ -183,8 +183,8 @@ function ScatterPlotChart({
           )
         })}
 
-        <text className="scatter-chart__axis-title" x={width / 2} y={height - 5} textAnchor="middle" fontSize="11">{xLabel}</text>
-        <text className="scatter-chart__axis-title" transform={`translate(15 ${height / 2}) rotate(-90)`} textAnchor="middle" fontSize="11">{yLabel}</text>
+        <text className="scatter-chart__axis-title" x={width / 2} y={height - 5} textAnchor="middle">{xLabel}</text>
+        <text className="scatter-chart__axis-title" transform={`translate(15 ${height / 2}) rotate(-90)`} textAnchor="middle">{yLabel}</text>
 
       </svg>
       </div>

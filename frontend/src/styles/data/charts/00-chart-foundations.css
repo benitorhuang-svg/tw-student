@@ -45,6 +45,41 @@
   --chart-bar-primary: #f0abfc;
   --chart-bar-active: #93c5fd;
   --chart-rate-stroke: #fb7185;
+  --chart-trend-up: #10b981;
+  --chart-trend-down: #f97316;
+
+  /* ─── SVG Typography Scale ─── */
+  --chart-text-2xs: 7px;
+  --chart-text-xs: 8px;
+  --chart-text-sm: 9px;
+  --chart-text-base: 10px;
+  --chart-text-md: 11px;
+
+  /* ─── Line / Stroke Weights ─── */
+  --chart-line-weight-thin: 1.5;
+  --chart-line-weight-primary: 2;
+  --chart-line-weight-bold: 3.5;
+
+  /* ─── Interactive State Opacity ─── */
+  --chart-opacity-muted: 0.4;
+  --chart-opacity-rest: 0.8;
+
+  /* ─── Shared Transition ─── */
+  --chart-transition-layout: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  --chart-transition-fast: all 0.2s ease;
+
+  /* ─── Box Plot ─── */
+  --chart-box-stroke: var(--palette-cyan, #2a6f91);
+  --chart-box-stroke-active: var(--palette-brass, #b88746);
+  --chart-box-fill: rgba(42, 111, 145, 0.18);
+  --chart-box-fill-active: rgba(184, 135, 70, 0.25);
+
+  /* ─── Trend Gradient ─── */
+  --chart-trend-gradient-start: rgba(42, 111, 145, 0.4);
+  --chart-trend-gradient-end: rgba(42, 111, 145, 0);
+
+  /* ─── Active row / bar bg ─── */
+  --chart-bg-active: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(243, 239, 232, 1));
 }
 
 /* ─── Glassmorphism Tooltip ─── */
@@ -151,16 +186,31 @@
   font-weight: 700;
 }
 
+.chart-svg-tooltip__group {
+  pointer-events: none;
+}
+
 /* ─── PieChart Center & Slice ─── */
 
 .pie-chart__slice {
   transition: opacity 0.3s ease, stroke-width 0.2s ease;
   cursor: pointer;
   transform-origin: center;
+  stroke: none;
+  stroke-width: 0;
 }
 
 .pie-chart__slice:hover {
   transform: scale(1.04);
+}
+
+.pie-chart__slice--active {
+  stroke: #fff;
+  stroke-width: 2;
+}
+
+.pie-chart__slice--muted {
+  opacity: var(--chart-opacity-muted);
 }
 
 .pie-chart__center {

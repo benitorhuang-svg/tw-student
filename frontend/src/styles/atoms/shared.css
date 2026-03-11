@@ -437,6 +437,14 @@
   text-align: right
 }
 
+.eyebrow--cyan {
+  color: var(--palette-cyan)
+}
+
+.eyebrow--brass {
+  color: var(--palette-brass)
+}
+
 .atlas-tab-panel {
   display: grid;
   gap: 12px

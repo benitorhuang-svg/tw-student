@@ -70,7 +70,7 @@ function BoxPlotChart({ title, subtitle, groups, activeGroupId = null }: BoxPlot
           const value = Math.round(maxValue * (1 - ratio))
           return (
             <g key={ratio}>
-              <line className="box-plot-chart__grid" x1={padding.left} x2={width - padding.right} y1={y} y2={y} strokeDasharray="4 4" stroke="rgba(255,255,255,0.05)" />
+              <line className="box-plot-chart__grid" x1={padding.left} x2={width - padding.right} y1={y} y2={y} />
               <text className="box-plot-chart__axis" x={padding.left - 8} y={y + 4} textAnchor="end">{formatStudents(value)}</text>
             </g>
           )
@@ -79,9 +79,6 @@ function BoxPlotChart({ title, subtitle, groups, activeGroupId = null }: BoxPlot
         {preparedGroups.map((group, index) => {
           const centerX = padding.left + stepX * index + stepX / 2
           const isActive = group.id === activeGroupId || group.id === hoveredGroupId
-          const opacity = isActive ? 1 : hoveredGroupId || activeGroupId ? 0.4 : 0.8
-          const strokeColor = isActive ? 'var(--palette-brass, #b88746)' : 'var(--palette-cyan, #2a6f91)'
-          const fillColor = isActive ? 'rgba(184, 135, 70, 0.25)' : 'rgba(42, 111, 145, 0.18)'
 
           return (
             <g
@@ -93,46 +90,38 @@ function BoxPlotChart({ title, subtitle, groups, activeGroupId = null }: BoxPlot
               aria-label={`${group.label} 中位數 ${formatStudents(Math.round(group.median))} 人`}
               onFocus={() => setHoveredGroupId(group.id)}
               onBlur={() => setHoveredGroupId(null)}
-              style={{ opacity, transition: 'opacity 0.2s', cursor: 'pointer' }}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setHoveredGroupId(group.id) } }}
+              className={`box-plot-chart__group${isActive ? ' box-plot-chart__group--active' : ''}${!isActive && (hoveredGroupId || activeGroupId) ? ' box-plot-chart__group--muted' : ''}`}
             >
               <line className="box-plot-chart__whisker"
                 x1={centerX} x2={centerX}
                 y1={isVisible ? toY(group.min) : bottomY} y2={isVisible ? toY(group.max) : bottomY}
-                stroke={strokeColor} style={{ transition: 'all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1)' }}
               />
               <line className="box-plot-chart__cap"
                 x1={centerX - boxWidth * 0.3} x2={centerX + boxWidth * 0.3}
                 y1={isVisible ? toY(group.min) : bottomY} y2={isVisible ? toY(group.min) : bottomY}
-                stroke={strokeColor} style={{ transition: 'all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1)' }}
               />
               <line className="box-plot-chart__cap"
                 x1={centerX - boxWidth * 0.3} x2={centerX + boxWidth * 0.3}
                 y1={isVisible ? toY(group.max) : bottomY} y2={isVisible ? toY(group.max) : bottomY}
-                stroke={strokeColor} style={{ transition: 'all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1)' }}
               />
               <rect className="box-plot-chart__box"
                 x={centerX - boxWidth / 2} y={isVisible ? toY(group.q3) : bottomY}
                 width={boxWidth} height={isVisible ? Math.max(toY(group.q1) - toY(group.q3), 4) : 0} rx={4}
-                fill={fillColor} stroke={strokeColor} style={{ transition: 'all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1)' }}
               />
               <line className="box-plot-chart__median"
                 x1={centerX - boxWidth / 2} x2={centerX + boxWidth / 2}
                 y1={isVisible ? toY(group.median) : bottomY} y2={isVisible ? toY(group.median) : bottomY}
-                stroke={strokeColor} style={{ transition: 'all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1)' }}
               />
               {/* Median value label */}
               <text
-                className="box-plot-chart__median-label"
+                className={`box-plot-chart__median-label${isActive ? ' box-plot-chart__median-label--visible' : ''}`}
                 x={centerX + boxWidth / 2 + 6}
                 y={isVisible ? toY(group.median) + 3 : bottomY}
-                fill={strokeColor}
-                fontSize="9"
-                fontWeight="700"
-                style={{ transition: 'all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1)', opacity: isActive ? 1 : 0 }}
               >
                 {formatStudents(Math.round(group.median))}
               </text>
-              <text className="box-plot-chart__label" x={centerX} y={height - 12} textAnchor="middle" fill={isActive ? '#fff' : undefined} style={{ transition: 'fill 0.2s' }}>
+              <text className="box-plot-chart__label" x={centerX} y={height - 12} textAnchor="middle">
                 {group.label}
               </text>
             </g>
@@ -143,7 +132,7 @@ function BoxPlotChart({ title, subtitle, groups, activeGroupId = null }: BoxPlot
 
       <div className="box-plot-chart__legend">
         {preparedGroups.map((group) => (
-          <span key={group.id} style={{ opacity: hoveredGroupId === null || hoveredGroupId === group.id ? 1 : 0.4, transition: 'opacity 0.2s' }}>{group.label} 中位數 {formatStudents(Math.round(group.median))} 人</span>
+          <span key={group.id} className={hoveredGroupId !== null && hoveredGroupId !== group.id ? 'box-plot-chart__legend-item box-plot-chart__legend-item--muted' : 'box-plot-chart__legend-item'}>{group.label} 中位數 {formatStudents(Math.round(group.median))} 人</span>
         ))}
       </div>
     </section>
