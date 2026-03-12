@@ -5,6 +5,7 @@ import {
   REGION_BY_COUNTY,
   SUMMARY_EDUCATION_LEVELS,
   SUMMARY_MANAGEMENT_TYPES,
+  fetchArrayBuffer,
   fetchJson,
   fetchText,
   normalizeCountyName,
@@ -12,6 +13,7 @@ import {
   normalizeText,
   normalizeTownName,
   parseCsv,
+  parseOfficialWorkbook,
   shortCountyLabel,
   summaryBucketKey,
   toCountyBucketFile,
@@ -27,6 +29,14 @@ const MANUAL_COORDINATE_OVERRIDES = {
     note: '正式統計資料存在但 GIS 點位缺失，座標已依公開校址人工覆核校正。',
     matchType: 'manual-reviewed-address',
     matchScore: 100,
+  },
+  '013501': {
+    longitude: 121.360219,
+    latitude: 25.07294,
+    resolution: '人工校正',
+    note: '正式統計資料存在但 GIS 點位缺失，座標已依學校官網公開校址人工覆核校正。',
+    matchType: 'manual-reviewed-address',
+    matchScore: 98.9,
   },
   '031301': {
     longitude: 121.244791,
@@ -59,6 +69,14 @@ const MANUAL_COORDINATE_OVERRIDES = {
     note: '正式統計資料存在但 GIS 點位缺失，座標已依公開校名 POI 人工覆核校正。',
     matchType: 'manual-reviewed-poi',
     matchScore: 100,
+  },
+  '113502': {
+    longitude: 120.308156,
+    latitude: 23.116287,
+    resolution: '人工校正',
+    note: '正式統計資料存在但 GIS 點位缺失，座標已依學校官網公開校址人工覆核校正。',
+    matchType: 'manual-reviewed-address',
+    matchScore: 98.24,
   },
   193667: {
     longitude: 120.691423,
@@ -226,13 +244,48 @@ async function fetchYearTextWithFallback(urlBuilder, requestedYear) {
       if (sourceYear !== requestedYear) {
         console.warn(`Fallback to ${sourceYear} for ${requestedYear}: ${urlBuilder(sourceYear)}`)
       }
-      return text
+      return { text, sourceYear }
     } catch (error) {
       lastError = error
     }
   }
 
   throw lastError ?? new Error(`Unable to fetch source for ${requestedYear}`)
+}
+
+async function fetchDetailRowsWithFallback(fileName, requestedYear) {
+  const parserKey = fileName.replace(/\.csv$/i, '')
+  let lastError = null
+
+  for (let sourceYear = requestedYear; sourceYear >= ACADEMIC_YEARS[0]; sourceYear -= 1) {
+    const candidates = [
+      {
+        fileName,
+        read: () => fetchText(`https://stats.moe.gov.tw/files/detail/${sourceYear}/${sourceYear}_${fileName}`),
+        parse: (payload) => parseCsv(payload),
+      },
+      {
+        fileName: `${parserKey}.xlsx`,
+        read: () => fetchArrayBuffer(`https://stats.moe.gov.tw/files/detail/${sourceYear}/${sourceYear}_${parserKey}.xlsx`),
+        parse: (payload) => parseOfficialWorkbook(payload, parserKey),
+      },
+    ]
+
+    for (const candidate of candidates) {
+      try {
+        const payload = await candidate.read()
+        return {
+          rows: candidate.parse(payload),
+          sourceYear,
+          sourceFile: candidate.fileName,
+        }
+      } catch (error) {
+        lastError = error
+      }
+    }
+  }
+
+  throw lastError ?? new Error(`Unable to fetch detail source for ${requestedYear}: ${fileName}`)
 }
 
 function getMissingYears(yearlyStudents) {
@@ -297,6 +350,48 @@ function buildScopeNotes(schools, scopeName) {
   }
 
   return dataNotes
+}
+
+function buildDatasetNotes(fallbackEntries) {
+  if (fallbackEntries.length === 0) {
+    return []
+  }
+
+  const byYear = new Map()
+  fallbackEntries.forEach(({ requestedYear, level, fileName, sourceYear }) => {
+    if (!byYear.has(requestedYear)) {
+      byYear.set(requestedYear, new Map())
+    }
+
+    const yearEntries = byYear.get(requestedYear)
+    if (!yearEntries.has(level)) {
+      yearEntries.set(level, { sourceYears: new Set(), files: new Set() })
+    }
+
+    const levelEntry = yearEntries.get(level)
+    levelEntry.sourceYears.add(sourceYear)
+    levelEntry.files.add(fileName)
+  })
+
+  return [...byYear.entries()]
+    .sort((left, right) => right[0] - left[0])
+    .map(([year, levelEntries]) => {
+      const levelSummary = [...levelEntries.entries()]
+        .sort(([leftLevel], [rightLevel]) => SUMMARY_EDUCATION_LEVELS.indexOf(leftLevel) - SUMMARY_EDUCATION_LEVELS.indexOf(rightLevel))
+        .map(([level, entry]) => {
+          const files = [...entry.files].sort().join('、')
+          const sourceYears = [...entry.sourceYears].sort((left, right) => right - left).join('、')
+          return `${level}（${files} 沿用 ${sourceYears} 學年）`
+        })
+        .join('、')
+
+      return {
+        type: '其他',
+        message: `${year} 學年度部分正式靜態檔尚未發布：${levelSummary}。因此這些學制目前會沿用前一年已發布的正式數列，畫面上的 ${year} 學年總數可能與前一年相同。`,
+        severity: 'warning',
+        years: [year],
+      }
+    })
 }
 
 function getStudentsForYear(school, year) {
@@ -436,7 +531,8 @@ async function buildDirectoryLookup() {
   const lookup = new Map()
   for (const config of Object.values(LEVEL_CONFIG)) {
     for (const fileName of config.directoryFiles) {
-      const rows = parseCsv(await fetchYearTextWithFallback((sourceYear) => `https://stats.moe.gov.tw/files/school/${sourceYear}/${fileName}`, CURRENT_YEAR))
+      const { text } = await fetchYearTextWithFallback((sourceYear) => `https://stats.moe.gov.tw/files/school/${sourceYear}/${fileName}`, CURRENT_YEAR)
+      const rows = parseCsv(text)
       rows.forEach((row) => {
         lookup.set(normalizeSchoolCode(row['代碼']), row)
       })
@@ -449,6 +545,15 @@ async function buildTrendLookup() {
   // Key by code:level so 完全中學 (schools spanning multiple levels)
   // keep each level's students separate instead of accumulating them.
   const trendsByCode = new Map()
+  const fallbackEntries = []
+
+  const recordFallback = (requestedYear, level, fileName, sourceYear) => {
+    if (requestedYear === sourceYear) {
+      return
+    }
+
+    fallbackEntries.push({ requestedYear, level, fileName, sourceYear })
+  }
 
   const addTrendValue = (code, year, level, students, scope = {}) => {
     if (!code || students <= 0) return
@@ -484,12 +589,8 @@ async function buildTrendLookup() {
   for (const year of ACADEMIC_YEARS) {
     for (const [level, config] of Object.entries(LEVEL_CONFIG)) {
       if ('detailFile' in config) {
-        const rows = parseCsv(
-          await fetchYearTextWithFallback(
-            (sourceYear) => `https://stats.moe.gov.tw/files/detail/${sourceYear}/${sourceYear}_${config.detailFile}`,
-            year,
-          ),
-        )
+        const { rows, sourceYear, sourceFile } = await fetchDetailRowsWithFallback(config.detailFile, year)
+        recordFallback(year, level, sourceFile, sourceYear)
         rows.forEach((row) => addTrendValue(normalizeSchoolCode(row['學校代碼']), year, level, config.sumRow(row), {
           countyName: row['縣市名稱'],
           townName: row['鄉鎮市區'],
@@ -500,12 +601,8 @@ async function buildTrendLookup() {
       }
 
       for (const detailFile of config.detailFiles) {
-        const rows = parseCsv(
-          await fetchYearTextWithFallback(
-            (sourceYear) => `https://stats.moe.gov.tw/files/detail/${sourceYear}/${sourceYear}_${detailFile.name}`,
-            year,
-          ),
-        )
+        const { rows, sourceYear, sourceFile } = await fetchDetailRowsWithFallback(detailFile.name, year)
+        recordFallback(year, level, sourceFile, sourceYear)
         rows.forEach((row) => addTrendValue(normalizeSchoolCode(row['學校代碼']), year, level, detailFile.sumRow(row), {
           countyName: row['縣市名稱'],
           townName: row['鄉鎮市區'],
@@ -516,15 +613,17 @@ async function buildTrendLookup() {
     }
   }
 
-  return trendsByCode
+  return { trendsByCode, fallbackEntries }
 }
 
 export async function buildOfficialDataset(boundaries) {
-  const [points, directoryLookup, trendLookup] = await Promise.all([fetchAllSchoolPoints(), buildDirectoryLookup(), buildTrendLookup()])
+  const [points, directoryLookup, trendLookupResult] = await Promise.all([fetchAllSchoolPoints(), buildDirectoryLookup(), buildTrendLookup()])
+  const { trendsByCode: trendLookup, fallbackEntries } = trendLookupResult
   const countyMap = new Map()
   const processedKeys = new Set()
   const coordinatesByCode = new Map()
   const locationByCode = new Map()
+  const dataNotes = buildDatasetNotes(fallbackEntries)
   const countyBoundaryLookup = new Map(Object.values(boundaries.countyCoordinateLookup).map((entry) => [entry.countyName, entry]))
   const townshipBoundaryLookup = new Map(Object.values(boundaries.townshipCoordinateLookup).map((entry) => [entry.legacyTownId, entry]))
 
@@ -945,6 +1044,7 @@ export async function buildOfficialDataset(boundaries) {
       years: ACADEMIC_YEARS,
       schoolAtlasFile: 'school-atlas/index.json',
       sources,
+      dataNotes,
       schoolCodeIndex,
       missingCoordinates,
       counties: counties.map((county) => ({

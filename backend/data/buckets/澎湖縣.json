@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-10T16:03:19.328Z",
+  "generatedAt": "2026-03-11T23:49:21.162Z",
   "county": {
     "id": "澎湖縣",
     "countyCode": "10016",
@@ -15,7 +15,7 @@
         "geohash": "wsjn1",
         "precision": 5,
         "count": 10,
-        "totalStudents": 5902,
+        "totalStudents": 5753,
         "latitude": 23.571757,
         "longitude": 119.593566,
         "bounds": {
@@ -29,21 +29,21 @@
             "id": "0042",
             "name": "國立澎湖科技大學",
             "townshipName": "馬公市",
-            "students": 2388,
+            "students": 2202,
             "status": "正常"
           },
           {
             "id": "160302",
             "name": "國立馬公高中",
             "townshipName": "馬公市",
-            "students": 1002,
+            "students": 958,
             "status": "正常"
           },
           {
             "id": "164501",
             "name": "縣立馬公國中",
             "townshipName": "馬公市",
-            "students": 887,
+            "students": 924,
             "status": "正常"
           },
           {
@@ -60,7 +60,7 @@
         "geohash": "wsjn0",
         "precision": 5,
         "count": 6,
-        "totalStudents": 1835,
+        "totalStudents": 1814,
         "latitude": 23.572437,
         "longitude": 119.568973,
         "bounds": {
@@ -74,7 +74,7 @@
             "id": "160401",
             "name": "國立澎湖海事水產",
             "townshipName": "馬公市",
-            "students": 556,
+            "students": 525,
             "status": "正常"
           },
           {
@@ -92,10 +92,10 @@
             "status": "正常"
           },
           {
-            "id": "164602",
-            "name": "縣立中正國小",
+            "id": "164513",
+            "name": "縣立文光國中",
             "townshipName": "馬公市",
-            "students": 228,
+            "students": 237,
             "status": "正常"
           }
         ]
@@ -105,7 +105,7 @@
         "geohash": "wsjn4",
         "precision": 5,
         "count": 5,
-        "totalStudents": 294,
+        "totalStudents": 282,
         "latitude": 23.578583,
         "longitude": 119.643196,
         "bounds": {
@@ -116,17 +116,17 @@
         },
         "topSchools": [
           {
-            "id": "164504",
-            "name": "縣立湖西國中",
-            "townshipName": "湖西鄉",
-            "students": 84,
-            "status": "正常"
-          },
-          {
             "id": "164615",
             "name": "縣立西溪國小",
             "townshipName": "湖西鄉",
             "students": 76,
+            "status": "正常"
+          },
+          {
+            "id": "164504",
+            "name": "縣立湖西國中",
+            "townshipName": "湖西鄉",
+            "students": 72,
             "status": "正常"
           },
           {
@@ -150,7 +150,7 @@
         "geohash": "wshyr",
         "precision": 5,
         "count": 4,
-        "totalStudents": 127,
+        "totalStudents": 123,
         "latitude": 23.612824,
         "longitude": 119.513013,
         "bounds": {
@@ -164,7 +164,7 @@
             "id": "164509",
             "name": "縣立西嶼國中",
             "townshipName": "西嶼鄉",
-            "students": 62,
+            "students": 58,
             "status": "正常"
           },
           {
@@ -195,7 +195,7 @@
         "geohash": "wsjjc",
         "precision": 5,
         "count": 4,
-        "totalStudents": 222,
+        "totalStudents": 225,
         "latitude": 23.531674,
         "longitude": 119.598101,
         "bounds": {
@@ -220,17 +220,17 @@
             "status": "正常"
           },
           {
+            "id": "164503",
+            "name": "縣立澎南國中",
+            "townshipName": "馬公市",
+            "students": 40,
+            "status": "正常"
+          },
+          {
             "id": "164608",
             "name": "縣立山水國小",
             "townshipName": "馬公市",
             "students": 38,
-            "status": "正常"
-          },
-          {
-            "id": "164503",
-            "name": "縣立澎南國中",
-            "townshipName": "馬公市",
-            "students": 37,
             "status": "正常"
           }
         ]
@@ -258,6 +258,13 @@
             "status": "正常"
           },
           {
+            "id": "164510",
+            "name": "縣立望安國中",
+            "townshipName": "望安鄉",
+            "students": 9,
+            "status": "正常"
+          },
+          {
             "id": "164639",
             "name": "縣立將軍國小",
             "townshipName": "望安鄉",
@@ -265,17 +272,10 @@
             "status": "正常"
           },
           {
-            "id": "164510",
-            "name": "縣立望安國中",
-            "townshipName": "望安鄉",
-            "students": 8,
-            "status": "正常"
-          },
-          {
             "id": "164511",
             "name": "縣立將澳國中",
             "townshipName": "望安鄉",
-            "students": 4,
+            "students": 3,
             "status": "正常"
           }
         ]
@@ -285,7 +285,7 @@
         "geohash": "wshuj",
         "precision": 5,
         "count": 3,
-        "totalStudents": 78,
+        "totalStudents": 87,
         "latitude": 23.208728,
         "longitude": 119.428927,
         "bounds": {
@@ -303,17 +303,17 @@
             "status": "正常"
           },
           {
+            "id": "164512",
+            "name": "縣立七美國中",
+            "townshipName": "七美鄉",
+            "students": 30,
+            "status": "正常"
+          },
+          {
             "id": "164644",
             "name": "縣立雙湖國小",
             "townshipName": "七美鄉",
             "students": 25,
-            "status": "正常"
-          },
-          {
-            "id": "164512",
-            "name": "縣立七美國中",
-            "townshipName": "七美鄉",
-            "students": 21,
             "status": "正常"
           }
         ]
@@ -323,7 +323,7 @@
         "geohash": "wsjn9",
         "precision": 5,
         "count": 3,
-        "totalStudents": 95,
+        "totalStudents": 101,
         "latitude": 23.659181,
         "longitude": 119.597742,
         "bounds": {
@@ -344,7 +344,7 @@
             "id": "164507",
             "name": "縣立白沙國中",
             "townshipName": "白沙鄉",
-            "students": 35,
+            "students": 41,
             "status": "正常"
           },
           {
@@ -423,7 +423,7 @@
         "geohash": "wsjnd",
         "precision": 5,
         "count": 2,
-        "totalStudents": 32,
+        "totalStudents": 30,
         "latitude": 23.66119,
         "longitude": 119.660233,
         "bounds": {
@@ -444,7 +444,7 @@
             "id": "164514",
             "name": "縣立鳥嶼國中",
             "townshipName": "白沙鄉",
-            "students": 10,
+            "students": 8,
             "status": "正常"
           }
         ]
@@ -655,7 +655,7 @@
         "geohash": "wsjn0g",
         "precision": 6,
         "count": 4,
-        "totalStudents": 1051,
+        "totalStudents": 1061,
         "latitude": 23.574086,
         "longitude": 119.570804,
         "bounds": {
@@ -683,7 +683,7 @@
             "id": "164513",
             "name": "縣立文光國中",
             "townshipName": "馬公市",
-            "students": 227,
+            "students": 237,
             "status": "正常"
           },
           {
@@ -700,7 +700,7 @@
         "geohash": "wshuj8",
         "precision": 6,
         "count": 2,
-        "totalStudents": 53,
+        "totalStudents": 62,
         "latitude": 23.206352,
         "longitude": 119.429035,
         "bounds": {
@@ -721,7 +721,7 @@
             "id": "164512",
             "name": "縣立七美國中",
             "townshipName": "七美鄉",
-            "students": 21,
+            "students": 30,
             "status": "正常"
           }
         ]
@@ -731,7 +731,7 @@
         "geohash": "wsjn9s",
         "precision": 6,
         "count": 2,
-        "totalStudents": 95,
+        "totalStudents": 101,
         "latitude": 23.667061,
         "longitude": 119.597913,
         "bounds": {
@@ -752,7 +752,7 @@
             "id": "164507",
             "name": "縣立白沙國中",
             "townshipName": "白沙鄉",
-            "students": 35,
+            "students": 41,
             "status": "正常"
           }
         ]
@@ -762,7 +762,7 @@
         "geohash": "wsjndg",
         "precision": 6,
         "count": 2,
-        "totalStudents": 32,
+        "totalStudents": 30,
         "latitude": 23.66119,
         "longitude": 119.660233,
         "bounds": {
@@ -783,7 +783,7 @@
             "id": "164514",
             "name": "縣立鳥嶼國中",
             "townshipName": "白沙鄉",
-            "students": 10,
+            "students": 8,
             "status": "正常"
           }
         ]
@@ -793,7 +793,7 @@
         "geohash": "wsjn15",
         "precision": 6,
         "count": 2,
-        "totalStudents": 3390,
+        "totalStudents": 3160,
         "latitude": 23.573978,
         "longitude": 119.5814,
         "bounds": {
@@ -807,14 +807,14 @@
             "id": "0042",
             "name": "國立澎湖科技大學",
             "townshipName": "馬公市",
-            "students": 2388,
+            "students": 2202,
             "status": "正常"
           },
           {
             "id": "160302",
             "name": "國立馬公高中",
             "townshipName": "馬公市",
-            "students": 1002,
+            "students": 958,
             "status": "正常"
           }
         ]
@@ -824,7 +824,7 @@
         "geohash": "wsjn0f",
         "precision": 6,
         "count": 2,
-        "totalStudents": 784,
+        "totalStudents": 753,
         "latitude": 23.569142,
         "longitude": 119.56531,
         "bounds": {
@@ -838,7 +838,7 @@
             "id": "160401",
             "name": "國立澎湖海事水產",
             "townshipName": "馬公市",
-            "students": 556,
+            "students": 525,
             "status": "正常"
           },
           {
@@ -855,7 +855,7 @@
         "geohash": "wsjjc6",
         "precision": 6,
         "count": 2,
-        "totalStudents": 75,
+        "totalStudents": 78,
         "latitude": 23.524732,
         "longitude": 119.591951,
         "bounds": {
@@ -866,17 +866,17 @@
         },
         "topSchools": [
           {
+            "id": "164503",
+            "name": "縣立澎南國中",
+            "townshipName": "馬公市",
+            "students": 40,
+            "status": "正常"
+          },
+          {
             "id": "164608",
             "name": "縣立山水國小",
             "townshipName": "馬公市",
             "students": 38,
-            "status": "正常"
-          },
-          {
-            "id": "164503",
-            "name": "縣立澎南國中",
-            "townshipName": "馬公市",
-            "students": 37,
             "status": "正常"
           }
         ]
@@ -886,7 +886,7 @@
         "geohash": "wshuzv",
         "precision": 6,
         "count": 2,
-        "totalStudents": 13,
+        "totalStudents": 12,
         "latitude": 23.364705,
         "longitude": 119.525396,
         "bounds": {
@@ -907,7 +907,7 @@
             "id": "164511",
             "name": "縣立將澳國中",
             "townshipName": "望安鄉",
-            "students": 4,
+            "students": 3,
             "status": "正常"
           }
         ]
@@ -917,7 +917,7 @@
         "geohash": "wsjn4v",
         "precision": 6,
         "count": 2,
-        "totalStudents": 143,
+        "totalStudents": 131,
         "latitude": 23.584607,
         "longitude": 119.658002,
         "bounds": {
@@ -931,7 +931,7 @@
             "id": "164504",
             "name": "縣立湖西國中",
             "townshipName": "湖西鄉",
-            "students": 84,
+            "students": 72,
             "status": "正常"
           },
           {
@@ -1116,7 +1116,7 @@
         "geohash": "wshyr8",
         "precision": 6,
         "count": 1,
-        "totalStudents": 62,
+        "totalStudents": 58,
         "latitude": 23.600335,
         "longitude": 119.510659,
         "bounds": {
@@ -1130,7 +1130,7 @@
             "id": "164509",
             "name": "縣立西嶼國中",
             "townshipName": "西嶼鄉",
-            "students": 62,
+            "students": 58,
             "status": "正常"
           }
         ]
@@ -1284,7 +1284,7 @@
         "geohash": "wsjn14",
         "precision": 6,
         "count": 1,
-        "totalStudents": 887,
+        "totalStudents": 924,
         "latitude": 23.570163,
         "longitude": 119.580979,
         "bounds": {
@@ -1298,7 +1298,7 @@
             "id": "164501",
             "name": "縣立馬公國中",
             "townshipName": "馬公市",
-            "students": 887,
+            "students": 924,
             "status": "正常"
           }
         ]
@@ -1356,7 +1356,7 @@
         "geohash": "wsjn19",
         "precision": 6,
         "count": 1,
-        "totalStudents": 266,
+        "totalStudents": 318,
         "latitude": 23.560638,
         "longitude": 119.599124,
         "bounds": {
@@ -1370,7 +1370,7 @@
             "id": "164502",
             "name": "縣立中正國中",
             "townshipName": "馬公市",
-            "students": 266,
+            "students": 318,
             "status": "正常"
           }
         ]
@@ -1572,7 +1572,7 @@
         "geohash": "wshuzj",
         "precision": 6,
         "count": 1,
-        "totalStudents": 8,
+        "totalStudents": 9,
         "latitude": 23.362661,
         "longitude": 119.498043,
         "bounds": {
@@ -1586,7 +1586,7 @@
             "id": "164510",
             "name": "縣立望安國中",
             "townshipName": "望安鄉",
-            "students": 8,
+            "students": 9,
             "status": "正常"
           }
         ]
@@ -1740,7 +1740,7 @@
         "geohash": "wsjn1y",
         "precision": 6,
         "count": 1,
-        "totalStudents": 8,
+        "totalStudents": 0,
         "latitude": 23.590626,
         "longitude": 119.611892,
         "bounds": {
@@ -1754,8 +1754,8 @@
             "id": "164505",
             "name": "縣立志清國中",
             "townshipName": "湖西鄉",
-            "students": 8,
-            "status": "正常"
+            "students": 0,
+            "status": "待確認"
           }
         ]
       }
@@ -1786,6 +1786,30 @@
         ]
       },
       {
+        "id": "7-wshuj8m",
+        "geohash": "wshuj8m",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 30,
+        "latitude": 23.205829,
+        "longitude": 119.429466,
+        "bounds": {
+          "minLatitude": 23.205829,
+          "maxLatitude": 23.205829,
+          "minLongitude": 119.429466,
+          "maxLongitude": 119.429466
+        },
+        "topSchools": [
+          {
+            "id": "164512",
+            "name": "縣立七美國中",
+            "townshipName": "七美鄉",
+            "students": 30,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "7-wshuj9v",
         "geohash": "wshuj9v",
         "precision": 7,
@@ -1805,30 +1829,6 @@
             "name": "縣立雙湖國小",
             "townshipName": "七美鄉",
             "students": 25,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wshuj8m",
-        "geohash": "wshuj8m",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 21,
-        "latitude": 23.205829,
-        "longitude": 119.429466,
-        "bounds": {
-          "minLatitude": 23.205829,
-          "maxLatitude": 23.205829,
-          "minLongitude": 119.429466,
-          "maxLongitude": 119.429466
-        },
-        "topSchools": [
-          {
-            "id": "164512",
-            "name": "縣立七美國中",
-            "townshipName": "七美鄉",
-            "students": 21,
             "status": "正常"
           }
         ]
@@ -1882,6 +1882,30 @@
         ]
       },
       {
+        "id": "7-wsjn9s8",
+        "geohash": "wsjn9s8",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 41,
+        "latitude": 23.668302,
+        "longitude": 119.597715,
+        "bounds": {
+          "minLatitude": 23.668302,
+          "maxLatitude": 23.668302,
+          "minLongitude": 119.597715,
+          "maxLongitude": 119.597715
+        },
+        "topSchools": [
+          {
+            "id": "164507",
+            "name": "縣立白沙國中",
+            "townshipName": "白沙鄉",
+            "students": 41,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "7-wsjn3f0",
         "geohash": "wsjn3f0",
         "precision": 7,
@@ -1901,30 +1925,6 @@
             "name": "縣立中屯國小",
             "townshipName": "白沙鄉",
             "students": 39,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsjn9s8",
-        "geohash": "wsjn9s8",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 35,
-        "latitude": 23.668302,
-        "longitude": 119.597715,
-        "bounds": {
-          "minLatitude": 23.668302,
-          "maxLatitude": 23.668302,
-          "minLongitude": 119.597715,
-          "maxLongitude": 119.597715
-        },
-        "topSchools": [
-          {
-            "id": "164507",
-            "name": "縣立白沙國中",
-            "townshipName": "白沙鄉",
-            "students": 35,
             "status": "正常"
           }
         ]
@@ -2030,7 +2030,7 @@
         "geohash": "wsjndgq",
         "precision": 7,
         "count": 1,
-        "totalStudents": 10,
+        "totalStudents": 8,
         "latitude": 23.660456,
         "longitude": 119.66076,
         "bounds": {
@@ -2044,7 +2044,7 @@
             "id": "164514",
             "name": "縣立鳥嶼國中",
             "townshipName": "白沙鄉",
-            "students": 10,
+            "students": 8,
             "status": "正常"
           }
         ]
@@ -2078,7 +2078,7 @@
         "geohash": "wshyr83",
         "precision": 7,
         "count": 1,
-        "totalStudents": 62,
+        "totalStudents": 58,
         "latitude": 23.600335,
         "longitude": 119.510659,
         "bounds": {
@@ -2092,7 +2092,7 @@
             "id": "164509",
             "name": "縣立西嶼國中",
             "townshipName": "西嶼鄉",
-            "students": 62,
+            "students": 58,
             "status": "正常"
           }
         ]
@@ -2246,7 +2246,7 @@
         "geohash": "wsjn15s",
         "precision": 7,
         "count": 1,
-        "totalStudents": 2388,
+        "totalStudents": 2202,
         "latitude": 23.57525,
         "longitude": 119.581921,
         "bounds": {
@@ -2260,7 +2260,7 @@
             "id": "0042",
             "name": "國立澎湖科技大學",
             "townshipName": "馬公市",
-            "students": 2388,
+            "students": 2202,
             "status": "正常"
           }
         ]
@@ -2270,7 +2270,7 @@
         "geohash": "wsjn15k",
         "precision": 7,
         "count": 1,
-        "totalStudents": 1002,
+        "totalStudents": 958,
         "latitude": 23.572706,
         "longitude": 119.580879,
         "bounds": {
@@ -2284,7 +2284,7 @@
             "id": "160302",
             "name": "國立馬公高中",
             "townshipName": "馬公市",
-            "students": 1002,
+            "students": 958,
             "status": "正常"
           }
         ]
@@ -2294,7 +2294,7 @@
         "geohash": "wsjn14u",
         "precision": 7,
         "count": 1,
-        "totalStudents": 887,
+        "totalStudents": 924,
         "latitude": 23.570163,
         "longitude": 119.580979,
         "bounds": {
@@ -2308,7 +2308,7 @@
             "id": "164501",
             "name": "縣立馬公國中",
             "townshipName": "馬公市",
-            "students": 887,
+            "students": 924,
             "status": "正常"
           }
         ]
@@ -2342,7 +2342,7 @@
         "geohash": "wsjn0fb",
         "precision": 7,
         "count": 1,
-        "totalStudents": 556,
+        "totalStudents": 525,
         "latitude": 23.570452,
         "longitude": 119.564928,
         "bounds": {
@@ -2356,7 +2356,7 @@
             "id": "160401",
             "name": "國立澎湖海事水產",
             "townshipName": "馬公市",
-            "students": 556,
+            "students": 525,
             "status": "正常"
           }
         ]
@@ -2438,7 +2438,7 @@
         "geohash": "wsjn191",
         "precision": 7,
         "count": 1,
-        "totalStudents": 266,
+        "totalStudents": 318,
         "latitude": 23.560638,
         "longitude": 119.599124,
         "bounds": {
@@ -2452,7 +2452,31 @@
             "id": "164502",
             "name": "縣立中正國中",
             "townshipName": "馬公市",
-            "students": 266,
+            "students": 318,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsjn0g7",
+        "geohash": "wsjn0g7",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 237,
+        "latitude": 23.57357,
+        "longitude": 119.569678,
+        "bounds": {
+          "minLatitude": 23.57357,
+          "maxLatitude": 23.57357,
+          "minLongitude": 119.569678,
+          "maxLongitude": 119.569678
+        },
+        "topSchools": [
+          {
+            "id": "164513",
+            "name": "縣立文光國中",
+            "townshipName": "馬公市",
+            "students": 237,
             "status": "正常"
           }
         ]
@@ -2477,30 +2501,6 @@
             "name": "縣立中正國小",
             "townshipName": "馬公市",
             "students": 228,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsjn0g7",
-        "geohash": "wsjn0g7",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 227,
-        "latitude": 23.57357,
-        "longitude": 119.569678,
-        "bounds": {
-          "minLatitude": 23.57357,
-          "maxLatitude": 23.57357,
-          "minLongitude": 119.569678,
-          "maxLongitude": 119.569678
-        },
-        "topSchools": [
-          {
-            "id": "164513",
-            "name": "縣立文光國中",
-            "townshipName": "馬公市",
-            "students": 227,
             "status": "正常"
           }
         ]
@@ -2650,6 +2650,30 @@
         ]
       },
       {
+        "id": "7-wsjjc6f",
+        "geohash": "wsjjc6f",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 40,
+        "latitude": 23.52707,
+        "longitude": 119.589226,
+        "bounds": {
+          "minLatitude": 23.52707,
+          "maxLatitude": 23.52707,
+          "minLongitude": 119.589226,
+          "maxLongitude": 119.589226
+        },
+        "topSchools": [
+          {
+            "id": "164503",
+            "name": "縣立澎南國中",
+            "townshipName": "馬公市",
+            "students": 40,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "7-wsjjc6n",
         "geohash": "wsjjc6n",
         "precision": 7,
@@ -2669,30 +2693,6 @@
             "name": "縣立山水國小",
             "townshipName": "馬公市",
             "students": 38,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsjjc6f",
-        "geohash": "wsjjc6f",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 37,
-        "latitude": 23.52707,
-        "longitude": 119.589226,
-        "bounds": {
-          "minLatitude": 23.52707,
-          "maxLatitude": 23.52707,
-          "minLongitude": 119.589226,
-          "maxLongitude": 119.589226
-        },
-        "topSchools": [
-          {
-            "id": "164503",
-            "name": "縣立澎南國中",
-            "townshipName": "馬公市",
-            "students": 37,
             "status": "正常"
           }
         ]
@@ -2770,6 +2770,30 @@
         ]
       },
       {
+        "id": "7-wshuzjp",
+        "geohash": "wshuzjp",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 9,
+        "latitude": 23.362661,
+        "longitude": 119.498043,
+        "bounds": {
+          "minLatitude": 23.362661,
+          "maxLatitude": 23.362661,
+          "minLongitude": 119.498043,
+          "maxLongitude": 119.498043
+        },
+        "topSchools": [
+          {
+            "id": "164510",
+            "name": "縣立望安國中",
+            "townshipName": "望安鄉",
+            "students": 9,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "7-wshuzv7",
         "geohash": "wshuzv7",
         "precision": 7,
@@ -2789,54 +2813,6 @@
             "name": "縣立將軍國小",
             "townshipName": "望安鄉",
             "students": 9,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wshuzjp",
-        "geohash": "wshuzjp",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 8,
-        "latitude": 23.362661,
-        "longitude": 119.498043,
-        "bounds": {
-          "minLatitude": 23.362661,
-          "maxLatitude": 23.362661,
-          "minLongitude": 119.498043,
-          "maxLongitude": 119.498043
-        },
-        "topSchools": [
-          {
-            "id": "164510",
-            "name": "縣立望安國中",
-            "townshipName": "望安鄉",
-            "students": 8,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wshuzvk",
-        "geohash": "wshuzvk",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 4,
-        "latitude": 23.364972,
-        "longitude": 119.525857,
-        "bounds": {
-          "minLatitude": 23.364972,
-          "maxLatitude": 23.364972,
-          "minLongitude": 119.525857,
-          "maxLongitude": 119.525857
-        },
-        "topSchools": [
-          {
-            "id": "164511",
-            "name": "縣立將澳國中",
-            "townshipName": "望安鄉",
-            "students": 4,
             "status": "正常"
           }
         ]
@@ -2866,25 +2842,25 @@
         ]
       },
       {
-        "id": "7-wsjn4v3",
-        "geohash": "wsjn4v3",
+        "id": "7-wshuzvk",
+        "geohash": "wshuzvk",
         "precision": 7,
         "count": 1,
-        "totalStudents": 84,
-        "latitude": 23.584826,
-        "longitude": 119.653831,
+        "totalStudents": 3,
+        "latitude": 23.364972,
+        "longitude": 119.525857,
         "bounds": {
-          "minLatitude": 23.584826,
-          "maxLatitude": 23.584826,
-          "minLongitude": 119.653831,
-          "maxLongitude": 119.653831
+          "minLatitude": 23.364972,
+          "maxLatitude": 23.364972,
+          "minLongitude": 119.525857,
+          "maxLongitude": 119.525857
         },
         "topSchools": [
           {
-            "id": "164504",
-            "name": "縣立湖西國中",
-            "townshipName": "湖西鄉",
-            "students": 84,
+            "id": "164511",
+            "name": "縣立將澳國中",
+            "townshipName": "望安鄉",
+            "students": 3,
             "status": "正常"
           }
         ]
@@ -2933,6 +2909,30 @@
             "name": "縣立西溪國小",
             "townshipName": "湖西鄉",
             "students": 76,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsjn4v3",
+        "geohash": "wsjn4v3",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 72,
+        "latitude": 23.584826,
+        "longitude": 119.653831,
+        "bounds": {
+          "minLatitude": 23.584826,
+          "maxLatitude": 23.584826,
+          "minLongitude": 119.653831,
+          "maxLongitude": 119.653831
+        },
+        "topSchools": [
+          {
+            "id": "164504",
+            "name": "縣立湖西國中",
+            "townshipName": "湖西鄉",
+            "students": 72,
             "status": "正常"
           }
         ]
@@ -3038,7 +3038,7 @@
         "geohash": "wsjn1yd",
         "precision": 7,
         "count": 1,
-        "totalStudents": 8,
+        "totalStudents": 0,
         "latitude": 23.590626,
         "longitude": 119.611892,
         "bounds": {
@@ -3052,8 +3052,8 @@
             "id": "164505",
             "name": "縣立志清國中",
             "townshipName": "湖西鄉",
-            "students": 8,
-            "status": "正常"
+            "students": 0,
+            "status": "待確認"
           }
         ]
       }

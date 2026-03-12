@@ -306,6 +306,7 @@ function App() {
           investigationFilter={investigationFilter}
           setSelectedInvestigationId={setSelectedInvestigationId}
           setInvestigationFilter={setInvestigationFilter}
+          nationalEducationTrendSeries={derived.nationalEducationTrendSeries}
           />
         )}
       </div>

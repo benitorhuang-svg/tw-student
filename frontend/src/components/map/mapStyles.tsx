@@ -1,29 +1,20 @@
 import L from 'leaflet'
-import { formatDelta, formatStudents } from '../../lib/analytics'
 
 export const LIGHT_TILE_URL = 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png'
 export const DARK_TILE_URL = 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
 
-export function buildHoverPreviewHtml(title: string, students: number, schools: number, delta: number, subtitle?: string) {
+export function buildHoverPreviewHtml(title: string) {
   return `
-    <div class="atlas-map-hover-card">
+    <div class="atlas-map-hover-card atlas-map-hover-card--name-only">
       <strong>${title}</strong>
-      ${subtitle ? `<span>${subtitle}</span>` : ''}
-      <span>學生數 ${formatStudents(students)} 人</span>
-      <span>學校數 ${schools.toLocaleString('zh-TW')} 校</span>
-      <span>今年增減 ${formatDelta(delta)} 人</span>
     </div>
   `
 }
 
-export function renderHoverPreview(title: string, students: number, schools: number, delta: number, subtitle?: string) {
+export function renderHoverPreview(title: string) {
   return (
-    <div className="atlas-map-hover-card">
+    <div className="atlas-map-hover-card atlas-map-hover-card--name-only">
       <strong>{title}</strong>
-      {subtitle ? <span>{subtitle}</span> : null}
-      <span>學生數 {formatStudents(students)} 人</span>
-      <span>學校數 {schools.toLocaleString('zh-TW')} 校</span>
-      <span>今年增減 {formatDelta(delta)} 人</span>
     </div>
   )
 }

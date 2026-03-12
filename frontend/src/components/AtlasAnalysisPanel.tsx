@@ -2,12 +2,14 @@ import { lazy, Suspense, type ChangeEventHandler, type RefObject } from 'react'
 
 import type { DataNote } from '../data/educationData'
 import { formatAcademicYear, type CountyComparisonSummary, type EducationDistributionRow, type RankingSummary, type SchoolInsight, type ScopeSummary } from '../lib/analytics'
+import type { TrendPoint } from '../lib/analytics.types'
 import type { AtlasLoadObservationSnapshot, AcademicYear } from '../hooks/types'
 import type { InvestigationFilter, InvestigationItem, SavedComparisonScenario } from '../hooks/types'
 import type { AtlasTab } from '../hooks/useAtlasQueryState'
 import InsightPanel from './InsightPanel'
 import OfflineMetricsPanel from './OfflineMetricsPanel'
 import ScopePanel from './ScopePanel'
+import StackedAreaTrendChart from './StackedAreaTrendChart'
 
 const ComparisonPanel = lazy(() => import('./ComparisonPanel'))
 const AnomalyPanel = lazy(() => import('./AnomalyPanel'))
@@ -57,6 +59,7 @@ type AtlasAnalysisPanelProps = {
   recentScenarios: SavedComparisonScenario[]
   activeScenarioSnapshot: SavedComparisonScenario | null
   favoriteScenarioIds: Set<string>
+  nationalEducationTrendSeries: Array<{ label: string, points: TrendPoint[] }>
   copyFeedbackMessage: string | null
   scenarioFeedbackMessage: string | null
   filteredAnomalies: InvestigationItem[]
@@ -105,6 +108,7 @@ function AtlasAnalysisPanel({
   scopeHeadline,
   scopeDescription,
   educationDistribution,
+  nationalEducationTrendSeries,
   observedCounties,
   topCountyPrefetchIds,
   loadObservation,
@@ -186,6 +190,25 @@ function AtlasAnalysisPanel({
               offlineReadyWithBuckets={offlineReadyWithBuckets}
               onPrefetchAll={onPrefetchAll}
             />
+            {activeTab === 'overview' && !activeCountyId && (
+              <div style={{ marginTop: '1.25rem' }}>
+                <StackedAreaTrendChart
+                  title="全台各學制歷年學生數"
+                  subtitle="涵蓋 108-114 學年度趨勢變化"
+                  series={nationalEducationTrendSeries}
+                />
+                {scopeNotes.length > 0 ? (
+                  <div className="note-stack" style={{ marginTop: '1rem' }} data-testid="national-scope-notes">
+                    {scopeNotes.map((note) => (
+                      <article key={`${note.type}-${note.message}`} className={`data-note data-note--${note.severity}`}>
+                        <strong>{note.type}</strong>
+                        <span>{note.message}</span>
+                      </article>
+                    ))}
+                  </div>
+                ) : null}
+              </div>
+            )}
           </div>
           <div className="analysis-overview__side">
             <InsightPanel

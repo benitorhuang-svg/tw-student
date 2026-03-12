@@ -1,6 +1,7 @@
 import { writeFile } from 'node:fs/promises'
 
 import { parse } from 'csv-parse/sync'
+import * as XLSX from 'xlsx'
 
 export const CURRENT_YEAR = 114
 export const ACADEMIC_YEARS = [107, 108, 109, 110, 111, 112, 113, 114]
@@ -193,7 +194,10 @@ export const LEVEL_CONFIG = {
 
 export function number(value) {
   if (value == null) return 0
-  const normalized = String(value).replace(/,/g, '').trim()
+  const normalized = String(value)
+    .replace(/,/g, '')
+    .replace(/[^\d.-]/g, '')
+    .trim()
   if (!normalized) return 0
   return Number.parseInt(normalized, 10) || 0
 }
@@ -251,6 +255,110 @@ export function parseCsv(text) {
   })
 }
 
+function normalizeWorkbookCell(value) {
+  return String(value ?? '').replace(/\r?\n/g, '').trim()
+}
+
+function hasWorkbookRowData(row) {
+  return row.some((value) => normalizeWorkbookCell(value) !== '')
+}
+
+function toWorkbookObjects(rows, headers, startIndex) {
+  return rows
+    .slice(startIndex)
+    .filter(hasWorkbookRowData)
+    .map((row) => Object.fromEntries(headers.map((header, index) => [header, row[index] ?? ''])))
+}
+
+function findHeaderRowIndex(rows, requiredHeaders) {
+  return rows.findIndex((row) => requiredHeaders.every((header) => row.some((value) => normalizeWorkbookCell(value) === header)))
+}
+
+function parseSimpleWorkbookRows(rows, requiredHeaders, aliases = {}) {
+  const headerRowIndex = findHeaderRowIndex(rows, requiredHeaders)
+  if (headerRowIndex < 0) {
+    throw new Error(`Unable to locate workbook header row: ${requiredHeaders.join(', ')}`)
+  }
+
+  const headers = rows[headerRowIndex].map((value) => {
+    const normalized = normalizeWorkbookCell(value)
+    return aliases[normalized] ?? normalized
+  })
+
+  return toWorkbookObjects(rows, headers, headerRowIndex + 1)
+}
+
+function combineWorkbookHeaders(primaryRow, secondaryRow) {
+  let lastPrimary = ''
+
+  return primaryRow.map((value, index) => {
+    const normalizedPrimary = normalizeWorkbookCell(value)
+    if (normalizedPrimary) {
+      lastPrimary = normalizedPrimary
+    }
+
+    const primary = normalizedPrimary || lastPrimary
+    const secondary = normalizeWorkbookCell(secondaryRow[index])
+
+    if (primary === '學生數' && secondary === '男') return '學生數男'
+    if (primary === '學生數' && secondary === '女') return '學生數女'
+    if (primary === '學生數' && secondary === '總計') return '學生數總計'
+
+    if (!primary) return secondary
+    if (!secondary) return primary
+    return `${primary}${secondary}`
+  })
+}
+
+function parseBase0WorkbookRows(rows) {
+  const headerRowIndex = rows.findIndex((row, index) => {
+    const nextRow = rows[index + 1] ?? []
+    return row.some((value) => normalizeWorkbookCell(value) === '學校代碼')
+      && row.some((value) => normalizeWorkbookCell(value) === '學生數')
+      && nextRow.some((value) => normalizeWorkbookCell(value) === '男')
+  })
+
+  if (headerRowIndex < 0) {
+    throw new Error('Unable to locate workbook multi-row header for base0')
+  }
+
+  const headers = combineWorkbookHeaders(rows[headerRowIndex], rows[headerRowIndex + 1] ?? [])
+  return toWorkbookObjects(rows, headers, headerRowIndex + 2)
+}
+
+export function parseOfficialWorkbook(arrayBuffer, parserKey) {
+  const workbook = XLSX.read(arrayBuffer, { type: 'array' })
+  const worksheet = workbook.Sheets[workbook.SheetNames[0]]
+  const rows = XLSX.utils.sheet_to_json(worksheet, {
+    header: 1,
+    defval: '',
+    raw: false,
+    blankrows: false,
+  })
+
+  switch (parserKey) {
+    case 'student':
+      return parseSimpleWorkbookRows(rows, ['學校代碼', '學校名稱', '總計'])
+    case 'basec':
+      return parseSimpleWorkbookRows(rows, ['學校代碼', '學校名稱', '1年級男學生數'])
+    case 'basej':
+      return parseSimpleWorkbookRows(rows, ['學校代碼', '學校名稱', '7年級男'], {
+        '7年級男': '學生數7年級男',
+        '7年級女': '學生數7年級女',
+        '8年級男': '學生數8年級男',
+        '8年級女': '學生數8年級女',
+        '9年級男': '學生數9年級男',
+        '9年級女': '學生數9年級女',
+      })
+    case 'base0':
+      return parseBase0WorkbookRows(rows)
+    case 'higherr':
+      return parseSimpleWorkbookRows(rows, ['學校代碼', '學校名稱', '學生數學士'])
+    default:
+      throw new Error(`Unsupported workbook parser: ${parserKey}`)
+  }
+}
+
 function wait(milliseconds) {
   return new Promise((resolve) => {
     setTimeout(resolve, milliseconds)
@@ -287,6 +395,10 @@ export async function fetchText(url) {
 
 export async function fetchJson(url) {
   return fetchWithRetry(url, 'json')
+}
+
+export async function fetchArrayBuffer(url) {
+  return fetchWithRetry(url, 'arrayBuffer')
 }
 
 export async function fetchArrayBufferWithFallback(urls) {

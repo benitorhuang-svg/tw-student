@@ -174,33 +174,64 @@ function ScatterPlotChart({
           })
         })()}
 
+        {/* Base markers first */}
         {points.map((p) => {
           const r = toR(p.size)
-          const active = p.id === activePointId
+          const isActive = p.id === activePointId
           return (
-            <g key={p.id}>
-              <circle
-                className={active ? 'scatter-chart__point scatter-chart__point--active chart-data-focusable' : 'scatter-chart__point chart-data-focusable'}
-                cx={toX(p.x)} cy={toY(p.y)} r={active ? r + 2 : r}
-                tabIndex={0}
-                role="button"
-                aria-label={`${p.label}: ${formatX(p.x)}, ${formatY(p.y)}`}
-                onMouseEnter={() => onHoverPoint?.(p.id)}
-                onMouseLeave={() => onHoverPoint?.(null)}
-                onClick={() => onSelectPoint?.(p.id)}
-                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onSelectPoint?.(p.id) } }}
-                onFocus={() => onHoverPoint?.(p.id)}
-                onBlur={() => onHoverPoint?.(null)}
-              />
-              {active && (
-                <g className="chart-svg-tooltip__group">
-                  <rect className="chart-svg-tooltip__surface" x={Math.min(Math.max(toX(p.x) - 46, padding.left + 4), width - padding.right - 92)} y={Math.max(toY(p.y) - r - 28, padding.top + 4)} width="92" height="22" rx="6" />
-                  <text className="chart-svg-tooltip__title" x={Math.min(Math.max(toX(p.x), padding.left + 50), width - padding.right - 46)} y={Math.max(toY(p.y) - r - 14, padding.top + 18)} textAnchor="middle">{p.label}</text>
-                </g>
-              )}
-            </g>
+            <circle
+              key={p.id}
+              className={`${isActive ? 'scatter-chart__point scatter-chart__point--active' : 'scatter-chart__point'} chart-data-focusable`}
+              cx={toX(p.x)}
+              cy={toY(p.y)}
+              r={isActive ? r + 4 : r}
+              tabIndex={0}
+              role="button"
+              onMouseEnter={() => onHoverPoint?.(p.id)}
+              onMouseLeave={() => { if (activePointId === p.id) onHoverPoint?.(null) }}
+              onClick={() => onSelectPoint?.(p.id)}
+              onFocus={() => onHoverPoint?.(p.id)}
+              onBlur={() => { if (activePointId === p.id) onHoverPoint?.(null) }}
+            />
           )
         })}
+
+        {/* Floating Tooltip Layer - Render on top of everything to prevent event dead-zones */}
+        {(() => {
+          const activePoint = points.find(p => p.id === activePointId)
+          if (!activePoint) return null
+          
+          const r = toR(activePoint.size)
+          const px = toX(activePoint.x)
+          const py = toY(activePoint.y)
+          
+          const tooltipWidth = 92
+          const tooltipHeight = 22
+          // Unify clamping logic to prevent label and box from decoupling
+          const tooltipX = Math.min(Math.max(px - tooltipWidth / 2, padding.left + 4), width - padding.right - tooltipWidth - 4)
+          const tooltipY = Math.max(py - r - 28, padding.top + 4)
+
+          return (
+            <g className="chart-svg-tooltip__group" style={{ pointerEvents: 'none' }}>
+              <rect 
+                className="chart-svg-tooltip__surface" 
+                x={tooltipX} 
+                y={tooltipY} 
+                width={tooltipWidth} 
+                height={tooltipHeight} 
+                rx="6" 
+              />
+              <text 
+                className="chart-svg-tooltip__title" 
+                x={tooltipX + tooltipWidth / 2} 
+                y={tooltipY + 14} 
+                textAnchor="middle"
+              >
+                {activePoint.label}
+              </text>
+            </g>
+          )
+        })()}
 
         <text className="scatter-chart__axis-title" x={width / 2} y={height - 5} textAnchor="middle">{xLabel}</text>
         <text className="scatter-chart__axis-title" transform={`translate(15 ${height / 2}) rotate(-90)`} textAnchor="middle">{yLabel}</text>

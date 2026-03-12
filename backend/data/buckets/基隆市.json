@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-10T16:03:19.305Z",
+  "generatedAt": "2026-03-11T23:49:21.131Z",
   "county": {
     "id": "基隆市",
     "countyCode": "10017",
@@ -15,7 +15,7 @@
         "geohash": "wsqwf",
         "precision": 5,
         "count": 34,
-        "totalStudents": 13140,
+        "totalStudents": 13103,
         "latitude": 25.123273,
         "longitude": 121.745749,
         "bounds": {
@@ -29,13 +29,6 @@
             "id": "173502",
             "name": "市立銘傳國中",
             "townshipName": "仁愛區",
-            "students": 1124,
-            "status": "正常"
-          },
-          {
-            "id": "1082",
-            "name": "崇右影藝科技大學",
-            "townshipName": "信義區",
             "students": 1114,
             "status": "正常"
           },
@@ -44,6 +37,13 @@
             "name": "市立信義國小",
             "townshipName": "仁愛區",
             "students": 1112,
+            "status": "正常"
+          },
+          {
+            "id": "1082",
+            "name": "崇右影藝科技大學",
+            "townshipName": "信義區",
+            "students": 1054,
             "status": "正常"
           },
           {
@@ -60,7 +60,7 @@
         "geohash": "wsqx4",
         "precision": 5,
         "count": 16,
-        "totalStudents": 9191,
+        "totalStudents": 8895,
         "latitude": 25.148236,
         "longitude": 121.751606,
         "bounds": {
@@ -74,28 +74,28 @@
             "id": "1185",
             "name": "德育護理健康學院",
             "townshipName": "中山區",
-            "students": 3167,
+            "students": 3119,
             "status": "正常"
           },
           {
             "id": "171306",
             "name": "私立二信高中",
             "townshipName": "中正區",
-            "students": 1569,
+            "students": 1446,
             "status": "正常"
           },
           {
             "id": "171306:國中",
             "name": "私立二信高中附設國中部",
             "townshipName": "中正區",
-            "students": 1141,
+            "students": 1098,
             "status": "正常"
           },
           {
             "id": "170403",
             "name": "國立海洋大學附屬基隆海事",
             "townshipName": "中正區",
-            "students": 998,
+            "students": 893,
             "status": "正常"
           }
         ]
@@ -105,7 +105,7 @@
         "geohash": "wsqwc",
         "precision": 5,
         "count": 8,
-        "totalStudents": 4917,
+        "totalStudents": 4898,
         "latitude": 25.110763,
         "longitude": 121.714792,
         "bounds": {
@@ -116,17 +116,17 @@
         },
         "topSchools": [
           {
-            "id": "170404",
-            "name": "國立基隆商工",
-            "townshipName": "七堵區",
-            "students": 1187,
-            "status": "正常"
-          },
-          {
             "id": "173633",
             "name": "市立建德國小",
             "townshipName": "安樂區",
             "students": 1102,
+            "status": "正常"
+          },
+          {
+            "id": "170404",
+            "name": "國立基隆商工",
+            "townshipName": "七堵區",
+            "students": 1082,
             "status": "正常"
           },
           {
@@ -140,7 +140,7 @@
             "id": "173512",
             "name": "市立建德國中",
             "townshipName": "安樂區",
-            "students": 646,
+            "students": 685,
             "status": "正常"
           }
         ]
@@ -150,7 +150,7 @@
         "geohash": "wsqw9",
         "precision": 5,
         "count": 5,
-        "totalStudents": 1740,
+        "totalStudents": 1731,
         "latitude": 25.085216,
         "longitude": 121.701405,
         "bounds": {
@@ -171,7 +171,7 @@
             "id": "173513",
             "name": "市立百福國中",
             "townshipName": "七堵區",
-            "students": 421,
+            "students": 412,
             "status": "正常"
           },
           {
@@ -195,7 +195,7 @@
         "geohash": "wsqx5",
         "precision": 5,
         "count": 5,
-        "totalStudents": 10999,
+        "totalStudents": 10969,
         "latitude": 25.14149,
         "longitude": 121.784688,
         "bounds": {
@@ -209,7 +209,7 @@
             "id": "0012",
             "name": "國立臺灣海洋大學",
             "townshipName": "中正區",
-            "students": 9102,
+            "students": 9069,
             "status": "正常"
           },
           {
@@ -230,7 +230,7 @@
             "id": "173314:國中",
             "name": "市立八斗高中附設國中部",
             "townshipName": "中正區",
-            "students": 273,
+            "students": 303,
             "status": "正常"
           }
         ]
@@ -240,7 +240,7 @@
         "geohash": "wsqx1",
         "precision": 5,
         "count": 4,
-        "totalStudents": 2327,
+        "totalStudents": 2388,
         "latitude": 25.144766,
         "longitude": 121.706864,
         "bounds": {
@@ -261,7 +261,7 @@
             "id": "173516",
             "name": "市立武崙國中",
             "townshipName": "安樂區",
-            "students": 683,
+            "students": 744,
             "status": "正常"
           },
           {
@@ -335,7 +335,7 @@
         "geohash": "wsqwfp",
         "precision": 6,
         "count": 6,
-        "totalStudents": 2354,
+        "totalStudents": 2442,
         "latitude": 25.135471,
         "longitude": 121.732061,
         "bounds": {
@@ -353,17 +353,10 @@
             "status": "正常"
           },
           {
-            "id": "173306",
-            "name": "市立安樂高中",
-            "townshipName": "安樂區",
-            "students": 412,
-            "status": "正常"
-          },
-          {
             "id": "173306:國中",
             "name": "市立安樂高中附設國中部",
             "townshipName": "安樂區",
-            "students": 409,
+            "students": 454,
             "status": "正常"
           },
           {
@@ -371,6 +364,13 @@
             "name": "市立安樂國小",
             "townshipName": "安樂區",
             "students": 396,
+            "status": "正常"
+          },
+          {
+            "id": "173306",
+            "name": "市立安樂高中",
+            "townshipName": "安樂區",
+            "students": 393,
             "status": "正常"
           }
         ]
@@ -380,7 +380,7 @@
         "geohash": "wsqx4c",
         "precision": 6,
         "count": 6,
-        "totalStudents": 4426,
+        "totalStudents": 4176,
         "latitude": 25.145547,
         "longitude": 121.76971,
         "bounds": {
@@ -394,21 +394,21 @@
             "id": "171306",
             "name": "私立二信高中",
             "townshipName": "中正區",
-            "students": 1569,
+            "students": 1446,
             "status": "正常"
           },
           {
             "id": "171306:國中",
             "name": "私立二信高中附設國中部",
             "townshipName": "中正區",
-            "students": 1141,
+            "students": 1098,
             "status": "正常"
           },
           {
             "id": "170403",
             "name": "國立海洋大學附屬基隆海事",
             "townshipName": "中正區",
-            "students": 998,
+            "students": 893,
             "status": "正常"
           },
           {
@@ -425,7 +425,7 @@
         "geohash": "wsqwfx",
         "precision": 6,
         "count": 5,
-        "totalStudents": 2715,
+        "totalStudents": 2748,
         "latitude": 25.132632,
         "longitude": 121.755235,
         "bounds": {
@@ -439,7 +439,7 @@
             "id": "1082",
             "name": "崇右影藝科技大學",
             "townshipName": "信義區",
-            "students": 1114,
+            "students": 1054,
             "status": "正常"
           },
           {
@@ -453,7 +453,7 @@
             "id": "173505",
             "name": "市立中正國中",
             "townshipName": "中正區",
-            "students": 445,
+            "students": 469,
             "status": "正常"
           },
           {
@@ -470,7 +470,7 @@
         "geohash": "wsqwf4",
         "precision": 6,
         "count": 5,
-        "totalStudents": 1384,
+        "totalStudents": 1310,
         "latitude": 25.107388,
         "longitude": 121.736091,
         "bounds": {
@@ -484,21 +484,14 @@
             "id": "170302",
             "name": "國立基隆高中",
             "townshipName": "暖暖區",
-            "students": 681,
+            "students": 631,
             "status": "正常"
           },
           {
             "id": "173307",
             "name": "市立暖暖高中",
             "townshipName": "暖暖區",
-            "students": 293,
-            "status": "正常"
-          },
-          {
-            "id": "173307:國中",
-            "name": "市立暖暖高中附設國中部",
-            "townshipName": "暖暖區",
-            "students": 159,
+            "students": 292,
             "status": "正常"
           },
           {
@@ -506,6 +499,13 @@
             "name": "市立暖江國小",
             "townshipName": "暖暖區",
             "students": 152,
+            "status": "正常"
+          },
+          {
+            "id": "173307:國中",
+            "name": "市立暖暖高中附設國中部",
+            "townshipName": "暖暖區",
+            "students": 136,
             "status": "正常"
           }
         ]
@@ -515,7 +515,7 @@
         "geohash": "wsqwc8",
         "precision": 6,
         "count": 3,
-        "totalStudents": 2606,
+        "totalStudents": 2548,
         "latitude": 25.095462,
         "longitude": 121.7158,
         "bounds": {
@@ -529,7 +529,7 @@
             "id": "170404",
             "name": "國立基隆商工",
             "townshipName": "七堵區",
-            "students": 1187,
+            "students": 1082,
             "status": "正常"
           },
           {
@@ -543,7 +543,7 @@
             "id": "173501",
             "name": "市立明德國中",
             "townshipName": "七堵區",
-            "students": 510,
+            "students": 557,
             "status": "正常"
           }
         ]
@@ -553,7 +553,7 @@
         "geohash": "wsqx45",
         "precision": 6,
         "count": 3,
-        "totalStudents": 912,
+        "totalStudents": 914,
         "latitude": 25.154385,
         "longitude": 121.730861,
         "bounds": {
@@ -567,7 +567,7 @@
             "id": "173304:國中",
             "name": "市立中山高中附設國中部",
             "townshipName": "中山區",
-            "students": 363,
+            "students": 387,
             "status": "正常"
           },
           {
@@ -581,7 +581,7 @@
             "id": "173304",
             "name": "市立中山高中",
             "townshipName": "中山區",
-            "students": 222,
+            "students": 200,
             "status": "正常"
           }
         ]
@@ -591,7 +591,7 @@
         "geohash": "wsqwfq",
         "precision": 6,
         "count": 3,
-        "totalStudents": 1923,
+        "totalStudents": 1847,
         "latitude": 25.128403,
         "longitude": 121.747446,
         "bounds": {
@@ -619,7 +619,7 @@
             "id": "171405",
             "name": "私立光隆家商",
             "townshipName": "信義區",
-            "students": 130,
+            "students": 54,
             "status": "正常"
           }
         ]
@@ -629,7 +629,7 @@
         "geohash": "wsqwfy",
         "precision": 6,
         "count": 3,
-        "totalStudents": 352,
+        "totalStudents": 356,
         "latitude": 25.129846,
         "longitude": 121.767393,
         "bounds": {
@@ -643,7 +643,7 @@
             "id": "173503",
             "name": "市立信義國中",
             "townshipName": "信義區",
-            "students": 202,
+            "students": 221,
             "status": "正常"
           },
           {
@@ -657,7 +657,7 @@
             "id": "171407",
             "name": "私立培德工家",
             "townshipName": "信義區",
-            "students": 73,
+            "students": 58,
             "status": "正常"
           }
         ]
@@ -698,7 +698,7 @@
         "geohash": "wsqx44",
         "precision": 6,
         "count": 2,
-        "totalStudents": 3283,
+        "totalStudents": 3235,
         "latitude": 25.149918,
         "longitude": 121.734049,
         "bounds": {
@@ -712,7 +712,7 @@
             "id": "1185",
             "name": "德育護理健康學院",
             "townshipName": "中山區",
-            "students": 3167,
+            "students": 3119,
             "status": "正常"
           },
           {
@@ -760,7 +760,7 @@
         "geohash": "wsqx52",
         "precision": 6,
         "count": 2,
-        "totalStudents": 444,
+        "totalStudents": 447,
         "latitude": 25.140501,
         "longitude": 121.7881,
         "bounds": {
@@ -774,14 +774,14 @@
             "id": "173314:國中",
             "name": "市立八斗高中附設國中部",
             "townshipName": "中正區",
-            "students": 273,
+            "students": 303,
             "status": "正常"
           },
           {
             "id": "173314",
             "name": "市立八斗高中",
             "townshipName": "中正區",
-            "students": 171,
+            "students": 144,
             "status": "正常"
           }
         ]
@@ -791,7 +791,7 @@
         "geohash": "wsqwft",
         "precision": 6,
         "count": 2,
-        "totalStudents": 1124,
+        "totalStudents": 1114,
         "latitude": 25.124174,
         "longitude": 121.753674,
         "bounds": {
@@ -805,7 +805,7 @@
             "id": "173502",
             "name": "市立銘傳國中",
             "townshipName": "仁愛區",
-            "students": 1124,
+            "students": 1114,
             "status": "正常"
           },
           {
@@ -822,7 +822,7 @@
         "geohash": "wsqwfk",
         "precision": 6,
         "count": 2,
-        "totalStudents": 243,
+        "totalStudents": 248,
         "latitude": 25.119537,
         "longitude": 121.74534,
         "bounds": {
@@ -843,7 +843,7 @@
             "id": "173508",
             "name": "市立南榮國中",
             "townshipName": "仁愛區",
-            "students": 118,
+            "students": 123,
             "status": "正常"
           }
         ]
@@ -877,7 +877,7 @@
         "geohash": "wsqw9q",
         "precision": 6,
         "count": 1,
-        "totalStudents": 421,
+        "totalStudents": 412,
         "latitude": 25.083608,
         "longitude": 121.698381,
         "bounds": {
@@ -891,7 +891,7 @@
             "id": "173513",
             "name": "市立百福國中",
             "townshipName": "七堵區",
-            "students": 421,
+            "students": 412,
             "status": "正常"
           }
         ]
@@ -1069,7 +1069,7 @@
         "geohash": "wsqx54",
         "precision": 6,
         "count": 1,
-        "totalStudents": 9102,
+        "totalStudents": 9069,
         "latitude": 25.150852,
         "longitude": 121.772607,
         "bounds": {
@@ -1083,7 +1083,7 @@
             "id": "0012",
             "name": "國立臺灣海洋大學",
             "townshipName": "中正區",
-            "students": 9102,
+            "students": 9069,
             "status": "正常"
           }
         ]
@@ -1237,7 +1237,7 @@
         "geohash": "wsqx12",
         "precision": 6,
         "count": 1,
-        "totalStudents": 683,
+        "totalStudents": 744,
         "latitude": 25.137528,
         "longitude": 121.706447,
         "bounds": {
@@ -1251,7 +1251,7 @@
             "id": "173516",
             "name": "市立武崙國中",
             "townshipName": "安樂區",
-            "students": 683,
+            "students": 744,
             "status": "正常"
           }
         ]
@@ -1261,7 +1261,7 @@
         "geohash": "wsqwcy",
         "precision": 6,
         "count": 1,
-        "totalStudents": 646,
+        "totalStudents": 685,
         "latitude": 25.127317,
         "longitude": 121.721501,
         "bounds": {
@@ -1275,7 +1275,7 @@
             "id": "173512",
             "name": "市立建德國中",
             "townshipName": "安樂區",
-            "students": 646,
+            "students": 685,
             "status": "正常"
           }
         ]
@@ -1381,7 +1381,7 @@
         "geohash": "wsqwfw",
         "precision": 6,
         "count": 1,
-        "totalStudents": 738,
+        "totalStudents": 658,
         "latitude": 25.129341,
         "longitude": 121.759479,
         "bounds": {
@@ -1395,7 +1395,7 @@
             "id": "170301",
             "name": "國立基隆女中",
             "townshipName": "信義區",
-            "students": 738,
+            "students": 658,
             "status": "正常"
           }
         ]
@@ -1449,6 +1449,30 @@
         ]
       },
       {
+        "id": "6-wsqwf2",
+        "geohash": "wsqwf2",
+        "precision": 6,
+        "count": 1,
+        "totalStudents": 483,
+        "latitude": 25.095756,
+        "longitude": 121.749369,
+        "bounds": {
+          "minLatitude": 25.095756,
+          "maxLatitude": 25.095756,
+          "minLongitude": 121.749369,
+          "maxLongitude": 121.749369
+        },
+        "topSchools": [
+          {
+            "id": "173515",
+            "name": "市立碇內國中",
+            "townshipName": "暖暖區",
+            "students": 483,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "6-wsqwf0",
         "geohash": "wsqwf0",
         "precision": 6,
@@ -1468,30 +1492,6 @@
             "name": "市立暖西國小",
             "townshipName": "暖暖區",
             "students": 439,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "6-wsqwf2",
-        "geohash": "wsqwf2",
-        "precision": 6,
-        "count": 1,
-        "totalStudents": 410,
-        "latitude": 25.095756,
-        "longitude": 121.749369,
-        "bounds": {
-          "minLatitude": 25.095756,
-          "maxLatitude": 25.095756,
-          "minLongitude": 121.749369,
-          "maxLongitude": 121.749369
-        },
-        "topSchools": [
-          {
-            "id": "173515",
-            "name": "市立碇內國中",
-            "townshipName": "暖暖區",
-            "students": 410,
             "status": "正常"
           }
         ]
@@ -1527,7 +1527,7 @@
         "geohash": "wsqwfpg",
         "precision": 7,
         "count": 3,
-        "totalStudents": 1137,
+        "totalStudents": 1199,
         "latitude": 25.136639,
         "longitude": 121.733837,
         "bounds": {
@@ -1548,14 +1548,14 @@
             "id": "171308:國中",
             "name": "私立聖心高中附設國中部",
             "townshipName": "中山區",
-            "students": 121,
+            "students": 168,
             "status": "正常"
           },
           {
             "id": "171308",
             "name": "輔大聖心高中",
             "townshipName": "中山區",
-            "students": 51,
+            "students": 66,
             "status": "正常"
           }
         ]
@@ -1565,7 +1565,7 @@
         "geohash": "wsqx4cq",
         "precision": 7,
         "count": 3,
-        "totalStudents": 2947,
+        "totalStudents": 2781,
         "latitude": 25.144111,
         "longitude": 121.770937,
         "bounds": {
@@ -1579,14 +1579,14 @@
             "id": "171306",
             "name": "私立二信高中",
             "townshipName": "中正區",
-            "students": 1569,
+            "students": 1446,
             "status": "正常"
           },
           {
             "id": "171306:國中",
             "name": "私立二信高中附設國中部",
             "townshipName": "中正區",
-            "students": 1141,
+            "students": 1098,
             "status": "正常"
           },
           {
@@ -1603,7 +1603,7 @@
         "geohash": "wsqx451",
         "precision": 7,
         "count": 2,
-        "totalStudents": 585,
+        "totalStudents": 587,
         "latitude": 25.153938,
         "longitude": 121.730834,
         "bounds": {
@@ -1617,14 +1617,14 @@
             "id": "173304:國中",
             "name": "市立中山高中附設國中部",
             "townshipName": "中山區",
-            "students": 363,
+            "students": 387,
             "status": "正常"
           },
           {
             "id": "173304",
             "name": "市立中山高中",
             "townshipName": "中山區",
-            "students": 222,
+            "students": 200,
             "status": "正常"
           }
         ]
@@ -1634,7 +1634,7 @@
         "geohash": "wsqx52e",
         "precision": 7,
         "count": 2,
-        "totalStudents": 444,
+        "totalStudents": 447,
         "latitude": 25.140501,
         "longitude": 121.7881,
         "bounds": {
@@ -1648,14 +1648,14 @@
             "id": "173314:國中",
             "name": "市立八斗高中附設國中部",
             "townshipName": "中正區",
-            "students": 273,
+            "students": 303,
             "status": "正常"
           },
           {
             "id": "173314",
             "name": "市立八斗高中",
             "townshipName": "中正區",
-            "students": 171,
+            "students": 144,
             "status": "正常"
           }
         ]
@@ -1665,7 +1665,7 @@
         "geohash": "wsqwfpc",
         "precision": 7,
         "count": 2,
-        "totalStudents": 821,
+        "totalStudents": 847,
         "latitude": 25.13561,
         "longitude": 121.729935,
         "bounds": {
@@ -1676,17 +1676,17 @@
         },
         "topSchools": [
           {
-            "id": "173306",
-            "name": "市立安樂高中",
-            "townshipName": "安樂區",
-            "students": 412,
-            "status": "正常"
-          },
-          {
             "id": "173306:國中",
             "name": "市立安樂高中附設國中部",
             "townshipName": "安樂區",
-            "students": 409,
+            "students": 454,
+            "status": "正常"
+          },
+          {
+            "id": "173306",
+            "name": "市立安樂高中",
+            "townshipName": "安樂區",
+            "students": 393,
             "status": "正常"
           }
         ]
@@ -1696,7 +1696,7 @@
         "geohash": "wsqwf4x",
         "precision": 7,
         "count": 2,
-        "totalStudents": 452,
+        "totalStudents": 428,
         "latitude": 25.107646,
         "longitude": 121.738573,
         "bounds": {
@@ -1710,14 +1710,14 @@
             "id": "173307",
             "name": "市立暖暖高中",
             "townshipName": "暖暖區",
-            "students": 293,
+            "students": 292,
             "status": "正常"
           },
           {
             "id": "173307:國中",
             "name": "市立暖暖高中附設國中部",
             "townshipName": "暖暖區",
-            "students": 159,
+            "students": 136,
             "status": "正常"
           }
         ]
@@ -1727,7 +1727,7 @@
         "geohash": "wsqwc8r",
         "precision": 7,
         "count": 1,
-        "totalStudents": 1187,
+        "totalStudents": 1082,
         "latitude": 25.094226,
         "longitude": 121.717202,
         "bounds": {
@@ -1741,7 +1741,7 @@
             "id": "170404",
             "name": "國立基隆商工",
             "townshipName": "七堵區",
-            "students": 1187,
+            "students": 1082,
             "status": "正常"
           }
         ]
@@ -1799,7 +1799,7 @@
         "geohash": "wsqwc8p",
         "precision": 7,
         "count": 1,
-        "totalStudents": 510,
+        "totalStudents": 557,
         "latitude": 25.094076,
         "longitude": 121.716232,
         "bounds": {
@@ -1813,7 +1813,7 @@
             "id": "173501",
             "name": "市立明德國中",
             "townshipName": "七堵區",
-            "students": 510,
+            "students": 557,
             "status": "正常"
           }
         ]
@@ -1823,7 +1823,7 @@
         "geohash": "wsqw9q6",
         "precision": 7,
         "count": 1,
-        "totalStudents": 421,
+        "totalStudents": 412,
         "latitude": 25.083608,
         "longitude": 121.698381,
         "bounds": {
@@ -1837,7 +1837,7 @@
             "id": "173513",
             "name": "市立百福國中",
             "townshipName": "七堵區",
-            "students": 421,
+            "students": 412,
             "status": "正常"
           }
         ]
@@ -1991,7 +1991,7 @@
         "geohash": "wsqx448",
         "precision": 7,
         "count": 1,
-        "totalStudents": 3167,
+        "totalStudents": 3119,
         "latitude": 25.150462,
         "longitude": 121.72915,
         "bounds": {
@@ -2005,7 +2005,7 @@
             "id": "1185",
             "name": "德育護理健康學院",
             "townshipName": "中山區",
-            "students": 3167,
+            "students": 3119,
             "status": "正常"
           }
         ]
@@ -2159,7 +2159,7 @@
         "geohash": "wsqx548",
         "precision": 7,
         "count": 1,
-        "totalStudents": 9102,
+        "totalStudents": 9069,
         "latitude": 25.150852,
         "longitude": 121.772607,
         "bounds": {
@@ -2173,7 +2173,7 @@
             "id": "0012",
             "name": "國立臺灣海洋大學",
             "townshipName": "中正區",
-            "students": 9102,
+            "students": 9069,
             "status": "正常"
           }
         ]
@@ -2183,7 +2183,7 @@
         "geohash": "wsqx4cz",
         "precision": 7,
         "count": 1,
-        "totalStudents": 998,
+        "totalStudents": 893,
         "latitude": 25.147332,
         "longitude": 121.771125,
         "bounds": {
@@ -2197,7 +2197,7 @@
             "id": "170403",
             "name": "國立海洋大學附屬基隆海事",
             "townshipName": "中正區",
-            "students": 998,
+            "students": 893,
             "status": "正常"
           }
         ]
@@ -2231,7 +2231,7 @@
         "geohash": "wsqwfxc",
         "precision": 7,
         "count": 1,
-        "totalStudents": 445,
+        "totalStudents": 469,
         "latitude": 25.13549,
         "longitude": 121.75299,
         "bounds": {
@@ -2245,7 +2245,7 @@
             "id": "173505",
             "name": "市立中正國中",
             "townshipName": "中正區",
-            "students": 445,
+            "students": 469,
             "status": "正常"
           }
         ]
@@ -2279,7 +2279,7 @@
         "geohash": "wsqx4cc",
         "precision": 7,
         "count": 1,
-        "totalStudents": 98,
+        "totalStudents": 119,
         "latitude": 25.146969,
         "longitude": 121.763278,
         "bounds": {
@@ -2293,7 +2293,7 @@
             "id": "173510",
             "name": "市立正濱國中",
             "townshipName": "中正區",
-            "students": 98,
+            "students": 119,
             "status": "正常"
           }
         ]
@@ -2375,7 +2375,7 @@
         "geohash": "wsqwft8",
         "precision": 7,
         "count": 1,
-        "totalStudents": 1124,
+        "totalStudents": 1114,
         "latitude": 25.123519,
         "longitude": 121.750672,
         "bounds": {
@@ -2389,7 +2389,7 @@
             "id": "173502",
             "name": "市立銘傳國中",
             "townshipName": "仁愛區",
-            "students": 1124,
+            "students": 1114,
             "status": "正常"
           }
         ]
@@ -2495,7 +2495,7 @@
         "geohash": "wsqwfku",
         "precision": 7,
         "count": 1,
-        "totalStudents": 118,
+        "totalStudents": 123,
         "latitude": 25.120148,
         "longitude": 121.746291,
         "bounds": {
@@ -2509,7 +2509,7 @@
             "id": "173508",
             "name": "市立南榮國中",
             "townshipName": "仁愛區",
-            "students": 118,
+            "students": 123,
             "status": "正常"
           }
         ]
@@ -2567,7 +2567,7 @@
         "geohash": "wsqx12p",
         "precision": 7,
         "count": 1,
-        "totalStudents": 683,
+        "totalStudents": 744,
         "latitude": 25.137528,
         "longitude": 121.706447,
         "bounds": {
@@ -2581,7 +2581,7 @@
             "id": "173516",
             "name": "市立武崙國中",
             "townshipName": "安樂區",
-            "students": 683,
+            "students": 744,
             "status": "正常"
           }
         ]
@@ -2591,7 +2591,7 @@
         "geohash": "wsqwcy6",
         "precision": 7,
         "count": 1,
-        "totalStudents": 646,
+        "totalStudents": 685,
         "latitude": 25.127317,
         "longitude": 121.721501,
         "bounds": {
@@ -2605,7 +2605,7 @@
             "id": "173512",
             "name": "市立建德國中",
             "townshipName": "安樂區",
-            "students": 646,
+            "students": 685,
             "status": "正常"
           }
         ]
@@ -2711,7 +2711,7 @@
         "geohash": "wsqwfx4",
         "precision": 7,
         "count": 1,
-        "totalStudents": 1114,
+        "totalStudents": 1054,
         "latitude": 25.131712,
         "longitude": 121.753747,
         "bounds": {
@@ -2725,7 +2725,7 @@
             "id": "1082",
             "name": "崇右影藝科技大學",
             "townshipName": "信義區",
-            "students": 1114,
+            "students": 1054,
             "status": "正常"
           }
         ]
@@ -2759,7 +2759,7 @@
         "geohash": "wsqwfww",
         "precision": 7,
         "count": 1,
-        "totalStudents": 738,
+        "totalStudents": 658,
         "latitude": 25.129341,
         "longitude": 121.759479,
         "bounds": {
@@ -2773,7 +2773,7 @@
             "id": "170301",
             "name": "國立基隆女中",
             "townshipName": "信義區",
-            "students": 738,
+            "students": 658,
             "status": "正常"
           }
         ]
@@ -2855,7 +2855,7 @@
         "geohash": "wsqwfx0",
         "precision": 7,
         "count": 1,
-        "totalStudents": 285,
+        "totalStudents": 354,
         "latitude": 25.132579,
         "longitude": 121.751756,
         "bounds": {
@@ -2869,7 +2869,7 @@
             "id": "173509",
             "name": "市立成功國中",
             "townshipName": "信義區",
-            "students": 285,
+            "students": 354,
             "status": "正常"
           }
         ]
@@ -2879,7 +2879,7 @@
         "geohash": "wsqwfyt",
         "precision": 7,
         "count": 1,
-        "totalStudents": 202,
+        "totalStudents": 221,
         "latitude": 25.129567,
         "longitude": 121.76849,
         "bounds": {
@@ -2893,31 +2893,7 @@
             "id": "173503",
             "name": "市立信義國中",
             "townshipName": "信義區",
-            "students": 202,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsqwfqz",
-        "geohash": "wsqwfqz",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 130,
-        "latitude": 25.130219,
-        "longitude": 121.749524,
-        "bounds": {
-          "minLatitude": 25.130219,
-          "maxLatitude": 25.130219,
-          "minLongitude": 121.749524,
-          "maxLongitude": 121.749524
-        },
-        "topSchools": [
-          {
-            "id": "171405",
-            "name": "私立光隆家商",
-            "townshipName": "信義區",
-            "students": 130,
+            "students": 221,
             "status": "正常"
           }
         ]
@@ -2951,7 +2927,7 @@
         "geohash": "wsqwfyy",
         "precision": 7,
         "count": 1,
-        "totalStudents": 73,
+        "totalStudents": 58,
         "latitude": 25.130893,
         "longitude": 121.770523,
         "bounds": {
@@ -2965,7 +2941,31 @@
             "id": "171407",
             "name": "私立培德工家",
             "townshipName": "信義區",
-            "students": 73,
+            "students": 58,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsqwfqz",
+        "geohash": "wsqwfqz",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 54,
+        "latitude": 25.130219,
+        "longitude": 121.749524,
+        "bounds": {
+          "minLatitude": 25.130219,
+          "maxLatitude": 25.130219,
+          "minLongitude": 121.749524,
+          "maxLongitude": 121.749524
+        },
+        "topSchools": [
+          {
+            "id": "171405",
+            "name": "私立光隆家商",
+            "townshipName": "信義區",
+            "students": 54,
             "status": "正常"
           }
         ]
@@ -3023,7 +3023,7 @@
         "geohash": "wsqwf4d",
         "precision": 7,
         "count": 1,
-        "totalStudents": 681,
+        "totalStudents": 631,
         "latitude": 25.107411,
         "longitude": 121.732555,
         "bounds": {
@@ -3037,7 +3037,31 @@
             "id": "170302",
             "name": "國立基隆高中",
             "townshipName": "暖暖區",
-            "students": 681,
+            "students": 631,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsqwf2x",
+        "geohash": "wsqwf2x",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 483,
+        "latitude": 25.095756,
+        "longitude": 121.749369,
+        "bounds": {
+          "minLatitude": 25.095756,
+          "maxLatitude": 25.095756,
+          "minLongitude": 121.749369,
+          "maxLongitude": 121.749369
+        },
+        "topSchools": [
+          {
+            "id": "173515",
+            "name": "市立碇內國中",
+            "townshipName": "暖暖區",
+            "students": 483,
             "status": "正常"
           }
         ]
@@ -3062,30 +3086,6 @@
             "name": "市立暖西國小",
             "townshipName": "暖暖區",
             "students": 439,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsqwf2x",
-        "geohash": "wsqwf2x",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 410,
-        "latitude": 25.095756,
-        "longitude": 121.749369,
-        "bounds": {
-          "minLatitude": 25.095756,
-          "maxLatitude": 25.095756,
-          "minLongitude": 121.749369,
-          "maxLongitude": 121.749369
-        },
-        "topSchools": [
-          {
-            "id": "173515",
-            "name": "市立碇內國中",
-            "townshipName": "暖暖區",
-            "students": 410,
             "status": "正常"
           }
         ]

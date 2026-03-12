@@ -391,6 +391,7 @@ export type EducationSummaryDataset = {
   generatedAt: string
   years: readonly AcademicYear[]
   schoolAtlasFile?: string
+  dataNotes?: DataNote[]
   assetMetrics?: {
     sqliteBytes?: number
     summaryBytes?: number

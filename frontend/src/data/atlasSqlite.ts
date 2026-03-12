@@ -275,6 +275,7 @@ async function loadEducationSummaryWithOptions(options: LoadDatabaseOptions = {}
     townshipBoundaries: '',
     countyBoundaries: '',
   })
+  const dataNotes = parseJsonValue(readMeta(db, 'dataNotes'), []) as EducationSummaryDataset['dataNotes']
   const generatedAt = String(readMeta(db, 'generatedAt') ?? '')
   const countyRows = mapRows(db.exec('SELECT * FROM counties ORDER BY name'))
   const townRows = mapRows(db.exec('SELECT * FROM towns ORDER BY county_id, name'))
@@ -359,6 +360,7 @@ async function loadEducationSummaryWithOptions(options: LoadDatabaseOptions = {}
     generatedAt,
     years,
     schoolAtlasFile: 'school-atlas/index.json',
+    dataNotes,
     assetMetrics: {
       countyBoundaryBytes: 0,
       countyDetailBytes: counties.reduce((sum, county) => sum + (county.assetMetrics?.detailBytes ?? 0), 0),

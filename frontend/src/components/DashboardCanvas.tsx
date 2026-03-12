@@ -12,6 +12,7 @@ import DashboardYearNavigator from './DashboardYearNavigator'
 import type { AtlasTab } from '../hooks/useAtlasQueryState'
 import type { useAtlasDerivedState } from '../hooks/useAtlasDerivedState'
 import type { AcademicYear, CountySchoolAtlasDataset, ManagementTypeFilter, RegionGroupFilter } from '../data/educationData'
+import type { TrendPoint } from '../lib/analytics.types'
 import type { InvestigationItem, SavedComparisonScenario } from '../hooks/types'
 
 type DashboardCanvasProps = {
@@ -86,6 +87,7 @@ type DashboardCanvasProps = {
   onSetActiveYear: (year: AcademicYear) => void
   onSetIsYearPlaybackActive: (active: boolean) => void
   summaryYears: number[]
+  nationalEducationTrendSeries: Array<{ label: string, points: TrendPoint[] }>
 }
 
 function DashboardCanvas({
@@ -129,6 +131,7 @@ function DashboardCanvas({
   onSetActiveYear,
   onSetIsYearPlaybackActive,
   summaryYears,
+  nationalEducationTrendSeries,
 }: DashboardCanvasProps) {
   const visibleCountyRows = derived.countySummaries.filter((row) => !row.filteredOut)
   const overviewTrendRows = [...visibleCountyRows]
@@ -164,6 +167,7 @@ function DashboardCanvas({
       }
     })
     .filter((group) => group.children.length > 0)
+
 
   const overviewMatrixSection = (
     <section className="dashboard-card dashboard-card--matrix">
@@ -207,7 +211,7 @@ function DashboardCanvas({
         <StackedAreaTrendChart
           title="全台各學制歷年學生數"
           subtitle="聚焦少子化衝擊全台總量與學制波浪趨勢"
-          series={derived.nationalEducationTrendSeries}
+          series={nationalEducationTrendSeries}
         />
       </div>
     </section>
@@ -312,8 +316,8 @@ function DashboardCanvas({
           <div className="dashboard-side-shell__content dashboard-side-shell__content--overview">
             {/* 原子版面排列：您可在此直接調整大區塊的順序 */}
             {overviewTrendSection}
-            {overviewTreemapSection}
             {overviewMatrixSection}
+            {overviewTreemapSection}
             {overviewRankingSection}
           </div>
         ) : null}

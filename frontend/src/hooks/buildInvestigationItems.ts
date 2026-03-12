@@ -85,7 +85,25 @@ export function buildInvestigationItems({
         seriesRows: buildSummarySeriesRows(resolveSummarySeries(selectedCounty.summaries, filters.educationLevel, filters.managementType)),
         downloadName: `${selectedCounty.name}-${note.type}-原始序列.csv`,
       })
+      return
     }
+
+    const nationalSeriesRows = summaryDataset.years.map((year) => ({
+      year,
+      students: countySummaries.reduce((sum, county) => sum + (county.trend.find((point) => point.year === year)?.value ?? 0), 0),
+      schools: countySummaries.reduce((sum, county) => sum + (county.trend.find((point) => point.year === year)?.year ? county.schools : 0), 0),
+    }))
+
+    register({
+      id: `scope-national-${note.type}-${index}`,
+      scope: '全台',
+      title: `全台 / ${note.type}`,
+      detail: note.message,
+      meta: note.years?.length ? `涉及年度: ${note.years.join('、')}` : '全台總覽',
+      severity: note.severity,
+      seriesRows: nationalSeriesRows,
+      downloadName: `全台-${note.type}-原始序列.csv`,
+    })
   })
 
   if (!selectedCounty) {

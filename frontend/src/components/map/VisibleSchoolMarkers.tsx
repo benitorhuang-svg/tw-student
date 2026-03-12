@@ -4,34 +4,23 @@ import L from 'leaflet'
 import { CircleMarker, Tooltip, useMap, useMapEvents } from 'react-leaflet'
 
 import type { CountyBucketDataset, SchoolBucketRecord } from '../../data/educationData'
-import { formatDelta, formatPercent, formatStudents } from '../../lib/analytics'
+import { formatStudents } from '../../lib/analytics'
 import type { SchoolMapPoint } from './types'
 import { growthChoroplethColor, growthChoroplethOpacity } from './mapStyles'
-import { getSchoolLevelColor, getSchoolLevelLabel } from './schoolMarkerTheme'
+import { getSchoolLevelColor } from './schoolMarkerTheme'
 
 function renderSchoolHoverCard(school: SchoolMapPoint) {
   return (
-    <div className="atlas-map-hover-card atlas-map-hover-card--school">
+    <div className="atlas-map-hover-card atlas-map-hover-card--school atlas-map-hover-card--name-only">
       <strong>{school.name}</strong>
-      <span>{school.townshipName}</span>
-      <span>
-        {school.educationLevel} / {school.managementType}
-      </span>
-      <span>學生數 {formatStudents(school.currentStudents)} 人</span>
-      <span>今年增減 {formatDelta(school.delta)} 人</span>
-      <span>年增率 {formatPercent(school.deltaRatio)}</span>
     </div>
   )
 }
 
-function renderClusterHoverCard(count: number, totalStudents: number, dominantEducationLevel: string | null, schoolNames: string[]) {
+function renderClusterHoverCard(count: number) {
   return (
-    <div className="atlas-map-hover-card atlas-map-hover-card--school">
+    <div className="atlas-map-hover-card atlas-map-hover-card--school atlas-map-hover-card--name-only">
       <strong>{count.toLocaleString('zh-TW')} 所學校分群</strong>
-      <span>學生總量 {formatStudents(totalStudents)} 人</span>
-      <span>主要學制 {getSchoolLevelLabel(dominantEducationLevel)}</span>
-      <span>{schoolNames.slice(0, 3).join('、')}</span>
-      <span>點擊後可繼續放大到更細的校點層級</span>
     </div>
   )
 }
@@ -351,7 +340,7 @@ function VisibleSchoolMarkers({
                 duration: 0.35,
               })
             }}
-            tooltipContent={renderClusterHoverCard(cluster.count, cluster.totalStudents, cluster.dominantEducationLevel, cluster.schoolNames)}
+            tooltipContent={renderClusterHoverCard(cluster.count)}
           />
         )
       })}

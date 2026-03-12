@@ -578,7 +578,7 @@
             },
             {
               "year": 114,
-              "students": 33
+              "students": 31
             }
           ],
           "studentCompositions": [
@@ -808,33 +808,33 @@
             },
             {
               "year": 114,
-              "totalStudents": 33,
-              "maleStudents": 18,
+              "totalStudents": 31,
+              "maleStudents": 16,
               "femaleStudents": 15,
               "bands": [
                 {
                   "id": "grade-7",
                   "label": "7年級",
                   "category": "grade",
-                  "totalStudents": 11,
-                  "maleStudents": 7,
-                  "femaleStudents": 4
+                  "totalStudents": 9,
+                  "maleStudents": 4,
+                  "femaleStudents": 5
                 },
                 {
                   "id": "grade-8",
                   "label": "8年級",
                   "category": "grade",
-                  "totalStudents": 12,
-                  "maleStudents": 5,
-                  "femaleStudents": 7
+                  "totalStudents": 11,
+                  "maleStudents": 7,
+                  "femaleStudents": 4
                 },
                 {
                   "id": "grade-9",
                   "label": "9年級",
                   "category": "grade",
-                  "totalStudents": 10,
-                  "maleStudents": 6,
-                  "femaleStudents": 4
+                  "totalStudents": 11,
+                  "maleStudents": 5,
+                  "femaleStudents": 6
                 }
               ]
             }
@@ -1415,7 +1415,7 @@
             },
             {
               "year": 114,
-              "students": 31
+              "students": 21
             }
           ],
           "studentCompositions": [
@@ -1645,33 +1645,33 @@
             },
             {
               "year": 114,
-              "totalStudents": 31,
-              "maleStudents": 17,
-              "femaleStudents": 14,
+              "totalStudents": 21,
+              "maleStudents": 10,
+              "femaleStudents": 11,
               "bands": [
                 {
                   "id": "grade-7",
                   "label": "7年級",
+                  "category": "grade",
+                  "totalStudents": 1,
+                  "maleStudents": 0,
+                  "femaleStudents": 1
+                },
+                {
+                  "id": "grade-8",
+                  "label": "8年級",
                   "category": "grade",
                   "totalStudents": 11,
                   "maleStudents": 9,
                   "femaleStudents": 2
                 },
                 {
-                  "id": "grade-8",
-                  "label": "8年級",
+                  "id": "grade-9",
+                  "label": "9年級",
                   "category": "grade",
                   "totalStudents": 9,
                   "maleStudents": 1,
                   "femaleStudents": 8
-                },
-                {
-                  "id": "grade-9",
-                  "label": "9年級",
-                  "category": "grade",
-                  "totalStudents": 11,
-                  "maleStudents": 7,
-                  "femaleStudents": 4
                 }
               ]
             }
@@ -1743,7 +1743,7 @@
             },
             {
               "year": 114,
-              "students": 257
+              "students": 252
             }
           ],
           "studentCompositions": [
@@ -1798,9 +1798,9 @@
             },
             {
               "year": 114,
-              "totalStudents": 257,
-              "maleStudents": 144,
-              "femaleStudents": 113,
+              "totalStudents": 252,
+              "maleStudents": 152,
+              "femaleStudents": 100,
               "bands": []
             }
           ],
@@ -2369,7 +2369,7 @@
             },
             {
               "year": 114,
-              "students": 126
+              "students": 135
             }
           ],
           "studentCompositions": [
@@ -2599,33 +2599,33 @@
             },
             {
               "year": 114,
-              "totalStudents": 126,
-              "maleStudents": 66,
-              "femaleStudents": 60,
+              "totalStudents": 135,
+              "maleStudents": 69,
+              "femaleStudents": 66,
               "bands": [
                 {
                   "id": "grade-7",
                   "label": "7年級",
                   "category": "grade",
-                  "totalStudents": 51,
-                  "maleStudents": 30,
-                  "femaleStudents": 21
+                  "totalStudents": 45,
+                  "maleStudents": 21,
+                  "femaleStudents": 24
                 },
                 {
                   "id": "grade-8",
                   "label": "8年級",
                   "category": "grade",
-                  "totalStudents": 41,
-                  "maleStudents": 19,
-                  "femaleStudents": 22
+                  "totalStudents": 49,
+                  "maleStudents": 29,
+                  "femaleStudents": 20
                 },
                 {
                   "id": "grade-9",
                   "label": "9年級",
                   "category": "grade",
-                  "totalStudents": 34,
-                  "maleStudents": 17,
-                  "femaleStudents": 17
+                  "totalStudents": 41,
+                  "maleStudents": 19,
+                  "femaleStudents": 22
                 }
               ]
             }
@@ -3144,323 +3144,6 @@
           "dataNotes": []
         },
         {
-          "id": "724502",
-          "code": "724502",
-          "schoolLevelId": "724502:國中",
-          "name": "縣立中正國中(小)",
-          "countyId": "連江縣",
-          "townshipId": "連江縣:南竿鄉",
-          "countyCode": "09007",
-          "townCode": "09007010",
-          "legacyCountyId": "連江縣",
-          "legacyTownshipId": "連江縣:南竿鄉",
-          "educationLevel": "國中",
-          "managementType": "公立",
-          "address": "連江縣南竿鄉馬祖村4號",
-          "phone": "(0836)22196",
-          "website": "http://www.jjps.matsu.edu.tw",
-          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/724502/J/連江縣/南竿鄉/縣市立/偏遠/無/",
-          "coordinates": {
-            "longitude": 119.919551,
-            "latitude": 26.158672
-          },
-          "yearlyStudents": [
-            {
-              "year": 107,
-              "students": 37
-            },
-            {
-              "year": 108,
-              "students": 50
-            },
-            {
-              "year": 109,
-              "students": 63
-            },
-            {
-              "year": 110,
-              "students": 66
-            },
-            {
-              "year": 111,
-              "students": 68
-            },
-            {
-              "year": 112,
-              "students": 59
-            },
-            {
-              "year": 113,
-              "students": 57
-            },
-            {
-              "year": 114,
-              "students": 57
-            }
-          ],
-          "studentCompositions": [
-            {
-              "year": 107,
-              "totalStudents": 37,
-              "maleStudents": 21,
-              "femaleStudents": 16,
-              "bands": [
-                {
-                  "id": "grade-7",
-                  "label": "7年級",
-                  "category": "grade",
-                  "totalStudents": 15,
-                  "maleStudents": 9,
-                  "femaleStudents": 6
-                },
-                {
-                  "id": "grade-8",
-                  "label": "8年級",
-                  "category": "grade",
-                  "totalStudents": 12,
-                  "maleStudents": 7,
-                  "femaleStudents": 5
-                },
-                {
-                  "id": "grade-9",
-                  "label": "9年級",
-                  "category": "grade",
-                  "totalStudents": 10,
-                  "maleStudents": 5,
-                  "femaleStudents": 5
-                }
-              ]
-            },
-            {
-              "year": 108,
-              "totalStudents": 50,
-              "maleStudents": 23,
-              "femaleStudents": 27,
-              "bands": [
-                {
-                  "id": "grade-7",
-                  "label": "7年級",
-                  "category": "grade",
-                  "totalStudents": 24,
-                  "maleStudents": 7,
-                  "femaleStudents": 17
-                },
-                {
-                  "id": "grade-8",
-                  "label": "8年級",
-                  "category": "grade",
-                  "totalStudents": 15,
-                  "maleStudents": 9,
-                  "femaleStudents": 6
-                },
-                {
-                  "id": "grade-9",
-                  "label": "9年級",
-                  "category": "grade",
-                  "totalStudents": 11,
-                  "maleStudents": 7,
-                  "femaleStudents": 4
-                }
-              ]
-            },
-            {
-              "year": 109,
-              "totalStudents": 63,
-              "maleStudents": 28,
-              "femaleStudents": 35,
-              "bands": [
-                {
-                  "id": "grade-7",
-                  "label": "7年級",
-                  "category": "grade",
-                  "totalStudents": 21,
-                  "maleStudents": 11,
-                  "femaleStudents": 10
-                },
-                {
-                  "id": "grade-8",
-                  "label": "8年級",
-                  "category": "grade",
-                  "totalStudents": 25,
-                  "maleStudents": 8,
-                  "femaleStudents": 17
-                },
-                {
-                  "id": "grade-9",
-                  "label": "9年級",
-                  "category": "grade",
-                  "totalStudents": 17,
-                  "maleStudents": 9,
-                  "femaleStudents": 8
-                }
-              ]
-            },
-            {
-              "year": 110,
-              "totalStudents": 66,
-              "maleStudents": 29,
-              "femaleStudents": 37,
-              "bands": [
-                {
-                  "id": "grade-7",
-                  "label": "7年級",
-                  "category": "grade",
-                  "totalStudents": 20,
-                  "maleStudents": 10,
-                  "femaleStudents": 10
-                },
-                {
-                  "id": "grade-8",
-                  "label": "8年級",
-                  "category": "grade",
-                  "totalStudents": 21,
-                  "maleStudents": 11,
-                  "femaleStudents": 10
-                },
-                {
-                  "id": "grade-9",
-                  "label": "9年級",
-                  "category": "grade",
-                  "totalStudents": 25,
-                  "maleStudents": 8,
-                  "femaleStudents": 17
-                }
-              ]
-            },
-            {
-              "year": 111,
-              "totalStudents": 68,
-              "maleStudents": 34,
-              "femaleStudents": 34,
-              "bands": [
-                {
-                  "id": "grade-7",
-                  "label": "7年級",
-                  "category": "grade",
-                  "totalStudents": 28,
-                  "maleStudents": 15,
-                  "femaleStudents": 13
-                },
-                {
-                  "id": "grade-8",
-                  "label": "8年級",
-                  "category": "grade",
-                  "totalStudents": 19,
-                  "maleStudents": 9,
-                  "femaleStudents": 10
-                },
-                {
-                  "id": "grade-9",
-                  "label": "9年級",
-                  "category": "grade",
-                  "totalStudents": 21,
-                  "maleStudents": 10,
-                  "femaleStudents": 11
-                }
-              ]
-            },
-            {
-              "year": 112,
-              "totalStudents": 59,
-              "maleStudents": 32,
-              "femaleStudents": 27,
-              "bands": [
-                {
-                  "id": "grade-7",
-                  "label": "7年級",
-                  "category": "grade",
-                  "totalStudents": 15,
-                  "maleStudents": 10,
-                  "femaleStudents": 5
-                },
-                {
-                  "id": "grade-8",
-                  "label": "8年級",
-                  "category": "grade",
-                  "totalStudents": 25,
-                  "maleStudents": 13,
-                  "femaleStudents": 12
-                },
-                {
-                  "id": "grade-9",
-                  "label": "9年級",
-                  "category": "grade",
-                  "totalStudents": 19,
-                  "maleStudents": 9,
-                  "femaleStudents": 10
-                }
-              ]
-            },
-            {
-              "year": 113,
-              "totalStudents": 57,
-              "maleStudents": 31,
-              "femaleStudents": 26,
-              "bands": [
-                {
-                  "id": "grade-7",
-                  "label": "7年級",
-                  "category": "grade",
-                  "totalStudents": 17,
-                  "maleStudents": 8,
-                  "femaleStudents": 9
-                },
-                {
-                  "id": "grade-8",
-                  "label": "8年級",
-                  "category": "grade",
-                  "totalStudents": 15,
-                  "maleStudents": 10,
-                  "femaleStudents": 5
-                },
-                {
-                  "id": "grade-9",
-                  "label": "9年級",
-                  "category": "grade",
-                  "totalStudents": 25,
-                  "maleStudents": 13,
-                  "femaleStudents": 12
-                }
-              ]
-            },
-            {
-              "year": 114,
-              "totalStudents": 57,
-              "maleStudents": 31,
-              "femaleStudents": 26,
-              "bands": [
-                {
-                  "id": "grade-7",
-                  "label": "7年級",
-                  "category": "grade",
-                  "totalStudents": 17,
-                  "maleStudents": 8,
-                  "femaleStudents": 9
-                },
-                {
-                  "id": "grade-8",
-                  "label": "8年級",
-                  "category": "grade",
-                  "totalStudents": 15,
-                  "maleStudents": 10,
-                  "femaleStudents": 5
-                },
-                {
-                  "id": "grade-9",
-                  "label": "9年級",
-                  "category": "grade",
-                  "totalStudents": 25,
-                  "maleStudents": 13,
-                  "femaleStudents": 12
-                }
-              ]
-            }
-          ],
-          "status": "正常",
-          "missingYears": [],
-          "dataNotes": []
-        },
-        {
           "id": "724602",
           "code": "724602",
           "schoolLevelId": "724602:國小",
@@ -3968,6 +3651,323 @@
           "status": "正常",
           "missingYears": [],
           "dataNotes": []
+        },
+        {
+          "id": "724502",
+          "code": "724502",
+          "schoolLevelId": "724502:國中",
+          "name": "縣立中正國中(小)",
+          "countyId": "連江縣",
+          "townshipId": "連江縣:南竿鄉",
+          "countyCode": "09007",
+          "townCode": "09007010",
+          "legacyCountyId": "連江縣",
+          "legacyTownshipId": "連江縣:南竿鄉",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "連江縣南竿鄉馬祖村4號",
+          "phone": "(0836)22196",
+          "website": "http://www.jjps.matsu.edu.tw",
+          "profileUrl": "https://stats.moe.gov.tw/edugissys/SchoolInfoCJ/724502/J/連江縣/南竿鄉/縣市立/偏遠/無/",
+          "coordinates": {
+            "longitude": 119.919551,
+            "latitude": 26.158672
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 37
+            },
+            {
+              "year": 108,
+              "students": 50
+            },
+            {
+              "year": 109,
+              "students": 63
+            },
+            {
+              "year": 110,
+              "students": 66
+            },
+            {
+              "year": 111,
+              "students": 68
+            },
+            {
+              "year": 112,
+              "students": 59
+            },
+            {
+              "year": 113,
+              "students": 57
+            },
+            {
+              "year": 114,
+              "students": 47
+            }
+          ],
+          "studentCompositions": [
+            {
+              "year": 107,
+              "totalStudents": 37,
+              "maleStudents": 21,
+              "femaleStudents": 16,
+              "bands": [
+                {
+                  "id": "grade-7",
+                  "label": "7年級",
+                  "category": "grade",
+                  "totalStudents": 15,
+                  "maleStudents": 9,
+                  "femaleStudents": 6
+                },
+                {
+                  "id": "grade-8",
+                  "label": "8年級",
+                  "category": "grade",
+                  "totalStudents": 12,
+                  "maleStudents": 7,
+                  "femaleStudents": 5
+                },
+                {
+                  "id": "grade-9",
+                  "label": "9年級",
+                  "category": "grade",
+                  "totalStudents": 10,
+                  "maleStudents": 5,
+                  "femaleStudents": 5
+                }
+              ]
+            },
+            {
+              "year": 108,
+              "totalStudents": 50,
+              "maleStudents": 23,
+              "femaleStudents": 27,
+              "bands": [
+                {
+                  "id": "grade-7",
+                  "label": "7年級",
+                  "category": "grade",
+                  "totalStudents": 24,
+                  "maleStudents": 7,
+                  "femaleStudents": 17
+                },
+                {
+                  "id": "grade-8",
+                  "label": "8年級",
+                  "category": "grade",
+                  "totalStudents": 15,
+                  "maleStudents": 9,
+                  "femaleStudents": 6
+                },
+                {
+                  "id": "grade-9",
+                  "label": "9年級",
+                  "category": "grade",
+                  "totalStudents": 11,
+                  "maleStudents": 7,
+                  "femaleStudents": 4
+                }
+              ]
+            },
+            {
+              "year": 109,
+              "totalStudents": 63,
+              "maleStudents": 28,
+              "femaleStudents": 35,
+              "bands": [
+                {
+                  "id": "grade-7",
+                  "label": "7年級",
+                  "category": "grade",
+                  "totalStudents": 21,
+                  "maleStudents": 11,
+                  "femaleStudents": 10
+                },
+                {
+                  "id": "grade-8",
+                  "label": "8年級",
+                  "category": "grade",
+                  "totalStudents": 25,
+                  "maleStudents": 8,
+                  "femaleStudents": 17
+                },
+                {
+                  "id": "grade-9",
+                  "label": "9年級",
+                  "category": "grade",
+                  "totalStudents": 17,
+                  "maleStudents": 9,
+                  "femaleStudents": 8
+                }
+              ]
+            },
+            {
+              "year": 110,
+              "totalStudents": 66,
+              "maleStudents": 29,
+              "femaleStudents": 37,
+              "bands": [
+                {
+                  "id": "grade-7",
+                  "label": "7年級",
+                  "category": "grade",
+                  "totalStudents": 20,
+                  "maleStudents": 10,
+                  "femaleStudents": 10
+                },
+                {
+                  "id": "grade-8",
+                  "label": "8年級",
+                  "category": "grade",
+                  "totalStudents": 21,
+                  "maleStudents": 11,
+                  "femaleStudents": 10
+                },
+                {
+                  "id": "grade-9",
+                  "label": "9年級",
+                  "category": "grade",
+                  "totalStudents": 25,
+                  "maleStudents": 8,
+                  "femaleStudents": 17
+                }
+              ]
+            },
+            {
+              "year": 111,
+              "totalStudents": 68,
+              "maleStudents": 34,
+              "femaleStudents": 34,
+              "bands": [
+                {
+                  "id": "grade-7",
+                  "label": "7年級",
+                  "category": "grade",
+                  "totalStudents": 28,
+                  "maleStudents": 15,
+                  "femaleStudents": 13
+                },
+                {
+                  "id": "grade-8",
+                  "label": "8年級",
+                  "category": "grade",
+                  "totalStudents": 19,
+                  "maleStudents": 9,
+                  "femaleStudents": 10
+                },
+                {
+                  "id": "grade-9",
+                  "label": "9年級",
+                  "category": "grade",
+                  "totalStudents": 21,
+                  "maleStudents": 10,
+                  "femaleStudents": 11
+                }
+              ]
+            },
+            {
+              "year": 112,
+              "totalStudents": 59,
+              "maleStudents": 32,
+              "femaleStudents": 27,
+              "bands": [
+                {
+                  "id": "grade-7",
+                  "label": "7年級",
+                  "category": "grade",
+                  "totalStudents": 15,
+                  "maleStudents": 10,
+                  "femaleStudents": 5
+                },
+                {
+                  "id": "grade-8",
+                  "label": "8年級",
+                  "category": "grade",
+                  "totalStudents": 25,
+                  "maleStudents": 13,
+                  "femaleStudents": 12
+                },
+                {
+                  "id": "grade-9",
+                  "label": "9年級",
+                  "category": "grade",
+                  "totalStudents": 19,
+                  "maleStudents": 9,
+                  "femaleStudents": 10
+                }
+              ]
+            },
+            {
+              "year": 113,
+              "totalStudents": 57,
+              "maleStudents": 31,
+              "femaleStudents": 26,
+              "bands": [
+                {
+                  "id": "grade-7",
+                  "label": "7年級",
+                  "category": "grade",
+                  "totalStudents": 17,
+                  "maleStudents": 8,
+                  "femaleStudents": 9
+                },
+                {
+                  "id": "grade-8",
+                  "label": "8年級",
+                  "category": "grade",
+                  "totalStudents": 15,
+                  "maleStudents": 10,
+                  "femaleStudents": 5
+                },
+                {
+                  "id": "grade-9",
+                  "label": "9年級",
+                  "category": "grade",
+                  "totalStudents": 25,
+                  "maleStudents": 13,
+                  "femaleStudents": 12
+                }
+              ]
+            },
+            {
+              "year": 114,
+              "totalStudents": 47,
+              "maleStudents": 26,
+              "femaleStudents": 21,
+              "bands": [
+                {
+                  "id": "grade-7",
+                  "label": "7年級",
+                  "category": "grade",
+                  "totalStudents": 15,
+                  "maleStudents": 7,
+                  "femaleStudents": 8
+                },
+                {
+                  "id": "grade-8",
+                  "label": "8年級",
+                  "category": "grade",
+                  "totalStudents": 17,
+                  "maleStudents": 9,
+                  "femaleStudents": 8
+                },
+                {
+                  "id": "grade-9",
+                  "label": "9年級",
+                  "category": "grade",
+                  "totalStudents": 15,
+                  "maleStudents": 10,
+                  "femaleStudents": 5
+                }
+              ]
+            }
+          ],
+          "status": "正常",
+          "missingYears": [],
+          "dataNotes": []
         }
       ],
       "dataNotes": []
@@ -4032,7 +4032,7 @@
             },
             {
               "year": 114,
-              "students": 10
+              "students": 13
             }
           ],
           "studentCompositions": [
@@ -4262,33 +4262,33 @@
             },
             {
               "year": 114,
-              "totalStudents": 10,
-              "maleStudents": 8,
-              "femaleStudents": 2,
+              "totalStudents": 13,
+              "maleStudents": 9,
+              "femaleStudents": 4,
               "bands": [
                 {
                   "id": "grade-7",
                   "label": "7年級",
+                  "category": "grade",
+                  "totalStudents": 3,
+                  "maleStudents": 1,
+                  "femaleStudents": 2
+                },
+                {
+                  "id": "grade-8",
+                  "label": "8年級",
                   "category": "grade",
                   "totalStudents": 2,
                   "maleStudents": 1,
                   "femaleStudents": 1
                 },
                 {
-                  "id": "grade-8",
-                  "label": "8年級",
-                  "category": "grade",
-                  "totalStudents": 7,
-                  "maleStudents": 6,
-                  "femaleStudents": 1
-                },
-                {
                   "id": "grade-9",
                   "label": "9年級",
                   "category": "grade",
-                  "totalStudents": 1,
-                  "maleStudents": 1,
-                  "femaleStudents": 0
+                  "totalStudents": 8,
+                  "maleStudents": 7,
+                  "femaleStudents": 1
                 }
               ]
             }

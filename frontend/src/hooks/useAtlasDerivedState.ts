@@ -156,7 +156,7 @@ export function useAtlasDerivedState({
   const rankingRows = selectedCounty ? townshipRows : countyRankingRows
   const scopeNotes = selectedTownshipSummary && selectedCounty && activeTownshipId
     ? getTownshipNotesFromSummary(selectedCounty, activeTownshipId)
-    : selectedCounty ? getCountyNotesFromSummary(selectedCounty) : []
+    : selectedCounty ? getCountyNotesFromSummary(selectedCounty) : (summaryDataset.dataNotes ?? [])
 
   const scopePath = ['全台']
   if (selectedCountySummary) scopePath.push(selectedCountySummary.label)

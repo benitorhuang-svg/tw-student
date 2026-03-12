@@ -11,6 +11,7 @@ import type { AcademicYear, CountySchoolAtlasDataset, EducationLevelFilter, Mana
 import type { AtlasTab } from '../hooks/useAtlasQueryState'
 import type { SavedComparisonScenario, InvestigationFilter } from '../hooks/types'
 import type { AtlasTheme } from '../lib/constants'
+import type { TrendPoint } from '../lib/analytics.types'
 import type { DataManifest, DataRefreshSummary, EducationSummaryDataset, ValidationReport } from '../data/educationTypes'
 
 type DesktopAppLayoutProps = {
@@ -81,6 +82,7 @@ type DesktopAppLayoutProps = {
   investigationFilter: InvestigationFilter
   setSelectedInvestigationId: (id: string | null) => void
   setInvestigationFilter: (filter: InvestigationFilter) => void
+  nationalEducationTrendSeries: Array<{ label: string, points: TrendPoint[] }>
 }
 
 function DesktopAppLayout(props: DesktopAppLayoutProps) {
@@ -144,6 +146,7 @@ function DesktopAppLayout(props: DesktopAppLayoutProps) {
         onSetActiveYear={props.setActiveYear}
         onSetIsYearPlaybackActive={props.setIsYearPlaybackActive}
         summaryYears={[...props.summaryDataset.years]}
+        nationalEducationTrendSeries={props.nationalEducationTrendSeries}
       />
 
       <AtlasFooter

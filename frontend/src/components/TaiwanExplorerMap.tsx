@@ -158,7 +158,7 @@ function TaiwanExplorerMap({
                 const properties = feature.properties as CountyBoundaryProperties
                 const summary = countyLookup.get(properties.countyId) ?? null
                 if (summary && !showCountyMarkers) {
-                  layer.bindTooltip(buildHoverPreviewHtml(summary.name, summary.students, summary.schools, summary.delta, summary.region), previewTipOpts)
+                  layer.bindTooltip(buildHoverPreviewHtml(summary.name), previewTipOpts)
                 }
                 layer.on({
                   click: () => onSelectCounty(properties.countyId),
@@ -197,7 +197,7 @@ function TaiwanExplorerMap({
                   const properties = feature.properties as TownshipBoundaryProperties
                   const summary = townshipLookup.get(properties.townId) ?? null
                   if (summary && !showTownshipMarkers) {
-                    layer.bindTooltip(buildHoverPreviewHtml(summary.label, summary.students, summary.schools, summary.delta, properties.countyName), previewTipOpts)
+                    layer.bindTooltip(buildHoverPreviewHtml(summary.label), previewTipOpts)
                   }
                   layer.on({
                     click: () => onSelectTownship(properties.townId),
@@ -221,7 +221,6 @@ function TaiwanExplorerMap({
                     const isChiayi = county.shortLabel === '嘉縣'
                     const displayLabel = isChiayi ? '嘉義' : county.shortLabel
                     let displayStudents = county.students
-                    let displaySchools = county.schools
                     let displayDelta = county.delta
                     let displayDeltaRatio = county.deltaRatio
 
@@ -229,7 +228,6 @@ function TaiwanExplorerMap({
                       const chiayiCity = counties.find((c) => c.shortLabel === '嘉市')
                       if (chiayiCity) {
                         displayStudents += chiayiCity.students
-                        displaySchools += chiayiCity.schools
                         displayDelta += chiayiCity.delta
                         const oldRaw = county.students - county.delta + (chiayiCity.students - chiayiCity.delta)
                         displayDeltaRatio = oldRaw > 0 ? displayDelta / oldRaw : 0
@@ -247,7 +245,7 @@ function TaiwanExplorerMap({
                         eventHandlers={{ click: () => onSelectCounty(county.id) }}
                       >
                         <Tooltip direction="top" offset={[0, -10]} className="atlas-map-tooltip atlas-map-tooltip--preview">
-                          {renderHoverPreview(isChiayi ? '嘉義' : county.name, displayStudents, displaySchools, displayDelta, county.region)}
+                          {renderHoverPreview(isChiayi ? '嘉義' : county.name)}
                         </Tooltip>
                       </Marker>
                     )
@@ -256,11 +254,11 @@ function TaiwanExplorerMap({
               : null}
 
             {showTownshipMarkers
-              ? <TownshipDotMarkers townshipRows={townshipRows} activeTownshipId={activeTownshipId} townshipCenterLookup={townshipCenterLookup} countyName={activeCounty?.name ?? ''} onSelectTownship={onSelectTownship} variant="full" />
+              ? <TownshipDotMarkers townshipRows={townshipRows} activeTownshipId={activeTownshipId} townshipCenterLookup={townshipCenterLookup} onSelectTownship={onSelectTownship} variant="full" />
               : null}
 
             {activeCounty && townshipRows.length > 0 && !showTownshipMarkers && !showSchoolMarkers
-              ? <TownshipDotMarkers townshipRows={townshipRows} activeTownshipId={activeTownshipId} townshipCenterLookup={townshipCenterLookup} countyName={activeCounty.name} onSelectTownship={onSelectTownship} variant="compact" />
+              ? <TownshipDotMarkers townshipRows={townshipRows} activeTownshipId={activeTownshipId} townshipCenterLookup={townshipCenterLookup} onSelectTownship={onSelectTownship} variant="compact" />
               : null}
 
             {showSchoolMarkers ? (

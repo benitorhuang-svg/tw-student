@@ -7,7 +7,6 @@ type TownshipDotMarkersProps = {
   townshipRows: RankingSummary[]
   activeTownshipId: string | null
   townshipCenterLookup: Map<string, [number, number]>
-  countyName: string
   onSelectTownship: (townshipId: string) => void
   variant?: 'compact' | 'full'
 }
@@ -23,7 +22,7 @@ function getTownshipCollisionBox(label: string, variant: 'compact' | 'full', zoo
   return { width, height }
 }
 
-function TownshipDotMarkers({ townshipRows, activeTownshipId, townshipCenterLookup, countyName, onSelectTownship, variant = 'compact' }: TownshipDotMarkersProps) {
+function TownshipDotMarkers({ townshipRows, activeTownshipId, townshipCenterLookup, onSelectTownship, variant = 'compact' }: TownshipDotMarkersProps) {
   const map = useMap()
   const [, setViewportVersion] = useState(0)
 
@@ -73,7 +72,7 @@ function TownshipDotMarkers({ townshipRows, activeTownshipId, townshipCenterLook
               eventHandlers={{ click: () => onSelectTownship(township.id) }}
             >
               <Tooltip direction="top" offset={[0, variant === 'compact' ? -6 : -10]} className="atlas-map-tooltip atlas-map-tooltip--preview">
-                {renderHoverPreview(township.label, township.students, township.schools, township.delta, countyName)}
+                {renderHoverPreview(township.label)}
               </Tooltip>
             </Marker>
           )

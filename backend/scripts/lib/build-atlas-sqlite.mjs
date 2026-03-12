@@ -201,6 +201,7 @@ export async function buildAtlasSqliteBuffer(datasetBundle) {
     insertMeta.run(['generatedAt', datasetBundle.generatedAt])
     insertMeta.run(['years', encodeJson(datasetBundle.years)])
     insertMeta.run(['sources', encodeJson(datasetBundle.sources)])
+    insertMeta.run(['dataNotes', encodeJson(datasetBundle.summaryDataset.dataNotes ?? [])])
 
     datasetBundle.summaryDataset.counties.forEach((county) => {
       const countyCode = county.countyCode ?? county.id

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-10T16:03:19.316Z",
+  "generatedAt": "2026-03-11T23:49:21.142Z",
   "county": {
     "id": "嘉義市",
     "countyCode": "10020",
@@ -15,7 +15,7 @@
         "geohash": "wsjtt",
         "precision": 5,
         "count": 22,
-        "totalStudents": 20239,
+        "totalStudents": 20139,
         "latitude": 23.4815,
         "longitude": 120.46578,
         "bounds": {
@@ -26,31 +26,31 @@
         },
         "topSchools": [
           {
-            "id": "200405",
-            "name": "國立嘉義高工",
-            "townshipName": "東區",
-            "students": 2356,
-            "status": "正常"
-          },
-          {
             "id": "201408",
             "name": "私立東吳工家",
             "townshipName": "東區",
-            "students": 2089,
+            "students": 2233,
+            "status": "正常"
+          },
+          {
+            "id": "200405",
+            "name": "國立嘉義高工",
+            "townshipName": "東區",
+            "students": 2176,
             "status": "正常"
           },
           {
             "id": "200303",
             "name": "國立嘉義高中",
             "townshipName": "東區",
-            "students": 2023,
+            "students": 1997,
             "status": "正常"
           },
           {
             "id": "203502",
             "name": "市立北興國中",
             "townshipName": "東區",
-            "students": 1591,
+            "students": 1656,
             "status": "正常"
           }
         ]
@@ -60,7 +60,7 @@
         "geohash": "wsjts",
         "precision": 5,
         "count": 14,
-        "totalStudents": 9077,
+        "totalStudents": 9106,
         "latitude": 23.484049,
         "longitude": 120.436045,
         "bounds": {
@@ -74,7 +74,7 @@
             "id": "200302",
             "name": "國立嘉義女中",
             "townshipName": "西區",
-            "students": 1570,
+            "students": 1545,
             "status": "正常"
           },
           {
@@ -105,7 +105,7 @@
         "geohash": "wsjtm",
         "precision": 5,
         "count": 5,
-        "totalStudents": 13706,
+        "totalStudents": 13500,
         "latitude": 23.461486,
         "longitude": 120.46224,
         "bounds": {
@@ -119,7 +119,7 @@
             "id": "0018",
             "name": "國立嘉義大學",
             "townshipName": "東區",
-            "students": 11349,
+            "students": 11103,
             "status": "正常"
           },
           {
@@ -133,14 +133,14 @@
             "id": "201312:國中",
             "name": "私立輔仁高中附設國中部",
             "townshipName": "東區",
-            "students": 753,
+            "students": 827,
             "status": "正常"
           },
           {
             "id": "201312",
             "name": "私立輔仁高中",
             "townshipName": "東區",
-            "students": 644,
+            "students": 626,
             "status": "正常"
           }
         ]
@@ -150,7 +150,7 @@
         "geohash": "wsjtk",
         "precision": 5,
         "count": 4,
-        "totalStudents": 3897,
+        "totalStudents": 3909,
         "latitude": 23.463465,
         "longitude": 120.444654,
         "bounds": {
@@ -164,7 +164,7 @@
             "id": "203505",
             "name": "市立民生國中",
             "townshipName": "西區",
-            "students": 1703,
+            "students": 1721,
             "status": "正常"
           },
           {
@@ -185,7 +185,7 @@
             "id": "203501",
             "name": "市立大業實驗國中",
             "townshipName": "東區",
-            "students": 245,
+            "students": 239,
             "status": "正常"
           }
         ]
@@ -197,7 +197,7 @@
         "geohash": "wsjtt0",
         "precision": 6,
         "count": 4,
-        "totalStudents": 5747,
+        "totalStudents": 5800,
         "latitude": 23.469904,
         "longitude": 120.461717,
         "bounds": {
@@ -208,24 +208,24 @@
         },
         "topSchools": [
           {
-            "id": "200405",
-            "name": "國立嘉義高工",
-            "townshipName": "東區",
-            "students": 2356,
-            "status": "正常"
-          },
-          {
             "id": "201408",
             "name": "私立東吳工家",
             "townshipName": "東區",
-            "students": 2089,
+            "students": 2233,
+            "status": "正常"
+          },
+          {
+            "id": "200405",
+            "name": "國立嘉義高工",
+            "townshipName": "東區",
+            "students": 2176,
             "status": "正常"
           },
           {
             "id": "203504",
             "name": "市立南興國中",
             "townshipName": "東區",
-            "students": 657,
+            "students": 746,
             "status": "正常"
           },
           {
@@ -242,7 +242,7 @@
         "geohash": "wsjtth",
         "precision": 6,
         "count": 4,
-        "totalStudents": 3546,
+        "totalStudents": 3474,
         "latitude": 23.490876,
         "longitude": 120.459846,
         "bounds": {
@@ -256,7 +256,7 @@
             "id": "203502",
             "name": "市立北興國中",
             "townshipName": "東區",
-            "students": 1591,
+            "students": 1656,
             "status": "正常"
           },
           {
@@ -270,14 +270,14 @@
             "id": "201304",
             "name": "私立興華高中",
             "townshipName": "東區",
-            "students": 481,
+            "students": 380,
             "status": "正常"
           },
           {
             "id": "201304:國中",
             "name": "私立興華高中附設國中部",
             "townshipName": "東區",
-            "students": 229,
+            "students": 193,
             "status": "正常"
           }
         ]
@@ -287,7 +287,7 @@
         "geohash": "wsjtt1",
         "precision": 6,
         "count": 3,
-        "totalStudents": 3585,
+        "totalStudents": 3530,
         "latitude": 23.475159,
         "longitude": 120.459466,
         "bounds": {
@@ -301,14 +301,14 @@
             "id": "200303",
             "name": "國立嘉義高中",
             "townshipName": "東區",
-            "students": 2023,
+            "students": 1997,
             "status": "正常"
           },
           {
             "id": "200407",
             "name": "國立嘉義家職",
             "townshipName": "東區",
-            "students": 997,
+            "students": 968,
             "status": "正常"
           },
           {
@@ -325,7 +325,7 @@
         "geohash": "wsjtmn",
         "precision": 6,
         "count": 3,
-        "totalStudents": 2303,
+        "totalStudents": 2359,
         "latitude": 23.460175,
         "longitude": 120.456139,
         "bounds": {
@@ -346,14 +346,14 @@
             "id": "201312:國中",
             "name": "私立輔仁高中附設國中部",
             "townshipName": "東區",
-            "students": 753,
+            "students": 827,
             "status": "正常"
           },
           {
             "id": "201312",
             "name": "私立輔仁高中",
             "townshipName": "東區",
-            "students": 644,
+            "students": 626,
             "status": "正常"
           }
         ]
@@ -363,7 +363,7 @@
         "geohash": "wsjttd",
         "precision": 6,
         "count": 3,
-        "totalStudents": 1683,
+        "totalStudents": 1745,
         "latitude": 23.482997,
         "longitude": 120.478462,
         "bounds": {
@@ -377,21 +377,21 @@
             "id": "201310:國中",
             "name": "私立嘉華高中附設國中部",
             "townshipName": "東區",
-            "students": 652,
+            "students": 686,
             "status": "正常"
           },
           {
             "id": "201310",
             "name": "私立嘉華高中",
             "townshipName": "東區",
-            "students": 556,
+            "students": 579,
             "status": "正常"
           },
           {
             "id": "203507",
             "name": "市立蘭潭國中",
             "townshipName": "東區",
-            "students": 475,
+            "students": 480,
             "status": "正常"
           }
         ]
@@ -401,7 +401,7 @@
         "geohash": "wsjtkx",
         "precision": 6,
         "count": 2,
-        "totalStudents": 2852,
+        "totalStudents": 2870,
         "latitude": 23.464622,
         "longitude": 120.439052,
         "bounds": {
@@ -415,7 +415,7 @@
             "id": "203505",
             "name": "市立民生國中",
             "townshipName": "西區",
-            "students": 1703,
+            "students": 1721,
             "status": "正常"
           },
           {
@@ -432,7 +432,7 @@
         "geohash": "wsjtsc",
         "precision": 6,
         "count": 2,
-        "totalStudents": 2776,
+        "totalStudents": 2751,
         "latitude": 23.473403,
         "longitude": 120.45203,
         "bounds": {
@@ -446,7 +446,7 @@
             "id": "200302",
             "name": "國立嘉義女中",
             "townshipName": "西區",
-            "students": 1570,
+            "students": 1545,
             "status": "正常"
           },
           {
@@ -463,7 +463,7 @@
         "geohash": "wsjtkz",
         "precision": 6,
         "count": 2,
-        "totalStudents": 1045,
+        "totalStudents": 1039,
         "latitude": 23.462309,
         "longitude": 120.450256,
         "bounds": {
@@ -484,7 +484,7 @@
             "id": "203501",
             "name": "市立大業實驗國中",
             "townshipName": "東區",
-            "students": 245,
+            "students": 239,
             "status": "正常"
           }
         ]
@@ -494,7 +494,7 @@
         "geohash": "wsjtsm",
         "precision": 6,
         "count": 2,
-        "totalStudents": 668,
+        "totalStudents": 696,
         "latitude": 23.494898,
         "longitude": 120.426448,
         "bounds": {
@@ -508,7 +508,7 @@
             "id": "203508",
             "name": "市立北園國中",
             "townshipName": "西區",
-            "students": 369,
+            "students": 397,
             "status": "正常"
           },
           {
@@ -525,7 +525,7 @@
         "geohash": "wsjtt4",
         "precision": 6,
         "count": 2,
-        "totalStudents": 2575,
+        "totalStudents": 2442,
         "latitude": 23.480643,
         "longitude": 120.460613,
         "bounds": {
@@ -539,14 +539,14 @@
             "id": "200406",
             "name": "國立嘉義高商",
             "townshipName": "東區",
-            "students": 1352,
+            "students": 1303,
             "status": "正常"
           },
           {
             "id": "200401",
             "name": "國立華南高商",
             "townshipName": "東區",
-            "students": 1223,
+            "students": 1139,
             "status": "正常"
           }
         ]
@@ -556,7 +556,7 @@
         "geohash": "wsjtt5",
         "precision": 6,
         "count": 2,
-        "totalStudents": 1553,
+        "totalStudents": 1598,
         "latitude": 23.486803,
         "longitude": 120.460278,
         "bounds": {
@@ -577,7 +577,7 @@
             "id": "203503",
             "name": "市立嘉義國中",
             "townshipName": "東區",
-            "students": 727,
+            "students": 772,
             "status": "正常"
           }
         ]
@@ -587,7 +587,7 @@
         "geohash": "wsjtsz",
         "precision": 6,
         "count": 2,
-        "totalStudents": 169,
+        "totalStudents": 142,
         "latitude": 23.505814,
         "longitude": 120.446399,
         "bounds": {
@@ -601,14 +601,14 @@
             "id": "201313:國中",
             "name": "私立宏仁女中附設國中部",
             "townshipName": "東區",
-            "students": 87,
+            "students": 78,
             "status": "正常"
           },
           {
             "id": "201313",
             "name": "私立宏仁高中",
             "townshipName": "東區",
-            "students": 82,
+            "students": 64,
             "status": "正常"
           }
         ]
@@ -738,7 +738,7 @@
         "geohash": "wsjts2",
         "precision": 6,
         "count": 1,
-        "totalStudents": 529,
+        "totalStudents": 582,
         "latitude": 23.468652,
         "longitude": 120.42576,
         "bounds": {
@@ -752,7 +752,7 @@
             "id": "203506",
             "name": "市立玉山國中",
             "townshipName": "西區",
-            "students": 529,
+            "students": 582,
             "status": "正常"
           }
         ]
@@ -810,7 +810,7 @@
         "geohash": "wsjtmx",
         "precision": 6,
         "count": 1,
-        "totalStudents": 11349,
+        "totalStudents": 11103,
         "latitude": 23.463817,
         "longitude": 120.483502,
         "bounds": {
@@ -824,7 +824,7 @@
             "id": "0018",
             "name": "國立嘉義大學",
             "townshipName": "東區",
-            "students": 11349,
+            "students": 11103,
             "status": "正常"
           }
         ]
@@ -930,7 +930,7 @@
         "geohash": "wsjtmp",
         "precision": 6,
         "count": 1,
-        "totalStudents": 54,
+        "totalStudents": 38,
         "latitude": 23.463088,
         "longitude": 120.459281,
         "bounds": {
@@ -944,7 +944,7 @@
             "id": "201314",
             "name": "私立立仁高中",
             "townshipName": "東區",
-            "students": 54,
+            "students": 38,
             "status": "正常"
           }
         ]
@@ -956,7 +956,7 @@
         "geohash": "wsjtmnc",
         "precision": 7,
         "count": 2,
-        "totalStudents": 1397,
+        "totalStudents": 1453,
         "latitude": 23.460634,
         "longitude": 120.456641,
         "bounds": {
@@ -970,14 +970,14 @@
             "id": "201312:國中",
             "name": "私立輔仁高中附設國中部",
             "townshipName": "東區",
-            "students": 753,
+            "students": 827,
             "status": "正常"
           },
           {
             "id": "201312",
             "name": "私立輔仁高中",
             "townshipName": "東區",
-            "students": 644,
+            "students": 626,
             "status": "正常"
           }
         ]
@@ -987,7 +987,7 @@
         "geohash": "wsjttdb",
         "precision": 7,
         "count": 2,
-        "totalStudents": 1208,
+        "totalStudents": 1265,
         "latitude": 23.483227,
         "longitude": 120.476817,
         "bounds": {
@@ -1001,14 +1001,14 @@
             "id": "201310:國中",
             "name": "私立嘉華高中附設國中部",
             "townshipName": "東區",
-            "students": 652,
+            "students": 686,
             "status": "正常"
           },
           {
             "id": "201310",
             "name": "私立嘉華高中",
             "townshipName": "東區",
-            "students": 556,
+            "students": 579,
             "status": "正常"
           }
         ]
@@ -1018,7 +1018,7 @@
         "geohash": "wsjtthp",
         "precision": 7,
         "count": 2,
-        "totalStudents": 710,
+        "totalStudents": 573,
         "latitude": 23.489587,
         "longitude": 120.464605,
         "bounds": {
@@ -1032,14 +1032,14 @@
             "id": "201304",
             "name": "私立興華高中",
             "townshipName": "東區",
-            "students": 481,
+            "students": 380,
             "status": "正常"
           },
           {
             "id": "201304:國中",
             "name": "私立興華高中附設國中部",
             "townshipName": "東區",
-            "students": 229,
+            "students": 193,
             "status": "正常"
           }
         ]
@@ -1049,7 +1049,7 @@
         "geohash": "wsjtsz4",
         "precision": 7,
         "count": 2,
-        "totalStudents": 169,
+        "totalStudents": 142,
         "latitude": 23.505814,
         "longitude": 120.446399,
         "bounds": {
@@ -1063,14 +1063,14 @@
             "id": "201313:國中",
             "name": "私立宏仁女中附設國中部",
             "townshipName": "東區",
-            "students": 87,
+            "students": 78,
             "status": "正常"
           },
           {
             "id": "201313",
             "name": "私立宏仁高中",
             "townshipName": "東區",
-            "students": 82,
+            "students": 64,
             "status": "正常"
           }
         ]
@@ -1080,7 +1080,7 @@
         "geohash": "wsjtkxt",
         "precision": 7,
         "count": 1,
-        "totalStudents": 1703,
+        "totalStudents": 1721,
         "latitude": 23.464693,
         "longitude": 120.439937,
         "bounds": {
@@ -1094,7 +1094,7 @@
             "id": "203505",
             "name": "市立民生國中",
             "townshipName": "西區",
-            "students": 1703,
+            "students": 1721,
             "status": "正常"
           }
         ]
@@ -1104,7 +1104,7 @@
         "geohash": "wsjtscj",
         "precision": 7,
         "count": 1,
-        "totalStudents": 1570,
+        "totalStudents": 1545,
         "latitude": 23.473441,
         "longitude": 120.451168,
         "bounds": {
@@ -1118,7 +1118,7 @@
             "id": "200302",
             "name": "國立嘉義女中",
             "townshipName": "西區",
-            "students": 1570,
+            "students": 1545,
             "status": "正常"
           }
         ]
@@ -1296,7 +1296,7 @@
         "geohash": "wsjts27",
         "precision": 7,
         "count": 1,
-        "totalStudents": 529,
+        "totalStudents": 582,
         "latitude": 23.468652,
         "longitude": 120.42576,
         "bounds": {
@@ -1310,7 +1310,7 @@
             "id": "203506",
             "name": "市立玉山國中",
             "townshipName": "西區",
-            "students": 529,
+            "students": 582,
             "status": "正常"
           }
         ]
@@ -1368,7 +1368,7 @@
         "geohash": "wsjtsmh",
         "precision": 7,
         "count": 1,
-        "totalStudents": 369,
+        "totalStudents": 397,
         "latitude": 23.49486,
         "longitude": 120.427102,
         "bounds": {
@@ -1382,7 +1382,7 @@
             "id": "203508",
             "name": "市立北園國中",
             "townshipName": "西區",
-            "students": 369,
+            "students": 397,
             "status": "正常"
           }
         ]
@@ -1416,7 +1416,7 @@
         "geohash": "wsjtmxm",
         "precision": 7,
         "count": 1,
-        "totalStudents": 11349,
+        "totalStudents": 11103,
         "latitude": 23.463817,
         "longitude": 120.483502,
         "bounds": {
@@ -1430,31 +1430,7 @@
             "id": "0018",
             "name": "國立嘉義大學",
             "townshipName": "東區",
-            "students": 11349,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsjtt0z",
-        "geohash": "wsjtt0z",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 2356,
-        "latitude": 23.472094,
-        "longitude": 120.464183,
-        "bounds": {
-          "minLatitude": 23.472094,
-          "maxLatitude": 23.472094,
-          "minLongitude": 120.464183,
-          "maxLongitude": 120.464183
-        },
-        "topSchools": [
-          {
-            "id": "200405",
-            "name": "國立嘉義高工",
-            "townshipName": "東區",
-            "students": 2356,
+            "students": 11103,
             "status": "正常"
           }
         ]
@@ -1464,7 +1440,7 @@
         "geohash": "wsjtt0k",
         "precision": 7,
         "count": 1,
-        "totalStudents": 2089,
+        "totalStudents": 2233,
         "latitude": 23.468913,
         "longitude": 120.460927,
         "bounds": {
@@ -1478,7 +1454,31 @@
             "id": "201408",
             "name": "私立東吳工家",
             "townshipName": "東區",
-            "students": 2089,
+            "students": 2233,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsjtt0z",
+        "geohash": "wsjtt0z",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 2176,
+        "latitude": 23.472094,
+        "longitude": 120.464183,
+        "bounds": {
+          "minLatitude": 23.472094,
+          "maxLatitude": 23.472094,
+          "minLongitude": 120.464183,
+          "maxLongitude": 120.464183
+        },
+        "topSchools": [
+          {
+            "id": "200405",
+            "name": "國立嘉義高工",
+            "townshipName": "東區",
+            "students": 2176,
             "status": "正常"
           }
         ]
@@ -1488,7 +1488,7 @@
         "geohash": "wsjtt1z",
         "precision": 7,
         "count": 1,
-        "totalStudents": 2023,
+        "totalStudents": 1997,
         "latitude": 23.477065,
         "longitude": 120.464614,
         "bounds": {
@@ -1502,7 +1502,7 @@
             "id": "200303",
             "name": "國立嘉義高中",
             "townshipName": "東區",
-            "students": 2023,
+            "students": 1997,
             "status": "正常"
           }
         ]
@@ -1512,7 +1512,7 @@
         "geohash": "wsjtth2",
         "precision": 7,
         "count": 1,
-        "totalStudents": 1591,
+        "totalStudents": 1656,
         "latitude": 23.490872,
         "longitude": 120.454997,
         "bounds": {
@@ -1526,7 +1526,7 @@
             "id": "203502",
             "name": "市立北興國中",
             "townshipName": "東區",
-            "students": 1591,
+            "students": 1656,
             "status": "正常"
           }
         ]
@@ -1536,7 +1536,7 @@
         "geohash": "wsjtt4y",
         "precision": 7,
         "count": 1,
-        "totalStudents": 1352,
+        "totalStudents": 1303,
         "latitude": 23.482269,
         "longitude": 120.462427,
         "bounds": {
@@ -1550,7 +1550,7 @@
             "id": "200406",
             "name": "國立嘉義高商",
             "townshipName": "東區",
-            "students": 1352,
+            "students": 1303,
             "status": "正常"
           }
         ]
@@ -1580,30 +1580,6 @@
         ]
       },
       {
-        "id": "7-wsjtt45",
-        "geohash": "wsjtt45",
-        "precision": 7,
-        "count": 1,
-        "totalStudents": 1223,
-        "latitude": 23.479017,
-        "longitude": 120.458799,
-        "bounds": {
-          "minLatitude": 23.479017,
-          "maxLatitude": 23.479017,
-          "minLongitude": 120.458799,
-          "maxLongitude": 120.458799
-        },
-        "topSchools": [
-          {
-            "id": "200401",
-            "name": "國立華南高商",
-            "townshipName": "東區",
-            "students": 1223,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "7-wsjtscp",
         "geohash": "wsjtscp",
         "precision": 7,
@@ -1628,11 +1604,35 @@
         ]
       },
       {
+        "id": "7-wsjtt45",
+        "geohash": "wsjtt45",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 1139,
+        "latitude": 23.479017,
+        "longitude": 120.458799,
+        "bounds": {
+          "minLatitude": 23.479017,
+          "maxLatitude": 23.479017,
+          "minLongitude": 120.458799,
+          "maxLongitude": 120.458799
+        },
+        "topSchools": [
+          {
+            "id": "200401",
+            "name": "國立華南高商",
+            "townshipName": "東區",
+            "students": 1139,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "7-wsjtt15",
         "geohash": "wsjtt15",
         "precision": 7,
         "count": 1,
-        "totalStudents": 997,
+        "totalStudents": 968,
         "latitude": 23.472596,
         "longitude": 120.458595,
         "bounds": {
@@ -1646,7 +1646,7 @@
             "id": "200407",
             "name": "國立嘉義家職",
             "townshipName": "東區",
-            "students": 997,
+            "students": 968,
             "status": "正常"
           }
         ]
@@ -1704,7 +1704,7 @@
         "geohash": "wsjtt5x",
         "precision": 7,
         "count": 1,
-        "totalStudents": 727,
+        "totalStudents": 772,
         "latitude": 23.487255,
         "longitude": 120.464727,
         "bounds": {
@@ -1718,7 +1718,7 @@
             "id": "203503",
             "name": "市立嘉義國中",
             "townshipName": "東區",
-            "students": 727,
+            "students": 772,
             "status": "正常"
           }
         ]
@@ -1728,7 +1728,7 @@
         "geohash": "wsjtt0j",
         "precision": 7,
         "count": 1,
-        "totalStudents": 657,
+        "totalStudents": 746,
         "latitude": 23.46785,
         "longitude": 120.462118,
         "bounds": {
@@ -1742,7 +1742,7 @@
             "id": "203504",
             "name": "市立南興國中",
             "townshipName": "東區",
-            "students": 657,
+            "students": 746,
             "status": "正常"
           }
         ]
@@ -1824,7 +1824,7 @@
         "geohash": "wsjttdu",
         "precision": 7,
         "count": 1,
-        "totalStudents": 475,
+        "totalStudents": 480,
         "latitude": 23.482536,
         "longitude": 120.481752,
         "bounds": {
@@ -1838,7 +1838,7 @@
             "id": "203507",
             "name": "市立蘭潭國中",
             "townshipName": "東區",
-            "students": 475,
+            "students": 480,
             "status": "正常"
           }
         ]
@@ -1920,7 +1920,7 @@
         "geohash": "wsjtkzp",
         "precision": 7,
         "count": 1,
-        "totalStudents": 245,
+        "totalStudents": 239,
         "latitude": 23.46215,
         "longitude": 120.45403,
         "bounds": {
@@ -1934,7 +1934,7 @@
             "id": "203501",
             "name": "市立大業實驗國中",
             "townshipName": "東區",
-            "students": 245,
+            "students": 239,
             "status": "正常"
           }
         ]
@@ -1944,7 +1944,7 @@
         "geohash": "wsjtmp7",
         "precision": 7,
         "count": 1,
-        "totalStudents": 54,
+        "totalStudents": 38,
         "latitude": 23.463088,
         "longitude": 120.459281,
         "bounds": {
@@ -1958,7 +1958,7 @@
             "id": "201314",
             "name": "私立立仁高中",
             "townshipName": "東區",
-            "students": 54,
+            "students": 38,
             "status": "正常"
           }
         ]
