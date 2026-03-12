@@ -130,9 +130,26 @@ export function useAtlasDerivedState({
   const countySummaries = getCountySummaries(summaryDataset.counties, filters)
   const countyRankingRows = getCountyRankingRows(countySummaries)
   const activeCountyId = selectedCountyFromDataset ? normalizeCountyId(summaryDataset, selectedCountyId) : null
-  const activeTownshipBoundaries = activeCountyId ? townshipBoundaryCache[activeCountyId] ?? null : null
+  // Special-case: when focusing on 嘉義, present both 嘉義市 and 嘉義縣 township slices together
+  const isChiayiGroup = activeCountyId === '嘉義市' || activeCountyId === '嘉義縣'
+  const chiayiCityBoundaries = townshipBoundaryCache['嘉義市'] ?? null
+  const chiayiCountyBoundaries = townshipBoundaryCache['嘉義縣'] ?? null
+  const activeTownshipBoundaries = activeCountyId
+    ? isChiayiGroup
+      ? (chiayiCityBoundaries && chiayiCountyBoundaries
+        ? { type: 'FeatureCollection' as const, features: [...chiayiCityBoundaries.features, ...chiayiCountyBoundaries.features] }
+        : (chiayiCityBoundaries ?? chiayiCountyBoundaries ?? null))
+      : (townshipBoundaryCache[activeCountyId] ?? null)
+    : null
+
   const activeCountyBuckets = activeCountyId ? countyBucketCache[activeCountyId] ?? null : null
-  const isTownshipBoundaryLoading = Boolean(activeCountyId && !activeTownshipBoundaries)
+  const isTownshipBoundaryLoading = Boolean(
+    activeCountyId && (
+      isChiayiGroup
+        ? !(chiayiCityBoundaries && chiayiCountyBoundaries)
+        : !(townshipBoundaryCache[activeCountyId])
+    ),
+  )
   const selectedCounty = summaryDataset.counties.find((county) => county.id === activeCountyId) ?? null
   const selectedCountyDetail = activeCountyId ? countyDetailCache[activeCountyId] ?? null : null
   const isCountyDetailLoading = Boolean(activeCountyId && !selectedCountyDetail && !countyDetailError)

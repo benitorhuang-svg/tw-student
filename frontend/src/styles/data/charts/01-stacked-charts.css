@@ -1,0 +1,35 @@
+.stacked-area-chart__svg {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+.stacked-area-chart__area-path {
+    transition: d .3s ease, fill-opacity .2s;
+}
+
+.stacked-area-chart__line-path {
+    stroke-width: var(--chart-line-weight-bold, 3.5);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.stacked-area-chart__value-label {
+    font-size: var(--chart-text-base, 10px);
+    font-weight: 700;
+}
+
+.stacked-area-chart__total-label {
+    fill: var(--text-main);
+    font-size: var(--chart-text-md, 11px);
+    font-weight: 900;
+}
+
+.stacked-area-chart__total-delta--up { fill: #10b981; }
+.stacked-area-chart__total-delta--down { fill: #ef4444; }
+
+.stacked-area-chart__series-0 { background: var(--chart-area-0); stroke: var(--chart-area-0); fill: var(--chart-area-0); }
+.stacked-area-chart__series-1 { background: var(--chart-area-1); stroke: var(--chart-area-1); fill: var(--chart-area-1); }
+.stacked-area-chart__series-2 { background: var(--chart-area-2); stroke: var(--chart-area-2); fill: var(--chart-area-2); }
+.stacked-area-chart__series-3 { background: var(--chart-area-3); stroke: var(--chart-area-3); fill: var(--chart-area-3); }
+.stacked-area-chart__series-4 { background: var(--chart-area-4); stroke: var(--chart-area-4); fill: var(--chart-area-4); }

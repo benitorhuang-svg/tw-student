@@ -12,28 +12,51 @@ type ButterflyItem = {
 }
 
 type ButterflyChartProps = {
-  title: string
-  subtitle: string
   items: ButterflyItem[]
   activeItemId?: string | null
   onSelectItem?: (id: string) => void
+  title?: string
+  subtitle?: string
+  className?: string
+  flat?: boolean
+  showHeader?: boolean
 }
 
 function ButterflyChart({
-  title,
-  subtitle,
   items,
   activeItemId = null,
   onSelectItem,
+  title,
+  subtitle,
+  className,
+  flat,
+  showHeader = false,
 }: ButterflyChartProps) {
   const { ref, isVisible } = useChartAnimation()
   const [detailItemId, setDetailItemId] = useState<string | null>(null)
 
+  const combinedClasses = [
+    'dashboard-card',
+    'butterfly-chart',
+    flat ? 'dashboard-card--flat' : '',
+    isVisible ? 'chart-enter chart-enter--visible' : 'chart-enter',
+    className || ''
+  ].filter(Boolean).join(' ')
+
   if (items.length === 0) {
     return (
-      <section ref={ref as React.RefObject<HTMLElement>} className="butterfly-chart">
-        <div className="panel-heading butterfly-chart__heading"><div><h3>{title}</h3></div></div>
-        <div className="chart-empty-state">尚無資料</div>
+      <section ref={ref as React.RefObject<HTMLElement>} className={combinedClasses}>
+        {showHeader && title && (
+          <div className="dashboard-card__head">
+            <div className="panel-heading__stack">
+              <h3 className="dashboard-card__title">{title}</h3>
+              {subtitle && <p className="dashboard-card__subtitle">{subtitle}</p>}
+            </div>
+          </div>
+        )}
+        <div className="dashboard-card__body">
+          <div className="chart-empty-state">尚無資料</div>
+        </div>
       </section>
     )
   }
@@ -41,17 +64,16 @@ function ButterflyChart({
   const maxSide = Math.max(...items.flatMap((item) => [item.leftValue, item.rightValue]), 1)
 
   return (
-    <section
-      ref={ref as React.RefObject<HTMLElement>}
-      className={isVisible ? 'butterfly-chart chart-enter chart-enter--visible' : 'butterfly-chart chart-enter'}
-    >
-      <div className="panel-heading butterfly-chart__heading">
-        <div>
-          <p className="eyebrow">公私立平衡蝴蝶圖</p>
-          <h3>{title}</h3>
+    <section ref={ref as React.RefObject<HTMLElement>} className={combinedClasses}>
+      {showHeader && title && (
+        <div className="dashboard-card__head">
+          <div className="panel-heading__stack">
+            <h3 className="dashboard-card__title">{title}</h3>
+            {subtitle && <p className="dashboard-card__subtitle">{subtitle}</p>}
+          </div>
         </div>
-        <p className="panel-heading__meta">{subtitle}</p>
-      </div>
+      )}
+      <div className="dashboard-card__body">
 
       <div className="butterfly-chart__header" aria-hidden="true">
         <span className="butterfly-chart__side butterfly-chart__side--left">公立</span>
@@ -59,7 +81,7 @@ function ButterflyChart({
         <span className="butterfly-chart__side butterfly-chart__side--right">私立</span>
       </div>
 
-      <div className="butterfly-chart__rows" role="list" aria-label={title}>
+      <div className="butterfly-chart__rows" role="list" aria-label="區域公私立學生占比分析">
         {items.map((item) => {
           const isActive = item.id === activeItemId
           const isDetailed = detailItemId === item.id || isActive
@@ -112,6 +134,7 @@ function ButterflyChart({
             </button>
           )
         })}
+      </div>
       </div>
     </section>
   )

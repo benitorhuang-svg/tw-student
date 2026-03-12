@@ -1,0 +1,71 @@
+/* Data Tables & Sorting */
+.school-table-panel {
+    display: grid;
+    gap: 8px
+}
+
+.school-table-wrap {
+    overflow: auto;
+    border-radius: 12px;
+    border: 1px solid rgba(148, 163, 184, .1);
+    max-height: 50vh
+}
+
+.school-table {
+    width: 100%;
+    min-width: 640px;
+    border-collapse: collapse
+}
+
+.school-table th,
+.school-table td {
+    padding: 8px 10px;
+    text-align: left;
+    border-bottom: 1px solid rgba(148, 163, 184, .1)
+}
+
+.school-table__sort {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    color: #94a3b8cc;
+    font-size: .74rem;
+    cursor: pointer;
+}
+
+.school-table__row {
+    cursor: pointer;
+    background: #ffffff05;
+    transition: background-color .13s ease
+}
+
+.school-table__row:hover {
+    background: #38bdf812
+}
+
+.school-table__row--active {
+    background: #38bdf81a
+}
+
+/* Table Metric Indicators */
+.school-table__delta--up { color: #22c55e }
+.school-table__delta--down { color: #f97316 }
+
+.status-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 7px;
+    border-radius: 999px;
+    background: #f59e0b24;
+    color: #fbbf24;
+    font-size: .76rem
+}
+
+.status-pill--normal {
+    background: #22c55e24;
+    color: #22c55e
+}

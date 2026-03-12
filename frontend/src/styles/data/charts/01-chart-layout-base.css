@@ -1,0 +1,55 @@
+.stacked-area-chart,
+.stacked-share-chart,
+.scatter-chart,
+.box-plot-chart,
+.trend-panel {
+    display: grid;
+    gap: 14px;
+    padding: 20px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.stacked-area-chart__axis,
+.scatter-chart__axis,
+.box-plot-chart__axis,
+.scatter-chart__label,
+.box-plot-chart__label {
+    fill: var(--text-soft);
+    font-size: var(--chart-text-md, 11px);
+    font-weight: 600
+}
+
+.scatter-chart__axis-title {
+    fill: var(--text-main);
+    font-size: var(--chart-text-md, 11px);
+    font-weight: 700
+}
+
+.stacked-area-chart__legend,
+.scatter-chart__legend,
+.box-plot-chart__legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 14px;
+    color: var(--text-main);
+    font-size: .82rem
+}
+
+.scatter-chart__heading,
+.stacked-area-chart__heading {
+    margin-bottom: 10px;
+    padding-left: 4px;
+}
+
+/* Dark mode consistency */
+.app-shell[data-theme=dark] .stacked-area-chart,
+.app-shell[data-theme=dark] .stacked-share-chart,
+.app-shell[data-theme=dark] .scatter-chart,
+.app-shell[data-theme=dark] .box-plot-chart,
+.app-shell[data-theme=dark] .trend-panel {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}

@@ -7,6 +7,9 @@ type PRIndicatorChartProps = {
   rank: number
   total: number
   scopeLabel: string
+  className?: string
+  flat?: boolean
+  showHeader?: boolean
 }
 
 function getBandLabel(percentile: number) {
@@ -17,7 +20,15 @@ function getBandLabel(percentile: number) {
   return '需補強定位'
 }
 
-function PRIndicatorChart({ schoolName, rank, total, scopeLabel }: PRIndicatorChartProps) {
+function PRIndicatorChart({
+  schoolName,
+  rank,
+  total,
+  scopeLabel,
+  className,
+  flat,
+  showHeader = true,
+}: PRIndicatorChartProps) {
   const { ref, isVisible } = useChartAnimation()
   const [showDetail, setShowDetail] = useState(false)
   const hasComparableCohort = total >= 3
@@ -26,21 +37,28 @@ function PRIndicatorChart({ schoolName, rank, total, scopeLabel }: PRIndicatorCh
     return Number((((total - rank) / Math.max(total - 1, 1)) * 100).toFixed(1))
   }, [hasComparableCohort, rank, total])
 
+  const combinedClasses = [
+    'dashboard-card',
+    'pr-indicator',
+    flat ? 'dashboard-card--flat' : '',
+    isVisible ? 'chart-enter chart-enter--visible' : 'chart-enter',
+    className || ''
+  ].filter(Boolean).join(' ')
+
   const bandLabel = getBandLabel(percentile)
 
   return (
-    <section
-      ref={ref as React.RefObject<HTMLElement>}
-      className={isVisible ? 'pr-indicator chart-enter chart-enter--visible' : 'pr-indicator chart-enter'}
-      aria-label={`${schoolName} 在 ${scopeLabel} 的百分等級 ${percentile}`}
-    >
-      <div className="panel-heading pr-indicator__heading">
-        <div>
-          <p className="eyebrow">PR 定位指標</p>
-          <h3>{schoolName} 在 {scopeLabel} 的位置</h3>
+    <section className={combinedClasses} ref={ref as React.RefObject<HTMLElement>} aria-label={`${schoolName} 在 ${scopeLabel} 的百分等級 ${percentile}`}>
+      {showHeader && (
+        <div className="dashboard-card__head">
+          <div className="panel-heading__stack">
+            <h3 className="dashboard-card__title">{schoolName} 在 {scopeLabel} 的位置</h3>
+            <p className="dashboard-card__subtitle">百分等級愈高，代表在同範圍與同學制中位於更前段。</p>
+          </div>
         </div>
-        <p className="panel-heading__meta">百分等級愈高，代表在同範圍與同學制 cohort 中位於更前段。</p>
-      </div>
+      )}
+
+      <div className="dashboard-card__body">
 
       <div className="pr-indicator__score-row">
         <div className="pr-indicator__score-block">
@@ -95,6 +113,7 @@ function PRIndicatorChart({ schoolName, rank, total, scopeLabel }: PRIndicatorCh
         <span>50</span>
         <span>75</span>
         <span>100</span>
+      </div>
       </div>
     </section>
   )

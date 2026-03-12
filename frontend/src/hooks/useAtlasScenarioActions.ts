@@ -132,6 +132,22 @@ export function useAtlasScenarioActions({
     setActiveTab(shouldResetCounty ? (region === '全部' ? 'overview' : 'regional') : 'county', 0)
   }
 
+  const ensureCountySelected = (countyId: string) => {
+    if (selectedCountyId === countyId) {
+      setActiveTab('county', 0)
+      return
+    }
+
+    startTransition(() => {
+      setSelectedCountyId(countyId)
+      setSelectedTownshipId(null)
+      setSelectedSchoolId(null)
+      clearCountyDetailError()
+    })
+
+    setActiveTab('county', 0)
+  }
+
   const handleTownshipSelect = (townshipId: string) => {
     const shouldResetTownship = selectedTownshipId === townshipId
 
@@ -225,6 +241,7 @@ export function useAtlasScenarioActions({
   return {
     handleRegionSelect,
     handleCountySelect,
+    ensureCountySelected,
     handleTownshipSelect,
     handleResetScope,
     handleNavigateScope,

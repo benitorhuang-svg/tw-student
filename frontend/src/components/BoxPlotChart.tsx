@@ -14,6 +14,9 @@ type BoxPlotChartProps = {
   subtitle: string
   groups: BoxPlotGroup[]
   activeGroupId?: string | null
+  className?: string
+  flat?: boolean
+  showHeader?: boolean
 }
 
 function percentile(values: number[], ratio: number) {
@@ -26,12 +29,28 @@ function percentile(values: number[], ratio: number) {
   return values[lowerIndex] * (1 - weight) + values[upperIndex] * weight
 }
 
-function BoxPlotChart({ title, subtitle, groups, activeGroupId = null }: BoxPlotChartProps) {
+function BoxPlotChart({
+  title,
+  subtitle,
+  groups,
+  activeGroupId = null,
+  className,
+  flat,
+  showHeader = true,
+}: BoxPlotChartProps) {
   const { containerRef, width, height } = useResponsiveSvg(620, 260, { minWidth: 320 })
   const padding = { top: 20, right: 16, bottom: 42, left: 50 }
 
   const { ref, isVisible } = useChartAnimation()
   const [hoveredGroupId, setHoveredGroupId] = useState<string | null>(null)
+
+  const combinedClasses = [
+    'dashboard-card',
+    'box-plot-chart',
+    flat ? 'dashboard-card--flat' : '',
+    isVisible ? 'chart-enter chart-enter--visible' : 'chart-enter',
+    className || ''
+  ].filter(Boolean).join(' ')
 
   const preparedGroups = groups
     .map((group) => {
@@ -54,16 +73,18 @@ function BoxPlotChart({ title, subtitle, groups, activeGroupId = null }: BoxPlot
   const bottomY = toY(0)
 
   return (
-    <section ref={ref as React.RefObject<HTMLElement>} className={isVisible ? 'box-plot-chart chart-enter chart-enter--visible' : 'box-plot-chart chart-enter'}>
-      <div className="panel-heading">
-        <div>
-          <p className="eyebrow">分布箱形</p>
-          <h3>{title}</h3>
+    <section className={combinedClasses} ref={ref as React.RefObject<HTMLElement>}>
+      {showHeader && (
+        <div className="dashboard-card__head">
+          <div className="panel-heading__stack">
+            <h3 className="dashboard-card__title">{title}</h3>
+            <p className="dashboard-card__subtitle">{subtitle}</p>
+          </div>
         </div>
-        <p className="panel-heading__meta">{subtitle}</p>
-      </div>
+      )}
 
-      <div className="chart-svg-frame" ref={containerRef}>
+      <div className="dashboard-card__body">
+        <div className="chart-svg-frame" ref={containerRef}>
       <svg className="box-plot-chart__svg" viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="xMidYMid meet" role="img" aria-label={title}>
         {[0, 0.25, 0.5, 0.75, 1].map((ratio) => {
           const y = padding.top + ratio * (height - padding.top - padding.bottom)
@@ -136,6 +157,7 @@ function BoxPlotChart({ title, subtitle, groups, activeGroupId = null }: BoxPlot
         {preparedGroups.map((group) => (
           <span key={group.id} className={hoveredGroupId !== null && hoveredGroupId !== group.id ? 'box-plot-chart__legend-item box-plot-chart__legend-item--muted' : 'box-plot-chart__legend-item'}>{group.label} 中位數 {formatStudents(Math.round(group.median))} 人</span>
         ))}
+      </div>
       </div>
     </section>
   )

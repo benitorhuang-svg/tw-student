@@ -33,23 +33,25 @@ function OfflineMetricsPanel({ loadObservation, offlineReadySlices, totalCountie
   ]
 
   return (
-    <section className="panel offline-metrics-panel">
-      <div className="panel-heading">
-        <div>
-          <p className="eyebrow">{isOffline ? '離線模式' : '快取狀態'}</p>
-          <h3>離線指標</h3>
+    <section className="dashboard-card offline-metrics-panel">
+      <div className="dashboard-card__head">
+        <div className="panel-heading__stack">
+          <h3 className="dashboard-card__title">離線指標</h3>
+          <p className="dashboard-card__subtitle">{isOffline ? '離線模式' : '快取狀態'}</p>
         </div>
       </div>
-      <div className="offline-metrics">
-        {rows.map((row) => (
-          <div key={row.label} className="offline-metric-row">
-            <span className="offline-metric-row__label">{row.label}</span>
-            <div className="offline-metric-row__bar">
-              <div className="offline-metric-row__fill" style={{ width: `${Math.round(row.ratio * 100)}%` }} />
+      <div className="dashboard-card__body">
+        <div className="offline-metrics" style={{ padding: '16px' }}>
+          {rows.map((row) => (
+            <div key={row.label} className="offline-metric-row">
+              <span className="offline-metric-row__label">{row.label}</span>
+              <div className="offline-metric-row__bar">
+                <div className="offline-metric-row__fill" style={{ width: `${Math.round(row.ratio * 100)}%` }} />
+              </div>
+              <span className="offline-metric-row__value">{row.value}</span>
             </div>
-            <span className="offline-metric-row__value">{row.value}</span>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   )

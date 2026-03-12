@@ -1,0 +1,152 @@
+.butterfly-chart {
+    display: grid;
+    gap: 14px;
+    padding: 20px;
+}
+
+.butterfly-chart__heading {
+    margin-bottom: 0;
+}
+
+.butterfly-chart__header,
+.butterfly-chart__row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 116px minmax(0, 1fr);
+    gap: 12px;
+    align-items: center
+}
+
+.butterfly-chart__header {
+    color: var(--text-soft);
+    font-size: .78rem;
+    font-weight: 700
+}
+
+.butterfly-chart__side--left {
+    text-align: right
+}
+
+.butterfly-chart__center-label {
+    text-align: center
+}
+
+.butterfly-chart__rows {
+    display: grid;
+    gap: 10px
+}
+
+.butterfly-chart__row {
+    padding: 12px 14px;
+    border-radius: 18px;
+    border: 1px solid rgba(148, 163, 184, .14);
+    background: linear-gradient(135deg, rgba(255, 255, 255, .72), rgba(243, 239, 232, .84));
+    text-align: left;
+    cursor: pointer;
+    transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease
+}
+
+.butterfly-chart__row:hover,
+.butterfly-chart__row--active {
+    transform: translateY(-1px);
+    border-color: rgba(42, 111, 145, .22);
+    box-shadow: 0 16px 30px rgba(16, 32, 51, .08)
+}
+
+.butterfly-chart__tooltip {
+    position: static;
+    grid-column: 1 / -1;
+    margin-top: 2px;
+    opacity: 1;
+    transform: none;
+}
+
+.butterfly-chart__track {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 22px;
+    border-radius: 999px;
+    background: rgba(148, 163, 184, .14);
+    overflow: hidden
+}
+
+.butterfly-chart__track--left {
+    justify-content: flex-end
+}
+
+.butterfly-chart__fill {
+    height: 100%;
+    transition: width .7s cubic-bezier(0.2, 0.8, 0.2, 1)
+}
+
+.butterfly-chart__fill--left {
+    background: linear-gradient(270deg, var(--palette-cyan), rgba(42, 111, 145, 0.66))
+}
+
+.butterfly-chart__fill--right {
+    background: linear-gradient(90deg, var(--palette-brass), rgba(184, 135, 70, 0.66))
+}
+
+.butterfly-chart__value {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: .76rem;
+    font-weight: 700;
+    color: var(--text-main)
+}
+
+.butterfly-chart__value--left {
+    left: 10px
+}
+
+.butterfly-chart__value--right {
+    right: 10px
+}
+
+.butterfly-chart__label-group {
+    display: grid;
+    justify-items: center;
+    gap: 3px;
+    text-align: center
+}
+
+.butterfly-chart__label-group strong {
+    color: var(--text-main)
+}
+
+.butterfly-chart__label-group small {
+    color: var(--text-soft)
+}
+
+@media (max-width: 860px) {
+    .butterfly-chart__header,
+    .butterfly-chart__row {
+        grid-template-columns: 1fr;
+        gap: 8px
+    }
+
+    .butterfly-chart__side--left,
+    .butterfly-chart__center-label {
+        text-align: left
+    }
+
+    .butterfly-chart__value {
+        font-size: .7rem
+    }
+}
+
+.app-shell[data-theme=dark] .butterfly-chart__row {
+    background: linear-gradient(135deg, rgba(15, 23, 42, .72), rgba(30, 41, 59, .84));
+    border-color: rgba(148, 163, 184, .08)
+}
+
+.app-shell[data-theme=dark] .butterfly-chart__row:hover,
+.app-shell[data-theme=dark] .butterfly-chart__row--active {
+    border-color: rgba(42, 111, 145, .36);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, .28)
+}
+
+.app-shell[data-theme=dark] .butterfly-chart__track {
+    background: rgba(148, 163, 184, .08)
+}

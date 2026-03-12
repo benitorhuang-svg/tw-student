@@ -14,6 +14,8 @@ type TrendChartProps = {
   formatValue?: (value: number) => string
   benchmarkLabel?: string
   predictionLabel?: string
+  className?: string
+  flat?: boolean
 }
 
 function buildLinePath(points: Array<{ x: number; y: number }>) {
@@ -36,10 +38,18 @@ function linearRegression(xs: number[], ys: number[]): { slope: number; intercep
 }
 
 function TrendChart({
-  chartId, title, subtitle, points, benchmarkPoints, activeYear, showHeader = true,
+  chartId,
+  title,
+  subtitle,
+  points,
+  benchmarkPoints,
+  activeYear,
+  showHeader = true,
   formatValue = (value) => `${formatStudents(Math.round(value))} 人`,
   benchmarkLabel = '基準參考',
   predictionLabel = '線性預測',
+  className,
+  flat,
 }: TrendChartProps) {
   const PREDICT_YEARS = 2
   const { containerRef, width, height } = useResponsiveSvg(620, 240, { minWidth: 320 })
@@ -50,6 +60,14 @@ function TrendChart({
   const [dashArray, setDashArray] = useState<string | number>('0 1000')
   const pathRef = useRef<SVGPathElement>(null)
   const { ref: animRef, isVisible } = useChartAnimation()
+
+  const combinedClasses = [
+    'dashboard-card',
+    'trend-panel',
+    flat ? 'dashboard-card--flat' : '',
+    isVisible ? 'chart-enter chart-enter--visible' : 'chart-enter',
+    className || ''
+  ].filter(Boolean).join(' ')
 
   useEffect(() => {
     if (pathRef.current && isVisible) {
@@ -123,25 +141,34 @@ function TrendChart({
 
   if (points.length === 0) {
     return (
-      <section className="trend-panel" ref={animRef as React.RefObject<HTMLElement>}>
-        {showHeader && <div className="panel-heading"><div><h3>{title}</h3></div></div>}
-        <div className="chart-empty-state">尚無資料</div>
+      <section className={combinedClasses} ref={animRef as React.RefObject<HTMLElement>}>
+        {showHeader && (
+          <div className="dashboard-card__head">
+            <div className="panel-heading__stack">
+              <h3 className="dashboard-card__title">{title}</h3>
+            </div>
+          </div>
+        )}
+        <div className="dashboard-card__body">
+          <div className="chart-empty-state">尚無資料</div>
+        </div>
       </section>
     )
   }
 
   return (
-    <section className="trend-panel" ref={animRef as React.RefObject<HTMLElement>}>
+    <section className={combinedClasses} ref={animRef as React.RefObject<HTMLElement>}>
       {showHeader && (
-        <div className="panel-heading">
-          <div>
-            <p className="eyebrow">歷年趨勢儀表</p>
-            <h3>{title}</h3>
+        <div className="dashboard-card__head">
+          <div className="panel-heading__stack">
+            <h3 className="dashboard-card__title">{title}</h3>
+            <p className="dashboard-card__subtitle">{subtitle}</p>
           </div>
-          <p className="panel-heading__meta">{subtitle}</p>
         </div>
       )}
-      <div className="chart-svg-frame" ref={containerRef}>
+
+      <div className="dashboard-card__body">
+        <div className="chart-svg-frame" ref={containerRef}>
       <svg
         className="trend-chart"
         viewBox={`0 0 ${width} ${height}`}
@@ -266,6 +293,7 @@ function TrendChart({
         <span>{benchmarkPoints && benchmarkPoints.length > 0 ? '實線為目前趨勢，藍綠點虛線為基準參考，琥珀虛線為線性預測。' : '實線為目前趨勢；若延伸虛線出現，代表未來兩學年的線性預測。'}</span>
         {compactPredictionLabels ? <span>窄寬度已自動稀疏年份標籤，避免底部擁擠。</span> : null}
       </div>
+    </div>
     </section>
   )
 }

@@ -1,0 +1,40 @@
+/* Theme overrides */
+.app-shell[data-theme=dark] .dashboard-canvas .stat-card,
+.app-shell[data-theme=dark] .dashboard-canvas .scope-panel__visual-card,
+.app-shell[data-theme=dark] .dashboard-canvas .insight-row,
+.app-shell[data-theme=dark] .dashboard-canvas .trend-panel {
+  background: #ffffff0a;
+  border-color: #94a3b824
+}
+
+.app-shell[data-theme=dark] .dashboard-canvas .insight-row__index,
+.app-shell[data-theme=dark] .dashboard-canvas .insight-row__meta strong,
+.app-shell[data-theme=dark] .dashboard-canvas .stat-card__value {
+  color: #f8fafc
+}
+
+/* Misc UI atoms */
+.empty-state {
+  padding: 14px;
+  border-radius: 12px;
+  background: #ffffff08;
+  color: #e2e8f0ad;
+  font-size: .9rem
+}
+
+.dashboard-canvas .empty-state {
+  background: #0f172a0a;
+  color: var(--text-soft)
+}
+
+.sparkline {
+  flex-shrink: 0;
+  vertical-align: middle
+}
+
+.atlas-control-rail .panel,
+.atlas-control-rail .atlas-filterbar {
+  background: #08111f29;
+  border: 0;
+  box-shadow: none
+}

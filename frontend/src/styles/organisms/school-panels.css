@@ -1,3 +1,11 @@
-@import './school-panels/01-school-panels.css';
+@import './school-panels/01-theme-vars.css';
+@import './school-panels/01-shell-layout.css';
+@import './school-panels/01-workbench-nav.css';
+@import './school-panels/01-focus-cards.css';
+@import './school-panels/01-metric-tiles.css';
+@import './school-panels/01-data-tables.css';
+@import './school-panels/01-governance-tools.css';
+@import './school-panels/01-analytic-charts.css';
+@import './school-panels/01-mobile-views.css';
 @import './school-panels/02-school-composition.css';
 @import './school-panels/03-layout-density.css';

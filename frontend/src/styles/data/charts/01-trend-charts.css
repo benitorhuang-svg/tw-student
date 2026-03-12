@@ -1,0 +1,51 @@
+.trend-chart {
+    width: 100%;
+    overflow: visible
+}
+
+.trend-chart__grid {
+    stroke: rgba(148, 163, 184, 0.15);
+    stroke-dasharray: 4 4
+}
+
+.trend-chart__line {
+    fill: none;
+    stroke: var(--palette-cyan, #2a6f91);
+    stroke-width: 3.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    filter: drop-shadow(0 4px 8px rgba(42, 111, 145, 0.3));
+}
+
+.trend-chart__point {
+    fill: #fff;
+    stroke: var(--palette-cyan, #2a6f91);
+    stroke-width: 2
+}
+
+.trend-chart__point--active {
+    fill: var(--palette-brass, #b88746);
+    stroke: #fff;
+    stroke-width: 3;
+    filter: drop-shadow(0 0 8px rgba(184, 135, 70, 0.5))
+}
+
+.trend-chart__label {
+    fill: var(--text-soft);
+    font-size: .78rem;
+    font-weight: 600
+}
+
+.trend-chart__regression {
+    fill: none;
+    stroke: #c97a54;
+    stroke-width: 2;
+    stroke-dasharray: 6 4
+}
+
+.trend-chart__prediction {
+    fill: none;
+    stroke: #b88746a8;
+    stroke-width: 1.8;
+    stroke-dasharray: 4 4
+}

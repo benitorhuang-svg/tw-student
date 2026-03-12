@@ -26,16 +26,15 @@ function AnomalyPanel({
   onDownloadAll,
 }: AnomalyPanelProps) {
   return (
-    <section className="panel anomaly-panel">
-      <div className="panel-heading">
-        <div>
-          <p className="eyebrow">資料治理</p>
-          <h3>異常資料調查面板</h3>
+    <section className="dashboard-card anomaly-panel">
+      <div className="dashboard-card__head">
+        <div className="panel-heading__stack">
+          <h3 className="dashboard-card__title">異常資料調查面板</h3>
+          <p className="dashboard-card__subtitle">彙整停辦、缺年度、待確認與正式註記</p>
         </div>
-        <div className="anomaly-panel__heading-actions">
-          <p className="panel-heading__meta">彙整停辦、缺年度、待確認與正式註記，並提供原始年度序列對照、單筆下載與整批匯出。</p>
+        <div className="dashboard-card__actions">
           <label className="filter-select">
-            <span>匯出篩選</span>
+            <span>篩選</span>
             <select value={investigationFilter} onChange={(event) => onSetFilter(event.target.value as InvestigationFilter)}>
               <option value="全部">全部</option>
               <option value="缺年度">缺年度</option>
@@ -45,12 +44,12 @@ function AnomalyPanel({
             </select>
           </label>
           <button type="button" className="ghost-button" onClick={onDownloadAll}>
-            整批匯出目前異常
+            匯出 CSV
           </button>
         </div>
       </div>
 
-      <div className="anomaly-grid">
+      <div className="dashboard-card__body" style={{ padding: '20px' }}>
         {filteredAnomalies.length === 0 ? (
           <div className="empty-state">目前工作範圍沒有額外異常訊號。</div>
         ) : (
@@ -70,7 +69,6 @@ function AnomalyPanel({
             </button>
           ))
         )}
-      </div>
 
       {activeInvestigation ? (
         <div className="anomaly-detail">
@@ -119,8 +117,9 @@ function AnomalyPanel({
           </article>
         ))}
       </div>
-    </section>
-  )
+    </div>
+  </section>
+)
 }
 
 export default AnomalyPanel

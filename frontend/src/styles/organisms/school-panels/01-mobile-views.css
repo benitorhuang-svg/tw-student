@@ -1,0 +1,61 @@
+/* Mobile Cards & Quick Look UI */
+.mobile-school-card-list {
+    display: grid;
+    gap: 8px
+}
+
+.mobile-school-card {
+    display: grid;
+    gap: 4px;
+    padding: 12px 14px;
+    border-radius: 16px;
+    border: var(--border-light);
+    background: #fffc;
+    cursor: pointer;
+    transition: transform .15s ease, box-shadow .15s ease
+}
+
+.mobile-school-card--active {
+    border-color: #38bdf866;
+    box-shadow: 0 0 0 2px #38bdf833
+}
+
+.mobile-school-card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px
+}
+
+.mobile-school-card__tag {
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: .68rem;
+    font-weight: 600
+}
+
+.mobile-school-card__tag--public { background: #22c55e1f; color: #16a34a; }
+.mobile-school-card__tag--private { background: #f973161f; color: #ea580c; }
+
+/* Mobile Drawers */
+.mobile-school-drawer-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    background: #00000080;
+    backdrop-filter: blur(4px);
+}
+
+.mobile-school-drawer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 3001;
+    max-height: 80dvh;
+    overflow-y: auto;
+    padding: 20px 16px calc(24px + env(safe-area-inset-bottom, 0px));
+    border-radius: 24px 24px 0 0;
+    background: #f7f4ee;
+    box-shadow: 0 -16px 60px #0f172a33;
+}

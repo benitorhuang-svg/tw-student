@@ -1,0 +1,72 @@
+/* School Focus & Profile Cards */
+.school-focus {
+    padding: 12px;
+    border-radius: 16px;
+    border: 1px solid var(--atlas-border-strong);
+    background: var(--atlas-surface-primary);
+    box-shadow: var(--atlas-shadow-soft)
+}
+
+.school-focus--overview {
+    display: grid;
+    gap: 12px
+}
+
+.school-focus__summary {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    align-items: center;
+    min-width: 0;
+}
+
+.school-focus__summary h3 {
+    margin: 4px 0 6px;
+    font-family: var(--font-heading);
+    font-size: .96rem;
+    color: var(--atlas-text-strong);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.school-focus__statline strong {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--atlas-text-strong)
+}
+
+/* Sidebar Components */
+.school-profile-sidebar {
+    display: grid;
+    gap: 12px;
+    align-content: start
+}
+
+.school-profile-metric {
+    display: grid;
+    gap: 4px;
+    padding: 10px;
+    border-radius: 14px;
+    background: var(--atlas-surface-secondary);
+    border: 1px solid var(--atlas-border-soft)
+}
+
+.school-profile-sidebar__info {
+    display: grid;
+    gap: 8px;
+    padding: 12px;
+    border-radius: 16px;
+    border: 1px solid var(--atlas-border-soft);
+    background: var(--atlas-surface-secondary)
+}
+
+.school-profile-info-row {
+    display: grid;
+    gap: 4px
+}
+
+.school-profile-info-row strong {
+    color: var(--atlas-text-strong);
+    font-family: var(--font-heading)
+}

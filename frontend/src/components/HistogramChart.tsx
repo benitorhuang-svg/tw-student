@@ -8,6 +8,9 @@ type HistogramChartProps = {
   subtitle: string
   values: number[]
   activeValue?: number | null
+  className?: string
+  flat?: boolean
+  showHeader?: boolean
 }
 
 type Bin = {
@@ -63,7 +66,15 @@ function buildBins(values: number[], containerWidth: number) {
   return bins
 }
 
-function HistogramChart({ title, subtitle, values, activeValue = null }: HistogramChartProps) {
+function HistogramChart({
+  title,
+  subtitle,
+  values,
+  activeValue = null,
+  className,
+  flat,
+  showHeader = true,
+}: HistogramChartProps) {
   const { ref, isVisible } = useChartAnimation()
   const barsRef = useRef<HTMLDivElement | null>(null)
   const [barsWidth, setBarsWidth] = useState(0)
@@ -74,6 +85,14 @@ function HistogramChart({ title, subtitle, values, activeValue = null }: Histogr
   const sortedValues = [...values].sort((left, right) => left - right)
   const median = sortedValues.length > 0 ? sortedValues[Math.floor((sortedValues.length - 1) / 2)] : 0
   const condensedRangeLabels = barsWidth < 420 && bins.length > 4
+
+  const combinedClasses = [
+    'dashboard-card',
+    'histogram-chart',
+    flat ? 'dashboard-card--flat' : '',
+    isVisible ? 'chart-enter chart-enter--visible' : 'chart-enter',
+    className || ''
+  ].filter(Boolean).join(' ')
 
   useEffect(() => {
     const node = barsRef.current
@@ -101,86 +120,89 @@ function HistogramChart({ title, subtitle, values, activeValue = null }: Histogr
 
   if (values.length < 4) {
     return (
-      <section className="histogram-chart histogram-chart--compact">
-        <div className="panel-heading histogram-chart__heading">
-          <div>
-            <p className="eyebrow">學校規模分布</p>
-            <h3>{title}</h3>
+      <section className={combinedClasses} ref={ref as React.RefObject<HTMLElement>}>
+        {showHeader && (
+          <div className="dashboard-card__head">
+            <div className="panel-heading__stack">
+              <h3 className="dashboard-card__title">{title}</h3>
+              <p className="dashboard-card__subtitle">{subtitle}</p>
+            </div>
           </div>
-          <p className="panel-heading__meta">{subtitle}</p>
-        </div>
-        <div className="histogram-chart__compact-grid">
-          <article>
-            <span>樣本數</span>
-            <strong>{values.length} 校</strong>
-          </article>
-          <article>
-            <span>平均</span>
-            <strong>{formatStudents(average)} 人</strong>
-          </article>
-          <article>
-            <span>中位數</span>
-            <strong>{formatStudents(median)} 人</strong>
-          </article>
+        )}
+        <div className="dashboard-card__body">
+          <div className="histogram-chart__compact-grid">
+            <article>
+              <span>樣本數</span>
+              <strong>{values.length} 校</strong>
+            </article>
+            <article>
+              <span>平均</span>
+              <strong>{formatStudents(average)} 人</strong>
+            </article>
+            <article>
+              <span>中位數</span>
+              <strong>{formatStudents(median)} 人</strong>
+            </article>
+          </div>
         </div>
       </section>
     )
   }
 
   return (
-    <section
-      ref={ref as React.RefObject<HTMLElement>}
-      className={isVisible ? 'histogram-chart chart-enter chart-enter--visible' : 'histogram-chart chart-enter'}
-    >
-      <div className="panel-heading histogram-chart__heading">
-        <div>
-          <p className="eyebrow">學校規模直方圖</p>
-          <h3>{title}</h3>
+    <section className={combinedClasses} ref={ref as React.RefObject<HTMLElement>}>
+      {showHeader && (
+        <div className="dashboard-card__head">
+          <div className="panel-heading__stack">
+            <h3 className="dashboard-card__title">{title}</h3>
+            <p className="dashboard-card__subtitle">{subtitle}</p>
+          </div>
         </div>
-        <p className="panel-heading__meta">{subtitle}</p>
-      </div>
+      )}
 
-      <div className="histogram-chart__summary" aria-hidden="true">
-        <span>平均 {formatStudents(average)} 人</span>
-        <span>中位數 {formatStudents(median)} 人</span>
-        <span>{values.length} 校樣本</span>
-      </div>
+      <div className="dashboard-card__body">
+        <div className="histogram-chart__summary" aria-hidden="true">
+          <span>平均 {formatStudents(average)} 人</span>
+          <span>中位數 {formatStudents(median)} 人</span>
+          <span>{values.length} 校樣本</span>
+        </div>
 
-      <div ref={barsRef} className="histogram-chart__bars" role="list" aria-label={title}>
-        {bins.map((bin, index) => {
-          const isActive = activeValue !== null && activeValue >= bin.start && (index === bins.length - 1 ? activeValue <= bin.end : activeValue < bin.end)
-          const isDetailed = detailIndex === index || isActive
-          const showRangeLabel = !condensedRangeLabels || isDetailed || index === 0 || index === bins.length - 1 || index % 2 === 0
-          return (
-            <button
-              key={`${bin.start}-${bin.end}`}
-              type="button"
-              className={isActive ? 'histogram-chart__bin histogram-chart__bin--active' : 'histogram-chart__bin'}
-              onClick={() => setDetailIndex(index)}
-              onMouseEnter={() => setDetailIndex(index)}
-              onMouseLeave={() => setDetailIndex(null)}
-              onFocus={() => setDetailIndex(index)}
-              onBlur={() => setDetailIndex(null)}
-              aria-pressed={isDetailed}
-              aria-label={`${formatRange(bin.start, bin.end)}，${bin.count} 校`}
-            >
-              <div className="histogram-chart__bar-track">
-                <div className="histogram-chart__bar-fill" style={{ height: isVisible ? `${(bin.count / maxCount) * 100}%` : '0%' }} />
-              </div>
-              <strong className="histogram-chart__count">{bin.count}</strong>
-              <span className={showRangeLabel ? 'histogram-chart__range' : 'histogram-chart__range histogram-chart__range--condensed'}>{showRangeLabel ? formatRange(bin.start, bin.end) : ' '}</span>
-              {isDetailed ? (
-                <div className="chart-tooltip chart-tooltip--visible histogram-chart__tooltip" role="note" aria-live="polite">
-                  <div className="chart-tooltip__title">{formatRange(bin.start, bin.end)}</div>
-                  <div className="chart-tooltip__row">
-                    <span>樣本數</span>
-                    <span className="chart-tooltip__value">{bin.count} 校</span>
-                  </div>
+        <div ref={barsRef} className="histogram-chart__bars" role="list" aria-label={title}>
+          {bins.map((bin, index) => {
+            const isActive = activeValue !== null && activeValue >= bin.start && (index === bins.length - 1 ? activeValue <= bin.end : activeValue < bin.end)
+            const isDetailed = detailIndex === index || isActive
+            const showRangeLabel = !condensedRangeLabels || isDetailed || index === 0 || index === bins.length - 1 || index % 2 === 0
+            return (
+              <button
+                key={`${bin.start}-${bin.end}`}
+                type="button"
+                className={isActive ? 'histogram-chart__bin histogram-chart__bin--active' : 'histogram-chart__bin'}
+                onClick={() => setDetailIndex(index)}
+                onMouseEnter={() => setDetailIndex(index)}
+                onMouseLeave={() => setDetailIndex(null)}
+                onFocus={() => setDetailIndex(index)}
+                onBlur={() => setDetailIndex(null)}
+                aria-pressed={isDetailed}
+                aria-label={`${formatRange(bin.start, bin.end)}，${bin.count} 校`}
+              >
+                <div className="histogram-chart__bar-track">
+                  <div className="histogram-chart__bar-fill" style={{ height: isVisible ? `${(bin.count / maxCount) * 100}%` : '0%' }} />
                 </div>
-              ) : null}
-            </button>
-          )
-        })}
+                <strong className="histogram-chart__count">{bin.count}</strong>
+                <span className={showRangeLabel ? 'histogram-chart__range' : 'histogram-chart__range histogram-chart__range--condensed'}>{showRangeLabel ? formatRange(bin.start, bin.end) : ' '}</span>
+                {isDetailed ? (
+                  <div className="chart-tooltip chart-tooltip--visible histogram-chart__tooltip" role="note" aria-live="polite">
+                    <div className="chart-tooltip__title">{formatRange(bin.start, bin.end)}</div>
+                    <div className="chart-tooltip__row">
+                      <span>樣本數</span>
+                      <span className="chart-tooltip__value">{bin.count} 校</span>
+                    </div>
+                  </div>
+                ) : null}
+              </button>
+            )
+          })}
+        </div>
       </div>
     </section>
   )

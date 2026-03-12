@@ -147,10 +147,12 @@ function App() {
       theme={theme}
       mapResetToken={mapResetToken}
       onSelectCounty={scenarioActions.handleCountySelect}
+      onAutoSelectCounty={scenarioActions.ensureCountySelected}
       onSelectTownship={scenarioActions.handleTownshipSelect}
       onSelectSchool={handleSchoolSelect}
       onHoverCounty={handlePrefetchCounty}
       onZoomChange={setMapZoom}
+      currentMapZoom={mapZoom}
       onMoveEnd={(lat: number, lon: number) => { setMapLat(lat); setMapLon(lon) }}
       initialMapZoom={mapZoom}
       initialMapLat={mapLat}

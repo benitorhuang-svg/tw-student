@@ -1,0 +1,79 @@
+.scatter-chart {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Base styles for scatter elements */
+.scatter-chart--clean {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.scatter-chart__svg {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+.scatter-chart__zero {
+    stroke: rgba(148, 163, 184, 0.4);
+    stroke-width: 1.5;
+    stroke-dasharray: 4 4;
+}
+
+.scatter-chart__quadrant {
+    stroke: none;
+    pointer-events: none;
+}
+
+.scatter-chart__quadrant--tl { fill: var(--chart-quadrant-tl, rgba(42, 111, 145, 0.06)); }
+.scatter-chart__quadrant--tr { fill: var(--chart-quadrant-tr, rgba(45, 143, 111, 0.06)); }
+.scatter-chart__quadrant--bl { fill: var(--chart-quadrant-bl, rgba(217, 119, 6, 0.06)); }
+.scatter-chart__quadrant--br { fill: var(--chart-quadrant-br, rgba(184, 135, 70, 0.06)); }
+
+.scatter-chart__axis {
+    fill: var(--text-soft, #94a3b8);
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.scatter-chart__axis-title {
+    fill: var(--text-main, #f8fafc);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.scatter-chart__point {
+    fill: #38bdf880;
+    stroke: #38bdf8;
+    stroke-width: 1.2;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.scatter-chart__point:hover,
+.scatter-chart__point--active {
+    fill: var(--palette-cyan, #2a6f91);
+    stroke: #fff;
+    stroke-width: 2;
+    filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.4));
+}
+
+.scatter-chart__point--active {
+    fill: var(--palette-brass, #b88746) !important;
+    stroke: #fff !important;
+    filter: drop-shadow(0 0 12px rgba(184, 135, 70, 0.5));
+}
+
+.scatter-chart__quadrant-label {
+    fill: var(--text-soft, #94a3b8);
+    font-size: 8px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    opacity: 0.45;
+    pointer-events: none;
+}

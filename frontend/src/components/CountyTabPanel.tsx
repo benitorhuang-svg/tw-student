@@ -45,30 +45,27 @@ function CountyTabPanel({
 
   return (
     <div className="dashboard-side-shell__content dashboard-side-shell__content--county">
-      <section className="dashboard-card dashboard-card--kpi">
-        <div className="dashboard-card__body dashboard-card__summary-body">
-          <ScopePanel
-            scopePath={derived.scopePath}
-            scopeHeadline={derived.scopeHeadline}
-            scopeDescription="聚焦單一縣市，地圖已切換到鄉鎮邊界與鄉鎮聚合點；可繼續點入鄉鎮或切到學校分析。"
-            currentScope={derived.currentScope}
-            activeYear={activeYear}
-            isYearPlaybackActive={isYearPlaybackActive}
-            educationDistribution={derived.educationDistribution}
-          />
-        </div>
-      </section>
+      <ScopePanel
+        scopePath={derived.scopePath}
+        scopeHeadline={derived.scopeHeadline}
+        scopeDescription="聚焦單一縣市，地圖已切換到鄉鎮邊界與鄉鎮聚合點；可繼續點入鄉鎮或切到學校分析。"
+        currentScope={derived.currentScope}
+        activeYear={activeYear}
+        isYearPlaybackActive={isYearPlaybackActive}
+        educationDistribution={derived.educationDistribution}
+        flat={true}
+        className="dashboard-card--kpi"
+      />
 
       <section className="dashboard-card dashboard-card--county-story">
-        <div className="dashboard-card__body dashboard-card__insight-body">
-          <div className="panel-heading panel-heading--section">
-            <div className="panel-heading__stack">
-              <p className="eyebrow eyebrow--cyan">縣市結構掃描</p>
-              <h3>{derived.selectedCounty?.name ?? '縣市'}發展概覽</h3>
-            </div>
-            <p className="panel-heading__meta">左側顯示縣內前六大鄉鎮人口體量；右側透過矩陣總結該縣市各鄉鎮的成長動能。</p>
+        <div className="dashboard-card__head">
+          <div className="panel-heading__stack">
+            <h3 className="dashboard-card__title">{derived.selectedCounty?.name ?? '縣市'}發展概覽</h3>
+            <p className="dashboard-card__subtitle">鄉鎮規模與變動率分佈</p>
           </div>
+        </div>
 
+        <div className="dashboard-card__body dashboard-card__insight-body">
           <div className="atlas-storyboard__split atlas-storyboard__split--county" data-testid="county-storyboard-split">
             <div className="atlas-storyboard__chart atlas-storyboard__chart--county-comparison">
               <ComparisonBarChart
@@ -83,7 +80,6 @@ function CountyTabPanel({
               {derived.townshipRows.length > 0 ? (
                 <ScatterPlotChart
                   title="鄉鎮規模與變動率"
-                  subtitle="X 軸看學生數、Y 軸看年變動率、圓點大小看學校數。"
                   xLabel="學生數"
                   yLabel="年變動率 (%)"
                   points={derived.townshipRows.map((row) => ({
@@ -97,6 +93,8 @@ function CountyTabPanel({
                   formatY={(value) => `${value.toFixed(1)}%`}
                   onHoverPoint={setHoveredTownshipId}
                   onSelectPoint={onSelectTownship}
+                  flat={true}
+                  showHeader={false}
                 />
               ) : countyDistribution.length > 0 ? (
                 <div className="county-storyboard__fallback-pie" data-testid="county-fallback-pie">
@@ -104,7 +102,7 @@ function CountyTabPanel({
                   <PieChart slices={countyDistribution.map((row) => ({ label: row.level, value: row.students, share: row.share }))} size={124} />
                 </div>
               ) : (
-                <div className="empty-state">目前條件沒有可顯示的鄉鎮分布。</div>
+                <div className="chart-empty-state">目前條件沒有可顯示的鄉鎮分布。</div>
               )}
             </div>
           </div>
@@ -130,46 +128,50 @@ function CountyTabPanel({
       </section>
 
       <section className="dashboard-card dashboard-card--ranking">
-        <div className="dashboard-card__body dashboard-card__ranking-body">
-          <div className="panel-heading panel-heading--section">
-            <div className="panel-heading__stack">
-              <p className="eyebrow eyebrow--brass">下鑽入口</p>
-              <h3>鄉鎮排行與熱區掃描</h3>
+        <div className="dashboard-card__head">
+          <div className="panel-heading__stack">
+            <h3 className="dashboard-card__title">鄉鎮排行與熱區掃描</h3>
+            <p className="dashboard-card__subtitle">依學生總數排序</p>
+          </div>
+
+          <div className="dashboard-card__actions">
+            <div className="chart-pill-row" role="tablist" aria-label="縣市分析圖表切換">
+              <button
+                type="button"
+                role="tab"
+                aria-selected={countyChartView === 'comparison'}
+                className={countyChartView === 'comparison' ? 'chip chip--active' : 'chip'}
+                onClick={() => setCountyChartView('comparison')}
+              >
+                鄉鎮量體
+              </button>
+              <button
+                type="button"
+                role="tab"
+                aria-selected={countyChartView === 'ranking'}
+                className={countyChartView === 'ranking' ? 'chip chip--active' : 'chip'}
+                onClick={() => setCountyChartView('ranking')}
+              >
+                鄉鎮排行
+              </button>
             </div>
-            <p className="panel-heading__meta">點選鄉鎮地圖會放大到在地層級，並自動展開「學校分析」工作台。</p>
           </div>
-          <div className="chart-pill-row" role="tablist" aria-label="縣市分析圖表切換">
-            <button
-              type="button"
-              role="tab"
-              aria-selected={countyChartView === 'comparison'}
-              className={countyChartView === 'comparison' ? 'chip chip--active' : 'chip'}
-              onClick={() => setCountyChartView('comparison')}
-            >
-              鄉鎮量體
-            </button>
-            <button
-              type="button"
-              role="tab"
-              aria-selected={countyChartView === 'ranking'}
-              className={countyChartView === 'ranking' ? 'chip chip--active' : 'chip'}
-              onClick={() => setCountyChartView('ranking')}
-            >
-              鄉鎮排行
-            </button>
-          </div>
+        </div>
+
+        <div className="dashboard-card__body dashboard-card__ranking-body">
           {countyChartView === 'comparison' ? (
             <ComparisonBarChart items={derived.townshipRows.slice(0, 8).map((row) => ({ id: row.id, label: row.label, value: row.students }))} activeItemId={hoveredTownshipId ?? selectedTownshipId} onHoverItem={setHoveredTownshipId} onSelectItem={onSelectTownship} />
           ) : (
             <InsightPanel
               title="鄉鎮排行"
               subtitle="點選鄉鎮即可進入各校分析"
-              showHeader={false}
+              showHeader={true}
               rows={derived.townshipRows}
               activeRowId={selectedTownshipId}
               onSelectRow={onSelectTownship}
               onHoverRow={setHoveredTownshipId}
               emptyMessage="目前縣市條件沒有可顯示的鄉鎮資料。"
+              flat={true}
             />
           )}
         </div>

@@ -1,0 +1,65 @@
+.insight-panel {
+    padding: 4px;
+    border-radius: 18px;
+    border: var(--border-subtle);
+    background: #0f172a8f
+}
+
+.insight-row {
+    display: grid;
+    gap: 4px;
+    padding: 8px 10px;
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid rgba(148, 163, 184, .12);
+    background: #ffffff0a;
+    color: #f8fafc;
+    text-align: left;
+    cursor: pointer;
+    transition: transform .16s ease, background-color .16s ease
+}
+
+.insight-row:hover {
+    transform: translateY(-1px);
+    background: #ffffff12
+}
+
+.insight-row--active {
+    border-color: rgba(184, 135, 70, .28);
+    background: linear-gradient(135deg, rgba(42, 111, 145, .14), rgba(184, 135, 70, .12))
+}
+
+.insight-row__meta strong {
+    color: var(--text-strong)
+}
+
+.insight-row__index {
+    min-width: 42px;
+    color: #0f172a;
+    font-family: var(--font-heading);
+    font-size: .88rem;
+    font-weight: 800
+}
+
+.insight-row__metrics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    font-size: .76rem;
+    color: #94a3b8bd
+}
+
+.insight-row__bar-track {
+    height: 5px;
+    border-radius: 999px;
+    background: #94a3b824;
+    overflow: hidden
+}
+
+.insight-row__bar-fill {
+    height: 100%;
+    border-radius: inherit;
+    background: var(--palette-cyan);
+    opacity: 0.6;
+    transition: width 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}

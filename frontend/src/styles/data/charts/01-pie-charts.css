@@ -1,0 +1,68 @@
+.pie-chart-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 8px 0;
+    flex-wrap: wrap;
+}
+
+.pie-chart-wrap svg {
+    flex-shrink: 0;
+    filter: drop-shadow(0 12px 20px rgba(16, 32, 51, 0.1))
+}
+
+.pie-chart__canvas {
+    position: relative;
+    width: min(100%, 220px);
+    aspect-ratio: 1;
+}
+
+.pie-chart-legend {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 6px;
+}
+
+.pie-chart-legend__row {
+    display: flex;
+    align-items: center;
+    gap: 4px 6px;
+    padding: 6px 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, .58);
+    border: 1px solid rgba(148, 163, 184, .12);
+    transition: transform 0.2s ease;
+}
+
+.pie-chart-legend__row:hover {
+    transform: translateX(4px);
+    background: #fff;
+}
+
+.pie-chart__slice--0, .pie-chart-legend__swatch--0 { fill: var(--chart-pie-0); background: var(--chart-pie-0) }
+.pie-chart__slice--1, .pie-chart-legend__swatch--1 { fill: var(--chart-pie-1); background: var(--chart-pie-1) }
+.pie-chart__slice--2, .pie-chart-legend__swatch--2 { fill: var(--chart-pie-2); background: var(--chart-pie-2) }
+.pie-chart__slice--3, .pie-chart-legend__swatch--3 { fill: var(--chart-pie-3); background: var(--chart-pie-3) }
+.pie-chart__slice--4, .pie-chart-legend__swatch--4 { fill: var(--chart-pie-4); background: var(--chart-pie-4) }
+.pie-chart__slice--5, .pie-chart-legend__swatch--5 { fill: var(--chart-pie-5); background: var(--chart-pie-5) }
+
+.pie-chart-legend__label {
+    color: var(--text-main);
+    font-weight: 600;
+    font-size: 0.76rem;
+}
+
+.pie-chart-legend__value {
+    margin-left: auto;
+    color: var(--text-soft);
+    font-size: .76rem;
+}
+
+.app-shell[data-theme=dark] .pie-chart-legend__row {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.app-shell[data-theme=dark] .pie-chart-legend__row:hover {
+    background: rgba(255, 255, 255, 0.08);
+}

@@ -1,0 +1,52 @@
+.atlas-workbench {
+    display: grid;
+    grid-template-columns: var(--sidebar-w) minmax(0, 1fr);
+    gap: 20px;
+    padding: 20px;
+    overflow: hidden;
+    transition: grid-template-columns .35s ease
+}
+
+.atlas-workbench[data-mode=overview] {
+    --sidebar-w: minmax(360px, 39vw)
+}
+
+.atlas-workbench[data-mode=regional] {
+    --sidebar-w: minmax(340px, 35vw)
+}
+
+.atlas-workbench[data-mode=schools] {
+    --sidebar-w: minmax(320px, 32vw)
+}
+
+.dashboard-side-shell {
+    grid-column: 2 / -1;
+    min-width: 0;
+    min-height: 0;
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr);
+    gap: 10px
+}
+
+.dashboard-side-shell__content {
+    min-width: 0;
+    min-height: 0;
+    overflow-y: auto
+}
+
+.dashboard-side-shell__content--overview,
+.dashboard-side-shell__content--regional,
+.dashboard-side-shell__content--county {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, .92fr);
+    grid-auto-rows: min-content;
+    align-content: start;
+    gap: 10px;
+}
+
+.dashboard-side-shell__content--schools {
+    display: grid;
+    align-content: start;
+    min-height: 0;
+    height: 100%
+}

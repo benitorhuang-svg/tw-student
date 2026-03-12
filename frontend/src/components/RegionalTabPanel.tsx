@@ -70,29 +70,27 @@ function RegionalTabPanel({
 
   return (
     <div className="dashboard-side-shell__content dashboard-side-shell__content--regional">
-      <section className="dashboard-card dashboard-card--kpi">
-        <div className="dashboard-card__body dashboard-card__summary-body">
-          <ScopePanel
-            scopePath={derived.scopePath}
-            scopeHeadline={derived.scopeHeadline}
-            scopeDescription={derived.scopeDescription}
-            currentScope={derived.currentScope}
-            activeYear={activeYear}
-            isYearPlaybackActive={isYearPlaybackActive}
-            educationDistribution={derived.educationDistribution}
-          />
-        </div>
-      </section>
+      <ScopePanel
+        scopePath={derived.scopePath}
+        scopeHeadline={derived.scopeHeadline}
+        scopeDescription={derived.scopeDescription}
+        currentScope={derived.currentScope}
+        activeYear={activeYear}
+        isYearPlaybackActive={isYearPlaybackActive}
+        educationDistribution={derived.educationDistribution}
+        flat={true}
+        className="dashboard-card--kpi"
+      />
 
       <section className="dashboard-card dashboard-card--regional-story">
-        <div className="dashboard-card__body dashboard-card__insight-body">
-          <div className="panel-heading panel-heading--section">
-            <div className="panel-heading__stack">
-              <p className="eyebrow eyebrow--cyan">區域結構剖析</p>
-              <h3>{region === '全部' ? '全台四大區域板塊分布' : `${region} 結構快照`}</h3>
-            </div>
-            <p className="panel-heading__meta">上方卡片為區域彙整，點選可過濾地圖；下方圖表則探索公私立佔比結構。</p>
+        <div className="dashboard-card__head">
+          <div className="panel-heading__stack">
+            <h3 className="dashboard-card__title">{region === '全部' ? '全台四大區域板塊分佈' : `${region} 結構快照`}</h3>
+            <p className="dashboard-card__subtitle">區域學生規模與增減率概況</p>
           </div>
+        </div>
+
+        <div className="dashboard-card__body dashboard-card__insight-body">
 
           <div className="atlas-metric-strip atlas-metric-strip--spaced">
             {regionSummaries.map((item) => (
@@ -110,12 +108,11 @@ function RegionalTabPanel({
                 items={regionSummaries.map((item) => ({ id: item.id, label: item.label, value: item.students }))}
                 activeItemId={region === '全部' ? null : region}
                 onSelectItem={(regionId) => scenarioActions.handleRegionSelect(regionId as RegionGroupFilter)}
+                flat={true}
               />
             </div>
             <div className="atlas-storyboard__chart">
               <ButterflyChart
-                title="各區公私立學生占比"
-                subtitle="左右對照各區公私立量體，快速辨識依賴公部門或民間補位的區域結構。"
                 items={regionSummaries.map((item) => ({
                   id: item.id,
                   label: item.label,
@@ -126,6 +123,7 @@ function RegionalTabPanel({
                 }))}
                 activeItemId={region === '全部' ? null : region}
                 onSelectItem={(regionId) => scenarioActions.handleRegionSelect(regionId as RegionGroupFilter)}
+                flat={true}
               />
             </div>
           </div>
@@ -133,41 +131,44 @@ function RegionalTabPanel({
       </section>
 
       <section className="dashboard-card dashboard-card--ranking">
-        <div className="dashboard-card__body dashboard-card__ranking-body">
-          <div className="panel-heading panel-heading--section">
-            <div className="panel-heading__stack">
-              <p className="eyebrow eyebrow--brass">下鑽入口</p>
-              <h3>{region === '全部' ? '全台縣市聚焦' : `${region} 縣市落差`}</h3>
+        <div className="dashboard-card__head">
+          <div className="panel-heading__stack">
+            <h3 className="dashboard-card__title">{region === '全部' ? '全台縣市聚焦' : `${region} 縣市落差`}</h3>
+            <p className="dashboard-card__subtitle">行政區域排行與圖表切換</p>
+          </div>
+
+          <div className="dashboard-card__actions">
+            <div className="chart-pill-row" role="tablist" aria-label="區域分析圖表切換">
+              <button
+                type="button"
+                role="tab"
+                aria-selected={regionalChartView === 'comparison'}
+                className={regionalChartView === 'comparison' ? 'chip chip--active' : 'chip'}
+                onClick={() => setRegionalChartView('comparison')}
+              >
+                縣市量體
+              </button>
+              <button
+                type="button"
+                role="tab"
+                aria-selected={regionalChartView === 'ranking'}
+                className={regionalChartView === 'ranking' ? 'chip chip--active' : 'chip'}
+                onClick={() => setRegionalChartView('ranking')}
+              >
+                縣市排行
+              </button>
             </div>
-            <p className="panel-heading__meta">點選列表中的縣市，地圖將自動切換並進入該縣市分析。右上方可切換顯示量體長條或詳細排行。</p>
           </div>
-          <div className="chart-pill-row" role="tablist" aria-label="區域分析圖表切換">
-            <button
-              type="button"
-              role="tab"
-              aria-selected={regionalChartView === 'comparison'}
-              className={regionalChartView === 'comparison' ? 'chip chip--active' : 'chip'}
-              onClick={() => setRegionalChartView('comparison')}
-            >
-              縣市量體
-            </button>
-            <button
-              type="button"
-              role="tab"
-              aria-selected={regionalChartView === 'ranking'}
-              className={regionalChartView === 'ranking' ? 'chip chip--active' : 'chip'}
-              onClick={() => setRegionalChartView('ranking')}
-            >
-              縣市排行
-            </button>
-          </div>
+        </div>
+
+        <div className="dashboard-card__body dashboard-card__ranking-body">
           {regionalChartView === 'comparison' ? (
             <ComparisonBarChart items={derived.countySummaries.filter((row) => !row.filteredOut).slice(0, 8).map((row) => ({ id: row.id, label: row.shortLabel, value: row.students }))} activeItemId={hoveredCountyId ?? selectedCountyId} onHoverItem={setHoveredCountyId} onSelectItem={scenarioActions.handleCountySelect} />
           ) : (
             <InsightPanel
               title={region === '全部' ? '全台縣市排行' : `${region} 縣市排行`}
-              subtitle=""
-              showHeader={false}
+              subtitle="依照學生人數"
+              showHeader={true}
               rows={derived.countySummaries.filter((row) => !row.filteredOut).map((row) => ({ id: row.id, label: row.name, subLabel: row.region, students: row.students, schools: row.schools, delta: row.delta, deltaRatio: row.deltaRatio, trend: row.trend }))}
               activeRowId={selectedCountyId}
               onSelectRow={scenarioActions.handleCountySelect}
@@ -176,44 +177,36 @@ function RegionalTabPanel({
                 handlePrefetchCounty(rowId)
               }}
               emptyMessage="目前區域條件沒有可比較的縣市資料。"
+              flat={true}
             />
           )}
         </div>
       </section>
 
-      <section className="dashboard-card dashboard-card--comparison">
-        <div className="dashboard-card__body dashboard-card__insight-body">
-          <div className="panel-heading panel-heading--section">
-            <div className="panel-heading__stack">
-              <p className="eyebrow">自帶分析台</p>
-              <h3>自訂縣市對焦</h3>
-            </div>
-            <p className="panel-heading__meta">在左側地圖多選縣市，或是使用上方的自訂群組，比較沒有被行政區界線綁定的客製化趨勢。</p>
-          </div>
-          <ComparisonPanel
-            comparisonScenarioName={comparisonScenarioName}
-            onChangeScenarioName={setComparisonScenarioName}
-            effectiveComparisonCountyIds={derived.effectiveComparisonCountyIds}
-            comparisonCandidates={derived.comparisonCandidates}
-            comparisonSummaries={derived.comparisonSummaries}
-            favoriteScenarios={favoriteScenarios}
-            recentScenarios={recentScenarios}
-            activeScenarioSnapshot={activeScenarioSnapshot}
-            favoriteScenarioIds={scenarioActions.favoriteScenarioIds}
-            copyFeedback={copyFeedbackMessage}
-            scenarioFeedback={scenarioFeedbackMessage}
-            onToggleCounty={scenarioActions.toggleComparisonCounty}
-            onCopyLink={scenarioActions.handleCopyComparisonLink}
-            onSaveScenario={scenarioActions.handleSaveFavoriteScenario}
-            onExportScenarios={scenarioActions.handleExportFavoriteScenarios}
-            onImportScenarios={scenarioActions.handleImportFavoriteScenarios}
-            onApplyScenario={scenarioActions.applySavedScenario}
-            onTogglePinScenario={scenarioActions.handleTogglePinScenario}
-            onRenameScenario={scenarioActions.handleRenameFavoriteScenario}
-            onRemoveScenario={scenarioActions.handleRemoveFavoriteScenario}
-          />
-        </div>
-      </section>
+      <ComparisonPanel
+        comparisonScenarioName={comparisonScenarioName}
+        onChangeScenarioName={setComparisonScenarioName}
+        effectiveComparisonCountyIds={derived.effectiveComparisonCountyIds}
+        comparisonCandidates={derived.comparisonCandidates}
+        comparisonSummaries={derived.comparisonSummaries}
+        favoriteScenarios={favoriteScenarios}
+        recentScenarios={recentScenarios}
+        activeScenarioSnapshot={activeScenarioSnapshot}
+        favoriteScenarioIds={scenarioActions.favoriteScenarioIds}
+        copyFeedback={copyFeedbackMessage}
+        scenarioFeedback={scenarioFeedbackMessage}
+        onToggleCounty={scenarioActions.toggleComparisonCounty}
+        onCopyLink={scenarioActions.handleCopyComparisonLink}
+        onSaveScenario={scenarioActions.handleSaveFavoriteScenario}
+        onExportScenarios={scenarioActions.handleExportFavoriteScenarios}
+        onImportScenarios={scenarioActions.handleImportFavoriteScenarios}
+        onApplyScenario={scenarioActions.applySavedScenario}
+        onTogglePinScenario={scenarioActions.handleTogglePinScenario}
+        onRenameScenario={scenarioActions.handleRenameFavoriteScenario}
+        onRemoveScenario={scenarioActions.handleRemoveFavoriteScenario}
+        flat={true}
+        className="dashboard-card--comparison"
+      />
     </div>
   )
 }

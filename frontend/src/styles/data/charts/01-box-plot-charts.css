@@ -1,0 +1,26 @@
+.box-plot-chart__whisker,
+.box-plot-chart__cap,
+.box-plot-chart__median {
+    stroke: var(--chart-box-stroke);
+    stroke-width: 2;
+}
+
+.box-plot-chart__box {
+    fill: var(--chart-box-fill);
+    stroke: var(--chart-box-stroke);
+    stroke-width: 1.6;
+}
+
+.box-plot-chart__group {
+    cursor: pointer;
+}
+
+.box-plot-chart__group--active .box-plot-chart__box {
+    fill: var(--chart-box-fill-active);
+    stroke: var(--chart-box-stroke-active);
+}
+
+.box-plot-chart__median-label {
+    font-size: var(--chart-text-sm, 9px);
+    font-weight: 700;
+}

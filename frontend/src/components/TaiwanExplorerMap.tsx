@@ -6,7 +6,7 @@ import type {
   CountyBucketDataset,
   CountyBoundaryCollection,
   CountyBoundaryProperties,
-  RegionGroupFilter,
+  
   TownshipBoundaryCollection,
   TownshipBoundaryProperties,
 } from '../data/educationData'
@@ -32,8 +32,10 @@ import type { SchoolMapPoint } from './map/types'
 
 export type { SchoolMapPoint } from './map/types'
 type TaiwanExplorerMapProps = {
-  counties: CountySummary[]; activeRegion: RegionGroupFilter
-  activeCountyId: string | null; activeTownshipId: string | null
+  counties: CountySummary[]
+  activeRegion: '全部' | '北部' | '中部' | '南部' | '東部' | '離島'
+  activeCountyId: string | null
+  activeTownshipId: string | null
   activeTab: 'overview' | 'regional' | 'county' | 'schools' | 'school-focus'
   theme: 'light' | 'dark'
   countyBoundaries: CountyBoundaryCollection
@@ -44,10 +46,12 @@ type TaiwanExplorerMapProps = {
   highlightedCountyId?: string | null; highlightedTownshipId?: string | null; highlightedSchoolId?: string | null
   isTownshipBoundaryLoading: boolean; mapResetToken: number
   onSelectCounty: (countyId: string) => void
+  onAutoSelectCounty?: (countyId: string) => void
   onSelectTownship: (townshipId: string) => void
   onSelectSchool: (schoolId: string | null) => void
   onHoverCounty?: (countyId: string | null) => void
   onZoomChange?: (zoom: number) => void; onMoveEnd?: (lat: number, lon: number) => void
+  currentMapZoom?: number | null
   initialMapZoom?: number | null; initialMapLat?: number | null; initialMapLon?: number | null
   scopePath: string[]; onNavigateScope: (depth: number) => void
 }
@@ -71,11 +75,13 @@ function TaiwanExplorerMap({
   isTownshipBoundaryLoading,
   mapResetToken,
   onSelectCounty,
+  onAutoSelectCounty,
   onSelectTownship,
   onSelectSchool,
   onHoverCounty,
   onZoomChange,
   onMoveEnd,
+  currentMapZoom = null,
   initialMapZoom = null,
   initialMapLat = null,
   initialMapLon = null,
@@ -83,6 +89,9 @@ function TaiwanExplorerMap({
   onNavigateScope,
 }: TaiwanExplorerMapProps) {
   const [hoveredFeatureId, setHoveredFeatureId] = useState<string | null>(null)
+  const [mapCenter, setMapCenter] = useState<[number, number] | null>(
+    initialMapLat != null && initialMapLon != null ? [initialMapLat, initialMapLon] : null,
+  )
   const tileUrl = theme === 'dark' ? DARK_TILE_URL : LIGHT_TILE_URL
   const tileOpacity = theme === 'dark' ? 0.32 : 1
   const selectedSchool = selectedSchoolId ? schoolPoints.find((school) => school.id === selectedSchoolId) ?? null : null
@@ -106,6 +115,8 @@ function TaiwanExplorerMap({
     townshipBoundaries,
     townshipRows,
     schoolPoints,
+    currentMapZoom,
+    mapCenter,
   )
 
   return (
@@ -118,7 +129,7 @@ function TaiwanExplorerMap({
             {selectedSchool ? `目前地圖聚焦：${selectedSchool.name}` : activeCounty ? `目前地圖聚焦：${activeCounty.name}` : '目前地圖聚焦：全台灣'}
           </div>
           <MapContainer
-            center={[initialMapLat ?? 24.3026, initialMapLon ?? 119.6693]}
+            center={[initialMapLat ?? 24.4444, initialMapLon ?? 120.2500]}
             zoom={initialMapZoom ?? 7}
             minZoom={7}
             maxZoom={18}
@@ -216,15 +227,16 @@ function TaiwanExplorerMap({
 
             {showCountyMarkers
               ? (() => {
-                  const filteredCounties = counties.filter((c) => c.shortLabel !== '嘉市')
+                  const filteredCounties = counties.filter((c) => (currentMapZoom != null && currentMapZoom >= 8 ? true : c.shortLabel !== '嘉市'))
                   return filteredCounties.map((county) => {
                     const isChiayi = county.shortLabel === '嘉縣'
-                    const displayLabel = isChiayi ? '嘉義' : county.shortLabel
+                    const showSeparateChiayi = currentMapZoom === 8
+                    const displayLabel = county.shortLabel
                     let displayStudents = county.students
                     let displayDelta = county.delta
                     let displayDeltaRatio = county.deltaRatio
 
-                    if (isChiayi) {
+                    if (isChiayi && !showSeparateChiayi) {
                       const chiayiCity = counties.find((c) => c.shortLabel === '嘉市')
                       if (chiayiCity) {
                         displayStudents += chiayiCity.students
@@ -237,10 +249,96 @@ function TaiwanExplorerMap({
                     // Use the original center for Chiayi County, or slightly adjust it? Original is fine.
                     const center = countyCenterLookup.get(county.id)
                     if (!center) return null
+
+
+                    // Small manual visual offsets for specific counties to avoid overlap.
+                    // Provide zoom-specific adjustments for visual comfort and interpolate
+                    // between zoom levels to avoid abrupt jumps while the user zooms.
+                      // keep 嘉市 offset stable across zooms so it remains readable when zooming in
+                      const globalPositionOffsets: Record<string, [number, number]> = {
+                        '嘉市': [0, -0.02],
+                          '新北市': [0, -0.03],
+                          '基隆市': [0.02, 0],
+                          '臺北市': [-0.02, 0.02],
+                          '嘉縣': [0.05, 0.12],
+                    }
+
+                    const zoomSpecificOffsets: Record<number, Record<string, [number, number]>> = {
+                      7: {
+                        '新北': [-0.06, -0.02],
+                        '基隆': [0, 0.06],
+                        '臺北': [0.06, -0.06],
+                        '台北': [0.06, -0.06],
+                        '嘉縣': [0.05, 0.12 ],
+                      },
+                      8: {
+                        // At zoom 8 show 嘉市 and 嘉縣 separately; push 嘉縣 to right to avoid overlap
+                        // 嘉市 shown separately starting zoom 8 and keep same offset for higher zooms
+                        '嘉市': [0, -0.02],
+                        '嘉縣': [0.05, 0.12 ],
+                      },
+                      9: {
+                        // Zoom=9: 增加新北往左下的偏移量，使標記落在較空曠位置
+                        '新北': [-0.1, -0.1], // stronger left-down
+                        '基隆': [0, -0.02],     // left
+                        '臺北': [0.02, -0.02],  // left-up
+                        '台北': [0.02, -0.02],
+                        // keep 嘉市 offset at higher zooms
+                         '嘉縣': [0.05, 0.12 ],
+                         '嘉市': [0, -0.02],
+                      },
+                      11: {
+                        '新北': [-0.1, -0.1],
+                        '基隆': [0, -0.01],
+                        '臺北': [0.01, -0.01],
+                        '台北': [0.01, -0.01],
+                        '嘉縣': [0.05, 0.12],
+                        '嘉市': [0, -0.02],
+                      },
+                    }
+
+                    function lerp(a: number, b: number, t: number) { return a + (b - a) * t }
+
+                    function getInterpolatedOffsetsForZoom(zoom: number | null) {
+                      if (zoom == null) return globalPositionOffsets
+                      const keys = Object.keys(zoomSpecificOffsets).map(Number).sort((a, b) => a - b)
+                      if (keys.length === 0) return globalPositionOffsets
+                      if (zoom <= keys[0]) return zoomSpecificOffsets[keys[0]]
+                      if (zoom >= keys[keys.length - 1]) return zoomSpecificOffsets[keys[keys.length - 1]]
+
+                      let lower = keys[0]
+                      let upper = keys[keys.length - 1]
+                      for (let i = 0; i < keys.length - 1; i++) {
+                        if (zoom >= keys[i] && zoom <= keys[i + 1]) {
+                          lower = keys[i]
+                          upper = keys[i + 1]
+                          break
+                        }
+                      }
+
+                      const t = (zoom - lower) / (upper - lower)
+                      const lowerOffsets = zoomSpecificOffsets[lower]
+                      const upperOffsets = zoomSpecificOffsets[upper]
+                      const result: Record<string, [number, number]> = {}
+
+                      const allKeys = new Set<string>([...Object.keys(lowerOffsets), ...Object.keys(upperOffsets)])
+                      allKeys.forEach((k) => {
+                        const lo = lowerOffsets[k] ?? globalPositionOffsets[k] ?? [0, 0]
+                        const hi = upperOffsets[k] ?? globalPositionOffsets[k] ?? [0, 0]
+                        result[k] = [lerp(lo[0], hi[0], t), lerp(lo[1], hi[1], t)]
+                      })
+
+                      return result
+                    }
+
+                    const effectiveOffsets = getInterpolatedOffsetsForZoom(currentMapZoom ?? null)
+                    const offset = effectiveOffsets[county.shortLabel] ?? null
+                    const adjustedCenter: [number, number] = offset ? [center[0] + offset[0], center[1] + offset[1]] : center
+
                     return (
                       <Marker
                         key={`county-marker-${county.id}`}
-                        position={center}
+                        position={adjustedCenter}
                         icon={renderScopeMarkerIcon(displayLabel, displayStudents, growthChoroplethColor(displayDeltaRatio), 54, 'county')}
                         eventHandlers={{ click: () => onSelectCounty(county.id) }}
                       >
@@ -253,23 +351,51 @@ function TaiwanExplorerMap({
                 })()
               : null}
 
+            
+
             {showTownshipMarkers
               ? <TownshipDotMarkers townshipRows={townshipRows} activeTownshipId={activeTownshipId} townshipCenterLookup={townshipCenterLookup} onSelectTownship={onSelectTownship} variant="full" />
               : null}
 
-            {activeCounty && townshipRows.length > 0 && !showTownshipMarkers && !showSchoolMarkers
-              ? <TownshipDotMarkers townshipRows={townshipRows} activeTownshipId={activeTownshipId} townshipCenterLookup={townshipCenterLookup} onSelectTownship={onSelectTownship} variant="compact" />
-              : null}
-
             {showSchoolMarkers ? (
-              <VisibleSchoolMarkers countyBuckets={countyBuckets} schoolPoints={schoolPoints} selectedSchoolId={selectedSchoolId} highlightedSchoolId={highlightedSchoolId} onSelectSchool={onSelectSchool} />
+              (() => {
+                // When zoom >= 12 and a township is selected, only show schools inside that township.
+                const zoom = currentMapZoom ?? 7
+                let schoolPointsToShow = schoolPoints
+                if (zoom >= 12 && activeTownshipId) {
+                  const activeTown = townshipRows.find((t) => t.id === activeTownshipId)
+                  const activeLabel = activeTown?.label ?? null
+                  if (activeLabel) {
+                    schoolPointsToShow = schoolPoints.filter((p) => p.townshipName === activeLabel)
+                  }
+                }
+
+                return <VisibleSchoolMarkers countyBuckets={countyBuckets} schoolPoints={schoolPointsToShow} selectedSchoolId={selectedSchoolId} highlightedSchoolId={highlightedSchoolId} onSelectSchool={onSelectSchool} />
+              })()
             ) : null}
 
             {activeCounty && townshipRows.length > 0 && !showSchoolMarkers ? (
               <AllTownshipLabels onSelectTownship={onSelectTownship} hiddenTownshipId={activeTownshipId} visibleTownshipIds={townshipRows.map((row) => row.id)} />
             ) : null}
 
-            <MapBoundsController countyBoundaries={countyBoundaries} townshipBoundaries={townshipBoundaries} activeCountyId={activeCountyId} activeTownshipId={activeTownshipId} selectedSchoolPoint={selectedSchool} activeRegion={activeRegion} mapResetToken={mapResetToken} onZoomChange={onZoomChange} onMoveEnd={onMoveEnd} initialZoomFromUrl={initialMapZoom} initialLatFromUrl={initialMapLat} initialLonFromUrl={initialMapLon} />
+            <MapBoundsController
+              countyBoundaries={countyBoundaries}
+              townshipBoundaries={townshipBoundaries}
+              activeCountyId={activeCountyId}
+              activeTownshipId={activeTownshipId}
+              selectedSchoolPoint={selectedSchool}
+              activeRegion={activeRegion}
+              mapResetToken={mapResetToken}
+              onZoomChange={onZoomChange}
+              onMoveEnd={(lat, lon) => {
+                setMapCenter([lat, lon])
+                onMoveEnd?.(lat, lon)
+              }}
+              onAutoSelectCounty={onAutoSelectCounty ?? onSelectCounty}
+              initialZoomFromUrl={initialMapZoom}
+              initialLatFromUrl={initialMapLat}
+              initialLonFromUrl={initialMapLon}
+            />
           </MapContainer>
           <MapFloatingHelp activeTab={activeTab} activeCountyName={activeCounty?.name ?? null} />
         </div>

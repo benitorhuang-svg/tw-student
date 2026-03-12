@@ -132,41 +132,55 @@ function SchoolAnalysisView({
         <span className="school-analysis-panel__chart-path-sep" aria-hidden="true">→</span>
         <span className="school-analysis-panel__chart-path-segment school-analysis-panel__chart-path-segment--current">{selectedSchool.name}</span>
       </nav>
-      <section className="school-focus school-analysis-panel__hero school-focus--overview">
-        <div className="school-focus__summary">
-          <div>
-            <p className="eyebrow">學校分析</p>
-            <h3>{selectedSchool.name}</h3>
-            <p>
+      <section className="dashboard-card school-analysis-panel__hero school-focus--overview">
+        <div className="dashboard-card__head">
+          <div className="panel-heading__stack">
+            <h3 className="dashboard-card__title">{selectedSchool.name}</h3>
+            <p className="dashboard-card__subtitle">
               {selectedSchool.countyName} / {selectedSchool.townshipName} / {selectedSchool.educationLevel} / {selectedSchool.managementType}
             </p>
           </div>
-          <div className="school-focus__statline">
-            <strong>{formatStudents(selectedSchool.currentStudents)} 人</strong>
-            <span>
-              今年增減 {formatDelta(selectedSchool.delta)} 人 / {formatPercent(selectedSchool.deltaRatio)}
-            </span>
+          <div className="dashboard-card__actions">
+            <div className="school-focus__statline">
+              <strong>{formatStudents(selectedSchool.currentStudents)} 人</strong>
+              <span>
+                今年增減 {formatDelta(selectedSchool.delta)} 人 / {formatPercent(selectedSchool.deltaRatio)}
+              </span>
+            </div>
           </div>
         </div>
-        <div className="school-focus__meta-grid">
-          {schoolFactCards.map((card) => (
-            <article key={card.label} className="school-focus__meta-card">
-              <span>{card.label}</span>
-              <strong>{card.value}</strong>
-              <small>{card.meta}</small>
-            </article>
-          ))}
+
+        <div className="dashboard-card__body">
+          <div className="school-focus__meta-grid">
+            {schoolFactCards.map((card) => (
+              <article key={card.label} className="school-focus__meta-card">
+                <span>{card.label}</span>
+                <strong>{card.value}</strong>
+                <small>{card.meta}</small>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
       <div className="school-analysis-panel__grid">
-        <div className="school-chart-panel">
-          <div className="school-chart-tabs" role="tablist" aria-label="單校圖表分頁">
-            <button type="button" role="tab" aria-selected={activeChartTab === 'overview'} className={activeChartTab === 'overview' ? 'chip chip--active' : 'chip'} onClick={() => setActiveChartTab('overview')}>校別概況</button>
-            <button type="button" role="tab" aria-selected={activeChartTab === 'trend'} className={activeChartTab === 'trend' ? 'chip chip--active' : 'chip'} onClick={() => setActiveChartTab('trend')}>校別趨勢</button>
-            <button type="button" role="tab" aria-selected={activeChartTab === 'ranking'} className={activeChartTab === 'ranking' ? 'chip chip--active' : 'chip'} onClick={() => setActiveChartTab('ranking')}>同範圍排行</button>
-            <button type="button" role="tab" aria-selected={activeChartTab === 'positioning'} className={activeChartTab === 'positioning' ? 'chip chip--active' : 'chip'} onClick={() => setActiveChartTab('positioning')}>規模定位</button>
+        <section className="dashboard-card school-chart-panel">
+          <div className="dashboard-card__head">
+            <div className="panel-heading__stack">
+              <h3 className="dashboard-card__title">校別深度數據分析</h3>
+              <p className="dashboard-card__subtitle">多維度趨勢與定位掃描</p>
+            </div>
+            <div className="dashboard-card__actions">
+              <div className="school-chart-tabs" role="tablist" aria-label="單校圖表分頁">
+                <button type="button" role="tab" aria-selected={activeChartTab === 'overview'} className={activeChartTab === 'overview' ? 'chip chip--active' : 'chip'} onClick={() => setActiveChartTab('overview')}>概況</button>
+                <button type="button" role="tab" aria-selected={activeChartTab === 'trend'} className={activeChartTab === 'trend' ? 'chip chip--active' : 'chip'} onClick={() => setActiveChartTab('trend')}>趨勢</button>
+                <button type="button" role="tab" aria-selected={activeChartTab === 'ranking'} className={activeChartTab === 'ranking' ? 'chip chip--active' : 'chip'} onClick={() => setActiveChartTab('ranking')}>排行</button>
+                <button type="button" role="tab" aria-selected={activeChartTab === 'positioning'} className={activeChartTab === 'positioning' ? 'chip chip--active' : 'chip'} onClick={() => setActiveChartTab('positioning')}>定位</button>
+              </div>
+            </div>
           </div>
+
+          <div className="dashboard-card__body">
 
           {activeChartTab === 'overview' ? (
             <SchoolAnalysisOverviewSection
@@ -197,6 +211,7 @@ function SchoolAnalysisView({
             <SchoolAnalysisPositioningSection selectedSchool={selectedSchool} scopeLabel={scopeLabel} cohortRank={cohortRank} cohortCount={cohortCount} scopeAverage={scopeAverage} scopeMedian={scopeMedian} sortedSchoolsMax={sortedSchoolsMax} />
           ) : null}
         </div>
+      </section>
 
         <div className="school-analysis-panel__side">
           <div className="school-profile-sidebar__info">

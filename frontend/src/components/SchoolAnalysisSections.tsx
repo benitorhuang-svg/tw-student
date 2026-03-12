@@ -109,28 +109,24 @@ export function SchoolAnalysisTrendSection(props: {
   const { selectedSchool, activeYear, trendMetric, onSetTrendMetric, trendPoints, benchmarkPoints } = props
   return (
     <div className="school-chart-panel__section">
-      <div className="panel-heading">
-        <div>
-          <p className="eyebrow">趨勢切換</p>
-          <h3>{selectedSchool.name} 趨勢圖</h3>
-        </div>
-        <div className="chart-pill-row" role="tablist" aria-label="單校趨勢指標切換">
-          <button type="button" role="tab" aria-selected={trendMetric === 'students'} className={trendMetric === 'students' ? 'chip chip--active' : 'chip'} onClick={() => onSetTrendMetric('students')}>學生數</button>
-          <button type="button" role="tab" aria-selected={trendMetric === 'delta'} className={trendMetric === 'delta' ? 'chip chip--active' : 'chip'} onClick={() => onSetTrendMetric('delta')}>今年增減</button>
-          <button type="button" role="tab" aria-selected={trendMetric === 'ratio'} className={trendMetric === 'ratio' ? 'chip chip--active' : 'chip'} onClick={() => onSetTrendMetric('ratio')}>成長率</button>
-        </div>
-      </div>
       <TrendChart
         chartId="school-trend"
         title={`${selectedSchool.name}${trendMetric === 'students' ? ' 歷年學生數' : trendMetric === 'delta' ? ' 歷年今年增減' : ' 歷年成長率'}`}
-        subtitle="同一張圖表容器支援學生數、今年增減與成長率三態切換，並對照同學制平均。"
+        subtitle="支援學生數、今年增減與成長率三態切換，並對照同學制平均。"
         points={trendPoints}
         benchmarkPoints={benchmarkPoints}
         activeYear={activeYear}
         formatValue={trendMetric === 'ratio' ? (value) => `${value.toFixed(1)}%` : (value) => `${formatDelta(Math.round(value))} 人`}
         benchmarkLabel="同學制平均"
         predictionLabel="趨勢預測"
+        flat={true}
+        showHeader={true}
       />
+      <div className="chart-pill-row school-analysis-metric-toggles" role="tablist" aria-label="單校趨勢指標切換">
+        <button type="button" role="tab" aria-selected={trendMetric === 'students'} className={trendMetric === 'students' ? 'chip chip--active' : 'chip'} onClick={() => onSetTrendMetric('students')}>學生數</button>
+        <button type="button" role="tab" aria-selected={trendMetric === 'delta'} className={trendMetric === 'delta' ? 'chip chip--active' : 'chip'} onClick={() => onSetTrendMetric('delta')}>增減值</button>
+        <button type="button" role="tab" aria-selected={trendMetric === 'ratio'} className={trendMetric === 'ratio' ? 'chip chip--active' : 'chip'} onClick={() => onSetTrendMetric('ratio')}>成長率</button>
+      </div>
     </div>
   )
 }
@@ -148,23 +144,30 @@ export function SchoolAnalysisRankingSection(props: {
   const { selectedSchool, selectedTownshipSummary, activeBenchmarkView, onSetActiveBenchmarkView, benchmarkItems, highlightedSchoolId = null, onHoverSchool, onSelectSchool } = props
   return (
     <div className="school-chart-panel__section">
-      <div className="panel-heading">
-        <div>
-          <p className="eyebrow">基準切換</p>
-          <h3>{selectedSchool.name} 比較基準</h3>
+      <div className="dashboard-card dashboard-card--flat">
+        <div className="dashboard-card__head">
+          <div className="panel-heading__stack">
+            <h3 className="dashboard-card__title">比較基準分析</h3>
+            <p className="dashboard-card__subtitle">對照鄉鎮平均、縣市平均或同儕校，判讀學校規模的相對位置。</p>
+          </div>
+          <div className="dashboard-card__actions">
+            <div className="chart-pill-row" role="tablist" aria-label="單校比較基準切換">
+              <button type="button" role="tab" aria-selected={activeBenchmarkView === 'township'} className={activeBenchmarkView === 'township' ? 'chip chip--active' : 'chip'} onClick={() => onSetActiveBenchmarkView('township')}>{selectedTownshipSummary ? '鄉鎮平均' : '範圍平均'}</button>
+              <button type="button" role="tab" aria-selected={activeBenchmarkView === 'county'} className={activeBenchmarkView === 'county' ? 'chip chip--active' : 'chip'} onClick={() => onSetActiveBenchmarkView('county')}>縣市平均</button>
+              <button type="button" role="tab" aria-selected={activeBenchmarkView === 'peers'} className={activeBenchmarkView === 'peers' ? 'chip chip--active' : 'chip'} onClick={() => onSetActiveBenchmarkView('peers')}>同儕 10 校</button>
+            </div>
+          </div>
         </div>
-        <div className="chart-pill-row" role="tablist" aria-label="單校比較基準切換">
-          <button type="button" role="tab" aria-selected={activeBenchmarkView === 'township'} className={activeBenchmarkView === 'township' ? 'chip chip--active' : 'chip'} onClick={() => onSetActiveBenchmarkView('township')}>{selectedTownshipSummary ? '鄉鎮平均' : '目前範圍平均'}</button>
-          <button type="button" role="tab" aria-selected={activeBenchmarkView === 'county'} className={activeBenchmarkView === 'county' ? 'chip chip--active' : 'chip'} onClick={() => onSetActiveBenchmarkView('county')}>縣市平均</button>
-          <button type="button" role="tab" aria-selected={activeBenchmarkView === 'peers'} className={activeBenchmarkView === 'peers' ? 'chip chip--active' : 'chip'} onClick={() => onSetActiveBenchmarkView('peers')}>同學制前 10 校</button>
+        <div className="dashboard-card__body">
+          <ComparisonBarChart
+            items={benchmarkItems}
+            activeItemId={highlightedSchoolId ?? selectedSchool.id}
+            onHoverItem={activeBenchmarkView === 'peers' ? onHoverSchool : undefined}
+            onSelectItem={activeBenchmarkView === 'peers' ? (schoolId) => onSelectSchool(schoolId) : undefined}
+            flat={true}
+          />
         </div>
       </div>
-      <ComparisonBarChart
-        items={benchmarkItems}
-        activeItemId={highlightedSchoolId ?? selectedSchool.id}
-        onHoverItem={activeBenchmarkView === 'peers' ? onHoverSchool : undefined}
-        onSelectItem={activeBenchmarkView === 'peers' ? (schoolId) => onSelectSchool(schoolId) : undefined}
-      />
     </div>
   )
 }

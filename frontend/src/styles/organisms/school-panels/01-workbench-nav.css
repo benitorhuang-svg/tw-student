@@ -1,0 +1,107 @@
+/* Navigation & Control Bars */
+.school-detail-shell__topbar {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 12px 14px;
+    border-radius: 16px;
+    border: 1px solid var(--atlas-border-strong);
+    background: var(--atlas-surface-interactive);
+    box-shadow: var(--atlas-shadow-soft);
+    min-width: 0;
+}
+
+.school-detail-shell__topbar--focus {
+    background: linear-gradient(135deg, rgba(42, 111, 145, .16), rgba(184, 135, 70, .12));
+    border-color: rgba(184, 135, 70, .18)
+}
+
+.school-detail-shell__topbar-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    flex-wrap: wrap
+}
+
+/* Tabs & Pill Selectors */
+.school-workbench-tabs,
+.chart-pill-row,
+.school-chart-tabs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap
+}
+
+.school-workbench-tabs--focus {
+    justify-content: flex-end
+}
+
+/* Year Stepper */
+.dashboard-year-nav {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+.dashboard-year-nav__stepper {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(148, 163, 184, 0.08);
+    border-radius: 999px;
+    padding: 2px 4px;
+    border: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.dashboard-year-nav__arrow {
+    padding: 2px 10px;
+    min-height: 28px;
+    border: none;
+    white-space: nowrap;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--text-main);
+    transition: background 0.2s ease;
+}
+
+.dashboard-year-nav__arrow:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.dashboard-year-nav__value {
+    min-width: 40px;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+.dashboard-year-nav__toggle {
+    padding: 2px 14px;
+    min-height: 28px;
+    border-radius: 999px;
+    font-size: 0.76rem;
+    font-weight: 700;
+    white-space: nowrap;
+    background: rgba(148, 163, 184, 0.12);
+    border: 1px solid rgba(148, 163, 184, 0.15);
+    transition: all 0.2s ease;
+}
+
+.dashboard-year-nav__toggle:hover {
+    background: var(--palette-cyan);
+    color: #fff;
+    border-color: transparent;
+}
+
+/* Hidden Dashboard Headers */
+.dashboard-card--map .dashboard-card__head,
+.dashboard-card--kpi .dashboard-card__head,
+.dashboard-card--ranking .dashboard-card__head,
+.dashboard-card--comparison .dashboard-card__head,
+.dashboard-card--anomaly .dashboard-card__head,
+.dashboard-card--school-detail .dashboard-card__head {
+    display: none
+}

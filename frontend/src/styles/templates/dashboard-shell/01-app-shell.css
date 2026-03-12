@@ -1,0 +1,25 @@
+.app-shell {
+    height: 100vh;
+    height: 100dvh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    background: radial-gradient(circle at top left, rgba(8, 145, 178, .08), transparent 24%), radial-gradient(circle at top right, rgba(249, 115, 22, .06), transparent 28%), var(--surface-page);
+    color: var(--text-main);
+    overflow: hidden;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    padding-left: env(safe-area-inset-left, 0px);
+    padding-right: env(safe-area-inset-right, 0px)
+}
+
+.app-shell[data-theme=dark] {
+    --text-main: #e5eef8;
+    --text-strong: #f8fafc;
+    --text-soft: #9cb1c7;
+    --surface-page: linear-gradient(180deg, #0b1424 0%, #101b30 100%);
+    color: var(--text-main)
+}
+
+.app-shell--loading {
+    align-items: stretch
+}

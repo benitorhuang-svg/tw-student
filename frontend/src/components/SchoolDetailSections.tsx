@@ -29,14 +29,14 @@ export function SchoolDetailWorkspace(props: {
   const { scopeLabel, activeYear, schoolPanelTitle, selectedSchool, schoolInsights, sortedSchools, scopeAverage, scopeMedian, sizeDistributionGroups, scopeDistribution, onSetWorkbenchView, onHoverSchool, onSelectSchool } = props
   return (
     <>
-      <div className="school-detail-shell__topbar">
-        <div>
-          <p className="eyebrow eyebrow--cyan">區域陣列掃描</p>
-          <h3>{schoolPanelTitle ?? '學校清單與規模分布'}</h3>
-          <p>{selectedSchool ? `目前已捕捉 ${selectedSchool.name}。此頁維持宏觀的清單矩陣，查看該校特寫請前往「校別概況」。` : `${scopeLabel} 群像。支援散點、箱線圖及清單交叉檢視，點擊節點即可查看校別概況。`}</p>
+    <section className="dashboard-card school-detail-shell__topbar" style={{ marginBottom: '14px' }}>
+      <div className="dashboard-card__head">
+        <div className="panel-heading__stack">
+          <h3 className="dashboard-card__title">{schoolPanelTitle ?? '學校清單與規模分布'}</h3>
+          <p className="dashboard-card__subtitle">{selectedSchool ? `目前已捕捉 ${selectedSchool.name}` : `${scopeLabel} 群像`}</p>
         </div>
 
-        <div className="school-detail-shell__topbar-actions">
+        <div className="dashboard-card__actions">
           {selectedSchool ? (
             <button type="button" className="ghost-button" onClick={() => onSetWorkbenchView('analysis')}>
               前往校別概況
@@ -44,6 +44,7 @@ export function SchoolDetailWorkspace(props: {
           ) : null}
         </div>
       </div>
+    </section>
 
       <div className="school-list-workspace">
         <div className="school-list-workspace__summary">
@@ -70,41 +71,54 @@ export function SchoolDetailWorkspace(props: {
         </div>
 
         <div className="school-list-workspace__grid">
-          <section className="school-list-workspace__card" data-testid="schools-peer-scatter">
-            <ScatterPlotChart
-              title={`${scopeLabel} 各校規模散點圖`}
-              subtitle="X 軸看學生數，Y 軸看年變動率，協助先找出規模與趨勢的離群校。"
-              xLabel="學生數"
-              yLabel="年變動率 (%)"
-              points={sortedSchools.map((school) => ({
-                id: school.id,
-                label: school.name,
-                x: school.currentStudents,
-                y: school.deltaRatio * 100,
-                size: Math.max(Math.abs(school.delta), 12),
-              }))}
-              activePointId={selectedSchool?.id ?? null}
-              formatY={(value) => `${value.toFixed(1)}%`}
-              onHoverPoint={onHoverSchool}
-              onSelectPoint={onSelectSchool}
-            />
-          </section>
+          <ScatterPlotChart
+            title={`${scopeLabel} 各校規模散點圖`}
+            subtitle="X 軸看學生數，Y 軸看年變動率，協助先找出規模與趨勢的離群校。"
+            xLabel="學生數"
+            yLabel="年變動率 (%)"
+            points={sortedSchools.map((school) => ({
+              id: school.id,
+              label: school.name,
+              x: school.currentStudents,
+              y: school.deltaRatio * 100,
+              size: Math.max(Math.abs(school.delta), 12),
+            }))}
+            activePointId={selectedSchool?.id ?? null}
+            formatY={(value) => `${value.toFixed(1)}%`}
+            onHoverPoint={onHoverSchool}
+            onSelectPoint={onSelectSchool}
+            flat={true}
+            className="school-list-workspace__card--scatter"
+          />
 
-          <section className="school-list-workspace__card school-list-workspace__card--distribution" data-testid="schools-distribution-card">
-            {schoolInsights.length > 0 ? (
-              <div className="school-distribution-stack school-distribution-stack--workspace" data-testid="schools-distribution-stack">
-                <HistogramChart title={`${scopeLabel} 學校規模分布`} subtitle="以真正的直方圖揭露規模集中區間，再用盒鬚圖補充各學制群體差異。" values={schoolInsights.map((school) => school.currentStudents)} activeValue={selectedSchool?.currentStudents ?? null} />
-                {sizeDistributionGroups.length > 0 ? (
-                  <BoxPlotChart title={`${scopeLabel} 學制箱形摘要`} subtitle="以盒鬚圖補充不同學制的中位數、四分位距與離散程度。" groups={sizeDistributionGroups} />
-                ) : null}
-              </div>
-            ) : scopeDistribution.length > 0 ? (
-              <div data-testid="schools-fallback-pie">
-                <PieChart slices={scopeDistribution} size={124} />
-              </div>
-            ) : (
-              <div className="empty-state">目前條件沒有可顯示的學校分布。</div>
-            )}
+          <section className="dashboard-card dashboard-card--flat school-list-workspace__card--distribution" data-testid="schools-distribution-card">
+            <div className="dashboard-card__body" style={{ padding: '0' }}>
+              {schoolInsights.length > 0 ? (
+                <div className="school-distribution-stack school-distribution-stack--workspace" data-testid="schools-distribution-stack">
+                  <HistogramChart
+                    title={`${scopeLabel} 學校規模分布`}
+                    subtitle="揭露規模集中區間"
+                    values={schoolInsights.map((school) => school.currentStudents)}
+                    activeValue={selectedSchool?.currentStudents ?? null}
+                    flat={true}
+                  />
+                  {sizeDistributionGroups.length > 0 ? (
+                    <BoxPlotChart
+                      title={`${scopeLabel} 學制箱形摘要`}
+                      subtitle="學制的中位數與離散程度"
+                      groups={sizeDistributionGroups}
+                      flat={true}
+                    />
+                  ) : null}
+                </div>
+              ) : scopeDistribution.length > 0 ? (
+                <div data-testid="schools-fallback-pie" style={{ padding: '20px' }}>
+                  <PieChart slices={scopeDistribution} size={124} />
+                </div>
+              ) : (
+                <div className="chart-empty-state">目前條件沒有可顯示的學校分布。</div>
+              )}
+            </div>
           </section>
         </div>
 
@@ -141,25 +155,28 @@ export function SchoolDetailFocus(props: {
   const { selectedSchool, schoolPanelTitle, effectiveFocusView, activeYear, scopeLabel, scopeAverage, scopeMedian, countyAverage, selectedSchoolRank, sortedSchoolsCount, sortedSchoolsMax, cohortRank, cohortCount, peerSchools, selectedTownshipSummary, highlightedSchoolId = null, selectedSchoolAtlasEntry, isCountySchoolAtlasLoading, countySchoolAtlasError, onSetWorkbenchView, onHoverSchool, onSelectSchool } = props
   return (
     <>
-      <div className="school-detail-shell__topbar school-detail-shell__topbar--focus">
-        <div>
-          <p className="eyebrow">校別概況</p>
-          <h3>{selectedSchool?.name ?? schoolPanelTitle ?? '單校分析'}</h3>
-          <p>{selectedSchool ? '此頁只保留單校內容，與各校分析的列表工作台分開。' : '請先從各校分析選擇一所學校。'}</p>
+    <section className="dashboard-card school-detail-shell__topbar school-detail-shell__topbar--focus" style={{ marginBottom: '14px' }}>
+      <div className="dashboard-card__head">
+        <div className="panel-heading__stack">
+          <h3 className="dashboard-card__title">{selectedSchool?.name ?? schoolPanelTitle ?? '單校分析'}</h3>
+          <p className="dashboard-card__subtitle">校別概況與資料註記</p>
         </div>
 
-        <div className="school-workbench-tabs school-workbench-tabs--focus" role="tablist" aria-label="校別概況分頁">
-          <button type="button" role="tab" aria-selected={false} className="chip" onClick={() => onSetWorkbenchView('list')}>
-            回到各校分析
-          </button>
-          <button type="button" role="tab" aria-selected={effectiveFocusView === 'analysis'} className={effectiveFocusView === 'analysis' ? 'chip chip--active' : 'chip'} onClick={() => onSetWorkbenchView('analysis')} disabled={!selectedSchool}>
-            校別概況
-          </button>
-          <button type="button" role="tab" aria-selected={effectiveFocusView === 'notes'} className={effectiveFocusView === 'notes' ? 'chip chip--active' : 'chip'} onClick={() => onSetWorkbenchView('notes')} disabled={!selectedSchool}>
-            資料註記
-          </button>
+        <div className="dashboard-card__actions">
+          <div className="school-workbench-tabs school-workbench-tabs--focus" role="tablist" aria-label="校別概況分頁">
+            <button type="button" role="tab" aria-selected={false} className="chip" onClick={() => onSetWorkbenchView('list')}>
+              回到各校分析
+            </button>
+            <button type="button" role="tab" aria-selected={effectiveFocusView === 'analysis'} className={effectiveFocusView === 'analysis' ? 'chip chip--active' : 'chip'} onClick={() => onSetWorkbenchView('analysis')} disabled={!selectedSchool}>
+              校別概況
+            </button>
+            <button type="button" role="tab" aria-selected={effectiveFocusView === 'notes'} className={effectiveFocusView === 'notes' ? 'chip chip--active' : 'chip'} onClick={() => onSetWorkbenchView('notes')} disabled={!selectedSchool}>
+              資料註記
+            </button>
+          </div>
         </div>
       </div>
+    </section>
 
       {effectiveFocusView === 'analysis' ? (
         selectedSchool ? (

@@ -1,0 +1,53 @@
+.atlas-analysis-column {
+    min-width: 0;
+    overflow-y: auto;
+    padding: 18px;
+    border-radius: 28px;
+    background: var(--surface-analysis);
+    box-shadow: var(--shadow-soft);
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain
+}
+
+.atlas-analysis-column::-webkit-scrollbar {
+    width: 8px
+}
+
+.atlas-analysis-column::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: #94a3b82e
+}
+
+.analysis-hero {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 22px;
+    margin-bottom: 16px
+}
+
+.analysis-hero h2 {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 2vw, 2rem);
+    line-height: 1.1;
+}
+
+.analysis-overview {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(300px, .8fr);
+    gap: 16px;
+    align-items: start
+}
+
+.analysis-overview__main,
+.analysis-overview__side,
+.analysis-regional,
+.analysis-schools {
+    display: grid;
+    gap: 16px
+}
+
+.analysis-regional {
+    grid-template-columns: minmax(320px, .95fr) minmax(320px, 1.05fr)
+}

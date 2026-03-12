@@ -23,6 +23,9 @@ type StackedAreaTrendChartProps = {
   title: string
   subtitle: string
   series: Series[]
+  className?: string
+  flat?: boolean
+  showHeader?: boolean
 }
 
 const SERIES_COLORS = [
@@ -33,7 +36,7 @@ const SERIES_COLORS = [
   'var(--chart-area-4, #a855f7)',
 ]
 
-function StackedAreaTrendChart({ title, subtitle, series }: StackedAreaTrendChartProps) {
+function StackedAreaTrendChart({ title, subtitle, series, className, flat, showHeader = true }: StackedAreaTrendChartProps) {
   const { containerRef, width, height } = useResponsiveSvg(680, 270, { minWidth: 340 })
 
   const paddingLeft = width < 420 ? 35 : 45
@@ -104,15 +107,26 @@ function StackedAreaTrendChart({ title, subtitle, series }: StackedAreaTrendChar
     return segments
   }, [])
 
-  return (
-    <section className="stacked-area-chart stacked-area-chart--framed" ref={animRef as React.RefObject<HTMLElement>}>
-      {/* Header */}
-      <div className="panel-heading stacked-area-chart__heading" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: '20px', marginBottom: '8px' }}>
-        <h3 className="stacked-area-chart__title" style={{ margin: 0 }}>{title}</h3>
-        <p className="panel-heading__meta" style={{ margin: 0, textAlign: 'right', maxWidth: '60%', fontSize: '0.85rem' }}>{subtitle}</p>
-      </div>
+  const combinedClasses = [
+    'dashboard-card',
+    flat ? 'dashboard-card--flat' : '',
+    className || ''
+  ].filter(Boolean).join(' ')
 
-      <div className="chart-svg-frame" ref={containerRef} style={{ position: 'relative' }}>
+  return (
+    <section className={combinedClasses} ref={animRef as React.RefObject<HTMLElement>}>
+      {/* Unified Header */}
+      {showHeader && title && (
+        <div className="dashboard-card__head">
+          <div className="panel-heading__stack">
+            <h3 className="dashboard-card__title">{title}</h3>
+            {subtitle && <p className="dashboard-card__subtitle">{subtitle}</p>}
+          </div>
+        </div>
+      )}
+
+      <div className="dashboard-card__body" style={{ padding: '0px' }}>
+        <div className="chart-svg-frame" ref={containerRef}>
         <svg
           className={`stacked-area-chart__svg${isVisible ? ' chart-enter chart-enter--visible' : ' chart-enter'}`}
           viewBox={`0 0 ${width} ${height}`}
@@ -313,8 +327,9 @@ function StackedAreaTrendChart({ title, subtitle, series }: StackedAreaTrendChar
           </div>
         )}
       </div>
-    </section>
-  )
+    </div>
+  </section>
+)
 }
 
 export default StackedAreaTrendChart

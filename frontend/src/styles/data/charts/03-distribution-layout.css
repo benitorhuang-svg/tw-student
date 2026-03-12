@@ -1,0 +1,11 @@
+.school-distribution-stack,
+.school-positioning-grid {
+    display: grid;
+    gap: 14px
+}
+
+@media (min-width: 980px) {
+    .school-positioning-grid {
+        grid-template-columns: minmax(260px, .9fr) minmax(0, 1.1fr)
+    }
+}

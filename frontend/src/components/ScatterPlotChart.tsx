@@ -1,13 +1,5 @@
-
 import { useChartAnimation } from '../hooks/useChartAnimation'
 import { useResponsiveSvg } from '../hooks/useResponsiveSvg'
-
-const formatWan = (val: number) => {
-  if (val === 0) return '0'
-  const absoluteVal = Math.abs(val)
-  if (absoluteVal < 1000) return val.toLocaleString('zh-TW')
-  return `${+(val / 10000).toFixed(1)} 萬`
-}
 
 type ScatterPoint = {
   id: string
@@ -20,7 +12,7 @@ type ScatterPoint = {
 
 type ScatterPlotChartProps = {
   title: string
-  subtitle: string
+  subtitle?: string
   xLabel: string
   yLabel: string
   points: ScatterPoint[]
@@ -30,48 +22,47 @@ type ScatterPlotChartProps = {
   onHoverPoint?: (id: string | null) => void
   onSelectPoint?: (id: string) => void
   children?: React.ReactNode
-}
-
-function getQuadrantLabels(width: number) {
-  if (width < 420) {
-    return {
-      topLeft: '擴張',
-      topRight: '成長',
-      bottomLeft: '警示',
-      bottomRight: '穩定',
-    }
-  }
-
-  return {
-    topLeft: '快速擴張',
-    topRight: '潛力成長',
-    bottomLeft: '轉型警示',
-    bottomRight: '穩定飽和',
-  }
+  className?: string
+  flat?: boolean
+  showHeader?: boolean
 }
 
 function ScatterPlotChart({
   title, subtitle, xLabel, yLabel, points, activePointId = null,
-  formatX = (value) => `${formatWan(Math.round(value))}人`,
   formatY = (value) => {
     if (value === 0) return '0%'
     return `${value > 0 ? '+' : ''}${value.toFixed(1)}%`
   },
   onHoverPoint, onSelectPoint,
   children,
+  className, flat, showHeader = true,
 }: ScatterPlotChartProps) {
   const { ref: animRef, isVisible } = useChartAnimation()
   const { containerRef, width, height } = useResponsiveSvg(620, 240, { minWidth: 320 })
-  const padding = { top: 20, right: width < 400 ? 24 : 50, bottom: 40, left: width < 400 ? 56 : 100 }
-  const quadrantLabels = getQuadrantLabels(width)
+  const padding = { top: 10, right: width < 400 ? 24 : 50, bottom: 40, left: width < 400 ? 56 : 100 }
   
+  const combinedClasses = [
+    'dashboard-card',
+    'scatter-chart',
+    flat ? 'dashboard-card--flat' : '',
+    className || ''
+  ].filter(Boolean).join(' ')
+
   if (points.length === 0) {
     return (
-      <section className="scatter-chart scatter-chart--framed">
-        <div className="panel-heading scatter-chart__heading">
-          <h3 className="scatter-chart__title">{title}</h3>
+      <section className={combinedClasses} ref={animRef as React.RefObject<HTMLElement>}>
+        {showHeader && (
+          <div className="dashboard-card__head">
+            <div className="panel-heading__stack">
+              <h3 className="dashboard-card__title">{title}</h3>
+              {subtitle && <p className="dashboard-card__subtitle">{subtitle}</p>}
+            </div>
+            {children}
+          </div>
+        )}
+        <div className="dashboard-card__body">
+          <div className="chart-empty-state">尚無資料</div>
         </div>
-        <div className="chart-empty-state">尚無資料</div>
       </section>
     )
   }
@@ -103,19 +94,20 @@ function ScatterPlotChart({
   const midY = toY(0)
 
   return (
-    <section className="scatter-chart scatter-chart--framed" ref={animRef as React.RefObject<HTMLElement>}>
-      <div className="panel-heading scatter-chart__heading scatter-chart__heading--split">
-        <div className="scatter-chart__heading-copy">
-          <h3 className="scatter-chart__title">{title}</h3>
+    <section className={combinedClasses} ref={animRef as React.RefObject<HTMLElement>}>
+      {showHeader && (
+        <div className="dashboard-card__head">
+          <div className="panel-heading__stack">
+            <h3 className="dashboard-card__title">{title}</h3>
+            {subtitle && <p className="dashboard-card__subtitle">{subtitle}</p>}
+          </div>
           {children}
         </div>
-        <p className="panel-heading__meta scatter-chart__meta">
-          {subtitle}
-        </p>
-      </div>
-
-  <div className="chart-svg-frame" ref={containerRef}>
-  <svg className={`scatter-chart__svg${width < 420 ? ' scatter-chart__svg--compact' : ''}${isVisible ? ' chart-enter chart-enter--visible' : ' chart-enter'}`} viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="xMidYMid meet" role="img" aria-label={`${title} 散佈圖`}>
+      )}
+      
+      <div className="dashboard-card__body">
+        <div className="chart-svg-frame" ref={containerRef}>
+        <svg className={`scatter-chart__svg${width < 420 ? ' scatter-chart__svg--compact' : ''}${isVisible ? ' chart-enter chart-enter--visible' : ' chart-enter'}`} viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="xMidYMid meet" role="img" aria-label={`${title}${subtitle ? `: ${subtitle}` : ''} 散佈圖`}>
         {/* 四象限淡色背景 */}
         <rect className="scatter-chart__quadrant scatter-chart__quadrant--tl" x={padding.left} y={padding.top} width={midX - padding.left} height={midY - padding.top} rx="2" />
         <rect className="scatter-chart__quadrant scatter-chart__quadrant--tr" x={midX} y={padding.top} width={width - padding.right - midX} height={midY - padding.top} rx="2" />
@@ -126,28 +118,27 @@ function ScatterPlotChart({
         <line className="scatter-chart__zero" x1={midX} x2={midX} y1={padding.top} y2={height - padding.bottom} />
         <line className="scatter-chart__zero" x1={padding.left} x2={width - padding.right} y1={midY} y2={midY} />
 
-        {/* 十字線數值標註 */}
-        <text className="scatter-chart__axis scatter-chart__axis--highlight-cyan" x={midX} y={padding.top - 6} textAnchor="middle">
-          平均: {formatX(avgX)}
-        </text>
-        <text className="scatter-chart__axis scatter-chart__axis--highlight-brass" x={width - padding.right + 5} y={midY + 4}>
-          {formatY(0)}
-        </text>
-
-        {/* 象限標籤 */}
-        <text className="scatter-chart__quadrant-label" x={width - padding.right - 5} y={padding.top + 15} textAnchor="end">{quadrantLabels.topRight}</text>
-        <text className="scatter-chart__quadrant-label" x={padding.left + 5} y={padding.top + 15}>{quadrantLabels.topLeft}</text>
-        <text className="scatter-chart__quadrant-label" x={padding.left + 5} y={height - padding.bottom - 10}>{quadrantLabels.bottomLeft}</text>
-        <text className="scatter-chart__quadrant-label" x={width - padding.right - 5} y={height - padding.bottom - 10} textAnchor="end">{quadrantLabels.bottomRight}</text>
-
         {/* 座標軸線與標註 */}
         {(() => {
-          const ticks = []
-          const start = Math.floor(minY / 0.5) * 0.5
-          const end = Math.ceil(maxY / 0.5) * 0.5
-          for (let v = start; v <= end + 0.01; v += 0.5) {
-            ticks.push(Math.round(v * 10) / 10)
+          const tickCount = 8
+          const rawStep = rangeY / tickCount
+          
+          // Round step to a "pretty" number (0.1, 0.2, 0.5, 1, 2, 5, 10, etc.)
+          const magnitude = Math.pow(10, Math.floor(Math.log10(rawStep)))
+          const normalized = rawStep / magnitude
+          let step: number
+          if (normalized < 1.5) step = 1 * magnitude
+          else if (normalized < 3) step = 2 * magnitude
+          else if (normalized < 7) step = 5 * magnitude
+          else step = 10 * magnitude
+          
+          const ticks: number[] = []
+          const start = Math.floor(minY / step) * step
+          for (let v = start; v <= maxY + step * 0.1; v += step) {
+             const rounded = Math.round(v * 1000) / 1000 // Avoid float precision mess
+             ticks.push(rounded)
           }
+
           return ticks.map((val) => {
             const y = toY(val)
             if (y < padding.top - 2 || y > height - padding.bottom + 2) return null
@@ -158,17 +149,29 @@ function ScatterPlotChart({
             )
           })
         })()}
+        {/* X軸標註 */}
         {(() => {
-          const ticks = []
-          for (let v = 0; v <= maxX + 1; v += 50000) {
-            ticks.push(v)
+          const tickCount = Math.max(Math.floor(width / 100), 2)
+          const rawStep = rangeX / tickCount
+          const magnitude = Math.pow(10, Math.floor(Math.log10(rawStep)))
+          const normalized = rawStep / magnitude
+          let step: number
+          if (normalized < 1.5) step = 1 * magnitude
+          else if (normalized < 3) step = 2 * magnitude
+          else if (normalized < 7) step = 5 * magnitude
+          else step = 10 * magnitude
+
+          const ticks: number[] = []
+          for (let v = 0; v <= maxX + step * 0.1; v += step) {
+             ticks.push(v)
           }
+
           return ticks.map((val) => {
             const x = toX(val)
             if (x < padding.left || x > width - padding.right + 2) return null
             return (
               <text key={val} className="scatter-chart__axis" x={x} y={height - 25} textAnchor="middle">
-                {val === 0 ? '0' : val / 10000}
+                {val === 0 ? '0' : val >= 10000 ? `${val / 10000}萬` : val.toLocaleString()}
               </text>
             )
           })
@@ -234,12 +237,13 @@ function ScatterPlotChart({
         })()}
 
         <text className="scatter-chart__axis-title" x={width / 2} y={height - 5} textAnchor="middle">{xLabel}</text>
-        <text className="scatter-chart__axis-title" transform={`translate(15 ${height / 2}) rotate(-90)`} textAnchor="middle">{yLabel}</text>
+        <text className="scatter-chart__axis-title" transform={"translate(15 " + (height / 2) + ") rotate(-90)"} textAnchor="middle">{yLabel}</text>
 
       </svg>
       </div>
-    </section>
-  )
+    </div>
+  </section>
+)
 }
 
 export default ScatterPlotChart

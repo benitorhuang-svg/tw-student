@@ -8,6 +8,7 @@ type TreemapLeaf = {
   label: string
   value: number
   meta?: string
+  color?: string
 }
 
 type TreemapGroup = {
@@ -25,6 +26,9 @@ type TreemapChartProps = {
   activeLeafId?: string | null
   onSelectLeaf?: (id: string) => void
   onSelectGroup?: (id: string) => void
+  className?: string
+  flat?: boolean
+  showHeader?: boolean
 }
 
 type LayoutRect<T> = {
@@ -35,35 +39,93 @@ type LayoutRect<T> = {
   height: number
 }
 
-const CANVAS_WIDTH = 1000
-const CANVAS_HEIGHT = 560
+const CANVAS_WIDTH = 550
+const CANVAS_HEIGHT = 550
 
-function buildSliceDiceLayout<T extends { value: number }>(
+/**
+ * Squarified Treemap Layout (Simple version)
+ */
+function squarify<T extends { value: number }>(
   nodes: T[],
   x: number,
   y: number,
   width: number,
   height: number,
-  splitVertically: boolean,
 ): LayoutRect<T>[] {
-  const total = Math.max(nodes.reduce((sum, node) => sum + Math.max(node.value, 0), 0), 1)
-  let cursor = 0
+  if (nodes.length === 0) return []
+  if (width <= 0 || height <= 0) return []
 
-  return nodes.map((node, index) => {
-    const value = Math.max(node.value, 0)
-    const ratio = index === nodes.length - 1 ? 1 - cursor : value / total
-    if (splitVertically) {
-      const rectWidth = width * ratio
-      const rect = { node, x: x + width * cursor, y, width: rectWidth, height }
-      cursor += ratio
-      return rect
+  const total = nodes.reduce((sum, n) => sum + Math.max(n.value, 0), 0)
+  if (total === 0) return []
+
+  const result: LayoutRect<T>[] = []
+  const sortedNodes = [...nodes].sort((a, b) => b.value - a.value)
+
+  let remainingNodes = [...sortedNodes]
+  let curX = x
+  let curY = y
+  let curW = width
+  let curH = height
+  const scale = (width * height) / total
+
+  while (remainingNodes.length > 0) {
+    const isVertical = curW < curH
+    const length = isVertical ? curW : curH
+
+    let i = 1
+    let worst = Infinity
+
+    while (i <= remainingNodes.length) {
+      const row = remainingNodes.slice(0, i)
+      const rowTotal = row.reduce((s, n) => s + n.value, 0)
+      const thickness = (rowTotal * scale) / length
+
+      const rowWorst = Math.max(
+        ...row.map(n => {
+          const side = (n.value * scale) / thickness
+          return Math.max(thickness / side, side / thickness)
+        })
+      )
+
+      if (rowWorst <= worst) {
+        worst = rowWorst
+        i++
+      } else {
+        i--
+        break
+      }
     }
 
-    const rectHeight = height * ratio
-    const rect = { node, x, y: y + height * cursor, width, height: rectHeight }
-    cursor += ratio
-    return rect
-  })
+    if (i > remainingNodes.length) i = remainingNodes.length
+    if (i === 0) i = 1
+
+    const row = remainingNodes.slice(0, i)
+    const rowTotal = row.reduce((s, n) => s + n.value, 0)
+    const thickness = (rowTotal * scale) / length
+
+    let rowCursor = 0
+    row.forEach(node => {
+      const side = (node.value * scale) / thickness
+      if (isVertical) {
+        result.push({ node, x: curX + rowCursor, y: curY, width: side, height: thickness })
+        rowCursor += side
+      } else {
+        result.push({ node, x: curX, y: curY + rowCursor, width: thickness, height: side })
+        rowCursor += side
+      }
+    })
+
+    remainingNodes = remainingNodes.slice(i)
+    if (isVertical) {
+      curY += thickness
+      curH -= thickness
+    } else {
+      curX += thickness
+      curW -= thickness
+    }
+  }
+
+  return result
 }
 
 function TreemapChart({
@@ -73,18 +135,35 @@ function TreemapChart({
   activeLeafId = null,
   onSelectLeaf,
   onSelectGroup,
+  className,
+  flat,
+  showHeader = true,
 }: TreemapChartProps) {
   const { ref, isVisible } = useChartAnimation()
   const [detailKey, setDetailKey] = useState<string | null>(null)
-  const groupLayouts = useMemo(
-    () => buildSliceDiceLayout(groups, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT, true),
-    [groups],
-  )
+
+  const combinedClasses = [
+    'dashboard-card',
+    'treemap-chart',
+    flat ? 'dashboard-card--flat' : '',
+    isVisible ? 'chart-enter chart-enter--visible' : 'chart-enter',
+    className || ''
+  ].filter(Boolean).join(' ')
+
+  // Groups as columns as per reference design
+  const totalValue = Math.max(groups.reduce((sum, g) => sum + g.value, 0), 1)
+  const groupLayouts = groups.reduce((acc, group) => {
+    const groupWidth = (group.value / totalValue) * CANVAS_WIDTH
+    acc.rects.push({ node: group, x: acc.cursor, y: 0, width: groupWidth, height: CANVAS_HEIGHT })
+    acc.cursor += groupWidth
+    return acc
+  }, { rects: [] as LayoutRect<TreemapGroup>[], cursor: 0 }).rects
+
   const detail = useMemo(() => {
     if (!detailKey) return null
     if (detailKey.startsWith('group:')) {
       const group = groups.find((item) => item.id === detailKey.replace('group:', ''))
-      return group ? { title: group.label, value: `${formatStudents(group.value)} 人`, meta: `${group.children.length} 個縣市 / 區塊` } : null
+      return group ? { title: group.label, value: `${formatStudents(group.value)} 人`, meta: `${group.children.length} 個縣市 / 區域` } : null
     }
 
     const leafId = detailKey.replace('leaf:', '')
@@ -112,98 +191,93 @@ function TreemapChart({
   }
 
   return (
-    <section
-      ref={ref as React.RefObject<HTMLElement>}
-      className={isVisible ? 'treemap-chart chart-enter chart-enter--visible' : 'treemap-chart chart-enter'}
-    >
-      <div className="panel-heading treemap-chart__heading">
-        <div>
-          <p className="eyebrow">地區量體矩形圖</p>
-          <h3>{title}</h3>
+    <section className={combinedClasses} ref={ref as React.RefObject<HTMLElement>}>
+      {showHeader && (
+        <div className="dashboard-card__head">
+          <div className="panel-heading__stack">
+            <h3 className="dashboard-card__title">{title}</h3>
+            <p className="dashboard-card__subtitle">{subtitle}</p>
+          </div>
         </div>
-        <p className="panel-heading__meta">{subtitle}</p>
-      </div>
+      )}
+
+      <div className="dashboard-card__body">
 
       <div className="treemap-chart__canvas" role="list" aria-label={title}>
-        {groupLayouts.map((groupLayout, groupIndex) => {
-          const group = groupLayout.node
-          const headerHeight = Math.min(60, Math.max(34, groupLayout.height * 0.18))
-          const innerPadding = 10
-          const childrenHeight = Math.max(groupLayout.height - headerHeight - innerPadding * 2, 0)
-          const childrenWidth = Math.max(groupLayout.width - innerPadding * 2, 0)
-          const childLayouts = buildSliceDiceLayout(
-            group.children,
-            0,
-            0,
-            childrenWidth,
-            childrenHeight,
-            groupIndex % 2 === 0,
-          )
+        <div className="treemap-chart__columns">
+          {groupLayouts.map((groupLayout) => {
+            const group = groupLayout.node
+            const childLayouts = squarify(
+              group.children,
+              0,
+              0,
+              groupLayout.width,
+              CANVAS_HEIGHT,
+            )
 
-          return (
-            <article
-              key={group.id}
-              className="treemap-chart__group"
-              style={{
-                left: `${(groupLayout.x / CANVAS_WIDTH) * 100}%`,
-                top: `${(groupLayout.y / CANVAS_HEIGHT) * 100}%`,
-                width: `${(groupLayout.width / CANVAS_WIDTH) * 100}%`,
-                height: `${(groupLayout.height / CANVAS_HEIGHT) * 100}%`,
-                ['--treemap-accent' as string]: group.accentColor,
-              }}
-            >
-              <button
-                type="button"
-                className="treemap-chart__group-header"
-                onClick={() => {
-                  setDetailKey(`group:${group.id}`)
-                  onSelectGroup?.(group.id)
+            return (
+              <div
+                key={group.id}
+                className="treemap-chart__group-column"
+                style={{
+                  flex: `${Math.max(group.value, 1)} 1 0px`,
+                  ['--treemap-accent' as string]: group.accentColor,
                 }}
-                onMouseEnter={() => setDetailKey(`group:${group.id}`)}
-                onMouseLeave={() => setDetailKey(null)}
-                onFocus={() => setDetailKey(`group:${group.id}`)}
-                onBlur={() => setDetailKey(null)}
               >
-                <span>{group.label}</span>
-                <strong>{formatStudents(group.value)} 人</strong>
-              </button>
+                <button
+                  type="button"
+                  className="treemap-chart__column-header"
+                  onClick={() => {
+                    setDetailKey(`group:${group.id}`)
+                    onSelectGroup?.(group.id)
+                  }}
+                  onMouseEnter={() => setDetailKey(`group:${group.id}`)}
+                  onMouseLeave={() => setDetailKey(null)}
+                >
+                  <span>{group.label}</span>
+                </button>
 
-              <div className="treemap-chart__children">
-                {childLayouts.map((childLayout) => {
-                  const child = childLayout.node
-                  const isActive = child.id === activeLeafId
-                  return (
-                    <button
-                      key={child.id}
-                      type="button"
-                      className={isActive ? 'treemap-chart__leaf treemap-chart__leaf--active' : 'treemap-chart__leaf'}
-                      style={{
-                        left: `${(childLayout.x / Math.max(childrenWidth, 1)) * 100}%`,
-                        top: `${(childLayout.y / Math.max(childrenHeight, 1)) * 100}%`,
-                        width: `${(childLayout.width / Math.max(childrenWidth, 1)) * 100}%`,
-                        height: `${(childLayout.height / Math.max(childrenHeight, 1)) * 100}%`,
-                      }}
-                      onClick={() => {
-                        setDetailKey(`leaf:${child.id}`)
-                        onSelectLeaf?.(child.id)
-                      }}
-                      onMouseEnter={() => setDetailKey(`leaf:${child.id}`)}
-                      onMouseLeave={() => setDetailKey(null)}
-                      onFocus={() => setDetailKey(`leaf:${child.id}`)}
-                      onBlur={() => setDetailKey(null)}
-                      aria-label={`${group.label} ${child.label} ${formatStudents(child.value)} 人`}
-                    >
-                      <span className="treemap-chart__leaf-label">{child.label}</span>
-                      <strong className="treemap-chart__leaf-value">{formatStudents(child.value)}</strong>
-                      {child.meta ? <small className="treemap-chart__leaf-meta">{child.meta}</small> : null}
-                    </button>
-                  )
-                })}
+                <div className="treemap-chart__leaf-container">
+                  {childLayouts.map((childLayout) => {
+                    const child = childLayout.node
+                    const isActive = child.id === activeLeafId
+                    return (
+                      <button
+                        key={child.id}
+                        type="button"
+                        className={isActive ? 'treemap-chart__leaf treemap-chart__leaf--active' : 'treemap-chart__leaf'}
+                        style={{
+                          left: `calc(${(childLayout.x / groupLayout.width) * 100}% + 1px)`,
+                          top: `calc(${(childLayout.y / CANVAS_HEIGHT) * 100}% + 1px)`,
+                          width: `calc(${(childLayout.width / groupLayout.width) * 100}% - 2px)`,
+                          height: `calc(${(childLayout.height / CANVAS_HEIGHT) * 100}% - 2px)`,
+                        }}
+                        onClick={() => {
+                          setDetailKey(`leaf:${child.id}`)
+                          onSelectLeaf?.(child.id)
+                        }}
+                        onMouseEnter={() => setDetailKey(`leaf:${child.id}`)}
+                        onMouseLeave={() => setDetailKey(null)}
+                        aria-label={`${group.label} ${child.label} ${formatStudents(child.value)} 人`}
+                      >
+                        <div className="treemap-chart__leaf-content">
+                          {childLayout.height > 15 && childLayout.width > 30 && (
+                            <span className="treemap-chart__leaf-label">{child.label}</span>
+                          )}
+                          {childLayout.height > 35 && childLayout.width > 40 && (
+                            <strong className="treemap-chart__leaf-value">{formatStudents(child.value)}</strong>
+                          )}
+                        </div>
+                      </button>
+                    )
+                  })}
+                </div>
               </div>
-            </article>
-          )
-        })}
+            )
+          })}
+        </div>
       </div>
+
       {detail ? (
         <div className="chart-tooltip chart-tooltip--visible treemap-chart__tooltip" role="note" aria-live="polite">
           <div className="chart-tooltip__title">{detail.title}</div>
@@ -213,6 +287,7 @@ function TreemapChart({
           </div>
         </div>
       ) : null}
+      </div>
     </section>
   )
 }

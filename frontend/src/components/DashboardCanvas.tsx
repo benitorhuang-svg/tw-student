@@ -170,51 +170,50 @@ function DashboardCanvas({
 
 
   const overviewMatrixSection = (
-    <section className="dashboard-card dashboard-card--matrix">
-      <div className="dashboard-card__body dashboard-card__insight-body">
-        <div className="atlas-storyboard__chart atlas-storyboard__chart--flush">
-          <ScatterPlotChart
-            title="發展熱點分析矩陣"
-            subtitle="縣市學生人數分布，圓點越大代表學生總數越多"
-            xLabel="學生數 (萬人)"
-            yLabel="全國佔比變動率 (%)"
-            points={derived.countyRankingRows.map((row) => ({
-              id: row.id,
-              label: row.label,
-              x: row.students,
-              y: (row.delta / Math.max(derived.currentScope.students, 1)) * 100,
-              size: row.schools,
-            }))}
-            activePointId={hoveredCountyId ?? selectedCountyId}
-            onHoverPoint={(id) => {
-              setHoveredCountyId(id)
-              handlePrefetchCounty(id)
-            }}
-            onSelectPoint={scenarioActions.handleCountySelect}
-          >
-            <DashboardYearNavigator
-              activeYear={activeYear}
-              isYearPlaybackActive={isYearPlaybackActive}
-              summaryYears={summaryYears}
-              onSetActiveYear={onSetActiveYear}
-              onTogglePlayback={() => onSetIsYearPlaybackActive(!isYearPlaybackActive)}
-            />
-          </ScatterPlotChart>
-        </div>
-      </div>
-    </section>
+    <ScatterPlotChart
+      title="發展熱點分析矩陣"
+      subtitle="X 軸學生成長，Y 軸全國佔比變動率"
+      xLabel="學生數 (萬人)"
+      yLabel="全國佔比變動率 (%)"
+      points={derived.countyRankingRows.map((row) => ({
+        id: row.id,
+        label: row.label,
+        x: row.students,
+        y: (row.delta / Math.max(derived.currentScope.students, 1)) * 100,
+        size: row.schools,
+      }))}
+      activePointId={hoveredCountyId ?? selectedCountyId}
+      onHoverPoint={(id) => {
+        setHoveredCountyId(id)
+        handlePrefetchCounty(id)
+      }}
+      onSelectPoint={scenarioActions.handleCountySelect}
+      flat={true}
+      className="dashboard-card--matrix"
+    >
+      <DashboardYearNavigator
+        activeYear={activeYear}
+        isYearPlaybackActive={isYearPlaybackActive}
+        summaryYears={summaryYears}
+        onSetActiveYear={onSetActiveYear}
+        onTogglePlayback={() => {
+          onSetIsYearPlaybackActive(!isYearPlaybackActive)
+          if (!isYearPlaybackActive) {
+            scenarioActions.handleResetScope()
+          }
+        }}
+      />
+    </ScatterPlotChart>
   )
 
   const overviewTrendSection = (
-    <section className="dashboard-card dashboard-card--overview-story">
-      <div className="dashboard-card__body dashboard-card__insight-body">
-        <StackedAreaTrendChart
-          title="全台各學制歷年學生數"
-          subtitle="聚焦少子化衝擊全台總量與學制波浪趨勢"
-          series={nationalEducationTrendSeries}
-        />
-      </div>
-    </section>
+    <StackedAreaTrendChart
+      title="全台各學制歷年學生數"
+      subtitle=""
+      series={nationalEducationTrendSeries}
+      flat={true}
+      className="dashboard-card--overview-story"
+    />
   )
 
 
@@ -222,79 +221,61 @@ function DashboardCanvas({
     <section className="dashboard-card dashboard-card--overview-movers">
       <div className="dashboard-card__body dashboard-card__insight-body">
         <div className="atlas-storyboard__split">
-          <div className="atlas-storyboard__chart">
-            <div className="panel-heading panel-heading--section">
-              <div className="panel-heading__stack">
-                <p className="eyebrow eyebrow--cyan">下鑽入口</p>
-                <h3>{derived.selectedCounty?.name ? `${derived.selectedCounty.name} 鄉鎮排行` : '全台縣市排行'}</h3>
-              </div>
-              <p className="panel-heading__meta">{derived.selectedCounty?.name ? '點擊鄉鎮即可同步切換至鄉鎮範圍' : '點選縣市列，地圖將展開下鑽'}</p>
-            </div>
-            <InsightPanel
-              title=""
-              subtitle=""
-              showHeader={false}
-              rows={derived.topRows}
-              activeRowId={selectedTownshipId ?? selectedCountyId}
-              onSelectRow={(rowId: string) => {
-                if (derived.selectedCounty?.name) {
-                  scenarioActions.handleTownshipSelect(rowId)
-                  return
-                }
-                scenarioActions.handleCountySelect(rowId)
-              }}
-              onHoverRow={(rowId: string | null) => {
-                setHoveredCountyId(rowId)
-                if (!derived.selectedCounty?.name && rowId) {
-                  handlePrefetchCounty(rowId)
-                  return
-                }
-                handlePrefetchCounty(null)
-              }}
-              emptyMessage="目前條件沒有可顯示的排行資料。"
-            />
-          </div>
-
-          <div className="atlas-storyboard__chart">
-            <div className="panel-heading panel-heading--section">
-              <div className="panel-heading__stack">
-                <p className="eyebrow">變動焦點</p>
-                <h3>年度增幅異動</h3>
-              </div>
-              <p className="panel-heading__meta">先看增減幅度最大的縣市，再點擊進入縣市分析</p>
-            </div>
-            <InsightPanel
-              title=""
-              subtitle=""
-              showHeader={false}
-              rows={overviewTrendRows}
-              activeRowId={selectedCountyId}
-              onSelectRow={scenarioActions.handleCountySelect}
-              onHoverRow={(rowId: string | null) => {
-                setHoveredCountyId(rowId)
+          <InsightPanel
+            title={derived.selectedCounty?.name ? `${derived.selectedCounty.name} 鄉鎮排行` : '全台縣市排行'}
+            subtitle="依學生總數"
+            showHeader={true}
+            rows={derived.topRows}
+            activeRowId={selectedTownshipId ?? selectedCountyId}
+            flat={true}
+            onSelectRow={(rowId: string) => {
+              if (derived.selectedCounty?.name) {
+                scenarioActions.handleTownshipSelect(rowId)
+                return
+              }
+              scenarioActions.handleCountySelect(rowId)
+            }}
+            onHoverRow={(rowId: string | null) => {
+              setHoveredCountyId(rowId)
+              if (!derived.selectedCounty?.name && rowId) {
                 handlePrefetchCounty(rowId)
-              }}
-              emptyMessage="目前條件沒有可顯示的縣市變動資料。"
-            />
-          </div>
+                return
+              }
+              handlePrefetchCounty(null)
+            }}
+            emptyMessage="目前條件沒有可顯示的排行資料。"
+          />
+
+          <InsightPanel
+            title="年度增幅異動"
+            subtitle="全國行政區趨勢對照"
+            showHeader={true}
+            rows={overviewTrendRows}
+            activeRowId={selectedCountyId}
+            flat={true}
+            onSelectRow={scenarioActions.handleCountySelect}
+            onHoverRow={(rowId: string | null) => {
+              setHoveredCountyId(rowId)
+              handlePrefetchCounty(rowId)
+            }}
+            emptyMessage="目前條件沒有可顯示的縣市變動資料。"
+          />
         </div>
       </div>
     </section>
   )
 
   const overviewTreemapSection = (
-    <section className="dashboard-card dashboard-card--overview-treemap">
-      <div className="dashboard-card__body dashboard-card__insight-body">
-        <TreemapChart
-          title="全台區域與縣市量體"
-          subtitle="先看區域板塊，再往縣市量體下鑽；面積愈大代表目前學生總量愈高。"
-          groups={overviewTreemapGroups}
-          activeLeafId={selectedCountyId}
-          onSelectLeaf={scenarioActions.handleCountySelect}
-          onSelectGroup={(nextRegion) => scenarioActions.handleRegionSelect(nextRegion as RegionGroupFilter)}
-        />
-      </div>
-    </section>
+    <TreemapChart
+      title="全台區域與縣市量體"
+      subtitle="依學生總數分布"
+      groups={overviewTreemapGroups}
+      activeLeafId={selectedCountyId}
+      onSelectLeaf={scenarioActions.handleCountySelect}
+      onSelectGroup={(nextRegion) => scenarioActions.handleRegionSelect(nextRegion as RegionGroupFilter)}
+      flat={true}
+      className="dashboard-card--overview-treemap"
+    />
   )
 
   return (
@@ -362,9 +343,7 @@ function DashboardCanvas({
 
         {activeTab === 'schools' || activeTab === 'school-focus' ? (
           <div className="dashboard-side-shell__content dashboard-side-shell__content--schools">
-            <section className="dashboard-card dashboard-card--school-detail">
-              <div className="dashboard-card__body dashboard-card__insight-body">
-                <SchoolDetailPanel
+            <SchoolDetailPanel
                   selectedCountyName={derived.selectedCounty?.name ?? null}
                   countyDetailError={countyDetailError}
                   isCountyDetailLoading={derived.isCountyDetailLoading}
@@ -385,8 +364,6 @@ function DashboardCanvas({
                   onHoverSchool={onHoverSchool}
                   onSelectSchool={handleSchoolSelect}
                 />
-              </div>
-            </section>
           </div>
         ) : null}
       </section>

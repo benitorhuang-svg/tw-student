@@ -1,0 +1,77 @@
+.scope-panel {
+  display: grid;
+  gap: 12px
+}
+
+.scope-panel__visuals {
+  display: grid;
+  grid-template-columns: minmax(180px, .8fr) minmax(0, 1.2fr);
+  gap: 14px;
+  align-items: stretch
+}
+
+.scope-panel__visual-card {
+  display: grid;
+  gap: 8px;
+  padding: 18px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.insight-panel .panel-heading h3,
+.trend-panel .panel-heading h3 {
+  margin: 2px 0 0;
+  font-family: var(--font-heading);
+  font-size: 1.04rem;
+  color: #f8fafc
+}
+
+.comparison-panel {
+  padding: 12px;
+  display: grid;
+  gap: 10px
+}
+
+.scenario-library {
+  display: grid;
+  gap: 10px
+}
+
+.scenario-library__section {
+  display: grid;
+  gap: 6px;
+  padding: 10px;
+  border-radius: 14px;
+  background: #0f172a33;
+  border: var(--border-subtle)
+}
+
+.hero-panel {
+  display: grid;
+  gap: 14px;
+  min-height: 100vh;
+  padding: 32px;
+  align-items: center;
+  justify-items: center;
+  background: radial-gradient(circle at top left, rgba(59, 130, 246, .18), transparent 34%), linear-gradient(180deg, #08111ff5, #0f172af5);
+  color: #e2e8f0
+}
+
+.hero-panel__content h1 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1;
+  letter-spacing: -.05em
+}
+
+.source-observation__card,
+.source-observation__item {
+  display: grid;
+  gap: 3px;
+  padding: 8px;
+  border-radius: 12px;
+  border: var(--border-subtle);
+  background: #ffffff08
+}

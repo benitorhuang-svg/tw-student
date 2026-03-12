@@ -1,0 +1,92 @@
+.dashboard-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 0;
+    border-radius: 20px;
+    background: #fff;
+    border: 1px solid rgba(148, 163, 184, 0.12);
+    box-shadow: 0 4px 20px rgba(16, 32, 51, 0.04), 0 1px 3px rgba(16, 32, 51, 0.02);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dashboard-card:hover {
+    box-shadow: 0 12px 36px rgba(16, 32, 51, 0.08);
+}
+
+.dashboard-card--flat {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+}
+
+.dashboard-card--flat .dashboard-card__head {
+    background: transparent !important;
+    padding-left: 0;
+    padding-right: 0;
+    border-bottom: 1.5px solid rgba(148, 163, 184, 0.15);
+}
+
+.dashboard-card--flat .dashboard-card__body {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.dashboard-card__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 14px 20px;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.08);
+    flex-shrink: 0;
+    background: rgba(248, 250, 252, 0.4);
+}
+
+.dashboard-card__title {
+    font-family: var(--font-heading);
+    font-size: .84rem;
+    font-weight: 700;
+    color: var(--text-main)
+}
+
+.dashboard-card__subtitle {
+    font-size: .72rem;
+    color: var(--text-soft)
+}
+
+.dashboard-card__body {
+    flex: 1;
+    min-height: 0;
+    overflow: hidden
+}
+
+.dashboard-card--map {
+    grid-row: 1 / -1
+}
+
+.dashboard-card--overview-story,
+.dashboard-card--overview-movers,
+.dashboard-card--regional-story,
+.dashboard-card--comparison,
+.dashboard-card--ranking,
+.dashboard-card--county-story {
+    min-height: 260px
+}
+
+.dashboard-card__insight-body {
+    padding: 16px;
+    height: 100%;
+}
+
+.dashboard-card--matrix .dashboard-card__insight-body {
+    padding-top: 12px;
+}
+
+.app-shell[data-theme=dark] .dashboard-card {
+    background: #091220eb;
+    border-color: #94a3b81f;
+    box-shadow: 0 24px 44px #0000003d
+}

@@ -22,6 +22,11 @@ type ComparisonBarChartProps = {
   activeItemId?: string | null
   onHoverItem?: (id: string | null) => void
   onSelectItem?: (id: string) => void
+  title?: string
+  subtitle?: string
+  className?: string
+  flat?: boolean
+  showHeader?: boolean
 }
 
 function splitAdminLabel(label: string) {
@@ -43,21 +48,58 @@ function splitAdminLabel(label: string) {
   return [`${normalized.slice(0, 5)}…`, normalized.slice(5, 10)]
 }
 
-function ComparisonBarChart({ items, activeItemId = null, onHoverItem, onSelectItem }: ComparisonBarChartProps) {
+function ComparisonBarChart({
+  items,
+  activeItemId = null,
+  onHoverItem,
+  onSelectItem,
+  title,
+  subtitle,
+  className,
+  flat,
+  showHeader = false,
+}: ComparisonBarChartProps) {
   const max = Math.max(...items.map((i) => i.value), 1)
   const { ref, isVisible } = useChartAnimation()
   const [detailItemId, setDetailItemId] = useState<string | null>(null)
 
+  const combinedClasses = [
+    'dashboard-card',
+    'comparison-bar-chart',
+    flat ? 'dashboard-card--flat' : '',
+    isVisible ? 'chart-enter chart-enter--visible' : 'chart-enter',
+    className || ''
+  ].filter(Boolean).join(' ')
+
   if (items.length === 0) {
     return (
-      <div ref={ref as React.RefObject<HTMLDivElement>} className="comparison-bar-chart">
-        <div className="chart-empty-state">尚無資料</div>
-      </div>
+      <section ref={ref as React.RefObject<HTMLElement>} className={combinedClasses}>
+        {showHeader && title && (
+          <div className="dashboard-card__head">
+            <div className="panel-heading__stack">
+              <h3 className="dashboard-card__title">{title}</h3>
+              {subtitle && <p className="dashboard-card__subtitle">{subtitle}</p>}
+            </div>
+          </div>
+        )}
+        <div className="dashboard-card__body">
+          <div className="chart-empty-state">尚無資料</div>
+        </div>
+      </section>
     )
   }
 
   return (
-    <div ref={ref as React.RefObject<HTMLDivElement>} className={isVisible ? 'comparison-bar-chart chart-enter chart-enter--visible' : 'comparison-bar-chart chart-enter'} role="list" aria-label="比較柱狀圖">
+    <section ref={ref as React.RefObject<HTMLElement>} className={combinedClasses} role="list" aria-label={title || '比較柱狀圖'}>
+      {showHeader && title && (
+        <div className="dashboard-card__head">
+          <div className="panel-heading__stack">
+            <h3 className="dashboard-card__title">{title}</h3>
+            {subtitle && <p className="dashboard-card__subtitle">{subtitle}</p>}
+          </div>
+        </div>
+      )}
+      <div className="dashboard-card__body">
       {items.map((item, idx) => {
         const targetWidth = Math.max((item.value / max) * 100, 2)
         const isActive = item.id === activeItemId
@@ -106,7 +148,8 @@ function ComparisonBarChart({ items, activeItemId = null, onHoverItem, onSelectI
           </button>
         )
       })}
-    </div>
+      </div>
+    </section>
   )
 }
 

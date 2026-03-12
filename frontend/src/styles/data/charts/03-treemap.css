@@ -1,0 +1,177 @@
+.treemap-chart {
+    display: grid;
+    gap: 0;
+    padding: 18px 20px;
+}
+
+.treemap-chart__heading {
+    margin-bottom: -10px;
+}
+
+.treemap-chart__canvas {
+    position: relative;
+    width: 100%;
+    min-height: 200px;
+    padding-right: 24px;
+    aspect-ratio: 16 / 6.5;
+    border-radius: 8px;
+    overflow: hidden;
+    background: transparent;
+    border: none;
+    box-sizing: border-box;
+}
+
+.treemap-chart__columns {
+    display: flex;
+    gap: 3px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: visible;
+}
+
+.treemap-chart__group-column {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    height: 100%;
+    min-width: 0;
+}
+
+.treemap-chart__column-header {
+    flex-shrink: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+    padding: 4px 0;
+    border: none;
+    background: transparent;
+    color: var(--treemap-accent);
+    filter: brightness(0.85);
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: visible;
+    min-height: 32px;
+    text-align: center;
+}
+
+.treemap-chart__group-column:nth-last-child(2) .treemap-chart__column-header {
+    justify-content: flex-end;
+}
+
+.treemap-chart__group-column:last-child .treemap-chart__column-header {
+    justify-content: flex-start;
+}
+
+.treemap-chart__leaf-container {
+    position: relative;
+    flex: 1;
+    width: 100%;
+    min-height: 0;
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.treemap-chart__leaf {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5px;
+    border: none;
+    background: var(--treemap-accent);
+    color: white;
+    border-radius: 2px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: filter 0.2s ease, transform 0.1s ease;
+}
+
+.treemap-chart__leaf:hover {
+    filter: brightness(1.1);
+    z-index: 10;
+}
+
+.treemap-chart__leaf--active {
+    box-shadow: inset 0 0 0 2px var(--palette-brass);
+    z-index: 10;
+}
+
+.treemap-chart__leaf-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0px;
+    width: 100%;
+    pointer-events: none;
+}
+
+.treemap-chart__leaf-label {
+    font-size: 0.62rem;
+    font-weight: 700;
+    line-height: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.treemap-chart__leaf-value {
+    font-size: 0.52rem;
+    font-weight: 500;
+    opacity: 0.85;
+}
+
+@media (max-width: 860px) {
+    .treemap-chart__canvas {
+        min-height: 420px;
+        aspect-ratio: auto
+    }
+
+    .treemap-chart__leaf-label {
+        font-size: .72rem;
+    }
+
+    .treemap-chart__leaf-value {
+        font-size: .78rem;
+    }
+
+    .treemap-chart__leaf-meta {
+        display: none;
+    }
+}
+
+.app-shell[data-theme=dark] .treemap-chart__canvas {
+    background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.1), transparent 34%),
+        linear-gradient(180deg, rgba(16, 24, 40, 0.92), rgba(11, 20, 36, 0.98));
+    border-color: rgba(148, 163, 184, 0.1)
+}
+
+.app-shell[data-theme=dark] .treemap-chart__group {
+    background: linear-gradient(180deg, color-mix(in srgb, var(--treemap-accent) 14%, #0f172a), rgba(15, 23, 42, 0.82))
+}
+
+.app-shell[data-theme=dark] .treemap-chart__group-header {
+    background: rgba(255, 255, 255, 0.06)
+}
+
+.app-shell[data-theme=dark] .treemap-chart__group,
+.app-shell[data-theme=dark] .treemap-chart__leaf {
+    border-color: rgba(255, 255, 255, 0.08)
+}
+
+.app-shell[data-theme=dark] .treemap-chart__leaf {
+    background: rgba(255, 255, 255, 0.05)
+}
+
+.app-shell[data-theme=dark] .treemap-chart__leaf:hover,
+.app-shell[data-theme=dark] .treemap-chart__leaf--active {
+    border-color: rgba(42, 111, 145, .36);
+    box-shadow: 0 16px 28px rgba(0, 0, 0, .3)
+}

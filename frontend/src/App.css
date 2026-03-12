@@ -2,7 +2,14 @@
 @import './styles/organisms/dashboard-header.css';
 @import './styles/templates/dashboard-shell.css';
 @import './styles/organisms/dashboard-footer.css';
-@import './styles/atoms/shared.css';
+@import './styles/atoms/chips.css';
+@import './styles/atoms/buttons.css';
+@import './styles/atoms/forms.css';
+@import './styles/atoms/typography.css';
+@import './styles/atoms/stat-cards.css';
+@import './styles/atoms/shared-utils.css';
+@import './styles/molecules/panels.css';
+@import './styles/molecules/tabs.css';
 @import './styles/data/charts.css';
 @import './styles/organisms/anomaly-panel.css';
 @import './styles/organisms/school-panels.css';

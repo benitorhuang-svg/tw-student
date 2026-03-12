@@ -1,0 +1,46 @@
+.atlas-filterbar {
+  display: grid;
+  gap: 10px
+}
+
+.atlas-filterbar__years {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 8px
+}
+
+.filter-select {
+  display: grid;
+  gap: 4px
+}
+
+.filter-select select,
+.filter-select input {
+  min-height: 40px;
+  border-radius: 10px;
+  border: 1px solid rgba(148, 163, 184, .18);
+  background: #ffffff12;
+  color: #f8fafc;
+  padding: 0 12px;
+  font-size: .9rem
+}
+
+.filter-select select option {
+  color: #0f172a
+}
+
+.comparison-panel__scenario-input input {
+  width: 100%
+}
+
+.mobile-filter-drawer__body .filter-select select,
+.mobile-filter-drawer__body .filter-select input {
+  min-height: 44px;
+  border-radius: 12px;
+  border: var(--border-light);
+  background: #ffffffe6;
+  color: var(--text-main);
+  padding: 0 12px;
+  font-size: .9rem
+}

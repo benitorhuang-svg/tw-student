@@ -1,0 +1,52 @@
+/* Metric Strips & Tile Sets */
+.atlas-metric-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 10px
+}
+
+.atlas-metric-strip--spaced {
+    margin-bottom: 16px
+}
+
+.atlas-metric-strip--compact {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr))
+}
+
+.atlas-metric-tile {
+    display: grid;
+    gap: 4px;
+    padding: 14px 16px;
+    border-radius: 14px;
+    background: rgba(148, 163, 184, 0.05);
+    border: 1px solid rgba(148, 163, 184, 0.08);
+    transition: all 0.2s ease;
+}
+
+.atlas-metric-tile--interactive {
+    cursor: pointer;
+    transition: transform .18s ease, border-color .18s ease, background .18s ease, box-shadow .18s ease
+}
+
+.atlas-metric-tile--active {
+    border-color: rgba(42, 111, 145, .34);
+    background: var(--atlas-surface-interactive-strong)
+}
+
+/* Workspace Summary Cards */
+.school-list-workspace__summary-card {
+    display: grid;
+    gap: 4px;
+    padding: 14px;
+    border-radius: 12px;
+    background: rgba(148, 163, 184, 0.06);
+    border: 1px solid rgba(148, 163, 184, 0.08);
+}
+
+.school-list-workspace__summary-card strong {
+    color: var(--atlas-text-strong);
+    font-family: var(--font-heading);
+    font-size: 1rem
+}
+
+

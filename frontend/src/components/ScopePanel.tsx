@@ -37,16 +37,27 @@ type ScopePanelProps = {
   loadObservation?: unknown
   offlineReadyWithBuckets?: number
   onPrefetchAll?: () => void
+  className?: string
+  flat?: boolean
 }
 
 function ScopePanel({
   currentScope,
   activeYear,
   educationDistribution,
+  className,
+  flat
 }: ScopePanelProps) {
 
+  const combinedClasses = [
+    'dashboard-card',
+    'scope-panel',
+    flat ? 'dashboard-card--flat' : '',
+    className || ''
+  ].filter(Boolean).join(' ')
+
   return (
-    <section className="panel scope-panel">
+    <section className={combinedClasses}>
       <div className="stat-grid stat-grid--top stat-grid--cols-2">
         <div data-testid="current-scope-card">
           <StatCard

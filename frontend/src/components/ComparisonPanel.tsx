@@ -40,6 +40,8 @@ type ComparisonPanelProps = {
   onTogglePinScenario: (scenarioId: string) => void
   onRenameScenario: (scenarioId: string) => void
   onRemoveScenario: (scenarioId: string) => void
+  className?: string
+  flat?: boolean
 }
 
 function ComparisonPanel({
@@ -63,16 +65,26 @@ function ComparisonPanel({
   onTogglePinScenario,
   onRenameScenario,
   onRemoveScenario,
+  className,
+  flat,
 }: ComparisonPanelProps) {
+  const combinedClasses = [
+    'dashboard-card',
+    'comparison-panel',
+    flat ? 'dashboard-card--flat' : '',
+    className || ''
+  ].filter(Boolean).join(' ')
+
   return (
-    <section className="panel comparison-panel">
-      <div className="panel-heading">
-        <div>
-          <p className="eyebrow">比較工作台</p>
-          <h3>縣市交叉比較</h3>
+    <section className={combinedClasses}>
+      <div className="dashboard-card__head">
+        <div className="panel-heading__stack">
+          <h3 className="dashboard-card__title">縣市交叉比較</h3>
+          <p className="dashboard-card__subtitle">可同時鎖定 4 個縣市進行對照</p>
         </div>
-        <p className="panel-heading__meta">可同時鎖定 4 個縣市，並把情境名稱與組合直接寫入 URL 分享。</p>
       </div>
+
+      <div className="dashboard-card__body" style={{ padding: '20px' }}>
 
       <div className="comparison-panel__controls">
         <label className="filter-select comparison-panel__scenario-input">
@@ -195,6 +207,7 @@ function ComparisonPanel({
             ))}
           </div>
         </section>
+      </div>
       </div>
     </section>
   )

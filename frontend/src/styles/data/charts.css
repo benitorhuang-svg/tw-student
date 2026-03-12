@@ -1,5 +1,14 @@
 @import './charts/00-chart-foundations.css';
-@import './charts/01-charts.css';
+@import './charts/01-pie-charts.css';
+@import './charts/01-trend-charts.css';
+@import './charts/01-chart-layout-base.css';
+@import './charts/01-stacked-charts.css';
+@import './charts/01-box-plot-charts.css';
 @import './charts/02-comparison-share.css';
-@import './charts/03-distribution-charts.css';
+@import './charts/03-treemap.css';
+@import './charts/03-butterfly.css';
+@import './charts/03-scatter.css';
+@import './charts/03-histogram.css';
+@import './charts/03-pr-indicator.css';
+@import './charts/03-distribution-layout.css';
 @import './charts/04-trend-regression.css';

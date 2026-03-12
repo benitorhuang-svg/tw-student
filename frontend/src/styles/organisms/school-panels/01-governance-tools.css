@@ -1,0 +1,73 @@
+/* Governance Overlays & Workflows */
+.governance-flyout-layer {
+    position: fixed;
+    inset: 0;
+    z-index: 900;
+    pointer-events: none
+}
+
+.governance-flyout-backdrop {
+    position: absolute;
+    inset: 0;
+    border: 0;
+    background: rgba(16, 32, 51, .16);
+    pointer-events: auto
+}
+
+.governance-flyout__head {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    align-items: flex-start
+}
+
+.governance-flyout__body {
+    min-height: 0;
+    overflow: auto;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, .06)
+}
+
+/* Tracking Lists */
+.governance-missing-list {
+    display: grid;
+    gap: 10px;
+    max-height: 320px;
+    overflow: auto
+}
+
+.governance-missing-item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, .08), rgba(42, 111, 145, .08));
+    border: var(--border-subtle)
+}
+
+/* Tracking Status Tags */
+.governance-status-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 6px
+}
+
+.governance-status-tag {
+    min-height: 30px;
+    padding: 0 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(216, 228, 236, .16);
+    background: rgba(255, 255, 255, .08);
+    color: #e5edf4;
+    font-size: .74rem;
+    cursor: pointer
+}
+
+.governance-status-tag--active {
+    border-color: rgba(184, 135, 70, .32);
+    background: linear-gradient(135deg, rgba(42, 111, 145, .24), rgba(184, 135, 70, .2));
+    color: #f8fafc
+}
