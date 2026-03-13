@@ -295,12 +295,9 @@ function AtlasAnalysisPanel({
               countyDetailError={countyDetailError}
               isCountyDetailLoading={isCountyDetailLoading}
               schoolInsights={schoolInsights}
-              countyWideSchoolInsights={schoolInsights}
               selectedSchool={selectedSchool}
               schoolPanelTitle={schoolPanelTitle}
               panelMode={activeTab === 'school-focus' ? 'focus' : 'workspace'}
-              activeYear={activeYear}
-              activeWorkbenchView={selectedSchool ? 'analysis' : 'list'}
               selectedTownshipSummary={selectedTownshipSummary}
               selectedCountySummary={selectedCountySummary}
               onSetWorkbenchView={() => undefined}

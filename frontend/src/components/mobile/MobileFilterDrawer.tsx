@@ -15,7 +15,6 @@ type MobileFilterDrawerProps = {
     educationLevel: EducationLevelFilter
     managementType: ManagementTypeFilter
     region: RegionGroupFilter
-    searchText: string
     isYearPlaybackActive: boolean
     isPending: boolean
     countyQuickPicks: Array<{ id: string; name: string }>
@@ -24,7 +23,6 @@ type MobileFilterDrawerProps = {
     onSetEducationLevel: (value: EducationLevelFilter) => void
     onSetManagementType: (value: ManagementTypeFilter) => void
     onSetRegion: (value: RegionGroupFilter) => void
-    onSetSearchText: (value: string) => void
     onSetIsYearPlaybackActive: (value: boolean) => void
     onResetScope: () => void
     onSelectCounty: (countyId: string) => void
@@ -40,7 +38,6 @@ function MobileFilterDrawer({
     educationLevel,
     managementType,
     region,
-    searchText,
     isYearPlaybackActive,
     isPending,
     countyQuickPicks,
@@ -49,7 +46,6 @@ function MobileFilterDrawer({
     onSetEducationLevel,
     onSetManagementType,
     onSetRegion,
-    onSetSearchText,
     onSetIsYearPlaybackActive,
     onResetScope,
     onSelectCounty,
@@ -75,7 +71,6 @@ function MobileFilterDrawer({
                         educationLevel={educationLevel}
                         managementType={managementType}
                         region={region}
-                        searchText={searchText}
                         isYearPlaybackActive={isYearPlaybackActive}
                         isPending={isPending}
                         countyQuickPicks={countyQuickPicks}
@@ -84,7 +79,6 @@ function MobileFilterDrawer({
                         onSetEducationLevel={onSetEducationLevel}
                         onSetManagementType={onSetManagementType}
                         onSetRegion={onSetRegion}
-                        onSetSearchText={onSetSearchText}
                         onSetIsYearPlaybackActive={onSetIsYearPlaybackActive}
                         onResetScope={onResetScope}
                         onSelectCounty={onSelectCounty}

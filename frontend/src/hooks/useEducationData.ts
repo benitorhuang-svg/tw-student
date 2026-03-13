@@ -75,6 +75,42 @@ export function useEducationData(selectedCountyId: string | null) {
   useEffect(() => {
     if (!summaryDataset || !selectedCountyCacheKey || townshipBoundaryCache[selectedCountyCacheKey]) return
     if (!selectedCountyForQuery) return
+
+    // Special-case: 嘉義市 / 嘉義縣 are represented as two separate county slices
+    // but the UI expects combined township boundaries when focusing either one.
+    // When either 嘉義市 or 嘉義縣 is selected, attempt to load both township
+    // slices and merge them into the in-memory cache so the map can render
+    // a complete set of townships for the Chiayi group.
+    const isChiayi = selectedCountyCacheKey === '嘉義市' || selectedCountyCacheKey === '嘉義縣'
+    if (isChiayi) {
+      const otherId = selectedCountyCacheKey === '嘉義市' ? '嘉義縣' : '嘉義市'
+      const otherCounty = summaryDataset.counties.find((c) => c.id === otherId) ?? null
+
+      // Load both selected and the counterpart; tolerate failures individually.
+      const promises: Array<Promise<TownshipBoundaryCollection | null>> = [
+        loadTownshipBoundaries(selectedCountyCacheKey, selectedCountyForQuery.townshipFile),
+        otherCounty ? loadTownshipBoundaries(otherId, otherCounty.townshipFile) : Promise.resolve(null),
+      ]
+
+      void Promise.allSettled(promises)
+        .then((results) => {
+          const nextCache: Record<string, typeof townshipBoundaryCache[string]> = {}
+          const [primary, secondary] = results as PromiseSettledResult<TownshipBoundaryCollection | null>[]
+
+          if (primary.status === 'fulfilled' && primary.value) {
+            nextCache[selectedCountyCacheKey] = primary.value
+          }
+          if (secondary.status === 'fulfilled' && secondary.value && otherCounty) {
+            nextCache[otherId] = secondary.value
+          }
+
+          setTownshipBoundaryCache((prev) => ({ ...prev, ...nextCache }))
+        })
+        .catch((error: Error) => setLoadError(error.message))
+
+      return
+    }
+
     loadTownshipBoundaries(selectedCountyCacheKey, selectedCountyForQuery.townshipFile)
       .then((boundaries) => setTownshipBoundaryCache((prev) => ({ ...prev, [selectedCountyCacheKey]: boundaries })))
       .catch((error: Error) => setLoadError(error.message))

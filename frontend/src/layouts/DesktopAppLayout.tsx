@@ -24,19 +24,17 @@ type DesktopAppLayoutProps = {
   educationLevel: EducationLevelFilter
   managementType: ManagementTypeFilter
   region: RegionGroupFilter
-  searchText: string
   isPending: boolean
   setActiveYear: (year: AcademicYear) => void
   setEducationLevel: (val: EducationLevelFilter) => void
   setManagementType: (val: ManagementTypeFilter) => void
-  setRegion: (val: RegionGroupFilter) => void
-  setSearchText: (val: string) => void
+  onSetRegion: (val: RegionGroupFilter) => void
   setIsYearPlaybackActive: (val: boolean) => void
   startTransition: React.TransitionStartFunction
 
   // Canvas
   activeTab: AtlasTab
-  sidebarRef: RefObject<HTMLElement | null>
+  sidebarRef: RefObject<HTMLDivElement | null>
   desktopTabItems: Array<{ id: AtlasTab; label: string }>
   setActiveTab: (tab: AtlasTab) => void
   mapElement: ReactNode
@@ -88,34 +86,41 @@ type DesktopAppLayoutProps = {
 function DesktopAppLayout(props: DesktopAppLayoutProps) {
   return (
     <>
-      <DashboardHeader
-        theme={props.theme}
-        onToggleTheme={() => props.setTheme((t) => (t === 'dark' ? 'light' : 'dark'))}
-        activeYear={props.activeYear}
-        summaryYears={[...props.summaryDataset.years]}
-        educationLevel={props.educationLevel}
-        managementType={props.managementType}
-        searchText={props.searchText}
-        isPending={props.isPending}
-        onSetActiveYear={props.setActiveYear}
-        onSetEducationLevel={props.setEducationLevel}
-        onSetManagementType={props.setManagementType}
-        onSetSearchText={props.setSearchText}
-        onStopPlayback={() => props.setIsYearPlaybackActive(false)}
-        startTransition={props.startTransition}
-      />
-
       <DashboardCanvas
         activeTab={props.activeTab}
         sidebarRef={props.sidebarRef}
         desktopTabItems={props.desktopTabItems}
         setActiveTab={props.setActiveTab}
         mapElement={props.mapElement}
+        header={
+          <DashboardHeader
+            theme={props.theme}
+            onToggleTheme={() => props.setTheme((t) => (t === 'dark' ? 'light' : 'dark'))}
+            isRefreshingData={props.isRefreshingData}
+            onRefreshData={props.refreshData}
+            generatedAtLabel={props.derived.generatedAtLabel}
+          />
+        }
+        footer={
+          <AtlasFooter
+            refreshStatus={props.refreshStatus}
+            onToggleGovernance={() => props.setShowGovernancePanel((c) => !c)}
+            isGovernanceOpen={props.showGovernancePanel}
+          />
+        }
         derived={props.derived}
         activeYear={props.activeYear}
-        isYearPlaybackActive={props.isYearPlaybackActive}
+        summaryYears={[...props.summaryDataset.years]}
+        educationLevel={props.educationLevel}
         managementType={props.managementType}
         region={props.region}
+        onSetActiveYear={props.setActiveYear}
+        onSetEducationLevel={props.setEducationLevel}
+        onSetManagementType={props.setManagementType}
+        onStopPlayback={() => props.setIsYearPlaybackActive(false)}
+        onTogglePlayback={() => props.setIsYearPlaybackActive(!props.isYearPlaybackActive)}
+        isYearPlaybackActive={props.isYearPlaybackActive}
+        startTransition={props.startTransition}
         comparisonScenarioName={props.comparisonScenarioName}
         setComparisonScenarioName={props.setComparisonScenarioName}
         favoriteScenarios={props.favoriteScenarios}
@@ -143,19 +148,7 @@ function DesktopAppLayout(props: DesktopAppLayoutProps) {
         handlePrefetchCounty={props.handlePrefetchCounty}
         handleSchoolSelect={props.handleSchoolSelect}
         onHoverSchool={props.setHoveredSchoolId}
-        onSetActiveYear={props.setActiveYear}
-        onSetIsYearPlaybackActive={props.setIsYearPlaybackActive}
-        summaryYears={[...props.summaryDataset.years]}
         nationalEducationTrendSeries={props.nationalEducationTrendSeries}
-      />
-
-      <AtlasFooter
-        generatedAtLabel={props.derived.generatedAtLabel}
-        isRefreshingData={props.isRefreshingData}
-        refreshStatus={props.refreshStatus}
-        onRefreshData={props.refreshData}
-        onToggleGovernance={() => props.setShowGovernancePanel((c) => !c)}
-        isGovernanceOpen={props.showGovernancePanel}
       />
 
       <DataGovernanceFlyout

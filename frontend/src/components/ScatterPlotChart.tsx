@@ -1,5 +1,6 @@
 import { useChartAnimation } from '../hooks/useChartAnimation'
 import { useResponsiveSvg } from '../hooks/useResponsiveSvg'
+import '../styles/data/charts/01-matrix-chart-redesign.css'
 
 type ScatterPoint = {
   id: string
@@ -12,7 +13,7 @@ type ScatterPoint = {
 
 type ScatterPlotChartProps = {
   title: string
-  subtitle?: string
+  subtitle?: string | React.ReactNode
   xLabel: string
   yLabel: string
   points: ScatterPoint[]
@@ -31,7 +32,8 @@ function ScatterPlotChart({
   title, subtitle, xLabel, yLabel, points, activePointId = null,
   formatY = (value) => {
     if (value === 0) return '0%'
-    return `${value > 0 ? '+' : ''}${value.toFixed(1)}%`
+    const formatted = Math.abs(value) % 1 === 0 ? Math.abs(value).toString() : Math.abs(value).toFixed(1)
+    return `${value > 0 ? '+' : '-'}${formatted}%`
   },
   onHoverPoint, onSelectPoint,
   children,
@@ -55,7 +57,7 @@ function ScatterPlotChart({
           <div className="dashboard-card__head">
             <div className="panel-heading__stack">
               <h3 className="dashboard-card__title">{title}</h3>
-              {subtitle && <p className="dashboard-card__subtitle">{subtitle}</p>}
+              {subtitle && (typeof subtitle === 'string' ? <p className="dashboard-card__subtitle">{subtitle}</p> : subtitle)}
             </div>
             {children}
           </div>
@@ -70,11 +72,18 @@ function ScatterPlotChart({
   const valuesX = points.map((p) => p.x)
   const valuesY = points.map((p) => p.y)
 
-  // Ensure the vertical range spans at least -0.5% to +0.5% for context
-  const rawMinY = Math.min(...valuesY, 0)
-  const rawMaxY = Math.max(...valuesY, 0)
-  const minY = Math.min(Math.floor(rawMinY / 0.5) * 0.5, -0.5) - 0.1
-  const maxY = Math.max(Math.ceil(rawMaxY / 0.5) * 0.5, 0.5) + 0.1
+  // --- DYNAMIC SYMMETRIC Y-AXIS LOGIC ---
+  const absMaxY = Math.max(...valuesY.map(y => Math.abs(y)), 0)
+  
+  // Snap to levels: 0.5, 1, 2, 4, 6, 8, 10...
+  let snapLimit = 0.5
+  if (absMaxY > 6) snapLimit = Math.ceil(absMaxY / 2) * 2
+  else if (absMaxY > 2) snapLimit = Math.ceil(absMaxY) % 2 === 0 ? Math.ceil(absMaxY) : Math.ceil(absMaxY) + 1
+  else if (absMaxY > 1) snapLimit = 2
+  else if (absMaxY > 0.5) snapLimit = 1
+  
+  const minY = -snapLimit
+  const maxY = snapLimit
 
   const minX = 0
   const rawMaxX = Math.max(...valuesX, 0)
@@ -99,7 +108,7 @@ function ScatterPlotChart({
         <div className="dashboard-card__head">
           <div className="panel-heading__stack">
             <h3 className="dashboard-card__title">{title}</h3>
-            {subtitle && <p className="dashboard-card__subtitle">{subtitle}</p>}
+            {subtitle && (typeof subtitle === 'string' ? <p className="dashboard-card__subtitle">{subtitle}</p> : subtitle)}
           </div>
           {children}
         </div>
@@ -117,6 +126,12 @@ function ScatterPlotChart({
         {/* 四象限格線 */}
         <line className="scatter-chart__zero" x1={midX} x2={midX} y1={padding.top} y2={height - padding.bottom} />
         <line className="scatter-chart__zero" x1={padding.left} x2={width - padding.right} y1={midY} y2={midY} />
+
+        {/* 四象限標籤 */}
+        <text className="scatter-chart__quadrant-label" x={padding.left + 8} y={padding.top + 16} textAnchor="start">新興熱點</text>
+        <text className="scatter-chart__quadrant-label" x={width - padding.right - 8} y={padding.top + 16} textAnchor="end">領先成長</text>
+        <text className="scatter-chart__quadrant-label" x={padding.left + 8} y={height - padding.bottom - 8} textAnchor="start">縮減警戒</text>
+        <text className="scatter-chart__quadrant-label" x={width - padding.right - 8} y={height - padding.bottom - 8} textAnchor="end">主要規模</text>
 
         {/* 座標軸線與標註 */}
         {(() => {

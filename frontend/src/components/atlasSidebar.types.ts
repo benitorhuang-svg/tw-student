@@ -17,7 +17,6 @@ export type AtlasSidebarProps = {
   educationLevel: EducationLevelFilter
   managementType: ManagementTypeFilter
   region: RegionGroupFilter
-  searchText: string
   isYearPlaybackActive: boolean
   isPending: boolean
   isOffline: boolean
@@ -70,11 +69,10 @@ export type AtlasSidebarProps = {
   onSetEducationLevel: (value: EducationLevelFilter) => void
   onSetManagementType: (value: ManagementTypeFilter) => void
   onSetRegion: (value: RegionGroupFilter) => void
-  onSetSearchText: (value: string) => void
   onSetIsYearPlaybackActive: (value: boolean) => void
   onResetScope: () => void
-  onSelectCounty: (countyId: string) => void
-  onSelectTownship: (townshipId: string) => void
+  onSelectCounty: (countyId: string, options?: { skipTabSwitch?: boolean }) => void
+  onSelectTownship: (townshipId: string, options?: { skipTabSwitch?: boolean }) => void
   onPrefetchCounty: (countyId: string | null) => void
   onPrefetchAll: () => void
   onChangeScenarioName: (value: string) => void

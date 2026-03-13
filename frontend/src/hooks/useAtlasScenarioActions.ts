@@ -104,7 +104,7 @@ export function useAtlasScenarioActions({
     })
   }
 
-  const handleRegionSelect = (nextRegion: RegionGroupFilter) => {
+  const handleRegionSelect = (nextRegion: RegionGroupFilter, options?: { skipTabSwitch?: boolean }) => {
     const shouldResetRegion = region === nextRegion && !selectedCountyId
 
     startTransition(() => {
@@ -116,10 +116,12 @@ export function useAtlasScenarioActions({
       setMapResetToken((current) => current + 1)
     })
 
-    setActiveTab(shouldResetRegion ? 'overview' : 'regional', 0)
+    if (!options?.skipTabSwitch) {
+      // Automatic tab switching is now handled by the orchestration effect
+    }
   }
 
-  const handleCountySelect = (countyId: string) => {
+  const handleCountySelect = (countyId: string, options?: { skipTabSwitch?: boolean }) => {
     const shouldResetCounty = selectedCountyId === countyId
 
     startTransition(() => {
@@ -129,12 +131,13 @@ export function useAtlasScenarioActions({
       clearCountyDetailError()
     })
 
-    setActiveTab(shouldResetCounty ? (region === '全部' ? 'overview' : 'regional') : 'county', 0)
+    if (!options?.skipTabSwitch) {
+      // Automatic tab switching is now handled by the orchestration effect
+    }
   }
 
   const ensureCountySelected = (countyId: string) => {
     if (selectedCountyId === countyId) {
-      setActiveTab('county', 0)
       return
     }
 
@@ -144,11 +147,9 @@ export function useAtlasScenarioActions({
       setSelectedSchoolId(null)
       clearCountyDetailError()
     })
-
-    setActiveTab('county', 0)
   }
 
-  const handleTownshipSelect = (townshipId: string) => {
+  const handleTownshipSelect = (townshipId: string, options?: { skipTabSwitch?: boolean }) => {
     const shouldResetTownship = selectedTownshipId === townshipId
 
     startTransition(() => {
@@ -156,7 +157,9 @@ export function useAtlasScenarioActions({
       setSelectedSchoolId(null)
     })
 
-    setActiveTab(shouldResetTownship ? 'county' : 'schools', 0)
+    if (!options?.skipTabSwitch) {
+      // Automatic tab switching is now handled by the orchestration effect
+    }
   }
 
   const handleResetScope = () => {
@@ -168,7 +171,6 @@ export function useAtlasScenarioActions({
       clearCountyDetailError()
       setMapResetToken((current) => current + 1)
     })
-    setActiveTab('overview', 0)
   }
 
   /** Breadcrumb navigation: depth 0 = 全台, 1 = 縣市 */
@@ -181,7 +183,6 @@ export function useAtlasScenarioActions({
         setSelectedSchoolId(null)
       })
       clearCountyDetailError()
-      setActiveTab('county', 0)
     }
   }
 

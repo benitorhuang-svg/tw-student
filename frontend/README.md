@@ -8,6 +8,46 @@ React 19 + TypeScript 5.9 + Vite 7.3 PWA 前端工作台。
 npm install
 npm run dev                # http://localhost:5173 — Vite 自動代理 backend/data
 npm run build              # 產出 dist/ 含 PWA service worker
+
+# performance helpers
+
+To reduce front‑end payloads, township/county GeoJSON files can be simplified with
+mapshaper or converted into vector tiles.  A convenience script lives at
+`frontend/scripts/simplify-boundaries.mjs`:
+
+```sh
+node frontend/scripts/simplify-boundaries.mjs
+```
+
+For production-grade tiling use Tippecanoe to emit `.pbf` files and serve them
+via `Leaflet.VectorGrid` from the atlas page — this mimics Google Maps' style
+and ensures only features in the current view are downloaded.
+
+A helper script (`frontend/scripts/generate-vector-tiles.mjs`) builds the tiles and
+lays them under `public/data/tiles/{county,township}/{z}/{x}/{y}.pbf`; run it with
+`node frontend/scripts/generate-vector-tiles.mjs` after data refresh.
+
+For development or light deployment you can serve those files via the
+included express server:
+
+```sh
+node backend/scripts/start-vector-tiles-server.js 8081 # optionally specify port
+```
+
+Point `VITE_VECTOR_TILE_BASE_URL` at `http://localhost:8081/tiles` (or your
+real tile host) and set `VITE_USE_VECTOR_TILES=true` to enable online tiling.
+Alternatively, host the `tiles` directory with any static file server that
+delivers `.pbf` with `application/x-protobuf` and `Content-Encoding: gzip`.
+
+Once tiles exist, configure the atlas component with the `vectorTileBaseUrl`
+prop (e.g. `/data/tiles`) or set a global constant.  The mapper will automatically
+switch to vector‑tile rendering and drop the old GeoJSON layers.
+
+
+School points are currently rendered as `CircleMarker` elements.  If you hit
+performance issues on mobile devices you may switch them to a canvas layer
+(similar to how townships were migrated) or pre‑cluster them server‑side.
+
 npm run lint               # ESLint
 npm run test:e2e           # Playwright E2E
 npm run audit:lighthouse   # LHCI（建議在 CI / Ubuntu runner 執行）

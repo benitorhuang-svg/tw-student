@@ -1,8 +1,8 @@
 .atlas-workbench {
     display: grid;
     grid-template-columns: var(--sidebar-w) minmax(0, 1fr);
-    gap: 20px;
-    padding: 20px;
+    gap: 12px;
+    padding: 12px;
     overflow: hidden;
     transition: grid-template-columns .35s ease
 }
@@ -20,12 +20,12 @@
 }
 
 .dashboard-side-shell {
-    grid-column: 2 / -1;
+    grid-area: sidebar;
     min-width: 0;
     min-height: 0;
     display: grid;
     grid-template-rows: auto minmax(0, 1fr);
-    gap: 10px
+    gap: 0
 }
 
 .dashboard-side-shell__content {
@@ -38,10 +38,10 @@
 .dashboard-side-shell__content--regional,
 .dashboard-side-shell__content--county {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(320px, .92fr);
+    grid-template-columns: 1fr;
     grid-auto-rows: min-content;
     align-content: start;
-    gap: 10px;
+    gap: 8px;
 }
 
 .dashboard-side-shell__content--schools {

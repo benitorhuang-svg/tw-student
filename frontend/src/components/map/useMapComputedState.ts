@@ -14,8 +14,13 @@ export function useMapComputedState(
   townshipRows: RankingSummary[],
   schoolPoints: SchoolMapPoint[],
   currentMapZoom?: number | null,
-  currentMapCenter?: [number, number] | null,
+  _currentMapCenter?: [number, number] | null,
 ) {
+  // `_currentMapCenter` is intentionally unused today but kept in the signature
+  // so calling code can opt into center-aware logic later without changing the
+  // hook signature.
+  void _currentMapCenter
+
   const activeCounty = counties.find((c) => c.id === activeCountyId) ?? null
   const countyLookup = new Map(counties.map((c) => [c.id, c]))
   const townshipLookup = new Map(townshipRows.map((t) => [t.id, t]))
@@ -43,65 +48,28 @@ export function useMapComputedState(
 
   const zoom = currentMapZoom ?? 7
 
-  // Determine nearest county to the current map center (if provided)
-  let countyAtCenterId: string | null = null
-  if (currentMapCenter) {
-    const [centerLat, centerLon] = currentMapCenter
-    let bestId: string | null = null
-    let bestDist = Number.POSITIVE_INFINITY
-    for (const [id, [lat, lon]] of countyCenterLookup.entries()) {
-      const dLat = lat - centerLat
-      const dLon = lon - centerLon
-      const distSq = dLat * dLat + dLon * dLon
-      if (distSq < bestDist) {
-        bestDist = distSq
-        bestId = id
-      }
-    }
-    // If nearest county center is reasonably close (within ~1 degree), consider center inside/near that county
-    if (bestId && bestDist < 1.0) countyAtCenterId = bestId
-  }
+  // =========================================================================
+  // Google Maps–style zoom-driven visibility rules (spec story 17)
+  //
+  // Key principles:
+  //   1. Upper layers never vanish — they just step back (like Google Maps)
+  //   2. No special-case filtering for any county (嘉市 etc.)
+  //   3. This is the SINGLE source of truth — no override branches below
+  //
+  // | Zoom   | Counties | Townships | Schools |
+  // |--------|----------|-----------|---------|
+  // | 7–8    | ✔        |           |         |
+  // | 9–10   | ✔        | ✔ (10+)   |         |
+  // | 11–12  | ✔        | ✔         |         |
+  // | 13+    | ✔        | ✔         | ✔       |
+  // =========================================================================
+  const showCountyMarkers = true // always visible — upper layer never hides
+  const showTownshipMarkers = zoom >= 10
+  // schools become visible one zoom level sooner – begin at 12 instead
+  let showSchoolMarkers = zoom >= 12 && schoolPoints.length > 0
 
-  // Zoom-driven visibility rules (user requirements):
-  // - zoom == 10: show county + township
-  // - zoom == 11: show township only
-  // - zoom >= 12: show township + school markers
-  // Fallback to prior behavior when zoom is lower than 10.
-    let showCountyMarkers = false
-    let showTownshipMarkers = false
-    let showSchoolMarkers = false
-
-    if (zoom < 10) {
-      showCountyMarkers = true
-    } else if (zoom === 10) {
-      showCountyMarkers = true
-      showTownshipMarkers = true
-    } else if (zoom === 11) {
-      showTownshipMarkers = true
-    } else if (zoom >= 12) {
-      showTownshipMarkers = true
-      showSchoolMarkers = schoolPoints.length > 0
-    }
-
-    // Always allow explicit selections to surface school markers
-    if (selectedSchoolId) showSchoolMarkers = true
-  // Also allow map center to enable township display when zoomed-in (useful for deep-linked lat/lon)
-  const centerEnablesTownships = !!countyAtCenterId
-
-  if (zoom === 10 || (zoom >= 10 && centerEnablesTownships && !activeCounty)) {
-    showCountyMarkers = true
-    showTownshipMarkers = true
-    showSchoolMarkers = false
-  } else if (zoom === 11 || (zoom >= 11 && centerEnablesTownships && !activeCounty)) {
-    showCountyMarkers = false
-    showTownshipMarkers = true
-    showSchoolMarkers = false
-  } else if (zoom >= 12) {
-    // show township markers for context, and enable school markers
-    showCountyMarkers = false
-    showTownshipMarkers = true
-    showSchoolMarkers = schoolPoints.length > 0
-  }
+  // Always allow an explicit school selection to surface its marker
+  if (selectedSchoolId) showSchoolMarkers = true
 
   return {
     activeCounty,
@@ -109,7 +77,7 @@ export function useMapComputedState(
     townshipLookup,
     countyCenterLookup,
     townshipCenterLookup,
-    countyAtCenterId,
+    countyAtCenterId: null as string | null,
     showCountyMarkers,
     showTownshipMarkers,
     showSchoolMarkers,

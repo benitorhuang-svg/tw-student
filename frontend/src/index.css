@@ -1,49 +1,78 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Sora:wght@400;600;700;800&display=swap');
 
 :root {
-  font-family: var(--font-body);
-  line-height: 1.5;
-  font-weight: 400;
-  color: #dbe4ee;
-  background:
-    radial-gradient(circle at top left, rgba(42, 111, 145, 0.2), transparent 24%),
-    radial-gradient(circle at top right, rgba(190, 150, 85, 0.1), transparent 22%),
-    linear-gradient(180deg, #04101a 0%, #091826 38%, #102033 100%);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* --- Shared Constants --- */
   --font-heading: 'Sora', 'Noto Sans TC', sans-serif;
   --font-body: 'Noto Sans TC', sans-serif;
-  --text-main: #102033;
-  --text-soft: #5d7083;
-  --text-strong: #081521;
-  --teal-main: #1e7f7a;
-  --teal-deep: #145d61;
-  --accent-orange: #b88746;
-  --palette-ink: #102033;
-  --palette-ink-soft: #37506a;
-  --palette-mist: #d8e4ec;
-  --palette-fog: #eef3f6;
-  --palette-teal: #1e7f7a;
-  --palette-cyan: #2a6f91;
-  --palette-jade: #2d8f6f;
-  --palette-brass: #b88746;
-  --palette-coral: #c96a4b;
-  --palette-danger: #b84f46;
-  --palette-success: #2d8f6f;
-  --surface-page: linear-gradient(180deg, #f3efe8 0%, #e8e1d6 100%);
-  --surface-analysis: rgba(250, 247, 241, 0.94);
-  --surface-overlay: rgba(255, 255, 255, 0.12);
-  --surface-rail: linear-gradient(135deg, rgba(16, 32, 51, 0.98), rgba(42, 111, 145, 0.9));
-  --surface-card: rgba(16, 32, 51, 0.88);
-  --surface-dark: rgba(8, 17, 31, 0.92);
-  --border-subtle: 1px solid rgba(55, 80, 106, 0.14);
-  --border-light: 1px solid rgba(55, 80, 106, 0.22);
-  --shadow-soft: 0 24px 60px rgba(16, 32, 51, 0.12);
-  --map-panel-bg: rgba(8, 17, 31, 0.18);
-  --map-canvas-bg: rgba(216, 228, 236, 0.1);
-  --map-breadcrumb-bg: rgba(8, 17, 31, 0.52);
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  /* --- Dynamic Tokens (Default to Dark) --- */
+  --bg-app: #04101a;
+  --bg-gradient: linear-gradient(180deg, #04101a 0%, #08111f 100%);
+  --sidebar-w: 420px;
+
+  /* Surfaces */
+  --surface-main: rgba(15, 23, 42, 0.7);
+  --surface-active: rgba(30, 41, 59, 0.9);
+  --surface-glass: rgba(15, 23, 42, 0.6);
+  --surface-card: rgba(8, 17, 31, 0.88);
+  
+  /* Borders & Shadows */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.15);
+  --shadow-premium: 0 20px 50px rgba(0, 0, 0, 0.3);
+  
+  /* Typography */
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-inverse: #0f172a;
+  
+  /* Brand Colors */
+  --brand-primary: #38bdf8;
+  --brand-success: #10b981;
+  --brand-danger: #ef4444;
+  --brand-warning: #fbbf24;
+  --accent-glow: rgba(56, 189, 248, 0.3);
+
+  /* Map Specific */
+  --map-panel-bg: #04101a;
+  --map-canvas-bg: #091826;
+}
+
+[data-theme='light'] {
+  /* Surfaces */
+  --bg-app: #f1f5f9;
+  --bg-gradient: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+  
+  --surface-main: rgba(255, 255, 255, 0.9);
+  --surface-active: #ffffff;
+  --surface-glass: rgba(255, 255, 255, 0.8);
+  --surface-card: #ffffff;
+  
+  /* Borders & Shadows */
+  --border-subtle: rgba(0, 0, 0, 0.06);
+  --border-strong: rgba(0, 0, 0, 0.1);
+  --shadow-premium: 0 12px 30px rgba(0, 0, 0, 0.05);
+
+  /* Typography */
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --text-inverse: #ffffff;
+  
+  /* Brand Colors (Keep shared or adjust for contrast) */
+  --brand-primary: #0ea5e9;
+  --accent-glow: rgba(14, 165, 233, 0.15);
+
+  /* Map Specific */
+  --map-panel-bg: #e2e8f0;
+  --map-canvas-bg: #f1f5f9;
 }
 
 * {

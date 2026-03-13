@@ -7,11 +7,11 @@ export const THEME_STORAGE_KEY = 'tw-atlas-theme'
 export type AtlasTheme = 'light' | 'dark'
 
 export const EDUCATION_LEVEL_OPTIONS: ReadonlyArray<{ value: EducationLevelFilter; label: string }> = [
-  { value: '全部', label: '學制' },
+  { value: '全部', label: '全部學制' },
   { value: '國小', label: '國小' },
   { value: '國中', label: '國中' },
   { value: '高中職', label: '高中職' },
-  { value: '大專院校', label: '大專院校' },
+  { value: '大專院校', label: '大專' },
 ]
 
 export const MANAGEMENT_TYPE_OPTIONS: ReadonlyArray<{ value: ManagementTypeFilter; label: string }> = [
@@ -21,7 +21,7 @@ export const MANAGEMENT_TYPE_OPTIONS: ReadonlyArray<{ value: ManagementTypeFilte
 ]
 
 export const REGION_OPTIONS: ReadonlyArray<{ value: RegionGroupFilter; label: string }> = [
-  { value: '全部', label: '地區類別' },
+  { value: '全部', label: '全部地區' },
   { value: '北部', label: '北部' },
   { value: '中部', label: '中部' },
   { value: '南部', label: '南部' },
@@ -41,3 +41,11 @@ export function readInitialTheme(): AtlasTheme {
 
   return 'light'
 }
+
+// --- Map Configuration Parameters ---
+export const MAP_DEFAULT_CENTER: [number, number] = [23.9260, 120.4597]
+export const MAP_DEFAULT_ZOOM = 7
+export const MAP_COUNTY_ZOOM = 10
+export const MAP_TOWNSHIP_ZOOM = 11
+export const MAP_SCHOOL_ZOOM = 12
+export const MAP_FOCUS_SCHOOL_ZOOM = 15.2

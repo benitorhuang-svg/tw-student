@@ -36,7 +36,7 @@
 .analysis-overview {
     display: grid;
     grid-template-columns: minmax(0, 1.2fr) minmax(300px, .8fr);
-    gap: 16px;
+    gap: 12px;
     align-items: start
 }
 
@@ -45,7 +45,7 @@
 .analysis-regional,
 .analysis-schools {
     display: grid;
-    gap: 16px
+    gap: 12px
 }
 
 .analysis-regional {

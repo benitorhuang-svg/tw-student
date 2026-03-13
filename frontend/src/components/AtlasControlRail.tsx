@@ -23,7 +23,6 @@ type AtlasControlRailProps = {
   educationLevel: EducationLevelFilter
   managementType: ManagementTypeFilter
   region: RegionGroupFilter
-  searchText: string
   isYearPlaybackActive: boolean
   isPending: boolean
   countyQuickPicks: CountyQuickPick[]
@@ -32,7 +31,6 @@ type AtlasControlRailProps = {
   onSetEducationLevel: (value: EducationLevelFilter) => void
   onSetManagementType: (value: ManagementTypeFilter) => void
   onSetRegion: (value: RegionGroupFilter) => void
-  onSetSearchText: (value: string) => void
   onSetIsYearPlaybackActive: (value: boolean) => void
   onResetScope: () => void
   onSelectCounty: (countyId: string) => void
@@ -53,7 +51,6 @@ function AtlasControlRail({
   educationLevel,
   managementType,
   region,
-  searchText,
   isYearPlaybackActive,
   isPending,
   countyQuickPicks,
@@ -62,7 +59,6 @@ function AtlasControlRail({
   onSetEducationLevel,
   onSetManagementType,
   onSetRegion,
-  onSetSearchText,
   onSetIsYearPlaybackActive,
   onResetScope,
   onSelectCounty,
@@ -109,7 +105,6 @@ function AtlasControlRail({
           educationLevel={educationLevel}
           managementType={managementType}
           region={region}
-          searchText={searchText}
           isYearPlaybackActive={isYearPlaybackActive}
           isPending={isPending}
           countyQuickPicks={countyQuickPicks}
@@ -118,7 +113,6 @@ function AtlasControlRail({
           onSetEducationLevel={onSetEducationLevel}
           onSetManagementType={onSetManagementType}
           onSetRegion={onSetRegion}
-          onSetSearchText={onSetSearchText}
           onSetIsYearPlaybackActive={onSetIsYearPlaybackActive}
           onResetScope={onResetScope}
           onSelectCounty={onSelectCounty}

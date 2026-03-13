@@ -2,7 +2,6 @@ import { lazy, Suspense } from 'react'
 
 import type { AtlasTab } from '../hooks/useAtlasQueryState'
 import AtlasTabs from './AtlasTabs'
-import FilterBar from './FilterBar'
 import InsightPanel from './InsightPanel'
 import OfflineMetricsPanel from './OfflineMetricsPanel'
 import ScopePanel from './ScopePanel'
@@ -25,16 +24,9 @@ function AtlasSidebar({
   activeTab,
   tabItems,
   onSetActiveTab,
-  summaryYears,
   activeYear,
-  educationLevel,
-  managementType,
-  region,
-  searchText,
   isYearPlaybackActive,
-  isPending,
   isOffline,
-  countyQuickPicks,
   activeCountyId,
   activeTownshipId,
   currentScope,
@@ -71,12 +63,6 @@ function AtlasSidebar({
   schoolPanelTitle,
   selectedTownshipSummary,
   selectedCountySummary,
-  onSetActiveYear,
-  onSetEducationLevel,
-  onSetManagementType,
-  onSetRegion,
-  onSetSearchText,
-  onSetIsYearPlaybackActive,
   onResetScope,
   onSelectCounty,
   onSelectTownship,
@@ -97,8 +83,9 @@ function AtlasSidebar({
   onDownloadInvestigation,
   onDownloadAll,
   onSelectSchool,
-  startTransition,
 }: AtlasSidebarProps) {
+  // Intentionally unused: kept for API compatibility and future extensions.
+  void onResetScope
   return (
     <aside className="atlas-sidebar" ref={sidebarRef}>
       <section className="sidebar-block sidebar-block--nav">
@@ -112,31 +99,6 @@ function AtlasSidebar({
         </div>
         <p className="sidebar-block__description">{TAB_META[activeTab].description}</p>
       </section>
-
-      <div className="sidebar-block sidebar-block--filters">
-        <FilterBar
-          years={summaryYears}
-          activeYear={activeYear}
-          educationLevel={educationLevel}
-          managementType={managementType}
-          region={region}
-          searchText={searchText}
-          isYearPlaybackActive={isYearPlaybackActive}
-          isPending={isPending}
-          countyQuickPicks={countyQuickPicks}
-          activeCountyId={activeCountyId}
-          onSetActiveYear={onSetActiveYear}
-          onSetEducationLevel={onSetEducationLevel}
-          onSetManagementType={onSetManagementType}
-          onSetRegion={onSetRegion}
-          onSetSearchText={onSetSearchText}
-          onSetIsYearPlaybackActive={onSetIsYearPlaybackActive}
-          onResetScope={onResetScope}
-          onSelectCounty={onSelectCounty}
-          onPrefetchCounty={onPrefetchCounty}
-          startTransition={startTransition}
-        />
-      </div>
 
       {activeTab === 'overview' ? (
         <div className="atlas-tab-panel" data-tab="overview">
@@ -162,9 +124,9 @@ function AtlasSidebar({
             activeRowId={activeTownshipId ?? activeCountyId}
             onSelectRow={(rowId) => {
               if (selectedCountyName) {
-                onSelectTownship(rowId)
+                onSelectTownship(rowId, { skipTabSwitch: true })
               } else {
-                onSelectCounty(rowId)
+                onSelectCounty(rowId, { skipTabSwitch: true })
               }
             }}
             onHoverRow={(rowId) => {
@@ -234,12 +196,9 @@ function AtlasSidebar({
               countyDetailError={countyDetailError}
               isCountyDetailLoading={isCountyDetailLoading}
               schoolInsights={schoolInsights}
-              countyWideSchoolInsights={schoolInsights}
               selectedSchool={selectedSchool}
               schoolPanelTitle={schoolPanelTitle}
               panelMode={activeTab === 'school-focus' ? 'focus' : 'workspace'}
-              activeYear={activeYear}
-              activeWorkbenchView={selectedSchool ? 'analysis' : 'list'}
               selectedTownshipSummary={selectedTownshipSummary}
               selectedCountySummary={selectedCountySummary}
               onSetWorkbenchView={() => undefined}

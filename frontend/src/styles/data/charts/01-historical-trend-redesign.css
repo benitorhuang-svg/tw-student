@@ -1,0 +1,100 @@
+.historical-trend-chart {
+    position: relative;
+    padding: 0;
+    background: #ffffff !important;
+    border: 1px solid rgba(226, 232, 240, 0.8) !important;
+    border-radius: 24px !important;
+    box-shadow: 
+        0 10px 40px -10px rgba(16, 32, 51, 0.08), 
+        0 20px 25px -5px rgba(16, 32, 51, 0.02),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.5) !important;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: visible !important;
+}
+
+.historical-trend-chart:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 25px 50px -12px rgba(16, 32, 51, 0.12),
+        0 15px 20px -5px rgba(16, 32, 51, 0.04) !important;
+}
+
+.historical-trend-chart .dashboard-card__body {
+    padding: 0 2px 0px 24px !important; /* Matched to Matrix Chart body */
+    overflow: visible !important;
+}
+
+.historical-trend-chart .dashboard-card__head {
+    margin-bottom: 0;
+    padding: 0px 24px 16px 100px; /* Increased bottom padding for breathing room */
+    border-bottom: none !important;
+    background: transparent !important;
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    gap: 28px;
+    min-height: 50px;
+}
+
+.historical-trend-chart .panel-heading__stack {
+    position: static;
+    transform: none;
+    text-align: left;
+    display: flex;
+    align-items: baseline;
+    gap: 28px;
+}
+
+.historical-trend-chart .dashboard-card__title {
+    font-size: 1.35rem; /* Matched to Matrix Chart */
+    letter-spacing: -0.01em;
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 0;
+}
+
+
+.historical-trend-chart .chart-svg-frame {
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.02));
+}
+
+.historical-trend-chart .bar-segment {
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    transform-origin: bottom;
+}
+
+.historical-trend-chart .bar-segment:hover {
+    filter: brightness(1.05) saturate(1.1);
+    transform: translateY(-5px);
+}
+
+.historical-trend-chart .label-badge {
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.historical-trend-chart .glass-tooltip {
+    background: rgba(255, 255, 255, 0.92) !important; /* Increased opacity for better text clarity */
+    backdrop-filter: blur(16px) saturate(220%) !important; /* Enhanced blur and saturation */
+    border: 1px solid rgba(255, 255, 255, 0.6) !important;
+    box-shadow: 
+        0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 20px 25px -5px rgba(16, 32, 51, 0.15),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.5) !important;
+    border-radius: 12px !important;
+}
+
+.historical-trend-chart .year-label {
+    font-family: 'Sora', sans-serif;
+    letter-spacing: 0.05em;
+}
+
+.historical-trend-chart .total-badge {
+    font-family: 'Sora', sans-serif;
+    font-weight: 800;
+}

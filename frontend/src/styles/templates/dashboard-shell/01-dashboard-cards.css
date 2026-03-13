@@ -26,7 +26,7 @@
     background: transparent !important;
     padding-left: 0;
     padding-right: 0;
-    border-bottom: 1.5px solid rgba(148, 163, 184, 0.15);
+    border-bottom: none;
 }
 
 .dashboard-card--flat .dashboard-card__body {
@@ -39,7 +39,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 8px;
-    padding: 14px 20px;
+    padding: 10px 20px;
     border-bottom: 1px solid rgba(148, 163, 184, 0.08);
     flex-shrink: 0;
     background: rgba(248, 250, 252, 0.4);
@@ -63,8 +63,14 @@
     overflow: hidden
 }
 
+.dashboard-card__map-body {
+    position: relative;
+}
+
 .dashboard-card--map {
-    grid-row: 1 / -1
+    grid-area: map;
+    z-index: 1;
+    height: 100%;
 }
 
 .dashboard-card--overview-story,

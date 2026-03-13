@@ -36,7 +36,6 @@ type MobileAppLayoutProps = {
     educationLevel: EducationLevelFilter
     managementType: ManagementTypeFilter
     region: RegionGroupFilter
-    searchText: string
     isYearPlaybackActive: boolean
     isPending: boolean
     countyQuickPicks: Array<{ id: string; name: string }>
@@ -46,7 +45,6 @@ type MobileAppLayoutProps = {
     onSetEducationLevel: (value: EducationLevelFilter) => void
     onSetManagementType: (value: ManagementTypeFilter) => void
     onSetRegion: (value: RegionGroupFilter) => void
-    onSetSearchText: (value: string) => void
     onSetIsYearPlaybackActive: (value: boolean) => void
     onResetScope: () => void
     onSelectCounty: (countyId: string) => void
@@ -216,7 +214,6 @@ function MobileAppLayout(props: MobileAppLayoutProps) {
                 educationLevel={educationLevel}
                 managementType={managementType}
                 region={region}
-                searchText={props.searchText}
                 isYearPlaybackActive={props.isYearPlaybackActive}
                 isPending={props.isPending}
                 countyQuickPicks={props.countyQuickPicks}
@@ -225,7 +222,6 @@ function MobileAppLayout(props: MobileAppLayoutProps) {
                 onSetEducationLevel={props.onSetEducationLevel}
                 onSetManagementType={props.onSetManagementType}
                 onSetRegion={props.onSetRegion}
-                onSetSearchText={props.onSetSearchText}
                 onSetIsYearPlaybackActive={props.onSetIsYearPlaybackActive}
                 onResetScope={props.onResetScope}
                 onSelectCounty={onSelectCounty}

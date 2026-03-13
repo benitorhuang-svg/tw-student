@@ -84,7 +84,7 @@ function ComparisonPanel({
         </div>
       </div>
 
-      <div className="dashboard-card__body" style={{ padding: '20px' }}>
+      <div className="dashboard-card__body">
 
       <div className="comparison-panel__controls">
         <label className="filter-select comparison-panel__scenario-input">

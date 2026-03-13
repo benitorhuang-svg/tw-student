@@ -274,6 +274,56 @@ PieChart aria-label 目前只有「比例圓餅圖」字串，缺少 total value
 3. **Given** TrendChart 進入 dark theme 或窄寬度條件，**When** 使用者快速掃讀趨勢，**Then** 基準線、預測線、資料點與 crosshair 仍需維持足夠對比與角色辨識。
 4. **Given** 團隊更新 TrendChart 樣式或互動，**When** 執行回歸驗證，**Then** 必須同時守住 hover、鍵盤、dark theme screenshot 與 benchmark/prediction 第一眼差異，不得只驗證其中單一面向。
 
+---
+
+### 使用者故事 17 - 地圖 UI Flow 重新設計：Google Maps 層級邏輯 (Priority: P0)
+
+地圖使用者在不同 zoom level 之間縮放時，應得到類似 Google Maps 的漸進式層級揭露體驗：放大時下一層標記逐步出現，但上一層標記不會突然消失，而是逐漸退後（變小/變淡）；點選「全台」應回到預設起始視角。
+
+**Why this priority**: 目前 zoom 可見性規則散落在多處且互相覆蓋，導致 zoom=11 時嘉市 marker 消失、deep link 不穩定等使用者可見 bug。這是地圖核心導航邏輯，必須在所有圖表精修之前修復。
+
+**設計參考**: Google Maps zoom-based layer visibility
+
+**Zoom 層級定義**:
+
+| Zoom 範圍 | 顯示層級 | 說明 |
+|-----------|---------|------|
+| 7–8 | 全台/縣市 | 所有 22 縣市 markers 可見，county boundaries 填色 |
+| 9–10 | 縣市 + 鄉鎮預載 | 縣市 markers 持續顯示，zoom=9 開始 prefetch township boundaries，zoom=10 township dot markers 出現與縣市 markers 共存 |
+| 11 | 鄉鎮市區為主 | township markers 為主角，county markers 維持可見但退後（Google Maps style: 上層不消失），township boundaries 完整可見 |
+| 12+ | 校點 | school markers 出現，zoom=12 及以上顯示所有校點；township markers 持續可見，township boundaries 保持 |
+
+**關鍵設計原則**:
+1. **上層不消失**: 放大時上一層標記不突然消失，而是逐漸退後
+2. **嘉市永遠可見**: 移除所有嘉市特殊過濾邏輯，所有縣市在所有 zoom 都遵守同一套規則
+3. **全台回預設**: breadcrumb「全台」→ center=[23.9260, 120.4597], zoom=7
+4. **Deep link 至上**: URL 中 zoom/lat/lon 為最高優先，不受 auto-select 覆蓋
+5. **單一規則源**: useMapComputedState 為唯一可見性決策點，移除所有二次覆蓋
+
+**移除的舊邏輯**:
+- `centerEnablesTownships` 二次覆蓋
+- 嘉市特殊 filter (`c.shortLabel !== '嘉市'`)
+- zoom≥11 跳過 setView 的硬限制
+- 重複的 zoom override branches
+
+**Independent Test**: 使用 Playwright 驗證以下場景：
+1. zoom=7 deep link → 確認所有縣市 markers 可見
+2. zoom=10 deep link → 確認縣市 markers + 鄉鎮 markers 共存
+3. zoom=11 嘉義區域 deep link → 確認嘉市 marker 仍可見
+4. 點選「全台」breadcrumb → 確認回到預設 zoom=7 視角
+5. zoom=13 deep link → 確認 school markers 可見
+
+**Acceptance Scenarios**:
+
+1. **Given** 使用者開啟 zoom=7 的地圖，**When** 檢視縣市層級，**Then** 所有 22 縣市 markers 皆可見，包含嘉義市，不做任何特殊過濾。
+2. **Given** 使用者放大到 zoom=10，**When** 檢視地圖，**Then** 縣市 markers 與 township dot markers 同時可見。
+3. **Given** 使用者放大到 zoom=11 並位於嘉義區域，**When** 檢視地圖，**Then** 嘉市 marker 仍然可見（不消失），township markers 為主要層級。
+4. **Given** 使用者放大到 zoom=13 以上並已選擇縣市，**When** 檢視地圖，**Then** school markers 出現，township markers 仍然可見。
+5. **Given** 使用者在任何 zoom level 點選 breadcrumb「全台」，**When** 觸發導覽，**Then** 地圖回到 center=[23.9260, 120.4597] zoom=7，所有選擇狀態重置。
+6. **Given** 使用者透過 deep link 指定 zoom/lat/lon，**When** 頁面載入，**Then** 地圖精確還原 URL 參數，不被 auto-select 或 fly-to 覆蓋。
+
+---
+
 ### Edge Cases
 
 - 當 `/data/*` 資產路徑錯誤、漏部署或被 SPA fallback 攔截時，系統需辨識「伺服器回傳 HTML 而非正式資料」，並提供可理解的錯誤訊息，而不是直接顯示原始 JSON parse 例外。

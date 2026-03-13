@@ -36,6 +36,8 @@ type OrchestrationInput = {
   mapZoom: number | null
   mapLat: number | null
   mapLon: number | null
+  tabIsExplicitFromQuery: boolean
+  forceTownshipLabels: boolean
 
   // Setters
   setFavoriteScenarios: Dispatch<SetStateAction<SavedComparisonScenario[]>>
@@ -71,6 +73,7 @@ export function useAtlasOrchestration(input: OrchestrationInput) {
     setSelectedCountyId, setSelectedTownshipId, setSelectedSchoolId,
     setMapResetToken, setActiveTab, startTransition, copyFeedback, scenarioFeedback,
     educationData, loadObservation,
+    tabIsExplicitFromQuery, forceTownshipLabels,
   } = input
 
   const { summaryDataset, countyDetailCache, countyBucketCache, townshipBoundaryCache, countyDetailError, clearCountyDetailError } = educationData
@@ -95,11 +98,29 @@ export function useAtlasOrchestration(input: OrchestrationInput) {
   }, [comparisonCountyIds, selectedCountyId, selectedTownshipId, setComparisonCountyIds, setSelectedCountyId, setSelectedTownshipId, summaryDataset])
 
   useAtlasUrlSync({
-    summaryDataset, activeTab, activeYear, educationLevel, managementType,
+    summaryDataset, activeTab, activeYear, educationLevel, managementType, region,
     deferredSearchText, comparisonCountyIds, comparisonScenarioName,
-    selectedCountyId, selectedTownshipId, mapZoom: input.mapZoom,
-    mapLat: input.mapLat, mapLon: input.mapLon,
+    selectedCountyId, selectedTownshipId, selectedSchoolId,
+    mapZoom: input.mapZoom, mapLat: input.mapLat, mapLon: input.mapLon,
+    forceTownshipLabels,
   })
+
+  // If a school is already selected, only auto-switch to school-focus when
+  // the user is already in a non-overview context.
+  // This preserves `tab=overview` even when `school=` is present in the URL.
+  const tabExplicitRef = useRef(tabIsExplicitFromQuery)
+  useEffect(() => {
+    // Clear the explicit tab flag after first mount so subsequent user interactions
+    // can still auto-switch tabs.
+    if (tabExplicitRef.current) {
+      tabExplicitRef.current = false
+      return
+    }
+
+    if (selectedSchoolId && activeTab !== 'overview') {
+      setActiveTab('school-focus', 0)
+    }
+  }, [selectedSchoolId, activeTab, setActiveTab])
 
   useAtlasTopPrefetch({
     summaryDataset, selectedCountyId, activeYear, educationLevel,
@@ -157,8 +178,26 @@ export function useAtlasOrchestration(input: OrchestrationInput) {
       setSelectedTownshipId(null)
       setSelectedSchoolId(entry.schoolIds?.[0] ?? code)
     })
-    setActiveTab('school-focus', 0)
+    // setActiveTab('school-focus', 0)
   }, [deferredSearchText, summaryDataset, selectedCountyId, startTransition, setSelectedCountyId, setSelectedTownshipId, setSelectedSchoolId, setRegion, setActiveTab])
+
+  /* ── UI Flow Orchestration: Auto-tab synchronization disabled as requested ──
+  const lastSelectedSchoolId = useRef(selectedSchoolId)
+  const lastSelectedTownshipId = useRef(selectedTownshipId)
+  const lastSelectedCountyId = useRef(selectedCountyId)
+
+  useEffect(() => {
+    // 1. School Focus: if a school was JUST selected (it was null/different, now truthy)
+    if (selectedSchoolId && selectedSchoolId !== lastSelectedSchoolId.current) {
+      setActiveTab('school-focus', 0)
+    }
+    // 2. Schools List: if no school selected, but a township was JUST selected
+    else if (!selectedSchoolId && selectedTownshipId && selectedTownshipId !== lastSelectedTownshipId.current) {
+      setActiveTab('schools', 0)
+    }
+    // ... (rest of logic)
+  }, [selectedSchoolId, selectedTownshipId, selectedCountyId, setActiveTab, region])
+  */
 
   return { derived, scenarioActions, activeScenarioSnapshot }
 }

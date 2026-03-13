@@ -3,8 +3,8 @@
     flex-direction: column;
     overflow-y: auto;
     overflow-x: hidden;
-    padding: 18px;
-    gap: 12px;
+    padding: 14px;
+    gap: 10px;
     border-radius: 28px;
     background: radial-gradient(circle at 20% 10%, rgba(56, 189, 248, .22), transparent 26%), var(--surface-rail);
     box-shadow: 0 28px 70px #0206173d;
@@ -23,8 +23,8 @@
 
 .control-hero {
     display: grid;
-    gap: 10px;
-    padding: 18px 18px 16px;
+    gap: 8px;
+    padding: 14px 14px 12px;
     border-radius: 22px;
     border: var(--border-subtle);
     background: linear-gradient(135deg, #0c4a6ed1, #111827b3);
@@ -40,8 +40,8 @@
 
 .sidebar-block {
     display: grid;
-    gap: 10px;
-    padding: 14px;
+    gap: 8px;
+    padding: 12px;
     border-radius: 18px;
     background: #0f172a70;
     border: var(--border-subtle)

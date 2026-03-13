@@ -17,7 +17,6 @@ type FilterBarProps = {
   educationLevel: EducationLevelFilter
   managementType: ManagementTypeFilter
   region: RegionGroupFilter
-  searchText: string
   isYearPlaybackActive: boolean
   isPending: boolean
   countyQuickPicks: CountyQuickPick[]
@@ -26,10 +25,9 @@ type FilterBarProps = {
   onSetEducationLevel: (level: EducationLevelFilter) => void
   onSetManagementType: (type: ManagementTypeFilter) => void
   onSetRegion: (region: RegionGroupFilter) => void
-  onSetSearchText: (value: string) => void
   onSetIsYearPlaybackActive: (active: boolean) => void
   onResetScope: () => void
-  onSelectCounty: (countyId: string) => void
+  onSelectCounty: (countyId: string, options?: { skipTabSwitch?: boolean }) => void
   onPrefetchCounty: (countyId: string | null) => void
   startTransition: TransitionStartFunction
 }
@@ -39,7 +37,6 @@ function FilterBar({
   activeYear,
   educationLevel,
   managementType,
-  searchText,
   isYearPlaybackActive,
   isPending,
   countyQuickPicks,
@@ -47,7 +44,6 @@ function FilterBar({
   onSetActiveYear,
   onSetEducationLevel,
   onSetManagementType,
-  onSetSearchText,
   onSetIsYearPlaybackActive,
   onResetScope,
   onSelectCounty,
@@ -100,10 +96,6 @@ function FilterBar({
           </select>
         </label>
 
-        <label className="filter-select filter-select--search">
-          <span>搜尋縣市 / 鄉鎮 / 學校</span>
-          <input value={searchText} onChange={(event) => onSetSearchText(event.target.value)} placeholder="例如：宜蘭、國中、私立" />
-        </label>
       </div>
 
       <div className="atlas-filterbar__meta">
@@ -121,7 +113,7 @@ function FilterBar({
               key={county.id}
               type="button"
               className={county.id === activeCountyId ? 'chip chip--active' : 'chip'}
-              onClick={() => onSelectCounty(county.id)}
+              onClick={() => onSelectCounty(county.id, { skipTabSwitch: true })}
               onMouseEnter={() => onPrefetchCounty(county.id)}
             >
               {county.name}

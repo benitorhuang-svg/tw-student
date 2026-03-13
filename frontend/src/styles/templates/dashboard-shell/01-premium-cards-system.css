@@ -1,0 +1,241 @@
+/* Premium Card Style System */
+
+.dashboard-card--premium {
+    position: relative;
+    padding: 0;
+    background: #ffffff !important;
+    border: 1px solid rgba(226, 232, 240, 0.8) !important;
+    border-radius: 24px !important;
+    box-shadow: 
+        0 10px 40px -10px rgba(16, 32, 51, 0.08), 
+        0 20px 25px -5px rgba(16, 32, 51, 0.02),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.5) !important;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: visible !important;
+}
+
+.dashboard-card--premium:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 25px 50px -12px rgba(16, 32, 51, 0.12),
+        0 15px 20px -5px rgba(16, 32, 51, 0.04) !important;
+}
+
+.dashboard-card--premium .dashboard-card__head {
+    margin-bottom: 0;
+    padding: 16px 24px 4px 24px;
+    border-bottom: none !important;
+    background: transparent !important;
+}
+
+.dashboard-card--premium .dashboard-card__title {
+    font-size: 1.15rem;
+    letter-spacing: -0.01em;
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 4px;
+}
+
+.dashboard-card--premium .dashboard-card__subtitle {
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.dashboard-card--premium .dashboard-card__body {
+    padding: 4px 24px 16px 24px !important;
+}
+
+/* Applying to specific functional cards */
+.dashboard-card--regional-story,
+.dashboard-card--overview-story,
+.dashboard-card--county-story {
+    grid-column: 1 / -1;
+    min-height: 280px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+.dashboard-card--ranking,
+.dashboard-card--comparison,
+.dashboard-card--overview-movers {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Premium Segmented Control */
+.premium-segmented-control {
+    grid-column: 1 / -1;
+    display: flex;
+    background: rgba(241, 245, 249, 0.6);
+    backdrop-filter: blur(8px);
+    padding: 6px;
+    border-radius: 16px;
+    gap: 4px;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    margin-bottom: 8px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.segmented-btn {
+    flex: 1;
+    padding: 10px 16px;
+    border-radius: 12px;
+    border: none;
+    background: transparent;
+    color: #64748b;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    white-space: nowrap;
+}
+
+.segmented-btn:hover {
+    background: rgba(255, 255, 255, 0.6);
+    color: #1e293b;
+}
+
+.segmented-btn--active {
+    background: #ffffff !important;
+    color: #334155 !important;
+    box-shadow: 
+        0 4px 6px -1px rgba(0, 0, 0, 0.05),
+        0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+.app-shell[data-theme=dark] .premium-segmented-control {
+    background: rgba(15, 23, 42, 0.6);
+    border-color: rgba(51, 65, 85, 0.6);
+}
+
+.app-shell[data-theme=dark] .segmented-btn {
+    color: #94a3b8;
+}
+
+.app-shell[data-theme=dark] .segmented-btn:hover {
+    background: rgba(30, 41, 59, 0.6);
+    color: #f8fafc;
+}
+
+.app-shell[data-theme=dark] .segmented-btn--active {
+    background: #1e293b !important;
+    color: #f1f5f9 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Overview Accordion */
+.overview-accordion {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.accordion-item {
+    background: #ffffff;
+    border-radius: 20px;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    box-shadow: 0 4px 20px -5px rgba(16, 32, 51, 0.05);
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.accordion-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 20px;
+    background: transparent;
+    border: none;
+    color: #1e293b;
+    font-size: 1rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    text-align: left;
+}
+
+.accordion-header:hover {
+    background: rgba(255, 255, 255, 0.8);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.accordion-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: rgba(15, 23, 42, 0.05);
+    border-radius: 6px;
+    font-family: monospace;
+    font-size: 1.2rem;
+    color: #64748b;
+    transition: all 0.3s ease;
+}
+
+.accordion-item--expanded {
+    box-shadow: 0 20px 40px -10px rgba(16, 32, 51, 0.1);
+}
+
+.accordion-item--expanded .accordion-header {
+    background: rgba(248, 250, 252, 0.5);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.5);
+}
+
+.accordion-item--expanded .accordion-icon {
+    background: #0ea5e9;
+    color: #ffffff;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0;
+    background: #ffffff;
+}
+
+.accordion-item--expanded .accordion-content {
+    max-height: 2000px;
+    opacity: 1;
+    padding: 0;
+}
+
+/* Ensure charts inside accordion don't have their own card styling */
+.accordion-content .dashboard-card {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+
+.accordion-content .dashboard-card__body {
+    padding: 12px 20px 24px 20px !important;
+}
+
+/* Dark Mode Overrides */
+.app-shell[data-theme=dark] .accordion-item {
+    background: #1e293b;
+    border-color: rgba(51, 65, 85, 0.6);
+}
+
+.app-shell[data-theme=dark] .accordion-header {
+    color: #f1f5f9;
+}
+
+.app-shell[data-theme=dark] .accordion-header:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.app-shell[data-theme=dark] .accordion-item--expanded .accordion-header {
+    background: rgba(0, 0, 0, 0.2);
+    border-bottom-color: rgba(51, 65, 85, 0.4);
+}
+
+.app-shell[data-theme=dark] .accordion-content {
+    background: transparent;
+}

@@ -1,52 +1,22 @@
-import type { CSSProperties, TransitionStartFunction } from 'react'
-
-import type { AcademicYear, EducationLevelFilter, ManagementTypeFilter } from '../data/educationData'
 import type { AtlasTheme } from '../lib/constants'
-import { EDUCATION_LEVEL_OPTIONS, MANAGEMENT_TYPE_OPTIONS } from '../lib/constants'
-import { formatAcademicYear } from '../lib/analytics'
 
 type DashboardHeaderProps = {
   theme: AtlasTheme
   onToggleTheme: () => void
-  activeYear: AcademicYear
-  summaryYears: AcademicYear[]
-  educationLevel: EducationLevelFilter
-  managementType: ManagementTypeFilter
-  searchText: string
-  isPending: boolean
-  onSetActiveYear: (year: AcademicYear) => void
-  onSetEducationLevel: (level: EducationLevelFilter) => void
-  onSetManagementType: (type: ManagementTypeFilter) => void
-  onSetSearchText: (text: string) => void
-  onStopPlayback: () => void
-  startTransition: TransitionStartFunction
+  isRefreshingData: boolean
+  onRefreshData: () => Promise<void>
+  generatedAtLabel: string
 }
 
 function DashboardHeader({
   theme,
   onToggleTheme,
-  activeYear,
-  summaryYears,
-  educationLevel,
-  managementType,
-  searchText,
-  isPending,
-  onSetActiveYear,
-  onSetEducationLevel,
-  onSetManagementType,
-  onSetSearchText,
-  onStopPlayback,
-  startTransition,
+  isRefreshingData,
+  onRefreshData,
+  generatedAtLabel,
 }: DashboardHeaderProps) {
-  const buildSelectWidth = (labels: string[], extraCh = 2) => {
-    const maxCh = Math.max(...labels.map((label) => label.length), 4) + extraCh
-    return { '--dashboard-select-width': `calc(${maxCh}ch + 2.9rem)` } as CSSProperties
-  }
-
-  const yearWidthStyle = buildSelectWidth(summaryYears.map((year) => formatAcademicYear(year)), 1)
-  const educationWidthStyle = buildSelectWidth(EDUCATION_LEVEL_OPTIONS.map((option) => option.label))
-  const managementWidthStyle = buildSelectWidth(MANAGEMENT_TYPE_OPTIONS.map((option) => option.label))
-
+  // Extract just the date part if it's in YYYY/M/D HH:mm:ss format
+  const dateOnly = generatedAtLabel.split(' ')[0]
   return (
     <header className="dashboard-header">
       <div className="dashboard-header__brand">
@@ -57,77 +27,42 @@ function DashboardHeader({
           title="切換亮暗模式"
           onClick={onToggleTheme}
         >
-          <span className="theme-toggle__icon" aria-hidden="true">{theme === 'dark' ? '☾' : '☼'}</span>
+          <span className="theme-toggle__icon" aria-hidden="true">
+            {theme === 'dark' ? (
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="20" height="20">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+              </svg>
+            ) : (
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="20" height="20">
+                <circle cx="12" cy="12" r="5" />
+                <line x1="12" y1="1" x2="12" y2="3" />
+                <line x1="12" y1="21" x2="12" y2="23" />
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                <line x1="1" y1="12" x2="3" y2="12" />
+                <line x1="21" y1="12" x2="23" y2="12" />
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+              </svg>
+            )}
+          </span>
         </button>
         <div>
           <h1>Taiwan Education Atlas</h1>
         </div>
-      </div>
 
-      <div className="dashboard-header__control-stack">
-        <div className="dashboard-header__filters">
-          <label className="dashboard-inline-filter dashboard-inline-filter--auto dashboard-inline-filter--year" style={yearWidthStyle}>
-            <select
-              value={activeYear}
-              data-testid="academic-year-select"
-              className="dashboard-filter-select"
-              aria-label="學年度"
-              onChange={(event) => {
-                onStopPlayback()
-                startTransition(() => onSetActiveYear(Number(event.target.value) as AcademicYear))
-              }}
-            >
-              {summaryYears.map((year) => (
-                <option key={year} value={year}>{formatAcademicYear(year)}</option>
-              ))}
-            </select>
-          </label>
+        <button
+          type="button"
+          className="header-refresh-button"
+          onClick={() => void onRefreshData()}
+          disabled={isRefreshingData}
+        >
+          {isRefreshingData ? '資料更新中...' : '資料更新'}
+        </button>
 
-          <label className="dashboard-inline-filter dashboard-inline-filter--auto" style={educationWidthStyle}>
-            <select
-              className="dashboard-filter-select"
-              value={educationLevel}
-              data-testid="education-level-select"
-              aria-label="學制"
-              onChange={(event) => startTransition(() => onSetEducationLevel(event.target.value as EducationLevelFilter))}
-            >
-              {EDUCATION_LEVEL_OPTIONS.map((option) => (
-                <option key={option.value} value={option.value}>
-                  {option.label}
-                </option>
-              ))}
-            </select>
-          </label>
-
-          <label className="dashboard-inline-filter dashboard-inline-filter--auto" style={managementWidthStyle}>
-            <select
-              className="dashboard-filter-select"
-              value={managementType}
-              data-testid="management-type-select"
-              aria-label="公私立"
-              onChange={(event) => startTransition(() => onSetManagementType(event.target.value as ManagementTypeFilter))}
-            >
-              {MANAGEMENT_TYPE_OPTIONS.map((option) => (
-                <option key={option.value} value={option.value}>
-                  {option.label}
-                </option>
-              ))}
-            </select>
-          </label>
-
-          <label className="dashboard-inline-filter dashboard-inline-filter--search">
-            <input
-              className="dashboard-filter-input"
-              data-testid="dashboard-search-input"
-              aria-label="搜尋"
-              value={searchText}
-              onChange={(e) => onSetSearchText(e.target.value)}
-              placeholder="搜尋縣市 / 鄉鎮 / 學校 / 代碼"
-            />
-          </label>
-
-          {isPending ? <span className="dashboard-pending-badge">更新中…</span> : null}
-        </div>
+        <span className="header-last-update">
+          最後更新時間 {dateOnly}
+        </span>
       </div>
     </header>
   )

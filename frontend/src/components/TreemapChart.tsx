@@ -21,7 +21,7 @@ type TreemapGroup = {
 
 type TreemapChartProps = {
   title: string
-  subtitle: string
+  subtitle?: React.ReactNode
   groups: TreemapGroup[]
   activeLeafId?: string | null
   onSelectLeaf?: (id: string) => void
@@ -29,6 +29,7 @@ type TreemapChartProps = {
   className?: string
   flat?: boolean
   showHeader?: boolean
+  children?: React.ReactNode
 }
 
 type LayoutRect<T> = {
@@ -138,6 +139,7 @@ function TreemapChart({
   className,
   flat,
   showHeader = true,
+  children,
 }: TreemapChartProps) {
   const { ref, isVisible } = useChartAnimation()
   const [detailKey, setDetailKey] = useState<string | null>(null)
@@ -151,9 +153,16 @@ function TreemapChart({
   ].filter(Boolean).join(' ')
 
   // Groups as columns as per reference design
-  const totalValue = Math.max(groups.reduce((sum, g) => sum + g.value, 0), 1)
-  const groupLayouts = groups.reduce((acc, group) => {
-    const groupWidth = (group.value / totalValue) * CANVAS_WIDTH
+  // Ensure a minimum visual width for groups even if population is tiny (e.g. Islands)
+  const MIN_RATIO = 0.08 
+  const totalValue = groups.reduce((sum, g) => sum + g.value, 0)
+  
+  // Calculate raw ratios and apply floors
+  const ratios = groups.map(g => Math.max(g.value / (totalValue || 1), MIN_RATIO))
+  const normalizedTotalRatio = ratios.reduce((a, b) => a + b, 0)
+  
+  const groupLayouts = groups.reduce((acc, group, idx) => {
+    const groupWidth = (ratios[idx] / normalizedTotalRatio) * CANVAS_WIDTH
     acc.rects.push({ node: group, x: acc.cursor, y: 0, width: groupWidth, height: CANVAS_HEIGHT })
     acc.cursor += groupWidth
     return acc
@@ -163,7 +172,11 @@ function TreemapChart({
     if (!detailKey) return null
     if (detailKey.startsWith('group:')) {
       const group = groups.find((item) => item.id === detailKey.replace('group:', ''))
-      return group ? { title: group.label, value: `${formatStudents(group.value)} 人`, meta: `${group.children.length} 個縣市 / 區域` } : null
+      return group ? { 
+        title: group.label, 
+        actualValue: `${formatStudents(group.value)} 人`,
+        meta: `${group.children.length} 個縣市 / 區域`
+      } : null
     }
 
     const leafId = detailKey.replace('leaf:', '')
@@ -172,7 +185,7 @@ function TreemapChart({
       if (leaf) {
         return {
           title: leaf.label,
-          value: `${formatStudents(leaf.value)} 人`,
+          actualValue: `${formatStudents(leaf.value)} 人`,
           meta: leaf.meta ?? `${group.label} / 子層級資料項`,
         }
       }
@@ -196,7 +209,8 @@ function TreemapChart({
         <div className="dashboard-card__head">
           <div className="panel-heading__stack">
             <h3 className="dashboard-card__title">{title}</h3>
-            <p className="dashboard-card__subtitle">{subtitle}</p>
+            {subtitle && <p className="dashboard-card__subtitle">{subtitle}</p>}
+            {children}
           </div>
         </div>
       )}
@@ -247,10 +261,10 @@ function TreemapChart({
                         type="button"
                         className={isActive ? 'treemap-chart__leaf treemap-chart__leaf--active' : 'treemap-chart__leaf'}
                         style={{
-                          left: `calc(${(childLayout.x / groupLayout.width) * 100}% + 1px)`,
-                          top: `calc(${(childLayout.y / CANVAS_HEIGHT) * 100}% + 1px)`,
-                          width: `calc(${(childLayout.width / groupLayout.width) * 100}% - 2px)`,
-                          height: `calc(${(childLayout.height / CANVAS_HEIGHT) * 100}% - 2px)`,
+                          left: `calc(${(childLayout.x / groupLayout.width) * 100}% + 0.5px)`,
+                          top: `calc(${(childLayout.y / CANVAS_HEIGHT) * 100}% + 0.5px)`,
+                          width: `calc(${(childLayout.width / groupLayout.width) * 100}% - 1px)`,
+                          height: `calc(${(childLayout.height / CANVAS_HEIGHT) * 100}% - 1px)`,
                         }}
                         onClick={() => {
                           setDetailKey(`leaf:${child.id}`)
@@ -258,15 +272,13 @@ function TreemapChart({
                         }}
                         onMouseEnter={() => setDetailKey(`leaf:${child.id}`)}
                         onMouseLeave={() => setDetailKey(null)}
-                        aria-label={`${group.label} ${child.label} ${formatStudents(child.value)} 人`}
+                        aria-label={`${group.label} ${child.label} ${(child.value / 10000).toFixed(1)} 萬`}
                       >
                         <div className="treemap-chart__leaf-content">
-                          {childLayout.height > 15 && childLayout.width > 30 && (
-                            <span className="treemap-chart__leaf-label">{child.label}</span>
-                          )}
-                          {childLayout.height > 35 && childLayout.width > 40 && (
-                            <strong className="treemap-chart__leaf-value">{formatStudents(child.value)}</strong>
-                          )}
+                          <span className="treemap-chart__leaf-label">{child.label}</span>
+                          <strong className="treemap-chart__leaf-value">
+                            {(child.value / 10000).toFixed(1)}萬
+                          </strong>
                         </div>
                       </button>
                     )
@@ -279,11 +291,28 @@ function TreemapChart({
       </div>
 
       {detail ? (
-        <div className="chart-tooltip chart-tooltip--visible treemap-chart__tooltip" role="note" aria-live="polite">
-          <div className="chart-tooltip__title">{detail.title}</div>
-          <div className="chart-tooltip__row">
-            <span>{detail.meta}</span>
-            <span className="chart-tooltip__value">{detail.value}</span>
+        <div className="chart-tooltip chart-tooltip--visible treemap-chart__tooltip" 
+             style={{ 
+               position: 'absolute', 
+               top: 10, 
+               right: 45, 
+               width: 175, 
+               pointerEvents: 'none', 
+               zIndex: 10,
+               background: 'rgba(15, 23, 42, 0.95)',
+               backdropFilter: 'blur(8px)',
+               padding: '10px 14px',
+               borderRadius: '12px',
+               boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.3)',
+               border: '1px solid rgba(255, 255, 255, 0.1)'
+             }}
+             role="note" aria-live="polite">
+          <div style={{ fontWeight: 800, color: '#ffffff', fontSize: '13px', display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '4px' }}>
+            <span>{detail.title}</span>
+            <span style={{ fontSize: '11px', opacity: 0.9, fontWeight: 900 }}>{detail.actualValue}</span>
+          </div>
+          <div style={{ fontSize: '10px', color: 'rgba(255, 255, 255, 0.5)', fontWeight: 600 }}>
+            {detail.meta}
           </div>
         </div>
       ) : null}

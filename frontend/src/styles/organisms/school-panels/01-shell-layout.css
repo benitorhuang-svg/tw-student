@@ -4,13 +4,14 @@
 .dashboard-canvas--county,
 .dashboard-canvas--schools,
 .dashboard-canvas--school-focus {
-    grid-template-columns: var(--dashboard-map-column) var(--dashboard-side-column)
+    grid-template-columns: var(--dashboard-side-column) var(--dashboard-map-column);
+    grid-template-areas: "sidebar map";
 }
 
 /* Shell Layouts */
 .school-detail-shell {
     display: grid;
-    gap: 14px;
+    gap: 8px;
     min-height: 0;
     align-content: start
 }
@@ -18,27 +19,27 @@
 .school-detail-layout {
     display: grid;
     grid-template-columns: minmax(0, 1.45fr) minmax(320px, .95fr);
-    gap: 14px;
+    gap: 8px;
     min-height: 0
 }
 
 .school-analysis-panel {
     display: grid;
-    gap: 12px;
+    gap: 8px;
     min-height: 0;
     align-content: start
 }
 
 .school-list-workspace {
     display: grid;
-    gap: 14px;
+    gap: 8px;
     min-height: 0
 }
 
 .school-list-workspace__grid {
     display: grid;
     grid-template-columns: minmax(0, 1.2fr) minmax(320px, 1fr);
-    gap: 12px;
+    gap: 8px;
     align-items: stretch
 }
 

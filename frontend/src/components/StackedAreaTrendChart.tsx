@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import type { TrendPoint } from '../lib/analytics'
-import { formatAcademicYearCompact, formatStudents } from '../lib/analytics'
+import { formatStudents } from '../lib/analytics'
 import { useChartAnimation } from '../hooks/useChartAnimation'
 import { useResponsiveSvg } from '../hooks/useResponsiveSvg'
+import '../styles/data/charts/01-historical-trend-redesign.css'
 
 const formatWanNumeric = (val: number) => {
   if (val === 0) return '0'
@@ -21,44 +22,61 @@ type Series = {
 
 type StackedAreaTrendChartProps = {
   title: string
-  subtitle: string
+  subtitle?: React.ReactNode
   series: Series[]
+  children?: React.ReactNode
   className?: string
   flat?: boolean
   showHeader?: boolean
 }
 
 const SERIES_COLORS = [
-  'var(--chart-area-0, #38bdf8)',
-  'var(--chart-area-1, #34d399)',
-  'var(--chart-area-2, #fbbf24)',
-  'var(--chart-area-3, #f87171)',
-  'var(--chart-area-4, #a855f7)',
+  { start: '#38bdf8', end: '#0ea5e9' }, // Cyan
+  { start: '#34d399', end: '#10b981' }, // Emerald
+  { start: '#fbbf24', end: '#f59e0b' }, // Amber
+  { start: '#f87171', end: '#ef4444' }, // Rose
+  { start: '#a855f7', end: '#8b5cf6' }, // Purple
 ]
 
-function StackedAreaTrendChart({ title, subtitle, series, className, flat, showHeader = true }: StackedAreaTrendChartProps) {
+function StackedAreaTrendChart({ title, subtitle, series, children, className, flat, showHeader = true }: StackedAreaTrendChartProps & { children?: React.ReactNode }) {
   const { containerRef, width, height } = useResponsiveSvg(680, 270, { minWidth: 340 })
 
-  const paddingLeft = width < 420 ? 35 : 45
+  const paddingLeft = width < 420 ? 35 : 55
   const paddingRight = 140
-  const paddingTop = 25
-  const paddingBottom = 35
+  const paddingTop = 40 // Increased for better label clearance
+  const paddingBottom = 45
 
   const [hoverIndex, setHoverIndex] = useState<number | null>(null)
   const { ref: animRef, isVisible } = useChartAnimation()
 
   const dataSeries = series.map(s => ({
     ...s,
-    points: s.points.filter(p => p.year >= 108)
+    points: s.points.filter(p => p.year >= 100) // Keep reasonable history
   }))
 
-  const dataYears = Array.from(new Set(dataSeries.flatMap((item) => item.points.map((point) => point.year)))).sort((left, right) => left - right)
+  const allYears = Array.from(new Set(dataSeries.flatMap((item) => item.points.map((point) => point.year)))).sort((left, right) => left - right)
+  
+  // Only show the 7 most recent years
+  const dataYears = allYears.slice(-7)
+
+  const combinedClasses = [
+    'dashboard-card',
+    'historical-trend-chart',
+    flat ? 'dashboard-card--flat' : '',
+    className || ''
+  ].filter(Boolean).join(' ')
 
   if (dataYears.length === 0) {
     return (
-      <section className="stacked-area-chart stacked-area-chart--framed">
-        <div className="panel-heading"><h3>{title}</h3></div>
-        <div className="chart-empty-state">尚無資料</div>
+      <section className={combinedClasses} ref={animRef as React.RefObject<HTMLElement>}>
+        {showHeader && (
+          <div className="dashboard-card__head">
+            <h3 className="dashboard-card__title">{title}</h3>
+          </div>
+        )}
+        <div className="dashboard-card__body">
+          <div className="chart-empty-state">尚無資料</div>
+        </div>
       </section>
     )
   }
@@ -67,20 +85,14 @@ function StackedAreaTrendChart({ title, subtitle, series, className, flat, showH
     dataSeries.reduce((sum, s) => sum + (s.points.find(p => p.year === year)?.value ?? 0), 0)
   )
 
-  // --- FULLY DYNAMIC Y-AXIS LOGIC ---
   const lastYearTotal = yearTotals[yearTotals.length - 1]
+  let stepSize = 500000
+  if (lastYearTotal < 1000000) stepSize = 100000
+  if (lastYearTotal < 300000) stepSize = 50000
+  if (lastYearTotal < 100000) stepSize = 10000
 
-  // 1. Calculate dynamic step based on magnitude
-  let stepSize = 500000 // Default 50W for large numbers
-  if (lastYearTotal < 1000000) stepSize = 100000 // 10W if under 100W
-  if (lastYearTotal < 300000) stepSize = 50000 // 5W if under 30W
-  if (lastYearTotal < 100000) stepSize = 10000 // 1W if under 10W
-
-  // 2. Set maxValue to the next step from LAST YEAR TOTAL
-  // (e.g., 336W / 50W -> 6.72 -> ceil is 7 -> 7 * 50W = 350W)
   const maxValue = Math.ceil(lastYearTotal / stepSize) * stepSize
 
-  // 3. Generate grid values (Skip 0 as requested)
   const gridValues = []
   for (let v = stepSize; v <= maxValue; v += stepSize) {
     gridValues.push(v)
@@ -90,7 +102,8 @@ function StackedAreaTrendChart({ title, subtitle, series, className, flat, showH
   const chartInnerHeight = height - paddingTop - paddingBottom
 
   const getValueY = (val: number) => paddingTop + chartInnerHeight - (val / maxValue) * chartInnerHeight
-  const barWidth = (chartInnerWidth / dataYears.length) * 0.82
+  const barWidth = (chartInnerWidth / dataYears.length) * 0.75
+
   const firstYearSegments = dataSeries.reduce<Array<{ label: string; color: string; centerY: number }>>((segments, current, index) => {
     const previousTotal = dataSeries
       .slice(0, index)
@@ -101,235 +114,284 @@ function StackedAreaTrendChart({ title, subtitle, series, className, flat, showH
 
     segments.push({
       label: current.label,
-      color: SERIES_COLORS[index % SERIES_COLORS.length],
+      color: SERIES_COLORS[index % SERIES_COLORS.length].start,
       centerY: (startY + endY) / 2,
     })
     return segments
   }, [])
 
-  const combinedClasses = [
-    'dashboard-card',
-    flat ? 'dashboard-card--flat' : '',
-    className || ''
-  ].filter(Boolean).join(' ')
-
   return (
     <section className={combinedClasses} ref={animRef as React.RefObject<HTMLElement>}>
-      {/* Unified Header */}
       {showHeader && title && (
         <div className="dashboard-card__head">
           <div className="panel-heading__stack">
             <h3 className="dashboard-card__title">{title}</h3>
-            {subtitle && <p className="dashboard-card__subtitle">{subtitle}</p>}
+            {subtitle && (typeof subtitle === 'string' ? <p className="dashboard-card__subtitle">{subtitle}</p> : subtitle)}
+            {children}
           </div>
         </div>
       )}
 
-      <div className="dashboard-card__body" style={{ padding: '0px' }}>
+      <div className="dashboard-card__body" style={{ padding: '0px', overflow: 'visible' }}>
         <div className="chart-svg-frame" ref={containerRef}>
-        <svg
-          className={`stacked-area-chart__svg${isVisible ? ' chart-enter chart-enter--visible' : ' chart-enter'}`}
-          viewBox={`0 0 ${width} ${height}`}
-          onMouseLeave={() => setHoverIndex(null)}
-          style={{ overflow: 'visible' }}
-        >
-          {/* Base line only (0 but no text) */}
-          <line
-            x1={paddingLeft}
-            x2={width - paddingRight}
-            y1={getValueY(0)}
-            y2={getValueY(0)}
-            stroke="rgba(148,163,184,0.1)"
-          />
+          <svg
+            className={`stacked-area-chart__svg${isVisible ? ' chart-enter chart-enter--visible' : ' chart-enter'}`}
+            viewBox={`0 0 ${width} ${height}`}
+            onMouseLeave={() => setHoverIndex(null)}
+            style={{ overflow: 'visible' }}
+          >
+            <defs>
+              {SERIES_COLORS.map((clr, idx) => (
+                <linearGradient key={`grad-${idx}`} id={`bar-grad-${idx}`} x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stopColor={clr.start} />
+                  <stop offset="100%" stopColor={clr.end} />
+                </linearGradient>
+              ))}
+              <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur in="SourceAlpha" stdDeviation="2" />
+                <feOffset dx="0" dy="2" result="offsetblur" />
+                <feComponentTransfer>
+                  <feFuncA type="linear" slope="0.2" />
+                </feComponentTransfer>
+                <feMerge>
+                  <feMergeNode />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
 
-          {/* Education Level Labels */}
-          {firstYearSegments.map((segment) => (
-            <text
-              key={`label-${segment.label}`}
-              x={paddingLeft - 10}
-              y={segment.centerY + 4}
-              textAnchor="end"
-              fontSize="12"
-              fontWeight="600"
-              fill={segment.color}
-            >
-              {segment.label.replace('院校', '')}
-            </text>
-          ))}
-
-          {/* Horizontal Grid & Right Y-Axis (Dynamic steps) */}
-          <g className="grid">
-            {gridValues.map(val => {
-              const y = getValueY(val)
-              return (
-                <g key={val}>
-                  <line
-                    x1={paddingLeft}
-                    x2={width - paddingRight}
-                    y1={y}
-                    y2={y}
-                    strokeDasharray="4 4"
-                    stroke="rgba(148,163,184,0.15)"
-                  />
-                  <text
-                    x={width - paddingRight + 8}
-                    y={y + 4}
-                    textAnchor="start"
-                    fontSize="10"
-                    fill="#94a3b8"
-                  >
-                    {lastYearTotal < 100000 ? formatStudents(val) : formatWanWithUnit(val)}
-                  </text>
-                </g>
-              )
-            })}
-          </g>
-
-          {/* Bars */}
-          {dataYears.map((year, yearIdx) => {
-            const barXCenter = paddingLeft + (yearIdx + 0.5) * (chartInnerWidth / dataYears.length)
-            let currentStackedValue = 0
-            const prevTotal = yearIdx > 0 ? yearTotals[yearIdx - 1] : null
-            const totalDeltaPct = prevTotal && prevTotal > 0 ? ((yearTotals[yearIdx] - prevTotal) / prevTotal) * 100 : null
-
-            return (
-              <g key={year}>
+            {/* Education Level Labels */}
+            {firstYearSegments.map((segment) => (
+              <g key={`label-group-${segment.label}`}>
+                <rect
+                  x={paddingLeft - 50}
+                  y={segment.centerY - 8}
+                  width="42"
+                  height="16"
+                  rx="6"
+                  fill={segment.color}
+                  opacity="0.1"
+                />
                 <text
-                  x={barXCenter}
-                  y={getValueY(0) + 24}
-                  textAnchor="middle"
-                  fontSize="11"
-                  fill="#94a3b8"
-                  fontWeight="700"
+                  x={paddingLeft - 12}
+                  y={segment.centerY + 4}
+                  textAnchor="end"
+                  fontSize="12"
+                  fontWeight="800"
+                  fill={segment.color}
+                  style={{ letterSpacing: '0.02em' }}
                 >
-                  {year}
+                  {segment.label.replace('院校', '')}
                 </text>
+              </g>
+            ))}
 
-                {dataSeries.map((s, sIdx) => {
-                  const p = s.points.find(pt => pt.year === year)
-                  if (!p || p.value === 0) return null
+            {/* Minimal Grid Lines */}
+            <g className="grid">
+              {gridValues.map(val => {
+                const y = getValueY(val)
+                return (
+                  <g key={val} opacity="0.4">
+                    <line
+                      x1={paddingLeft}
+                      x2={width - paddingRight}
+                      y1={y}
+                      y2={y}
+                      stroke="#cbd5e1"
+                      strokeWidth="0.5"
+                      strokeDasharray="4 4"
+                    />
+                    <text
+                      x={width - paddingRight + 12}
+                      y={y + 4}
+                      textAnchor="start"
+                      fontSize="10"
+                      fill="#64748b"
+                      fontWeight="500"
+                    >
+                      {lastYearTotal < 100000 ? formatStudents(val) : formatWanWithUnit(val)}
+                    </text>
+                  </g>
+                )
+              })}
+            </g>
 
-                  const startY = getValueY(currentStackedValue)
-                  const endY = getValueY(currentStackedValue + p.value)
-                  const segmentHeight = startY - endY
-                  const isHovered = hoverIndex === yearIdx
+            {/* Main X-Axis Line */}
+            <line
+              x1={paddingLeft}
+              x2={width - paddingRight}
+              y1={getValueY(0)}
+              y2={getValueY(0)}
+              stroke="#e2e8f0"
+              strokeWidth="1.5"
+            />
 
-                  currentStackedValue += p.value
+            {/* Bars */}
+            {dataYears.map((year, yearIdx) => {
+              const barXCenter = paddingLeft + (yearIdx + 0.5) * (chartInnerWidth / dataYears.length)
+              let currentStackedValue = 0
+              const prevTotal = yearIdx > 0 ? yearTotals[yearIdx - 1] : null
+              const totalDeltaPct = prevTotal && prevTotal > 0 ? ((yearTotals[yearIdx] - prevTotal) / prevTotal) * 100 : null
 
-                  return (
-                    <g key={s.label} onMouseEnter={() => setHoverIndex(yearIdx)}>
-                      <rect
-                        x={barXCenter - barWidth / 2}
-                        y={endY}
-                        width={barWidth}
-                        height={Math.max(segmentHeight, 0.5)}
-                        fill={SERIES_COLORS[sIdx % SERIES_COLORS.length]}
-                        opacity={hoverIndex === null || isHovered ? 0.9 : 0.4}
-                        style={{ transition: 'all 0.3s ease' }}
-                        stroke="#fff"
-                        strokeWidth="0.5"
-                      />
-                      {/* Inner segment label showing value ONLY */}
-                      {segmentHeight > 18 && (
-                        <text
-                          x={barXCenter}
-                          y={endY + segmentHeight / 2 + 3}
-                          textAnchor="middle"
-                          fontSize="9"
-                          fontWeight="700"
-                          fill="#fff"
-                          style={{ pointerEvents: 'none', filter: 'drop-shadow(0px 1px 1px rgba(0,0,0,0.3))' }}
-                        >
-                          {formatWanNumeric(p.value)}
-                        </text>
-                      )}
-                    </g>
-                  )
-                })}
-
-                {/* Yearly Statistics Above Bar */}
-                <g opacity={hoverIndex === null || hoverIndex === yearIdx ? 1 : 0.4} style={{ pointerEvents: 'none' }}>
+              return (
+                <g key={year}>
                   <text
                     x={barXCenter}
-                    y={getValueY(yearTotals[yearIdx]) - 16}
+                    y={getValueY(0) + 22}
                     textAnchor="middle"
-                    fontSize="9"
-                    fontWeight="700"
-                    fill="#1e293b"
+                    fontSize="12"
+                    fill="#475569"
+                    className="year-label"
+                    fontWeight="800"
                   >
-                    {formatWanWithUnit(yearTotals[yearIdx])}
+                    {year}
                   </text>
-                  {totalDeltaPct !== null ? (
+
+                  {dataSeries.map((s, sIdx) => {
+                    const p = s.points.find(pt => pt.year === year)
+                    if (!p || p.value === 0) return null
+
+                    const startY = getValueY(currentStackedValue)
+                    const endY = getValueY(currentStackedValue + p.value)
+                    const segmentHeight = startY - endY
+                    const isHovered = hoverIndex === yearIdx
+
+                    const isTopSegment = sIdx === dataSeries.length - 1;
+                    const ry = isTopSegment ? 6 : 0;
+
+                    currentStackedValue += p.value
+
+                    return (
+                      <g key={s.label} onMouseEnter={() => setHoverIndex(yearIdx)} className="bar-segment">
+                        <rect
+                          x={barXCenter - barWidth / 2}
+                          y={endY}
+                          width={barWidth}
+                          height={Math.max(segmentHeight, 0.5)}
+                          fill={`url(#bar-grad-${sIdx % SERIES_COLORS.length})`}
+                          opacity={hoverIndex === null || isHovered ? 1 : 0.3}
+                          rx={ry}
+                          ry={ry}
+                          style={{ cursor: 'pointer' }}
+                          filter={isHovered ? 'url(#shadow)' : 'none'}
+                        />
+                        {!isTopSegment && (
+                          <line
+                            x1={barXCenter - barWidth / 2}
+                            x2={barXCenter + barWidth / 2}
+                            y1={endY}
+                            y2={endY}
+                            stroke="rgba(255,255,255,0.4)"
+                            strokeWidth="0.5"
+                          />
+                        )}
+                        {segmentHeight > 20 && (
+                          <text
+                            x={barXCenter}
+                            y={endY + segmentHeight / 2 + 4}
+                            textAnchor="middle"
+                            fontSize="10"
+                            fontWeight="800"
+                            fill="#fff"
+                            style={{ pointerEvents: 'none', filter: 'drop-shadow(0px 1px 2px rgba(0,0,0,0.5))' }}
+                          >
+                            {formatWanNumeric(p.value)}
+                          </text>
+                        )}
+                      </g>
+                    )
+                  })}
+
+                  <g opacity={hoverIndex === null || hoverIndex === yearIdx ? 1 : 0.3} style={{ pointerEvents: 'none' }}>
                     <text
                       x={barXCenter}
-                      y={getValueY(yearTotals[yearIdx]) - 6}
+                      y={getValueY(yearTotals[yearIdx]) - 28}
                       textAnchor="middle"
-                      fontSize="9"
-                      fontWeight="600"
-                      fill={Math.abs(totalDeltaPct) < 0.01 ? '#94a3b8' : (totalDeltaPct > 0 ? '#10b981' : '#f43f5e')}
+                      fontSize="11"
+                      fontWeight="900"
+                      fill="#1e293b"
+                      className="total-badge"
                     >
-                      ({totalDeltaPct > 0 ? '+' : ''}{totalDeltaPct.toFixed(1)}%)
+                      {formatWanWithUnit(yearTotals[yearIdx])}
                     </text>
-                  ) : (
-                    <text
-                      x={barXCenter}
-                      y={getValueY(yearTotals[yearIdx]) - 6}
-                      textAnchor="middle"
-                      fontSize="9"
-                      fontWeight="600"
-                      fill="#94a3b8"
-                    >
-                      (-)
-                    </text>
-                  )}
+                    {totalDeltaPct !== null ? (
+                      <g transform={`translate(${barXCenter}, ${getValueY(yearTotals[yearIdx]) - 14})`}>
+                        <rect
+                          x="-20"
+                          y="-8"
+                          width="40"
+                          height="12"
+                          rx="4"
+                          fill={Math.abs(totalDeltaPct) < 0.01 ? '#94a3b8' : (totalDeltaPct > 0 ? '#10b981' : '#f43f5e')}
+                          opacity="0.12"
+                        />
+                        <text
+                          x="0"
+                          y="2"
+                          textAnchor="middle"
+                          fontSize="9"
+                          fontWeight="800"
+                          fill={Math.abs(totalDeltaPct) < 0.01 ? '#64748b' : (totalDeltaPct > 0 ? '#059669' : '#e11d48')}
+                        >
+                          {totalDeltaPct > 0 ? '+' : ''}{totalDeltaPct.toFixed(1)}%
+                        </text>
+                      </g>
+                    ) : null}
+                  </g>
                 </g>
-              </g>
-            )
-          })}
-        </svg>
-
-        {/* Hover Tooltip - Positioned on the right, aligned with year labels at the bottom */}
-        {hoverIndex !== null && (
-          <div className="chart-tooltip chart-tooltip--visible" style={{ position: 'absolute', bottom: 0, right: 0, width: paddingRight - 10, pointerEvents: 'none', background: 'rgba(255,255,255,0.98)', padding: '10px', borderRadius: '8px', border: '1px solid #e2e8f0', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)', zIndex: 10 }}>
-            <div style={{ fontWeight: 800, marginBottom: '8px', color: '#0f172a', borderBottom: '1.5px solid #f1f5f9', paddingBottom: '4px', fontSize: '12px' }}>
-              {formatAcademicYearCompact(dataYears[hoverIndex])}學年度
-            </div>
-            {[...dataSeries].reverse().map((s, idx) => {
-              const p = s.points.find(pt => pt.year === dataYears[hoverIndex!])
-              const prevP = hoverIndex! > 0 ? s.points.find(pt => pt.year === dataYears[hoverIndex! - 1]) : null
-              if (!p) return null
-
-              const deltaPct = prevP && prevP.value > 0 ? ((p.value - prevP.value) / prevP.value) * 100 : null
-              const realIdx = dataSeries.length - 1 - idx
-
-              return (
-                <div key={s.label} style={{ display: 'flex', flexDirection: 'column', marginBottom: '6px' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11px', fontWeight: 700 }}>
-                    <span style={{ color: SERIES_COLORS[realIdx % SERIES_COLORS.length] }}>{s.label.replace('院校', '')}</span>
-                    <span style={{ color: '#0f172a' }}>{formatStudents(p.value)}</span>
-                  </div>
-                  {deltaPct !== null ? (
-                    <div style={{ fontSize: '10px', textAlign: 'right', color: Math.abs(deltaPct) < 0.01 ? '#94a3b8' : (deltaPct >= 0 ? '#059669' : '#dc2626'), fontWeight: 600 }}>
-                      {Math.abs(deltaPct) < 0.01 ? '0.0%' : `${deltaPct > 0 ? '+' : ''}${deltaPct.toFixed(1)}%`}
-                    </div>
-                  ) : (
-                    <div style={{ fontSize: '10px', textAlign: 'right', color: '#94a3b8', fontWeight: 600 }}>-</div>
-                  )}
-                </div>
               )
             })}
-            <div style={{ marginTop: '8px', borderTop: '1.5px solid #f1f5f9', paddingTop: '6px', fontSize: '11px' }}>
-              <div style={{ fontWeight: 800, color: '#0f172a', display: 'flex', justifyContent: 'space-between' }}>
-                <span>總計</span>
-                <span>{formatStudents(yearTotals[hoverIndex])}</span>
+          </svg>
+
+          {hoverIndex !== null && (
+            <div className="chart-tooltip glass-tooltip chart-tooltip--visible" style={{ position: 'absolute', top: 10, right: 10, width: 125, pointerEvents: 'none', zIndex: 10 }}>
+              <div style={{ fontWeight: 800, marginBottom: '-6px', color: '#0f172a', borderBottom: '1.5px solid rgba(15, 23, 42, 0.08)', paddingBottom: '6px', fontSize: '12px', textAlign: 'right' }}>
+                {dataYears[hoverIndex]}學年度
+              </div>
+              {[...dataSeries].reverse().map((s, idx) => {
+                const p = s.points.find(pt => pt.year === dataYears[hoverIndex!])
+                const prevP = hoverIndex! > 0 ? s.points.find(pt => pt.year === dataYears[hoverIndex! - 1]) : null
+                if (!p) return null
+
+                const deltaPct = prevP && prevP.value > 0 ? ((p.value - prevP.value) / prevP.value) * 100 : null
+                const realIdx = dataSeries.length - 1 - idx
+
+                return (
+                  <div key={s.label} style={{ marginBottom: '6px' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11px', fontWeight: 800, alignItems: 'baseline' }}>
+                      <span style={{ color: SERIES_COLORS[realIdx % SERIES_COLORS.length].start }}>{s.label.replace('院校', '')}</span>
+                      <span style={{ color: '#0f172a' }}>{formatWanNumeric(p.value)}萬</span>
+                    </div>
+                    {deltaPct !== null && (
+                      <div style={{ fontSize: '9px', textAlign: 'right', color: Math.abs(deltaPct) < 0.01 ? '#64748b' : (deltaPct >= 0 ? '#059669' : '#dc2626'), fontWeight: 800, marginTop: '-2px' }}>
+                        {Math.abs(deltaPct) < 0.01 ? '0.0%' : `${deltaPct > 0 ? '↑' : '↓'} ${Math.abs(deltaPct).toFixed(1)}%`}
+                      </div>
+                    )}
+                  </div>
+                )
+              })}
+              <div style={{ marginTop: '10px', borderTop: '1.5px solid rgba(15, 23, 42, 0.08)', paddingTop: '8px' }}>
+                <div style={{ fontWeight: 900, color: '#0f172a', display: 'flex', justifyContent: 'space-between', fontSize: '11px' }}>
+                  <span>總計</span>
+                  <span>{formatWanNumeric(yearTotals[hoverIndex])}萬</span>
+                </div>
+                {(() => {
+                  const prevTotal = hoverIndex > 0 ? yearTotals[hoverIndex - 1] : null;
+                  const totalDeltaPct = prevTotal && prevTotal > 0 ? ((yearTotals[hoverIndex] - prevTotal) / prevTotal) * 100 : null;
+                  if (totalDeltaPct === null) return null;
+                  return (
+                    <div style={{ fontSize: '9px', textAlign: 'right', color: Math.abs(totalDeltaPct) < 0.01 ? '#64748b' : (totalDeltaPct >= 0 ? '#059669' : '#dc2626'), fontWeight: 800, marginTop: '-2px' }}>
+                      {Math.abs(totalDeltaPct) < 0.01 ? '0.0%' : `${totalDeltaPct > 0 ? '↑' : '↓'} ${Math.abs(totalDeltaPct).toFixed(1)}%`}
+                    </div>
+                  );
+                })()}
               </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
-    </div>
-  </section>
-)
+    </section>
+  )
 }
 
 export default StackedAreaTrendChart

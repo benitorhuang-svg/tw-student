@@ -37,7 +37,7 @@ export function useAtlasAppState() {
   // ── Selection state ──
   const [selectedCountyId, setSelectedCountyId] = useState<string | null>(initialQueryState.selectedCountyId)
   const [selectedTownshipId, setSelectedTownshipId] = useState<string | null>(initialQueryState.selectedTownshipId)
-  const [selectedSchoolId, setSelectedSchoolId] = useState<string | null>(null)
+  const [selectedSchoolId, setSelectedSchoolId] = useState<string | null>(initialQueryState.selectedSchoolId)
 
   // ── Comparison state ──
   const [comparisonCountyIds, setComparisonCountyIds] = useState<string[]>(initialQueryState.comparisonCountyIds)
@@ -51,10 +51,12 @@ export function useAtlasAppState() {
 
   // ── Tab + map state ──
   const { activeTab, setActiveTab, sidebarRef } = useAtlasTabState(initialQueryState.tab)
+  const [tabIsExplicitFromQuery] = useState(initialQueryState.tabIsExplicit)
   const [mapResetToken, setMapResetToken] = useState(0)
   const [mapZoom, setMapZoom] = useState<number | null>(initialQueryState.zoom ?? null)
   const [mapLat, setMapLat] = useState<number | null>(initialQueryState.lat ?? null)
   const [mapLon, setMapLon] = useState<number | null>(initialQueryState.lon ?? null)
+  const [forceTownshipLabels, setForceTownshipLabels] = useState<boolean>(initialQueryState.forceTownshipLabels ?? false)
 
   return {
     initialQueryState,
@@ -89,9 +91,11 @@ export function useAtlasAppState() {
     investigationFilter, setInvestigationFilter,
     // Tab + map
     activeTab, setActiveTab, sidebarRef,
+    tabIsExplicitFromQuery,
     mapResetToken, setMapResetToken,
     mapZoom, setMapZoom,
     mapLat, setMapLat,
     mapLon, setMapLon,
+    forceTownshipLabels, setForceTownshipLabels,
   }
 }

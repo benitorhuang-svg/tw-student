@@ -1,35 +1,47 @@
-import type { ReactNode, RefObject } from 'react'
-
+import { useState } from 'react'
+import type { ReactNode, RefObject, TransitionStartFunction } from 'react'
 import CountyTabPanel from './CountyTabPanel'
-import InsightPanel from './InsightPanel'
 import RegionalTabPanel from './RegionalTabPanel'
 import SchoolDetailPanel from './SchoolDetailPanel'
 import StackedAreaTrendChart from './StackedAreaTrendChart'
 import ScatterPlotChart from './ScatterPlotChart'
-import TreemapChart from './TreemapChart'
 import AtlasTabs from './AtlasTabs'
-import DashboardYearNavigator from './DashboardYearNavigator'
+import TreemapChart from './TreemapChart'
+import { AtlasPlaybackPill, AtlasLevelPill, AtlasRegionPill, AtlasTypePill } from './AtlasGlobalFilters'
+import MapFloatingHelp from './map/molecules/MapFloatingHelp'
 import type { AtlasTab } from '../hooks/useAtlasQueryState'
+import '../styles/templates/dashboard-shell/01-premium-cards-system.css'
 import type { useAtlasDerivedState } from '../hooks/useAtlasDerivedState'
-import type { AcademicYear, CountySchoolAtlasDataset, ManagementTypeFilter, RegionGroupFilter } from '../data/educationData'
+import type { RegionGroupFilter, CountySchoolAtlasDataset, AcademicYear, EducationLevelFilter, ManagementTypeFilter } from '../data/educationData'
 import type { TrendPoint } from '../lib/analytics.types'
 import type { InvestigationItem, SavedComparisonScenario } from '../hooks/types'
 
 type DashboardCanvasProps = {
   activeTab: AtlasTab
-  sidebarRef: RefObject<HTMLElement | null>
+  sidebarRef: RefObject<HTMLDivElement | null>
   desktopTabItems: Array<{ id: AtlasTab; label: string }>
   setActiveTab: (tab: AtlasTab) => void
   mapElement: ReactNode
+  header: ReactNode
+  footer: ReactNode
 
   // Scope / KPI
   derived: ReturnType<typeof useAtlasDerivedState>
 
   // Filters
   activeYear: AcademicYear
-  isYearPlaybackActive: boolean
+  summaryYears: AcademicYear[]
+  educationLevel: EducationLevelFilter
   managementType: ManagementTypeFilter
   region: RegionGroupFilter
+  onSetActiveYear: (year: AcademicYear) => void
+  onSetEducationLevel: (level: EducationLevelFilter) => void
+  onSetManagementType: (type: ManagementTypeFilter) => void
+
+  onStopPlayback: () => void
+  onTogglePlayback: () => void
+  isYearPlaybackActive: boolean
+  startTransition: TransitionStartFunction
 
   // Comparison / scenario
   comparisonScenarioName: string
@@ -64,9 +76,9 @@ type DashboardCanvasProps = {
 
   // Actions
   scenarioActions: {
-    handleRegionSelect: (region: RegionGroupFilter) => void
-    handleCountySelect: (countyId: string) => void
-    handleTownshipSelect: (townshipId: string) => void
+    handleRegionSelect: (region: RegionGroupFilter, options?: { skipTabSwitch?: boolean }) => void
+    handleCountySelect: (countyId: string, options?: { skipTabSwitch?: boolean }) => void;
+    handleTownshipSelect: (townshipId: string, options?: { skipTabSwitch?: boolean }) => void
     handleResetScope: () => void
     toggleComparisonCounty: (countyId: string) => void
     handleCopyComparisonLink: () => Promise<void>
@@ -84,9 +96,6 @@ type DashboardCanvasProps = {
   handlePrefetchCounty: (countyId: string | null) => void
   handleSchoolSelect: (schoolId: string | null) => void
   onHoverSchool?: (schoolId: string | null) => void
-  onSetActiveYear: (year: AcademicYear) => void
-  onSetIsYearPlaybackActive: (active: boolean) => void
-  summaryYears: number[]
   nationalEducationTrendSeries: Array<{ label: string, points: TrendPoint[] }>
 }
 
@@ -96,90 +105,57 @@ function DashboardCanvas({
   desktopTabItems,
   setActiveTab,
   mapElement,
+  header,
+  footer,
   derived,
   activeYear,
-  isYearPlaybackActive,
+  summaryYears,
+  educationLevel,
   managementType,
   region,
-  comparisonScenarioName,
-  setComparisonScenarioName,
-  favoriteScenarios,
-  recentScenarios,
-  activeScenarioSnapshot,
-  copyFeedbackMessage,
-  scenarioFeedbackMessage,
+  onSetActiveYear,
+  onSetEducationLevel,
+  onSetManagementType,
+  onStopPlayback,
+  onTogglePlayback,
+  isYearPlaybackActive,
+  startTransition,
   countyDetailError,
-  countySchoolAtlasError,
   selectedCountyId,
   selectedTownshipId,
-  countySchoolAtlasCache,
-  schoolWorkbenchView,
   onSetSchoolWorkbenchView,
   hoveredCountyId,
   hoveredTownshipId,
-  hoveredSchoolId,
   setHoveredCountyId,
   setHoveredTownshipId,
-  regionalChartView,
-  countyChartView,
-  setRegionalChartView,
-  setCountyChartView,
   scenarioActions,
   handlePrefetchCounty,
   handleSchoolSelect,
   onHoverSchool,
-  onSetActiveYear,
-  onSetIsYearPlaybackActive,
-  summaryYears,
   nationalEducationTrendSeries,
 }: DashboardCanvasProps) {
-  const visibleCountyRows = derived.countySummaries.filter((row) => !row.filteredOut)
-  const overviewTrendRows = [...visibleCountyRows]
-    .sort((left, right) => Math.abs(right.deltaRatio) - Math.abs(left.deltaRatio))
-    .slice(0, 8)
-    .map((row) => ({
-      id: row.id,
-      label: row.name,
-      subLabel: row.region,
-      students: row.students,
-      schools: row.schools,
-      delta: row.delta,
-      deltaRatio: row.deltaRatio,
-      trend: row.trend,
-    }))
+  const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({
+    matrix: true,
+    trend: false,
+    treemap: false
+  })
 
-  const overviewTreemapGroups = ['北部', '中部', '南部', '東部', '離島']
-    .map((regionName, index) => {
-      const regionCounties = visibleCountyRows.filter((row) => row.region === regionName)
-      const students = regionCounties.reduce((sum, row) => sum + row.students, 0)
-
-      return {
-        id: regionName,
-        label: regionName,
-        value: students,
-        accentColor: `var(--chart-series-${index})`,
-        children: regionCounties.map((row) => ({
-          id: row.id,
-          label: row.shortLabel,
-          value: row.students,
-          meta: `${row.deltaRatio >= 0 ? '+' : ''}${(row.deltaRatio * 100).toFixed(1)}%`,
-        })),
-      }
-    })
-    .filter((group) => group.children.length > 0)
+  const toggleSection = (id: string) => {
+    setExpandedSections(prev => ({ ...prev, [id]: !prev[id] }))
+  }
 
 
   const overviewMatrixSection = (
     <ScatterPlotChart
       title="發展熱點分析矩陣"
-      subtitle="X 軸學生成長，Y 軸全國佔比變動率"
+      subtitle={null}
       xLabel="學生數 (萬人)"
       yLabel="全國佔比變動率 (%)"
       points={derived.countyRankingRows.map((row) => ({
         id: row.id,
         label: row.label,
         x: row.students,
-        y: (row.delta / Math.max(derived.currentScope.students, 1)) * 100,
+        y: (row.delta / Math.max(derived.globalNationalSummary.students, 1)) * 100,
         size: row.schools,
       }))}
       activePointId={hoveredCountyId ?? selectedCountyId}
@@ -187,185 +163,241 @@ function DashboardCanvas({
         setHoveredCountyId(id)
         handlePrefetchCounty(id)
       }}
-      onSelectPoint={scenarioActions.handleCountySelect}
-      flat={true}
-      className="dashboard-card--matrix"
+      onSelectPoint={(id) => scenarioActions.handleCountySelect(id, { skipTabSwitch: true })}
+      showHeader={false}
     >
-      <DashboardYearNavigator
-        activeYear={activeYear}
-        isYearPlaybackActive={isYearPlaybackActive}
-        summaryYears={summaryYears}
-        onSetActiveYear={onSetActiveYear}
-        onTogglePlayback={() => {
-          onSetIsYearPlaybackActive(!isYearPlaybackActive)
-          if (!isYearPlaybackActive) {
-            scenarioActions.handleResetScope()
-          }
-        }}
-      />
+      <p className="dashboard-card__subtitle" style={{ margin: 0, opacity: 0.8 }}>
+        X 軸學生成長，Y 軸全國佔比變動率
+      </p>
     </ScatterPlotChart>
   )
 
   const overviewTrendSection = (
     <StackedAreaTrendChart
       title="全台各學制歷年學生數"
-      subtitle=""
+      subtitle={undefined}
       series={nationalEducationTrendSeries}
-      flat={true}
-      className="dashboard-card--overview-story"
-    />
-  )
-
-
-  const overviewRankingSection = (
-    <section className="dashboard-card dashboard-card--overview-movers">
-      <div className="dashboard-card__body dashboard-card__insight-body">
-        <div className="atlas-storyboard__split">
-          <InsightPanel
-            title={derived.selectedCounty?.name ? `${derived.selectedCounty.name} 鄉鎮排行` : '全台縣市排行'}
-            subtitle="依學生總數"
-            showHeader={true}
-            rows={derived.topRows}
-            activeRowId={selectedTownshipId ?? selectedCountyId}
-            flat={true}
-            onSelectRow={(rowId: string) => {
-              if (derived.selectedCounty?.name) {
-                scenarioActions.handleTownshipSelect(rowId)
-                return
-              }
-              scenarioActions.handleCountySelect(rowId)
-            }}
-            onHoverRow={(rowId: string | null) => {
-              setHoveredCountyId(rowId)
-              if (!derived.selectedCounty?.name && rowId) {
-                handlePrefetchCounty(rowId)
-                return
-              }
-              handlePrefetchCounty(null)
-            }}
-            emptyMessage="目前條件沒有可顯示的排行資料。"
-          />
-
-          <InsightPanel
-            title="年度增幅異動"
-            subtitle="全國行政區趨勢對照"
-            showHeader={true}
-            rows={overviewTrendRows}
-            activeRowId={selectedCountyId}
-            flat={true}
-            onSelectRow={scenarioActions.handleCountySelect}
-            onHoverRow={(rowId: string | null) => {
-              setHoveredCountyId(rowId)
-              handlePrefetchCounty(rowId)
-            }}
-            emptyMessage="目前條件沒有可顯示的縣市變動資料。"
-          />
-        </div>
-      </div>
-    </section>
+      className="dashboard-card--overview-story dashboard-card--premium"
+      showHeader={false}
+    >
+       <p className="dashboard-card__subtitle" style={{ margin: 0, opacity: 0.8 }}>
+        各教育階段歷年人數變化趨勢
+      </p>
+    </StackedAreaTrendChart>
   )
 
   const overviewTreemapSection = (
     <TreemapChart
-      title="全台區域與縣市量體"
-      subtitle="依學生總數分布"
-      groups={overviewTreemapGroups}
-      activeLeafId={selectedCountyId}
-      onSelectLeaf={scenarioActions.handleCountySelect}
-      onSelectGroup={(nextRegion) => scenarioActions.handleRegionSelect(nextRegion as RegionGroupFilter)}
-      flat={true}
-      className="dashboard-card--overview-treemap"
-    />
+      title="各地區學生分佈比例"
+      subtitle={undefined}
+      groups={(() => {
+        const regions = ['北部', '中部', '南部', '東部', '離島']
+        const regionColors: Record<string, string> = {
+          '北部': '#3b82f6',
+          '中部': '#10b981',
+          '南部': '#f59e0b',
+          '東部': '#8b5cf6',
+          '離島': '#6366f1'
+        }
+        
+        return regions.map(reg => {
+          const counties = derived.countyRankingRows.filter(c => c.subLabel === reg)
+          return {
+            id: reg,
+            label: reg,
+            value: counties.reduce((sum, c) => sum + c.students, 0),
+            accentColor: regionColors[reg] || '#94a3b8',
+            children: counties.map(c => ({
+              id: c.id,
+              label: c.label,
+              value: c.students
+            }))
+          }
+        }).filter(g => g.value > 0)
+      })()}
+      activeLeafId={hoveredCountyId ?? selectedCountyId}
+      onSelectLeaf={(id) => scenarioActions.handleCountySelect(id, { skipTabSwitch: true })}
+      className="dashboard-card--premium"
+      showHeader={false}
+    >
+      <p className="dashboard-card__subtitle" style={{ margin: 0, opacity: 0.8 }}>
+        以區域為第一層級，探討學生規模構成
+      </p>
+    </TreemapChart>
   )
+
 
   return (
     <main className={`dashboard-canvas dashboard-canvas--${activeTab}`}>
-      <section className="dashboard-card dashboard-card--map">
-        <div className="dashboard-card__body dashboard-card__map-body">
-          {mapElement}
+      <section className="dashboard-side-shell">
+        <div className="side-shell__header">
+          {header}
+        </div>
+
+        <div className="side-shell__body" ref={sidebarRef}>
+          <AtlasTabs
+            activeTab={activeTab}
+            items={desktopTabItems.map(item => ({ key: item.id, label: item.label }))}
+            onSelectTab={setActiveTab}
+          />
+
+          {activeTab === 'overview' ? (
+            <div className="dashboard-side-shell__content dashboard-side-shell__content--overview">
+              {/* Region selector moved to map floating filters */}
+              
+              <div className="overview-accordion">
+                <div className={`accordion-item ${expandedSections.matrix ? 'accordion-item--expanded' : ''}`}>
+                  <button 
+                    className="accordion-header" 
+                    onClick={() => toggleSection('matrix')}
+                    aria-expanded={expandedSections.matrix}
+                  >
+                    <span className="accordion-icon">{expandedSections.matrix ? '−' : '+'}</span>
+                    <span className="accordion-title">發展熱點分析矩陣</span>
+                  </button>
+                  <div className="accordion-content">
+                    {overviewMatrixSection}
+                  </div>
+                </div>
+
+                <div className={`accordion-item ${expandedSections.trend ? 'accordion-item--expanded' : ''}`}>
+                  <button 
+                    className="accordion-header" 
+                    onClick={() => toggleSection('trend')}
+                    aria-expanded={expandedSections.trend}
+                  >
+                    <span className="accordion-icon">{expandedSections.trend ? '−' : '+'}</span>
+                    <span className="accordion-title">全台各學制歷年學生數</span>
+                  </button>
+                  <div className="accordion-content">
+                    {overviewTrendSection}
+                  </div>
+                </div>
+
+                <div className={`accordion-item ${expandedSections.treemap ? 'accordion-item--expanded' : ''}`}>
+                  <button 
+                    className="accordion-header" 
+                    onClick={() => toggleSection('treemap')}
+                    aria-expanded={expandedSections.treemap}
+                  >
+                    <span className="accordion-icon">{expandedSections.treemap ? '−' : '+'}</span>
+                    <span className="accordion-title">各地區學生分佈比例</span>
+                  </button>
+                  <div className="accordion-content">
+                    {overviewTreemapSection}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ) : null}
+
+          {activeTab === 'regional' ? (
+            <RegionalTabPanel
+              derived={derived}
+              region={region}
+              hoveredCountyId={hoveredCountyId}
+              selectedCountyId={selectedCountyId}
+              setHoveredCountyId={setHoveredCountyId}
+              scenarioActions={scenarioActions}
+              handlePrefetchCounty={handlePrefetchCounty}
+            />
+          ) : null}
+
+          {activeTab === 'county' ? (
+            <CountyTabPanel
+              derived={derived}
+              selectedTownshipId={selectedTownshipId}
+              hoveredTownshipId={hoveredTownshipId}
+              setHoveredTownshipId={setHoveredTownshipId}
+              onSelectTownship={scenarioActions.handleTownshipSelect}
+            />
+          ) : null}
+
+          {activeTab === 'schools' || activeTab === 'school-focus' ? (
+            <div className="dashboard-side-shell__content dashboard-side-shell__content--schools">
+              <SchoolDetailPanel
+                    selectedCountyName={derived.selectedCounty?.name ?? null}
+                    countyDetailError={countyDetailError}
+                    isCountyDetailLoading={derived.isCountyDetailLoading}
+                    schoolInsights={derived.schoolInsights}
+                    selectedSchool={derived.selectedSchool}
+                    schoolPanelTitle={activeTab === 'school-focus' && derived.selectedSchool ? derived.selectedSchool.name : derived.schoolPanelTitle}
+                    panelMode={activeTab === 'school-focus' ? 'focus' : 'workspace'}
+                    selectedTownshipSummary={derived.selectedTownshipSummary}
+                    selectedCountySummary={derived.selectedCountySummary}
+                    onSetWorkbenchView={onSetSchoolWorkbenchView}
+                    onHoverSchool={onHoverSchool}
+                    onSelectSchool={handleSchoolSelect}
+                  />
+            </div>
+          ) : null}
+        </div>
+
+        <div className="side-shell__footer">
+          {footer}
         </div>
       </section>
 
-      <section className="dashboard-side-shell" ref={sidebarRef}>
-        <AtlasTabs
-          activeTab={activeTab}
-          items={desktopTabItems.map(item => ({ key: item.id, label: item.label }))}
-          onSelectTab={setActiveTab}
-        />
+      <section className="dashboard-card dashboard-card--map">
+        <div className="dashboard-card__body dashboard-card__map-body">
+          {mapElement}
 
-        {activeTab === 'overview' ? (
-          <div className="dashboard-side-shell__content dashboard-side-shell__content--overview">
-            {/* 原子版面排列：您可在此直接調整大區塊的順序 */}
-            {overviewTrendSection}
-            {overviewMatrixSection}
-            {overviewTreemapSection}
-            {overviewRankingSection}
-          </div>
-        ) : null}
+          <div className="map-floating-filters">
+            <MapFloatingHelp 
+              activeTab={activeTab} 
+              activeCountyName={derived.selectedCounty?.name ?? null} 
+            />
 
-        {activeTab === 'regional' ? (
-          <RegionalTabPanel
-            derived={derived}
-            activeYear={activeYear}
-            isYearPlaybackActive={isYearPlaybackActive}
-            region={region}
-            comparisonScenarioName={comparisonScenarioName}
-            setComparisonScenarioName={setComparisonScenarioName}
-            favoriteScenarios={favoriteScenarios}
-            recentScenarios={recentScenarios}
-            activeScenarioSnapshot={activeScenarioSnapshot}
-            copyFeedbackMessage={copyFeedbackMessage}
-            scenarioFeedbackMessage={scenarioFeedbackMessage}
-            regionalChartView={regionalChartView}
-            setRegionalChartView={setRegionalChartView}
-            hoveredCountyId={hoveredCountyId}
-            selectedCountyId={selectedCountyId}
-            setHoveredCountyId={setHoveredCountyId}
-            scenarioActions={scenarioActions}
-            handlePrefetchCounty={handlePrefetchCounty}
-          />
-        ) : null}
-
-        {activeTab === 'county' ? (
-          <CountyTabPanel
-            derived={derived}
-            activeYear={activeYear}
-            isYearPlaybackActive={isYearPlaybackActive}
-            managementType={managementType}
-            selectedTownshipId={selectedTownshipId}
-            countyChartView={countyChartView}
-            setCountyChartView={setCountyChartView}
-            hoveredTownshipId={hoveredTownshipId}
-            setHoveredTownshipId={setHoveredTownshipId}
-            onSelectTownship={scenarioActions.handleTownshipSelect}
-          />
-        ) : null}
-
-        {activeTab === 'schools' || activeTab === 'school-focus' ? (
-          <div className="dashboard-side-shell__content dashboard-side-shell__content--schools">
-            <SchoolDetailPanel
-                  selectedCountyName={derived.selectedCounty?.name ?? null}
-                  countyDetailError={countyDetailError}
-                  isCountyDetailLoading={derived.isCountyDetailLoading}
-                  schoolInsights={derived.schoolInsights}
-                  countyWideSchoolInsights={derived.countyWideSchoolInsights}
-                  selectedSchool={derived.selectedSchool}
-                  selectedCountySchoolAtlas={derived.activeCountyId ? countySchoolAtlasCache[derived.activeCountyId] ?? null : null}
-                  isCountySchoolAtlasLoading={derived.activeCountyId ? !countySchoolAtlasCache[derived.activeCountyId] && !countySchoolAtlasError : false}
-                  countySchoolAtlasError={countySchoolAtlasError}
-                  schoolPanelTitle={activeTab === 'school-focus' && derived.selectedSchool ? derived.selectedSchool.name : derived.schoolPanelTitle}
-                  panelMode={activeTab === 'school-focus' ? 'focus' : 'workspace'}
-                  activeYear={activeYear}
-                  activeWorkbenchView={schoolWorkbenchView}
-                  selectedTownshipSummary={derived.selectedTownshipSummary}
-                  selectedCountySummary={derived.selectedCountySummary}
-                  highlightedSchoolId={hoveredSchoolId}
-                  onSetWorkbenchView={onSetSchoolWorkbenchView}
-                  onHoverSchool={onHoverSchool}
-                  onSelectSchool={handleSchoolSelect}
+            <div className="map-floating-filters__main-stack">
+              <div className="map-floating-filters__group--region-expanded">
+                <AtlasRegionPill
+                  region={region}
+                  onSetRegion={(r) => scenarioActions.handleRegionSelect(r, { skipTabSwitch: true })}
+                  startTransition={startTransition}
+                  onReset={() => {
+                    startTransition(() => {
+                      scenarioActions.handleResetScope()
+                      onSetEducationLevel('全部')
+                      onSetManagementType('全部')
+                      if (summaryYears.length > 0) {
+                        onSetActiveYear(summaryYears[summaryYears.length - 1])
+                      }
+                    })
+                  }}
                 />
+              </div>
+
+              <div className="map-floating-filters__group map-floating-filters__group--playback">
+                <AtlasPlaybackPill
+                  isYearPlaybackActive={isYearPlaybackActive}
+                  onTogglePlayback={onTogglePlayback}
+                  activeYear={activeYear}
+                  summaryYears={summaryYears}
+                  onSetActiveYear={onSetActiveYear}
+                  onStopPlayback={onStopPlayback}
+                  startTransition={startTransition}
+                />
+              </div>
+            </div>
+
+            <div className="map-floating-filters__side-stack">
+              <div className="map-floating-filters__group">
+                <AtlasLevelPill
+                  educationLevel={educationLevel}
+                  onSetEducationLevel={onSetEducationLevel}
+                  startTransition={startTransition}
+                />
+              </div>
+              <div className="map-floating-filters__group">
+                <AtlasTypePill
+                  managementType={managementType}
+                  onSetManagementType={onSetManagementType}
+                  startTransition={startTransition}
+                />
+              </div>
+            </div>
           </div>
-        ) : null}
+        </div>
       </section>
     </main>
   )
