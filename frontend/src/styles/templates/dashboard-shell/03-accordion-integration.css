@@ -1,0 +1,13 @@
+/* Nested Content Integration Fixes */
+.accordion-content .dashboard-card,
+.accordion-content .matrix-chart-premium {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    transform: none !important;
+}
+
+.accordion-content .dashboard-card__body {
+    padding: 8px 12px 16px 12px !important;
+}

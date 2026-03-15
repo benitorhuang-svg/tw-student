@@ -1,15 +1,12 @@
 .matrix-chart-premium {
     position: relative;
     padding: 0;
-    background: #ffffff !important;
-    border: 1px solid rgba(226, 232, 240, 0.8) !important;
-    border-radius: 24px !important;
-    box-shadow:
-        0 10px 40px -10px rgba(16, 32, 51, 0.08),
-        0 20px 25px -5px rgba(16, 32, 51, 0.02),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.5) !important;
+    background: var(--chart-bg);
+    border: var(--chart-border);
+    border-radius: 20px;
+    box-shadow: var(--shadow-soft);
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    overflow: visible !important;
+    overflow: visible;
 }
 
 .matrix-chart-premium:hover {
@@ -22,16 +19,12 @@
 .matrix-chart-premium .dashboard-card__head {
     margin-bottom: 0;
     padding: 0px 24px 4px 100px;
-    /* Reduced top/bottom padding */
     border-bottom: none !important;
     background: transparent !important;
     display: flex;
     justify-content: flex-start;
-    /* Move group to the left */
     align-items: baseline;
-    /* Align text baselines */
     gap: 28px;
-    /* Increase gap to prevent crowding */
     min-height: 50px;
 }
 
@@ -43,17 +36,19 @@
 
 .matrix-chart-premium .dashboard-card__title {
     font-size: 1.35rem;
-    /* Slightly larger title */
     letter-spacing: -0.01em;
     font-weight: 800;
-    color: #1e293b;
+    color: var(--text-main);
     margin-bottom: 0;
 }
 
-
 .matrix-chart-premium .dashboard-card__body {
-    padding: 0 2px 0px 24px !important;
+    padding: 0 !important;
     overflow: visible !important;
+}
+
+.matrix-chart-premium .chart-svg-frame {
+    padding: 0 4px 0 12px;
 }
 
 .matrix-chart-premium .scatter-chart__quadrant {
@@ -82,26 +77,38 @@
 }
 
 .matrix-chart-premium .scatter-chart__axis {
-    fill: #64748b;
+    fill: var(--text-soft);
     font-weight: 700;
 }
 
 .matrix-chart-premium .scatter-chart__axis-title {
-    fill: #1e293b;
+    fill: var(--text-strong);
     font-weight: 800;
 }
 
 .matrix-chart-premium .scatter-chart__zero {
-    stroke: #cbd5e1;
+    stroke: var(--chart-grid);
     stroke-width: 1;
     stroke-dasharray: 4 4;
 }
 
 .matrix-chart-premium .scatter-chart__quadrant-label {
-    fill: #64748b;
+    fill: var(--chart-label);
     font-size: 10px;
     font-weight: 800;
-    opacity: 0.5;
+    opacity: 0.82;
     pointer-events: none;
     letter-spacing: 0.05em;
+}
+
+/* Tooltip Redesign inside SVG */
+.matrix-chart-premium .chart-svg-tooltip__surface {
+    fill: var(--chart-tooltip-fill, #ffffff);
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1));
+}
+
+.matrix-chart-premium .chart-svg-tooltip__title {
+    fill: var(--chart-tooltip-ink, #0f172a);
+    font-size: 11px;
+    font-weight: 700;
 }

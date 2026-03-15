@@ -10,9 +10,14 @@ import type {
   CountyBucketDataset,
   CountyBoundaryCollection,
   TownshipBoundaryCollection,
+  AcademicYear,
+  EducationLevelFilter,
+  ManagementTypeFilter,
+  RegionGroupFilter,
 } from '../data/educationData'
 import type { CountySummary, RankingSummary } from '../lib/analytics'
 import type { SchoolMapPoint } from './map/types'
+import type { AtlasTab } from '../hooks/useAtlasQueryState'
 
 export type { SchoolMapPoint } from './map/types'
 
@@ -21,12 +26,13 @@ type TaiwanExplorerMapProps = {
   activeRegion: '全部' | '北部' | '中部' | '南部' | '東部' | '離島'
   activeCountyId: string | null
   activeTownshipId: string | null
-  activeTab: 'overview' | 'regional' | 'county' | 'schools' | 'school-focus'
+  activeTab: AtlasTab
   theme: 'light' | 'dark'
   countyBoundaries: CountyBoundaryCollection
   townshipBoundaries: TownshipBoundaryCollection | null
   townshipRows: RankingSummary[]
   allTownshipRows: RankingSummary[]
+  allTownshipBoundaries?: TownshipBoundaryCollection | null
   schoolPoints: SchoolMapPoint[]
   countyBuckets: CountyBucketDataset | null
   selectedSchoolId: string | null
@@ -48,65 +54,52 @@ type TaiwanExplorerMapProps = {
   initialMapLon?: number | null
   scopePath: string[]
   onNavigateScope: (depth: number) => void
-  /**
-   * Optional base URL for vector tile service.  Tiles are expected at
-   * `${baseUrl}/county/{z}/{x}/{y}.pbf` and similarly for `township`.
-   * When present the component will render boundaries via Leaflet.VectorGrid
-   * instead of `GeoJSON`.
-   */
   vectorTileBaseUrl?: string
   onVectorTileError?: () => void
   forceTownshipLabels?: boolean
+
+  // Filter Props
+  activeYear: AcademicYear
+  summaryYears: AcademicYear[]
+  educationLevel: EducationLevelFilter
+  managementType: ManagementTypeFilter
+  isYearPlaybackActive: boolean
+  onSetRegion: (region: RegionGroupFilter) => void
+  onResetRegion: () => void
+  onTogglePlayback: () => void
+  onSetActiveYear: (year: AcademicYear) => void
+  onStopPlayback: () => void
+  onSetEducationLevel: (level: EducationLevelFilter) => void
+  onSetManagementType: (type: ManagementTypeFilter) => void
+  startTransition: React.TransitionStartFunction
+  activeCountyName: string | null
 }
 
-function TaiwanExplorerMap({
-  counties,
-  activeRegion,
-  activeCountyId,
-  activeTownshipId,
-  theme,
-  countyBoundaries,
-  townshipBoundaries,
-  townshipRows,
-  allTownshipRows,
-  schoolPoints,
-  countyBuckets,
-  selectedSchoolId,
-  highlightedCountyId = null,
-  highlightedTownshipId = null,
-  highlightedSchoolId = null,
-  isTownshipBoundaryLoading,
-  mapResetToken,
-  onSelectCounty,
-  onAutoSelectCounty,
-  onSelectTownship,
-  onSelectSchool,
-  onHoverCounty,
-  onZoomChange,
-  onMoveEnd,
-  currentMapZoom = null,
-  initialMapZoom = null,
-  initialMapLat = null,
-  initialMapLon = null,
-  scopePath,
-  onNavigateScope,
-  vectorTileBaseUrl = '',
-  onVectorTileError,
-  forceTownshipLabels = false,
-}: TaiwanExplorerMapProps) {
-  const [allTownshipBoundaries, setAllTownshipBoundaries] = useState<TownshipBoundaryCollection | null>(null)
+function TaiwanExplorerMap(props: TaiwanExplorerMapProps) {
+  const {
+    counties, activeRegion, activeCountyId, activeTownshipId, theme, 
+    countyBoundaries, townshipBoundaries, townshipRows, allTownshipRows,
+    allTownshipBoundaries: allTownshipBoundariesFromProp,
+    schoolPoints, countyBuckets, selectedSchoolId,
+    highlightedCountyId = null, highlightedTownshipId = null, highlightedSchoolId = null,
+    isTownshipBoundaryLoading, mapResetToken,
+    onSelectCounty, onAutoSelectCounty, onSelectTownship, onSelectSchool, onHoverCounty,
+    onZoomChange, onMoveEnd, currentMapZoom = null, initialMapZoom = null,
+    initialMapLat = null, initialMapLon = null, scopePath, onNavigateScope,
+    vectorTileBaseUrl = '', onVectorTileError, forceTownshipLabels = false,
+    activeTab, activeYear, summaryYears, educationLevel, managementType,
+    isYearPlaybackActive, onSetRegion, onResetRegion, onTogglePlayback,
+    onSetActiveYear, onStopPlayback, onSetEducationLevel, onSetManagementType,
+    startTransition, activeCountyName
+  } = props
+
+  const [allTownshipBoundariesLocal, setAllTownshipBoundariesLocal] = useState<TownshipBoundaryCollection | null>(null)
   const [isLoadingAllTownships, setIsLoadingAllTownships] = useState(false)
 
-  // The UI requirement is that once the map is zoomed in to level 11 the
-  // user must be able to see *every* township polygon across Taiwan – this
-  // allows 嘉縣 users to notice 嘉市 townships (and vice‑versa) and also makes
-  // the experience consistent for every county.  To avoid a momentary blank
-  // canvas when the user *arrives* at zoom 11, we start the fetch one step
-  // earlier (zoom 10) and display a loading banner while the merge happens.
+  const allTownshipBoundaries = allTownshipBoundariesFromProp || allTownshipBoundariesLocal
+
   useEffect(() => {
     const zoom = currentMapZoom ?? MAP_DEFAULT_ZOOM
-    // begin fetching at zoom (MAP_TOWNSHIP_ZOOM - 1) so that data is ready by the time the user
-    // actually reaches MAP_TOWNSHIP_ZOOM
     if (zoom < MAP_TOWNSHIP_ZOOM - 2) return
     if (allTownshipBoundaries || isLoadingAllTownships) return
 
@@ -127,10 +120,10 @@ function TaiwanExplorerMap({
           }
         }
         if (!cancelled && features.length > 0) {
-          setAllTownshipBoundaries({ type: 'FeatureCollection', features } as TownshipBoundaryCollection)
+          setAllTownshipBoundariesLocal({ type: 'FeatureCollection', features } as TownshipBoundaryCollection)
         }
       } catch {
-        // ignore network errors — leave as null
+        // ignore network errors
       } finally {
         if (!cancelled) setIsLoadingAllTownships(false)
       }
@@ -177,6 +170,21 @@ function TaiwanExplorerMap({
       vectorTileBaseUrl={vectorTileBaseUrl}
       onVectorTileError={onVectorTileError}
       forceTownshipLabels={forceTownshipLabels}
+      activeTab={activeTab}
+      activeYear={activeYear}
+      summaryYears={summaryYears}
+      educationLevel={educationLevel}
+      managementType={managementType}
+      isYearPlaybackActive={isYearPlaybackActive}
+      onSetRegion={onSetRegion}
+      onResetRegion={onResetRegion}
+      onTogglePlayback={onTogglePlayback}
+      onSetActiveYear={onSetActiveYear}
+      onStopPlayback={onStopPlayback}
+      onSetEducationLevel={onSetEducationLevel}
+      onSetManagementType={onSetManagementType}
+      startTransition={startTransition}
+      activeCountyName={activeCountyName}
     />
   )
 }

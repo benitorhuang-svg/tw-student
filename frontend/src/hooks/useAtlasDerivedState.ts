@@ -1,6 +1,11 @@
 import { useMemo } from 'react'
 
-import type { SchoolMapPoint } from '../components/TaiwanExplorerMap'
+import { useHierarchyState } from './derived/useHierarchyState'
+import { useAnalyticsState } from './derived/useAnalyticsState'
+import { useMarkersState } from './derived/useMarkersState'
+import { useInvestigationState } from './derived/useInvestigationState'
+import { useUiMetadata } from './derived/useUiMetadata'
+
 import type {
   AtlasLoadObservationSnapshot,
   AcademicYear,
@@ -10,29 +15,11 @@ import type {
   EducationLevelFilter,
   ManagementTypeFilter,
   RegionGroupFilter,
-  SchoolLevel,
-  SchoolManagementType,
   TownshipBoundaryCollection,
 } from '../data/educationData'
-import {
-  getCountyComparisonSummaries,
-  getCountyNotesFromSummary,
-  getCountyRankingRows,
-  getCountyScopeSummaryFromSummary,
-  getCountySummaries,
-  getNationalEducationDistribution,
-  getNationalEducationTrendSeries,
-  getRegionalComparisonRows,
-  getNationSummary,
-  getSchoolInsights,
-  getTownshipNotesFromSummary,
-  getTownshipScopeSummaryFromSummary,
-  getTownshipSummaries,
-} from '../lib/analytics'
-import { normalizeCountyId, normalizeCountyIds, normalizeTownshipId, resolveCountyRecord, toCanonicalCountyIds } from './atlasIdentity'
-import { buildInvestigationItems, classifyInvestigation } from './buildInvestigationItems'
-import type { InvestigationFilter } from './types'
+import { getCountyNotesFromSummary, getTownshipNotesFromSummary } from '../lib/analytics'
 import { DEFAULT_YEAR } from './useAtlasQueryState'
+import type { InvestigationFilter } from './types'
 
 type DerivedStateArgs = {
   summaryDataset: EducationSummaryDataset | null
@@ -55,293 +42,141 @@ type DerivedStateArgs = {
   selectedInvestigationId: string | null
 }
 
-export function useAtlasDerivedState({
-  summaryDataset,
-  activeYear,
-  educationLevel,
-  managementType,
-  region,
-  deferredSearchText,
-  selectedCountyId,
-  selectedTownshipId,
-  selectedSchoolId,
-  comparisonCountyIds,
-  comparisonScenarioName,
-  countyDetailCache,
-  countyBucketCache,
-  townshipBoundaryCache,
-  countyDetailError,
-  loadObservation,
-  investigationFilter,
-  selectedInvestigationId,
-}: DerivedStateArgs) {
+export function useAtlasDerivedState(args: DerivedStateArgs) {
+  const {
+    summaryDataset,
+    activeYear,
+    educationLevel,
+    managementType,
+    region,
+    deferredSearchText,
+    selectedCountyId,
+    selectedTownshipId,
+    selectedSchoolId,
+    comparisonCountyIds,
+    comparisonScenarioName,
+    countyDetailCache,
+    countyBucketCache,
+    townshipBoundaryCache,
+    loadObservation,
+    investigationFilter,
+    selectedInvestigationId,
+  } = args
+
+  // 1. Core Filters
+  const filters = useMemo(() => ({
+    year: summaryDataset?.years.includes(activeYear) ? activeYear : (summaryDataset?.years.at(-1) ?? DEFAULT_YEAR),
+    educationLevel,
+    managementType,
+    region,
+    searchText: deferredSearchText,
+  }), [summaryDataset, activeYear, educationLevel, managementType, region, deferredSearchText])
+
+  // 2. Hierarchy Atom
+  const hierarchy = useHierarchyState(
+    summaryDataset,
+    selectedCountyId,
+    selectedTownshipId,
+    townshipBoundaryCache,
+    countyDetailCache
+  )
+
+  // 3. Analytics Atom
+  const analytics = useAnalyticsState(
+    summaryDataset,
+    filters,
+    hierarchy.selectedCounty,
+    hierarchy.activeTownshipId,
+    comparisonCountyIds,
+    comparisonScenarioName
+  )
+
+  // 4. Markers Atom
+  const markers = useMarkersState(
+    summaryDataset,
+    countyDetailCache,
+    filters,
+    hierarchy.activeTownshipId,
+    selectedSchoolId,
+    countyBucketCache
+  )
+
+  // 5. Investigative Logic
+  const scopeNotes = useMemo(() => {
+    if (!summaryDataset) return []
+    return analytics.selectedTownshipSummary && hierarchy.selectedCounty && hierarchy.activeTownshipId
+      ? getTownshipNotesFromSummary(hierarchy.selectedCounty, hierarchy.activeTownshipId)
+      : hierarchy.selectedCounty ? getCountyNotesFromSummary(hierarchy.selectedCounty) : (summaryDataset.dataNotes ?? [])
+  }, [summaryDataset, analytics.selectedTownshipSummary, hierarchy.selectedCounty, hierarchy.activeTownshipId])
+
+  const investigation = useInvestigationState(
+    summaryDataset,
+    analytics.countySummaries,
+    analytics.countyRankingRows,
+    hierarchy.selectedCounty,
+    hierarchy.selectedCountyDetail,
+    hierarchy.activeTownshipId,
+    analytics.selectedTownshipSummary,
+    scopeNotes,
+    educationLevel,
+    managementType,
+    investigationFilter,
+    selectedInvestigationId
+  )
+
+  // 6. UI Metadata Atom
+  const ui = useUiMetadata({
+    summaryDataset,
+    selectedCountySummary: analytics.selectedCountySummary,
+    selectedTownshipSummary: analytics.selectedTownshipSummary,
+    activeCountyId: hierarchy.activeCountyId,
+    activeTownshipId: hierarchy.activeTownshipId,
+    countyRankingRows: analytics.countyRankingRows,
+    townshipRows: analytics.townshipRows,
+    nationalSummary: analytics.nationalSummary as any,
+    loadObservation,
+    selectedCounty: hierarchy.selectedCounty
+  })
+
+  // 7. UI Composition
   return useMemo(() => {
-    if (!summaryDataset) {
+    if (!summaryDataset || !ui) {
       return {
-        filters: null,
-        countySummaries: [],
-        mapCountySummaries: [],
-        countyRankingRows: [],
-        activeCountyId: null,
-        activeTownshipBoundaries: null,
-        activeCountyBuckets: null,
-        isTownshipBoundaryLoading: false,
-        selectedCounty: null,
-        selectedCountyDetail: null,
-        isCountyDetailLoading: false,
-        selectedCountySummary: null,
-        townshipRows: [],
-        allTownshipRows: [],
-        activeTownshipId: null,
-        selectedTownshipSummary: null,
-        countyWideSchoolInsights: [],
-        schoolInsights: [],
-        selectedSchool: null,
-        educationDistribution: [],
-        nationalEducationTrendSeries: [],
-        regionalComparisonRows: [],
+        filters: null, countySummaries: [], mapCountySummaries: [], countyRankingRows: [],
+        activeCountyId: null, activeTownshipBoundaries: null, activeCountyBuckets: null,
+        isTownshipBoundaryLoading: false, selectedCounty: null, selectedCountyDetail: null,
+        isCountyDetailLoading: false, selectedCountySummary: null, townshipRows: [],
+        allTownshipRows: [], activeTownshipId: null, selectedTownshipSummary: null,
+        countyWideSchoolInsights: [], schoolInsights: [], selectedSchool: null,
+        educationDistribution: [], nationalEducationTrendSeries: [], regionalComparisonRows: [],
         currentScope: { label: '全台灣', caption: '', students: 0, schools: 0, delta: 0, deltaRatio: 0, trend: [] },
-        rankingRows: [],
-        scopeNotes: [],
-        scopePath: ['全台灣'],
-        effectiveComparisonCountyIds: [],
-        comparisonSummaries: [],
-        comparisonCandidates: [],
-        filteredAnomalies: [],
-        activeInvestigation: null,
-        activeScenarioSnapshot: null,
-        topRows: [],
-        topCountyPrefetchIds: '',
-        countyQuickPicks: [],
-        scopeHeadline: '全台教育工作台',
-        scopeDescription: '',
-        schoolPanelTitle: '縣市細節載入後顯示學校清單',
-        generatedAtLabel: '',
-        offlineReadyWithBuckets: 0,
-        observedCounties: [],
-        schoolMapPoints: [],
+        rankingRows: [], scopeNotes: [], scopePath: ['全台灣'], allTownshipBoundaries: null,
+        effectiveComparisonCountyIds: [], comparisonSummaries: [], comparisonCandidates: [],
+        filteredAnomalies: [], activeInvestigation: null, activeScenarioSnapshot: null,
+        topRows: [], topCountyPrefetchIds: '', countyQuickPicks: [],
+        scopeHeadline: '全台教育工作台', scopeDescription: '', schoolPanelTitle: '縣市細節載入後顯示學校清單',
+        generatedAtLabel: '', offlineReadyWithBuckets: 0, observedCounties: [], schoolMapPoints: [],
         globalNationalSummary: { label: '全台灣', caption: '', students: 0, schools: 0, delta: 0, deltaRatio: 0, trend: [] },
       }
     }
 
-    const filters = {
-      year: summaryDataset.years.includes(activeYear) ? activeYear : (summaryDataset.years.at(-1) ?? DEFAULT_YEAR),
-      educationLevel,
-      managementType,
-      region,
-      searchText: deferredSearchText,
-    }
-
-    const selectedCountyFromDataset = resolveCountyRecord(summaryDataset, selectedCountyId)
-    // keep a copy of the raw summaries for the map layer (no chiayi merge)
-    const mapCountySummaries = getCountySummaries(summaryDataset.counties, filters)
-    let countySummaries = mapCountySummaries.slice()
-
-    // ============================================================================
-    // special merge for Chiayi in analysis panels
-    // always combine 嘉義市 and 嘉義縣 into a single "嘉義" row so that
-    // charts/rankings treat them as one entity.  the map and detail panes still
-    // honour the original county ids.
-    // ============================================================================
-    const chiayiRows = countySummaries.filter((c) => c.id === '嘉義市' || c.id === '嘉義縣')
-    if (chiayiRows.length > 0) {
-      const merged: typeof chiayiRows[0] = {
-        id: '嘉義',
-        name: '嘉義',
-        shortLabel: '嘉義',
-        region: chiayiRows[0].region,
-        students: chiayiRows.reduce((sum, c) => sum + c.students, 0),
-        schools: chiayiRows.reduce((sum, c) => sum + c.schools, 0),
-        delta: chiayiRows.reduce((sum, c) => sum + c.delta, 0),
-        deltaRatio: (chiayiRows.reduce((sum, c) => sum + c.students - c.delta, 0) || 1) > 0
-          ? chiayiRows.reduce((sum, c) => sum + c.delta, 0) /
-            chiayiRows.reduce((sum, c) => sum + c.students - c.delta, 0)
-          : 0,
-        trend: chiayiRows[0].trend.map((pt, idx) => ({
-          year: pt.year,
-          value: chiayiRows.reduce((sum, c) => sum + (c.trend[idx]?.value ?? 0), 0),
-        })),
-        filteredOut: chiayiRows.every((c) => c.filteredOut),
-      }
-      countySummaries = countySummaries.filter((c) => c.id !== '嘉義市' && c.id !== '嘉義縣')
-      countySummaries.push(merged)
-    }
-
-    const countyRankingRows = getCountyRankingRows(countySummaries)
-    const activeCountyId = selectedCountyFromDataset ? normalizeCountyId(summaryDataset, selectedCountyId) : null
-    // Special-case: when focusing on 嘉義, present both 嘉義市 and 嘉義縣 township slices together
-    const isChiayiGroup = activeCountyId === '嘉義市' || activeCountyId === '嘉義縣'
-    const chiayiCityBoundaries = townshipBoundaryCache['嘉義市'] ?? null
-    const chiayiCountyBoundaries = townshipBoundaryCache['嘉義縣'] ?? null
-    const activeTownshipBoundaries = activeCountyId
-      ? isChiayiGroup
-        ? (chiayiCityBoundaries && chiayiCountyBoundaries
-          ? { type: 'FeatureCollection' as const, features: [...chiayiCityBoundaries.features, ...chiayiCountyBoundaries.features] }
-          : (chiayiCityBoundaries ?? chiayiCountyBoundaries ?? null))
-        : (townshipBoundaryCache[activeCountyId] ?? null)
-      : null
-
+    const { activeCountyId } = hierarchy
     const activeCountyBuckets = activeCountyId ? countyBucketCache[activeCountyId] ?? null : null
-    const isTownshipBoundaryLoading = Boolean(
-      activeCountyId && (
-        isChiayiGroup
-          ? !(chiayiCityBoundaries && chiayiCountyBoundaries)
-          : !(townshipBoundaryCache[activeCountyId])
-      ),
-    )
-    const selectedCounty = summaryDataset.counties.find((county) => county.id === activeCountyId) ?? null
-    const selectedCountyDetail = activeCountyId ? countyDetailCache[activeCountyId] ?? null : null
-    const isCountyDetailLoading = Boolean(activeCountyId && !selectedCountyDetail && !countyDetailError)
-    const selectedCountySummary = selectedCounty ? getCountyScopeSummaryFromSummary(selectedCounty, filters) : null
-    const townshipRows = selectedCounty ? getTownshipSummaries(selectedCounty, filters) : []
-    const allTownshipRows = summaryDataset
-      ? summaryDataset.counties.flatMap((county) => getTownshipSummaries(county, filters))
-      : []
-    const activeTownshipId = selectedCounty ? normalizeTownshipId(summaryDataset, activeCountyId, selectedTownshipId) : null
-    const selectedTownshipSummary = selectedCounty && activeTownshipId
-      ? getTownshipScopeSummaryFromSummary(selectedCounty, activeTownshipId, filters)
-      : null
-    const countyWideSchoolInsights = getSchoolInsights(selectedCountyDetail, filters, null)
-    const schoolInsights = getSchoolInsights(selectedCountyDetail, filters, activeTownshipId)
-    const activeSchoolId = countyWideSchoolInsights.some((school) => school.id === selectedSchoolId) ? selectedSchoolId : null
-    const selectedSchool = activeSchoolId
-      ? countyWideSchoolInsights.find((school) => school.id === activeSchoolId) ?? null
-      : null
-    const nationalSummary = getNationSummary(summaryDataset.counties, filters)
-    const globalNationalSummary = getNationSummary(summaryDataset.counties, { ...filters, region: '全部' })
-    const educationDistribution = getNationalEducationDistribution(summaryDataset.counties, filters)
-    const nationalEducationTrendSeries = getNationalEducationTrendSeries(summaryDataset.counties, filters)
-    const regionalComparisonRows = getRegionalComparisonRows(summaryDataset.counties, filters)
-    const currentScope = selectedTownshipSummary ?? selectedCountySummary ?? nationalSummary
-    const rankingRows = selectedCounty ? townshipRows : countyRankingRows
-    const scopeNotes = selectedTownshipSummary && selectedCounty && activeTownshipId
-      ? getTownshipNotesFromSummary(selectedCounty, activeTownshipId)
-      : selectedCounty ? getCountyNotesFromSummary(selectedCounty) : (summaryDataset.dataNotes ?? [])
-
-    const scopePath = ['全台']
-    if (selectedCountySummary) scopePath.push(selectedCountySummary.label)
-    if (selectedTownshipSummary) scopePath.push(selectedTownshipSummary.label)
-
-    const validComparisonIds = normalizeCountyIds(summaryDataset, comparisonCountyIds)
-    const effectiveComparisonCountyIds = (validComparisonIds.length > 0 ? validComparisonIds : countyRankingRows.map((row) => row.id).slice(0, 4)).slice(0, 4)
-    const comparisonSummaries = getCountyComparisonSummaries(summaryDataset.counties, effectiveComparisonCountyIds, filters)
-    const comparisonCandidateIds = [...new Set([...effectiveComparisonCountyIds, ...countyRankingRows.slice(0, 8).map((row) => row.id)])]
-    const comparisonCandidates = comparisonCandidateIds
-      .map((countyId) => {
-        const rankingRow = countyRankingRows.find((row) => row.id === countyId)
-        const summaryRow = countySummaries.find((row) => row.id === countyId)
-        return { id: countyId, displayName: summaryRow?.name ?? rankingRow?.label ?? countyId }
-      })
-      .filter((row) => row.displayName !== row.id || summaryDataset.counties.some((county) => county.id === row.id))
-
-    const anomalies = buildInvestigationItems({
-      summaryDataset,
-      countySummaries,
-      countyRankingRows,
-      selectedCounty,
-      selectedCountyDetail,
-      selectedTownshipId: activeTownshipId,
-      selectedTownshipSummary,
-      scopeNotes,
-      filters: { educationLevel, managementType },
-    })
-    const filteredAnomalies = anomalies.filter((item) => investigationFilter === '全部' || classifyInvestigation(item) === investigationFilter)
-    const activeInvestigation = filteredAnomalies.find((item) => item.id === selectedInvestigationId) ?? filteredAnomalies[0] ?? null
-
-    const activeScenarioSnapshot = comparisonCountyIds.length > 0
-      ? {
-          name: comparisonScenarioName.trim() || `比較 ${comparisonCountyIds.length} 縣市`,
-          countyIds: toCanonicalCountyIds(summaryDataset, comparisonCountyIds).slice(0, 4),
-          activeYear: filters.year,
-          educationLevel,
-          managementType,
-        }
-      : null
-
-    const topRows = rankingRows.slice(0, 6)
-    const topCountyPrefetchIds = selectedCounty ? '' : countyRankingRows.slice(0, 3).map((row) => row.id).join('|')
-    const countyQuickPicks = countySummaries.filter((county) => !county.filteredOut).sort((left, right) => left.name.localeCompare(right.name, 'zh-Hant'))
-    const scopeHeadline = selectedTownshipSummary
-      ? `${selectedTownshipSummary.label} 校務分布`
-      : selectedCountySummary ? `${selectedCountySummary.label} 教育版圖` : '全台教育工作台'
-    const scopeDescription = selectedTownshipSummary
-      ? '已切到鄉鎮層級，左側表格與異常面板同步聚焦同一範圍。'
-      : selectedCountySummary
-        ? '已聚焦指定縣市，右側地圖呈現鄉鎮界線與校點分群，左側同步顯示比較與學校明細。'
-        : '上方篩選列負責切片條件，左側分析工作台負責比較、排行與治理，右側專注地圖探索。'
-    const schoolPanelTitle = selectedTownshipSummary
-      ? `${selectedTownshipSummary.label} 學校清單`
-      : selectedCountySummary ? `${selectedCountySummary.label} 重點學校` : '縣市細節載入後顯示學校清單'
-    const generatedAtLabel = new Date(summaryDataset.generatedAt).toLocaleString('zh-TW')
-    const offlineReadySlices = loadObservation.loadedCountyDetails.length + loadObservation.loadedTownshipSlices.length
-    const offlineReadyWithBuckets = offlineReadySlices + loadObservation.loadedBucketSlices.length
-
-    const observedCounties = summaryDataset.counties
-      .filter((county) =>
-        loadObservation.loadedCountyDetails.includes(county.id) ||
-        loadObservation.loadedBucketSlices.includes(county.id) ||
-        loadObservation.loadedTownshipSlices.includes(county.id),
-      )
-      .map((county) => ({
-        id: county.id,
-        name: county.name,
-        detailBytes: loadObservation.resourceSizes[county.detailFile] ?? county.assetMetrics?.detailBytes ?? 0,
-        bucketBytes: loadObservation.resourceSizes[county.bucketFile] ?? county.assetMetrics?.bucketBytes ?? 0,
-        townshipBytes: loadObservation.resourceSizes[county.townshipFile] ?? county.assetMetrics?.townshipBytes ?? 0,
-        hasBucketSlice: loadObservation.loadedBucketSlices.includes(county.id),
-        hasTownshipSlice: loadObservation.loadedTownshipSlices.includes(county.id),
-      }))
-
-    const schoolRecordLookup = new Map(
-      (selectedCountyDetail?.towns ?? []).flatMap((township) => township.schools.map((school) => [school.id, school] as const)),
-    )
-    const visibleSchoolInsights = activeTownshipId
-      ? schoolInsights
-      : selectedSchool
-        ? countyWideSchoolInsights
-        : schoolInsights
-
-    const schoolMapPoints: SchoolMapPoint[] = visibleSchoolInsights.reduce<SchoolMapPoint[]>((points, school) => {
-      const rawSchool = schoolRecordLookup.get(school.id)
-      if (!rawSchool) return points
-      const { latitude, longitude } = rawSchool.coordinates
-      if (!Number.isFinite(latitude) || !Number.isFinite(longitude) || (latitude === 0 && longitude === 0)) return points
-      points.push({
-        id: school.id,
-        name: school.name,
-        townshipName: school.townshipName,
-        educationLevel: school.educationLevel as SchoolLevel,
-        managementType: school.managementType as SchoolManagementType,
-        status: school.status ?? '正常',
-        currentStudents: school.currentStudents,
-        delta: school.delta,
-        deltaRatio: school.deltaRatio,
-        latitude,
-        longitude,
-        website: rawSchool.profileUrl ?? rawSchool.website,
-      })
-      return points
-    }, [])
+    const countyQuickPicks = analytics.countySummaries.filter((c) => !c.filteredOut).sort((l, r) => l.name.localeCompare(r.name, 'zh-Hant'))
 
     return {
-      filters, countySummaries, mapCountySummaries, countyRankingRows,
-      activeCountyId, activeTownshipBoundaries, activeCountyBuckets, isTownshipBoundaryLoading,
-      selectedCounty, selectedCountyDetail, isCountyDetailLoading, selectedCountySummary,
-      townshipRows, allTownshipRows, activeTownshipId, selectedTownshipSummary,
-      countyWideSchoolInsights, schoolInsights, selectedSchool,
-      educationDistribution, nationalEducationTrendSeries, regionalComparisonRows, currentScope, rankingRows, scopeNotes, scopePath,
-      effectiveComparisonCountyIds, comparisonSummaries, comparisonCandidates,
-      filteredAnomalies, activeInvestigation, activeScenarioSnapshot,
-      topRows, topCountyPrefetchIds, countyQuickPicks,
-      scopeHeadline, scopeDescription, schoolPanelTitle, generatedAtLabel,
-      offlineReadyWithBuckets, observedCounties, schoolMapPoints,
-      globalNationalSummary,
+      filters, 
+      ...analytics, 
+      ...hierarchy, 
+      ...markers, 
+      ...investigation,
+      ...ui,
+      scopeNotes,
+      countyQuickPicks,
+      offlineReadyWithBuckets: loadObservation.loadedCountyDetails.length + loadObservation.loadedTownshipSlices.length + loadObservation.loadedBucketSlices.length,
+      activeCountyBuckets,
+      globalNationalSummary: analytics.nationalSummary,
+      isCountyDetailLoading: Boolean(activeCountyId && !hierarchy.selectedCountyDetail),
     }
-  }, [
-    summaryDataset, activeYear, educationLevel, managementType, region,
-    deferredSearchText, selectedCountyId, selectedTownshipId, selectedSchoolId,
-    comparisonCountyIds, comparisonScenarioName, countyDetailCache,
-    countyBucketCache, townshipBoundaryCache, countyDetailError, loadObservation,
-    investigationFilter, selectedInvestigationId,
-  ])
+  }, [summaryDataset, filters, hierarchy, analytics, markers, investigation, scopeNotes, loadObservation, countyBucketCache, ui])
 }

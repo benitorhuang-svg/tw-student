@@ -7,26 +7,24 @@ type SchoolNotesViewProps = {
 function SchoolNotesView({ selectedSchool }: SchoolNotesViewProps) {
   return (
     <div className="school-notes-panel" data-testid="school-notes">
-      <div className="panel-heading">
-        <div>
-          <p className="eyebrow">資料註記</p>
-          <h3>{selectedSchool.name}</h3>
-        </div>
-        <p className="panel-heading__meta">整合缺漏年度、學校狀態與正式資料備註，便於快速確認可信度。</p>
+      <div className="school-notes-intro">
+        <p>整合缺漏年度、學校狀態與正式資料備註，便於快速確認資料可信度。</p>
       </div>
 
-      <div className="school-profile-sidebar__info">
-        <div className="school-profile-info-row">
-          <span>今年增減</span>
-          <strong>{formatDelta(selectedSchool.delta)} 人</strong>
+      <div className="school-notes-quick-stats">
+        <div className="quick-stat-item">
+          <span className="quick-stat-item__label">今年增減</span>
+          <strong className="quick-stat-item__value">{formatDelta(selectedSchool.delta)} 人</strong>
         </div>
-        <div className="school-profile-info-row">
-          <span>資料完整性</span>
-          <strong>{selectedSchool.missingYears?.length ? `缺 ${selectedSchool.missingYears.join('、')}` : '正式資料完整'}</strong>
+        <div className="quick-stat-item">
+          <span className="quick-stat-item__label">資料完整性</span>
+          <strong className="quick-stat-item__value">
+            {selectedSchool.missingYears?.length ? `缺 ${selectedSchool.missingYears.join('、')}` : '正式資料完整'}
+          </strong>
         </div>
-        <div className="school-profile-info-row">
-          <span>狀態</span>
-          <strong>{selectedSchool.status ?? '正常'}</strong>
+        <div className="quick-stat-item">
+          <span className="quick-stat-item__label">當前狀態</span>
+          <strong className="quick-stat-item__value">{selectedSchool.status ?? '正常'}</strong>
         </div>
       </div>
 

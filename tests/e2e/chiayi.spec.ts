@@ -4,7 +4,7 @@ import { test, expect } from '@playwright/test'
 // Adjust selectors based on rendered DOM; this test will try to find marker labels.
 
 test('chiayi township display', async ({ page }) => {
-  await page.goto('http://localhost:5173')
+  await page.goto('/')
   await page.waitForLoadState('networkidle')
 
   // Wait for map canvas
@@ -27,9 +27,26 @@ test('chiayi township display', async ({ page }) => {
   const clickedCity = await clickMarkerByLabel('嘉市')
   const clickedCounty = await clickMarkerByLabel('嘉縣')
 
-  // If clicking the county marker succeeded, the map should center and zoom to 10
-  if (clickedCity) {
+  // If clicking the county marker succeeded, the map should center and zoom to 10.
+  // We verify by checking the URL sync params (zoom/lat/lon) that are written by the app.
+  if (clickedCounty) {
     await page.waitForFunction(() => window.location.search.includes('zoom=10'))
+
+    const { zoom, lat, lon } = await page.evaluate(() => {
+      const params = new URL(window.location.href).searchParams
+      return {
+        zoom: Number(params.get('zoom')),
+        lat: Number(params.get('lat')),
+        lon: Number(params.get('lon')),
+      }
+    })
+
+    expect(zoom).toBe(10)
+    // County center for 嘉義縣 should be near { lat: 23.4497, lon: 120.5179 }
+    expect(lat).toBeGreaterThan(23.35)
+    expect(lat).toBeLessThan(23.55)
+    expect(lon).toBeGreaterThan(120.4)
+    expect(lon).toBeLessThan(120.65)
   }
 
   // zoom in to trigger township display
@@ -50,14 +67,14 @@ test('chiayi township display', async ({ page }) => {
 
   // now simulate the regression described in issue: deep-link to zoom 11 on
   // 嘉義縣 and make sure 嘉市 is still visible (county marker should remain).
-  await page.goto('http://localhost:5173/?year=114&county=10010&tab=county&zoom=11&lat=23.4673&lon=120.5019')
+  await page.goto('/?year=114&county=10010&tab=county&zoom=11&lat=23.4673&lon=120.5019')
   await page.waitForTimeout(1000) // allow layer updates
   const chiayiCityMarkers = await page.locator('text=嘉市').count()
   expect(chiayiCityMarkers).toBeGreaterThan(0)
 })
 
 test('maintains unknown URL params (vectorTiles) after load', async ({ page }) => {
-  await page.goto('http://localhost:5173/?vectorTiles=true&year=114')
+  await page.goto('/?vectorTiles=true&year=114')
   await page.waitForLoadState('networkidle')
   await page.waitForTimeout(500)
   const url = page.url()

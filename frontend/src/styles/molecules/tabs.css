@@ -1,15 +1,16 @@
 .atlas-tabs {
   position: relative;
   display: flex;
-  gap: 4px;
+  gap: 2px;
   overflow-x: auto;
   overscroll-behavior-x: contain;
-  background: linear-gradient(180deg, rgba(8, 17, 31, 0.44), rgba(15, 23, 42, 0.24));
-  border-radius: 20px;
-  padding: 8px; /* Increased from 6px */
-  border: 1px solid rgba(216, 228, 236, 0.12);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 10px 24px rgba(15, 23, 42, 0.12);
-  margin-bottom: 8px;
+  background: var(--comp-tabs-bg);
+  border-radius: 12px;
+  padding: 4px;
+  border: 1px solid var(--comp-tabs-border);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 0px;
+  backdrop-filter: blur(8px);
 }
 
 .atlas-tabs::-webkit-scrollbar {
@@ -18,12 +19,12 @@
 
 .atlas-tabs__indicator {
   position: absolute;
-  top: 8px; /* Adjusted for increased padding */
-  bottom: 8px;
+  top: 4px;
+  bottom: 4px;
   left: 0;
-  background: linear-gradient(135deg, var(--palette-cyan, #2a6f91), color-mix(in srgb, var(--palette-brass, #b88746) 38%, var(--palette-cyan, #2a6f91)));
-  border-radius: 14px;
-  box-shadow: 0 8px 18px rgba(16, 32, 51, 0.28);
+  background: var(--comp-tab-active-bg);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--brand-primary) 30%, transparent);
   pointer-events: none;
   transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
   will-change: transform, width;
@@ -31,30 +32,29 @@
 
 .atlas-tab {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   flex: 0 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
   min-width: max-content;
-  padding: 12px 24px; /* Increased padding for better height and width */
-  font-size: 0.92rem; /* Increased font size slightly */
-  font-weight: 700; /* Bolder for dashboard feel */
-  color: rgba(238, 243, 246, 0.74);
+  padding: 5px 14px;
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--comp-tab-text);
   background: transparent;
   border: none;
-  border-radius: 14px;
+  border-radius: 8px;
   cursor: pointer;
   white-space: nowrap;
   transition: all 0.25s ease;
 }
 
 .atlas-tab:hover {
-  color: #fff;
-  transform: translateY(-1px)
+  color: var(--comp-tab-hover-text);
 }
 
 .atlas-tab--active {
-  color: #fff !important;
+  color: var(--comp-tab-active-text) !important;
 }

@@ -44,3 +44,58 @@
   padding: 0 12px;
   font-size: .9rem
 }
+
+/* Dashboard Specific Filters */
+.dashboard-filter-select,
+.dashboard-filter-input {
+    height: 44px;
+    padding: 0 14px;
+    border-radius: 14px;
+    border: 1px solid rgba(216, 228, 236, .18);
+    background: rgba(255, 255, 255, .1);
+    color: #eef3f6;
+    font-size: .9rem;
+    font-weight: 600;
+    min-width: 0;
+    max-width: 100%;
+    transition: border-color .15s ease, background .15s ease, box-shadow .15s ease;
+}
+
+.dashboard-filter-select:focus,
+.dashboard-filter-input:focus {
+    outline: none;
+    border-color: rgba(184, 135, 70, .46);
+    background: rgba(255, 255, 255, .14);
+    box-shadow: 0 0 0 3px rgba(184, 135, 70, .14);
+}
+
+.dashboard-filter-select option {
+    background: #1e293b;
+    color: #f8fafc;
+}
+
+.dashboard-filter-chip {
+    min-height: 34px;
+    padding: 0 13px;
+    border-radius: 999px;
+    border: 1px solid rgba(216, 228, 236, .18);
+    background: rgba(255, 255, 255, .08);
+    color: #eef3f6;
+    font-size: .82rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform .16s ease, background .16s ease, border-color .16s ease, box-shadow .16s ease;
+}
+
+.dashboard-filter-chip:hover {
+    transform: translateY(-1px);
+    background: rgba(255, 255, 255, .14);
+    border-color: rgba(216, 228, 236, .28);
+}
+
+.dashboard-filter-chip--active {
+    border-color: rgba(184, 135, 70, .48);
+    background: linear-gradient(135deg, var(--palette-cyan), color-mix(in srgb, var(--palette-brass) 44%, var(--palette-cyan)));
+    color: #f8fafc;
+    box-shadow: 0 10px 20px rgba(16, 32, 51, .24);
+}

@@ -1,0 +1,55 @@
+/* Header Molecule Sections */
+
+.dashboard-header__tabs {
+    display: flex;
+    gap: 2px;
+    padding: 3px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, .08);
+    border: 1px solid rgba(216, 228, 236, .14);
+    flex-shrink: 0;
+}
+
+.dashboard-header__filters {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    margin-left: auto;
+    flex-shrink: 1;
+    min-width: 0;
+    overflow: visible;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.dashboard-header__control-stack {
+    display: flex;
+    min-width: 0;
+    flex: 1 1 820px;
+    justify-content: flex-end;
+}
+
+.dashboard-inline-filter {
+    display: grid;
+    gap: 4px;
+    min-width: 0;
+    flex: 0 0 auto;
+}
+
+.dashboard-inline-filter__label {
+    font-size: .72rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--comp-header-soft-text);
+}
+
+.dashboard-year-stepper {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(4px);
+    overflow: hidden;
+    height: 40px;
+}

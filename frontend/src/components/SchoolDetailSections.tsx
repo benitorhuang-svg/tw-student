@@ -1,3 +1,4 @@
+import React from 'react'
 import ScatterPlotChart from './ScatterPlotChart'
 import SchoolDataTable from './SchoolDataTable'
 import SchoolNotesView from './SchoolNotesView'
@@ -12,37 +13,51 @@ export function SchoolDetailWorkspace(props: {
   sortedSchools: SchoolInsight[]
   onHoverSchool?: (schoolId: string | null) => void
   onSelectSchool: (schoolId: string | null) => void
+  hoveredSchoolId?: string | null
 }) {
-  const { scopeLabel, selectedSchool, schoolInsights, sortedSchools, onHoverSchool, onSelectSchool } = props
-  return (
-    <>
-      <div className="school-list-workspace">
-        <div className="school-list-workspace__full-width" style={{ marginBottom: '1.5rem' }}>
-          <ScatterPlotChart
-            title={`${scopeLabel} 各校發展熱點分析矩陣`}
-            subtitle={`以 ${scopeLabel} 總學生數為分母計算佔比變動`}
-            xLabel="學生數"
-            yLabel={`${scopeLabel} 佔比變動率 (%)`}
-            points={sortedSchools.map((school) => {
-              const totalStudentsInScope = schoolInsights.reduce((sum, s) => sum + s.currentStudents, 0);
-              return {
-                id: school.id,
-                label: school.name,
-                x: school.currentStudents,
-                y: (school.delta / Math.max(totalStudentsInScope, 1)) * 100,
-                size: school.currentStudents,
-              };
-            })}
-            activePointId={selectedSchool?.id ?? null}
-            onHoverPoint={onHoverSchool}
-            onSelectPoint={onSelectSchool}
-            className="matrix-chart-premium"
-          />
-        </div>
+  const { scopeLabel, selectedSchool, schoolInsights, sortedSchools, onHoverSchool, onSelectSchool, hoveredSchoolId } = props
+  const [isMatrixExpanded, setIsMatrixExpanded] = React.useState(true)
 
-        <SchoolDataTable schools={schoolInsights} selectedSchoolId={selectedSchool?.id ?? null} onSelectSchool={onSelectSchool} onHoverSchool={onHoverSchool} scopeLabel={scopeLabel} />
+  return (
+    <div className="school-list-workspace">
+      <div className="overview-accordion" style={{ marginBottom: '1rem' }}>
+        <div className={`accordion-item ${isMatrixExpanded ? 'accordion-item--expanded' : ''}`}>
+          <button 
+            className="accordion-header" 
+            onClick={() => setIsMatrixExpanded(!isMatrixExpanded)}
+            aria-expanded={isMatrixExpanded}
+          >
+            <span className="accordion-icon">{isMatrixExpanded ? '−' : '+'}</span>
+            <span className="accordion-title">熱點分析矩陣 (鄉鎮分析)</span>
+          </button>
+          <div className="accordion-content">
+            <ScatterPlotChart
+              title="熱點分析矩陣 (鄉鎮分析)"
+              subtitle={`以 ${scopeLabel} 總學生數為分母計算佔比變動`}
+              xLabel="學生數"
+              yLabel={`${scopeLabel} 佔比變動率 (%)`}
+              points={sortedSchools.map((school) => {
+                const totalStudentsInScope = schoolInsights.reduce((sum, s) => sum + s.currentStudents, 0);
+                return {
+                  id: school.id,
+                  label: school.name,
+                  x: school.currentStudents,
+                  y: (school.delta / Math.max(totalStudentsInScope, 1)) * 100,
+                  size: school.currentStudents,
+                };
+              })}
+              activePointId={hoveredSchoolId ?? selectedSchool?.id ?? null}
+              onHoverPoint={onHoverSchool}
+              onSelectPoint={onSelectSchool}
+              className="matrix-chart-premium"
+              showHeader={false}
+            />
+          </div>
+        </div>
       </div>
-    </>
+
+      <SchoolDataTable schools={schoolInsights} selectedSchoolId={selectedSchool?.id ?? null} onSelectSchool={onSelectSchool} onHoverSchool={onHoverSchool} scopeLabel={scopeLabel} />
+    </div>
   )
 }
 
@@ -53,32 +68,34 @@ export function SchoolDetailFocus(props: {
 }) {
   const { selectedSchool, schoolPanelTitle, onSetWorkbenchView } = props
   return (
-    <>
-    <section className="dashboard-card school-detail-shell__topbar school-detail-shell__topbar--focus dashboard-card--premium" style={{ marginBottom: '1.25rem' }}>
-      <div className="dashboard-card__head">
-        <div className="panel-heading__stack">
-          <h3 className="dashboard-card__title">{selectedSchool?.name ?? schoolPanelTitle ?? '單校分析'}</h3>
-          <p className="dashboard-card__subtitle">資料註記</p>
-        </div>
-
-        <div className="dashboard-card__actions">
-          <div className="school-workbench-tabs school-workbench-tabs--focus" role="tablist" aria-label="校別概況分頁">
-            <button type="button" role="tab" aria-selected={false} className="chip" onClick={() => onSetWorkbenchView('list')}>
-              回到各校分析
-            </button>
-            <button type="button" role="tab" aria-selected={true} className="chip chip--active">
-              資料註記
-            </button>
+    <div className="school-focus-view">
+      <header className="school-focus-hero">
+        <div className="school-focus-hero__content">
+          <h2 className="school-focus-hero__title">{selectedSchool?.name ?? schoolPanelTitle ?? '單校分析'}</h2>
+          <div className="school-focus-hero__meta">
+            {selectedSchool?.countyName} · {selectedSchool?.townshipName} · {selectedSchool?.educationLevel}
           </div>
         </div>
-      </div>
-    </section>
+        
+        <div className="school-focus-hero__tabs" role="tablist">
+          <button type="button" role="tab" className="workbench-tab workbench-tab--back" onClick={() => onSetWorkbenchView('list')}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ width: 14, height: 14 }}>
+              <line x1="19" y1="12" x2="5" y2="12" />
+              <polyline points="12 19 5 12 12 5" />
+            </svg>
+            返回列表
+          </button>
+          <div className="workbench-tab workbench-tab--active">
+            資料註記
+          </div>
+        </div>
+      </header>
 
       {selectedSchool ? (
         <SchoolNotesView selectedSchool={selectedSchool} />
       ) : (
-        <div className="empty-state">請先點選地圖學校或表格列，右側就會切到單校分析。</div>
+        <div className="empty-state">請先從左側列表選擇學校，以進入深度分析模式。</div>
       )}
-    </>
+    </div>
   )
 }

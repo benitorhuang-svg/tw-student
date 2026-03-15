@@ -21,6 +21,7 @@ type SchoolDetailPanelProps = {
   onSetWorkbenchView: (view: SchoolWorkbenchView) => void
   onHoverSchool?: (schoolId: string | null) => void
   onSelectSchool: (schoolId: string | null) => void
+  hoveredSchoolId?: string | null
 }
 
 function SchoolDetailPanel({
@@ -36,6 +37,7 @@ function SchoolDetailPanel({
   onSetWorkbenchView,
   onHoverSchool,
   onSelectSchool,
+  hoveredSchoolId,
 }: SchoolDetailPanelProps) {
   const sortedSchools = useMemo(
     () => [...schoolInsights].sort((left, right) => right.currentStudents - left.currentStudents),
@@ -57,7 +59,15 @@ function SchoolDetailPanel({
       ) : (
         <div className="school-detail-shell">
           {panelMode === 'workspace' ? (
-            <SchoolDetailWorkspace scopeLabel={scopeLabel} selectedSchool={selectedSchool} schoolInsights={schoolInsights} sortedSchools={sortedSchools} onHoverSchool={onHoverSchool} onSelectSchool={onSelectSchool} />
+            <SchoolDetailWorkspace 
+              scopeLabel={scopeLabel} 
+              selectedSchool={selectedSchool} 
+              schoolInsights={schoolInsights} 
+              sortedSchools={sortedSchools} 
+              onHoverSchool={onHoverSchool} 
+              onSelectSchool={onSelectSchool}
+              hoveredSchoolId={hoveredSchoolId}
+            />
           ) : null}
 
           {panelMode === 'focus' ? (

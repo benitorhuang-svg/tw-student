@@ -30,7 +30,7 @@ function CountyTabPanel({
   return (
     <div className="dashboard-side-shell__content dashboard-side-shell__content--county">
       <div className="overview-accordion">
-        {derived.townshipRows.length > 0 && (
+        {derived.townshipRows.length > 0 ? (
           <div className={`accordion-item ${expandedSections.matrix ? 'accordion-item--expanded' : ''}`}>
             <button 
               className="accordion-header" 
@@ -38,11 +38,11 @@ function CountyTabPanel({
               aria-expanded={expandedSections.matrix}
             >
               <span className="accordion-icon">{expandedSections.matrix ? '−' : '+'}</span>
-              <span className="accordion-title">鄉鎮發展熱點分析矩陣</span>
+              <span className="accordion-title">熱點分析矩陣 (縣市分析)</span>
             </button>
             <div className="accordion-content">
               <ScatterPlotChart
-                title="鄉鎮發展熱點分析矩陣"
+                title="熱點分析矩陣 (縣市分析)"
                 subtitle={`以 ${derived.selectedCounty?.name} 總學生數為分母計算佔比變動`}
                 xLabel="學生數"
                 yLabel="縣市佔比變動率 (%)"
@@ -61,6 +61,8 @@ function CountyTabPanel({
               />
             </div>
           </div>
+        ) : (
+          <div className="empty-state">請先從地圖或全台排行選擇縣市，系統將自動載入該區域的鄉鎮分析資料。</div>
         )}
       </div>
     </div>

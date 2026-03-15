@@ -1,20 +1,20 @@
 import L from 'leaflet'
+import { formatStudents } from '../../lib/analytics'
 
 export const LIGHT_TILE_URL = 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png'
 export const DARK_TILE_URL = 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
 
-export function buildHoverPreviewHtml(title: string) {
-  return `
-    <div class="atlas-map-hover-card atlas-map-hover-card--name-only">
-      <strong>${title}</strong>
-    </div>
-  `
+export function buildHoverPreviewHtml(title: string, students?: number) {
+  const stats = (students != null && students > 0) ? ` <span class="atlas-map-hover-card__stats">${students.toLocaleString('zh-TW')}人</span>` : ''
+  return `<div class="atlas-map-hover-card"><span class="atlas-map-hover-card__name">${title}</span>${stats}</div>`
 }
 
-export function renderHoverPreview(title: string) {
+export function renderHoverPreview(title: string, students?: number) {
+  const stats = (students != null && students > 0) ? ` ${formatStudents(students)}人` : ''
   return (
-    <div className="atlas-map-hover-card atlas-map-hover-card--name-only">
-      <strong>{title}</strong>
+    <div className="atlas-map-hover-card">
+      <span className="atlas-map-hover-card__name">{title}</span>
+      <span className="atlas-map-hover-card__stats">{stats}</span>
     </div>
   )
 }

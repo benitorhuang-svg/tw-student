@@ -18,14 +18,19 @@ type AreaLookup = {
   townships: Record<string, TownshipCoord>
 }
 
+import { MAP_COUNTY_ZOOM } from '../../../lib/constants'
 import type { TownshipBoundaryCollection } from '../../../data/educationData'
+import { renderHoverPreview } from '../mapStyles'
+import type { RankingSummary } from '../../../lib/analytics'
 
 type AllTownshipLabelsProps = {
-  onSelectTownship: (townshipId: string) => void
+  onSelectTownship: (townshipId: string, options?: { skipTabSwitch?: boolean }) => void
   hiddenTownshipId?: string | null
   visibleTownshipIds?: string[]
   forceShowAll?: boolean
   townshipBoundaries?: TownshipBoundaryCollection | null
+  currentZoom?: number | null
+  townshipLookup?: Map<string, RankingSummary>
 }
 
 function makeTownshipLabelIcon(name: string) {
@@ -44,6 +49,8 @@ function AllTownshipLabels({
   visibleTownshipIds = [],
   forceShowAll = false,
   townshipBoundaries = null,
+  currentZoom = null,
+  townshipLookup = new Map(),
 }: AllTownshipLabelsProps) {
   const map = useMap()
   const [data, setData] = useState<TownshipCoord[] | null>(null)
@@ -75,8 +82,8 @@ function AllTownshipLabels({
 
   const visible = useMemo(() => {
     if (!data) return []
-    const zoom = map.getZoom()
-    if (zoom < 10) return []
+    const zoom = currentZoom ?? map.getZoom()
+    if (zoom < MAP_COUNTY_ZOOM) return []
     const bounds = map.getBounds()
     const visibleIdSet = visibleTownshipIds.length > 0 ? new Set(visibleTownshipIds) : null
 
@@ -112,24 +119,32 @@ function AllTownshipLabels({
 
     return inView
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [data, hiddenTownshipId, visibleTownshipIds, map.getZoom(), map.getBounds().toBBoxString(), forceShowAll])
+  }, [data, hiddenTownshipId, visibleTownshipIds, currentZoom, map.getZoom(), map.getBounds().toBBoxString(), forceShowAll])
 
   if (!visible.length) return null
 
   return (
     <>
-      {visible.map((t) => (
-        <Marker
-          key={t.townId}
-          position={[t.latitude, t.longitude]}
-          icon={makeTownshipLabelIcon(t.townName)}
-          eventHandlers={{ click: () => onSelectTownship(t.townId) }}
-        >
-          <Tooltip direction="top" offset={[0, -8]} className="atlas-map-tooltip">
-            {t.countyName} {t.townName}
-          </Tooltip>
-        </Marker>
-      ))}
+      {visible.map((t) => {
+        const summary = townshipLookup.get(t.townId)
+        return (
+          <Marker
+            key={t.townId}
+            position={[t.latitude, t.longitude]}
+            icon={makeTownshipLabelIcon(t.townName)}
+            eventHandlers={{ 
+              click: (e) => {
+                L.DomEvent.stopPropagation(e.originalEvent)
+                onSelectTownship(t.townId, { skipTabSwitch: true })
+              } 
+            }}
+          >
+            <Tooltip direction="top" offset={[0, -10]} className="atlas-map-tooltip atlas-map-tooltip--preview">
+              {renderHoverPreview(`${t.countyName} ${t.townName}`, summary?.students)}
+            </Tooltip>
+          </Marker>
+        )
+      })}
     </>
   )
 }

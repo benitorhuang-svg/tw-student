@@ -1,0 +1,41 @@
+/* Chart Design System: Color Tokens */
+
+:root {
+  /* 12-color series palette for charts */
+  --chart-series-0: #2a6f91;   /* cyan */
+  --chart-series-1: #2d8f6f;   /* jade */
+  --chart-series-2: #b88746;   /* brass */
+  --chart-series-3: #c96a4b;   /* coral */
+  --chart-series-4: #7c5cbf;   /* violet */
+  --chart-series-5: #38bdf8;   /* sky */
+  --chart-series-6: #34d399;   /* emerald */
+  --chart-series-7: #fbbf24;   /* amber */
+  --chart-series-8: #f87171;   /* rose */
+  --chart-series-9: #a78bfa;   /* lavender */
+  --chart-series-10: #22d3ee;  /* teal */
+  --chart-series-11: #fb923c;  /* tangerine */
+
+  /* Stacked Area series */
+  --chart-area-0: #38bdf8;
+  --chart-area-1: #34d399;
+  --chart-area-2: #fbbf24;
+  --chart-area-3: #f87171;
+  --chart-area-4: #a855f7;
+
+  /* Scatter quadrant backgrounds (Use semantic theme colors) */
+  --chart-quadrant-tl: color-mix(in srgb, var(--chart-series-0) 8%, transparent);
+  --chart-quadrant-tr: color-mix(in srgb, var(--chart-series-1) 8%, transparent);
+  --chart-quadrant-bl: color-mix(in srgb, var(--chart-series-8) 8%, transparent);
+  --chart-quadrant-br: color-mix(in srgb, var(--chart-series-2) 8%, transparent);
+
+  /* Tooltip surface - reference global semantic tokens */
+  --chart-tooltip-surface: var(--chart-tooltip-bg, #0f172a);
+  --chart-tooltip-stroke: var(--chart-border, rgba(255, 255, 255, 0.1));
+  --chart-tooltip-elevation: var(--shadow-md);
+
+  /* Typography Scale */
+  --chart-text-xs: 8px;
+  --chart-text-sm: 9px;
+  --chart-text-base: 10px;
+  --chart-text-md: 11px;
+}

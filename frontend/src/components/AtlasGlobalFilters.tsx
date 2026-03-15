@@ -104,19 +104,17 @@ export function AtlasLevelPill({
   startTransition,
 }: LevelPillProps) {
   return (
-    <div className="atlas-filter-pill atlas-filter-pill--level">
-      <select
-        className="filter-select"
-        value={educationLevel}
-        aria-label="學制"
-        onChange={(event) => startTransition(() => onSetEducationLevel(event.target.value as EducationLevelFilter))}
-      >
-        {EDUCATION_LEVEL_OPTIONS.map((option) => (
-          <option key={option.value} value={option.value}>
-            {option.label}
-          </option>
-        ))}
-      </select>
+    <div className="atlas-region-segmented">
+      {EDUCATION_LEVEL_OPTIONS.map((option) => (
+        <button
+          key={option.value}
+          type="button"
+          className={educationLevel === option.value ? 'region-btn active' : 'region-btn'}
+          onClick={() => startTransition(() => onSetEducationLevel(option.value as EducationLevelFilter))}
+        >
+          {option.label}
+        </button>
+      ))}
     </div>
   )
 }
@@ -133,19 +131,17 @@ export function AtlasTypePill({
   startTransition,
 }: TypePillProps) {
   return (
-    <div className="atlas-filter-pill atlas-filter-pill--type">
-      <select
-        className="filter-select"
-        value={managementType}
-        aria-label="公私立"
-        onChange={(event) => startTransition(() => onSetManagementType(event.target.value as ManagementTypeFilter))}
-      >
-        {MANAGEMENT_TYPE_OPTIONS.map((option) => (
-          <option key={option.value} value={option.value}>
-            {option.label}
-          </option>
-        ))}
-      </select>
+    <div className="atlas-region-segmented">
+      {MANAGEMENT_TYPE_OPTIONS.map((option) => (
+        <button
+          key={option.value}
+          type="button"
+          className={managementType === option.value ? 'region-btn active' : 'region-btn'}
+          onClick={() => startTransition(() => onSetManagementType(option.value as ManagementTypeFilter))}
+        >
+          {option.label}
+        </button>
+      ))}
     </div>
   )
 }

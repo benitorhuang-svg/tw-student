@@ -51,7 +51,7 @@ export function readInitialQueryState() {
     tab: isAtlasTab(tab) ? tab : 'overview',
     tabIsExplicit: params.has('tab'),
     forceTownshipLabels: forceTownshipLabels === 'true',
-    zoom: Number.isFinite(zoomRaw) && zoomRaw >= 7 && zoomRaw <= 13 ? zoomRaw : undefined,
+    zoom: Number.isFinite(zoomRaw) && zoomRaw >= 7 && zoomRaw <= 18 ? zoomRaw : undefined,
     lat: Number.isFinite(latRaw) && latRaw >= 21 && latRaw <= 26 ? latRaw : undefined,
     lon: Number.isFinite(lonRaw) && lonRaw >= 119 && lonRaw <= 123 ? lonRaw : undefined,
   }

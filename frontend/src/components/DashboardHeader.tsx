@@ -19,7 +19,7 @@ function DashboardHeader({
   const dateOnly = generatedAtLabel.split(' ')[0]
   return (
     <header className="dashboard-header">
-      <div className="dashboard-header__brand">
+      <div className="dashboard-header__left">
         <button
           type="button"
           className={theme === 'dark' ? 'theme-toggle theme-toggle--dark' : 'theme-toggle'}
@@ -29,11 +29,11 @@ function DashboardHeader({
         >
           <span className="theme-toggle__icon" aria-hidden="true">
             {theme === 'dark' ? (
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="20" height="20">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" width="18" height="18">
                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
               </svg>
             ) : (
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="20" height="20">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" width="18" height="18">
                 <circle cx="12" cy="12" r="5" />
                 <line x1="12" y1="1" x2="12" y2="3" />
                 <line x1="12" y1="21" x2="12" y2="23" />
@@ -47,22 +47,25 @@ function DashboardHeader({
             )}
           </span>
         </button>
-        <div>
+        <div className="dashboard-header__logo">
           <h1>Taiwan Education Atlas</h1>
         </div>
+      </div>
 
-        <button
-          type="button"
-          className="header-refresh-button"
-          onClick={() => void onRefreshData()}
-          disabled={isRefreshingData}
-        >
-          {isRefreshingData ? '資料更新中...' : '資料更新'}
-        </button>
-
-        <span className="header-last-update">
-          最後更新時間 {dateOnly}
-        </span>
+      <div className="dashboard-header__right">
+        <div className="header-status-group">
+          <button
+            type="button"
+            className="header-refresh-button"
+            onClick={() => void onRefreshData()}
+            disabled={isRefreshingData}
+          >
+            {isRefreshingData ? '正在同步' : '資料更新'}
+          </button>
+          <span className="header-last-update">
+            最後更新日: {dateOnly}
+          </span>
+        </div>
       </div>
     </header>
   )

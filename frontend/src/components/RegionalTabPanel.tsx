@@ -52,13 +52,11 @@ function RegionalTabPanel({
             aria-expanded={expandedSections.matrix}
           >
             <span className="accordion-icon">{expandedSections.matrix ? '−' : '+'}</span>
-            <span className="accordion-title">
-              {region === '全部' ? '全台四大區域規模與變動率' : `${region} 縣市規模與變動率`}
-            </span>
+            <span className="accordion-title">熱點分析矩陣 (區域分析)</span>
           </button>
           <div className="accordion-content">
             <ScatterPlotChart
-              title={region === '全部' ? '全台四大區域規模與變動率' : `${region} 縣市規模與變動率`}
+              title="熱點分析矩陣 (區域分析)"
               subtitle={region === '全部' ? '以全台總學生數為分母計算佔比變動' : `以 ${region} 總學生數為分母計算佔比變動`}
               xLabel="學生數"
               yLabel="區域佔比變動率 (%)"
@@ -67,7 +65,7 @@ function RegionalTabPanel({
                   id: item.id,
                   label: item.label,
                   x: item.students,
-                  y: (item.delta / Math.max(derived.globalNationalSummary.students, 1)) * 100,
+                  y: (item.delta / Math.max(derived.globalNationalSummary?.students ?? 0, 1)) * 100,
                   size: item.schools
                 })) :
                 derived.countySummaries
@@ -83,11 +81,12 @@ function RegionalTabPanel({
                     };
                   })
               }
-              activePointId={region === '全部' ? (region === '全部' ? null : region) : (hoveredCountyId ?? selectedCountyId)}
+              activePointId={hoveredCountyId ?? selectedCountyId}
               onHoverPoint={(id: string | null) => {
-                if (region === '全部') return;
                 setHoveredCountyId(id);
-                handlePrefetchCounty(id);
+                if (region !== '全部' && id) {
+                  handlePrefetchCounty(id);
+                }
               }}
               onSelectPoint={(id: string) => {
                 if (region === '全部') {

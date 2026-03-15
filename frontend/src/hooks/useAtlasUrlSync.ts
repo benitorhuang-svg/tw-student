@@ -88,15 +88,15 @@ export function useAtlasUrlSync({
     if (activeTab !== 'overview') params.set('tab', activeTab)
     else params.delete('tab')
 
-    if (mapZoom != null) params.set('zoom', String(mapZoom))
+    if (mapZoom != null && Number.isFinite(mapZoom)) params.set('zoom', String(Math.round(mapZoom)))
     else params.delete('zoom')
 
     if (forceTownshipLabels) params.set('forceTownshipLabels', 'true')
     else params.delete('forceTownshipLabels')
 
-    if (mapLat != null && mapLon != null) {
-      params.set('lat', mapLat.toFixed(4))
-      params.set('lon', mapLon.toFixed(4))
+    if (mapLat != null && mapLon != null && Number.isFinite(mapLat) && Number.isFinite(mapLon)) {
+      params.set('lat', mapLat.toFixed(5))
+      params.set('lon', mapLon.toFixed(5))
     } else {
       params.delete('lat')
       params.delete('lon')
@@ -104,7 +104,11 @@ export function useAtlasUrlSync({
 
     const nextSearch = params.toString()
     const nextUrl = nextSearch ? `${window.location.pathname}?${nextSearch}` : window.location.pathname
-    window.history.replaceState({}, '', nextUrl)
+    
+    // Only update if the URL actually changed to prevent history bloat
+    if (window.location.search.substring(1) !== nextSearch) {
+      window.history.replaceState({}, '', nextUrl)
+    }
   }, [
     activeTab,
     activeYear,

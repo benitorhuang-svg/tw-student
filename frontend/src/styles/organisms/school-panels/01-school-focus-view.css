@@ -1,0 +1,174 @@
+/* School Focus Hero & Navigation */
+.school-focus-view {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem;
+    animation: fadeIn 0.4s ease-out;
+}
+
+.school-focus-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background: var(--surface-card);
+    border: 1px solid var(--border-strong);
+    border-radius: 20px;
+    box-shadow: var(--shadow-premium);
+}
+
+.school-focus-hero__title {
+    margin: 0 0 0.25rem 0;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+}
+
+.school-focus-hero__meta {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.school-focus-hero__tabs {
+    display: flex;
+    gap: 0.5rem;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 4px;
+    border-radius: 12px;
+}
+
+.workbench-tab {
+    padding: 8px 14px;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.workbench-tab--back {
+    background: transparent;
+    color: var(--text-secondary);
+}
+
+.workbench-tab--back:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+}
+
+.workbench-tab--active {
+    background: var(--brand-primary);
+    color: var(--text-inverse);
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+}
+
+/* School Notes Panel */
+.school-notes-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.school-notes-intro {
+    padding: 0 0.5rem;
+}
+
+.school-notes-intro p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.school-notes-quick-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.quick-stat-item {
+    padding: 1.25rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-subtle);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.quick-stat-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--border-strong);
+    transform: translateY(-2px);
+}
+
+.quick-stat-item__label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.quick-stat-item__value {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    font-weight: 800;
+    font-family: var(--font-heading);
+}
+
+.note-stack {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.data-note {
+    padding: 1rem;
+    border-radius: 12px;
+    border-left: 4px solid;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.data-note--warning {
+    background: rgba(251, 191, 36, 0.1);
+    border-color: var(--brand-warning);
+    border-left-color: var(--brand-warning);
+}
+
+.data-note--error {
+    background: rgba(239, 68, 68, 0.1);
+    border-color: var(--brand-danger);
+    border-left-color: var(--brand-danger);
+}
+
+.data-note--info {
+    background: rgba(56, 189, 248, 0.1);
+    border-color: var(--brand-primary);
+    border-left-color: var(--brand-primary);
+}
+
+.data-note strong {
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.data-note span {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

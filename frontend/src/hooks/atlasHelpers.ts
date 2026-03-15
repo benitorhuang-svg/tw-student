@@ -4,7 +4,6 @@ import {
   type EducationLevelFilter,
   type ManagementTypeFilter,
   type DataNote,
-  type RegionGroupFilter,
 } from '../data/educationData'
 import type { AtlasTab } from './useAtlasQueryState'
 import type { InvestigationItem, InvestigationFilter, SavedComparisonScenario } from './types'
@@ -157,19 +156,14 @@ export function classifyInvestigation(item: InvestigationItem): InvestigationFil
 }
 
 export function buildDesktopTabItems(
-  region: RegionGroupFilter,
   selectedCounty: { shortLabel: string } | null,
   selectedTownshipSummary: { label: string } | null,
   selectedSchool: { name: string } | null,
 ): Array<{ id: AtlasTab; label: string }> {
-  const items: Array<{ id: AtlasTab; label: string }> = [
+  return [
     { id: 'overview', label: '全台總覽' },
-    { id: 'regional', label: region === '全部' ? '區域分析' : `${region} 區域分析` },
+    { id: 'county', label: `縣市分析${selectedCounty ? ` (${selectedCounty.shortLabel})` : ''}` },
+    { id: 'schools', label: `鄉鎮分析${selectedTownshipSummary ? ` (${selectedTownshipSummary.label})` : ''}` },
+    { id: 'school-focus', label: `校別概況${selectedSchool ? ` (${selectedSchool.name})` : ''}` }
   ]
-  if (selectedCounty) {
-    items.push({ id: 'county', label: `${selectedCounty.shortLabel} 縣市分析` })
-    items.push({ id: 'schools', label: selectedTownshipSummary ? `${selectedTownshipSummary.label} 各校分析` : '鄉鎮各校分析' })
-    if (selectedSchool) items.push({ id: 'school-focus', label: `${selectedSchool.name} 校別概況` })
-  }
-  return items
 }

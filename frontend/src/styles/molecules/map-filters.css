@@ -1,0 +1,123 @@
+/* Map Floating Filters Molecule */
+
+.map-floating-filters {
+  position: absolute;
+  bottom: 24px;
+  left: 12px;
+  z-index: 1000;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.map-floating-filters__stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+  pointer-events: auto;
+}
+
+.map-floating-tools {
+  display: flex;
+  align-items: center;
+}
+
+.map-zoom-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1px; /* Very thin gap for a joined look */
+  background: var(--map-overlay-bg);
+  backdrop-filter: blur(var(--map-overlay-blur));
+  border: 1px solid var(--map-overlay-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-premium);
+}
+
+.map-zoom-btn {
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.map-zoom-btn:hover {
+  background: var(--surface-active);
+  color: var(--brand-primary);
+}
+
+.map-zoom-btn:first-child {
+  border-bottom: 1px solid var(--map-overlay-border);
+}
+
+.map-zoom-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.map-floating-filters__group {
+  display: flex;
+  align-items: center;
+  background: var(--map-overlay-bg);
+  backdrop-filter: blur(var(--map-overlay-blur));
+  border: 1px solid var(--map-overlay-border);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-premium);
+  padding: 2px 4px;
+}
+
+.map-floating-filters__group--playback {
+  padding: 4px 10px;
+}
+
+.atlas-region-segmented {
+  display: flex;
+  gap: 2px;
+  background: var(--map-overlay-bg);
+  backdrop-filter: blur(var(--map-overlay-blur));
+  border: 1px solid var(--map-overlay-border);
+  border-radius: var(--radius-pill);
+  padding: 2px;
+  box-shadow: var(--shadow-premium);
+}
+
+.atlas-slim-player {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  padding: 0 8px;
+  height: 30px;
+  width: fit-content;
+}
+
+.player-mini-year {
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.player-mini-steppers {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+/* Theme Overrides */
+[data-theme='light'] .map-floating-filters__group,
+[data-theme='light'] .atlas-region-segmented {
+  background: var(--map-overlay-bg);
+  border-color: var(--map-overlay-border);
+}

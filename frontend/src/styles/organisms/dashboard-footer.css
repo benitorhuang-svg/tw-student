@@ -1,10 +1,76 @@
-.footer-note{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:6px 16px;font-size:.66rem;color:var(--palette-ink-soft);flex-shrink:0;background:linear-gradient(180deg,rgba(255,255,255,.42),rgba(255,255,255,.28));border-top:1px solid rgba(55,80,106,.1)}
-.footer-note--official{font-size:.7rem}
-.footer-note__left,.footer-note__right{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.footer-refresh-cluster{display:flex;align-items:flex-start;gap:8px;flex-wrap:wrap}
-.footer-sources__label{color:rgba(55,80,106,.7)}
-.footer-sources{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.footer-governance-pill{margin-right:14px;padding-right:14px;border-right:1px solid rgba(55,80,106,0.15);border-radius:0;}
-.footer-sources a{color:var(--palette-ink);text-decoration:none}
-.footer-sources a:hover{color:var(--palette-cyan);text-decoration:underline}
-.footer-refresh-status { color: var(--palette-teal); }
+/* Premium Dashboard Footer Styling */
+
+.footer-note {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 6px 20px;
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+    background: var(--surface-glass, rgba(15, 23, 42, 0.6));
+    backdrop-filter: blur(20px);
+    border-top: 1px solid var(--border-subtle);
+    z-index: 100;
+}
+
+.footer-note--official {
+    font-weight: 500;
+}
+
+.footer-note__left, .footer-note__right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-sources__label {
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.footer-sources {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-sources a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid transparent;
+}
+
+.footer-sources a:hover {
+    color: var(--brand-primary);
+    border-bottom-color: var(--brand-primary);
+}
+
+.footer-governance-pill {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-subtle);
+    padding: 4px 12px;
+    border-radius: var(--radius-sm, 8px);
+    color: var(--text-primary);
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.footer-governance-pill:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--brand-primary);
+}
+
+.footer-governance-pill--active {
+    background: var(--brand-primary);
+    border-color: var(--brand-primary);
+    color: #fff;
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+}
+
+.footer-refresh-status {
+    color: var(--brand-success);
+    font-weight: 600;
+    font-family: var(--font-mono);
+}

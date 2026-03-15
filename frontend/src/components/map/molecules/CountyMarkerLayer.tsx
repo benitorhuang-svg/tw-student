@@ -12,6 +12,7 @@ interface CountyMarkerLayerProps {
   currentMapZoom: number | null
   activeCountyId: string | null
   onSelectCounty: (countyId: string, options?: { skipTabSwitch?: boolean }) => void
+  showMarkers?: boolean
 }
 
 export function CountyMarkerLayer({
@@ -21,6 +22,7 @@ export function CountyMarkerLayer({
   currentMapZoom,
   activeCountyId,
   onSelectCounty,
+  showMarkers = true,
 }: CountyMarkerLayerProps) {
   const map = useMap()
   const [bounds, setBounds] = useState(map.getBounds())
@@ -163,6 +165,8 @@ export function CountyMarkerLayer({
 
   const effectiveOffsets = getInterpolatedOffsetsForZoom(currentMapZoom)
 
+  if (!showMarkers && !activeCountyId) return null
+
   return (
     <>
       {visibleCounties.map((county) => {
@@ -177,10 +181,15 @@ export function CountyMarkerLayer({
             key={`county-marker-${county.id}`}
             position={adjustedCenter}
             icon={renderScopeMarkerIcon(county.shortLabel, county.students, growthChoroplethColor(county.deltaRatio), 54, 'county')}
-            eventHandlers={{ click: () => onSelectCounty(county.id) }}
+            eventHandlers={{ 
+              click: (e) => {
+                L.DomEvent.stopPropagation(e.originalEvent)
+                onSelectCounty(county.id)
+              } 
+            }}
           >
             <Tooltip direction="top" offset={[0, -10]} className="atlas-map-tooltip atlas-map-tooltip--preview">
-              {renderHoverPreview(county.name)}
+              {renderHoverPreview(county.name, county.students)}
             </Tooltip>
           </Marker>
         )

@@ -1,8 +1,8 @@
 import { useMemo } from 'react'
-
 import type { CountyBoundaryCollection, TownshipBoundaryCollection } from '../../data/educationData'
 import type { CountySummary, RankingSummary } from '../../lib/analytics'
 import type { SchoolMapPoint } from './types'
+import { computeLayerVisibility } from './mapVisibilityAtoms'
 
 export function useMapComputedState(
   counties: CountySummary[],
@@ -16,9 +16,6 @@ export function useMapComputedState(
   currentMapZoom?: number | null,
   _currentMapCenter?: [number, number] | null,
 ) {
-  // `_currentMapCenter` is intentionally unused today but kept in the signature
-  // so calling code can opt into center-aware logic later without changing the
-  // hook signature.
   void _currentMapCenter
 
   const activeCounty = counties.find((c) => c.id === activeCountyId) ?? null
@@ -47,29 +44,7 @@ export function useMapComputedState(
   }, [townshipBoundaries])
 
   const zoom = currentMapZoom ?? 7
-
-  // =========================================================================
-  // Google Maps–style zoom-driven visibility rules (spec story 17)
-  //
-  // Key principles:
-  //   1. Upper layers never vanish — they just step back (like Google Maps)
-  //   2. No special-case filtering for any county (嘉市 etc.)
-  //   3. This is the SINGLE source of truth — no override branches below
-  //
-  // | Zoom   | Counties | Townships | Schools |
-  // |--------|----------|-----------|---------|
-  // | 7–8    | ✔        |           |         |
-  // | 9–10   | ✔        | ✔ (10+)   |         |
-  // | 11–12  | ✔        | ✔         |         |
-  // | 13+    | ✔        | ✔         | ✔       |
-  // =========================================================================
-  const showCountyMarkers = true // always visible — upper layer never hides
-  const showTownshipMarkers = zoom >= 10
-  // schools become visible one zoom level sooner – begin at 12 instead
-  let showSchoolMarkers = zoom >= 12 && schoolPoints.length > 0
-
-  // Always allow an explicit school selection to surface its marker
-  if (selectedSchoolId) showSchoolMarkers = true
+  const visibility = computeLayerVisibility(zoom, schoolPoints.length > 0, !!selectedSchoolId)
 
   return {
     activeCounty,
@@ -78,8 +53,6 @@ export function useMapComputedState(
     countyCenterLookup,
     townshipCenterLookup,
     countyAtCenterId: null as string | null,
-    showCountyMarkers,
-    showTownshipMarkers,
-    showSchoolMarkers,
+    ...visibility,
   }
 }

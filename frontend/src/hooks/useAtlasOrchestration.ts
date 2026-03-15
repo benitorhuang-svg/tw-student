@@ -73,7 +73,7 @@ export function useAtlasOrchestration(input: OrchestrationInput) {
     setSelectedCountyId, setSelectedTownshipId, setSelectedSchoolId,
     setMapResetToken, setActiveTab, startTransition, copyFeedback, scenarioFeedback,
     educationData, loadObservation,
-    tabIsExplicitFromQuery, forceTownshipLabels,
+    forceTownshipLabels,
   } = input
 
   const { summaryDataset, countyDetailCache, countyBucketCache, townshipBoundaryCache, countyDetailError, clearCountyDetailError } = educationData
@@ -107,20 +107,7 @@ export function useAtlasOrchestration(input: OrchestrationInput) {
 
   // If a school is already selected, only auto-switch to school-focus when
   // the user is already in a non-overview context.
-  // This preserves `tab=overview` even when `school=` is present in the URL.
-  const tabExplicitRef = useRef(tabIsExplicitFromQuery)
-  useEffect(() => {
-    // Clear the explicit tab flag after first mount so subsequent user interactions
-    // can still auto-switch tabs.
-    if (tabExplicitRef.current) {
-      tabExplicitRef.current = false
-      return
-    }
-
-    if (selectedSchoolId && activeTab !== 'overview') {
-      setActiveTab('school-focus', 0)
-    }
-  }, [selectedSchoolId, activeTab, setActiveTab])
+  // No auto-redirect logic here anymore to allow manual tab switching
 
   useAtlasTopPrefetch({
     summaryDataset, selectedCountyId, activeYear, educationLevel,
@@ -139,9 +126,13 @@ export function useAtlasOrchestration(input: OrchestrationInput) {
     ? createSavedComparisonScenario(derived.activeScenarioSnapshot)
     : null
 
+  // ── UI Flow Logic: Selection Hierarchy Completion ──
+  // Hierarchy completion is now handled atomically within handleSchoolSelect 
+  // and handleSearch in scenarioActions to ensure UI consistency.
+
   const scenarioActions = useAtlasScenarioActions({
     summaryDataset, activeYear, educationLevel, managementType, region,
-    selectedCountyId, selectedTownshipId, comparisonCountyIds, comparisonScenarioName,
+    selectedCountyId, selectedTownshipId, selectedSchoolId, comparisonCountyIds, comparisonScenarioName,
     favoriteScenarios,
     activeScenarioSnapshot: derived.activeScenarioSnapshot,
     filteredAnomalies: derived.filteredAnomalies,
@@ -155,49 +146,53 @@ export function useAtlasOrchestration(input: OrchestrationInput) {
     startTransition, copyFeedback, scenarioFeedback,
   })
 
-  // ── School code auto-navigation ──
+  // ── School code & Name auto-navigation (GMap Search Logic) ──
   const lastCodeNavRef = useRef<string>('')
   useEffect(() => {
-    const code = deferredSearchText.trim()
-    if (!/^\d{4,}$/.test(code)) {
-      lastCodeNavRef.current = ''
-      return
-    }
-    if (code === lastCodeNavRef.current) return
+    const query = deferredSearchText.trim()
+    if (query.length < 2 || query === lastCodeNavRef.current) return
+    
+    lastCodeNavRef.current = query
     const index = summaryDataset?.schoolCodeIndex
     if (!index) return
-    const entry = index[code]
-    if (!entry) return
-    lastCodeNavRef.current = code
+
     startTransition(() => {
-      const nextCountyId = entry.countyId ?? entry.countyCode ?? null
-      if (selectedCountyId !== nextCountyId) {
-        setSelectedCountyId(nextCountyId)
+      // 1. Try numeric code match first (High precision)
+      if (/^\d{4,}$/.test(query)) {
+        const entry = index[query]
+        if (entry) {
+          const nextCountyId = entry.countyId ?? entry.countyCode ?? null
+          const nextTownshipId = entry.townshipId ?? entry.townCode ?? null
+          setSelectedCountyId(nextCountyId)
+          setRegion('全部')
+          setSelectedTownshipId(nextTownshipId)
+          setSelectedSchoolId(entry.schoolIds?.[0] ?? query)
+          setActiveTab('school-focus', 0)
+          return
+        }
       }
-      setRegion('全部')
-      setSelectedTownshipId(null)
-      setSelectedSchoolId(entry.schoolIds?.[0] ?? code)
+
+      // 2. Try fuzzy name match (Discoverability)
+      // We look for partial matches in the school index if the query looks like a name
+      if (query.length >= 2 && !/^\d+$/.test(query)) {
+        const matches = Object.values(index).filter(entry => 
+          entry.name?.includes(query) || (entry.schoolIds?.[0]?.includes(query))
+        )
+        
+        if (matches.length === 1) {
+          const entry = matches[0]
+          const nextCountyId = entry.countyId ?? entry.countyCode ?? null
+          const nextTownshipId = entry.townshipId ?? entry.townCode ?? null
+          setSelectedCountyId(nextCountyId)
+          setRegion('全部')
+          setSelectedTownshipId(nextTownshipId)
+          setSelectedSchoolId(entry.schoolIds?.[0] ?? query)
+          setActiveTab('school-focus', 0)
+        }
+        // Note: If multiple matches, we let the derived state handle the list display
+      }
     })
-    // setActiveTab('school-focus', 0)
-  }, [deferredSearchText, summaryDataset, selectedCountyId, startTransition, setSelectedCountyId, setSelectedTownshipId, setSelectedSchoolId, setRegion, setActiveTab])
-
-  /* ── UI Flow Orchestration: Auto-tab synchronization disabled as requested ──
-  const lastSelectedSchoolId = useRef(selectedSchoolId)
-  const lastSelectedTownshipId = useRef(selectedTownshipId)
-  const lastSelectedCountyId = useRef(selectedCountyId)
-
-  useEffect(() => {
-    // 1. School Focus: if a school was JUST selected (it was null/different, now truthy)
-    if (selectedSchoolId && selectedSchoolId !== lastSelectedSchoolId.current) {
-      setActiveTab('school-focus', 0)
-    }
-    // 2. Schools List: if no school selected, but a township was JUST selected
-    else if (!selectedSchoolId && selectedTownshipId && selectedTownshipId !== lastSelectedTownshipId.current) {
-      setActiveTab('schools', 0)
-    }
-    // ... (rest of logic)
-  }, [selectedSchoolId, selectedTownshipId, selectedCountyId, setActiveTab, region])
-  */
+  }, [deferredSearchText, summaryDataset, startTransition, setSelectedCountyId, setSelectedTownshipId, setSelectedSchoolId, setRegion])
 
   return { derived, scenarioActions, activeScenarioSnapshot }
 }

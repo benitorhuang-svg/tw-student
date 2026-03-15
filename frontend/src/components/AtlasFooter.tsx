@@ -19,7 +19,7 @@ const SOURCE_LINKS = [
   },
 ]
 
-function AtlasFooter({ refreshStatus, onToggleGovernance, isGovernanceOpen }: AtlasFooterProps) {
+function AtlasFooter({ onToggleGovernance, isGovernanceOpen }: Omit<AtlasFooterProps, 'refreshStatus'>) {
   return (
     <footer className="footer-note footer-note--official">
       <div className="footer-note__left">
@@ -36,7 +36,7 @@ function AtlasFooter({ refreshStatus, onToggleGovernance, isGovernanceOpen }: At
         </div>
       </div>
       <div className="footer-note__right">
-        {refreshStatus ? <span className="footer-refresh-status">{refreshStatus}</span> : null}
+        {/* Refresh status hidden as requested */}
       </div>
     </footer>
   )

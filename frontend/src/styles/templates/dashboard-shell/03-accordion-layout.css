@@ -1,0 +1,26 @@
+/* Accordion Structural Layout */
+.overview-accordion {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.accordion-item {
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0;
+}
+
+.accordion-item--expanded .accordion-content {
+    max-height: 2000px;
+    opacity: 1;
+    padding: 0;
+}

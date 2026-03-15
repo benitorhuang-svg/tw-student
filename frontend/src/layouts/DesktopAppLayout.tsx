@@ -7,7 +7,7 @@ import DashboardHeader from '../components/DashboardHeader'
 import DataGovernanceFlyout from '../components/DataGovernanceFlyout'
 import type { useAtlasDerivedState } from '../hooks/useAtlasDerivedState'
 import type { useAtlasScenarioActions } from '../hooks/useAtlasScenarioActions'
-import type { AcademicYear, CountySchoolAtlasDataset, EducationLevelFilter, ManagementTypeFilter, RegionGroupFilter } from '../data/educationData'
+import type { AcademicYear, CountyBoundaryCollection, CountyBucketDataset, CountyDetailDataset, CountySchoolAtlasDataset, EducationLevelFilter, ManagementTypeFilter, RegionGroupFilter, TownshipBoundaryCollection } from '../data/educationData'
 import type { AtlasTab } from '../hooks/useAtlasQueryState'
 import type { SavedComparisonScenario, InvestigationFilter } from '../hooks/types'
 import type { AtlasTheme } from '../lib/constants'
@@ -21,6 +21,7 @@ type DesktopAppLayoutProps = {
   setShowGovernancePanel: (fn: (prev: boolean) => boolean) => void
   activeYear: AcademicYear
   summaryDataset: EducationSummaryDataset
+  countyBoundaries: CountyBoundaryCollection
   educationLevel: EducationLevelFilter
   managementType: ManagementTypeFilter
   region: RegionGroupFilter
@@ -51,6 +52,9 @@ type DesktopAppLayoutProps = {
   countySchoolAtlasError: string | null
   selectedCountyId: string | null
   selectedTownshipId: string | null
+  countyDetailCache: Record<string, CountyDetailDataset>
+  countyBucketCache: Record<string, CountyBucketDataset>
+  townshipBoundaryCache: Record<string, TownshipBoundaryCollection>
   countySchoolAtlasCache: Record<string, CountySchoolAtlasDataset>
   schoolWorkbenchView: 'list' | 'analysis' | 'notes'
   onSetSchoolWorkbenchView: (view: 'list' | 'analysis' | 'notes') => void
@@ -103,7 +107,6 @@ function DesktopAppLayout(props: DesktopAppLayoutProps) {
         }
         footer={
           <AtlasFooter
-            refreshStatus={props.refreshStatus}
             onToggleGovernance={() => props.setShowGovernancePanel((c) => !c)}
             isGovernanceOpen={props.showGovernancePanel}
           />

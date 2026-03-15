@@ -43,10 +43,80 @@
   /* Map Specific */
   --map-panel-bg: #04101a;
   --map-canvas-bg: #091826;
+  --map-overlay-bg: rgba(8, 17, 31, 0.76);
+  --map-overlay-border: rgba(255, 255, 255, 0.12);
+  --map-overlay-blur: 16px;
+  --map-tooltip-bg: rgba(15, 23, 42, 0.95);
+  --map-tooltip-color: #f8fafc;
 }
 
+/* --- MODERN PREMIUM TOOLTIPS (Global Overrides) --- */
+.leaflet-tooltip,
+.atlas-map-tooltip,
+.atlas-map-tooltip--preview {
+    background: rgba(15, 23, 42, 0.85) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 999px !important;
+    padding: 6px 14px !important; /* Default padding for simple text tooltips */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3) !important;
+    font-size: 0.88rem !important;
+    font-weight: 500 !important;
+    white-space: nowrap !important;
+    opacity: 1 !important;
+    z-index: 10000 !important;
+}
+
+/* If the tooltip uses our rich card, it handles its own internal padding */
+.leaflet-tooltip:has(.atlas-map-hover-card),
+.atlas-map-tooltip:has(.atlas-map-hover-card) {
+    padding: 0 !important;
+}
+
+.leaflet-tooltip::before,
+.atlas-map-tooltip::before {
+    display: none !important;
+}
+
+.atlas-map-hover-card {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    padding: 6px 16px !important;
+    gap: 10px !important;
+    white-space: nowrap !important;
+}
+
+.atlas-map-hover-card__name {
+    font-weight: 700 !important;
+    color: #ffffff !important;
+}
+
+.atlas-map-hover-card__stats {
+    font-weight: 400 !important;
+    color: rgba(255, 255, 255, 0.75) !important;
+    font-size: 0.82rem !important;
+    border-left: 1px solid rgba(255,255,255,0.2);
+    padding-left: 10px;
+}
+
+/* Remove unexpected outlines/rectangles from map interactive features */
+.leaflet-interactive {
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent;
+}
+
+svg.leaflet-zoom-animated path {
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+
 [data-theme='light'] {
-  /* Surfaces */
+  /* ... existing light tokens ... */
   --bg-app: #f1f5f9;
   --bg-gradient: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
   
@@ -66,13 +136,18 @@
   --text-muted: #94a3b8;
   --text-inverse: #ffffff;
   
-  /* Brand Colors (Keep shared or adjust for contrast) */
+  /* Brand Colors */
   --brand-primary: #0ea5e9;
   --accent-glow: rgba(14, 165, 233, 0.15);
 
   /* Map Specific */
   --map-panel-bg: #e2e8f0;
   --map-canvas-bg: #f1f5f9;
+  --map-overlay-bg: rgba(255, 255, 255, 0.85);
+  --map-overlay-border: rgba(0, 0, 0, 0.08);
+  --map-overlay-blur: 12px;
+  --map-tooltip-bg: rgba(15, 23, 42, 0.9);
+  --map-tooltip-color: #ffffff;
 }
 
 * {

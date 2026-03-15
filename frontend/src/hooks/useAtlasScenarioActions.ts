@@ -24,6 +24,7 @@ type ScenarioActionsArgs = {
   region: RegionGroupFilter
   selectedCountyId: string | null
   selectedTownshipId: string | null
+  selectedSchoolId: string | null
   comparisonScenarioName: string
   comparisonCountyIds?: string[]
   favoriteScenarios: SavedComparisonScenario[]
@@ -59,6 +60,7 @@ export function useAtlasScenarioActions({
   region,
   selectedCountyId,
   selectedTownshipId,
+  selectedSchoolId,
   comparisonScenarioName,
   favoriteScenarios,
   activeScenarioSnapshot,
@@ -131,8 +133,8 @@ export function useAtlasScenarioActions({
       clearCountyDetailError()
     })
 
-    if (!options?.skipTabSwitch) {
-      // Automatic tab switching is now handled by the orchestration effect
+    if (!shouldResetCounty && !options?.skipTabSwitch) {
+      setActiveTab('county', 0)
     }
   }
 
@@ -147,6 +149,9 @@ export function useAtlasScenarioActions({
       setSelectedSchoolId(null)
       clearCountyDetailError()
     })
+    
+    // Handled by orchestrator
+    setActiveTab('county', 0)
   }
 
   const handleTownshipSelect = (townshipId: string, options?: { skipTabSwitch?: boolean }) => {
@@ -157,9 +162,36 @@ export function useAtlasScenarioActions({
       setSelectedSchoolId(null)
     })
 
-    if (!options?.skipTabSwitch) {
-      // Automatic tab switching is now handled by the orchestration effect
+    if (!shouldResetTownship && !options?.skipTabSwitch) {
+      setActiveTab('schools', 0)
     }
+  }
+
+  const handleSchoolSelect = (schoolId: string | null, options?: { skipTabSwitch?: boolean }) => {
+    const shouldResetSchool = selectedSchoolId === schoolId
+    const nextId = shouldResetSchool ? null : schoolId
+
+    startTransition(() => {
+      setSelectedSchoolId(nextId)
+      
+      // Atomic Hierarchy Completion: Ensure parents are set in the SAME transition
+      if (nextId && summaryDataset?.schoolCodeIndex) {
+        // Find entry where schoolIds includes this specific level ID
+        const entry = Object.values(summaryDataset.schoolCodeIndex).find(e => 
+          e.schoolIds?.includes(nextId)
+        )
+        if (entry) {
+          const cid = entry.countyId ?? entry.countyCode ?? null
+          const tid = entry.townshipId ?? entry.townCode ?? null
+          if (cid) setSelectedCountyId(cid)
+          if (tid) setSelectedTownshipId(tid)
+        }
+      }
+
+      if (nextId && !options?.skipTabSwitch) {
+        setActiveTab('school-focus', 0)
+      }
+    })
   }
 
   const handleResetScope = () => {
@@ -170,20 +202,28 @@ export function useAtlasScenarioActions({
       setSelectedSchoolId(null)
       clearCountyDetailError()
       setMapResetToken((current) => current + 1)
+      setActiveTab('overview', 0)
     })
   }
 
-  /** Breadcrumb navigation: depth 0 = 全台, 1 = 縣市 */
+  /** Breadcrumb navigation: 0=National, 1=County, 2=Township/SchoolList */
   const handleNavigateScope = (depth: number) => {
     if (depth === 0) {
       handleResetScope()
-    } else if (depth === 1 && selectedCountyId) {
-      startTransition(() => {
+      return
+    }
+
+    startTransition(() => {
+      if (depth === 1) {
         setSelectedTownshipId(null)
         setSelectedSchoolId(null)
-      })
-      clearCountyDetailError()
-    }
+        clearCountyDetailError()
+        setActiveTab('county', 0)
+      } else if (depth === 2) {
+        setSelectedSchoolId(null)
+        setActiveTab('schools', 0)
+      }
+    })
   }
 
   const toggleComparisonCounty = (countyId: string) => {
@@ -244,6 +284,7 @@ export function useAtlasScenarioActions({
     handleCountySelect,
     ensureCountySelected,
     handleTownshipSelect,
+    handleSchoolSelect,
     handleResetScope,
     handleNavigateScope,
     toggleComparisonCounty,

@@ -72,11 +72,21 @@ export function CountyBoundaryLayer({
         const properties = feature.properties as CountyBoundaryProperties
         const summary = countyLookup.get(properties.countyId) ?? null
         if (summary && !showMarkers) {
-          layer.bindTooltip(buildHoverPreviewHtml(summary.name), previewTipOpts)
+          layer.bindTooltip(buildHoverPreviewHtml(summary.name, summary.students), previewTipOpts)
         }
         layer.on({
-          click: () => onSelectCounty(properties.countyId, { skipTabSwitch: true }),
-          mouseover: () => {
+          click: (e: L.LeafletMouseEvent) => {
+            L.DomEvent.stopPropagation(e.originalEvent)
+            onSelectCounty(properties.countyId, { skipTabSwitch: true })
+          },
+          dblclick: (e: L.LeafletMouseEvent) => {
+            L.DomEvent.stopPropagation(e.originalEvent)
+            onSelectCounty(properties.countyId) // Full drill-down on double click
+          },
+          mouseover: (e: L.LeafletMouseEvent) => {
+            if (e.target.setStyle) {
+              e.target.setStyle({ cursor: 'pointer' })
+            }
             setHoveredFeatureId(properties.countyId)
             onHoverCounty(properties.countyId)
             layer.openTooltip?.()

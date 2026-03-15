@@ -26,6 +26,8 @@ function AtlasTabs({ activeTab, items, onSelectTab }: AtlasTabsProps) {
         left: activeEl.offsetLeft,
         opacity: 1,
       })
+    } else {
+      setIndicatorStyle(prev => ({ ...prev, opacity: 0 }))
     }
   }, [activeTab, items])
 

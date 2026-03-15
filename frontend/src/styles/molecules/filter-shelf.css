@@ -1,0 +1,109 @@
+/* Filter Shelf Molecules */
+
+.filter-shelf {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  pointer-events: auto;
+  position: relative;
+}
+
+.filter-shelf__toggle {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--map-overlay-bg);
+  backdrop-filter: blur(var(--map-overlay-blur));
+  border: 1px solid var(--map-overlay-border);
+  box-shadow: var(--shadow-premium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-primary);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+.filter-shelf__toggle:hover {
+  background: var(--surface-active);
+  transform: scale(1.05);
+  border-color: var(--brand-primary);
+}
+
+.filter-shelf__toggle--active {
+  background: var(--brand-primary);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);
+}
+
+.filter-shelf__toggle--modified {
+  border-color: var(--brand-primary);
+  background: var(--map-overlay-bg);
+}
+
+.filter-shelf__dot {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 10px;
+  height: 10px;
+  background: var(--brand-primary);
+  border-radius: 50%;
+  border: 2px solid var(--surface-main);
+  animation: shelf-dot-pulse 2s infinite;
+}
+
+@keyframes shelf-dot-pulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.7); }
+  70% { transform: scale(1.1); box-shadow: 0 0 0 6px rgba(56, 189, 248, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(56, 189, 248, 0); }
+}
+
+.filter-shelf__content {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: left center; /* Expand from left to right */
+  opacity: 0;
+  transform: translateX(-10px) scale(0.95);
+  pointer-events: none;
+  max-width: 0;
+  z-index: 5;
+}
+
+.filter-shelf--open .filter-shelf__content {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  pointer-events: auto;
+  max-width: 600px; /* Limit expansion */
+}
+
+.map-floating-filters__stack {
+  align-items: flex-start;
+  pointer-events: none;
+}
+
+.map-floating-filters__stack * {
+  pointer-events: auto;
+}
+
+.filter-shelf--horizontal {
+  flex-direction: row;
+}
+
+.filter-shelf--horizontal .filter-shelf__content {
+  margin-left: 4px;
+}
+
+/* Special styling for the shelf icons */
+.filter-shelf__toggle svg {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2.2;
+}
+
+

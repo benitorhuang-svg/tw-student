@@ -30,7 +30,7 @@ export function TownshipBoundaryLayer({
 }: TownshipBoundaryLayerProps) {
   const previewTipOpts = { 
     direction: 'top' as const, 
-    offset: [0, -8] as [number, number], 
+    offset: [0, -10] as [number, number], 
     className: 'atlas-map-tooltip atlas-map-tooltip--preview', 
     opacity: 1 
   }
@@ -64,11 +64,21 @@ export function TownshipBoundaryLayer({
         const properties = feature.properties as TownshipBoundaryProperties
         const summary = townshipLookup.get(properties.townId) ?? null
         if (summary && !showMarkers) {
-          layer.bindTooltip(buildHoverPreviewHtml(summary.label), previewTipOpts)
+          layer.bindTooltip(buildHoverPreviewHtml(summary.label, summary.students), previewTipOpts)
         }
         layer.on({
-          click: () => onSelectTownship(properties.townId, { skipTabSwitch: true }),
-          mouseover: () => {
+          click: (e: L.LeafletMouseEvent) => {
+            L.DomEvent.stopPropagation(e.originalEvent)
+            onSelectTownship(properties.townId, { skipTabSwitch: true })
+          },
+          dblclick: (e: L.LeafletMouseEvent) => {
+            L.DomEvent.stopPropagation(e.originalEvent)
+            onSelectTownship(properties.townId) // Full drill-down
+          },
+          mouseover: (e: L.LeafletMouseEvent) => {
+            if (e.target.setStyle) {
+              e.target.setStyle({ cursor: 'pointer' })
+            }
             setHoveredFeatureId(properties.townId)
             layer.openTooltip?.()
           },

@@ -4,7 +4,7 @@ type MapBreadcrumbProps = {
 }
 
 function MapBreadcrumb({ scopePath, onNavigate }: MapBreadcrumbProps) {
-  if (scopePath.length <= 1) return null
+  if (scopePath.length === 0) return null
 
   return (
     <nav className="map-breadcrumb" aria-label="地圖路徑">

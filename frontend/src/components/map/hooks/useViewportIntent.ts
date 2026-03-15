@@ -1,0 +1,140 @@
+import { useCallback } from 'react'
+import L from 'leaflet'
+import type { GeoJsonObject } from 'geojson'
+import type { 
+  CountyBoundaryCollection, 
+  RegionGroupFilter, 
+  TownshipBoundaryCollection 
+} from '../../../data/educationData'
+import type { SchoolMapPoint } from '../types'
+import {
+  MAP_DEFAULT_CENTER,
+  MAP_DEFAULT_ZOOM,
+  MAP_COUNTY_ZOOM,
+  MAP_TOWNSHIP_ZOOM,
+  MAP_MAX_ZOOM,
+  MAP_FOCUS_SCHOOL_ZOOM,
+} from '../../../lib/constants'
+
+export type ViewportIntent = 
+  | { id: string; type: 'flyTo'; center: [number, number]; zoom: number }
+  | { id: string; type: 'snapTo'; center: [number, number]; zoom: number }
+  | { id: string; type: 'noop' }
+
+export function useViewportIntent(
+  countyBoundaries: CountyBoundaryCollection,
+  townshipBoundaries: TownshipBoundaryCollection | null,
+  activeCountyId: string | null,
+  activeTownshipId: string | null,
+  selectedSchoolPoint: SchoolMapPoint | null,
+  activeRegion: RegionGroupFilter,
+  currentZoom: number,
+  lastAppliedIntentId: string,
+  pendingInitialCenter: [number, number] | null,
+  pendingInitialZoom: number | null,
+  lastAutoSelectAttempt: { countyId: string | null; time: number | null },
+  mapResetToken: number
+) {
+  const AUTO_SELECT_DETECTION_WINDOW_MS = 1500
+
+  return useCallback((): ViewportIntent => {
+    if (pendingInitialCenter) {
+      const center = pendingInitialCenter
+      const zoom =
+        pendingInitialZoom ??
+        (activeTownshipId
+          ? MAP_MAX_ZOOM
+          : townshipBoundaries
+          ? MAP_TOWNSHIP_ZOOM
+          : activeCountyId
+          ? MAP_TOWNSHIP_ZOOM
+          : activeRegion === '全部'
+          ? MAP_DEFAULT_ZOOM
+          : 9)
+
+      return {
+        id: `initial:${center[0]}:${center[1]}:${zoom}`,
+        type: 'flyTo',
+        center,
+        zoom,
+      }
+    }
+
+    if (selectedSchoolPoint) {
+      const id = `school:${selectedSchoolPoint.id}`
+      const zoom = pendingInitialZoom ?? MAP_FOCUS_SCHOOL_ZOOM
+      return {
+        id,
+        type: 'flyTo',
+        center: [selectedSchoolPoint.latitude, selectedSchoolPoint.longitude],
+        zoom,
+      }
+    }
+
+    if (activeTownshipId && townshipBoundaries) {
+      const townshipFeature = townshipBoundaries.features.find(
+        (f) => f.properties?.townId === activeTownshipId,
+      )
+      if (townshipFeature) {
+        const bounds = L.geoJSON(townshipFeature as GeoJsonObject).getBounds()
+        if (bounds.isValid()) {
+          const center = bounds.getCenter()
+          return {
+            id: `township:${activeTownshipId}`,
+            type: 'flyTo',
+            center: [center.lat, center.lng],
+            zoom: Math.max(currentZoom, MAP_TOWNSHIP_ZOOM),
+          }
+        }
+      }
+    }
+
+    if (activeCountyId) {
+      const now = Date.now()
+      const autoSelectedRecently =
+        lastAutoSelectAttempt.countyId === activeCountyId &&
+        lastAutoSelectAttempt.time != null &&
+        now - lastAutoSelectAttempt.time < AUTO_SELECT_DETECTION_WINDOW_MS
+
+      if (autoSelectedRecently) {
+        return { id: lastAppliedIntentId, type: 'noop' }
+      }
+
+      const countyFeature = countyBoundaries.features.find(
+        (feature) => feature.properties.countyId === activeCountyId,
+      )
+      if (countyFeature) {
+        return {
+          id: `county:${activeCountyId}`,
+          type: 'flyTo',
+          center: [countyFeature.properties.centerLatitude, countyFeature.properties.centerLongitude],
+          zoom: MAP_COUNTY_ZOOM,
+        }
+      }
+    }
+
+    if (!activeCountyId && !activeTownshipId && !selectedSchoolPoint && activeRegion === '全部') {
+      return {
+        id: `national:${mapResetToken}`,
+        type: 'snapTo',
+        center: MAP_DEFAULT_CENTER,
+        zoom: MAP_DEFAULT_ZOOM,
+      }
+    }
+
+    return { id: lastAppliedIntentId, type: 'noop' }
+  }, [
+    activeCountyId,
+    activeRegion,
+    activeTownshipId,
+    countyBoundaries,
+    currentZoom,
+    selectedSchoolPoint,
+    townshipBoundaries,
+    pendingInitialCenter,
+    pendingInitialZoom,
+    lastAutoSelectAttempt,
+    lastAppliedIntentId,
+    mapResetToken
+  ])
+}

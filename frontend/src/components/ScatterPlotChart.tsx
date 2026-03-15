@@ -87,7 +87,7 @@ function ScatterPlotChart({
 
   const minX = 0
   const rawMaxX = Math.max(...valuesX, 0)
-  const maxX = Math.max(Math.ceil(rawMaxX / 50000) * 50000, 100000)
+  const maxX = Math.max(rawMaxX * 1.3, 10)
 
   const avgX = valuesX.reduce((a, b) => a + b, 0) / valuesX.length
 
@@ -238,12 +238,14 @@ function ScatterPlotChart({
                 width={tooltipWidth} 
                 height={tooltipHeight} 
                 rx="6" 
+                fill="var(--chart-tooltip-fill, #ffffff)"
               />
               <text 
                 className="chart-svg-tooltip__title" 
                 x={tooltipX + tooltipWidth / 2} 
                 y={tooltipY + 14} 
                 textAnchor="middle"
+                fill="var(--chart-tooltip-ink, #000000)"
               >
                 {activePoint.label}
               </text>

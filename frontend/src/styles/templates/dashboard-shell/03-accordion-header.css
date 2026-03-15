@@ -1,0 +1,37 @@
+/* Accordion Interactive Header & Icons */
+.accordion-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    background: transparent;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    text-align: left;
+}
+
+.accordion-header:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.accordion-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 900;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.accordion-item--expanded .accordion-icon {
+    background: #0ea5e9;
+    color: #ffffff;
+}

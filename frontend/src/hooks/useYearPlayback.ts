@@ -19,7 +19,7 @@ export function useYearPlayback(
           return summaryDataset.years[nextIndex] ?? currentYear
         })
       })
-    }, 1800)
+    }, 1000)
 
     return () => window.clearInterval(timer)
   }, [isActive, setActiveYear, startTransition, summaryDataset])
