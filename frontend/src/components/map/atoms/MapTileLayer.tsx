@@ -7,8 +7,8 @@ interface MapTileLayerProps {
 
 export function MapTileLayer({ theme }: MapTileLayerProps) {
   const tileUrl = theme === 'dark' ? DARK_TILE_URL : LIGHT_TILE_URL
-  const tileOpacity = theme === 'dark' ? 0.32 : 1
-  
+  const tileOpacity = theme === 'dark' ? 0.75 : 1
+
   return (
     <TileLayer
       key={tileUrl}

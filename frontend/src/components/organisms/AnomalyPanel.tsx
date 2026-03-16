@@ -1,5 +1,5 @@
-import { formatAcademicYear, formatStudents } from '../lib/analytics'
-import type { InvestigationItem, InvestigationFilter, DataNote } from '../hooks/types'
+import { formatAcademicYear, formatStudents } from '../../lib/analytics'
+import type { InvestigationItem, InvestigationFilter, DataNote } from '../../hooks/types'
 
 type AnomalyPanelProps = {
   filteredAnomalies: InvestigationItem[]

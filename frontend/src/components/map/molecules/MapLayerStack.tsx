@@ -4,6 +4,8 @@ import { CountyMarkerLayer } from './CountyMarkerLayer'
 import AllTownshipLabels from './AllTownshipLabels'
 import VisibleSchoolMarkers from './VisibleSchoolMarkers'
 import VectorTileBoundaryLayer from './VectorTileBoundaryLayer'
+import { StarMarker } from '../atoms/StarMarker'
+import { buildSchoolMarkerAriaLabel, renderSchoolHoverCard } from '../atoms/MapHoverCard'
 import type { 
   CountyBoundaryCollection, 
   TownshipBoundaryCollection,
@@ -23,8 +25,9 @@ type LayerStackProps = {
   hoveredTownshipId: string | null
   highlightedCountyId: string | null
   highlightedTownshipId: string | null
-  highlightedSchoolId: string | null
+   highlightedSchoolId: string | null
   selectedSchoolId: string | null
+  selectedSchoolPoint: SchoolMapPoint | null
   countyBoundaries: CountyBoundaryCollection
   townshipBoundaries: TownshipBoundaryCollection | null
   allTownshipBoundaries: TownshipBoundaryCollection | null
@@ -55,6 +58,7 @@ export function MapLayerStack(props: LayerStackProps) {
   const {
     theme, activeCountyId, activeTownshipId, hoveredCountyId, hoveredTownshipId,
     highlightedCountyId, highlightedTownshipId, highlightedSchoolId, selectedSchoolId,
+    selectedSchoolPoint,
     countyBoundaries, townshipBoundaries, allTownshipBoundaries, schoolPoints,
     countyBuckets, countyLookup, townshipLookup, allTownshipRows,
     visibleTownshipRows, countyCenterLookup, showCountyMarkers, showTownshipMarkers,
@@ -67,6 +71,7 @@ export function MapLayerStack(props: LayerStackProps) {
     <>
       {vectorTileBaseUrl ? (
         <VectorTileBoundaryLayer
+          theme={theme}
           baseUrl={vectorTileBaseUrl}
           onError={onVectorTileError}
           activeCountyId={activeCountyId}
@@ -77,6 +82,8 @@ export function MapLayerStack(props: LayerStackProps) {
           onSelectTownship={onSelectTownship}
           countyLookup={countyLookup}
           townshipLookup={new Map(allTownshipRows.map((t) => [t.id, t]))}
+          showCounties={showCountyMarkers}
+          showTownships={showTownshipMarkers}
         />
       ) : (
         <>
@@ -84,6 +91,7 @@ export function MapLayerStack(props: LayerStackProps) {
             countyBoundaries={countyBoundaries}
             countyLookup={countyLookup}
             activeCountyId={activeCountyId}
+            activeTownshipId={activeTownshipId}
             hoveredFeatureId={hoveredCountyId}
             highlightedCountyId={highlightedCountyId}
             theme={theme}
@@ -92,7 +100,7 @@ export function MapLayerStack(props: LayerStackProps) {
             onHoverCounty={onHoverCounty}
             setHoveredFeatureId={setHoveredCountyId}
           />
-          {townshipBoundaries && (
+          {townshipBoundaries && showTownshipMarkers && (
             <TownshipBoundaryLayer
               data={townshipBoundaries}
               townshipLookup={townshipLookup}
@@ -120,12 +128,13 @@ export function MapLayerStack(props: LayerStackProps) {
 
       <AllTownshipLabels
         onSelectTownship={onSelectTownship}
-        hiddenTownshipId={activeTownshipId}
+        hiddenTownshipId={null}
         visibleTownshipIds={showTownshipMarkers ? visibleTownshipRows.map((r) => r.id) : []}
         forceShowAll={forceTownshipLabels}
         townshipBoundaries={allTownshipBoundaries}
         currentZoom={currentMapZoom}
         townshipLookup={townshipLookup}
+        selectedTownshipId={activeTownshipId}
       />
 
       {showSchoolMarkers && (
@@ -135,6 +144,19 @@ export function MapLayerStack(props: LayerStackProps) {
           selectedSchoolId={selectedSchoolId}
           highlightedSchoolId={highlightedSchoolId}
           onSelectSchool={onSelectSchool}
+        />
+      )}
+
+      {/* Global Selection Star Marker: Ensures star always shows even if school point is hidden by clustering or bounds */}
+      {selectedSchoolPoint && (
+        <StarMarker
+          position={[selectedSchoolPoint.latitude, selectedSchoolPoint.longitude]}
+          isSelected={true}
+          size={36}
+          color="#fbbf24"
+          ariaLabel={buildSchoolMarkerAriaLabel(selectedSchoolPoint)}
+          onActivate={() => onSelectSchool(selectedSchoolPoint.id)}
+          tooltipContent={renderSchoolHoverCard(selectedSchoolPoint)}
         />
       )}
     </>

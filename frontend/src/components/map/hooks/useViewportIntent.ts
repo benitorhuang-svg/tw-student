@@ -12,6 +12,7 @@ import {
   MAP_DEFAULT_ZOOM,
   MAP_COUNTY_ZOOM,
   MAP_TOWNSHIP_ZOOM,
+  MAP_TOWNSHIP_FOCUS_ZOOM,
   MAP_MAX_ZOOM,
   MAP_FOCUS_SCHOOL_ZOOM,
 } from '../../../lib/constants'
@@ -29,6 +30,7 @@ export function useViewportIntent(
   selectedSchoolPoint: SchoolMapPoint | null,
   activeRegion: RegionGroupFilter,
   currentZoom: number,
+  requestedZoom: number | null,
   lastAppliedIntentId: string,
   pendingInitialCenter: [number, number] | null,
   pendingInitialZoom: number | null,
@@ -62,7 +64,7 @@ export function useViewportIntent(
 
     if (selectedSchoolPoint) {
       const id = `school:${selectedSchoolPoint.id}`
-      const zoom = pendingInitialZoom ?? MAP_FOCUS_SCHOOL_ZOOM
+      const zoom = requestedZoom ?? pendingInitialZoom ?? MAP_FOCUS_SCHOOL_ZOOM
       return {
         id,
         type: 'flyTo',
@@ -83,13 +85,14 @@ export function useViewportIntent(
             id: `township:${activeTownshipId}`,
             type: 'flyTo',
             center: [center.lat, center.lng],
-            zoom: Math.max(currentZoom, MAP_TOWNSHIP_ZOOM),
+            zoom: requestedZoom ?? Math.max(currentZoom, MAP_TOWNSHIP_FOCUS_ZOOM),
           }
         }
       }
     }
 
     if (activeCountyId) {
+      const id = `county:${activeCountyId}`
       const now = Date.now()
       const autoSelectedRecently =
         lastAutoSelectAttempt.countyId === activeCountyId &&
@@ -97,7 +100,7 @@ export function useViewportIntent(
         now - lastAutoSelectAttempt.time < AUTO_SELECT_DETECTION_WINDOW_MS
 
       if (autoSelectedRecently) {
-        return { id: lastAppliedIntentId, type: 'noop' }
+        return { id, type: 'noop' }
       }
 
       const countyFeature = countyBoundaries.features.find(
@@ -105,10 +108,10 @@ export function useViewportIntent(
       )
       if (countyFeature) {
         return {
-          id: `county:${activeCountyId}`,
+          id,
           type: 'flyTo',
           center: [countyFeature.properties.centerLatitude, countyFeature.properties.centerLongitude],
-          zoom: MAP_COUNTY_ZOOM,
+          zoom: requestedZoom ?? MAP_COUNTY_ZOOM,
         }
       }
     }
@@ -116,7 +119,7 @@ export function useViewportIntent(
     if (!activeCountyId && !activeTownshipId && !selectedSchoolPoint && activeRegion === '全部') {
       return {
         id: `national:${mapResetToken}`,
-        type: 'snapTo',
+        type: 'flyTo',
         center: MAP_DEFAULT_CENTER,
         zoom: MAP_DEFAULT_ZOOM,
       }
@@ -129,12 +132,12 @@ export function useViewportIntent(
     activeTownshipId,
     countyBoundaries,
     currentZoom,
+    requestedZoom,
     selectedSchoolPoint,
     townshipBoundaries,
     pendingInitialCenter,
     pendingInitialZoom,
     lastAutoSelectAttempt,
-    lastAppliedIntentId,
     mapResetToken
   ])
 }

@@ -1,8 +1,8 @@
 import { useMemo } from 'react'
 
-import { SchoolDetailFocus, SchoolDetailWorkspace } from './SchoolDetailSections'
-import type { SchoolInsight } from '../lib/analytics'
-import type { SchoolWorkbenchView } from './schoolDetail.types'
+import { SchoolDetailFocus, SchoolDetailWorkspace } from '../SchoolDetailSections'
+import type { SchoolInsight } from '../../lib/analytics'
+import type { SchoolWorkbenchView } from '../schoolDetail.types'
 
 type ScopeSummaryLabel = {
   label: string

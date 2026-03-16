@@ -10,7 +10,7 @@ import { MapLayerStack } from '../molecules/MapLayerStack'
 import { useMapComputedState } from '../useMapComputedState'
 import { MapEvents } from '../atoms/MapEvents'
 import { MapFloatingFilters } from '../../molecules/MapFloatingFilters'
-import type { CountyBucketDataset, CountyBoundaryCollection, TownshipBoundaryCollection, AcademicYear, EducationLevelFilter, ManagementTypeFilter, RegionGroupFilter } from '../../../data/educationData'
+import type { CountyBucketDataset, CountyBoundaryCollection, TownshipBoundaryCollection, AcademicYear, EducationLevelFilter, ManagementTypeFilter, RegionGroupFilter, EducationSummaryDataset } from '../../../data/educationData'
 import type { CountySummary, RankingSummary } from '../../../lib/analytics.types'
 import type { SchoolMapPoint } from '../types'
 import type { AtlasTab } from '../../../hooks/useAtlasQueryState'
@@ -68,6 +68,7 @@ export type MapCanvasProps = {
   onSetManagementType: (type: ManagementTypeFilter) => void
   startTransition: TransitionStartFunction
   activeCountyName: string | null
+  summaryDataset?: EducationSummaryDataset | null
 }
 
 export default function MapCanvas(props: MapCanvasProps) {
@@ -87,7 +88,23 @@ export default function MapCanvas(props: MapCanvasProps) {
   const [openShelf, setOpenShelf] = useState<string | null>(null)
   const toggleShelf = (id: string) => setOpenShelf(prev => prev === id ? null : id)
 
-  const selectedSchool = selectedSchoolId ? schoolPoints.find((school) => school.id === selectedSchoolId) ?? null : null
+  let selectedSchool = selectedSchoolId ? schoolPoints.find((school) => school.id === selectedSchoolId) ?? null : null
+
+  // High-Precision fallback: Use global school index if point is not in current view/cache
+  if (!selectedSchool && selectedSchoolId && props.summaryDataset?.schoolCodeIndex) {
+    const entry = Object.values(props.summaryDataset.schoolCodeIndex).find(e =>
+      e.schoolIds?.includes(selectedSchoolId)
+    )
+    if (entry?.longitude && entry?.latitude) {
+      selectedSchool = {
+        id: selectedSchoolId,
+        name: entry.name,
+        latitude: entry.latitude,
+        longitude: entry.longitude,
+      } as SchoolMapPoint
+    }
+  }
+
   const [hoveredCountyId, setHoveredCountyId] = useState<string | null>(null)
   const [hoveredTownshipId, setHoveredTownshipId] = useState<string | null>(null)
 
@@ -111,6 +128,8 @@ export default function MapCanvas(props: MapCanvasProps) {
             minZoom={MAP_DEFAULT_ZOOM}
             maxZoom={MAP_MAX_ZOOM}
             zoomControl={false}
+            zoomSnap={0.1}
+            zoomDelta={0.5}
             className="atlas-map-canvas"
             attributionControl={false}
           >
@@ -118,9 +137,6 @@ export default function MapCanvas(props: MapCanvasProps) {
             {/* Zoom control is now integrated into MapFloatingFilters */}
             <MapEvents onBackgroundClick={() => {
               if (selectedSchoolId) onSelectSchool(null)
-              else if (activeTownshipId) onNavigateScope(1)
-              else if (activeCountyId) onNavigateScope(0)
-              else onNavigateScope(0)
             }} />
 
             <MapLayerStack
@@ -132,6 +148,7 @@ export default function MapCanvas(props: MapCanvasProps) {
               setHoveredTownshipId={setHoveredTownshipId}
               visibleTownshipRows={visibleTownshipRows}
               selectedSchoolId={selectedSchoolId}
+              selectedSchoolPoint={selectedSchool}
               vectorTileBaseUrl={vectorTileBaseUrl}
               onVectorTileError={props.onVectorTileError ?? (() => {})}
               onHoverCounty={props.onHoverCounty ?? (() => {})}

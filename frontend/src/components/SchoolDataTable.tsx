@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
-import { formatDelta, formatPercent, formatStudents, type SchoolInsight } from '../lib/analytics'
+import { formatPercent, type SchoolInsight } from '../lib/analytics'
+import SchoolTableRow from './molecules/SchoolTableRow'
 
 type SchoolSortKey =
   | 'name'
@@ -47,7 +48,7 @@ function compareSchoolRows(left: SchoolInsight, right: SchoolInsight, sortKey: S
     case 'status':
       return ((statusRank[left.status ?? '正常'] ?? 0) - (statusRank[right.status ?? '正常'] ?? 0)) * direction
     default:
-      return left[sortKey].localeCompare(right[sortKey], 'zh-Hant') * direction
+      return (left[sortKey] || '').localeCompare(right[sortKey] || '', 'zh-Hant') * direction
   }
 }
 
@@ -152,42 +153,15 @@ function SchoolDataTable({ schools, selectedSchoolId, onSelectSchool, onHoverSch
             </tr>
           </thead>
           <tbody>
-            {visibleSchools.map((school) => {
-              const isActive = school.id === selectedSchool?.id
-
-              return (
-                <tr
-                  key={school.id}
-                  className={isActive ? 'school-table__row school-table__row--active' : 'school-table__row'}
-                  onClick={() => onSelectSchool(school.id)}
-                  onMouseEnter={() => onHoverSchool?.(school.id)}
-                  onMouseLeave={() => onHoverSchool?.(null)}
-                  onKeyDown={(event) => {
-                    if (event.key === 'Enter' || event.key === ' ') {
-                      event.preventDefault()
-                      onSelectSchool(school.id)
-                    }
-                  }}
-                  tabIndex={0}
-                >
-                  <td>
-                    <strong>{school.name}</strong>
-                  </td>
-                  <td>{school.townshipName}</td>
-                  <td>{school.educationLevel}</td>
-                  <td>{school.managementType}</td>
-                  <td>{formatStudents(school.currentStudents)} 人</td>
-                  <td className={school.delta >= 0 ? 'school-table__delta school-table__delta--up' : 'school-table__delta school-table__delta--down'}>
-                    {formatDelta(school.delta)}
-                  </td>
-                  <td>
-                    <span className={school.status && school.status !== '正常' ? 'status-pill' : 'status-pill status-pill--normal'}>
-                      {school.status ?? '正常'}
-                    </span>
-                  </td>
-                </tr>
-              )
-            })}
+            {visibleSchools.map((school) => (
+              <SchoolTableRow
+                key={school.id}
+                school={school}
+                isActive={school.id === selectedSchool?.id}
+                onSelect={onSelectSchool}
+                onHover={onHoverSchool || (() => {})}
+              />
+            ))}
           </tbody>
         </table>
       </div>
@@ -202,7 +176,7 @@ function SchoolDataTable({ schools, selectedSchoolId, onSelectSchool, onHoverSch
 
       <div className="school-table-panel__footer">
         <span>顯示 {visibleSchools.length} / {sortedSchools.length} 所</span>
-        <span>點擊列可同步切到右側學校分析分頁</span>
+        <span>點擊列可同步地圖定位與更新分析狀態</span>
       </div>
     </section>
   )

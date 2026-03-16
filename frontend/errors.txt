@@ -1,0 +1,5 @@
+src/components/AtlasAnalysisPanel.tsx(15,40): error TS2307: Cannot find module './AnomalyPanel' or its corresponding type declarations.
+src/components/AtlasAnalysisPanel.tsx(16,45): error TS2307: Cannot find module './SchoolDetailPanel' or its corresponding type declarations.
+src/components/AtlasSidebar.tsx(11,40): error TS2307: Cannot find module './AnomalyPanel' or its corresponding type declarations.
+src/components/AtlasSidebar.tsx(12,45): error TS2307: Cannot find module './SchoolDetailPanel' or its corresponding type declarations.
+src/hooks/derived/useRegionalAnalytics.ts(8,3): error TS6196: 'CountySummaryRecord' is declared but never used.

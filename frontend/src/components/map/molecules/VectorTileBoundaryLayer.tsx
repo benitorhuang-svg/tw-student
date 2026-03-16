@@ -14,6 +14,7 @@ import {
 } from '../mapStyles'
 
 export type VectorTileBoundaryLayerProps = {
+  theme: 'light' | 'dark'
   baseUrl: string 
   onError?: () => void 
   activeCountyId: string | null
@@ -24,9 +25,12 @@ export type VectorTileBoundaryLayerProps = {
   onSelectTownship: (id: string, options?: { skipTabSwitch?: boolean }) => void
   countyLookup: Map<string, CountySummary>
   townshipLookup: Map<string, RankingSummary>
+  showCounties?: boolean
+  showTownships?: boolean
 }
 
 function VectorTileBoundaryLayer({
+  theme,
   baseUrl,
   onError,
   activeCountyId,
@@ -37,6 +41,8 @@ function VectorTileBoundaryLayer({
   onSelectTownship,
   countyLookup,
   townshipLookup,
+  showCounties = true,
+  showTownships = true,
 }: VectorTileBoundaryLayerProps) {
   const map = useMap()
   const tooltipRef = useRef<L.Tooltip | null>(null)
@@ -79,7 +85,7 @@ function VectorTileBoundaryLayer({
           const summary = countyLookup.get(props.countyId)
           if (!summary || summary.filteredOut) return { opacity: 0, fillOpacity: 0, weight: 0 }
           return {
-            color: 'rgba(0,0,0,0.15)',
+            color: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.15)',
             weight: 0.8,
             fillColor: choroplethColor(summary.students),
             fillOpacity: Math.min(0.12, choroplethOpacity(summary.students)),
@@ -96,7 +102,7 @@ function VectorTileBoundaryLayer({
           const summary = townshipLookup.get(props.townId)
           if (!summary) return { opacity: 0, fillOpacity: 0, weight: 0 }
           return {
-            color: 'rgba(0,0,0,0.1)',
+            color: theme === 'dark' ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.1)',
             weight: 0.6,
             fillColor: choroplethColor(summary.students),
             fillOpacity: Math.max(0.04, choroplethOpacity(summary.students) - 0.06),
@@ -116,10 +122,17 @@ function VectorTileBoundaryLayer({
       tooltipRef.current
         .setLatLng(e.latlng)
         .setContent(buildHoverPreviewHtml(name, students))
-        .addTo(map)
+      
+      if (!map.hasLayer(tooltipRef.current)) {
+        tooltipRef.current.addTo(map)
+      }
     }
 
-    const hideTip = () => { tooltipRef.current?.remove() }
+    const hideTip = () => { 
+      if (tooltipRef.current && map.hasLayer(tooltipRef.current)) {
+        tooltipRef.current.remove()
+      }
+    }
 
     countyLayer.on('mouseover', (e: any) => {
       const summary = countyLookup.get(e.layer.properties.countyId)
@@ -134,7 +147,7 @@ function VectorTileBoundaryLayer({
 
     townshipLayer.on('mouseover', (e: any) => {
       const summary = townshipLookup.get(e.layer.properties.townId)
-      if (summary) showTip(e, summary.label, summary.students)
+      if (summary) showTip(e, (summary as any).label ?? (summary as any).name, summary.students)
     })
     townshipLayer.on('mouseout', hideTip)
     townshipLayer.on('click', (e: any) => {
@@ -149,7 +162,25 @@ function VectorTileBoundaryLayer({
     }
   }, [map, baseUrl]) 
 
-  // 2. Dynamic styling updates (On state change) without re-adding layers
+  // 2. Dynamic visibility & styling updates
+  useEffect(() => {
+    const cLayer = countyLayerRef.current
+    const tLayer = townshipLayerRef.current
+    if (!cLayer || !tLayer) return
+
+    if (showCounties) {
+      if (!map.hasLayer(cLayer)) cLayer.addTo(map)
+    } else {
+      if (map.hasLayer(cLayer)) cLayer.remove()
+    }
+
+    if (showTownships) {
+      if (!map.hasLayer(tLayer)) tLayer.addTo(map)
+    } else {
+      if (map.hasLayer(tLayer)) tLayer.remove()
+    }
+  }, [map, showCounties, showTownships])
+
   useEffect(() => {
     const cLayer = countyLayerRef.current
     const tLayer = townshipLayerRef.current
@@ -157,22 +188,32 @@ function VectorTileBoundaryLayer({
 
     // Update County highlights
     countyLookup.forEach((summary, id) => {
-      const isHighlighted = id === highlightedCountyId || id === activeCountyId
+      const isHovered = id === highlightedCountyId
+      const isActive = id === activeCountyId
+      const isVisible = isHovered || isActive
       cLayer.setFeatureStyle(id, {
-        color: isHighlighted ? '#000000' : 'rgba(0,0,0,0.15)',
-        weight: isHighlighted ? 1.6 : 0.8,
-        fillOpacity: isHighlighted ? 0.2 : Math.min(0.12, choroplethOpacity(summary.students)),
+        color: isVisible ? (theme === 'dark' ? '#f8fafc' : '#000000') : (theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.15)'),
+        weight: isVisible ? 1.6 : 0.8,
+        fillColor: isActive ? (theme === 'dark' ? '#10b981' : '#10b981') : choroplethColor(summary.students),
+        fillOpacity: isActive ? (activeTownshipId ? 0 : (theme === 'dark' ? 0.4 : 0.25)) : isHovered ? 0.2 : Math.min(0.12, choroplethOpacity(summary.students)),
       })
     })
 
     // Update Township highlights
+    const zoom = map.getZoom()
     townshipLookup.forEach((summary, id) => {
-      const isHighlighted = id === highlightedTownshipId || id === activeTownshipId
+      const isHovered = id === highlightedTownshipId
+      const isActive = id === activeTownshipId
+      const isMarked = isHovered || isActive
+      // Strict visibility rule: hide if zoom < 11 unless explicitly highlighted
+      const isVisible = zoom >= 11 || isMarked
+      
       tLayer.setFeatureStyle(id, {
-        color: isHighlighted ? '#000000' : 'rgba(0,0,0,0.1)',
-        weight: isHighlighted ? 1.6 : 0.6,
-        fillColor: id === activeTownshipId ? '#cfe6d3' : choroplethColor(summary.students),
-        fillOpacity: isHighlighted ? 0.35 : Math.max(0.04, choroplethOpacity(summary.students) - 0.06),
+        color: isMarked ? (theme === 'dark' ? '#f8fafc' : '#000000') : (theme === 'dark' ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.1)'),
+        weight: isMarked ? 1.6 : 0.6,
+        fillColor: isActive ? '#10b981' : choroplethColor(summary.students),
+        opacity: isVisible ? 1 : 0,
+        fillOpacity: isVisible ? (isActive ? 0.35 : isHovered ? 0.25 : Math.max(0.04, choroplethOpacity(summary.students) - 0.06)) : 0,
       })
     })
   }, [activeCountyId, activeTownshipId, highlightedCountyId, highlightedTownshipId, countyLookup, townshipLookup])

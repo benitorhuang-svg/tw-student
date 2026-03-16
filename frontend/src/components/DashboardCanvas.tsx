@@ -1,19 +1,14 @@
-import { useState, useMemo } from 'react'
+import { } from 'react'
 import type { ReactNode, RefObject, TransitionStartFunction } from 'react'
 
-// Layout/System Components
-import AtlasTabs from './AtlasTabs'
-import CountyTabPanel from './CountyTabPanel'
-import RegionalTabPanel from './RegionalTabPanel'
-import SchoolDetailPanel from './SchoolDetailPanel'
+// Organisms (Atomic Design Level)
+import OverviewTabPanel from './organisms/OverviewTabPanel'
+import RegionalTabPanel from './organisms/RegionalTabPanel'
+import CountyTabPanel from './organisms/CountyTabPanel'
+import SchoolDetailPanel from './organisms/SchoolDetailPanel'
 
 // Molecules & Atoms
-import OverviewAccordion from './molecules/OverviewAccordion'
-import { 
-  OverviewMatrixSection, 
-  OverviewTrendSection, 
-  OverviewTreemapSection 
-} from './molecules/OverviewSections'
+import AtlasTabs from './AtlasTabs'
 
 // Types
 import type { AtlasTab } from '../hooks/useAtlasQueryState'
@@ -139,50 +134,7 @@ function DashboardCanvas({
   hoveredSchoolId,
   nationalEducationTrendSeries,
 }: DashboardCanvasProps) {
-  const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({
-    matrix: true,
-    trend: false,
-    treemap: false
-  })
-
-  const toggleSection = (id: string) => {
-    setExpandedSections(prev => ({ ...prev, [id]: !prev[id] }))
-  }
-
-  // Memoized derived data for charts
-  const matrixPoints = useMemo(() => derived.countyRankingRows.map((row) => ({
-    id: row.id,
-    label: row.label,
-    x: row.students,
-    y: (row.delta / Math.max(derived.globalNationalSummary?.students ?? 0, 1)) * 100,
-    size: row.schools,
-  })), [derived.countyRankingRows, derived.globalNationalSummary])
-
-  const treemapGroups = useMemo(() => {
-    const regions = ['北部', '中部', '南部', '東部', '離島']
-    const regionColors: Record<string, string> = {
-      '北部': '#3b82f6',
-      '中部': '#10b981',
-      '南部': '#f59e0b',
-      '東部': '#8b5cf6',
-      '離島': '#6366f1'
-    }
-    
-    return regions.map(reg => {
-      const counties = derived.countyRankingRows.filter(c => c.subLabel === reg)
-      return {
-        id: reg,
-        label: reg,
-        value: counties.reduce((sum, c) => sum + c.students, 0),
-        accentColor: regionColors[reg] || '#94a3b8',
-        children: counties.map(c => ({
-          id: c.id,
-          label: c.label,
-          value: c.students
-        }))
-      }
-    }).filter(g => g.value > 0)
-  }, [derived.countyRankingRows])
+  // DashboardCanvas is now primarily a shell orchestrating organisms
 
   return (
     <main className={`dashboard-canvas dashboard-canvas--${activeTab}`}>
@@ -199,33 +151,15 @@ function DashboardCanvas({
           />
 
           {activeTab === 'overview' && (
-            <div className="dashboard-side-shell__content dashboard-side-shell__content--overview">
-              <OverviewAccordion
-                expandedSections={expandedSections}
-                onToggleSection={toggleSection}
-                matrixSection={
-                  <OverviewMatrixSection
-                    points={matrixPoints}
-                    activePointId={hoveredCountyId ?? selectedCountyId}
-                    onHoverPoint={(id) => {
-                      setHoveredCountyId(id)
-                      handlePrefetchCounty(id)
-                    }}
-                    onSelectPoint={(id) => scenarioActions.handleCountySelect(id, { skipTabSwitch: true })}
-                  />
-                }
-                trendSection={
-                  <OverviewTrendSection series={nationalEducationTrendSeries} />
-                }
-                treemapSection={
-                  <OverviewTreemapSection
-                    groups={treemapGroups}
-                    activeLeafId={hoveredCountyId ?? selectedCountyId}
-                    onSelectLeaf={(id) => scenarioActions.handleCountySelect(id, { skipTabSwitch: true })}
-                  />
-                }
-              />
-            </div>
+            <OverviewTabPanel
+              derived={derived}
+              hoveredCountyId={hoveredCountyId}
+              selectedCountyId={selectedCountyId}
+              setHoveredCountyId={setHoveredCountyId}
+              handlePrefetchCounty={handlePrefetchCounty}
+              scenarioActions={scenarioActions}
+              nationalEducationTrendSeries={nationalEducationTrendSeries}
+            />
           )}
 
           {activeTab === 'regional' && (

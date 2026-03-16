@@ -23,6 +23,8 @@ type MapBoundsControllerProps = {
   initialLonFromUrl?: number | null
   onAutoSelectCounty?: (countyId: string) => void
   onHoverCounty?: (countyId: string | null) => void
+  currentMapZoom?: number | null
+  activeTab: string
 }
 
 function MapBoundsController({
@@ -37,9 +39,11 @@ function MapBoundsController({
   onMoveEnd,
   onAutoSelectCounty,
   onHoverCounty,
+  currentMapZoom = null,
   initialZoomFromUrl = null,
   initialLatFromUrl = null,
   initialLonFromUrl = null,
+  activeTab,
 }: MapBoundsControllerProps) {
   const map = useMap()
   const SIDEBAR_PADDING: L.PointExpression = [0, 0]
@@ -65,6 +69,14 @@ function MapBoundsController({
     }
   }, [mapResetToken])
 
+  // Clear initial refs if a school is selected, to ensure school focus takes priority
+  useEffect(() => {
+    if (selectedSchoolPoint) {
+      pendingInitialCenterRef.current = null
+      pendingInitialZoomRef.current = null
+    }
+  }, [selectedSchoolPoint])
+
   const viewportIntent = useViewportIntent(
     countyBoundaries,
     townshipBoundaries,
@@ -73,6 +85,7 @@ function MapBoundsController({
     selectedSchoolPoint,
     activeRegion,
     map.getZoom(),
+    currentMapZoom,
     lastAppliedIntentIdRef.current,
     pendingInitialCenterRef.current,
     pendingInitialZoomRef.current,
@@ -162,7 +175,7 @@ function MapBoundsController({
         })
       }
 
-      if (!activeCountyId && onAutoSelectCounty && Date.now() >= suppressAutoSelectUntil) {
+      if (activeTab !== 'overview' && !activeCountyId && onAutoSelectCounty && Date.now() >= suppressAutoSelectUntil) {
         try {
           const countyId = getNearestCountyId(c.lat, c.lng)
           if (countyId && countyId !== lastAutoSelectRef.current) {
@@ -175,7 +188,7 @@ function MapBoundsController({
     }
     map.on('moveend', handleMoveEnd)
     return () => { map.off('moveend', handleMoveEnd) }
-  }, [map, onMoveEnd, onAutoSelectCounty, getNearestCountyId, activeCountyId, suppressAutoSelectUntil, countyBoundaries, onHoverCounty])
+  }, [map, onMoveEnd, onAutoSelectCounty, getNearestCountyId, activeTab, activeCountyId, suppressAutoSelectUntil, countyBoundaries, onHoverCounty])
 
   return null
 }

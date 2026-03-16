@@ -12,55 +12,55 @@
   --radius-pill: 999px;
 
   /* --- Dynamic Tokens (Default to Dark) --- */
-  --bg-app: #04101a;
-  --bg-gradient: linear-gradient(180deg, #04101a 0%, #08111f 100%);
+  --bg-app: #020617;
+  --bg-gradient: radial-gradient(circle at 50% -10%, #0f172a 0%, #020617 100%);
   --sidebar-w: 420px;
 
   /* Surfaces */
-  --surface-main: rgba(15, 23, 42, 0.7);
-  --surface-active: rgba(30, 41, 59, 0.9);
-  --surface-glass: rgba(15, 23, 42, 0.6);
-  --surface-card: rgba(8, 17, 31, 0.88);
+  --surface-main: rgba(30, 41, 59, 0.45);
+  --surface-active: rgba(51, 65, 85, 0.85);
+  --surface-glass: rgba(15, 23, 42, 0.65);
+  --surface-card: rgba(15, 23, 42, 0.82);
   
   /* Borders & Shadows */
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-strong: rgba(255, 255, 255, 0.15);
-  --shadow-premium: 0 20px 50px rgba(0, 0, 0, 0.3);
+  --border-subtle: rgba(255, 255, 255, 0.05);
+  --border-strong: rgba(255, 255, 255, 0.12);
+  --shadow-premium: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
   
   /* Typography */
   --text-primary: #f8fafc;
   --text-secondary: #94a3b8;
   --text-muted: #64748b;
-  --text-inverse: #0f172a;
+  --text-inverse: #020617;
   
   /* Brand Colors */
   --brand-primary: #38bdf8;
   --brand-success: #10b981;
-  --brand-danger: #ef4444;
-  --brand-warning: #fbbf24;
-  --accent-glow: rgba(56, 189, 248, 0.3);
+  --brand-danger: #f43f5e;
+  --brand-warning: #f59e0b;
+  --accent-glow: rgba(56, 189, 248, 0.25);
 
   /* Map Specific */
-  --map-panel-bg: #04101a;
-  --map-canvas-bg: #091826;
-  --map-overlay-bg: rgba(8, 17, 31, 0.76);
-  --map-overlay-border: rgba(255, 255, 255, 0.12);
-  --map-overlay-blur: 16px;
-  --map-tooltip-bg: rgba(15, 23, 42, 0.95);
+  --map-panel-bg: #020617;
+  --map-canvas-bg: #020617;
+  --map-overlay-bg: rgba(15, 23, 42, 0.8);
+  --map-overlay-border: rgba(255, 255, 255, 0.1);
+  --map-overlay-blur: 20px;
+  --map-tooltip-bg: rgba(15, 23, 42, 0.98);
   --map-tooltip-color: #f8fafc;
 }
 
 /* --- MODERN PREMIUM TOOLTIPS (Global Overrides) --- */
-.leaflet-tooltip,
-.atlas-map-tooltip,
-.atlas-map-tooltip--preview {
-    background: rgba(15, 23, 42, 0.85) !important;
-    backdrop-filter: blur(8px) !important;
-    -webkit-backdrop-filter: blur(8px) !important;
-    color: #ffffff !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+.app-shell .leaflet-tooltip,
+.app-shell .atlas-map-tooltip,
+.app-shell .atlas-map-tooltip--preview {
+    background: var(--map-tooltip-bg) !important;
+    backdrop-filter: blur(var(--map-overlay-blur)) !important;
+    -webkit-backdrop-filter: blur(var(--map-overlay-blur)) !important;
+    color: var(--map-tooltip-color) !important;
+    border: 1px solid var(--map-overlay-border) !important;
     border-radius: 999px !important;
-    padding: 6px 14px !important; /* Default padding for simple text tooltips */
+    padding: 6px 14px !important; 
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3) !important;
     font-size: 0.88rem !important;
     font-weight: 500 !important;
@@ -91,14 +91,15 @@
 
 .atlas-map-hover-card__name {
     font-weight: 700 !important;
-    color: #ffffff !important;
+    color: var(--map-tooltip-color) !important;
 }
 
 .atlas-map-hover-card__stats {
     font-weight: 400 !important;
-    color: rgba(255, 255, 255, 0.75) !important;
+    color: var(--map-tooltip-color) !important;
+    opacity: 0.8;
     font-size: 0.82rem !important;
-    border-left: 1px solid rgba(255,255,255,0.2);
+    border-left: 1px solid var(--map-overlay-border);
     padding-left: 10px;
 }
 
@@ -113,6 +114,84 @@ svg.leaflet-zoom-animated path {
     stroke-linejoin: round;
 }
 
+/* --- Map Marker Animations --- */
+@keyframes atlas-pulse {
+    0% {
+        transform: scale(0.95);
+        opacity: 0.8;
+    }
+    70% {
+        transform: scale(1.15);
+        opacity: 0.3;
+    }
+    100% {
+        transform: scale(0.95);
+        opacity: 0.8;
+    }
+}
+
+.atlas-selected-school-pulse {
+    transform-origin: center;
+    transform-box: fill-box;
+    animation: atlas-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    pointer-events: none;
+}
+
+.atlas-school-marker-selected {
+    z-index: 1000 !important;
+}
+
+/* --- ATOMIC Star Marker --- */
+.atlas-star-marker-container {
+    background: transparent !important;
+    border: none !important;
+    overflow: visible !important; /* Crucial for floating out of bounds */
+}
+
+.atlas-star-marker-atom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.45));
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    pointer-events: auto;
+}
+
+.atlas-star-marker-atom.is-selected {
+    animation: 
+        atlas-star-entrance 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards,
+        atlas-star-floating 2.5s ease-in-out infinite alternate,
+        atlas-star-twinkle-gold 3s ease-in-out infinite alternate;
+}
+
+@keyframes atlas-star-entrance {
+    from {
+        transform: scale(0) rotate(-60deg) translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1.1) rotate(0deg) translateY(0); /* Align with center */
+        opacity: 1;
+    }
+}
+
+@keyframes atlas-star-floating {
+    from {
+        transform: scale(1.1) rotate(0deg) translateY(-4px);
+    }
+    to {
+        transform: scale(1.1) rotate(0deg) translateY(4px);
+    }
+}
+
+@keyframes atlas-star-twinkle-gold {
+    0% {
+        filter: drop-shadow(0 0 5px #fff) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.45));
+    }
+    100% {
+        filter: drop-shadow(0 0 15px #fbbf24) drop-shadow(0 4px 20px rgba(0, 0, 0, 0.6));
+    }
+}
 
 
 [data-theme='light'] {
@@ -146,8 +225,8 @@ svg.leaflet-zoom-animated path {
   --map-overlay-bg: rgba(255, 255, 255, 0.85);
   --map-overlay-border: rgba(0, 0, 0, 0.08);
   --map-overlay-blur: 12px;
-  --map-tooltip-bg: rgba(15, 23, 42, 0.9);
-  --map-tooltip-color: #ffffff;
+  --map-tooltip-bg: rgba(255, 255, 255, 0.95);
+  --map-tooltip-color: #0f172a;
 }
 
 * {

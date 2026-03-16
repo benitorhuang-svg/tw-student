@@ -3,20 +3,12 @@ import type { AtlasTheme } from '../lib/constants'
 type DashboardHeaderProps = {
   theme: AtlasTheme
   onToggleTheme: () => void
-  isRefreshingData: boolean
-  onRefreshData: () => Promise<void>
-  generatedAtLabel: string
 }
 
 function DashboardHeader({
   theme,
   onToggleTheme,
-  isRefreshingData,
-  onRefreshData,
-  generatedAtLabel,
 }: DashboardHeaderProps) {
-  // Extract just the date part if it's in YYYY/M/D HH:mm:ss format
-  const dateOnly = generatedAtLabel.split(' ')[0]
   return (
     <header className="dashboard-header">
       <div className="dashboard-header__left">
@@ -49,22 +41,6 @@ function DashboardHeader({
         </button>
         <div className="dashboard-header__logo">
           <h1>Taiwan Education Atlas</h1>
-        </div>
-      </div>
-
-      <div className="dashboard-header__right">
-        <div className="header-status-group">
-          <button
-            type="button"
-            className="header-refresh-button"
-            onClick={() => void onRefreshData()}
-            disabled={isRefreshingData}
-          >
-            {isRefreshingData ? '正在同步' : '資料更新'}
-          </button>
-          <span className="header-last-update">
-            最後更新日: {dateOnly}
-          </span>
         </div>
       </div>
     </header>

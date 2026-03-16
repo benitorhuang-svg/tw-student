@@ -60,6 +60,7 @@
     stroke: #38bdf8;
     stroke-width: 1.5;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    outline: none !important;
 }
 
 .matrix-chart-premium .scatter-chart__point:hover {
@@ -74,6 +75,7 @@
     stroke: #fff !important;
     stroke-width: 3;
     filter: drop-shadow(0 4px 15px rgba(245, 158, 11, 0.5)) !important;
+    outline: none !important;
 }
 
 .matrix-chart-premium .scatter-chart__axis {
@@ -111,4 +113,8 @@
     fill: var(--chart-tooltip-ink, #0f172a);
     font-size: 11px;
     font-weight: 700;
+}
+
+.chart-data-focusable {
+    outline: none !important;
 }

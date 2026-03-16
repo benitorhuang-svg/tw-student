@@ -13,6 +13,7 @@ interface CountyBoundaryLayerProps {
   highlightedCountyId: string | null
   theme: 'light' | 'dark'
   showMarkers: boolean
+  activeTownshipId: string | null
   onSelectCounty: (countyId: string, options?: { skipTabSwitch?: boolean }) => void
   onHoverCounty: (countyId: string | null) => void
   setHoveredFeatureId: (id: string | null) => void
@@ -24,17 +25,18 @@ export function CountyBoundaryLayer({
   activeCountyId,
   hoveredFeatureId,
   highlightedCountyId,
+  activeTownshipId,
   theme,
   showMarkers,
   onSelectCounty,
   onHoverCounty,
   setHoveredFeatureId,
 }: CountyBoundaryLayerProps) {
-  const previewTipOpts = { 
-    direction: 'top' as const, 
-    offset: [0, -8] as [number, number], 
-    className: 'atlas-map-tooltip atlas-map-tooltip--preview', 
-    opacity: 1 
+  const previewTipOpts = {
+    direction: 'top' as const,
+    offset: [0, -8] as [number, number],
+    className: 'atlas-map-tooltip atlas-map-tooltip--preview',
+    opacity: 1
   }
 
   return (
@@ -64,8 +66,8 @@ export function CountyBoundaryLayer({
         return {
           color: isActive || isHovered ? highlightStroke : baseStroke,
           weight: isActive || isHovered ? highlightWeight : baseWeight,
-          fillColor: isActive ? '#b8d7be' : choroplethColor(summary.students),
-          fillOpacity: isActive ? 0.24 : Math.min(0.12, choroplethOpacity(summary.students)),
+          fillColor: isActive ? (theme === 'dark' ? '#10b981' : '#10b981') : choroplethColor(summary.students),
+          fillOpacity: isActive ? (activeTownshipId ? 0 : (theme === 'dark' ? 0.4 : 0.25)) : Math.min(0.12, choroplethOpacity(summary.students)),
         }
       }}
       onEachFeature={(feature: Feature, layer: L.Layer) => {

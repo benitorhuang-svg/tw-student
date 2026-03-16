@@ -41,9 +41,19 @@ function VisibleSchoolMarkers({
     }
   })
 
+  // Sort clustered points to ensure selected school is rendered on top
+  const sortedClusteredPoints = useMemo(() => {
+    if (!selectedSchoolId) return clusteredPoints;
+    return [...clusteredPoints].sort((a, b) => {
+      const aHasSelected = a.schools?.some(s => s.id === selectedSchoolId) ? 1 : 0;
+      const bHasSelected = b.schools?.some(s => s.id === selectedSchoolId) ? 1 : 0;
+      return aHasSelected - bHasSelected;
+    });
+  }, [clusteredPoints, selectedSchoolId]);
+
   return (
     <>
-      {clusteredPoints.map((cluster) => {
+      {sortedClusteredPoints.map((cluster) => {
         // Individual school markers
         if (cluster.count === 1 && cluster.schools.length === 1) {
           const school = cluster.schools[0]

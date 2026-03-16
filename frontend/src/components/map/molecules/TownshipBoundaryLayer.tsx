@@ -50,8 +50,8 @@ export function TownshipBoundaryLayer({
         const baseWeight = 0.7
         const highlightWeight = 1.6
 
-        const activeFillColor = theme === 'dark' ? 'rgba(56, 189, 248, 0.35)' : 'rgba(56, 189, 248, 0.35)'
-        const activeFillOpacity = 0.35
+        const activeFillColor = '#10b981'
+        const activeFillOpacity = 0.4
 
         return {
           color: isActive || isHovered ? highlightStroke : baseStroke,

@@ -14,6 +14,7 @@ import type {
   EducationLevelFilter,
   ManagementTypeFilter,
   RegionGroupFilter,
+  EducationSummaryDataset,
 } from '../data/educationData'
 import type { CountySummary, RankingSummary } from '../lib/analytics'
 import type { SchoolMapPoint } from './map/types'
@@ -73,6 +74,7 @@ type TaiwanExplorerMapProps = {
   onSetManagementType: (type: ManagementTypeFilter) => void
   startTransition: React.TransitionStartFunction
   activeCountyName: string | null
+  summaryDataset?: EducationSummaryDataset | null
 }
 
 function TaiwanExplorerMap(props: TaiwanExplorerMapProps) {
@@ -185,6 +187,7 @@ function TaiwanExplorerMap(props: TaiwanExplorerMapProps) {
       onSetManagementType={onSetManagementType}
       startTransition={startTransition}
       activeCountyName={activeCountyName}
+      summaryDataset={props.summaryDataset}
     />
   )
 }

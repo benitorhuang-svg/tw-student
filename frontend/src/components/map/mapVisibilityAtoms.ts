@@ -19,8 +19,8 @@ export function computeLayerVisibility(zoom: number, hasSchoolPoints: boolean, i
   const showCountyMarkers = zoom < 11
   const showTownshipMarkers = zoom >= 10 && zoom < 13
   
-  // Schools become visible at zoom 12
-  let showSchoolMarkers = zoom >= 12 && hasSchoolPoints
+  // Schools become visible at zoom 13
+  let showSchoolMarkers = zoom >= 13 && hasSchoolPoints
   
   // Always allow an explicit school selection to surface its marker
   if (isSchoolSelected) showSchoolMarkers = true

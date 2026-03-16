@@ -1,14 +1,14 @@
 import { useState } from 'react'
-import ScatterPlotChart from './ScatterPlotChart'
-import '../styles/templates/dashboard-shell/01-premium-cards-system.css'
-import type { useAtlasDerivedState } from '../hooks/useAtlasDerivedState'
+import ScatterPlotChart from '../ScatterPlotChart'
+import '../../styles/templates/dashboard-shell/01-premium-cards-system.css'
+import type { useAtlasDerivedState } from '../../hooks/useAtlasDerivedState'
 
 type CountyTabPanelProps = {
   derived: ReturnType<typeof useAtlasDerivedState>
   selectedTownshipId: string | null
   hoveredTownshipId: string | null
   setHoveredTownshipId: (id: string | null) => void
-  onSelectTownship: (townshipId: string, options?: { skipTabSwitch?: boolean }) => void
+  onSelectTownship: (townshipId: string, options?: { skipTabSwitch?: boolean, zoom?: number }) => void
 }
 
 function CountyTabPanel({
@@ -55,7 +55,7 @@ function CountyTabPanel({
                 }))}
                 activePointId={hoveredTownshipId ?? selectedTownshipId}
                 onHoverPoint={setHoveredTownshipId}
-                onSelectPoint={(id) => onSelectTownship(id, { skipTabSwitch: true })}
+                onSelectPoint={(id) => onSelectTownship(id, { skipTabSwitch: true, zoom: 12 })}
                 className="matrix-chart-premium"
                 showHeader={false}
               />

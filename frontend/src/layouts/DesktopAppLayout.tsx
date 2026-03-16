@@ -1,6 +1,6 @@
 import type { ReactNode, RefObject } from 'react'
 
-import AnomalyPanel from '../components/AnomalyPanel'
+import AnomalyPanel from '../components/organisms/AnomalyPanel'
 import AtlasFooter from '../components/AtlasFooter'
 import DashboardCanvas from '../components/DashboardCanvas'
 import DashboardHeader from '../components/DashboardHeader'
@@ -100,9 +100,6 @@ function DesktopAppLayout(props: DesktopAppLayoutProps) {
           <DashboardHeader
             theme={props.theme}
             onToggleTheme={() => props.setTheme((t) => (t === 'dark' ? 'light' : 'dark'))}
-            isRefreshingData={props.isRefreshingData}
-            onRefreshData={props.refreshData}
-            generatedAtLabel={props.derived.generatedAtLabel}
           />
         }
         footer={
@@ -160,6 +157,7 @@ function DesktopAppLayout(props: DesktopAppLayoutProps) {
         generatedAtLabel={props.derived.generatedAtLabel}
         refreshStatus={props.refreshStatus}
         isRefreshingData={props.isRefreshingData}
+        onRefreshData={props.refreshData}
         sources={props.summaryDataset?.sources ?? {
           points: 'https://stats.moe.gov.tw/edugissys/',
           statistics: 'https://depart.moe.edu.tw/ed4500/News.aspx?n=5A930C32CC6C3818&sms=91B3AAE8C6388B96',

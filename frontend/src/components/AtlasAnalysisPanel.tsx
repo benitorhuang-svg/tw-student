@@ -12,8 +12,8 @@ import ScopePanel from './ScopePanel'
 import StackedAreaTrendChart from './StackedAreaTrendChart'
 
 const ComparisonPanel = lazy(() => import('./ComparisonPanel'))
-const AnomalyPanel = lazy(() => import('./AnomalyPanel'))
-const SchoolDetailPanel = lazy(() => import('./SchoolDetailPanel'))
+const AnomalyPanel = lazy(() => import('./organisms/AnomalyPanel'))
+const SchoolDetailPanel = lazy(() => import('./organisms/SchoolDetailPanel'))
 
 const TAB_META: Record<AtlasTab, { title: string; description: string }> = {
   overview: { title: '概況總覽', description: '先看全台與目前範圍的核心指標，再決定要不要往區域或單校下鑽。' },

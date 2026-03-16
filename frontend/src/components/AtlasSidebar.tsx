@@ -8,8 +8,8 @@ import ScopePanel from './ScopePanel'
 import type { AtlasSidebarProps } from './atlasSidebar.types'
 
 const ComparisonPanel = lazy(() => import('./ComparisonPanel'))
-const AnomalyPanel = lazy(() => import('./AnomalyPanel'))
-const SchoolDetailPanel = lazy(() => import('./SchoolDetailPanel'))
+const AnomalyPanel = lazy(() => import('./organisms/AnomalyPanel'))
+const SchoolDetailPanel = lazy(() => import('./organisms/SchoolDetailPanel'))
 
 const TAB_META: Record<AtlasTab, { title: string; description: string }> = {
   overview: { title: '概況總覽', description: '先看全台與目前範圍的摘要、排名與整體變動，再決定是否切入區域分析。' },

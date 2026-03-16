@@ -19,16 +19,33 @@ export function SchoolMarker({
   isHighlighted,
   onSelect,
   suppressNextMapClearRef
-}: SchoolMarkerProps) {
+ }: SchoolMarkerProps) {
   const map = useMap()
-  const baseRadius = isSelected ? 8 : isHighlighted ? 7 : Math.max(5, Math.min(10, Math.round(school.currentStudents / 150)))
+  const baseRadius = isSelected ? 12 : isHighlighted ? 7 : Math.max(5, Math.min(10, Math.round(school.currentStudents / 150)))
   const absPct = Math.abs(school.deltaRatio * 100)
   const hasGlow = absPct >= 5
   const glowColor = school.deltaRatio >= 0 ? '#22c55e' : '#ef4444'
 
   return (
     <>
-      {hasGlow && (
+      {/* Selection Pulse Halo */}
+      {isSelected && (
+        <CircleMarker
+          center={[school.latitude, school.longitude]}
+          radius={baseRadius + 12}
+          pathOptions={{
+            className: 'atlas-selected-school-pulse',
+            color: '#38bdf8',
+            weight: 3,
+            fillColor: '#38bdf8',
+            fillOpacity: 0.1,
+          }}
+          interactive={false}
+        />
+      )}
+
+      {/* Growth/Decline Glow (only when not selected or as a secondary layer) */}
+      {!isSelected && hasGlow && (
         <CircleMarker
           center={[school.latitude, school.longitude]}
           radius={baseRadius + Math.min(14, 4 + absPct * 0.4)}
@@ -41,17 +58,19 @@ export function SchoolMarker({
           interactive={false}
         />
       )}
+
+      {/* Base Circle Marker */}
       <AccessibleCircleMarker
         ariaLabel={buildSchoolMarkerAriaLabel(school)}
         center={[school.latitude, school.longitude]}
-        isPressed={isSelected}
-        radius={baseRadius}
+        isPressed={isSelected || isHighlighted}
+        radius={isSelected ? 6 : baseRadius} // Smaller base if selected to emphasize the star
         pathOptions={{
-          className: `atlas-school-marker atlas-school-marker-${school.id}`,
-          color: isSelected || isHighlighted ? '#f8fafc' : '#0f172a',
-          weight: isSelected ? 2.5 : isHighlighted ? 2 : 1,
+          className: `atlas-school-marker atlas-school-marker-${school.id} ${isSelected ? 'atlas-school-marker-selected' : ''}`,
+          color: isSelected ? '#38bdf8' : isHighlighted ? '#f8fafc' : '#0f172a',
+          weight: isSelected ? 3 : isHighlighted ? 2 : 1,
           fillColor: growthChoroplethColor(school.deltaRatio),
-          fillOpacity: isHighlighted ? 0.94 : Math.max(0.58, growthChoroplethOpacity(school.deltaRatio) + 0.12),
+          fillOpacity: isSelected || isHighlighted ? 1.0 : Math.max(0.58, growthChoroplethOpacity(school.deltaRatio) + 0.12),
         }}
         onActivate={() => {
           suppressNextMapClearRef.current = true

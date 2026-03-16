@@ -1,10 +1,10 @@
 import { useMemo, useState } from 'react'
-import ScatterPlotChart from './ScatterPlotChart'
-import StackedAreaTrendChart from './StackedAreaTrendChart'
-import '../styles/templates/dashboard-shell/01-premium-cards-system.css'
-import type { useAtlasDerivedState } from '../hooks/useAtlasDerivedState'
-import type { RegionGroupFilter } from '../data/educationData'
-import type { InvestigationItem } from '../hooks/types'
+import ScatterPlotChart from '../ScatterPlotChart'
+import StackedAreaTrendChart from '../StackedAreaTrendChart'
+import '../../styles/templates/dashboard-shell/01-premium-cards-system.css'
+import type { useAtlasDerivedState } from '../../hooks/useAtlasDerivedState'
+import type { RegionGroupFilter } from '../../data/educationData'
+import type { InvestigationItem } from '../../hooks/types'
 
 type RegionalTabPanelProps = {
   derived: ReturnType<typeof useAtlasDerivedState>
@@ -13,8 +13,8 @@ type RegionalTabPanelProps = {
   selectedCountyId: string | null
   setHoveredCountyId: (id: string | null) => void
   scenarioActions: {
-    handleRegionSelect: (region: RegionGroupFilter, options?: { skipTabSwitch?: boolean }) => void
-    handleCountySelect: (countyId: string, options?: { skipTabSwitch?: boolean }) => void;
+    handleRegionSelect: (region: RegionGroupFilter, options?: { skipTabSwitch?: boolean, zoom?: number }) => void
+    handleCountySelect: (countyId: string, options?: { skipTabSwitch?: boolean, zoom?: number }) => void;
     favoriteScenarioIds: Set<string>
     handleDownloadInvestigation: (item: InvestigationItem) => void
     handleDownloadAllInvestigations: () => void
@@ -90,10 +90,10 @@ function RegionalTabPanel({
               }}
               onSelectPoint={(id: string) => {
                 if (region === '全部') {
-                  scenarioActions.handleRegionSelect(id as RegionGroupFilter, { skipTabSwitch: true });
+                  scenarioActions.handleRegionSelect(id as RegionGroupFilter, { skipTabSwitch: true, zoom: 9 });
                   return;
                 }
-                scenarioActions.handleCountySelect(id, { skipTabSwitch: true });
+                scenarioActions.handleCountySelect(id, { skipTabSwitch: true, zoom: 9 });
               }}
               className="matrix-chart-premium"
               showHeader={false}

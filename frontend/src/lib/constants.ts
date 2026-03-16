@@ -43,9 +43,10 @@ export function readInitialTheme(): AtlasTheme {
 }
 
 // --- Map Configuration Parameters ---
-export const MAP_DEFAULT_CENTER: [number, number] = [24.45720, 120.61290]
-export const MAP_DEFAULT_ZOOM = 7
-export const MAP_COUNTY_ZOOM = 12
-export const MAP_TOWNSHIP_ZOOM = 12
-export const MAP_FOCUS_SCHOOL_ZOOM = 13
-export const MAP_MAX_ZOOM = 13
+export const MAP_DEFAULT_CENTER: [number, number] = [24.43720, 119.61300]
+export const MAP_DEFAULT_ZOOM = 7.5
+export const MAP_COUNTY_ZOOM = 9
+export const MAP_TOWNSHIP_ZOOM = 11
+export const MAP_TOWNSHIP_FOCUS_ZOOM = 13
+export const MAP_FOCUS_SCHOOL_ZOOM = 15
+export const MAP_MAX_ZOOM = 15

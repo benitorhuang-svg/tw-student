@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import type { GeoJsonObject } from 'geojson'
 import L from 'leaflet'
-import { Marker, Tooltip, useMap, useMapEvents } from 'react-leaflet'
+import { Marker, useMap, useMapEvents } from 'react-leaflet'
 import { buildDataAssetUrl } from '../../../data/dataAsset'
 
 type TownshipCoord = {
@@ -18,9 +18,7 @@ type AreaLookup = {
   townships: Record<string, TownshipCoord>
 }
 
-import { MAP_COUNTY_ZOOM } from '../../../lib/constants'
 import type { TownshipBoundaryCollection } from '../../../data/educationData'
-import { renderHoverPreview } from '../mapStyles'
 import type { RankingSummary } from '../../../lib/analytics'
 
 type AllTownshipLabelsProps = {
@@ -31,6 +29,7 @@ type AllTownshipLabelsProps = {
   townshipBoundaries?: TownshipBoundaryCollection | null
   currentZoom?: number | null
   townshipLookup?: Map<string, RankingSummary>
+  selectedTownshipId?: string | null
 }
 
 function makeTownshipLabelIcon(name: string) {
@@ -50,7 +49,7 @@ function AllTownshipLabels({
   forceShowAll = false,
   townshipBoundaries = null,
   currentZoom = null,
-  townshipLookup = new Map(),
+  selectedTownshipId = null,
 }: AllTownshipLabelsProps) {
   const map = useMap()
   const [data, setData] = useState<TownshipCoord[] | null>(null)
@@ -83,15 +82,26 @@ function AllTownshipLabels({
   const visible = useMemo(() => {
     if (!data) return []
     const zoom = currentZoom ?? map.getZoom()
-    if (zoom < MAP_COUNTY_ZOOM) return []
+    
+    // Strict visibility rule: hide if zoom < 11 unless forced. 
+    // Also hide if visibleTownshipIds is empty (and not forced).
+    if (zoom < 11 && !forceShowAll) return []
+    if (visibleTownshipIds.length === 0 && !forceShowAll) return []
+    
     const bounds = map.getBounds()
-    const visibleIdSet = visibleTownshipIds.length > 0 ? new Set(visibleTownshipIds) : null
+    const visibleIdSet = new Set(visibleTownshipIds)
 
     // Pad the viewport slightly so that townships whose polygon just barely
     // touches the edge of the view are still treated as "visible".
     const padded = bounds.pad(0.1)
 
     const inView = data.filter((t) => {
+      // Selected township ALWAYS bypasses basic filters if it's in view
+      if (t.townId === selectedTownshipId) {
+        const padded = bounds.pad(0.2)
+        return padded.contains([t.latitude, t.longitude])
+      }
+
       if (t.townId === hiddenTownshipId) return false
       if (visibleIdSet && !visibleIdSet.has(t.townId)) return false
 
@@ -107,6 +117,12 @@ function AllTownshipLabels({
     if (!forceShowAll && zoom < 12) {
       const accepted: typeof inView = []
       for (const candidate of inView) {
+        // Selected township ALWAYS accepted
+        if (candidate.townId === selectedTownshipId) {
+          accepted.unshift(candidate) // Put it at the start so it can block others but not be blocked
+          continue
+        }
+
         const pt = map.latLngToContainerPoint([candidate.latitude, candidate.longitude])
         const overlaps = accepted.some((existing) => {
           const ept = map.latLngToContainerPoint([existing.latitude, existing.longitude])
@@ -126,7 +142,6 @@ function AllTownshipLabels({
   return (
     <>
       {visible.map((t) => {
-        const summary = townshipLookup.get(t.townId)
         return (
           <Marker
             key={t.townId}
@@ -138,11 +153,7 @@ function AllTownshipLabels({
                 onSelectTownship(t.townId, { skipTabSwitch: true })
               } 
             }}
-          >
-            <Tooltip direction="top" offset={[0, -10]} className="atlas-map-tooltip atlas-map-tooltip--preview">
-              {renderHoverPreview(`${t.countyName} ${t.townName}`, summary?.students)}
-            </Tooltip>
-          </Marker>
+          />
         )
       })}
     </>

@@ -20,19 +20,19 @@ export function renderHoverPreview(title: string, students?: number) {
 }
 
 export function choroplethColor(students: number) {
-  if (students >= 150000) return '#83b8aa'
-  if (students >= 100000) return '#9fcec0'
-  if (students >= 50000) return '#b9ddd1'
-  if (students >= 10000) return '#d2ebe1'
-  return '#e7f5ef'
+  if (students >= 150000) return '#0ea5e9' // Sky-500
+  if (students >= 100000) return '#38bdf8' // Sky-400
+  if (students >= 50000) return '#7dd3fc'  // Sky-300
+  if (students >= 10000) return '#bae6fd'  // Sky-200
+  return '#f0f9ff'                         // Sky-50
 }
 
 export function choroplethOpacity(students: number) {
-  if (students >= 150000) return 0.28
-  if (students >= 100000) return 0.22
-  if (students >= 50000) return 0.17
-  if (students >= 10000) return 0.13
-  return 0.09
+  if (students >= 150000) return 0.45
+  if (students >= 100000) return 0.35
+  if (students >= 50000) return 0.25
+  if (students >= 10000) return 0.18
+  return 0.12
 }
 
 /** 年增減色域：成長藍、衰退紅，依百分比深淺 */

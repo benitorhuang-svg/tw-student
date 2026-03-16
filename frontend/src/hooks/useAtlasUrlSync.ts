@@ -88,7 +88,7 @@ export function useAtlasUrlSync({
     if (activeTab !== 'overview') params.set('tab', activeTab)
     else params.delete('tab')
 
-    if (mapZoom != null && Number.isFinite(mapZoom)) params.set('zoom', String(Math.round(mapZoom)))
+    if (mapZoom != null && Number.isFinite(mapZoom)) params.set('zoom', String(Math.round(mapZoom * 10) / 10))
     else params.delete('zoom')
 
     if (forceTownshipLabels) params.set('forceTownshipLabels', 'true')

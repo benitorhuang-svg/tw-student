@@ -41,6 +41,8 @@ function App() {
 
   useEffect(() => {
     window.localStorage.setItem(THEME_STORAGE_KEY, state.theme)
+    // Synchronize theme to body for global components like tooltips
+    document.body.setAttribute('data-theme', state.theme)
   }, [state.theme])
 
   // 3. Orchestration Layer
@@ -55,6 +57,9 @@ function App() {
     setSelectedSchoolId: state.setSelectedSchoolId,
     setMapResetToken: state.setMapResetToken,
     setActiveTab: state.setActiveTab,
+    setMapZoom: state.setMapZoom,
+    setMapLat: state.setMapLat,
+    setMapLon: state.setMapLon,
     startTransition, copyFeedback, scenarioFeedback,
     educationData, loadObservation,
   })
@@ -74,7 +79,7 @@ function App() {
   // 5. Action Handlers
   const handlePrefetchCounty = (countyId: string | null) => { if (countyId) prefetchCounty(countyId) }
   const handleSchoolSelect = (schoolId: string | null) => {
-    scenarioActions.handleSchoolSelect(schoolId)
+    scenarioActions.handleSchoolSelect(schoolId, { skipTabSwitch: true })
     if (schoolId) state.setSchoolWorkbenchView('analysis')
   }
 
@@ -106,7 +111,7 @@ function App() {
       onSelectCounty={scenarioActions.handleCountySelect}
       onAutoSelectCounty={scenarioActions.ensureCountySelected}
       onSelectTownship={scenarioActions.handleTownshipSelect}
-      onSelectSchool={scenarioActions.handleSchoolSelect}
+      onSelectSchool={handleSchoolSelect}
       onHoverCounty={handlePrefetchCounty}
       onZoomChange={state.setMapZoom}
       currentMapZoom={state.mapZoom}
@@ -133,6 +138,7 @@ function App() {
       onSetManagementType={state.setManagementType}
       startTransition={startTransition}
       activeCountyName={derived.selectedCounty?.name ?? null}
+      summaryDataset={summaryDataset}
     />
   )
 
