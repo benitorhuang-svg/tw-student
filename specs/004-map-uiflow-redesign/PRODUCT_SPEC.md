@@ -3,30 +3,26 @@
 摘要：將現有 Leaflet + TopoJSON 地圖互動與資料載入管線系統性重構，提升互動流暢度、首屏載入速度與離線可用性，並提供可測試的驗收準則與執行任務清單。
 
 ## 背景
-本專案為臺灣教育 Atlas（student_counting_analysis_TW），目前以 Leaflet + TopoJSON 呈現教育行政區與學校點位。隨著資料量與互動需求提升，地圖在低倍率（low-zoom）或大量點物件時的載入/渲染效能、標籤顯示與離線體驗成為限制，需引入多層級資料管線、前端聚合（clustering）、漸進載入與 PWA 快取策略。
+本專案為臺灣教育 Atlas（student_counting_analysis_TW），目前以 Leaflet 為主體呈現教育行政區與學校點位。隨著資料量與互動需求提升，單純依賴 React 元件渲染數千個 DOM Marker 已達到效能瓶頸。需導入前端空間索引（rbush）、資料投影（Data Projection）與 Canvas 渲染優化，以維持流暢的互動體驗。
 
 ## 問題陳述
-- 使用者在平移 (pan) 或縮放 (zoom) 時，畫面會有明顯延遲或掉幀，影響使用體驗。
-- 首次載入需下載大量 topojson 導致首屏延遲 (TTI) 上升。
-- 離線或網路差時，地圖互動與資料還原 (deep-link) 體驗不穩定。
-- 標籤（label）碰撞與資訊遮蔽，使圖上焦點不清楚。
-- 測試覆蓋不足，缺少 E2E 驗證地圖常見互動流程（聚合、spiderfy、deep-link、離線）
+- 大量點位渲染瓶頸：當畫面中校點超過 2,000 個時，React 的 Reconciliation 與 DOM 渲染導致平移與縮放延遲。
+- 資料流過於沈重：每次過濾條件改變時，全量物件的解構與合併處理占用過多 JS 主執行緒時間。
+- 標籤碰撞效率：目前的碰撞檢測與 React 元件生命週期綁定，導致高頻操作下的「噴幀」現象。
 
 ## 目標與成功衡量指標
-- 互動流暢度：在常見桌面/筆電裝置上，平移/縮放操作平均維持 30 FPS（可視為目標），pan/zoom 延遲平均 < 150ms。
-- 首屏載入（First meaningful map content）：主要地圖圖層在 2 秒內可見（在標準寬頻條件下）。
-- 離線可用性：預先快取的 baseline 縮放層（例如 z=0,4,7,10）在離線模式下仍能顯示基本地圖與聚合，離線地圖互動不致於崩潰。 
-- E2E 覆蓋：Playwright 測試包含 pan/zoom、cluster 展開與 spiderfy、deep-link 還原、離線模式（至少 5 個測試案例），CI 上能穩定執行。
-- 正確性：聚合展開後可以在 500ms 內回應對點資訊的 click/drill-down 操作（在模擬中等網速下測試）。
+- 互動流暢度：平移/縮放操作需維持穩定 30+ FPS，互動延遲（Interaction Latency）< 100ms。
+- 資料投影效率：從資料庫查詢到地圖座標點產出的處理時間 < 50ms。
+- 空間索引查詢：使用 rbush 進行 Viewport Culling，確保畫面外點位不參與 React 渲染循環。
+- 離線可用性：預先快取的基礎縮放層（z=0,4,7,10）在離線模式下需能秒級呈現，不依賴動態計算。
 
 ## 範圍
 - In-scope:
-  - 建立 backend multi-zoom topojson/vector-tiles（建議 z0..z14）並提供 tile API
-  - 前端聚合（Supercluster）整合、cluster UI、spiderfy 行為
-  - 漸進載入（progressive loading）與 Canvas/WebGL fallback 策略
-  - Service Worker 的 precache（baseline zooms）與 runtime cache policy
-  - E2E 測試（Playwright）與性能指標量測
-  - 基本無障礙支援（鍵盤導覽、ARIA）
+  - 輕量化資料投影（Data Projection）：將 SQLite 原始資料轉為輕量化的傳輸格式。
+  - 前端空間索引（rbush）：實作高效的 Viewport 點位裁切。
+  - Canvas 全局渲染：開啟 Leaflet `preferCanvas` 模式，並重構 Marker 為 Canvas 渲染。
+  - 事件防抖與處理：優化地圖移動事件對 React 狀態的觸發頻率。
+  - PWA 快取與邊界 TopoJSON 壓縮。
 
 - Out-of-scope:
   - 大幅改用其他地圖平台（例如完全換成 Mapbox GL）作為主線實作（可列為替代方案）

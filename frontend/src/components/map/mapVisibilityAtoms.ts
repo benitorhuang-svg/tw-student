@@ -16,14 +16,15 @@ export function computeLayerVisibility(zoom: number, hasSchoolPoints: boolean, i
   // | 10–11  | (small)  | ✔         |         |
   // | 12–13  |          | (small)   | ✔       |
   
-  const showCountyMarkers = zoom < 11
-  const showTownshipMarkers = zoom >= 10 && zoom < 13
-  
   // Schools become visible at zoom 13
-  let showSchoolMarkers = zoom >= 13 && hasSchoolPoints
+  let showSchoolMarkers = (zoom >= 13 && hasSchoolPoints)
   
-  // Always allow an explicit school selection to surface its marker
+  // If a school is selected, we ALWAYS show school markers
   if (isSchoolSelected) showSchoolMarkers = true
+  
+  // EXCLUSIVITY RULE: Hide counties earlier (zoom 10) to clear view for townships
+  const showCountyMarkers = zoom < 10 && !showSchoolMarkers
+  const showTownshipMarkers = zoom >= 9.5 && zoom < 13 && !isSchoolSelected
   
   return {
     showCountyMarkers,

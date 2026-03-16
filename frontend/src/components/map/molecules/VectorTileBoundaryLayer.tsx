@@ -49,7 +49,24 @@ function VectorTileBoundaryLayer({
   const countyLayerRef = useRef<any>(null)
   const townshipLayerRef = useRef<any>(null)
 
-  // 1. Preflight check
+  // Stable references for event handlers to avoid stale closures
+  const handlersRef = useRef({ onSelectCounty, onSelectTownship, countyLookup, townshipLookup })
+  useEffect(() => {
+    handlersRef.current = { onSelectCounty, onSelectTownship, countyLookup, townshipLookup }
+  }, [onSelectCounty, onSelectTownship, countyLookup, townshipLookup])
+
+  // 1. Pane Management
+  useEffect(() => {
+    if (!map) return
+    if (!map.getPane('county-pane')) {
+      map.createPane('county-pane').style.zIndex = '400'
+    }
+    if (!map.getPane('township-pane')) {
+      map.createPane('township-pane').style.zIndex = '450'
+    }
+  }, [map])
+
+  // 2. Preflight check
   useEffect(() => {
     if (!baseUrl) return
     const url = `${baseUrl}/county/0/0/0.pbf`
@@ -63,7 +80,7 @@ function VectorTileBoundaryLayer({
       })
   }, [baseUrl, onError])
 
-  // 2. Pre-create shared tooltip instance
+  // 3. Tooltip Singleton
   useEffect(() => {
     tooltipRef.current = L.tooltip({
       direction: 'top',
@@ -73,16 +90,17 @@ function VectorTileBoundaryLayer({
     return () => { tooltipRef.current?.remove() }
   }, [])
 
-  // 1. Initial layer creation (Once per baseUrl)
+  // 4. Initial layer creation
   useEffect(() => {
     if (!map || !baseUrl) return
 
     const vectorGrid = (L as any).vectorGrid
 
     const countyLayer = vectorGrid.protobuf(`${baseUrl}/county/{z}/{x}/{y}.pbf`, {
+      pane: 'county-pane',
       vectorTileLayerStyles: {
         county: (props: any) => {
-          const summary = countyLookup.get(props.countyId)
+          const summary = handlersRef.current.countyLookup.get(props.countyId)
           if (!summary || summary.filteredOut) return { opacity: 0, fillOpacity: 0, weight: 0 }
           return {
             color: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.15)',
@@ -97,9 +115,10 @@ function VectorTileBoundaryLayer({
     }).addTo(map)
 
     const townshipLayer = vectorGrid.protobuf(`${baseUrl}/township/{z}/{x}/{y}.pbf`, {
+      pane: 'township-pane',
       vectorTileLayerStyles: {
         township: (props: any) => {
-          const summary = townshipLookup.get(props.townId)
+          const summary = handlersRef.current.townshipLookup.get(props.townId)
           if (!summary) return { opacity: 0, fillOpacity: 0, weight: 0 }
           return {
             color: theme === 'dark' ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.1)',
@@ -116,7 +135,7 @@ function VectorTileBoundaryLayer({
     countyLayerRef.current = countyLayer
     townshipLayerRef.current = townshipLayer
 
-    // Event handlers for tooltips & clicks
+    // Event handlers using stable ref
     const showTip = (e: any, name: string, students: number) => {
       if (!tooltipRef.current) return
       tooltipRef.current
@@ -135,25 +154,25 @@ function VectorTileBoundaryLayer({
     }
 
     countyLayer.on('mouseover', (e: any) => {
-      const summary = countyLookup.get(e.layer.properties.countyId)
+      const summary = handlersRef.current.countyLookup.get(e.layer.properties.countyId)
       if (summary) showTip(e, summary.name, summary.students)
     })
     countyLayer.on('mouseout', hideTip)
     countyLayer.on('click', (e: any) => {
       L.DomEvent.stop(e.originalEvent)
       const id = e.layer.properties.countyId
-      if (id) onSelectCounty(id, { skipTabSwitch: true })
+      if (id) handlersRef.current.onSelectCounty(id, { skipTabSwitch: true })
     })
 
     townshipLayer.on('mouseover', (e: any) => {
-      const summary = townshipLookup.get(e.layer.properties.townId)
+      const summary = handlersRef.current.townshipLookup.get(e.layer.properties.townId)
       if (summary) showTip(e, (summary as any).label ?? (summary as any).name, summary.students)
     })
     townshipLayer.on('mouseout', hideTip)
     townshipLayer.on('click', (e: any) => {
       L.DomEvent.stop(e.originalEvent)
       const id = e.layer.properties.townId
-      if (id) onSelectTownship(id, { skipTabSwitch: true })
+      if (id) handlersRef.current.onSelectTownship(id, { skipTabSwitch: true })
     })
 
     return () => {
@@ -162,7 +181,7 @@ function VectorTileBoundaryLayer({
     }
   }, [map, baseUrl]) 
 
-  // 2. Dynamic visibility & styling updates
+  // 5. Dynamic visibility & styling updates
   useEffect(() => {
     const cLayer = countyLayerRef.current
     const tLayer = townshipLayerRef.current
@@ -175,7 +194,10 @@ function VectorTileBoundaryLayer({
     }
 
     if (showTownships) {
-      if (!map.hasLayer(tLayer)) tLayer.addTo(map)
+      if (!map.hasLayer(tLayer)) {
+        tLayer.addTo(map)
+        tLayer.bringToFront() // Ensure township is always on top
+      }
     } else {
       if (map.hasLayer(tLayer)) tLayer.remove()
     }
@@ -195,7 +217,7 @@ function VectorTileBoundaryLayer({
         color: isVisible ? (theme === 'dark' ? '#f8fafc' : '#000000') : (theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.15)'),
         weight: isVisible ? 1.6 : 0.8,
         fillColor: isActive ? (theme === 'dark' ? '#10b981' : '#10b981') : choroplethColor(summary.students),
-        fillOpacity: isActive ? (activeTownshipId ? 0 : (theme === 'dark' ? 0.4 : 0.25)) : isHovered ? 0.2 : Math.min(0.12, choroplethOpacity(summary.students)),
+        fillOpacity: isActive ? (activeTownshipId ? 0.05 : (theme === 'dark' ? 0.4 : 0.25)) : isHovered ? 0.2 : Math.min(0.12, choroplethOpacity(summary.students)),
       })
     })
 
@@ -205,7 +227,6 @@ function VectorTileBoundaryLayer({
       const isHovered = id === highlightedTownshipId
       const isActive = id === activeTownshipId
       const isMarked = isHovered || isActive
-      // Strict visibility rule: hide if zoom < 11 unless explicitly highlighted
       const isVisible = zoom >= 11 || isMarked
       
       tLayer.setFeatureStyle(id, {
@@ -216,7 +237,7 @@ function VectorTileBoundaryLayer({
         fillOpacity: isVisible ? (isActive ? 0.35 : isHovered ? 0.25 : Math.max(0.04, choroplethOpacity(summary.students) - 0.06)) : 0,
       })
     })
-  }, [activeCountyId, activeTownshipId, highlightedCountyId, highlightedTownshipId, countyLookup, townshipLookup])
+  }, [activeCountyId, activeTownshipId, highlightedCountyId, highlightedTownshipId, countyLookup, townshipLookup, theme])
 
   return null
 }

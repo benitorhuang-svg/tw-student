@@ -86,11 +86,19 @@
     gap: 4px;
     padding: 8px;
     border-radius: 999px;
-    border: 2px solid rgba(255, 255, 255, .66);
+    border: 2px solid rgba(255, 255, 255, 0.8);
     background: var(--scope-dot-color);
-    box-shadow: 0 18px 34px #08111f52, 0 0 0 6px #ffffff14;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25), 0 0 0 4px rgba(255, 255, 255, 0.1);
     color: #f8fafc;
     text-align: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+}
+
+.atlas-scope-dot:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35), 0 0 0 6px rgba(255, 255, 255, 0.15);
+    z-index: 1000;
 }
 
 .atlas-map-focus-label {
@@ -143,6 +151,43 @@
     width: max-content;
     padding: 6px 10px;
     text-align: center;
+}
+
+/* --- Scope Pill Design (District Style) --- */
+.atlas-scope-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: #0f172ae3; /* Deep navy/black */
+    border: 1.5px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    color: #f8fafc;
+    font-size: 0.8rem;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    backdrop-filter: blur(8px);
+    cursor: pointer;
+}
+
+.atlas-scope-pill:hover {
+    transform: translateY(-2px);
+    background: #1e293be3;
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.atlas-scope-pill.is-active {
+    background: #10b981; /* Brand Primary Green */
+    border-color: #34d399;
+    color: #ffffff;
+    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
+}
+
+.atlas-scope-pill__label {
+    letter-spacing: 0.02em;
 }
 
 .map-floating-help {

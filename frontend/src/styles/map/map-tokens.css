@@ -1,0 +1,23 @@
+/* --- Map Specific Design Tokens --- */
+
+:root {
+    --map-panel-bg: #020617;
+    --map-canvas-bg: #020617;
+    --map-overlay-bg: rgba(15, 23, 42, 0.8);
+    --map-overlay-border: rgba(255, 255, 255, 0.1);
+    --map-overlay-blur: 20px;
+    --map-tooltip-bg: rgba(15, 23, 42, 0.98);
+    --map-tooltip-color: #f8fafc;
+    
+    --accent-glow: rgba(56, 189, 248, 0.25);
+}
+
+[data-theme='light'] {
+    --map-panel-bg: #e2e8f0;
+    --map-canvas-bg: #f1f5f9;
+    --map-overlay-bg: rgba(255, 255, 255, 0.85);
+    --map-overlay-border: rgba(0, 0, 0, 0.08);
+    --map-overlay-blur: 12px;
+    --map-tooltip-bg: rgba(255, 255, 255, 0.95);
+    --map-tooltip-color: #0f172a;
+}

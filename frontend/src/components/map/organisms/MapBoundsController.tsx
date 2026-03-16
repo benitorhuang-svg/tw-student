@@ -4,6 +4,7 @@ import { useMap } from 'react-leaflet'
 
 import type { CountyBoundaryCollection, RegionGroupFilter, TownshipBoundaryCollection } from '../../../data/educationData'
 import type { SchoolMapPoint } from '../types'
+import { MAP_MAX_BOUNDS } from '../../../lib/constants'
 import { useViewportIntent } from '../hooks/useViewportIntent'
 
 const AUTO_SELECT_SUPPRESSION_MS = 2000
@@ -151,6 +152,12 @@ function MapBoundsController({
       const z = Math.round(map.getZoom() * 10) / 10
       onZoomChange?.(z)
       prevZoomRef.current = z
+      
+      // Force bounds check on zoom/pan to prevent escaping geofence
+      const center = map.getCenter()
+      if (!L.latLngBounds(MAP_MAX_BOUNDS).contains(center)) {
+          map.panInsideBounds(MAP_MAX_BOUNDS, { animate: true })
+      }
     }
     map.on('zoomend', handleZoomEnd)
     handleZoomEnd()

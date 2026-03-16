@@ -58,16 +58,18 @@ export function CountyBoundaryLayer({
           }
         }
 
-        const baseStroke = theme === 'dark' ? 'rgba(255,255,255,0.2)' : 'rgba(0,0,0,0.2)'
-        const highlightStroke = theme === 'dark' ? '#e2e8f0' : '#000000'
-        const baseWeight = 0.8
-        const highlightWeight = 1.6
+        const baseStroke = theme === 'dark' ? 'rgba(255,255,255,0.4)' : 'rgba(0,0,0,0.35)'
+        const highlightStroke = theme === 'dark' ? '#f8fafc' : '#1e293b'
+        const baseWeight = 1.0
+        const highlightWeight = 2.0
 
         return {
           color: isActive || isHovered ? highlightStroke : baseStroke,
           weight: isActive || isHovered ? highlightWeight : baseWeight,
-          fillColor: isActive ? (theme === 'dark' ? '#10b981' : '#10b981') : choroplethColor(summary.students),
-          fillOpacity: isActive ? (activeTownshipId ? 0 : (theme === 'dark' ? 0.4 : 0.25)) : Math.min(0.12, choroplethOpacity(summary.students)),
+          fillColor: isActive ? '#10b981' : choroplethColor(summary.students),
+          fillOpacity: isActive 
+            ? (activeTownshipId ? 0.05 : 0.45) 
+            : Math.max(0.2, choroplethOpacity(summary.students)),
         }
       }}
       onEachFeature={(feature: Feature, layer: L.Layer) => {

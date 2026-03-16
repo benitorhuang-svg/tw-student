@@ -12,12 +12,43 @@
   gap: 12px;
 }
 
+/** 
+ * Dedicated pane for UI elements inside Leaflet MapContainer 
+ * Ensures clear separation from map SVG/Canvas tiles.
+ */
+.atlas-map-ui-overlay-pane {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  pointer-events: none;
+}
+.atlas-map-ui-overlay-pane > * {
+  pointer-events: auto;
+}
+
 .map-floating-filters__stack {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px; /* Increased gap for better breathing */
   align-items: flex-start;
   pointer-events: auto;
+}
+
+.map-floating-filters__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.map-floating-filters__bottom-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
 }
 
 .map-floating-tools {
@@ -120,4 +151,16 @@
 [data-theme='light'] .atlas-region-segmented {
   background: var(--map-overlay-bg);
   border-color: var(--map-overlay-border);
+}
+
+.map-bottom-right-stack {
+  position: absolute;
+  bottom: 24px;
+  right: 12px;
+  z-index: 1000;
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-end;
 }

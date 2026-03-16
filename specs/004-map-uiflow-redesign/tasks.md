@@ -4,20 +4,18 @@
 
 ## P0（高優先）
 
-- id: multi-zoom-data-pipeline
-  - 標題：建立 multi-zoom 資料管線（backend）
-  - 描述：在 backend 產生 z0..z14 的 topojson / vector-tiles，並輸出到 backend/data/tiles/{z}/{x}/{y}.json；包含每級的 simplify tolerance 設定表。
-  - 預期檔案改動：backend/data/**, .specify/scripts/**
-  - 驗收準則：可在本地驗證輸出完整且符合簡化表的 tiles（至少 z=0,4,7,10）。
-  - 建議測試案例：backend-multi-zoom-pipeline.spec.ts
+- id: frontend-data-projection-optimization
+  - 標題：實作輕量化資料投影與 rbush 索引
+  - 描述：優化 `useMarkersState`，將 5,000+ 校點投影為輕量化物件，並導入 `rbush` 進行 Viewport Culling。
+  - 預期檔案改動：frontend/src/hooks/derived/useMarkersState.ts, frontend/src/lib/spatial/**
+  - 驗收準則：切換條件時，JS 處理時間 < 50ms；平移時僅處理畫面內點位。
   - 優先度：P0
 
-- id: frontend-supercluster-integration
-  - 標題：前端整合 Supercluster 與 cluster UI（含 spiderfy）
-  - 描述：在前端整合 Supercluster，支援 cluster radius、extent 參數；實作點擊 cluster 的 spiderfy 與 zoom-in 展開邏輯。
-  - 預期檔案改動：frontend/src/components/map/**, frontend/src/lib/supercluster/**
-  - 驗收準則：cluster 在低 zoom 正常聚合，點擊 cluster 後在 500ms 內執行 spiderfy 或 zoom-in 展開；對應 Playwright 測試通過。
-  - 建議測試案例：cluster-spiderfy.spec.ts
+- id: leaflet-canvas-renderer-global
+  - 標題：啟用地圖全域 Canvas 渲染與標籤優化
+  - 描述：在 `MapCanvas` 啟用 `preferCanvas: true`；優化 `AllTownshipLabels` 增加事件防抖。
+  - 預期檔案改動：frontend/src/components/map/organisms/MapCanvas.tsx, frontend/src/components/map/molecules/AllTownshipLabels.tsx
+  - 驗收準則：在大量校點顯示時，地圖縮放動畫流暢（> 30 FPS）。
   - 優先度：P0
 
 - id: serviceworker-precaching-baseline

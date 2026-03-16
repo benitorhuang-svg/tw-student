@@ -1,0 +1,63 @@
+/* --- Map Tooltips & Hover Cards --- */
+
+.app-shell .leaflet-tooltip,
+.app-shell .atlas-map-tooltip,
+.app-shell .atlas-map-tooltip--preview {
+    background: var(--map-tooltip-bg) !important;
+    backdrop-filter: blur(var(--map-overlay-blur)) !important;
+    -webkit-backdrop-filter: blur(var(--map-overlay-blur)) !important;
+    color: var(--map-tooltip-color) !important;
+    border: 1px solid var(--map-overlay-border) !important;
+    border-radius: 999px !important;
+    padding: 6px 14px !important; 
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3) !important;
+    font-size: 0.88rem !important;
+    font-weight: 500 !important;
+    white-space: nowrap !important;
+    opacity: 1 !important;
+    z-index: 10000 !important;
+}
+
+/* If the tooltip uses our rich card, it handles its own internal padding */
+.leaflet-tooltip:has(.atlas-map-hover-card),
+.atlas-map-tooltip:has(.atlas-map-hover-card) {
+    padding: 0 !important;
+}
+
+.leaflet-tooltip::before,
+.atlas-map-tooltip::before {
+    display: none !important;
+}
+
+.atlas-map-hover-card {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    padding: 6px 16px !important;
+    gap: 10px !important;
+    white-space: nowrap !important;
+}
+
+.atlas-map-hover-card__name {
+    font-weight: 700 !important;
+    color: var(--map-tooltip-color) !important;
+}
+
+.atlas-map-hover-card__stats {
+    font-weight: 400 !important;
+    color: var(--map-tooltip-color) !important;
+    opacity: 0.8;
+    font-size: 0.82rem !important;
+    border-left: 1px solid var(--map-overlay-border);
+    padding-left: 10px;
+}
+
+.leaflet-interactive {
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent;
+}
+
+svg.leaflet-zoom-animated path {
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}

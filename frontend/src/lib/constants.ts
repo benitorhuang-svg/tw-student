@@ -50,3 +50,4 @@ export const MAP_TOWNSHIP_ZOOM = 11
 export const MAP_TOWNSHIP_FOCUS_ZOOM = 13
 export const MAP_FOCUS_SCHOOL_ZOOM = 15
 export const MAP_MAX_ZOOM = 15
+export const MAP_MAX_BOUNDS: [[number, number], [number, number]] = [[20.0, 117.5], [26.8, 123.0]]

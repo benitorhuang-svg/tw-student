@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import { MapContainer } from 'react-leaflet'
 
-import { MAP_DEFAULT_CENTER, MAP_DEFAULT_ZOOM, MAP_MAX_ZOOM } from '../../../lib/constants'
-import MapBreadcrumb from '../atoms/MapBreadcrumb'
+import { MAP_DEFAULT_CENTER, MAP_DEFAULT_ZOOM, MAP_MAX_ZOOM, MAP_MAX_BOUNDS } from '../../../lib/constants'
 import { MapLoadingBanner } from '../atoms/MapLoadingBanner'
 import { MapTileLayer } from '../atoms/MapTileLayer'
 import MapBoundsController from './MapBoundsController'
@@ -10,6 +9,7 @@ import { MapLayerStack } from '../molecules/MapLayerStack'
 import { useMapComputedState } from '../useMapComputedState'
 import { MapEvents } from '../atoms/MapEvents'
 import { MapFloatingFilters } from '../../molecules/MapFloatingFilters'
+import { AtlasMiniMap } from '../molecules/AtlasMiniMap'
 import type { CountyBucketDataset, CountyBoundaryCollection, TownshipBoundaryCollection, AcademicYear, EducationLevelFilter, ManagementTypeFilter, RegionGroupFilter, EducationSummaryDataset } from '../../../data/educationData'
 import type { CountySummary, RankingSummary } from '../../../lib/analytics.types'
 import type { SchoolMapPoint } from '../types'
@@ -71,6 +71,18 @@ export type MapCanvasProps = {
   summaryDataset?: EducationSummaryDataset | null
 }
 
+/**
+ * Helper to ensure UI overlays stay in their absolute-positioned containers
+ * and don't leak into the Leaflet map layers.
+ */
+function MapUIOverlay({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="atlas-map-ui-overlay-pane">
+      {children}
+    </div>
+  )
+}
+
 export default function MapCanvas(props: MapCanvasProps) {
   const {
     activeCountyId, activeTownshipId, theme, countyBoundaries,
@@ -90,7 +102,6 @@ export default function MapCanvas(props: MapCanvasProps) {
 
   let selectedSchool = selectedSchoolId ? schoolPoints.find((school) => school.id === selectedSchoolId) ?? null : null
 
-  // High-Precision fallback: Use global school index if point is not in current view/cache
   if (!selectedSchool && selectedSchoolId && props.summaryDataset?.schoolCodeIndex) {
     const entry = Object.values(props.summaryDataset.schoolCodeIndex).find(e =>
       e.schoolIds?.includes(selectedSchoolId)
@@ -121,20 +132,22 @@ export default function MapCanvas(props: MapCanvasProps) {
       <div className="atlas-map-shell">
         <div className="atlas-map-canvas-wrap" data-township-markers={forceTownshipLabels ? 'true' : 'false'}>
           <MapLoadingBanner isLoading={isTownshipBoundaryLoading} message="正在同步縣市鄉鎮界線…" />
-          <MapBreadcrumb scopePath={scopePath} onNavigate={onNavigateScope} />
+          
           <MapContainer
             center={[initialMapLat ?? MAP_DEFAULT_CENTER[0], initialMapLon ?? MAP_DEFAULT_CENTER[1]]}
             zoom={initialMapZoom ?? MAP_DEFAULT_ZOOM}
             minZoom={MAP_DEFAULT_ZOOM}
             maxZoom={MAP_MAX_ZOOM}
+            maxBounds={MAP_MAX_BOUNDS}
+            maxBoundsViscosity={1.0}
             zoomControl={false}
             zoomSnap={0.1}
             zoomDelta={0.5}
             className="atlas-map-canvas"
             attributionControl={false}
+            preferCanvas={true}
           >
             <MapTileLayer theme={theme} />
-            {/* Zoom control is now integrated into MapFloatingFilters */}
             <MapEvents onBackgroundClick={() => {
               if (selectedSchoolId) onSelectSchool(null)
             }} />
@@ -159,7 +172,7 @@ export default function MapCanvas(props: MapCanvasProps) {
               allTownshipBoundaries={allTownshipBoundaries}
               forceTownshipLabels={forceTownshipLabels}
             />
-
+            
             <MapBoundsController
               {...props}
               selectedSchoolPoint={selectedSchool}
@@ -168,26 +181,40 @@ export default function MapCanvas(props: MapCanvasProps) {
               initialLonFromUrl={initialMapLon}
             />
 
-            <MapFloatingFilters
-              activeTab={activeTab}
-              activeCountyName={activeCountyName}
-              region={props.activeRegion}
-              activeYear={activeYear}
-              summaryYears={summaryYears}
-              educationLevel={educationLevel}
-              managementType={managementType}
-              isYearPlaybackActive={isYearPlaybackActive}
-              openShelf={openShelf}
-              onToggleShelf={toggleShelf}
-              onSetRegion={onSetRegion}
-              onResetRegion={onResetRegion}
-              onTogglePlayback={onTogglePlayback}
-              onSetActiveYear={onSetActiveYear}
-              onStopPlayback={onStopPlayback}
-              onSetEducationLevel={onSetEducationLevel}
-              onSetManagementType={onSetManagementType}
-              startTransition={startTransition}
-            />
+            {/* UI Overlays Portal-like sibling container inside MapContainer */}
+            <MapUIOverlay>
+              <MapFloatingFilters
+                activeTab={activeTab}
+                activeCountyName={activeCountyName}
+                region={props.activeRegion}
+                activeYear={activeYear}
+                summaryYears={summaryYears}
+                educationLevel={educationLevel}
+                managementType={managementType}
+                isYearPlaybackActive={isYearPlaybackActive}
+                openShelf={openShelf}
+                onToggleShelf={toggleShelf}
+                onSetRegion={onSetRegion}
+                onResetRegion={onResetRegion}
+                onTogglePlayback={onTogglePlayback}
+                onSetActiveYear={onSetActiveYear}
+                onStopPlayback={onStopPlayback}
+                onSetEducationLevel={onSetEducationLevel}
+                onSetManagementType={onSetManagementType}
+                startTransition={startTransition}
+              />
+
+              <div className="map-bottom-right-stack">
+                <AtlasMiniMap 
+                  countyBoundaries={countyBoundaries as any}
+                  activeCountyId={activeCountyId}
+                  onSelectCounty={props.onSelectCounty}
+                  isVisible={true}
+                  scopePath={scopePath}
+                  onNavigateScope={onNavigateScope}
+                />
+              </div>
+            </MapUIOverlay>
           </MapContainer>
         </div>
       </div>

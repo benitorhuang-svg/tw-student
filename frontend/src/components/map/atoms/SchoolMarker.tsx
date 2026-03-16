@@ -64,13 +64,13 @@ export function SchoolMarker({
         ariaLabel={buildSchoolMarkerAriaLabel(school)}
         center={[school.latitude, school.longitude]}
         isPressed={isSelected || isHighlighted}
-        radius={isSelected ? 6 : baseRadius} // Smaller base if selected to emphasize the star
+        radius={isSelected ? 6 : baseRadius}
         pathOptions={{
           className: `atlas-school-marker atlas-school-marker-${school.id} ${isSelected ? 'atlas-school-marker-selected' : ''}`,
-          color: isSelected ? '#38bdf8' : isHighlighted ? '#f8fafc' : '#0f172a',
-          weight: isSelected ? 3 : isHighlighted ? 2 : 1,
+          color: isSelected ? '#38bdf8' : isHighlighted ? '#ffffff' : '#ffffff',
+          weight: isSelected ? 3 : 1.5,
           fillColor: growthChoroplethColor(school.deltaRatio),
-          fillOpacity: isSelected || isHighlighted ? 1.0 : Math.max(0.58, growthChoroplethOpacity(school.deltaRatio) + 0.12),
+          fillOpacity: isSelected || isHighlighted ? 1.0 : Math.max(0.65, growthChoroplethOpacity(school.deltaRatio) + 0.1),
         }}
         onActivate={() => {
           suppressNextMapClearRef.current = true

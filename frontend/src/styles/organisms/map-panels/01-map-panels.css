@@ -2,7 +2,7 @@
 
 @import "../../atoms/map-elements.css";
 @import "../../molecules/map-overlays.css";
-@import "../../molecules/map-filters.css";
+@import "../../map/floating-filters.css";
 @import "../../molecules/filter-shelf.css";
 
 .dashboard-side-shell {

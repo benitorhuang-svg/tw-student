@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useState, useRef } from 'react'
 import { useMap, useMapEvents } from 'react-leaflet'
 import type { CountyBucketDataset, SchoolBucketRecord } from '../../../data/educationData'
 import type { SchoolMapPoint } from '../types'
@@ -21,11 +21,15 @@ export function useSchoolClustering(
   countyBuckets: CountyBucketDataset | null
 ) {
   const map = useMap()
+  const renderedBoundsRef = useRef<L.LatLngBounds>(map.getBounds().pad(1.0))
   const [zoom, setZoom] = useState(() => map.getZoom())
-  const [bounds, setBounds] = useState(() => map.getBounds())
+  const [bounds, setBounds] = useState(() => renderedBoundsRef.current)
 
   useMapEvents({
-    moveend: () => setBounds(map.getBounds()),
+    moveend: () => {
+      setZoom(map.getZoom())
+      setBounds(map.getBounds())
+    },
     zoomend: () => {
       setZoom(map.getZoom())
       setBounds(map.getBounds())

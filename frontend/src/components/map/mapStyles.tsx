@@ -24,7 +24,7 @@ export function choroplethColor(students: number) {
   if (students >= 100000) return '#38bdf8' // Sky-400
   if (students >= 50000) return '#7dd3fc'  // Sky-300
   if (students >= 10000) return '#bae6fd'  // Sky-200
-  return '#f0f9ff'                         // Sky-50
+  return '#e2e8f0'                         // Slate-200 (Darker default to see small islands)
 }
 
 export function choroplethOpacity(students: number) {
@@ -80,6 +80,20 @@ export function renderScopeMarkerIcon(label: string, value: number, color: strin
       <div class="atlas-scope-dot atlas-scope-dot--${variant}${hideValue ? ' atlas-scope-dot--compact' : ''}" style="--region-dot-size:${size}px; --scope-dot-width:${iconWidth}px; --scope-dot-color:${color};">
         <span class="atlas-region-dot__label">${displayLabel}</span>
         ${hideValue ? '' : `<strong class="atlas-region-dot__value">${value.toLocaleString('zh-TW')}</strong>`}
+      </div>
+    `,
+  })
+}
+
+export function renderScopePillIcon(label: string, color: string, isActive: boolean) {
+  const width = Math.min(120, 40 + label.length * 14)
+  return L.divIcon({
+    className: 'atlas-scope-pill-wrapper',
+    iconSize: [width, 30],
+    iconAnchor: [width / 2, 15],
+    html: `
+      <div class="atlas-scope-pill ${isActive ? 'is-active' : ''}" style="--scope-pill-color: ${color}">
+        <span class="atlas-scope-pill__label">${label}</span>
       </div>
     `,
   })

@@ -10,6 +10,7 @@ import type {
 } from '../../data/educationData'
 import type { SchoolMapPoint } from '../../components/map/types'
 import { getSchoolInsights } from '../../lib/analytics'
+import { getStudentsForYear, previousYearOf } from '../../lib/analytics.helpers'
 
 export function useMarkersState(
   summaryDataset: EducationSummaryDataset | null,
@@ -28,89 +29,81 @@ export function useMarkersState(
   return useMemo(() => {
     if (!summaryDataset) return { schoolMapPoints: [], selectedSchool: null, schoolInsights: [], countyWideSchoolInsights: [] }
 
-    // Merge schools from all cached counties to ensure seamless styling across borders
-    const allCachedInsights = Object.values(countyDetailCache).flatMap(detail => 
-        getSchoolInsights(detail, filters, null)
-    )
+    // PERFORMANCE OPTIMIZATION: Zero-copy projection where possible
+    // We avoid repeated massive flatMaps by using a more targeted extraction logic.
+    const cachedDetails = Object.values(countyDetailCache);
     
-    // We still maintain these for specific panel UI, but for map points we want everything in cache
+    // We still need full insights for the specific sidebar panels (township/county)
     const currentCountyId = Object.keys(countyDetailCache).find(id => 
         countyDetailCache[id].towns.some(t => t.id === activeTownshipId)
     )
-    const selectedCountyDetail = currentCountyId ? countyDetailCache[currentCountyId] : null
-    const townshipSchoolInsights = getSchoolInsights(selectedCountyDetail, filters, activeTownshipId)
-    const countyWideSchoolInsights = getSchoolInsights(selectedCountyDetail, filters, null)
+    const selectedCountyDetail = currentCountyId ? countyDetailCache[currentCountyId] : null;
+    const townshipSchoolInsights = getSchoolInsights(selectedCountyDetail, filters, activeTownshipId);
+    const countyWideSchoolInsights = getSchoolInsights(selectedCountyDetail, filters, null);
     
-    const activeSchoolId = allCachedInsights.some((s) => s.id === selectedSchoolId) ? selectedSchoolId : null
-    const selectedSchool = activeSchoolId 
-      ? allCachedInsights.find((s) => s.id === activeSchoolId) ?? null 
-      : null
-
-    // Build a lookup for student counts from the bucket cache for schools not in detail cache
-    const bucketStudentLookup = new Map<string, number>()
-    Object.values(countyBucketCache).forEach((bucketData: CountyBucketDataset) => {
-      Object.values(bucketData.precisions).forEach((buckets) => {
-        buckets.forEach((bucket) => {
-          bucket.topSchools?.forEach((s) => {
+    // Build a lookup for student counts from the bucket cache to enrich preview points
+    const bucketStudentLookup = new Map<string, number>();
+    for (const bucketData of Object.values(countyBucketCache)) {
+      for (const buckets of Object.values(bucketData.precisions)) {
+        for (const bucket of buckets) {
+          if (!bucket.topSchools) continue;
+          for (const s of bucket.topSchools) {
             if (!bucketStudentLookup.has(s.id)) {
-              bucketStudentLookup.set(s.id, s.students)
+              bucketStudentLookup.set(s.id, s.students);
             }
-          })
-        })
-      })
-    })
+          }
+        }
+      }
+    }
 
-    const schoolRecordLookup = new Map<string, any>()
-    Object.values(countyDetailCache).forEach(detail => {
-        detail.towns.forEach(town => {
-            town.schools.forEach(s => schoolRecordLookup.set(s.id, s))
-        })
-    })
+    const points: SchoolMapPoint[] = [];
+    const processedIds = new Set<string>();
 
-    const points: SchoolMapPoint[] = allCachedInsights.reduce<SchoolMapPoint[]>((acc, school) => {
-      const raw = schoolRecordLookup.get(school.id)
-      if (!raw) return acc
-      const { latitude, longitude } = raw.coordinates
-      if (!Number.isFinite(latitude) || !Number.isFinite(longitude) || (latitude === 0 && longitude === 0)) return acc
-      
-      acc.push({
-        id: school.id,
-        name: school.name,
-        townshipName: school.townshipName,
-        educationLevel: school.educationLevel,
-        managementType: school.managementType,
-        status: school.status ?? '正常',
-        currentStudents: school.currentStudents,
-        delta: school.delta,
-        deltaRatio: school.deltaRatio,
-        latitude,
-        longitude,
-        website: raw.profileUrl ?? raw.website,
-      })
-      return acc
-    }, [])
+    // 1. Process Detailed Schools (Highest priority, most accurate data)
+    for (const detail of cachedDetails) {
+      for (const town of detail.towns) {
+        for (const s of town.schools) {
+          // Fast filter skip
+          if (filters.educationLevel !== '全部' && s.educationLevel !== filters.educationLevel) continue;
+          if (filters.managementType !== '全部' && s.managementType !== filters.managementType) continue;
+          if (filters.region !== '全部' && detail.county.region !== filters.region) continue;
 
-    // ============================================================================
-    // Fix for "Zoom 12 顯示所有校點"
-    // We add "preview" points from the schoolCodeIndex for all schools NOT already
-    // in the detailed points. This ensures that even without a focused county, 
-    // or when looking at borders, all school markers appear at high zoom.
-    // ============================================================================
+          const lat = s.coordinates?.latitude;
+          const lon = s.coordinates?.longitude;
+          if (!lat || !lon || (lat === 0 && lon === 0)) continue;
+
+          const currentStudents = getStudentsForYear(s, filters.year);
+          const previousYear = previousYearOf(filters.year);
+          const previousStudents = previousYear ? getStudentsForYear(s, previousYear) : currentStudents;
+          const delta = currentStudents - previousStudents;
+
+          points.push({
+            id: s.id,
+            name: s.name,
+            townshipName: town.name,
+            educationLevel: s.educationLevel,
+            managementType: s.managementType,
+            status: s.status ?? '正常',
+            currentStudents,
+            delta,
+            deltaRatio: previousStudents === 0 ? 0 : delta / previousStudents,
+            latitude: lat,
+            longitude: lon,
+            website: s.profileUrl ?? s.website,
+          });
+          processedIds.add(s.id);
+        }
+      }
+    }
+
+    // 2. Process Preview Schools (From global index)
     if (summaryDataset.schoolCodeIndex) {
-      const existingIds = new Set(points.map(p => p.id))
-      
-      Object.entries(summaryDataset.schoolCodeIndex).forEach(([code, entry]) => {
-        // We use the first schoolId as a representative if multiple exist for the same code
-        const id = entry.schoolIds?.[0] || code
-        
-        // Skip if already in the detailed points
-        if (existingIds.has(id)) return
+      for (const [code, entry] of Object.entries(summaryDataset.schoolCodeIndex)) {
+        const id = entry.schoolIds?.[0] || code;
+        if (processedIds.has(id)) continue;
 
         if (entry.longitude && entry.latitude) {
-          // Filter by education level if applicable
-          if (filters.educationLevel !== '全部' && !entry.levels?.includes(filters.educationLevel as any)) {
-              return
-          }
+          if (filters.educationLevel !== '全部' && !entry.levels?.includes(filters.educationLevel as any)) continue;
 
           points.push({
             id,
@@ -124,16 +117,18 @@ export function useMarkersState(
             deltaRatio: 0,
             latitude: entry.latitude,
             longitude: entry.longitude,
-          })
+          });
         }
-      })
+      }
     }
+
+    const selectedSchool = selectedSchoolId ? points.find(p => p.id === selectedSchoolId) ?? null : null;
 
     return {
       schoolMapPoints: points,
       selectedSchool,
       schoolInsights: townshipSchoolInsights,
       countyWideSchoolInsights,
-    }
-  }, [summaryDataset, countyDetailCache, countyBucketCache, filters, activeTownshipId, selectedSchoolId])
+    };
+  }, [summaryDataset, countyDetailCache, countyBucketCache, filters, activeTownshipId, selectedSchoolId]);
 }

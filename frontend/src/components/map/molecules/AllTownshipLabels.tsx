@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import type { GeoJsonObject } from 'geojson'
 import L from 'leaflet'
-import { Marker, useMap, useMapEvents } from 'react-leaflet'
+import { Marker, useMap } from 'react-leaflet'
 import { buildDataAssetUrl } from '../../../data/dataAsset'
 
 type TownshipCoord = {
@@ -54,6 +54,7 @@ function AllTownshipLabels({
   const map = useMap()
   const [data, setData] = useState<TownshipCoord[] | null>(null)
   const [, setVersion] = useState(0)
+  const [bounds, setBounds] = useState(() => map.getBounds())
 
   const townshipBoundsLookup = useMemo(() => {
     if (!townshipBoundaries) return new Map<string, L.LatLngBounds>()
@@ -61,8 +62,8 @@ function AllTownshipLabels({
     townshipBoundaries.features.forEach((feature) => {
       const id = feature?.properties?.townId
       if (!id) return
-      const bounds = L.geoJSON(feature as GeoJsonObject).getBounds()
-      if (bounds.isValid()) lookup.set(id, bounds)
+      const b = L.geoJSON(feature as GeoJsonObject).getBounds()
+      if (b.isValid()) lookup.set(id, b)
     })
     return lookup
   }, [townshipBoundaries])
@@ -74,31 +75,34 @@ function AllTownshipLabels({
       .catch(() => {})
   }, [])
 
-  useMapEvents({
-    moveend: () => setVersion((v) => v + 1),
-    zoomend: () => setVersion((v) => v + 1),
-  })
+  useEffect(() => {
+    const handler = () => {
+      setBounds(map.getBounds())
+      setVersion((v) => v + 1)
+    }
+    map.on('moveend', handler)
+    map.on('zoomend', handler)
+    return () => {
+      map.off('moveend', handler)
+      map.off('zoomend', handler)
+    }
+  }, [map])
 
   const visible = useMemo(() => {
     if (!data) return []
     const zoom = currentZoom ?? map.getZoom()
     
     // Strict visibility rule: hide if zoom < 11 unless forced. 
-    // Also hide if visibleTownshipIds is empty (and not forced).
     if (zoom < 11 && !forceShowAll) return []
     if (visibleTownshipIds.length === 0 && !forceShowAll) return []
     
-    const bounds = map.getBounds()
     const visibleIdSet = new Set(visibleTownshipIds)
-
-    // Pad the viewport slightly so that townships whose polygon just barely
-    // touches the edge of the view are still treated as "visible".
-    const padded = bounds.pad(0.1)
+    const renderBounds = bounds
 
     const inView = data.filter((t) => {
       // Selected township ALWAYS bypasses basic filters if it's in view
       if (t.townId === selectedTownshipId) {
-        const padded = bounds.pad(0.2)
+        const padded = renderBounds.pad(0.2)
         return padded.contains([t.latitude, t.longitude])
       }
 
@@ -107,10 +111,10 @@ function AllTownshipLabels({
 
       const townshipBounds = townshipBoundsLookup.get(t.townId)
       if (townshipBounds) {
-        return padded.intersects(townshipBounds)
+        return renderBounds.intersects(townshipBounds)
       }
 
-      return padded.contains([t.latitude, t.longitude])
+      return renderBounds.contains([t.latitude, t.longitude])
     })
 
     // Optional deduplication for readability
@@ -119,7 +123,7 @@ function AllTownshipLabels({
       for (const candidate of inView) {
         // Selected township ALWAYS accepted
         if (candidate.townId === selectedTownshipId) {
-          accepted.unshift(candidate) // Put it at the start so it can block others but not be blocked
+          accepted.unshift(candidate) 
           continue
         }
 
@@ -135,7 +139,7 @@ function AllTownshipLabels({
 
     return inView
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [data, hiddenTownshipId, visibleTownshipIds, currentZoom, map.getZoom(), map.getBounds().toBBoxString(), forceShowAll])
+  }, [data, hiddenTownshipId, visibleTownshipIds, currentZoom, bounds, forceShowAll])
 
   if (!visible.length) return null
 
@@ -148,7 +152,7 @@ function AllTownshipLabels({
             position={[t.latitude, t.longitude]}
             icon={makeTownshipLabelIcon(t.townName)}
             eventHandlers={{ 
-              click: (e) => {
+              click: (e: L.LeafletMouseEvent) => {
                 L.DomEvent.stopPropagation(e.originalEvent)
                 onSelectTownship(t.townId, { skipTabSwitch: true })
               } 

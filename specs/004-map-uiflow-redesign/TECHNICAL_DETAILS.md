@@ -21,30 +21,25 @@
 
 ## 前端實作建議
 - Leaflet 建議設定：
-  - preferCanvas: true
-  - inertia: true
-  - zoomAnimation: true
-  - preferCanvas 在大量點時能穩定提升渲染效能
+  - `preferCanvas: true`：這是核心設定，確保所有向量圖層與 Marker 盡可能在 Canvas 上繪製，避免 DOM 節點過多。
+  - `zoomSnap: 0.1`, `zoomDelta: 0.5`：配合平滑縮放。
 
-- 聚合引擎：Supercluster（或等價 JS library）
-  - 主要參數：radius (像素)、extent、maxZoom
-  - cluster expansion / spiderfy：點擊 cluster 時若 cluster 大小小於 threshold，可直接 spiderfy 展示內部點，否則以 zoom-in 展開
-  - spiderfy 設定要能處理大量重疊點（避免重疊重心偏移）
+- 輕量化資料投影 (Data Projection)：
+  - 使用 `Float32Array` 或精簡物件存放校點座標，避免在 React State 中存放大體積的完整 Metadata 物件。
+  - 只有在選取（Selected）或懸停（Hovered）時，才從 SQLite 緩存中索引詳細屬性。
 
-- label collision 處理
-  - 演算法建議：greedy placement + priority rules
-    - priority：selected / hovered point > anchor points > secondary labels
-    - 先繪製高權重標籤，再嘗試放置次級標籤，若碰撞則以縮放或聚合處理
-  - 可採用 spatial index（rbush）做快速碰撞測試
+- 空間索引與 Viewport Culling：
+  - 引入 **`rbush`** 作為前端空間索引。
+  - 在 `moveend` 事件觸發時，透過 `rbush.search(bbox)` 快速篩選可見點位。
+  - 只有在「畫面內」的點位才傳遞給 React 元件進行渲染。
 
-- progressive loading event flow
-  - 首屏載入：load baseline tiles (z=0,4,7) 並 render choropleth + coarse clusters
-  - 使用者 zoom-in 到 threshold 時，request 點資料或較高 z 的 tiles
-  - 在 cluster expansion/spiderfy 前，確保點資料已載入或以 placeholder 顯示
+- 標籤碰撞與顯示優化：
+  - 在 `AllTownshipLabels` 中使用 `rbush` 進行標籤位置預計算。
+  - 增加 **Debounce (防抖)** 機制：地圖移動過程中不觸發重大的標籤計算，僅在移動結束後進行一次性更新。
 
-- Canvas vs WebGL fallback
-  - 預設使用 Canvas（Leaflet canvas layer），當資料量超過閾值（例如超過 10k 點或 FPS 降低明顯）時，切換到 WebGL 解決方案（mapbox-gl / deck.gl）作為 fallback
-  - 需設計一套 state sync 機制，使得地圖狀態（zoom, center, selectedId）能在兩種渲染模式間互通
+- 渲染 fallback 策略：
+  - 預設模式：Leaflet Canvas Renderer。
+  - 當點位超過 10,000 個或移動 FPS 低於 20 時，引導使用者縮小搜尋範圍或切換至基礎預覽模式。
 
 ## Service Worker / PWA Cache 策略
 - Precache：將 baseline zoom levels （建議 z=0,4,7,10）列為 precache 的項目

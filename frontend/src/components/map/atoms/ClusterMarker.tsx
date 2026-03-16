@@ -21,10 +21,10 @@ export function ClusterMarker({ cluster, maxStudentsInView, zoom }: ClusterMarke
       center={[cluster.latitude, cluster.longitude]}
       radius={radius}
       pathOptions={{
-        color: '#f8fafc',
-        weight: 1.5,
+        color: '#ffffff',
+        weight: 2,
         fillColor: clusterColor,
-        fillOpacity: 0.82,
+        fillOpacity: 0.85,
         className: 'atlas-cluster-marker',
       }}
       ariaLabel={buildClusterMarkerAriaLabel(cluster.count, cluster.totalStudents)}

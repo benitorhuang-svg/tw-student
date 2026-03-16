@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { Marker, Tooltip, useMap } from 'react-leaflet'
 import L from 'leaflet'
 import type { FeatureCollection, GeoJsonObject } from 'geojson'
-import { renderScopeMarkerIcon, growthChoroplethColor, renderHoverPreview } from '../mapStyles'
+import { renderScopeMarkerIcon, growthChoroplethColor, renderHoverPreview, renderScopePillIcon } from '../mapStyles'
 import type { CountySummary } from '../../../lib/analytics'
 
 interface CountyMarkerLayerProps {
@@ -176,21 +176,39 @@ export function CountyMarkerLayer({
         const offset = effectiveOffsets[county.shortLabel] ?? null
         const adjustedCenter: [number, number] = offset ? [center[0] + offset[0], center[1] + offset[1]] : center
 
+        const zoom = currentMapZoom ?? 7;
+        const usePill = zoom >= 9.5;
+        const isActive = county.id === activeCountyId;
+        
+        // Pills are smaller, so we keep them interactive even at higher zooms
+        const isInteractive = usePill ? true : (zoom < 10.5);
+        const opacity = zoom >= 11.5 ? 0.6 : 1.0;
+
+        const icon = usePill 
+          ? renderScopePillIcon(county.shortLabel, growthChoroplethColor(county.deltaRatio), isActive)
+          : renderScopeMarkerIcon(county.shortLabel, county.students, growthChoroplethColor(county.deltaRatio), 54, 'county');
+
         return (
           <Marker
             key={`county-marker-${county.id}`}
             position={adjustedCenter}
-            icon={renderScopeMarkerIcon(county.shortLabel, county.students, growthChoroplethColor(county.deltaRatio), 54, 'county')}
+            interactive={isInteractive}
+            icon={icon}
             eventHandlers={{ 
               click: (e) => {
+                if (!isInteractive) return;
                 L.DomEvent.stopPropagation(e.originalEvent)
                 onSelectCounty(county.id)
               } 
             }}
+            opacity={opacity}
+            zIndexOffset={isActive ? 1000 : usePill ? 500 : 0}
           >
-            <Tooltip direction="top" offset={[0, -10]} className="atlas-map-tooltip atlas-map-tooltip--preview">
-              {renderHoverPreview(county.name, county.students)}
-            </Tooltip>
+            {isInteractive && (
+              <Tooltip direction="top" offset={[0, usePill ? -15 : -10]} className="atlas-map-tooltip atlas-map-tooltip--preview">
+                {renderHoverPreview(county.name, county.students)}
+              </Tooltip>
+            )}
           </Marker>
         )
       })}
