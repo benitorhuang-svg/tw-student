@@ -12,6 +12,7 @@ interface StarMarkerProps {
   tooltipContent?: React.ReactNode
   onActivate?: () => void
   ariaLabel?: string
+  zoom?: number
 }
 
 /**
@@ -27,16 +28,20 @@ export const StarMarker: React.FC<StarMarkerProps> = ({
   deltaRatio = 0,
   tooltipContent,
   onActivate,
-  ariaLabel
+  ariaLabel,
+  zoom = 11
 }) => {
   const markerRef = useRef<L.Marker>(null)
+  
+  // Scale the star based on zoom level just like regular school markers
+  const dynamicSize = size * (zoom / 11)
   
   const dotColor = growthChoroplethColor(deltaRatio)
 
   const icon = L.divIcon({
     className: 'atlas-selected-marker-molecule-container',
     html: `
-      <div class="atlas-selected-marker-sync-group" style="width: ${size}px; height: ${size}px;">
+      <div class="atlas-selected-marker-sync-group" style="width: ${dynamicSize}px; height: ${dynamicSize}px;">
         <!-- The underlying dot (matches normal school markers) -->
         <div class="atlas-selected-dot-base" style="background-color: ${dotColor};"></div>
         
@@ -48,8 +53,8 @@ export const StarMarker: React.FC<StarMarkerProps> = ({
         </div>
       </div>
     `,
-    iconSize: [size, size],
-    iconAnchor: [size / 2, size / 2],
+    iconSize: [dynamicSize, dynamicSize],
+    iconAnchor: [dynamicSize / 2, dynamicSize / 2],
   })
 
   useEffect(() => {

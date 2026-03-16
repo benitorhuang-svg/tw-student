@@ -8,7 +8,6 @@ export function useMapComputedState(
   counties: CountySummary[],
   activeCountyId: string | null,
   _activeTownshipId: string | null,
-  selectedSchoolId: string | null,
   countyBoundaries: CountyBoundaryCollection,
   townshipBoundaries: TownshipBoundaryCollection | null,
   townshipRows: RankingSummary[],
@@ -44,7 +43,7 @@ export function useMapComputedState(
   }, [townshipBoundaries])
 
   const zoom = currentMapZoom ?? 7
-  const visibility = computeLayerVisibility(zoom, schoolPoints.length > 0, !!selectedSchoolId)
+  const visibility = computeLayerVisibility(zoom, schoolPoints.length > 0)
 
   return {
     activeCounty,

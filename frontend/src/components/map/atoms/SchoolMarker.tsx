@@ -1,3 +1,4 @@
+import L from 'leaflet'
 import { CircleMarker, useMap } from 'react-leaflet'
 import { MAP_MAX_ZOOM } from '../../../lib/constants'
 import { growthChoroplethColor, growthChoroplethOpacity } from '../mapStyles'
@@ -21,20 +22,26 @@ export function SchoolMarker({
   isHighlighted,
   onSelect,
   suppressNextMapClearRef
- }: SchoolMarkerProps) {
+}: SchoolMarkerProps) {
   const map = useMap()
-  
+
   // If selected, we don't render anything on the Canvas layer.
   // The SelectedSchoolMarker (Molecule) in MapLayerStack will handle the 
   // synchronous rendering of both the dot and the star on the HTML layer.
   if (isSelected) return null;
 
-  // Scale markers based on zoom level to reduce visual noise when zoomed out
-  const zoomFactor = Math.max(0.6, Math.min(1.2, (zoom - 10) * 0.4 + 1))
-  const baseRadius = isHighlighted 
-    ? 7 
-    : Math.max(3, Math.min(8, Math.round(school.currentStudents / 250))) * zoomFactor
-    
+  // Scale logic: Start as small dots at Zoom 11, grow more aggressively as we zoom in
+  // - Zoom 11: zoomFactor approx 1.0 (Small dots)
+  // - Zoom 15: zoomFactor approx 3.0+ (Large markers)
+  const zoomFactor = Math.pow(1.35, Math.max(0, zoom - 11))
+  
+  const baseRadius = isHighlighted
+    ? 6 * zoomFactor
+    : Math.max(2.5, Math.min(8, Math.round(school.currentStudents / 350))) * zoomFactor
+
+  // At Zoom 11, keep hit zone manageable (20px), then scale up with the marker
+  const hitZoneRadius = Math.max(20, baseRadius * 1.4)
+
   const absPct = Math.abs(school.deltaRatio * 100)
   // Disable glow at low zoom levels to reduce clutter
   const hasGlow = !isSelected && absPct >= 5 && zoom >= 11
@@ -48,15 +55,44 @@ export function SchoolMarker({
         <CircleMarker
           center={[school.latitude, school.longitude]}
           radius={baseRadius + Math.min(10, 2 + absPct * 0.2) * zoomFactor}
-          pathOptions={{ 
-            color: glowColor, 
-            weight: 0, 
-            fillColor: glowColor, 
-            fillOpacity: Math.min(0.1, (0.02 + absPct * 0.002) * glowOpacityFactor) 
+          pathOptions={{
+            color: glowColor,
+            weight: 0,
+            fillColor: glowColor,
+            fillOpacity: Math.min(0.1, (0.02 + absPct * 0.002) * glowOpacityFactor)
           }}
           interactive={false}
         />
       )}
+
+      {/* Frosted/Matte Hit Zone for better visual click target indication */}
+      <CircleMarker
+        center={[school.latitude, school.longitude]}
+        radius={hitZoneRadius}
+        pathOptions={{
+          color: 'rgba(255, 255, 255, 0.3)',
+          weight: 1,
+          fillColor: 'rgba(255, 255, 255, 0.08)',
+          fillOpacity: 1,
+          className: 'atlas-school-marker-hitzone',
+        }}
+        eventHandlers={{
+          click: (e) => {
+            // Forward click to selection logic
+            L.DomEvent.stopPropagation(e.originalEvent)
+            suppressNextMapClearRef.current = true
+            onSelect(school.id)
+          },
+          dblclick: () => {
+            map.flyTo([school.latitude, school.longitude], MAP_MAX_ZOOM, { animate: true, duration: 1.2 })
+          },
+          mouseover: (e) => {
+            if ((e.target as any).setStyle) {
+              (e.target as any).setStyle({ cursor: 'pointer' })
+            }
+          }
+        }}
+      />
 
       {/* Base Circle Marker */}
       <AccessibleCircleMarker

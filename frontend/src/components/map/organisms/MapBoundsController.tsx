@@ -47,7 +47,9 @@ function MapBoundsController({
   activeTab,
 }: MapBoundsControllerProps) {
   const map = useMap()
-  const SIDEBAR_PADDING: L.PointExpression = [0, 0]
+  // Shift center to the bottom-right to increase space for side panels and breadcrumbs
+  const PADDING_TOP_LEFT: L.PointExpression = [200, 150]
+  const PADDING_BOTTOM_RIGHT: L.PointExpression = [60, 60]
 
   const lastAutoSelectRef = useRef<string | null>(null)
   const hasInitialCenter = initialLatFromUrl != null && initialLonFromUrl != null
@@ -100,10 +102,11 @@ function MapBoundsController({
 
     if (intent.type === 'flyTo') {
       const bounds = L.latLng(intent.center).toBounds(200)
-      map.flyToBounds(bounds, { 
-        paddingTopLeft: SIDEBAR_PADDING,
+      map.flyToBounds(bounds, {
+        paddingTopLeft: PADDING_TOP_LEFT,
+        paddingBottomRight: PADDING_BOTTOM_RIGHT,
         maxZoom: intent.zoom,
-        animate: true, 
+        animate: true,
         duration: 0.8,
       })
 
@@ -112,16 +115,23 @@ function MapBoundsController({
         pendingInitialZoomRef.current = null
       }
     } else if (intent.type === 'snapTo') {
-      map.setView(intent.center, intent.zoom, { animate: false })
-      
+      // Use fitBounds with duration 0 to respect padding for snap commands too
+      const bounds = L.latLng(intent.center).toBounds(200)
+      map.fitBounds(bounds, {
+        paddingTopLeft: PADDING_TOP_LEFT,
+        paddingBottomRight: PADDING_BOTTOM_RIGHT,
+        maxZoom: intent.zoom,
+        animate: false
+      })
+
       if (intent.id.startsWith('initial:')) {
-          pendingInitialCenterRef.current = null
-          pendingInitialZoomRef.current = null
+        pendingInitialCenterRef.current = null
+        pendingInitialZoomRef.current = null
       }
     }
 
     lastAppliedIntentIdRef.current = intent.id
-  }, [viewportIntent, map, SIDEBAR_PADDING])
+  }, [viewportIntent, map, PADDING_TOP_LEFT, PADDING_BOTTOM_RIGHT])
 
   const getNearestCountyId = useCallback((lat: number, lon: number) => {
     let bestCountyId: string | null = null
@@ -152,11 +162,11 @@ function MapBoundsController({
       const z = Math.round(map.getZoom() * 10) / 10
       onZoomChange?.(z)
       prevZoomRef.current = z
-      
+
       // Force bounds check on zoom/pan to prevent escaping geofence
       const center = map.getCenter()
       if (!L.latLngBounds(MAP_MAX_BOUNDS).contains(center)) {
-          map.panInsideBounds(MAP_MAX_BOUNDS, { animate: true })
+        map.panInsideBounds(MAP_MAX_BOUNDS, { animate: true })
       }
     }
     map.on('zoomend', handleZoomEnd)
@@ -169,16 +179,16 @@ function MapBoundsController({
       const c = map.getCenter()
       const b = map.getBounds()
       const z = map.getZoom()
-      
+
       onMoveEnd?.(Math.round(c.lat * 10000) / 10000, Math.round(c.lng * 10000) / 10000)
 
       // Automated prefetching for visible counties when zoomed in
       if (z >= 11 && onHoverCounty) {
         countyBoundaries.features.forEach(feature => {
-            const center = [feature.properties.centerLatitude, feature.properties.centerLongitude] as [number, number]
-            if (b.contains(center)) {
-               onHoverCounty(feature.properties.countyId)
-            }
+          const center = [feature.properties.centerLatitude, feature.properties.centerLongitude] as [number, number]
+          if (b.contains(center)) {
+            onHoverCounty(feature.properties.countyId)
+          }
         })
       }
 

@@ -1,8 +1,14 @@
-import React from 'react'
-import { useMap } from 'react-leaflet'
+import { useState } from 'react'
+import { useMap, useMapEvents } from 'react-leaflet'
 
 export const MapZoomControls: React.FC = () => {
   const map = useMap()
+  const [zoom, setZoom] = useState(() => map.getZoom())
+
+  useMapEvents({
+    zoomend: () => setZoom(map.getZoom()),
+    moveend: () => setZoom(map.getZoom()),
+  })
 
   return (
     <div className="map-zoom-controls">
@@ -16,6 +22,9 @@ export const MapZoomControls: React.FC = () => {
           <line x1="5" y1="12" x2="19" y2="12" />
         </svg>
       </button>
+      <div className="map-zoom-level">
+        {Math.round(zoom * 10) / 10}
+      </div>
       <button 
         type="button"
         className="map-zoom-btn" 

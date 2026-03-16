@@ -154,10 +154,12 @@ export function useAtlasNavigationActions({
       if (depth === 1) {
         setSelectedTownshipId(null)
         setSelectedSchoolId(null)
+        setMapZoom(MAP_TOWNSHIP_ZOOM)
         clearCountyDetailError()
         setActiveTab('county', 0)
       } else if (depth === 2) {
         setSelectedSchoolId(null)
+        setMapZoom(MAP_TOWNSHIP_FOCUS_ZOOM)
         setActiveTab('schools', 0)
       }
     })

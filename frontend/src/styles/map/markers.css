@@ -23,6 +23,24 @@
     z-index: 1;
 }
 
+@keyframes atlas-marker-pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.4); opacity: 0.2; }
+    100% { transform: scale(1.8); opacity: 0; }
+}
+
+.atlas-selected-marker-sync-group::before {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background: var(--brand-primary);
+    border-radius: 50%;
+    animation: atlas-marker-pulse 2s infinite ease-out;
+    pointer-events: none;
+    z-index: 0;
+}
+
 .atlas-star-icon-wrap {
     position: absolute;
     width: 100%;
@@ -80,4 +98,57 @@
 
 .atlas-school-marker-selected {
     filter: drop-shadow(0 0 12px rgb(56 189 248 / 40%));
+}
+
+.atlas-school-marker-hitzone {
+    transition: fill 0.2s ease, stroke 0.2s ease;
+    cursor: pointer;
+}
+
+.atlas-school-marker-hitzone:hover {
+    fill: rgba(255, 255, 255, 0.2) !important;
+    stroke: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* --- Map Breadcrumb Glassmorphism --- */
+.map-breadcrumb {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 99px;
+    padding: 6px 16px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    box-shadow: 
+        0 4px 6px -1px rgba(0, 0, 0, 0.05),
+        0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.map-breadcrumb:hover {
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+}
+
+.map-breadcrumb__link {
+    background: none;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 6px;
+    color: var(--brand-primary);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.map-breadcrumb__link:hover {
+    background: rgba(56, 189, 248, 0.1);
+}
+
+.map-breadcrumb__current {
+    font-weight: 700;
+    color: var(--text-primary);
+    padding: 4px 8px;
 }

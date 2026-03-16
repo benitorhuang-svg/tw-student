@@ -41,15 +41,23 @@ function VisibleSchoolMarkers({
     }
   })
 
-  // Sort clustered points to ensure selected school is rendered on top
+  // Sort clustered points:
+  // 1. Primary: Put selected school on top (rendered last)
+  // 2. Secondary: Larger schools (by student count) on top to emphasize significance
   const sortedClusteredPoints = useMemo(() => {
-    if (!selectedSchoolId) return clusteredPoints;
     return [...clusteredPoints].sort((a, b) => {
-      const aHasSelected = a.schools?.some(s => s.id === selectedSchoolId) ? 1 : 0;
-      const bHasSelected = b.schools?.some(s => s.id === selectedSchoolId) ? 1 : 0;
-      return aHasSelected - bHasSelected;
-    });
-  }, [clusteredPoints, selectedSchoolId]);
+      // Check if either cluster contains the selected school
+      const aHasSelected = a.schools?.some(s => s.id === selectedSchoolId) ? 1 : 0
+      const bHasSelected = b.schools?.some(s => s.id === selectedSchoolId) ? 1 : 0
+      
+      if (aHasSelected !== bHasSelected) {
+        return aHasSelected - bHasSelected // Selected on top
+      }
+      
+      // Secondary sort: Larger school count or larger student volume
+      return a.totalStudents - b.totalStudents
+    })
+  }, [clusteredPoints, selectedSchoolId])
 
   return (
     <>

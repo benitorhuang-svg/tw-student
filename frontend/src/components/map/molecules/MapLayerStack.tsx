@@ -194,6 +194,7 @@ export function MapLayerStack(props: LayerStackProps) {
           position={[selectedSchoolPoint.latitude, selectedSchoolPoint.longitude]}
           isSelected={true}
           deltaRatio={selectedSchoolPoint.deltaRatio}
+          zoom={currentMapZoom ?? 11}
           size={36}
           color="#fbbf24"
           ariaLabel={buildSchoolMarkerAriaLabel(selectedSchoolPoint)}

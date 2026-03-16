@@ -1,28 +1,37 @@
-.top-left-context {
+.map-bottom-left-stack {
     position: absolute;
-    top: 16px;
+    bottom: 24px;
     left: 16px;
     z-index: 1000;
-    pointer-events: auto;
+    pointer-events: none;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
+    align-items: flex-start;
 }
 
-.control-group {
+
+.map-control-group {
     display: flex;
-    align-items: flex-end; /* Align mini-map and help tools to bottom */
+    align-items: flex-start; /* Align from top since minimap is taller */
     gap: 12px;
     pointer-events: none;
 }
 
-.control-group > * {
+.map-control-group > * {
     pointer-events: auto;
 }
 
-.detached-controls {
+.map-detached-controls {
     display: flex;
     flex-direction: column;
     gap: 8px;
     align-items: center;
+}
+
+.map-minimap-zoom-pillar {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
 }

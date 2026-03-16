@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { SCHOOL_LEVEL_LEGEND } from '../schoolMarkerTheme'
 
 type MapFloatingHelpProps = {
@@ -7,16 +7,16 @@ type MapFloatingHelpProps = {
 }
 
 const COUNTY_LEGEND = [
-  { id: 0, color: '#99f6e4', opacity: 0.28, label: '< 5 萬' },
-  { id: 1, color: '#5eead4', opacity: 0.46, label: '5 萬 - 10 萬' },
-  { id: 2, color: '#14b8a6', opacity: 0.64, label: '10 萬 - 15 萬' },
-  { id: 3, color: '#0f766e', opacity: 0.82, label: '>= 15 萬' },
+  { id: 0, color: '#99f6e4', opacity: 0.28, label: '< 5 萬人' },
+  { id: 1, color: '#5eead4', opacity: 0.46, label: '5 萬 - 10 萬人' },
+  { id: 2, color: '#14b8a6', opacity: 0.64, label: '10 萬 - 15 萬人' },
+  { id: 3, color: '#0f766e', opacity: 0.82, label: '>= 15 萬人' },
 ]
 
 function getTip(activeTab: MapFloatingHelpProps['activeTab'], activeCountyName: string | null) {
   if (activeTab === 'schools' || activeTab === 'school-focus') {
     return activeCountyName
-      ? '點擊個別校點，即可於右側面板查看該校詳細趨勢分析。'
+      ? '點擊校點可查看詳細趨勢。'
       : '先選定縣市與鄉鎮，再用教育階段配色圓點檢視學校分布。'
   }
 
@@ -37,9 +37,33 @@ function getTip(activeTab: MapFloatingHelpProps['activeTab'], activeCountyName: 
 
 function MapFloatingHelp({ activeTab, activeCountyName }: MapFloatingHelpProps) {
   const [isOpen, setIsOpen] = useState(false)
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  // Close guide when clicking anywhere on the screen
+  useEffect(() => {
+    if (!isOpen) return
+
+    const handleGlobalClick = (event: MouseEvent) => {
+      const target = event.target as HTMLElement
+      // If clicking the toggle button itself, let its own handler (setIsOpen(!isOpen)) handle it.
+      // For all other clicks (on the panel or anywhere else on the screen), close it.
+      if (target.closest('.map-help-toggle')) {
+        return
+      }
+      
+      setIsOpen(false)
+    }
+
+    // Use capture phase to ensure we catch clicks even if other elements stop propagation (like the map)
+    window.addEventListener('click', handleGlobalClick, true)
+
+    return () => {
+      window.removeEventListener('click', handleGlobalClick, true)
+    }
+  }, [isOpen])
 
   return (
-    <div className="map-floating-tools">
+    <div className="map-floating-tools" ref={containerRef}>
       <button
         type="button"
         className={isOpen ? 'map-help-toggle map-help-toggle--active' : 'map-help-toggle'}
@@ -47,7 +71,10 @@ function MapFloatingHelp({ activeTab, activeCountyName }: MapFloatingHelpProps) 
         aria-controls="atlas-map-help"
         aria-label="切換探索提示與圖例"
         data-testid="map-help-toggle"
-        onClick={() => setIsOpen((current) => !current)}
+        onClick={(e) => {
+          e.stopPropagation()
+          setIsOpen((current) => !current)
+        }}
       >
         <svg 
           viewBox="0 0 24 24" 
@@ -67,8 +94,8 @@ function MapFloatingHelp({ activeTab, activeCountyName }: MapFloatingHelpProps) 
       {isOpen && (
         <section id="atlas-map-help" className="map-floating-help">
           <div className="map-floating-help__header">
-            <span className="map-floating-help__title-badge">PROMPT</span>
-            <h3 className="map-floating-help__title">探索提示</h3>
+            <span className="map-floating-help__title-badge">GUIDE</span>
+            <h3 className="map-floating-help__title">地圖操作指引</h3>
           </div>
           
           <div className="map-floating-help__tip-body">
@@ -78,7 +105,7 @@ function MapFloatingHelp({ activeTab, activeCountyName }: MapFloatingHelpProps) 
           <div className="map-floating-help__divider" />
 
           <div className="map-floating-help__legend-header">
-            <h4 className="map-floating-help__legend-subtitle">圖例說明</h4>
+            <h4 className="map-floating-help__legend-subtitle">數據圖例</h4>
           </div>
 
           <div className="map-floating-help__legend-grid">
@@ -92,7 +119,7 @@ function MapFloatingHelp({ activeTab, activeCountyName }: MapFloatingHelpProps) 
                     </div>
                   ))}
                 </div>
-                <p className="map-floating-help__legend-footer">圓點大小亦反映該格網聚合的學生總量。</p>
+                <p className="map-floating-help__legend-footer">圓點反映各校位置，大小代表學生總量。</p>
               </>
             ) : (
               <>
@@ -104,7 +131,7 @@ function MapFloatingHelp({ activeTab, activeCountyName }: MapFloatingHelpProps) 
                     </div>
                   ))}
                 </div>
-                <p className="map-floating-help__legend-footer">填色越深，代表目前層級學生規模越高。</p>
+                <p className="map-floating-help__legend-footer">填色越深，代表目前區域學生人數越多。</p>
               </>
             )}
           </div>
@@ -114,4 +141,4 @@ function MapFloatingHelp({ activeTab, activeCountyName }: MapFloatingHelpProps) 
   )
 }
 
-export default MapFloatingHelp
+export default MapFloatingHelp

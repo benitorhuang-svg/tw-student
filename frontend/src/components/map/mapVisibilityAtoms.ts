@@ -9,23 +9,22 @@ export type MapLayerVisibility = {
   showSchoolMarkers: boolean
 }
 
-export function computeLayerVisibility(zoom: number, hasSchoolPoints: boolean, isSchoolSelected: boolean): MapLayerVisibility {
-  // | Zoom   | Counties | Townships | Schools |
-  // |--------|----------|-----------|---------|
-  // | 7–9    | ✔        |           |         |
-  // | 10–11  | (small)  | ✔         |         |
-  // | 12–13  |          | (small)   | ✔       |
-  
-  // Schools become visible at zoom 13
-  let showSchoolMarkers = (zoom >= 13 && hasSchoolPoints)
-  
-  // If a school is selected, we ALWAYS show school markers
-  if (isSchoolSelected) showSchoolMarkers = true
-  
-  // EXCLUSIVITY RULE: Hide counties earlier (zoom 10) to clear view for townships
-  const showCountyMarkers = zoom < 10 && !showSchoolMarkers
-  const showTownshipMarkers = zoom >= 9.5 && zoom < 13 && !isSchoolSelected
-  
+export function computeLayerVisibility(zoom: number, hasSchoolPoints: boolean): MapLayerVisibility {
+  // Revised Zoom-based Visibility Rules:
+  // | Level          | Zoom Range  | Layers Shown              |
+  // |----------------|-------------|---------------------------|
+  // | County Level   | < 13.0      | Counties                  |
+  // | School Level   | >= 13.0     | Townships + Schools       |
+  //
+  // User Requirements:
+  // 1. County + Township levels should NOT show schools.
+  // 2. Zoom >= 13 shows Townships + Schools (No Counties).
+  // 3. Zoom >= 13 is the threshold for detailed exploration.
+
+  const showSchoolMarkers = zoom >= 13.0 && hasSchoolPoints
+  const showCountyMarkers = zoom < 13.0
+  const showTownshipMarkers = zoom >= 10.5
+
   return {
     showCountyMarkers,
     showTownshipMarkers,

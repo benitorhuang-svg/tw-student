@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { MapContainer } from 'react-leaflet'
-import { AtlasLevelFilter, AtlasTypeFilter } from '../../AtlasGlobalFilters'
 
 import { MAP_DEFAULT_CENTER, MAP_DEFAULT_ZOOM, MAP_MAX_ZOOM, MAP_MAX_BOUNDS } from '../../../lib/constants'
 import { MapLoadingBanner } from '../atoms/MapLoadingBanner'
@@ -11,9 +10,11 @@ import { useMapComputedState } from '../useMapComputedState'
 import { MapEvents } from '../atoms/MapEvents'
 import MapBreadcrumb from '../atoms/MapBreadcrumb'
 import { MapYearLabel } from '../atoms/MapYearLabel'
+import { MapControlStack } from '../molecules/MapControlStack'
+import { AtlasLevelFilter, AtlasTypeFilter } from '../../AtlasGlobalFilters'
 import { AtlasMiniMap } from '../molecules/AtlasMiniMap'
-import MapFloatingHelp from '../molecules/MapFloatingHelp'
 import { MapZoomControls } from '../atoms/MapZoomControls'
+
 import type { CountyBucketDataset, CountyBoundaryCollection, TownshipBoundaryCollection, AcademicYear, EducationLevelFilter, ManagementTypeFilter, RegionGroupFilter, EducationSummaryDataset } from '../../../data/educationData'
 import type { CountySummary, RankingSummary } from '../../../lib/analytics.types'
 import type { SchoolMapPoint } from '../types'
@@ -73,18 +74,6 @@ export type MapCanvasProps = {
   summaryDataset?: EducationSummaryDataset | null
 }
 
-/**
- * Helper to ensure UI overlays stay in their absolute-positioned containers
- * and don't leak into the Leaflet map layers.
- */
-function MapUIOverlay({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="atlas-map-ui-overlay-pane">
-      {children}
-    </div>
-  )
-}
-
 export default function MapCanvas(props: MapCanvasProps) {
   const {
     activeCountyId, activeTownshipId, theme, countyBoundaries,
@@ -120,7 +109,7 @@ export default function MapCanvas(props: MapCanvasProps) {
   const visibleTownshipRows = allTownshipRows.length > 0 ? allTownshipRows : townshipRows
 
   const computed = useMapComputedState(
-    props.counties, activeCountyId, activeTownshipId, selectedSchoolId,
+    props.counties, activeCountyId, activeTownshipId,
     countyBoundaries, townshipBoundaries, townshipRows, schoolPoints,
     props.currentMapZoom ?? null, undefined
   )
@@ -144,9 +133,9 @@ export default function MapCanvas(props: MapCanvasProps) {
               className="atlas-map-canvas"
               attributionControl={false}
               preferCanvas={true}
-              inertia={false} // Disable floaty movement
-              zoomAnimation={true} // Keep zoom animation but make it snappy
-              fadeAnimation={false} // Faster tile removal
+              inertia={false}
+              zoomAnimation={true}
+              fadeAnimation={false}
             >
             <MapTileLayer theme={theme} />
             <MapEvents onBackgroundClick={() => {
@@ -182,20 +171,24 @@ export default function MapCanvas(props: MapCanvasProps) {
               initialLonFromUrl={initialMapLon}
             />
 
-            <MapUIOverlay>
-              {/* 1. Top Left: Navigation Path (Level with Year) */}
-              <div className="map-top-left-context">
-                <MapBreadcrumb scopePath={scopePath} onNavigate={onNavigateScope} />
-              </div>
-
-              {/* 2. Top Right: Year Context */}
-              <div className="map-top-right-context">
-                <MapYearLabel activeYear={props.activeYear} />
-              </div>
-
-              {/* 3. Bottom Left Area: Filters + Mini Map */}
-              <div className="map-bottom-left-stack">
-                <div className="map-filter-detached-row">
+            {/* 1. Top Left Management Cluster */}
+            <div className="map-top-left-management" style={{ position: 'absolute', top: 16, left: 16, zIndex: 1000, display: 'flex', flexDirection: 'column', gap: 12, pointerEvents: 'none' }}>
+              
+              {/* Row 1: Horizontal Controls (Wrappable to prevent overflow) */}
+              <div style={{ 
+                display: 'flex', 
+                flexWrap: 'wrap', 
+                alignItems: 'center', 
+                alignContent: 'flex-start',
+                gap: '8px 12px', /* Vertical gap 8px, Horizontal gap 12px */
+                maxWidth: 'calc(100vw - 48px)',
+                pointerEvents: 'none'
+              }}>
+                <div style={{ pointerEvents: 'auto' }}>
+                  <MapYearLabel activeYear={props.activeYear} />
+                </div>
+                
+                <div style={{ display: 'flex', gap: 8, pointerEvents: 'auto' }}>
                   <AtlasTypeFilter
                     managementType={managementType}
                     onSetManagementType={onSetManagementType}
@@ -208,25 +201,33 @@ export default function MapCanvas(props: MapCanvasProps) {
                   />
                 </div>
 
-                <div className="map-control-group">
-                  <AtlasMiniMap 
-                    countyBoundaries={countyBoundaries as any}
-                    activeCountyId={activeCountyId}
-                    onSelectCounty={props.onSelectCounty}
-                    isVisible={true}
-                  />
-                  <div className="map-detached-controls">
-                    <MapFloatingHelp 
-                      activeTab={activeTab} 
-                      activeCountyName={activeCountyName} 
-                    />
-                    <MapZoomControls />
-                  </div>
+                <div style={{ pointerEvents: 'auto' }}>
+                   <MapBreadcrumb scopePath={scopePath} onNavigate={onNavigateScope} />
                 </div>
               </div>
 
-              {/* 4. Bottom Right: Now Empty */}
-            </MapUIOverlay>
+              {/* Row 2: MiniMap + Zoom (Vertical Pillar) */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 12, width: 'fit-content', pointerEvents: 'auto' }}>
+                <AtlasMiniMap 
+                  countyBoundaries={countyBoundaries as any}
+                  activeCountyId={activeCountyId}
+                  onSelectCounty={props.onSelectCounty}
+                  isVisible={true}
+                />
+                <MapZoomControls />
+              </div>
+            </div>
+
+            {/* 2. Top Right Overlay: (Empty or for future use) */}
+            <div className="map-top-right-context" style={{ position: 'absolute', top: 16, right: 16, zIndex: 1000 }}>
+            </div>
+
+            {/* 3. Floating Tools (Help Toggle) */}
+            <MapControlStack
+              activeTab={activeTab}
+              activeCountyName={activeCountyName}
+            />
+
           </MapContainer>
         </div>
       </div>

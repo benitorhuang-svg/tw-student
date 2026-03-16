@@ -121,8 +121,8 @@ export function AtlasMiniMap({
     const x = ((e.clientX - rect.left) / rect.width) * VIEWBOX_W;
     const y = ((e.clientY - rect.top) / rect.height) * VIEWBOX_H;
     const { lat, lon } = unproject(x, y);
-    // Snappier panTo
-    map.panTo([lat, lon], { animate: true, duration: 0.3 });
+    // Snappier panTo with fixed zoom 11
+    map.setView([lat, lon], 11, { animate: true, duration: 0.3 });
   };
 
   const handleDoubleClick = (e: React.MouseEvent<SVGSVGElement>) => {
@@ -132,7 +132,7 @@ export function AtlasMiniMap({
     const x = ((e.clientX - rect.left) / rect.width) * VIEWBOX_W;
     const y = ((e.clientY - rect.top) / rect.height) * VIEWBOX_H;
     const { lat, lon } = unproject(x, y);
-    map.setView([lat, lon], Math.min(map.getZoom() + 2, map.getMaxZoom()), { 
+    map.setView([lat, lon], 11, { 
       animate: true, 
       duration: 0.4 
     });
@@ -291,9 +291,6 @@ export function AtlasMiniMap({
         </div>
       </MiniMapBody>
 
-      <div className="atlas-mini-map-card__zoom-indicator">
-        Zoom {Math.round(map.getZoom() * 10) / 10}
-      </div>
 
       {hoveredName && <MiniMapTooltip label={hoveredName} x={tooltipPos.x} y={tooltipPos.y} />}
     </div>
