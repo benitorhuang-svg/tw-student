@@ -14,6 +14,9 @@ type TownshipCoord = {
   latitude: number
 }
 
+// Import helper for tooltip content
+import { buildHoverPreviewHtml } from '../mapStyles'
+
 type AreaLookup = {
   townships: Record<string, TownshipCoord>
 }
@@ -30,6 +33,8 @@ type AllTownshipLabelsProps = {
   currentZoom?: number | null
   townshipLookup?: Map<string, RankingSummary>
   selectedTownshipId?: string | null
+  showMapTooltip?: (latlng: L.LatLng, content: string) => void
+  hideMapTooltip?: () => void
 }
 
 function makeTownshipLabelIcon(name: string) {
@@ -49,7 +54,10 @@ function AllTownshipLabels({
   forceShowAll = false,
   townshipBoundaries = null,
   currentZoom = null,
+  townshipLookup = new Map(),
   selectedTownshipId = null,
+  showMapTooltip,
+  hideMapTooltip,
 }: AllTownshipLabelsProps) {
   const map = useMap()
   const [data, setData] = useState<TownshipCoord[] | null>(null)
@@ -155,7 +163,20 @@ function AllTownshipLabels({
               click: (e: L.LeafletMouseEvent) => {
                 L.DomEvent.stopPropagation(e.originalEvent)
                 onSelectTownship(t.townId, { skipTabSwitch: true })
-              } 
+              },
+              mouseover: (e: L.LeafletMouseEvent) => {
+                if (showMapTooltip && townshipLookup) {
+                  const summary = townshipLookup.get(t.townId)
+                  if (summary) {
+                    showMapTooltip(e.latlng, buildHoverPreviewHtml(summary.label, summary.students))
+                  }
+                }
+              },
+              mouseout: () => {
+                if (hideMapTooltip) {
+                  hideMapTooltip()
+                }
+              }
             }}
           />
         )

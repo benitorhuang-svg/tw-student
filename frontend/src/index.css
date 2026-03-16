@@ -1,12 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Sora:wght@400;600;700;800&display=swap');
+/* Fonts are loaded in foundations.css */
 
 /* Foundations & Base Resets (Atoms) */
-@import './styles/foundations.css';
-@import './styles/base/reset.css';
+@import url('./styles/base/reset.css');
 
 /* Map Atomic Modules (Molecules & Atoms) */
-@import './styles/map/map-tokens.css';
-@import './styles/map/floating-filters.css';
-@import './styles/map/tooltips.css';
-@import './styles/map/markers.css';
-@import './styles/map/minimap.css';
+@import url('./styles/map/floating-filters.css');
+@import url('./styles/map/tooltips.css');
+@import url('./styles/map/markers.css');
+@import url('./styles/map/minimap.css');

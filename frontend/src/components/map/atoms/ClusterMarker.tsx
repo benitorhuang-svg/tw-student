@@ -29,10 +29,24 @@ export function ClusterMarker({ cluster, maxStudentsInView, zoom }: ClusterMarke
       }}
       ariaLabel={buildClusterMarkerAriaLabel(cluster.count, cluster.totalStudents)}
       onActivate={() => {
-        map.flyTo([cluster.latitude, cluster.longitude], Math.min(zoom + 2, 13), {
-          animate: true,
-          duration: 0.8,
-        })
+        if (cluster.schools.length > 1) {
+          const lats = cluster.schools.map(s => s.latitude)
+          const lons = cluster.schools.map(s => s.longitude)
+          const bounds: [[number, number], [number, number]] = [
+            [Math.min(...lats), Math.min(...lons)],
+            [Math.max(...lats), Math.max(...lons)]
+          ]
+          map.flyToBounds(bounds, {
+            padding: [50, 50],
+            maxZoom: Math.max(zoom + 1, 13),
+            duration: 0.8
+          })
+        } else {
+          map.flyTo([cluster.latitude, cluster.longitude], Math.min(zoom + 2, 13), {
+            animate: true,
+            duration: 0.8,
+          })
+        }
       }}
       tooltipContent={renderClusterHoverCard(cluster.count, cluster.totalStudents)}
     >

@@ -1,4 +1,4 @@
-import { } from 'react'
+import React from 'react'
 import type { ReactNode, RefObject, TransitionStartFunction } from 'react'
 
 // Organisms (Atomic Design Level)
@@ -191,7 +191,7 @@ function DashboardCanvas({
                 countyDetailError={countyDetailError}
                 isCountyDetailLoading={derived.isCountyDetailLoading}
                 schoolInsights={derived.schoolInsights}
-                selectedSchool={derived.selectedSchool}
+                selectedSchool={derived.selectedSchoolInsight}
                 schoolPanelTitle={activeTab === 'school-focus' && derived.selectedSchool ? derived.selectedSchool.name : derived.schoolPanelTitle}
                 panelMode={activeTab === 'school-focus' ? 'focus' : 'workspace'}
                 selectedTownshipSummary={derived.selectedTownshipSummary}

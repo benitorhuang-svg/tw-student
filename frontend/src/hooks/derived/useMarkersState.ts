@@ -27,13 +27,10 @@ export function useMarkersState(
   countyBucketCache: Record<string, CountyBucketDataset>,
 ) {
   return useMemo(() => {
-    if (!summaryDataset) return { schoolMapPoints: [], selectedSchool: null, schoolInsights: [], countyWideSchoolInsights: [] }
+    if (!summaryDataset) return { schoolMapPoints: [], selectedSchool: null, selectedSchoolInsight: null, schoolInsights: [], countyWideSchoolInsights: [] }
 
-    // PERFORMANCE OPTIMIZATION: Zero-copy projection where possible
-    // We avoid repeated massive flatMaps by using a more targeted extraction logic.
     const cachedDetails = Object.values(countyDetailCache);
     
-    // We still need full insights for the specific sidebar panels (township/county)
     const currentCountyId = Object.keys(countyDetailCache).find(id => 
         countyDetailCache[id].towns.some(t => t.id === activeTownshipId)
     )
@@ -41,9 +38,9 @@ export function useMarkersState(
     const townshipSchoolInsights = getSchoolInsights(selectedCountyDetail, filters, activeTownshipId);
     const countyWideSchoolInsights = getSchoolInsights(selectedCountyDetail, filters, null);
     
-    // Build a lookup for student counts from the bucket cache to enrich preview points
     const bucketStudentLookup = new Map<string, number>();
     for (const bucketData of Object.values(countyBucketCache)) {
+      if (!bucketData?.precisions) continue;
       for (const buckets of Object.values(bucketData.precisions)) {
         for (const bucket of buckets) {
           if (!bucket.topSchools) continue;
@@ -59,11 +56,9 @@ export function useMarkersState(
     const points: SchoolMapPoint[] = [];
     const processedIds = new Set<string>();
 
-    // 1. Process Detailed Schools (Highest priority, most accurate data)
     for (const detail of cachedDetails) {
       for (const town of detail.towns) {
         for (const s of town.schools) {
-          // Fast filter skip
           if (filters.educationLevel !== '全部' && s.educationLevel !== filters.educationLevel) continue;
           if (filters.managementType !== '全部' && s.managementType !== filters.managementType) continue;
           if (filters.region !== '全部' && detail.county.region !== filters.region) continue;
@@ -96,7 +91,6 @@ export function useMarkersState(
       }
     }
 
-    // 2. Process Preview Schools (From global index)
     if (summaryDataset.schoolCodeIndex) {
       for (const [code, entry] of Object.entries(summaryDataset.schoolCodeIndex)) {
         const id = entry.schoolIds?.[0] || code;
@@ -123,10 +117,12 @@ export function useMarkersState(
     }
 
     const selectedSchool = selectedSchoolId ? points.find(p => p.id === selectedSchoolId) ?? null : null;
+    const selectedSchoolInsight = selectedSchoolId ? (townshipSchoolInsights.find(s => s.id === selectedSchoolId) ?? countyWideSchoolInsights.find(s => s.id === selectedSchoolId) ?? null) : null;
 
     return {
       schoolMapPoints: points,
       selectedSchool,
+      selectedSchoolInsight,
       schoolInsights: townshipSchoolInsights,
       countyWideSchoolInsights,
     };

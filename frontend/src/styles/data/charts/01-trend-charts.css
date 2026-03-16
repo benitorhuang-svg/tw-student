@@ -4,7 +4,7 @@
 }
 
 .trend-chart__grid {
-    stroke: rgba(148, 163, 184, 0.15);
+    stroke: rgb(148 163 184 / 15%);
     stroke-dasharray: 4 4
 }
 
@@ -14,7 +14,7 @@
     stroke-width: 3.5;
     stroke-linecap: round;
     stroke-linejoin: round;
-    filter: drop-shadow(0 4px 8px rgba(42, 111, 145, 0.3));
+    filter: drop-shadow(0 4px 8px rgb(42 111 145 / 30%));
 }
 
 .trend-chart__point {
@@ -27,7 +27,7 @@
     fill: var(--palette-brass, #b88746);
     stroke: #fff;
     stroke-width: 3;
-    filter: drop-shadow(0 0 8px rgba(184, 135, 70, 0.5))
+    filter: drop-shadow(0 0 8px rgb(184 135 70 / 50%))
 }
 
 .trend-chart__label {

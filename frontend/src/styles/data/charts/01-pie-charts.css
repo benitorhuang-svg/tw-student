@@ -9,7 +9,7 @@
 
 .pie-chart-wrap svg {
     flex-shrink: 0;
-    filter: drop-shadow(0 12px 20px rgba(16, 32, 51, 0.1))
+    filter: drop-shadow(0 12px 20px rgb(16 32 51 / 10%))
 }
 
 .pie-chart__canvas {
@@ -30,8 +30,8 @@
     gap: 4px 6px;
     padding: 6px 10px;
     border-radius: 10px;
-    background: rgba(255, 255, 255, .58);
-    border: 1px solid rgba(148, 163, 184, .12);
+    background: rgb(255 255 255 / 58%);
+    border: 1px solid rgb(148 163 184 / 12%);
     transition: transform 0.2s ease;
 }
 
@@ -59,10 +59,10 @@
     font-size: .76rem;
 }
 
-.app-shell[data-theme=dark] .pie-chart-legend__row {
-    background: rgba(255, 255, 255, 0.04);
+.app-shell[data-theme="dark"] .pie-chart-legend__row {
+    background: rgb(255 255 255 / 4%);
 }
 
-.app-shell[data-theme=dark] .pie-chart-legend__row:hover {
-    background: rgba(255, 255, 255, 0.08);
+.app-shell[data-theme="dark"] .pie-chart-legend__row:hover {
+    background: rgb(255 255 255 / 8%);
 }

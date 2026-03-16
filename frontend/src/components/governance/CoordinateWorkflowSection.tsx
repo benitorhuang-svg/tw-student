@@ -4,6 +4,7 @@ import {
   type CoordinateWorkflowStatus,
   type MissingCoordinateEntry,
 } from '../../data/educationTypes'
+import atomStyles from '../../styles/atoms.module.css'
 
 type CoordinateWorkflowSectionProps = {
   workflowRows: (MissingCoordinateEntry & { workflowStatus: CoordinateWorkflowStatus; workflowUpdatedAt: string | null })[]
@@ -60,7 +61,7 @@ export const CoordinateWorkflowSection: React.FC<CoordinateWorkflowSectionProps>
               <button
                 key={status}
                 type="button"
-                className={workflowFilter === status ? 'chip chip--active' : 'chip'}
+                className={`${atomStyles.chip} ${workflowFilter === status ? atomStyles['is-active'] : ''}`}
                 onClick={() => setWorkflowFilter(status)}
               >
                 {status} <span>{workflowCounts[status]}</span>
@@ -81,12 +82,12 @@ export const CoordinateWorkflowSection: React.FC<CoordinateWorkflowSectionProps>
                 <strong>{entry.name}</strong>
                 <span>{entry.county} {entry.township} ({entry.code})</span>
               </div>
-              <div className="governance-status-tags">
+              <div className={atomStyles['status-tags']}>
                 {COORDINATE_WORKFLOW_STATUSES.map((status) => (
                   <button
                     key={status}
                     type="button"
-                    className={entry.workflowStatus === status ? 'status-tag status-tag--active' : 'status-tag'}
+                    className={`${atomStyles['status-tag']} ${entry.workflowStatus === status ? atomStyles['is-active'] : ''}`}
                     onClick={() => updateWorkflowStatus(entry.code, status)}
                   >
                     {status}

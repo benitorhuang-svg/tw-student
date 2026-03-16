@@ -64,10 +64,8 @@ type TaiwanExplorerMapProps = {
   summaryYears: AcademicYear[]
   educationLevel: EducationLevelFilter
   managementType: ManagementTypeFilter
-  isYearPlaybackActive: boolean
   onSetRegion: (region: RegionGroupFilter) => void
   onResetRegion: () => void
-  onTogglePlayback: () => void
   onSetActiveYear: (year: AcademicYear) => void
   onStopPlayback: () => void
   onSetEducationLevel: (level: EducationLevelFilter) => void
@@ -90,7 +88,7 @@ function TaiwanExplorerMap(props: TaiwanExplorerMapProps) {
     initialMapLat = null, initialMapLon = null, scopePath, onNavigateScope,
     vectorTileBaseUrl = '', onVectorTileError, forceTownshipLabels = false,
     activeTab, activeYear, summaryYears, educationLevel, managementType,
-    isYearPlaybackActive, onSetRegion, onResetRegion, onTogglePlayback,
+    onSetRegion, onResetRegion, 
     onSetActiveYear, onStopPlayback, onSetEducationLevel, onSetManagementType,
     startTransition, activeCountyName
   } = props
@@ -177,10 +175,8 @@ function TaiwanExplorerMap(props: TaiwanExplorerMapProps) {
       summaryYears={summaryYears}
       educationLevel={educationLevel}
       managementType={managementType}
-      isYearPlaybackActive={isYearPlaybackActive}
       onSetRegion={onSetRegion}
       onResetRegion={onResetRegion}
-      onTogglePlayback={onTogglePlayback}
       onSetActiveYear={onSetActiveYear}
       onStopPlayback={onStopPlayback}
       onSetEducationLevel={onSetEducationLevel}

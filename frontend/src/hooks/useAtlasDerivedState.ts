@@ -147,7 +147,7 @@ export function useAtlasDerivedState(args: DerivedStateArgs) {
         isTownshipBoundaryLoading: false, selectedCounty: null, selectedCountyDetail: null,
         isCountyDetailLoading: false, selectedCountySummary: null, townshipRows: [],
         allTownshipRows: [], activeTownshipId: null, selectedTownshipSummary: null,
-        countyWideSchoolInsights: [], schoolInsights: [], selectedSchool: null,
+        countyWideSchoolInsights: [], schoolInsights: [], selectedSchool: null, selectedSchoolInsight: null,
         educationDistribution: [], nationalEducationTrendSeries: [], regionalComparisonRows: [],
         currentScope: { label: '全台灣', caption: '', students: 0, schools: 0, delta: 0, deltaRatio: 0, trend: [] },
         rankingRows: [], scopeNotes: [], scopePath: ['全台灣'], allTownshipBoundaries: null,

@@ -1,4 +1,4 @@
-@import "https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Sora:wght@400;600;700;800&display=swap";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Sora:wght@400;600;700;800&display=swap");
 
 :root {
     /**
@@ -6,41 +6,42 @@
      */
     --layout-sidebar-ratio: 47fr;
     --layout-map-ratio: 53fr;
-    --dashboard-header-h: 64px;
+    --dashboard-header-h: 72px; /* Slightly taller for better breathing space */
     --radius-sm: 8px;
     --radius-md: 14px;
-    --radius-lg: 20px;
+    --radius-lg: 24px;
     --radius-pill: 999px;
 
     /**
      * 2. COLOR PRIMITIVES (HSL Palette - More Vibrant & Premium)
      */
+
     /* Slate - Neutrals */
     --h-slate: 215;
-    --clr-slate-50: hsl(var(--h-slate), 25%, 97%);
-    --clr-slate-100: hsl(var(--h-slate), 25%, 94%);
-    --clr-slate-200: hsl(var(--h-slate), 20%, 90%);
-    --clr-slate-300: hsl(var(--h-slate), 16%, 80%);
-    --clr-slate-400: hsl(var(--h-slate), 15%, 65%);
-    --clr-slate-500: hsl(var(--h-slate), 15%, 50%);
-    --clr-slate-600: hsl(var(--h-slate), 15%, 40%);
-    --clr-slate-700: hsl(var(--h-slate), 15%, 30%);
-    --clr-slate-800: hsl(var(--h-slate), 20%, 15%);
-    --clr-slate-900: hsl(var(--h-slate), 25%, 10%);
-    --clr-slate-950: hsl(var(--h-slate), 30%, 4%);
+    --clr-slate-50: hsl(var(--h-slate) 25% 97%);
+    --clr-slate-100: hsl(var(--h-slate) 25% 94%);
+    --clr-slate-200: hsl(var(--h-slate) 20% 90%);
+    --clr-slate-300: hsl(var(--h-slate) 16% 80%);
+    --clr-slate-400: hsl(var(--h-slate) 15% 65%);
+    --clr-slate-500: hsl(var(--h-slate) 15% 50%);
+    --clr-slate-600: hsl(var(--h-slate) 15% 40%);
+    --clr-slate-700: hsl(var(--h-slate) 15% 30%);
+    --clr-slate-800: hsl(var(--h-slate) 20% 15%);
+    --clr-slate-900: hsl(var(--h-slate) 25% 10%);
+    --clr-slate-950: hsl(var(--h-slate) 30% 4%);
 
     /* Primary - Azure / Sky */
     --h-primary: 201;
-    --clr-primary-50: hsl(var(--h-primary), 90%, 95%);
-    --clr-primary-100: hsl(var(--h-primary), 85%, 90%);
-    --clr-primary-500: hsl(var(--h-primary), 85%, 50%);
-    --clr-primary-600: hsl(var(--h-primary), 90%, 42%);
-    --clr-primary-700: hsl(var(--h-primary), 95%, 35%);
+    --clr-primary-50: hsl(var(--h-primary) 90% 95%);
+    --clr-primary-100: hsl(var(--h-primary) 85% 90%);
+    --clr-primary-500: hsl(var(--h-primary) 85% 50%);
+    --clr-primary-600: hsl(var(--h-primary) 90% 42%);
+    --clr-primary-700: hsl(var(--h-primary) 95% 35%);
 
     /* Secondary - Emerald / Emerald Green */
     --h-secondary: 162;
-    --clr-secondary-500: hsl(var(--h-secondary), 75%, 45%);
-    --clr-secondary-600: hsl(var(--h-secondary), 80%, 38%);
+    --clr-secondary-500: hsl(var(--h-secondary) 75% 45%);
+    --clr-secondary-600: hsl(var(--h-secondary) 80% 38%);
 
     /* Rose - Accents */
     --clr-accent-rose: #f43f5e;
@@ -50,43 +51,61 @@
      * 3. SEMANTIC TOKENS (Functional mapping)
      */
     --brand-warning: var(--clr-accent-amber);
+    --brand-primary: var(--clr-primary-600);
+    --brand-danger: var(--clr-accent-rose);
+
+    /* Action Tokens */
+    --action-primary-bg: var(--brand-primary);
+    --action-primary-text: var(--text-inverse);
+    --action-primary-hover: var(--clr-primary-700);
+    --action-ghost-hover: var(--border-subtle);
+    
+    /* Surface Tokens (Refined) */
+    --surface-page: var(--clr-slate-50);
+    --surface-card: #fff;
+    --surface-main: rgb(255 255 255 / 90%);
+    --surface-analysis: rgb(254 252 248 / 96%);
+    --surface-rail: linear-gradient(135deg, var(--clr-slate-100), var(--clr-slate-200));
+    --surface-glass: rgb(255 255 255 / 75%);
+    --surface-glass-rich: rgb(255 255 255 / 85%);
+    --surface-active: var(--clr-slate-100);
+
+    /* State Tokens */
+    --state-info: var(--clr-primary-500);
+    --state-success: var(--clr-secondary-500);
+    --state-warning: var(--clr-accent-amber);
+    --state-danger: var(--clr-accent-rose);
 
     /* Text & Status Contrast Fixes */
     --text-main: var(--clr-slate-800);
     --text-soft: var(--clr-slate-600);
     --text-strong: var(--clr-slate-900);
-    --text-inverse: #ffffff;
+    --text-inverse: #fff;
     --text-dim: var(--clr-slate-400);
-
-    /* Surfaces */
-    --surface-page: var(--clr-slate-50);
-    --surface-card: #ffffff;
-    --surface-main: rgba(255, 255, 255, 0.9);
-    --surface-analysis: rgba(254, 252, 248, 0.96);
-    --surface-rail: linear-gradient(135deg, var(--clr-slate-100), var(--clr-slate-200));
-    --surface-glass: rgba(255, 255, 255, 0.7);
+    --text-muted: var(--clr-slate-500);
 
     /* Borders & Shadows */
-    --border-subtle: rgba(15, 23, 42, 0.05);
-    --border-light: rgba(15, 23, 42, 0.08);
-    --border-strong: rgba(15, 23, 42, 0.12);
+    --border-subtle: rgb(15 23 42 / 4%);
+    --border-light: rgb(15 23 42 / 8%);
+    --border-strong: rgb(15 23 42 / 12%);
     --border-active: var(--brand-primary);
-
-    --shadow-soft: 0 8px 30px rgba(0, 0, 0, 0.04);
-    --shadow-premium: 0 20px 40px -12px rgba(15, 23, 42, 0.12);
-    --shadow-heavy: 0 30px 60px -12px rgba(15, 23, 42, 0.2);
+    --shadow-soft: 0 4px 20px rgb(0 0 0 / 3%);
+    --shadow-premium: 0 12px 30px -8px rgb(15 23 42 / 8%), 0 4px 12px -4px rgb(15 23 42 / 3%);
+    --shadow-heavy: 0 30px 60px -12px rgb(15 23 42 / 15%);
+    --shadow-glow: 0 0 20px rgb(56 189 248 / 30%);
 
     /**
      * 4. MAP OVERLAY TOKENS (Refined UX)
      */
     --map-panel-bg: var(--clr-slate-100);
-    --map-canvas-bg: #f1f5f9;
-    --map-overlay-bg: rgba(255, 255, 255, 0.82);
-    --map-overlay-border: rgba(148, 163, 184, 0.15);
-    --map-overlay-blur: 16px;
-    --map-tooltip-bg: rgba(15, 23, 42, 0.92);
-    --map-tooltip-color: #ffffff;
+    --map-canvas-bg: #f8fafc;
+    --map-overlay-bg: rgb(255 255 255 / 85%);
+    --map-overlay-border: rgb(148 163 184 / 15%);
+    --map-overlay-blur: 20px;
+    --map-tooltip-bg: rgb(15 23 42 / 95%);
+    --map-tooltip-color: #fff;
     --map-breadcrumb-bg: var(--map-overlay-bg);
+    --map-accent-glow: rgb(56 189 248 / 25%);
 
     /**
      * 5. LEGACY ALIASES (Compatibility)
@@ -97,143 +116,115 @@
     --palette-fog: var(--clr-slate-50);
     --palette-teal: var(--clr-secondary-600);
     --palette-cyan: var(--clr-primary-500);
-
     --teal-main: var(--clr-secondary-600);
-    --teal-deep: hsl(var(--h-secondary), 80%, 25%);
+    --teal-deep: hsl(var(--h-secondary) 80% 25%);
     --accent-orange: var(--clr-accent-amber);
-
     --font-heading: "Sora", "Noto Sans TC", sans-serif;
     --font-body: "Noto Sans TC", sans-serif;
 
     /**
      * 5. COMPONENT-SPECIFIC TOKENS
      */
-    --comp-tabs-bg: rgba(15, 23, 42, 0.04);
+    --comp-tabs-bg: rgb(15 23 42 / 3%);
     --comp-tabs-border: var(--border-light);
     --comp-tab-active-bg: var(--brand-primary);
-    --comp-tab-active-text: #ffffff;
+    --comp-tab-active-text: #fff;
     --comp-tab-text: var(--text-soft);
-    --comp-tab-hover-text: var(--text-main);
-
+    --comp-tab-hover-text: var(--text-strong);
     --comp-header-bg: var(--clr-slate-900);
-    --comp-header-text: #ffffff;
-    --comp-header-soft-text: rgba(255, 255, 255, 0.7);
+    --comp-header-text: #fff;
+    --comp-header-soft-text: rgb(255 255 255 / 65%);
 
     /**
-     * 6. CHART TOKENS (Theme-aware)
-     */
-    --chart-bg: #ffffff;
+ * 6. CHART TOKENS (Theme-aware)
+ */
+    --chart-bg: #fff;
     --chart-border: var(--border-light);
     --chart-text: var(--text-main);
     --chart-grid: var(--border-subtle);
     --chart-tooltip-fill: var(--clr-slate-900);
-    --chart-tooltip-ink: #ffffff;
+    --chart-tooltip-ink: #fff;
     --chart-label: var(--text-soft);
 }
 
 [data-theme='dark'] {
     --text-main: var(--clr-slate-200);
     --text-soft: var(--clr-slate-400);
-    --text-strong: #ffffff;
+    --text-strong: #fff;
     --text-inverse: var(--clr-slate-900);
     --text-dim: var(--clr-slate-600);
+    --text-muted: var(--clr-slate-400);
 
+    /* Action Tokens Dark */
+    --action-primary-bg: var(--brand-primary);
+    --action-primary-text: #fff;
+    --action-primary-hover: var(--clr-primary-500);
+    --action-ghost-hover: rgb(255 255 255 / 5%);
     --surface-page: var(--clr-slate-950);
     --surface-card: var(--clr-slate-900);
-    --surface-analysis: rgba(15, 23, 42, 0.92);
-    --surface-main: rgba(15, 23, 42, 0.8);
-    --surface-glass: rgba(15, 23, 42, 0.7);
-
-    --border-subtle: rgba(255, 255, 255, 0.05);
-    --border-light: rgba(255, 255, 255, 0.1);
-    --border-strong: rgba(255, 255, 255, 0.2);
+    --surface-analysis: rgb(15 23 42 / 92%);
+    --surface-main: rgb(15 23 42 / 80%);
+    --surface-glass: rgb(15 23 42 / 70%);
+    --surface-active: var(--clr-slate-900);
+    --border-subtle: rgb(255 255 255 / 5%);
+    --border-light: rgb(255 255 255 / 10%);
+    --border-strong: rgb(255 255 255 / 20%);
     --border-active: var(--brand-primary);
-
     --surface-rail: linear-gradient(135deg, var(--clr-slate-950), #0f172a);
-
     --map-panel-bg: var(--clr-slate-950);
     --map-canvas-bg: #04101a;
-    --map-overlay-bg: rgba(8, 17, 31, 0.85);
-    --map-overlay-border: rgba(255, 255, 255, 0.1);
-    --map-tooltip-bg: #ffffff;
+    --map-overlay-bg: rgb(8 17 31 / 85%);
+    --map-overlay-border: rgb(255 255 255 / 10%);
+    --map-tooltip-bg: #fff;
     --map-tooltip-color: var(--clr-slate-950);
-
-    --shadow-premium: 0 20px 50px rgba(0, 0, 0, 0.4);
-
-    --comp-tabs-bg: rgba(0, 0, 0, 0.3);
-    --comp-tabs-border: rgba(255, 255, 255, 0.1);
-    --comp-tab-text: rgba(255, 255, 255, 0.6);
-    --comp-tab-hover-text: #ffffff;
-
-    --comp-header-bg: #000000;
-    --comp-header-text: #ffffff;
-    --comp-header-soft-text: rgba(255, 255, 255, 0.6);
-
+    --map-accent-glow: rgb(56 189 248 / 40%);
+    --shadow-premium: 0 20px 50px rgb(0 0 0 / 40%);
+    --comp-tabs-bg: rgb(0 0 0 / 30%);
+    --comp-tabs-border: rgb(255 255 255 / 10%);
+    --comp-tab-text: rgb(255 255 255 / 60%);
+    --comp-tab-hover-text: #fff;
+    --comp-header-bg: #000;
+    --comp-header-text: #fff;
+    --comp-header-soft-text: rgb(255 255 255 / 60%);
     --chart-bg: var(--clr-slate-900);
-    --chart-border: rgba(255, 255, 255, 0.08);
+    --chart-border: rgb(255 255 255 / 8%);
     --chart-text: var(--clr-slate-100);
-    --chart-grid: rgba(255, 255, 255, 0.05);
-    --chart-tooltip-fill: #ffffff;
+    --chart-grid: rgb(255 255 255 / 5%);
+    --chart-tooltip-fill: #fff;
     --chart-tooltip-ink: #0f172a;
-    --chart-label: rgba(255, 255, 255, 0.7);
-}
-
-/**
- * SYSTEM RESET & DEFAULTS
- */
-* {
-    box-sizing: border-box;
-    -webkit-tap-highlight-color: transparent;
-}
-
-html {
-    scroll-behavior: smooth;
-    overscroll-behavior: none;
-}
-
-body {
-    margin: 0;
-    min-width: 320px;
-    min-height: 100dvh;
-    font-family: var(--font-body);
-    font-weight: 400;
-    line-height: 1.6;
-    color: var(--text-main);
-    background: var(--surface-page);
-    overflow: hidden;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-}
-
-button,
-input,
-select {
-    font: inherit;
-    color: inherit;
-    outline: none;
-}
-
-button {
-    cursor: pointer;
-    border: none;
-    background: none;
-    transition: all 0.2s ease;
-}
-
-#root {
-    height: 100dvh;
-    width: 100%;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
+    --chart-label: rgb(255 255 255 / 70%);
 }
 
 /* Base Utility Classes */
 .premium-glass {
     background: var(--surface-glass);
     backdrop-filter: blur(var(--map-overlay-blur));
+    backdrop-filter: blur(var(--map-overlay-blur));
     border: 1px solid var(--border-light);
     box-shadow: var(--shadow-premium);
 }
+
+/* Staggered Entry Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stagger-item {
+    opacity: 0;
+    animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.stagger-item:nth-child(1) { animation-delay: 0.1s; }
+.stagger-item:nth-child(2) { animation-delay: 0.18s; }
+.stagger-item:nth-child(3) { animation-delay: 0.26s; }
+.stagger-item:nth-child(4) { animation-delay: 0.34s; }
+.stagger-item:nth-child(5) { animation-delay: 0.42s; }
+.stagger-item:nth-child(6) { animation-delay: 0.5s; }

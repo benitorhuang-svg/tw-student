@@ -6,7 +6,7 @@
     padding: 3px 8px;
     border-radius: 999px;
     background: #08111fd1;
-    border: 1px solid rgba(148, 163, 184, .18);
+    border: 1px solid rgb(148 163 184 / 18%);
     box-shadow: 0 4px 12px #0206172e;
     backdrop-filter: blur(8px);
     color: #e0f2fe;
@@ -33,8 +33,8 @@
 .scope-breadcrumbs span {
     padding: 4px 8px;
     border-radius: 999px;
-    border: 1px solid rgba(42, 111, 145, .14);
-    background: rgba(42, 111, 145, .12);
+    border: 1px solid rgb(42 111 145 / 14%);
+    background: rgb(42 111 145 / 12%);
     color: var(--palette-cyan);
     font-size: .76rem
 }
@@ -43,7 +43,7 @@
     align-self: start;
     padding: 6px 10px;
     border-radius: 999px;
-    border: 1px solid rgba(125, 211, 252, .24);
+    border: 1px solid rgb(125 211 252 / 24%);
     background: #0ea5e929;
     color: #e0f2fe;
     font-size: .78rem

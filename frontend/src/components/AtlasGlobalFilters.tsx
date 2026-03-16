@@ -1,7 +1,6 @@
 import type { TransitionStartFunction } from 'react'
 import type { AcademicYear, EducationLevelFilter, ManagementTypeFilter, RegionGroupFilter } from '../data/educationData'
 import { EDUCATION_LEVEL_OPTIONS, MANAGEMENT_TYPE_OPTIONS } from '../lib/constants'
-import { formatAcademicYear } from '../lib/analytics'
 import '../styles/molecules/atlas-filters.css'
 
 type CommonFilterProps = {
@@ -10,33 +9,23 @@ type CommonFilterProps = {
 
 // ── PLAYBACK PILL ──
 type PlaybackPillProps = {
-  isYearPlaybackActive: boolean
-  onTogglePlayback: () => void
+  onStopPlayback: () => void
 }
 
 export function AtlasPlaybackPill({ 
-  isYearPlaybackActive, 
-  onTogglePlayback,
-  activeYear,
   summaryYears,
   onSetActiveYear,
   onStopPlayback,
   startTransition
 }: PlaybackPillProps & { 
-  activeYear: AcademicYear, 
   summaryYears: AcademicYear[], 
   onSetActiveYear: (year: AcademicYear) => void,
-  onStopPlayback: () => void,
   startTransition: TransitionStartFunction 
 }) {
-  const activeIdx = summaryYears.indexOf(activeYear)
   const total = summaryYears.length
 
   return (
     <div className="atlas-slim-player">
-      <div className="player-mini-info">
-        <span className="player-mini-year">{formatAcademicYear(activeYear)}</span>
-      </div>
 
       <button
         type="button"
@@ -52,99 +41,65 @@ export function AtlasPlaybackPill({
           <polyline points="6 17 11 12 6 7" />
         </svg>
       </button>
-
-      <button
-        type="button"
-        className={isYearPlaybackActive ? 'player-mini-btn active' : 'player-mini-btn'}
-        onClick={onTogglePlayback}
-      >
-        {isYearPlaybackActive ? '■' : '▶'}
-      </button>
-
-      <div className="player-mini-steppers">
-        <button
-          className="mini-step-btn"
-          disabled={activeIdx <= 0}
-          onClick={() => {
-            if (activeIdx > 0) {
-              onStopPlayback()
-              startTransition(() => onSetActiveYear(summaryYears[activeIdx - 1]))
-            }
-          }}
-        >
-          ‹
-        </button>
-        <button
-          className="mini-step-btn"
-          disabled={activeIdx >= total - 1}
-          onClick={() => {
-            if (activeIdx >= 0 && activeIdx < total - 1) {
-              onStopPlayback()
-              startTransition(() => onSetActiveYear(summaryYears[activeIdx + 1]))
-            }
-          }}
-        >
-          ›
-        </button>
-      </div>
     </div>
   )
 }
 
+import { CollapsibleFilter } from './map/molecules/CollapsibleFilter'
 
-// ── EDUCATION LEVEL PILL ──
+// ── EDUCATION LEVEL FILTER ──
 type LevelPillProps = CommonFilterProps & {
   educationLevel: EducationLevelFilter
   onSetEducationLevel: (level: EducationLevelFilter) => void
 }
 
-export function AtlasLevelPill({
+export function AtlasLevelFilter({
   educationLevel,
   onSetEducationLevel,
   startTransition,
 }: LevelPillProps) {
   return (
-    <div className="atlas-region-segmented">
-      {EDUCATION_LEVEL_OPTIONS.map((option) => (
-        <button
-          key={option.value}
-          type="button"
-          className={educationLevel === option.value ? 'region-btn active' : 'region-btn'}
-          onClick={() => startTransition(() => onSetEducationLevel(option.value as EducationLevelFilter))}
-        >
-          {option.label}
-        </button>
-      ))}
-    </div>
+    <CollapsibleFilter
+      label="學制篩選"
+      options={EDUCATION_LEVEL_OPTIONS}
+      currentValue={educationLevel}
+      onSelect={(val) => startTransition(() => onSetEducationLevel(val as EducationLevelFilter))}
+      icon={(
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" width="14" height="14">
+          <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+          <path d="M6 12v5c3 3 9 3 12 0v-5" />
+        </svg>
+      )}
+    />
   )
 }
 
-// ── MANAGEMENT TYPE PILL ──
+// ── MANAGEMENT TYPE FILTER ──
 type TypePillProps = CommonFilterProps & {
   managementType: ManagementTypeFilter
   onSetManagementType: (type: ManagementTypeFilter) => void
 }
 
-export function AtlasTypePill({
+export function AtlasTypeFilter({
   managementType,
   onSetManagementType,
   startTransition,
 }: TypePillProps) {
   return (
-    <div className="atlas-region-segmented">
-      {MANAGEMENT_TYPE_OPTIONS.map((option) => (
-        <button
-          key={option.value}
-          type="button"
-          className={managementType === option.value ? 'region-btn active' : 'region-btn'}
-          onClick={() => startTransition(() => onSetManagementType(option.value as ManagementTypeFilter))}
-        >
-          {option.label}
-        </button>
-      ))}
-    </div>
+    <CollapsibleFilter
+      label="權屬篩選"
+      options={MANAGEMENT_TYPE_OPTIONS}
+      currentValue={managementType}
+      onSelect={(val) => startTransition(() => onSetManagementType(val as ManagementTypeFilter))}
+      icon={(
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" width="14" height="14">
+          <path d="M3 21h18M3 7v1a3 3 0 0 0 6 0V7m0 1a3 3 0 0 0 6 0V7m0 1a3 3 0 0 0 6 0V7M4 21V7m16 14V7" />
+        </svg>
+      )}
+    />
   )
 }
+
 
 // ── REGION PILL ──
 type RegionPillProps = CommonFilterProps & {

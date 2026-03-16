@@ -2,44 +2,31 @@ import { useMemo, useState, useEffect, useCallback } from 'react'
 import { useMap, useMapEvents } from 'react-leaflet'
 import type { FeatureCollection, Geometry } from 'geojson'
 
-import MapBreadcrumb from '../atoms/MapBreadcrumb'
 import { MiniMapTooltip } from '../atoms/MiniMapTooltip'
+import { MiniMapBody } from '../atoms/MiniMapBody'
+import { MiniMapCounty } from '../atoms/MiniMapCounty'
 
 export type AtlasMiniMapProps = {
   countyBoundaries: FeatureCollection
   activeCountyId: string | null
   onSelectCounty: (countyId: string) => void
   isVisible: boolean
-  scopePath?: string[]
-  onNavigateScope?: (depth: number) => void
+  className?: string
+  style?: React.CSSProperties
 }
 
-// Projection Constants
-const PROJ_BOUNDS = { lonMin: 117.5, lonMax: 122.5, latMin: 21.0, latMax: 27.0 };
+// Projection Constants (Magnified view for better detail)
+const PROJ_BOUNDS = { lonMin: 118.2, lonMax: 122.2, latMin: 21.9, latMax: 26.6 };
 const VIEWBOX_W = 100;
 const VIEWBOX_H = 120;
-
-// --- Atomic Components ---
-
-export const MiniMapHeader: React.FC<{ scopePath: string[], onNavigate: (d: number) => void }> = ({ scopePath, onNavigate }) => (
-  <div className="atlas-mini-map-card__header">
-    <MapBreadcrumb scopePath={scopePath} onNavigate={onNavigate} />
-  </div>
-);
-
-export const MiniMapBody: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <div className="atlas-mini-map-card__body">
-    {children}
-  </div>
-);
 
 export function AtlasMiniMap({
   countyBoundaries,
   activeCountyId,
   onSelectCounty,
   isVisible,
-  scopePath = [],
-  onNavigateScope = () => {},
+  className,
+  style,
 }: AtlasMiniMapProps) {
   const map = useMap();
   const [viewportBounds, setViewportBounds] = useState(() => map.getBounds());
@@ -116,15 +103,103 @@ export function AtlasMiniMap({
     return { x, y, width, height };
   }, [viewportBounds, project]);
 
+  // Add a simple panning logic: if user drags on the SVG, we pan the main map
+  const [isPanning, setIsPanning] = useState(false);
+  const [hasMoved, setHasMoved] = useState(false);
+
   const handleSvgClick = (e: React.MouseEvent<SVGSVGElement>) => {
+    e.stopPropagation();
+    // If we were dragging (panning), don't trigger the click pan
+    if (hasMoved) {
+      setHasMoved(false);
+      return;
+    }
+
     if ((e.target as Element).tagName === 'path' || (e.target as Element).tagName === 'circle') return;
     const svg = e.currentTarget;
     const rect = svg.getBoundingClientRect();
     const x = ((e.clientX - rect.left) / rect.width) * VIEWBOX_W;
     const y = ((e.clientY - rect.top) / rect.height) * VIEWBOX_H;
     const { lat, lon } = unproject(x, y);
-    map.flyTo([lat, lon], map.getZoom(), { duration: 1 });
+    // Snappier panTo
+    map.panTo([lat, lon], { animate: true, duration: 0.3 });
   };
+
+  const handleDoubleClick = (e: React.MouseEvent<SVGSVGElement>) => {
+    e.stopPropagation();
+    const svg = e.currentTarget;
+    const rect = svg.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * VIEWBOX_W;
+    const y = ((e.clientY - rect.top) / rect.height) * VIEWBOX_H;
+    const { lat, lon } = unproject(x, y);
+    map.setView([lat, lon], Math.min(map.getZoom() + 2, map.getMaxZoom()), { 
+      animate: true, 
+      duration: 0.4 
+    });
+  };
+
+  const handleWheel = (e: React.WheelEvent) => {
+    e.stopPropagation();
+    // Only zoom if not scrolling the page
+    if (e.deltaY < 0) {
+      map.zoomIn();
+    } else {
+      map.zoomOut();
+    }
+  };
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if ((e.target as Element).closest('.map-zoom-controls') || (e.target as Element).closest('.map-floating-tools')) return;
+    if (e.button !== 0) return; // Only handle left click
+    
+    setIsPanning(true);
+    setHasMoved(false);
+  };
+
+  useEffect(() => {
+    if (!isPanning) return;
+
+    let startX = 0;
+    let startY = 0;
+    const threshold = 4; // pixels
+
+    const handleMouseMoveGlobal = (e: MouseEvent) => {
+      const svg = document.querySelector('.atlas-mini-map-card__svg');
+      if (!svg) return;
+      
+      if (startX === 0) {
+        startX = e.clientX;
+        startY = e.clientY;
+      }
+      
+      const dist = Math.sqrt(Math.pow(e.clientX - startX, 2) + Math.pow(e.clientY - startY, 2));
+      if (dist > threshold) {
+        setHasMoved(true);
+      }
+
+      const rect = svg.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * VIEWBOX_W;
+      const y = ((e.clientY - rect.top) / rect.height) * VIEWBOX_H;
+      
+      // Clamp x, y to viewbox
+      const clampedX = Math.max(0, Math.min(VIEWBOX_W, x));
+      const clampedY = Math.max(0, Math.min(VIEWBOX_H, y));
+      
+      const { lat, lon } = unproject(clampedX, clampedY);
+      map.setView([lat, lon], map.getZoom(), { animate: false });
+    };
+
+    const handleMouseUpGlobal = () => {
+      setIsPanning(false);
+    };
+
+    window.addEventListener('mousemove', handleMouseMoveGlobal);
+    window.addEventListener('mouseup', handleMouseUpGlobal);
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMoveGlobal);
+      window.removeEventListener('mouseup', handleMouseUpGlobal);
+    };
+  }, [isPanning, map, unproject]);
 
   const captureMouse = (e: React.MouseEvent) => {
     setTooltipPos({ x: e.clientX, y: e.clientY });
@@ -133,54 +208,78 @@ export function AtlasMiniMap({
   if (!isVisible) return null;
 
   return (
-    <div className="atlas-mini-map-card" onMouseMove={captureMouse}>
-      <MiniMapHeader scopePath={scopePath} onNavigate={onNavigateScope} />
-      
+    <div 
+      className={`atlas-mini-map-card ${isPanning ? 'is-panning' : ''} ${className || ''}`} 
+      style={style}
+      onMouseMove={captureMouse}
+      onWheel={handleWheel}
+    >
       <MiniMapBody>
-        <div className="atlas-mini-map-card__main">
+        <div 
+          className="atlas-mini-map-card__main"
+          onMouseDown={handleMouseDown}
+        >
           <svg 
             viewBox={`0 0 ${VIEWBOX_W} ${VIEWBOX_H}`} 
             className="atlas-mini-map-card__svg"
             onClick={handleSvgClick}
-            onMouseMove={captureMouse}
+            onDoubleClick={handleDoubleClick}
           >
             <rect 
               x="0" y="0" width={VIEWBOX_W} height={VIEWBOX_H} 
               className="atlas-mini-map-card__sea"
             />
             
-            {mainIslandPaths.map((p) => {
-              const isActive = p.id === activeCountyId;
-              const isIsland = ['10016', '09020', '10007'].includes(p.id ?? '');
-              return (
-                <path
-                  key={p.id}
-                  d={p.d}
-                  className={`atlas-mini-map-card__path ${isActive ? 'is-active' : ''} ${isIsland ? 'is-island' : ''}`}
-                  onMouseEnter={() => setHoveredName(p.name)}
-                  onMouseLeave={() => setHoveredName(null)}
-                  onClick={(e) => { e.stopPropagation(); onSelectCounty(p.id!); }}
-                />
-              );
-            })}
+            {/* 1. Atomic Island Groups */}
+            {(() => {
+              const seen = new Set<string>();
+              const islandIds = ['10016', '09020', '10007'];
+              return countyBoundaries.features
+                .filter(f => {
+                  const id = f.properties?.countyId;
+                  if (!id || !islandIds.includes(id)) return false;
+                  if (seen.has(id)) return false;
+                  seen.add(id);
+                  return true;
+                })
+                .map(f => {
+                  const p = f.properties;
+                  if (!p) return null;
+                  const id = p.countyId;
+                  const pathData = mainIslandPaths.find(path => path.id === id)?.d ?? '';
+                  const center = project(p.centerLongitude, p.centerLatitude);
+                  
+                  return (
+                    <MiniMapCounty
+                      key={`island-${id}`}
+                      id={id}
+                      name={p.countyName}
+                      pathData={pathData}
+                      isIsland={true}
+                      center={center}
+                      isActive={id === activeCountyId}
+                      onSelect={onSelectCounty}
+                      onHover={setHoveredName}
+                    />
+                  );
+                });
+            })()}
 
-            {countyBoundaries.features
-              .filter(f => ['10016', '09020', '10007'].includes(f.properties?.countyId))
-              .map(f => {
-                const p = f.properties;
-                if (!p) return null;
-                const { x, y } = project(p.centerLongitude, p.centerLatitude);
-                return (
-                  <circle
-                    key={`hit-${p.countyId}`}
-                    cx={x} cy={y} r="8"
-                    className={`atlas-mini-map-card__island-hit ${activeCountyId === p.countyId ? 'is-active' : ''}`}
-                    onMouseEnter={() => setHoveredName(p.countyName)}
-                    onMouseLeave={() => setHoveredName(null)}
-                    onClick={(e) => { e.stopPropagation(); onSelectCounty(p.countyId); }}
-                  />
-                );
-              })}
+            {/* 2. Main Island Counties */}
+            {mainIslandPaths
+              .filter(p => !['10016', '09020', '10007'].includes(p.id ?? ''))
+              .map((p) => (
+                <MiniMapCounty
+                  key={`main-${p.id}`}
+                  id={p.id!}
+                  name={p.name!}
+                  pathData={p.d}
+                  isIsland={false}
+                  isActive={p.id === activeCountyId}
+                  onSelect={onSelectCounty}
+                  onHover={setHoveredName}
+                />
+              ))}
             
             {redBox && (
               <rect
@@ -192,7 +291,12 @@ export function AtlasMiniMap({
         </div>
       </MiniMapBody>
 
+      <div className="atlas-mini-map-card__zoom-indicator">
+        Zoom {Math.round(map.getZoom() * 10) / 10}
+      </div>
+
       {hoveredName && <MiniMapTooltip label={hoveredName} x={tooltipPos.x} y={tooltipPos.y} />}
     </div>
   )
 }
+

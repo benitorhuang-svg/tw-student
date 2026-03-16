@@ -124,17 +124,28 @@ function SchoolDataTable({ schools, selectedSchoolId, onSelectSchool, onHoverSch
   return (
     <section className="school-table-panel">
       <div className="school-table-panel__toolbar">
-        <div>
-          <strong>{schools.length.toLocaleString('zh-TW')} 所學校</strong>
-          <span>目前排序: {sortableHeaders.find((header) => header.key === sortKey)?.label ?? sortKey}</span>
+        <div className="toolbar-info-stack">
+          <div className="toolbar-count-pill">
+            <span className="count-value">{schools.length.toLocaleString('zh-TW')}</span>
+            <span className="count-label">所學校</span>
+          </div>
+          <div className="toolbar-sort-hint">
+            <span className="hint-label">目前排序:</span>
+            <span className="hint-value">{sortableHeaders.find((header) => header.key === sortKey)?.label ?? sortKey}</span>
+          </div>
         </div>
         <button
           type="button"
-          className="ghost-button"
+          className="premium-export-btn"
           onClick={handleExport}
           data-testid="school-export-button"
         >
-          匯出 CSV
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" width="14" height="14">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <polyline points="7 10 12 15 17 10" />
+            <line x1="12" y1="15" x2="12" y2="3" />
+          </svg>
+          <span>匯出 CSV</span>
         </button>
       </div>
 

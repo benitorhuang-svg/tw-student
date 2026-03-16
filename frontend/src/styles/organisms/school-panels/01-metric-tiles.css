@@ -18,8 +18,8 @@
     gap: 4px;
     padding: 14px 16px;
     border-radius: 14px;
-    background: rgba(148, 163, 184, 0.05);
-    border: 1px solid rgba(148, 163, 184, 0.08);
+    background: rgb(148 163 184 / 5%);
+    border: 1px solid rgb(148 163 184 / 8%);
     transition: all 0.2s ease;
 }
 
@@ -29,7 +29,7 @@
 }
 
 .atlas-metric-tile--active {
-    border-color: rgba(42, 111, 145, .34);
+    border-color: rgb(42 111 145 / 34%);
     background: var(--atlas-surface-interactive-strong)
 }
 
@@ -39,8 +39,8 @@
     gap: 4px;
     padding: 14px;
     border-radius: 12px;
-    background: rgba(148, 163, 184, 0.06);
-    border: 1px solid rgba(148, 163, 184, 0.08);
+    background: rgb(148 163 184 / 6%);
+    border: 1px solid rgb(148 163 184 / 8%);
 }
 
 .school-list-workspace__summary-card strong {

@@ -13,16 +13,16 @@
   gap: 8px;
   padding: 16px;
   border-radius: 20px;
-  border: 1px solid rgba(148, 163, 184, .14);
-  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgb(148 163 184 / 14%);
+  background: rgb(255 255 255 / 4%);
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   transition: transform 0.3s ease, box-shadow 0.3s ease
 }
 
 .stat-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(16, 32, 51, 0.12)
+  box-shadow: 0 12px 24px rgb(16 32 51 / 12%)
 }
 
 .stat-card__title {
@@ -55,18 +55,18 @@
 }
 
 .stat-card--lagoon {
-  background: linear-gradient(135deg, rgba(42, 111, 145, .12), rgba(42, 111, 145, .02));
-  border-color: rgba(42, 111, 145, .18)
+  background: linear-gradient(135deg, rgb(42 111 145 / 12%), rgb(42 111 145 / 2%));
+  border-color: rgb(42 111 145 / 18%)
 }
 
 .stat-card--sun {
-  background: linear-gradient(135deg, rgba(184, 135, 70, .12), rgba(184, 135, 70, .02));
-  border-color: rgba(184, 135, 70, .18)
+  background: linear-gradient(135deg, rgb(184 135 70 / 12%), rgb(184 135 70 / 2%));
+  border-color: rgb(184 135 70 / 18%)
 }
 
 .stat-card--coral {
-  background: linear-gradient(135deg, rgba(217, 119, 6, .12), rgba(217, 119, 6, .02));
-  border-color: rgba(217, 119, 6, .18)
+  background: linear-gradient(135deg, rgb(217 119 6 / 12%), rgb(217 119 6 / 2%));
+  border-color: rgb(217 119 6 / 18%)
 }
 
 .education-distribution-bar {

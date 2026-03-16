@@ -1,0 +1,28 @@
+.top-left-context {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 1000;
+    pointer-events: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.control-group {
+    display: flex;
+    align-items: flex-end; /* Align mini-map and help tools to bottom */
+    gap: 12px;
+    pointer-events: none;
+}
+
+.control-group > * {
+    pointer-events: auto;
+}
+
+.detached-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+}

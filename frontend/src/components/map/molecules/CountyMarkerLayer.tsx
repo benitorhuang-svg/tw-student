@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from 'react'
-import { Marker, Tooltip, useMap } from 'react-leaflet'
+import { useMap } from 'react-leaflet'
 import L from 'leaflet'
 import type { FeatureCollection, GeoJsonObject } from 'geojson'
-import { renderScopeMarkerIcon, growthChoroplethColor, renderHoverPreview, renderScopePillIcon } from '../mapStyles'
+import { CountyMarker } from '../atoms/CountyMarker'
 import type { CountySummary } from '../../../lib/analytics'
 
 interface CountyMarkerLayerProps {
@@ -13,6 +13,9 @@ interface CountyMarkerLayerProps {
   activeCountyId: string | null
   onSelectCounty: (countyId: string, options?: { skipTabSwitch?: boolean }) => void
   showMarkers?: boolean
+  onHoverCounty: (id: string | null) => void
+  showMapTooltip: (latlng: L.LatLng, content: string) => void
+  hideMapTooltip: () => void
 }
 
 export function CountyMarkerLayer({
@@ -23,6 +26,9 @@ export function CountyMarkerLayer({
   activeCountyId,
   onSelectCounty,
   showMarkers = true,
+  onHoverCounty,
+  showMapTooltip,
+  hideMapTooltip,
 }: CountyMarkerLayerProps) {
   const map = useMap()
   const [bounds, setBounds] = useState(map.getBounds())
@@ -149,8 +155,8 @@ export function CountyMarkerLayer({
     }
 
     const t = (zoom - lower) / (upper - lower)
-    const lowerOffsets = zoomSpecificOffsets[lower]
-    const upperOffsets = zoomSpecificOffsets[upper]
+    const lowerOffsets = lowerSpecificOffsets(lower)
+    const upperOffsets = upperSpecificOffsets(upper)
     const result: Record<string, [number, number]> = {}
 
     const allKeys = new Set<string>([...Object.keys(lowerOffsets), ...Object.keys(upperOffsets)])
@@ -161,6 +167,9 @@ export function CountyMarkerLayer({
     })
 
     return result
+
+    function lowerSpecificOffsets(l: number) { return zoomSpecificOffsets[l] }
+    function upperSpecificOffsets(u: number) { return zoomSpecificOffsets[u] }
   }
 
   const effectiveOffsets = getInterpolatedOffsetsForZoom(currentMapZoom)
@@ -184,34 +193,23 @@ export function CountyMarkerLayer({
         const isInteractive = usePill ? true : (zoom < 10.5);
         const opacity = zoom >= 11.5 ? 0.6 : 1.0;
 
-        const icon = usePill 
-          ? renderScopePillIcon(county.shortLabel, growthChoroplethColor(county.deltaRatio), isActive)
-          : renderScopeMarkerIcon(county.shortLabel, county.students, growthChoroplethColor(county.deltaRatio), 54, 'county');
-
         return (
-          <Marker
+          <CountyMarker
             key={`county-marker-${county.id}`}
+            county={county}
             position={adjustedCenter}
-            interactive={isInteractive}
-            icon={icon}
-            eventHandlers={{ 
-              click: (e) => {
-                if (!isInteractive) return;
-                L.DomEvent.stopPropagation(e.originalEvent)
-                onSelectCounty(county.id)
-              } 
-            }}
+            isActive={isActive}
+            usePill={usePill}
+            isInteractive={isInteractive}
             opacity={opacity}
-            zIndexOffset={isActive ? 1000 : usePill ? 500 : 0}
-          >
-            {isInteractive && (
-              <Tooltip direction="top" offset={[0, usePill ? -15 : -10]} className="atlas-map-tooltip atlas-map-tooltip--preview">
-                {renderHoverPreview(county.name, county.students)}
-              </Tooltip>
-            )}
-          </Marker>
+            onSelect={onSelectCounty}
+            onHover={onHoverCounty}
+            showTooltip={showMapTooltip}
+            hideTooltip={hideMapTooltip}
+          />
         )
       })}
     </>
   )
 }
+

@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState, type ReactNode } from 'react'
+import styles from './DataGovernanceFlyout.module.css'
 
 import {
   type CoordinateWorkflowEntry,
@@ -153,12 +154,12 @@ function DataGovernanceFlyout({
   const dateOnly = generatedAtLabel.split(' ')[0]
 
   return (
-    <div className="governance-flyout-layer" role="dialog" aria-modal="false" aria-label="資料治理面板">
-      <button type="button" className="governance-flyout-backdrop" aria-label="關閉資料治理面板" onClick={onClose} />
-      <aside className="governance-flyout">
+    <div className={styles.layer} role="dialog" aria-modal="false" aria-label="資料治理面板">
+      <button type="button" className={styles.backdrop} aria-label="關閉資料治理面板" onClick={onClose} />
+      <aside className={styles.flyout}>
         <GovernanceHeader onClose={onClose} />
 
-        <div className="governance-flyout__body">
+        <div className={styles.body}>
           <div className="school-chart-panel">
             <VitalStatusSection
               dateOnly={dateOnly}

@@ -1,14 +1,41 @@
+import type { AcademicYear } from '../data/educationData'
 import type { AtlasTheme } from '../lib/constants'
 
 type DashboardHeaderProps = {
   theme: AtlasTheme
+  activeYear?: AcademicYear
+  summaryYears?: AcademicYear[]
+  isYearPlaybackActive?: boolean
   onToggleTheme: () => void
+  onSetActiveYear?: (year: AcademicYear) => void
+  onStopPlayback?: () => void
+  onTogglePlayback?: () => void
+  startTransition?: React.TransitionStartFunction
 }
 
 function DashboardHeader({
   theme,
+  activeYear,
+  summaryYears = [],
+  isYearPlaybackActive = false,
   onToggleTheme,
+  onSetActiveYear,
+  onStopPlayback,
+  onTogglePlayback,
+  startTransition,
 }: DashboardHeaderProps) {
+  const activeIdx = activeYear ? summaryYears.indexOf(activeYear) : -1
+  const total = summaryYears.length
+
+  const handleStep = (direction: number) => {
+    if (!onSetActiveYear || !onStopPlayback || !startTransition || activeIdx === -1) return
+    const nextIdx = activeIdx + direction
+    if (nextIdx >= 0 && nextIdx < total) {
+      onStopPlayback()
+      startTransition(() => onSetActiveYear(summaryYears[nextIdx]))
+    }
+  }
+
   return (
     <header className="dashboard-header">
       <div className="dashboard-header__left">
@@ -40,8 +67,60 @@ function DashboardHeader({
           </span>
         </button>
         <div className="dashboard-header__logo">
-          <h1>Taiwan Education Atlas</h1>
+          <h1>
+            <span className="logo-text--primary">Taiwan</span>
+            <span className="logo-text--secondary">Education Atlas</span>
+          </h1>
         </div>
+        
+        {activeYear && (
+          <div className="dashboard-header__year-stepper">
+            <div className="stepper-controls">
+              <button
+                type="button"
+                className="header-step-btn"
+                disabled={activeIdx <= 0}
+                onClick={() => handleStep(-1)}
+                title="上一個學年度"
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" width="14" height="14">
+                  <polyline points="15 18 9 12 15 6" />
+                </svg>
+              </button>
+              <div className="dashboard-header__year">
+                <span className="year-chip">{activeYear}學年度</span>
+              </div>
+              <button
+                type="button"
+                className="header-step-btn"
+                disabled={activeIdx >= total - 1}
+                onClick={() => handleStep(1)}
+                title="下一個學年度"
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" width="14" height="14">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </button>
+            </div>
+            
+            <button
+              type="button"
+              className={isYearPlaybackActive ? 'header-playback-btn active' : 'header-playback-btn'}
+              onClick={onTogglePlayback}
+              title={isYearPlaybackActive ? '停止播放' : '播放年度變遷'}
+            >
+              {isYearPlaybackActive ? (
+                <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12">
+                  <rect x="6" y="6" width="12" height="12" rx="1" />
+                </svg>
+              ) : (
+                <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              )}
+            </button>
+          </div>
+        )}
       </div>
     </header>
   )

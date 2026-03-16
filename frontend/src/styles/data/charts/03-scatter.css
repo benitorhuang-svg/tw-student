@@ -19,7 +19,7 @@
 }
 
 .scatter-chart__zero {
-    stroke: rgba(148, 163, 184, 0.4);
+    stroke: rgb(148 163 184 / 40%);
     stroke-width: 1.5;
     stroke-dasharray: 4 4;
 }
@@ -29,10 +29,10 @@
     pointer-events: none;
 }
 
-.scatter-chart__quadrant--tl { fill: var(--chart-quadrant-tl, rgba(42, 111, 145, 0.06)); }
-.scatter-chart__quadrant--tr { fill: var(--chart-quadrant-tr, rgba(45, 143, 111, 0.06)); }
-.scatter-chart__quadrant--bl { fill: var(--chart-quadrant-bl, rgba(217, 119, 6, 0.06)); }
-.scatter-chart__quadrant--br { fill: var(--chart-quadrant-br, rgba(184, 135, 70, 0.06)); }
+.scatter-chart__quadrant--tl { fill: var(--chart-quadrant-tl, rgb(42 111 145 / 6%)); }
+.scatter-chart__quadrant--tr { fill: var(--chart-quadrant-tr, rgb(45 143 111 / 6%)); }
+.scatter-chart__quadrant--bl { fill: var(--chart-quadrant-bl, rgb(217 119 6 / 6%)); }
+.scatter-chart__quadrant--br { fill: var(--chart-quadrant-br, rgb(184 135 70 / 6%)); }
 
 .scatter-chart__axis {
     fill: var(--text-soft, #94a3b8);
@@ -59,14 +59,14 @@
     fill: var(--palette-cyan, #2a6f91);
     stroke: #fff;
     stroke-width: 2;
-    filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.4));
+    filter: drop-shadow(0 0 8px rgb(56 189 248 / 40%));
     outline: none !important;
 }
 
 .scatter-chart__point--active {
     fill: var(--palette-brass, #b88746) !important;
     stroke: #fff !important;
-    filter: drop-shadow(0 0 12px rgba(184, 135, 70, 0.5));
+    filter: drop-shadow(0 0 12px rgb(184 135 70 / 50%));
 }
 
 .scatter-chart__quadrant-label {

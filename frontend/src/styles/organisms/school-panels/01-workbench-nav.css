@@ -13,8 +13,8 @@
 }
 
 .school-detail-shell__topbar--focus {
-    background: linear-gradient(135deg, rgba(42, 111, 145, .16), rgba(184, 135, 70, .12));
-    border-color: rgba(184, 135, 70, .18)
+    background: linear-gradient(135deg, rgb(42 111 145 / 16%), rgb(184 135 70 / 12%));
+    border-color: rgb(184 135 70 / 18%)
 }
 
 .school-detail-shell__topbar-actions {
@@ -50,10 +50,10 @@
     display: flex;
     align-items: center;
     gap: 4px;
-    background: rgba(148, 163, 184, 0.08);
+    background: rgb(148 163 184 / 8%);
     border-radius: 999px;
     padding: 2px 4px;
-    border: 1px solid rgba(148, 163, 184, 0.1);
+    border: 1px solid rgb(148 163 184 / 10%);
 }
 
 .dashboard-year-nav__arrow {
@@ -68,7 +68,7 @@
 }
 
 .dashboard-year-nav__arrow:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgb(255 255 255 / 15%);
 }
 
 .dashboard-year-nav__value {
@@ -85,8 +85,8 @@
     font-size: 0.76rem;
     font-weight: 700;
     white-space: nowrap;
-    background: rgba(148, 163, 184, 0.12);
-    border: 1px solid rgba(148, 163, 184, 0.15);
+    background: rgb(148 163 184 / 12%);
+    border: 1px solid rgb(148 163 184 / 15%);
     transition: all 0.2s ease;
 }
 

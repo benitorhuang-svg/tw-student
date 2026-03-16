@@ -61,6 +61,7 @@ function VisibleSchoolMarkers({
             <SchoolMarker
               key={`school-${school.id}`}
               school={school}
+              zoom={zoom}
               isSelected={school.id === selectedSchoolId}
               isHighlighted={school.id === highlightedSchoolId}
               onSelect={stableSelectSchool}

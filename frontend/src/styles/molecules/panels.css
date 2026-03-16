@@ -24,7 +24,7 @@
   margin: 2px 0 0;
   font-family: var(--font-heading);
   font-size: 1.04rem;
-  color: #f8fafc
+  color: var(--clr-slate-50)
 }
 
 .comparison-panel {
@@ -43,7 +43,7 @@
   gap: 6px;
   padding: 10px;
   border-radius: 14px;
-  background: #0f172a33;
+  background: var(--border-subtle);
   border: var(--border-subtle)
 }
 
@@ -52,10 +52,9 @@
   gap: 14px;
   min-height: 100vh;
   padding: 32px;
-  align-items: center;
-  justify-items: center;
-  background: radial-gradient(circle at top left, rgba(59, 130, 246, .18), transparent 34%), linear-gradient(180deg, #08111ff5, #0f172af5);
-  color: #e2e8f0
+  place-items: center center;
+  background: radial-gradient(circle at top left, rgb(59 130 246 / 18%), transparent 34%), linear-gradient(180deg, var(--clr-slate-950), var(--clr-slate-900));
+  color: var(--clr-slate-200)
 }
 
 .hero-panel__content h1 {
@@ -73,5 +72,5 @@
   padding: 8px;
   border-radius: 12px;
   border: var(--border-subtle);
-  background: #ffffff08
+  background: var(--border-subtle)
 }

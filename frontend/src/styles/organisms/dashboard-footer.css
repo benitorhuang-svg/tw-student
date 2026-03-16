@@ -4,14 +4,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 16px;
-    padding: 6px 20px;
-    font-size: 0.72rem;
+    gap: 12px;
+    padding: 6px 16px;
+    font-size: 0.7rem;
     color: var(--text-secondary);
-    background: var(--surface-glass, rgba(15, 23, 42, 0.6));
+    background: var(--surface-glass, rgb(15 23 42 / 60%));
     backdrop-filter: blur(20px);
     border-top: 1px solid var(--border-subtle);
     z-index: 100;
+    overflow-x: auto; /* Allow horizontal scroll if really tight */
+    white-space: nowrap;
 }
 
 .footer-note--official {
@@ -21,7 +23,8 @@
 .footer-note__left, .footer-note__right {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
+    flex-wrap: nowrap;
 }
 
 .footer-sources__label {
@@ -32,7 +35,8 @@
 .footer-sources {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
+    flex-wrap: nowrap;
 }
 
 .footer-sources a {
@@ -40,6 +44,7 @@
     text-decoration: none;
     transition: all 0.2s ease;
     border-bottom: 1px solid transparent;
+    white-space: nowrap;
 }
 
 .footer-sources a:hover {
@@ -48,7 +53,7 @@
 }
 
 .footer-governance-pill {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgb(255 255 255 / 5%);
     border: 1px solid var(--border-subtle);
     padding: 4px 12px;
     border-radius: var(--radius-sm, 8px);
@@ -58,7 +63,7 @@
 }
 
 .footer-governance-pill:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgb(255 255 255 / 10%);
     border-color: var(--brand-primary);
 }
 
@@ -66,7 +71,7 @@
     background: var(--brand-primary);
     border-color: var(--brand-primary);
     color: #fff;
-    box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+    box-shadow: 0 0 15px rgb(56 189 248 / 30%);
 }
 
 .footer-refresh-status {

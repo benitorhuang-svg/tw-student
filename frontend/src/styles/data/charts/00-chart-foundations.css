@@ -1,7 +1,7 @@
 /* ─── Chart Foundation Entry ─── */
 
-@import "../../foundations/chart-tokens.css";
-@import "../../atoms/chart-elements.css";
+@import url("../../foundations/chart-tokens.css");
+@import url("../../atoms/chart-elements.css");
 
 :root {
   --chart-line-weight-thin: 1.5;

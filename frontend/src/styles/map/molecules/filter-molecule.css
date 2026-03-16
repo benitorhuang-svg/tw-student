@@ -1,0 +1,313 @@
+.map-top-left-context {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 1000;
+    pointer-events: auto;
+}
+
+.map-top-right-context {
+    position: absolute;
+    top: 16px;
+    right: 16px; /* Symmetrical with left */
+    z-index: 1000;
+    pointer-events: auto;
+}
+
+/* Breadcrumb Floating Style */
+.map-breadcrumb {
+    padding: 6px 16px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    border-radius: var(--radius-lg); /* Atomized radius */
+    background: var(--map-overlay-bg);
+    backdrop-filter: blur(var(--map-overlay-blur));
+    backdrop-filter: blur(var(--map-overlay-blur));
+    border: 1px solid var(--map-overlay-border);
+    box-shadow: var(--shadow-premium);
+    white-space: nowrap;
+    max-width: none;
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.map-breadcrumb__segment {
+    display: flex;
+    align-items: center;
+}
+
+.map-breadcrumb__separator {
+    color: var(--text-soft);
+    opacity: 0.5;
+    margin: 0 4px;
+}
+
+.map-breadcrumb__link {
+    background: transparent;
+    border: none;
+    color: var(--text-soft);
+    font: inherit;
+    cursor: pointer;
+    padding: 2px 4px;
+    border-radius: var(--radius-sm);
+    transition: all 0.2s ease;
+}
+
+.map-breadcrumb__link:hover {
+    color: var(--brand-primary);
+    background: var(--surface-active);
+}
+
+.map-breadcrumb__current {
+    color: var(--brand-primary);
+    padding: 2px 4px;
+}
+
+.map-control-group {
+    display: flex;
+    align-items: flex-end; /* Align mini-map and help tools to bottom */
+    gap: 12px;
+    pointer-events: none;
+}
+
+.map-control-group > * {
+    pointer-events: auto;
+}
+
+.map-detached-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Tighter gap */
+    align-items: center;
+}
+
+.map-detached-controls .map-help-toggle {
+    width: 44px;
+    height: 44px;
+    background: var(--map-overlay-bg);
+    backdrop-filter: blur(var(--map-overlay-blur));
+    backdrop-filter: blur(var(--map-overlay-blur));
+    border: 1px solid var(--map-overlay-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-premium);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: var(--text-primary);
+}
+
+.map-detached-controls .map-help-toggle:hover {
+    background: var(--surface-active);
+    color: var(--brand-primary);
+    transform: translateY(-2px);
+}
+
+.map-zoom-controls {
+    display: flex;
+    flex-direction: column; /* Vertical zoom for sidebar feel */
+    gap: 1px;
+    background: var(--map-overlay-bg);
+    backdrop-filter: blur(var(--map-overlay-blur));
+    backdrop-filter: blur(var(--map-overlay-blur));
+    border: 1px solid var(--map-overlay-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-premium);
+}
+
+.map-zoom-controls button {
+    width: 44px;
+    height: 44px;
+    border: none;
+    background: transparent;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.map-zoom-controls button:hover {
+    background: var(--surface-active);
+    color: var(--brand-primary);
+}
+
+.map-context-filters {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    pointer-events: auto;
+}
+
+.map-context-segmented {
+    display: flex;
+    align-items: center;
+    background: var(--map-overlay-bg);
+    backdrop-filter: blur(var(--map-overlay-blur));
+    padding: 4px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--map-overlay-border);
+    box-shadow: var(--shadow-premium);
+}
+
+.map-bottom-left-stack {
+    position: absolute;
+    bottom: 24px;
+    left: 16px;
+    z-index: 1000;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.map-bottom-right-stack {
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+    z-index: 1000;
+    pointer-events: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-end;
+}
+
+.map-filter-group-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: var(--map-overlay-bg);
+    backdrop-filter: blur(var(--map-overlay-blur));
+    backdrop-filter: blur(var(--map-overlay-blur));
+    padding: 8px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--map-overlay-border);
+    box-shadow: var(--shadow-premium);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    gap: 8px;
+    pointer-events: auto;
+}
+
+.map-filter-group-bar:hover {
+    box-shadow: var(--shadow-heavy), 0 0 20px rgb(15 23 42 / 5%);
+    background: var(--surface-glass-rich);
+}
+
+.filter-divider {
+    display: none; /* Hide divider in vertical stack */
+}
+
+.map-filter-detached-row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+    pointer-events: none;
+}
+
+.map-filter-detached-row > * {
+    pointer-events: auto;
+}
+
+/* Collapsible Filter Atom Molecule Styling */
+.map-collapsible-filter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--map-overlay-bg);
+    backdrop-filter: blur(var(--map-overlay-blur));
+    backdrop-filter: blur(var(--map-overlay-blur));
+    border: 1px solid var(--map-overlay-border);
+    border-radius: var(--radius-md);
+    padding: 4px;
+    box-shadow: var(--shadow-premium);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    max-width: fit-content;
+    overflow: hidden;
+}
+
+.filter-toggle-btn {
+    height: 36px;
+    border: none;
+    background: transparent;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+    padding: 0 10px;
+    position: relative;
+    gap: 8px;
+}
+
+.filter-toggle-btn:hover {
+    background: var(--surface-active);
+    color: var(--brand-primary);
+}
+
+.filter-toggle-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+}
+
+.filter-active-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-soft);
+    white-space: nowrap;
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.map-collapsible-filter.is-open .filter-active-label {
+    opacity: 0;
+    width: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.filter-expansion {
+    display: flex;
+    align-items: center;
+    width: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.map-collapsible-filter.is-open {
+    padding-right: 8px;
+}
+
+.map-collapsible-filter.is-open .filter-expansion {
+    width: auto;
+    opacity: 1;
+    margin-left: 4px;
+}
+
+/* Reset inner pill styles when collapsed */
+.filter-expansion .map-context-segmented {
+    background: transparent;
+    backdrop-filter: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+}
+
+.filter-expansion .segmented-icon {
+    display: none; /* Hide internal icon since we have the toggle icon */
+}
+

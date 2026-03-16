@@ -2,12 +2,12 @@
 .premium-segmented-control {
     grid-column: 1 / -1;
     display: flex;
-    background: rgba(241, 245, 249, 0.6);
+    background: rgb(241 245 249 / 60%);
     backdrop-filter: blur(8px);
     padding: 6px;
     border-radius: 16px;
     gap: 4px;
-    border: 1px solid rgba(226, 232, 240, 0.8);
+    border: 1px solid rgb(226 232 240 / 80%);
     margin-bottom: 8px;
     position: sticky;
     top: 0;
@@ -29,35 +29,35 @@
 }
 
 .segmented-btn:hover {
-    background: rgba(255, 255, 255, 0.6);
+    background: rgb(255 255 255 / 60%);
     color: #1e293b;
 }
 
 .segmented-btn--active {
-    background: #ffffff !important;
+    background: #fff !important;
     color: #334155 !important;
     box-shadow: 
-        0 4px 6px -1px rgba(0, 0, 0, 0.05),
-        0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        0 4px 6px -1px rgb(0 0 0 / 5%),
+        0 2px 4px -1px rgb(0 0 0 / 3%);
 }
 
 /* Dark Mode Overrides */
-.app-shell[data-theme=dark] .premium-segmented-control {
-    background: rgba(15, 23, 42, 0.6);
-    border-color: rgba(51, 65, 85, 0.6);
+.app-shell[data-theme="dark"] .premium-segmented-control {
+    background: rgb(15 23 42 / 60%);
+    border-color: rgb(51 65 85 / 60%);
 }
 
-.app-shell[data-theme=dark] .segmented-btn {
+.app-shell[data-theme="dark"] .segmented-btn {
     color: #94a3b8;
 }
 
-.app-shell[data-theme=dark] .segmented-btn:hover {
-    background: rgba(30, 41, 59, 0.6);
+.app-shell[data-theme="dark"] .segmented-btn:hover {
+    background: rgb(30 41 59 / 60%);
     color: #f8fafc;
 }
 
-.app-shell[data-theme=dark] .segmented-btn--active {
+.app-shell[data-theme="dark"] .segmented-btn--active {
     background: #1e293b !important;
     color: #f1f5f9 !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 12px rgb(0 0 0 / 30%);
 }

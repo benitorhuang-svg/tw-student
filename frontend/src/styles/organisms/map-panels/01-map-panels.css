@@ -1,9 +1,9 @@
 /* Dashboard Map Organism Entry */
 
-@import "../../atoms/map-elements.css";
-@import "../../molecules/map-overlays.css";
-@import "../../map/floating-filters.css";
-@import "../../molecules/filter-shelf.css";
+@import url("../../atoms/map-elements.css");
+@import url("../../molecules/map-overlays.css");
+@import url("../../map/floating-filters.css");
+@import url("../../molecules/filter-shelf.css");
 
 .dashboard-side-shell {
     grid-area: sidebar;
@@ -20,13 +20,13 @@
 .side-shell__header {
     flex-shrink: 0;
     z-index: 20;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
 }
 
 .side-shell__body {
     flex: 1;
     overflow-y: auto;
-    padding: 4px 12px 0 12px;
+    padding: 4px 12px 0;
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -83,6 +83,19 @@
     min-height: 0;
     background: var(--map-canvas-bg);
     z-index: 1;
+}
+
+/* Ensure Leaflet doesn't show grab/grabbing icons */
+.atlas-map-canvas-wrap :local(.leaflet-grab),
+.atlas-map-canvas-wrap :local(.leaflet-dragging .leaflet-grab),
+.atlas-map-canvas-wrap .leaflet-grab,
+.atlas-map-canvas-wrap .leaflet-dragging .leaflet-interactive,
+.atlas-map-canvas-wrap .leaflet-dragging .leaflet-grab {
+    cursor: default !important;
+}
+
+.atlas-map-canvas.leaflet-container {
+    cursor: default !important;
 }
 
 .dashboard-card--map {

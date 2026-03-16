@@ -8,7 +8,7 @@
 .school-list-workspace__card,
 .school-focus,
 .school-analysis-panel__side {
-    box-shadow: 0 18px 36px rgba(16, 32, 51, .06);
+    box-shadow: 0 18px 36px rgb(16 32 51 / 6%);
 }
 
 .county-storyboard__fallback-pie {
@@ -34,14 +34,14 @@
     align-content: start;
 }
 
-@media (max-width: 1180px) {
+@media (width <= 1180px) {
     .atlas-storyboard__split--county,
     .school-list-workspace__grid {
         grid-template-columns: 1fr;
     }
 }
 
-@media (max-width: 720px) {
+@media (width <= 720px) {
     .atlas-storyboard__chart--county-comparison,
     .atlas-storyboard__chart--county-distribution,
     .school-list-workspace__card {

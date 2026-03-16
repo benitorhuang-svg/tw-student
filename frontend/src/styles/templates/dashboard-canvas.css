@@ -12,7 +12,7 @@
     min-height: 0;
     height: 100vh;
     height: 100dvh;
-    background: var(--palette-ink, #08111f);
+    background: var(--palette-ink, var(--clr-slate-950));
 }
 
 .control-map-stage {
@@ -29,7 +29,7 @@
     gap: 12px;
     align-items: flex-start;
     padding: 0 6px;
-    color: #e2e8f0;
+    color: var(--clr-slate-200);
 }
 
 .control-map-stage__body {

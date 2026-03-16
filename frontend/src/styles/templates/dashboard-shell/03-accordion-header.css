@@ -16,7 +16,7 @@
 
 .accordion-header:hover {
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 12px rgb(0 0 0 / 5%);
 }
 
 .accordion-icon {
@@ -33,5 +33,5 @@
 
 .accordion-item--expanded .accordion-icon {
     background: #0ea5e9;
-    color: #ffffff;
+    color: #fff;
 }

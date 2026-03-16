@@ -1,35 +1,35 @@
 /* Regional / Focus Theme Variables */
 .dashboard-side-shell {
-    --atlas-surface-primary: linear-gradient(180deg, rgba(255, 255, 255, .96), rgba(248, 250, 252, .92));
-    --atlas-surface-secondary: linear-gradient(180deg, rgba(255, 255, 255, .84), rgba(241, 245, 249, .78));
-    --atlas-surface-interactive: linear-gradient(135deg, rgba(42, 111, 145, .12), rgba(184, 135, 70, .08));
-    --atlas-surface-interactive-strong: linear-gradient(135deg, rgba(42, 111, 145, .18), rgba(184, 135, 70, .14));
-    --atlas-border-strong: rgba(148, 163, 184, .22);
-    --atlas-border-soft: rgba(148, 163, 184, .16);
+    --atlas-surface-primary: linear-gradient(180deg, rgb(255 255 255 / 96%), rgb(248 250 252 / 92%));
+    --atlas-surface-secondary: linear-gradient(180deg, rgb(255 255 255 / 84%), rgb(241 245 249 / 78%));
+    --atlas-surface-interactive: linear-gradient(135deg, rgb(42 111 145 / 12%), rgb(184 135 70 / 8%));
+    --atlas-surface-interactive-strong: linear-gradient(135deg, rgb(42 111 145 / 18%), rgb(184 135 70 / 14%));
+    --atlas-border-strong: rgb(148 163 184 / 22%);
+    --atlas-border-soft: rgb(148 163 184 / 16%);
     --atlas-text-strong: var(--text-main);
     --atlas-text-muted: var(--text-soft);
-    --atlas-text-subtle: rgba(71, 85, 105, .86);
-    --atlas-shadow-soft: 0 16px 38px rgba(15, 23, 42, .08)
+    --atlas-text-subtle: rgb(71 85 105 / 86%);
+    --atlas-shadow-soft: 0 16px 38px rgb(15 23 42 / 8%)
 }
 
-.app-shell[data-theme=dark] .dashboard-side-shell {
-    --atlas-surface-primary: linear-gradient(180deg, rgba(15, 23, 42, .72), rgba(15, 23, 42, .62));
-    --atlas-surface-secondary: linear-gradient(180deg, rgba(255, 255, 255, .08), rgba(255, 255, 255, .05));
-    --atlas-surface-interactive: linear-gradient(135deg, rgba(42, 111, 145, .18), rgba(184, 135, 70, .12));
-    --atlas-surface-interactive-strong: linear-gradient(135deg, rgba(37, 99, 235, .24), rgba(8, 145, 178, .18));
-    --atlas-border-strong: rgba(148, 163, 184, .2);
-    --atlas-border-soft: rgba(148, 163, 184, .14);
+.app-shell[data-theme="dark"] .dashboard-side-shell {
+    --atlas-surface-primary: linear-gradient(180deg, rgb(15 23 42 / 72%), rgb(15 23 42 / 62%));
+    --atlas-surface-secondary: linear-gradient(180deg, rgb(255 255 255 / 8%), rgb(255 255 255 / 5%));
+    --atlas-surface-interactive: linear-gradient(135deg, rgb(42 111 145 / 18%), rgb(184 135 70 / 12%));
+    --atlas-surface-interactive-strong: linear-gradient(135deg, rgb(37 99 235 / 24%), rgb(8 145 178 / 18%));
+    --atlas-border-strong: rgb(148 163 184 / 20%);
+    --atlas-border-soft: rgb(148 163 184 / 14%);
     --atlas-text-strong: #f8fafc;
-    --atlas-text-muted: rgba(226, 232, 240, .78);
-    --atlas-text-subtle: rgba(148, 163, 184, .82);
-    --atlas-shadow-soft: 0 16px 38px rgba(2, 6, 23, .26)
+    --atlas-text-muted: rgb(226 232 240 / 78%);
+    --atlas-text-subtle: rgb(148 163 184 / 82%);
+    --atlas-shadow-soft: 0 16px 38px rgb(2 6 23 / 26%)
 }
 
 /* Base Utility Overrides */
-.app-shell[data-theme=dark] .dashboard-canvas .stat-card,
-.app-shell[data-theme=dark] .dashboard-canvas .scope-panel__visual-card,
-.app-shell[data-theme=dark] .dashboard-canvas .insight-row,
-.app-shell[data-theme=dark] .dashboard-canvas .trend-panel {
+.app-shell[data-theme="dark"] .dashboard-canvas .stat-card,
+.app-shell[data-theme="dark"] .dashboard-canvas .scope-panel__visual-card,
+.app-shell[data-theme="dark"] .dashboard-canvas .insight-row,
+.app-shell[data-theme="dark"] .dashboard-canvas .trend-panel {
   background: #ffffff0a;
   border-color: #94a3b824
 }

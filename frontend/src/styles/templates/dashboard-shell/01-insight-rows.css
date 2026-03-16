@@ -11,7 +11,7 @@
     padding: 8px 10px;
     width: 100%;
     border-radius: 12px;
-    border: 1px solid rgba(148, 163, 184, .12);
+    border: 1px solid rgb(148 163 184 / 12%);
     background: #ffffff0a;
     color: #f8fafc;
     text-align: left;
@@ -25,8 +25,8 @@
 }
 
 .insight-row--active {
-    border-color: rgba(184, 135, 70, .28);
-    background: linear-gradient(135deg, rgba(42, 111, 145, .14), rgba(184, 135, 70, .12))
+    border-color: rgb(184 135 70 / 28%);
+    background: linear-gradient(135deg, rgb(42 111 145 / 14%), rgb(184 135 70 / 12%))
 }
 
 .insight-row__meta strong {

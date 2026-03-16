@@ -1,252 +1,31 @@
-/* --- Premium Atlas Mini Map Card --- */
+@import url('./atoms/minimap-atoms.css');
+@import url('./molecules/minimap-molecule.css');
 
-.atlas-mini-map-card {
-    width: 180px;
-    background: #ffffff; /* Solid fallback */
-    background: rgba(255, 255, 255, 0.9); /* Higher opacity */
-    backdrop-filter: blur(12px) saturate(180%);
-    -webkit-backdrop-filter: blur(12px) saturate(180%);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
-    padding: 10px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    animation: atlas-mini-map-card-entrance 0.5s ease-out;
-    cursor: default !important;
-    overflow: hidden;
+/* --- Specific Overrides / Layout --- */
+.atlas-mini-map-card__help-container {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 100;
 }
 
-@keyframes atlas-mini-map-card-entrance {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+.atlas-mini-map-card__help-container .map-floating-help {
+    position: absolute;
+    bottom: -8px;
+    left: calc(100% + 16px);
+    right: auto !important;
+    width: 260px;
+    z-index: 3000;
+    pointer-events: auto;
+    animation: help-panel-slide-in 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.atlas-mini-map-card__header {
-    padding: 4px 10px;
-    border-bottom: 1.5px solid rgba(0, 0, 0, 0.08); /* Clear separator line */
-    background: rgba(248, 250, 252, 0.9);
-    display: flex;
-    align-items: center;
-    border-radius: 12px 12px 0 0;
-    min-height: 28px;
-}
-
-/* Atomic Override for Breadcrumb inside MiniMap Header */
-.atlas-mini-map-card__header .map-breadcrumb {
-    position: static !important;
-    background: transparent !important;
-    padding: 0 !important;
-    border: none !important;
-    box-shadow: none !important;
-    font-size: 11px !important; /* Smaller text for compact spacing */
-    max-width: 100% !important;
-    margin: 0 !important;
-    width: auto !important;
-    backdrop-filter: none !important;
-    pointer-events: auto !important;
-    display: flex !important;
-    flex-wrap: nowrap !important; 
-    gap: 4px !important; /* Tighter gap */
-    overflow-x: hidden !important; /* Hide scroll to avoid clutter */
-}
-
-.atlas-mini-map-card__header .map-breadcrumb__segment {
-    flex-shrink: 0 !important;
-    color: #4b5563 !important;
-    gap: 3px !important; /* Narrower gap between arrow and text */
-}
-
-.atlas-mini-map-card__header .map-breadcrumb__current {
-    font-weight: 700 !important;
-    color: var(--brand-primary) !important;
-    white-space: nowrap !important;
-}
-
-.atlas-mini-map-card__header .map-breadcrumb__link {
-    font-weight: 600 !important;
-    background: transparent !important;
-    padding: 1px 2px !important;
-    white-space: nowrap !important;
-}
-
-/* Larger hit areas for offshore islands */
-.atlas-mini-map-card__island-hit {
-    fill: rgba(71, 85, 105, 0.05); /* Even more subtle default */
-    stroke: rgba(71, 85, 105, 0.1);
-    stroke-width: 0.5;
-    cursor: pointer;
+.atlas-mini-map-card__help-container .map-help-toggle {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: rgb(255 255 255 / 95%);
+    border: 1px solid rgb(0 0 0 / 10%);
+    box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
     transition: all 0.2s ease;
-}
-
-.atlas-mini-map-card__header .map-breadcrumb__segment,
-.atlas-mini-map-card__header .map-breadcrumb__current,
-.atlas-mini-map-card__header .map-breadcrumb__link {
-    white-space: nowrap;
-}
-
-.atlas-mini-map-tooltip {
-    background: rgba(15, 23, 42, 0.9);
-    color: white;
-    padding: 6px 12px;
-    border-radius: 6px;
-    font-size: 13px;
-    font-weight: 500;
-    backdrop-filter: blur(4px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    pointer-events: none;
-    white-space: nowrap;
-}
-
-.atlas-mini-map-card__body {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    align-items: center;
-    overflow: hidden; /* Ensure self-clipping */
-}
-
-.atlas-mini-map-card__insets {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.atlas-mini-map-card__inset-item {
-    aspect-ratio: 1;
-    border: 1px solid #e5e7eb;
-    border-radius: 4px;
-    padding: 2px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    background: #f9fafb;
-}
-
-.atlas-mini-map-card__inset-item svg {
-    width: 100%;
-    height: 100%;
-    fill: #d1d5db;
-    stroke: #94a3b8;
-    stroke-width: 0.5;
-}
-
-.atlas-mini-map-card__inset-item.is-featured {
-    border: 2.5px solid #ef4444; /* Red highlight as in the user sample */
-}
-
-.atlas-mini-map-card__inset-item:hover {
-    border-color: var(--brand-primary);
-    background: #f0f9ff;
-}
-
-.atlas-mini-map-card__inset-item.is-active {
-    background: #e0f2fe;
-    border-color: var(--brand-primary);
-}
-.atlas-mini-map-card__inset-item.is-active svg {
-    fill: var(--brand-primary);
-    stroke: var(--brand-primary);
-}
-
-.atlas-mini-map-card__main {
-    height: 180px; /* Shrunk from 250px */
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
-    padding: 4px;
-}
-
-.atlas-mini-map-card__svg {
-    height: 100%;
-    width: auto;
-    overflow: visible;
-    cursor: default; /* Removed crosshair to prevent flickering */
-}
-
-.atlas-mini-map-card__sea {
-    fill: #f0f9ff; /* Very light sky blue for ocean */
-    transition: fill 0.3s ease;
-}
-
-[data-theme='dark'] .atlas-mini-map-card__sea {
-    fill: #0f172a; /* Darker ocean for dark mode */
-}
-
-.atlas-mini-map-card__path {
-    fill: #f8fafc;
-    stroke: #64748b;
-    stroke-width: 1.2;
-    cursor: default; /* Changed from pointer to prevent flickering/confusion */
-    transition: all 0.2s ease;
-}
-
-.atlas-mini-map-card__path.is-island {
-    fill: #e2e8f0;
-    stroke: #475569;
-    stroke-width: 1.5;
-}
-
-.atlas-mini-map-card__path:hover {
-    fill: #e0f2fe;
-    stroke: var(--brand-primary);
-}
-
-.atlas-mini-map-card__path.is-active {
-    fill: #bfdbfe;
-    stroke: var(--brand-primary);
-    stroke-width: 1.2;
-}
-
-/* Larger hit areas for offshore islands */
-.atlas-mini-map-card__island-hit {
-    fill: rgba(71, 85, 105, 0.1);
-    stroke: rgba(71, 85, 105, 0.3);
-    stroke-width: 0.5;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.atlas-mini-map-card__island-hit:hover {
-    fill: rgba(30, 64, 175, 0.2);
-    stroke: var(--brand-primary);
-    stroke-width: 1;
-}
-
-.atlas-mini-map-card__island-hit.is-active {
-    fill: rgba(59, 130, 246, 0.2);
-    stroke: var(--brand-primary);
-    stroke-width: 1.2;
-}
-
-.atlas-mini-map-card__viewport-box {
-    fill: rgba(239, 68, 68, 0.15);
-    stroke: #ef4444;
-    stroke-width: 1.5;
-    pointer-events: none;
-    /* Removed animation to prevent flickering */
-}
-
-/* Dark Mode Overrides */
-[data-theme='dark'] .atlas-mini-map-card {
-    background: #1e293b;
-    border-color: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-}
-
-[data-theme='dark'] .atlas-mini-map-card__header {
-    color: #e2e8f0;
-    border-bottom-color: rgba(255, 255, 255, 0.05);
-}
-
-[data-theme='dark'] .atlas-mini-map-card__inset-item {
-    background: #0f172a;
-    border-color: rgba(255, 255, 255, 0.1);
-}
-
-[data-theme='dark'] .atlas-mini-map-card__path {
-    fill: #334155;
-    stroke: #475569;
 }

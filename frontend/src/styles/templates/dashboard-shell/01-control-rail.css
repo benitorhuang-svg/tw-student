@@ -1,12 +1,11 @@
 .atlas-control-rail {
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
-    overflow-x: hidden;
+    overflow: hidden auto;
     padding: 14px;
     gap: 10px;
     border-radius: 28px;
-    background: radial-gradient(circle at 20% 10%, rgba(56, 189, 248, .22), transparent 26%), var(--surface-rail);
+    background: radial-gradient(circle at 20% 10%, rgb(56 189 248 / 22%), transparent 26%), var(--surface-rail);
     box-shadow: 0 28px 70px #0206173d;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior: contain

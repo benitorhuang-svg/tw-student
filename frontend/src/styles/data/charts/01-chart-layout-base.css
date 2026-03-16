@@ -44,11 +44,11 @@
 }
 
 /* Dark mode consistency */
-.app-shell[data-theme=dark] .stacked-area-chart,
-.app-shell[data-theme=dark] .stacked-share-chart,
-.app-shell[data-theme=dark] .scatter-chart,
-.app-shell[data-theme=dark] .box-plot-chart,
-.app-shell[data-theme=dark] .trend-panel {
+.app-shell[data-theme="dark"] .stacked-area-chart,
+.app-shell[data-theme="dark"] .stacked-share-chart,
+.app-shell[data-theme="dark"] .scatter-chart,
+.app-shell[data-theme="dark"] .box-plot-chart,
+.app-shell[data-theme="dark"] .trend-panel {
     background: transparent;
     border: none;
     box-shadow: none;

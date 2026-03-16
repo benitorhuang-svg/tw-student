@@ -7,15 +7,15 @@
     transition: grid-template-columns .35s ease
 }
 
-.atlas-workbench[data-mode=overview] {
+.atlas-workbench[data-mode="overview"] {
     --sidebar-w: minmax(360px, 39vw)
 }
 
-.atlas-workbench[data-mode=regional] {
+.atlas-workbench[data-mode="regional"] {
     --sidebar-w: minmax(340px, 35vw)
 }
 
-.atlas-workbench[data-mode=schools] {
+.atlas-workbench[data-mode="schools"] {
     --sidebar-w: minmax(320px, 32vw)
 }
 

@@ -1,0 +1,100 @@
+/* --- Mini Map Atomic Styles --- */
+
+/* 1. Sea / Background Atom */
+.atlas-mini-map-card__sea {
+    fill: #f0f9ff;
+    transition: fill 0.3s ease;
+}
+
+[data-theme='dark'] .atlas-mini-map-card__sea {
+    fill: #020617;
+}
+
+/* 2. Map Path Atom (Counties) */
+.atlas-mini-map-card__path {
+    fill: #fff;
+    stroke: #cbd5e1;
+    stroke-width: 0.8;
+    cursor: default;
+    transition: all 0.2s ease;
+}
+
+[data-theme='dark'] .atlas-mini-map-card__path {
+    fill: #1e293b;
+    stroke: #334155;
+    stroke-width: 0.8;
+}
+
+.atlas-mini-map-card__path.is-island {
+    fill: #1e293b;
+    stroke: #0f172a;
+    stroke-width: 1.2;
+}
+
+[data-theme='dark'] .atlas-mini-map-card__path.is-island {
+    fill: #94a3b8;
+    stroke: #0f172a;
+}
+
+/* 3. Hit Area Atom */
+.atlas-mini-map-card__island-hit {
+    fill: rgb(71 85 105 / 5%);
+    stroke: rgb(71 85 105 / 10%);
+    stroke-width: 0.5;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* 4. Tooltip Atom */
+.atlas-mini-map-tooltip {
+    background: rgb(15 23 42 / 90%);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 4px 12px rgb(0 0 0 / 20%);
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+/* 5. Inset Item Atom */
+.atlas-mini-map-card__inset-item {
+    aspect-ratio: 1;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    padding: 2px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: #f9fafb;
+}
+
+/* 6. Viewport Atom */
+.atlas-mini-map-card__viewport-box {
+    fill: rgb(239 68 68 / 15%);
+    stroke: #ef4444;
+    stroke-width: 1.2;
+    pointer-events: none;
+}
+
+/* 7. Zoom Indicator Atom */
+.atlas-mini-map-card__zoom-indicator {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-soft);
+    background: rgb(255 255 255 / 70%);
+    padding: 2px 6px;
+    border-radius: 4px;
+    backdrop-filter: blur(4px);
+    pointer-events: none;
+    letter-spacing: 0.02em;
+}
+
+[data-theme='dark'] .atlas-mini-map-card__zoom-indicator {
+    background: rgb(30 41 59 / 70%);
+    color: #94a3b8;
+}

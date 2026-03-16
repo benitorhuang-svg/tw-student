@@ -5,14 +5,14 @@
     min-height: 0;
     border-radius: 20px;
     background: #fff;
-    border: 1px solid rgba(148, 163, 184, 0.12);
-    box-shadow: 0 4px 20px rgba(16, 32, 51, 0.04), 0 1px 3px rgba(16, 32, 51, 0.02);
+    border: 1px solid rgb(148 163 184 / 12%);
+    box-shadow: 0 4px 20px rgb(16 32 51 / 4%), 0 1px 3px rgb(16 32 51 / 2%);
     overflow: hidden;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .dashboard-card:hover {
-    box-shadow: 0 12px 36px rgba(16, 32, 51, 0.08);
+    box-shadow: 0 12px 36px rgb(16 32 51 / 8%);
 }
 
 .dashboard-card--flat {
@@ -40,9 +40,9 @@
     justify-content: space-between;
     gap: 8px;
     padding: 10px 20px;
-    border-bottom: 1px solid rgba(148, 163, 184, 0.08);
+    border-bottom: 1px solid rgb(148 163 184 / 8%);
     flex-shrink: 0;
-    background: rgba(248, 250, 252, 0.4);
+    background: rgb(248 250 252 / 40%);
 }
 
 .dashboard-card__title {
@@ -91,7 +91,7 @@
     padding-top: 12px;
 }
 
-.app-shell[data-theme=dark] .dashboard-card {
+.app-shell[data-theme="dark"] .dashboard-card {
     background: #091220eb;
     border-color: #94a3b81f;
     box-shadow: 0 24px 44px #0000003d

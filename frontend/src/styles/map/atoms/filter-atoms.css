@@ -1,0 +1,84 @@
+/* --- Filter Atomic Styles --- */
+
+/* 1. Year Label Atom */
+.map-year-label {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    background: var(--map-overlay-bg);
+    backdrop-filter: blur(var(--map-overlay-blur));
+    backdrop-filter: blur(var(--map-overlay-blur));
+    padding: 6px 16px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--map-overlay-border);
+    color: var(--brand-primary);
+    font-weight: 800;
+    font-family: var(--font-heading);
+    font-size: 0.95rem; /* Matched with breadcrumb */
+    letter-spacing: 0.02em;
+    box-shadow: var(--shadow-premium);
+    pointer-events: auto;
+    animation: fade-in-up 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* 2. Segmented Button Atom */
+.segmented-btn {
+    padding: 6px 12px;
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+}
+
+.segmented-btn:hover {
+    background: rgb(255 255 255 / 8%);
+    color: var(--text-primary);
+}
+
+.segmented-btn.active {
+    background: var(--brand-primary);
+    color: #fff;
+    box-shadow: 0 4px 12px rgb(59 130 246 / 30%);
+}
+
+/* 3. Segmented Icon Atom */
+.segmented-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    border-right: 1px solid var(--map-overlay-border);
+    margin-right: 4px;
+    opacity: 0.8;
+}
+
+/* 4. Zoom Button Atom */
+.map-zoom-btn {
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.map-zoom-btn:hover {
+    background: var(--surface-active);
+    color: var(--brand-primary);
+}
+
+.map-zoom-btn svg {
+    width: 20px;
+    height: 20px;
+}

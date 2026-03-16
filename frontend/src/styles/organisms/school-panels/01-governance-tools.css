@@ -10,7 +10,7 @@
     position: absolute;
     inset: 0;
     border: 0;
-    background: rgba(16, 32, 51, .16);
+    background: rgb(16 32 51 / 16%);
     pointer-events: auto
 }
 
@@ -25,7 +25,7 @@
     min-height: 0;
     overflow: auto;
     border-radius: 18px;
-    background: rgba(255, 255, 255, .06)
+    background: rgb(255 255 255 / 6%)
 }
 
 /* Tracking Lists */
@@ -43,7 +43,7 @@
     gap: 14px;
     padding: 12px 14px;
     border-radius: 12px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, .08), rgba(42, 111, 145, .08));
+    background: linear-gradient(135deg, rgb(255 255 255 / 8%), rgb(42 111 145 / 8%));
     border: var(--border-subtle)
 }
 
@@ -59,15 +59,15 @@
     min-height: 30px;
     padding: 0 10px;
     border-radius: 999px;
-    border: 1px solid rgba(216, 228, 236, .16);
-    background: rgba(255, 255, 255, .08);
+    border: 1px solid rgb(216 228 236 / 16%);
+    background: rgb(255 255 255 / 8%);
     color: #e5edf4;
     font-size: .74rem;
     cursor: pointer
 }
 
 .governance-status-tag--active {
-    border-color: rgba(184, 135, 70, .32);
-    background: linear-gradient(135deg, rgba(42, 111, 145, .24), rgba(184, 135, 70, .2));
+    border-color: rgb(184 135 70 / 32%);
+    background: linear-gradient(135deg, rgb(42 111 145 / 24%), rgb(184 135 70 / 20%));
     color: #f8fafc
 }

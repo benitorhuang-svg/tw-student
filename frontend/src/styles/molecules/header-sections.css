@@ -5,8 +5,8 @@
     gap: 2px;
     padding: 3px;
     border-radius: 10px;
-    background: rgba(255, 255, 255, .08);
-    border: 1px solid rgba(216, 228, 236, .14);
+    background: rgb(255 255 255 / 8%);
+    border: 1px solid rgb(216 228 236 / 14%);
     flex-shrink: 0;
 }
 
@@ -46,9 +46,9 @@
 .dashboard-year-stepper {
     display: flex;
     align-items: center;
-    background: rgba(255, 255, 255, 0.08);
+    background: rgb(255 255 255 / 8%);
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border: 1px solid rgb(255 255 255 / 12%);
     backdrop-filter: blur(4px);
     overflow: hidden;
     height: 40px;

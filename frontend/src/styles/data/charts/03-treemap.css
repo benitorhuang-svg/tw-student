@@ -6,7 +6,7 @@
     border-radius: 24px !important;
     box-shadow:
         var(--shadow-heavy),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.5) !important;
+        inset 0 0 0 1px rgb(255 255 255 / 50%) !important;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     overflow: visible !important; /* Ensure children don't get clipped */
 }
@@ -15,18 +15,19 @@
 .treemap-chart:hover {
     transform: translateY(-2px);
     box-shadow:
-        0 25px 50px -12px rgba(16, 32, 51, 0.12),
-        0 15px 20px -5px rgba(16, 32, 51, 0.04) !important;
+        0 25px 50px -12px rgb(16 32 51 / 12%),
+        0 15px 20px -5px rgb(16 32 51 / 4%) !important;
 }
 
 
 .treemap-chart .dashboard-card__head {
-    margin-bottom: 0px;
-    padding: 0px 24px 0px 24px; /* Reduced bottom padding to shorten gap */
+    margin-bottom: 0;
+    padding: 0 24px; /* Reduced bottom padding to shorten gap */
     border-bottom: none !important;
     background: transparent !important;
     display: flex;
     justify-content: center;
+
     /* Centered Title */
     align-items: baseline;
     gap: 28px;
@@ -40,6 +41,7 @@
     text-align: center;
     display: flex;
     justify-content: center;
+
     /* Centered group */
     align-items: baseline;
     gap: 28px;
@@ -56,7 +58,7 @@
 }
 
 .treemap-chart .dashboard-card__body {
-    padding: 0px 24px 16px 24px !important; /* Slightly tighter body padding */
+    padding: 0 24px 16px !important; /* Slightly tighter body padding */
     overflow: visible !important;
 }
 
@@ -72,7 +74,7 @@
     background: transparent;
     border: none;
     box-sizing: border-box;
-    padding: 0px 12px 0px 12px;
+    padding: 0 12px;
 }
 
 
@@ -124,6 +126,7 @@
 .treemap-chart__group-column:nth-last-child(2) .treemap-chart__column-header,
 .treemap-chart__group-column:last-child .treemap-chart__column-header {
     justify-content: center;
+
     /* Standardize all to center */
 }
 
@@ -132,7 +135,7 @@
     flex: 1;
     width: 100%;
     min-height: 0;
-    background: rgba(0, 0, 0, 0.05);
+    background: rgb(0 0 0 / 5%);
 }
 
 .treemap-chart__leaf {
@@ -169,7 +172,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 0px;
+    gap: 0;
     width: 100%;
     pointer-events: none;
 }
@@ -182,7 +185,7 @@
     overflow: visible; /* Allow slight overflow if necessary rather than truncation */
     text-overflow: clip;
     width: auto;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    text-shadow: 0 1px 2px rgb(0 0 0 / 40%);
     letter-spacing: -0.04em; /* Tighter letter spacing to fit */
     padding: 0 1px;
 }
@@ -193,13 +196,13 @@
     font-size: 0.65rem;
     font-weight: 800;
     opacity: 1;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 1px 1px rgb(0 0 0 / 30%);
     line-height: 1;
     margin-top: 1px;
 }
 
 
-@media (max-width: 860px) {
+@media (width <= 860px) {
     .treemap-chart__canvas {
         min-height: 420px;
         aspect-ratio: auto
@@ -218,32 +221,32 @@
     }
 }
 
-.app-shell[data-theme=dark] .treemap-chart__canvas {
+.app-shell[data-theme="dark"] .treemap-chart__canvas {
     background:
-        radial-gradient(circle at top left, rgba(56, 189, 248, 0.1), transparent 34%),
-        linear-gradient(180deg, rgba(16, 24, 40, 0.92), rgba(11, 20, 36, 0.98));
-    border-color: rgba(148, 163, 184, 0.1)
+        radial-gradient(circle at top left, rgb(56 189 248 / 10%), transparent 34%),
+        linear-gradient(180deg, rgb(16 24 40 / 92%), rgb(11 20 36 / 98%));
+    border-color: rgb(148 163 184 / 10%)
 }
 
-.app-shell[data-theme=dark] .treemap-chart__group {
-    background: linear-gradient(180deg, color-mix(in srgb, var(--treemap-accent) 14%, #0f172a), rgba(15, 23, 42, 0.82))
+.app-shell[data-theme="dark"] .treemap-chart__group {
+    background: linear-gradient(180deg, color-mix(in srgb, var(--treemap-accent) 14%, #0f172a), rgb(15 23 42 / 82%))
 }
 
-.app-shell[data-theme=dark] .treemap-chart__group-header {
-    background: rgba(255, 255, 255, 0.06)
+.app-shell[data-theme="dark"] .treemap-chart__group-header {
+    background: rgb(255 255 255 / 6%)
 }
 
-.app-shell[data-theme=dark] .treemap-chart__group,
-.app-shell[data-theme=dark] .treemap-chart__leaf {
-    border-color: rgba(255, 255, 255, 0.08)
+.app-shell[data-theme="dark"] .treemap-chart__group,
+.app-shell[data-theme="dark"] .treemap-chart__leaf {
+    border-color: rgb(255 255 255 / 8%)
 }
 
-.app-shell[data-theme=dark] .treemap-chart__leaf {
-    background: rgba(255, 255, 255, 0.05)
+.app-shell[data-theme="dark"] .treemap-chart__leaf {
+    background: rgb(255 255 255 / 5%)
 }
 
-.app-shell[data-theme=dark] .treemap-chart__leaf:hover,
-.app-shell[data-theme=dark] .treemap-chart__leaf--active {
-    border-color: rgba(42, 111, 145, .36);
-    box-shadow: 0 16px 28px rgba(0, 0, 0, .3)
+.app-shell[data-theme="dark"] .treemap-chart__leaf:hover,
+.app-shell[data-theme="dark"] .treemap-chart__leaf--active {
+    border-color: rgb(42 111 145 / 36%);
+    box-shadow: 0 16px 28px rgb(0 0 0 / 30%)
 }

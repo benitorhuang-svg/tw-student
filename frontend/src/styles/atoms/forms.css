@@ -19,7 +19,7 @@
 .filter-select input {
   min-height: 40px;
   border-radius: 10px;
-  border: 1px solid rgba(148, 163, 184, .18);
+  border: 1px solid rgb(148 163 184 / 18%);
   background: #ffffff12;
   color: #f8fafc;
   padding: 0 12px;
@@ -51,8 +51,8 @@
     height: 44px;
     padding: 0 14px;
     border-radius: 14px;
-    border: 1px solid rgba(216, 228, 236, .18);
-    background: rgba(255, 255, 255, .1);
+    border: 1px solid rgb(216 228 236 / 18%);
+    background: rgb(255 255 255 / 10%);
     color: #eef3f6;
     font-size: .9rem;
     font-weight: 600;
@@ -64,9 +64,9 @@
 .dashboard-filter-select:focus,
 .dashboard-filter-input:focus {
     outline: none;
-    border-color: rgba(184, 135, 70, .46);
-    background: rgba(255, 255, 255, .14);
-    box-shadow: 0 0 0 3px rgba(184, 135, 70, .14);
+    border-color: rgb(184 135 70 / 46%);
+    background: rgb(255 255 255 / 14%);
+    box-shadow: 0 0 0 3px rgb(184 135 70 / 14%);
 }
 
 .dashboard-filter-select option {
@@ -78,8 +78,8 @@
     min-height: 34px;
     padding: 0 13px;
     border-radius: 999px;
-    border: 1px solid rgba(216, 228, 236, .18);
-    background: rgba(255, 255, 255, .08);
+    border: 1px solid rgb(216 228 236 / 18%);
+    background: rgb(255 255 255 / 8%);
     color: #eef3f6;
     font-size: .82rem;
     font-weight: 700;
@@ -89,13 +89,13 @@
 
 .dashboard-filter-chip:hover {
     transform: translateY(-1px);
-    background: rgba(255, 255, 255, .14);
-    border-color: rgba(216, 228, 236, .28);
+    background: rgb(255 255 255 / 14%);
+    border-color: rgb(216 228 236 / 28%);
 }
 
 .dashboard-filter-chip--active {
-    border-color: rgba(184, 135, 70, .48);
+    border-color: rgb(184 135 70 / 48%);
     background: linear-gradient(135deg, var(--palette-cyan), color-mix(in srgb, var(--palette-brass) 44%, var(--palette-cyan)));
     color: #f8fafc;
-    box-shadow: 0 10px 20px rgba(16, 32, 51, .24);
+    box-shadow: 0 10px 20px rgb(16 32 51 / 24%);
 }

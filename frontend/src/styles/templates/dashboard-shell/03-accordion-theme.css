@@ -1,8 +1,8 @@
 /* Accordion Visual Theme & Dark Mode */
 .accordion-item {
-    background: #ffffff;
-    border: 1px solid rgba(226, 232, 240, 0.8);
-    box-shadow: 0 4px 20px -5px rgba(16, 32, 51, 0.05);
+    background: #fff;
+    border: 1px solid rgb(226 232 240 / 80%);
+    box-shadow: 0 4px 20px -5px rgb(16 32 51 / 5%);
 }
 
 .accordion-header {
@@ -10,46 +10,46 @@
 }
 
 .accordion-header:hover {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgb(255 255 255 / 80%);
 }
 
 .accordion-icon {
-    background: rgba(15, 23, 42, 0.05);
+    background: rgb(15 23 42 / 5%);
     color: #64748b;
 }
 
 .accordion-item--expanded {
-    box-shadow: 0 20px 40px -10px rgba(16, 32, 51, 0.1);
+    box-shadow: 0 20px 40px -10px rgb(16 32 51 / 10%);
 }
 
 .accordion-item--expanded .accordion-header {
-    background: rgba(248, 250, 252, 0.5);
-    border-bottom: 1px solid rgba(226, 232, 240, 0.3);
+    background: rgb(248 250 252 / 50%);
+    border-bottom: 1px solid rgb(226 232 240 / 30%);
 }
 
 .accordion-content {
-    background: #ffffff;
+    background: #fff;
 }
 
 /* Dark Mode Overrides */
-.app-shell[data-theme=dark] .accordion-item {
+.app-shell[data-theme="dark"] .accordion-item {
     background: #1e293b;
-    border-color: rgba(51, 65, 85, 0.6);
+    border-color: rgb(51 65 85 / 60%);
 }
 
-.app-shell[data-theme=dark] .accordion-header {
+.app-shell[data-theme="dark"] .accordion-header {
     color: #f1f5f9;
 }
 
-.app-shell[data-theme=dark] .accordion-header:hover {
-    background: rgba(255, 255, 255, 0.05);
+.app-shell[data-theme="dark"] .accordion-header:hover {
+    background: rgb(255 255 255 / 5%);
 }
 
-.app-shell[data-theme=dark] .accordion-item--expanded .accordion-header {
-    background: rgba(0, 0, 0, 0.2);
-    border-bottom-color: rgba(51, 65, 85, 0.4);
+.app-shell[data-theme="dark"] .accordion-item--expanded .accordion-header {
+    background: rgb(0 0 0 / 20%);
+    border-bottom-color: rgb(51 65 85 / 40%);
 }
 
-.app-shell[data-theme=dark] .accordion-content {
+.app-shell[data-theme="dark"] .accordion-content {
     background: transparent;
 }

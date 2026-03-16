@@ -1,3 +1,5 @@
+import { useMap } from 'react-leaflet'
+import L from 'leaflet'
 import { CountyBoundaryLayer } from './CountyBoundaryLayer'
 import { TownshipBoundaryLayer } from './TownshipBoundaryLayer'
 import { CountyMarkerLayer } from './CountyMarkerLayer'
@@ -11,6 +13,7 @@ import type {
   TownshipBoundaryCollection,
   CountyBucketDataset 
 } from '../../../data/educationData'
+import { useEffect, useRef, useCallback } from 'react'
 import type { 
   CountySummary, 
   RankingSummary 
@@ -67,6 +70,37 @@ export function MapLayerStack(props: LayerStackProps) {
     setHoveredCountyId, setHoveredTownshipId, onVectorTileError
   } = props
 
+  const map = useMap()
+  const tooltipRef = useRef<L.Tooltip | null>(null)
+
+  useEffect(() => {
+    if (!map) return
+    tooltipRef.current = L.tooltip({
+      direction: 'top',
+      offset: [0, -10],
+      className: 'atlas-map-tooltip atlas-map-tooltip--preview',
+      sticky: true,
+      opacity: 1
+    })
+    return () => {
+      tooltipRef.current?.remove()
+    }
+  }, [map])
+
+  const showMapTooltip = useCallback((latlng: L.LatLng, content: string) => {
+    if (!tooltipRef.current || !map) return
+    tooltipRef.current.setLatLng(latlng).setContent(content)
+    if (!map.hasLayer(tooltipRef.current)) {
+      tooltipRef.current.addTo(map)
+    }
+  }, [map])
+
+  const hideMapTooltip = useCallback(() => {
+    if (tooltipRef.current && map.hasLayer(tooltipRef.current)) {
+      tooltipRef.current.remove()
+    }
+  }, [map])
+
   return (
     <>
       {vectorTileBaseUrl ? (
@@ -95,10 +129,11 @@ export function MapLayerStack(props: LayerStackProps) {
             hoveredFeatureId={hoveredCountyId}
             highlightedCountyId={highlightedCountyId}
             theme={theme}
-            showMarkers={showCountyMarkers}
             onSelectCounty={onSelectCounty}
             onHoverCounty={onHoverCounty}
             setHoveredFeatureId={setHoveredCountyId}
+            showMapTooltip={showMapTooltip}
+            hideMapTooltip={hideMapTooltip}
           />
           {townshipBoundaries && showTownshipMarkers && (
             <TownshipBoundaryLayer
@@ -108,9 +143,10 @@ export function MapLayerStack(props: LayerStackProps) {
               hoveredFeatureId={hoveredTownshipId}
               highlightedTownshipId={highlightedTownshipId}
               theme={theme}
-              showMarkers={showTownshipMarkers}
               onSelectTownship={onSelectTownship}
               setHoveredFeatureId={setHoveredTownshipId}
+              showMapTooltip={showMapTooltip}
+              hideMapTooltip={hideMapTooltip}
             />
           )}
         </>
@@ -124,6 +160,9 @@ export function MapLayerStack(props: LayerStackProps) {
         activeCountyId={activeCountyId}
         onSelectCounty={onSelectCounty}
         showMarkers={showCountyMarkers}
+        onHoverCounty={onHoverCounty}
+        showMapTooltip={showMapTooltip}
+        hideMapTooltip={hideMapTooltip}
       />
 
       <AllTownshipLabels
@@ -135,6 +174,8 @@ export function MapLayerStack(props: LayerStackProps) {
         currentZoom={currentMapZoom}
         townshipLookup={townshipLookup}
         selectedTownshipId={activeTownshipId}
+        showMapTooltip={showMapTooltip}
+        hideMapTooltip={hideMapTooltip}
       />
 
       {showSchoolMarkers && (
@@ -147,11 +188,12 @@ export function MapLayerStack(props: LayerStackProps) {
         />
       )}
 
-      {/* Global Selection Star Marker: Ensures star always shows even if school point is hidden by clustering or bounds */}
+      {/* Global Selection Marker Molecule: Combines Star, Dot, and Pulse to prevent drift */}
       {selectedSchoolPoint && (
         <StarMarker
           position={[selectedSchoolPoint.latitude, selectedSchoolPoint.longitude]}
           isSelected={true}
+          deltaRatio={selectedSchoolPoint.deltaRatio}
           size={36}
           color="#fbbf24"
           ariaLabel={buildSchoolMarkerAriaLabel(selectedSchoolPoint)}

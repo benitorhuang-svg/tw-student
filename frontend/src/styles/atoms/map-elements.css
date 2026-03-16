@@ -70,13 +70,13 @@
     color: #111827;
     font-weight: 800;
     font-size: 0.9rem;
-    box-shadow: 0 10px 20px rgba(249, 115, 22, 0.3);
+    box-shadow: 0 10px 20px rgb(249 115 22 / 30%);
 }
 
 .map-pill {
     padding: 4px 8px;
     border-radius: 999px;
-    border: 1px solid rgba(148, 163, 184, .14);
+    border: 1px solid rgb(148 163 184 / 14%);
     background: #ffffff0a;
     color: #e2e8f0;
     font-size: .78rem;

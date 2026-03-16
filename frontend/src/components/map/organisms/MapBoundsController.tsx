@@ -104,7 +104,7 @@ function MapBoundsController({
         paddingTopLeft: SIDEBAR_PADDING,
         maxZoom: intent.zoom,
         animate: true, 
-        duration: 1.5,
+        duration: 0.8,
       })
 
       if (intent.id.startsWith('initial:')) {

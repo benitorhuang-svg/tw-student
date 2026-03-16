@@ -45,7 +45,7 @@ function RegionalTabPanel({
   return (
     <div className="dashboard-side-shell__content dashboard-side-shell__content--regional">
       <div className="overview-accordion">
-        <div className={`accordion-item ${expandedSections.matrix ? 'accordion-item--expanded' : ''}`}>
+        <div className={`accordion-item stagger-item ${expandedSections.matrix ? 'accordion-item--expanded' : ''}`} style={{ animationDelay: '0.1s' }}>
           <button 
             className="accordion-header" 
             onClick={() => toggleSection('matrix')}
@@ -101,7 +101,7 @@ function RegionalTabPanel({
           </div>
         </div>
 
-        <div className={`accordion-item ${expandedSections.trend ? 'accordion-item--expanded' : ''}`}>
+        <div className={`accordion-item stagger-item ${expandedSections.trend ? 'accordion-item--expanded' : ''}`} style={{ animationDelay: '0.2s' }}>
           <button 
             className="accordion-header" 
             onClick={() => toggleSection('trend')}

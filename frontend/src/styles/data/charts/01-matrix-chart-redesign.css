@@ -12,13 +12,13 @@
 .matrix-chart-premium:hover {
     transform: translateY(-2px);
     box-shadow:
-        0 25px 50px -12px rgba(16, 32, 51, 0.12),
-        0 15px 20px -5px rgba(16, 32, 51, 0.04) !important;
+        0 25px 50px -12px rgb(16 32 51 / 12%),
+        0 15px 20px -5px rgb(16 32 51 / 4%) !important;
 }
 
 .matrix-chart-premium .dashboard-card__head {
     margin-bottom: 0;
-    padding: 0px 24px 4px 100px;
+    padding: 0 24px 4px 100px;
     border-bottom: none !important;
     background: transparent !important;
     display: flex;
@@ -52,65 +52,77 @@
 }
 
 .matrix-chart-premium .scatter-chart__quadrant {
-    transition: fill 0.4s ease;
+    transition: all 0.4s ease;
+    opacity: 0.6;
 }
 
+.matrix-chart-premium .scatter-chart__quadrant--tl { fill: rgb(56 189 248 / 4%); }
+.matrix-chart-premium .scatter-chart__quadrant--tr { fill: rgb(16 185 129 / 4%); }
+.matrix-chart-premium .scatter-chart__quadrant--bl { fill: rgb(244 63 94 / 4%); }
+.matrix-chart-premium .scatter-chart__quadrant--br { fill: rgb(245 158 11 / 4%); }
+
 .matrix-chart-premium .scatter-chart__point {
-    fill: #38bdf840;
-    stroke: #38bdf8;
+    fill: #38bdf880;
+    stroke: #fff;
     stroke-width: 1.5;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     outline: none !important;
+    cursor: pointer;
 }
 
 .matrix-chart-premium .scatter-chart__point:hover {
     fill: #0ea5e9;
     stroke: #fff;
     stroke-width: 2.5;
-    filter: drop-shadow(0 4px 12px rgba(14, 165, 233, 0.4));
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 10px rgb(14 165 233 / 50%));
 }
 
 .matrix-chart-premium .scatter-chart__point--active {
-    fill: #f59e0b !important;
+    fill: var(--clr-accent-amber) !important;
     stroke: #fff !important;
     stroke-width: 3;
-    filter: drop-shadow(0 4px 15px rgba(245, 158, 11, 0.5)) !important;
+    filter: drop-shadow(0 0 15px rgb(245 158 11 / 60%)) !important;
     outline: none !important;
+    r: calc(attr(r) + 2); /* Scale up natively */
 }
 
 .matrix-chart-premium .scatter-chart__axis {
-    fill: var(--text-soft);
-    font-weight: 700;
+    fill: var(--text-dim);
+    font-size: 10px;
+    font-weight: 600;
 }
 
 .matrix-chart-premium .scatter-chart__axis-title {
-    fill: var(--text-strong);
-    font-weight: 800;
+    fill: var(--text-soft);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
 }
 
 .matrix-chart-premium .scatter-chart__zero {
-    stroke: var(--chart-grid);
+    stroke: var(--border-light);
     stroke-width: 1;
-    stroke-dasharray: 4 4;
+    stroke-dasharray: 6 4;
 }
 
 .matrix-chart-premium .scatter-chart__quadrant-label {
-    fill: var(--chart-label);
+    fill: var(--text-dim);
     font-size: 10px;
     font-weight: 800;
-    opacity: 0.82;
+    opacity: 0.6;
     pointer-events: none;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.1em;
 }
 
 /* Tooltip Redesign inside SVG */
 .matrix-chart-premium .chart-svg-tooltip__surface {
-    fill: var(--chart-tooltip-fill, #ffffff);
-    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1));
+    fill: var(--text-strong);
+    filter: drop-shadow(0 8px 20px rgb(0 0 0 / 15%));
 }
 
 .matrix-chart-premium .chart-svg-tooltip__title {
-    fill: var(--chart-tooltip-ink, #0f172a);
+    fill: #fff;
     font-size: 11px;
     font-weight: 700;
 }

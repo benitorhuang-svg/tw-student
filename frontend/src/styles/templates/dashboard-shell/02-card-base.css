@@ -2,13 +2,13 @@
 .dashboard-card--premium {
     position: relative;
     padding: 0;
-    background: #ffffff !important;
-    border: 1px solid rgba(226, 232, 240, 0.8) !important;
+    background: #fff !important;
+    border: 1px solid rgb(226 232 240 / 80%) !important;
     border-radius: 20px !important;
     box-shadow: 
-        0 10px 40px -10px rgba(16, 32, 51, 0.08), 
-        0 20px 25px -5px rgba(16, 32, 51, 0.02),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.5) !important;
+        0 10px 40px -10px rgb(16 32 51 / 8%), 
+        0 20px 25px -5px rgb(16 32 51 / 2%),
+        inset 0 0 0 1px rgb(255 255 255 / 50%) !important;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     overflow: visible !important;
 }
@@ -16,13 +16,13 @@
 .dashboard-card--premium:hover {
     transform: translateY(-2px);
     box-shadow: 
-        0 25px 50px -12px rgba(16, 32, 51, 0.12),
-        0 15px 20px -5px rgba(16, 32, 51, 0.04) !important;
+        0 25px 50px -12px rgb(16 32 51 / 12%),
+        0 15px 20px -5px rgb(16 32 51 / 4%) !important;
 }
 
 .dashboard-card--premium .dashboard-card__head {
     margin-bottom: 0;
-    padding: 16px 24px 4px 24px;
+    padding: 16px 24px 4px;
     border-bottom: none !important;
     background: transparent !important;
 }
@@ -41,23 +41,23 @@
 }
 
 .dashboard-card--premium .dashboard-card__body {
-    padding: 0 16px 12px 16px !important;
+    padding: 0 16px 12px !important;
 }
 
 /* Dark Mode Overrides */
-.app-shell[data-theme=dark] .dashboard-card--premium {
+.app-shell[data-theme="dark"] .dashboard-card--premium {
     background: var(--surface-card) !important;
     border-color: var(--border-strong) !important;
     box-shadow: 
-        0 20px 40px -10px rgba(0, 0, 0, 0.4),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.05) !important;
+        0 20px 40px -10px rgb(0 0 0 / 40%),
+        inset 0 0 0 1px rgb(255 255 255 / 5%) !important;
 }
 
-.app-shell[data-theme=dark] .dashboard-card--premium .dashboard-card__title {
+.app-shell[data-theme="dark"] .dashboard-card--premium .dashboard-card__title {
     color: var(--text-primary);
 }
 
-.app-shell[data-theme=dark] .dashboard-card--premium .dashboard-card__subtitle {
+.app-shell[data-theme="dark"] .dashboard-card--premium .dashboard-card__subtitle {
     color: var(--text-secondary);
 }
 

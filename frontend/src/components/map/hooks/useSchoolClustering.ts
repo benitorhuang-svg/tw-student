@@ -66,8 +66,27 @@ export function useSchoolClustering(
       }))
     }
 
-    const precision = zoom >= 11 ? 7 : zoom >= 10 ? 6 : 5
-    const candidateBuckets = bucketIndex[precision as 5 | 6 | 7] as SchoolBucketRecord[]
+    // Optimized thresholds for better clustering:
+    // Zoom 12+: Details (Precision 7)
+    // Zoom 11: District level (Precision 6)
+    // Zoom 10: County level (Precision 5)
+    // Zoom < 10: National level (Precision 5)
+    
+    // Density Guard: If too many points are visible, force coarser clustering regardless of zoom
+    const isOvercrowded = visiblePoints.length > 300
+    
+    let precision: number
+    if (isOvercrowded) {
+      precision = zoom >= 11 ? 5 : 4
+    } else {
+      precision = zoom >= 13 ? 7 : zoom >= 11 ? 6 : 5
+    }
+
+    // Geohash precision 4 is not in our default bucket index usually, 
+    // but the data structure should handle it or fall back. 
+    // Our bucketIndex only has 5, 6, 7.
+    const safePrecision = Math.max(5, Math.min(7, precision)) as 5 | 6 | 7
+    const candidateBuckets = bucketIndex[safePrecision] as SchoolBucketRecord[]
 
     // No buckets: manual clustering (returning all as individual points for now if no buckets)
     if (candidateBuckets.length === 0) {

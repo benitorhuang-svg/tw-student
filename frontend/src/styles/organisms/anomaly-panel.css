@@ -1,10 +1,10 @@
 /* Premium Anomaly & Investigation Panel Styling */
 
 .governance-flyout .anomaly-panel {
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    padding: 0 !important;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
 }
 
 .anomaly-panel {
@@ -21,13 +21,13 @@
 }
 
 .anomaly-panel .dashboard-card__title {
-    color: #fff;
+    color: var(--text-strong);
     font-size: 1.1rem;
     font-weight: 700;
 }
 
 .anomaly-panel .dashboard-card__subtitle {
-    color: rgba(255, 255, 255, 0.4);
+    color: rgb(255 255 255 / 40%);
     font-size: 0.8rem;
 }
 
@@ -39,8 +39,8 @@
     gap: 8px;
     padding: 16px;
     border-radius: 12px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgb(255 255 255 / 3%);
+    border: 1px solid rgb(255 255 255 / 6%);
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
@@ -63,19 +63,19 @@
 .data-note--critical::before { background: var(--brand-danger); }
 
 .data-note:hover {
-    background: rgba(255, 255, 255, 0.06);
+    background: rgb(255 255 255 / 6%);
     transform: translateX(4px);
-    border-color: rgba(255, 255, 255, 0.12);
+    border-color: rgb(255 255 255 / 12%);
 }
 
 .data-note--selected {
-    background: rgba(56, 189, 248, 0.08);
-    border-color: rgba(56, 189, 248, 0.3);
-    box-shadow: 0 0 20px rgba(56, 189, 248, 0.1);
+    background: rgb(56 189 248 / 8%);
+    border-color: rgb(56 189 248 / 30%);
+    box-shadow: 0 0 20px rgb(56 189 248 / 10%);
 }
 
 .data-note strong {
-    color: #fff;
+    color: var(--text-strong);
     font-size: 0.9rem;
     font-weight: 700;
 }
@@ -94,13 +94,13 @@
 }
 
 .data-note span {
-    color: rgba(255, 255, 255, 0.6);
+    color: rgb(255 255 255 / 60%);
     font-size: 0.82rem;
     line-height: 1.5;
 }
 
 .data-note small {
-    color: rgba(255, 255, 255, 0.3);
+    color: rgb(255 255 255 / 30%);
     font-size: 0.7rem;
     font-style: italic;
 }
@@ -110,8 +110,8 @@
     margin-top: 16px;
     padding: 24px;
     border-radius: 16px;
-    background: rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgb(0 0 0 / 20%);
+    border: 1px solid rgb(255 255 255 / 8%);
     display: grid;
     gap: 20px;
     animation: fadeIn 0.4s ease;
@@ -124,13 +124,13 @@
 
 .anomaly-detail__header h4 {
     margin: 8px 0;
-    color: #fff;
+    color: var(--text-strong);
     font-size: 1.1rem;
     font-weight: 700;
 }
 
 .anomaly-detail__header p {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgb(255 255 255 / 50%);
     font-size: 0.85rem;
     line-height: 1.6;
 }
@@ -138,8 +138,8 @@
 .anomaly-series-table-wrap {
     overflow-x: auto;
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgb(255 255 255 / 6%);
+    background: rgb(255 255 255 / 2%);
 }
 
 .anomaly-series-table {
@@ -148,27 +148,27 @@
 }
 
 .anomaly-series-table th {
-    background: rgba(255, 255, 255, 0.04);
+    background: rgb(255 255 255 / 4%);
     padding: 12px 16px;
     text-align: left;
     font-size: 0.7rem;
     font-weight: 800;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.4);
+    color: rgb(255 255 255 / 40%);
     letter-spacing: 0.05em;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgb(255 255 255 / 8%);
 }
 
 .anomaly-series-table td {
     padding: 12px 16px;
     font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.8);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    color: rgb(255 255 255 / 80%);
+    border-bottom: 1px solid rgb(255 255 255 / 4%);
 }
 
 .anomaly-series-table tr:hover td {
-    background: rgba(255, 255, 255, 0.02);
-    color: #fff;
+    background: rgb(255 255 255 / 2%);
+    color: var(--text-strong);
 }
 
 .anomaly-series-table tr:last-child td {

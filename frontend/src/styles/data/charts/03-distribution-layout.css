@@ -4,7 +4,7 @@
     gap: 14px
 }
 
-@media (min-width: 980px) {
+@media (width >= 980px) {
     .school-positioning-grid {
         grid-template-columns: minmax(260px, .9fr) minmax(0, 1.1fr)
     }

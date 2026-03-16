@@ -6,6 +6,7 @@ type AccordionItemProps = {
   isExpanded: boolean
   onToggle: (id: string) => void
   children: React.ReactNode
+  style?: React.CSSProperties
 }
 
 export const AccordionItem: React.FC<AccordionItemProps> = ({
@@ -13,10 +14,11 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
   title,
   isExpanded,
   onToggle,
-  children
+  children,
+  style
 }) => {
   return (
-    <div className={`accordion-item ${isExpanded ? 'accordion-item--expanded' : ''}`}>
+    <div className={`accordion-item stagger-item ${isExpanded ? 'accordion-item--expanded' : ''}`} style={style}>
       <button
         className="accordion-header"
         onClick={() => onToggle(id)}
@@ -54,6 +56,7 @@ export const OverviewAccordion: React.FC<OverviewAccordionProps> = ({
         title="熱點分析矩陣 (全台總覽)"
         isExpanded={expandedSections.matrix}
         onToggle={onToggleSection}
+        style={{ animationDelay: '0.1s' }}
       >
         {matrixSection}
       </AccordionItem>
@@ -63,6 +66,7 @@ export const OverviewAccordion: React.FC<OverviewAccordionProps> = ({
         title="全台各學制歷年學生數"
         isExpanded={expandedSections.trend}
         onToggle={onToggleSection}
+        style={{ animationDelay: '0.2s' }}
       >
         {trendSection}
       </AccordionItem>
@@ -72,6 +76,7 @@ export const OverviewAccordion: React.FC<OverviewAccordionProps> = ({
         title="各地區學生分佈比例"
         isExpanded={expandedSections.treemap}
         onToggle={onToggleSection}
+        style={{ animationDelay: '0.3s' }}
       >
         {treemapSection}
       </AccordionItem>

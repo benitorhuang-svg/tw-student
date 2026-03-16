@@ -12,7 +12,7 @@ function MapBreadcrumb({ scopePath, onNavigate }: MapBreadcrumbProps) {
         const isLast = index === scopePath.length - 1
         return (
           <span key={segment} className="map-breadcrumb__segment">
-            {index > 0 && <span className="map-breadcrumb__separator" aria-hidden="true">›</span>}
+            {index > 0 && <span className="map-breadcrumb__separator" aria-hidden="true">&nbsp;&gt;&nbsp;</span>}
             {isLast ? (
               <span className="map-breadcrumb__current">{segment}</span>
             ) : (

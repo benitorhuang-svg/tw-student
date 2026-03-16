@@ -99,7 +99,14 @@ function DesktopAppLayout(props: DesktopAppLayoutProps) {
         header={
           <DashboardHeader
             theme={props.theme}
+            activeYear={props.activeYear}
+            summaryYears={[...props.summaryDataset.years]}
+            isYearPlaybackActive={props.isYearPlaybackActive}
             onToggleTheme={() => props.setTheme((t) => (t === 'dark' ? 'light' : 'dark'))}
+            onSetActiveYear={props.setActiveYear}
+            onStopPlayback={() => props.setIsYearPlaybackActive(false)}
+            onTogglePlayback={() => props.setIsYearPlaybackActive(!props.isYearPlaybackActive)}
+            startTransition={props.startTransition}
           />
         }
         footer={

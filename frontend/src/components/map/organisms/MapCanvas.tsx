@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { MapContainer } from 'react-leaflet'
+import { AtlasLevelFilter, AtlasTypeFilter } from '../../AtlasGlobalFilters'
 
 import { MAP_DEFAULT_CENTER, MAP_DEFAULT_ZOOM, MAP_MAX_ZOOM, MAP_MAX_BOUNDS } from '../../../lib/constants'
 import { MapLoadingBanner } from '../atoms/MapLoadingBanner'
@@ -8,8 +9,11 @@ import MapBoundsController from './MapBoundsController'
 import { MapLayerStack } from '../molecules/MapLayerStack'
 import { useMapComputedState } from '../useMapComputedState'
 import { MapEvents } from '../atoms/MapEvents'
-import { MapFloatingFilters } from '../../molecules/MapFloatingFilters'
+import MapBreadcrumb from '../atoms/MapBreadcrumb'
+import { MapYearLabel } from '../atoms/MapYearLabel'
 import { AtlasMiniMap } from '../molecules/AtlasMiniMap'
+import MapFloatingHelp from '../molecules/MapFloatingHelp'
+import { MapZoomControls } from '../atoms/MapZoomControls'
 import type { CountyBucketDataset, CountyBoundaryCollection, TownshipBoundaryCollection, AcademicYear, EducationLevelFilter, ManagementTypeFilter, RegionGroupFilter, EducationSummaryDataset } from '../../../data/educationData'
 import type { CountySummary, RankingSummary } from '../../../lib/analytics.types'
 import type { SchoolMapPoint } from '../types'
@@ -58,10 +62,8 @@ export type MapCanvasProps = {
   summaryYears: AcademicYear[]
   educationLevel: EducationLevelFilter
   managementType: ManagementTypeFilter
-  isYearPlaybackActive: boolean
   onSetRegion: (region: RegionGroupFilter) => void
   onResetRegion: () => void
-  onTogglePlayback: () => void
   onSetActiveYear: (year: AcademicYear) => void
   onStopPlayback: () => void
   onSetEducationLevel: (level: EducationLevelFilter) => void
@@ -91,14 +93,10 @@ export default function MapCanvas(props: MapCanvasProps) {
     highlightedTownshipId, highlightedSchoolId, isTownshipBoundaryLoading,
     onSelectSchool, initialMapZoom, initialMapLat, initialMapLon, 
     scopePath, onNavigateScope, vectorTileBaseUrl = '', forceTownshipLabels = false,
-    activeTab, activeYear, summaryYears, educationLevel, managementType,
-    isYearPlaybackActive, onSetRegion, onResetRegion, onTogglePlayback,
-    onSetActiveYear, onStopPlayback, onSetEducationLevel, onSetManagementType,
+    activeTab, educationLevel, managementType,
+    onSetEducationLevel, onSetManagementType,
     startTransition, activeCountyName
   } = props
-
-  const [openShelf, setOpenShelf] = useState<string | null>(null)
-  const toggleShelf = (id: string) => setOpenShelf(prev => prev === id ? null : id)
 
   let selectedSchool = selectedSchoolId ? schoolPoints.find((school) => school.id === selectedSchoolId) ?? null : null
 
@@ -133,20 +131,23 @@ export default function MapCanvas(props: MapCanvasProps) {
         <div className="atlas-map-canvas-wrap" data-township-markers={forceTownshipLabels ? 'true' : 'false'}>
           <MapLoadingBanner isLoading={isTownshipBoundaryLoading} message="正在同步縣市鄉鎮界線…" />
           
-          <MapContainer
-            center={[initialMapLat ?? MAP_DEFAULT_CENTER[0], initialMapLon ?? MAP_DEFAULT_CENTER[1]]}
-            zoom={initialMapZoom ?? MAP_DEFAULT_ZOOM}
-            minZoom={MAP_DEFAULT_ZOOM}
-            maxZoom={MAP_MAX_ZOOM}
-            maxBounds={MAP_MAX_BOUNDS}
-            maxBoundsViscosity={1.0}
-            zoomControl={false}
-            zoomSnap={0.1}
-            zoomDelta={0.5}
-            className="atlas-map-canvas"
-            attributionControl={false}
-            preferCanvas={true}
-          >
+            <MapContainer
+              center={[initialMapLat ?? MAP_DEFAULT_CENTER[0], initialMapLon ?? MAP_DEFAULT_CENTER[1]]}
+              zoom={initialMapZoom ?? MAP_DEFAULT_ZOOM}
+              minZoom={MAP_DEFAULT_ZOOM}
+              maxZoom={MAP_MAX_ZOOM}
+              maxBounds={MAP_MAX_BOUNDS}
+              maxBoundsViscosity={1.0}
+              zoomControl={false}
+              zoomSnap={0.1}
+              zoomDelta={0.5}
+              className="atlas-map-canvas"
+              attributionControl={false}
+              preferCanvas={true}
+              inertia={false} // Disable floaty movement
+              zoomAnimation={true} // Keep zoom animation but make it snappy
+              fadeAnimation={false} // Faster tile removal
+            >
             <MapTileLayer theme={theme} />
             <MapEvents onBackgroundClick={() => {
               if (selectedSchoolId) onSelectSchool(null)
@@ -181,39 +182,50 @@ export default function MapCanvas(props: MapCanvasProps) {
               initialLonFromUrl={initialMapLon}
             />
 
-            {/* UI Overlays Portal-like sibling container inside MapContainer */}
             <MapUIOverlay>
-              <MapFloatingFilters
-                activeTab={activeTab}
-                activeCountyName={activeCountyName}
-                region={props.activeRegion}
-                activeYear={activeYear}
-                summaryYears={summaryYears}
-                educationLevel={educationLevel}
-                managementType={managementType}
-                isYearPlaybackActive={isYearPlaybackActive}
-                openShelf={openShelf}
-                onToggleShelf={toggleShelf}
-                onSetRegion={onSetRegion}
-                onResetRegion={onResetRegion}
-                onTogglePlayback={onTogglePlayback}
-                onSetActiveYear={onSetActiveYear}
-                onStopPlayback={onStopPlayback}
-                onSetEducationLevel={onSetEducationLevel}
-                onSetManagementType={onSetManagementType}
-                startTransition={startTransition}
-              />
-
-              <div className="map-bottom-right-stack">
-                <AtlasMiniMap 
-                  countyBoundaries={countyBoundaries as any}
-                  activeCountyId={activeCountyId}
-                  onSelectCounty={props.onSelectCounty}
-                  isVisible={true}
-                  scopePath={scopePath}
-                  onNavigateScope={onNavigateScope}
-                />
+              {/* 1. Top Left: Navigation Path (Level with Year) */}
+              <div className="map-top-left-context">
+                <MapBreadcrumb scopePath={scopePath} onNavigate={onNavigateScope} />
               </div>
+
+              {/* 2. Top Right: Year Context */}
+              <div className="map-top-right-context">
+                <MapYearLabel activeYear={props.activeYear} />
+              </div>
+
+              {/* 3. Bottom Left Area: Filters + Mini Map */}
+              <div className="map-bottom-left-stack">
+                <div className="map-filter-detached-row">
+                  <AtlasTypeFilter
+                    managementType={managementType}
+                    onSetManagementType={onSetManagementType}
+                    startTransition={startTransition}
+                  />
+                  <AtlasLevelFilter
+                    educationLevel={educationLevel}
+                    onSetEducationLevel={onSetEducationLevel}
+                    startTransition={startTransition}
+                  />
+                </div>
+
+                <div className="map-control-group">
+                  <AtlasMiniMap 
+                    countyBoundaries={countyBoundaries as any}
+                    activeCountyId={activeCountyId}
+                    onSelectCounty={props.onSelectCounty}
+                    isVisible={true}
+                  />
+                  <div className="map-detached-controls">
+                    <MapFloatingHelp 
+                      activeTab={activeTab} 
+                      activeCountyName={activeCountyName} 
+                    />
+                    <MapZoomControls />
+                  </div>
+                </div>
+              </div>
+
+              {/* 4. Bottom Right: Now Empty */}
             </MapUIOverlay>
           </MapContainer>
         </div>

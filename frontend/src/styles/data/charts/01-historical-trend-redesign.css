@@ -1,13 +1,13 @@
 .historical-trend-chart {
     position: relative;
     padding: 0;
-    background: #ffffff !important;
-    border: 1px solid rgba(226, 232, 240, 0.8) !important;
+    background: #fff !important;
+    border: 1px solid rgb(226 232 240 / 80%) !important;
     border-radius: 24px !important;
     box-shadow: 
-        0 10px 40px -10px rgba(16, 32, 51, 0.08), 
-        0 20px 25px -5px rgba(16, 32, 51, 0.02),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.5) !important;
+        0 10px 40px -10px rgb(16 32 51 / 8%), 
+        0 20px 25px -5px rgb(16 32 51 / 2%),
+        inset 0 0 0 1px rgb(255 255 255 / 50%) !important;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     overflow: visible !important;
 }
@@ -15,18 +15,18 @@
 .historical-trend-chart:hover {
     transform: translateY(-2px);
     box-shadow: 
-        0 25px 50px -12px rgba(16, 32, 51, 0.12),
-        0 15px 20px -5px rgba(16, 32, 51, 0.04) !important;
+        0 25px 50px -12px rgb(16 32 51 / 12%),
+        0 15px 20px -5px rgb(16 32 51 / 4%) !important;
 }
 
 .historical-trend-chart .dashboard-card__body {
-    padding: 0 2px 0px 24px !important; /* Matched to Matrix Chart body */
+    padding: 0 2px 0 24px !important; /* Matched to Matrix Chart body */
     overflow: visible !important;
 }
 
 .historical-trend-chart .dashboard-card__head {
     margin-bottom: 0;
-    padding: 0px 24px 16px 100px; /* Increased bottom padding for breathing room */
+    padding: 0 24px 16px 100px; /* Increased bottom padding for breathing room */
     border-bottom: none !important;
     background: transparent !important;
     display: flex;
@@ -55,7 +55,7 @@
 
 
 .historical-trend-chart .chart-svg-frame {
-    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.02));
+    filter: drop-shadow(0 4px 6px rgb(0 0 0 / 2%));
 }
 
 .historical-trend-chart .bar-segment {
@@ -73,28 +73,28 @@
     border-radius: 6px;
     font-size: 11px;
     font-weight: 700;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgb(255 255 255 / 50%);
     backdrop-filter: blur(4px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgb(255 255 255 / 30%);
 }
 
 .historical-trend-chart .glass-tooltip {
-    background: rgba(255, 255, 255, 0.92) !important; /* Increased opacity for better text clarity */
+    background: rgb(255 255 255 / 92%) !important; /* Increased opacity for better text clarity */
     backdrop-filter: blur(16px) saturate(220%) !important; /* Enhanced blur and saturation */
-    border: 1px solid rgba(255, 255, 255, 0.6) !important;
+    border: 1px solid rgb(255 255 255 / 60%) !important;
     box-shadow: 
-        0 4px 6px -1px rgba(0, 0, 0, 0.1),
-        0 20px 25px -5px rgba(16, 32, 51, 0.15),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.5) !important;
+        0 4px 6px -1px rgb(0 0 0 / 10%),
+        0 20px 25px -5px rgb(16 32 51 / 15%),
+        inset 0 0 0 1px rgb(255 255 255 / 50%) !important;
     border-radius: 12px !important;
 }
 
 .historical-trend-chart .year-label {
-    font-family: 'Sora', sans-serif;
+    font-family: Sora, sans-serif;
     letter-spacing: 0.05em;
 }
 
 .historical-trend-chart .total-badge {
-    font-family: 'Sora', sans-serif;
+    font-family: Sora, sans-serif;
     font-weight: 800;
 }

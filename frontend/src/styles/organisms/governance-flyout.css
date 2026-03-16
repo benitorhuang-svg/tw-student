@@ -8,9 +8,9 @@
     height: calc(100dvh - var(--dashboard-header-h) - var(--dashboard-footer-h));
     display: grid;
     grid-template-rows: auto 1fr auto;
-    background: linear-gradient(165deg, rgba(16, 32, 51, 0.98) 0%, rgba(8, 17, 31, 1) 100%);
-    border-right: 1px solid rgba(255, 255, 255, 0.12);
-    box-shadow: 40px 0 100px rgba(0, 0, 0, 0.8);
+    background: linear-gradient(165deg, rgb(8 17 31 / 100%) 0%, rgb(2 6 23 / 100%) 100%);
+    border-right: 1px solid var(--border-light);
+    box-shadow: 40px 0 100px rgb(0 0 0 / 80%);
     z-index: 2000;
     pointer-events: auto;
     backdrop-filter: blur(40px) saturate(200%);
@@ -25,8 +25,8 @@
 
 .governance-flyout__head {
     padding: 32px 28px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.12), transparent 70%);
+    border-bottom: 1px solid rgb(255 255 255 / 10%);
+    background: radial-gradient(circle at top left, rgb(56 189 248 / 12%), transparent 70%);
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -40,24 +40,24 @@
     font-size: 0.65rem;
     text-transform: uppercase;
     margin-bottom: 8px;
-    text-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
-    background: rgba(56, 189, 248, 0.1);
+    text-shadow: 0 0 15px rgb(56 189 248 / 50%);
+    background: rgb(56 189 248 / 10%);
     padding: 4px 12px;
     border-radius: 20px;
-    border: 1px solid rgba(56, 189, 248, 0.2);
+    border: 1px solid rgb(56 189 248 / 20%);
 }
 
 .governance-flyout__head h3 {
     margin: 4px 0 0;
     font-family: var(--font-heading);
-    color: #fff;
+    color: var(--text-strong);
     font-size: 1.5rem;
     font-weight: 800;
     letter-spacing: -0.03em;
 }
 
 .governance-flyout__head p {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgb(255 255 255 / 50%);
     font-size: 0.85rem;
     line-height: 1.6;
     margin-top: 12px;
@@ -65,9 +65,9 @@
 }
 
 .close-trigger {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.4);
+    background: rgb(255 255 255 / 5%);
+    border: 1px solid rgb(255 255 255 / 10%);
+    color: rgb(255 255 255 / 40%);
     width: 36px;
     height: 36px;
     border-radius: 50%;
@@ -79,9 +79,9 @@
 }
 
 .close-trigger:hover {
-    background: rgba(244, 63, 94, 0.15);
-    color: #fb7185;
-    border-color: rgba(244, 63, 94, 0.3);
+    background: rgb(244 63 94 / 15%);
+    color: var(--brand-danger);
+    border-color: rgb(244 63 94 / 30%);
     transform: rotate(90deg);
 }
 
@@ -98,7 +98,7 @@
 }
 
 .governance-flyout__body::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgb(255 255 255 / 10%);
     border-radius: 10px;
 }
 
@@ -120,14 +120,14 @@
 }
 
 .panel-heading h3 {
-    color: #fff;
+    color: var(--text-strong);
     font-size: 1.25rem;
     font-weight: 800;
     margin: 6px 0;
 }
 
 .panel-heading__meta {
-    color: rgba(255, 255, 255, 0.45);
+    color: rgb(255 255 255 / 45%);
     font-size: 0.8rem;
     line-height: 1.6;
 }
@@ -139,8 +139,8 @@
 }
 
 .school-profile-metric {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgb(255 255 255 / 3%);
+    border: 1px solid rgb(255 255 255 / 8%);
     padding: 20px;
     border-radius: 20px;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -149,14 +149,14 @@
 }
 
 .school-profile-metric:hover {
-    background: rgba(56, 189, 248, 0.04);
-    border-color: rgba(56, 189, 248, 0.3);
+    background: rgb(56 189 248 / 4%);
+    border-color: rgb(56 189 248 / 30%);
     transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 12px 30px rgb(0 0 0 / 40%);
 }
 
 .school-profile-metric span {
-    color: rgba(255, 255, 255, 0.3);
+    color: rgb(255 255 255 / 30%);
     font-size: 0.65rem;
     font-weight: 900;
     text-transform: uppercase;
@@ -164,7 +164,7 @@
 }
 
 .school-profile-metric strong {
-    color: #fff;
+    color: var(--text-strong);
     font-size: 1.3rem;
     display: block;
     margin: 10px 0;
@@ -173,11 +173,11 @@
     letter-spacing: -0.02em;
 }
 
-.school-profile-metric .status--pass { color: #4ade80; text-shadow: 0 0 10px rgba(74, 222, 128, 0.3); }
-.school-profile-metric .status--fail { color: #f87171; text-shadow: 0 0 10px rgba(248, 113, 113, 0.3); }
+.school-profile-metric .status--pass { color: var(--clr-secondary-500); text-shadow: 0 0 10px rgb(74 222 128 / 30%); }
+.school-profile-metric .status--fail { color: var(--brand-danger); text-shadow: 0 0 10px rgb(248 113 113 / 30%); }
 
 .school-profile-metric small {
-    color: rgba(255, 255, 255, 0.25);
+    color: rgb(255 255 255 / 25%);
     font-size: 0.7rem;
     line-height: 1.4;
 }
@@ -189,7 +189,7 @@
     align-items: center;
     margin-top: 20px;
     padding-bottom: 12px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgb(255 255 255 / 6%);
 }
 
 .action-link {
@@ -205,7 +205,7 @@
 }
 
 .action-link:hover {
-    background: rgba(56, 189, 248, 0.1);
+    background: rgb(56 189 248 / 10%);
     text-decoration: underline;
 }
 
@@ -217,8 +217,8 @@
 }
 
 .governance-missing-item {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgb(255 255 255 / 2%);
+    border: 1px solid rgb(255 255 255 / 5%);
     padding: 12px 16px;
     border-radius: 12px;
     display: flex;
@@ -228,19 +228,19 @@
 }
 
 .governance-missing-item:hover {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.12);
+    background: rgb(255 255 255 / 5%);
+    border-color: rgb(255 255 255 / 12%);
 }
 
 .missing-item__info strong {
     display: block;
-    color: #fff;
+    color: var(--text-strong);
     font-size: 0.9rem;
     font-weight: 700;
 }
 
 .missing-item__info span {
-    color: rgba(255, 255, 255, 0.4);
+    color: rgb(255 255 255 / 40%);
     font-size: 0.75rem;
 }
 
@@ -253,23 +253,23 @@
     font-size: 0.65rem;
     padding: 2px 8px;
     border-radius: 6px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.3);
+    background: rgb(255 255 255 / 5%);
+    border: 1px solid rgb(255 255 255 / 10%);
+    color: rgb(255 255 255 / 30%);
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .status-tag--active {
     background: var(--brand-primary);
-    color: #fff;
+    color: var(--text-strong);
     border-color: transparent;
     font-weight: 700;
 }
 
 .limit-note {
     text-align: center;
-    color: rgba(255, 255, 255, 0.3);
+    color: rgb(255 255 255 / 30%);
     font-size: 0.75rem;
     font-style: italic;
     margin-top: 8px;
@@ -284,7 +284,7 @@
 }
 
 .asset-item {
-    background: rgba(255, 255, 255, 0.02);
+    background: rgb(255 255 255 / 2%);
     padding: 10px 16px;
     border-radius: 12px;
     display: flex;
@@ -292,14 +292,14 @@
     align-items: center;
 }
 
-.asset-item span { color: rgba(255, 255, 255, 0.4); font-size: 0.75rem; }
-.asset-item strong { color: #fff; font-size: 0.85rem; font-family: monospace; }
+.asset-item span { color: rgb(255 255 255 / 40%); font-size: 0.75rem; }
+.asset-item strong { color: var(--text-strong); font-size: 0.85rem; font-family: monospace; }
 
 .source-links {
     display: flex;
     gap: 16px;
     padding-top: 12px;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-top: 1px solid rgb(255 255 255 / 6%);
 }
 
 .source-links a {
@@ -310,13 +310,13 @@
     transition: all 0.3s ease;
 }
 
-.source-links a:hover { color: #fff; text-decoration: underline; }
+.source-links a:hover { color: var(--text-strong); text-decoration: underline; }
 
 /* Sticky Footer: Sync Actions */
 .governance-flyout__footer {
     padding: 24px 28px;
-    background: rgba(15, 23, 42, 0.95);
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgb(15 23 42 / 95%);
+    border-top: 1px solid rgb(255 255 255 / 15%);
     backdrop-filter: blur(20px);
     display: flex;
     flex-direction: column;
@@ -339,8 +339,8 @@
 }
 
 .sync-indicator--active {
-    background: #fbbf24;
-    box-shadow: 0 0 15px #fbbf24;
+    background: var(--brand-warning);
+    box-shadow: 0 0 15px var(--brand-warning);
     animation: pulseSync 1.5s infinite;
 }
 
@@ -350,8 +350,8 @@
     100% { transform: scale(1); opacity: 1; }
 }
 
-.sync-info p { margin: 0; color: #fff; font-size: 0.85rem; font-weight: 700; }
-.sync-info small { color: rgba(255, 255, 255, 0.45); font-size: 0.75rem; }
+.sync-info p { margin: 0; color: var(--text-strong); font-size: 0.85rem; font-weight: 700; }
+.sync-info small { color: rgb(255 255 255 / 45%); font-size: 0.75rem; }
 
 .premium-sync-button {
     width: 100%;
@@ -359,7 +359,7 @@
     background: linear-gradient(135deg, var(--brand-primary), #0ea5e9);
     border: none;
     border-radius: 16px;
-    color: #fff;
+    color: var(--text-strong);
     font-size: 0.95rem;
     font-weight: 800;
     cursor: pointer;
@@ -368,12 +368,12 @@
     justify-content: center;
     gap: 10px;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: 0 10px 25px rgba(56, 189, 248, 0.3);
+    box-shadow: 0 10px 25px rgb(56 189 248 / 30%);
 }
 
 .premium-sync-button:hover:not(:disabled) {
     transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 15px 35px rgba(56, 189, 248, 0.5);
+    box-shadow: 0 15px 35px rgb(56 189 248 / 50%);
     background: linear-gradient(135deg, #7dd3fc, var(--brand-primary));
 }
 
@@ -382,8 +382,8 @@
 }
 
 .premium-sync-button:disabled {
-    background: rgba(255, 255, 255, 0.05);
-    color: rgba(255, 255, 255, 0.2);
+    background: rgb(255 255 255 / 5%);
+    color: rgb(255 255 255 / 20%);
     cursor: not-allowed;
     box-shadow: none;
 }
@@ -406,10 +406,7 @@
 /* Layer & Backdrop override */
 .governance-flyout-layer {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     z-index: 10000;
     display: flex;
     pointer-events: none;
@@ -417,11 +414,8 @@
 
 .governance-flyout-backdrop {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
+    inset: 0;
+    background: rgb(0 0 0 / 70%);
     backdrop-filter: blur(16px);
     border: none;
     width: 100%;

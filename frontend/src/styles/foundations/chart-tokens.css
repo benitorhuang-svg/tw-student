@@ -30,7 +30,7 @@
 
   /* Tooltip surface - reference global semantic tokens */
   --chart-tooltip-surface: var(--chart-tooltip-bg, #0f172a);
-  --chart-tooltip-stroke: var(--chart-border, rgba(255, 255, 255, 0.1));
+  --chart-tooltip-stroke: var(--chart-border, rgb(255 255 255 / 10%));
   --chart-tooltip-elevation: var(--shadow-md);
 
   /* Typography Scale */
