@@ -114,7 +114,6 @@ export function StackedAreaTrendChart({ title, subtitle, series, children, class
   const paddingTop = -5 // Tightened from 45 to pull chart up
   const paddingBottom = 30 // Balanced bottom spacing
 
-  const [hoverIndex, setHoverIndex] = useState<number | null>(null)
   const { ref: animRef, isVisible } = useChartAnimation()
 
   const dataSeries = series.map(s => ({
@@ -205,7 +204,6 @@ export function StackedAreaTrendChart({ title, subtitle, series, children, class
           <svg
             className={`stacked-area-chart__svg${isVisible ? ' chart-enter chart-enter--visible' : ' chart-enter'}`}
             viewBox={`0 0 ${width} ${height}`}
-            onMouseLeave={() => setHoverIndex(null)}
             style={{ overflow: 'visible' }}
           >
             <defs>
@@ -259,23 +257,21 @@ export function StackedAreaTrendChart({ title, subtitle, series, children, class
                     const startY = getValueY(currentStackedValue)
                     const endY = getValueY(currentStackedValue + p.value)
                     const segmentHeight = startY - endY
-                    const isHovered = hoverIndex === yearIdx
                     const isTopSegment = sIdx === dataSeries.length - 1
                     const isBottomSegment = sIdx === 0
                     currentStackedValue += p.value
 
                     return (
-                      <g key={s.label} onMouseEnter={() => setHoverIndex(yearIdx)} className="bar-segment">
+                      <g key={s.label} className="bar-segment">
                         <rect
                           x={barXCenter - barWidth / 2}
                           y={endY}
                           width={barWidth}
                           height={Math.max(segmentHeight, 0.5)}
                           fill={`url(#bar-grad-${sIdx % SERIES_COLORS.length})`}
-                          opacity={hoverIndex === null || isHovered ? 1 : 0.4}
+                          opacity={1}
                           rx={(isTopSegment && p.value > 0) || (isBottomSegment && currentStackedValue === p.value) ? 6 : 0}
-                          filter={isHovered ? 'url(#shadow)' : 'none'}
-                          style={{ cursor: 'pointer' }}
+                          style={{ cursor: 'default' }}
                         />
                         {!isTopSegment && (
                           <line x1={barXCenter - barWidth / 2} x2={barXCenter + barWidth / 2} y1={endY} y2={endY} stroke="rgba(255,255,255,0.25)" strokeWidth="0.8" />
@@ -293,7 +289,7 @@ export function StackedAreaTrendChart({ title, subtitle, series, children, class
                   })}
 
                   {/* Summary Indicators */}
-                  <g opacity={hoverIndex === null || hoverIndex === yearIdx ? 1 : 0.3} style={{ pointerEvents: 'none' }}>
+                  <g style={{ pointerEvents: 'none' }}>
                     <text x={barXCenter} y={getValueY(yearTotals[yearIdx]) - 24} textAnchor="middle" className="total-badge" style={{ fontSize: '11px', fontWeight: 800, fill: '#1e293b' }}>
                       {formatWithComma(yearTotals[yearIdx])}
                     </text>
@@ -318,58 +314,6 @@ export function StackedAreaTrendChart({ title, subtitle, series, children, class
             </g>
           </svg>
 
-          {hoverIndex !== null && (
-            <div className="chart-tooltip glass-tooltip chart-tooltip--visible" style={{
-              position: 'absolute',
-              top: -10, // Shifted up slightly to avoid clipping bottom
-              [hoverIndex > dataYears.length / 2 ? 'left' : 'right']: 10,
-              width: 125,
-              pointerEvents: 'none',
-              zIndex: 20
-            }}>
-              <div style={{ fontWeight: 800, marginBottom: '-8px', color: '#f8fafc', borderBottom: '1.5px solid rgba(255, 255, 255, 0.15)', paddingBottom: '4px', fontSize: '11px', textAlign: 'right' }}>
-                {dataYears[hoverIndex]}學年度
-              </div>
-              {[...dataSeries].reverse().map((s, idx) => {
-                const p = s.points.find(pt => pt.year === dataYears[hoverIndex!])
-                const prevP = hoverIndex! > 0 ? s.points.find(pt => pt.year === dataYears[hoverIndex! - 1]) : null
-                if (!p) return null
-
-                const deltaPct = prevP && prevP.value > 0 ? ((p.value - prevP.value) / prevP.value) * 100 : null
-                const realIdx = dataSeries.length - 1 - idx
-
-                return (
-                  <div key={s.label} style={{ marginBottom: '4px' }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11px', fontWeight: 800, alignItems: 'baseline' }}>
-                      <span style={{ color: SERIES_COLORS[realIdx % SERIES_COLORS.length].start }}>{s.label.replace('院校', '')}</span>
-                      <span style={{ color: '#f8fafc' }}>{formatWanNumeric(p.value)}萬</span>
-                    </div>
-                    {deltaPct !== null && (
-                      <div style={{ fontSize: '9px', textAlign: 'right', color: Math.abs(deltaPct) < 0.01 ? '#64748b' : (deltaPct >= 0 ? '#059669' : '#dc2626'), fontWeight: 800, marginTop: '-2px' }}>
-                        {Math.abs(deltaPct) < 0.01 ? '0.0%' : `${deltaPct > 0 ? '↑' : '↓'} ${Math.abs(deltaPct).toFixed(1)}%`}
-                      </div>
-                    )}
-                  </div>
-                )
-              })}
-              <div style={{ marginTop: '6px', borderTop: '1.5px solid rgba(255, 255, 255, 0.15)', paddingTop: '6px' }}>
-                <div style={{ fontWeight: 900, color: '#f8fafc', display: 'flex', justifyContent: 'space-between', fontSize: '11px' }}>
-                  <span>總計</span>
-                  <span>{formatWanNumeric(yearTotals[hoverIndex])}萬</span>
-                </div>
-                {(() => {
-                  const prevTotal = hoverIndex > 0 ? yearTotals[hoverIndex - 1] : null;
-                  const totalDeltaPct = prevTotal && prevTotal > 0 ? ((yearTotals[hoverIndex] - prevTotal) / prevTotal) * 100 : null;
-                  if (totalDeltaPct === null) return null;
-                  return (
-                    <div style={{ fontSize: '9px', textAlign: 'right', color: Math.abs(totalDeltaPct) < 0.01 ? '#64748b' : (totalDeltaPct >= 0 ? '#059669' : '#dc2626'), fontWeight: 800, marginTop: '-2px' }}>
-                      {Math.abs(totalDeltaPct) < 0.01 ? '0.0%' : `${totalDeltaPct > 0 ? '↑' : '↓'} ${Math.abs(totalDeltaPct).toFixed(1)}%`}
-                    </div>
-                  );
-                })()}
-              </div>
-            </div>
-          )}
         </div>
       </div>
     </section>
