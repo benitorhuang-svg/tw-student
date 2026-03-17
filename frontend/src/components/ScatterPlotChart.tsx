@@ -107,7 +107,7 @@ function ScatterPlotChart({
       {showHeader && (
         <div className="dashboard-card__head">
           <div className="panel-heading__stack">
-            <h3 className="dashboard-card__title">{title}</h3>
+            {title && <h3 className="dashboard-card__title">{title}</h3>}
             {subtitle && (typeof subtitle === 'string' ? <p className="dashboard-card__subtitle">{subtitle}</p> : subtitle)}
           </div>
           {children}

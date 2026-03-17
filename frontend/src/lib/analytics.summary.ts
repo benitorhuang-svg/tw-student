@@ -161,6 +161,10 @@ export function getRegionalComparisonRows(
       privateStudents,
       publicShare: totalManagedStudents === 0 ? 0 : publicStudents / totalManagedStudents,
       privateShare: totalManagedStudents === 0 ? 0 : privateStudents / totalManagedStudents,
+      trend: ACADEMIC_YEARS.map((year) => ({
+        year,
+        value: regionalCounties.reduce((sum, county) => sum + (county.trend.find((p) => p.year === year)?.value ?? 0), 0)
+      }))
     }
   }).filter((row) => row.countyCount > 0)
 }

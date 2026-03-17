@@ -145,6 +145,16 @@
     --chart-tooltip-fill: var(--clr-slate-900);
     --chart-tooltip-ink: #fff;
     --chart-label: var(--text-soft);
+
+    /**
+     * 7. SPACING TOKENS (Atomic Spacing)
+     */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 12px;
+    --spacing-lg: 16px;
+    --spacing-xl: 24px;
+    --spacing-2xl: 32px;
 }
 
 [data-theme='dark'] {

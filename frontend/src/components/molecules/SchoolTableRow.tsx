@@ -7,6 +7,8 @@ type SchoolTableRowProps = {
   isActive: boolean
   onSelect: (id: string) => void
   onHover: (id: string | null) => void
+  maxStudents?: number
+  maxDelta?: number
 }
 
 const SchoolTableRow: React.FC<SchoolTableRowProps> = ({
@@ -14,7 +16,12 @@ const SchoolTableRow: React.FC<SchoolTableRowProps> = ({
   isActive,
   onSelect,
   onHover,
+  maxStudents = 1,
+  maxDelta = 1
 }) => {
+  const studentRatio = (school.currentStudents / maxStudents) * 100
+  const deltaRatio = (Math.abs(school.delta) / maxDelta) * 100
+
   return (
     <tr
       className={isActive ? 'school-table__row school-table__row--active' : 'school-table__row'}
@@ -29,17 +36,42 @@ const SchoolTableRow: React.FC<SchoolTableRowProps> = ({
       }}
       tabIndex={0}
     >
-      <td>
-        <strong>{school.name}</strong>
+      <td className="school-table__cell--name">
+        <div className="school-name-group">
+          <strong>{school.name}</strong>
+          <small>{school.code}</small>
+        </div>
       </td>
-      <td>{school.townshipName}</td>
-      <td>{school.educationLevel}</td>
-      <td>{school.managementType}</td>
-      <td>{formatStudents(school.currentStudents)} 人</td>
-      <td className={school.delta >= 0 ? 'school-table__delta school-table__delta--up' : 'school-table__delta school-table__delta--down'}>
-        {formatDelta(school.delta)}
+      <td><span className="text-dim">{school.townshipName}</span></td>
+      <td><span className="education-chip">{school.educationLevel}</span></td>
+      <td><span className="management-chip">{school.managementType}</span></td>
+      <td className="school-table__cell--metrics">
+        <div className="metric-visual-box">
+          <div className="metric-text-row">
+            <span className="metric-value">{formatStudents(school.currentStudents)}</span>
+          </div>
+          <div className="metric-bar-track">
+            <div 
+              className="metric-bar-fill" 
+              style={{ width: `${studentRatio}%` }} 
+            />
+          </div>
+        </div>
       </td>
-      <td>
+      <td className="school-table__cell--metrics">
+        <div className="metric-visual-box">
+          <div className={`metric-text-row ${school.delta >= 0 ? 'text-up' : 'text-down'}`}>
+            <span className="metric-value">{formatDelta(school.delta)}</span>
+          </div>
+          <div className="metric-bar-track metric-bar-track--delta">
+            <div 
+              className={`metric-bar-fill ${school.delta >= 0 ? 'bg-up' : 'bg-down'}`} 
+              style={{ width: `${deltaRatio}%` }} 
+            />
+          </div>
+        </div>
+      </td>
+      <td className="school-table__cell--status">
         <SchoolStatusPill status={school.status} />
       </td>
     </tr>

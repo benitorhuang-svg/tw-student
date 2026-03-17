@@ -10,10 +10,11 @@ type OverviewTreemapSectionProps = {
 /**
  * Molecule: OverviewTreemapSection
  */
-export const OverviewTreemapSection: React.FC<OverviewTreemapSectionProps> = ({
+export const OverviewTreemapSection: React.FC<OverviewTreemapSectionProps & { flat?: boolean }> = ({
   groups,
   activeLeafId,
-  onSelectLeaf
+  onSelectLeaf,
+  flat = false
 }) => (
   <TreemapChart
     title="各區域學生規模分佈比例"
@@ -23,6 +24,7 @@ export const OverviewTreemapSection: React.FC<OverviewTreemapSectionProps> = ({
     onSelectLeaf={onSelectLeaf}
     className="dashboard-card--premium"
     showHeader={false}
+    flat={flat}
   >
     <p className="dashboard-card__subtitle" style={{ margin: 0, opacity: 0.8 }}>
       以五大區域為分類基準，掃描各地區學生數構成

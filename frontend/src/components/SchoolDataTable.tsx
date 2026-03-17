@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 
 import { formatPercent, type SchoolInsight } from '../lib/analytics'
 import SchoolTableRow from './molecules/SchoolTableRow'
@@ -15,9 +15,10 @@ type SchoolSortKey =
 type SchoolDataTableProps = {
   schools: SchoolInsight[]
   selectedSchoolId: string | null
-  onSelectSchool: (schoolId: string) => void
+  onSelectSchool: (schoolId: string | null) => void
   onHoverSchool?: (schoolId: string | null) => void
   scopeLabel: string
+  flat?: boolean
 }
 
 const statusRank: Record<string, number> = {
@@ -64,7 +65,7 @@ function escapeCsv(value: string) {
 
 const PAGE_SIZE = 50
 
-function SchoolDataTable({ schools, selectedSchoolId, onSelectSchool, onHoverSchool, scopeLabel }: SchoolDataTableProps) {
+function SchoolDataTable({ schools, selectedSchoolId, onSelectSchool, onHoverSchool, scopeLabel, flat = false }: SchoolDataTableProps) {
   const [sortKey, setSortKey] = useState<SchoolSortKey>('currentStudents')
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('desc')
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE)
@@ -121,8 +122,11 @@ function SchoolDataTable({ schools, selectedSchoolId, onSelectSchool, onHoverSch
     )
   }
 
+  const maxStudents = useMemo(() => Math.max(...schools.map(s => s.currentStudents), 1), [schools])
+  const maxDelta = useMemo(() => Math.max(...schools.map(s => Math.abs(s.delta)), 1), [schools])
+
   return (
-    <section className="school-table-panel dashboard-card">
+    <section className={`school-table-panel ${flat ? "dashboard-card--flat" : "dashboard-card"}`}>
       <div className="dashboard-card__head">
         <div className="panel-heading__stack">
           <h3 className="dashboard-card__title">學校資料明細 ({scopeLabel})</h3>
@@ -181,6 +185,8 @@ function SchoolDataTable({ schools, selectedSchoolId, onSelectSchool, onHoverSch
                   isActive={school.id === selectedSchool?.id}
                   onSelect={onSelectSchool}
                   onHover={onHoverSchool || (() => {})}
+                  maxStudents={maxStudents}
+                  maxDelta={maxDelta}
                 />
               ))}
             </tbody>

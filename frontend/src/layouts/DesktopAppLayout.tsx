@@ -156,6 +156,10 @@ function DesktopAppLayout(props: DesktopAppLayoutProps) {
         handleSchoolSelect={props.handleSchoolSelect}
         onHoverSchool={props.setHoveredSchoolId}
         nationalEducationTrendSeries={props.nationalEducationTrendSeries}
+        selectedInvestigationId={props.selectedInvestigationId}
+        investigationFilter={props.investigationFilter}
+        setSelectedInvestigationId={props.setSelectedInvestigationId}
+        setInvestigationFilter={props.setInvestigationFilter}
       />
 
       <DataGovernanceFlyout

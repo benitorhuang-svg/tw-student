@@ -48,12 +48,12 @@
 
 .ranking-item {
     display: flex;
-    align-items: center;
-    gap: 10px;
+    flex-direction: column;
+    gap: 6px;
     cursor: pointer;
-    padding: 4px;
-    border-radius: 8px;
-    transition: background 0.2s ease;
+    padding: 8px;
+    border-radius: 10px;
+    transition: all 0.2s ease;
 }
 
 .ranking-item:hover {
@@ -64,14 +64,20 @@
     background: rgba(255, 255, 255, 0.08);
 }
 
+.ranking-item__header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
 .ranking-item__rank {
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 6px;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 900;
     color: #fff;
     flex-shrink: 0;
@@ -81,34 +87,36 @@
 .ranking-item__rank--2 { background: linear-gradient(135deg, #94a3b8, #64748b); }
 .ranking-item__rank--3 { background: linear-gradient(135deg, #b45309, #78350f); }
 
-.ranking-item__info {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-}
-
 .ranking-item__name {
-    font-size: 0.9rem;
+    flex: 1;
+    font-size: 0.88rem;
     font-weight: 700;
     color: var(--text-main);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .ranking-item__value {
-    font-size: 0.75rem;
+    font-size: 0.78rem;
     font-weight: 800;
     color: var(--text-soft);
 }
 
-.ranking-item__indicator {
-    width: 4px;
-    height: 18px;
+.ranking-item__visual {
+    padding-left: 28px;
+}
+
+.ranking-item__track {
+    height: 4px;
+    background: var(--border-subtle);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.ranking-item__fill {
+    height: 100%;
+    transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
     border-radius: 2px;
 }
 
-.ranking-item__indicator--count { background-color: var(--brand-primary); }
-.ranking-item__indicator--growth { background-color: #10b981; }
-.ranking-item__indicator--decline { background-color: #f43f5e; }
+.ranking-item__fill--count { background-color: var(--brand-primary); }
+.ranking-item__fill--growth { background-color: #10b981; }
+.ranking-item__fill--decline { background-color: #f43f5e; }

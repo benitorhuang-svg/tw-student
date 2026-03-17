@@ -136,8 +136,71 @@
 }
 
 /* Table Metric Indicators */
-.school-table__delta--up { color: #22c55e }
-.school-table__delta--down { color: #f97316 }
+.school-table__delta--up { color: var(--brand-success, #10b981) }
+.school-table__delta--down { color: var(--brand-warning, #f59e0b) }
+
+.metric-visual-box {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+    min-width: 80px;
+}
+
+.metric-text-row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    font-size: 0.82rem;
+    font-weight: 800;
+}
+
+.metric-bar-track {
+    height: 4px;
+    background: rgba(148, 163, 184, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.metric-bar-fill {
+    height: 100%;
+    background: var(--brand-primary);
+    border-radius: 2px;
+    transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.text-up { color: #10b981; }
+.text-down { color: #f97316; }
+.bg-up { background: #10b981; }
+.bg-down { background: #f97316; }
+
+.school-name-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.school-name-group small {
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    font-family: monospace;
+}
+
+.education-chip, .management-chip {
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    background: var(--surface-glass);
+    border: 1px solid var(--border-light);
+    border-radius: 4px;
+    color: var(--text-soft);
+}
+
+.text-dim {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
 
 .status-pill {
     display: inline-flex;

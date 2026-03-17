@@ -49,20 +49,28 @@ function SchoolDetailPanel({
   return (
     <section className="panel school-detail-panel" data-testid="school-detail-panel">
       {!selectedCountyName ? (
-        <div className="dashboard-card" style={{ padding: '40px', textAlign: 'center' }}>
-          <div className="empty-state">請先從地圖或排行選擇縣市，系統才會載入該縣市的學校明細。</div>
+        <div className="dashboard-card" style={{ textAlign: 'center' }}>
+          <div className="dashboard-card__body" style={{ padding: '40px' }}>
+            <div className="empty-state">請先從地圖或排行選擇縣市，系統才會載入該縣市的學校明細。</div>
+          </div>
         </div>
       ) : countyDetailError ? (
-        <div className="dashboard-card" style={{ padding: '40px', textAlign: 'center' }}>
-          <div className="empty-state">{countyDetailError}</div>
+        <div className="dashboard-card" style={{ textAlign: 'center' }}>
+          <div className="dashboard-card__body" style={{ padding: '40px' }}>
+            <div className="empty-state">{countyDetailError}</div>
+          </div>
         </div>
       ) : isCountyDetailLoading ? (
-        <div className="dashboard-card" style={{ padding: '40px', textAlign: 'center' }}>
-          <div className="empty-state" data-testid="county-detail-loading">正在載入 {selectedCountyName} 的學校細節資料...</div>
+        <div className="dashboard-card" style={{ textAlign: 'center' }}>
+          <div className="dashboard-card__body" style={{ padding: '40px' }}>
+            <div className="empty-state" data-testid="county-detail-loading">正在載入 {selectedCountyName} 的學校細節資料...</div>
+          </div>
         </div>
       ) : schoolInsights.length === 0 ? (
-        <div className="dashboard-card" style={{ padding: '40px', textAlign: 'center' }}>
-          <div className="empty-state">目前篩選條件沒有對應學校，請放寬條件或切換分析層級。</div>
+        <div className="dashboard-card" style={{ textAlign: 'center' }}>
+          <div className="dashboard-card__body" style={{ padding: '40px' }}>
+            <div className="empty-state">目前篩選條件沒有對應學校，請放寬條件或切換分析層級。</div>
+          </div>
         </div>
       ) : (
         <div className="school-detail-shell">

@@ -10,6 +10,8 @@ type kpItem = {
     isPositive: boolean
   }
   meta?: string
+  sparklineData?: number[]
+  gauge?: number
 }
 
 type KPIGridProps = {

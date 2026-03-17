@@ -31,14 +31,27 @@ function OverviewTabPanel({
   nationalEducationTrendSeries
 }: OverviewTabPanelProps) {
   const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({
-    matrix: true,
+    hero: true,
+    matrix: false,
     trend: false,
     ranking: false,
     treemap: false
   })
 
   const toggleSection = (id: string) => {
-    setExpandedSections(prev => ({ ...prev, [id]: !prev[id] }))
+    // Exclusive accordion effect: close others when opening one
+    setExpandedSections(prev => {
+      const isCurrentlyExpanded = prev[id]
+      const next: Record<string, boolean> = {}
+      // If we're expanding it, close all others. If we're closing it, just close it.
+      Object.keys(prev).forEach(key => {
+        next[key] = false
+      })
+      if (!isCurrentlyExpanded) {
+        next[id] = true
+      }
+      return next
+    })
   }
 
   // Memoized derived data for charts
@@ -78,37 +91,41 @@ function OverviewTabPanel({
 
   return (
     <div className="dashboard-side-shell__content dashboard-side-shell__content--overview">
-      <section className="overview-hero-section" style={{ marginBottom: '20px' }}>
-        <KPIGrid 
-          items={[
-            { 
-              label: '全台學生總數', 
-              value: ((derived.globalNationalSummary?.students ?? 0) / 10000).toFixed(1), 
-              unit: '萬人',
-              meta: `共 ${(derived.globalNationalSummary?.schools ?? 0).toLocaleString()} 所學校`
-            },
-            { 
-              label: '年度學生消長', 
-              value: formatDelta(derived.globalNationalSummary?.delta ?? 0), 
-              unit: '人',
-              trend: {
-                value: formatPercent(derived.globalNationalSummary?.deltaRatio ?? 0),
-                isPositive: (derived.globalNationalSummary?.deltaRatio ?? 0) > 0
-              }
-            },
-            {
-              label: '主要增長學制',
-              value: '幼兒園', // This could be dynamic but hardcoded for now or based on points
-              unit: '',
-              meta: '增幅約 1.2%'
-            }
-          ]}
-        />
-      </section>
-
       <OverviewAccordion
         expandedSections={expandedSections}
         onToggleSection={toggleSection}
+        heroSection={
+          <KPIGrid 
+            items={[
+              { 
+                label: '全台學生總數', 
+                value: ((derived.globalNationalSummary?.students ?? 0) / 10000).toFixed(1), 
+                unit: '萬人',
+                meta: `共 ${(derived.globalNationalSummary?.schools ?? 0).toLocaleString()} 所學校`,
+                sparklineData: derived.globalNationalSummary?.trend.map(p => p.value),
+                gauge: 1.0
+              },
+              { 
+                label: '年度學生消長', 
+                value: formatDelta(derived.globalNationalSummary?.delta ?? 0), 
+                unit: '人',
+                trend: {
+                  value: formatPercent(derived.globalNationalSummary?.deltaRatio ?? 0),
+                  isPositive: (derived.globalNationalSummary?.deltaRatio ?? 0) > 0
+                },
+                sparklineData: derived.globalNationalSummary?.trend.map(p => p.value), // Showing the same trend but emphasizes the change
+                gauge: 0.65
+              },
+              {
+                label: '主要增長學制',
+                value: '幼兒園', 
+                unit: '',
+                meta: '增幅約 1.2%',
+                gauge: 0.8
+              }
+            ]}
+          />
+        }
         matrixSection={
           <OverviewMatrixSection
             points={matrixPoints}

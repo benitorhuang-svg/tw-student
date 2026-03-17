@@ -133,35 +133,75 @@ function ComparisonPanel({
       )}
 
       <div className="comparison-grid">
-        {comparisonSummaries.map((county) => (
-          <article key={county.id} className="comparison-card">
-            <div className="comparison-card__header">
-              <div>
-                <strong>{county.name}</strong>
-                <span>{county.region}</span>
-              </div>
-              <span>{formatDelta(county.delta)}</span>
-            </div>
-            <div className="comparison-card__stats">
-              <span>{formatStudents(county.students)} 人</span>
-              <span>{county.schools} 校</span>
-              <span>{formatPercent(county.deltaRatio)}</span>
-            </div>
-            <div className="comparison-card__distribution">
-              {county.distribution.map((row) => (
-                <div key={`${county.id}-${row.level}`} className="comparison-card__distribution-row">
-                  <div>
-                    <strong>{row.level}</strong>
-                    <span>{formatStudents(row.students)} 人 / {row.schools} 校</span>
+        {(() => {
+          const mStudents = Math.max(...comparisonSummaries.map(s => s.students), 1)
+          const mDelta = Math.max(...comparisonSummaries.map(s => Math.abs(s.deltaRatio)), 0.01)
+
+          return comparisonSummaries.map((county) => {
+            const studentRatio = (county.students / mStudents) * 100
+            const deltaRatio = (Math.abs(county.deltaRatio) / mDelta) * 100
+
+            return (
+              <article key={county.id} className="comparison-card">
+                <div className="comparison-card__header">
+                  <div className="comparison-card__title-group">
+                    <div className="comparison-card__name-stack">
+                      <strong>{county.name}</strong>
+                      <span className="region-tag">{county.region}</span>
+                    </div>
+                    <div className="comparison-card__summary-bars">
+                      <div className="mini-stat-bar-group" title={`規模: ${formatStudents(county.students)}`}>
+                        <div className="mini-stat-bar-track">
+                          <div className="mini-stat-bar-fill mini-stat-bar-fill--primary" style={{ width: `${studentRatio}%` }} />
+                        </div>
+                      </div>
+                      <div className="mini-stat-bar-group" title={`消長: ${formatPercent(county.deltaRatio)}`}>
+                        <div className="mini-stat-bar-track">
+                          <div 
+                            className={`mini-stat-bar-fill ${county.deltaRatio >= 0 ? 'mini-stat-bar-fill--up' : 'mini-stat-bar-fill--down'}`} 
+                            style={{ width: `${deltaRatio}%` }} 
+                          />
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div className="distribution-bar">
-                    <div className="distribution-bar__fill" style={{ width: `${Math.max(row.share * 100, row.students > 0 ? 8 : 0)}%` }} />
+                  <div className={`comparison-delta-pill ${county.delta >= 0 ? 'comparison-delta-pill--up' : 'comparison-delta-pill--down'}`}>
+                    {formatDelta(county.delta)}
                   </div>
                 </div>
-              ))}
-            </div>
-          </article>
-        ))}
+
+                <div className="comparison-card__stats">
+                  <div className="stat-pill-lite">
+                    <span className="stat-label">學生數</span>
+                    <span className="stat-value">{formatStudents(county.students)}</span>
+                  </div>
+                  <div className="stat-pill-lite">
+                    <span className="stat-label">學校數</span>
+                    <span className="stat-value">{county.schools}</span>
+                  </div>
+                  <div className="stat-pill-lite">
+                    <span className="stat-label">變動率</span>
+                    <span className="stat-value">{formatPercent(county.deltaRatio)}</span>
+                  </div>
+                </div>
+
+                <div className="comparison-card__distribution">
+                  {county.distribution.map((row) => (
+                    <div key={`${county.id}-${row.level}`} className="comparison-card__distribution-row">
+                      <div className="distribution-label-group">
+                        <strong>{row.level}</strong>
+                        <span>{formatStudents(row.students)} 人</span>
+                      </div>
+                      <div className="distribution-bar">
+                        <div className="distribution-bar__fill" style={{ width: `${Math.max(row.share * 100, row.students > 0 ? 8 : 0)}%` }} />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </article>
+            )
+          })
+        })()}
       </div>
 
       <div className="scenario-library">

@@ -21,7 +21,7 @@ import type {
   ManagementTypeFilter 
 } from '../data/educationData'
 import type { TrendPoint } from '../lib/analytics.types'
-import type { InvestigationItem, SavedComparisonScenario } from '../hooks/types'
+import type { InvestigationItem, SavedComparisonScenario, InvestigationFilter } from '../hooks/types'
 
 // Styles
 import '../styles/templates/dashboard-shell/01-premium-cards-system.css'
@@ -34,10 +34,10 @@ type DashboardCanvasProps = {
   mapElement: ReactNode
   header: ReactNode
   footer: ReactNode
-
+  
   // Scope / KPI
   derived: ReturnType<typeof useAtlasDerivedState>
-
+  
   // Filters
   activeYear: AcademicYear
   summaryYears: AcademicYear[]
@@ -47,12 +47,12 @@ type DashboardCanvasProps = {
   onSetActiveYear: (year: AcademicYear) => void
   onSetEducationLevel: (level: EducationLevelFilter) => void
   onSetManagementType: (type: ManagementTypeFilter) => void
-
+  
   onStopPlayback: () => void
   onTogglePlayback: () => void
   isYearPlaybackActive: boolean
   startTransition: TransitionStartFunction
-
+  
   // Comparison / scenario
   comparisonScenarioName: string
   setComparisonScenarioName: (name: string) => void
@@ -61,7 +61,7 @@ type DashboardCanvasProps = {
   activeScenarioSnapshot: SavedComparisonScenario | null
   copyFeedbackMessage: string | null
   scenarioFeedbackMessage: string | null
-
+  
   // School detail
   countyDetailError: string | null
   countySchoolAtlasError: string | null
@@ -70,20 +70,20 @@ type DashboardCanvasProps = {
   countySchoolAtlasCache: Record<string, CountySchoolAtlasDataset>
   schoolWorkbenchView: 'list' | 'analysis' | 'notes'
   onSetSchoolWorkbenchView: (view: 'list' | 'analysis' | 'notes') => void
-
+  
   // Hover
   hoveredCountyId: string | null
   hoveredTownshipId: string | null
   hoveredSchoolId: string | null
   setHoveredCountyId: (id: string | null) => void
   setHoveredTownshipId: (id: string | null) => void
-
+  
   // Chart views
   regionalChartView: 'comparison' | 'ranking'
   countyChartView: 'comparison' | 'ranking'
   setRegionalChartView: (view: 'comparison' | 'ranking') => void
   setCountyChartView: (view: 'comparison' | 'ranking') => void
-
+  
   // Actions
   scenarioActions: {
     handleRegionSelect: (region: RegionGroupFilter, options?: { skipTabSwitch?: boolean }) => void
@@ -107,6 +107,11 @@ type DashboardCanvasProps = {
   handleSchoolSelect: (schoolId: string | null) => void
   onHoverSchool?: (schoolId: string | null) => void
   nationalEducationTrendSeries: Array<{ label: string, points: TrendPoint[] }>
+  // Missing Investigation Props
+  selectedInvestigationId: string | null
+  investigationFilter: InvestigationFilter
+  setSelectedInvestigationId: (id: string | null) => void
+  setInvestigationFilter: (filter: InvestigationFilter) => void
 }
 
 function DashboardCanvas({
@@ -133,6 +138,18 @@ function DashboardCanvas({
   onHoverSchool,
   hoveredSchoolId,
   nationalEducationTrendSeries,
+  // New props
+  comparisonScenarioName,
+  setComparisonScenarioName,
+  favoriteScenarios,
+  recentScenarios,
+  activeScenarioSnapshot,
+  copyFeedbackMessage,
+  scenarioFeedbackMessage,
+  selectedInvestigationId,
+  investigationFilter,
+  setSelectedInvestigationId,
+  setInvestigationFilter,
 }: DashboardCanvasProps) {
   // DashboardCanvas is now primarily a shell orchestrating organisms
 
@@ -171,6 +188,34 @@ function DashboardCanvas({
               setHoveredCountyId={setHoveredCountyId}
               scenarioActions={scenarioActions}
               handlePrefetchCounty={handlePrefetchCounty}
+              comparisonScenarioName={comparisonScenarioName}
+              onChangeScenarioName={setComparisonScenarioName}
+              effectiveComparisonCountyIds={derived.effectiveComparisonCountyIds}
+              comparisonCandidates={derived.comparisonCandidates}
+              comparisonSummaries={derived.comparisonSummaries}
+              favoriteScenarios={favoriteScenarios}
+              recentScenarios={recentScenarios}
+              activeScenarioSnapshot={activeScenarioSnapshot}
+              copyFeedbackMessage={copyFeedbackMessage}
+              scenarioFeedbackMessage={scenarioFeedbackMessage}
+              onToggleCounty={scenarioActions.toggleComparisonCounty}
+              onCopyLink={() => scenarioActions.handleCopyComparisonLink()}
+              onSaveScenario={() => scenarioActions.handleSaveFavoriteScenario()}
+              onExportScenarios={() => scenarioActions.handleExportFavoriteScenarios()}
+              onImportScenarios={scenarioActions.handleImportFavoriteScenarios}
+              onApplyScenario={scenarioActions.applySavedScenario}
+              onTogglePinScenario={scenarioActions.handleTogglePinScenario}
+              onRenameScenario={scenarioActions.handleRenameFavoriteScenario}
+              onRemoveScenario={scenarioActions.handleRemoveFavoriteScenario}
+              filteredAnomalies={derived.filteredAnomalies}
+              activeInvestigation={derived.activeInvestigation}
+              selectedInvestigationId={selectedInvestigationId}
+              investigationFilter={investigationFilter}
+              scopeNotes={derived.scopeNotes}
+              onSelectInvestigation={setSelectedInvestigationId}
+              onSetFilter={setInvestigationFilter}
+              onDownloadInvestigation={scenarioActions.handleDownloadInvestigation}
+              onDownloadAll={scenarioActions.handleDownloadAllInvestigations}
             />
           )}
 

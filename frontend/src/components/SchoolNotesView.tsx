@@ -2,17 +2,20 @@ import { formatDelta, type SchoolInsight } from '../lib/analytics'
 
 type SchoolNotesViewProps = {
   selectedSchool: SchoolInsight
+  flat?: boolean
 }
 
-function SchoolNotesView({ selectedSchool }: SchoolNotesViewProps) {
+function SchoolNotesView({ selectedSchool, flat = false }: SchoolNotesViewProps) {
   return (
-    <div className="school-notes-panel dashboard-card" data-testid="school-notes">
-      <div className="dashboard-card__head">
-        <div className="panel-heading__stack">
-          <h3 className="dashboard-card__title">校別特徵標記</h3>
-          <p className="dashboard-card__subtitle">整合缺漏年度、學校狀態與正式資料備註，便於快速確認資料可信度。</p>
+    <div className={`school-notes-panel ${flat ? 'dashboard-card--flat' : 'dashboard-card'}`} data-testid="school-notes">
+      {!flat && (
+        <div className="dashboard-card__head">
+          <div className="panel-heading__stack">
+            <h3 className="dashboard-card__title">校別特徵標記</h3>
+            <p className="dashboard-card__subtitle">整合缺漏年度、學校狀態與正式資料備註，便於快速確認資料可信度。</p>
+          </div>
         </div>
-      </div>
+      )}
 
       <div className="dashboard-card__body">
         <div className="school-notes-quick-stats">

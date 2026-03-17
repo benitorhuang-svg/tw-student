@@ -27,13 +27,13 @@ const SchoolWorkspaceMatrix: React.FC<SchoolWorkspaceMatrixProps> = ({
   onSelectSchool,
 }) => {
   return (
-    <div className="overview-accordion" style={{ marginBottom: '1rem' }}>
-      <AccordionItem
-        id="matrix-workspace"
-        title="學校規模消長矩陣 (行政區)"
-        isExpanded={isExpanded}
-        onToggle={onToggle}
-      >
+    <AccordionItem
+      id="matrix-workspace"
+      title="學校規模消長矩陣 (行政區)"
+      isExpanded={isExpanded}
+      onToggle={onToggle}
+      style={{ animationDelay: '0.05s' }}
+    >
         <ScatterPlotChart
           title="學校規模消長矩陣 (行政區)"
           subtitle={`以 ${scopeLabel} 總學生數為分母計算佔比變動`}
@@ -54,10 +54,10 @@ const SchoolWorkspaceMatrix: React.FC<SchoolWorkspaceMatrixProps> = ({
           onSelectPoint={onSelectSchool}
           className="matrix-chart-premium"
           showHeader={false}
+          flat={true}
         />
       </AccordionItem>
-    </div>
-  )
+    )
 }
 
 export default SchoolWorkspaceMatrix

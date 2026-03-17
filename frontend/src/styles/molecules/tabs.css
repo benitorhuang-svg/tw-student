@@ -4,7 +4,7 @@
   z-index: 100;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--spacing-sm);
   overflow-x: hidden;
   overflow-y: hidden;
   flex-shrink: 0;
@@ -13,7 +13,7 @@
   padding: 6px;
   border: 1px solid var(--comp-tabs-border);
   box-shadow: var(--shadow-sm);
-  margin-bottom: 8px;
+  margin-bottom: var(--spacing-sm);
   backdrop-filter: blur(8px);
   height: 48px;
   box-sizing: border-box;

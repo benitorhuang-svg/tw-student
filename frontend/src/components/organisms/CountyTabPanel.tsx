@@ -30,13 +30,24 @@ function CountyTabPanel({
 }: CountyTabPanelProps) {
 
   const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({
-    matrix: true,
+    hero: true,
+    matrix: false,
     distribution: false,
     structure: false
   })
 
   const toggleSection = (id: string) => {
-    setExpandedSections(prev => ({ ...prev, [id]: !prev[id] }))
+    setExpandedSections(prev => {
+      const isCurrentlyExpanded = prev[id]
+      const next: Record<string, boolean> = {}
+      Object.keys(prev).forEach(key => {
+        next[key] = false
+      })
+      if (!isCurrentlyExpanded) {
+        next[id] = true
+      }
+      return next
+    })
   }
 
   const structureItems = derived.selectedCounty 
@@ -52,49 +63,58 @@ function CountyTabPanel({
 
   return (
     <div className="dashboard-side-shell__content dashboard-side-shell__content--county">
-      {derived.selectedCountySummary && (
-        <section className="county-hero-section" style={{ marginBottom: '20px' }}>
-          <KPIGrid 
-            className="kpi-grid--compact"
-            columns={3}
-            items={[
-              { 
-                label: '縣市總學生數', 
-                value: ((derived.selectedCountySummary?.students ?? 0) / 10000).toFixed(1), 
-                unit: '萬',
-                meta: `全台排名第 ${derived.countyRankingRows.findIndex(r => r.id === derived.selectedCounty?.id) + 1} 名`
-              },
-              { 
-                label: '年度學生消長', 
-                value: formatDelta(derived.selectedCountySummary?.delta ?? 0), 
-                unit: '人',
-                trend: {
-                  value: formatPercent(derived.selectedCountySummary?.deltaRatio ?? 0),
-                  isPositive: (derived.selectedCountySummary?.deltaRatio ?? 0) > 0
-                }
-              },
-              {
-                label: '轄下鄉鎮數',
-                value: derived.townshipRows.length,
-                unit: '區',
-                meta: '完成數據掃描'
-              }
-            ]}
-          />
-        </section>
-      )}
-
       <div className="overview-accordion">
+        {derived.selectedCountySummary && (
+          <AccordionItem
+            id="hero"
+            title={`${derived.selectedCounty?.name} 核心指標概覽`}
+            isExpanded={expandedSections.hero}
+            onToggle={toggleSection}
+            style={{ animationDelay: '0.05s' }}
+          >
+            <KPIGrid 
+              className="kpi-grid--compact"
+              columns={3}
+              items={[
+                { 
+                  label: '縣市總學生數', 
+                  value: ((derived.selectedCountySummary?.students ?? 0) / 10000).toFixed(1), 
+                  unit: '萬',
+                  meta: `全台排名第 ${derived.countyRankingRows.findIndex(r => r.id === derived.selectedCounty?.id) + 1} 名`,
+                  sparklineData: derived.selectedCountySummary?.trend.map(p => p.value),
+                  gauge: 1 - (derived.countyRankingRows.findIndex(r => r.id === derived.selectedCounty?.id) / 22)
+                },
+                { 
+                  label: '年度學生消長', 
+                  value: formatDelta(derived.selectedCountySummary?.delta ?? 0), 
+                  unit: '人',
+                  trend: {
+                    value: formatPercent(derived.selectedCountySummary?.deltaRatio ?? 0),
+                    isPositive: (derived.selectedCountySummary?.deltaRatio ?? 0) > 0
+                  },
+                  sparklineData: derived.selectedCountySummary?.trend.map(p => p.value)
+                },
+                {
+                  label: '轄下鄉鎮數',
+                  value: derived.townshipRows.length,
+                  unit: '區',
+                  meta: '完成數據掃描',
+                  gauge: Math.min(derived.townshipRows.length / 20, 1)
+                }
+              ]}
+            />
+          </AccordionItem>
+        )}
         {derived.townshipRows.length > 0 ? (
           <AccordionItem
             id="matrix"
-            title="縣市消長分佈矩陣"
+            title="鄉鎮消長分佈分析"
             isExpanded={expandedSections.matrix}
             onToggle={toggleSection}
           >
             <ScatterPlotChart
-              title="縣市消長分佈矩陣"
-              subtitle={`以 ${derived.selectedCounty?.name} 學生總數為基準，掃描內部各鄉鎮的學生消長狀況`}
+              title=""
+              subtitle={null}
               xLabel="學生數"
               yLabel="縣市佔比變動率 (%)"
               points={derived.townshipRows.map((row) => ({
@@ -108,12 +128,15 @@ function CountyTabPanel({
               onHoverPoint={setHoveredTownshipId}
               onSelectPoint={(id) => onSelectTownship(id, { skipTabSwitch: true, zoom: 12 })}
               className="matrix-chart-premium"
-              showHeader={false}
+              showHeader={true}
+              flat={true}
             />
           </AccordionItem>
         ) : (
-          <div className="dashboard-card" style={{ padding: '40px', textAlign: 'center' }}>
-            <div className="empty-state">請先從地圖或全台排行選擇縣市，系統將自動載入該區域的鄉鎮分析資料。</div>
+          <div className="dashboard-card" style={{ padding: '0', textAlign: 'center' }}>
+            <div className="dashboard-card__body" style={{ padding: '40px' }}>
+              <div className="empty-state">請先從地圖或全台排行選擇縣市，系統將自動載入該區域的鄉鎮分析資料。</div>
+            </div>
           </div>
         )}
 
@@ -125,11 +148,12 @@ function CountyTabPanel({
               title="鄉鎮學生規模排名"
               isExpanded={expandedSections.distribution}
               onToggle={toggleSection}
-              style={{ marginTop: '12px' }}
+              style={{ animationDelay: '0.2s' }}
             >
               <TownshipDistributionSection 
                 townships={derived.townshipRows}
                 onSelectTownship={(id) => onSelectTownship(id, { skipTabSwitch: true, zoom: 12 })}
+                flat={true}
               />
             </AccordionItem>
 
@@ -138,12 +162,12 @@ function CountyTabPanel({
               title="各級學制與公私立結構比"
               isExpanded={expandedSections.structure}
               onToggle={toggleSection}
-              style={{ marginTop: '12px' }}
+              style={{ animationDelay: '0.25s' }}
             >
               <ButterflyChart 
                 items={structureItems}
                 className="county-sidebar-butterfly"
-                flat
+                flat={true}
                 hideTooltip
               />
             </AccordionItem>

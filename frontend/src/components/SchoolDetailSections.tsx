@@ -1,4 +1,5 @@
 import React from 'react'
+import AccordionItem from './atoms/AccordionItem'
 import SchoolDataTable from './SchoolDataTable'
 import SchoolNotesView from './SchoolNotesView'
 import SchoolWorkspaceMatrix from './molecules/SchoolWorkspaceMatrix'
@@ -17,13 +18,30 @@ export function SchoolDetailWorkspace(props: {
   hoveredSchoolId?: string | null
 }) {
   const { scopeLabel, selectedSchool, schoolInsights, sortedSchools, onHoverSchool, onSelectSchool, hoveredSchoolId } = props
-  const [isMatrixExpanded, setIsMatrixExpanded] = React.useState(true)
+  const [expandedSections, setExpandedSections] = React.useState<Record<string, boolean>>({
+    matrix: false,
+    table: true
+  })
+
+  const toggleSection = (id: string) => {
+    setExpandedSections(prev => {
+      const isCurrentlyExpanded = prev[id]
+      const next: Record<string, boolean> = {}
+      Object.keys(prev).forEach(key => {
+        next[key] = false
+      })
+      if (!isCurrentlyExpanded) {
+        next[id] = true
+      }
+      return next
+    })
+  }
 
   return (
-    <div className="school-list-workspace">
+    <div className="school-list-workspace overview-accordion">
       <SchoolWorkspaceMatrix
-        isExpanded={isMatrixExpanded}
-        onToggle={() => setIsMatrixExpanded(!isMatrixExpanded)}
+        isExpanded={expandedSections.matrix}
+        onToggle={() => toggleSection('matrix')}
         scopeLabel={scopeLabel}
         sortedSchools={sortedSchools}
         schoolInsights={schoolInsights}
@@ -33,13 +51,22 @@ export function SchoolDetailWorkspace(props: {
         onSelectSchool={onSelectSchool}
       />
 
-      <SchoolDataTable 
-        schools={schoolInsights} 
-        selectedSchoolId={selectedSchool?.id ?? null} 
-        onSelectSchool={onSelectSchool} 
-        onHoverSchool={onHoverSchool} 
-        scopeLabel={scopeLabel} 
-      />
+      <AccordionItem
+        id="school-table-accordion"
+        title={`學校資料明細 (${scopeLabel})`}
+        isExpanded={expandedSections.table}
+        onToggle={() => toggleSection('table')}
+        style={{ animationDelay: '0.1s' }}
+      >
+        <SchoolDataTable 
+          schools={schoolInsights} 
+          selectedSchoolId={selectedSchool?.id ?? null} 
+          onSelectSchool={onSelectSchool} 
+          onHoverSchool={onHoverSchool} 
+          scopeLabel={scopeLabel} 
+          flat={true}
+        />
+      </AccordionItem>
     </div>
   )
 }
@@ -50,19 +77,50 @@ export function SchoolDetailFocus(props: {
   onSetWorkbenchView: (view: SchoolWorkbenchView) => void
 }) {
   const { selectedSchool, schoolPanelTitle, onSetWorkbenchView } = props
+  const [expandedSections, setExpandedSections] = React.useState<Record<string, boolean>>({
+    hero: true,
+    notes: false
+  })
+
+  const toggleSection = (id: string) => {
+    setExpandedSections(prev => {
+      const isCurrentlyExpanded = prev[id]
+      const next: Record<string, boolean> = {}
+      Object.keys(prev).forEach(key => {
+        next[key] = false
+      })
+      if (!isCurrentlyExpanded) {
+        next[id] = true
+      }
+      return next
+    })
+  }
+
   return (
-    <div className="school-focus-view">
+    <div className="school-focus-view overview-accordion">
       <SchoolFocusHero 
         selectedSchool={selectedSchool} 
         schoolPanelTitle={schoolPanelTitle} 
-        onSetWorkbenchView={onSetWorkbenchView} 
+        onSetWorkbenchView={onSetWorkbenchView}
+        isExpanded={expandedSections.hero}
+        onToggle={() => toggleSection('hero')}
       />
 
       {selectedSchool ? (
-        <SchoolNotesView selectedSchool={selectedSchool} />
+        <AccordionItem
+          id="school-notes-accordion"
+          title="資料註記與備註"
+          isExpanded={expandedSections.notes}
+          onToggle={() => toggleSection('notes')}
+          style={{ animationDelay: '0.1s' }}
+        >
+          <SchoolNotesView selectedSchool={selectedSchool} flat={true} />
+        </AccordionItem>
       ) : (
-        <div className="dashboard-card" style={{ padding: '40px', textAlign: 'center' }}>
-          <div className="empty-state">請先從左側列表選擇學校，以進入深度分析模式。</div>
+        <div className="dashboard-card" style={{ textAlign: 'center' }}>
+          <div className="dashboard-card__body" style={{ padding: '40px' }}>
+            <div className="empty-state">請先從左側列表選擇學校，以進入深度分析模式。</div>
+          </div>
         </div>
       )}
     </div>
