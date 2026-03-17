@@ -2,6 +2,7 @@ import React from 'react'
 import type { SchoolInsight } from '../../lib/analytics'
 import type { SchoolWorkbenchView } from '../schoolDetail.types'
 import AccordionItem from '../atoms/AccordionItem'
+import WorkbenchTab from '../atoms/WorkbenchTab'
 
 type SchoolFocusHeroProps = {
   selectedSchool: SchoolInsight | null
@@ -34,29 +35,15 @@ const SchoolFocusHero: React.FC<SchoolFocusHeroProps> = ({
         </div>
 
         <div className="school-focus-hero__tabs" role="tablist">
-          <button
-            type="button"
-            role="tab"
-            className="workbench-tab workbench-tab--back"
-            onClick={() => onSetWorkbenchView('list')}
-          >
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              style={{ width: 14, height: 14 }}
-            >
-              <line x1="19" y1="12" x2="5" y2="12" />
-              <polyline points="12 19 5 12 12 5" />
-            </svg>
-            返回列表
-          </button>
-          <div className="workbench-tab workbench-tab--active">
-            資料註記
-          </div>
+          <WorkbenchTab 
+            isBack 
+            label="返回列表" 
+            onClick={() => onSetWorkbenchView('list')} 
+          />
+          <WorkbenchTab 
+            isActive 
+            label="深度分析面板" 
+          />
         </div>
       </header>
     </AccordionItem>

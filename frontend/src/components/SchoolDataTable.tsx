@@ -68,9 +68,23 @@ const PAGE_SIZE = 50
 function SchoolDataTable({ schools, selectedSchoolId, onSelectSchool, onHoverSchool, scopeLabel, flat = false }: SchoolDataTableProps) {
   const [sortKey, setSortKey] = useState<SchoolSortKey>('currentStudents')
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('desc')
+  const [searchTerm, setSearchTerm] = useState('')
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE)
 
-  const sortedSchools = [...schools].sort((left, right) => compareSchoolRows(left, right, sortKey, sortDirection))
+  const filteredSchools = useMemo(() => {
+    if (!searchTerm) return schools
+    const lowSearch = searchTerm.toLowerCase()
+    return schools.filter(s => 
+      s.name.toLowerCase().includes(lowSearch) || 
+      s.code.toLowerCase().includes(lowSearch) ||
+      s.townshipName.toLowerCase().includes(lowSearch)
+    )
+  }, [schools, searchTerm])
+
+  const sortedSchools = useMemo(() => 
+    [...filteredSchools].sort((left, right) => compareSchoolRows(left, right, sortKey, sortDirection)),
+    [filteredSchools, sortKey, sortDirection]
+  )
   const selectedSchool = selectedSchoolId ? sortedSchools.find((school) => school.id === selectedSchoolId) ?? null : null
   const visibleSchools = sortedSchools.slice(0, visibleCount)
   const hasMore = visibleCount < sortedSchools.length
@@ -152,14 +166,33 @@ function SchoolDataTable({ schools, selectedSchoolId, onSelectSchool, onHoverSch
       <div className="dashboard-card__body">
         <div className="school-table-panel__toolbar">
           <div className="toolbar-info-stack">
+            <div className="toolbar-search-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" width="16" height="16" className="search-icon">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+              <input 
+                type="text" 
+                placeholder="搜尋學校、代碼或鄉鎮..." 
+                value={searchTerm}
+                onChange={(e) => {
+                  setSearchTerm(e.target.value)
+                  setVisibleCount(PAGE_SIZE)
+                }}
+                className="toolbar-search-input"
+              />
+              {searchTerm && (
+                <button className="search-clear-btn" onClick={() => setSearchTerm('')}>×</button>
+              )}
+            </div>
             <div className="toolbar-count-pill">
-              <span className="count-value">{schools.length.toLocaleString('zh-TW')}</span>
+              <span className="count-value">{filteredSchools.length.toLocaleString('zh-TW')}</span>
               <span className="count-label">所學校</span>
             </div>
-            <div className="toolbar-sort-hint">
-              <span className="hint-label">目前排序:</span>
-              <span className="hint-value">{sortableHeaders.find((header) => header.key === sortKey)?.label ?? sortKey}</span>
-            </div>
+          </div>
+          <div className="toolbar-sort-hint">
+            <span className="hint-label">目前排序:</span>
+            <span className="hint-value">{sortableHeaders.find((header) => header.key === sortKey)?.label ?? sortKey}</span>
           </div>
         </div>
 

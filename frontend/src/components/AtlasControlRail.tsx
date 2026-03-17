@@ -2,8 +2,8 @@ import type { ReactNode, TransitionStartFunction } from 'react'
 
 import type { AcademicYear, EducationLevelFilter, ManagementTypeFilter, RegionGroupFilter } from '../hooks/types'
 import type { AtlasTab } from '../hooks/useAtlasQueryState'
-import type { AtlasTabItem } from './AtlasTabs'
-import AtlasTabs from './AtlasTabs'
+import type { AtlasTabItem } from './molecules/AtlasTabs'
+import AtlasTabs from './molecules/AtlasTabs'
 import FilterBar from './FilterBar'
 
 type CountyQuickPick = {

@@ -84,7 +84,7 @@
     fill-opacity: 1;
     stroke: #fff;
     stroke-width: 2.5;
-    transform: scale(1.1);
+    /* Removed transform: scale to prevent flicker with JS state */
     filter: drop-shadow(0 0 8px var(--brand-primary));
 }
 
@@ -95,7 +95,17 @@
     stroke-width: 3;
     filter: drop-shadow(0 0 15px var(--clr-accent-amber));
     outline: none !important;
-    transform: scale(1.2);
+    /* transform handled by stable overlay layer or static class */
+}
+
+/* Active Highlight Overlay (Atomic Layer) */
+.matrix-chart-premium .scatter-chart__point--active-overlay {
+    fill: var(--clr-accent-amber);
+    stroke: #fff;
+    stroke-width: 3;
+    filter: drop-shadow(0 0 20px var(--clr-accent-amber));
+    pointer-events: none;
+    transition: all 0.2s ease-out;
 }
 
 .matrix-chart-premium .scatter-chart__axis {

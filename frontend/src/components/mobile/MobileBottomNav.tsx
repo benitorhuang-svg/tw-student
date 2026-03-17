@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 import type { AtlasTab } from '../../hooks/useAtlasQueryState'
-import type { AtlasTabItem } from '../AtlasTabs'
+import type { AtlasTabItem } from '../molecules/AtlasTabs'
 
 type MobileBottomNavProps = {
     activeTab: AtlasTab
@@ -9,6 +9,11 @@ type MobileBottomNavProps = {
 }
 
 const TAB_ICONS: Record<AtlasTab, ReactNode> = {
+    welcome: (
+        <svg className="mobile-bottom-nav__icon" viewBox="0 0 24 24">
+            <path d="M12 2L2 12h3v8h14v-8h3L12 2z" />
+        </svg>
+    ),
     overview: (
         <svg className="mobile-bottom-nav__icon" viewBox="0 0 24 24">
             <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z" />

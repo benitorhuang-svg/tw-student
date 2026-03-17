@@ -4,8 +4,6 @@ import OverviewMatrixSection from '../molecules/OverviewMatrixSection'
 import OverviewTrendSection from '../molecules/OverviewTrendSection'
 import OverviewTreemapSection from '../molecules/OverviewTreemapSection'
 import OverviewRankingSection from '../molecules/OverviewRankingSection'
-import KPIGrid from '../molecules/KPIGrid'
-import { formatDelta, formatPercent } from '../../lib/analytics'
 import type { useAtlasDerivedState } from '../../hooks/useAtlasDerivedState'
 import type { TrendPoint } from '../../lib/analytics.types'
 
@@ -31,8 +29,8 @@ function OverviewTabPanel({
   nationalEducationTrendSeries
 }: OverviewTabPanelProps) {
   const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({
-    hero: true,
-    matrix: false,
+    hero: false,
+    matrix: true,
     trend: false,
     ranking: false,
     treemap: false
@@ -94,38 +92,7 @@ function OverviewTabPanel({
       <OverviewAccordion
         expandedSections={expandedSections}
         onToggleSection={toggleSection}
-        heroSection={
-          <KPIGrid 
-            items={[
-              { 
-                label: '全台學生總數', 
-                value: ((derived.globalNationalSummary?.students ?? 0) / 10000).toFixed(1), 
-                unit: '萬人',
-                meta: `共 ${(derived.globalNationalSummary?.schools ?? 0).toLocaleString()} 所學校`,
-                sparklineData: derived.globalNationalSummary?.trend.map(p => p.value),
-                gauge: 1.0
-              },
-              { 
-                label: '年度學生消長', 
-                value: formatDelta(derived.globalNationalSummary?.delta ?? 0), 
-                unit: '人',
-                trend: {
-                  value: formatPercent(derived.globalNationalSummary?.deltaRatio ?? 0),
-                  isPositive: (derived.globalNationalSummary?.deltaRatio ?? 0) > 0
-                },
-                sparklineData: derived.globalNationalSummary?.trend.map(p => p.value), // Showing the same trend but emphasizes the change
-                gauge: 0.65
-              },
-              {
-                label: '主要增長學制',
-                value: '幼兒園', 
-                unit: '',
-                meta: '增幅約 1.2%',
-                gauge: 0.8
-              }
-            ]}
-          />
-        }
+        heroSection={null}
         matrixSection={
           <OverviewMatrixSection
             points={matrixPoints}

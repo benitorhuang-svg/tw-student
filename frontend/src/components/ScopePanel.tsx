@@ -1,5 +1,5 @@
 import PieChart from './PieChart'
-import StatCard from './StatCard'
+import StatCard from './atoms/StatCard'
 import TrendChart from './TrendChart'
 import { formatAcademicYear, formatDelta, formatPercent, formatStudents, type TrendPoint } from '../lib/analytics'
 import type { AcademicYear } from '../hooks/types'
@@ -61,18 +61,20 @@ function ScopePanel({
       <div className="stat-grid stat-grid--top stat-grid--cols-2">
         <div data-testid="current-scope-card">
           <StatCard
-            title={currentScope.label}
-            value={`${formatStudents(currentScope.students)} 人`}
+            label={currentScope.label}
+            value={`${formatStudents(currentScope.students)}`}
             numericValue={currentScope.students}
-            caption={`${currentScope.schools.toLocaleString('zh-TW')} 校 | 今年增減 ${formatDelta(currentScope.delta)} / ${formatPercent(currentScope.deltaRatio)}`}
+            unit="人"
+            meta={`${currentScope.schools.toLocaleString('zh-TW')} 校 | 今年增減 ${formatDelta(currentScope.delta)} / ${formatPercent(currentScope.deltaRatio)}`}
             tone="lagoon"
           />
         </div>
         <StatCard
-          title="今年增減"
-          value={`${currentScope.delta >= 0 ? '+' : ''}${formatStudents(currentScope.delta)} 人`}
+          label="今年增減"
+          value={`${currentScope.delta >= 0 ? '+' : ''}${formatStudents(currentScope.delta)}`}
           numericValue={currentScope.delta}
-          caption={`${formatAcademicYear(activeYear)} 相較前一年 ${formatPercent(currentScope.deltaRatio)}`}
+          unit="人"
+          meta={`${formatAcademicYear(activeYear)} 相較前一年 ${formatPercent(currentScope.deltaRatio)}`}
           tone="sun"
         />
       </div>

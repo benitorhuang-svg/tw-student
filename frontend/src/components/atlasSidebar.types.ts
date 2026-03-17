@@ -5,7 +5,7 @@ import type { AtlasLoadObservationSnapshot, AcademicYear, EducationLevelFilter, 
 import type { InvestigationFilter, InvestigationItem, SavedComparisonScenario } from '../hooks/types'
 import type { AtlasTab } from '../hooks/useAtlasQueryState'
 import type { CountyComparisonSummary, CountySummary, EducationDistributionRow, RankingSummary, SchoolInsight, ScopeSummary } from '../lib/analytics'
-import type { AtlasTabItem } from './AtlasTabs'
+import type { AtlasTabItem } from './molecules/AtlasTabs'
 
 export type AtlasSidebarProps = {
   sidebarRef: RefObject<HTMLElement | null>

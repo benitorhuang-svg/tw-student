@@ -42,6 +42,9 @@ export function getSchoolInsights(
             status: school.status,
             missingYears: school.missingYears,
             dataNotes: school.dataNotes,
+            // Semi-realistic mock values for demo
+            studentTeacherRatio: 12 + (parseInt(school.code.slice(-2)) % 8),
+            averageClassSize: 22 + (parseInt(school.code.slice(-3)) % 12),
           }
         }),
     )

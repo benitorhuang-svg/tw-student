@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import type { AtlasTab } from '../hooks/useAtlasQueryState'
+import type { AtlasTab } from '../../hooks/useAtlasQueryState'
 
 export type AtlasTabItem = {
   key: AtlasTab
@@ -13,7 +13,11 @@ type AtlasTabsProps = {
   onSelectTab: (tab: AtlasTab) => void
 }
 
-function AtlasTabs({ activeTab, items, onSelectTab }: AtlasTabsProps) {
+/**
+ * Molecule: AtlasTabs
+ * 管理導航頁籤與滑動指示器
+ */
+export function AtlasTabs({ activeTab, items, onSelectTab }: AtlasTabsProps) {
   const containerRef = useRef<HTMLElement>(null)
   const [indicatorStyle, setIndicatorStyle] = useState({ width: 0, left: 0, opacity: 0 })
 

@@ -1,0 +1,190 @@
+.welcome-portal {
+    padding: 40px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    background: radial-gradient(circle at top left, rgba(0, 242, 255, 0.05), transparent 400px),
+                radial-gradient(circle at bottom right, rgba(112, 0, 255, 0.05), transparent 400px);
+    min-height: 100%;
+}
+
+.welcome-portal__hero {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    position: relative;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.welcome-portal__hero-map {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6;
+}
+
+.map-nexus {
+    width: 80px;
+    height: 100px;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Map_of_Taiwan.svg/512px-Map_of_Taiwan.svg.png') no-repeat center;
+    background-size: contain;
+    filter: invert(1) brightness(0.8) sepia(1) saturate(5) hue-rotate(180deg);
+    position: relative;
+}
+
+.map-nexus::after {
+    content: '';
+    position: absolute;
+    inset: -20px;
+    background: radial-gradient(circle, var(--color-primary-cyan), transparent 70%);
+    opacity: 0.2;
+    animation: nexus-pulse 3s infinite ease-in-out;
+}
+
+@keyframes nexus-pulse {
+    0%, 100% { transform: scale(1); opacity: 0.1; }
+    50% { transform: scale(1.5); opacity: 0.3; }
+}
+
+.welcome-portal__hero-text h1 {
+    font-size: 42px;
+    font-weight: 900;
+    line-height: 1.1;
+    margin: 0;
+    letter-spacing: -1px;
+}
+
+.welcome-portal__hero-text h1 span {
+    background: linear-gradient(90deg, #fff, rgba(255,255,255,0.4));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.welcome-portal__hero-text .eyebrow {
+    color: var(--color-primary-cyan);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.welcome-portal__hero-text .description {
+    color: var(--text-dim);
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 320px;
+    margin-top: 16px;
+}
+
+.welcome-portal__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.portal-node {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 24px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+    animation: node-enter 0.8s backwards;
+}
+
+@keyframes node-enter {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.portal-node:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: var(--node-accent);
+    transform: translateX(8px);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+}
+
+.portal-node:active {
+    transform: scale(0.98) translateX(6px);
+}
+
+.portal-node__icon {
+    width: 52px;
+    height: 52px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--node-accent);
+    transition: all 0.4s ease;
+}
+
+.portal-node:hover .portal-node__icon {
+    background: var(--node-accent);
+    color: #fff;
+    transform: scale(1.1) rotate(-5deg);
+    box-shadow: 0 0 20px var(--node-accent);
+}
+
+.portal-node__icon .material-symbols-outlined {
+    font-size: 28px;
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.portal-node__content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+}
+
+.portal-node__content strong {
+    font-size: 17px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.portal-node__content span {
+    font-size: 13px;
+    color: var(--text-dim);
+}
+
+.portal-node__glow {
+    position: absolute;
+    right: -20px;
+    top: -20px;
+    width: 80px;
+    height: 80px;
+    background: var(--node-accent);
+    filter: blur(40px);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.portal-node:hover .portal-node__glow {
+    opacity: 0.15;
+}
+
+.welcome-portal__footer {
+    margin-top: auto;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.welcome-portal__footer p {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.3);
+    text-align: center;
+    font-weight: 500;
+}

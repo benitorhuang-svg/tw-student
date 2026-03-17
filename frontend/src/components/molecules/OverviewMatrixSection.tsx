@@ -1,5 +1,4 @@
-import React from 'react'
-import ScatterPlotChart from '../ScatterPlotChart'
+import { ScatterPlotChart } from '../organisms/ScatterPlotChart'
 
 type OverviewMatrixSectionProps = {
   points: any[]
@@ -10,7 +9,7 @@ type OverviewMatrixSectionProps = {
 
 /**
  * Molecule: OverviewMatrixSection
- * 封裝全台消長分佈矩陣，包含特定的說明文字
+ * 封裝全台成長潛力矩陣，包含特定的說明文字
  */
 export const OverviewMatrixSection: React.FC<OverviewMatrixSectionProps & { flat?: boolean }> = ({
   points,
@@ -30,6 +29,7 @@ export const OverviewMatrixSection: React.FC<OverviewMatrixSectionProps & { flat
     onSelectPoint={onSelectPoint}
     className="matrix-chart-premium"
     flat={flat}
+    showHeader={false}
   />
 )
 

@@ -6,9 +6,10 @@ import OverviewTabPanel from './organisms/OverviewTabPanel'
 import RegionalTabPanel from './organisms/RegionalTabPanel'
 import CountyTabPanel from './organisms/CountyTabPanel'
 import SchoolDetailPanel from './organisms/SchoolDetailPanel'
+import WelcomePortal from './organisms/WelcomePortal'
 
 // Molecules & Atoms
-import AtlasTabs from './AtlasTabs'
+import AtlasTabs from './molecules/AtlasTabs'
 
 // Types
 import type { AtlasTab } from '../hooks/useAtlasQueryState'
@@ -112,6 +113,7 @@ type DashboardCanvasProps = {
   investigationFilter: InvestigationFilter
   setSelectedInvestigationId: (id: string | null) => void
   setInvestigationFilter: (filter: InvestigationFilter) => void
+  onToggleGovernance: () => void
 }
 
 function DashboardCanvas({
@@ -150,6 +152,7 @@ function DashboardCanvas({
   investigationFilter,
   setSelectedInvestigationId,
   setInvestigationFilter,
+  onToggleGovernance,
 }: DashboardCanvasProps) {
   // DashboardCanvas is now primarily a shell orchestrating organisms
 
@@ -166,6 +169,13 @@ function DashboardCanvas({
             items={desktopTabItems.map(item => ({ key: item.id, label: item.label }))}
             onSelectTab={setActiveTab}
           />
+
+          {activeTab === 'welcome' && (
+            <WelcomePortal 
+              onNavigate={setActiveTab}
+              onToggleGovernance={onToggleGovernance}
+            />
+          )}
 
           {activeTab === 'overview' && (
             <OverviewTabPanel

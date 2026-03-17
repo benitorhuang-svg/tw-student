@@ -10,12 +10,12 @@ import {
   type RegionGroupFilter,
 } from '../data/educationData'
 
-export type AtlasTab = 'overview' | 'regional' | 'county' | 'schools' | 'school-focus'
+export type AtlasTab = 'welcome' | 'overview' | 'regional' | 'county' | 'schools' | 'school-focus'
 
 export const DEFAULT_YEAR = ACADEMIC_YEARS.at(-1) ?? 114
 
 function isAtlasTab(value: string | null): value is AtlasTab {
-  return value === 'overview' || value === 'regional' || value === 'county' || value === 'schools' || value === 'school-focus'
+  return value === 'welcome' || value === 'overview' || value === 'regional' || value === 'county' || value === 'schools' || value === 'school-focus'
 }
 
 export function readInitialQueryState() {
@@ -48,7 +48,7 @@ export function readInitialQueryState() {
     selectedSchoolId: school ? school : null,
     comparisonCountyIds: compare ? compare.split(',').map((value) => value.trim()).filter(Boolean) : [],
     comparisonScenarioName: params.get('scenario') ?? '',
-    tab: isAtlasTab(tab) ? tab : 'overview',
+    tab: isAtlasTab(tab) ? tab : 'welcome',
     tabIsExplicit: params.has('tab'),
     forceTownshipLabels: forceTownshipLabels === 'true',
     zoom: Number.isFinite(zoomRaw) && zoomRaw >= 7 && zoomRaw <= 18 ? zoomRaw : undefined,

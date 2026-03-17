@@ -1,15 +1,13 @@
 import { useState } from 'react'
-import ScatterPlotChart from '../ScatterPlotChart'
+import { ScatterPlotChart } from './ScatterPlotChart'
 import '../../styles/templates/dashboard-shell/01-premium-cards-system.css'
 import '../../styles/organisms/overview-panels.css'
 import '../../styles/organisms/county-panels.css'
 import { 
   TownshipDistributionSection 
 } from '../molecules/TownshipDistributionSection'
-import ButterflyChart from '../ButterflyChart'
+import { ButterflyChart } from '../molecules/ButterflyChart'
 import AccordionItem from '../atoms/AccordionItem'
-import KPIGrid from '../molecules/KPIGrid'
-import { formatDelta, formatPercent } from '../../lib/analytics'
 import { getCountyStructureDistribution } from '../../lib/analytics'
 import type { useAtlasDerivedState } from '../../hooks/useAtlasDerivedState'
 
@@ -30,8 +28,8 @@ function CountyTabPanel({
 }: CountyTabPanelProps) {
 
   const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({
-    hero: true,
-    matrix: false,
+    hero: false,
+    matrix: true,
     distribution: false,
     structure: false
   })
@@ -64,51 +62,11 @@ function CountyTabPanel({
   return (
     <div className="dashboard-side-shell__content dashboard-side-shell__content--county">
       <div className="overview-accordion">
-        {derived.selectedCountySummary && (
-          <AccordionItem
-            id="hero"
-            title={`${derived.selectedCounty?.name} 核心指標概覽`}
-            isExpanded={expandedSections.hero}
-            onToggle={toggleSection}
-            style={{ animationDelay: '0.05s' }}
-          >
-            <KPIGrid 
-              className="kpi-grid--compact"
-              columns={3}
-              items={[
-                { 
-                  label: '縣市總學生數', 
-                  value: ((derived.selectedCountySummary?.students ?? 0) / 10000).toFixed(1), 
-                  unit: '萬',
-                  meta: `全台排名第 ${derived.countyRankingRows.findIndex(r => r.id === derived.selectedCounty?.id) + 1} 名`,
-                  sparklineData: derived.selectedCountySummary?.trend.map(p => p.value),
-                  gauge: 1 - (derived.countyRankingRows.findIndex(r => r.id === derived.selectedCounty?.id) / 22)
-                },
-                { 
-                  label: '年度學生消長', 
-                  value: formatDelta(derived.selectedCountySummary?.delta ?? 0), 
-                  unit: '人',
-                  trend: {
-                    value: formatPercent(derived.selectedCountySummary?.deltaRatio ?? 0),
-                    isPositive: (derived.selectedCountySummary?.deltaRatio ?? 0) > 0
-                  },
-                  sparklineData: derived.selectedCountySummary?.trend.map(p => p.value)
-                },
-                {
-                  label: '轄下鄉鎮數',
-                  value: derived.townshipRows.length,
-                  unit: '區',
-                  meta: '完成數據掃描',
-                  gauge: Math.min(derived.townshipRows.length / 20, 1)
-                }
-              ]}
-            />
-          </AccordionItem>
-        )}
+
         {derived.townshipRows.length > 0 ? (
           <AccordionItem
             id="matrix"
-            title="鄉鎮消長分佈分析"
+            title="鄉鎮成長潛力矩陣"
             isExpanded={expandedSections.matrix}
             onToggle={toggleSection}
           >
@@ -128,7 +86,7 @@ function CountyTabPanel({
               onHoverPoint={setHoveredTownshipId}
               onSelectPoint={(id) => onSelectTownship(id, { skipTabSwitch: true, zoom: 12 })}
               className="matrix-chart-premium"
-              showHeader={true}
+              showHeader={false}
               flat={true}
             />
           </AccordionItem>

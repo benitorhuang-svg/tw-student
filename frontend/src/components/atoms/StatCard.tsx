@@ -1,9 +1,12 @@
 import React from 'react'
+import AnimatedNumber from '../AnimatedNumber'
 
 type StatCardProps = {
   label: string
   value: string | number
   unit?: string
+  numericValue?: number
+  tone?: 'lagoon' | 'sun' | 'coral'
   trend?: {
     value: number | string
     isPositive: boolean
@@ -23,6 +26,8 @@ export const StatCard: React.FC<StatCardProps> = ({
   label,
   value,
   unit,
+  numericValue,
+  tone,
   trend,
   meta,
   icon,
@@ -30,15 +35,27 @@ export const StatCard: React.FC<StatCardProps> = ({
   gauge,
   className = ''
 }) => {
+  const finalClassName = [
+    'stat-card',
+    tone ? `stat-card--${tone}` : '',
+    className
+  ].filter(Boolean).join(' ')
+
   return (
-    <article className={`stat-card ${className}`}>
+    <article className={finalClassName}>
       <header className="stat-card__header">
         <span className="stat-card__label">{label}</span>
         {icon && <span className="stat-card__icon">{icon}</span>}
       </header>
       <main className="stat-card__content">
         <div className="stat-card__value-group">
-          <span className="stat-card__value">{value}</span>
+          <span className="stat-card__value">
+            {numericValue !== undefined ? (
+              <AnimatedNumber value={numericValue} />
+            ) : (
+              value
+            )}
+          </span>
           {unit && <span className="stat-card__unit">{unit}</span>}
         </div>
         {sparklineData && sparklineData.length > 1 && (

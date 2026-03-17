@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { useChartAnimation } from '../hooks/useChartAnimation'
-import { formatStudents } from '../lib/analytics'
+import { useChartAnimation } from '../../hooks/useChartAnimation'
+import { formatStudents } from '../../lib/analytics'
 
 type ButterflyItem = {
   id: string
@@ -23,7 +23,7 @@ type ButterflyChartProps = {
   hideTooltip?: boolean
 }
 
-function ButterflyChart({
+export function ButterflyChart({
   items,
   activeItemId = null,
   onSelectItem,

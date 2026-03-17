@@ -1,6 +1,7 @@
 import { useMemo } from 'react'
 
-import { SchoolDetailFocus, SchoolDetailWorkspace } from '../SchoolDetailSections'
+import { SchoolDetailFocus } from './SchoolDetailFocus'
+import { SchoolDetailWorkspace } from './SchoolDetailWorkspace'
 import type { SchoolInsight } from '../../lib/analytics'
 import type { SchoolWorkbenchView } from '../schoolDetail.types'
 
@@ -14,7 +15,6 @@ type SchoolDetailPanelProps = {
   isCountyDetailLoading: boolean
   schoolInsights: SchoolInsight[]
   selectedSchool: SchoolInsight | null
-  schoolPanelTitle?: string
   panelMode: 'workspace' | 'focus'
   selectedTownshipSummary: ScopeSummaryLabel
   selectedCountySummary: ScopeSummaryLabel
@@ -30,7 +30,6 @@ function SchoolDetailPanel({
   isCountyDetailLoading,
   schoolInsights,
   selectedSchool,
-  schoolPanelTitle,
   panelMode,
   selectedTownshipSummary,
   selectedCountySummary,
@@ -46,52 +45,66 @@ function SchoolDetailPanel({
   
   const scopeLabel = selectedTownshipSummary?.label ?? selectedCountySummary?.label ?? selectedCountyName ?? '目前範圍'
 
-  return (
-    <section className="panel school-detail-panel" data-testid="school-detail-panel">
-      {!selectedCountyName ? (
-        <div className="dashboard-card" style={{ textAlign: 'center' }}>
-          <div className="dashboard-card__body" style={{ padding: '40px' }}>
-            <div className="empty-state">請先從地圖或排行選擇縣市，系統才會載入該縣市的學校明細。</div>
-          </div>
+  if (!selectedCountyName) {
+    return (
+      <div className="dashboard-card" style={{ textAlign: 'center' }}>
+        <div className="dashboard-card__body" style={{ padding: '40px' }}>
+          <div className="empty-state">請先從地圖或排行選擇縣市，系統才會載入該縣市的學校明細。</div>
         </div>
-      ) : countyDetailError ? (
-        <div className="dashboard-card" style={{ textAlign: 'center' }}>
-          <div className="dashboard-card__body" style={{ padding: '40px' }}>
-            <div className="empty-state">{countyDetailError}</div>
-          </div>
-        </div>
-      ) : isCountyDetailLoading ? (
-        <div className="dashboard-card" style={{ textAlign: 'center' }}>
-          <div className="dashboard-card__body" style={{ padding: '40px' }}>
-            <div className="empty-state" data-testid="county-detail-loading">正在載入 {selectedCountyName} 的學校細節資料...</div>
-          </div>
-        </div>
-      ) : schoolInsights.length === 0 ? (
-        <div className="dashboard-card" style={{ textAlign: 'center' }}>
-          <div className="dashboard-card__body" style={{ padding: '40px' }}>
-            <div className="empty-state">目前篩選條件沒有對應學校，請放寬條件或切換分析層級。</div>
-          </div>
-        </div>
-      ) : (
-        <div className="school-detail-shell">
-          {panelMode === 'workspace' ? (
-            <SchoolDetailWorkspace 
-              scopeLabel={scopeLabel} 
-              selectedSchool={selectedSchool} 
-              schoolInsights={schoolInsights} 
-              sortedSchools={sortedSchools} 
-              onHoverSchool={onHoverSchool} 
-              onSelectSchool={onSelectSchool}
-              hoveredSchoolId={hoveredSchoolId}
-            />
-          ) : null}
+      </div>
+    )
+  }
 
-          {panelMode === 'focus' ? (
-            <SchoolDetailFocus selectedSchool={selectedSchool} schoolPanelTitle={schoolPanelTitle} onSetWorkbenchView={onSetWorkbenchView} />
-          ) : null}
+  if (countyDetailError) {
+    return (
+      <div className="dashboard-card" style={{ textAlign: 'center' }}>
+        <div className="dashboard-card__body" style={{ padding: '40px' }}>
+          <div className="empty-state">{countyDetailError}</div>
         </div>
+      </div>
+    )
+  }
+
+  if (isCountyDetailLoading) {
+    return (
+      <div className="dashboard-card" style={{ textAlign: 'center' }}>
+        <div className="dashboard-card__body" style={{ padding: '40px' }}>
+          <div className="empty-state" data-testid="county-detail-loading">正在載入 {selectedCountyName} 的學校細節資料...</div>
+        </div>
+      </div>
+    )
+  }
+
+  if (schoolInsights.length === 0) {
+    return (
+      <div className="dashboard-card" style={{ textAlign: 'center' }}>
+        <div className="dashboard-card__body" style={{ padding: '40px' }}>
+          <div className="empty-state">目前篩選條件沒有對應學校，請放寬條件或切換分析層級。</div>
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <>
+      {panelMode === 'workspace' ? (
+        <SchoolDetailWorkspace 
+          scopeLabel={scopeLabel} 
+          selectedSchool={selectedSchool} 
+          schoolInsights={schoolInsights} 
+          sortedSchools={sortedSchools} 
+          onHoverSchool={onHoverSchool} 
+          onSelectSchool={onSelectSchool}
+          hoveredSchoolId={hoveredSchoolId}
+        />
+      ) : (
+        <SchoolDetailFocus 
+          selectedSchool={selectedSchool} 
+          schoolInsights={schoolInsights} 
+          onSetWorkbenchView={onSetWorkbenchView} 
+        />
       )}
-    </section>
+    </>
   )
 }
 

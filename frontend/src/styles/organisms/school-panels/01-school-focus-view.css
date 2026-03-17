@@ -1,9 +1,5 @@
 /* School Focus Hero & Navigation */
 .school-focus-view {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    padding: 1rem;
     animation: fadeIn 0.4s ease-out;
 }
 

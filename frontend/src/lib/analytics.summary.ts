@@ -6,6 +6,7 @@ import type {
   EducationDistributionRow,
   RankingSummary,
   ScopeSummary,
+  RegionalComparisonRow,
 } from './analytics.types'
 import { aggregateSchools, aggregateSummarySeries, getFilteredSchoolsForTownship, getSummaryTrend, matchesSummarySearch } from './analytics.helpers'
 
@@ -121,7 +122,7 @@ export function getNationalEducationTrendSeries(
 export function getRegionalComparisonRows(
   counties: CountySummaryRecord[],
   filters: Pick<DashboardFilters, 'year' | 'educationLevel' | 'searchText'>,
-) {
+): RegionalComparisonRow[] {
   const allRegionCounties = getCountySummaries(counties, {
     ...filters,
     managementType: '全部' as ManagementTypeFilter,

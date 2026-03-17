@@ -98,6 +98,23 @@ export type SchoolInsight = {
   status?: SchoolRecord['status']
   missingYears?: SchoolRecord['missingYears']
   dataNotes?: DataNote[]
+  studentTeacherRatio?: number
+  averageClassSize?: number
+}
+
+export type RegionalComparisonRow = {
+  id: string
+  label: string
+  countyCount: number
+  students: number
+  schools: number
+  delta: number
+  deltaRatio: number
+  publicStudents: number
+  privateStudents: number
+  publicShare: number
+  privateShare: number
+  trend: TrendPoint[]
 }
 
 export type AnalyticsSchoolContext = {

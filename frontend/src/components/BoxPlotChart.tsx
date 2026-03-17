@@ -17,6 +17,7 @@ type BoxPlotChartProps = {
   className?: string
   flat?: boolean
   showHeader?: boolean
+  highlightValue?: number
 }
 
 function percentile(values: number[], ratio: number) {
@@ -37,6 +38,7 @@ function BoxPlotChart({
   className,
   flat,
   showHeader = true,
+  highlightValue,
 }: BoxPlotChartProps) {
   const { containerRef, width, height } = useResponsiveSvg(620, 260, { minWidth: 320 })
   const padding = { top: 20, right: 16, bottom: 42, left: 50 }
@@ -78,7 +80,7 @@ function BoxPlotChart({
         <div className="dashboard-card__head">
           <div className="panel-heading__stack">
             <h3 className="dashboard-card__title">{title}</h3>
-            <p className="dashboard-card__subtitle">{subtitle}</p>
+            {subtitle && <p className="dashboard-card__subtitle">{subtitle}</p>}
           </div>
         </div>
       )}
@@ -135,12 +137,36 @@ function BoxPlotChart({
                 x1={centerX - boxWidth / 2} x2={centerX + boxWidth / 2}
                 y1={isVisible ? toY(group.median) : bottomY} y2={isVisible ? toY(group.median) : bottomY}
               />
+
+              {highlightValue !== undefined && (
+                <g className="box-plot-chart__highlight">
+                   <circle
+                     cx={centerX}
+                     cy={isVisible ? toY(highlightValue) : bottomY}
+                     r="6"
+                     fill="#ef4444"
+                     stroke="#fff"
+                     strokeWidth="2"
+                     filter="drop-shadow(0 0 4px rgba(239, 68, 68, 0.5))"
+                   />
+                   <text
+                     x={centerX + 12}
+                     y={isVisible ? toY(highlightValue) : bottomY}
+                     fontSize="10"
+                     fontWeight="900"
+                     fill="#ef4444"
+                     dominantBaseline="middle"
+                   >
+                     本校: {formatStudents(highlightValue)}
+                   </text>
+                </g>
+              )}
+
               {/* Median value label */}
               <text
                 className={`box-plot-chart__median-label${isActive ? ' box-plot-chart__median-label--visible' : ''}`}
                 x={centerX}
                 y={medianLabelY}
-                textAnchor="middle"
               >
                 {formatStudents(Math.round(group.median))}
               </text>

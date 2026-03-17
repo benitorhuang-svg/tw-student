@@ -22,19 +22,15 @@ export const OverviewAccordion: React.FC<OverviewAccordionProps> = ({
 }) => {
   return (
     <div className="overview-accordion">
-      <AccordionItem
-        id="hero"
-        title="全台核心指標概況"
-        isExpanded={expandedSections.hero}
-        onToggle={onToggleSection}
-        style={{ animationDelay: '0.05s' }}
-      >
-        {heroSection}
-      </AccordionItem>
+      {heroSection && (
+        <div className="overview-hero-direct">
+          {heroSection}
+        </div>
+      )}
 
       <AccordionItem
         id="matrix"
-        title="消長分佈分析"
+        title="全台縣市成長潛力矩陣"
         isExpanded={expandedSections.matrix}
         onToggle={onToggleSection}
         style={{ animationDelay: '0.1s' }}

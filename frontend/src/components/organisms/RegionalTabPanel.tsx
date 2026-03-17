@@ -1,6 +1,6 @@
 import { useMemo, useState, Suspense, lazy } from 'react'
-import ScatterPlotChart from '../ScatterPlotChart'
-import StackedAreaTrendChart from '../StackedAreaTrendChart'
+import { ScatterPlotChart } from './ScatterPlotChart'
+import { StackedAreaTrendChart } from './StackedAreaTrendChart'
 import '../../styles/templates/dashboard-shell/01-premium-cards-system.css'
 import type { useAtlasDerivedState } from '../../hooks/useAtlasDerivedState'
 import type { RegionGroupFilter } from '../../data/educationData'
@@ -97,8 +97,8 @@ function RegionalTabPanel({
   const regionSummaries = useMemo(() => [...derived.regionalComparisonRows].sort((left, right) => right.students - left.students), [derived.regionalComparisonRows])
 
   const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({
-    hero: true,
-    matrix: false,
+    hero: false,
+    matrix: true,
     trend: false,
     comparison: false,
     anomaly: false
@@ -138,7 +138,7 @@ function RegionalTabPanel({
                   value: ((regionSummaries.find(r => r.id === region)?.students ?? 0) / 10000).toFixed(1), 
                   unit: '萬',
                   meta: `佔全台約 ${formatPercent((regionSummaries.find(r => r.id === region)?.students ?? 0) / Math.max(derived.globalNationalSummary?.students ?? 1, 1))}`,
-                  sparklineData: regionSummaries.find(r => r.id === region)?.trend?.map(p => p.value)
+                  sparklineData: regionSummaries.find(r => r.id === region)?.trend?.map((p: any) => p.value)
                 },
                 { 
                   label: '年度消長趨勢', 
@@ -148,7 +148,7 @@ function RegionalTabPanel({
                     value: formatPercent(regionSummaries.find(r => r.id === region)?.deltaRatio ?? 0),
                     isPositive: (regionSummaries.find(r => r.id === region)?.deltaRatio ?? 0) > 0
                   },
-                  sparklineData: regionSummaries.find(r => r.id === region)?.trend?.map(p => p.value)
+                  sparklineData: regionSummaries.find(r => r.id === region)?.trend?.map((p: any) => p.value)
                 },
                 {
                   label: '區域縣市構成',
@@ -162,7 +162,7 @@ function RegionalTabPanel({
         )}
         <AccordionItem
           id="matrix"
-          title="區域消長分佈分析"
+          title="區域成長潛力矩陣"
           isExpanded={expandedSections.matrix}
           onToggle={toggleSection}
           style={{ animationDelay: '0.1s' }}
@@ -208,7 +208,7 @@ function RegionalTabPanel({
               scenarioActions.handleCountySelect(id, { skipTabSwitch: true, zoom: 9 });
             }}
             className="matrix-chart-premium"
-            showHeader={true}
+            showHeader={false}
             flat={true}
           />
         </AccordionItem>

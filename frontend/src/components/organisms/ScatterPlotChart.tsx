@@ -1,6 +1,6 @@
-import { useChartAnimation } from '../hooks/useChartAnimation'
-import { useResponsiveSvg } from '../hooks/useResponsiveSvg'
-import '../styles/data/charts/01-matrix-chart-redesign.css'
+import { useChartAnimation } from '../../hooks/useChartAnimation'
+import { useResponsiveSvg } from '../../hooks/useResponsiveSvg'
+import '../../styles/data/charts/01-matrix-chart-redesign.css'
 
 type ScatterPoint = {
   id: string
@@ -28,7 +28,7 @@ type ScatterPlotChartProps = {
   showHeader?: boolean
 }
 
-function ScatterPlotChart({
+export function ScatterPlotChart({
   title, subtitle, xLabel, yLabel, points, activePointId = null,
   formatY = (value) => {
     if (value === 0) return '0%'
@@ -40,8 +40,8 @@ function ScatterPlotChart({
   className, flat, showHeader = true,
 }: ScatterPlotChartProps) {
   const { ref: animRef, isVisible } = useChartAnimation()
-  const { containerRef, width, height } = useResponsiveSvg(620, 240, { minWidth: 320 })
-  const padding = { top: 10, right: width < 400 ? 24 : 50, bottom: 40, left: width < 400 ? 56 : 100 }
+  const { containerRef, width, height } = useResponsiveSvg(620, 340, { minWidth: 320 })
+  const padding = { top: 8, right: width < 400 ? 16 : 20, bottom: 40, left: width < 400 ? 56 : 80 }
   
   const combinedClasses = [
     'dashboard-card',
@@ -87,7 +87,7 @@ function ScatterPlotChart({
 
   const minX = 0
   const rawMaxX = Math.max(...valuesX, 0)
-  const maxX = Math.max(rawMaxX * 1.3, 10)
+  const maxX = Math.max(rawMaxX * 1.15, 10)
 
   const avgX = valuesX.reduce((a, b) => a + b, 0) / valuesX.length
 
@@ -192,7 +192,7 @@ function ScatterPlotChart({
           })
         })()}
 
-        {/* Base markers first */}
+        {/* Base markers - Stable order to prevent DOM reshuffling flicker */}
         {points.map((p) => {
           const r = toR(p.size)
           const isActive = p.id === activePointId
@@ -202,10 +202,13 @@ function ScatterPlotChart({
               className={`${isActive ? 'scatter-chart__point scatter-chart__point--active' : 'scatter-chart__point'} chart-data-focusable`}
               cx={toX(p.x)}
               cy={toY(p.y)}
-              r={isActive ? r + 1 : r} /* Increase hit-area slightly when active */
+              r={isActive ? r + 1.5 : r} 
               tabIndex={0}
               role="button"
-              onMouseEnter={() => onHoverPoint?.(p.id)}
+              onMouseEnter={() => {
+                // Use a simple event check to stabilize
+                onHoverPoint?.(p.id)
+              }}
               onMouseLeave={() => { if (activePointId === p.id) onHoverPoint?.(null) }}
               onClick={() => onSelectPoint?.(p.id)}
               onFocus={() => onHoverPoint?.(p.id)}
@@ -213,6 +216,22 @@ function ScatterPlotChart({
             />
           )
         })}
+
+        {/* Top-most Highlight Layer: Render a clone of the active point on top without moving the original DOM node */}
+        {(() => {
+          const activePoint = points.find(p => p.id === activePointId)
+          if (!activePoint) return null
+          const r = toR(activePoint.size)
+          return (
+            <circle
+              className="scatter-chart__point--active-overlay"
+              cx={toX(activePoint.x)}
+              cy={toY(activePoint.y)}
+              r={r + 1.5}
+              style={{ pointerEvents: 'none' }} // Crucial: don't intercept events from the real point below
+            />
+          )
+        })()}
 
         {/* Floating Tooltip Layer - Render on top of everything to prevent event dead-zones */}
         {(() => {

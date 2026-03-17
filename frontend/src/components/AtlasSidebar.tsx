@@ -1,7 +1,7 @@
 import { lazy, Suspense } from 'react'
 
 import type { AtlasTab } from '../hooks/useAtlasQueryState'
-import AtlasTabs from './AtlasTabs'
+import AtlasTabs from './molecules/AtlasTabs'
 import InsightPanel from './InsightPanel'
 import OfflineMetricsPanel from './OfflineMetricsPanel'
 import ScopePanel from './ScopePanel'
@@ -12,6 +12,7 @@ const AnomalyPanel = lazy(() => import('./organisms/AnomalyPanel'))
 const SchoolDetailPanel = lazy(() => import('./organisms/SchoolDetailPanel'))
 
 const TAB_META: Record<AtlasTab, { title: string; description: string }> = {
+  welcome: { title: '歡迎使用', description: '全台教育數據分析入口。請選擇下方的分析模組開始探索。' },
   overview: { title: '全台總覽', description: '觀察全台與目前範圍的摘要、排名與整體趨勢。' },
   regional: { title: '區域分析', description: '聚焦各縣市與鄉鎮間的指標差異與下鑽分析。' },
   county: { title: '縣市分析', description: '專注單一縣市的各級教育數據與鄉鎮排行。' },

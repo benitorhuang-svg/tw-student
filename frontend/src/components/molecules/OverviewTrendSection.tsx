@@ -1,5 +1,4 @@
-import React from 'react'
-import StackedAreaTrendChart from '../StackedAreaTrendChart'
+import { StackedAreaTrendChart } from '../organisms/StackedAreaTrendChart'
 import type { TrendPoint } from '../../lib/analytics.types'
 
 type OverviewTrendSectionProps = {

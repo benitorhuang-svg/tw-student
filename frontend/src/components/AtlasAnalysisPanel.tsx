@@ -9,13 +9,14 @@ import type { AtlasTab } from '../hooks/useAtlasQueryState'
 import InsightPanel from './InsightPanel'
 import OfflineMetricsPanel from './OfflineMetricsPanel'
 import ScopePanel from './ScopePanel'
-import StackedAreaTrendChart from './StackedAreaTrendChart'
+import { StackedAreaTrendChart } from './organisms/StackedAreaTrendChart'
 
 const ComparisonPanel = lazy(() => import('./ComparisonPanel'))
 const AnomalyPanel = lazy(() => import('./organisms/AnomalyPanel'))
 const SchoolDetailPanel = lazy(() => import('./organisms/SchoolDetailPanel'))
 
 const TAB_META: Record<AtlasTab, { title: string; description: string }> = {
+  welcome: { title: '歡迎使用', description: '全台教育數據分析入口。請選擇下方的分析模組開始探索。' },
   overview: { title: '概況總覽', description: '掌握全台整體及目前選取範圍的核心指標，作為下鑽區域或單校分析的起點。' },
   regional: { title: '區域消長', description: '集中呈現特定區域的縣市差異、交叉比較指標與異常數據偵測。' },
   county: { title: '縣市分析', description: '聚焦選定縣市內的鄉鎮排名與規模分佈，掌握縣內各區教育版圖位移。' },

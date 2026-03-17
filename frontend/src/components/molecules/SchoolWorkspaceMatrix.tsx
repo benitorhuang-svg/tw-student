@@ -1,5 +1,5 @@
 import React from 'react'
-import ScatterPlotChart from '../ScatterPlotChart'
+import { ScatterPlotChart } from '../organisms/ScatterPlotChart'
 import type { SchoolInsight } from '../../lib/analytics'
 import AccordionItem from '../atoms/AccordionItem'
 
@@ -29,13 +29,13 @@ const SchoolWorkspaceMatrix: React.FC<SchoolWorkspaceMatrixProps> = ({
   return (
     <AccordionItem
       id="matrix-workspace"
-      title="學校規模消長矩陣 (行政區)"
+      title="學校成長潛力矩陣 (行政區)"
       isExpanded={isExpanded}
       onToggle={onToggle}
       style={{ animationDelay: '0.05s' }}
     >
         <ScatterPlotChart
-          title="學校規模消長矩陣 (行政區)"
+          title="學校成長潛力矩陣 (行政區)"
           subtitle={`以 ${scopeLabel} 總學生數為分母計算佔比變動`}
           xLabel="學生數"
           yLabel={`${scopeLabel} 佔比變動率 (%)`}

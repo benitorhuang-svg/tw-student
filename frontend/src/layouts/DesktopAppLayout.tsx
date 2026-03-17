@@ -160,6 +160,7 @@ function DesktopAppLayout(props: DesktopAppLayoutProps) {
         investigationFilter={props.investigationFilter}
         setSelectedInvestigationId={props.setSelectedInvestigationId}
         setInvestigationFilter={props.setInvestigationFilter}
+        onToggleGovernance={() => props.setShowGovernancePanel((c) => !c)}
       />
 
       <DataGovernanceFlyout

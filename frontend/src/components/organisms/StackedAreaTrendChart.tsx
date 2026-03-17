@@ -1,18 +1,17 @@
 import { useState } from 'react'
-import type { TrendPoint } from '../lib/analytics'
-import { formatStudents } from '../lib/analytics'
-import { useChartAnimation } from '../hooks/useChartAnimation'
-import { useResponsiveSvg } from '../hooks/useResponsiveSvg'
-import '../styles/data/charts/01-historical-trend-redesign.css'
+import type { TrendPoint } from '../../lib/analytics'
+import { useChartAnimation } from '../../hooks/useChartAnimation'
+import { useResponsiveSvg } from '../../hooks/useResponsiveSvg'
+import '../../styles/data/charts/01-historical-trend-redesign.css'
 
 const formatWanNumeric = (val: number) => {
   if (val === 0) return '0'
   return `${+(val / 10000).toFixed(1)}`
 }
 
-const formatWanWithUnit = (val: number) => {
+const formatWithComma = (val: number) => {
   if (val === 0) return '0'
-  return `${+(val / 10000).toFixed(0)}萬`
+  return val.toLocaleString('en-US')
 }
 
 type Series = {
@@ -69,41 +68,51 @@ const TrendYearLabel = ({ x, y, year }: { x: number, y: number, year: number | s
   </text>
 )
 
-const TrendValueBadge = ({ x, y, value }: { x: number, y: number, value: number }) => (
-  <g style={{ pointerEvents: 'none' }}>
-    <rect
-      x={x - 18}
-      y={y - 7}
-      width="36"
-      height="14"
-      rx="4"
-      fill="rgba(255, 255, 255, 0.15)"
-    />
-    <text
-      x={x}
-      y={y + 4}
-      textAnchor="middle"
-      fontSize="10"
-      fontWeight="900"
-      fill="#fff"
-      style={{ textShadow: '0 1px 2px rgba(0,0,0,0.4)', letterSpacing: '-0.02em' }}
-    >
-      {formatWanNumeric(value)}
-    </text>
-  </g>
-)
+const TrendValueBadge = ({ x, y, value, prevValue }: { x: number, y: number, value: number, prevValue: number | null }) => {
+  const delta = prevValue !== null ? value - prevValue : null
+  const deltaPct = prevValue && prevValue > 0 ? (delta! / prevValue) * 100 : null
 
-function StackedAreaTrendChart({ title, subtitle, series, children, className, flat, showHeader = true }: StackedAreaTrendChartProps & { children?: React.ReactNode }) {
-  // Fix: Use a flatter base ratio and clamp height to avoid massive whitespace on wide screens
-  const responsive = useResponsiveSvg(800, 240, { minWidth: 340, minHeight: 180 })
+  return (
+    <g style={{ pointerEvents: 'none' }}>
+      <text
+        x={x}
+        y={y - 2}
+        textAnchor="middle"
+        fontSize="10"
+        fontWeight="800"
+        fill="#ffffff"
+        style={{ letterSpacing: '-0.02em', filter: 'drop-shadow(0 1px 1px rgba(0,0,0,0.3))' }}
+      >
+        {formatWithComma(value)}
+      </text>
+      {deltaPct !== null && (
+        <text
+          x={x}
+          y={y + 8}
+          textAnchor="middle"
+          fontSize="8"
+          fontWeight="900"
+          fill={Math.abs(deltaPct) < 0.1 ? 'rgba(255,255,255,0.7)' : (deltaPct > 0 ? '#bbf7d0' : '#fecaca')}
+          style={{ opacity: 0.9 }}
+        >
+          {deltaPct > 0 ? '+' : ''}{deltaPct.toFixed(1)}%
+        </text>
+      )}
+    </g>
+  )
+}
+
+export function StackedAreaTrendChart({ title, subtitle, series, children, className, flat, showHeader = true }: StackedAreaTrendChartProps & { children?: React.ReactNode }) {
+  // Collapse whitespace by tightening height and top padding
+  const responsive = useResponsiveSvg(800, 220, { minWidth: 340, minHeight: 180 })
   const width = responsive.width
-  const height = Math.min(responsive.height, 220) // Clamped lower to 220px to remove bottom whitespace
+  const height = Math.min(responsive.height, 220)
   const containerRef = responsive.containerRef
 
   const paddingLeft = width < 420 ? 30 : 50
   const paddingRight = 60
-  const paddingTop = 40 // Increased from 26 to give room for totals and tooltip
-  const paddingBottom = 22 // Tightened from 34 to remove blank space
+  const paddingTop = -5 // Tightened from 45 to pull chart up
+  const paddingBottom = 30 // Balanced bottom spacing
 
   const [hoverIndex, setHoverIndex] = useState<number | null>(null)
   const { ref: animRef, isVisible } = useChartAnimation()
@@ -114,7 +123,7 @@ function StackedAreaTrendChart({ title, subtitle, series, children, className, f
   }))
 
   const allYears = Array.from(new Set(dataSeries.flatMap((item) => item.points.map((point) => point.year)))).sort((left, right) => left - right)
-  
+
   // Only show the 7 most recent years
   const dataYears = allYears.slice(-7)
 
@@ -224,8 +233,8 @@ function StackedAreaTrendChart({ title, subtitle, series, children, className, f
               {gridValues.map(val => (
                 <g key={val} opacity="0.4">
                   <line x1={paddingLeft} x2={width - paddingRight} y1={getValueY(val)} y2={getValueY(val)} stroke="#cbd5e1" strokeWidth="0.5" strokeDasharray="4 4" />
-                  <text x={width - paddingRight + 12} y={getValueY(val) + 4} textAnchor="start" fontSize="10" fill="#64748b" fontWeight="500">
-                    {lastYearTotal < 100000 ? formatStudents(val) : formatWanWithUnit(val)}
+                  <text x={width - paddingRight + 12} y={getValueY(val) + 4} textAnchor="start" fontSize="9" fill="#94a3b8" fontWeight="600">
+                    {formatWithComma(val)}
                   </text>
                 </g>
               ))}
@@ -241,10 +250,11 @@ function StackedAreaTrendChart({ title, subtitle, series, children, className, f
 
               return (
                 <g key={year} className="trend-molecule--bar-group">
-                  <TrendYearLabel x={barXCenter} y={getValueY(0) + 16} year={year} />
+                  <TrendYearLabel x={barXCenter} y={getValueY(0) + 20} year={year} />
 
                   {dataSeries.map((s, sIdx) => {
                     const p = s.points.find(pt => pt.year === year)
+                    const prevP = yearIdx > 0 ? s.points.find(pt => pt.year === dataYears[yearIdx - 1]) : null
                     if (!p || p.value === 0) return null
                     const startY = getValueY(currentStackedValue)
                     const endY = getValueY(currentStackedValue + p.value)
@@ -263,15 +273,20 @@ function StackedAreaTrendChart({ title, subtitle, series, children, className, f
                           height={Math.max(segmentHeight, 0.5)}
                           fill={`url(#bar-grad-${sIdx % SERIES_COLORS.length})`}
                           opacity={hoverIndex === null || isHovered ? 1 : 0.4}
-                          rx={isTopSegment || isBottomSegment ? 6 : 0}
+                          rx={(isTopSegment && p.value > 0) || (isBottomSegment && currentStackedValue === p.value) ? 6 : 0}
                           filter={isHovered ? 'url(#shadow)' : 'none'}
                           style={{ cursor: 'pointer' }}
                         />
                         {!isTopSegment && (
                           <line x1={barXCenter - barWidth / 2} x2={barXCenter + barWidth / 2} y1={endY} y2={endY} stroke="rgba(255,255,255,0.25)" strokeWidth="0.8" />
                         )}
-                        {segmentHeight > 16 && (
-                          <TrendValueBadge x={barXCenter} y={endY + segmentHeight / 2} value={p.value} />
+                        {segmentHeight > 24 && (
+                          <TrendValueBadge
+                            x={barXCenter}
+                            y={endY + segmentHeight / 2}
+                            value={p.value}
+                            prevValue={prevP ? prevP.value : null}
+                          />
                         )}
                       </g>
                     )
@@ -279,11 +294,13 @@ function StackedAreaTrendChart({ title, subtitle, series, children, className, f
 
                   {/* Summary Indicators */}
                   <g opacity={hoverIndex === null || hoverIndex === yearIdx ? 1 : 0.3} style={{ pointerEvents: 'none' }}>
-                    <text x={barXCenter} y={getValueY(yearTotals[yearIdx]) - 28} textAnchor="middle" className="total-badge">{formatWanWithUnit(yearTotals[yearIdx])}</text>
+                    <text x={barXCenter} y={getValueY(yearTotals[yearIdx]) - 24} textAnchor="middle" className="total-badge" style={{ fontSize: '11px', fontWeight: 800, fill: '#1e293b' }}>
+                      {formatWithComma(yearTotals[yearIdx])}
+                    </text>
                     {totalDeltaPct !== null && (
-                      <g transform={`translate(${barXCenter}, ${getValueY(yearTotals[yearIdx]) - 14})`}>
-                        <rect x="-20" y="-8" width="40" height="12" rx="4" fill={Math.abs(totalDeltaPct) < 0.01 ? '#94a3b8' : (totalDeltaPct > 0 ? '#10b981' : '#f43f5e')} opacity="0.12" />
-                        <text x="0" y="2" textAnchor="middle" fontSize="9" fontWeight="800" fill={Math.abs(totalDeltaPct) < 0.01 ? '#64748b' : (totalDeltaPct > 0 ? '#059669' : '#e11d48')}>
+                      <g transform={`translate(${barXCenter}, ${getValueY(yearTotals[yearIdx]) - 12})`}>
+                        <rect x="-18" y="-7" width="36" height="11" rx="4" fill={Math.abs(totalDeltaPct) < 0.01 ? '#94a3b8' : (totalDeltaPct > 0 ? '#10b981' : '#f43f5e')} opacity="0.12" />
+                        <text x="0" y="2" textAnchor="middle" fontSize="9" fontWeight="900" fill={Math.abs(totalDeltaPct) < 0.01 ? '#64748b' : (totalDeltaPct > 0 ? '#059669' : '#e11d48')}>
                           {totalDeltaPct > 0 ? '+' : ''}{totalDeltaPct.toFixed(1)}%
                         </text>
                       </g>
@@ -302,13 +319,13 @@ function StackedAreaTrendChart({ title, subtitle, series, children, className, f
           </svg>
 
           {hoverIndex !== null && (
-            <div className="chart-tooltip glass-tooltip chart-tooltip--visible" style={{ 
-              position: 'absolute', 
+            <div className="chart-tooltip glass-tooltip chart-tooltip--visible" style={{
+              position: 'absolute',
               top: -10, // Shifted up slightly to avoid clipping bottom
-              [hoverIndex > dataYears.length / 2 ? 'left' : 'right']: 10, 
-              width: 125, 
-              pointerEvents: 'none', 
-              zIndex: 20 
+              [hoverIndex > dataYears.length / 2 ? 'left' : 'right']: 10,
+              width: 125,
+              pointerEvents: 'none',
+              zIndex: 20
             }}>
               <div style={{ fontWeight: 800, marginBottom: '-8px', color: '#f8fafc', borderBottom: '1.5px solid rgba(255, 255, 255, 0.15)', paddingBottom: '4px', fontSize: '11px', textAlign: 'right' }}>
                 {dataYears[hoverIndex]}學年度
