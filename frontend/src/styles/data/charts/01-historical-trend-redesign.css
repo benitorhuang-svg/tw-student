@@ -1,15 +1,20 @@
 .historical-trend-chart {
     position: relative;
     padding: 0;
-    background: #fff !important;
-    border: 1px solid rgb(226 232 240 / 80%) !important;
+    background: transparent !important;
+    border: none !important;
     border-radius: 24px !important;
-    box-shadow: 
-        0 10px 40px -10px rgb(16 32 51 / 8%), 
-        0 20px 25px -5px rgb(16 32 51 / 2%),
-        inset 0 0 0 1px rgb(255 255 255 / 50%) !important;
+    box-shadow: none !important;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     overflow: visible !important;
+    min-height: 0 !important; /* Reset to 0 to remove bottom blank space */
+}
+
+/* Override story-specific min-heights that were causing the gap */
+.historical-trend-chart.dashboard-card--overview-story,
+.historical-trend-chart.dashboard-card--county-story,
+.historical-trend-chart.dashboard-card--regional-story {
+    min-height: 0 !important;
 }
 
 .historical-trend-chart:hover {
@@ -20,20 +25,20 @@
 }
 
 .historical-trend-chart .dashboard-card__body {
-    padding: 0 2px 0 24px !important; /* Matched to Matrix Chart body */
+    padding: 12px 16px 0 !important; /* Added top padding for tooltip room */
     overflow: visible !important;
 }
 
 .historical-trend-chart .dashboard-card__head {
     margin-bottom: 0;
-    padding: 0 24px 16px 100px; /* Increased bottom padding for breathing room */
+    padding: 0 24px 8px; /* Reduced excessive left padding */
     border-bottom: none !important;
     background: transparent !important;
     display: flex;
     justify-content: flex-start;
     align-items: baseline;
     gap: 28px;
-    min-height: 50px;
+    min-height: 42px;
 }
 
 .historical-trend-chart .panel-heading__stack {
@@ -55,17 +60,17 @@
 
 
 .historical-trend-chart .chart-svg-frame {
-    filter: drop-shadow(0 4px 6px rgb(0 0 0 / 2%));
+    filter: drop-shadow(0 8px 12px rgb(0 0 0 / 2%));
+    padding: 20px 0 0; /* Increased top padding */
 }
 
 .historical-trend-chart .bar-segment {
-    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     transform-origin: bottom;
 }
 
 .historical-trend-chart .bar-segment:hover {
-    filter: brightness(1.05) saturate(1.1);
-    transform: translateY(-5px);
+    filter: brightness(1.1) saturate(1.2);
 }
 
 .historical-trend-chart .label-badge {
@@ -79,22 +84,36 @@
 }
 
 .historical-trend-chart .glass-tooltip {
-    background: rgb(255 255 255 / 92%) !important; /* Increased opacity for better text clarity */
-    backdrop-filter: blur(16px) saturate(220%) !important; /* Enhanced blur and saturation */
-    border: 1px solid rgb(255 255 255 / 60%) !important;
-    box-shadow: 
-        0 4px 6px -1px rgb(0 0 0 / 10%),
-        0 20px 25px -5px rgb(16 32 51 / 15%),
-        inset 0 0 0 1px rgb(255 255 255 / 50%) !important;
+    background: rgba(15, 23, 42, 0.95) !important;
+    backdrop-filter: blur(12px) saturate(180%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 50%), 0 10px 10px -5px rgb(0 0 0 / 40%) !important;
     border-radius: 12px !important;
+    color: #f8fafc !important;
 }
 
-.historical-trend-chart .year-label {
-    font-family: Sora, sans-serif;
-    letter-spacing: 0.05em;
+[data-theme='dark'] .historical-trend-chart .glass-tooltip {
+    background: rgb(2 6 23 / 98%) !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
 }
 
 .historical-trend-chart .total-badge {
-    font-family: Sora, sans-serif;
+    font-family: var(--font-heading);
     font-weight: 800;
+    font-size: 13px;
+    letter-spacing: -0.01em;
+}
+
+.historical-trend-chart .year-label {
+    font-family: var(--font-heading);
+    letter-spacing: 0.05em;
+    fill: var(--text-soft);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.historical-trend-chart .label-badge-text {
+    font-weight: 800;
+    font-size: 11px;
+    letter-spacing: 0.02em;
 }

@@ -50,7 +50,10 @@ export const CollapsibleFilter = ({
       <button 
         type="button"
         className="filter-toggle-btn" 
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={(e) => {
+          e.stopPropagation()
+          setIsOpen(!isOpen)
+        }}
         aria-expanded={isOpen}
         title={label}
       >
@@ -65,7 +68,7 @@ export const CollapsibleFilter = ({
         </span>
       </button>
       
-      <div className="filter-expansion">
+      <div className="filter-expansion" onClick={(e) => e.stopPropagation()}>
         <SegmentedPill
           options={options}
           currentValue={currentValue}

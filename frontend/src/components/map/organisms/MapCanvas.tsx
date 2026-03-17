@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { MapContainer } from 'react-leaflet'
 
 import { MAP_DEFAULT_CENTER, MAP_DEFAULT_ZOOM, MAP_MAX_ZOOM, MAP_MAX_BOUNDS } from '../../../lib/constants'
-import { MapLoadingBanner } from '../atoms/MapLoadingBanner'
 import { MapTileLayer } from '../atoms/MapTileLayer'
 import MapBoundsController from './MapBoundsController'
 import { MapLayerStack } from '../molecules/MapLayerStack'
@@ -79,7 +78,7 @@ export default function MapCanvas(props: MapCanvasProps) {
     activeCountyId, activeTownshipId, theme, countyBoundaries,
     townshipBoundaries, townshipRows, allTownshipRows, allTownshipBoundaries,
     schoolPoints, selectedSchoolId, highlightedCountyId,
-    highlightedTownshipId, highlightedSchoolId, isTownshipBoundaryLoading,
+    highlightedTownshipId, highlightedSchoolId,
     onSelectSchool, initialMapZoom, initialMapLat, initialMapLon, 
     scopePath, onNavigateScope, vectorTileBaseUrl = '', forceTownshipLabels = false,
     activeTab, educationLevel, managementType,
@@ -118,7 +117,6 @@ export default function MapCanvas(props: MapCanvasProps) {
     <section className="panel atlas-map-panel">
       <div className="atlas-map-shell">
         <div className="atlas-map-canvas-wrap" data-township-markers={forceTownshipLabels ? 'true' : 'false'}>
-          <MapLoadingBanner isLoading={isTownshipBoundaryLoading} message="正在同步縣市鄉鎮界線…" />
           
             <MapContainer
               center={[initialMapLat ?? MAP_DEFAULT_CENTER[0], initialMapLon ?? MAP_DEFAULT_CENTER[1]]}
@@ -171,24 +169,14 @@ export default function MapCanvas(props: MapCanvasProps) {
               initialLonFromUrl={initialMapLon}
             />
 
-            {/* 1. Top Left Management Cluster */}
-            <div className="map-top-left-management" style={{ position: 'absolute', top: 16, left: 16, zIndex: 1000, display: 'flex', flexDirection: 'column', gap: 12, pointerEvents: 'none' }}>
+            {/* 1. Top Bar: Breadcrumb (Left) | Filters + Year (Right) */}
+            <div className="map-top-bar">
+              <div className="map-top-bar__left">
+                <MapBreadcrumb scopePath={scopePath} onNavigate={onNavigateScope} />
+              </div>
               
-              {/* Row 1: Horizontal Controls (Wrappable to prevent overflow) */}
-              <div style={{ 
-                display: 'flex', 
-                flexWrap: 'wrap', 
-                alignItems: 'center', 
-                alignContent: 'flex-start',
-                gap: '8px 12px', /* Vertical gap 8px, Horizontal gap 12px */
-                maxWidth: 'calc(100vw - 48px)',
-                pointerEvents: 'none'
-              }}>
-                <div style={{ pointerEvents: 'auto' }}>
-                  <MapYearLabel activeYear={props.activeYear} />
-                </div>
-                
-                <div style={{ display: 'flex', gap: 8, pointerEvents: 'auto' }}>
+              <div className="map-top-bar__right">
+                <div className="map-top-bar__filters">
                   <AtlasTypeFilter
                     managementType={managementType}
                     onSetManagementType={onSetManagementType}
@@ -200,29 +188,22 @@ export default function MapCanvas(props: MapCanvasProps) {
                     startTransition={startTransition}
                   />
                 </div>
-
-                <div style={{ pointerEvents: 'auto' }}>
-                   <MapBreadcrumb scopePath={scopePath} onNavigate={onNavigateScope} />
-                </div>
-              </div>
-
-              {/* Row 2: MiniMap + Zoom (Vertical Pillar) */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 12, width: 'fit-content', pointerEvents: 'auto' }}>
-                <AtlasMiniMap 
-                  countyBoundaries={countyBoundaries as any}
-                  activeCountyId={activeCountyId}
-                  onSelectCounty={props.onSelectCounty}
-                  isVisible={true}
-                />
-                <MapZoomControls />
+                <MapYearLabel activeYear={props.activeYear} />
               </div>
             </div>
 
-            {/* 2. Top Right Overlay: (Empty or for future use) */}
-            <div className="map-top-right-context" style={{ position: 'absolute', top: 16, right: 16, zIndex: 1000 }}>
+            {/* 2. Control Pillar: MiniMap + Zoom (Below Top Bar) */}
+            <div className="map-control-pillar">
+              <AtlasMiniMap 
+                countyBoundaries={countyBoundaries as any}
+                activeCountyId={activeCountyId}
+                onSelectCounty={props.onSelectCounty}
+                isVisible={true}
+              />
+              <MapZoomControls />
             </div>
 
-            {/* 3. Floating Tools (Help Toggle) */}
+            {/* 3. Floating Overlay Tools (Bottom Left) */}
             <MapControlStack
               activeTab={activeTab}
               activeCountyName={activeCountyName}

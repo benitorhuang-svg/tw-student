@@ -1,0 +1,114 @@
+/* Overview Ranking & Insight Components */
+
+.overview-ranking-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+    padding: 16px 12px 24px;
+}
+
+.ranking-card {
+    background: rgba(15, 23, 42, 0.02);
+    border: 1px solid rgba(15, 23, 42, 0.04);
+    border-radius: 16px;
+    padding: 14px;
+    transition: all 0.3s ease;
+}
+
+[data-theme='dark'] .ranking-card {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.06);
+}
+
+.ranking-card:hover {
+    background: #fff;
+    box-shadow: var(--shadow-premium);
+    transform: translateY(-2px);
+    border-color: transparent;
+}
+
+[data-theme='dark'] .ranking-card:hover {
+    background: var(--surface-card);
+}
+
+.ranking-card__title {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.ranking-card__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ranking-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 8px;
+    transition: background 0.2s ease;
+}
+
+.ranking-item:hover {
+    background: rgba(15, 23, 42, 0.04);
+}
+
+[data-theme='dark'] .ranking-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.ranking-item__rank {
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 900;
+    color: #fff;
+    flex-shrink: 0;
+}
+
+.ranking-item__rank--1 { background: linear-gradient(135deg, #f59e0b, #d97706); }
+.ranking-item__rank--2 { background: linear-gradient(135deg, #94a3b8, #64748b); }
+.ranking-item__rank--3 { background: linear-gradient(135deg, #b45309, #78350f); }
+
+.ranking-item__info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.ranking-item__name {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-main);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ranking-item__value {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--text-soft);
+}
+
+.ranking-item__indicator {
+    width: 4px;
+    height: 18px;
+    border-radius: 2px;
+}
+
+.ranking-item__indicator--count { background-color: var(--brand-primary); }
+.ranking-item__indicator--growth { background-color: #10b981; }
+.ranking-item__indicator--decline { background-color: #f43f5e; }

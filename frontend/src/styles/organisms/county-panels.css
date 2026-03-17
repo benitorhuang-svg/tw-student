@@ -1,0 +1,213 @@
+/* County Analysis Enhanced Components */
+
+.county-kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 16px 12px 24px;
+}
+
+.kpi-card {
+    background: var(--surface-card);
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    transition: all 0.3s ease;
+}
+
+.kpi-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-soft);
+    border-color: var(--brand-primary);
+}
+
+.kpi-card__label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-muted);
+}
+
+.kpi-card__value {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--text-strong);
+    letter-spacing: -0.02em;
+}
+
+.kpi-card__unit {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-soft);
+    margin-left: 4px;
+}
+
+.kpi-card__footer {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--text-dim);
+    margin-top: 4px;
+}
+
+/* Butterfly Chart Customization for Sidebar */
+.county-sidebar-butterfly {
+    padding: 0 8px 16px;
+}
+
+.county-sidebar-butterfly .butterfly-chart__row {
+    padding: 8px 4px;
+}
+
+.county-sidebar-butterfly .butterfly-chart__label-group strong {
+    font-size: 0.85rem;
+}
+
+.county-sidebar-butterfly .butterfly-chart__value {
+    font-size: 0.75rem;
+}
+
+/* Township Distribution List */
+.township-distribution-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px 16px 24px;
+}
+
+.township-bar-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.township-bar-item:hover {
+    transform: translateX(4px);
+}
+
+.township-bar-item__label {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.township-bar-item__name {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.township-bar-item__value {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-soft);
+}
+
+.township-bar-item__track {
+    height: 6px;
+    background: rgba(15, 23, 42, 0.05);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+[data-theme='dark'] .township-bar-item__track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.township-bar-item__fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--brand-primary), #60a5fa);
+    border-radius: 3px;
+    transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* School Impact Grid */
+.school-impact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 12px 16px 24px;
+}
+
+.impact-group__title {
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.impact-group__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.impact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 10px;
+    background: rgba(15, 23, 42, 0.02);
+    border: 1px solid rgba(15, 23, 42, 0.04);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+[data-theme='dark'] .impact-item {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.06);
+}
+
+.impact-item:hover {
+    background: #fff;
+    box-shadow: var(--shadow-soft);
+    border-color: var(--brand-primary);
+    transform: translateY(-1px);
+}
+
+[data-theme='dark'] .impact-item:hover {
+    background: var(--surface-card);
+}
+
+.impact-item__badge {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 900;
+    color: #fff;
+}
+
+.impact-item__badge--positive { background: #10b981; }
+.impact-item__badge--negative { background: #f43f5e; }
+
+.impact-item__info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.impact-item__name {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-main);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.impact-item__delta {
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: var(--text-soft);
+}

@@ -1,4 +1,4 @@
-import { ACADEMIC_YEARS, buildSummaryBucketKey, type CountyRecord, type CountySummaryRecord, type EducationLevelFilter, type ManagementTypeFilter, type RegionGroup } from '../data/educationData'
+import { ACADEMIC_YEARS, buildSummaryBucketKey, type AcademicYear, type CountyRecord, type CountySummaryRecord, type EducationLevelFilter, type ManagementTypeFilter, type RegionGroup } from '../data/educationData'
 import type {
   CountyComparisonSummary,
   CountySummary,
@@ -183,6 +183,21 @@ export function getCountyComparisonSummaries(counties: CountySummaryRecord[], co
       const metrics = aggregateSummarySeries(getSummaryTrend(county.summaries, filters), filters.year)
       return { id: county.id, name: county.name, shortLabel: county.shortLabel, region: county.region, ...metrics, distribution: getCountyEducationDistribution(county, filters) }
     })
+}
+
+export function getCountyStructureDistribution(county: CountySummaryRecord, year: AcademicYear) {
+  const levels: Array<Exclude<EducationLevelFilter, '全部'>> = ['國小', '國中', '高中職', '大專院校']
+  return levels.map(level => {
+    const pub = aggregateSummarySeries(county.summaries[buildSummaryBucketKey(level, '公立')] ?? [], year)
+    const priv = aggregateSummarySeries(county.summaries[buildSummaryBucketKey(level, '私立')] ?? [], year)
+    return {
+      level,
+      publicStudents: pub.students,
+      privateStudents: priv.students,
+      publicSchools: pub.schools,
+      privateSchools: priv.schools,
+    }
+  })
 }
 
 export function getCountyRankingRows(countySummaries: CountySummary[]): RankingSummary[] {

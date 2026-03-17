@@ -1,10 +1,10 @@
 .matrix-chart-premium {
     position: relative;
     padding: 0;
-    background: var(--chart-bg);
-    border: var(--chart-border);
+    background: transparent; /* Changed to transparent to inherit from parent card or be more glass-like */
+    border: none;
     border-radius: 20px;
-    box-shadow: var(--shadow-soft);
+    box-shadow: none;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     overflow: visible;
 }
@@ -56,35 +56,46 @@
     opacity: 0.6;
 }
 
-.matrix-chart-premium .scatter-chart__quadrant--tl { fill: rgb(56 189 248 / 4%); }
-.matrix-chart-premium .scatter-chart__quadrant--tr { fill: rgb(16 185 129 / 4%); }
-.matrix-chart-premium .scatter-chart__quadrant--bl { fill: rgb(244 63 94 / 4%); }
-.matrix-chart-premium .scatter-chart__quadrant--br { fill: rgb(245 158 11 / 4%); }
+.matrix-chart-premium .scatter-chart__quadrant--tl { fill: rgb(56 189 248 / 6%); } /* Sky - Emerging */
+.matrix-chart-premium .scatter-chart__quadrant--tr { fill: rgb(16 185 129 / 6%); } /* Emerald - Growth */
+.matrix-chart-premium .scatter-chart__quadrant--bl { fill: rgb(244 63 94 / 6%); } /* Rose - Alert */
+.matrix-chart-premium .scatter-chart__quadrant--br { fill: rgb(15 23 42 / 4%); } /* Neutral - Scale */
+
+[data-theme="dark"] .matrix-chart-premium .scatter-chart__quadrant--br { fill: rgb(255 255 255 / 2%); }
 
 .matrix-chart-premium .scatter-chart__point {
-    fill: #38bdf880;
+    fill: var(--brand-primary);
+    fill-opacity: 0.6;
     stroke: #fff;
     stroke-width: 1.5;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     outline: none !important;
     cursor: pointer;
+    /* Fix flicker: Ensure scale origin is center of the circle */
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+[data-theme='dark'] .matrix-chart-premium .scatter-chart__point {
+    stroke: var(--clr-slate-900);
 }
 
 .matrix-chart-premium .scatter-chart__point:hover {
-    fill: #0ea5e9;
+    fill-opacity: 1;
     stroke: #fff;
     stroke-width: 2.5;
     transform: scale(1.1);
-    filter: drop-shadow(0 0 10px rgb(14 165 233 / 50%));
+    filter: drop-shadow(0 0 8px var(--brand-primary));
 }
 
 .matrix-chart-premium .scatter-chart__point--active {
     fill: var(--clr-accent-amber) !important;
+    fill-opacity: 1 !important;
     stroke: #fff !important;
     stroke-width: 3;
-    filter: drop-shadow(0 0 15px rgb(245 158 11 / 60%)) !important;
+    filter: drop-shadow(0 0 15px var(--clr-accent-amber));
     outline: none !important;
-    r: calc(attr(r) + 2); /* Scale up natively */
+    transform: scale(1.2);
 }
 
 .matrix-chart-premium .scatter-chart__axis {
@@ -107,24 +118,37 @@
 }
 
 .matrix-chart-premium .scatter-chart__quadrant-label {
-    fill: var(--text-dim);
-    font-size: 10px;
+    fill: var(--text-soft);
+    font-size: 11px;
     font-weight: 800;
-    opacity: 0.6;
+    opacity: 0.4;
     pointer-events: none;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.05em;
+    font-family: var(--font-heading);
 }
 
 /* Tooltip Redesign inside SVG */
 .matrix-chart-premium .chart-svg-tooltip__surface {
-    fill: var(--text-strong);
-    filter: drop-shadow(0 8px 20px rgb(0 0 0 / 15%));
+    fill: var(--clr-slate-900);
+    fill-opacity: 0.9;
+    filter: drop-shadow(0 12px 24px rgb(0 0 0 / 25%));
+}
+
+[data-theme='dark'] .matrix-chart-premium .chart-svg-tooltip__surface {
+    fill: var(--surface-card);
+    fill-opacity: 0.95;
+    stroke: var(--border-light);
 }
 
 .matrix-chart-premium .chart-svg-tooltip__title {
     fill: #fff;
-    font-size: 11px;
-    font-weight: 700;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+}
+
+[data-theme='dark'] .matrix-chart-premium .chart-svg-tooltip__title {
+    fill: var(--text-strong);
 }
 
 .chart-data-focusable {

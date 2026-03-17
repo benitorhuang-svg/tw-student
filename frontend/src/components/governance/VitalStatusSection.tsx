@@ -32,7 +32,7 @@ export const VitalStatusSection: React.FC<VitalStatusSectionProps> = ({
         <div className="school-profile-metric">
           <span>完整產製時間</span>
           <strong>{generatedAtLabel}</strong>
-          <small>{isRefreshingData ? '同步中...' : '前端已部署切片'}</small>
+          <small>{isRefreshingData ? '更新中...' : '前端已部署切片'}</small>
         </div>
         <div className="school-profile-metric" data-testid="governance-local-version">
           <span>本地版本</span>

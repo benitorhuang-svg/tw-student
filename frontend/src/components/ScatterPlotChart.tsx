@@ -135,10 +135,9 @@ function ScatterPlotChart({
 
         {/* 座標軸線與標註 */}
         {(() => {
-          const tickCount = 8
+          const tickCount = 6 // Slightly fewer for clean look
           const rawStep = rangeY / tickCount
           
-          // Round step to a "pretty" number (0.1, 0.2, 0.5, 1, 2, 5, 10, etc.)
           const magnitude = Math.pow(10, Math.floor(Math.log10(rawStep)))
           const normalized = rawStep / magnitude
           let step: number
@@ -150,13 +149,14 @@ function ScatterPlotChart({
           const ticks: number[] = []
           const start = Math.floor(minY / step) * step
           for (let v = start; v <= maxY + step * 0.1; v += step) {
-             const rounded = Math.round(v * 1000) / 1000 // Avoid float precision mess
+             const rounded = Math.round(v * 1000) / 1000
+             if (rounded === 0) continue // Zero is handled by quadrant lines
              ticks.push(rounded)
           }
 
           return ticks.map((val) => {
             const y = toY(val)
-            if (y < padding.top - 2 || y > height - padding.bottom + 2) return null
+            if (y < padding.top + 10 || y > height - padding.bottom - 10) return null
             return (
               <text key={val} className="scatter-chart__axis" x={padding.left - 12} y={y + 4} textAnchor="end">
                 {formatY(val)}
@@ -202,7 +202,7 @@ function ScatterPlotChart({
               className={`${isActive ? 'scatter-chart__point scatter-chart__point--active' : 'scatter-chart__point'} chart-data-focusable`}
               cx={toX(p.x)}
               cy={toY(p.y)}
-              r={isActive ? r + 4 : r}
+              r={isActive ? r + 1 : r} /* Increase hit-area slightly when active */
               tabIndex={0}
               role="button"
               onMouseEnter={() => onHoverPoint?.(p.id)}
@@ -223,29 +223,27 @@ function ScatterPlotChart({
           const px = toX(activePoint.x)
           const py = toY(activePoint.y)
           
-          const tooltipWidth = 92
-          const tooltipHeight = 22
+          const tooltipWidth = 100
+          const tooltipHeight = 26
           // Unify clamping logic to prevent label and box from decoupling
           const tooltipX = Math.min(Math.max(px - tooltipWidth / 2, padding.left + 4), width - padding.right - tooltipWidth - 4)
-          const tooltipY = Math.max(py - r - 28, padding.top + 4)
+          const tooltipY = Math.max(py - r - 32, padding.top + 4)
 
           return (
-            <g className="chart-svg-tooltip__group" style={{ pointerEvents: 'none' }}>
+            <g className="chart-svg-tooltip__group" style={{ pointerEvents: 'none', transition: 'all 0.3s ease' }}>
               <rect 
                 className="chart-svg-tooltip__surface" 
                 x={tooltipX} 
                 y={tooltipY} 
                 width={tooltipWidth} 
                 height={tooltipHeight} 
-                rx="6" 
-                fill="var(--chart-tooltip-fill, #ffffff)"
+                rx="8" 
               />
               <text 
                 className="chart-svg-tooltip__title" 
                 x={tooltipX + tooltipWidth / 2} 
-                y={tooltipY + 14} 
+                y={tooltipY + 17} 
                 textAnchor="middle"
-                fill="var(--chart-tooltip-ink, #000000)"
               >
                 {activePoint.label}
               </text>

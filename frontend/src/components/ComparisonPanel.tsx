@@ -79,8 +79,8 @@ function ComparisonPanel({
     <section className={combinedClasses}>
       <div className="dashboard-card__head">
         <div className="panel-heading__stack">
-          <h3 className="dashboard-card__title">縣市交叉比較</h3>
-          <p className="dashboard-card__subtitle">可同時鎖定 4 個縣市進行對照</p>
+          <h3 className="dashboard-card__title">縣市消長對照分析</h3>
+          <p className="dashboard-card__subtitle">可選取至多 4 個縣市進行同步指標對照</p>
         </div>
       </div>
 
@@ -194,11 +194,11 @@ function ComparisonPanel({
 
         <section className="scenario-library__section">
           <div className="scenario-library__header">
-            <strong>最近開啟</strong>
-            <span>{recentScenarios.length.toLocaleString('zh-TW')} 筆</span>
+            <strong>最近開啟過</strong>
+            <span>{recentScenarios.length.toLocaleString('zh-TW')} 筆數據</span>
           </div>
           <div className="scenario-library__list">
-            {recentScenarios.length === 0 ? <span className="comparison-panel__feedback">尚未建立最近清單</span> : null}
+            {recentScenarios.length === 0 ? <span className="comparison-panel__feedback">尚未有最近瀏覽記錄</span> : null}
             {recentScenarios.map((scenario) => (
               <button key={scenario.id} type="button" className={activeScenarioSnapshot?.id === scenario.id ? 'scenario-recent scenario-recent--active' : 'scenario-recent'} onClick={() => onApplyScenario(scenario)}>
                 <strong>{scenario.name}</strong>

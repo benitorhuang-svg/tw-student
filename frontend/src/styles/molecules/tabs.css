@@ -1,16 +1,22 @@
 .atlas-tabs {
-  position: relative;
+  position: sticky;
+  top: -4px; /* Adjust for parent padding if necessary */
+  z-index: 100;
   display: flex;
-  gap: 2px;
-  overflow-x: auto;
-  overscroll-behavior-x: contain;
+  align-items: center;
+  gap: 8px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  flex-shrink: 0;
   background: var(--comp-tabs-bg);
   border-radius: 12px;
-  padding: 4px;
+  padding: 6px;
   border: 1px solid var(--comp-tabs-border);
   box-shadow: var(--shadow-sm);
-  margin-bottom: 0;
+  margin-bottom: 8px;
   backdrop-filter: blur(8px);
+  height: 48px;
+  box-sizing: border-box;
 }
 
 .atlas-tabs::-webkit-scrollbar {
@@ -19,8 +25,8 @@
 
 .atlas-tabs__indicator {
   position: absolute;
-  top: 4px;
-  bottom: 4px;
+  top: 6px;
+  bottom: 6px;
   left: 0;
   background: var(--comp-tab-active-bg);
   border-radius: 8px;
@@ -39,8 +45,8 @@
   justify-content: center;
   gap: 6px;
   min-width: max-content;
-  padding: 5px 14px;
-  font-size: 0.86rem;
+  padding: 8px 16px;
+  font-size: 0.88rem;
   font-weight: 700;
   color: var(--comp-tab-text);
   background: transparent;

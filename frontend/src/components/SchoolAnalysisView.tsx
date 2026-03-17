@@ -9,6 +9,7 @@ import type { SchoolCodeAtlasEntry } from '../data/educationData'
 import { formatAcademicYear, formatDelta, formatPercent, formatStudents, type SchoolInsight } from '../lib/analytics'
 import type { AcademicYear } from '../hooks/types'
 import type { TrendPoint } from '../lib/analytics.types'
+import KPIGrid from './molecules/KPIGrid'
 
 function buildTrendMetricSeries(trend: TrendPoint[], metric: 'students' | 'delta' | 'ratio') {
   return trend.map((point, index) => {
@@ -105,12 +106,6 @@ function SchoolAnalysisView({
     [peerSchools],
   )
 
-  const schoolFactCards = [
-    { label: '目前學生數', value: `${formatStudents(selectedSchool.currentStudents)} 人`, meta: formatAcademicYear(activeYear) },
-    { label: '今年增減', value: `${formatDelta(selectedSchool.delta)} 人`, meta: formatPercent(selectedSchool.deltaRatio) },
-    { label: '範圍排名', value: `#${selectedSchoolRank}`, meta: `${scopeLabel} 共 ${sortedSchoolsCount} 所` },
-    { label: '資料狀態', value: selectedSchool.status ?? '正常', meta: selectedSchool.missingYears?.length ? `缺 ${selectedSchool.missingYears.join('、')}` : '正式資料完整' },
-  ]
 
   const schoolProfileFacts = useMemo(() => [
     { label: '學校代碼', value: selectedSchool.code },
@@ -151,15 +146,39 @@ function SchoolAnalysisView({
         </div>
 
         <div className="dashboard-card__body">
-          <div className="school-focus__meta-grid">
-            {schoolFactCards.map((card) => (
-              <article key={card.label} className="school-focus__meta-card">
-                <span>{card.label}</span>
-                <strong>{card.value}</strong>
-                <small>{card.meta}</small>
-              </article>
-            ))}
-          </div>
+          <KPIGrid 
+            className="kpi-grid--school-hero"
+            columns={4}
+            items={[
+              { 
+                label: '目前學生數', 
+                value: formatStudents(selectedSchool.currentStudents), 
+                unit: '人',
+                meta: formatAcademicYear(activeYear)
+              },
+              { 
+                label: '本年度消長', 
+                value: formatDelta(selectedSchool.delta), 
+                unit: '人',
+                trend: {
+                  value: formatPercent(selectedSchool.deltaRatio),
+                  isPositive: selectedSchool.deltaRatio > 0
+                }
+              },
+              {
+                label: '行政區排名',
+                value: `#${selectedSchoolRank}`,
+                unit: '',
+                meta: `${scopeLabel} 共 ${sortedSchoolsCount} 所`
+              },
+              {
+                label: '資料可靠度',
+                value: selectedSchool.status ?? '正常',
+                unit: '',
+                meta: selectedSchool.missingYears?.length ? `缺 ${selectedSchool.missingYears.join('、')}` : '正式資料完整'
+              }
+            ]}
+          />
         </div>
       </section>
 
@@ -167,15 +186,15 @@ function SchoolAnalysisView({
         <section className="dashboard-card school-chart-panel">
           <div className="dashboard-card__head">
             <div className="panel-heading__stack">
-              <h3 className="dashboard-card__title">校別深度數據分析</h3>
-              <p className="dashboard-card__subtitle">多維度趨勢與定位掃描</p>
+              <h3 className="dashboard-card__title">單校深度診斷分析</h3>
+              <p className="dashboard-card__subtitle">多維度消長與定位評估</p>
             </div>
             <div className="dashboard-card__actions">
               <div className="school-chart-tabs" role="tablist" aria-label="單校圖表分頁">
                 <button type="button" role="tab" aria-selected={activeChartTab === 'overview'} className={activeChartTab === 'overview' ? 'chip chip--active' : 'chip'} onClick={() => setActiveChartTab('overview')}>概況</button>
-                <button type="button" role="tab" aria-selected={activeChartTab === 'trend'} className={activeChartTab === 'trend' ? 'chip chip--active' : 'chip'} onClick={() => setActiveChartTab('trend')}>趨勢</button>
-                <button type="button" role="tab" aria-selected={activeChartTab === 'ranking'} className={activeChartTab === 'ranking' ? 'chip chip--active' : 'chip'} onClick={() => setActiveChartTab('ranking')}>排行</button>
-                <button type="button" role="tab" aria-selected={activeChartTab === 'positioning'} className={activeChartTab === 'positioning' ? 'chip chip--active' : 'chip'} onClick={() => setActiveChartTab('positioning')}>定位</button>
+                <button type="button" role="tab" aria-selected={activeChartTab === 'trend'} className={activeChartTab === 'trend' ? 'chip chip--active' : 'chip'} onClick={() => setActiveChartTab('trend')}>歷年趨勢</button>
+                <button type="button" role="tab" aria-selected={activeChartTab === 'ranking'} className={activeChartTab === 'ranking' ? 'chip chip--active' : 'chip'} onClick={() => setActiveChartTab('ranking')}>規模排名</button>
+                <button type="button" role="tab" aria-selected={activeChartTab === 'positioning'} className={activeChartTab === 'positioning' ? 'chip chip--active' : 'chip'} onClick={() => setActiveChartTab('positioning')}>同儕定位</button>
               </div>
             </div>
           </div>

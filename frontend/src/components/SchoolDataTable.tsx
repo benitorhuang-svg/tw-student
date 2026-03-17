@@ -122,72 +122,83 @@ function SchoolDataTable({ schools, selectedSchoolId, onSelectSchool, onHoverSch
   }
 
   return (
-    <section className="school-table-panel">
-      <div className="school-table-panel__toolbar">
-        <div className="toolbar-info-stack">
-          <div className="toolbar-count-pill">
-            <span className="count-value">{schools.length.toLocaleString('zh-TW')}</span>
-            <span className="count-label">所學校</span>
-          </div>
-          <div className="toolbar-sort-hint">
-            <span className="hint-label">目前排序:</span>
-            <span className="hint-value">{sortableHeaders.find((header) => header.key === sortKey)?.label ?? sortKey}</span>
-          </div>
+    <section className="school-table-panel dashboard-card">
+      <div className="dashboard-card__head">
+        <div className="panel-heading__stack">
+          <h3 className="dashboard-card__title">學校資料明細 ({scopeLabel})</h3>
+          <p className="dashboard-card__subtitle">點擊列可同步地圖定位與進入單校聚焦模式</p>
         </div>
-        <button
-          type="button"
-          className="premium-export-btn"
-          onClick={handleExport}
-          data-testid="school-export-button"
-        >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" width="14" height="14">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-            <polyline points="7 10 12 15 17 10" />
-            <line x1="12" y1="15" x2="12" y2="3" />
-          </svg>
-          <span>匯出 CSV</span>
-        </button>
-      </div>
-
-      <div className="school-table-wrap" data-testid="school-list">
-        <table className="school-table">
-          <thead>
-            <tr>
-              {sortableHeaders.map((header) => (
-                <th key={header.key}>
-                  <button type="button" className="school-table__sort" onClick={() => handleSort(header.key)}>
-                    <span>{header.label}</span>
-                    <span>{sortKey === header.key ? (sortDirection === 'asc' ? '↑' : '↓') : '↕'}</span>
-                  </button>
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {visibleSchools.map((school) => (
-              <SchoolTableRow
-                key={school.id}
-                school={school}
-                isActive={school.id === selectedSchool?.id}
-                onSelect={onSelectSchool}
-                onHover={onHoverSchool || (() => {})}
-              />
-            ))}
-          </tbody>
-        </table>
-      </div>
-
-      {hasMore && (
-        <div className="school-table-panel__loadmore">
-          <button type="button" className="ghost-button" onClick={() => setVisibleCount((c) => c + PAGE_SIZE)}>
-            載入更多（已顯示 {visibleCount} / {sortedSchools.length}）
+        <div className="dashboard-card__actions">
+          <button
+            type="button"
+            className="premium-export-btn"
+            onClick={handleExport}
+            data-testid="school-export-button"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" width="14" height="14">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+            <span>匯出 CSV</span>
           </button>
         </div>
-      )}
+      </div>
 
-      <div className="school-table-panel__footer">
-        <span>顯示 {visibleSchools.length} / {sortedSchools.length} 所</span>
-        <span>點擊列可同步地圖定位與更新分析狀態</span>
+      <div className="dashboard-card__body">
+        <div className="school-table-panel__toolbar">
+          <div className="toolbar-info-stack">
+            <div className="toolbar-count-pill">
+              <span className="count-value">{schools.length.toLocaleString('zh-TW')}</span>
+              <span className="count-label">所學校</span>
+            </div>
+            <div className="toolbar-sort-hint">
+              <span className="hint-label">目前排序:</span>
+              <span className="hint-value">{sortableHeaders.find((header) => header.key === sortKey)?.label ?? sortKey}</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="school-table-wrap" data-testid="school-list">
+          <table className="school-table">
+            <thead>
+              <tr>
+                {sortableHeaders.map((header) => (
+                  <th key={header.key}>
+                    <button type="button" className="school-table__sort" onClick={() => handleSort(header.key)}>
+                      <span>{header.label}</span>
+                      <span>{sortKey === header.key ? (sortDirection === 'asc' ? '↑' : '↓') : '↕'}</span>
+                    </button>
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {visibleSchools.map((school) => (
+                <SchoolTableRow
+                  key={school.id}
+                  school={school}
+                  isActive={school.id === selectedSchool?.id}
+                  onSelect={onSelectSchool}
+                  onHover={onHoverSchool || (() => {})}
+                />
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        {hasMore && (
+          <div className="school-table-panel__loadmore">
+            <button type="button" className="ghost-button" onClick={() => setVisibleCount((c) => c + PAGE_SIZE)}>
+              載入更多（已顯示 {visibleCount} / {sortedSchools.length}）
+            </button>
+          </div>
+        )}
+
+        <div className="school-table-panel__footer">
+          <span>顯示 {visibleSchools.length} / {sortedSchools.length} 所</span>
+          <span>資料定期更新，來源於教育部統計處</span>
+        </div>
       </div>
     </section>
   )

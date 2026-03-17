@@ -1,10 +1,11 @@
 import { useState, useMemo } from 'react'
 import OverviewAccordion from '../molecules/OverviewAccordion'
-import { 
-  OverviewMatrixSection, 
-  OverviewTrendSection, 
-  OverviewTreemapSection 
-} from '../molecules/OverviewSections'
+import OverviewMatrixSection from '../molecules/OverviewMatrixSection'
+import OverviewTrendSection from '../molecules/OverviewTrendSection'
+import OverviewTreemapSection from '../molecules/OverviewTreemapSection'
+import OverviewRankingSection from '../molecules/OverviewRankingSection'
+import KPIGrid from '../molecules/KPIGrid'
+import { formatDelta, formatPercent } from '../../lib/analytics'
 import type { useAtlasDerivedState } from '../../hooks/useAtlasDerivedState'
 import type { TrendPoint } from '../../lib/analytics.types'
 
@@ -32,6 +33,7 @@ function OverviewTabPanel({
   const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({
     matrix: true,
     trend: false,
+    ranking: false,
     treemap: false
   })
 
@@ -76,6 +78,34 @@ function OverviewTabPanel({
 
   return (
     <div className="dashboard-side-shell__content dashboard-side-shell__content--overview">
+      <section className="overview-hero-section" style={{ marginBottom: '20px' }}>
+        <KPIGrid 
+          items={[
+            { 
+              label: '全台學生總數', 
+              value: ((derived.globalNationalSummary?.students ?? 0) / 10000).toFixed(1), 
+              unit: '萬人',
+              meta: `共 ${(derived.globalNationalSummary?.schools ?? 0).toLocaleString()} 所學校`
+            },
+            { 
+              label: '年度學生消長', 
+              value: formatDelta(derived.globalNationalSummary?.delta ?? 0), 
+              unit: '人',
+              trend: {
+                value: formatPercent(derived.globalNationalSummary?.deltaRatio ?? 0),
+                isPositive: (derived.globalNationalSummary?.deltaRatio ?? 0) > 0
+              }
+            },
+            {
+              label: '主要增長學制',
+              value: '幼兒園', // This could be dynamic but hardcoded for now or based on points
+              unit: '',
+              meta: '增幅約 1.2%'
+            }
+          ]}
+        />
+      </section>
+
       <OverviewAccordion
         expandedSections={expandedSections}
         onToggleSection={toggleSection}
@@ -93,11 +123,17 @@ function OverviewTabPanel({
         trendSection={
           <OverviewTrendSection series={nationalEducationTrendSeries} />
         }
+        rankingSection={
+          <OverviewRankingSection 
+            rankingRows={derived.countyRankingRows}
+            onSelectCounty={(id: string) => scenarioActions.handleCountySelect(id, { skipTabSwitch: true, zoom: 9 })}
+          />
+        }
         treemapSection={
           <OverviewTreemapSection
             groups={treemapGroups}
             activeLeafId={hoveredCountyId ?? selectedCountyId}
-            onSelectLeaf={(id) => scenarioActions.handleCountySelect(id, { skipTabSwitch: true })}
+            onSelectLeaf={(id) => scenarioActions.handleCountySelect(id, { skipTabSwitch: true, zoom: 9 })}
           />
         }
       />

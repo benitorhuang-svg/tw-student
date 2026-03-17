@@ -61,7 +61,9 @@ export function SchoolDetailFocus(props: {
       {selectedSchool ? (
         <SchoolNotesView selectedSchool={selectedSchool} />
       ) : (
-        <div className="empty-state">請先從左側列表選擇學校，以進入深度分析模式。</div>
+        <div className="dashboard-card" style={{ padding: '40px', textAlign: 'center' }}>
+          <div className="empty-state">請先從左側列表選擇學校，以進入深度分析模式。</div>
+        </div>
       )}
     </div>
   )

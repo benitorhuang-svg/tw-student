@@ -25,7 +25,7 @@
 .dashboard-header__left {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 8px; /* Reduced from 12px */
     flex: 1;
     min-width: 0; /* Enable shrinking */
     flex-wrap: nowrap;
@@ -38,7 +38,7 @@
 
 .dashboard-header__logo h1 {
     margin: 0;
-    font-size: 1.15rem; /* Reduced from 1.4rem for single-line fit */
+    font-size: 1.05rem; /* Reduced from 1.15rem */
     font-weight: 800;
     font-family: var(--font-heading);
     letter-spacing: -0.025em;
@@ -162,10 +162,10 @@
 .dashboard-header__year-stepper {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 10px; /* Reduced from 16px */
     border-left: 1px solid var(--border-light);
-    margin-left: 16px;
-    padding-left: 16px;
+    margin-left: 12px; /* Reduced from 16px */
+    padding-left: 12px; /* Reduced from 16px */
 }
 
 .stepper-controls {
@@ -257,7 +257,7 @@
     background: linear-gradient(135deg, rgb(59 130 246 / 10%) 0%, rgb(59 130 246 / 5%) 100%);
     color: var(--map-accent, #3b82f6);
     border-radius: 999px;
-    font-size: 0.9rem;
+    font-size: 0.86rem; /* Reduced from 0.9rem */
     font-weight: 800;
     font-family: var(--font-heading);
     border: 1px solid rgb(59 130 246 / 20%);

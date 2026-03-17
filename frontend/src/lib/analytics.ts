@@ -15,5 +15,6 @@ export {
   getRegionalComparisonRows,
   getCountyComparisonSummaries,
   getCountyRankingRows,
+  getCountyStructureDistribution,
 } from './analytics.summary'
 export { getSchoolInsights } from './analytics.schools'

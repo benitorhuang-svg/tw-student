@@ -51,8 +51,8 @@ export function useAtlasNavigationActions({
       setSelectedCountyId(null)
       setSelectedTownshipId(null)
       setSelectedSchoolId(null)
-      if (options?.zoom) {
-        setMapZoom((curr) => Math.max(curr ?? 0, options.zoom!))
+      if (options?.zoom != null) {
+        setMapZoom(options.zoom)
       }
       clearCountyDetailError()
       setMapResetToken((current) => current + 1)
@@ -65,7 +65,7 @@ export function useAtlasNavigationActions({
       setSelectedTownshipId(null)
       setSelectedSchoolId(null)
       if (options?.zoom != null) {
-        setMapZoom((curr) => Math.max(curr ?? 0, options.zoom!))
+        setMapZoom(options.zoom)
       } else {
         setMapZoom((curr) => Math.max(curr ?? 0, MAP_TOWNSHIP_ZOOM))
       }
@@ -94,7 +94,7 @@ export function useAtlasNavigationActions({
     startTransition(() => {
       setSelectedTownshipId(townshipId)
       setSelectedSchoolId(null)
-      setMapZoom((curr) => Math.max(curr ?? 0, options?.zoom ?? MAP_TOWNSHIP_FOCUS_ZOOM))
+      setMapZoom(options?.zoom ?? MAP_TOWNSHIP_FOCUS_ZOOM)
     })
 
     if (!options?.skipTabSwitch) {

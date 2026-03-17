@@ -20,6 +20,7 @@ type ButterflyChartProps = {
   className?: string
   flat?: boolean
   showHeader?: boolean
+  hideTooltip?: boolean
 }
 
 function ButterflyChart({
@@ -31,6 +32,7 @@ function ButterflyChart({
   className,
   flat,
   showHeader = false,
+  hideTooltip = false,
 }: ButterflyChartProps) {
   const { ref, isVisible } = useChartAnimation()
   const [detailItemId, setDetailItemId] = useState<string | null>(null)
@@ -118,7 +120,7 @@ function ButterflyChart({
                 <div className="butterfly-chart__fill butterfly-chart__fill--right" style={{ width: isVisible ? rightWidth : '0%' }} />
                 <span className="butterfly-chart__value butterfly-chart__value--right">{formatStudents(item.rightValue)}</span>
               </div>
-              {isDetailed ? (
+              {!hideTooltip && isDetailed ? (
                 <div className="chart-tooltip chart-tooltip--visible butterfly-chart__tooltip" role="note" aria-live="polite">
                   <div className="chart-tooltip__title">{item.label}</div>
                   <div className="chart-tooltip__row">

@@ -16,8 +16,8 @@ export const GovernanceFooter: React.FC<GovernanceFooterProps> = ({
       <div className="sync-status">
         <span className={isRefreshingData ? 'sync-indicator sync-indicator--active' : 'sync-indicator'}></span>
         <div className="sync-info">
-          <p>{isRefreshingData ? '正在同步雲端資料庫...' : '資料已與雲端同步'}</p>
-          <small>{refreshStatus || `最後檢查: ${new Date().toLocaleTimeString('zh-TW')}`}</small>
+          <p>{isRefreshingData ? '' : '資料已與雲端同步'}</p>
+          <small>{isRefreshingData ? '更新中...' : (refreshStatus || `最後檢查: ${new Date().toLocaleTimeString('zh-TW')}`)}</small>
         </div>
       </div>
       <button
@@ -31,7 +31,7 @@ export const GovernanceFooter: React.FC<GovernanceFooterProps> = ({
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" width="18" height="18">
               <path d="M21 12a9 9 0 1 1-6.219-8.56" />
             </svg>
-            同步中...
+            更新中...
           </span>
         ) : (
           <>

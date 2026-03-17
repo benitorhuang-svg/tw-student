@@ -16,11 +16,11 @@ const AnomalyPanel = lazy(() => import('./organisms/AnomalyPanel'))
 const SchoolDetailPanel = lazy(() => import('./organisms/SchoolDetailPanel'))
 
 const TAB_META: Record<AtlasTab, { title: string; description: string }> = {
-  overview: { title: '概況總覽', description: '先看全台與目前範圍的核心指標，再決定要不要往區域或單校下鑽。' },
-  regional: { title: '區域分析', description: '右側集中呈現比較卡片、異常治理與區域差異，讓地圖回到純粹的篩選角色。' },
-  county: { title: '縣市分析', description: '聚焦單一縣市後，以鄉鎮排名與分布掌握縣內教育版圖，再往各校層級下鑽。' },
-  schools: { title: '學校工作台', description: '只在這裡呈現學校表格、單校趨勢與正式註記，維持分析焦點單純。' },
-  'school-focus': { title: '單校分析', description: '單一學校分頁專注呈現趨勢、比較基準、資料註記與外部連結。' },
+  overview: { title: '概況總覽', description: '掌握全台整體及目前選取範圍的核心指標，作為下鑽區域或單校分析的起點。' },
+  regional: { title: '區域消長', description: '集中呈現特定區域的縣市差異、交叉比較指標與異常數據偵測。' },
+  county: { title: '縣市分析', description: '聚焦選定縣市內的鄉鎮排名與規模分佈，掌握縣內各區教育版圖位移。' },
+  schools: { title: '校別概況', description: '條列目前範圍內的學校細節清單，並提供多校間的趨勢對照與數據註記。' },
+  'school-focus': { title: '單校診斷', description: '針對特定學校進行深度診斷，包含歷年走勢、同儕定位與正式數據備註。' },
 }
 
 type AtlasAnalysisPanelProps = {
@@ -212,8 +212,8 @@ function AtlasAnalysisPanel({
           </div>
           <div className="analysis-overview__side">
             <InsightPanel
-              title={selectedCountyName ? `${selectedCountyName} 鄉鎮排行` : '全台縣市排行'}
-              subtitle={selectedCountyName ? '點擊鄉鎮即可同步切換' : '點擊縣市即可同步縮小左側地圖範圍'}
+              title={selectedCountyName ? `${selectedCountyName} 鄉鎮規模排名` : '全台縣市規模排名'}
+              subtitle={selectedCountyName ? '點擊鄉鎮即可同步定位' : '點擊縣市即可縮小左側地圖觀察範圍'}
               rows={topRows}
               activeRowId={activeTownshipId ?? activeCountyId}
               onSelectRow={(rowId) => {
@@ -232,7 +232,7 @@ function AtlasAnalysisPanel({
 
                 onPrefetchCounty(null)
               }}
-              emptyMessage="目前條件沒有可顯示的排行資料。"
+              emptyMessage="目前條件下尚無符合選取範圍的排名資料。"
             />
 
             <OfflineMetricsPanel
