@@ -1,5 +1,3 @@
-import { useMemo } from 'react'
-
 import { SchoolDetailFocus } from './SchoolDetailFocus'
 import { SchoolDetailWorkspace } from './SchoolDetailWorkspace'
 import type { SchoolInsight } from '../../lib/analytics'
@@ -15,13 +13,14 @@ type SchoolDetailPanelProps = {
   isCountyDetailLoading: boolean
   schoolInsights: SchoolInsight[]
   selectedSchool: SchoolInsight | null
+  schoolPanelTitle?: string
   panelMode: 'workspace' | 'focus'
   selectedTownshipSummary: ScopeSummaryLabel
   selectedCountySummary: ScopeSummaryLabel
   onSetWorkbenchView: (view: SchoolWorkbenchView) => void
+  hoveredSchoolId?: string | null
   onHoverSchool?: (schoolId: string | null) => void
   onSelectSchool: (schoolId: string | null) => void
-  hoveredSchoolId?: string | null
 }
 
 function SchoolDetailPanel({
@@ -30,20 +29,17 @@ function SchoolDetailPanel({
   isCountyDetailLoading,
   schoolInsights,
   selectedSchool,
+  schoolPanelTitle,
   panelMode,
   selectedTownshipSummary,
   selectedCountySummary,
   onSetWorkbenchView,
+  hoveredSchoolId,
   onHoverSchool,
   onSelectSchool,
-  hoveredSchoolId,
 }: SchoolDetailPanelProps) {
-  const sortedSchools = useMemo(
-    () => [...schoolInsights].sort((left, right) => right.currentStudents - left.currentStudents),
-    [schoolInsights],
-  )
   
-  const scopeLabel = selectedTownshipSummary?.label ?? selectedCountySummary?.label ?? selectedCountyName ?? '目前範圍'
+  const scopeLabel = selectedTownshipSummary?.label ?? selectedCountySummary?.label ?? schoolPanelTitle ?? selectedCountyName ?? '目前範圍'
 
   if (!selectedCountyName) {
     return (
@@ -92,10 +88,9 @@ function SchoolDetailPanel({
           scopeLabel={scopeLabel} 
           selectedSchool={selectedSchool} 
           schoolInsights={schoolInsights} 
-          sortedSchools={sortedSchools} 
+          hoveredSchoolId={hoveredSchoolId}
           onHoverSchool={onHoverSchool} 
           onSelectSchool={onSelectSchool}
-          hoveredSchoolId={hoveredSchoolId}
         />
       ) : (
         <SchoolDetailFocus 

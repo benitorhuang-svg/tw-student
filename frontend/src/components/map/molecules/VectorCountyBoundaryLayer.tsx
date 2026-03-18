@@ -5,6 +5,37 @@ import { useMap } from 'react-leaflet'
 import type { CountySummary } from '../../../lib/analytics'
 import { choroplethColor, choroplethOpacity, buildHoverPreviewHtml } from '../mapStyles'
 
+type CountyTileProperties = {
+  countyId?: string
+}
+
+type VectorTileFeature = {
+  properties?: CountyTileProperties
+}
+
+type VectorTileMouseEvent = L.LeafletMouseEvent & {
+  layer: VectorTileFeature
+}
+
+type VectorGridLayer = L.Layer & {
+  setFeatureStyle: (id: string, style: L.PathOptions) => void
+  on: (event: 'mouseover' | 'mouseout' | 'click', handler: (event: VectorTileMouseEvent) => void) => VectorGridLayer
+}
+
+type VectorGridNamespace = {
+  protobuf: (
+    url: string,
+    options: {
+      pane: string
+      vectorTileLayerStyles: {
+        county: (props: CountyTileProperties) => L.PathOptions
+      }
+      interactive: boolean
+      getFeatureId: (feature: VectorTileFeature) => string | undefined
+    }
+  ) => VectorGridLayer
+}
+
 export type CountyBoundaryLayerProps = {
   theme: 'light' | 'dark'
   baseUrl: string
@@ -31,7 +62,7 @@ const VectorCountyBoundaryLayer = memo(({
   visible,
 }: CountyBoundaryLayerProps) => {
   const map = useMap()
-  const layerRef = useRef<any>(null)
+  const layerRef = useRef<VectorGridLayer | null>(null)
   const tooltipRef = useRef<L.Tooltip | null>(null)
 
   // Stable references for event handlers
@@ -52,11 +83,12 @@ const VectorCountyBoundaryLayer = memo(({
       className: 'atlas-map-tooltip atlas-map-tooltip--preview',
     })
 
-    const vectorGrid = (L as any).vectorGrid
+    const vectorGrid = (L as typeof L & { vectorGrid: VectorGridNamespace }).vectorGrid
     const layer = vectorGrid.protobuf(`${baseUrl}/county/{z}/{x}/{y}.pbf`, {
       pane: 'county-pane',
       vectorTileLayerStyles: {
-        county: (props: any) => {
+        county: (props) => {
+          if (!props.countyId) return { opacity: 0, fillOpacity: 0, weight: 0 }
           const summary = handlersRef.current.countyLookup.get(props.countyId)
           if (!summary || summary.filteredOut) return { opacity: 0, fillOpacity: 0, weight: 0 }
           return {
@@ -68,23 +100,24 @@ const VectorCountyBoundaryLayer = memo(({
         },
       },
       interactive: true,
-      getFeatureId: (f: any) => f.properties?.countyId,
+      getFeatureId: (feature) => feature.properties?.countyId,
     })
-
-    if (visible) layer.addTo(map)
     layerRef.current = layer
 
-    layer.on('mouseover', (e: any) => {
-      const summary = handlersRef.current.countyLookup.get(e.layer.properties.countyId)
+    layer.on('mouseover', (event) => {
+      const countyId = event.layer.properties?.countyId
+      if (!countyId) return
+
+      const summary = handlersRef.current.countyLookup.get(countyId)
       if (summary && tooltipRef.current) {
-        tooltipRef.current.setLatLng(e.latlng).setContent(buildHoverPreviewHtml(summary.name, summary.students))
+        tooltipRef.current.setLatLng(event.latlng).setContent(buildHoverPreviewHtml(summary.name, summary.students))
         if (!map.hasLayer(tooltipRef.current)) tooltipRef.current.addTo(map)
       }
     })
     layer.on('mouseout', () => tooltipRef.current?.remove())
-    layer.on('click', (e: any) => {
-      L.DomEvent.stop(e.originalEvent)
-      const id = e.layer.properties.countyId
+    layer.on('click', (event) => {
+      L.DomEvent.stop(event.originalEvent)
+      const id = event.layer.properties?.countyId
       if (id) handlersRef.current.onSelectCounty(id, { skipTabSwitch: true })
     })
 
@@ -92,7 +125,7 @@ const VectorCountyBoundaryLayer = memo(({
       layer.remove()
       tooltipRef.current?.remove()
     }
-  }, [map, baseUrl, theme]) // Only recreate on major changes
+  }, [map, baseUrl, theme])
 
   useEffect(() => {
     if (!layerRef.current) return

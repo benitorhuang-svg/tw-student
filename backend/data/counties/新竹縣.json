@@ -8160,7 +8160,7 @@
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 0
+              "students": 2009
             },
             {
               "year": 108,
@@ -8194,7 +8194,9 @@
           "studentCompositions": [
             {
               "year": 107,
-              "totalStudents": 0,
+              "totalStudents": 2009,
+              "maleStudents": 1091,
+              "femaleStudents": 918,
               "bands": []
             },
             {
@@ -8275,7 +8277,7 @@
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 0
+              "students": 2023
             },
             {
               "year": 108,
@@ -8309,7 +8311,9 @@
           "studentCompositions": [
             {
               "year": 107,
-              "totalStudents": 0,
+              "totalStudents": 2023,
+              "maleStudents": 1041,
+              "femaleStudents": 982,
               "bands": []
             },
             {
@@ -15341,7 +15345,7 @@
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 0
+              "students": 821
             },
             {
               "year": 108,
@@ -15375,7 +15379,9 @@
           "studentCompositions": [
             {
               "year": 107,
-              "totalStudents": 0,
+              "totalStudents": 821,
+              "maleStudents": 385,
+              "femaleStudents": 436,
               "bands": []
             },
             {
@@ -15445,9 +15451,9 @@
           "legacyTownshipId": "新竹縣:竹北市",
           "educationLevel": "國中",
           "managementType": "私立",
-          "address": "",
-          "phone": "",
-          "website": "",
+          "address": "新竹縣竹北市中正西路15號",
+          "phone": "(03)5552020",
+          "website": "http://www.ymsh.hcc.edu.tw",
           "profileUrl": "",
           "coordinates": {
             "longitude": 121.003993,
@@ -15755,7 +15761,7 @@
             "county": "新竹縣",
             "township": "竹北市",
             "level": "國中",
-            "address": "",
+            "address": "新竹縣竹北市中正西路15號",
             "countyCode": "10004",
             "townCode": "10004010",
             "longitude": 121.003993,
@@ -17032,9 +17038,9 @@
           "legacyTownshipId": "新竹縣:竹北市",
           "educationLevel": "國中",
           "managementType": "公立",
-          "address": "",
-          "phone": "",
-          "website": "",
+          "address": "新竹縣竹北市嘉興路356號",
+          "phone": "(03)5503824",
+          "website": "https://ljsh.hcc.edu.tw/",
           "profileUrl": "",
           "coordinates": {
             "longitude": 121.032328,
@@ -17342,7 +17348,7 @@
             "county": "新竹縣",
             "township": "竹北市",
             "level": "國中",
-            "address": "",
+            "address": "新竹縣竹北市嘉興路356號",
             "countyCode": "10004",
             "townCode": "10004010",
             "longitude": 121.032328,
@@ -20893,7 +20899,7 @@
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 0
+              "students": 1605
             },
             {
               "year": 108,
@@ -20927,7 +20933,9 @@
           "studentCompositions": [
             {
               "year": 107,
-              "totalStudents": 0,
+              "totalStudents": 1605,
+              "maleStudents": 984,
+              "femaleStudents": 621,
               "bands": []
             },
             {
@@ -22026,7 +22034,7 @@
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 0
+              "students": 1703
             },
             {
               "year": 108,
@@ -22060,7 +22068,9 @@
           "studentCompositions": [
             {
               "year": 107,
-              "totalStudents": 0,
+              "totalStudents": 1703,
+              "maleStudents": 877,
+              "femaleStudents": 826,
               "bands": []
             },
             {
@@ -26452,9 +26462,9 @@
           "legacyTownshipId": "新竹縣:竹東鎮",
           "educationLevel": "國中",
           "managementType": "私立",
-          "address": "",
-          "phone": "",
-          "website": "",
+          "address": "新竹縣竹東鎮東峰路343號",
+          "phone": "(03)5961232",
+          "website": "http://www.ttsh.hcc.edu.tw",
           "profileUrl": "",
           "coordinates": {
             "longitude": 121.098742,
@@ -26762,7 +26772,7 @@
             "county": "新竹縣",
             "township": "竹東鎮",
             "level": "國中",
-            "address": "",
+            "address": "新竹縣竹東鎮東峰路343號",
             "countyCode": "10004",
             "townCode": "10004020",
             "longitude": 121.098742,
@@ -27878,20 +27888,28 @@
                   "femaleStudents": 222
                 },
                 {
-                  "id": "修-四技",
-                  "label": "修 四技",
-                  "category": "degree",
-                  "totalStudents": 360,
-                  "maleStudents": 248,
-                  "femaleStudents": 112
-                },
-                {
                   "id": "日-二技",
                   "label": "日 二技",
                   "category": "degree",
                   "totalStudents": 41,
                   "maleStudents": 24,
                   "femaleStudents": 17
+                },
+                {
+                  "id": "日-五專",
+                  "label": "日 五專",
+                  "category": "degree",
+                  "totalStudents": 518,
+                  "maleStudents": 307,
+                  "femaleStudents": 211
+                },
+                {
+                  "id": "修-四技",
+                  "label": "修 四技",
+                  "category": "degree",
+                  "totalStudents": 360,
+                  "maleStudents": 248,
+                  "femaleStudents": 112
                 },
                 {
                   "id": "修-二技",
@@ -27908,14 +27926,6 @@
                   "totalStudents": 66,
                   "maleStudents": 48,
                   "femaleStudents": 18
-                },
-                {
-                  "id": "日-五專",
-                  "label": "日 五專",
-                  "category": "degree",
-                  "totalStudents": 518,
-                  "maleStudents": 307,
-                  "femaleStudents": 211
                 }
               ]
             },
@@ -27998,14 +28008,6 @@
                   "femaleStudents": 86
                 },
                 {
-                  "id": "修-四技",
-                  "label": "修 四技",
-                  "category": "degree",
-                  "totalStudents": 145,
-                  "maleStudents": 80,
-                  "femaleStudents": 65
-                },
-                {
                   "id": "日-二技",
                   "label": "日 二技",
                   "category": "degree",
@@ -28014,20 +28016,28 @@
                   "femaleStudents": 5
                 },
                 {
-                  "id": "修-二技",
-                  "label": "修 二技",
-                  "category": "degree",
-                  "totalStudents": 58,
-                  "maleStudents": 58,
-                  "femaleStudents": 0
-                },
-                {
                   "id": "日-五專",
                   "label": "日 五專",
                   "category": "degree",
                   "totalStudents": 272,
                   "maleStudents": 144,
                   "femaleStudents": 128
+                },
+                {
+                  "id": "修-四技",
+                  "label": "修 四技",
+                  "category": "degree",
+                  "totalStudents": 145,
+                  "maleStudents": 80,
+                  "femaleStudents": 65
+                },
+                {
+                  "id": "修-二技",
+                  "label": "修 二技",
+                  "category": "degree",
+                  "totalStudents": 58,
+                  "maleStudents": 58,
+                  "femaleStudents": 0
                 }
               ]
             },
@@ -28046,20 +28056,20 @@
                   "femaleStudents": 65
                 },
                 {
-                  "id": "修-四技",
-                  "label": "修 四技",
-                  "category": "degree",
-                  "totalStudents": 114,
-                  "maleStudents": 61,
-                  "femaleStudents": 53
-                },
-                {
                   "id": "日-五專",
                   "label": "日 五專",
                   "category": "degree",
                   "totalStudents": 203,
                   "maleStudents": 106,
                   "femaleStudents": 97
+                },
+                {
+                  "id": "修-四技",
+                  "label": "修 四技",
+                  "category": "degree",
+                  "totalStudents": 114,
+                  "maleStudents": 61,
+                  "femaleStudents": 53
                 }
               ]
             },
@@ -28078,20 +28088,20 @@
                   "femaleStudents": 113
                 },
                 {
-                  "id": "修-四技",
-                  "label": "修 四技",
-                  "category": "degree",
-                  "totalStudents": 101,
-                  "maleStudents": 49,
-                  "femaleStudents": 52
-                },
-                {
                   "id": "日-五專",
                   "label": "日 五專",
                   "category": "degree",
                   "totalStudents": 114,
                   "maleStudents": 59,
                   "femaleStudents": 55
+                },
+                {
+                  "id": "修-四技",
+                  "label": "修 四技",
+                  "category": "degree",
+                  "totalStudents": 101,
+                  "maleStudents": 49,
+                  "femaleStudents": 52
                 }
               ]
             },
@@ -28110,20 +28120,20 @@
                   "femaleStudents": 166
                 },
                 {
-                  "id": "修-四技",
-                  "label": "修 四技",
-                  "category": "degree",
-                  "totalStudents": 122,
-                  "maleStudents": 75,
-                  "femaleStudents": 47
-                },
-                {
                   "id": "日-五專",
                   "label": "日 五專",
                   "category": "degree",
                   "totalStudents": 101,
                   "maleStudents": 44,
                   "femaleStudents": 57
+                },
+                {
+                  "id": "修-四技",
+                  "label": "修 四技",
+                  "category": "degree",
+                  "totalStudents": 122,
+                  "maleStudents": 75,
+                  "femaleStudents": 47
                 }
               ]
             },
@@ -28142,20 +28152,20 @@
                   "femaleStudents": 320
                 },
                 {
-                  "id": "修-四技",
-                  "label": "修 四技",
-                  "category": "degree",
-                  "totalStudents": 196,
-                  "maleStudents": 146,
-                  "femaleStudents": 50
-                },
-                {
                   "id": "日-五專",
                   "label": "日 五專",
                   "category": "degree",
                   "totalStudents": 80,
                   "maleStudents": 34,
                   "femaleStudents": 46
+                },
+                {
+                  "id": "修-四技",
+                  "label": "修 四技",
+                  "category": "degree",
+                  "totalStudents": 196,
+                  "maleStudents": 146,
+                  "femaleStudents": 50
                 }
               ]
             },
@@ -32428,13 +32438,13 @@
           "legacyTownshipId": "新竹縣:湖口鄉",
           "educationLevel": "國中",
           "managementType": "公立",
-          "address": "",
-          "phone": "",
-          "website": "",
+          "address": "新竹縣湖口鄉中正路二段263巷21號",
+          "phone": "(03)5690772",
+          "website": "http://www.hkhs.hcc.edu.tw",
           "profileUrl": "",
           "coordinates": {
-            "longitude": 121.05444,
-            "latitude": 24.89028
+            "longitude": 121.051839,
+            "latitude": 24.890784
           },
           "yearlyStudents": [
             {
@@ -32544,7 +32554,7 @@
           "dataNotes": [
             {
               "type": "其他",
-              "message": "正式統計資料存在但 GIS 點位缺失，座標改採學校名稱與行政區 POI 解點。",
+              "message": "正式統計資料存在但 GIS 點位缺失，座標改採校址解點。",
               "severity": "info"
             }
           ],
@@ -32555,14 +32565,14 @@
             "county": "新竹縣",
             "township": "湖口鄉",
             "level": "國中",
-            "address": "",
+            "address": "新竹縣湖口鄉中正路二段263巷21號",
             "countyCode": "10004",
             "townCode": "10004050",
-            "longitude": 121.05444,
-            "latitude": 24.89028,
+            "longitude": 121.051839,
+            "latitude": 24.890784,
             "coordinateResolution": "地址解點",
-            "coordinateMatchType": "POI",
-            "coordinateMatchScore": 90.13
+            "coordinateMatchType": "PointAddress",
+            "coordinateMatchScore": 100
           }
         },
         {
@@ -33098,7 +33108,7 @@
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 0
+              "students": 626
             },
             {
               "year": 108,
@@ -33132,7 +33142,9 @@
           "studentCompositions": [
             {
               "year": 107,
-              "totalStudents": 0,
+              "totalStudents": 626,
+              "maleStudents": 313,
+              "femaleStudents": 313,
               "bands": []
             },
             {
@@ -35872,9 +35884,9 @@
           "legacyTownshipId": "新竹縣:湖口鄉",
           "educationLevel": "國中",
           "managementType": "公立",
-          "address": "",
-          "phone": "",
-          "website": "",
+          "address": "新竹縣湖口鄉達生路601號",
+          "phone": "(03)5992588",
+          "website": "https://hkhs.hcc.edu.tw",
           "profileUrl": "",
           "coordinates": {
             "longitude": 121.053145,
@@ -36164,7 +36176,7 @@
             "county": "新竹縣",
             "township": "湖口鄉",
             "level": "國中",
-            "address": "",
+            "address": "新竹縣湖口鄉達生路601號",
             "countyCode": "10004",
             "townCode": "10004050",
             "longitude": 121.053145,
@@ -36216,7 +36228,7 @@
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 0
+              "students": 1252
             },
             {
               "year": 108,
@@ -36250,7 +36262,9 @@
           "studentCompositions": [
             {
               "year": 107,
-              "totalStudents": 0,
+              "totalStudents": 1252,
+              "maleStudents": 1010,
+              "femaleStudents": 242,
               "bands": []
             },
             {
@@ -38164,9 +38178,9 @@
           "legacyTownshipId": "新竹縣:新埔鎮",
           "educationLevel": "國中",
           "managementType": "私立",
-          "address": "",
-          "phone": "",
-          "website": "",
+          "address": "新竹縣新埔鎮楊新路一段40號",
+          "phone": "(03)5882520",
+          "website": "http://www.savs.hcc.edu.tw",
           "profileUrl": "",
           "coordinates": {
             "longitude": 121.082102,
@@ -38447,7 +38461,7 @@
             "county": "新竹縣",
             "township": "新埔鎮",
             "level": "國中",
-            "address": "",
+            "address": "新竹縣新埔鎮楊新路一段40號",
             "countyCode": "10004",
             "townCode": "10004030",
             "longitude": 121.082102,
@@ -42225,20 +42239,28 @@
                   "femaleStudents": 88
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 330,
-                  "maleStudents": 257,
-                  "femaleStudents": 73
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
                   "totalStudents": 8340,
                   "maleStudents": 5152,
                   "femaleStudents": 3188
+                },
+                {
+                  "id": "日-二專",
+                  "label": "日 二專",
+                  "category": "degree",
+                  "totalStudents": 8,
+                  "maleStudents": 7,
+                  "femaleStudents": 1
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 330,
+                  "maleStudents": 257,
+                  "femaleStudents": 73
                 },
                 {
                   "id": "修-四技",
@@ -42255,14 +42277,6 @@
                   "totalStudents": 110,
                   "maleStudents": 61,
                   "femaleStudents": 49
-                },
-                {
-                  "id": "日-二專",
-                  "label": "日 二專",
-                  "category": "degree",
-                  "totalStudents": 8,
-                  "maleStudents": 7,
-                  "femaleStudents": 1
                 },
                 {
                   "id": "修-二專",
@@ -42361,28 +42375,12 @@
                   "femaleStudents": 77
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 286,
-                  "maleStudents": 208,
-                  "femaleStudents": 78
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
                   "totalStudents": 7433,
                   "maleStudents": 4536,
                   "femaleStudents": 2897
-                },
-                {
-                  "id": "修-四技",
-                  "label": "修 四技",
-                  "category": "degree",
-                  "totalStudents": 2979,
-                  "maleStudents": 1903,
-                  "femaleStudents": 1076
                 },
                 {
                   "id": "日-二技",
@@ -42393,20 +42391,36 @@
                   "femaleStudents": 11
                 },
                 {
-                  "id": "修-二技",
-                  "label": "修 二技",
-                  "category": "degree",
-                  "totalStudents": 693,
-                  "maleStudents": 327,
-                  "femaleStudents": 366
-                },
-                {
                   "id": "日-二專",
                   "label": "日 二專",
                   "category": "degree",
                   "totalStudents": 37,
                   "maleStudents": 35,
                   "femaleStudents": 2
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 286,
+                  "maleStudents": 208,
+                  "femaleStudents": 78
+                },
+                {
+                  "id": "修-四技",
+                  "label": "修 四技",
+                  "category": "degree",
+                  "totalStudents": 2979,
+                  "maleStudents": 1903,
+                  "femaleStudents": 1076
+                },
+                {
+                  "id": "修-二技",
+                  "label": "修 二技",
+                  "category": "degree",
+                  "totalStudents": 693,
+                  "maleStudents": 327,
+                  "femaleStudents": 366
                 },
                 {
                   "id": "修-二專",
@@ -42433,28 +42447,12 @@
                   "femaleStudents": 111
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 280,
-                  "maleStudents": 195,
-                  "femaleStudents": 85
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
                   "totalStudents": 7072,
                   "maleStudents": 4263,
                   "femaleStudents": 2809
-                },
-                {
-                  "id": "修-四技",
-                  "label": "修 四技",
-                  "category": "degree",
-                  "totalStudents": 2798,
-                  "maleStudents": 1768,
-                  "femaleStudents": 1030
                 },
                 {
                   "id": "日-二技",
@@ -42465,20 +42463,36 @@
                   "femaleStudents": 27
                 },
                 {
-                  "id": "修-二技",
-                  "label": "修 二技",
-                  "category": "degree",
-                  "totalStudents": 654,
-                  "maleStudents": 339,
-                  "femaleStudents": 315
-                },
-                {
                   "id": "日-二專",
                   "label": "日 二專",
                   "category": "degree",
                   "totalStudents": 21,
                   "maleStudents": 21,
                   "femaleStudents": 0
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 280,
+                  "maleStudents": 195,
+                  "femaleStudents": 85
+                },
+                {
+                  "id": "修-四技",
+                  "label": "修 四技",
+                  "category": "degree",
+                  "totalStudents": 2798,
+                  "maleStudents": 1768,
+                  "femaleStudents": 1030
+                },
+                {
+                  "id": "修-二技",
+                  "label": "修 二技",
+                  "category": "degree",
+                  "totalStudents": 654,
+                  "maleStudents": 339,
+                  "femaleStudents": 315
                 },
                 {
                   "id": "修-二專",
@@ -42505,28 +42519,12 @@
                   "femaleStudents": 146
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 304,
-                  "maleStudents": 199,
-                  "femaleStudents": 105
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
                   "totalStudents": 6523,
                   "maleStudents": 3909,
                   "femaleStudents": 2614
-                },
-                {
-                  "id": "修-四技",
-                  "label": "修 四技",
-                  "category": "degree",
-                  "totalStudents": 2410,
-                  "maleStudents": 1515,
-                  "femaleStudents": 895
                 },
                 {
                   "id": "日-二技",
@@ -42537,20 +42535,36 @@
                   "femaleStudents": 16
                 },
                 {
-                  "id": "修-二技",
-                  "label": "修 二技",
-                  "category": "degree",
-                  "totalStudents": 707,
-                  "maleStudents": 389,
-                  "femaleStudents": 318
-                },
-                {
                   "id": "日-二專",
                   "label": "日 二專",
                   "category": "degree",
                   "totalStudents": 23,
                   "maleStudents": 21,
                   "femaleStudents": 2
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 304,
+                  "maleStudents": 199,
+                  "femaleStudents": 105
+                },
+                {
+                  "id": "修-四技",
+                  "label": "修 四技",
+                  "category": "degree",
+                  "totalStudents": 2410,
+                  "maleStudents": 1515,
+                  "femaleStudents": 895
+                },
+                {
+                  "id": "修-二技",
+                  "label": "修 二技",
+                  "category": "degree",
+                  "totalStudents": 707,
+                  "maleStudents": 389,
+                  "femaleStudents": 318
                 },
                 {
                   "id": "修-二專",
@@ -42585,28 +42599,12 @@
                   "femaleStudents": 167
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 320,
-                  "maleStudents": 195,
-                  "femaleStudents": 125
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
                   "totalStudents": 6022,
                   "maleStudents": 3596,
                   "femaleStudents": 2426
-                },
-                {
-                  "id": "修-四技",
-                  "label": "修 四技",
-                  "category": "degree",
-                  "totalStudents": 2191,
-                  "maleStudents": 1405,
-                  "femaleStudents": 786
                 },
                 {
                   "id": "日-二技",
@@ -42617,20 +42615,36 @@
                   "femaleStudents": 21
                 },
                 {
-                  "id": "修-二技",
-                  "label": "修 二技",
-                  "category": "degree",
-                  "totalStudents": 723,
-                  "maleStudents": 377,
-                  "femaleStudents": 346
-                },
-                {
                   "id": "日-二專",
                   "label": "日 二專",
                   "category": "degree",
                   "totalStudents": 27,
                   "maleStudents": 24,
                   "femaleStudents": 3
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 320,
+                  "maleStudents": 195,
+                  "femaleStudents": 125
+                },
+                {
+                  "id": "修-四技",
+                  "label": "修 四技",
+                  "category": "degree",
+                  "totalStudents": 2191,
+                  "maleStudents": 1405,
+                  "femaleStudents": 786
+                },
+                {
+                  "id": "修-二技",
+                  "label": "修 二技",
+                  "category": "degree",
+                  "totalStudents": 723,
+                  "maleStudents": 377,
+                  "femaleStudents": 346
                 },
                 {
                   "id": "修-二專",
@@ -42665,28 +42679,12 @@
                   "femaleStudents": 167
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 305,
-                  "maleStudents": 186,
-                  "femaleStudents": 119
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
                   "totalStudents": 6220,
                   "maleStudents": 3671,
                   "femaleStudents": 2549
-                },
-                {
-                  "id": "修-四技",
-                  "label": "修 四技",
-                  "category": "degree",
-                  "totalStudents": 2020,
-                  "maleStudents": 1308,
-                  "femaleStudents": 712
                 },
                 {
                   "id": "日-二技",
@@ -42697,20 +42695,36 @@
                   "femaleStudents": 15
                 },
                 {
-                  "id": "修-二技",
-                  "label": "修 二技",
-                  "category": "degree",
-                  "totalStudents": 800,
-                  "maleStudents": 423,
-                  "femaleStudents": 377
-                },
-                {
                   "id": "日-二專",
                   "label": "日 二專",
                   "category": "degree",
                   "totalStudents": 13,
                   "maleStudents": 12,
                   "femaleStudents": 1
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 305,
+                  "maleStudents": 186,
+                  "femaleStudents": 119
+                },
+                {
+                  "id": "修-四技",
+                  "label": "修 四技",
+                  "category": "degree",
+                  "totalStudents": 2020,
+                  "maleStudents": 1308,
+                  "femaleStudents": 712
+                },
+                {
+                  "id": "修-二技",
+                  "label": "修 二技",
+                  "category": "degree",
+                  "totalStudents": 800,
+                  "maleStudents": 423,
+                  "femaleStudents": 377
                 },
                 {
                   "id": "修-二專",
@@ -43849,7 +43863,7 @@
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 0
+              "students": 1428
             },
             {
               "year": 108,
@@ -43883,7 +43897,9 @@
           "studentCompositions": [
             {
               "year": 107,
-              "totalStudents": 0,
+              "totalStudents": 1428,
+              "maleStudents": 791,
+              "femaleStudents": 637,
               "bands": []
             },
             {
@@ -44790,7 +44806,7 @@
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 0
+              "students": 907
             },
             {
               "year": 108,
@@ -44824,7 +44840,9 @@
           "studentCompositions": [
             {
               "year": 107,
-              "totalStudents": 0,
+              "totalStudents": 907,
+              "maleStudents": 517,
+              "femaleStudents": 390,
               "bands": []
             },
             {
@@ -44894,9 +44912,9 @@
           "legacyTownshipId": "新竹縣:新豐鄉",
           "educationLevel": "國中",
           "managementType": "私立",
-          "address": "",
-          "phone": "",
-          "website": "",
+          "address": "新竹縣新豐鄉員山133號",
+          "phone": "(03)5592158",
+          "website": "http://www.ydvs.hcc.edu.tw/",
           "profileUrl": "",
           "coordinates": {
             "longitude": 121.00512,
@@ -45204,7 +45222,7 @@
             "county": "新竹縣",
             "township": "新豐鄉",
             "level": "國中",
-            "address": "",
+            "address": "新竹縣新豐鄉員山133號",
             "countyCode": "10004",
             "townCode": "10004060",
             "longitude": 121.00512,
@@ -45542,9 +45560,9 @@
           "legacyTownshipId": "新竹縣:新豐鄉",
           "educationLevel": "國中",
           "managementType": "私立",
-          "address": "",
-          "phone": "",
-          "website": "",
+          "address": "新竹縣新豐鄉忠信街178號",
+          "phone": "(03)5595775",
+          "website": "https://www.chhs.hcc.edu.tw/",
           "profileUrl": "",
           "coordinates": {
             "longitude": 121.002864,
@@ -45852,7 +45870,7 @@
             "county": "新竹縣",
             "township": "新豐鄉",
             "level": "國中",
-            "address": "",
+            "address": "新竹縣新豐鄉忠信街178號",
             "countyCode": "10004",
             "townCode": "10004060",
             "longitude": 121.002864,
@@ -51438,7 +51456,7 @@
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 0
+              "students": 924
             },
             {
               "year": 108,
@@ -51472,7 +51490,9 @@
           "studentCompositions": [
             {
               "year": 107,
-              "totalStudents": 0,
+              "totalStudents": 924,
+              "maleStudents": 473,
+              "femaleStudents": 451,
               "bands": []
             },
             {

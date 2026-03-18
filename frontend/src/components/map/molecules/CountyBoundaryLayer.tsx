@@ -12,11 +12,13 @@ interface CountyBoundaryLayerProps {
   hoveredFeatureId: string | null
   highlightedCountyId: string | null
   theme: 'light' | 'dark'
-  showMarkers: boolean
+  showMarkers?: boolean
   activeTownshipId: string | null
   onSelectCounty: (countyId: string, options?: { skipTabSwitch?: boolean }) => void
   onHoverCounty: (countyId: string | null) => void
   setHoveredFeatureId: (id: string | null) => void
+  showMapTooltip?: (latlng: L.LatLng, content: string) => void
+  hideMapTooltip?: () => void
 }
 
 export function CountyBoundaryLayer({
@@ -27,10 +29,12 @@ export function CountyBoundaryLayer({
   highlightedCountyId,
   activeTownshipId,
   theme,
-  showMarkers,
+  showMarkers = false,
   onSelectCounty,
   onHoverCounty,
   setHoveredFeatureId,
+  showMapTooltip,
+  hideMapTooltip,
 }: CountyBoundaryLayerProps) {
   const previewTipOpts = {
     direction: 'top' as const,
@@ -93,11 +97,15 @@ export function CountyBoundaryLayer({
             }
             setHoveredFeatureId(properties.countyId)
             onHoverCounty(properties.countyId)
+            if (summary && showMapTooltip) {
+              showMapTooltip(e.latlng, buildHoverPreviewHtml(summary.name, summary.students))
+            }
             layer.openTooltip?.()
           },
           mouseout: () => {
             setHoveredFeatureId(null)
             onHoverCounty(null)
+            hideMapTooltip?.()
             layer.closeTooltip?.()
           },
         })

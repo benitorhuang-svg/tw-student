@@ -1,4 +1,4 @@
-import { useMemo, useState, useRef } from 'react'
+import { useMemo, useState } from 'react'
 import { useMap, useMapEvents } from 'react-leaflet'
 import type { CountyBucketDataset } from '../../../data/educationData'
 import type { SchoolMapPoint } from '../types'
@@ -17,12 +17,13 @@ export type ClusterPoint = {
 
 export function useSchoolClustering(
   schoolPoints: SchoolMapPoint[],
-  _countyBuckets: CountyBucketDataset | null
+  countyBuckets: CountyBucketDataset | null
 ) {
   const map = useMap()
-  const renderedBoundsRef = useRef<L.LatLngBounds>(map.getBounds().pad(1.0))
   const [zoom, setZoom] = useState(() => map.getZoom())
-  const [bounds, setBounds] = useState(() => renderedBoundsRef.current)
+  const [bounds, setBounds] = useState(() => map.getBounds().pad(1.0))
+
+  void countyBuckets
 
   useMapEvents({
     moveend: () => {
@@ -36,15 +37,6 @@ export function useSchoolClustering(
   })
 
   // Bucket indexing is kept for interface stability but not used
-  const bucketIndex = useMemo(
-    () => ({
-      5: [],
-      6: [],
-      7: [],
-    }),
-    []
-  )
-
   const visiblePoints = useMemo(
     () => schoolPoints.filter((p) => bounds.contains([p.latitude, p.longitude])),
     [schoolPoints, bounds]
@@ -63,7 +55,7 @@ export function useSchoolClustering(
       schoolNames: [point.name],
       geohash: point.id,
     }))
-  }, [bounds, bucketIndex, visiblePoints, zoom])
+  }, [visiblePoints])
 
   return {
     clusteredPoints,

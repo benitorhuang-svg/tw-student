@@ -2,6 +2,8 @@ import { EDUCATION_LEVELS, MANAGEMENT_TYPES, buildSummaryBucketKey } from '../ed
 import type { 
   AcademicYear, 
   EducationSummaryDataset, 
+  EducationLevelFilter,
+  ManagementTypeFilter,
   SummaryBucketKey, 
   SummaryTrendRecord, 
   TrendRecord,
@@ -35,7 +37,10 @@ export function buildSummaryMap(rows: SqlValueRow[]) {
   ) as Record<SummaryBucketKey, SummaryTrendRecord[]>
 
   rows.forEach((row) => {
-    const bucketKey = buildSummaryBucketKey(row.education_level as any, row.management_type as any)
+    const bucketKey = buildSummaryBucketKey(
+      String(row.education_level) as EducationLevelFilter,
+      String(row.management_type) as ManagementTypeFilter,
+    )
     summaries[bucketKey].push({
       year: Number(row.year) as AcademicYear,
       students: Number(row.students),

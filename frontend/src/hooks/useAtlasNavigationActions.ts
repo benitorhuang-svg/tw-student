@@ -1,7 +1,8 @@
 import { type Dispatch, type SetStateAction, type TransitionStartFunction } from 'react'
 import type { 
   RegionGroupFilter, 
-  EducationSummaryDataset 
+  EducationSummaryDataset,
+  SchoolCodeEntry,
 } from '../data/educationData'
 import { MAP_TOWNSHIP_ZOOM, MAP_TOWNSHIP_FOCUS_ZOOM } from '../lib/constants'
 import type { AtlasTab } from './useAtlasQueryState'
@@ -110,17 +111,18 @@ export function useAtlasNavigationActions({
       setSelectedSchoolId(nextId)
       
       if (nextId && summaryDataset?.schoolCodeIndex) {
-        const entry = Object.values(summaryDataset.schoolCodeIndex).find(e => 
-          (e as any).schoolIds?.includes(nextId)
+        const entry = Object.values(summaryDataset.schoolCodeIndex).find((value) => 
+          value.schoolIds?.includes(nextId)
         )
         if (entry) {
-          const cid = (entry as any).countyId ?? (entry as any).countyCode ?? null
-          const tid = (entry as any).townshipId ?? (entry as any).townCode ?? null
+          const schoolEntry: SchoolCodeEntry = entry
+          const cid = schoolEntry.countyId ?? schoolEntry.countyCode ?? null
+          const tid = schoolEntry.townshipId ?? schoolEntry.townCode ?? null
           if (cid) setSelectedCountyId(cid)
           if (tid) setSelectedTownshipId(tid)
-          if ((entry as any).latitude && (entry as any).longitude) {
-            setMapLat((entry as any).latitude)
-            setMapLon((entry as any).longitude)
+          if (schoolEntry.latitude && schoolEntry.longitude) {
+            setMapLat(schoolEntry.latitude)
+            setMapLon(schoolEntry.longitude)
             setMapZoom((curr) => Math.max(curr ?? 0, MAP_TOWNSHIP_FOCUS_ZOOM))
           }
         }

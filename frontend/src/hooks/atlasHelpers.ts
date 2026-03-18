@@ -161,7 +161,7 @@ export function buildDesktopTabItems(
   selectedSchool: { name: string } | null,
 ): Array<{ id: AtlasTab; label: string }> {
   return [
-    { id: 'overview', label: '全台總覽' },
+    { id: 'overview', label: '概況總覽' },
     { id: 'county', label: `縣市分析${selectedCounty ? `_${selectedCounty.shortLabel}` : ''}` },
     { id: 'schools', label: `鄉鎮分析${selectedTownshipSummary ? `_${selectedTownshipSummary.label}` : ''}` },
     { id: 'school-focus', label: `校別概況${selectedSchool ? `_${selectedSchool.name}` : ''}` }

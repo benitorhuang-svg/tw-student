@@ -8,7 +8,7 @@ type SegmentedOption = {
 type SegmentedPillProps = {
   options: ReadonlyArray<SegmentedOption>
   currentValue: string
-  onSelect: (value: any) => void
+  onSelect: (value: string) => void
   icon: React.ReactNode
   className?: string
 }

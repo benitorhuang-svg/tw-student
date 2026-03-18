@@ -12,9 +12,11 @@ interface TownshipBoundaryLayerProps {
   hoveredFeatureId: string | null
   highlightedTownshipId: string | null
   theme: 'light' | 'dark'
-  showMarkers: boolean
+  showMarkers?: boolean
   onSelectTownship: (townshipId: string, options?: { skipTabSwitch?: boolean }) => void
   setHoveredFeatureId: (id: string | null) => void
+  showMapTooltip?: (latlng: L.LatLng, content: string) => void
+  hideMapTooltip?: () => void
 }
 
 export function TownshipBoundaryLayer({
@@ -24,9 +26,11 @@ export function TownshipBoundaryLayer({
   hoveredFeatureId,
   highlightedTownshipId,
   theme,
-  showMarkers,
+  showMarkers = false,
   onSelectTownship,
   setHoveredFeatureId,
+  showMapTooltip,
+  hideMapTooltip,
 }: TownshipBoundaryLayerProps) {
   const previewTipOpts = { 
     direction: 'top' as const, 
@@ -80,10 +84,14 @@ export function TownshipBoundaryLayer({
               e.target.setStyle({ cursor: 'pointer' })
             }
             setHoveredFeatureId(properties.townId)
+            if (summary && showMapTooltip) {
+              showMapTooltip(e.latlng, buildHoverPreviewHtml(summary.label, summary.students))
+            }
             layer.openTooltip?.()
           },
           mouseout: () => {
             setHoveredFeatureId(null)
+            hideMapTooltip?.()
             layer.closeTooltip?.()
           },
         })

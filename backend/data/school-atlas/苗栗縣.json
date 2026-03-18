@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-11T23:49:21.039Z",
+  "generatedAt": "2026-03-17T13:50:49.065Z",
   "years": [
     107,
     108,
@@ -104,20 +104,20 @@
                   "femaleStudents": 124
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 6,
-                  "maleStudents": 2,
-                  "femaleStudents": 4
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 5901,
                   "maleStudents": 4022,
                   "femaleStudents": 1879
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 6,
+                  "maleStudents": 2,
+                  "femaleStudents": 4
                 },
                 {
                   "id": "進-學士",
@@ -200,20 +200,20 @@
                   "femaleStudents": 111
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 38,
-                  "maleStudents": 19,
-                  "femaleStudents": 19
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 5965,
                   "maleStudents": 4094,
                   "femaleStudents": 1871
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 38,
+                  "maleStudents": 19,
+                  "femaleStudents": 19
                 },
                 {
                   "id": "進-學士",
@@ -248,20 +248,20 @@
                   "femaleStudents": 118
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 42,
-                  "maleStudents": 26,
-                  "femaleStudents": 16
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 6104,
                   "maleStudents": 4202,
                   "femaleStudents": 1902
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 42,
+                  "maleStudents": 26,
+                  "femaleStudents": 16
                 },
                 {
                   "id": "進-學士",
@@ -296,20 +296,20 @@
                   "femaleStudents": 123
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 43,
-                  "maleStudents": 22,
-                  "femaleStudents": 21
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 6122,
                   "maleStudents": 4264,
                   "femaleStudents": 1858
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 43,
+                  "maleStudents": 22,
+                  "femaleStudents": 21
                 },
                 {
                   "id": "進-學士",
@@ -344,20 +344,20 @@
                   "femaleStudents": 134
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 49,
-                  "maleStudents": 31,
-                  "femaleStudents": 18
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 6179,
                   "maleStudents": 4324,
                   "femaleStudents": 1855
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 49,
+                  "maleStudents": 31,
+                  "femaleStudents": 18
                 },
                 {
                   "id": "進-學士",
@@ -392,20 +392,20 @@
                   "femaleStudents": 143
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 57,
-                  "maleStudents": 32,
-                  "femaleStudents": 25
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 6067,
                   "maleStudents": 4249,
                   "femaleStudents": 1818
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 57,
+                  "maleStudents": 32,
+                  "femaleStudents": 25
                 },
                 {
                   "id": "進-學士",
@@ -502,7 +502,7 @@
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 0
+              "students": 1513
             },
             {
               "year": 108,
@@ -536,7 +536,9 @@
           "studentCompositions": [
             {
               "year": 107,
-              "totalStudents": 0,
+              "totalStudents": 1513,
+              "maleStudents": 693,
+              "femaleStudents": 820,
               "bands": []
             },
             {
@@ -625,7 +627,7 @@
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 0
+              "students": 1611
             },
             {
               "year": 108,
@@ -659,7 +661,9 @@
           "studentCompositions": [
             {
               "year": 107,
-              "totalStudents": 0,
+              "totalStudents": 1611,
+              "maleStudents": 822,
+              "femaleStudents": 789,
               "bands": []
             },
             {
@@ -742,9 +746,9 @@
             "longitude": 120.832199,
             "latitude": 24.312704
           },
-          "address": "",
-          "phone": "",
-          "website": "",
+          "address": "苗栗縣卓蘭鎮老庄161號",
+          "phone": "(04)25892007",
+          "website": "https://www.jlsh.mlc.edu.tw/",
           "profileUrl": "",
           "yearlyStudents": [
             {
@@ -1065,7 +1069,7 @@
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 0
+              "students": 973
             },
             {
               "year": 108,
@@ -1099,7 +1103,9 @@
           "studentCompositions": [
             {
               "year": 107,
-              "totalStudents": 0,
+              "totalStudents": 973,
+              "maleStudents": 330,
+              "femaleStudents": 643,
               "bands": []
             },
             {
@@ -1188,7 +1194,7 @@
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 0
+              "students": 1236
             },
             {
               "year": 108,
@@ -1222,7 +1228,9 @@
           "studentCompositions": [
             {
               "year": 107,
-              "totalStudents": 0,
+              "totalStudents": 1236,
+              "maleStudents": 535,
+              "femaleStudents": 701,
               "bands": []
             },
             {
@@ -1311,7 +1319,7 @@
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 0
+              "students": 895
             },
             {
               "year": 108,
@@ -1345,7 +1353,9 @@
           "studentCompositions": [
             {
               "year": 107,
-              "totalStudents": 0,
+              "totalStudents": 895,
+              "maleStudents": 636,
+              "femaleStudents": 259,
               "bands": []
             },
             {
@@ -1434,7 +1444,7 @@
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 0
+              "students": 1945
             },
             {
               "year": 108,
@@ -1468,7 +1478,9 @@
           "studentCompositions": [
             {
               "year": 107,
-              "totalStudents": 0,
+              "totalStudents": 1945,
+              "maleStudents": 1448,
+              "femaleStudents": 497,
               "bands": []
             },
             {
@@ -1557,7 +1569,7 @@
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 0
+              "students": 1111
             },
             {
               "year": 108,
@@ -1591,7 +1603,9 @@
           "studentCompositions": [
             {
               "year": 107,
-              "totalStudents": 0,
+              "totalStudents": 1111,
+              "maleStudents": 362,
+              "femaleStudents": 749,
               "bands": []
             },
             {
@@ -1674,9 +1688,9 @@
             "longitude": 120.882951,
             "latitude": 24.700688
           },
-          "address": "",
-          "phone": "",
-          "website": "",
+          "address": "苗栗縣竹南鎮公義路245號",
+          "phone": "(037)622009",
+          "website": "http://www.cish.mlc.edu.tw",
           "profileUrl": "",
           "yearlyStudents": [
             {
@@ -1997,7 +2011,7 @@
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 0
+              "students": 1692
             },
             {
               "year": 108,
@@ -2031,7 +2045,9 @@
           "studentCompositions": [
             {
               "year": 107,
-              "totalStudents": 0,
+              "totalStudents": 1692,
+              "maleStudents": 959,
+              "femaleStudents": 733,
               "bands": []
             },
             {
@@ -2114,9 +2130,9 @@
             "longitude": 120.814633,
             "latitude": 24.559372
           },
-          "address": "",
-          "phone": "",
-          "website": "",
+          "address": "苗栗縣苗栗市福麗里至公路251號",
+          "phone": "(037)353270",
+          "website": "http://www.ctsh.mlc.edu.tw",
           "profileUrl": "",
           "yearlyStudents": [
             {
@@ -2437,7 +2453,7 @@
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 0
+              "students": 1205
             },
             {
               "year": 108,
@@ -2471,7 +2487,9 @@
           "studentCompositions": [
             {
               "year": 107,
-              "totalStudents": 0,
+              "totalStudents": 1205,
+              "maleStudents": 639,
+              "femaleStudents": 566,
               "bands": []
             },
             {
@@ -2555,9 +2573,9 @@
             "longitude": 120.862623,
             "latitude": 24.30507
           },
-          "address": "",
-          "phone": "",
-          "website": "",
+          "address": "苗栗縣卓蘭鎮內灣141之3號",
+          "phone": "(04)25896909",
+          "website": "https://holistic.org.tw/",
           "profileUrl": "",
           "yearlyStudents": [
             {
@@ -3063,9 +3081,9 @@
             "longitude": 120.862623,
             "latitude": 24.30507
           },
-          "address": "",
-          "phone": "",
-          "website": "",
+          "address": "苗栗縣卓蘭鎮內灣141之3號",
+          "phone": "(04)25896909",
+          "website": "https://holistic.org.tw/",
           "profileUrl": "",
           "yearlyStudents": [
             {
@@ -3386,7 +3404,7 @@
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 0
+              "students": 38
             },
             {
               "year": 108,
@@ -3420,7 +3438,9 @@
           "studentCompositions": [
             {
               "year": 107,
-              "totalStudents": 0,
+              "totalStudents": 38,
+              "maleStudents": 26,
+              "femaleStudents": 12,
               "bands": []
             },
             {
@@ -3509,7 +3529,7 @@
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 0
+              "students": 1082
             },
             {
               "year": 108,
@@ -3543,7 +3563,9 @@
           "studentCompositions": [
             {
               "year": 107,
-              "totalStudents": 0,
+              "totalStudents": 1082,
+              "maleStudents": 672,
+              "femaleStudents": 410,
               "bands": []
             },
             {
@@ -3632,7 +3654,7 @@
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 0
+              "students": 493
             },
             {
               "year": 108,
@@ -3666,7 +3688,9 @@
           "studentCompositions": [
             {
               "year": 107,
-              "totalStudents": 0,
+              "totalStudents": 493,
+              "maleStudents": 226,
+              "femaleStudents": 267,
               "bands": []
             },
             {
@@ -3749,9 +3773,9 @@
             "longitude": 120.7659,
             "latitude": 24.40991
           },
-          "address": "",
-          "phone": "",
-          "website": "",
+          "address": "苗栗縣三義鄉廣盛村11鄰122號",
+          "phone": "(037)872015",
+          "website": "https://sjh.mlc.edu.tw/Home/Index.php",
           "profileUrl": "",
           "yearlyStudents": [
             {
@@ -4072,7 +4096,7 @@
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 0
+              "students": 399
             },
             {
               "year": 108,
@@ -4106,7 +4130,9 @@
           "studentCompositions": [
             {
               "year": 107,
-              "totalStudents": 0,
+              "totalStudents": 399,
+              "maleStudents": 167,
+              "femaleStudents": 232,
               "bands": []
             },
             {
@@ -4189,9 +4215,9 @@
             "longitude": 120.663931,
             "latitude": 24.43777
           },
-          "address": "",
-          "phone": "",
-          "website": "",
+          "address": "苗栗縣苑裡鎮客庄里1鄰2號",
+          "phone": "(037)861042",
+          "website": "https://yljh.mlc.edu.tw/Home/Index.php",
           "profileUrl": "",
           "yearlyStudents": [
             {
@@ -4512,7 +4538,7 @@
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 0
+              "students": 618
             },
             {
               "year": 108,
@@ -4546,7 +4572,9 @@
           "studentCompositions": [
             {
               "year": 107,
-              "totalStudents": 0,
+              "totalStudents": 618,
+              "maleStudents": 282,
+              "femaleStudents": 336,
               "bands": []
             },
             {
@@ -4629,9 +4657,9 @@
             "longitude": 120.936476,
             "latitude": 24.686023
           },
-          "address": "",
-          "phone": "",
-          "website": "",
+          "address": "苗栗縣頭份市中正一路401號",
+          "phone": "(037)663403",
+          "website": "https://shhs.mlc.edu.tw/Home/Index.php",
           "profileUrl": "",
           "yearlyStudents": [
             {
@@ -4952,7 +4980,7 @@
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 0
+              "students": 555
             },
             {
               "year": 108,
@@ -4986,7 +5014,9 @@
           "studentCompositions": [
             {
               "year": 107,
-              "totalStudents": 0,
+              "totalStudents": 555,
+              "maleStudents": 260,
+              "femaleStudents": 295,
               "bands": []
             },
             {
@@ -5069,9 +5099,9 @@
             "longitude": 120.89539,
             "latitude": 24.707162
           },
-          "address": "",
-          "phone": "",
-          "website": "",
+          "address": "苗栗縣竹南鎮大埔里六鄰公義路890號",
+          "phone": "(037)580566",
+          "website": "https://dtsh.mlc.edu.tw/Home/Index.php",
           "profileUrl": "",
           "yearlyStudents": [
             {
@@ -5392,7 +5422,7 @@
           "yearlyStudents": [
             {
               "year": 107,
-              "students": 0
+              "students": 394
             },
             {
               "year": 108,
@@ -5426,7 +5456,9 @@
           "studentCompositions": [
             {
               "year": 107,
-              "totalStudents": 0,
+              "totalStudents": 394,
+              "maleStudents": 195,
+              "femaleStudents": 199,
               "bands": []
             },
             {
@@ -74069,14 +74101,6 @@
                   "femaleStudents": 92
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 205,
-                  "maleStudents": 115,
-                  "femaleStudents": 90
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
@@ -74085,20 +74109,28 @@
                   "femaleStudents": 1281
                 },
                 {
-                  "id": "修-四技",
-                  "label": "修 四技",
-                  "category": "degree",
-                  "totalStudents": 1174,
-                  "maleStudents": 692,
-                  "femaleStudents": 482
-                },
-                {
                   "id": "日-二技",
                   "label": "日 二技",
                   "category": "degree",
                   "totalStudents": 1,
                   "maleStudents": 0,
                   "femaleStudents": 1
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 205,
+                  "maleStudents": 115,
+                  "femaleStudents": 90
+                },
+                {
+                  "id": "修-四技",
+                  "label": "修 四技",
+                  "category": "degree",
+                  "totalStudents": 1174,
+                  "maleStudents": 692,
+                  "femaleStudents": 482
                 },
                 {
                   "id": "修-二技",
@@ -74181,20 +74213,20 @@
                   "femaleStudents": 75
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 220,
-                  "maleStudents": 139,
-                  "femaleStudents": 81
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
                   "totalStudents": 1710,
                   "maleStudents": 856,
                   "femaleStudents": 854
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 220,
+                  "maleStudents": 139,
+                  "femaleStudents": 81
                 },
                 {
                   "id": "修-四技",
@@ -74229,20 +74261,20 @@
                   "femaleStudents": 92
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 161,
-                  "maleStudents": 89,
-                  "femaleStudents": 72
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
                   "totalStudents": 1558,
                   "maleStudents": 796,
                   "femaleStudents": 762
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 161,
+                  "maleStudents": 89,
+                  "femaleStudents": 72
                 },
                 {
                   "id": "修-四技",
@@ -74277,20 +74309,20 @@
                   "femaleStudents": 92
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 175,
-                  "maleStudents": 95,
-                  "femaleStudents": 80
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
                   "totalStudents": 1262,
                   "maleStudents": 673,
                   "femaleStudents": 589
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 175,
+                  "maleStudents": 95,
+                  "femaleStudents": 80
                 },
                 {
                   "id": "修-四技",
@@ -74325,20 +74357,20 @@
                   "femaleStudents": 70
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 186,
-                  "maleStudents": 115,
-                  "femaleStudents": 71
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
                   "totalStudents": 1106,
                   "maleStudents": 530,
                   "femaleStudents": 576
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 186,
+                  "maleStudents": 115,
+                  "femaleStudents": 71
                 },
                 {
                   "id": "修-四技",
@@ -74373,20 +74405,20 @@
                   "femaleStudents": 61
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 151,
-                  "maleStudents": 78,
-                  "femaleStudents": 73
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
                   "totalStudents": 1589,
                   "maleStudents": 772,
                   "femaleStudents": 817
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 151,
+                  "maleStudents": 78,
+                  "femaleStudents": 73
                 },
                 {
                   "id": "修-四技",
@@ -74530,20 +74562,20 @@
               "femaleStudents": 4915,
               "bands": [
                 {
-                  "id": "修-二專",
-                  "label": "修 二專",
-                  "category": "degree",
-                  "totalStudents": 352,
-                  "maleStudents": 202,
-                  "femaleStudents": 150
-                },
-                {
                   "id": "日-五專",
                   "label": "日 五專",
                   "category": "degree",
                   "totalStudents": 6073,
                   "maleStudents": 1308,
                   "femaleStudents": 4765
+                },
+                {
+                  "id": "修-二專",
+                  "label": "修 二專",
+                  "category": "degree",
+                  "totalStudents": 352,
+                  "maleStudents": 202,
+                  "femaleStudents": 150
                 }
               ]
             },
@@ -74578,20 +74610,20 @@
               "femaleStudents": 4969,
               "bands": [
                 {
-                  "id": "修-二專",
-                  "label": "修 二專",
-                  "category": "degree",
-                  "totalStudents": 398,
-                  "maleStudents": 188,
-                  "femaleStudents": 210
-                },
-                {
                   "id": "日-五專",
                   "label": "日 五專",
                   "category": "degree",
                   "totalStudents": 6117,
                   "maleStudents": 1358,
                   "femaleStudents": 4759
+                },
+                {
+                  "id": "修-二專",
+                  "label": "修 二專",
+                  "category": "degree",
+                  "totalStudents": 398,
+                  "maleStudents": 188,
+                  "femaleStudents": 210
                 }
               ]
             },
@@ -74602,20 +74634,20 @@
               "femaleStudents": 4841,
               "bands": [
                 {
-                  "id": "修-二專",
-                  "label": "修 二專",
-                  "category": "degree",
-                  "totalStudents": 416,
-                  "maleStudents": 212,
-                  "femaleStudents": 204
-                },
-                {
                   "id": "日-五專",
                   "label": "日 五專",
                   "category": "degree",
                   "totalStudents": 5970,
                   "maleStudents": 1333,
                   "femaleStudents": 4637
+                },
+                {
+                  "id": "修-二專",
+                  "label": "修 二專",
+                  "category": "degree",
+                  "totalStudents": 416,
+                  "maleStudents": 212,
+                  "femaleStudents": 204
                 }
               ]
             },
@@ -74626,20 +74658,20 @@
               "femaleStudents": 4666,
               "bands": [
                 {
-                  "id": "修-二專",
-                  "label": "修 二專",
-                  "category": "degree",
-                  "totalStudents": 374,
-                  "maleStudents": 182,
-                  "femaleStudents": 192
-                },
-                {
                   "id": "日-五專",
                   "label": "日 五專",
                   "category": "degree",
                   "totalStudents": 5782,
                   "maleStudents": 1308,
                   "femaleStudents": 4474
+                },
+                {
+                  "id": "修-二專",
+                  "label": "修 二專",
+                  "category": "degree",
+                  "totalStudents": 374,
+                  "maleStudents": 182,
+                  "femaleStudents": 192
                 }
               ]
             },
@@ -74650,20 +74682,20 @@
               "femaleStudents": 4429,
               "bands": [
                 {
-                  "id": "修-二專",
-                  "label": "修 二專",
-                  "category": "degree",
-                  "totalStudents": 377,
-                  "maleStudents": 185,
-                  "femaleStudents": 192
-                },
-                {
                   "id": "日-五專",
                   "label": "日 五專",
                   "category": "degree",
                   "totalStudents": 5465,
                   "maleStudents": 1228,
                   "femaleStudents": 4237
+                },
+                {
+                  "id": "修-二專",
+                  "label": "修 二專",
+                  "category": "degree",
+                  "totalStudents": 377,
+                  "maleStudents": 185,
+                  "femaleStudents": 192
                 }
               ]
             },
@@ -74674,20 +74706,20 @@
               "femaleStudents": 4119,
               "bands": [
                 {
-                  "id": "修-二專",
-                  "label": "修 二專",
-                  "category": "degree",
-                  "totalStudents": 401,
-                  "maleStudents": 198,
-                  "femaleStudents": 203
-                },
-                {
                   "id": "日-五專",
                   "label": "日 五專",
                   "category": "degree",
                   "totalStudents": 5057,
                   "maleStudents": 1141,
                   "femaleStudents": 3916
+                },
+                {
+                  "id": "修-二專",
+                  "label": "修 二專",
+                  "category": "degree",
+                  "totalStudents": 401,
+                  "maleStudents": 198,
+                  "femaleStudents": 203
                 }
               ]
             },

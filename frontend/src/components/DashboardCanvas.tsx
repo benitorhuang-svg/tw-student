@@ -6,7 +6,6 @@ import OverviewTabPanel from './organisms/OverviewTabPanel'
 import RegionalTabPanel from './organisms/RegionalTabPanel'
 import CountyTabPanel from './organisms/CountyTabPanel'
 import SchoolDetailPanel from './organisms/SchoolDetailPanel'
-import WelcomePortal from './organisms/WelcomePortal'
 
 // Molecules & Atoms
 import AtlasTabs from './molecules/AtlasTabs'
@@ -14,12 +13,12 @@ import AtlasTabs from './molecules/AtlasTabs'
 // Types
 import type { AtlasTab } from '../hooks/useAtlasQueryState'
 import type { useAtlasDerivedState } from '../hooks/useAtlasDerivedState'
-import type { 
-  RegionGroupFilter, 
-  CountySchoolAtlasDataset, 
-  AcademicYear, 
-  EducationLevelFilter, 
-  ManagementTypeFilter 
+import type {
+  RegionGroupFilter,
+  CountySchoolAtlasDataset,
+  AcademicYear,
+  EducationLevelFilter,
+  ManagementTypeFilter
 } from '../data/educationData'
 import type { TrendPoint } from '../lib/analytics.types'
 import type { InvestigationItem, SavedComparisonScenario, InvestigationFilter } from '../hooks/types'
@@ -35,10 +34,10 @@ type DashboardCanvasProps = {
   mapElement: ReactNode
   header: ReactNode
   footer: ReactNode
-  
+
   // Scope / KPI
   derived: ReturnType<typeof useAtlasDerivedState>
-  
+
   // Filters
   activeYear: AcademicYear
   summaryYears: AcademicYear[]
@@ -48,12 +47,12 @@ type DashboardCanvasProps = {
   onSetActiveYear: (year: AcademicYear) => void
   onSetEducationLevel: (level: EducationLevelFilter) => void
   onSetManagementType: (type: ManagementTypeFilter) => void
-  
+
   onStopPlayback: () => void
   onTogglePlayback: () => void
   isYearPlaybackActive: boolean
   startTransition: TransitionStartFunction
-  
+
   // Comparison / scenario
   comparisonScenarioName: string
   setComparisonScenarioName: (name: string) => void
@@ -62,7 +61,7 @@ type DashboardCanvasProps = {
   activeScenarioSnapshot: SavedComparisonScenario | null
   copyFeedbackMessage: string | null
   scenarioFeedbackMessage: string | null
-  
+
   // School detail
   countyDetailError: string | null
   countySchoolAtlasError: string | null
@@ -71,20 +70,20 @@ type DashboardCanvasProps = {
   countySchoolAtlasCache: Record<string, CountySchoolAtlasDataset>
   schoolWorkbenchView: 'list' | 'analysis' | 'notes'
   onSetSchoolWorkbenchView: (view: 'list' | 'analysis' | 'notes') => void
-  
+
   // Hover
   hoveredCountyId: string | null
   hoveredTownshipId: string | null
   hoveredSchoolId: string | null
   setHoveredCountyId: (id: string | null) => void
   setHoveredTownshipId: (id: string | null) => void
-  
+
   // Chart views
   regionalChartView: 'comparison' | 'ranking'
   countyChartView: 'comparison' | 'ranking'
   setRegionalChartView: (view: 'comparison' | 'ranking') => void
   setCountyChartView: (view: 'comparison' | 'ranking') => void
-  
+
   // Actions
   scenarioActions: {
     handleRegionSelect: (region: RegionGroupFilter, options?: { skipTabSwitch?: boolean }) => void
@@ -113,7 +112,6 @@ type DashboardCanvasProps = {
   investigationFilter: InvestigationFilter
   setSelectedInvestigationId: (id: string | null) => void
   setInvestigationFilter: (filter: InvestigationFilter) => void
-  onToggleGovernance: () => void
 }
 
 function DashboardCanvas({
@@ -152,7 +150,6 @@ function DashboardCanvas({
   investigationFilter,
   setSelectedInvestigationId,
   setInvestigationFilter,
-  onToggleGovernance,
 }: DashboardCanvasProps) {
   // DashboardCanvas is now primarily a shell orchestrating organisms
 
@@ -169,13 +166,6 @@ function DashboardCanvas({
             items={desktopTabItems.map(item => ({ key: item.id, label: item.label }))}
             onSelectTab={setActiveTab}
           />
-
-          {activeTab === 'welcome' && (
-            <WelcomePortal 
-              onNavigate={setActiveTab}
-              onToggleGovernance={onToggleGovernance}
-            />
-          )}
 
           {activeTab === 'overview' && (
             <OverviewTabPanel

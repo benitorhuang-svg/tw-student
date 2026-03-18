@@ -133,7 +133,7 @@ export function useAtlasDerivedState(args: DerivedStateArgs) {
     activeTownshipId: hierarchy.activeTownshipId,
     countyRankingRows: analytics.countyRankingRows,
     townshipRows: analytics.townshipRows,
-    nationalSummary: analytics.nationalSummary as any,
+    nationalSummary: analytics.nationalSummary,
     loadObservation,
     selectedCounty: hierarchy.selectedCounty
   })

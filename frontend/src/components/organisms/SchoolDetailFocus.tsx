@@ -25,8 +25,8 @@ export const SchoolDetailFocus: React.FC<SchoolDetailFocusProps> = ({
   void onSetWorkbenchView
 
   const [expandedSections, setExpandedSections] = React.useState<Record<string, boolean>>({
-    trend: true,
-    comparison: false
+    trend: false,
+    comparison: true
   })
 
   // Normalize schoolInsights or find max for radar normalization
@@ -124,32 +124,11 @@ export const SchoolDetailFocus: React.FC<SchoolDetailFocusProps> = ({
       {selectedSchool ? (
         <>
           <AccordionItem
-            id="school-trend-accordion"
-            title={`${selectedSchool.name} 歷年學生消長趨勢`}
-            isExpanded={expandedSections.trend}
-            onToggle={() => toggleSection('trend')}
-            style={{ animationDelay: '0.05s' }}
-          >
-            <StackedAreaTrendChart
-              title=""
-              subtitle={null}
-              series={schoolTrendSeries}
-              showHeader={false}
-              flat={true}
-              className="dashboard-card--premium"
-            >
-              <p className="dashboard-card__subtitle" style={{ margin: '0 0 1rem', opacity: 0.8 }}>
-                顯示該校自 108 學年度起的人數變化走勢，輔助判斷長期辦學規模穩定性。
-              </p>
-            </StackedAreaTrendChart>
-          </AccordionItem>
-
-          <AccordionItem
             id="school-comparison-accordion"
             title="校別核心效能診斷 (Nightingale Rose Chart)"
             isExpanded={expandedSections.comparison}
             onToggle={() => toggleSection('comparison')}
-            style={{ animationDelay: '0.1s' }}
+            style={{ animationDelay: '0.05s' }}
           >
             <RadarChart
               title=""
@@ -167,6 +146,23 @@ export const SchoolDetailFocus: React.FC<SchoolDetailFocusProps> = ({
                 花瓣超出虛線代表該指標優於平均水準。
               </div>
             </div>
+          </AccordionItem>
+
+          <AccordionItem
+            id="school-trend-accordion"
+            title={`${selectedSchool.name} 歷年學生消長趨勢`}
+            isExpanded={expandedSections.trend}
+            onToggle={() => toggleSection('trend')}
+            style={{ animationDelay: '0.1s' }}
+          >
+            <StackedAreaTrendChart
+              title=""
+              subtitle={null}
+              series={schoolTrendSeries}
+              showHeader={false}
+              flat={false}
+              className="dashboard-card--premium"
+            />
           </AccordionItem>
         </>
       ) : (

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-11T23:49:21.153Z",
+  "generatedAt": "2026-03-17T13:50:49.124Z",
   "county": {
     "id": "臺北市",
     "countyCode": "63000",
@@ -14,10 +14,10 @@
         "id": "5-wsqqm",
         "geohash": "wsqqm",
         "precision": 5,
-        "count": 67,
+        "count": 68,
         "totalStudents": 158490,
-        "latitude": 25.029231,
-        "longitude": 121.534263,
+        "latitude": 25.029076,
+        "longitude": 121.534499,
         "bounds": {
           "minLatitude": 25.004931,
           "maxLatitude": 25.04514,
@@ -349,7 +349,7 @@
           },
           {
             "id": "381306:國小",
-            "name": "私立靜心高中附設國小部",
+            "name": "臺北市靜心高中附設國小",
             "townshipName": "文山區",
             "students": 1512,
             "status": "正常"
@@ -833,6 +833,51 @@
         ]
       },
       {
+        "id": "6-wsqqmf",
+        "geohash": "wsqqmf",
+        "precision": 6,
+        "count": 7,
+        "totalStudents": 3587,
+        "latitude": 25.019471,
+        "longitude": 121.549331,
+        "bounds": {
+          "minLatitude": 25.018511,
+          "maxLatitude": 25.021344,
+          "minLongitude": 121.546191,
+          "maxLongitude": 121.550504
+        },
+        "topSchools": [
+          {
+            "id": "333301",
+            "name": "市立和平高中",
+            "townshipName": "大安區",
+            "students": 1337,
+            "status": "正常"
+          },
+          {
+            "id": "333602",
+            "name": "市立大安國小",
+            "townshipName": "大安區",
+            "students": 1149,
+            "status": "正常"
+          },
+          {
+            "id": "333301:國中",
+            "name": "市立和平高中附設國中部",
+            "townshipName": "大安區",
+            "students": 517,
+            "status": "正常"
+          },
+          {
+            "id": "333611",
+            "name": "市立和平實驗國小",
+            "townshipName": "大安區",
+            "students": 327,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "6-wsqqw0",
         "geohash": "wsqqw0",
         "precision": 6,
@@ -878,51 +923,6 @@
         ]
       },
       {
-        "id": "6-wsqqmf",
-        "geohash": "wsqqmf",
-        "precision": 6,
-        "count": 6,
-        "totalStudents": 3587,
-        "latitude": 25.019599,
-        "longitude": 121.549169,
-        "bounds": {
-          "minLatitude": 25.018511,
-          "maxLatitude": 25.021344,
-          "minLongitude": 121.546191,
-          "maxLongitude": 121.550504
-        },
-        "topSchools": [
-          {
-            "id": "333301",
-            "name": "市立和平高中",
-            "townshipName": "大安區",
-            "students": 1337,
-            "status": "正常"
-          },
-          {
-            "id": "333602",
-            "name": "市立大安國小",
-            "townshipName": "大安區",
-            "students": 1149,
-            "status": "正常"
-          },
-          {
-            "id": "333301:國中",
-            "name": "市立和平高中附設國中部",
-            "townshipName": "大安區",
-            "students": 517,
-            "status": "正常"
-          },
-          {
-            "id": "333611",
-            "name": "市立和平實驗國小",
-            "townshipName": "大安區",
-            "students": 327,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "6-wsqqjy",
         "geohash": "wsqqjy",
         "precision": 6,
@@ -939,7 +939,7 @@
         "topSchools": [
           {
             "id": "381306:國小",
-            "name": "私立靜心高中附設國小部",
+            "name": "臺北市靜心高中附設國小",
             "townshipName": "文山區",
             "students": 1512,
             "status": "正常"
@@ -1254,7 +1254,7 @@
         "topSchools": [
           {
             "id": "411303:國小",
-            "name": "私立華興中學附設國小部",
+            "name": "私立華興中學附設國小",
             "townshipName": "士林區",
             "students": 968,
             "status": "正常"
@@ -1434,7 +1434,7 @@
         "topSchools": [
           {
             "id": "331304:國小",
-            "name": "私立復興實驗高中附設國小部",
+            "name": "私立復興實驗高中附設國小",
             "townshipName": "大安區",
             "students": 1800,
             "status": "正常"
@@ -5724,7 +5724,7 @@
         "topSchools": [
           {
             "id": "411303:國小",
-            "name": "私立華興中學附設國小部",
+            "name": "私立華興中學附設國小",
             "townshipName": "士林區",
             "students": 968,
             "status": "正常"
@@ -5769,7 +5769,7 @@
         "topSchools": [
           {
             "id": "331304:國小",
-            "name": "私立復興實驗高中附設國小部",
+            "name": "私立復興實驗高中附設國小",
             "townshipName": "大安區",
             "students": 1800,
             "status": "正常"
@@ -5814,7 +5814,7 @@
         "topSchools": [
           {
             "id": "381306:國小",
-            "name": "私立靜心高中附設國小部",
+            "name": "臺北市靜心高中附設國小",
             "townshipName": "文山區",
             "students": 1512,
             "status": "正常"
@@ -5911,7 +5911,7 @@
           },
           {
             "id": "311401:國小",
-            "name": "私立普林思頓高中附設國小部",
+            "name": "臺北市普林思頓高中附設國小",
             "townshipName": "松山區",
             "students": 36,
             "status": "正常"
@@ -8773,6 +8773,30 @@
             "townshipName": "大安區",
             "students": 90,
             "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsqqmfw",
+        "geohash": "wsqqmfw",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 0,
+        "latitude": 25.018703,
+        "longitude": 121.550306,
+        "bounds": {
+          "minLatitude": 25.018703,
+          "maxLatitude": 25.018703,
+          "minLongitude": 121.550306,
+          "maxLongitude": 121.550306
+        },
+        "topSchools": [
+          {
+            "id": "333504:國中",
+            "name": "市立芳和實驗國中",
+            "townshipName": "大安區",
+            "students": 0,
+            "status": "待確認"
           }
         ]
       },

@@ -29,21 +29,15 @@ export function AtlasMiniMap({
   style,
 }: AtlasMiniMapProps) {
   const map = useMap();
-  const [viewportBounds, setViewportBounds] = useState(() => map.getBounds());
+  const [viewportVersion, setViewportVersion] = useState(0);
   const [hoveredName, setHoveredName] = useState<string | null>(null);
   const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 });
 
   // Listen to map changes to update the red box
   useMapEvents({
-    moveend: () => setViewportBounds(map.getBounds()),
-    zoomend: () => setViewportBounds(map.getBounds()),
+    moveend: () => setViewportVersion((value) => value + 1),
+    zoomend: () => setViewportVersion((value) => value + 1),
   });
-
-  useEffect(() => {
-    if (isVisible) {
-      setViewportBounds(map.getBounds());
-    }
-  }, [isVisible, map]);
 
   const project = useCallback((lon: number, lat: number) => {
     const x = ((lon - PROJ_BOUNDS.lonMin) / (PROJ_BOUNDS.lonMax - PROJ_BOUNDS.lonMin)) * VIEWBOX_W;
@@ -80,6 +74,11 @@ export function AtlasMiniMap({
 
     return { mainIslandPaths: processFeatures() };
   }, [countyBoundaries, project]);
+
+  const viewportBounds = useMemo(() => {
+    void viewportVersion;
+    return isVisible ? map.getBounds() : null;
+  }, [isVisible, map, viewportVersion]);
 
   const redBox = useMemo(() => {
     if (!viewportBounds) return null;

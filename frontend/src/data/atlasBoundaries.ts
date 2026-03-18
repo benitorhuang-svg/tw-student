@@ -2,8 +2,8 @@ import type { FeatureCollection, Geometry } from 'geojson'
 
 import { feature } from 'topojson-client'
 
-import { recordResourceLoad } from './atlasLoadObservation'
-import { buildDataAssetUrl, parseJsonDataResponse } from './dataAsset'
+import { loadDatabase } from './sqlite/connection'
+import { mapRows, parseJsonValue } from './sqlite/mappers'
 import type {
   CountyBoundaryCollection,
   CountyBoundaryProperties,
@@ -29,6 +29,12 @@ type BoundaryLoadOptions = {
   forceRefresh?: boolean
 }
 
+const EMPTY_TOPOLOGY: TopologyCollection = {
+  type: 'Topology',
+  objects: {},
+  arcs: [],
+}
+
 function decodeFeatureCollection<TProperties>(
   topology: TopologyCollection,
   objectName: string,
@@ -41,30 +47,9 @@ function decodeFeatureCollection<TProperties>(
   return feature(topology as never, topologyObject as never) as unknown as FeatureCollection<Geometry, TProperties>
 }
 
-function byteLengthOfText(text: string) {
-  return new TextEncoder().encode(text).length
-}
+// 移除不再需要的網路抓取函數，現在統一由 SQLite 讀取
 
-async function fetchJsonWithMetrics<T>(resourcePath: string, options: BoundaryLoadOptions = {}) {
-  const resolvedUrl = buildDataAssetUrl(resourcePath, options.forceRefresh)
-  const response = await fetch(resolvedUrl, {
-    cache: options.forceRefresh ? 'no-store' : 'default',
-  })
 
-  const text = await response.text()
-  return {
-    value: await parseJsonDataResponse<T>(new Response(text, { status: response.status, statusText: response.statusText, headers: response.headers }), resourcePath, resolvedUrl),
-    bytes: byteLengthOfText(text),
-  }
-}
-
-function toCountyBoundaryResourceKey() {
-  return 'county-boundary:county-boundaries.topo.json'
-}
-
-function toTownshipBoundaryResourceKey(townshipFile: string) {
-  return `township-boundary:${townshipFile}`
-}
 
 export async function loadCountyBoundaries(options: BoundaryLoadOptions = {}) {
   if (options.forceRefresh) {
@@ -72,26 +57,20 @@ export async function loadCountyBoundaries(options: BoundaryLoadOptions = {}) {
   }
 
   if (countyBoundaryCache) {
-    recordResourceLoad({
-      source: 'memory',
-      resourceKey: toCountyBoundaryResourceKey(),
-    })
     return countyBoundaryCache
   }
 
-  const { value, bytes } = await fetchJsonWithMetrics<TopologyCollection>('county-boundaries.topo.json', options)
+  const { db } = await loadDatabase(options)
+  const rows = mapRows(db.exec("SELECT topology_json FROM boundaries WHERE id = 'counties' AND type = 'county'"))
+  const topologyJson = rows[0]?.topology_json as string
+  if (!topologyJson) throw new Error('找不到縣市邊界資料庫紀錄')
+
+  const value = parseJsonValue<TopologyCollection>(topologyJson, EMPTY_TOPOLOGY)
   countyBoundaryCache = decodeFeatureCollection<CountyBoundaryProperties>(value, 'counties')
-  recordResourceLoad({
-    source: 'network',
-    resourceKey: toCountyBoundaryResourceKey(),
-    bytes,
-  })
   return countyBoundaryCache
 }
 
-export async function loadTownshipBoundaries(countyId: string, townshipFile?: string, options: BoundaryLoadOptions = {}) {
-  const resolvedTownshipFile = townshipFile ?? `townships/${countyId}.topo.json`
-  const resourceKey = toTownshipBoundaryResourceKey(resolvedTownshipFile)
+export async function loadTownshipBoundaries(countyId: string, _townshipFile?: string, options: BoundaryLoadOptions = {}) {
 
   if (options.forceRefresh) {
     townshipBoundaryMemoryCache.delete(countyId)
@@ -99,11 +78,6 @@ export async function loadTownshipBoundaries(countyId: string, townshipFile?: st
   }
 
   if (townshipBoundaryMemoryCache.has(countyId)) {
-    recordResourceLoad({
-      source: 'memory',
-      resourceKey,
-      townshipCountyId: countyId,
-    })
     return townshipBoundaryMemoryCache.get(countyId) as TownshipBoundaryCollection
   }
 
@@ -113,15 +87,14 @@ export async function loadTownshipBoundaries(countyId: string, townshipFile?: st
   }
 
   const nextRequest = (async () => {
-    const { value, bytes } = await fetchJsonWithMetrics<TopologyCollection>(resolvedTownshipFile, options)
+    const { db } = await loadDatabase(options)
+    const rows = mapRows(db.exec('SELECT topology_json FROM boundaries WHERE id = ? AND type = "township"', [countyId]))
+    const topologyJson = rows[0]?.topology_json as string
+    if (!topologyJson) throw new Error(`找不到鄉鎮邊界資料庫紀錄：${countyId}`)
+
+    const value = parseJsonValue<TopologyCollection>(topologyJson, EMPTY_TOPOLOGY)
     const decoded = decodeFeatureCollection<TownshipBoundaryProperties>(value, 'townships')
     townshipBoundaryMemoryCache.set(countyId, decoded)
-    recordResourceLoad({
-      source: 'network',
-      resourceKey,
-      bytes,
-      townshipCountyId: countyId,
-    })
     return decoded
   })()
 

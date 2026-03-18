@@ -1,9 +1,13 @@
 import { recordResourceLoad } from '../atlasLoadObservation'
 import { loadDatabase, SQLITE_RESOURCE_KEY, type LoadDatabaseOptions } from './connection'
-import { mapRows, parseJsonValue, buildSummaryMap, buildSchoolCodeIndex } from './mappers'
+import { mapRows, parseJsonValue, buildSummaryMap, buildSchoolCodeIndex, type SqlValueRow } from './mappers'
 import type { 
   EducationSummaryDataset, 
-  CountySummaryRecord
+  CountySummaryRecord,
+  DataNote,
+  RegionGroup,
+  SchoolLevel,
+  MissingCoordinateEntry,
 } from '../educationTypes'
 
 let summaryCache: EducationSummaryDataset | null = null
@@ -31,7 +35,9 @@ export function registerCountyLookups(counties: CountySummaryRecord[]) {
   })
 }
 
-function readMeta(db: any, key: string) {
+const EMPTY_DATA_NOTES: DataNote[] = []
+
+function readMeta(db: { exec: (sql: string, params?: unknown[]) => Array<{ columns: string[]; values: unknown[][] }> }, key: string) {
   const rows = mapRows(db.exec('SELECT value FROM meta WHERE key = ?', [key]))
   return rows[0]?.value
 }
@@ -76,21 +82,21 @@ export async function loadEducationSummaryWithOptions(options: LoadDatabaseOptio
     ORDER BY schools.code, schools.education_level
   `))
 
-  const countySummaryLookup = new Map<string, any[]>()
+  const countySummaryLookup = new Map<string, SqlValueRow[]>()
   countySummaryRows.forEach((row) => {
     const key = String(row.county_id)
     if (!countySummaryLookup.has(key)) countySummaryLookup.set(key, [])
     countySummaryLookup.get(key)?.push(row)
   })
 
-  const townSummaryLookup = new Map<string, any[]>()
+  const townSummaryLookup = new Map<string, SqlValueRow[]>()
   townSummaryRows.forEach((row) => {
     const key = String(row.town_id)
     if (!townSummaryLookup.has(key)) townSummaryLookup.set(key, [])
     townSummaryLookup.get(key)?.push(row)
   })
 
-  const townRowsByCounty = new Map<string, any[]>()
+  const townRowsByCounty = new Map<string, SqlValueRow[]>()
   townRows.forEach((row) => {
     const key = String(row.county_id)
     if (!townRowsByCounty.has(key)) townRowsByCounty.set(key, [])
@@ -116,7 +122,7 @@ export async function loadEducationSummaryWithOptions(options: LoadDatabaseOptio
       legacyCountyId: String(countyRow.legacy_id),
       name: String(countyRow.name),
       shortLabel: String(countyRow.short_label),
-      region: String(countyRow.region) as any,
+      region: String(countyRow.region) as RegionGroup,
       townshipFile: String(countyRow.township_file),
       detailFile: String(countyRow.detail_file),
       bucketFile: String(countyRow.bucket_file),
@@ -128,7 +134,7 @@ export async function loadEducationSummaryWithOptions(options: LoadDatabaseOptio
         schoolAtlasBytes: Number(countyRow.school_atlas_bytes),
         sqliteBytes: bytes,
       },
-      dataNotes: parseJsonValue(countyRow.data_notes_json, []),
+      dataNotes: parseJsonValue(countyRow.data_notes_json, EMPTY_DATA_NOTES),
       summaries: buildSummaryMap(countySummaryLookup.get(countyCode) ?? []),
       towns,
     }
@@ -156,13 +162,13 @@ export async function loadEducationSummaryWithOptions(options: LoadDatabaseOptio
       township: String(row.township_legacy_id).split(':').slice(1).join(':') || String(row.township_legacy_id),
       countyCode: String(row.county_id),
       townCode: String(row.township_id),
-      level: String(row.school_level) as any,
+      level: String(row.school_level) as SchoolLevel,
       address: String(row.address || ''),
       longitude: row.longitude == null ? undefined : Number(row.longitude),
       latitude: row.latitude == null ? undefined : Number(row.latitude),
-      coordinateResolution: row.coordinate_resolution as any,
-      coordinateMatchType: row.coordinate_match_type as any,
-      coordinateMatchScore: row.coordinate_match_score as any,
+      coordinateResolution: row.coordinate_resolution == null ? undefined : (String(row.coordinate_resolution) as MissingCoordinateEntry['coordinateResolution']),
+      coordinateMatchType: row.coordinate_match_type == null ? undefined : String(row.coordinate_match_type),
+      coordinateMatchScore: row.coordinate_match_score == null ? undefined : Number(row.coordinate_match_score),
     })),
     counties,
   }

@@ -7,6 +7,7 @@ import type {
   EducationLevelFilter,
   ManagementTypeFilter,
   RegionGroupFilter,
+  SchoolLevel,
 } from '../../data/educationData'
 import type { SchoolMapPoint } from '../../components/map/types'
 import { getSchoolInsights } from '../../lib/analytics'
@@ -97,7 +98,7 @@ export function useMarkersState(
         if (processedIds.has(id)) continue;
 
         if (entry.longitude && entry.latitude) {
-          if (filters.educationLevel !== '全部' && !entry.levels?.includes(filters.educationLevel as any)) continue;
+          if (filters.educationLevel !== '全部' && !entry.levels?.includes(filters.educationLevel as SchoolLevel)) continue;
 
           points.push({
             id,

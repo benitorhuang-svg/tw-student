@@ -1,0 +1,177 @@
+/* Overview Ranking Redesign - Ultra Compact Layout */
+.overview-ranking-redesign {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.overview-ranking--flat {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.overview-ranking-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+@media (max-width: 1100px) {
+    .overview-ranking-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Category Card */
+.ranking-category-card {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 18px;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.2s ease;
+}
+
+.app-shell[data-theme="dark"] .ranking-category-card {
+    background: rgba(30, 41, 59, 0.4);
+    border-color: rgba(255, 255, 255, 0.06);
+}
+
+.ranking-category-card__main {
+    padding: 14px 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.ranking-category-card__header {
+    margin-bottom: 12px;
+}
+
+.ranking-category-card__title-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ranking-category-card__icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.app-shell[data-theme="dark"] .ranking-category-card__icon-wrap {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.ranking-category-card__title {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 850;
+    color: #1e293b;
+    letter-spacing: -0.01em;
+}
+
+.app-shell[data-theme="dark"] .ranking-category-card__title {
+    color: #f1f5f9;
+}
+
+.ranking-list-simplified {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.ranking-item-compact-new {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 8px 12px;
+    background: rgba(248, 250, 252, 0.7);
+    border: 1px solid rgba(226, 232, 240, 0.5);
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.2s ease;
+    text-align: left;
+}
+
+.app-shell[data-theme="dark"] .ranking-item-compact-new {
+    background: rgba(255, 255, 255, 0.02);
+    border-color: rgba(255, 255, 255, 0.04);
+}
+
+.ranking-item-compact-new:hover {
+    background: white;
+    border-color: #0ea5e9;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.ranking-item__name {
+    font-size: 0.85rem;
+    font-weight: 750;
+    color: #334155;
+    z-index: 1;
+}
+
+.app-shell[data-theme="dark"] .ranking-item__name {
+    color: #e2e8f0;
+}
+
+.ranking-item__value {
+    font-size: 0.85rem;
+    font-weight: 850;
+    font-family: var(--font-mono);
+    color: #0284c7;
+    z-index: 1;
+    white-space: nowrap;
+}
+
+.ranking-category-card--growth .ranking-item__value { color: #10b981; }
+.ranking-category-card--decline .ranking-item__value { color: #f43f5e; }
+
+/* Progress Bar as a subtle underlay */
+.ranking-item__bar-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    opacity: 0.6;
+}
+
+.ranking-item__bar-overlay .ranking-metric-bar {
+    height: 100% !important;
+    border-radius: 0;
+    background: transparent;
+}
+
+.ranking-item-compact-new:hover .ranking-item__bar-overlay {
+    opacity: 1;
+    height: 4px;
+}
+
+/* Empty State Small */
+.overview-ranking-empty {
+    padding: 24px;
+    text-align: center;
+    color: #94a3b8;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background: rgba(248, 250, 252, 0.4);
+    border-radius: 16px;
+    border: 1.5px dashed #e2e8f0;
+}

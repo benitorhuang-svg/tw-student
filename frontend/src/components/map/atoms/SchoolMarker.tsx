@@ -87,8 +87,10 @@ export function SchoolMarker({
             map.flyTo([school.latitude, school.longitude], MAP_MAX_ZOOM, { animate: true, duration: 1.2 })
           },
           mouseover: (e) => {
-            if ((e.target as any).setStyle) {
-              (e.target as any).setStyle({ cursor: 'pointer' })
+            const target = e.target as L.Path
+            const element = target.getElement() as SVGElement | null
+            if (element) {
+              element.style.cursor = 'pointer'
             }
           }
         }}

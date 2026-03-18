@@ -2,15 +2,19 @@ import { recordResourceLoad } from '../atlasLoadObservation'
 import { loadDatabase } from './connection'
 import { 
   mapRows, 
+  parseJsonValue,
   buildYearlyStudentLookup, 
   buildCompositionLookup, 
   buildStudentCompositions 
 } from './mappers'
 import { resolveCountyCode } from './summary'
-import type { CountyDetailDataset } from '../educationTypes'
+import type { CountyDetailDataset, DataNote, AcademicYear, RegionGroup, SchoolLevel, SchoolManagementType, SchoolRecord } from '../educationTypes'
 
 const countyDetailMemoryCache = new Map<string, CountyDetailDataset>()
 const pendingCountyDetailRequests = new Map<string, Promise<CountyDetailDataset>>()
+
+const EMPTY_DATA_NOTES: DataNote[] = []
+const EMPTY_ACADEMIC_YEARS: AcademicYear[] = []
 
 export async function loadCountyDetail(detailFile: string, countyId?: string) {
   const resolvedCountyId = countyId ?? detailFile // simplified for atomic refactor
@@ -49,7 +53,7 @@ export async function loadCountyDetail(detailFile: string, countyId?: string) {
 
     const yearlyLookup = buildYearlyStudentLookup(yearRows)
     const compositionLookup = buildCompositionLookup(compositionSummaryRows, compositionRows)
-    const schoolsByTown = new Map<string, any[]>()
+    const schoolsByTown = new Map<string, SchoolRecord[]>()
 
     schoolRows.forEach((row) => {
       const townshipKey = String(row.township_legacy_id)
@@ -67,8 +71,8 @@ export async function loadCountyDetail(detailFile: string, countyId?: string) {
         townCode: String(row.township_id),
         legacyCountyId: String(row.county_legacy_id),
         legacyTownshipId: String(row.township_legacy_id),
-        educationLevel: String(row.education_level) as any,
-        managementType: String(row.management_type) as any,
+        educationLevel: String(row.education_level) as SchoolLevel,
+        managementType: String(row.management_type) as SchoolManagementType,
         address: String(row.address),
         phone: String(row.phone),
         website: String(row.website),
@@ -76,9 +80,9 @@ export async function loadCountyDetail(detailFile: string, countyId?: string) {
         coordinates: { longitude: Number(row.longitude), latitude: Number(row.latitude) },
         yearlyStudents: yearlyLookup.get(schoolId) ?? [],
         studentCompositions: buildStudentCompositions(schoolId, compositionLookup),
-        status: row.status as any,
-        missingYears: JSON.parse(String(row.missing_years_json || '[]')),
-        dataNotes: JSON.parse(String(row.data_notes_json || '[]')),
+        status: row.status == null ? undefined : (String(row.status) as SchoolRecord['status']),
+        missingYears: parseJsonValue(String(row.missing_years_json || '[]'), EMPTY_ACADEMIC_YEARS),
+        dataNotes: parseJsonValue(String(row.data_notes_json || '[]'), EMPTY_DATA_NOTES),
       })
     })
 
@@ -89,9 +93,9 @@ export async function loadCountyDetail(detailFile: string, countyId?: string) {
         legacyCountyId: String(countyRow.legacy_id),
         name: String(countyRow.name),
         shortLabel: String(countyRow.short_label),
-        region: String(countyRow.region) as any,
+        region: String(countyRow.region) as RegionGroup,
       },
-      dataNotes: JSON.parse(String(countyRow.data_notes_json || '[]')),
+      dataNotes: parseJsonValue(String(countyRow.data_notes_json || '[]'), EMPTY_DATA_NOTES),
       towns: townRows.map((townRow) => ({
         id: String(townRow.legacy_id),
         countyId: String(countyRow.legacy_id),
@@ -100,7 +104,7 @@ export async function loadCountyDetail(detailFile: string, countyId?: string) {
         legacyTownshipId: String(townRow.legacy_id),
         name: String(townRow.name),
         schools: schoolsByTown.get(String(townRow.legacy_id)) ?? [],
-        dataNotes: JSON.parse(String(townRow.data_notes_json || '[]')),
+        dataNotes: parseJsonValue(String(townRow.data_notes_json || '[]'), EMPTY_DATA_NOTES),
       })),
     }
 

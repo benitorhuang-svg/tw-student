@@ -2,7 +2,7 @@ import { recordResourceLoad } from '../atlasLoadObservation'
 import { loadDatabase } from './connection'
 import { mapRows, parseJsonValue } from './mappers'
 import { resolveCountyCode } from './summary'
-import type { CountyBucketDataset } from '../educationTypes'
+import type { CountyBucketDataset, RegionGroup } from '../educationTypes'
 
 const countyBucketMemoryCache = new Map<string, CountyBucketDataset>()
 const pendingCountyBucketRequests = new Map<string, Promise<CountyBucketDataset>>()
@@ -58,7 +58,7 @@ export async function loadCountyBuckets(bucketFile: string, countyId?: string) {
         legacyCountyId: String(countyRow.legacy_id),
         name: String(countyRow.name),
         shortLabel: String(countyRow.short_label),
-        region: String(countyRow.region) as any,
+        region: String(countyRow.region) as RegionGroup,
       },
       precisions,
     }

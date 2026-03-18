@@ -4,7 +4,8 @@ import { StackedAreaTrendChart } from './StackedAreaTrendChart'
 import '../../styles/templates/dashboard-shell/01-premium-cards-system.css'
 import type { useAtlasDerivedState } from '../../hooks/useAtlasDerivedState'
 import type { RegionGroupFilter } from '../../data/educationData'
-import type { InvestigationItem, InvestigationFilter } from '../../hooks/types'
+import type { CountyComparisonSummary, TrendPoint } from '../../lib/analytics'
+import type { InvestigationItem, InvestigationFilter, SavedComparisonScenario, DataNote } from '../../hooks/types'
 import AccordionItem from '../atoms/AccordionItem'
 import KPIGrid from '../molecules/KPIGrid'
 import { formatDelta, formatPercent } from '../../lib/analytics'
@@ -31,10 +32,10 @@ type RegionalTabPanelProps = {
   onChangeScenarioName: (name: string) => void
   effectiveComparisonCountyIds: string[]
   comparisonCandidates: Array<{ id: string; displayName: string }>
-  comparisonSummaries: any[]
-  favoriteScenarios: any[]
-  recentScenarios: any[]
-  activeScenarioSnapshot: any | null
+  comparisonSummaries: CountyComparisonSummary[]
+  favoriteScenarios: SavedComparisonScenario[]
+  recentScenarios: SavedComparisonScenario[]
+  activeScenarioSnapshot: SavedComparisonScenario | null
   copyFeedbackMessage: string | null
   scenarioFeedbackMessage: string | null
   onToggleCounty: (countyId: string) => void
@@ -42,18 +43,18 @@ type RegionalTabPanelProps = {
   onSaveScenario: () => void
   onExportScenarios: () => void
   onImportScenarios: (event: React.ChangeEvent<HTMLInputElement>) => void
-  onApplyScenario: (scenario: any) => void
+  onApplyScenario: (scenario: SavedComparisonScenario) => void
   onTogglePinScenario: (scenarioId: string) => void
   onRenameScenario: (scenarioId: string) => void
   onRemoveScenario: (scenarioId: string) => void
-  filteredAnomalies: any[]
-  activeInvestigation: any | null
+  filteredAnomalies: InvestigationItem[]
+  activeInvestigation: InvestigationItem | null
   selectedInvestigationId: string | null
   investigationFilter: InvestigationFilter
-  scopeNotes: any[]
+  scopeNotes: DataNote[]
   onSelectInvestigation: (id: string) => void
   onSetFilter: (filter: InvestigationFilter) => void
-  onDownloadInvestigation: (item: any) => void
+  onDownloadInvestigation: (item: InvestigationItem) => void
   onDownloadAll: () => void
 }
 
@@ -138,7 +139,7 @@ function RegionalTabPanel({
                   value: ((regionSummaries.find(r => r.id === region)?.students ?? 0) / 10000).toFixed(1), 
                   unit: '萬',
                   meta: `佔全台約 ${formatPercent((regionSummaries.find(r => r.id === region)?.students ?? 0) / Math.max(derived.globalNationalSummary?.students ?? 1, 1))}`,
-                  sparklineData: regionSummaries.find(r => r.id === region)?.trend?.map((p: any) => p.value)
+                  sparklineData: regionSummaries.find(r => r.id === region)?.trend?.map((point: TrendPoint) => point.value)
                 },
                 { 
                   label: '年度消長趨勢', 
@@ -148,7 +149,7 @@ function RegionalTabPanel({
                     value: formatPercent(regionSummaries.find(r => r.id === region)?.deltaRatio ?? 0),
                     isPositive: (regionSummaries.find(r => r.id === region)?.deltaRatio ?? 0) > 0
                   },
-                  sparklineData: regionSummaries.find(r => r.id === region)?.trend?.map((p: any) => p.value)
+                  sparklineData: regionSummaries.find(r => r.id === region)?.trend?.map((point: TrendPoint) => point.value)
                 },
                 {
                   label: '區域縣市構成',
@@ -280,11 +281,11 @@ function RegionalTabPanel({
               filteredAnomalies={filteredAnomalies}
               activeInvestigation={activeInvestigation}
               selectedInvestigationId={selectedInvestigationId}
-              investigationFilter={investigationFilter as any}
+              investigationFilter={investigationFilter}
               scopeNotes={scopeNotes}
               scopeHeadline={region === '全部' ? '全台範圍' : region}
               onSelectInvestigation={onSelectInvestigation}
-              onSetFilter={onSetFilter as any}
+              onSetFilter={onSetFilter}
               onDownloadInvestigation={onDownloadInvestigation}
               onDownloadAll={onDownloadAll}
               flat={true}

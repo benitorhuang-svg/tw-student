@@ -1,6 +1,5 @@
 import React from 'react'
 import { formatDelta, formatStudents, type SchoolInsight } from '../../lib/analytics'
-import SchoolStatusPill from '../atoms/SchoolStatusPill'
 
 type SchoolTableRowProps = {
   school: SchoolInsight
@@ -9,6 +8,7 @@ type SchoolTableRowProps = {
   onHover: (id: string | null) => void
   maxStudents?: number
   maxDelta?: number
+  style?: React.CSSProperties
 }
 
 const SchoolTableRow: React.FC<SchoolTableRowProps> = ({
@@ -17,17 +17,19 @@ const SchoolTableRow: React.FC<SchoolTableRowProps> = ({
   onSelect,
   onHover,
   maxStudents = 1,
-  maxDelta = 1
+  maxDelta = 1,
+  style
 }) => {
   const studentRatio = (school.currentStudents / maxStudents) * 100
   const deltaRatio = (Math.abs(school.delta) / maxDelta) * 100
-
+  
   return (
     <tr
-      className={isActive ? 'school-table__row school-table__row--active' : 'school-table__row'}
+      className={`school-table-v2-row ${isActive ? 'school-table-v2-row--active' : ''}`}
       onClick={() => onSelect(school.id)}
       onMouseEnter={() => onHover(school.id)}
       onMouseLeave={() => onHover(null)}
+      style={style}
       onKeyDown={(event) => {
         if (event.key === 'Enter' || event.key === ' ') {
           event.preventDefault()
@@ -37,42 +39,52 @@ const SchoolTableRow: React.FC<SchoolTableRowProps> = ({
       tabIndex={0}
     >
       <td className="school-table__cell--name">
-        <div className="school-name-group">
+        <div className="school-name-group-v2">
           <strong>{school.name}</strong>
-          <small>{school.code}</small>
+          <span className="school-code-v2">{school.code}</span>
         </div>
       </td>
-      <td><span className="text-dim">{school.townshipName}</span></td>
       <td><span className="education-chip">{school.educationLevel}</span></td>
       <td><span className="management-chip">{school.managementType}</span></td>
-      <td className="school-table__cell--metrics">
-        <div className="metric-visual-box">
-          <div className="metric-text-row">
-            <span className="metric-value">{formatStudents(school.currentStudents)}</span>
+      
+      {/* ── Students Metric ── */}
+      <td>
+        <div className="metric-v2">
+          <div className="metric-v2__text">
+            <span>{formatStudents(school.currentStudents)}</span>
           </div>
-          <div className="metric-bar-track">
+          <div className="metric-v2__bar">
             <div 
-              className="metric-bar-fill" 
+              className="metric-v2__fill" 
               style={{ width: `${studentRatio}%` }} 
             />
           </div>
         </div>
       </td>
-      <td className="school-table__cell--metrics">
-        <div className="metric-visual-box">
-          <div className={`metric-text-row ${school.delta >= 0 ? 'text-up' : 'text-down'}`}>
-            <span className="metric-value">{formatDelta(school.delta)}</span>
+      
+      {/* ── Delta Metric ── */}
+      <td>
+        <div className={`metric-v2 ${school.delta >= 0 ? 'metric-v2--up' : 'metric-v2--down'}`}>
+          <div className="metric-v2__text">
+            {school.delta > 0 && <span>+</span>}
+            <span>{formatDelta(school.delta)}</span>
+            {school.delta !== 0 && (
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: '2px' }}>
+                {school.delta > 0 ? (
+                  <path d="M18 15l-6-6-6 6" />
+                ) : (
+                  <path d="M6 9l6 6 6-6" />
+                )}
+              </svg>
+            )}
           </div>
-          <div className="metric-bar-track metric-bar-track--delta">
+          <div className="metric-v2__bar">
             <div 
-              className={`metric-bar-fill ${school.delta >= 0 ? 'bg-up' : 'bg-down'}`} 
+              className="metric-v2__fill" 
               style={{ width: `${deltaRatio}%` }} 
             />
           </div>
         </div>
-      </td>
-      <td className="school-table__cell--status">
-        <SchoolStatusPill status={school.status} />
       </td>
     </tr>
   )

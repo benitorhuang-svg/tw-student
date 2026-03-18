@@ -4,7 +4,7 @@ import { SegmentedPill } from '../atoms/SegmentedPill'
 type CollapsibleFilterProps = {
   options: ReadonlyArray<{ value: string; label: string }>
   currentValue: string
-  onSelect: (value: any) => void
+  onSelect: (value: string) => void
   icon: React.ReactNode
   label: string
 }

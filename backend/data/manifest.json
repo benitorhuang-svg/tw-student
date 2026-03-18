@@ -1,8 +1,8 @@
 {
   "schemaVersion": "2026.03.p0",
-  "generatedAt": "2026-03-11T23:49:21.039Z",
-  "buildId": "20260311234921",
-  "contentHash": "sha256-b8e7834f1541c778082bcf94e38be25feec778ace9a8cbe02c383089a6d885b3",
+  "generatedAt": "2026-03-17T13:50:49.065Z",
+  "buildId": "20260317135049",
+  "contentHash": "sha256-f97f6cc1b1d189f1cfc3239ee12c168576d6dde4aef23dc03e159d94430cd43a",
   "previousCompatibleSchemaVersions": [],
   "validationSummary": {
     "overallStatus": "pass",
@@ -14,15 +14,15 @@
     {
       "path": "education-summary.json",
       "assetGroup": "summary",
-      "hash": "sha256-c52974147807550c12fe64ccdaae5455b1ee43751a0521188f7686ee1fbf95d8",
-      "bytes": 7942754,
+      "hash": "sha256-eef9fd55b379d32a4f7d52d9433a19f4d605ce43a9034658ae853bac947ef64e",
+      "bytes": 7952653,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": true
     },
     {
       "path": "validation-report.json",
       "assetGroup": "validation",
-      "hash": "sha256-b8c04bab02694beb026d14825c993f7a3e62b2647523bf8a8f5921971575ff45",
+      "hash": "sha256-1612cda8fa38c80ad64a1ccdba6db2952190f19359a626fad0f6d6b7dabe04c9",
       "bytes": 7546,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": true
@@ -30,7 +30,7 @@
     {
       "path": "schema/grade-map.json",
       "assetGroup": "schema",
-      "hash": "sha256-e8b5496e824021501447e703e097e9041f7123f9ba736f60f12b933836521d55",
+      "hash": "sha256-a0892be70368507f4f191f404f933406b58383d72b0e2dcdc563b5f1ec67ab6f",
       "bytes": 3012,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": true
@@ -38,7 +38,7 @@
     {
       "path": "school-atlas/index.json",
       "assetGroup": "school-atlas-index",
-      "hash": "sha256-d0edc5e685ca1b028a777ec63050d76309ee5b9866b28e4069318e8f7e78db0b",
+      "hash": "sha256-f59c4186441afa88d9ca2f47c7541b6ea9070beb84e862ed5d6cc1fa54ea369a",
       "bytes": 4809,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false
@@ -54,7 +54,7 @@
     {
       "path": "area-coordinate-lookup.json",
       "assetGroup": "lookup",
-      "hash": "sha256-66be52959a28264eef98a5286ba944f04dd48d02f0303e0dedbb0a699dcc5672",
+      "hash": "sha256-f2fc1eed74bf45d1f47d8bdce6ab6da46c0945859c85bc89517a12fae87c6cf2",
       "bytes": 150919,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false
@@ -62,24 +62,24 @@
     {
       "path": "school-coordinate-lookup.json",
       "assetGroup": "lookup",
-      "hash": "sha256-eb7e5e3c0aa57d39f0af07f57e4590e1e0de6fb1597a0948490416e5b70f0465",
-      "bytes": 1113840,
+      "hash": "sha256-b6dc3026a8d85a3abfc2f6e0d25da46903fcbc61248a77b468538cabb68b23be",
+      "bytes": 1114950,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false
     },
     {
       "path": "education-atlas.sqlite",
       "assetGroup": "sqlite",
-      "hash": "sha256-cebd2f5df1ef5bb9b574846365fa5a6dfae4503f5f4adf27c5d56cf5dcb8b4f2",
-      "bytes": 32452608,
+      "hash": "sha256-2a8fd4984f26fc31f04b05b6e0872285e6900bbbac234fb130ba64972393eaeb",
+      "bytes": 39612416,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": true
     },
     {
       "path": "counties/宜蘭縣.json",
       "assetGroup": "county-detail",
-      "hash": "sha256-bf25834fe4053f2c58df7d5af3095f61f82108de5fad5b68780bf4df222877eb",
-      "bytes": 1608153,
+      "hash": "sha256-f92523487a63b2931eb84d35b97c64e9dfeaba28e7f2c756eb02deb5604df6d9",
+      "bytes": 1609788,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
       "countyId": "宜蘭縣",
@@ -88,8 +88,8 @@
     {
       "path": "counties/花蓮縣.json",
       "assetGroup": "county-detail",
-      "hash": "sha256-67dd860b71886b9d0940803807669cfc8bb16a2081ae5a05180fd9f7a7040ae2",
-      "bytes": 1993834,
+      "hash": "sha256-5af5c9b6afb0b415fd6f35f652b876c2ceb31369405f1a46a0c3be6489c97d06",
+      "bytes": 1989348,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
       "countyId": "花蓮縣",
@@ -98,7 +98,7 @@
     {
       "path": "counties/金門縣.json",
       "assetGroup": "county-detail",
-      "hash": "sha256-bb002e929d125d980bde09dc95b27f1fc07e250193876639141e2804d2294083",
+      "hash": "sha256-4e3f08b7fdf351a7dec91ad060e3e257a7af99e256b76d7afb4ae32492ffb4fa",
       "bytes": 373970,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
@@ -108,8 +108,8 @@
     {
       "path": "counties/南投縣.json",
       "assetGroup": "county-detail",
-      "hash": "sha256-588269a6168e23d92e70f5b40376db47d533911f9a6b3fa78477aee80521e78e",
-      "bytes": 2674840,
+      "hash": "sha256-7913ed7c4ac29c045a816140282e23fa2c6400b49b148fa5f40b8a4654972f7e",
+      "bytes": 2676714,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
       "countyId": "南投縣",
@@ -118,7 +118,7 @@
     {
       "path": "counties/屏東縣.json",
       "assetGroup": "county-detail",
-      "hash": "sha256-0d038067c92647b65dd236b27f6985f9fe6621b7614514d475c63ca84e05063b",
+      "hash": "sha256-1100d6360c6d2afe6bfd2e3e50b1a66d992445082846089e7185f0ec4a4d60c4",
       "bytes": 3227605,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
@@ -128,8 +128,8 @@
     {
       "path": "counties/苗栗縣.json",
       "assetGroup": "county-detail",
-      "hash": "sha256-f7b968a222dd40ef325918d906d7e00bfee1a69f8e0d64a89c4358fe67b90de9",
-      "bytes": 2299766,
+      "hash": "sha256-bfd6ff4f38ac0ecf898a4998325bd9828c46e032614da7312224c97be854715e",
+      "bytes": 2302036,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
       "countyId": "苗栗縣",
@@ -138,8 +138,8 @@
     {
       "path": "counties/桃園市.json",
       "assetGroup": "county-detail",
-      "hash": "sha256-34eb382741c79af77863f86c02a52ace3232ae38442a3dbb61a0e1f43f3bd9db",
-      "bytes": 4080185,
+      "hash": "sha256-4399fe4d328e241bdb8a6c69d89a0ca48bc8ca98f3eef363fb98f7ed1e4a8ee1",
+      "bytes": 4090976,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
       "countyId": "桃園市",
@@ -148,8 +148,8 @@
     {
       "path": "counties/高雄市.json",
       "assetGroup": "county-detail",
-      "hash": "sha256-d9cc418586028a05d9ed43938333f227cb22985c60e124fdcf40c0efc538a163",
-      "bytes": 5438943,
+      "hash": "sha256-8707dcdc368e041451e085d688cfab6ad904dee58ab2593d764dbaa17bd130ba",
+      "bytes": 5438939,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
       "countyId": "高雄市",
@@ -158,7 +158,7 @@
     {
       "path": "counties/基隆市.json",
       "assetGroup": "county-detail",
-      "hash": "sha256-a430d335c199363971d06e0d1d374f71f8bd14347e50ad4b183be6c822bb8e48",
+      "hash": "sha256-cc2561a2cd79221a8fea2643fbb90efcb8d91382bdf06fcf5dbfa6d2567787f3",
       "bytes": 920570,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
@@ -178,8 +178,8 @@
     {
       "path": "counties/雲林縣.json",
       "assetGroup": "county-detail",
-      "hash": "sha256-f2276105f0777c56ffd77f9882ad5ba1a40de6ce73450250305ab78ca287478d",
-      "bytes": 3024558,
+      "hash": "sha256-b13c1cf67ad0adb4e8b5b49fc6d4cf71cff311564b5e196edb90b89c6179036d",
+      "bytes": 3027250,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
       "countyId": "雲林縣",
@@ -188,8 +188,8 @@
     {
       "path": "counties/新北市.json",
       "assetGroup": "county-detail",
-      "hash": "sha256-cd81c32c49409ed353da048a1216dd50d5c28bcf9895aa15b16d5d1d7ea41c37",
-      "bytes": 5044840,
+      "hash": "sha256-38d1ce8b1ac8fa36d712db2d433ef91fe7c7b6939cdfd2e563bbc4a33965e737",
+      "bytes": 5054472,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
       "countyId": "新北市",
@@ -198,7 +198,7 @@
     {
       "path": "counties/新竹市.json",
       "assetGroup": "county-detail",
-      "hash": "sha256-e961f6d72ee5fd72d7699cbf5412171c9f0a056c387e32581885d8708f7504a9",
+      "hash": "sha256-3d74f77db21d5815cfdf3a264eb22dd3dc9743813fee06b6d45cff08f0b3bf8b",
       "bytes": 887452,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
@@ -208,8 +208,8 @@
     {
       "path": "counties/新竹縣.json",
       "assetGroup": "county-detail",
-      "hash": "sha256-02fcfa753644e28b53ee92fbe230ed15fa814215aea2670560a1a92c806b09ac",
-      "bytes": 1838264,
+      "hash": "sha256-9ee032c8fd6beac90e0e6a8c6e2f98e83d621fefe4d7ce9b8e0cda48ee4545ac",
+      "bytes": 1839879,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
       "countyId": "新竹縣",
@@ -218,7 +218,7 @@
     {
       "path": "counties/嘉義市.json",
       "assetGroup": "county-detail",
-      "hash": "sha256-164968a8c74395322540b9d88893c7eba390797fb46dccceab05e42d007495c8",
+      "hash": "sha256-b6cc31346d8725e5997f7ee8164aef8667d43ef269fd20fd2215f9699d0f5bb1",
       "bytes": 494900,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
@@ -228,7 +228,7 @@
     {
       "path": "counties/嘉義縣.json",
       "assetGroup": "county-detail",
-      "hash": "sha256-4c8956d9c642f3f9239be4bb9c6a8196b0fcb21ece4dd9940ca2dc9d82846470",
+      "hash": "sha256-759f4bc3864f688e89cdfe9d9ba3839ca2c01a0e3382159d9af1cf2b86b46613",
       "bytes": 2322753,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
@@ -238,8 +238,8 @@
     {
       "path": "counties/彰化縣.json",
       "assetGroup": "county-detail",
-      "hash": "sha256-9705ef1649b5dc4f241a20ce07db7a9e2dacdbd36760329757137e0ffe60e652",
-      "bytes": 3386951,
+      "hash": "sha256-9bff09f295d6a7ecda38bb35e55c83ec1eb4aa95946be0345b384f6e4979fa4e",
+      "bytes": 3389817,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
       "countyId": "彰化縣",
@@ -248,8 +248,8 @@
     {
       "path": "counties/臺中市.json",
       "assetGroup": "county-detail",
-      "hash": "sha256-cf01b90546c78114a70f42d165ca3c08fb99631215e22411a2e74a7728e7f048",
-      "bytes": 5337268,
+      "hash": "sha256-773d9550a8b34a181dda84376ddbdeeb6496744b93fc386cbebf55a07707e5e5",
+      "bytes": 5348447,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
       "countyId": "臺中市",
@@ -258,8 +258,8 @@
     {
       "path": "counties/臺北市.json",
       "assetGroup": "county-detail",
-      "hash": "sha256-ce083461d44fbbeefe230c42f0b67dec998527382013f0e2c5ab81f5252d4d7c",
-      "bytes": 3998130,
+      "hash": "sha256-18053efc52d8ff3f9287a80ab9860b5bdd719c13aa0b6cfde6b759c94d19a6aa",
+      "bytes": 4004323,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
       "countyId": "臺北市",
@@ -268,7 +268,7 @@
     {
       "path": "counties/臺東縣.json",
       "assetGroup": "county-detail",
-      "hash": "sha256-ac2097b8298ad64a0ac145c773e03d3964ed08a8d5b86b00d75c485efcd212f0",
+      "hash": "sha256-620e306574d554b8dab0873d380521e00349f47a35b43b142d43eb0788fea465",
       "bytes": 1728049,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
@@ -278,8 +278,8 @@
     {
       "path": "counties/臺南市.json",
       "assetGroup": "county-detail",
-      "hash": "sha256-60c75f1327a1fc487255408f4da66c1840873ae0ff7668c6ac4100d79c3fc034",
-      "bytes": 4568536,
+      "hash": "sha256-a37a65a3fe0c797a83e4569c3366210d81059f46c97596bb7edf546d36ac3c1d",
+      "bytes": 4574831,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
       "countyId": "臺南市",
@@ -288,7 +288,7 @@
     {
       "path": "counties/澎湖縣.json",
       "assetGroup": "county-detail",
-      "hash": "sha256-e7aeef262a51c4b4f5a67954fcaf6e9868d29071c0fe716e76f4e2b5afa12674",
+      "hash": "sha256-fcd12ac9dfe7be9826f01c6ed2b6638fa1c303536d1d40d6725a4bff344c13fc",
       "bytes": 742175,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
@@ -298,7 +298,7 @@
     {
       "path": "buckets/宜蘭縣.json",
       "assetGroup": "county-bucket",
-      "hash": "sha256-a149bca904879e1e5a607c14d3a822288c913b73aa14551cb22d069145fb3332",
+      "hash": "sha256-05374771c3877a82cd74f1eec0d21186d70690952e4ce4fec274cc7730c3fb45",
       "bytes": 167635,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
@@ -308,8 +308,8 @@
     {
       "path": "buckets/花蓮縣.json",
       "assetGroup": "county-bucket",
-      "hash": "sha256-220877061fccfdf42bc33550b6686b334e859a97fb7b6335574724ef98c768a8",
-      "bytes": 214489,
+      "hash": "sha256-3a62484d85b622886c799a11f9eaa9f3536755e738750a9cdff8377c8e1c2f75",
+      "bytes": 214052,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
       "countyId": "花蓮縣",
@@ -318,7 +318,7 @@
     {
       "path": "buckets/金門縣.json",
       "assetGroup": "county-bucket",
-      "hash": "sha256-7410f1585ac104a9d820fcf16814189fbf3638d202ee7bebf3f60574263d10f9",
+      "hash": "sha256-57f39815588bc9a03634cb53f53d36f0cee0442bfbb51321acd6a0803c41d8fd",
       "bytes": 41662,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
@@ -328,7 +328,7 @@
     {
       "path": "buckets/南投縣.json",
       "assetGroup": "county-bucket",
-      "hash": "sha256-02870dc49f54c28b157fb7fec34f64d794f519de4641f9f3fb57ab9a148ac883",
+      "hash": "sha256-5fd8715caf6bf3cfca955a29dbfb95db0ab5884ac5b5b38b44158289d0b5f4a4",
       "bytes": 282352,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
@@ -338,7 +338,7 @@
     {
       "path": "buckets/屏東縣.json",
       "assetGroup": "county-bucket",
-      "hash": "sha256-814ceee9aa71dd84d494a08d559613c459831987fb2cc6eb30f8c864421d7c44",
+      "hash": "sha256-763a27f8a0cdb8dd938547d9c4383d25e495af5e3dbe79a3645ccd5beef98997",
       "bytes": 336406,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
@@ -348,7 +348,7 @@
     {
       "path": "buckets/苗栗縣.json",
       "assetGroup": "county-bucket",
-      "hash": "sha256-b9d0f8cfd27439866887c23f3abf0c2e7d1a33cdeff43ceca4d0a940818cf60a",
+      "hash": "sha256-8237238aa06e1ec5a4791d95647c392e10cb02abc491fce4a624bf3171d22077",
       "bytes": 242615,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
@@ -358,8 +358,8 @@
     {
       "path": "buckets/桃園市.json",
       "assetGroup": "county-bucket",
-      "hash": "sha256-b7f8f6d4d1bc0f144ba41eaa8741336cb7c7277eab712944f4fc016659067713",
-      "bytes": 394875,
+      "hash": "sha256-23e5a3fd134ffe3799215100a551d7e9b2244c772e82f88f8ad70217da472d4a",
+      "bytes": 396110,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
       "countyId": "桃園市",
@@ -368,7 +368,7 @@
     {
       "path": "buckets/高雄市.json",
       "assetGroup": "county-bucket",
-      "hash": "sha256-9b3f9be41cca845afb34af9de7794eddba6d4251d62e08ce4d5947eff52ac7a3",
+      "hash": "sha256-f36ad007e39686dde805fc36be39e7af35f865963b1234c057b1878f87c31829",
       "bytes": 527880,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
@@ -378,7 +378,7 @@
     {
       "path": "buckets/基隆市.json",
       "assetGroup": "county-bucket",
-      "hash": "sha256-50c2a58410d26b279846cb1b4a2cba0edd4a791a2024aef78e73131227ce7ec7",
+      "hash": "sha256-5d7265a1c54b4ad3a7d1cf5cd28c5064b577c65a7ffec3b9811bc8060253e5ca",
       "bytes": 82609,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
@@ -388,7 +388,7 @@
     {
       "path": "buckets/連江縣.json",
       "assetGroup": "county-bucket",
-      "hash": "sha256-b5456f5bf62ec13c4f283fdfbab3e48f95b1144760b5999eab6e3f54b96d3231",
+      "hash": "sha256-00fee437cecb70649432f28ffdc08ef7d4d6407e419daf49f147798e04d8ad28",
       "bytes": 18533,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
@@ -398,7 +398,7 @@
     {
       "path": "buckets/雲林縣.json",
       "assetGroup": "county-bucket",
-      "hash": "sha256-4f38d2ea7a90d15a46276a9e15a7119d6ffe04ee785844f2c81c1465afde6b6e",
+      "hash": "sha256-007286b475ac4ccc3abbf1ddd9fa9e88536f43b637844476fc96ddce2d250dd6",
       "bytes": 314893,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
@@ -408,7 +408,7 @@
     {
       "path": "buckets/新北市.json",
       "assetGroup": "county-bucket",
-      "hash": "sha256-08f34f0fd3ab33fcedcf0dc463fd64a9366de8b9cede62026ef8debdca27c093",
+      "hash": "sha256-7f6227aa16350dd3dde2c545a1fa43a89b6ef242156432e8eb66782f7e827e82",
       "bytes": 487459,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
@@ -418,7 +418,7 @@
     {
       "path": "buckets/新竹市.json",
       "assetGroup": "county-bucket",
-      "hash": "sha256-51afbbd141b2b09510fe16fd61895d8c4775c83211cd0fab93d8cf069b2fab4a",
+      "hash": "sha256-cf87aa5c35e3702c15e7f1659ef5a9945c3881fe1deaa818794c61e23225dd95",
       "bytes": 83936,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
@@ -428,8 +428,8 @@
     {
       "path": "buckets/新竹縣.json",
       "assetGroup": "county-bucket",
-      "hash": "sha256-46ce133bc6b0c8de164914430a56685b19cabc10728aacbb59223da5def7806e",
-      "bytes": 190763,
+      "hash": "sha256-76b472de9080d9a4f7346ac47000e83ce09804c619524f9ed4781df40f2b7eea",
+      "bytes": 190770,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
       "countyId": "新竹縣",
@@ -438,7 +438,7 @@
     {
       "path": "buckets/嘉義市.json",
       "assetGroup": "county-bucket",
-      "hash": "sha256-a13b9e11d1e7f784c54d17e85cd62393b44a090deb064d0f654a01929b210b8e",
+      "hash": "sha256-b17d4a157c319796db758813545118e06b83d8495daf02dde1ad1d2420088511",
       "bytes": 50958,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
@@ -448,7 +448,7 @@
     {
       "path": "buckets/嘉義縣.json",
       "assetGroup": "county-bucket",
-      "hash": "sha256-dc8389a400dcd2757cefac905e57ec5f748a1ff930b1fd43adcd8f3ae7becbf5",
+      "hash": "sha256-60b28534f82ed6538b0ac1c0735b5dd14d52ddc14aeb4ce2138accb54973e260",
       "bytes": 252614,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
@@ -458,7 +458,7 @@
     {
       "path": "buckets/彰化縣.json",
       "assetGroup": "county-bucket",
-      "hash": "sha256-ae1bfd32a29287b6f8af4c28d642e659cc6e0e9f53b1c68fe54403310b0dfdd0",
+      "hash": "sha256-08d7045c2f64769695abedbd0b6fa22bb1a28b8227613a09151298ba20b4f529",
       "bytes": 344438,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
@@ -468,8 +468,8 @@
     {
       "path": "buckets/臺中市.json",
       "assetGroup": "county-bucket",
-      "hash": "sha256-9aef6a7040c717d9223bdb2d132d3b313f88af292722216dfb6ede33e703dbf4",
-      "bytes": 512751,
+      "hash": "sha256-fc86406592de5ef7b31dcc8324e34b1480185cfd921d4a378ffc9c42281c6c85",
+      "bytes": 513587,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
       "countyId": "臺中市",
@@ -478,8 +478,8 @@
     {
       "path": "buckets/臺北市.json",
       "assetGroup": "county-bucket",
-      "hash": "sha256-df9681b196ca1bb8f94cf3acc39884db066421105cdc7125591de492303d0558",
-      "bytes": 345986,
+      "hash": "sha256-0d61043f69c45ea58c5ae2745c88bd9976420dbcce810e537727f57bfce5f6bb",
+      "bytes": 346605,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
       "countyId": "臺北市",
@@ -488,7 +488,7 @@
     {
       "path": "buckets/臺東縣.json",
       "assetGroup": "county-bucket",
-      "hash": "sha256-69f9e4d9357768e9f4b872f2e97e1616439d0255d0b6104a8939f193aa2688d1",
+      "hash": "sha256-61e1abd95a553630c81b9da2c7f52d73e3405d35932b31be1cdf26b0e05bc168",
       "bytes": 189231,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
@@ -498,8 +498,8 @@
     {
       "path": "buckets/臺南市.json",
       "assetGroup": "county-bucket",
-      "hash": "sha256-0b786136c7426d3476d29870d34f4ed6acba2783f5cbb7e908cfda9a1c431eda",
-      "bytes": 473426,
+      "hash": "sha256-680cd6cfc02e83a8fa1033c808a6f90878261fef1d55d738ec319ba01ad19658",
+      "bytes": 474877,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
       "countyId": "臺南市",
@@ -508,7 +508,7 @@
     {
       "path": "buckets/澎湖縣.json",
       "assetGroup": "county-bucket",
-      "hash": "sha256-a68100b3435076a3a0abf4d913dc9342b923d3fd0c617dc13c8405c26df8e0d6",
+      "hash": "sha256-3519c46139c37d517a11126eebd828b6ec3b71a01840287a2807966a2a4e8e36",
       "bytes": 79019,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
@@ -518,8 +518,8 @@
     {
       "path": "school-atlas/宜蘭縣.json",
       "assetGroup": "school-atlas",
-      "hash": "sha256-ed1c2f99497cbd91db16c434da89f271d16dda0148716c701f6425b09da0a187",
-      "bytes": 1616446,
+      "hash": "sha256-c59a93eedbc9ed00ebc007cc166fcd49abad366bc4dc36b7602d54d96af02641",
+      "bytes": 1617840,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
       "countyId": "宜蘭縣",
@@ -528,8 +528,8 @@
     {
       "path": "school-atlas/花蓮縣.json",
       "assetGroup": "school-atlas",
-      "hash": "sha256-0b9ca7ba5a5da5552ed3f330a6fa668b2f9fc03217e122f2e4470743330560cf",
-      "bytes": 2005093,
+      "hash": "sha256-8cca7812f385972276219d4db0d97900c6f9272e9179ece162843059a18ac4d0",
+      "bytes": 2001382,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
       "countyId": "花蓮縣",
@@ -538,7 +538,7 @@
     {
       "path": "school-atlas/金門縣.json",
       "assetGroup": "school-atlas",
-      "hash": "sha256-c8e1decc2e1af64ab642f72e0839bfa15e4ff335d7f0bb1992f861d4bf5b3276",
+      "hash": "sha256-0ea0ae890e942de1a25b83b7932128d451c7d82988b9c4779ee655e8c2bf752b",
       "bytes": 376086,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
@@ -548,8 +548,8 @@
     {
       "path": "school-atlas/南投縣.json",
       "assetGroup": "school-atlas",
-      "hash": "sha256-6b4b8e0211b16e5e927cf06f7d447b442c130f7eb5dd539541b09f757f08c8d4",
-      "bytes": 2690587,
+      "hash": "sha256-eab0c1c37dd215f8c7688672e8228f82fdbb9b13dd0c8927395004db2ea73e60",
+      "bytes": 2692227,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
       "countyId": "南投縣",
@@ -558,7 +558,7 @@
     {
       "path": "school-atlas/屏東縣.json",
       "assetGroup": "school-atlas",
-      "hash": "sha256-4f1c68ae6b749a79c5fd3625895507db7670dea6ecc9fdf2142a6dc0f2c90817",
+      "hash": "sha256-02a9683008c7703cade8e659dae58758d8090fc5677fb54b93b13e3cf50c36e9",
       "bytes": 3237292,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
@@ -568,8 +568,8 @@
     {
       "path": "school-atlas/苗栗縣.json",
       "assetGroup": "school-atlas",
-      "hash": "sha256-5b4ef5ad40ae6d36cd2e20e0aa897901aff3a8613db0dade859eaae824b62bce",
-      "bytes": 2309503,
+      "hash": "sha256-32977d9af267378403b839dee04335065e7cbb8393f4c7fe47cff6413c9b3939",
+      "bytes": 2311443,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
       "countyId": "苗栗縣",
@@ -578,8 +578,8 @@
     {
       "path": "school-atlas/桃園市.json",
       "assetGroup": "school-atlas",
-      "hash": "sha256-38a93edaee9754ea7984992c7df2d6a9eb78a7a2f428bc2bb2136ac8bc643d5d",
-      "bytes": 4101758,
+      "hash": "sha256-9ffd213d38a363a6a0d3fa94df4dd89c43db211dddb93d7e50a0cfcf72942ca7",
+      "bytes": 4111313,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
       "countyId": "桃園市",
@@ -588,8 +588,8 @@
     {
       "path": "school-atlas/高雄市.json",
       "assetGroup": "school-atlas",
-      "hash": "sha256-fcd492ff520b017efcbaac9820ac85a1330a8a6d269a34766c2da4cd1c8b00b1",
-      "bytes": 5453797,
+      "hash": "sha256-1cf755154c295ad6eae59a66ca5155280e0b3f5d13ed3ee6886949706be22350",
+      "bytes": 5453794,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
       "countyId": "高雄市",
@@ -598,7 +598,7 @@
     {
       "path": "school-atlas/基隆市.json",
       "assetGroup": "school-atlas",
-      "hash": "sha256-093bb6cfb758e7322ada104f0140677822ee15d93748df18d831bdb8ced69e6a",
+      "hash": "sha256-095ab9f5cab47fdb5f4300096f9faf8f6aa3df9e312c3e9ff9c7d9eec8c1ff09",
       "bytes": 921793,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
@@ -608,7 +608,7 @@
     {
       "path": "school-atlas/連江縣.json",
       "assetGroup": "school-atlas",
-      "hash": "sha256-9fa9a3b76abf3ac9689ce8ef55123fe05d0a2b8a64ed2a0cafcb036c44e04328",
+      "hash": "sha256-cf74e4c49bbb99104c0490cccbbfdfe7ebf6258e59cc5d4d866ae4b4b642d3a3",
       "bytes": 165053,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
@@ -618,8 +618,8 @@
     {
       "path": "school-atlas/雲林縣.json",
       "assetGroup": "school-atlas",
-      "hash": "sha256-f6f99f36a29db0c04a5c252ec1ef6ef4859a1b636f9fca3356dcaa655ed1be1c",
-      "bytes": 3040167,
+      "hash": "sha256-fa68f038a1411caf02c6de4298e0f1b2e5c6151c87d32671e7888f4ca04c2267",
+      "bytes": 3042500,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
       "countyId": "雲林縣",
@@ -628,8 +628,8 @@
     {
       "path": "school-atlas/新北市.json",
       "assetGroup": "school-atlas",
-      "hash": "sha256-ed9ab9605c6bae58eb6cf0c3b93862cbcab36756c1d3e052a4eefb289df77d67",
-      "bytes": 5058652,
+      "hash": "sha256-a820bd46dc7ad980d7c33bafcbe8d31aa305ac44ab92ce644065a92eacd50db2",
+      "bytes": 5066710,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
       "countyId": "新北市",
@@ -638,7 +638,7 @@
     {
       "path": "school-atlas/新竹市.json",
       "assetGroup": "school-atlas",
-      "hash": "sha256-cf30433b7966e0551a1d2b93b2688505dfd168e9b89c24bb803021ce9b04eaf7",
+      "hash": "sha256-4c0bb64c4d226373801469dae3ba848189b0f0bbc9c071813d0e4945dd556090",
       "bytes": 890754,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
@@ -648,8 +648,8 @@
     {
       "path": "school-atlas/新竹縣.json",
       "assetGroup": "school-atlas",
-      "hash": "sha256-dd8446b4cded5858d1223a214049e6f31772d334270507f644c9b76bd6a30035",
-      "bytes": 1846236,
+      "hash": "sha256-5e2ae6b8bce3d4f5bfd5378776054ba07e30df55cf942362739ec5801db4aa88",
+      "bytes": 1847563,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
       "countyId": "新竹縣",
@@ -658,7 +658,7 @@
     {
       "path": "school-atlas/嘉義市.json",
       "assetGroup": "school-atlas",
-      "hash": "sha256-ecc9e55f3591b39d06fc58a347e38bb34bb51bf0e2316d506c6970320cca3405",
+      "hash": "sha256-33213b7f16ff8d4e6b5984184fd7855e6f318405de2519f4395616edbd744c9d",
       "bytes": 497488,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
@@ -668,7 +668,7 @@
     {
       "path": "school-atlas/嘉義縣.json",
       "assetGroup": "school-atlas",
-      "hash": "sha256-f0499b44ed372d350c21abb01a7e2218cbf93d15eabbac1bd5818d2e6cbcfb74",
+      "hash": "sha256-0628aac0c58e79b83bc6e0e33d767da18fdac7b46c588f658129a8782ca783d6",
       "bytes": 2331074,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
@@ -678,8 +678,8 @@
     {
       "path": "school-atlas/彰化縣.json",
       "assetGroup": "school-atlas",
-      "hash": "sha256-7f67eff2f7e1edeea99e7c91a4febc2447dbbc00f2cfd012426b1e156e92033d",
-      "bytes": 3402072,
+      "hash": "sha256-72403710923eb4e8e824cdf7fe34006be85fea33fdd39907772d20e6cc06854c",
+      "bytes": 3404632,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
       "countyId": "彰化縣",
@@ -688,8 +688,8 @@
     {
       "path": "school-atlas/臺中市.json",
       "assetGroup": "school-atlas",
-      "hash": "sha256-b38a692f7143d35637376ec04cb6e11dfba0153ece1eb461f971863c024d7ba3",
-      "bytes": 5357966,
+      "hash": "sha256-e43575ed01db131edbf57285de831f8ecf87bc3812572e70d85cbf69a36883eb",
+      "bytes": 5367526,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
       "countyId": "臺中市",
@@ -698,8 +698,8 @@
     {
       "path": "school-atlas/臺北市.json",
       "assetGroup": "school-atlas",
-      "hash": "sha256-394037ddb1905798e01baa2378ef2bcf0dc988527236baaa06b1d00eba993b8a",
-      "bytes": 4004742,
+      "hash": "sha256-2c6f0b9caa6b7cf2041ee3f2451af60583aed7f9af96f48bd804ad8a7e2b285c",
+      "bytes": 4010494,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
       "countyId": "臺北市",
@@ -708,7 +708,7 @@
     {
       "path": "school-atlas/臺東縣.json",
       "assetGroup": "school-atlas",
-      "hash": "sha256-7eeeec1082ee171f96245bfb39fd95032a73bd19b8615c784ee7ecd24d5e36f7",
+      "hash": "sha256-874a5cfacbd5d868c12ca9b53f487e95d2f25becc43eed2bfff1cfd1d4e1b2df",
       "bytes": 1736157,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
@@ -718,8 +718,8 @@
     {
       "path": "school-atlas/臺南市.json",
       "assetGroup": "school-atlas",
-      "hash": "sha256-96b67e2eb2025bdf808f568d455775c307fc0c900649399b34292c0c2d9761d0",
-      "bytes": 4586394,
+      "hash": "sha256-f999ef9e275051c6a8c1fd49b3e13d5ed96033cdd8be0542be857caf58443e82",
+      "bytes": 4592182,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,
       "countyId": "臺南市",
@@ -728,7 +728,7 @@
     {
       "path": "school-atlas/澎湖縣.json",
       "assetGroup": "school-atlas",
-      "hash": "sha256-1cfae2281b55d6ffd909a9aac9ffe54187d43f9cddec62ca98472bbad0037177",
+      "hash": "sha256-a5fb89f9148cec56b5fa893e1779c6cf8e7b328e4e39159521f802c00544e1f9",
       "bytes": 744431,
       "dependsOnSchemaVersion": "2026.03.p0",
       "critical": false,

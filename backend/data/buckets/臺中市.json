@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-11T23:49:21.150Z",
+  "generatedAt": "2026-03-17T13:50:49.120Z",
   "county": {
     "id": "臺中市",
     "countyCode": "66000",
@@ -821,6 +821,51 @@
         ]
       },
       {
+        "id": "5-wsm9y",
+        "geohash": "wsm9y",
+        "precision": 5,
+        "count": 7,
+        "totalStudents": 3805,
+        "latitude": 24.241225,
+        "longitude": 120.53044,
+        "bounds": {
+          "minLatitude": 24.216605,
+          "maxLatitude": 24.252886,
+          "minLongitude": 120.523851,
+          "maxLongitude": 120.538628
+        },
+        "topSchools": [
+          {
+            "id": "064663",
+            "name": "市立梧棲區中正國小",
+            "townshipName": "梧棲區",
+            "students": 1328,
+            "status": "正常"
+          },
+          {
+            "id": "064661",
+            "name": "市立梧棲國小",
+            "townshipName": "梧棲區",
+            "students": 961,
+            "status": "正常"
+          },
+          {
+            "id": "064516",
+            "name": "市立梧棲國中",
+            "townshipName": "梧棲區",
+            "students": 631,
+            "status": "正常"
+          },
+          {
+            "id": "064689",
+            "name": "市立龍海國小",
+            "townshipName": "龍井區",
+            "students": 382,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "5-wsmcg",
         "geohash": "wsmcg",
         "precision": 5,
@@ -996,51 +1041,6 @@
             "name": "市立潭子區新興國小",
             "townshipName": "潭子區",
             "students": 223,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "5-wsm9y",
-        "geohash": "wsm9y",
-        "precision": 5,
-        "count": 6,
-        "totalStudents": 3805,
-        "latitude": 24.241082,
-        "longitude": 120.531538,
-        "bounds": {
-          "minLatitude": 24.216605,
-          "maxLatitude": 24.252886,
-          "minLongitude": 120.527001,
-          "maxLongitude": 120.538628
-        },
-        "topSchools": [
-          {
-            "id": "064663",
-            "name": "市立梧棲區中正國小",
-            "townshipName": "梧棲區",
-            "students": 1328,
-            "status": "正常"
-          },
-          {
-            "id": "064661",
-            "name": "市立梧棲國小",
-            "townshipName": "梧棲區",
-            "students": 961,
-            "status": "正常"
-          },
-          {
-            "id": "064516",
-            "name": "市立梧棲國中",
-            "townshipName": "梧棲區",
-            "students": 631,
-            "status": "正常"
-          },
-          {
-            "id": "064689",
-            "name": "市立龍海國小",
-            "townshipName": "龍井區",
-            "students": 382,
             "status": "正常"
           }
         ]
@@ -4541,6 +4541,37 @@
             "townshipName": "神岡區",
             "students": 298,
             "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "6-wsm9yt",
+        "geohash": "wsm9yt",
+        "precision": 6,
+        "count": 2,
+        "totalStudents": 223,
+        "latitude": 24.243355,
+        "longitude": 120.5262,
+        "bounds": {
+          "minLatitude": 24.242087,
+          "maxLatitude": 24.244623,
+          "minLongitude": 120.523851,
+          "maxLongitude": 120.528549
+        },
+        "topSchools": [
+          {
+            "id": "064662",
+            "name": "市立梧南國小",
+            "townshipName": "梧棲區",
+            "students": 223,
+            "status": "正常"
+          },
+          {
+            "id": "063501:國中",
+            "name": "市立善水國中(小)",
+            "townshipName": "梧棲區",
+            "students": 0,
+            "status": "待確認"
           }
         ]
       },
@@ -9009,30 +9040,6 @@
             "name": "市立永寧國小",
             "townshipName": "梧棲區",
             "students": 280,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "6-wsm9yt",
-        "geohash": "wsm9yt",
-        "precision": 6,
-        "count": 1,
-        "totalStudents": 223,
-        "latitude": 24.244623,
-        "longitude": 120.528549,
-        "bounds": {
-          "minLatitude": 24.244623,
-          "maxLatitude": 24.244623,
-          "minLongitude": 120.528549,
-          "maxLongitude": 120.528549
-        },
-        "topSchools": [
-          {
-            "id": "064662",
-            "name": "市立梧南國小",
-            "townshipName": "梧棲區",
-            "students": 223,
             "status": "正常"
           }
         ]
@@ -17891,6 +17898,30 @@
             "townshipName": "梧棲區",
             "students": 106,
             "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsm9yt4",
+        "geohash": "wsm9yt4",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 0,
+        "latitude": 24.242087,
+        "longitude": 120.523851,
+        "bounds": {
+          "minLatitude": 24.242087,
+          "maxLatitude": 24.242087,
+          "minLongitude": 120.523851,
+          "maxLongitude": 120.523851
+        },
+        "topSchools": [
+          {
+            "id": "063501:國中",
+            "name": "市立善水國中(小)",
+            "townshipName": "梧棲區",
+            "students": 0,
+            "status": "待確認"
           }
         ]
       },

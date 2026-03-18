@@ -39,7 +39,7 @@ function insertTownSummaryRows(statement, countyCode, townCode, summaries) {
   })
 }
 
-export async function buildAtlasSqliteBuffer(datasetBundle) {
+export async function buildAtlasSqliteBuffer(datasetBundle, boundaries) {
   const SQL = await initSqlJs({
     locateFile: (file) => path.join(sqlJsRoot, file),
   })
@@ -174,6 +174,11 @@ export async function buildAtlasSqliteBuffer(datasetBundle) {
       coordinate_match_score REAL,
       PRIMARY KEY (code, school_level)
     );
+    CREATE TABLE boundaries (
+      id TEXT PRIMARY KEY,
+      type TEXT NOT NULL, -- 'county' or 'township'
+      topology_json TEXT NOT NULL
+    );
     CREATE INDEX idx_towns_county_id ON towns (county_id);
     CREATE INDEX idx_schools_county_id ON schools (county_id);
     CREATE INDEX idx_schools_township_id ON schools (township_id);
@@ -193,6 +198,7 @@ export async function buildAtlasSqliteBuffer(datasetBundle) {
   const insertCountySummary = db.prepare('INSERT INTO county_summaries VALUES (?, ?, ?, ?, ?, ?)')
   const insertTownSummary = db.prepare('INSERT INTO town_summaries VALUES (?, ?, ?, ?, ?, ?, ?)')
   const insertBucket = db.prepare('INSERT INTO school_buckets VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)')
+  const insertBoundary = db.prepare('INSERT INTO boundaries VALUES (?, ?, ?)')
   const insertCoordinateIssue = db.prepare('INSERT INTO coordinate_issues VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)')
 
   try {
@@ -202,6 +208,8 @@ export async function buildAtlasSqliteBuffer(datasetBundle) {
     insertMeta.run(['years', encodeJson(datasetBundle.years)])
     insertMeta.run(['sources', encodeJson(datasetBundle.sources)])
     insertMeta.run(['dataNotes', encodeJson(datasetBundle.summaryDataset.dataNotes ?? [])])
+
+    insertBoundary.run(['counties', 'county', encodeJson(boundaries.countyTopology)])
 
     datasetBundle.summaryDataset.counties.forEach((county) => {
       const countyCode = county.countyCode ?? county.id
@@ -234,6 +242,11 @@ export async function buildAtlasSqliteBuffer(datasetBundle) {
         ])
         insertTownSummaryRows(insertTownSummary, countyCode, town.townCode ?? town.id, town.summaries)
       })
+
+      const townshipTopology = boundaries.townshipTopologyByCounty.find((entry) => entry.countyId === county.id)
+      if (townshipTopology) {
+        insertBoundary.run([county.id, 'township', encodeJson(townshipTopology.topology)])
+      }
     })
 
     datasetBundle.countyDetails.forEach(({ detail }) => {
@@ -358,6 +371,7 @@ export async function buildAtlasSqliteBuffer(datasetBundle) {
     insertCountySummary.free()
     insertTownSummary.free()
     insertBucket.free()
+    insertBoundary.free()
     insertCoordinateIssue.free()
   }
 

@@ -1,7 +1,7 @@
 import { useState, type ReactNode, type TransitionStartFunction } from 'react'
 
 import type { AtlasTab } from '../hooks/useAtlasQueryState'
-import type { AtlasTabItem } from '../components/AtlasTabs'
+import type { AtlasTabItem } from '../components/molecules/AtlasTabs'
 import type {
     AcademicYear,
     EducationLevelFilter,

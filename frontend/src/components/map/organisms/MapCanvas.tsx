@@ -195,7 +195,7 @@ export default function MapCanvas(props: MapCanvasProps) {
             {/* 2. Control Pillar: MiniMap + Zoom (Below Top Bar) */}
             <div className="map-control-pillar">
               <AtlasMiniMap 
-                countyBoundaries={countyBoundaries as any}
+                countyBoundaries={countyBoundaries}
                 activeCountyId={activeCountyId}
                 onSelectCounty={props.onSelectCounty}
                 isVisible={true}

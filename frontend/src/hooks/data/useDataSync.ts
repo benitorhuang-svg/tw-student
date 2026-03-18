@@ -91,7 +91,7 @@ export function useDataSync(deps: SyncDeps) {
           deps.setCountyDetailCache({})
           deps.setCountyBucketCache({})
           updatedAssets.push(...changedAssets.filter((asset) => asset.path === 'education-atlas.sqlite' || asset.path === 'education-summary.json').map((asset) => asset.path))
-        } catch (error) {
+        } catch {
             /* Error handling */
         }
       }
@@ -101,14 +101,14 @@ export function useDataSync(deps: SyncDeps) {
           resetAtlasBoundaryCaches()
           nextCountyBoundaries = await loadCountyBoundaries({ forceRefresh: true })
           updatedAssets.push('county-boundaries.topo.json')
-        } catch (error) { /* ... */ }
+        } catch { /* ... */ }
       }
 
       if (validationChanged || !deps.validationReport) {
         try {
           nextValidationReport = await loadValidationReport({ forceRefresh: true })
           if (changedPaths.has('validation-report.json')) updatedAssets.push('validation-report.json')
-        } catch (error) { /* ... */ }
+        } catch { /* ... */ }
       }
 
       deps.setSummaryDataset(nextSummaryDataset)
@@ -131,7 +131,7 @@ export function useDataSync(deps: SyncDeps) {
       }
       setRefreshSummary(nextRefreshSummary)
       setRefreshStatus('資料同步完成')
-    } catch (e) {
+    } catch {
       setRefreshStatus('同步失敗')
     } finally {
       setIsRefreshingData(false)

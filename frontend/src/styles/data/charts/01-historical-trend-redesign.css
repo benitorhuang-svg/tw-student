@@ -1,13 +1,28 @@
 .historical-trend-chart {
     position: relative;
     padding: 0;
-    background: transparent !important;
-    border: none !important;
-    border-radius: 24px !important;
-    box-shadow: none !important;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     overflow: visible !important;
-    min-height: 0 !important; /* Reset to 0 to remove bottom blank space */
+    min-height: 0 !important;
+    background: transparent !important;
+    border: none !important;
+}
+
+.dashboard-card--glass {
+    background: rgba(255, 255, 255, 0.02) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    box-shadow: 
+        0 8px 32px 0 rgba(31, 38, 135, 0.07),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.05) !important;
+}
+
+.historical-trend-chart.dashboard-card--flat {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 
 /* Override story-specific min-heights that were causing the gap */
@@ -25,7 +40,7 @@
 }
 
 .historical-trend-chart .dashboard-card__body {
-    padding: 12px 16px 0 !important; /* Added top padding for tooltip room */
+    padding: 0 12px 0 !important;
     overflow: visible !important;
 }
 
@@ -61,7 +76,7 @@
 
 .historical-trend-chart .chart-svg-frame {
     filter: drop-shadow(0 8px 12px rgb(0 0 0 / 2%));
-    padding: 20px 0 0; /* Increased top padding */
+    padding: 4px 0 0;
 }
 
 .historical-trend-chart .bar-segment {
@@ -98,22 +113,29 @@
 }
 
 .historical-trend-chart .total-badge {
-    font-family: var(--font-heading);
-    font-weight: 800;
-    font-size: 13px;
+    font-family: inherit;
+    font-weight: 900;
+    font-size: 14px;
     letter-spacing: -0.01em;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
 }
 
 .historical-trend-chart .year-label {
-    font-family: var(--font-heading);
-    letter-spacing: 0.05em;
-    fill: var(--text-soft);
-    font-size: 11px;
-    font-weight: 700;
+    font-family: inherit;
+    letter-spacing: 0.1em;
+    fill: var(--text-secondary);
+    font-size: 12px;
+    font-weight: 800;
 }
 
 .historical-trend-chart .label-badge-text {
-    font-weight: 800;
-    font-size: 11px;
-    letter-spacing: 0.02em;
+    font-weight: 900;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.historical-trend-chart .chart-svg-frame {
+    filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.05));
+    padding: 0;
 }

@@ -1,7 +1,8 @@
 import React from 'react'
+import type { RankingSummary } from '../../lib/analytics'
 
 type TownshipDistributionSectionProps = {
-  townships: any[]
+  townships: RankingSummary[]
   onSelectTownship: (id: string) => void
   flat?: boolean
 }

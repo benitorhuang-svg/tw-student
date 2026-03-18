@@ -1,6 +1,5 @@
 import { writeFile } from 'node:fs/promises'
 
-import { parse } from 'csv-parse/sync'
 import * as XLSX from 'xlsx'
 
 export const CURRENT_YEAR = 114
@@ -144,8 +143,8 @@ function buildHigherrComposition(row) {
 export const LEVEL_CONFIG = {
   國小: {
     pointLevel: '國民小學',
-    directoryFiles: ['e1_new.csv'],
-    detailFile: 'basec.csv',
+    directoryFiles: ['e1_new'],
+    detailFile: 'basec',
     sumRow: (row) =>
       number(row['1年級男學生數']) +
       number(row['1年級女學生數']) +
@@ -163,8 +162,8 @@ export const LEVEL_CONFIG = {
   },
   國中: {
     pointLevel: '國民中學',
-    directoryFiles: ['j1_new.csv'],
-    detailFile: 'basej.csv',
+    directoryFiles: ['j1_new'],
+    detailFile: 'basej',
     sumRow: (row) =>
       number(row['學生數7年級男']) +
       number(row['學生數7年級女']) +
@@ -176,18 +175,18 @@ export const LEVEL_CONFIG = {
   },
   高中職: {
     pointLevel: '高級中等學校',
-    directoryFiles: ['high.csv'],
-    detailFile: 'base0.csv',
+    directoryFiles: ['high'],
+    detailFile: 'base0',
     sumRow: (row) => number(row['學生數男']) + number(row['學生數女']),
     breakdownRow: buildHighComposition,
   },
   大專院校: {
     pointLevel: '大專校院',
-    directoryFiles: ['u1_new.csv', 'u2_new.csv', 'u3_new.csv'],
+    directoryFiles: ['u1_new', 'u2_new', 'u3_new'],
     detailFiles: [
-      { name: 'student.csv', sumRow: (row) => number(row['總計']), breakdownRow: buildHigherStudentComposition },
-      { name: 'highera1.csv', sumRow: (row) => number(row['二專學生數']) + number(row['二技(大學)學生數']), breakdownRow: buildHighera1Composition },
-      { name: 'higherr.csv', sumRow: (row) => number(row['學生數學士']) + number(row['學生數碩士']) + number(row['學生數博士']), breakdownRow: buildHigherrComposition },
+      { name: 'student', sumRow: (row) => number(row['總計']), breakdownRow: buildHigherStudentComposition },
+      { name: 'highera', sumRow: (row) => number(row['二專學生數']) + number(row['二技(大學)學生數']), breakdownRow: buildHighera1Composition },
+      { name: 'higherr', sumRow: (row) => number(row['學生數學士']) + number(row['學生數碩士']) + number(row['學生數博士']), breakdownRow: buildHigherrComposition },
     ],
   },
 }
@@ -245,22 +244,16 @@ export function summaryBucketKey(educationLevel, managementType) {
   return `${educationLevel}|${managementType}`
 }
 
-export function parseCsv(text) {
-  return parse(text, {
-    bom: true,
-    columns: true,
-    relax_column_count: true,
-    skip_empty_lines: true,
-    trim: true,
-  })
-}
-
 function normalizeWorkbookCell(value) {
   return String(value ?? '').replace(/\r?\n/g, '').trim()
 }
 
 function hasWorkbookRowData(row) {
   return row.some((value) => normalizeWorkbookCell(value) !== '')
+}
+
+function isWorkbookSchoolCode(value) {
+  return /^[0-9A-Z]{4,10}$/i.test(normalizeWorkbookCell(value))
 }
 
 function toWorkbookObjects(rows, headers, startIndex) {
@@ -275,7 +268,10 @@ function findHeaderRowIndex(rows, requiredHeaders) {
 }
 
 function parseSimpleWorkbookRows(rows, requiredHeaders, aliases = {}) {
-  const headerRowIndex = findHeaderRowIndex(rows, requiredHeaders)
+  const headerRowIndex = rows.findIndex((row) => {
+    const normalizedRow = row.map((value) => aliases[normalizeWorkbookCell(value)] ?? normalizeWorkbookCell(value))
+    return requiredHeaders.every((header) => normalizedRow.includes(header))
+  })
   if (headerRowIndex < 0) {
     throw new Error(`Unable to locate workbook header row: ${requiredHeaders.join(', ')}`)
   }
@@ -318,12 +314,75 @@ function parseBase0WorkbookRows(rows) {
       && nextRow.some((value) => normalizeWorkbookCell(value) === '男')
   })
 
-  if (headerRowIndex < 0) {
+  if (headerRowIndex >= 0) {
+    const headers = combineWorkbookHeaders(rows[headerRowIndex], rows[headerRowIndex + 1] ?? [])
+    return toWorkbookObjects(rows, headers, headerRowIndex + 2)
+  }
+
+  const legacyHeaderRowIndex = rows.findIndex((row, index) => {
+    const nextRow = rows[index + 1] ?? []
+    return normalizeWorkbookCell(row[14]) === '學生數' && normalizeWorkbookCell(nextRow[14]) === '總計'
+  })
+
+  if (legacyHeaderRowIndex < 0) {
     throw new Error('Unable to locate workbook multi-row header for base0')
   }
 
-  const headers = combineWorkbookHeaders(rows[headerRowIndex], rows[headerRowIndex + 1] ?? [])
-  return toWorkbookObjects(rows, headers, headerRowIndex + 2)
+  return rows
+    .slice(legacyHeaderRowIndex + 2)
+    .filter((row) => hasWorkbookRowData(row) && isWorkbookSchoolCode(row[0]))
+    .map((row) => ({
+      學校代碼: row[0] ?? '',
+      學校名稱: row[1] ?? '',
+      縣市名稱: row[3] ?? '',
+      學生數男: row[15] ?? '',
+      學生數女: row[16] ?? '',
+    }))
+}
+
+function parseHigheraWorkbookRows(rows) {
+  const simpleHeaderRowIndex = rows.findIndex((row) => row.some((value) => normalizeWorkbookCell(value) === '二專學生數'))
+  if (simpleHeaderRowIndex >= 0) {
+    return parseSimpleWorkbookRows(rows, ['學校代碼', '學校名稱', '二專學生數'])
+  }
+
+  const fixedHeaderRowIndex = rows.findIndex((row) => normalizeWorkbookCell(row[16]) === '二專' && normalizeWorkbookCell(row[17]).startsWith('二技'))
+  if (fixedHeaderRowIndex < 0) {
+    throw new Error('Unable to locate workbook header row for highera')
+  }
+
+  return rows
+    .slice(fixedHeaderRowIndex + 1)
+    .filter((row) => hasWorkbookRowData(row) && isWorkbookSchoolCode(row[0]))
+    .map((row) => ({
+      學校代碼: row[0] ?? '',
+      學校名稱: row[1] ?? '',
+      二專學生數: row[16] ?? '',
+      '二技(大學)學生數': row[17] ?? '',
+    }))
+}
+
+function parseHigherrWorkbookRows(rows) {
+  const simpleHeaderRowIndex = rows.findIndex((row) => row.some((value) => normalizeWorkbookCell(value) === '學生數學士'))
+  if (simpleHeaderRowIndex >= 0) {
+    return parseSimpleWorkbookRows(rows, ['學校代碼', '學校名稱', '學生數學士'])
+  }
+
+  const fixedHeaderRowIndex = rows.findIndex((row) => normalizeWorkbookCell(row[10]) === '學士' && normalizeWorkbookCell(row[11]) === '碩士' && normalizeWorkbookCell(row[12]) === '博士')
+  if (fixedHeaderRowIndex < 0) {
+    throw new Error('Unable to locate workbook header row for higherr')
+  }
+
+  return rows
+    .slice(fixedHeaderRowIndex + 1)
+    .filter((row) => hasWorkbookRowData(row) && isWorkbookSchoolCode(row[0]))
+    .map((row) => ({
+      學校代碼: row[0] ?? '',
+      學校名稱: row[1] ?? '',
+      學生數學士: row[10] ?? '',
+      學生數碩士: row[11] ?? '',
+      學生數博士: row[12] ?? '',
+    }))
 }
 
 export function parseOfficialWorkbook(arrayBuffer, parserKey) {
@@ -339,10 +398,26 @@ export function parseOfficialWorkbook(arrayBuffer, parserKey) {
   switch (parserKey) {
     case 'student':
       return parseSimpleWorkbookRows(rows, ['學校代碼', '學校名稱', '總計'])
+    case 'highera':
+    case 'highera1':
+      return parseHigheraWorkbookRows(rows)
     case 'basec':
-      return parseSimpleWorkbookRows(rows, ['學校代碼', '學校名稱', '1年級男學生數'])
+      return parseSimpleWorkbookRows(rows, ['學校代碼', '學校名稱', '1年級男學生數'], {
+        '1年級男': '1年級男學生數',
+        '1年級女': '1年級女學生數',
+        '2年級男': '2年級男學生數',
+        '2年級女': '2年級女學生數',
+        '3年級男': '3年級男學生數',
+        '3年級女': '3年級女學生數',
+        '4年級男': '4年級男學生數',
+        '4年級女': '4年級女學生數',
+        '5年級男': '5年級男學生數',
+        '5年級女': '5年級女學生數',
+        '6年級男': '6年級男學生數',
+        '6年級女': '6年級女學生數',
+      })
     case 'basej':
-      return parseSimpleWorkbookRows(rows, ['學校代碼', '學校名稱', '7年級男'], {
+      return parseSimpleWorkbookRows(rows, ['學校代碼', '學校名稱', '學生數7年級男'], {
         '7年級男': '學生數7年級男',
         '7年級女': '學生數7年級女',
         '8年級男': '學生數8年級男',
@@ -353,7 +428,14 @@ export function parseOfficialWorkbook(arrayBuffer, parserKey) {
     case 'base0':
       return parseBase0WorkbookRows(rows)
     case 'higherr':
-      return parseSimpleWorkbookRows(rows, ['學校代碼', '學校名稱', '學生數學士'])
+      return parseHigherrWorkbookRows(rows)
+    case 'e1_new':
+    case 'j1_new':
+    case 'high':
+    case 'u1_new':
+    case 'u2_new':
+    case 'u3_new':
+      return parseSimpleWorkbookRows(rows, ['代碼', '學校名稱'])
     default:
       throw new Error(`Unsupported workbook parser: ${parserKey}`)
   }

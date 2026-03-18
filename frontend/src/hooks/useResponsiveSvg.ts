@@ -16,9 +16,17 @@ export function useResponsiveSvg(baseWidth: number, baseHeight: number, options:
     const minWidth = options.minWidth ?? 320
     const minHeight = options.minHeight ?? 180
     const updateSize = (nextWidth: number) => {
-      const width = Math.max(Math.round(nextWidth), minWidth)
-      const height = Math.max(Math.round((width * baseHeight) / baseWidth), minHeight)
-      setSize({ width, height })
+      const roundedWidth = Math.max(Math.round(nextWidth), minWidth)
+      
+      setSize((current) => {
+        // Threshold check: prevent tiny 1px breathing loops
+        if (Math.abs(current.width - roundedWidth) <= 2) {
+          return current
+        }
+        
+        const nextHeight = Math.max(Math.round((roundedWidth * baseHeight) / baseWidth), minHeight)
+        return { width: roundedWidth, height: nextHeight }
+      })
     }
 
     updateSize(element.clientWidth || baseWidth)

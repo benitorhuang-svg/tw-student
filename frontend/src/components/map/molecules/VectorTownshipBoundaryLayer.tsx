@@ -5,6 +5,38 @@ import { useMap } from 'react-leaflet'
 import type { RankingSummary } from '../../../lib/analytics'
 import { choroplethColor, choroplethOpacity, buildHoverPreviewHtml } from '../mapStyles'
 
+type TownshipTileProperties = {
+  townId?: string
+}
+
+type VectorTileFeature = {
+  properties?: TownshipTileProperties
+}
+
+type VectorTileMouseEvent = L.LeafletMouseEvent & {
+  layer: VectorTileFeature
+}
+
+type VectorGridLayer = L.Layer & {
+  setFeatureStyle: (id: string, style: L.PathOptions) => void
+  bringToFront: () => VectorGridLayer
+  on: (event: 'mouseover' | 'mouseout' | 'click', handler: (event: VectorTileMouseEvent) => void) => VectorGridLayer
+}
+
+type VectorGridNamespace = {
+  protobuf: (
+    url: string,
+    options: {
+      pane: string
+      vectorTileLayerStyles: {
+        township: (props: TownshipTileProperties) => L.PathOptions
+      }
+      interactive: boolean
+      getFeatureId: (feature: VectorTileFeature) => string | undefined
+    }
+  ) => VectorGridLayer
+}
+
 export type TownshipBoundaryLayerProps = {
   theme: 'light' | 'dark'
   baseUrl: string
@@ -29,7 +61,7 @@ const VectorTownshipBoundaryLayer = memo(({
   visible,
 }: TownshipBoundaryLayerProps) => {
   const map = useMap()
-  const layerRef = useRef<any>(null)
+  const layerRef = useRef<VectorGridLayer | null>(null)
   const tooltipRef = useRef<L.Tooltip | null>(null)
 
   // Stable references for event handlers
@@ -50,11 +82,12 @@ const VectorTownshipBoundaryLayer = memo(({
       className: 'atlas-map-tooltip atlas-map-tooltip--preview',
     })
 
-    const vectorGrid = (L as any).vectorGrid
+    const vectorGrid = (L as typeof L & { vectorGrid: VectorGridNamespace }).vectorGrid
     const layer = vectorGrid.protobuf(`${baseUrl}/township/{z}/{x}/{y}.pbf`, {
       pane: 'township-pane',
       vectorTileLayerStyles: {
-        township: (props: any) => {
+        township: (props) => {
+          if (!props.townId) return { opacity: 0, fillOpacity: 0, weight: 0 }
           const summary = handlersRef.current.townshipLookup.get(props.townId)
           if (!summary) return { opacity: 0, fillOpacity: 0, weight: 0 }
           return {
@@ -66,25 +99,26 @@ const VectorTownshipBoundaryLayer = memo(({
         },
       },
       interactive: true,
-      getFeatureId: (f: any) => f.properties?.townId,
+      getFeatureId: (feature) => feature.properties?.townId,
     })
-
-    if (visible) layer.addTo(map)
     layerRef.current = layer
 
-    layer.on('mouseover', (e: any) => {
-      const summary = handlersRef.current.townshipLookup.get(e.layer.properties.townId)
+    layer.on('mouseover', (event) => {
+      const townId = event.layer.properties?.townId
+      if (!townId) return
+
+      const summary = handlersRef.current.townshipLookup.get(townId)
       if (summary && tooltipRef.current) {
         tooltipRef.current
-          .setLatLng(e.latlng)
-          .setContent(buildHoverPreviewHtml((summary as any).label ?? (summary as any).name, summary.students))
+          .setLatLng(event.latlng)
+          .setContent(buildHoverPreviewHtml(summary.label, summary.students))
         if (!map.hasLayer(tooltipRef.current)) tooltipRef.current.addTo(map)
       }
     })
     layer.on('mouseout', () => tooltipRef.current?.remove())
-    layer.on('click', (e: any) => {
-      L.DomEvent.stop(e.originalEvent)
-      const id = e.layer.properties.townId
+    layer.on('click', (event) => {
+      L.DomEvent.stop(event.originalEvent)
+      const id = event.layer.properties?.townId
       if (id) handlersRef.current.onSelectTownship(id, { skipTabSwitch: true })
     })
 
@@ -125,7 +159,7 @@ const VectorTownshipBoundaryLayer = memo(({
         fillOpacity: isVisible ? (isActive ? 0.35 : isHovered ? 0.25 : Math.max(0.04, choroplethOpacity(summary.students) - 0.06)) : 0,
       })
     })
-  }, [activeTownshipId, highlightedTownshipId, townshipLookup, theme, map.getZoom()])
+  }, [activeTownshipId, highlightedTownshipId, townshipLookup, theme, map])
 
   return null
 })

@@ -6,6 +6,7 @@ import {
   type EducationLevelFilter,
   type ManagementTypeFilter,
   type EducationSummaryDataset,
+  type RegionGroupFilter,
 } from '../data/educationData'
 import { normalizeCountyIds, toCanonicalCountyIds } from './atlasIdentity'
 import { createSavedComparisonScenario, writeStoredScenarios } from './atlasHelpers'
@@ -27,7 +28,7 @@ type ComparisonActionsArgs = {
   setActiveYear: Dispatch<SetStateAction<AcademicYear>>
   setEducationLevel: Dispatch<SetStateAction<EducationLevelFilter>>
   setManagementType: Dispatch<SetStateAction<ManagementTypeFilter>>
-  setRegion: Dispatch<SetStateAction<any>>
+  setRegion: Dispatch<SetStateAction<RegionGroupFilter>>
   setSelectedCountyId: Dispatch<SetStateAction<string | null>>
   setSelectedTownshipId: Dispatch<SetStateAction<string | null>>
   setSelectedSchoolId: Dispatch<SetStateAction<string | null>>
@@ -118,7 +119,8 @@ export function useAtlasComparisonActions({
       setSelectedTownshipId(null)
       setSelectedSchoolId(null)
     })
-    setActiveTab('regional', 0)
+    // 'regional' page removed — redirect users to overview instead
+    setActiveTab('overview', 0)
     scenarioFeedback.show(`已套用情境：${scenario.name}`)
   }
 

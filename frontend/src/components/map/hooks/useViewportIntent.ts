@@ -1,6 +1,7 @@
 import { useCallback } from 'react'
 import L from 'leaflet'
 import type { GeoJsonObject } from 'geojson'
+import type { MutableRefObject } from 'react'
 import type { 
   CountyBoundaryCollection, 
   RegionGroupFilter, 
@@ -31,15 +32,19 @@ export function useViewportIntent(
   activeRegion: RegionGroupFilter,
   currentZoom: number,
   requestedZoom: number | null,
-  lastAppliedIntentId: string,
-  pendingInitialCenter: [number, number] | null,
-  pendingInitialZoom: number | null,
-  lastAutoSelectAttempt: { countyId: string | null; time: number | null },
+  lastAppliedIntentIdRef: MutableRefObject<string>,
+  pendingInitialCenterRef: MutableRefObject<[number, number] | null>,
+  pendingInitialZoomRef: MutableRefObject<number | null>,
+  lastAutoSelectAttemptRef: MutableRefObject<{ countyId: string | null; time: number | null }>,
   mapResetToken: number
 ) {
   const AUTO_SELECT_DETECTION_WINDOW_MS = 1500
 
   return useCallback((): ViewportIntent => {
+    const pendingInitialCenter = pendingInitialCenterRef.current
+    const pendingInitialZoom = pendingInitialZoomRef.current
+    const lastAutoSelectAttempt = lastAutoSelectAttemptRef.current
+
     if (pendingInitialCenter) {
       const center = pendingInitialCenter
       const zoom =
@@ -125,7 +130,7 @@ export function useViewportIntent(
       }
     }
 
-    return { id: lastAppliedIntentId, type: 'noop' }
+    return { id: lastAppliedIntentIdRef.current, type: 'noop' }
   }, [
     activeCountyId,
     activeRegion,
@@ -135,9 +140,10 @@ export function useViewportIntent(
     requestedZoom,
     selectedSchoolPoint,
     townshipBoundaries,
-    pendingInitialCenter,
-    pendingInitialZoom,
-    lastAutoSelectAttempt,
+    lastAppliedIntentIdRef,
+    pendingInitialCenterRef,
+    pendingInitialZoomRef,
+    lastAutoSelectAttemptRef,
     mapResetToken
   ])
 }

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import { ScatterPlotChart } from './ScatterPlotChart'
 import '../../styles/templates/dashboard-shell/01-premium-cards-system.css'
 import '../../styles/organisms/overview-panels.css'
@@ -58,6 +58,16 @@ function CountyTabPanel({
         rightLabel: '私立'
       }))
     : []
+  
+  const townshipPoints = useMemo(() => {
+    return derived.townshipRows.map((row) => ({
+      id: row.id,
+      label: row.label,
+      x: row.students,
+      y: (row.delta / Math.max(derived.selectedCountySummary?.students ?? 1, 1)) * 100,
+      size: row.schools,
+    }))
+  }, [derived.townshipRows, derived.selectedCountySummary])
 
   return (
     <div className="dashboard-side-shell__content dashboard-side-shell__content--county">
@@ -75,13 +85,7 @@ function CountyTabPanel({
               subtitle={null}
               xLabel="學生數"
               yLabel="縣市佔比變動率 (%)"
-              points={derived.townshipRows.map((row) => ({
-                id: row.id,
-                label: row.label,
-                x: row.students,
-                y: (row.delta / Math.max(derived.selectedCountySummary?.students ?? 1, 1)) * 100,
-                size: row.schools,
-              }))}
+              points={townshipPoints}
               activePointId={hoveredTownshipId ?? selectedTownshipId}
               onHoverPoint={setHoveredTownshipId}
               onSelectPoint={(id) => onSelectTownship(id, { skipTabSwitch: true, zoom: 12 })}

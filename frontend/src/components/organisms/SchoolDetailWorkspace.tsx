@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import AccordionItem from '../atoms/AccordionItem'
+import { ScatterPlotChart } from './ScatterPlotChart'
 import SchoolDataTable from '../SchoolDataTable'
-import SchoolWorkspaceMatrix from '../molecules/SchoolWorkspaceMatrix'
 import type { SchoolInsight } from '../../lib/analytics'
 import '../../styles/templates/dashboard-shell/01-premium-cards-system.css'
 
@@ -9,10 +9,9 @@ type SchoolDetailWorkspaceProps = {
   scopeLabel: string
   selectedSchool: SchoolInsight | null
   schoolInsights: SchoolInsight[]
-  sortedSchools: SchoolInsight[]
+  hoveredSchoolId?: string | null
   onHoverSchool?: (schoolId: string | null) => void
   onSelectSchool: (schoolId: string | null) => void
-  hoveredSchoolId?: string | null
 }
 
 /**
@@ -23,10 +22,9 @@ export const SchoolDetailWorkspace: React.FC<SchoolDetailWorkspaceProps> = ({
   scopeLabel,
   selectedSchool,
   schoolInsights,
-  sortedSchools,
+  hoveredSchoolId,
   onHoverSchool,
   onSelectSchool,
-  hoveredSchoolId
 }) => {
   const [expandedSections, setExpandedSections] = React.useState<Record<string, boolean>>({
     matrix: true,
@@ -47,25 +45,49 @@ export const SchoolDetailWorkspace: React.FC<SchoolDetailWorkspaceProps> = ({
     })
   }
 
+  /* --- 散佈圖資料點：與鄉鎮成長潛力矩陣同樣邏輯 --- */
+  const matrixPoints = useMemo(() => {
+    const totalStudentsInScope = schoolInsights.reduce((sum, s) => sum + s.currentStudents, 0)
+    return schoolInsights.map((school) => ({
+      id: school.id,
+      label: school.name,
+      x: school.currentStudents,
+      y: (school.delta / Math.max(totalStudentsInScope, 1)) * 100,
+      size: school.currentStudents,
+    }))
+  }, [schoolInsights])
+
   return (
     <div className="school-list-workspace overview-accordion">
-      <SchoolWorkspaceMatrix
-        isExpanded={expandedSections.matrix}
-        onToggle={() => toggleSection('matrix')}
-        scopeLabel={scopeLabel}
-        sortedSchools={sortedSchools}
-        schoolInsights={schoolInsights}
-        hoveredSchoolId={hoveredSchoolId}
-        selectedSchoolId={selectedSchool?.id}
-        onHoverSchool={onHoverSchool}
-        onSelectSchool={onSelectSchool}
-      />
 
+      {/* ── 學校成長潛力矩陣 ── */}
       <AccordionItem
-        id="school-table-accordion"
+        id="matrix"
+        title="學校成長潛力矩陣"
+        isExpanded={expandedSections.matrix}
+        onToggle={toggleSection}
+      >
+        <ScatterPlotChart
+          title=""
+          subtitle={null}
+          xLabel="學生數"
+          yLabel="範圍佔比變動率 (%)"
+          points={matrixPoints}
+          activePointId={hoveredSchoolId ?? selectedSchool?.id ?? null}
+          onHoverPoint={onHoverSchool}
+          onSelectPoint={(id) => onSelectSchool(id)}
+          className="matrix-chart-premium"
+          showHeader={false}
+          flat={true}
+        />
+      </AccordionItem>
+
+      {/* ── 學校資料明細 ── */}
+      <AccordionItem
+        id="table"
         title={`學校資料明細 (${scopeLabel})`}
         isExpanded={expandedSections.table}
-        onToggle={() => toggleSection('table')}
+        onToggle={toggleSection}
         style={{ animationDelay: '0.1s' }}
       >
         <SchoolDataTable 

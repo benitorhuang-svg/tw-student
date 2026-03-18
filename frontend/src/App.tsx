@@ -128,10 +128,8 @@ function App() {
       summaryYears={[...summaryDataset.years]}
       educationLevel={state.educationLevel}
       managementType={state.managementType}
-      isYearPlaybackActive={isYearPlaybackActive}
       onSetRegion={scenarioActions.handleRegionSelect}
       onResetRegion={scenarioActions.handleResetScope}
-      onTogglePlayback={() => setIsYearPlaybackActive(!isYearPlaybackActive)}
       onSetActiveYear={state.setActiveYear}
       onStopPlayback={() => setIsYearPlaybackActive(false)}
       onSetEducationLevel={state.setEducationLevel}

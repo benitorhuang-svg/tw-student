@@ -176,7 +176,7 @@ async function main() {
   const datasetBundle = await buildOfficialDataset(boundaries)
   attachAssetMetrics(datasetBundle, boundaries)
 
-  const sqliteBuffer = await buildAtlasSqliteBuffer(datasetBundle)
+  const sqliteBuffer = await buildAtlasSqliteBuffer(datasetBundle, boundaries)
   const gradeMap = buildGradeMap(datasetBundle.generatedAt)
   datasetBundle.summaryDataset.assetMetrics.sqliteBytes = sqliteBuffer.byteLength
   datasetBundle.summaryDataset.counties = datasetBundle.summaryDataset.counties.map((county) => ({

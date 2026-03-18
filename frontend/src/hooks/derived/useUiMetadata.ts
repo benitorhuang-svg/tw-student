@@ -1,7 +1,8 @@
 import { useMemo } from 'react'
 import type { 
   EducationSummaryDataset, 
-  AtlasLoadObservationSnapshot 
+  AtlasLoadObservationSnapshot,
+  CountySummaryRecord,
 } from '../../data/educationData'
 import type { RankingSummary, ScopeSummary } from '../../lib/analytics'
 
@@ -13,9 +14,9 @@ type UiMetadataArgs = {
   activeTownshipId: string | null
   countyRankingRows: RankingSummary[]
   townshipRows: RankingSummary[]
-  nationalSummary: ScopeSummary
+  nationalSummary: ScopeSummary | null
   loadObservation: AtlasLoadObservationSnapshot
-  selectedCounty: any // CountySummaryRecord | null
+  selectedCounty: CountySummaryRecord | null
 }
 
 export function useUiMetadata(args: UiMetadataArgs) {
@@ -32,6 +33,16 @@ export function useUiMetadata(args: UiMetadataArgs) {
 
   return useMemo(() => {
     if (!summaryDataset) return null
+
+    const fallbackScope: ScopeSummary = {
+      label: '全台灣',
+      caption: '',
+      students: 0,
+      schools: 0,
+      delta: 0,
+      deltaRatio: 0,
+      trend: [],
+    }
 
     const scopePath = ['全台']
     if (selectedCountySummary) scopePath.push(selectedCountySummary.label)
@@ -84,7 +95,7 @@ export function useUiMetadata(args: UiMetadataArgs) {
       schoolPanelTitle,
       generatedAtLabel,
       observedCounties,
-      currentScope: selectedTownshipSummary ?? selectedCountySummary ?? nationalSummary,
+      currentScope: selectedTownshipSummary ?? selectedCountySummary ?? nationalSummary ?? fallbackScope,
     }
   }, [summaryDataset, selectedCountySummary, selectedTownshipSummary, selectedCounty, townshipRows, countyRankingRows, nationalSummary, loadObservation])
 }

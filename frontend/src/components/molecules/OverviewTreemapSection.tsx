@@ -1,8 +1,24 @@
 import React from 'react'
 import TreemapChart from '../TreemapChart'
 
+type TreemapLeaf = {
+  id: string
+  label: string
+  value: number
+  meta?: string
+  color?: string
+}
+
+type TreemapGroup = {
+  id: string
+  label: string
+  value: number
+  accentColor: string
+  children: TreemapLeaf[]
+}
+
 type OverviewTreemapSectionProps = {
-  groups: any[]
+  groups: TreemapGroup[]
   activeLeafId: string | null
   onSelectLeaf: (id: string) => void
 }

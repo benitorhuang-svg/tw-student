@@ -7,12 +7,10 @@ import {
   SUMMARY_MANAGEMENT_TYPES,
   fetchArrayBuffer,
   fetchJson,
-  fetchText,
   normalizeCountyName,
   normalizeSchoolCode,
   normalizeText,
   normalizeTownName,
-  parseCsv,
   parseOfficialWorkbook,
   shortCountyLabel,
   summaryBucketKey,
@@ -235,16 +233,16 @@ async function resolveMissingSchoolCoordinate({ code, schoolName, countyName, to
   }
 }
 
-async function fetchYearTextWithFallback(urlBuilder, requestedYear) {
+async function fetchYearBinaryWithFallback(urlBuilder, requestedYear) {
   let lastError = null
 
   for (let sourceYear = requestedYear; sourceYear >= ACADEMIC_YEARS[0]; sourceYear -= 1) {
     try {
-      const text = await fetchText(urlBuilder(sourceYear))
+      const buffer = await fetchArrayBuffer(urlBuilder(sourceYear))
       if (sourceYear !== requestedYear) {
         console.warn(`Fallback to ${sourceYear} for ${requestedYear}: ${urlBuilder(sourceYear)}`)
       }
-      return { text, sourceYear }
+      return { buffer, sourceYear }
     } catch (error) {
       lastError = error
     }
@@ -253,23 +251,34 @@ async function fetchYearTextWithFallback(urlBuilder, requestedYear) {
   throw lastError ?? new Error(`Unable to fetch source for ${requestedYear}`)
 }
 
+function buildWorkbookCandidates(baseUrl, sourceYear, parserKey, fileNameBuilder = (year, key, extension) => `${year}_${key}.${extension}`) {
+  return [
+    {
+      fileName: `${parserKey}.xls`,
+      read: () => fetchArrayBuffer(`${baseUrl}/${fileNameBuilder(sourceYear, parserKey, 'xls')}`),
+    },
+    {
+      fileName: `${parserKey}.xlsx`,
+      read: () => fetchArrayBuffer(`${baseUrl}/${fileNameBuilder(sourceYear, parserKey, 'xlsx')}`),
+    },
+  ]
+}
+
 async function fetchDetailRowsWithFallback(fileName, requestedYear) {
-  const parserKey = fileName.replace(/\.csv$/i, '')
+  const parserKey = fileName.replace(/\.(xls|xlsx)$/i, '')
   let lastError = null
 
   for (let sourceYear = requestedYear; sourceYear >= ACADEMIC_YEARS[0]; sourceYear -= 1) {
-    const candidates = [
-      {
-        fileName,
-        read: () => fetchText(`https://stats.moe.gov.tw/files/detail/${sourceYear}/${sourceYear}_${fileName}`),
-        parse: (payload) => parseCsv(payload),
-      },
-      {
-        fileName: `${parserKey}.xlsx`,
-        read: () => fetchArrayBuffer(`https://stats.moe.gov.tw/files/detail/${sourceYear}/${sourceYear}_${parserKey}.xlsx`),
+    const candidates = buildWorkbookCandidates(
+      'https://stats.moe.gov.tw/files/detail',
+      sourceYear,
+      parserKey,
+      (year, key, extension) => `${year}/${year}_${key}.${extension}`,
+    )
+      .map((candidate) => ({
+        ...candidate,
         parse: (payload) => parseOfficialWorkbook(payload, parserKey),
-      },
-    ]
+      }))
 
     for (const candidate of candidates) {
       try {
@@ -530,9 +539,40 @@ function inferManagementType(directoryRow, schoolName) {
 async function buildDirectoryLookup() {
   const lookup = new Map()
   for (const config of Object.values(LEVEL_CONFIG)) {
-    for (const fileName of config.directoryFiles) {
-      const { text } = await fetchYearTextWithFallback((sourceYear) => `https://stats.moe.gov.tw/files/school/${sourceYear}/${fileName}`, CURRENT_YEAR)
-      const rows = parseCsv(text)
+    for (const parserKey of config.directoryFiles) {
+      let buffer = null
+      let lastError = null
+
+      for (let sourceYear = CURRENT_YEAR; sourceYear >= ACADEMIC_YEARS[0]; sourceYear -= 1) {
+        const candidates = buildWorkbookCandidates(
+          'https://stats.moe.gov.tw/files/school',
+          sourceYear,
+          parserKey,
+          (year, key, extension) => `${year}/${key}.${extension}`,
+        )
+
+        for (const candidate of candidates) {
+          try {
+            buffer = await candidate.read()
+            if (sourceYear !== CURRENT_YEAR) {
+              console.warn(`Fallback to ${sourceYear} for ${CURRENT_YEAR}: ${candidate.fileName}`)
+            }
+            break
+          } catch (error) {
+            lastError = error
+          }
+        }
+
+        if (buffer) {
+          break
+        }
+      }
+
+      if (!buffer) {
+        throw lastError ?? new Error(`Unable to fetch workbook for ${parserKey}`)
+      }
+
+      const rows = parseOfficialWorkbook(buffer, parserKey)
       rows.forEach((row) => {
         lookup.set(normalizeSchoolCode(row['代碼']), row)
       })

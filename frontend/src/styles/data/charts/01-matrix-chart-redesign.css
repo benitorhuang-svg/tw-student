@@ -5,15 +5,14 @@
     border: none;
     border-radius: 20px;
     box-shadow: none;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    /* transition: all 0.4s ... REMOVED: all transitions on containers are dangerous for layout stability */
+    transition: opacity 0.4s ease; 
     overflow: visible;
 }
 
 .matrix-chart-premium:hover {
-    transform: translateY(-2px);
-    box-shadow:
-        0 25px 50px -12px rgb(16 32 51 / 12%),
-        0 15px 20px -5px rgb(16 32 51 / 4%) !important;
+    transform: none !important;
+    box-shadow: none !important;
 }
 
 .matrix-chart-premium .dashboard-card__head {
@@ -52,14 +51,16 @@
 }
 
 .matrix-chart-premium .scatter-chart__quadrant {
-    transition: all 0.4s ease;
+    transition: fill 0.8s ease;
     opacity: 0.6;
+    rx: 4; /* Apply radius in CSS for cleaner TSX */
+    shape-rendering: geometricPrecision;
 }
 
-.matrix-chart-premium .scatter-chart__quadrant--tl { fill: rgb(56 189 248 / 6%); } /* Sky - Emerging */
-.matrix-chart-premium .scatter-chart__quadrant--tr { fill: rgb(16 185 129 / 6%); } /* Emerald - Growth */
-.matrix-chart-premium .scatter-chart__quadrant--bl { fill: rgb(244 63 94 / 6%); } /* Rose - Alert */
-.matrix-chart-premium .scatter-chart__quadrant--br { fill: rgb(15 23 42 / 4%); } /* Neutral - Scale */
+.matrix-chart-premium .scatter-chart__quadrant--tl { fill: rgb(56 189 248 / 8%); } /* Sky - Emerging */
+.matrix-chart-premium .scatter-chart__quadrant--tr { fill: rgb(16 185 129 / 8%); } /* Emerald - Growth */
+.matrix-chart-premium .scatter-chart__quadrant--bl { fill: rgb(244 63 94 / 8%); } /* Rose - Alert */
+.matrix-chart-premium .scatter-chart__quadrant--br { fill: rgb(15 23 42 / 6%); } /* Neutral - Scale */
 
 [data-theme="dark"] .matrix-chart-premium .scatter-chart__quadrant--br { fill: rgb(255 255 255 / 2%); }
 
@@ -68,10 +69,11 @@
     fill-opacity: 0.6;
     stroke: #fff;
     stroke-width: 1.5;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    /* Only animate light-weight properties to avoid frequent expensive repaints */
+    transition: fill 200ms ease, fill-opacity 200ms ease, stroke-width 200ms ease, filter 180ms ease, r 200ms ease;
     outline: none !important;
     cursor: pointer;
-    /* Fix flicker: Ensure scale origin is center of the circle */
+    /* Ensure scale origin is center of the circle */
     transform-origin: center;
     transform-box: fill-box;
 }
@@ -84,8 +86,8 @@
     fill-opacity: 1;
     stroke: #fff;
     stroke-width: 2.5;
-    /* Removed transform: scale to prevent flicker with JS state */
-    filter: drop-shadow(0 0 8px var(--brand-primary));
+    /* Keep a subtle shadow but avoid heavy animated transforms */
+    filter: drop-shadow(0 0 6px var(--brand-primary));
 }
 
 .matrix-chart-premium .scatter-chart__point--active {
@@ -98,14 +100,22 @@
     /* transform handled by stable overlay layer or static class */
 }
 
+.matrix-chart-premium .scatter-chart__point--hovered-base {
+    fill-opacity: 0.5 !important;
+    stroke-opacity: 0.7;
+    filter: none !important; /* Remove individual filter to avoid stacking lag */
+}
+
 /* Active Highlight Overlay (Atomic Layer) */
 .matrix-chart-premium .scatter-chart__point--active-overlay {
     fill: var(--clr-accent-amber);
     stroke: #fff;
     stroke-width: 3;
-    filter: drop-shadow(0 0 20px var(--clr-accent-amber));
+    filter: drop-shadow(0 0 16px var(--clr-accent-amber));
     pointer-events: none;
-    transition: all 0.2s ease-out;
+    /* Animate opacity only to avoid reflow when overlay appears */
+    opacity: 1;
+    transition: opacity 160ms ease-out;
 }
 
 .matrix-chart-premium .scatter-chart__axis {

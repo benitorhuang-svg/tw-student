@@ -1,11 +1,38 @@
 import React, { useMemo } from 'react'
-import type { RankingSummary } from '../../lib/analytics'
+import { formatPercent, type RankingSummary } from '../../lib/analytics'
+import RankingCategoryCard from './RankingCategoryCard'
+import '../../styles/organisms/overview-ranking-redesign.css'
 
 type OverviewRankingSectionProps = {
   rankingRows: RankingSummary[]
   onSelectCounty: (id: string) => void
   flat?: boolean
 }
+
+const Icons = {
+  Scale: () => (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 6h18M3 12h18M3 18h18" />
+    </svg>
+  ),
+  Growth: () => (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+      <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+      <polyline points="17 6 23 6 23 12" />
+    </svg>
+  ),
+  Decline: () => (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f43f5e" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+      <polyline points="23 18 13.5 8.5 8.5 13.5 1 6" />
+      <polyline points="17 18 23 18 23 12" />
+    </svg>
+  )
+}
+
+function formatStudentWan(students: number) {
+  return `${(students / 10000).toFixed(1)} 萬`
+}
+
 
 /**
  * Molecule: OverviewRankingSection
@@ -22,52 +49,65 @@ export const OverviewRankingSection: React.FC<OverviewRankingSectionProps> = ({
   const topByGrowth = useMemo(() => [...rankingRows].sort((a, b) => b.deltaRatio - a.deltaRatio).slice(0, 3), [rankingRows])
   const bottomByGrowth = useMemo(() => [...rankingRows].sort((a, b) => a.deltaRatio - b.deltaRatio).slice(0, 3), [rankingRows])
 
-  const RankCard = ({ title, items, type }: { title: string, items: any[], type: 'count' | 'growth' | 'decline' }) => (
-    <div className="ranking-card">
-      <h4 className="ranking-card__title">{title}</h4>
-      <div className="ranking-card__list">
-        {items.map((item, idx) => {
-          const ratio = type === 'count' 
-            ? (item.students / maxStudents) * 100 
-            : (Math.abs(item.deltaRatio) / maxDeltaRatio) * 100
-            
-          return (
-            <div 
-              key={item.id} 
-              className="ranking-item" 
-              onClick={() => onSelectCounty(item.id)}
-            >
-              <div className="ranking-item__header">
-                <div className={`ranking-item__rank ranking-item__rank--${idx + 1}`}>{idx + 1}</div>
-                <span className="ranking-item__name">{item.label}</span>
-                <span className="ranking-item__value">
-                  {type === 'count' ? `${(item.students / 10000).toFixed(1)} 萬` : 
-                   `${item.deltaRatio > 0 ? '+' : ''}${(item.deltaRatio * 100).toFixed(1)}%`}
-                </span>
-              </div>
-              <div className="ranking-item__visual">
-                <div className="ranking-item__track">
-                  <div 
-                    className={`ranking-item__fill ranking-item__fill--${type}`} 
-                    style={{ width: `${ratio}%` }}
-                  />
-                </div>
-              </div>
-            </div>
-          )
-        })}
-      </div>
-    </div>
-  )
+  const categories = useMemo(() => ([
+    {
+      key: 'count',
+      title: '規模排行',
+      tone: 'count' as const,
+      icon: <Icons.Scale />,
+      items: topByStudents.map((item) => ({
+        ...item,
+        emphasisValue: formatStudentWan(item.students),
+        ratio: (item.students / maxStudents) * 100,
+      })),
+    },
+    {
+      key: 'growth',
+      title: '成長動能',
+      tone: 'growth' as const,
+      icon: <Icons.Growth />,
+      items: topByGrowth.map((item) => ({
+        ...item,
+        emphasisValue: formatPercent(item.deltaRatio),
+        ratio: (Math.abs(item.deltaRatio) / maxDeltaRatio) * 100,
+      })),
+    },
+    {
+      key: 'decline',
+      title: '收縮警戒',
+      tone: 'decline' as const,
+      icon: <Icons.Decline />,
+      items: bottomByGrowth.map((item) => ({
+        ...item,
+        emphasisValue: formatPercent(item.deltaRatio),
+        ratio: (Math.abs(item.deltaRatio) / maxDeltaRatio) * 100,
+      })),
+    },
+  ]), [bottomByGrowth, maxDeltaRatio, maxStudents, topByGrowth, topByStudents])
+
+  if (rankingRows.length === 0) {
+    return (
+      <section className={`overview-ranking-card ${flat ? 'overview-ranking--flat' : ''}`}>
+        <div className="overview-ranking-empty">
+          <p>目前篩選條件下沒有可用的縣市排行資料。</p>
+        </div>
+      </section>
+    )
+  }
 
   return (
-    <section className={`overview-ranking-card ${flat ? "dashboard-card--flat" : "dashboard-card"}`}>
-      <div className="dashboard-card__body">
-        <div className="overview-ranking-grid">
-          <RankCard title="學生規模前三名" items={topByStudents} type="count" />
-          <RankCard title="成長力道前三名" items={topByGrowth} type="growth" />
-          <RankCard title="減幅最明顯縣市" items={bottomByGrowth} type="decline" />
-        </div>
+    <section className={`overview-ranking-redesign ${flat ? 'overview-ranking--flat' : ''}`}>
+      <div className="overview-ranking-grid">
+        {categories.map((category) => (
+          <RankingCategoryCard
+            key={category.key}
+            title={category.title}
+            tone={category.tone}
+            icon={category.icon}
+            items={category.items}
+            onSelectCounty={onSelectCounty}
+          />
+        ))}
       </div>
     </section>
   )

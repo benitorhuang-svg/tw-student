@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import type { EducationSummaryDataset, RegionGroupFilter } from '../data/educationData'
+import type { EducationSummaryDataset, RegionGroupFilter, SchoolCodeEntry } from '../data/educationData'
 import type { AtlasTab } from './useAtlasQueryState'
 
 type SearchNavigationArgs = {
@@ -65,7 +65,7 @@ export function useAtlasSearchNavigation({
       }
     })
 
-    function performTargetNavigation(entry: any, originalId: string) {
+    function performTargetNavigation(entry: SchoolCodeEntry, originalId: string) {
       const nextCountyId = entry.countyId ?? entry.countyCode ?? null
       const nextTownshipId = entry.townshipId ?? entry.townCode ?? null
       

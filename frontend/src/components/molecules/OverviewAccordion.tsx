@@ -1,10 +1,14 @@
 import React from 'react'
 import AccordionItem from '../atoms/AccordionItem'
 
+type FlatSectionProps = {
+  flat?: boolean
+}
+
 type OverviewAccordionProps = {
   expandedSections: Record<string, boolean>
   onToggleSection: (id: string) => void
-  heroSection: React.ReactNode
+  heroSection?: React.ReactNode
   matrixSection: React.ReactNode
   trendSection: React.ReactNode
   treemapSection: React.ReactNode
@@ -35,7 +39,7 @@ export const OverviewAccordion: React.FC<OverviewAccordionProps> = ({
         onToggle={onToggleSection}
         style={{ animationDelay: '0.1s' }}
       >
-        {React.isValidElement(matrixSection) ? React.cloneElement(matrixSection as React.ReactElement<any>, { flat: true }) : matrixSection}
+        {React.isValidElement(matrixSection) ? React.cloneElement(matrixSection as React.ReactElement<FlatSectionProps>, { flat: true }) : matrixSection}
       </AccordionItem>
 
       <AccordionItem
@@ -45,7 +49,7 @@ export const OverviewAccordion: React.FC<OverviewAccordionProps> = ({
         onToggle={onToggleSection}
         style={{ animationDelay: '0.2s' }}
       >
-        {React.isValidElement(trendSection) ? React.cloneElement(trendSection as React.ReactElement<any>, { flat: true }) : trendSection}
+        {React.isValidElement(trendSection) ? React.cloneElement(trendSection as React.ReactElement<FlatSectionProps>, { flat: true }) : trendSection}
       </AccordionItem>
 
       <AccordionItem
@@ -55,7 +59,7 @@ export const OverviewAccordion: React.FC<OverviewAccordionProps> = ({
         onToggle={onToggleSection}
         style={{ animationDelay: '0.25s' }}
       >
-        {React.isValidElement(rankingSection) ? React.cloneElement(rankingSection as React.ReactElement<any>, { flat: true }) : rankingSection}
+        {React.isValidElement(rankingSection) ? React.cloneElement(rankingSection as React.ReactElement<FlatSectionProps>, { flat: true }) : rankingSection}
       </AccordionItem>
 
       <AccordionItem
@@ -65,7 +69,7 @@ export const OverviewAccordion: React.FC<OverviewAccordionProps> = ({
         onToggle={onToggleSection}
         style={{ animationDelay: '0.3s' }}
       >
-        {React.isValidElement(treemapSection) ? React.cloneElement(treemapSection as React.ReactElement<any>, { flat: true }) : treemapSection}
+        {React.isValidElement(treemapSection) ? React.cloneElement(treemapSection as React.ReactElement<FlatSectionProps>, { flat: true }) : treemapSection}
       </AccordionItem>
     </div>
   )

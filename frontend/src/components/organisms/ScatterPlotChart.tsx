@@ -1,6 +1,12 @@
+import React, { useMemo } from 'react'
 import { useChartAnimation } from '../../hooks/useChartAnimation'
 import { useResponsiveSvg } from '../../hooks/useResponsiveSvg'
 import '../../styles/data/charts/01-matrix-chart-redesign.css'
+
+/**
+ * Atomic Design: ScatterPlotChart (Organism)
+ * 重新建構：穩定座標系、原子化結構、無閃爍交互
+ */
 
 type ScatterPoint = {
   id: string
@@ -8,7 +14,6 @@ type ScatterPoint = {
   x: number
   y: number
   size?: number
-  detail?: string
 }
 
 type ScatterPlotChartProps = {
@@ -18,48 +23,96 @@ type ScatterPlotChartProps = {
   yLabel: string
   points: ScatterPoint[]
   activePointId?: string | null
-  formatX?: (value: number) => string
-  formatY?: (value: number) => string
   onHoverPoint?: (id: string | null) => void
   onSelectPoint?: (id: string) => void
-  children?: React.ReactNode
   className?: string
   flat?: boolean
   showHeader?: boolean
 }
 
-export function ScatterPlotChart({
-  title, subtitle, xLabel, yLabel, points, activePointId = null,
-  formatY = (value) => {
-    if (value === 0) return '0%'
-    const formatted = Math.abs(value) % 1 === 0 ? Math.abs(value).toString() : Math.abs(value).toFixed(1)
-    return `${value > 0 ? '+' : '-'}${formatted}%`
-  },
-  onHoverPoint, onSelectPoint,
-  children,
-  className, flat, showHeader = true,
-}: ScatterPlotChartProps) {
-  const { ref: animRef, isVisible } = useChartAnimation()
-  const { containerRef, width, height } = useResponsiveSvg(620, 340, { minWidth: 320 })
-  const padding = { top: 8, right: width < 400 ? 16 : 20, bottom: 40, left: width < 400 ? 56 : 80 }
-  
-  const combinedClasses = [
-    'dashboard-card',
-    'scatter-chart',
-    flat ? 'dashboard-card--flat' : '',
-    className || ''
-  ].filter(Boolean).join(' ')
+const DEFAULT_PADDING = { top: 20, right: 30, bottom: 50, left: 70 }
 
+export const ScatterPlotChart: React.FC<ScatterPlotChartProps> = ({
+  title,
+  subtitle,
+  xLabel,
+  yLabel,
+  points,
+  activePointId = null,
+  onHoverPoint,
+  onSelectPoint,
+  className = '',
+  flat = true,
+  showHeader = true,
+}) => {
+  const { ref: animRef } = useChartAnimation()
+  const responsiveOptions = useMemo(() => ({ minWidth: 320 }), [])
+  const { containerRef, width, height } = useResponsiveSvg(620, 420, responsiveOptions)
+  
+  const padding = useMemo(() => ({
+    ...DEFAULT_PADDING,
+    left: width < 450 ? 55 : 70,
+    right: width < 450 ? 15 : 30
+  }), [width])
+
+  // 1. 軸線範圍計算 (穩定化)
+  const { maxX, minY, maxY, midXVal, rangeX, rangeY } = useMemo(() => {
+    if (points.length === 0) return { maxX: 100, minY: -1, maxY: 1, midXVal: 50, rangeX: 100, rangeY: 2 }
+
+    const xs = points.map(p => p.x)
+    const ys = points.map(p => p.y)
+    
+    // X軸：固定從 0 開始，並向上取整到穩定的間距
+    const rawMaxX = Math.max(...xs, 10)
+    const snapX = rawMaxX > 10000 ? 5000 : rawMaxX > 1000 ? 1000 : 500
+    const calcMaxX = Math.ceil((rawMaxX * 1.15) / snapX) * snapX
+    
+    // Y軸：根據數據點的最大絕對值動態縮放，確保所有點都在可視範圍內
+    const maxAbsY = ys.length > 0 ? Math.max(...ys.map(Math.abs)) : 0.1
+    
+    // 設置 Y 軸上限為最大值的 1.1 倍以提供些許餘裕，並確保對稱性
+    const maxYVal = Math.max(maxAbsY * 1.1, 0.05)
+    const minYVal = -maxYVal 
+    
+    // 中間分割線取 X 範圍的中值
+    const calcMidXVal = calcMaxX / 2
+
+    return {
+      minX: 0,
+      maxX: calcMaxX,
+      minY: minYVal,
+      maxY: maxYVal,
+      midXVal: calcMidXVal,
+      rangeX: calcMaxX,
+      rangeY: maxYVal - minYVal
+    }
+  }, [points])
+
+  // 2. 座標轉換函式 (加上邊界箝制 Clamp，避免離群值飛出圖表)
+  const toX = (v: number) => {
+    const pos = padding.left + (v / rangeX) * (width - padding.left - padding.right)
+    return Math.min(Math.max(pos, padding.left), width - padding.right)
+  }
+  const toY = (v: number) => {
+    const ratio = (v - minY) / rangeY
+    const pos = height - padding.bottom - ratio * (height - padding.top - padding.bottom)
+    // 為了解決離群值問題，將超出範圍的點箝制在邊緣 (加上 2px 緩衝)
+    return Math.min(Math.max(pos, padding.top + 2), height - padding.bottom - 2)
+  }
+  
+  const midXPos = toX(midXVal)
+  const midYPos = toY(0)
+
+  const maxSize = useMemo(() => Math.max(...points.map(p => p.size ?? 10), 10), [points])
+  const toR = (s?: number) => 4 + ((s ?? 10) / maxSize) * 8
+
+  // 3. 處理無資料狀態
   if (points.length === 0) {
     return (
-      <section className={combinedClasses} ref={animRef as React.RefObject<HTMLElement>}>
+      <section className={`dashboard-card scatter-chart ${flat ? 'dashboard-card--flat' : ''} ${className}`} ref={animRef as React.RefObject<HTMLElement>}>
         {showHeader && (
           <div className="dashboard-card__head">
-            <div className="panel-heading__stack">
-              <h3 className="dashboard-card__title">{title}</h3>
-              {subtitle && (typeof subtitle === 'string' ? <p className="dashboard-card__subtitle">{subtitle}</p> : subtitle)}
-            </div>
-            {children}
+            <h3 className="dashboard-card__title">{title}</h3>
           </div>
         )}
         <div className="dashboard-card__body">
@@ -69,215 +122,161 @@ export function ScatterPlotChart({
     )
   }
 
-  const valuesX = points.map((p) => p.x)
-  const valuesY = points.map((p) => p.y)
-
-  // --- DYNAMIC SYMMETRIC Y-AXIS LOGIC ---
-  const absMaxY = Math.max(...valuesY.map(y => Math.abs(y)), 0)
-  
-  // Snap to levels: 0.5, 1, 2, 4, 6, 8, 10...
-  let snapLimit = 0.5
-  if (absMaxY > 6) snapLimit = Math.ceil(absMaxY / 2) * 2
-  else if (absMaxY > 2) snapLimit = Math.ceil(absMaxY) % 2 === 0 ? Math.ceil(absMaxY) : Math.ceil(absMaxY) + 1
-  else if (absMaxY > 1) snapLimit = 2
-  else if (absMaxY > 0.5) snapLimit = 1
-  
-  const minY = -snapLimit
-  const maxY = snapLimit
-
-  const minX = 0
-  const rawMaxX = Math.max(...valuesX, 0)
-  const maxX = Math.max(rawMaxX * 1.15, 10)
-
-  const avgX = valuesX.reduce((a, b) => a + b, 0) / valuesX.length
-
-  const rangeX = Math.max(maxX - minX, 1)
-  const rangeY = Math.max(maxY - minY, 1)
-  const maxSize = Math.max(...points.map((p) => p.size ?? 12), 12)
-
-  const toX = (v: number) => padding.left + ((v - minX) / rangeX) * (width - padding.left - padding.right)
-  const toY = (v: number) => height - padding.bottom - ((v - minY) / rangeY) * (height - padding.top - padding.bottom)
-  const toR = (v: number | undefined) => 4 + ((v ?? 12) / maxSize) * 10
-
-  const midX = toX(avgX)
-  const midY = toY(0)
-
   return (
-    <section className={combinedClasses} ref={animRef as React.RefObject<HTMLElement>}>
+    <section 
+      className={`dashboard-card scatter-chart ${flat ? 'dashboard-card--flat' : ''} ${className}`} 
+      ref={animRef as React.RefObject<HTMLElement>}
+      style={{ overflow: 'visible' }}
+    >
       {showHeader && (
         <div className="dashboard-card__head">
           <div className="panel-heading__stack">
-            {title && <h3 className="dashboard-card__title">{title}</h3>}
+            <h3 className="dashboard-card__title">{title}</h3>
             {subtitle && (typeof subtitle === 'string' ? <p className="dashboard-card__subtitle">{subtitle}</p> : subtitle)}
           </div>
-          {children}
         </div>
       )}
-      
-      <div className="dashboard-card__body">
+
+      <div className="dashboard-card__body" style={{ position: 'relative' }}>
         <div className="chart-svg-frame" ref={containerRef}>
-        <svg className={`scatter-chart__svg${width < 420 ? ' scatter-chart__svg--compact' : ''}${isVisible ? ' chart-enter chart-enter--visible' : ' chart-enter'}`} viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="xMidYMid meet" role="img" aria-label={`${title}${subtitle ? `: ${subtitle}` : ''} 散佈圖`}>
-        {/* 四象限淡色背景 */}
-        <rect className="scatter-chart__quadrant scatter-chart__quadrant--tl" x={padding.left} y={padding.top} width={midX - padding.left} height={midY - padding.top} rx="2" />
-        <rect className="scatter-chart__quadrant scatter-chart__quadrant--tr" x={midX} y={padding.top} width={width - padding.right - midX} height={midY - padding.top} rx="2" />
-        <rect className="scatter-chart__quadrant scatter-chart__quadrant--bl" x={padding.left} y={midY} width={midX - padding.left} height={height - padding.bottom - midY} rx="2" />
-        <rect className="scatter-chart__quadrant scatter-chart__quadrant--br" x={midX} y={midY} width={width - padding.right - midX} height={height - padding.bottom - midY} rx="2" />
-
-        {/* 四象限格線 */}
-        <line className="scatter-chart__zero" x1={midX} x2={midX} y1={padding.top} y2={height - padding.bottom} />
-        <line className="scatter-chart__zero" x1={padding.left} x2={width - padding.right} y1={midY} y2={midY} />
-
-        {/* 四象限標籤 */}
-        <text className="scatter-chart__quadrant-label" x={padding.left + 8} y={padding.top + 16} textAnchor="start">新興熱點</text>
-        <text className="scatter-chart__quadrant-label" x={width - padding.right - 8} y={padding.top + 16} textAnchor="end">領先成長</text>
-        <text className="scatter-chart__quadrant-label" x={padding.left + 8} y={height - padding.bottom - 8} textAnchor="start">縮減警戒</text>
-        <text className="scatter-chart__quadrant-label" x={width - padding.right - 8} y={height - padding.bottom - 8} textAnchor="end">主要規模</text>
-
-        {/* 座標軸線與標註 */}
-        {(() => {
-          const tickCount = 6 // Slightly fewer for clean look
-          const rawStep = rangeY / tickCount
-          
-          const magnitude = Math.pow(10, Math.floor(Math.log10(rawStep)))
-          const normalized = rawStep / magnitude
-          let step: number
-          if (normalized < 1.5) step = 1 * magnitude
-          else if (normalized < 3) step = 2 * magnitude
-          else if (normalized < 7) step = 5 * magnitude
-          else step = 10 * magnitude
-          
-          const ticks: number[] = []
-          const start = Math.floor(minY / step) * step
-          for (let v = start; v <= maxY + step * 0.1; v += step) {
-             const rounded = Math.round(v * 1000) / 1000
-             if (rounded === 0) continue // Zero is handled by quadrant lines
-             ticks.push(rounded)
-          }
-
-          return ticks.map((val) => {
-            const y = toY(val)
-            if (y < padding.top + 10 || y > height - padding.bottom - 10) return null
-            return (
-              <text key={val} className="scatter-chart__axis" x={padding.left - 12} y={y + 4} textAnchor="end">
-                {formatY(val)}
-              </text>
-            )
-          })
-        })()}
-        {/* X軸標註 */}
-        {(() => {
-          const tickCount = Math.max(Math.floor(width / 100), 2)
-          const rawStep = rangeX / tickCount
-          const magnitude = Math.pow(10, Math.floor(Math.log10(rawStep)))
-          const normalized = rawStep / magnitude
-          let step: number
-          if (normalized < 1.5) step = 1 * magnitude
-          else if (normalized < 3) step = 2 * magnitude
-          else if (normalized < 7) step = 5 * magnitude
-          else step = 10 * magnitude
-
-          const ticks: number[] = []
-          for (let v = 0; v <= maxX + step * 0.1; v += step) {
-             ticks.push(v)
-          }
-
-          return ticks.map((val) => {
-            const x = toX(val)
-            if (x < padding.left || x > width - padding.right + 2) return null
-            return (
-              <text key={val} className="scatter-chart__axis" x={x} y={height - 25} textAnchor="middle">
-                {val === 0 ? '0' : val >= 10000 ? `${val / 10000}萬` : val.toLocaleString()}
-              </text>
-            )
-          })
-        })()}
-
-        {/* Base markers - Stable order to prevent DOM reshuffling flicker */}
-        {points.map((p) => {
-          const r = toR(p.size)
-          const isActive = p.id === activePointId
-          return (
-            <circle
-              key={p.id}
-              className={`${isActive ? 'scatter-chart__point scatter-chart__point--active' : 'scatter-chart__point'} chart-data-focusable`}
-              cx={toX(p.x)}
-              cy={toY(p.y)}
-              r={isActive ? r + 1.5 : r} 
-              tabIndex={0}
-              role="button"
-              onMouseEnter={() => {
-                // Use a simple event check to stabilize
-                onHoverPoint?.(p.id)
-              }}
-              onMouseLeave={() => { if (activePointId === p.id) onHoverPoint?.(null) }}
-              onClick={() => onSelectPoint?.(p.id)}
-              onFocus={() => onHoverPoint?.(p.id)}
-              onBlur={() => { if (activePointId === p.id) onHoverPoint?.(null) }}
-            />
-          )
-        })}
-
-        {/* Top-most Highlight Layer: Render a clone of the active point on top without moving the original DOM node */}
-        {(() => {
-          const activePoint = points.find(p => p.id === activePointId)
-          if (!activePoint) return null
-          const r = toR(activePoint.size)
-          return (
-            <circle
-              className="scatter-chart__point--active-overlay"
-              cx={toX(activePoint.x)}
-              cy={toY(activePoint.y)}
-              r={r + 1.5}
-              style={{ pointerEvents: 'none' }} // Crucial: don't intercept events from the real point below
-            />
-          )
-        })()}
-
-        {/* Floating Tooltip Layer - Render on top of everything to prevent event dead-zones */}
-        {(() => {
-          const activePoint = points.find(p => p.id === activePointId)
-          if (!activePoint) return null
-          
-          const r = toR(activePoint.size)
-          const px = toX(activePoint.x)
-          const py = toY(activePoint.y)
-          
-          const tooltipWidth = 100
-          const tooltipHeight = 26
-          // Unify clamping logic to prevent label and box from decoupling
-          const tooltipX = Math.min(Math.max(px - tooltipWidth / 2, padding.left + 4), width - padding.right - tooltipWidth - 4)
-          const tooltipY = Math.max(py - r - 32, padding.top + 4)
-
-          return (
-            <g className="chart-svg-tooltip__group" style={{ pointerEvents: 'none', transition: 'all 0.3s ease' }}>
-              <rect 
-                className="chart-svg-tooltip__surface" 
-                x={tooltipX} 
-                y={tooltipY} 
-                width={tooltipWidth} 
-                height={tooltipHeight} 
-                rx="8" 
-              />
-              <text 
-                className="chart-svg-tooltip__title" 
-                x={tooltipX + tooltipWidth / 2} 
-                y={tooltipY + 17} 
-                textAnchor="middle"
-              >
-                {activePoint.label}
-              </text>
+          <svg 
+            className="scatter-chart__svg" 
+            viewBox={`0 0 ${width} ${height}`}
+            style={{ overflow: 'visible' }}
+          >
+            {/* --- 背景四象限 --- */}
+            <g className="scatter-chart__background">
+               {/* Rounding these prevents sub-pixel jitter during layout shifts */}
+               {(() => {
+                 const mXP = Math.round(midXPos)
+                 const mYP = Math.round(midYPos)
+                 return (
+                   <g className="scatter-chart__quadrants-stable">
+                     <rect x={padding.left} y={padding.top} width={mXP - padding.left} height={mYP - padding.top} className="scatter-chart__quadrant scatter-chart__quadrant--tl" />
+                     <rect x={mXP} y={padding.top} width={width - padding.right - mXP} height={mYP - padding.top} className="scatter-chart__quadrant scatter-chart__quadrant--tr" />
+                     <rect x={padding.left} y={mYP} width={mXP - padding.left} height={height - padding.bottom - mYP} className="scatter-chart__quadrant scatter-chart__quadrant--bl" />
+                     <rect x={mXP} y={mYP} width={width - padding.right - mXP} height={height - padding.bottom - mYP} className="scatter-chart__quadrant scatter-chart__quadrant--br" />
+                   </g>
+                 )
+               })()}
             </g>
-          )
-        })()}
 
-        <text className="scatter-chart__axis-title" x={width / 2} y={height - 5} textAnchor="middle">{xLabel}</text>
-        <text className="scatter-chart__axis-title" transform={"translate(15 " + (height / 2) + ") rotate(-90)"} textAnchor="middle">{yLabel}</text>
+            {/* --- 軸線與標籤 --- */}
+            <g className="scatter-chart__lines">
+              <line x1={midXPos} x2={midXPos} y1={padding.top} y2={height - padding.bottom} className="scatter-chart__zero" />
+              <line x1={padding.left} x2={width - padding.right} y1={midYPos} y2={midYPos} className="scatter-chart__zero" />
+            </g>
 
-      </svg>
+            <g className="scatter-chart__quadrant-labels" style={{ pointerEvents: 'none', opacity: 0.5 }}>
+              <text x={padding.left + 10} y={padding.top + 20} className="scatter-chart__quadrant-label">新興熱點</text>
+              <text x={width - padding.right - 10} y={padding.top + 20} textAnchor="end" className="scatter-chart__quadrant-label">領先成長</text>
+              <text x={padding.left + 10} y={height - padding.bottom - 10} className="scatter-chart__quadrant-label">縮減警戒</text>
+              <text x={width - padding.right - 10} y={height - padding.bottom - 10} textAnchor="end" className="scatter-chart__quadrant-label">主要規模</text>
+            </g>
+
+            {/* --- Y 軸刻度 --- */}
+            <g className="scatter-chart__axis-y">
+                {[minY, 0, maxY].map(val => {
+                  const y = toY(val)
+                  const label = Math.abs(val) < 0.001 ? '0%' : (val > 0 ? '+' : '') + (Number.isInteger(val) ? val : parseFloat(val.toFixed(2))) + '%'
+                  return (
+                    <text key={val} x={padding.left - 12} y={y + 4} textAnchor="end" className="scatter-chart__axis">
+                      {label}
+                    </text>
+                  )
+                })}
+            </g>
+
+            {/* --- X 軸刻度 --- */}
+            <g className="scatter-chart__axis-x">
+               {[0, maxX / 2, maxX].map(val => {
+                 const x = toX(val)
+                 const label = val === 0 ? '0' : val >= 10000 ? `${val/10000}萬` : val.toLocaleString()
+                 return (
+                   <text key={val} x={x} y={height - 25} textAnchor="middle" className="scatter-chart__axis">
+                     {label}
+                   </text>
+                 )
+               })}
+            </g>
+
+            {/* --- 數據點 --- */}
+            <g className="scatter-chart__points">
+              {points.map(p => {
+                const cx = toX(p.x)
+                const cy = toY(p.y)
+                const r = toR(p.size)
+                const isHovered = p.id === activePointId
+
+                return (
+                  <g key={p.id}>
+                    {/* 透明交互層：穩定且較大，防止滑鼠逃脫導致的閃爍 */}
+                    <circle 
+                      cx={cx} cy={cy} r={r + 10} 
+                      fill="transparent" 
+                      style={{ cursor: 'pointer' }}
+                      onMouseEnter={() => onHoverPoint?.(p.id)}
+                      onMouseLeave={() => onHoverPoint?.(null)}
+                      onClick={() => onSelectPoint?.(p.id)}
+                    />
+                    {/* 視覺圓點：始終渲染，確保佈局穩定 */}
+                    <circle 
+                      cx={cx} cy={cy} r={r}
+                      className={isHovered ? 'scatter-chart__point scatter-chart__point--hovered-base' : 'scatter-chart__point'}
+                      style={{ pointerEvents: 'none' }}
+                    />
+                  </g>
+                )
+              })}
+            </g>
+
+            {/* --- 單獨的 Highlight 層：確保選中點在最上方 --- */}
+            {(() => {
+              const activePoint = points.find(p => p.id === activePointId)
+              if (!activePoint) return null
+              const cx = toX(activePoint.x)
+              const cy = toY(activePoint.y)
+              const r = toR(activePoint.size)
+              return (
+                <circle 
+                  cx={cx} cy={cy} r={r + 2}
+                  className="scatter-chart__point scatter-chart__point--active"
+                  style={{ pointerEvents: 'none', filter: 'drop-shadow(0 0 12px var(--clr-accent-amber))' }}
+                />
+              )
+            })()}
+
+            {/* --- 單獨的 Tooltip 層 (確保在最上方) --- */}
+            {(() => {
+              const activePoint = points.find(p => p.id === activePointId)
+              if (!activePoint) return null
+              const tx = toX(activePoint.x)
+              const ty = toY(activePoint.y)
+              const r = toR(activePoint.size)
+              
+              const boxW = 110
+              const boxH = 28
+              const safeX = Math.min(Math.max(tx - boxW/2, padding.left + 5), width - padding.right - boxW - 5)
+              const safeY = Math.max(ty - r - 35, padding.top + 5)
+
+              return (
+                <g className="chart-svg-tooltip__group" style={{ pointerEvents: 'none' }}>
+                  <rect x={safeX} y={safeY} width={boxW} height={boxH} rx="8" className="chart-svg-tooltip__surface" />
+                  <text x={safeX + boxW/2} y={safeY + 18} textAnchor="middle" className="chart-svg-tooltip__title">
+                    {activePoint.label}
+                  </text>
+                </g>
+              )
+            })()}
+
+            {/* --- 軸標題 --- */}
+            <text x={width/2} y={height - 5} textAnchor="middle" className="scatter-chart__axis-title">{xLabel}</text>
+            <text transform={`translate(15, ${height/2}) rotate(-90)`} textAnchor="middle" className="scatter-chart__axis-title">{yLabel}</text>
+          </svg>
+        </div>
       </div>
-    </div>
-  </section>
-)
+    </section>
+  )
 }
 
 export default ScatterPlotChart

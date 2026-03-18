@@ -1,5 +1,6 @@
 import React from 'react'
 import '../../styles/organisms/welcome-portal.css'
+import type { AtlasTab } from '../../hooks/useAtlasQueryState'
 
 type PortalNodeProps = {
   id: string
@@ -29,7 +30,7 @@ const PortalNode: React.FC<PortalNodeProps> = ({ label, sublabel, icon, color, o
 )
 
 type WelcomePortalProps = {
-  onNavigate: (tab: any) => void
+  onNavigate: (tab: AtlasTab) => void
   onToggleGovernance: () => void
 }
 

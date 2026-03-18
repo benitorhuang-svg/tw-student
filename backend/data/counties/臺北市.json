@@ -10,7 +10,7 @@
   "dataNotes": [
     {
       "type": "異常值",
-      "message": "臺北市 有 9 所學校最新學年學生數為 0，需留意停辦或整併可能。",
+      "message": "臺北市 有 10 所學校最新學年學生數為 0，需留意停辦或整併可能。",
       "severity": "info",
       "years": [
         114
@@ -105,20 +105,20 @@
                   "femaleStudents": 411
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 828,
-                  "maleStudents": 382,
-                  "femaleStudents": 446
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 17333,
                   "maleStudents": 6868,
                   "femaleStudents": 10465
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 828,
+                  "maleStudents": 382,
+                  "femaleStudents": 446
                 }
               ]
             },
@@ -185,20 +185,20 @@
                   "femaleStudents": 409
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 772,
-                  "maleStudents": 355,
-                  "femaleStudents": 417
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 17052,
                   "maleStudents": 6598,
                   "femaleStudents": 10454
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 772,
+                  "maleStudents": 355,
+                  "femaleStudents": 417
                 }
               ]
             },
@@ -225,20 +225,20 @@
                   "femaleStudents": 436
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 781,
-                  "maleStudents": 343,
-                  "femaleStudents": 438
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 17355,
                   "maleStudents": 6893,
                   "femaleStudents": 10462
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 781,
+                  "maleStudents": 343,
+                  "femaleStudents": 438
                 }
               ]
             },
@@ -265,20 +265,20 @@
                   "femaleStudents": 490
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 745,
-                  "maleStudents": 317,
-                  "femaleStudents": 428
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 16655,
                   "maleStudents": 6628,
                   "femaleStudents": 10027
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 745,
+                  "maleStudents": 317,
+                  "femaleStudents": 428
                 }
               ]
             },
@@ -305,20 +305,20 @@
                   "femaleStudents": 477
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 702,
-                  "maleStudents": 282,
-                  "femaleStudents": 420
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 15949,
                   "maleStudents": 6409,
                   "femaleStudents": 9540
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 702,
+                  "maleStudents": 282,
+                  "femaleStudents": 420
                 }
               ]
             },
@@ -345,20 +345,20 @@
                   "femaleStudents": 453
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 658,
-                  "maleStudents": 268,
-                  "femaleStudents": 390
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 15813,
                   "maleStudents": 6639,
                   "femaleStudents": 9174
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 658,
+                  "maleStudents": 268,
+                  "femaleStudents": 390
                 }
               ]
             },
@@ -494,14 +494,6 @@
                   "femaleStudents": 778
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 560,
-                  "maleStudents": 215,
-                  "femaleStudents": 345
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
@@ -510,12 +502,12 @@
                   "femaleStudents": 10903
                 },
                 {
-                  "id": "進-學士",
-                  "label": "進 學士",
+                  "id": "職-碩士",
+                  "label": "職 碩士",
                   "category": "degree",
-                  "totalStudents": 1561,
-                  "maleStudents": 671,
-                  "femaleStudents": 890
+                  "totalStudents": 560,
+                  "maleStudents": 215,
+                  "femaleStudents": 345
                 },
                 {
                   "id": "修-二技",
@@ -524,6 +516,14 @@
                   "totalStudents": 135,
                   "maleStudents": 42,
                   "femaleStudents": 93
+                },
+                {
+                  "id": "進-學士",
+                  "label": "進 學士",
+                  "category": "degree",
+                  "totalStudents": 1561,
+                  "maleStudents": 671,
+                  "femaleStudents": 890
                 }
               ]
             },
@@ -606,14 +606,6 @@
                   "femaleStudents": 749
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 634,
-                  "maleStudents": 257,
-                  "femaleStudents": 377
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
@@ -622,12 +614,12 @@
                   "femaleStudents": 10361
                 },
                 {
-                  "id": "進-學士",
-                  "label": "進 學士",
+                  "id": "職-碩士",
+                  "label": "職 碩士",
                   "category": "degree",
-                  "totalStudents": 1491,
-                  "maleStudents": 645,
-                  "femaleStudents": 846
+                  "totalStudents": 634,
+                  "maleStudents": 257,
+                  "femaleStudents": 377
                 },
                 {
                   "id": "修-二技",
@@ -636,6 +628,14 @@
                   "totalStudents": 162,
                   "maleStudents": 64,
                   "femaleStudents": 98
+                },
+                {
+                  "id": "進-學士",
+                  "label": "進 學士",
+                  "category": "degree",
+                  "totalStudents": 1491,
+                  "maleStudents": 645,
+                  "femaleStudents": 846
                 }
               ]
             },
@@ -662,14 +662,6 @@
                   "femaleStudents": 744
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 616,
-                  "maleStudents": 232,
-                  "femaleStudents": 384
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
@@ -678,12 +670,12 @@
                   "femaleStudents": 10007
                 },
                 {
-                  "id": "進-學士",
-                  "label": "進 學士",
+                  "id": "職-碩士",
+                  "label": "職 碩士",
                   "category": "degree",
-                  "totalStudents": 1438,
-                  "maleStudents": 607,
-                  "femaleStudents": 831
+                  "totalStudents": 616,
+                  "maleStudents": 232,
+                  "femaleStudents": 384
                 },
                 {
                   "id": "修-二技",
@@ -692,6 +684,14 @@
                   "totalStudents": 159,
                   "maleStudents": 60,
                   "femaleStudents": 99
+                },
+                {
+                  "id": "進-學士",
+                  "label": "進 學士",
+                  "category": "degree",
+                  "totalStudents": 1438,
+                  "maleStudents": 607,
+                  "femaleStudents": 831
                 }
               ]
             },
@@ -718,14 +718,6 @@
                   "femaleStudents": 710
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 573,
-                  "maleStudents": 207,
-                  "femaleStudents": 366
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
@@ -734,12 +726,12 @@
                   "femaleStudents": 8948
                 },
                 {
-                  "id": "進-學士",
-                  "label": "進 學士",
+                  "id": "職-碩士",
+                  "label": "職 碩士",
                   "category": "degree",
-                  "totalStudents": 1304,
-                  "maleStudents": 509,
-                  "femaleStudents": 795
+                  "totalStudents": 573,
+                  "maleStudents": 207,
+                  "femaleStudents": 366
                 },
                 {
                   "id": "修-二技",
@@ -748,6 +740,14 @@
                   "totalStudents": 178,
                   "maleStudents": 66,
                   "femaleStudents": 112
+                },
+                {
+                  "id": "進-學士",
+                  "label": "進 學士",
+                  "category": "degree",
+                  "totalStudents": 1304,
+                  "maleStudents": 509,
+                  "femaleStudents": 795
                 }
               ]
             },
@@ -774,14 +774,6 @@
                   "femaleStudents": 731
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 565,
-                  "maleStudents": 201,
-                  "femaleStudents": 364
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
@@ -790,12 +782,12 @@
                   "femaleStudents": 7679
                 },
                 {
-                  "id": "進-學士",
-                  "label": "進 學士",
+                  "id": "職-碩士",
+                  "label": "職 碩士",
                   "category": "degree",
-                  "totalStudents": 1139,
-                  "maleStudents": 432,
-                  "femaleStudents": 707
+                  "totalStudents": 565,
+                  "maleStudents": 201,
+                  "femaleStudents": 364
                 },
                 {
                   "id": "修-二技",
@@ -804,6 +796,14 @@
                   "totalStudents": 175,
                   "maleStudents": 64,
                   "femaleStudents": 111
+                },
+                {
+                  "id": "進-學士",
+                  "label": "進 學士",
+                  "category": "degree",
+                  "totalStudents": 1139,
+                  "maleStudents": 432,
+                  "femaleStudents": 707
                 }
               ]
             },
@@ -830,14 +830,6 @@
                   "femaleStudents": 749
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 514,
-                  "maleStudents": 173,
-                  "femaleStudents": 341
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
@@ -846,12 +838,12 @@
                   "femaleStudents": 6727
                 },
                 {
-                  "id": "進-學士",
-                  "label": "進 學士",
+                  "id": "職-碩士",
+                  "label": "職 碩士",
                   "category": "degree",
-                  "totalStudents": 1003,
-                  "maleStudents": 371,
-                  "femaleStudents": 632
+                  "totalStudents": 514,
+                  "maleStudents": 173,
+                  "femaleStudents": 341
                 },
                 {
                   "id": "修-二技",
@@ -860,6 +852,14 @@
                   "totalStudents": 195,
                   "maleStudents": 71,
                   "femaleStudents": 124
+                },
+                {
+                  "id": "進-學士",
+                  "label": "進 學士",
+                  "category": "degree",
+                  "totalStudents": 1003,
+                  "maleStudents": 371,
+                  "femaleStudents": 632
                 }
               ]
             },
@@ -1003,14 +1003,6 @@
                   "femaleStudents": 684
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 1175,
-                  "maleStudents": 539,
-                  "femaleStudents": 636
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
@@ -1019,20 +1011,28 @@
                   "femaleStudents": 7270
                 },
                 {
-                  "id": "進-學士",
-                  "label": "進 學士",
-                  "category": "degree",
-                  "totalStudents": 1071,
-                  "maleStudents": 356,
-                  "femaleStudents": 715
-                },
-                {
                   "id": "日-4+X",
                   "label": "日 4+X",
                   "category": "degree",
                   "totalStudents": 27,
                   "maleStudents": 24,
                   "femaleStudents": 3
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 1175,
+                  "maleStudents": 539,
+                  "femaleStudents": 636
+                },
+                {
+                  "id": "進-學士",
+                  "label": "進 學士",
+                  "category": "degree",
+                  "totalStudents": 1071,
+                  "maleStudents": 356,
+                  "femaleStudents": 715
                 }
               ]
             },
@@ -1115,20 +1115,20 @@
                   "femaleStudents": 717
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 1205,
-                  "maleStudents": 559,
-                  "femaleStudents": 646
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 11760,
                   "maleStudents": 4613,
                   "femaleStudents": 7147
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 1205,
+                  "maleStudents": 559,
+                  "femaleStudents": 646
                 },
                 {
                   "id": "進-學士",
@@ -1163,20 +1163,20 @@
                   "femaleStudents": 730
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 1209,
-                  "maleStudents": 567,
-                  "femaleStudents": 642
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 11851,
                   "maleStudents": 4621,
                   "femaleStudents": 7230
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 1209,
+                  "maleStudents": 567,
+                  "femaleStudents": 642
                 },
                 {
                   "id": "進-學士",
@@ -1211,20 +1211,20 @@
                   "femaleStudents": 736
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 1281,
-                  "maleStudents": 590,
-                  "femaleStudents": 691
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 11772,
                   "maleStudents": 4634,
                   "femaleStudents": 7138
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 1281,
+                  "maleStudents": 590,
+                  "femaleStudents": 691
                 },
                 {
                   "id": "進-學士",
@@ -1259,20 +1259,20 @@
                   "femaleStudents": 717
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 1279,
-                  "maleStudents": 595,
-                  "femaleStudents": 684
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 11909,
                   "maleStudents": 4730,
                   "femaleStudents": 7179
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 1279,
+                  "maleStudents": 595,
+                  "femaleStudents": 684
                 },
                 {
                   "id": "進-學士",
@@ -1307,20 +1307,20 @@
                   "femaleStudents": 690
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 1250,
-                  "maleStudents": 579,
-                  "femaleStudents": 671
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 11864,
                   "maleStudents": 4761,
                   "femaleStudents": 7103
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 1250,
+                  "maleStudents": 579,
+                  "femaleStudents": 671
                 },
                 {
                   "id": "進-學士",
@@ -3784,7 +3784,7 @@
           "id": "411303:國小",
           "code": "411303",
           "schoolLevelId": "411303:國小",
-          "name": "私立華興中學附設國小部",
+          "name": "私立華興中學附設國小",
           "countyId": "臺北市",
           "townshipId": "臺北市:士林區",
           "countyCode": "63000",
@@ -4138,7 +4138,7 @@
           "_missingGIS": true,
           "_missingCoordinateEntry": {
             "code": "411303",
-            "name": "私立華興中學附設國小部",
+            "name": "私立華興中學附設國小",
             "county": "臺北市",
             "township": "士林區",
             "level": "國小",
@@ -23928,20 +23928,20 @@
                   "femaleStudents": 4019
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 1485,
-                  "maleStudents": 904,
-                  "femaleStudents": 581
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 16604,
                   "maleStudents": 9447,
                   "femaleStudents": 7157
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 1485,
+                  "maleStudents": 904,
+                  "femaleStudents": 581
                 }
               ]
             },
@@ -24016,20 +24016,20 @@
                   "femaleStudents": 4250
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 1675,
-                  "maleStudents": 1037,
-                  "femaleStudents": 638
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 16756,
                   "maleStudents": 9444,
                   "femaleStudents": 7312
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 1675,
+                  "maleStudents": 1037,
+                  "femaleStudents": 638
                 }
               ]
             },
@@ -24056,20 +24056,20 @@
                   "femaleStudents": 4269
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 1631,
-                  "maleStudents": 1009,
-                  "femaleStudents": 622
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 16906,
                   "maleStudents": 9525,
                   "femaleStudents": 7381
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 1631,
+                  "maleStudents": 1009,
+                  "femaleStudents": 622
                 }
               ]
             },
@@ -24096,20 +24096,20 @@
                   "femaleStudents": 4445
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 1623,
-                  "maleStudents": 1003,
-                  "femaleStudents": 620
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 17074,
                   "maleStudents": 9514,
                   "femaleStudents": 7560
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 1623,
+                  "maleStudents": 1003,
+                  "femaleStudents": 620
                 }
               ]
             },
@@ -24136,20 +24136,20 @@
                   "femaleStudents": 4586
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 1577,
-                  "maleStudents": 948,
-                  "femaleStudents": 629
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 17323,
                   "maleStudents": 9652,
                   "femaleStudents": 7671
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 1577,
+                  "maleStudents": 948,
+                  "femaleStudents": 629
                 }
               ]
             },
@@ -24176,20 +24176,20 @@
                   "femaleStudents": 4754
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 1629,
-                  "maleStudents": 970,
-                  "femaleStudents": 659
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 17432,
                   "maleStudents": 9688,
                   "femaleStudents": 7744
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 1629,
+                  "maleStudents": 970,
+                  "femaleStudents": 659
                 }
               ]
             },
@@ -24317,20 +24317,20 @@
                   "femaleStudents": 2369
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 2042,
-                  "maleStudents": 596,
-                  "femaleStudents": 1446
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 8079,
                   "maleStudents": 3583,
                   "femaleStudents": 4496
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 2042,
+                  "maleStudents": 596,
+                  "femaleStudents": 1446
                 }
               ]
             },
@@ -24397,20 +24397,20 @@
                   "femaleStudents": 2408
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 2129,
-                  "maleStudents": 632,
-                  "femaleStudents": 1497
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 8173,
                   "maleStudents": 3625,
                   "femaleStudents": 4548
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 2129,
+                  "maleStudents": 632,
+                  "femaleStudents": 1497
                 }
               ]
             },
@@ -24437,20 +24437,20 @@
                   "femaleStudents": 2486
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 2134,
-                  "maleStudents": 627,
-                  "femaleStudents": 1507
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 8313,
                   "maleStudents": 3723,
                   "femaleStudents": 4590
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 2134,
+                  "maleStudents": 627,
+                  "femaleStudents": 1507
                 }
               ]
             },
@@ -24477,20 +24477,20 @@
                   "femaleStudents": 2457
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 2182,
-                  "maleStudents": 650,
-                  "femaleStudents": 1532
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 8394,
                   "maleStudents": 3810,
                   "femaleStudents": 4584
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 2182,
+                  "maleStudents": 650,
+                  "femaleStudents": 1532
                 }
               ]
             },
@@ -24517,20 +24517,20 @@
                   "femaleStudents": 2506
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 2272,
-                  "maleStudents": 680,
-                  "femaleStudents": 1592
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 8503,
                   "maleStudents": 3846,
                   "femaleStudents": 4657
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 2272,
+                  "maleStudents": 680,
+                  "femaleStudents": 1592
                 }
               ]
             },
@@ -24557,20 +24557,20 @@
                   "femaleStudents": 2539
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 2333,
-                  "maleStudents": 716,
-                  "femaleStudents": 1617
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 8587,
                   "maleStudents": 3899,
                   "femaleStudents": 4688
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 2333,
+                  "maleStudents": 716,
+                  "femaleStudents": 1617
                 }
               ]
             },
@@ -24698,28 +24698,12 @@
                   "femaleStudents": 712
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 1538,
-                  "maleStudents": 1105,
-                  "femaleStudents": 433
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
                   "totalStudents": 5928,
                   "maleStudents": 4146,
                   "femaleStudents": 1782
-                },
-                {
-                  "id": "修-四技",
-                  "label": "修 四技",
-                  "category": "degree",
-                  "totalStudents": 1778,
-                  "maleStudents": 1504,
-                  "femaleStudents": 274
                 },
                 {
                   "id": "日-二技",
@@ -24730,20 +24714,36 @@
                   "femaleStudents": 68
                 },
                 {
-                  "id": "修-二技",
-                  "label": "修 二技",
-                  "category": "degree",
-                  "totalStudents": 168,
-                  "maleStudents": 120,
-                  "femaleStudents": 48
-                },
-                {
                   "id": "日-五專",
                   "label": "日 五專",
                   "category": "degree",
                   "totalStudents": 32,
                   "maleStudents": 26,
                   "femaleStudents": 6
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 1538,
+                  "maleStudents": 1105,
+                  "femaleStudents": 433
+                },
+                {
+                  "id": "修-四技",
+                  "label": "修 四技",
+                  "category": "degree",
+                  "totalStudents": 1778,
+                  "maleStudents": 1504,
+                  "femaleStudents": 274
+                },
+                {
+                  "id": "修-二技",
+                  "label": "修 二技",
+                  "category": "degree",
+                  "totalStudents": 168,
+                  "maleStudents": 120,
+                  "femaleStudents": 48
                 }
               ]
             },
@@ -24842,28 +24842,12 @@
                   "femaleStudents": 823
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 1622,
-                  "maleStudents": 1142,
-                  "femaleStudents": 480
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
                   "totalStudents": 6273,
                   "maleStudents": 4402,
                   "femaleStudents": 1871
-                },
-                {
-                  "id": "修-四技",
-                  "label": "修 四技",
-                  "category": "degree",
-                  "totalStudents": 1891,
-                  "maleStudents": 1602,
-                  "femaleStudents": 289
                 },
                 {
                   "id": "日-二技",
@@ -24874,20 +24858,36 @@
                   "femaleStudents": 49
                 },
                 {
-                  "id": "修-二技",
-                  "label": "修 二技",
-                  "category": "degree",
-                  "totalStudents": 41,
-                  "maleStudents": 28,
-                  "femaleStudents": 13
-                },
-                {
                   "id": "日-五專",
                   "label": "日 五專",
                   "category": "degree",
                   "totalStudents": 96,
                   "maleStudents": 78,
                   "femaleStudents": 18
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 1622,
+                  "maleStudents": 1142,
+                  "femaleStudents": 480
+                },
+                {
+                  "id": "修-四技",
+                  "label": "修 四技",
+                  "category": "degree",
+                  "totalStudents": 1891,
+                  "maleStudents": 1602,
+                  "femaleStudents": 289
+                },
+                {
+                  "id": "修-二技",
+                  "label": "修 二技",
+                  "category": "degree",
+                  "totalStudents": 41,
+                  "maleStudents": 28,
+                  "femaleStudents": 13
                 }
               ]
             },
@@ -24914,28 +24914,12 @@
                   "femaleStudents": 864
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 1604,
-                  "maleStudents": 1100,
-                  "femaleStudents": 504
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
                   "totalStudents": 6236,
                   "maleStudents": 4418,
                   "femaleStudents": 1818
-                },
-                {
-                  "id": "修-四技",
-                  "label": "修 四技",
-                  "category": "degree",
-                  "totalStudents": 1695,
-                  "maleStudents": 1430,
-                  "femaleStudents": 265
                 },
                 {
                   "id": "日-二技",
@@ -24946,20 +24930,36 @@
                   "femaleStudents": 8
                 },
                 {
-                  "id": "修-二技",
-                  "label": "修 二技",
-                  "category": "degree",
-                  "totalStudents": 3,
-                  "maleStudents": 2,
-                  "femaleStudents": 1
-                },
-                {
                   "id": "日-五專",
                   "label": "日 五專",
                   "category": "degree",
                   "totalStudents": 121,
                   "maleStudents": 100,
                   "femaleStudents": 21
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 1604,
+                  "maleStudents": 1100,
+                  "femaleStudents": 504
+                },
+                {
+                  "id": "修-四技",
+                  "label": "修 四技",
+                  "category": "degree",
+                  "totalStudents": 1695,
+                  "maleStudents": 1430,
+                  "femaleStudents": 265
+                },
+                {
+                  "id": "修-二技",
+                  "label": "修 二技",
+                  "category": "degree",
+                  "totalStudents": 3,
+                  "maleStudents": 2,
+                  "femaleStudents": 1
                 }
               ]
             },
@@ -24986,28 +24986,12 @@
                   "femaleStudents": 959
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 1586,
-                  "maleStudents": 1079,
-                  "femaleStudents": 507
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
                   "totalStudents": 6308,
                   "maleStudents": 4432,
                   "femaleStudents": 1876
-                },
-                {
-                  "id": "修-四技",
-                  "label": "修 四技",
-                  "category": "degree",
-                  "totalStudents": 1438,
-                  "maleStudents": 1202,
-                  "femaleStudents": 236
                 },
                 {
                   "id": "日-二技",
@@ -25018,20 +25002,36 @@
                   "femaleStudents": 17
                 },
                 {
-                  "id": "修-二技",
-                  "label": "修 二技",
-                  "category": "degree",
-                  "totalStudents": 1,
-                  "maleStudents": 1,
-                  "femaleStudents": 0
-                },
-                {
                   "id": "日-五專",
                   "label": "日 五專",
                   "category": "degree",
                   "totalStudents": 150,
                   "maleStudents": 123,
                   "femaleStudents": 27
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 1586,
+                  "maleStudents": 1079,
+                  "femaleStudents": 507
+                },
+                {
+                  "id": "修-四技",
+                  "label": "修 四技",
+                  "category": "degree",
+                  "totalStudents": 1438,
+                  "maleStudents": 1202,
+                  "femaleStudents": 236
+                },
+                {
+                  "id": "修-二技",
+                  "label": "修 二技",
+                  "category": "degree",
+                  "totalStudents": 1,
+                  "maleStudents": 1,
+                  "femaleStudents": 0
                 }
               ]
             },
@@ -25058,28 +25058,12 @@
                   "femaleStudents": 1023
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 1604,
-                  "maleStudents": 1110,
-                  "femaleStudents": 494
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
                   "totalStudents": 6371,
                   "maleStudents": 4444,
                   "femaleStudents": 1927
-                },
-                {
-                  "id": "修-四技",
-                  "label": "修 四技",
-                  "category": "degree",
-                  "totalStudents": 1197,
-                  "maleStudents": 984,
-                  "femaleStudents": 213
                 },
                 {
                   "id": "日-二技",
@@ -25096,6 +25080,22 @@
                   "totalStudents": 153,
                   "maleStudents": 126,
                   "femaleStudents": 27
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 1604,
+                  "maleStudents": 1110,
+                  "femaleStudents": 494
+                },
+                {
+                  "id": "修-四技",
+                  "label": "修 四技",
+                  "category": "degree",
+                  "totalStudents": 1197,
+                  "maleStudents": 984,
+                  "femaleStudents": 213
                 }
               ]
             },
@@ -25122,28 +25122,12 @@
                   "femaleStudents": 1027
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 1643,
-                  "maleStudents": 1118,
-                  "femaleStudents": 525
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
                   "totalStudents": 6392,
                   "maleStudents": 4394,
                   "femaleStudents": 1998
-                },
-                {
-                  "id": "修-四技",
-                  "label": "修 四技",
-                  "category": "degree",
-                  "totalStudents": 892,
-                  "maleStudents": 747,
-                  "femaleStudents": 145
                 },
                 {
                   "id": "日-二技",
@@ -25160,6 +25144,22 @@
                   "totalStudents": 159,
                   "maleStudents": 131,
                   "femaleStudents": 28
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 1643,
+                  "maleStudents": 1118,
+                  "femaleStudents": 525
+                },
+                {
+                  "id": "修-四技",
+                  "label": "修 四技",
+                  "category": "degree",
+                  "totalStudents": 892,
+                  "maleStudents": 747,
+                  "femaleStudents": 145
                 }
               ]
             },
@@ -25303,28 +25303,12 @@
                   "femaleStudents": 210
                 },
                 {
-                  "id": "職-博士",
-                  "label": "職 博士",
-                  "category": "degree",
-                  "totalStudents": 5,
-                  "maleStudents": 5,
-                  "femaleStudents": 0
-                },
-                {
                   "id": "日-碩士",
                   "label": "日 碩士",
                   "category": "degree",
                   "totalStudents": 3500,
                   "maleStudents": 2409,
                   "femaleStudents": 1091
-                },
-                {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 798,
-                  "maleStudents": 533,
-                  "femaleStudents": 265
                 },
                 {
                   "id": "日-四技",
@@ -25341,6 +25325,22 @@
                   "totalStudents": 187,
                   "maleStudents": 76,
                   "femaleStudents": 111
+                },
+                {
+                  "id": "職-博士",
+                  "label": "職 博士",
+                  "category": "degree",
+                  "totalStudents": 5,
+                  "maleStudents": 5,
+                  "femaleStudents": 0
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 798,
+                  "maleStudents": 533,
+                  "femaleStudents": 265
                 },
                 {
                   "id": "修-二技",
@@ -25431,14 +25431,6 @@
                   "femaleStudents": 1105
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 812,
-                  "maleStudents": 506,
-                  "femaleStudents": 306
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
@@ -25453,6 +25445,14 @@
                   "totalStudents": 115,
                   "maleStudents": 46,
                   "femaleStudents": 69
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 812,
+                  "maleStudents": 506,
+                  "femaleStudents": 306
                 }
               ]
             },
@@ -25479,14 +25479,6 @@
                   "femaleStudents": 1140
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 786,
-                  "maleStudents": 483,
-                  "femaleStudents": 303
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
@@ -25501,6 +25493,14 @@
                   "totalStudents": 59,
                   "maleStudents": 12,
                   "femaleStudents": 47
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 786,
+                  "maleStudents": 483,
+                  "femaleStudents": 303
                 }
               ]
             },
@@ -25527,14 +25527,6 @@
                   "femaleStudents": 1241
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 836,
-                  "maleStudents": 513,
-                  "femaleStudents": 323
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
@@ -25549,6 +25541,14 @@
                   "totalStudents": 50,
                   "maleStudents": 9,
                   "femaleStudents": 41
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 836,
+                  "maleStudents": 513,
+                  "femaleStudents": 323
                 }
               ]
             },
@@ -25575,14 +25575,6 @@
                   "femaleStudents": 1319
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 861,
-                  "maleStudents": 538,
-                  "femaleStudents": 323
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
@@ -25597,6 +25589,14 @@
                   "totalStudents": 48,
                   "maleStudents": 4,
                   "femaleStudents": 44
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 861,
+                  "maleStudents": 538,
+                  "femaleStudents": 323
                 }
               ]
             },
@@ -25623,14 +25623,6 @@
                   "femaleStudents": 1409
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 837,
-                  "maleStudents": 508,
-                  "femaleStudents": 329
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
@@ -25645,6 +25637,14 @@
                   "totalStudents": 49,
                   "maleStudents": 8,
                   "femaleStudents": 41
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 837,
+                  "maleStudents": 508,
+                  "femaleStudents": 329
                 }
               ]
             },
@@ -25780,20 +25780,20 @@
                   "femaleStudents": 876
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 937,
-                  "maleStudents": 199,
-                  "femaleStudents": 738
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 3408,
                   "maleStudents": 1174,
                   "femaleStudents": 2234
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 937,
+                  "maleStudents": 199,
+                  "femaleStudents": 738
                 }
               ]
             },
@@ -25860,20 +25860,20 @@
                   "femaleStudents": 935
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 1021,
-                  "maleStudents": 250,
-                  "femaleStudents": 771
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 3349,
                   "maleStudents": 1119,
                   "femaleStudents": 2230
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 1021,
+                  "maleStudents": 250,
+                  "femaleStudents": 771
                 }
               ]
             },
@@ -25900,20 +25900,20 @@
                   "femaleStudents": 978
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 1048,
-                  "maleStudents": 262,
-                  "femaleStudents": 786
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 3318,
                   "maleStudents": 1101,
                   "femaleStudents": 2217
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 1048,
+                  "maleStudents": 262,
+                  "femaleStudents": 786
                 }
               ]
             },
@@ -25940,20 +25940,20 @@
                   "femaleStudents": 992
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 1051,
-                  "maleStudents": 247,
-                  "femaleStudents": 804
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 3325,
                   "maleStudents": 1097,
                   "femaleStudents": 2228
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 1051,
+                  "maleStudents": 247,
+                  "femaleStudents": 804
                 }
               ]
             },
@@ -25980,20 +25980,20 @@
                   "femaleStudents": 1048
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 1145,
-                  "maleStudents": 275,
-                  "femaleStudents": 870
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 3352,
                   "maleStudents": 1119,
                   "femaleStudents": 2233
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 1145,
+                  "maleStudents": 275,
+                  "femaleStudents": 870
                 }
               ]
             },
@@ -26020,20 +26020,20 @@
                   "femaleStudents": 1037
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 1090,
-                  "maleStudents": 261,
-                  "femaleStudents": 829
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 3328,
                   "maleStudents": 1100,
                   "femaleStudents": 2228
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 1090,
+                  "maleStudents": 261,
+                  "femaleStudents": 829
                 }
               ]
             },
@@ -27146,7 +27146,7 @@
           "id": "331304:國小",
           "code": "331304",
           "schoolLevelId": "331304:國小",
-          "name": "私立復興實驗高中附設國小部",
+          "name": "私立復興實驗高中附設國小",
           "countyId": "臺北市",
           "townshipId": "臺北市:大安區",
           "countyCode": "63000",
@@ -27500,7 +27500,7 @@
           "_missingGIS": true,
           "_missingCoordinateEntry": {
             "code": "331304",
-            "name": "私立復興實驗高中附設國小部",
+            "name": "私立復興實驗高中附設國小",
             "county": "臺北市",
             "township": "大安區",
             "level": "國小",
@@ -38818,12 +38818,224 @@
             "coordinateMatchType": "related-school-point",
             "coordinateMatchScore": 100
           }
+        },
+        {
+          "id": "333504:國中",
+          "code": "333504",
+          "schoolLevelId": "333504:國中",
+          "name": "市立芳和實驗國中",
+          "countyId": "臺北市",
+          "townshipId": "臺北市:大安區",
+          "countyCode": "63000",
+          "townCode": "63000030",
+          "legacyCountyId": "臺北市",
+          "legacyTownshipId": "臺北市:大安區",
+          "educationLevel": "國中",
+          "managementType": "公立",
+          "address": "",
+          "phone": "",
+          "website": "",
+          "profileUrl": "",
+          "coordinates": {
+            "longitude": 121.550306,
+            "latitude": 25.018703
+          },
+          "yearlyStudents": [
+            {
+              "year": 107,
+              "students": 278
+            },
+            {
+              "year": 108,
+              "students": 262
+            },
+            {
+              "year": 109,
+              "students": 293
+            },
+            {
+              "year": 110,
+              "students": 0
+            },
+            {
+              "year": 111,
+              "students": 0
+            },
+            {
+              "year": 112,
+              "students": 0
+            },
+            {
+              "year": 113,
+              "students": 0
+            },
+            {
+              "year": 114,
+              "students": 0
+            }
+          ],
+          "studentCompositions": [
+            {
+              "year": 107,
+              "totalStudents": 278,
+              "maleStudents": 153,
+              "femaleStudents": 125,
+              "bands": [
+                {
+                  "id": "grade-7",
+                  "label": "7年級",
+                  "category": "grade",
+                  "totalStudents": 99,
+                  "maleStudents": 56,
+                  "femaleStudents": 43
+                },
+                {
+                  "id": "grade-8",
+                  "label": "8年級",
+                  "category": "grade",
+                  "totalStudents": 87,
+                  "maleStudents": 44,
+                  "femaleStudents": 43
+                },
+                {
+                  "id": "grade-9",
+                  "label": "9年級",
+                  "category": "grade",
+                  "totalStudents": 92,
+                  "maleStudents": 53,
+                  "femaleStudents": 39
+                }
+              ]
+            },
+            {
+              "year": 108,
+              "totalStudents": 262,
+              "maleStudents": 145,
+              "femaleStudents": 117,
+              "bands": [
+                {
+                  "id": "grade-7",
+                  "label": "7年級",
+                  "category": "grade",
+                  "totalStudents": 83,
+                  "maleStudents": 47,
+                  "femaleStudents": 36
+                },
+                {
+                  "id": "grade-8",
+                  "label": "8年級",
+                  "category": "grade",
+                  "totalStudents": 96,
+                  "maleStudents": 54,
+                  "femaleStudents": 42
+                },
+                {
+                  "id": "grade-9",
+                  "label": "9年級",
+                  "category": "grade",
+                  "totalStudents": 83,
+                  "maleStudents": 44,
+                  "femaleStudents": 39
+                }
+              ]
+            },
+            {
+              "year": 109,
+              "totalStudents": 293,
+              "maleStudents": 162,
+              "femaleStudents": 131,
+              "bands": [
+                {
+                  "id": "grade-7",
+                  "label": "7年級",
+                  "category": "grade",
+                  "totalStudents": 120,
+                  "maleStudents": 67,
+                  "femaleStudents": 53
+                },
+                {
+                  "id": "grade-8",
+                  "label": "8年級",
+                  "category": "grade",
+                  "totalStudents": 79,
+                  "maleStudents": 43,
+                  "femaleStudents": 36
+                },
+                {
+                  "id": "grade-9",
+                  "label": "9年級",
+                  "category": "grade",
+                  "totalStudents": 94,
+                  "maleStudents": 52,
+                  "femaleStudents": 42
+                }
+              ]
+            },
+            {
+              "year": 110,
+              "totalStudents": 0,
+              "bands": []
+            },
+            {
+              "year": 111,
+              "totalStudents": 0,
+              "bands": []
+            },
+            {
+              "year": 112,
+              "totalStudents": 0,
+              "bands": []
+            },
+            {
+              "year": 113,
+              "totalStudents": 0,
+              "bands": []
+            },
+            {
+              "year": 114,
+              "totalStudents": 0,
+              "bands": []
+            }
+          ],
+          "status": "待確認",
+          "missingYears": [],
+          "dataNotes": [
+            {
+              "type": "異常值",
+              "message": "114 學年學生數為 0，可能涉及停辦、整併或資料尚未更新。",
+              "severity": "warning",
+              "years": [
+                114
+              ]
+            },
+            {
+              "type": "其他",
+              "message": "正式統計資料存在但 GIS 點位缺失，座標改採學校名稱與行政區 POI 解點。",
+              "severity": "info"
+            }
+          ],
+          "_missingGIS": true,
+          "_missingCoordinateEntry": {
+            "code": "333504",
+            "name": "市立芳和實驗國中",
+            "county": "臺北市",
+            "township": "大安區",
+            "level": "國中",
+            "address": "",
+            "countyCode": "63000",
+            "townCode": "63000030",
+            "longitude": 121.550306,
+            "latitude": 25.018703,
+            "coordinateResolution": "地址解點",
+            "coordinateMatchType": "POI",
+            "coordinateMatchScore": 100
+          }
         }
       ],
       "dataNotes": [
         {
           "type": "異常值",
-          "message": "大安區 有 1 所學校最新學年學生數為 0，需留意停辦或整併可能。",
+          "message": "大安區 有 2 所學校最新學年學生數為 0，需留意停辦或整併可能。",
           "severity": "info",
           "years": [
             114
@@ -38918,14 +39130,6 @@
                   "femaleStudents": 219
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 144,
-                  "maleStudents": 56,
-                  "femaleStudents": 88
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
@@ -38934,12 +39138,12 @@
                   "femaleStudents": 7545
                 },
                 {
-                  "id": "進-學士",
-                  "label": "進 學士",
+                  "id": "職-碩士",
+                  "label": "職 碩士",
                   "category": "degree",
-                  "totalStudents": 2033,
-                  "maleStudents": 643,
-                  "femaleStudents": 1390
+                  "totalStudents": 144,
+                  "maleStudents": 56,
+                  "femaleStudents": 88
                 },
                 {
                   "id": "修-二技",
@@ -38948,6 +39152,14 @@
                   "totalStudents": 128,
                   "maleStudents": 21,
                   "femaleStudents": 107
+                },
+                {
+                  "id": "進-學士",
+                  "label": "進 學士",
+                  "category": "degree",
+                  "totalStudents": 2033,
+                  "maleStudents": 643,
+                  "femaleStudents": 1390
                 }
               ]
             },
@@ -39030,14 +39242,6 @@
                   "femaleStudents": 233
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 119,
-                  "maleStudents": 40,
-                  "femaleStudents": 79
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
@@ -39046,12 +39250,12 @@
                   "femaleStudents": 7241
                 },
                 {
-                  "id": "進-學士",
-                  "label": "進 學士",
+                  "id": "職-碩士",
+                  "label": "職 碩士",
                   "category": "degree",
-                  "totalStudents": 1860,
-                  "maleStudents": 618,
-                  "femaleStudents": 1242
+                  "totalStudents": 119,
+                  "maleStudents": 40,
+                  "femaleStudents": 79
                 },
                 {
                   "id": "修-二技",
@@ -39060,6 +39264,14 @@
                   "totalStudents": 123,
                   "maleStudents": 31,
                   "femaleStudents": 92
+                },
+                {
+                  "id": "進-學士",
+                  "label": "進 學士",
+                  "category": "degree",
+                  "totalStudents": 1860,
+                  "maleStudents": 618,
+                  "femaleStudents": 1242
                 }
               ]
             },
@@ -39086,14 +39298,6 @@
                   "femaleStudents": 213
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 117,
-                  "maleStudents": 42,
-                  "femaleStudents": 75
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
@@ -39102,12 +39306,12 @@
                   "femaleStudents": 7130
                 },
                 {
-                  "id": "進-學士",
-                  "label": "進 學士",
+                  "id": "職-碩士",
+                  "label": "職 碩士",
                   "category": "degree",
-                  "totalStudents": 1682,
-                  "maleStudents": 542,
-                  "femaleStudents": 1140
+                  "totalStudents": 117,
+                  "maleStudents": 42,
+                  "femaleStudents": 75
                 },
                 {
                   "id": "修-二技",
@@ -39116,6 +39320,14 @@
                   "totalStudents": 98,
                   "maleStudents": 25,
                   "femaleStudents": 73
+                },
+                {
+                  "id": "進-學士",
+                  "label": "進 學士",
+                  "category": "degree",
+                  "totalStudents": 1682,
+                  "maleStudents": 542,
+                  "femaleStudents": 1140
                 }
               ]
             },
@@ -39142,14 +39354,6 @@
                   "femaleStudents": 195
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 111,
-                  "maleStudents": 27,
-                  "femaleStudents": 84
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
@@ -39158,12 +39362,12 @@
                   "femaleStudents": 6580
                 },
                 {
-                  "id": "進-學士",
-                  "label": "進 學士",
+                  "id": "職-碩士",
+                  "label": "職 碩士",
                   "category": "degree",
-                  "totalStudents": 1406,
-                  "maleStudents": 450,
-                  "femaleStudents": 956
+                  "totalStudents": 111,
+                  "maleStudents": 27,
+                  "femaleStudents": 84
                 },
                 {
                   "id": "修-二技",
@@ -39172,6 +39376,14 @@
                   "totalStudents": 78,
                   "maleStudents": 23,
                   "femaleStudents": 55
+                },
+                {
+                  "id": "進-學士",
+                  "label": "進 學士",
+                  "category": "degree",
+                  "totalStudents": 1406,
+                  "maleStudents": 450,
+                  "femaleStudents": 956
                 }
               ]
             },
@@ -39198,14 +39410,6 @@
                   "femaleStudents": 185
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 107,
-                  "maleStudents": 20,
-                  "femaleStudents": 87
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
@@ -39214,12 +39418,12 @@
                   "femaleStudents": 6016
                 },
                 {
-                  "id": "進-學士",
-                  "label": "進 學士",
+                  "id": "職-碩士",
+                  "label": "職 碩士",
                   "category": "degree",
-                  "totalStudents": 1107,
-                  "maleStudents": 351,
-                  "femaleStudents": 756
+                  "totalStudents": 107,
+                  "maleStudents": 20,
+                  "femaleStudents": 87
                 },
                 {
                   "id": "修-二技",
@@ -39228,6 +39432,14 @@
                   "totalStudents": 74,
                   "maleStudents": 14,
                   "femaleStudents": 60
+                },
+                {
+                  "id": "進-學士",
+                  "label": "進 學士",
+                  "category": "degree",
+                  "totalStudents": 1107,
+                  "maleStudents": 351,
+                  "femaleStudents": 756
                 }
               ]
             },
@@ -39254,14 +39466,6 @@
                   "femaleStudents": 199
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 105,
-                  "maleStudents": 25,
-                  "femaleStudents": 80
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
@@ -39270,12 +39474,12 @@
                   "femaleStudents": 5677
                 },
                 {
-                  "id": "進-學士",
-                  "label": "進 學士",
+                  "id": "職-碩士",
+                  "label": "職 碩士",
                   "category": "degree",
-                  "totalStudents": 919,
-                  "maleStudents": 283,
-                  "femaleStudents": 636
+                  "totalStudents": 105,
+                  "maleStudents": 25,
+                  "femaleStudents": 80
                 },
                 {
                   "id": "修-二技",
@@ -39284,6 +39488,14 @@
                   "totalStudents": 80,
                   "maleStudents": 21,
                   "femaleStudents": 59
+                },
+                {
+                  "id": "進-學士",
+                  "label": "進 學士",
+                  "category": "degree",
+                  "totalStudents": 919,
+                  "maleStudents": 283,
+                  "femaleStudents": 636
                 }
               ]
             },
@@ -39427,20 +39639,20 @@
                   "femaleStudents": 89
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 232,
-                  "maleStudents": 178,
-                  "femaleStudents": 54
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 3689,
                   "maleStudents": 2226,
                   "femaleStudents": 1463
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 232,
+                  "maleStudents": 178,
+                  "femaleStudents": 54
                 }
               ]
             },
@@ -39507,20 +39719,20 @@
                   "femaleStudents": 64
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 129,
-                  "maleStudents": 99,
-                  "femaleStudents": 30
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 3545,
                   "maleStudents": 2164,
                   "femaleStudents": 1381
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 129,
+                  "maleStudents": 99,
+                  "femaleStudents": 30
                 }
               ]
             },
@@ -39547,20 +39759,20 @@
                   "femaleStudents": 72
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 140,
-                  "maleStudents": 114,
-                  "femaleStudents": 26
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 3525,
                   "maleStudents": 2176,
                   "femaleStudents": 1349
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 140,
+                  "maleStudents": 114,
+                  "femaleStudents": 26
                 }
               ]
             },
@@ -39587,20 +39799,20 @@
                   "femaleStudents": 83
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 149,
-                  "maleStudents": 114,
-                  "femaleStudents": 35
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 3351,
                   "maleStudents": 2102,
                   "femaleStudents": 1249
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 149,
+                  "maleStudents": 114,
+                  "femaleStudents": 35
                 }
               ]
             },
@@ -39627,20 +39839,20 @@
                   "femaleStudents": 93
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 127,
-                  "maleStudents": 95,
-                  "femaleStudents": 32
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 3143,
                   "maleStudents": 1997,
                   "femaleStudents": 1146
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 127,
+                  "maleStudents": 95,
+                  "femaleStudents": 32
                 }
               ]
             },
@@ -39667,20 +39879,20 @@
                   "femaleStudents": 87
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 120,
-                  "maleStudents": 93,
-                  "femaleStudents": 27
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 3055,
                   "maleStudents": 1951,
                   "femaleStudents": 1104
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 120,
+                  "maleStudents": 93,
+                  "femaleStudents": 27
                 }
               ]
             },
@@ -48250,20 +48462,20 @@
                   "femaleStudents": 799
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 1036,
-                  "maleStudents": 287,
-                  "femaleStudents": 749
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 5304,
                   "maleStudents": 2373,
                   "femaleStudents": 2931
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 1036,
+                  "maleStudents": 287,
+                  "femaleStudents": 749
                 }
               ]
             },
@@ -48330,20 +48542,20 @@
                   "femaleStudents": 831
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 1122,
-                  "maleStudents": 313,
-                  "femaleStudents": 809
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 5351,
                   "maleStudents": 2355,
                   "femaleStudents": 2996
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 1122,
+                  "maleStudents": 313,
+                  "femaleStudents": 809
                 }
               ]
             },
@@ -48370,20 +48582,20 @@
                   "femaleStudents": 901
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 1201,
-                  "maleStudents": 316,
-                  "femaleStudents": 885
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 5345,
                   "maleStudents": 2363,
                   "femaleStudents": 2982
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 1201,
+                  "maleStudents": 316,
+                  "femaleStudents": 885
                 }
               ]
             },
@@ -48410,20 +48622,20 @@
                   "femaleStudents": 928
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 1191,
-                  "maleStudents": 328,
-                  "femaleStudents": 863
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 5287,
                   "maleStudents": 2332,
                   "femaleStudents": 2955
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 1191,
+                  "maleStudents": 328,
+                  "femaleStudents": 863
                 }
               ]
             },
@@ -48450,20 +48662,20 @@
                   "femaleStudents": 917
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 1248,
-                  "maleStudents": 341,
-                  "femaleStudents": 907
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 5275,
                   "maleStudents": 2287,
                   "femaleStudents": 2988
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 1248,
+                  "maleStudents": 341,
+                  "femaleStudents": 907
                 }
               ]
             },
@@ -48490,20 +48702,20 @@
                   "femaleStudents": 958
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 1286,
-                  "maleStudents": 370,
-                  "femaleStudents": 916
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 5251,
                   "maleStudents": 2272,
                   "femaleStudents": 2979
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 1286,
+                  "maleStudents": 370,
+                  "femaleStudents": 916
                 }
               ]
             },
@@ -48623,14 +48835,6 @@
                   "femaleStudents": 142
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 43,
-                  "maleStudents": 23,
-                  "femaleStudents": 20
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
@@ -48639,20 +48843,36 @@
                   "femaleStudents": 1676
                 },
                 {
-                  "id": "修-四技",
-                  "label": "修 四技",
-                  "category": "degree",
-                  "totalStudents": 679,
-                  "maleStudents": 213,
-                  "femaleStudents": 466
-                },
-                {
                   "id": "日-二技",
                   "label": "日 二技",
                   "category": "degree",
                   "totalStudents": 779,
                   "maleStudents": 169,
                   "femaleStudents": 610
+                },
+                {
+                  "id": "日-五專",
+                  "label": "日 五專",
+                  "category": "degree",
+                  "totalStudents": 1874,
+                  "maleStudents": 523,
+                  "femaleStudents": 1351
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 43,
+                  "maleStudents": 23,
+                  "femaleStudents": 20
+                },
+                {
+                  "id": "修-四技",
+                  "label": "修 四技",
+                  "category": "degree",
+                  "totalStudents": 679,
+                  "maleStudents": 213,
+                  "femaleStudents": 466
                 },
                 {
                   "id": "修-二技",
@@ -48677,14 +48897,6 @@
                   "totalStudents": 2,
                   "maleStudents": 2,
                   "femaleStudents": 0
-                },
-                {
-                  "id": "日-五專",
-                  "label": "日 五專",
-                  "category": "degree",
-                  "totalStudents": 1874,
-                  "maleStudents": 523,
-                  "femaleStudents": 1351
                 }
               ]
             },
@@ -48783,14 +48995,6 @@
                   "femaleStudents": 165
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 53,
-                  "maleStudents": 26,
-                  "femaleStudents": 27
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
@@ -48799,20 +49003,36 @@
                   "femaleStudents": 1699
                 },
                 {
-                  "id": "修-四技",
-                  "label": "修 四技",
-                  "category": "degree",
-                  "totalStudents": 826,
-                  "maleStudents": 300,
-                  "femaleStudents": 526
-                },
-                {
                   "id": "日-二技",
                   "label": "日 二技",
                   "category": "degree",
                   "totalStudents": 683,
                   "maleStudents": 159,
                   "femaleStudents": 524
+                },
+                {
+                  "id": "日-五專",
+                  "label": "日 五專",
+                  "category": "degree",
+                  "totalStudents": 1752,
+                  "maleStudents": 473,
+                  "femaleStudents": 1279
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 53,
+                  "maleStudents": 26,
+                  "femaleStudents": 27
+                },
+                {
+                  "id": "修-四技",
+                  "label": "修 四技",
+                  "category": "degree",
+                  "totalStudents": 826,
+                  "maleStudents": 300,
+                  "femaleStudents": 526
                 },
                 {
                   "id": "修-二技",
@@ -48829,14 +49049,6 @@
                   "totalStudents": 738,
                   "maleStudents": 281,
                   "femaleStudents": 457
-                },
-                {
-                  "id": "日-五專",
-                  "label": "日 五專",
-                  "category": "degree",
-                  "totalStudents": 1752,
-                  "maleStudents": 473,
-                  "femaleStudents": 1279
                 }
               ]
             },
@@ -48863,14 +49075,6 @@
                   "femaleStudents": 172
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 68,
-                  "maleStudents": 28,
-                  "femaleStudents": 40
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
@@ -48879,20 +49083,36 @@
                   "femaleStudents": 1675
                 },
                 {
-                  "id": "修-四技",
-                  "label": "修 四技",
-                  "category": "degree",
-                  "totalStudents": 907,
-                  "maleStudents": 327,
-                  "femaleStudents": 580
-                },
-                {
                   "id": "日-二技",
                   "label": "日 二技",
                   "category": "degree",
                   "totalStudents": 645,
                   "maleStudents": 138,
                   "femaleStudents": 507
+                },
+                {
+                  "id": "日-五專",
+                  "label": "日 五專",
+                  "category": "degree",
+                  "totalStudents": 1704,
+                  "maleStudents": 482,
+                  "femaleStudents": 1222
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 68,
+                  "maleStudents": 28,
+                  "femaleStudents": 40
+                },
+                {
+                  "id": "修-四技",
+                  "label": "修 四技",
+                  "category": "degree",
+                  "totalStudents": 907,
+                  "maleStudents": 327,
+                  "femaleStudents": 580
                 },
                 {
                   "id": "修-二技",
@@ -48909,14 +49129,6 @@
                   "totalStudents": 493,
                   "maleStudents": 159,
                   "femaleStudents": 334
-                },
-                {
-                  "id": "日-五專",
-                  "label": "日 五專",
-                  "category": "degree",
-                  "totalStudents": 1704,
-                  "maleStudents": 482,
-                  "femaleStudents": 1222
                 }
               ]
             },
@@ -48943,14 +49155,6 @@
                   "femaleStudents": 185
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 94,
-                  "maleStudents": 33,
-                  "femaleStudents": 61
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
@@ -48959,20 +49163,36 @@
                   "femaleStudents": 1641
                 },
                 {
-                  "id": "修-四技",
-                  "label": "修 四技",
-                  "category": "degree",
-                  "totalStudents": 922,
-                  "maleStudents": 356,
-                  "femaleStudents": 566
-                },
-                {
                   "id": "日-二技",
                   "label": "日 二技",
                   "category": "degree",
                   "totalStudents": 595,
                   "maleStudents": 126,
                   "femaleStudents": 469
+                },
+                {
+                  "id": "日-五專",
+                  "label": "日 五專",
+                  "category": "degree",
+                  "totalStudents": 1755,
+                  "maleStudents": 515,
+                  "femaleStudents": 1240
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 94,
+                  "maleStudents": 33,
+                  "femaleStudents": 61
+                },
+                {
+                  "id": "修-四技",
+                  "label": "修 四技",
+                  "category": "degree",
+                  "totalStudents": 922,
+                  "maleStudents": 356,
+                  "femaleStudents": 566
                 },
                 {
                   "id": "修-二技",
@@ -48989,14 +49209,6 @@
                   "totalStudents": 302,
                   "maleStudents": 106,
                   "femaleStudents": 196
-                },
-                {
-                  "id": "日-五專",
-                  "label": "日 五專",
-                  "category": "degree",
-                  "totalStudents": 1755,
-                  "maleStudents": 515,
-                  "femaleStudents": 1240
                 }
               ]
             },
@@ -49023,14 +49235,6 @@
                   "femaleStudents": 195
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 135,
-                  "maleStudents": 57,
-                  "femaleStudents": 78
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
@@ -49039,20 +49243,36 @@
                   "femaleStudents": 1567
                 },
                 {
-                  "id": "修-四技",
-                  "label": "修 四技",
-                  "category": "degree",
-                  "totalStudents": 929,
-                  "maleStudents": 360,
-                  "femaleStudents": 569
-                },
-                {
                   "id": "日-二技",
                   "label": "日 二技",
                   "category": "degree",
                   "totalStudents": 571,
                   "maleStudents": 144,
                   "femaleStudents": 427
+                },
+                {
+                  "id": "日-五專",
+                  "label": "日 五專",
+                  "category": "degree",
+                  "totalStudents": 1745,
+                  "maleStudents": 518,
+                  "femaleStudents": 1227
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 135,
+                  "maleStudents": 57,
+                  "femaleStudents": 78
+                },
+                {
+                  "id": "修-四技",
+                  "label": "修 四技",
+                  "category": "degree",
+                  "totalStudents": 929,
+                  "maleStudents": 360,
+                  "femaleStudents": 569
                 },
                 {
                   "id": "修-二技",
@@ -49069,14 +49289,6 @@
                   "totalStudents": 138,
                   "maleStudents": 57,
                   "femaleStudents": 81
-                },
-                {
-                  "id": "日-五專",
-                  "label": "日 五專",
-                  "category": "degree",
-                  "totalStudents": 1745,
-                  "maleStudents": 518,
-                  "femaleStudents": 1227
                 }
               ]
             },
@@ -49103,14 +49315,6 @@
                   "femaleStudents": 198
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 156,
-                  "maleStudents": 63,
-                  "femaleStudents": 93
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
@@ -49119,20 +49323,36 @@
                   "femaleStudents": 1553
                 },
                 {
-                  "id": "修-四技",
-                  "label": "修 四技",
-                  "category": "degree",
-                  "totalStudents": 896,
-                  "maleStudents": 341,
-                  "femaleStudents": 555
-                },
-                {
                   "id": "日-二技",
                   "label": "日 二技",
                   "category": "degree",
                   "totalStudents": 588,
                   "maleStudents": 159,
                   "femaleStudents": 429
+                },
+                {
+                  "id": "日-五專",
+                  "label": "日 五專",
+                  "category": "degree",
+                  "totalStudents": 1771,
+                  "maleStudents": 514,
+                  "femaleStudents": 1257
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 156,
+                  "maleStudents": 63,
+                  "femaleStudents": 93
+                },
+                {
+                  "id": "修-四技",
+                  "label": "修 四技",
+                  "category": "degree",
+                  "totalStudents": 896,
+                  "maleStudents": 341,
+                  "femaleStudents": 555
                 },
                 {
                   "id": "修-二技",
@@ -49149,14 +49369,6 @@
                   "totalStudents": 80,
                   "maleStudents": 36,
                   "femaleStudents": 44
-                },
-                {
-                  "id": "日-五專",
-                  "label": "日 五專",
-                  "category": "degree",
-                  "totalStudents": 1771,
-                  "maleStudents": 514,
-                  "femaleStudents": 1257
                 }
               ]
             },
@@ -56024,14 +56236,6 @@
                   "femaleStudents": 26
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 55,
-                  "maleStudents": 32,
-                  "femaleStudents": 23
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
@@ -56040,20 +56244,28 @@
                   "femaleStudents": 4233
                 },
                 {
-                  "id": "修-四技",
-                  "label": "修 四技",
-                  "category": "degree",
-                  "totalStudents": 788,
-                  "maleStudents": 396,
-                  "femaleStudents": 392
-                },
-                {
                   "id": "日-二技",
                   "label": "日 二技",
                   "category": "degree",
                   "totalStudents": 154,
                   "maleStudents": 32,
                   "femaleStudents": 122
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 55,
+                  "maleStudents": 32,
+                  "femaleStudents": 23
+                },
+                {
+                  "id": "修-四技",
+                  "label": "修 四技",
+                  "category": "degree",
+                  "totalStudents": 788,
+                  "maleStudents": 396,
+                  "femaleStudents": 392
                 },
                 {
                   "id": "修-二技",
@@ -56136,14 +56348,6 @@
                   "femaleStudents": 16
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 39,
-                  "maleStudents": 21,
-                  "femaleStudents": 18
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
@@ -56152,20 +56356,28 @@
                   "femaleStudents": 3810
                 },
                 {
-                  "id": "修-四技",
-                  "label": "修 四技",
-                  "category": "degree",
-                  "totalStudents": 500,
-                  "maleStudents": 281,
-                  "femaleStudents": 219
-                },
-                {
                   "id": "日-二技",
                   "label": "日 二技",
                   "category": "degree",
                   "totalStudents": 112,
                   "maleStudents": 27,
                   "femaleStudents": 85
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 39,
+                  "maleStudents": 21,
+                  "femaleStudents": 18
+                },
+                {
+                  "id": "修-四技",
+                  "label": "修 四技",
+                  "category": "degree",
+                  "totalStudents": 500,
+                  "maleStudents": 281,
+                  "femaleStudents": 219
                 },
                 {
                   "id": "修-二技",
@@ -56192,14 +56404,6 @@
                   "femaleStudents": 19
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 26,
-                  "maleStudents": 15,
-                  "femaleStudents": 11
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
@@ -56208,20 +56412,28 @@
                   "femaleStudents": 3779
                 },
                 {
-                  "id": "修-四技",
-                  "label": "修 四技",
-                  "category": "degree",
-                  "totalStudents": 414,
-                  "maleStudents": 224,
-                  "femaleStudents": 190
-                },
-                {
                   "id": "日-二技",
                   "label": "日 二技",
                   "category": "degree",
                   "totalStudents": 106,
                   "maleStudents": 34,
                   "femaleStudents": 72
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 26,
+                  "maleStudents": 15,
+                  "femaleStudents": 11
+                },
+                {
+                  "id": "修-四技",
+                  "label": "修 四技",
+                  "category": "degree",
+                  "totalStudents": 414,
+                  "maleStudents": 224,
+                  "femaleStudents": 190
                 },
                 {
                   "id": "修-二技",
@@ -56248,14 +56460,6 @@
                   "femaleStudents": 20
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 26,
-                  "maleStudents": 15,
-                  "femaleStudents": 11
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
@@ -56264,20 +56468,28 @@
                   "femaleStudents": 3318
                 },
                 {
-                  "id": "修-四技",
-                  "label": "修 四技",
-                  "category": "degree",
-                  "totalStudents": 320,
-                  "maleStudents": 170,
-                  "femaleStudents": 150
-                },
-                {
                   "id": "日-二技",
                   "label": "日 二技",
                   "category": "degree",
                   "totalStudents": 87,
                   "maleStudents": 30,
                   "femaleStudents": 57
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 26,
+                  "maleStudents": 15,
+                  "femaleStudents": 11
+                },
+                {
+                  "id": "修-四技",
+                  "label": "修 四技",
+                  "category": "degree",
+                  "totalStudents": 320,
+                  "maleStudents": 170,
+                  "femaleStudents": 150
                 },
                 {
                   "id": "修-二技",
@@ -56304,14 +56516,6 @@
                   "femaleStudents": 24
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 26,
-                  "maleStudents": 12,
-                  "femaleStudents": 14
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
@@ -56320,20 +56524,28 @@
                   "femaleStudents": 2815
                 },
                 {
-                  "id": "修-四技",
-                  "label": "修 四技",
-                  "category": "degree",
-                  "totalStudents": 235,
-                  "maleStudents": 130,
-                  "femaleStudents": 105
-                },
-                {
                   "id": "日-二技",
                   "label": "日 二技",
                   "category": "degree",
                   "totalStudents": 53,
                   "maleStudents": 16,
                   "femaleStudents": 37
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 26,
+                  "maleStudents": 12,
+                  "femaleStudents": 14
+                },
+                {
+                  "id": "修-四技",
+                  "label": "修 四技",
+                  "category": "degree",
+                  "totalStudents": 235,
+                  "maleStudents": 130,
+                  "femaleStudents": 105
                 },
                 {
                   "id": "修-二技",
@@ -56360,14 +56572,6 @@
                   "femaleStudents": 31
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 29,
-                  "maleStudents": 10,
-                  "femaleStudents": 19
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
@@ -56376,20 +56580,28 @@
                   "femaleStudents": 2607
                 },
                 {
-                  "id": "修-四技",
-                  "label": "修 四技",
-                  "category": "degree",
-                  "totalStudents": 202,
-                  "maleStudents": 117,
-                  "femaleStudents": 85
-                },
-                {
                   "id": "日-二技",
                   "label": "日 二技",
                   "category": "degree",
                   "totalStudents": 31,
                   "maleStudents": 11,
                   "femaleStudents": 20
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 29,
+                  "maleStudents": 10,
+                  "femaleStudents": 19
+                },
+                {
+                  "id": "修-四技",
+                  "label": "修 四技",
+                  "category": "degree",
+                  "totalStudents": 202,
+                  "maleStudents": 117,
+                  "femaleStudents": 85
                 },
                 {
                   "id": "修-二技",
@@ -56533,36 +56745,12 @@
                   "femaleStudents": 68
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 121,
-                  "maleStudents": 42,
-                  "femaleStudents": 79
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 607,
                   "maleStudents": 287,
                   "femaleStudents": 320
-                },
-                {
-                  "id": "進-學士",
-                  "label": "進 學士",
-                  "category": "degree",
-                  "totalStudents": 311,
-                  "maleStudents": 220,
-                  "femaleStudents": 91
-                },
-                {
-                  "id": "修-二技",
-                  "label": "修 二技",
-                  "category": "degree",
-                  "totalStudents": 32,
-                  "maleStudents": 2,
-                  "femaleStudents": 30
                 },
                 {
                   "id": "日-二專",
@@ -56573,6 +56761,30 @@
                   "femaleStudents": 1
                 },
                 {
+                  "id": "日-五專",
+                  "label": "日 五專",
+                  "category": "degree",
+                  "totalStudents": 2863,
+                  "maleStudents": 637,
+                  "femaleStudents": 2226
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 121,
+                  "maleStudents": 42,
+                  "femaleStudents": 79
+                },
+                {
+                  "id": "修-二技",
+                  "label": "修 二技",
+                  "category": "degree",
+                  "totalStudents": 32,
+                  "maleStudents": 2,
+                  "femaleStudents": 30
+                },
+                {
                   "id": "修-二專",
                   "label": "修 二專",
                   "category": "degree",
@@ -56581,12 +56793,12 @@
                   "femaleStudents": 212
                 },
                 {
-                  "id": "日-五專",
-                  "label": "日 五專",
+                  "id": "進-學士",
+                  "label": "進 學士",
                   "category": "degree",
-                  "totalStudents": 2863,
-                  "maleStudents": 637,
-                  "femaleStudents": 2226
+                  "totalStudents": 311,
+                  "maleStudents": 220,
+                  "femaleStudents": 91
                 }
               ]
             },
@@ -56669,36 +56881,12 @@
                   "femaleStudents": 15
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 26,
-                  "maleStudents": 7,
-                  "femaleStudents": 19
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 269,
                   "maleStudents": 79,
                   "femaleStudents": 190
-                },
-                {
-                  "id": "進-學士",
-                  "label": "進 學士",
-                  "category": "degree",
-                  "totalStudents": 31,
-                  "maleStudents": 23,
-                  "femaleStudents": 8
-                },
-                {
-                  "id": "修-二技",
-                  "label": "修 二技",
-                  "category": "degree",
-                  "totalStudents": 153,
-                  "maleStudents": 11,
-                  "femaleStudents": 142
                 },
                 {
                   "id": "日-二專",
@@ -56709,6 +56897,30 @@
                   "femaleStudents": 1
                 },
                 {
+                  "id": "日-五專",
+                  "label": "日 五專",
+                  "category": "degree",
+                  "totalStudents": 2783,
+                  "maleStudents": 679,
+                  "femaleStudents": 2104
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 26,
+                  "maleStudents": 7,
+                  "femaleStudents": 19
+                },
+                {
+                  "id": "修-二技",
+                  "label": "修 二技",
+                  "category": "degree",
+                  "totalStudents": 153,
+                  "maleStudents": 11,
+                  "femaleStudents": 142
+                },
+                {
                   "id": "修-二專",
                   "label": "修 二專",
                   "category": "degree",
@@ -56717,12 +56929,12 @@
                   "femaleStudents": 131
                 },
                 {
-                  "id": "日-五專",
-                  "label": "日 五專",
+                  "id": "進-學士",
+                  "label": "進 學士",
                   "category": "degree",
-                  "totalStudents": 2783,
-                  "maleStudents": 679,
-                  "femaleStudents": 2104
+                  "totalStudents": 31,
+                  "maleStudents": 23,
+                  "femaleStudents": 8
                 }
               ]
             },
@@ -56741,14 +56953,6 @@
                   "femaleStudents": 5
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 13,
-                  "maleStudents": 5,
-                  "femaleStudents": 8
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
@@ -56757,12 +56961,20 @@
                   "femaleStudents": 177
                 },
                 {
-                  "id": "進-學士",
-                  "label": "進 學士",
+                  "id": "日-五專",
+                  "label": "日 五專",
                   "category": "degree",
-                  "totalStudents": 6,
-                  "maleStudents": 3,
-                  "femaleStudents": 3
+                  "totalStudents": 2653,
+                  "maleStudents": 636,
+                  "femaleStudents": 2017
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 13,
+                  "maleStudents": 5,
+                  "femaleStudents": 8
                 },
                 {
                   "id": "修-二技",
@@ -56781,12 +56993,12 @@
                   "femaleStudents": 137
                 },
                 {
-                  "id": "日-五專",
-                  "label": "日 五專",
+                  "id": "進-學士",
+                  "label": "進 學士",
                   "category": "degree",
-                  "totalStudents": 2653,
-                  "maleStudents": 636,
-                  "femaleStudents": 2017
+                  "totalStudents": 6,
+                  "maleStudents": 3,
+                  "femaleStudents": 3
                 }
               ]
             },
@@ -56805,14 +57017,6 @@
                   "femaleStudents": 2
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 7,
-                  "maleStudents": 4,
-                  "femaleStudents": 3
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
@@ -56821,12 +57025,20 @@
                   "femaleStudents": 147
                 },
                 {
-                  "id": "進-學士",
-                  "label": "進 學士",
+                  "id": "日-五專",
+                  "label": "日 五專",
                   "category": "degree",
-                  "totalStudents": 2,
-                  "maleStudents": 0,
-                  "femaleStudents": 2
+                  "totalStudents": 2635,
+                  "maleStudents": 599,
+                  "femaleStudents": 2036
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 7,
+                  "maleStudents": 4,
+                  "femaleStudents": 3
                 },
                 {
                   "id": "修-二技",
@@ -56845,12 +57057,12 @@
                   "femaleStudents": 133
                 },
                 {
-                  "id": "日-五專",
-                  "label": "日 五專",
+                  "id": "進-學士",
+                  "label": "進 學士",
                   "category": "degree",
-                  "totalStudents": 2635,
-                  "maleStudents": 599,
-                  "femaleStudents": 2036
+                  "totalStudents": 2,
+                  "maleStudents": 0,
+                  "femaleStudents": 2
                 }
               ]
             },
@@ -56861,20 +57073,28 @@
               "femaleStudents": 2502,
               "bands": [
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 5,
-                  "maleStudents": 2,
-                  "femaleStudents": 3
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 156,
                   "maleStudents": 36,
                   "femaleStudents": 120
+                },
+                {
+                  "id": "日-五專",
+                  "label": "日 五專",
+                  "category": "degree",
+                  "totalStudents": 2676,
+                  "maleStudents": 628,
+                  "femaleStudents": 2048
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 5,
+                  "maleStudents": 2,
+                  "femaleStudents": 3
                 },
                 {
                   "id": "修-二技",
@@ -56891,14 +57111,6 @@
                   "totalStudents": 211,
                   "maleStudents": 53,
                   "femaleStudents": 158
-                },
-                {
-                  "id": "日-五專",
-                  "label": "日 五專",
-                  "category": "degree",
-                  "totalStudents": 2676,
-                  "maleStudents": 628,
-                  "femaleStudents": 2048
                 }
               ]
             },
@@ -56909,20 +57121,28 @@
               "femaleStudents": 2476,
               "bands": [
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 2,
-                  "maleStudents": 2,
-                  "femaleStudents": 0
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 137,
                   "maleStudents": 37,
                   "femaleStudents": 100
+                },
+                {
+                  "id": "日-五專",
+                  "label": "日 五專",
+                  "category": "degree",
+                  "totalStudents": 2698,
+                  "maleStudents": 645,
+                  "femaleStudents": 2053
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 2,
+                  "maleStudents": 2,
+                  "femaleStudents": 0
                 },
                 {
                   "id": "修-二技",
@@ -56939,14 +57159,6 @@
                   "totalStudents": 207,
                   "maleStudents": 56,
                   "femaleStudents": 151
-                },
-                {
-                  "id": "日-五專",
-                  "label": "日 五專",
-                  "category": "degree",
-                  "totalStudents": 2698,
-                  "maleStudents": 645,
-                  "femaleStudents": 2053
                 }
               ]
             },
@@ -68296,20 +68508,20 @@
                   "femaleStudents": 2144
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 1750,
-                  "maleStudents": 896,
-                  "femaleStudents": 854
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 9630,
                   "maleStudents": 3983,
                   "femaleStudents": 5647
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 1750,
+                  "maleStudents": 896,
+                  "femaleStudents": 854
                 }
               ]
             },
@@ -68376,20 +68588,20 @@
                   "femaleStudents": 2172
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 1766,
-                  "maleStudents": 905,
-                  "femaleStudents": 861
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 9632,
                   "maleStudents": 4019,
                   "femaleStudents": 5613
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 1766,
+                  "maleStudents": 905,
+                  "femaleStudents": 861
                 }
               ]
             },
@@ -68416,20 +68628,20 @@
                   "femaleStudents": 2146
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 1632,
-                  "maleStudents": 779,
-                  "femaleStudents": 853
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 9556,
                   "maleStudents": 3920,
                   "femaleStudents": 5636
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 1632,
+                  "maleStudents": 779,
+                  "femaleStudents": 853
                 }
               ]
             },
@@ -68456,20 +68668,20 @@
                   "femaleStudents": 2296
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 1870,
-                  "maleStudents": 921,
-                  "femaleStudents": 949
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 9732,
                   "maleStudents": 3976,
                   "femaleStudents": 5756
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 1870,
+                  "maleStudents": 921,
+                  "femaleStudents": 949
                 }
               ]
             },
@@ -68496,20 +68708,20 @@
                   "femaleStudents": 2396
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 1903,
-                  "maleStudents": 938,
-                  "femaleStudents": 965
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 9763,
                   "maleStudents": 3928,
                   "femaleStudents": 5835
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 1903,
+                  "maleStudents": 938,
+                  "femaleStudents": 965
                 }
               ]
             },
@@ -68536,20 +68748,20 @@
                   "femaleStudents": 2433
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 1864,
-                  "maleStudents": 902,
-                  "femaleStudents": 962
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 9801,
                   "maleStudents": 3991,
                   "femaleStudents": 5810
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 1864,
+                  "maleStudents": 902,
+                  "femaleStudents": 962
                 }
               ]
             },
@@ -68677,14 +68889,6 @@
                   "femaleStudents": 318
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 785,
-                  "maleStudents": 422,
-                  "femaleStudents": 363
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
@@ -68693,12 +68897,12 @@
                   "femaleStudents": 6262
                 },
                 {
-                  "id": "進-學士",
-                  "label": "進 學士",
+                  "id": "職-碩士",
+                  "label": "職 碩士",
                   "category": "degree",
-                  "totalStudents": 424,
-                  "maleStudents": 163,
-                  "femaleStudents": 261
+                  "totalStudents": 785,
+                  "maleStudents": 422,
+                  "femaleStudents": 363
                 },
                 {
                   "id": "修-二技",
@@ -68707,6 +68911,14 @@
                   "totalStudents": 1,
                   "maleStudents": 0,
                   "femaleStudents": 1
+                },
+                {
+                  "id": "進-學士",
+                  "label": "進 學士",
+                  "category": "degree",
+                  "totalStudents": 424,
+                  "maleStudents": 163,
+                  "femaleStudents": 261
                 }
               ]
             },
@@ -68781,20 +68993,20 @@
                   "femaleStudents": 298
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 655,
-                  "maleStudents": 355,
-                  "femaleStudents": 300
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 9431,
                   "maleStudents": 3325,
                   "femaleStudents": 6106
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 655,
+                  "maleStudents": 355,
+                  "femaleStudents": 300
                 },
                 {
                   "id": "進-學士",
@@ -68829,20 +69041,20 @@
                   "femaleStudents": 309
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 656,
-                  "maleStudents": 337,
-                  "femaleStudents": 319
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 9517,
                   "maleStudents": 3421,
                   "femaleStudents": 6096
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 656,
+                  "maleStudents": 337,
+                  "femaleStudents": 319
                 },
                 {
                   "id": "進-學士",
@@ -68877,20 +69089,20 @@
                   "femaleStudents": 285
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 559,
-                  "maleStudents": 282,
-                  "femaleStudents": 277
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 9019,
                   "maleStudents": 3210,
                   "femaleStudents": 5809
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 559,
+                  "maleStudents": 282,
+                  "femaleStudents": 277
                 },
                 {
                   "id": "進-學士",
@@ -68925,20 +69137,20 @@
                   "femaleStudents": 265
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 543,
-                  "maleStudents": 274,
-                  "femaleStudents": 269
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 9150,
                   "maleStudents": 3175,
                   "femaleStudents": 5975
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 543,
+                  "maleStudents": 274,
+                  "femaleStudents": 269
                 },
                 {
                   "id": "進-學士",
@@ -68973,20 +69185,20 @@
                   "femaleStudents": 278
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 485,
-                  "maleStudents": 233,
-                  "femaleStudents": 252
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 9213,
                   "maleStudents": 3137,
                   "femaleStudents": 6076
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 485,
+                  "maleStudents": 233,
+                  "femaleStudents": 252
                 },
                 {
                   "id": "進-學士",
@@ -69122,20 +69334,20 @@
                   "femaleStudents": 64
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 76,
-                  "maleStudents": 58,
-                  "femaleStudents": 18
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
                   "totalStudents": 7977,
                   "maleStudents": 3490,
                   "femaleStudents": 4487
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 76,
+                  "maleStudents": 58,
+                  "femaleStudents": 18
                 },
                 {
                   "id": "修-四技",
@@ -69250,20 +69462,20 @@
                   "femaleStudents": 65
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 77,
-                  "maleStudents": 55,
-                  "femaleStudents": 22
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
                   "totalStudents": 6374,
                   "maleStudents": 2918,
                   "femaleStudents": 3456
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 77,
+                  "maleStudents": 55,
+                  "femaleStudents": 22
                 },
                 {
                   "id": "修-四技",
@@ -69314,14 +69526,6 @@
                   "femaleStudents": 81
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 82,
-                  "maleStudents": 56,
-                  "femaleStudents": 26
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
@@ -69330,20 +69534,28 @@
                   "femaleStudents": 3258
                 },
                 {
-                  "id": "修-四技",
-                  "label": "修 四技",
-                  "category": "degree",
-                  "totalStudents": 1115,
-                  "maleStudents": 655,
-                  "femaleStudents": 460
-                },
-                {
                   "id": "日-二技",
                   "label": "日 二技",
                   "category": "degree",
                   "totalStudents": 7,
                   "maleStudents": 2,
                   "femaleStudents": 5
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 82,
+                  "maleStudents": 56,
+                  "femaleStudents": 26
+                },
+                {
+                  "id": "修-四技",
+                  "label": "修 四技",
+                  "category": "degree",
+                  "totalStudents": 1115,
+                  "maleStudents": 655,
+                  "femaleStudents": 460
                 },
                 {
                   "id": "修-二技",
@@ -69386,14 +69598,6 @@
                   "femaleStudents": 81
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 60,
-                  "maleStudents": 36,
-                  "femaleStudents": 24
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
@@ -69402,20 +69606,28 @@
                   "femaleStudents": 2885
                 },
                 {
-                  "id": "修-四技",
-                  "label": "修 四技",
-                  "category": "degree",
-                  "totalStudents": 994,
-                  "maleStudents": 589,
-                  "femaleStudents": 405
-                },
-                {
                   "id": "日-二技",
                   "label": "日 二技",
                   "category": "degree",
                   "totalStudents": 7,
                   "maleStudents": 2,
                   "femaleStudents": 5
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 60,
+                  "maleStudents": 36,
+                  "femaleStudents": 24
+                },
+                {
+                  "id": "修-四技",
+                  "label": "修 四技",
+                  "category": "degree",
+                  "totalStudents": 994,
+                  "maleStudents": 589,
+                  "femaleStudents": 405
                 },
                 {
                   "id": "修-二技",
@@ -69450,20 +69662,20 @@
                   "femaleStudents": 68
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 55,
-                  "maleStudents": 38,
-                  "femaleStudents": 17
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
                   "totalStudents": 4457,
                   "maleStudents": 2079,
                   "femaleStudents": 2378
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 55,
+                  "maleStudents": 38,
+                  "femaleStudents": 17
                 },
                 {
                   "id": "修-四技",
@@ -69506,20 +69718,20 @@
                   "femaleStudents": 61
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 64,
-                  "maleStudents": 39,
-                  "femaleStudents": 25
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
                   "totalStudents": 4086,
                   "maleStudents": 1934,
                   "femaleStudents": 2152
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 64,
+                  "maleStudents": 39,
+                  "femaleStudents": 25
                 },
                 {
                   "id": "修-四技",
@@ -70177,7 +70389,7 @@
           "id": "381306:國小",
           "code": "381306",
           "schoolLevelId": "381306:國小",
-          "name": "私立靜心高中附設國小部",
+          "name": "臺北市靜心高中附設國小",
           "countyId": "臺北市",
           "townshipId": "臺北市:文山區",
           "countyCode": "63000",
@@ -70531,7 +70743,7 @@
           "_missingGIS": true,
           "_missingCoordinateEntry": {
             "code": "381306",
-            "name": "私立靜心高中附設國小部",
+            "name": "臺北市靜心高中附設國小",
             "county": "臺北市",
             "township": "文山區",
             "level": "國小",
@@ -86697,14 +86909,6 @@
                   "femaleStudents": 2737
                 },
                 {
-                  "id": "修-四技",
-                  "label": "修 四技",
-                  "category": "degree",
-                  "totalStudents": 852,
-                  "maleStudents": 622,
-                  "femaleStudents": 230
-                },
-                {
                   "id": "日-二技",
                   "label": "日 二技",
                   "category": "degree",
@@ -86713,20 +86917,28 @@
                   "femaleStudents": 2
                 },
                 {
-                  "id": "修-二專",
-                  "label": "修 二專",
-                  "category": "degree",
-                  "totalStudents": 12,
-                  "maleStudents": 7,
-                  "femaleStudents": 5
-                },
-                {
                   "id": "日-五專",
                   "label": "日 五專",
                   "category": "degree",
                   "totalStudents": 1249,
                   "maleStudents": 878,
                   "femaleStudents": 371
+                },
+                {
+                  "id": "修-四技",
+                  "label": "修 四技",
+                  "category": "degree",
+                  "totalStudents": 852,
+                  "maleStudents": 622,
+                  "femaleStudents": 230
+                },
+                {
+                  "id": "修-二專",
+                  "label": "修 二專",
+                  "category": "degree",
+                  "totalStudents": 12,
+                  "maleStudents": 7,
+                  "femaleStudents": 5
                 }
               ]
             },
@@ -86809,20 +87021,28 @@
                   "femaleStudents": 2640
                 },
                 {
-                  "id": "修-四技",
-                  "label": "修 四技",
-                  "category": "degree",
-                  "totalStudents": 771,
-                  "maleStudents": 597,
-                  "femaleStudents": 174
-                },
-                {
                   "id": "日-二技",
                   "label": "日 二技",
                   "category": "degree",
                   "totalStudents": 3,
                   "maleStudents": 2,
                   "femaleStudents": 1
+                },
+                {
+                  "id": "日-五專",
+                  "label": "日 五專",
+                  "category": "degree",
+                  "totalStudents": 1056,
+                  "maleStudents": 719,
+                  "femaleStudents": 337
+                },
+                {
+                  "id": "修-四技",
+                  "label": "修 四技",
+                  "category": "degree",
+                  "totalStudents": 771,
+                  "maleStudents": 597,
+                  "femaleStudents": 174
                 },
                 {
                   "id": "修-二技",
@@ -86839,14 +87059,6 @@
                   "totalStudents": 418,
                   "maleStudents": 192,
                   "femaleStudents": 226
-                },
-                {
-                  "id": "日-五專",
-                  "label": "日 五專",
-                  "category": "degree",
-                  "totalStudents": 1056,
-                  "maleStudents": 719,
-                  "femaleStudents": 337
                 }
               ]
             },
@@ -86873,20 +87085,28 @@
                   "femaleStudents": 2484
                 },
                 {
-                  "id": "修-四技",
-                  "label": "修 四技",
-                  "category": "degree",
-                  "totalStudents": 744,
-                  "maleStudents": 583,
-                  "femaleStudents": 161
-                },
-                {
                   "id": "日-二技",
                   "label": "日 二技",
                   "category": "degree",
                   "totalStudents": 8,
                   "maleStudents": 5,
                   "femaleStudents": 3
+                },
+                {
+                  "id": "日-五專",
+                  "label": "日 五專",
+                  "category": "degree",
+                  "totalStudents": 933,
+                  "maleStudents": 603,
+                  "femaleStudents": 330
+                },
+                {
+                  "id": "修-四技",
+                  "label": "修 四技",
+                  "category": "degree",
+                  "totalStudents": 744,
+                  "maleStudents": 583,
+                  "femaleStudents": 161
                 },
                 {
                   "id": "修-二技",
@@ -86903,14 +87123,6 @@
                   "totalStudents": 374,
                   "maleStudents": 174,
                   "femaleStudents": 200
-                },
-                {
-                  "id": "日-五專",
-                  "label": "日 五專",
-                  "category": "degree",
-                  "totalStudents": 933,
-                  "maleStudents": 603,
-                  "femaleStudents": 330
                 }
               ]
             },
@@ -86937,28 +87149,12 @@
                   "femaleStudents": 2450
                 },
                 {
-                  "id": "修-四技",
-                  "label": "修 四技",
-                  "category": "degree",
-                  "totalStudents": 729,
-                  "maleStudents": 566,
-                  "femaleStudents": 163
-                },
-                {
                   "id": "日-二技",
                   "label": "日 二技",
                   "category": "degree",
                   "totalStudents": 7,
                   "maleStudents": 4,
                   "femaleStudents": 3
-                },
-                {
-                  "id": "修-二技",
-                  "label": "修 二技",
-                  "category": "degree",
-                  "totalStudents": 466,
-                  "maleStudents": 230,
-                  "femaleStudents": 236
                 },
                 {
                   "id": "日-二專",
@@ -86969,20 +87165,36 @@
                   "femaleStudents": 4
                 },
                 {
-                  "id": "修-二專",
-                  "label": "修 二專",
-                  "category": "degree",
-                  "totalStudents": 341,
-                  "maleStudents": 193,
-                  "femaleStudents": 148
-                },
-                {
                   "id": "日-五專",
                   "label": "日 五專",
                   "category": "degree",
                   "totalStudents": 838,
                   "maleStudents": 522,
                   "femaleStudents": 316
+                },
+                {
+                  "id": "修-四技",
+                  "label": "修 四技",
+                  "category": "degree",
+                  "totalStudents": 729,
+                  "maleStudents": 566,
+                  "femaleStudents": 163
+                },
+                {
+                  "id": "修-二技",
+                  "label": "修 二技",
+                  "category": "degree",
+                  "totalStudents": 466,
+                  "maleStudents": 230,
+                  "femaleStudents": 236
+                },
+                {
+                  "id": "修-二專",
+                  "label": "修 二專",
+                  "category": "degree",
+                  "totalStudents": 341,
+                  "maleStudents": 193,
+                  "femaleStudents": 148
                 }
               ]
             },
@@ -87009,6 +87221,22 @@
                   "femaleStudents": 2330
                 },
                 {
+                  "id": "日-二專",
+                  "label": "日 二專",
+                  "category": "degree",
+                  "totalStudents": 19,
+                  "maleStudents": 15,
+                  "femaleStudents": 4
+                },
+                {
+                  "id": "日-五專",
+                  "label": "日 五專",
+                  "category": "degree",
+                  "totalStudents": 745,
+                  "maleStudents": 463,
+                  "femaleStudents": 282
+                },
+                {
                   "id": "修-四技",
                   "label": "修 四技",
                   "category": "degree",
@@ -87025,28 +87253,12 @@
                   "femaleStudents": 189
                 },
                 {
-                  "id": "日-二專",
-                  "label": "日 二專",
-                  "category": "degree",
-                  "totalStudents": 19,
-                  "maleStudents": 15,
-                  "femaleStudents": 4
-                },
-                {
                   "id": "修-二專",
                   "label": "修 二專",
                   "category": "degree",
                   "totalStudents": 307,
                   "maleStudents": 172,
                   "femaleStudents": 135
-                },
-                {
-                  "id": "日-五專",
-                  "label": "日 五專",
-                  "category": "degree",
-                  "totalStudents": 745,
-                  "maleStudents": 463,
-                  "femaleStudents": 282
                 }
               ]
             },
@@ -87073,6 +87285,22 @@
                   "femaleStudents": 2797
                 },
                 {
+                  "id": "日-二專",
+                  "label": "日 二專",
+                  "category": "degree",
+                  "totalStudents": 9,
+                  "maleStudents": 8,
+                  "femaleStudents": 1
+                },
+                {
+                  "id": "日-五專",
+                  "label": "日 五專",
+                  "category": "degree",
+                  "totalStudents": 711,
+                  "maleStudents": 446,
+                  "femaleStudents": 265
+                },
+                {
                   "id": "修-四技",
                   "label": "修 四技",
                   "category": "degree",
@@ -87089,28 +87317,12 @@
                   "femaleStudents": 189
                 },
                 {
-                  "id": "日-二專",
-                  "label": "日 二專",
-                  "category": "degree",
-                  "totalStudents": 9,
-                  "maleStudents": 8,
-                  "femaleStudents": 1
-                },
-                {
                   "id": "修-二專",
                   "label": "修 二專",
                   "category": "degree",
                   "totalStudents": 309,
                   "maleStudents": 156,
                   "femaleStudents": 153
-                },
-                {
-                  "id": "日-五專",
-                  "label": "日 五專",
-                  "category": "degree",
-                  "totalStudents": 711,
-                  "maleStudents": 446,
-                  "femaleStudents": 265
                 }
               ]
             },
@@ -87262,14 +87474,6 @@
                   "femaleStudents": 474
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 203,
-                  "maleStudents": 30,
-                  "femaleStudents": 173
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
@@ -87284,6 +87488,14 @@
                   "totalStudents": 857,
                   "maleStudents": 53,
                   "femaleStudents": 804
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 203,
+                  "maleStudents": 30,
+                  "femaleStudents": 173
                 },
                 {
                   "id": "修-二技",
@@ -87374,14 +87586,6 @@
                   "femaleStudents": 476
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 194,
-                  "maleStudents": 28,
-                  "femaleStudents": 166
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
@@ -87396,6 +87600,14 @@
                   "totalStudents": 936,
                   "maleStudents": 85,
                   "femaleStudents": 851
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 194,
+                  "maleStudents": 28,
+                  "femaleStudents": 166
                 },
                 {
                   "id": "修-二技",
@@ -87430,14 +87642,6 @@
                   "femaleStudents": 465
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 205,
-                  "maleStudents": 27,
-                  "femaleStudents": 178
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
@@ -87452,6 +87656,14 @@
                   "totalStudents": 948,
                   "maleStudents": 87,
                   "femaleStudents": 861
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 205,
+                  "maleStudents": 27,
+                  "femaleStudents": 178
                 },
                 {
                   "id": "修-二技",
@@ -87486,14 +87698,6 @@
                   "femaleStudents": 465
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 208,
-                  "maleStudents": 31,
-                  "femaleStudents": 177
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
@@ -87508,6 +87712,14 @@
                   "totalStudents": 906,
                   "maleStudents": 84,
                   "femaleStudents": 822
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 208,
+                  "maleStudents": 31,
+                  "femaleStudents": 177
                 },
                 {
                   "id": "修-二技",
@@ -87542,14 +87754,6 @@
                   "femaleStudents": 471
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 197,
-                  "maleStudents": 33,
-                  "femaleStudents": 164
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
@@ -87564,6 +87768,14 @@
                   "totalStudents": 958,
                   "maleStudents": 93,
                   "femaleStudents": 865
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 197,
+                  "maleStudents": 33,
+                  "femaleStudents": 164
                 },
                 {
                   "id": "修-二技",
@@ -87598,14 +87810,6 @@
                   "femaleStudents": 462
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 182,
-                  "maleStudents": 31,
-                  "femaleStudents": 151
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
@@ -87620,6 +87824,14 @@
                   "totalStudents": 943,
                   "maleStudents": 84,
                   "femaleStudents": 859
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 182,
+                  "maleStudents": 31,
+                  "femaleStudents": 151
                 },
                 {
                   "id": "修-二技",
@@ -87763,20 +87975,20 @@
                   "femaleStudents": 23
                 },
                 {
-                  "id": "修-二專",
-                  "label": "修 二專",
-                  "category": "degree",
-                  "totalStudents": 302,
-                  "maleStudents": 148,
-                  "femaleStudents": 154
-                },
-                {
                   "id": "日-五專",
                   "label": "日 五專",
                   "category": "degree",
                   "totalStudents": 3932,
                   "maleStudents": 448,
                   "femaleStudents": 3484
+                },
+                {
+                  "id": "修-二專",
+                  "label": "修 二專",
+                  "category": "degree",
+                  "totalStudents": 302,
+                  "maleStudents": 148,
+                  "femaleStudents": 154
                 }
               ]
             },
@@ -87827,20 +88039,20 @@
                   "femaleStudents": 27
                 },
                 {
-                  "id": "修-二專",
-                  "label": "修 二專",
-                  "category": "degree",
-                  "totalStudents": 222,
-                  "maleStudents": 103,
-                  "femaleStudents": 119
-                },
-                {
                   "id": "日-五專",
                   "label": "日 五專",
                   "category": "degree",
                   "totalStudents": 3852,
                   "maleStudents": 480,
                   "femaleStudents": 3372
+                },
+                {
+                  "id": "修-二專",
+                  "label": "修 二專",
+                  "category": "degree",
+                  "totalStudents": 222,
+                  "maleStudents": 103,
+                  "femaleStudents": 119
                 }
               ]
             },
@@ -87859,20 +88071,20 @@
                   "femaleStudents": 1
                 },
                 {
-                  "id": "修-二專",
-                  "label": "修 二專",
-                  "category": "degree",
-                  "totalStudents": 144,
-                  "maleStudents": 72,
-                  "femaleStudents": 72
-                },
-                {
                   "id": "日-五專",
                   "label": "日 五專",
                   "category": "degree",
                   "totalStudents": 3852,
                   "maleStudents": 504,
                   "femaleStudents": 3348
+                },
+                {
+                  "id": "修-二專",
+                  "label": "修 二專",
+                  "category": "degree",
+                  "totalStudents": 144,
+                  "maleStudents": 72,
+                  "femaleStudents": 72
                 }
               ]
             },
@@ -87883,20 +88095,20 @@
               "femaleStudents": 3433,
               "bands": [
                 {
-                  "id": "修-二專",
-                  "label": "修 二專",
-                  "category": "degree",
-                  "totalStudents": 145,
-                  "maleStudents": 71,
-                  "femaleStudents": 74
-                },
-                {
                   "id": "日-五專",
                   "label": "日 五專",
                   "category": "degree",
                   "totalStudents": 3873,
                   "maleStudents": 514,
                   "femaleStudents": 3359
+                },
+                {
+                  "id": "修-二專",
+                  "label": "修 二專",
+                  "category": "degree",
+                  "totalStudents": 145,
+                  "maleStudents": 71,
+                  "femaleStudents": 74
                 }
               ]
             },
@@ -87907,20 +88119,20 @@
               "femaleStudents": 3452,
               "bands": [
                 {
-                  "id": "修-二專",
-                  "label": "修 二專",
-                  "category": "degree",
-                  "totalStudents": 148,
-                  "maleStudents": 70,
-                  "femaleStudents": 78
-                },
-                {
                   "id": "日-五專",
                   "label": "日 五專",
                   "category": "degree",
                   "totalStudents": 3932,
                   "maleStudents": 558,
                   "femaleStudents": 3374
+                },
+                {
+                  "id": "修-二專",
+                  "label": "修 二專",
+                  "category": "degree",
+                  "totalStudents": 148,
+                  "maleStudents": 70,
+                  "femaleStudents": 78
                 }
               ]
             },
@@ -87931,20 +88143,20 @@
               "femaleStudents": 3386,
               "bands": [
                 {
-                  "id": "修-二專",
-                  "label": "修 二專",
-                  "category": "degree",
-                  "totalStudents": 108,
-                  "maleStudents": 55,
-                  "femaleStudents": 53
-                },
-                {
                   "id": "日-五專",
                   "label": "日 五專",
                   "category": "degree",
                   "totalStudents": 3938,
                   "maleStudents": 605,
                   "femaleStudents": 3333
+                },
+                {
+                  "id": "修-二專",
+                  "label": "修 二專",
+                  "category": "degree",
+                  "totalStudents": 108,
+                  "maleStudents": 55,
+                  "femaleStudents": 53
                 }
               ]
             },
@@ -88056,14 +88268,6 @@
                   "femaleStudents": 624
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 169,
-                  "maleStudents": 52,
-                  "femaleStudents": 117
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
@@ -88080,12 +88284,20 @@
                   "femaleStudents": 19
                 },
                 {
-                  "id": "日-七年",
-                  "label": "日 七年",
+                  "id": "日-五專",
+                  "label": "日 五專",
                   "category": "degree",
                   "totalStudents": 72,
                   "maleStudents": 26,
                   "femaleStudents": 46
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 169,
+                  "maleStudents": 52,
+                  "femaleStudents": 117
                 }
               ]
             },
@@ -88168,14 +88380,6 @@
                   "femaleStudents": 645
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 179,
-                  "maleStudents": 54,
-                  "femaleStudents": 125
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
@@ -88192,12 +88396,20 @@
                   "femaleStudents": 14
                 },
                 {
-                  "id": "日-七年",
-                  "label": "日 七年",
+                  "id": "日-五專",
+                  "label": "日 五專",
                   "category": "degree",
                   "totalStudents": 82,
                   "maleStudents": 35,
                   "femaleStudents": 47
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 179,
+                  "maleStudents": 54,
+                  "femaleStudents": 125
                 }
               ]
             },
@@ -88224,14 +88436,6 @@
                   "femaleStudents": 623
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 180,
-                  "maleStudents": 53,
-                  "femaleStudents": 127
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
@@ -88254,6 +88458,14 @@
                   "totalStudents": 84,
                   "maleStudents": 41,
                   "femaleStudents": 43
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 180,
+                  "maleStudents": 53,
+                  "femaleStudents": 127
                 }
               ]
             },
@@ -88280,14 +88492,6 @@
                   "femaleStudents": 654
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 177,
-                  "maleStudents": 58,
-                  "femaleStudents": 119
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
@@ -88302,6 +88506,14 @@
                   "totalStudents": 85,
                   "maleStudents": 41,
                   "femaleStudents": 44
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 177,
+                  "maleStudents": 58,
+                  "femaleStudents": 119
                 }
               ]
             },
@@ -88328,14 +88540,6 @@
                   "femaleStudents": 644
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 193,
-                  "maleStudents": 64,
-                  "femaleStudents": 129
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
@@ -88350,6 +88554,14 @@
                   "totalStudents": 83,
                   "maleStudents": 39,
                   "femaleStudents": 44
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 193,
+                  "maleStudents": 64,
+                  "femaleStudents": 129
                 }
               ]
             },
@@ -88376,14 +88588,6 @@
                   "femaleStudents": 634
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 189,
-                  "maleStudents": 61,
-                  "femaleStudents": 128
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
@@ -88398,6 +88602,14 @@
                   "totalStudents": 76,
                   "maleStudents": 34,
                   "femaleStudents": 42
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 189,
+                  "maleStudents": 61,
+                  "femaleStudents": 128
                 }
               ]
             },
@@ -107059,7 +107271,7 @@
           "id": "311401:國小",
           "code": "311401",
           "schoolLevelId": "311401:國小",
-          "name": "私立普林思頓高中附設國小部",
+          "name": "臺北市普林思頓高中附設國小",
           "countyId": "臺北市",
           "townshipId": "臺北市:松山區",
           "countyCode": "63000",
@@ -107413,7 +107625,7 @@
           "_missingGIS": true,
           "_missingCoordinateEntry": {
             "code": "311401",
-            "name": "私立普林思頓高中附設國小部",
+            "name": "臺北市普林思頓高中附設國小",
             "county": "臺北市",
             "township": "松山區",
             "level": "國小",
@@ -107956,14 +108168,6 @@
                   "femaleStudents": 399
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 267,
-                  "maleStudents": 65,
-                  "femaleStudents": 202
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
@@ -107972,20 +108176,28 @@
                   "femaleStudents": 2747
                 },
                 {
-                  "id": "修-二技",
-                  "label": "修 二技",
-                  "category": "degree",
-                  "totalStudents": 1,
-                  "maleStudents": 0,
-                  "femaleStudents": 1
-                },
-                {
                   "id": "日-4+X",
                   "label": "日 4+X",
                   "category": "degree",
                   "totalStudents": 29,
                   "maleStudents": 14,
                   "femaleStudents": 15
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 267,
+                  "maleStudents": 65,
+                  "femaleStudents": 202
+                },
+                {
+                  "id": "修-二技",
+                  "label": "修 二技",
+                  "category": "degree",
+                  "totalStudents": 1,
+                  "maleStudents": 0,
+                  "femaleStudents": 1
                 }
               ]
             },
@@ -108060,14 +108272,6 @@
                   "femaleStudents": 422
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 307,
-                  "maleStudents": 79,
-                  "femaleStudents": 228
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
@@ -108082,6 +108286,14 @@
                   "totalStudents": 2,
                   "maleStudents": 1,
                   "femaleStudents": 1
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 307,
+                  "maleStudents": 79,
+                  "femaleStudents": 228
                 }
               ]
             },
@@ -108108,20 +108320,20 @@
                   "femaleStudents": 467
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 314,
-                  "maleStudents": 87,
-                  "femaleStudents": 227
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 4551,
                   "maleStudents": 1867,
                   "femaleStudents": 2684
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 314,
+                  "maleStudents": 87,
+                  "femaleStudents": 227
                 }
               ]
             },
@@ -108148,20 +108360,20 @@
                   "femaleStudents": 471
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 300,
-                  "maleStudents": 92,
-                  "femaleStudents": 208
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 4543,
                   "maleStudents": 1909,
                   "femaleStudents": 2634
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 300,
+                  "maleStudents": 92,
+                  "femaleStudents": 208
                 }
               ]
             },
@@ -108188,20 +108400,20 @@
                   "femaleStudents": 435
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 312,
-                  "maleStudents": 84,
-                  "femaleStudents": 228
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 4538,
                   "maleStudents": 1896,
                   "femaleStudents": 2642
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 312,
+                  "maleStudents": 84,
+                  "femaleStudents": 228
                 }
               ]
             },
@@ -108228,20 +108440,20 @@
                   "femaleStudents": 461
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 297,
-                  "maleStudents": 68,
-                  "femaleStudents": 229
-                },
-                {
                   "id": "日-學士",
                   "label": "日 學士",
                   "category": "degree",
                   "totalStudents": 4524,
                   "maleStudents": 1864,
                   "femaleStudents": 2660
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 297,
+                  "maleStudents": 68,
+                  "femaleStudents": 229
                 }
               ]
             },
@@ -114914,14 +115126,6 @@
                   "femaleStudents": 56
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 97,
-                  "maleStudents": 75,
-                  "femaleStudents": 22
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
@@ -114930,20 +115134,28 @@
                   "femaleStudents": 1436
                 },
                 {
-                  "id": "修-四技",
-                  "label": "修 四技",
-                  "category": "degree",
-                  "totalStudents": 824,
-                  "maleStudents": 671,
-                  "femaleStudents": 153
-                },
-                {
                   "id": "日-二技",
                   "label": "日 二技",
                   "category": "degree",
                   "totalStudents": 27,
                   "maleStudents": 7,
                   "femaleStudents": 20
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 97,
+                  "maleStudents": 75,
+                  "femaleStudents": 22
+                },
+                {
+                  "id": "修-四技",
+                  "label": "修 四技",
+                  "category": "degree",
+                  "totalStudents": 824,
+                  "maleStudents": 671,
+                  "femaleStudents": 153
                 },
                 {
                   "id": "修-二技",
@@ -115026,14 +115238,6 @@
                   "femaleStudents": 55
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 126,
-                  "maleStudents": 107,
-                  "femaleStudents": 19
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
@@ -115042,20 +115246,28 @@
                   "femaleStudents": 969
                 },
                 {
-                  "id": "修-四技",
-                  "label": "修 四技",
-                  "category": "degree",
-                  "totalStudents": 711,
-                  "maleStudents": 589,
-                  "femaleStudents": 122
-                },
-                {
                   "id": "日-二技",
                   "label": "日 二技",
                   "category": "degree",
                   "totalStudents": 35,
                   "maleStudents": 6,
                   "femaleStudents": 29
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 126,
+                  "maleStudents": 107,
+                  "femaleStudents": 19
+                },
+                {
+                  "id": "修-四技",
+                  "label": "修 四技",
+                  "category": "degree",
+                  "totalStudents": 711,
+                  "maleStudents": 589,
+                  "femaleStudents": 122
                 },
                 {
                   "id": "修-二技",
@@ -115090,14 +115302,6 @@
                   "femaleStudents": 65
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 129,
-                  "maleStudents": 105,
-                  "femaleStudents": 24
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
@@ -115106,20 +115310,28 @@
                   "femaleStudents": 840
                 },
                 {
-                  "id": "修-四技",
-                  "label": "修 四技",
-                  "category": "degree",
-                  "totalStudents": 644,
-                  "maleStudents": 528,
-                  "femaleStudents": 116
-                },
-                {
                   "id": "日-二技",
                   "label": "日 二技",
                   "category": "degree",
                   "totalStudents": 41,
                   "maleStudents": 5,
                   "femaleStudents": 36
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 129,
+                  "maleStudents": 105,
+                  "femaleStudents": 24
+                },
+                {
+                  "id": "修-四技",
+                  "label": "修 四技",
+                  "category": "degree",
+                  "totalStudents": 644,
+                  "maleStudents": 528,
+                  "femaleStudents": 116
                 },
                 {
                   "id": "修-二技",
@@ -115154,14 +115366,6 @@
                   "femaleStudents": 66
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 98,
-                  "maleStudents": 77,
-                  "femaleStudents": 21
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
@@ -115170,20 +115374,28 @@
                   "femaleStudents": 672
                 },
                 {
-                  "id": "修-四技",
-                  "label": "修 四技",
-                  "category": "degree",
-                  "totalStudents": 660,
-                  "maleStudents": 528,
-                  "femaleStudents": 132
-                },
-                {
                   "id": "日-二技",
                   "label": "日 二技",
                   "category": "degree",
                   "totalStudents": 30,
                   "maleStudents": 7,
                   "femaleStudents": 23
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 98,
+                  "maleStudents": 77,
+                  "femaleStudents": 21
+                },
+                {
+                  "id": "修-四技",
+                  "label": "修 四技",
+                  "category": "degree",
+                  "totalStudents": 660,
+                  "maleStudents": 528,
+                  "femaleStudents": 132
                 },
                 {
                   "id": "修-二技",
@@ -115218,14 +115430,6 @@
                   "femaleStudents": 83
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 86,
-                  "maleStudents": 61,
-                  "femaleStudents": 25
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
@@ -115234,20 +115438,28 @@
                   "femaleStudents": 506
                 },
                 {
-                  "id": "修-四技",
-                  "label": "修 四技",
-                  "category": "degree",
-                  "totalStudents": 636,
-                  "maleStudents": 516,
-                  "femaleStudents": 120
-                },
-                {
                   "id": "日-二技",
                   "label": "日 二技",
                   "category": "degree",
                   "totalStudents": 30,
                   "maleStudents": 7,
                   "femaleStudents": 23
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 86,
+                  "maleStudents": 61,
+                  "femaleStudents": 25
+                },
+                {
+                  "id": "修-四技",
+                  "label": "修 四技",
+                  "category": "degree",
+                  "totalStudents": 636,
+                  "maleStudents": 516,
+                  "femaleStudents": 120
                 },
                 {
                   "id": "修-二技",
@@ -115282,14 +115494,6 @@
                   "femaleStudents": 65
                 },
                 {
-                  "id": "職-碩士",
-                  "label": "職 碩士",
-                  "category": "degree",
-                  "totalStudents": 78,
-                  "maleStudents": 56,
-                  "femaleStudents": 22
-                },
-                {
                   "id": "日-四技",
                   "label": "日 四技",
                   "category": "degree",
@@ -115298,20 +115502,36 @@
                   "femaleStudents": 468
                 },
                 {
-                  "id": "修-四技",
-                  "label": "修 四技",
-                  "category": "degree",
-                  "totalStudents": 498,
-                  "maleStudents": 399,
-                  "femaleStudents": 99
-                },
-                {
                   "id": "日-二技",
                   "label": "日 二技",
                   "category": "degree",
                   "totalStudents": 30,
                   "maleStudents": 5,
                   "femaleStudents": 25
+                },
+                {
+                  "id": "日-五專",
+                  "label": "日 五專",
+                  "category": "degree",
+                  "totalStudents": 44,
+                  "maleStudents": 34,
+                  "femaleStudents": 10
+                },
+                {
+                  "id": "職-碩士",
+                  "label": "職 碩士",
+                  "category": "degree",
+                  "totalStudents": 78,
+                  "maleStudents": 56,
+                  "femaleStudents": 22
+                },
+                {
+                  "id": "修-四技",
+                  "label": "修 四技",
+                  "category": "degree",
+                  "totalStudents": 498,
+                  "maleStudents": 399,
+                  "femaleStudents": 99
                 },
                 {
                   "id": "修-二技",
@@ -115328,14 +115548,6 @@
                   "totalStudents": 99,
                   "maleStudents": 53,
                   "femaleStudents": 46
-                },
-                {
-                  "id": "日-五專",
-                  "label": "日 五專",
-                  "category": "degree",
-                  "totalStudents": 44,
-                  "maleStudents": 34,
-                  "femaleStudents": 10
                 }
               ]
             },

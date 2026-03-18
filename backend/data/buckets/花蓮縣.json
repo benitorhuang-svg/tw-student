@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-11T23:49:21.097Z",
+  "generatedAt": "2026-03-17T13:50:49.092Z",
   "county": {
     "id": "花蓮縣",
     "countyCode": "10015",
@@ -236,51 +236,6 @@
         ]
       },
       {
-        "id": "5-wsnr7",
-        "geohash": "wsnr7",
-        "precision": 5,
-        "count": 5,
-        "totalStudents": 138,
-        "latitude": 23.79267,
-        "longitude": 121.452045,
-        "bounds": {
-          "minLatitude": 23.783465,
-          "maxLatitude": 23.811322,
-          "minLongitude": 121.440406,
-          "maxLongitude": 121.457521
-        },
-        "topSchools": [
-          {
-            "id": "154696",
-            "name": "縣立西林國小",
-            "townshipName": "萬榮鄉",
-            "students": 60,
-            "status": "正常"
-          },
-          {
-            "id": "154694",
-            "name": "縣立見晴國小",
-            "townshipName": "萬榮鄉",
-            "students": 38,
-            "status": "正常"
-          },
-          {
-            "id": "154642",
-            "name": "縣立林榮國小",
-            "townshipName": "鳳林鎮",
-            "students": 29,
-            "status": "正常"
-          },
-          {
-            "id": "154399",
-            "name": "縣立南平中學",
-            "townshipName": "鳳林鎮",
-            "students": 11,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "5-wsnqe",
         "geohash": "wsnqe",
         "precision": 5,
@@ -411,6 +366,51 @@
             "name": "縣立萬寧國小",
             "townshipName": "富里鄉",
             "students": 13,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "5-wsnr7",
+        "geohash": "wsnr7",
+        "precision": 5,
+        "count": 4,
+        "totalStudents": 138,
+        "latitude": 23.794972,
+        "longitude": 121.450677,
+        "bounds": {
+          "minLatitude": 23.783465,
+          "maxLatitude": 23.811322,
+          "minLongitude": 121.440406,
+          "maxLongitude": 121.457521
+        },
+        "topSchools": [
+          {
+            "id": "154696",
+            "name": "縣立西林國小",
+            "townshipName": "萬榮鄉",
+            "students": 60,
+            "status": "正常"
+          },
+          {
+            "id": "154694",
+            "name": "縣立見晴國小",
+            "townshipName": "萬榮鄉",
+            "students": 38,
+            "status": "正常"
+          },
+          {
+            "id": "154642",
+            "name": "縣立林榮國小",
+            "townshipName": "鳳林鎮",
+            "students": 29,
+            "status": "正常"
+          },
+          {
+            "id": "154399",
+            "name": "縣立南平中學",
+            "townshipName": "鳳林鎮",
+            "students": 11,
             "status": "正常"
           }
         ]
@@ -2304,37 +2304,6 @@
             "townshipName": "鳳林鎮",
             "students": 168,
             "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "6-wsnr7c",
-        "geohash": "wsnr7c",
-        "precision": 6,
-        "count": 2,
-        "totalStudents": 11,
-        "latitude": 23.783465,
-        "longitude": 121.457521,
-        "bounds": {
-          "minLatitude": 23.783465,
-          "maxLatitude": 23.783465,
-          "minLongitude": 121.457521,
-          "maxLongitude": 121.457521
-        },
-        "topSchools": [
-          {
-            "id": "154399",
-            "name": "縣立南平中學",
-            "townshipName": "鳳林鎮",
-            "students": 11,
-            "status": "正常"
-          },
-          {
-            "id": "154399:國中",
-            "name": "縣立南平中學附設國中部",
-            "townshipName": "鳳林鎮",
-            "students": 0,
-            "status": "待確認"
           }
         ]
       },
@@ -4739,6 +4708,30 @@
         ]
       },
       {
+        "id": "6-wsnr7c",
+        "geohash": "wsnr7c",
+        "precision": 6,
+        "count": 1,
+        "totalStudents": 11,
+        "latitude": 23.783465,
+        "longitude": 121.457521,
+        "bounds": {
+          "minLatitude": 23.783465,
+          "maxLatitude": 23.783465,
+          "minLongitude": 121.457521,
+          "maxLongitude": 121.457521
+        },
+        "topSchools": [
+          {
+            "id": "154399",
+            "name": "縣立南平中學",
+            "townshipName": "鳳林鎮",
+            "students": 11,
+            "status": "正常"
+          }
+        ]
+      },
+      {
         "id": "6-wsnqjr",
         "geohash": "wsnqjr",
         "precision": 6,
@@ -4926,37 +4919,6 @@
             "townshipName": "新城鄉",
             "students": 271,
             "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "7-wsnr7cd",
-        "geohash": "wsnr7cd",
-        "precision": 7,
-        "count": 2,
-        "totalStudents": 11,
-        "latitude": 23.783465,
-        "longitude": 121.457521,
-        "bounds": {
-          "minLatitude": 23.783465,
-          "maxLatitude": 23.783465,
-          "minLongitude": 121.457521,
-          "maxLongitude": 121.457521
-        },
-        "topSchools": [
-          {
-            "id": "154399",
-            "name": "縣立南平中學",
-            "townshipName": "鳳林鎮",
-            "students": 11,
-            "status": "正常"
-          },
-          {
-            "id": "154399:國中",
-            "name": "縣立南平中學附設國中部",
-            "townshipName": "鳳林鎮",
-            "students": 0,
-            "status": "待確認"
           }
         ]
       },
@@ -8172,6 +8134,30 @@
             "name": "縣立北林國小",
             "townshipName": "鳳林鎮",
             "students": 17,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsnr7cd",
+        "geohash": "wsnr7cd",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 11,
+        "latitude": 23.783465,
+        "longitude": 121.457521,
+        "bounds": {
+          "minLatitude": 23.783465,
+          "maxLatitude": 23.783465,
+          "minLongitude": 121.457521,
+          "maxLongitude": 121.457521
+        },
+        "topSchools": [
+          {
+            "id": "154399",
+            "name": "縣立南平中學",
+            "townshipName": "鳳林鎮",
+            "students": 11,
             "status": "正常"
           }
         ]

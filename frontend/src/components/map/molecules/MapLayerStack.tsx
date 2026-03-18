@@ -37,8 +37,8 @@ type LayerStackProps = {
   schoolPoints: SchoolMapPoint[]
   countyBuckets: CountyBucketDataset | null
   counties: CountySummary[]
-  countyLookup: Map<string, any>
-  townshipLookup: Map<string, any>
+  countyLookup: Map<string, CountySummary>
+  townshipLookup: Map<string, RankingSummary>
   allTownshipRows: RankingSummary[]
   visibleTownshipRows: RankingSummary[]
   countyCenterLookup: Map<string, [number, number]>

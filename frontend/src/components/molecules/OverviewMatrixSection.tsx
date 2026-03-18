@@ -1,7 +1,16 @@
 import { ScatterPlotChart } from '../organisms/ScatterPlotChart'
+import '../../styles/organisms/overview-sections-redesign.css'
+
+type MatrixPoint = {
+  id: string
+  label: string
+  x: number
+  y: number
+  size?: number
+}
 
 type OverviewMatrixSectionProps = {
-  points: any[]
+  points: MatrixPoint[]
   activePointId: string | null
   onHoverPoint: (id: string | null) => void
   onSelectPoint: (id: string) => void
@@ -16,7 +25,6 @@ export const OverviewMatrixSection: React.FC<OverviewMatrixSectionProps & { flat
   activePointId,
   onHoverPoint,
   onSelectPoint,
-  flat = false
 }) => (
   <ScatterPlotChart
     title=""
@@ -28,9 +36,11 @@ export const OverviewMatrixSection: React.FC<OverviewMatrixSectionProps & { flat
     onHoverPoint={onHoverPoint}
     onSelectPoint={onSelectPoint}
     className="matrix-chart-premium"
-    flat={flat}
+    flat={true}
     showHeader={false}
-  />
+  >
+    {null}
+  </ScatterPlotChart>
 )
 
 export default OverviewMatrixSection

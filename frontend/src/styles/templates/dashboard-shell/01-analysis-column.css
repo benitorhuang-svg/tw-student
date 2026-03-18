@@ -1,6 +1,7 @@
 .atlas-analysis-column {
     min-width: 0;
     overflow-y: auto;
+    scrollbar-gutter: stable; /* Crucial: prevent content width shift when scrollbar appears */
     padding: 18px;
     border-radius: 28px;
     background: var(--surface-analysis);

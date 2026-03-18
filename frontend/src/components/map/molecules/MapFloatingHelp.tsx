@@ -1,8 +1,9 @@
 import { useState, useRef, useEffect } from 'react'
 import { SCHOOL_LEVEL_LEGEND } from '../schoolMarkerTheme'
+import type { AtlasTab } from '../../../hooks/useAtlasQueryState'
 
 type MapFloatingHelpProps = {
-  activeTab: 'overview' | 'regional' | 'county' | 'schools' | 'school-focus'
+  activeTab: AtlasTab
   activeCountyName: string | null
 }
 

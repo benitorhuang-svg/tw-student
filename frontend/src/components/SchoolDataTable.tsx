@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react'
 
 import { formatPercent, type SchoolInsight } from '../lib/analytics'
 import SchoolTableRow from './molecules/SchoolTableRow'
+import '../styles/organisms/school-data-table-redesign.css'
 
 type SchoolSortKey =
   | 'name'
@@ -30,12 +31,10 @@ const statusRank: Record<string, number> = {
 
 const sortableHeaders: Array<{ key: SchoolSortKey; label: string }> = [
   { key: 'name', label: '學校' },
-  { key: 'townshipName', label: '鄉鎮' },
   { key: 'educationLevel', label: '學制' },
   { key: 'managementType', label: '公私立' },
   { key: 'currentStudents', label: '學生數' },
   { key: 'delta', label: '今年增減' },
-  { key: 'status', label: '狀態' },
 ]
 
 function compareSchoolRows(left: SchoolInsight, right: SchoolInsight, sortKey: SchoolSortKey, sortDirection: 'asc' | 'desc') {
@@ -68,22 +67,29 @@ const PAGE_SIZE = 50
 function SchoolDataTable({ schools, selectedSchoolId, onSelectSchool, onHoverSchool, scopeLabel, flat = false }: SchoolDataTableProps) {
   const [sortKey, setSortKey] = useState<SchoolSortKey>('currentStudents')
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('desc')
-  const [searchTerm, setSearchTerm] = useState('')
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE)
+  
+  // High-level statistics
+  const stats = useMemo(() => {
+    const totalSchools = schools.length
+    const totalStudents = schools.reduce((sum, s) => sum + s.currentStudents, 0)
+    const totalDelta = schools.reduce((sum, s) => sum + s.delta, 0)
+    const prevTotal = totalStudents - totalDelta
+    const avgGrowth = prevTotal > 0 ? (totalDelta / prevTotal) * 100 : 0
+    return {
+      totalSchools,
+      totalStudents,
+      totalDelta,
+      avgGrowth
+    }
+  }, [schools])
 
-  const filteredSchools = useMemo(() => {
-    if (!searchTerm) return schools
-    const lowSearch = searchTerm.toLowerCase()
-    return schools.filter(s => 
-      s.name.toLowerCase().includes(lowSearch) || 
-      s.code.toLowerCase().includes(lowSearch) ||
-      s.townshipName.toLowerCase().includes(lowSearch)
-    )
-  }, [schools, searchTerm])
+  const maxStudents = useMemo(() => Math.max(...schools.map(s => s.currentStudents), 1), [schools])
+  const maxDelta = useMemo(() => Math.max(...schools.map(s => Math.abs(s.delta)), 1), [schools])
 
   const sortedSchools = useMemo(() => 
-    [...filteredSchools].sort((left, right) => compareSchoolRows(left, right, sortKey, sortDirection)),
-    [filteredSchools, sortKey, sortDirection]
+    [...schools].sort((left, right) => compareSchoolRows(left, right, sortKey, sortDirection)),
+    [schools, sortKey, sortDirection]
   )
   const selectedSchool = selectedSchoolId ? sortedSchools.find((school) => school.id === selectedSchoolId) ?? null : null
   const visibleSchools = sortedSchools.slice(0, visibleCount)
@@ -130,113 +136,95 @@ function SchoolDataTable({ schools, selectedSchoolId, onSelectSchool, onHoverSch
 
   if (schools.length === 0) {
     return (
-      <section className="school-table-panel">
+      <section className="school-table-redesign">
         <div className="chart-empty-state">尚無學校資料</div>
       </section>
     )
   }
 
-  const maxStudents = useMemo(() => Math.max(...schools.map(s => s.currentStudents), 1), [schools])
-  const maxDelta = useMemo(() => Math.max(...schools.map(s => Math.abs(s.delta)), 1), [schools])
-
   return (
-    <section className={`school-table-panel ${flat ? "dashboard-card--flat" : "dashboard-card"}`}>
-      <div className="dashboard-card__head">
-        <div className="panel-heading__stack">
-          <h3 className="dashboard-card__title">學校資料明細 ({scopeLabel})</h3>
-          <p className="dashboard-card__subtitle">點擊列可同步地圖定位與進入單校聚焦模式</p>
-        </div>
-        <div className="dashboard-card__actions">
+    <section className={`school-table-redesign ${flat ? "dashboard-card--flat" : ""}`}>
+      {/* ── District Quick Stats Bar (Single Line) ── */}
+      <div className="school-table-stats-bar-v2">
+        <div className="stat-row">
+          <div className="stat-group">
+            <span className="stat-pill-v2-inline">
+              <span className="stat-label">學校總數</span>
+              <span className="stat-value">{stats.totalSchools.toLocaleString('zh-TW')}</span>
+            </span>
+            <span className="stat-pill-v2-inline">
+              <span className="stat-label">總學生數</span>
+              <span className="stat-value">{stats.totalStudents.toLocaleString('zh-TW')}</span>
+            </span>
+            <span className="stat-pill-v2-inline">
+              <span className="stat-label">學年度增減</span>
+              <span className={`stat-value-trend ${stats.totalDelta >= 0 ? 'text-up' : 'text-down'}`}>
+                {stats.totalDelta > 0 ? '+' : ''}{stats.totalDelta.toLocaleString('zh-TW')}
+                <small>({stats.avgGrowth.toFixed(1)}%)</small>
+              </span>
+            </span>
+          </div>
+
           <button
             type="button"
-            className="premium-export-btn"
+            className="premium-export-btn-compact"
             onClick={handleExport}
-            data-testid="school-export-button"
           >
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" width="14" height="14">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
               <polyline points="7 10 12 15 17 10" />
               <line x1="12" y1="15" x2="12" y2="3" />
             </svg>
-            <span>匯出 CSV</span>
+            <span>匯出</span>
           </button>
         </div>
       </div>
 
-      <div className="dashboard-card__body">
-        <div className="school-table-panel__toolbar">
-          <div className="toolbar-info-stack">
-            <div className="toolbar-search-box">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" width="16" height="16" className="search-icon">
-                <circle cx="11" cy="11" r="8" />
-                <line x1="21" y1="21" x2="16.65" y2="16.65" />
-              </svg>
-              <input 
-                type="text" 
-                placeholder="搜尋學校、代碼或鄉鎮..." 
-                value={searchTerm}
-                onChange={(e) => {
-                  setSearchTerm(e.target.value)
-                  setVisibleCount(PAGE_SIZE)
-                }}
-                className="toolbar-search-input"
-              />
-              {searchTerm && (
-                <button className="search-clear-btn" onClick={() => setSearchTerm('')}>×</button>
-              )}
-            </div>
-            <div className="toolbar-count-pill">
-              <span className="count-value">{filteredSchools.length.toLocaleString('zh-TW')}</span>
-              <span className="count-label">所學校</span>
-            </div>
-          </div>
-          <div className="toolbar-sort-hint">
-            <span className="hint-label">目前排序:</span>
-            <span className="hint-value">{sortableHeaders.find((header) => header.key === sortKey)?.label ?? sortKey}</span>
-          </div>
-        </div>
-
-        <div className="school-table-wrap" data-testid="school-list">
-          <table className="school-table">
-            <thead>
-              <tr>
-                {sortableHeaders.map((header) => (
-                  <th key={header.key}>
-                    <button type="button" className="school-table__sort" onClick={() => handleSort(header.key)}>
-                      <span>{header.label}</span>
-                      <span>{sortKey === header.key ? (sortDirection === 'asc' ? '↑' : '↓') : '↕'}</span>
-                    </button>
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {visibleSchools.map((school) => (
-                <SchoolTableRow
-                  key={school.id}
-                  school={school}
-                  isActive={school.id === selectedSchool?.id}
-                  onSelect={onSelectSchool}
-                  onHover={onHoverSchool || (() => {})}
-                  maxStudents={maxStudents}
-                  maxDelta={maxDelta}
-                />
+      <div className="school-table-wrap-v2" data-testid="school-list">
+        <table className="school-table-v2">
+          <thead>
+            <tr>
+              {sortableHeaders.map((header) => (
+                <th key={header.key}>
+                  <button type="button" className="school-table-v2__sort" onClick={() => handleSort(header.key)}>
+                    <span>{header.label}</span>
+                    <span style={{ opacity: 0.4 }}>{sortKey === header.key ? (sortDirection === 'asc' ? '↑' : '↓') : '↕'}</span>
+                  </button>
+                </th>
               ))}
-            </tbody>
-          </table>
-        </div>
+            </tr>
+          </thead>
+          <tbody>
+            {visibleSchools.map((school, idx) => (
+              <SchoolTableRow
+                key={school.id}
+                school={school}
+                isActive={school.id === selectedSchool?.id}
+                onSelect={onSelectSchool}
+                onHover={onHoverSchool || (() => {})}
+                maxStudents={maxStudents}
+                maxDelta={maxDelta}
+                style={{ animationDelay: `${Math.min(idx * 0.02, 1)}s` }}
+              />
+            ))}
+          </tbody>
+        </table>
 
         {hasMore && (
-          <div className="school-table-panel__loadmore">
-            <button type="button" className="ghost-button" onClick={() => setVisibleCount((c) => c + PAGE_SIZE)}>
+          <div className="load-more-v2">
+            <button type="button" className="ghost-button-v2" onClick={() => setVisibleCount((c) => c + PAGE_SIZE)}>
               載入更多（已顯示 {visibleCount} / {sortedSchools.length}）
             </button>
           </div>
         )}
+      </div>
 
-        <div className="school-table-panel__footer">
-          <span>顯示 {visibleSchools.length} / {sortedSchools.length} 所</span>
-          <span>資料定期更新，來源於教育部統計處</span>
+      <div className="school-table-panel__footer-v2">
+        <span>顯示 {visibleSchools.length} / {sortedSchools.length} 所學校資料</span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <span style={{ fontSize: '0.7rem' }}>排序依據: {sortableHeaders.find((h) => h.key === sortKey)?.label}</span>
+          <span style={{ opacity: 0.3 }}>|</span>
+          <span>資料來源: 教育部統計處</span>
         </div>
       </div>
     </section>

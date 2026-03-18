@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef } from 'react'
 import L from 'leaflet'
 import { useMap } from 'react-leaflet'
 
@@ -8,6 +8,8 @@ import { MAP_MAX_BOUNDS } from '../../../lib/constants'
 import { useViewportIntent } from '../hooks/useViewportIntent'
 
 const AUTO_SELECT_SUPPRESSION_MS = 2000
+const PADDING_TOP_LEFT: L.PointExpression = [200, 150]
+const PADDING_BOTTOM_RIGHT: L.PointExpression = [60, 60]
 
 type MapBoundsControllerProps = {
   countyBoundaries: CountyBoundaryCollection
@@ -47,9 +49,6 @@ function MapBoundsController({
   activeTab,
 }: MapBoundsControllerProps) {
   const map = useMap()
-  // Shift center to the bottom-right to increase space for side panels and breadcrumbs
-  const PADDING_TOP_LEFT: L.PointExpression = [200, 150]
-  const PADDING_BOTTOM_RIGHT: L.PointExpression = [60, 60]
 
   const lastAutoSelectRef = useRef<string | null>(null)
   const hasInitialCenter = initialLatFromUrl != null && initialLonFromUrl != null
@@ -60,13 +59,13 @@ function MapBoundsController({
 
   const lastAppliedIntentIdRef = useRef<string>('init')
   const lastAutoSelectAttemptRef = useRef<{ countyId: string | null; time: number | null }>({ countyId: null, time: null })
-  const [suppressAutoSelectUntil, setSuppressAutoSelectUntil] = useState(0)
+  const suppressAutoSelectUntilRef = useRef(0)
   const prevMapResetTokenRef = useRef(mapResetToken)
 
   useEffect(() => {
     if (mapResetToken !== prevMapResetTokenRef.current) {
       prevMapResetTokenRef.current = mapResetToken
-      setSuppressAutoSelectUntil(Date.now() + AUTO_SELECT_SUPPRESSION_MS)
+      suppressAutoSelectUntilRef.current = Date.now() + AUTO_SELECT_SUPPRESSION_MS
       lastAutoSelectRef.current = null
       lastAutoSelectAttemptRef.current = { countyId: null, time: null }
     }
@@ -89,10 +88,10 @@ function MapBoundsController({
     activeRegion,
     map.getZoom(),
     currentMapZoom,
-    lastAppliedIntentIdRef.current,
-    pendingInitialCenterRef.current,
-    pendingInitialZoomRef.current,
-    lastAutoSelectAttemptRef.current,
+    lastAppliedIntentIdRef,
+    pendingInitialCenterRef,
+    pendingInitialZoomRef,
+    lastAutoSelectAttemptRef,
     mapResetToken
   )
 
@@ -131,7 +130,7 @@ function MapBoundsController({
     }
 
     lastAppliedIntentIdRef.current = intent.id
-  }, [viewportIntent, map, PADDING_TOP_LEFT, PADDING_BOTTOM_RIGHT])
+  }, [viewportIntent, map])
 
   const getNearestCountyId = useCallback((lat: number, lon: number) => {
     let bestCountyId: string | null = null
@@ -192,7 +191,7 @@ function MapBoundsController({
         })
       }
 
-      if (activeTab !== 'overview' && !activeCountyId && onAutoSelectCounty && Date.now() >= suppressAutoSelectUntil) {
+      if (activeTab !== 'overview' && !activeCountyId && onAutoSelectCounty && Date.now() >= suppressAutoSelectUntilRef.current) {
         try {
           const countyId = getNearestCountyId(c.lat, c.lng)
           if (countyId && countyId !== lastAutoSelectRef.current) {
@@ -205,7 +204,7 @@ function MapBoundsController({
     }
     map.on('moveend', handleMoveEnd)
     return () => { map.off('moveend', handleMoveEnd) }
-  }, [map, onMoveEnd, onAutoSelectCounty, getNearestCountyId, activeTab, activeCountyId, suppressAutoSelectUntil, countyBoundaries, onHoverCounty])
+  }, [map, onMoveEnd, onAutoSelectCounty, getNearestCountyId, activeTab, activeCountyId, countyBoundaries, onHoverCounty])
 
   return null
 }

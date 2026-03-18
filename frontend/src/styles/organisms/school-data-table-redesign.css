@@ -1,0 +1,314 @@
+/* 
+ * School Data Table Redesign (Premium Glassmorphism)
+ */
+
+.school-table-redesign {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: var(--surface-card);
+  border: 1px solid var(--border-light);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: var(--shadow-soft);
+}
+
+.school-table-redesign.dashboard-card--flat {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+
+/* 1. Quick Stats Banner - Single Line V2 */
+.school-table-stats-bar-v2 {
+  padding: 10px 16px;
+  background: var(--surface-glass, rgba(255, 255, 255, 0.02));
+  border-bottom: 1px solid var(--border-light);
+}
+
+.stat-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.stat-group {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.stat-pill-v2-inline {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+
+.stat-value {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-main);
+  font-family: Sora, sans-serif;
+}
+
+.stat-value-trend {
+  font-size: 0.9rem;
+  font-weight: 800;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.stat-value-trend small {
+  font-size: 0.7rem;
+  font-weight: 700;
+  opacity: 0.8;
+}
+
+.premium-export-btn-compact {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: var(--surface-card);
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  color: var(--text-soft);
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.premium-export-btn-compact:hover {
+  background: var(--surface-page);
+  color: var(--brand-primary);
+  border-color: var(--brand-primary);
+  transform: translateY(-1px);
+}
+
+.text-up { color: #10b981; }
+.text-down { color: #f43f5e; }
+
+/* 2. Enhanced Toolbar - REMOVED */
+
+
+/* 3. Redesigned Table Wrapper */
+
+.school-table-wrap-v2 {
+  margin: 0 12px;
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  background: var(--surface-glass);
+  overflow-x: hidden; /* Avoid horizontal scroll */
+  max-height: 480px;
+  overflow-y: auto;
+}
+
+.school-table-v2 {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: auto;
+}
+
+.school-table-v2 thead th {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--surface-glass);
+  backdrop-filter: blur(12px);
+  padding: 12px 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-light);
+  white-space: nowrap;
+}
+
+.school-table-v2__sort {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--text-dim);
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.school-table-v2__sort:hover {
+  color: var(--brand-primary);
+}
+
+/* 4. Row Animations & Styles */
+
+.school-table-v2-row {
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: rowAppear 0.5s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+
+@keyframes rowAppear {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.school-table-v2-row td {
+  padding: 12px 10px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.06);
+  font-size: 0.85rem;
+  vertical-align: middle;
+}
+
+.school-table-v2-row:hover {
+  background: rgba(56, 189, 248, 0.04);
+}
+
+.school-table-v2-row--active {
+  background: rgba(56, 189, 248, 0.08) !important;
+  box-shadow: inset 3px 0 0 var(--brand-primary);
+}
+
+.school-table-v2-row--active td {
+  color: var(--text-strong);
+}
+
+/* 5. Metric Cells - Shortened Bars */
+
+.metric-v2 {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  width: 100%;
+  min-width: 60px; /* Shortened from 100px */
+  max-width: 80px;  /* Limit max width */
+}
+
+.metric-v2__text {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  font-family: Sora, sans-serif;
+}
+
+.metric-v2__bar {
+  height: 3px;
+  background: rgba(148, 163, 184, 0.1);
+  border-radius: 3px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.metric-v2__fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--brand-primary), #38bdf8);
+  border-radius: 3px;
+  transition: width 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.metric-v2--up .metric-v2__fill { background: linear-gradient(90deg, #10b981, #34d399); }
+.metric-v2--down .metric-v2__fill { background: linear-gradient(90deg, #f43f5e, #fb7185); }
+
+/* 6. Name Cell */
+
+.school-name-group-v2 {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.school-name-group-v2 strong {
+  font-size: 0.9rem;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  max-width: 150px;
+}
+
+.school-name-group-v2 .school-code-v2 {
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  font-family: monospace;
+}
+
+
+/* 7. Footer & Load More */
+
+.school-table-panel__footer-v2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-top: 1px solid var(--border-light);
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+.load-more-v2 {
+  display: flex;
+  justify-content: center;
+  padding: 12px;
+}
+
+.ghost-button-v2 {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  border: 1px dashed var(--border-light);
+  border-radius: 12px;
+  color: var(--text-soft);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ghost-button-v2:hover {
+  background: var(--surface-glass);
+  border-color: var(--brand-primary);
+  color: var(--brand-primary);
+}
+
+/* Status Pill Upgrades - Removed as column is removed */
+
+.education-chip, .management-chip {
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    background: rgba(148, 163, 184, 0.06);
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    border-radius: 8px;
+    color: var(--text-soft);
+    display: inline-block;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+
+.education-chip:hover {
+    background: rgba(2, 132, 199, 0.08);
+    border-color: rgba(2, 132, 199, 0.2);
+    color: var(--brand-primary);
+}
+

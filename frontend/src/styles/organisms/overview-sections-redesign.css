@@ -1,0 +1,57 @@
+/* Overview Sections Redesign */
+.section-head-redesign {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 24px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+    border-bottom: 1px solid rgba(226, 232, 240, 0.5);
+    margin-bottom: 20px;
+}
+
+.app-shell[data-theme="dark"] .section-head-redesign {
+    border-bottom-color: rgba(71, 85, 105, 0.3);
+}
+
+.section-head-redesign__icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: var(--brand-primary-light, #e0f2fe);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--brand-primary, #0284c7);
+    flex-shrink: 0;
+}
+
+.app-shell[data-theme="dark"] .section-head-redesign__icon {
+    background: rgba(56, 189, 248, 0.1);
+    color: #38bdf8;
+}
+
+.section-head-redesign__content {
+    flex: 1;
+}
+
+.section-head-redesign__title {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #1e293b;
+    margin: 0 0 4px 0;
+}
+
+.app-shell[data-theme="dark"] .section-head-redesign__title {
+    color: #f1f5f9;
+}
+
+.section-head-redesign__subtitle {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.app-shell[data-theme="dark"] .section-head-redesign__subtitle {
+    color: #94a3b8;
+}

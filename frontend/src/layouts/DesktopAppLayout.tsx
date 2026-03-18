@@ -1,10 +1,10 @@
 import type { ReactNode, RefObject } from 'react'
 
 import AnomalyPanel from '../components/organisms/AnomalyPanel'
-import AtlasFooter from '../components/AtlasFooter'
+import AtlasFooter from '../components/molecules/AtlasFooter'
 import DashboardCanvas from '../components/DashboardCanvas'
 import DashboardHeader from '../components/DashboardHeader'
-import DataGovernanceFlyout from '../components/DataGovernanceFlyout'
+import DataGovernanceFlyout from '../components/organisms/DataGovernanceFlyout'
 import type { useAtlasDerivedState } from '../hooks/useAtlasDerivedState'
 import type { useAtlasScenarioActions } from '../hooks/useAtlasScenarioActions'
 import type { AcademicYear, CountyBoundaryCollection, CountyBucketDataset, CountyDetailDataset, CountySchoolAtlasDataset, EducationLevelFilter, ManagementTypeFilter, RegionGroupFilter, TownshipBoundaryCollection } from '../data/educationData'
@@ -18,7 +18,7 @@ type DesktopAppLayoutProps = {
   theme: AtlasTheme
   setTheme: (fn: (prev: AtlasTheme) => AtlasTheme) => void
   showGovernancePanel: boolean
-  setShowGovernancePanel: (fn: (prev: boolean) => boolean) => void
+  setShowGovernancePanel: (val: boolean | ((prev: boolean) => boolean)) => void
   activeYear: AcademicYear
   summaryDataset: EducationSummaryDataset
   countyBoundaries: CountyBoundaryCollection
@@ -88,13 +88,21 @@ type DesktopAppLayoutProps = {
 }
 
 function DesktopAppLayout(props: DesktopAppLayoutProps) {
+  const handleTabSelect = (tab: AtlasTab) => {
+    if (tab === 'welcome') {
+      window.location.href = '/'
+      return
+    }
+    props.setActiveTab(tab)
+  }
+
   return (
     <>
       <DashboardCanvas
         activeTab={props.activeTab}
         sidebarRef={props.sidebarRef}
         desktopTabItems={props.desktopTabItems}
-        setActiveTab={props.setActiveTab}
+        setActiveTab={handleTabSelect}
         mapElement={props.mapElement}
         header={
           <DashboardHeader
@@ -111,8 +119,15 @@ function DesktopAppLayout(props: DesktopAppLayoutProps) {
         }
         footer={
           <AtlasFooter
-            onToggleGovernance={() => props.setShowGovernancePanel((c) => !c)}
+            onToggleGovernance={() => {
+              console.log('DesktopAppLayout.toggleGovernance (before):', props.showGovernancePanel)
+              props.setShowGovernancePanel((c) => {
+                console.log('DesktopAppLayout.toggleGovernance (after):', !c)
+                return !c
+              })
+            }}
             isGovernanceOpen={props.showGovernancePanel}
+            anomalyCount={props.derived.filteredAnomalies.length}
           />
         }
         derived={props.derived}
@@ -160,12 +175,11 @@ function DesktopAppLayout(props: DesktopAppLayoutProps) {
         investigationFilter={props.investigationFilter}
         setSelectedInvestigationId={props.setSelectedInvestigationId}
         setInvestigationFilter={props.setInvestigationFilter}
-        onToggleGovernance={() => props.setShowGovernancePanel((c) => !c)}
       />
 
       <DataGovernanceFlyout
         open={props.showGovernancePanel}
-        onClose={() => props.setShowGovernancePanel(() => false)}
+        onClose={() => props.setShowGovernancePanel(false)}
         generatedAtLabel={props.derived.generatedAtLabel}
         refreshStatus={props.refreshStatus}
         isRefreshingData={props.isRefreshingData}

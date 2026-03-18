@@ -20,14 +20,6 @@ const TAB_ICONS: Record<AtlasTab, ReactNode> = {
             <polyline points="9 22 9 12 15 12 15 22" />
         </svg>
     ),
-    regional: (
-        <svg className="mobile-bottom-nav__icon" viewBox="0 0 24 24">
-            <rect x="3" y="3" width="7" height="7" rx="1" />
-            <rect x="14" y="3" width="7" height="7" rx="1" />
-            <rect x="3" y="14" width="7" height="7" rx="1" />
-            <rect x="14" y="14" width="7" height="7" rx="1" />
-        </svg>
-    ),
     county: (
         <svg className="mobile-bottom-nav__icon" viewBox="0 0 24 24">
             <path d="M4 5h16v4H4z" />

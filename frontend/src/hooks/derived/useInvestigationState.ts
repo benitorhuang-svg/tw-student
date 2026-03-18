@@ -5,19 +5,22 @@ import type {
   CountyDetailDataset,
   EducationLevelFilter,
   ManagementTypeFilter,
+  DataNote,
 } from '../../data/educationData'
 import { buildInvestigationItems, classifyInvestigation } from '../buildInvestigationItems'
 import type { InvestigationFilter } from '../types'
+import type { CountySummary, ScopeSummary } from '../../lib/analytics'
+import { getCountyRankingRows } from '../../lib/analytics'
 
 export function useInvestigationState(
   summaryDataset: EducationSummaryDataset | null,
-  countySummaries: any[],
-  countyRankingRows: any[],
+  countySummaries: CountySummary[],
+  countyRankingRows: ReturnType<typeof getCountyRankingRows>,
   selectedCounty: CountySummaryRecord | null,
   selectedCountyDetail: CountyDetailDataset | null,
   activeTownshipId: string | null,
-  selectedTownshipSummary: any,
-  scopeNotes: any[],
+  selectedTownshipSummary: ScopeSummary | null,
+  scopeNotes: DataNote[],
   educationLevel: EducationLevelFilter,
   managementType: ManagementTypeFilter,
   investigationFilter: InvestigationFilter,

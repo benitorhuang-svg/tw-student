@@ -9,10 +9,10 @@ import atomStyles from '../../styles/atoms.module.css'
 type CoordinateWorkflowSectionProps = {
   workflowRows: (MissingCoordinateEntry & { workflowStatus: CoordinateWorkflowStatus; workflowUpdatedAt: string | null })[]
   workflowCounts: Record<string, number>
-  workflowFilter: string
-  setWorkflowFilter: (filter: any) => void
+  workflowFilter: CoordinateWorkflowStatus | '全部'
+  setWorkflowFilter: (filter: CoordinateWorkflowStatus | '全部') => void
   updateWorkflowStatus: (code: string, status: CoordinateWorkflowStatus) => void
-  downloadMissingCoordinates: (rows: any[]) => void
+  downloadMissingCoordinates: (rows: (MissingCoordinateEntry & { workflowStatus: CoordinateWorkflowStatus; workflowUpdatedAt: string | null })[]) => void
 }
 
 export const CoordinateWorkflowSection: React.FC<CoordinateWorkflowSectionProps> = ({
@@ -23,6 +23,7 @@ export const CoordinateWorkflowSection: React.FC<CoordinateWorkflowSectionProps>
   updateWorkflowStatus,
   downloadMissingCoordinates,
 }) => {
+  const workflowStatuses: Array<CoordinateWorkflowStatus | '全部'> = ['全部', ...COORDINATE_WORKFLOW_STATUSES]
   const filteredWorkflowRows = workflowFilter === '全部'
     ? workflowRows
     : workflowRows.filter((entry) => entry.workflowStatus === workflowFilter)
@@ -57,7 +58,7 @@ export const CoordinateWorkflowSection: React.FC<CoordinateWorkflowSectionProps>
       {workflowRows.length > 0 && (
         <div className="workflow-controls">
           <div className="chip-row">
-            {(['全部', ...COORDINATE_WORKFLOW_STATUSES]).map((status) => (
+            {workflowStatuses.map((status) => (
               <button
                 key={status}
                 type="button"
@@ -76,8 +77,8 @@ export const CoordinateWorkflowSection: React.FC<CoordinateWorkflowSectionProps>
 
       {workflowRows.length > 0 && (
         <div className="governance-missing-list">
-          {filteredWorkflowRows.slice(0, 10).map((entry) => (
-            <article key={entry.code} className="governance-missing-item">
+          {filteredWorkflowRows.slice(0, 10).map((entry, index) => (
+            <article key={`${entry.code}-${entry.workflowStatus}-${entry.workflowUpdatedAt ?? ''}-${index}`} className="governance-missing-item">
               <div className="missing-item__info">
                 <strong>{entry.name}</strong>
                 <span>{entry.county} {entry.township} ({entry.code})</span>

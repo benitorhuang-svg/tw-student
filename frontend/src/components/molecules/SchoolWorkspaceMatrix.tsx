@@ -15,10 +15,9 @@ type SchoolWorkspaceMatrixProps = {
   onSelectSchool: (id: string | null) => void
 }
 
-const SchoolWorkspaceMatrix: React.FC<SchoolWorkspaceMatrixProps> = ({
+export const SchoolWorkspaceMatrix: React.FC<SchoolWorkspaceMatrixProps> = React.memo(({
   isExpanded,
   onToggle,
-  scopeLabel,
   sortedSchools,
   schoolInsights,
   hoveredSchoolId,
@@ -26,38 +25,40 @@ const SchoolWorkspaceMatrix: React.FC<SchoolWorkspaceMatrixProps> = ({
   onHoverSchool,
   onSelectSchool,
 }) => {
+  const points = React.useMemo(() => {
+    const totalStudentsInScope = schoolInsights.reduce((sum, s) => sum + s.currentStudents, 0)
+    return sortedSchools.map((school) => ({
+      id: school.id,
+      label: school.name,
+      x: school.currentStudents,
+      y: (school.delta / Math.max(totalStudentsInScope, 1)) * 100,
+      size: school.currentStudents,
+    }))
+  }, [sortedSchools, schoolInsights])
+
   return (
     <AccordionItem
       id="matrix-workspace"
-      title="學校成長潛力矩陣 (行政區)"
+      title="學校成長潛力矩陣"
       isExpanded={isExpanded}
       onToggle={onToggle}
       style={{ animationDelay: '0.05s' }}
     >
-        <ScatterPlotChart
-          title="學校成長潛力矩陣 (行政區)"
-          subtitle={`以 ${scopeLabel} 總學生數為分母計算佔比變動`}
-          xLabel="學生數"
-          yLabel={`${scopeLabel} 佔比變動率 (%)`}
-          points={sortedSchools.map((school) => {
-            const totalStudentsInScope = schoolInsights.reduce((sum, s) => sum + s.currentStudents, 0)
-            return {
-              id: school.id,
-              label: school.name,
-              x: school.currentStudents,
-              y: (school.delta / Math.max(totalStudentsInScope, 1)) * 100,
-              size: school.currentStudents,
-            }
-          })}
-          activePointId={hoveredSchoolId ?? selectedSchoolId ?? null}
-          onHoverPoint={onHoverSchool}
-          onSelectPoint={onSelectSchool}
-          className="matrix-chart-premium"
-          showHeader={false}
-          flat={true}
-        />
-      </AccordionItem>
-    )
-}
+      <ScatterPlotChart
+        title=""
+        subtitle={null}
+        xLabel="學生數"
+        yLabel="鄉鎮佔比變動率 (%)"
+        points={points}
+        activePointId={hoveredSchoolId ?? selectedSchoolId ?? null}
+        onHoverPoint={onHoverSchool}
+        onSelectPoint={onSelectSchool}
+        className="matrix-chart-premium"
+        showHeader={false}
+        flat={true}
+      />
+    </AccordionItem>
+  )
+})
 
 export default SchoolWorkspaceMatrix

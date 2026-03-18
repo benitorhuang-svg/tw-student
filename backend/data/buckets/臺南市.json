@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-11T23:49:21.158Z",
+  "generatedAt": "2026-03-17T13:50:49.126Z",
   "county": {
     "id": "臺南市",
     "countyCode": "67000",
@@ -61,8 +61,8 @@
         "precision": 5,
         "count": 16,
         "totalStudents": 15437,
-        "latitude": 22.974274,
-        "longitude": 120.213413,
+        "latitude": 22.974273,
+        "longitude": 120.213414,
         "bounds": {
           "minLatitude": 22.945459,
           "maxLatitude": 22.981606,
@@ -1586,6 +1586,44 @@
         ]
       },
       {
+        "id": "5-wsj7v",
+        "geohash": "wsj7v",
+        "precision": 5,
+        "count": 3,
+        "totalStudents": 144,
+        "latitude": 23.177743,
+        "longitude": 120.135491,
+        "bounds": {
+          "minLatitude": 23.160924,
+          "maxLatitude": 23.187743,
+          "minLongitude": 120.13444,
+          "maxLongitude": 120.136845
+        },
+        "topSchools": [
+          {
+            "id": "114686",
+            "name": "市立篤加國小",
+            "townshipName": "七股區",
+            "students": 82,
+            "status": "正常"
+          },
+          {
+            "id": "114682",
+            "name": "市立後港國小",
+            "townshipName": "七股區",
+            "students": 62,
+            "status": "正常"
+          },
+          {
+            "id": "114528:國中",
+            "name": "市立後港國中",
+            "townshipName": "七股區",
+            "students": 0,
+            "status": "待確認"
+          }
+        ]
+      },
+      {
         "id": "5-wsj7q",
         "geohash": "wsj7q",
         "precision": 5,
@@ -1923,37 +1961,6 @@
             "name": "市立南寧高中",
             "townshipName": "南區",
             "students": 341,
-            "status": "正常"
-          }
-        ]
-      },
-      {
-        "id": "5-wsj7v",
-        "geohash": "wsj7v",
-        "precision": 5,
-        "count": 2,
-        "totalStudents": 144,
-        "latitude": 23.172743,
-        "longitude": 120.136016,
-        "bounds": {
-          "minLatitude": 23.160924,
-          "maxLatitude": 23.184562,
-          "minLongitude": 120.135187,
-          "maxLongitude": 120.136845
-        },
-        "topSchools": [
-          {
-            "id": "114686",
-            "name": "市立篤加國小",
-            "townshipName": "七股區",
-            "students": 82,
-            "status": "正常"
-          },
-          {
-            "id": "114682",
-            "name": "市立後港國小",
-            "townshipName": "七股區",
-            "students": 62,
             "status": "正常"
           }
         ]
@@ -3269,7 +3276,7 @@
           {
             "id": "211318:國中",
             "name": "私立德光高中附設國中部",
-            "townshipName": "東區",
+            "townshipName": "龍崎區",
             "students": 1365,
             "status": "正常"
           },
@@ -4953,6 +4960,30 @@
           {
             "id": "114688",
             "name": "市立龍山國小",
+            "townshipName": "七股區",
+            "students": 0,
+            "status": "待確認"
+          }
+        ]
+      },
+      {
+        "id": "6-wsj7vt",
+        "geohash": "wsj7vt",
+        "precision": 6,
+        "count": 1,
+        "totalStudents": 0,
+        "latitude": 23.187743,
+        "longitude": 120.13444,
+        "bounds": {
+          "minLatitude": 23.187743,
+          "maxLatitude": 23.187743,
+          "minLongitude": 120.13444,
+          "maxLongitude": 120.13444
+        },
+        "topSchools": [
+          {
+            "id": "114528:國中",
+            "name": "市立後港國中",
             "townshipName": "七股區",
             "students": 0,
             "status": "待確認"
@@ -10498,37 +10529,6 @@
         ]
       },
       {
-        "id": "7-wsj6xxq",
-        "geohash": "wsj6xxq",
-        "precision": 7,
-        "count": 2,
-        "totalStudents": 2473,
-        "latitude": 22.979837,
-        "longitude": 120.221535,
-        "bounds": {
-          "minLatitude": 22.979837,
-          "maxLatitude": 22.979837,
-          "minLongitude": 120.221535,
-          "maxLongitude": 120.221535
-        },
-        "topSchools": [
-          {
-            "id": "211318:國中",
-            "name": "私立德光高中附設國中部",
-            "townshipName": "東區",
-            "students": 1365,
-            "status": "正常"
-          },
-          {
-            "id": "211318",
-            "name": "私立德光高中",
-            "townshipName": "東區",
-            "students": 1108,
-            "status": "正常"
-          }
-        ]
-      },
-      {
         "id": "7-wsj6z9p",
         "geohash": "wsj6z9p",
         "precision": 7,
@@ -10555,6 +10555,37 @@
             "name": "私立長榮高中附設國中部",
             "townshipName": "東區",
             "students": 193,
+            "status": "正常"
+          }
+        ]
+      },
+      {
+        "id": "7-wsj6xxq",
+        "geohash": "wsj6xxq",
+        "precision": 7,
+        "count": 2,
+        "totalStudents": 2473,
+        "latitude": 22.979837,
+        "longitude": 120.221535,
+        "bounds": {
+          "minLatitude": 22.979837,
+          "maxLatitude": 22.979837,
+          "minLongitude": 120.221535,
+          "maxLongitude": 120.221535
+        },
+        "topSchools": [
+          {
+            "id": "211318:國中",
+            "name": "私立德光高中附設國中部",
+            "townshipName": "龍崎區",
+            "students": 1365,
+            "status": "正常"
+          },
+          {
+            "id": "211318",
+            "name": "私立德光高中",
+            "townshipName": "東區",
+            "students": 1108,
             "status": "正常"
           }
         ]
@@ -11120,6 +11151,30 @@
           {
             "id": "114688",
             "name": "市立龍山國小",
+            "townshipName": "七股區",
+            "students": 0,
+            "status": "待確認"
+          }
+        ]
+      },
+      {
+        "id": "7-wsj7vtp",
+        "geohash": "wsj7vtp",
+        "precision": 7,
+        "count": 1,
+        "totalStudents": 0,
+        "latitude": 23.187743,
+        "longitude": 120.13444,
+        "bounds": {
+          "minLatitude": 23.187743,
+          "maxLatitude": 23.187743,
+          "minLongitude": 120.13444,
+          "maxLongitude": 120.13444
+        },
+        "topSchools": [
+          {
+            "id": "114528:國中",
+            "name": "市立後港國中",
             "townshipName": "七股區",
             "students": 0,
             "status": "待確認"
