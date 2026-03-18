@@ -100,8 +100,8 @@ function RegionalTabPanel({
   const regionSummaries = useMemo(() => [...derived.regionalComparisonRows].sort((left, right) => right.students - left.students), [derived.regionalComparisonRows])
 
   const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({
-    hero: false,
-    matrix: true,
+    hero: true,
+    matrix: false,
     trend: false,
     comparison: false,
     anomaly: false

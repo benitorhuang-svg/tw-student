@@ -30,9 +30,9 @@ function OverviewTabPanel({
 }: OverviewTabPanelProps) {
   const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({
     hero: false,
-    matrix: false,
+    matrix: true,
     trend: false,
-    ranking: true,
+    ranking: false,
     treemap: false
   })
 
