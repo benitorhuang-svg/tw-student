@@ -8,6 +8,7 @@ type AnomalyPanelProps = {
   investigationFilter: InvestigationFilter
   scopeNotes: DataNote[]
   scopeHeadline: string
+  anomaliesCounts: Record<InvestigationFilter, number>
   onSelectInvestigation: (id: string) => void
   onSetFilter: (filter: InvestigationFilter) => void
   onDownloadInvestigation: (item: InvestigationItem) => void
@@ -21,6 +22,7 @@ function AnomalyPanel({
   selectedInvestigationId,
   investigationFilter,
   scopeNotes,
+  anomaliesCounts = { '全部': 0, '缺年度': 0, '待確認': 0, '停辦/整併': 0, '正式註記': 0 },
   onSelectInvestigation,
   onSetFilter,
   onDownloadInvestigation,
@@ -29,41 +31,47 @@ function AnomalyPanel({
 }: AnomalyPanelProps) {
   return (
     <section className={`anomaly-panel ${flat ? "dashboard-card--flat" : "dashboard-card"}`}>
-      {!flat && (
-        <div className="dashboard-card__head">
+      <div className="dashboard-card__head">
+        {!flat && (
           <div className="panel-heading__stack">
             <h3 className="dashboard-card__title">異常資料調查面板</h3>
-            <p className="dashboard-card__subtitle">彙整停辦、缺年度、待確認與正式註記</p>
+            <p className="dashboard-card__subtitle">僅統計需處理的缺年度、待確認與停辦/整併異常，正式註記另列於下方</p>
           </div>
-          <div className="dashboard-card__actions">
-            <label className="filter-select">
-              <span>篩選</span>
-              <select value={investigationFilter} onChange={(event) => onSetFilter(event.target.value as InvestigationFilter)}>
-                <option value="全部">全部</option>
-                <option value="缺年度">缺年度</option>
-                <option value="待確認">待確認</option>
-                <option value="停辦/整併">停辦/整併</option>
-                <option value="正式註記">正式註記</option>
-              </select>
-            </label>
-            <button type="button" className="ghost-button" onClick={onDownloadAll}>
-              匯出 CSV
-            </button>
+        )}
+        <div className={`dashboard-card__actions ${flat ? 'dashboard-card__actions--flat' : ''}`}>
+          <div className="anomaly-filter-controls">
+            {(['全部', '缺年度', '待確認', '停辦/整併', '正式註記'] as InvestigationFilter[]).map((val) => {
+              const count = anomaliesCounts[val] || 0
+              return (
+                <button
+                  key={val}
+                  type="button"
+                  className={`filter-tab ${investigationFilter === val ? 'active' : ''}`}
+                  onClick={() => onSetFilter(val)}
+                >
+                  {val} {count > 0 && <span className="filter-count-badge">{count}</span>}
+                </button>
+              )
+            })}
           </div>
+          <button type="button" className="ghost-button" onClick={onDownloadAll}>
+            匯出 CSV
+          </button>
         </div>
-      )}
+      </div>
 
-      <div className="dashboard-card__body" style={{ padding: '20px' }}>
-        {filteredAnomalies.length === 0 ? (
-          <div className="empty-state">目前工作範圍沒有額外異常訊號。</div>
-        ) : (
-          filteredAnomalies.map((item) => (
-            <button
-              key={item.id}
-              type="button"
-              className={selectedInvestigationId === item.id || (!selectedInvestigationId && activeInvestigation?.id === item.id) ? `data-note data-note--${item.severity} data-note--selected` : `data-note data-note--${item.severity}`}
-              onClick={() => onSelectInvestigation(item.id)}
-            >
+      <div className="dashboard-card__body scroll-container anomaly-panel__body-container">
+        <div className="anomaly-list-grid">
+          {filteredAnomalies.length === 0 ? (
+            <div className="empty-state">目前工作範圍沒有額外異常訊號。</div>
+          ) : (
+            filteredAnomalies.map((item) => (
+              <button
+                key={item.id}
+                type="button"
+                className={selectedInvestigationId === item.id || (!selectedInvestigationId && activeInvestigation?.id === item.id) ? `data-note data-note--${item.severity} data-note--selected` : `data-note data-note--${item.severity}`}
+                onClick={() => onSelectInvestigation(item.id)}
+              >
               <div className="anomaly-card__header">
                 <strong>{item.title}</strong>
                 <span>{item.scope}</span>
@@ -73,6 +81,7 @@ function AnomalyPanel({
             </button>
           ))
         )}
+        </div>
 
       {activeInvestigation ? (
         <div className="anomaly-detail">

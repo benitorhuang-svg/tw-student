@@ -112,7 +112,6 @@ export function useAtlasDerivedState(args: DerivedStateArgs) {
   const investigation = useInvestigationState(
     summaryDataset,
     analytics.countySummaries,
-    analytics.countyRankingRows,
     hierarchy.selectedCounty,
     hierarchy.selectedCountyDetail,
     hierarchy.activeTownshipId,
@@ -157,6 +156,7 @@ export function useAtlasDerivedState(args: DerivedStateArgs) {
         scopeHeadline: '全台教育工作台', scopeDescription: '', schoolPanelTitle: '縣市細節載入後顯示學校清單',
         generatedAtLabel: '', offlineReadyWithBuckets: 0, observedCounties: [], schoolMapPoints: [],
         globalNationalSummary: { label: '全台灣', caption: '', students: 0, schools: 0, delta: 0, deltaRatio: 0, trend: [] },
+        anomaliesCounts: { '全部': 0, '缺年度': 0, '待確認': 0, '停辦/整併': 0, '正式註記': 0 },
       }
     }
 

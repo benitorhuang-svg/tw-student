@@ -27,10 +27,6 @@ function getTip(activeTab: MapFloatingHelpProps['activeTab'], activeCountyName: 
       : '先從全台選中縣市，隨即檢視縣內鄉鎮的學生規模差異。'
   }
 
-  if (activeTab === 'regional') {
-    return '掌握各區縣市規模，點選特定縣市可查看更詳細的行政區輪廓。'
-  }
-
   return activeCountyName
     ? '目前已鎖定特定區域，您可以繼續點選圖面進行深層特徵探索。'
     : '先從全台區域開始，依序點選地區、縣市、鄉鎮與學校進行多層級下鑽。'

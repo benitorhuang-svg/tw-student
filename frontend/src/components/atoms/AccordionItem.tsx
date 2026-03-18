@@ -33,11 +33,12 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
 
   useEffect(() => {
     if (isExpanded) {
-      // Wait for the CSS transition to finish, then remove maxHeight constraint
-      const timer = setTimeout(() => setSettled(true), 400)
+      const timer = setTimeout(() => {
+        requestAnimationFrame(() => setSettled(true))
+      }, 400)
       return () => clearTimeout(timer)
     } else {
-      setSettled(false)
+      requestAnimationFrame(() => setSettled(false))
     }
   }, [isExpanded])
 

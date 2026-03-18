@@ -30,7 +30,6 @@ function AtlasFooter({ onToggleGovernance, isGovernanceOpen, anomalyCount = 0 }:
           className={`rank-pill footer-governance-pill ${isGovernanceOpen ? 'footer-governance-pill--active' : ''} ${anomalyCount > 0 ? 'footer-governance-pill--alert' : ''}`}
           onClick={(event) => {
             event.stopPropagation()
-            console.log('Governance toggle clicked, currently open=', isGovernanceOpen)
             onToggleGovernance()
           }}
           aria-haspopup="dialog"
@@ -40,7 +39,7 @@ function AtlasFooter({ onToggleGovernance, isGovernanceOpen, anomalyCount = 0 }:
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="footer-governance-icon">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
           </svg>
-          <span>資料治理</span>
+          <span className="footer-governance-label">資料治理</span>
           {anomalyCount > 0 && (
             <span className="footer-governance-badge" title={`${anomalyCount} 個監控項目，點擊查看詳情`}>
               {anomalyCount}

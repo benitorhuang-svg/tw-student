@@ -38,9 +38,7 @@ export const OverviewMatrixSection: React.FC<OverviewMatrixSectionProps & { flat
     className="matrix-chart-premium"
     flat={true}
     showHeader={false}
-  >
-    {null}
-  </ScatterPlotChart>
+  />
 )
 
 export default OverviewMatrixSection

@@ -13,11 +13,29 @@
     gap: 24px;
 }
 
+.anomaly-panel__body-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 0;
+}
+
+.anomaly-list-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 12px;
+    padding: 2px;
+}
+
 .anomaly-panel .dashboard-card__head {
     padding: 0;
     margin-bottom: 0;
     border: none;
     background: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
 }
 
 .anomaly-panel .dashboard-card__title {
@@ -29,6 +47,79 @@
 .anomaly-panel .dashboard-card__subtitle {
     color: rgb(255 255 255 / 40%);
     font-size: 0.8rem;
+}
+
+.anomaly-panel .dashboard-card__actions {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px;
+}
+
+.anomaly-panel .dashboard-card__actions--flat {
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 12px;
+}
+
+.anomaly-filter-controls {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    background: rgb(255 255 255 / 4%);
+    padding: 6px;
+    border-radius: 999px;
+    border: 1px solid rgb(255 255 255 / 6%);
+}
+
+.filter-tab {
+    padding: 6px 16px;
+    border: none;
+    background: transparent;
+    color: rgb(255 255 255 / 50%);
+    font-size: 0.85rem;
+    font-weight: 700;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.filter-tab:hover {
+    color: #fff;
+    background: rgb(255 255 255 / 8%);
+}
+
+.filter-tab.active {
+    background: #fff;
+    color: #0f172a;
+    box-shadow: 0 4px 12px rgb(255 255 255 / 10%);
+}
+
+.filter-count-badge {
+    height: 18px;
+    min-width: 18px;
+    padding: 0 6px;
+    background: rgb(255 255 255 / 10%);
+    color: inherit;
+    font-size: 10px;
+    font-weight: 900;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.filter-tab.active .filter-count-badge {
+    background: #0ea5e9;
+    color: #fff;
 }
 
 /* Data Notes / Investigation Cards */

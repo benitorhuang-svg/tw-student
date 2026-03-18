@@ -65,7 +65,7 @@ const WelcomePortal: React.FC<WelcomePortalProps> = ({ onNavigate, onToggleGover
           sublabel="北中南東各區資源分配與對照"
           icon="intersect"
           color="#7000ff"
-          onClick={() => onNavigate('regional')}
+          onClick={() => onNavigate('overview')}
           delay="0.2s"
         />
         <PortalNode 
@@ -93,7 +93,7 @@ const WelcomePortal: React.FC<WelcomePortalProps> = ({ onNavigate, onToggleGover
           icon="database_alert"
           color="#ffa600"
           onClick={() => {
-            onNavigate('regional') // Fallback to a tab
+            onNavigate('overview')
             setTimeout(onToggleGovernance, 300)
           }}
           delay="0.5s"

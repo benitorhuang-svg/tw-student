@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import {
   diffManifestAssets,
   loadDataManifest,
@@ -43,6 +43,32 @@ export function useDataSync(deps: SyncDeps) {
   const [isRefreshingData, setIsRefreshingData] = useState(false)
   const [refreshStatus, setRefreshStatus] = useState<string | null>(null)
 
+  useEffect(() => {
+    if (!deps.localManifest) {
+      return
+    }
+
+    setRemoteManifest((current) => current ?? deps.localManifest)
+
+    let cancelled = false
+
+    loadDataManifest({ forceRefresh: true })
+      .then((nextRemoteManifest) => {
+        if (!cancelled) {
+          setRemoteManifest(nextRemoteManifest)
+        }
+      })
+      .catch(() => {
+        if (!cancelled) {
+          setRemoteManifest((current) => current ?? deps.localManifest)
+        }
+      })
+
+    return () => {
+      cancelled = true
+    }
+  }, [deps.localManifest])
+
   const refreshData = async () => {
     setIsRefreshingData(true)
     setRefreshStatus('比對部署 manifest 與本地版本...')
@@ -66,6 +92,7 @@ export function useDataSync(deps: SyncDeps) {
           rolledBackAssets: [],
           message: '部署資料沒有變更，沿用目前快取。',
         }
+        deps.setLocalManifest(nextRemoteManifest)
         setRefreshSummary(nextRefreshSummary)
         setRefreshStatus(nextRefreshSummary.message)
         return
@@ -113,6 +140,7 @@ export function useDataSync(deps: SyncDeps) {
 
       deps.setSummaryDataset(nextSummaryDataset)
       deps.setCountyBoundaries(nextCountyBoundaries)
+      deps.setLocalManifest(nextRemoteManifest)
       deps.setValidationReport(nextValidationReport)
 
       const nextRefreshSummary: DataRefreshSummary = {

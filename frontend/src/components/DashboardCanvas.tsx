@@ -3,7 +3,6 @@ import type { ReactNode, RefObject, TransitionStartFunction } from 'react'
 
 // Organisms (Atomic Design Level)
 import OverviewTabPanel from './organisms/OverviewTabPanel'
-import RegionalTabPanel from './organisms/RegionalTabPanel'
 import CountyTabPanel from './organisms/CountyTabPanel'
 import SchoolDetailPanel from './organisms/SchoolDetailPanel'
 
@@ -123,7 +122,6 @@ function DashboardCanvas({
   header,
   footer,
   derived,
-  region,
   countyDetailError,
   selectedCountyId,
   selectedTownshipId,
@@ -138,18 +136,6 @@ function DashboardCanvas({
   onHoverSchool,
   hoveredSchoolId,
   nationalEducationTrendSeries,
-  // New props
-  comparisonScenarioName,
-  setComparisonScenarioName,
-  favoriteScenarios,
-  recentScenarios,
-  activeScenarioSnapshot,
-  copyFeedbackMessage,
-  scenarioFeedbackMessage,
-  selectedInvestigationId,
-  investigationFilter,
-  setSelectedInvestigationId,
-  setInvestigationFilter,
 }: DashboardCanvasProps) {
   // DashboardCanvas is now primarily a shell orchestrating organisms
 
@@ -176,46 +162,6 @@ function DashboardCanvas({
               handlePrefetchCounty={handlePrefetchCounty}
               scenarioActions={scenarioActions}
               nationalEducationTrendSeries={nationalEducationTrendSeries}
-            />
-          )}
-
-          {activeTab === 'regional' && (
-            <RegionalTabPanel
-              derived={derived}
-              region={region}
-              hoveredCountyId={hoveredCountyId}
-              selectedCountyId={selectedCountyId}
-              setHoveredCountyId={setHoveredCountyId}
-              scenarioActions={scenarioActions}
-              handlePrefetchCounty={handlePrefetchCounty}
-              comparisonScenarioName={comparisonScenarioName}
-              onChangeScenarioName={setComparisonScenarioName}
-              effectiveComparisonCountyIds={derived.effectiveComparisonCountyIds}
-              comparisonCandidates={derived.comparisonCandidates}
-              comparisonSummaries={derived.comparisonSummaries}
-              favoriteScenarios={favoriteScenarios}
-              recentScenarios={recentScenarios}
-              activeScenarioSnapshot={activeScenarioSnapshot}
-              copyFeedbackMessage={copyFeedbackMessage}
-              scenarioFeedbackMessage={scenarioFeedbackMessage}
-              onToggleCounty={scenarioActions.toggleComparisonCounty}
-              onCopyLink={() => scenarioActions.handleCopyComparisonLink()}
-              onSaveScenario={() => scenarioActions.handleSaveFavoriteScenario()}
-              onExportScenarios={() => scenarioActions.handleExportFavoriteScenarios()}
-              onImportScenarios={scenarioActions.handleImportFavoriteScenarios}
-              onApplyScenario={scenarioActions.applySavedScenario}
-              onTogglePinScenario={scenarioActions.handleTogglePinScenario}
-              onRenameScenario={scenarioActions.handleRenameFavoriteScenario}
-              onRemoveScenario={scenarioActions.handleRemoveFavoriteScenario}
-              filteredAnomalies={derived.filteredAnomalies}
-              activeInvestigation={derived.activeInvestigation}
-              selectedInvestigationId={selectedInvestigationId}
-              investigationFilter={investigationFilter}
-              scopeNotes={derived.scopeNotes}
-              onSelectInvestigation={setSelectedInvestigationId}
-              onSetFilter={setInvestigationFilter}
-              onDownloadInvestigation={scenarioActions.handleDownloadInvestigation}
-              onDownloadAll={scenarioActions.handleDownloadAllInvestigations}
             />
           )}
 

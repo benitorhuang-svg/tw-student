@@ -23,10 +23,12 @@ export type InvestigationSeriesRow = {
 export type InvestigationItem = {
   id: string
   scope: string
+  category: InvestigationFilter
   title: string
   detail: string
   meta: string
   severity: DataNote['severity']
+  actionable: boolean
   seriesRows: InvestigationSeriesRow[]
   downloadName: string
 }

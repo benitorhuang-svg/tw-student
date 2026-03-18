@@ -51,6 +51,7 @@ type RegionalTabPanelProps = {
   activeInvestigation: InvestigationItem | null
   selectedInvestigationId: string | null
   investigationFilter: InvestigationFilter
+  anomaliesCounts: Record<InvestigationFilter, number>
   scopeNotes: DataNote[]
   onSelectInvestigation: (id: string) => void
   onSetFilter: (filter: InvestigationFilter) => void
@@ -89,6 +90,7 @@ function RegionalTabPanel({
   activeInvestigation,
   selectedInvestigationId,
   investigationFilter,
+  anomaliesCounts,
   scopeNotes,
   onSelectInvestigation,
   onSetFilter,
@@ -282,6 +284,7 @@ function RegionalTabPanel({
               activeInvestigation={activeInvestigation}
               selectedInvestigationId={selectedInvestigationId}
               investigationFilter={investigationFilter}
+              anomaliesCounts={anomaliesCounts}
               scopeNotes={scopeNotes}
               scopeHeadline={region === '全部' ? '全台範圍' : region}
               onSelectInvestigation={onSelectInvestigation}

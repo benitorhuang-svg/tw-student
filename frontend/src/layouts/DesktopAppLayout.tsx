@@ -96,6 +96,11 @@ function DesktopAppLayout(props: DesktopAppLayoutProps) {
     props.setActiveTab(tab)
   }
 
+  const governanceAlertCount =
+    (props.validationReport?.overallStatus === 'fail' || props.validationReport?.overallStatus === 'warning' ? 1 : 0) +
+    (props.localManifest && props.remoteManifest && props.localManifest.contentHash !== props.remoteManifest.contentHash ? 1 : 0) +
+    (props.refreshSummary && ['failed', 'partial-failure', 'fallback'].includes(props.refreshSummary.overallStatus) ? 1 : 0)
+
   return (
     <>
       <DashboardCanvas
@@ -120,14 +125,10 @@ function DesktopAppLayout(props: DesktopAppLayoutProps) {
         footer={
           <AtlasFooter
             onToggleGovernance={() => {
-              console.log('DesktopAppLayout.toggleGovernance (before):', props.showGovernancePanel)
-              props.setShowGovernancePanel((c) => {
-                console.log('DesktopAppLayout.toggleGovernance (after):', !c)
-                return !c
-              })
+              props.setShowGovernancePanel((current) => !current)
             }}
             isGovernanceOpen={props.showGovernancePanel}
-            anomalyCount={props.derived.filteredAnomalies.length}
+            anomalyCount={governanceAlertCount}
           />
         }
         derived={props.derived}
@@ -181,29 +182,17 @@ function DesktopAppLayout(props: DesktopAppLayoutProps) {
         open={props.showGovernancePanel}
         onClose={() => props.setShowGovernancePanel(false)}
         generatedAtLabel={props.derived.generatedAtLabel}
-        refreshStatus={props.refreshStatus}
         isRefreshingData={props.isRefreshingData}
-        onRefreshData={props.refreshData}
-        sources={props.summaryDataset?.sources ?? {
-          points: 'https://stats.moe.gov.tw/edugissys/',
-          statistics: 'https://depart.moe.edu.tw/ed4500/News.aspx?n=5A930C32CC6C3818&sms=91B3AAE8C6388B96',
-          townshipBoundaries: 'https://www.nlsc.gov.tw/',
-          countyBoundaries: 'https://www.nlsc.gov.tw/',
-        }}
         localManifest={props.localManifest}
         remoteManifest={props.remoteManifest}
         validationReport={props.validationReport}
-        refreshSummary={props.refreshSummary}
-        assetMetrics={props.summaryDataset?.assetMetrics}
-        anomalyCount={props.derived.filteredAnomalies.length}
-        scopeNoteCount={props.derived.scopeNotes.length}
-        missingCoordinates={props.summaryDataset?.missingCoordinates}
       >
         <AnomalyPanel
           filteredAnomalies={props.derived.filteredAnomalies}
           activeInvestigation={props.derived.activeInvestigation}
           selectedInvestigationId={props.selectedInvestigationId}
           investigationFilter={props.investigationFilter}
+          anomaliesCounts={props.derived.anomaliesCounts ?? { '全部': 0, '缺年度': 0, '待確認': 0, '停辦/整併': 0, '正式註記': 0 }}
           scopeNotes={props.derived.scopeNotes}
           scopeHeadline={props.derived.scopeHeadline}
           onSelectInvestigation={props.setSelectedInvestigationId}
