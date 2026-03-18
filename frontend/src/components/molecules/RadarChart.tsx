@@ -42,12 +42,12 @@ export function RadarChart({
   showHeader = true,
   benchmarkLabel = '全區平均',
  }: RadarChartProps) {
-  const { containerRef, width, height } = useResponsiveSvg(400, 280, { minWidth: 260 })
+  const { containerRef, width, height } = useResponsiveSvg(400, 250, { minWidth: 260 })
   const { ref, isVisible } = useChartAnimation()
   
   const centerX = width / 2
-  const centerY = height / 2 - 8 // Shifted slightly up to leave room for bottom labels/legend
-  const maxRadius = Math.min(centerX, centerY) * 0.55 
+  const centerY = height / 2
+  const maxRadius = Math.min(centerX, centerY) * 0.58 // Increased slightly to fill space
   const innerRadius = 12 
   
   const combinedClasses = [
@@ -101,8 +101,30 @@ export function RadarChart({
         </div>
       )}
       
-      <div className="dashboard-card__body" style={{ padding: '0px' }}>
-        <div className="chart-svg-frame" ref={containerRef}>
+      <div className="dashboard-card__body" style={{ padding: '0px', display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+        {/* Legend - Moved to Left Side */}
+        <div style={{ 
+          display: 'flex', 
+          flexDirection: 'column', 
+          justifyContent: 'center', 
+          gap: '12px', 
+          padding: '0 0 0 20px', 
+          fontSize: '11px', 
+          fontWeight: 600,
+          minWidth: '100px',
+          flexShrink: 0
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#64748b' }}>
+            <span style={{ width: '10px', height: '10px', background: '#38bdf8', opacity: 0.8, borderRadius: '2px' }}></span>
+            本校診斷
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#94a3b8', whiteSpace: 'nowrap' }}>
+            <span style={{ width: '10px', height: '0', borderBottom: '2px dashed currentColor' }}></span>
+            {benchmarkLabel}
+          </div>
+        </div>
+
+        <div className="chart-svg-frame" ref={containerRef} style={{ flexGrow: 1 }}>
           <svg viewBox={`0 0 ${width} ${height}`} style={{ overflow: 'visible' }}>
             <defs>
               <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
@@ -221,18 +243,6 @@ export function RadarChart({
               strokeWidth="1"
             />
           </svg>
-        </div>
-
-        {/* Legend */}
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', padding: '12px 0 20px', fontSize: '11px', fontWeight: 600 }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#64748b' }}>
-            <span style={{ width: '12px', height: '12px', background: '#38bdf8', opacity: 0.8, borderRadius: '3px' }}></span>
-            本校診斷數據
-          </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#94a3b8' }}>
-            <span style={{ width: '12px', height: '0', borderBottom: '2px dashed currentColor' }}></span>
-            {benchmarkLabel} (規格線)
-          </div>
         </div>
       </div>
     </section>

@@ -138,14 +138,6 @@ export const SchoolDetailFocus: React.FC<SchoolDetailFocusProps> = ({
               className="dashboard-card--premium"
               benchmarkLabel="全區規格標準"
             />
-            <div style={{ padding: '0 24px 24px', fontSize: '12px', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-              <div style={{ padding: '12px', background: 'rgba(255,255,255,0.03)', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)' }}>
-                <strong style={{ color: '#38bdf8' }}>📊 診斷解讀指引：</strong> <br/>
-                此圖表採用 <span style={{ color: '#fff' }}>南丁格爾玫瑰圖 (Polar Area Chart)</span> 形式呈現 6 核心維度。
-                實色「花瓣」長度代表該校表現，<span style={{ color: '#fff', borderBottom: '1.5px dashed rgba(255,255,255,0.4)' }}>白色虛線</span> 代表行政區平均規格。
-                花瓣超出虛線代表該指標優於平均水準。
-              </div>
-            </div>
           </AccordionItem>
 
           <AccordionItem

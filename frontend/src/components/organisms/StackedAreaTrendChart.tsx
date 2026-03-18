@@ -31,34 +31,44 @@ const SERIES_COLORS = [
 
 // --- Atoms ---
 
-
-const TrendYearLabel = ({ x, y, year }: { x: number, y: number, year: number | string }) => (
-  <text x={x} y={y} textAnchor="middle" className="year-label">
-    {year}
-  </text>
-)
-
-const formatDelta = (delta: number) => {
-  if (delta === 0) return '--'
-  const sign = delta > 0 ? '+' : ''
-  return `${sign}${delta.toLocaleString()}`
+const formatValue = (val: number) => {
+  if (Math.abs(val) >= 10000) {
+    return `${(val / 10000).toFixed(1)}萬`
+  }
+  return val.toLocaleString()
 }
 
-const TrendValueBadge = ({ x, y, delta, segmentHeight }: { x: number, y: number, delta: number, segmentHeight: number }) => {
-  const isCompact = segmentHeight < 26 // More generous threshold
-  const fontSize = isCompact ? 8.5 : 11.5 // Increased from 7.5 : 9.5
-  const color = delta === 0 ? '#ffffff' : delta > 0 ? '#d1fae5' : '#fecdd3'
+const formatDelta = (delta: number) => {
+  const sign = delta > 0 ? '+' : (delta < 0 ? '-' : '')
+  if (delta === 0) return '0'
+  
+  const absDelta = Math.abs(delta)
+  if (absDelta < 10000) {
+    return `${sign}${absDelta.toLocaleString()}`
+  }
+  
+  const val = absDelta / 10000
+  const formatted = val < 0.1 ? val.toFixed(2) : val.toFixed(1)
+  return `${sign}${formatted}萬`
+}
+
+const TrendValueBadge = ({ x, y, delta }: { x: number, y: number, delta: number }) => {
+  // Use pure white with a stronger shadow for maximum clarity on colored bars
+  const deltaColor = delta === 0 ? 'rgba(255,255,255,0.8)' : '#ffffff'
 
   return (
     <g style={{ pointerEvents: 'none' }}>
       <text
         x={x}
-        y={y - 2}
+        y={y}
         textAnchor="middle"
-        fontSize={fontSize}
-        fontWeight="800"
-        fill={color}
-        style={{ letterSpacing: '-0.02em', filter: 'drop-shadow(0 1px 1px rgba(0,0,0,0.4))' }}
+        fontSize="11" // Slightly larger for better readability
+        fontWeight="1000"
+        fill={deltaColor}
+        style={{ 
+          filter: 'drop-shadow(0 0.5px 2px rgba(0,0,0,0.7))',
+          letterSpacing: '-0.01em'
+        }}
       >
         {formatDelta(delta)}
       </text>
@@ -69,20 +79,23 @@ const TrendValueBadge = ({ x, y, delta, segmentHeight }: { x: number, y: number,
 export function StackedAreaTrendChart({ title, subtitle, series, children, className, flat, showHeader = true }: StackedAreaTrendChartProps & { children?: React.ReactNode }) {
   // Collapse whitespace by tightening height and top padding
   // Increase height from 320 to 440 for more prominent bars ("不小器")
-  const { containerRef, width, height: responsiveHeight } = useResponsiveSvg(800, 240, { minWidth: 340, minHeight: 140 })
-  const height = Math.min(responsiveHeight, 280)
-
-  const paddingLeft = width < 420 ? 10 : 20
-  const paddingRight = width < 420 ? 10 : 20
-  const paddingTop = 15
-  const paddingBottom = 10
-
+  // Increase height from 280 to 360 to accommodate bottom labels
   const { ref: animRef, isVisible } = useChartAnimation()
 
   const dataSeries = series.map(s => ({
     ...s,
     points: s.points.filter(p => p.year >= 100) // Keep reasonable history
   }))
+
+  const isSingleSeries = dataSeries.length <= 1
+  const baseH = isSingleSeries ? 260 : 420
+  const { containerRef, width, height: responsiveHeight } = useResponsiveSvg(800, baseH, { minWidth: 340, minHeight: 200 })
+  const height = Math.min(responsiveHeight, isSingleSeries ? 320 : 520) 
+
+  const paddingLeft = isSingleSeries ? 20 : (width < 520 ? 60 : 85) 
+  const paddingRight = width < 420 ? 10 : 20
+  const paddingTop = isSingleSeries ? 40 : 32 // More space for labels
+  const paddingBottom = 40 // Reduced since we only show year numbers
 
   const allYears = Array.from(new Set(dataSeries.flatMap((item) => item.points.map((point) => point.year)))).sort((left, right) => left - right)
 
@@ -116,16 +129,15 @@ export function StackedAreaTrendChart({ title, subtitle, series, children, class
     dataSeries.reduce((sum, s) => sum + (s.points.find(p => p.year === year)?.value ?? 0), 0)
   )
 
-  const maxTotal = Math.max(...yearTotals, 5000)
-  // Higher buffer for the floating line
-  const rawMaxValue = maxTotal * 1.35 
-  const maxValue = rawMaxValue
+  const maxTotal = Math.max(...yearTotals, 100)
+  // More buffer for breathing space (1.3x)
+  const maxValue = maxTotal * (isSingleSeries ? 1.3 : 1.1) 
 
   const chartInnerWidth = width - paddingLeft - paddingRight
   const chartInnerHeight = height - paddingTop - paddingBottom
 
   const getValueY = (val: number) => paddingTop + chartInnerHeight - (val / maxValue) * chartInnerHeight
-  const barWidth = (chartInnerWidth / dataYears.length) * 0.7 // Balanced bar width for combo
+  const barWidth = (chartInnerWidth / dataYears.length) * 0.65
 
 
 
@@ -184,70 +196,89 @@ export function StackedAreaTrendChart({ title, subtitle, series, children, class
               </linearGradient>
             </defs>
 
-            {/* Molecules: Grid removed as per minimal request */}
-            <line x1={paddingLeft} x2={width - paddingRight} y1={getValueY(0)} y2={getValueY(0)} stroke="#e2e8f0" strokeWidth="1.5" />
+            <line x1={paddingLeft} x2={width - paddingRight} y1={getValueY(0)} y2={getValueY(0)} stroke="#e2e8f0" strokeWidth="1" strokeDasharray="2 2" />
 
-            {/* Molecule: Combo Series (Bars + Line) */}
-            {dataSeries.map((s, sIdx) => {
-              const points = dataYears.map((year, yearIdx) => {
-                const x = paddingLeft + (yearIdx + 0.5) * (chartInnerWidth / dataYears.length)
-                const p = s.points.find(pt => pt.year === year)
-                const val = p ? p.value : 0
-                const y = getValueY(val) 
-                return { x, y, val, year }
-              })
+            {/* Molecule: Left Side Category Labels (Legend) - Only show for multiple series */}
+            {!isSingleSeries && dataSeries.map((s, sIdx) => {
+              // Align with the first year's segment for consistent reference
+              const firstYear = dataYears[0]
+              const val = s.points.find(pt => pt.year === firstYear)?.value ?? 0
+              const stackBaseVal = dataSeries.slice(0, sIdx).reduce((sum, prevSeries) => {
+                return sum + (prevSeries.points.find(pt => pt.year === firstYear)?.value ?? 0)
+              }, 0)
+              const yCenter = (getValueY(stackBaseVal) + getValueY(stackBaseVal + val)) / 2
 
-              if (points.length < 2) return null
-
-              const pathD = points.reduce((acc, p, i, arr) => {
-                if (i === 0) return `M ${p.x} ${p.y}`
-                const prev = arr[i - 1]
-                const cp1x = prev.x + (p.x - prev.x) / 3
-                const cp2x = prev.x + (p.x - prev.x) * 2 / 3
-                return `${acc} C ${cp1x} ${prev.y}, ${cp2x} ${p.y}, ${p.x} ${p.y}`
-              }, '')
+              // Standardize Category Names
+              const standardizedName = s.label.replace('院校', '')
 
               return (
-                <g key={s.label} className="combo-series">
-                  {/* Structural Bars - Showing Volume with headcount */}
-                  {points.map((p) => (
-                    <g key={`bar-group-${p.year}`}>
-                      <rect
-                        x={p.x - barWidth / 2}
-                        y={p.y + 20} // Slightly lower than the trend point
-                        width={barWidth}
-                        height={Math.max(getValueY(0) - (p.y + 20), 0.5)}
-                        fill={`url(#bar-grad-${sIdx % SERIES_COLORS.length})`}
-                        opacity="0.1"
-                        rx="6"
-                      />
-                      <text
-                        x={p.x}
-                        y={p.y + 36}
-                        textAnchor="middle"
-                        fontSize="9"
-                        fontWeight="900"
-                        fill={SERIES_COLORS[sIdx % SERIES_COLORS.length].start}
-                        style={{ letterSpacing: '0.05em' }}
-                      >
-                        {p.val.toLocaleString()}
-                      </text>
-                    </g>
-                  ))}
-
-                  {/* Floating Trend Line - Zoomed performance hint */}
-                  <path
-                    d={pathD}
-                    stroke={`url(#bar-grad-${sIdx % SERIES_COLORS.length})`}
-                    strokeWidth="3"
-                    fill="none"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    style={{ filter: `url(#glow-${sIdx % SERIES_COLORS.length})` }}
-                  />
+                <g key={`leg-${s.label}`}>
+                  {/* Category Label - Dot removed as per request */}
+                  <text 
+                    x={20} // Slightly moved in 
+                    y={yCenter} 
+                    alignmentBaseline="middle" 
+                    fontSize="13" 
+                    fontWeight="800" 
+                    fill="#334155"
+                    style={{ letterSpacing: '0.02em' }}
+                  >
+                    {standardizedName}
+                  </text>
                 </g>
               )
             })}
+
+            {/* Molecule: Grouped Yearly Stacked Bars */}
+            {dataSeries.map((s, sIdx) => {
+              const points = dataYears.map((year, yearIdx) => {
+                const x = paddingLeft + (yearIdx + 0.5) * (chartInnerWidth / dataYears.length)
+                const currentVal = s.points.find(pt => pt.year === year)?.value ?? 0
+                const stackBaseVal = dataSeries.slice(0, sIdx).reduce((sum, prevSeries) => {
+                  return sum + (prevSeries.points.find(pt => pt.year === year)?.value ?? 0)
+                }, 0)
+                
+                const y0 = getValueY(stackBaseVal)
+                const y1 = getValueY(stackBaseVal + currentVal)
+                
+                return { x, y0, y1, val: currentVal, year }
+              })
+
+              return (
+                <g key={s.label} className="stacked-bar-series">
+                  {points.map((p) => (
+                    <rect
+                      key={`bar-${p.year}`}
+                      x={p.x - barWidth / 2}
+                      y={p.y1}
+                      width={barWidth}
+                      height={Math.max(p.y0 - p.y1, 0.5)}
+                      fill={`url(#bar-grad-${sIdx % SERIES_COLORS.length})`}
+                      opacity="0.9"
+                      rx="2"
+                    />
+                  ))}
+                </g>
+              )
+            })}
+
+            {/* Total Trend Line - Only one subtle line for the overall total if desired, but here we favor pure bars */}
+            <path
+              d={dataYears.reduce((acc, _year, i) => {
+                const x = paddingLeft + (i + 0.5) * (chartInnerWidth / dataYears.length)
+                const y = getValueY(yearTotals[i])
+                if (i === 0) return `M ${x} ${y}`
+                const xPrev = paddingLeft + (i - 0.5) * (chartInnerWidth / dataYears.length)
+                const yPrev = getValueY(yearTotals[i-1])
+                const cp1x = xPrev + (x - xPrev) / 3
+                const cp2x = xPrev + (x - xPrev) * 2 / 3
+                return `${acc} C ${cp1x} ${yPrev}, ${cp2x} ${y}, ${x} ${y}`
+              }, '')}
+              stroke="rgba(0,0,0,0.1)"
+              strokeWidth="2"
+              fill="none"
+              strokeDasharray="4 4"
+            />
 
             {/* Molecule: Per-Year Indicators (Labels, Badges) */}
             {dataYears.map((year, yearIdx) => {
@@ -258,37 +289,66 @@ export function StackedAreaTrendChart({ title, subtitle, series, children, class
 
               return (
                 <g key={year} className="trend-molecule--indicator-group">
-                  <TrendYearLabel x={barXCenter} y={getValueY(0) + 16} year={year} />
-                  
-                  {dataSeries.map((s) => {
-                    const p = s.points.find(pt => pt.year === year)
-                    const val = p ? p.value : 0
-                    const prevYearVal = yearIdx > 0 ? (s.points.find(pt => pt.year === dataYears[yearIdx - 1])?.value ?? 0) : null
-                    const delta = prevYearVal !== null ? val - prevYearVal : 0
-                    const y = getValueY(val)
-
-                    return (
-                      <g key={s.label}>
-                         <TrendValueBadge
-                          x={barXCenter}
-                          y={y + 24}
-                          delta={delta}
-                          segmentHeight={30}
-                        />
-                      </g>
-                    )
-                  })}
-
-                  <g style={{ pointerEvents: 'none' }}>
+                  {/* Top Labels: Total Value + % Change Badge */}
+                  <g transform={`translate(${barXCenter}, ${getValueY(yearTotals[yearIdx]) - 10})`}>
+                    <text
+                      y={-18}
+                      textAnchor="middle"
+                      fontSize="14"
+                      fontWeight="900"
+                      fill="#1e293b"
+                    >
+                      {formatValue(yearTotals[yearIdx])}
+                    </text>
+                    
                     {totalDelta !== null && (
-                      <g transform={`translate(${barXCenter}, ${getValueY(yearTotals[yearIdx]) - 22})`}>
-                        <rect x="-24" y="-9" width="48" height="15" rx="6" fill={totalDelta === 0 ? '#94a3b8' : (totalDelta > 0 ? '#10b981' : '#f43f5e')} opacity="0.15" />
-                        <text x="0" y="2.5" textAnchor="middle" fontSize="11" fontWeight="900" fill={totalDelta === 0 ? '#64748b' : (totalDelta > 0 ? '#059669' : '#e11d48')}>
+                      <g transform={`translate(0, 0)`}>
+                        <rect x="-22" y="-9" width="44" height="15" rx="5" fill={totalDelta === 0 ? '#94a3b8' : (totalDelta > 0 ? '#10b981' : '#f43f5e')} opacity="0.15" />
+                        <text x="0" y="2.5" textAnchor="middle" fontSize="10.5" fontWeight="900" fill={totalDelta === 0 ? '#64748b' : (totalDelta > 0 ? '#059669' : '#e11d48')}>
                           {totalDeltaPct !== null ? `${totalDeltaPct > 0 ? '+' : ''}${totalDeltaPct.toFixed(1)}%` : ''}
                         </text>
                       </g>
                     )}
                   </g>
+
+                  {/* Bottom Labels: Year Only */}
+                  <text
+                    x={barXCenter}
+                    y={getValueY(0) + 24}
+                    textAnchor="middle"
+                    fontSize="13"
+                    fontWeight="800"
+                    fill="#64748b"
+                  >
+                    {year}
+                  </text>
+                  
+                  {/* Per-segment Deltas */}
+                  {dataSeries.map((s, sIdx) => {
+                    const p = s.points.find(pt => pt.year === year)
+                    const val = p ? p.value : 0
+                    const prevYearVal = yearIdx > 0 ? (s.points.find(pt => pt.year === dataYears[yearIdx - 1])?.value ?? 0) : null
+                    const delta = prevYearVal !== null ? val - prevYearVal : 0
+                    const stackBaseVal = dataSeries.slice(0, sIdx).reduce((sum, prevSeries) => {
+                      return sum + (prevSeries.points.find(pt => pt.year === year)?.value ?? 0)
+                    }, 0)
+                    const ySegmentTop = getValueY(stackBaseVal + val)
+                    const ySegmentBottom = getValueY(stackBaseVal)
+                    const yCenter = (ySegmentTop + ySegmentBottom) / 2
+
+                    // Lowered threshold to 10px since we have more vertical space now
+                    if (ySegmentBottom - ySegmentTop < 10) return null
+
+                    return (
+                      <g key={s.label}>
+                         <TrendValueBadge
+                          x={barXCenter}
+                          y={yCenter + 4}
+                          delta={delta}
+                        />
+                      </g>
+                    )
+                  })}
                 </g>
               )
             })}

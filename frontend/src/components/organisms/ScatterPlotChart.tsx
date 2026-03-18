@@ -47,7 +47,7 @@ export const ScatterPlotChart: React.FC<ScatterPlotChartProps> = ({
 }) => {
   const { ref: animRef } = useChartAnimation()
   const responsiveOptions = useMemo(() => ({ minWidth: 320 }), [])
-  const { containerRef, width, height } = useResponsiveSvg(620, 420, responsiveOptions)
+  const { containerRef, width, height } = useResponsiveSvg(620, 320, responsiveOptions)
   
   const padding = useMemo(() => ({
     ...DEFAULT_PADDING,
@@ -67,12 +67,13 @@ export const ScatterPlotChart: React.FC<ScatterPlotChartProps> = ({
     const snapX = rawMaxX > 10000 ? 5000 : rawMaxX > 1000 ? 1000 : 500
     const calcMaxX = Math.ceil((rawMaxX * 1.15) / snapX) * snapX
     
-    // Y軸：根據數據點的最大絕對值動態縮放，確保所有點都在可視範圍內
-    const maxAbsY = ys.length > 0 ? Math.max(...ys.map(Math.abs)) : 0.1
+    // Y軸：不再強制對稱，改為獨立根據最大/最小值動態調整
+    const rawMaxY = ys.length > 0 ? Math.max(...ys, 0.02) : 0.05
+    const rawMinY = ys.length > 0 ? Math.min(...ys, -0.02) : -0.05
     
-    // 設置 Y 軸上限為最大值的 1.1 倍以提供些許餘裕，並確保對稱性
-    const maxYVal = Math.max(maxAbsY * 1.1, 0.05)
-    const minYVal = -maxYVal 
+    // 設置 Y 軸範圍，向上/下延伸 20% 的餘裕空間，並確保包含 0 軸
+    const maxYVal = Math.max(rawMaxY * (rawMaxY > 0 ? 1.2 : 0.8), 0.05)
+    const minYVal = Math.min(rawMinY * (rawMinY < 0 ? 1.2 : 0.8), -0.05)
     
     // 中間分割線取 X 範圍的中值
     const calcMidXVal = calcMaxX / 2
