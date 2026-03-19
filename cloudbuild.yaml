@@ -1,0 +1,31 @@
+steps:
+  # Step 1: Build the multi-stage Docker image
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'build',
+      '-t', 'asia-east1-docker.pkg.dev/$PROJECT_ID/tw-student-atlas/tw-student-atlas:$COMMIT_SHA',
+      '-t', 'asia-east1-docker.pkg.dev/$PROJECT_ID/tw-student-atlas/tw-student-atlas:latest',
+      '.'
+    ]
+
+  # Step 2: Push the image to Artifact Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'asia-east1-docker.pkg.dev/$PROJECT_ID/tw-student-atlas/tw-student-atlas:$COMMIT_SHA']
+  
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'asia-east1-docker.pkg.dev/$PROJECT_ID/tw-student-atlas/tw-student-atlas:latest']
+
+  # Step 3: Deploy to Cloud Run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args: [
+      'run', 'deploy', 'tw-student-atlas',
+      '--image', 'asia-east1-docker.pkg.dev/$PROJECT_ID/tw-student-atlas/tw-student-atlas:$COMMIT_SHA',
+      '--region', 'asia-east1',
+      '--platform', 'managed',
+      '--allow-unauthenticated'
+    ]
+
+# 關鍵解決：強制使用 Cloud Logging 避開 Logs Bucket 錯誤
+options:
+  logging: CLOUD_LOGGING_ONLY
