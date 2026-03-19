@@ -90,6 +90,14 @@ cd backend && node scripts/refresh-official-data.mjs
 10. **E2E helper 收斂**：`chart-interactions.spec.ts` 已擴充到 9 個案例，下一輪可抽出 chart focus / screenshot helper，降低維護成本。
 11. **圖表互動樣式收斂**：tooltip 契約與 regression 已建立，但 responsive legend / axis / disclosure badge 的視覺密度仍可再做純樣式 QA 收斂。
 
+## 布署資訊
+
+目前專案透過 **Google Cloud Run** 進行手動布署，並搭配 **Firebase Hosting** 提供便捷的短網址服務。
+
+- **專案入口**: [https://tw-student.web.app/](https://tw-student.web.app/)
+- **布署架構**: Frontend (Vite) + Backend Data API (Cloud Run)
+- **環境設定**: 透過 Firebase Hosting 代理請求至 Cloud Run 服務
+
 ## 維護原則
 
 1. **規格先行**：重大功能開發前先更新 `specs/` 相關文件
