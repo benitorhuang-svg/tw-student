@@ -1,0 +1,30 @@
+graph TD
+    subgraph "Local Development (本機開發)"
+        A[Local Changes] -->|git push| B(GitHub Repo: main)
+    end
+
+    subgraph "GCP Cloud Build - asia-east1 (雲端自動編譯)"
+        B -->|GitHub Trigger| C{Cloud Build Trigger}
+        C -->|Reads| D[cloudbuild.yaml]
+        D -->|Step 1: Build| E[Dockerfile Multi-stage Build]
+        E -->|Environment| F(Node 24 Environment)
+        F -->|Compile| G[Frontend Vite Build]
+        G -->|Bundle| H[Static Assets + backend/data]
+    end
+
+    subgraph "Storage & Deployment (發布與部署)"
+        H -->|Step 2: Push| I[(Artifact Registry)]
+        I -->|Step 3: Deploy| J[Cloud Run Service]
+        J -->|Region| K(asia-east1: Taiwan)
+    end
+
+    subgraph "Entry Point (公開存取)"
+        L[User Browser] --> M[Firebase Hosting: tw-student.web.app]
+        M -->|Proxy Rewrite| J
+    end
+
+    %% Styles
+    style C fill:#4285F4,color:#fff,stroke:#333,stroke-width:2px
+    style J fill:#34A853,color:#fff,stroke:#333,stroke-width:4px
+    style B fill:#000,color:#fff
+    style M fill:#FFCA28,color:#333
