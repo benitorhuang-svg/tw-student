@@ -39,7 +39,7 @@ function insertTownSummaryRows(statement, countyCode, townCode, summaries) {
   })
 }
 
-export async function buildAtlasSqliteBuffer(datasetBundle, boundaries) {
+export async function buildAtlasSqliteBuffer(datasetBundle, boundaries, { validationReport, gradeMap } = {}) {
   const SQL = await initSqlJs({
     locateFile: (file) => path.join(sqlJsRoot, file),
   })
@@ -208,6 +208,15 @@ export async function buildAtlasSqliteBuffer(datasetBundle, boundaries) {
     insertMeta.run(['years', encodeJson(datasetBundle.years)])
     insertMeta.run(['sources', encodeJson(datasetBundle.sources)])
     insertMeta.run(['dataNotes', encodeJson(datasetBundle.summaryDataset.dataNotes ?? [])])
+    
+    if (validationReport) {
+      insertMeta.run(['validationReport', encodeJson(validationReport)])
+    }
+    if (gradeMap) {
+      insertMeta.run(['gradeMap', encodeJson(gradeMap)])
+    }
+    // 把完整的摘要也存一份進去，徹底取代 summary.json
+    insertMeta.run(['summaryDataset', encodeJson(datasetBundle.summaryDataset)])
 
     insertBoundary.run(['counties', 'county', encodeJson(boundaries.countyTopology)])
 

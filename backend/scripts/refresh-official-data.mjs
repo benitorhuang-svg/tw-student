@@ -156,8 +156,14 @@ function buildAssetDrafts({ datasetBundle, boundaries, sqliteBuffer, gradeMap, v
 }
 
 async function writeAtlasOutputs(assetDrafts, manifest) {
+  // 只保留重要的兩個檔案，其餘全部整合進 SQLite
+  const filteredDrafts = assetDrafts.filter(entry => 
+    entry.path === 'education-atlas.sqlite' || 
+    entry.path === 'manifest.json'
+  )
+
   await Promise.all([
-    ...assetDrafts.map((entry) => {
+    ...filteredDrafts.map((entry) => {
       const filePath = path.join(DATA_DIR, entry.path)
       if (entry.buffer) {
         return writeFile(filePath, entry.buffer)
@@ -176,8 +182,23 @@ async function main() {
   const datasetBundle = await buildOfficialDataset(boundaries)
   attachAssetMetrics(datasetBundle, boundaries)
 
-  const sqliteBuffer = await buildAtlasSqliteBuffer(datasetBundle, boundaries)
+  // 1. 先建立 Grade Map 與初步的 Validation Report
   const gradeMap = buildGradeMap(datasetBundle.generatedAt)
+  const validationReport = buildValidationReport({
+    generatedAt: datasetBundle.generatedAt,
+    schemaVersion: DATA_SCHEMA_VERSION,
+    datasetBundle,
+    boundaries,
+    assetDrafts: [], // 這裡傳空，因為內部校驗不依賴二進位雜湊
+  })
+
+  // 2. 將所有內容（包含 Report 與 Grade Map）封裝進 SQLite
+  const sqliteBuffer = await buildAtlasSqliteBuffer(datasetBundle, boundaries, {
+    validationReport,
+    gradeMap
+  })
+
+  // 3. 更新度量指標
   datasetBundle.summaryDataset.assetMetrics.sqliteBytes = sqliteBuffer.byteLength
   datasetBundle.summaryDataset.counties = datasetBundle.summaryDataset.counties.map((county) => ({
     ...county,
@@ -187,34 +208,17 @@ async function main() {
     },
   }))
 
-  const initialAssetDrafts = buildAssetDrafts({
-    datasetBundle,
-    boundaries,
-    sqliteBuffer,
-    gradeMap,
-    validationReport: {
-      generatedAt: datasetBundle.generatedAt,
-      schemaVersion: DATA_SCHEMA_VERSION,
-      overallStatus: 'pass',
-      items: [],
-    },
-  })
-
-  const validationReport = buildValidationReport({
-    generatedAt: datasetBundle.generatedAt,
-    schemaVersion: DATA_SCHEMA_VERSION,
-    datasetBundle,
-    boundaries,
-    assetDrafts: initialAssetDrafts,
-  })
-
-  const assetDrafts = buildAssetDrafts({
+  // 4. 建立最終的基本資產清單與 Manifest
+  // 只留核心資料庫，其餘 JSON 均已整併
+  const fullAssetDrafts = buildAssetDrafts({
     datasetBundle,
     boundaries,
     sqliteBuffer,
     gradeMap,
     validationReport,
   })
+  
+  const assetDrafts = fullAssetDrafts.filter(entry => entry.path === 'education-atlas.sqlite')
 
   const { manifest } = buildManifest({
     generatedAt: datasetBundle.generatedAt,
@@ -223,10 +227,11 @@ async function main() {
     assetDrafts,
   })
 
-  await writeAtlasOutputs(assetDrafts, manifest)
+  // 5. 寫出檔案
+  await writeAtlasOutputs(fullAssetDrafts, manifest)
 
   console.log('Official dataset refreshed successfully.')
-  console.log(`Generated ${datasetBundle.summaryDataset.counties.length} county summaries.`)
+  console.log('Consolidated all data into education-atlas.sqlite')
 }
 
 main().catch((error) => {

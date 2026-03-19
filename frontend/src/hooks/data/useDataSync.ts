@@ -106,36 +106,29 @@ export function useDataSync(deps: SyncDeps) {
       let nextCountyBoundaries = deps.countyBoundaries
       let nextValidationReport = deps.validationReport
 
-      const sqliteChanged = changedPaths.has('education-atlas.sqlite') || changedPaths.has('education-summary.json')
-      const countyBoundariesChanged = changedPaths.has('county-boundaries.topo.json')
-      const validationChanged = changedPaths.has('validation-report.json')
+      // 全部整併到 SQLite 之後，只要資料庫有變，就全部更新
+      const sqliteChanged = changedPaths.has('education-atlas.sqlite')
 
-      if (sqliteChanged) {
+      if (sqliteChanged || !deps.summaryDataset || !deps.validationReport) {
         try {
           resetAtlasSqliteCache()
           resetAtlasLoadObservations()
+          resetAtlasBoundaryCaches()
+          
+          setRefreshStatus('正在從 SQLite 更新資料...')
+          
+          // 全部改從 SQL 讀取
           nextSummaryDataset = await refreshEducationSummary()
+          nextCountyBoundaries = await loadCountyBoundaries({ forceRefresh: true })
+          nextValidationReport = await loadValidationReport({ forceRefresh: true })
+          
           deps.setCountyDetailCache({})
           deps.setCountyBucketCache({})
-          updatedAssets.push(...changedAssets.filter((asset) => asset.path === 'education-atlas.sqlite' || asset.path === 'education-summary.json').map((asset) => asset.path))
-        } catch {
-            /* Error handling */
+          
+          if (sqliteChanged) updatedAssets.push('education-atlas.sqlite')
+        } catch (e) {
+            console.error('SQLite 資料同步失敗', e)
         }
-      }
-
-      if (countyBoundariesChanged) {
-        try {
-          resetAtlasBoundaryCaches()
-          nextCountyBoundaries = await loadCountyBoundaries({ forceRefresh: true })
-          updatedAssets.push('county-boundaries.topo.json')
-        } catch { /* ... */ }
-      }
-
-      if (validationChanged || !deps.validationReport) {
-        try {
-          nextValidationReport = await loadValidationReport({ forceRefresh: true })
-          if (changedPaths.has('validation-report.json')) updatedAssets.push('validation-report.json')
-        } catch { /* ... */ }
       }
 
       deps.setSummaryDataset(nextSummaryDataset)

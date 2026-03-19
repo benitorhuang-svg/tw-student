@@ -111,7 +111,7 @@ export default defineConfig({
         globPatterns: ['**/*.{js,css,html,svg,png,ico,txt,woff2}'],
         navigateFallback: 'index.html',
         navigateFallbackDenylist: [/\/data\//, /\.json$/],
-        maximumFileSizeToCacheInBytes: 7 * 1024 * 1024,
+        maximumFileSizeToCacheInBytes: 50 * 1024 * 1024,
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
@@ -132,13 +132,13 @@ export default defineConfig({
             },
           },
           {
-            urlPattern: /\/data\/.*\.json$/i,
+            urlPattern: /\/data\/.*\.(json|sqlite)$/i,
             handler: 'StaleWhileRevalidate',
             options: {
-              cacheName: 'education-data-json',
+              cacheName: 'education-data-assets',
               expiration: {
-                maxEntries: 30,
-                maxAgeSeconds: 60 * 60 * 24 * 7,
+                maxEntries: 10,
+                maxAgeSeconds: 60 * 60 * 24 * 30,
               },
             },
           },

@@ -1,9 +1,11 @@
 import { recordResourceLoad } from './atlasLoadObservation'
 import { buildDataAssetUrl, parseJsonDataResponse } from './dataAsset'
+import { loadDatabase } from './sqlite/connection'
+import { mapRows, parseJsonValue } from './sqlite/mappers'
 import type { DataManifest, ValidationReport } from './educationTypes'
 
 const MANIFEST_RESOURCE_KEY = 'manifest:manifest.json'
-const VALIDATION_RESOURCE_KEY = 'validation:validation-report.json'
+const VALIDATION_RESOURCE_KEY = 'validation:validation-report.sqlite'
 
 let manifestCache: DataManifest | null = null
 let validationReportCache: ValidationReport | null = null
@@ -82,14 +84,36 @@ export async function loadValidationReport(options: ManifestLoadOptions = {}) {
   }
 
   if (!pendingValidationRequest) {
-    pendingValidationRequest = fetchJsonWithMetrics<ValidationReport>('validation-report.json', VALIDATION_RESOURCE_KEY, options)
-      .then((report) => {
-        validationReportCache = report
-        return report
+    pendingValidationRequest = (async () => {
+      const { db, bytes } = await loadDatabase(options)
+      const rows = mapRows(db.exec("SELECT value FROM meta WHERE key = 'validationReport'"))
+      const reportJson = rows[0]?.value as string
+      
+      if (!reportJson) {
+         // 回退機制或是預設值
+         return {
+           generatedAt: '',
+           schemaVersion: '',
+           overallStatus: 'pass' as const,
+           items: []
+         }
+      }
+
+      const report = parseJsonValue<ValidationReport>(reportJson, {
+        generatedAt: '',
+        schemaVersion: '',
+        overallStatus: 'pass',
+        items: []
       })
-      .finally(() => {
-        pendingValidationRequest = null
+
+      validationReportCache = report
+      recordResourceLoad({
+        source: 'sqlite',
+        resourceKey: VALIDATION_RESOURCE_KEY,
+        bytes,
       })
+      return report
+    })()
   }
 
   return pendingValidationRequest
@@ -111,4 +135,4 @@ export function resetAtlasManifestCache() {
   validationReportCache = null
   pendingManifestRequest = null
   pendingValidationRequest = null
-}
+}
