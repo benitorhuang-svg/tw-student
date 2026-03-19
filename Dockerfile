@@ -1,12 +1,33 @@
 # ---------------------------------------------------------
-# 直接部署本地已建置完成的檔案 (Bypassing external download 403 errors)
+# 第一階段：建置階段 (Build Stage)
+# 使用 Node 24 來安裝依賴並進行前端編譯
+# ---------------------------------------------------------
+FROM node:24-slim AS build-stage
+
+WORKDIR /app
+
+# 複製 package 檔案以利用 Docker 層快取 (Cache Layering)
+# 我們需要 frontend 的 package.json
+COPY frontend/package*.json ./frontend/
+RUN cd frontend && npm install
+
+# 複製其餘所有原始碼
+# 注意：Vite 建置過程會讀取 ../backend/data，所以必須完整複製
+COPY . .
+
+# 執行前端建置
+RUN cd frontend && npm run build
+
+# ---------------------------------------------------------
+# 第二階段：噴出階段 (Production Stage)
+# 使用 Nginx 提供高性能的靜態資源服務
 # ---------------------------------------------------------
 FROM nginx:stable-alpine
 
-# 複製本地已建置好的 frontend/dist 目錄到 Nginx 預設路徑
-COPY frontend/dist /usr/share/nginx/html
+# 從 build-stage 複製產出的 dist 目錄到 Nginx 預設路徑
+COPY --from=build-stage /app/frontend/dist /usr/share/nginx/html
 
-# 安裝 gzip 工具並預先壓縮大型 SQLite 檔案
+# 安裝 gzip 工具並預先壓縮大型 SQLite 檔案 (優化載入速度)
 RUN apk add --no-cache gzip && \
     gzip -fk -9 /usr/share/nginx/html/data/education-atlas.sqlite
 
