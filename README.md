@@ -92,11 +92,21 @@ cd backend && node scripts/refresh-official-data.mjs
 
 ## 布署資訊
 
-目前專案透過 **Google Cloud Run** 進行手動布署，並搭配 **Firebase Hosting** 提供便捷的短網址服務。
+目前專案透過 **Google Cloud Run** 進行自動部屬，並搭配 **Firebase Hosting** 提供便捷的短網址服務。
 
 - **專案入口**: [https://tw-student.web.app/](https://tw-student.web.app/)
-- **布署架構**: Frontend (Vite) + Backend Data API (Cloud Run)
+- **布署區域**: `asia-east1` (台灣)
 - **環境設定**: 透過 Firebase Hosting 代理請求至 Cloud Run 服務
+
+### 更新與布署流程 (Deployment Workflow)
+
+1. **GitHub 自動部屬 (推薦)**:
+   - 只要推送到 `main` 分支，GCP Cloud Build 會自動觸發**多階段建置 (Node 24)**，編譯完成後自動更新 Cloud Run 全域版本。
+   - `git add . && git commit -m "Your update message" && git push origin main`
+
+2. **GCP CLI 手動部屬 (備援)**:
+   - 若自動連動異常，可使用本機 PowerShell 腳本手動上傳編譯：
+   - `.\deploy-to-gcp.ps1`
 
 ## 維護原則
 
