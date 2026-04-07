@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>臺灣教育 Atlas | 部屬說明</title>
+    <title>臺灣教育 Atlas | 部署說明</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@300;400;700;900&display=swap" rel="stylesheet">
@@ -232,8 +232,8 @@
                 <div class="text-side">
                     <span class="scene-num">STEP 01</span>
                     <h2>GitHub 源碼代控</h2>
-                    <p>開發流程始於 GitHub 倉庫。開發者推送到 <code>main</code> 分支後，將觸發 GCP 的全自動化「拉取」事件，無需在 GitHub 內儲存任何靜態金鑰。</p>
-                    <p style="font-size: 0.9rem;">• 模式：與 GCP 建立受信任的 OAuth 連結<br>• 安全：無需管理 GitHub Secrets</p>
+                    <p>開發流程始於 GitHub。我們採用 <b>GCP 第 2 代連線 (2nd Gen)</b>，透過 OAuth 2.0 建立受信任的專屬連結。當開發者推送至 <code>main</code> 分支，GCP 將即時接收事件通告。</p>
+                    <p style="font-size: 0.9rem;">• 連結：Cloud Build GitHub 2nd Gen<br>• 授權：OAuth 託管授權模式</p>
                 </div>
                 <div class="visual-side">
                     <div class="visual-frame"><img src="./assets/github_node.png" alt="GitHub Source"></div>
@@ -247,8 +247,8 @@
                 <div class="text-side">
                     <span class="scene-num">STEP 02</span>
                     <h2>GCP 原生自動編譯 (Pull)</h2>
-                    <p>GCP Cloud Build 偵測到 GitHub 更新後，會主動「拉取」源碼，並根據 <code>infra/cloudbuild.yaml</code> 啟動容器化環境執行 Vite 建置與測試。</p>
-                    <p style="font-size: 0.9rem;">• 機制：Event-driven Pull Pipeline<br>• 環境：Node 25 (Alpine Linux)</p>
+                    <p>GCP 會根據儲存在 <b>Secret Manager</b> 的安全憑證，主動「拉取」源碼。建構器會自動讀取 <code>infra/cloudbuild.yaml</code> 組態，無需手動配置編譯腳本。</p>
+                    <p style="font-size: 0.9rem;">• 安全：零密鑰安全模型 (Zero-Secret Model)<br>• 環境：Node 25 (Alpine Linux)</p>
                 </div>
                 <div class="visual-side">
                     <div class="visual-frame"><img src="./assets/cloud_build_node.png" alt="Google Cloud Build"></div>
@@ -277,8 +277,8 @@
                 <div class="text-side">
                     <span class="scene-num">STEP 04</span>
                     <h2>無伺服器部署</h2>
-                    <p>鏡像自動部署至 Google Cloud Run。支援自動擴展與台北 (asia-east1) 的超低延遲反應。</p>
-                    <p style="font-size: 0.9rem;">• 機房：asia-east1 (Taiwan)<br>• 特性：Serverless, Auto-scaling</p>
+                    <p>建置後自動部署至 Google Cloud Run。服務運行於台北 (asia-east1) 數據中心，確保台灣使用者享有毫秒級的極速載入體驗。</p>
+                    <p style="font-size: 0.9rem;">• 機房：asia-east1 (Taiwan, Taipei)<br>• 特性：Serverless, Auto-scaling</p>
                 </div>
                 <div class="visual-side">
                     <div class="visual-frame"><img src="./assets/cloud_run_node.png" alt="Google Cloud Run"></div>
