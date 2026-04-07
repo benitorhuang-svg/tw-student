@@ -2,10 +2,10 @@
 .github
 .vscode
 node_modules/
-backend/node_modules/
-frontend/node_modules/
-# Allow frontend/dist even though it is in .gitignore
-!frontend/dist/
+services/backend/node_modules/
+services/frontend/node_modules/
+# Allow services/frontend/dist even though it is in .gitignore
+!services/frontend/dist/
 *.log
 .DS_Store
 # Dockerfile should NOT be ignored here because gcloud needs it

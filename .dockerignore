@@ -1,8 +1,11 @@
+.git
+.github
+.vscode
 node_modules
-frontend/node_modules
-backend/node_modules
-# frontend/dist (Removed to allow local build deployment)
-# backend/data (Removed to allow multi-stage build in the cloud)
+services/frontend/node_modules
+services/backend/node_modules
+# services/frontend/dist (Removed to allow local build deployment)
+# data/ (Removed to allow multi-stage build in the cloud)
 .git
 .github
 .vscode

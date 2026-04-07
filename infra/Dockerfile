@@ -8,15 +8,16 @@ WORKDIR /app
 
 # 複製 package 檔案以利用 Docker 層快取 (Cache Layering)
 # 我們需要 frontend 的 package.json
-COPY frontend/package*.json ./frontend/
-RUN cd frontend && npm install
+# Move to services/frontend after repo reorg
+COPY services/frontend/package*.json ./services/frontend/
+RUN cd services/frontend && npm install
 
 # 複製其餘所有原始碼
 # 注意：Vite 建置過程會讀取 ../backend/data，所以必須完整複製
 COPY . .
 
 # 執行前端建置
-RUN cd frontend && npm run build
+RUN cd services/frontend && npm run build
 
 # ---------------------------------------------------------
 # 第二階段：噴出階段 (Production Stage)
@@ -25,7 +26,7 @@ RUN cd frontend && npm run build
 FROM nginx:stable-alpine
 
 # 從 build-stage 複製產出的 dist 目錄到 Nginx 預設路徑
-COPY --from=build-stage /app/frontend/dist /usr/share/nginx/html
+COPY --from=build-stage /app/services/frontend/dist /usr/share/nginx/html
 
 # 安裝 gzip 工具並預先壓縮大型 SQLite 檔案 (優化載入速度)
 RUN apk add --no-cache gzip && \

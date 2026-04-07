@@ -5,7 +5,8 @@ import type { Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 
-const backendDataDir = path.resolve(__dirname, '..', 'backend', 'data')
+// After repo reorg, canonical data/ is at workspace root; resolve to that path
+const backendDataDir = path.resolve(__dirname, '..', '..', 'data')
 
 /** Serve backend/data/ as /data/ in dev and copy to dist/data/ in build. */
 function backendDataPlugin(): Plugin {

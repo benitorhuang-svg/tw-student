@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import initSqlJs from 'sql.js';
 
-const DATA_DIR = 'backend/data';
+const DATA_DIR = 'data';
 const SQLITE_FILE = path.join(DATA_DIR, 'education-atlas.sqlite');
 const REPORT_FILE = path.join(DATA_DIR, 'validation-report.json');
 const GRADE_MAP_FILE = path.join(DATA_DIR, 'schema/grade-map.json');

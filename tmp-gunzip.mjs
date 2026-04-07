@@ -1,8 +1,8 @@
 import { createReadStream, createWriteStream } from 'fs';
 import { createGunzip } from 'zlib';
 
-const input = 'backend/data/education-atlas.sqlite.gz';
-const output = 'backend/data/education-atlas.sqlite';
+const input = 'data/education-atlas.sqlite.gz';
+const output = 'data/education-atlas.sqlite';
 
 const gunzip = createGunzip();
 const source = createReadStream(input);

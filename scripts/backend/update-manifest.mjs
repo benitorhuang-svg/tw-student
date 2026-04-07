@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 
-const DATA_DIR = 'backend/data';
+const DATA_DIR = 'data';
 const MANIFEST_FILE = path.join(DATA_DIR, 'manifest.json');
 const SQLITE_FILE = path.join(DATA_DIR, 'education-atlas.sqlite');
 

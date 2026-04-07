@@ -1,7 +1,7 @@
-backend/node_modules/
-frontend/node_modules/
-frontend/dist/
-frontend/test-results/
-frontend/playwright-report/
+services/backend/node_modules/
+services/frontend/node_modules/
+services/frontend/dist/
+services/frontend/test-results/
+services/frontend/playwright-report/
 *.log
 .DS_Store
