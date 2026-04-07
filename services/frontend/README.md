@@ -6,32 +6,32 @@ React 19 + TypeScript 5.9 + Vite 7.3 PWA 前端工作台。
 
 ```bash
 npm install
-npm run dev                # http://localhost:5173 — Vite 自動代理 backend/data
+npm run dev                # http://localhost:5173 — Vite 自動代理 data/
 npm run build              # 產出 dist/ 含 PWA service worker
 
 # performance helpers
 
 To reduce front‑end payloads, township/county GeoJSON files can be simplified with
 mapshaper or converted into vector tiles.  A convenience script lives at
-`frontend/scripts/simplify-boundaries.mjs`:
+`services/frontend/scripts/simplify-boundaries.mjs`:
 
 ```sh
-node frontend/scripts/simplify-boundaries.mjs
+node services/frontend/scripts/simplify-boundaries.mjs
 ```
 
 For production-grade tiling use Tippecanoe to emit `.pbf` files and serve them
 via `Leaflet.VectorGrid` from the atlas page — this mimics Google Maps' style
 and ensures only features in the current view are downloaded.
 
-A helper script (`frontend/scripts/generate-vector-tiles.mjs`) builds the tiles and
-lays them under `public/data/tiles/{county,township}/{z}/{x}/{y}.pbf`; run it with
-`node frontend/scripts/generate-vector-tiles.mjs` after data refresh.
+A helper script (`services/frontend/scripts/generate-vector-tiles.mjs`) builds the tiles and
+lays them under `data/tiles/{county,township}/{z}/{x}/{y}.pbf`; run it from the repo root with
+`node services/frontend/scripts/generate-vector-tiles.mjs` after data refresh.
 
-For development or light deployment you can serve those files via the
+From the repo root, you can serve those files via the
 included express server:
 
 ```sh
-node backend/scripts/start-vector-tiles-server.js 8081 # optionally specify port
+node services/backend/scripts/start-vector-tiles-server.js 8081 # optionally specify port
 ```
 
 Point `VITE_VECTOR_TILE_BASE_URL` at `http://localhost:8081/tiles` (or your
@@ -55,7 +55,7 @@ npm run audit:lighthouse   # LHCI（建議在 CI / Ubuntu runner 執行）
 
 ## 資料來源
 
-開發模式下，`backendDataPlugin()` (定義於 `vite.config.ts`) 將 `../backend/data/` 底下的靜態資料以 `/data/*` 路徑代理至前端。Production build 時會自動複製至 `dist/data/`。
+開發模式下，`backendDataPlugin()` (定義於 `vite.config.ts`) 將 repo-root `data/` 底下的靜態資料以 `/data/*` 路徑代理至前端。Production build 時會自動複製至 `dist/data/`。
 
 ## 圖表元件
 
@@ -134,7 +134,7 @@ npm run audit:lighthouse   # LHCI（建議在 CI / Ubuntu runner 執行）
 
 - `npm run audit:lighthouse` 會以 build 後的 preview server 掃描三條核心路徑：overview、regional、schools(Taichung)
 - 本機 Windows 若遇到 Chrome interstitial，可改由 `.github/workflows/lighthouse.yml` 在 Ubuntu runner 執行
-- 報告輸出至 `frontend/lighthouse-results/`，workflow 也會上傳成 artifact
+- 報告輸出至 `lighthouse-results/`，workflow 也會上傳成 artifact
 
 ## 下一輪精修焦點
 

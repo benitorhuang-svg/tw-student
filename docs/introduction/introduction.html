@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>臺灣教育 Atlas | 部屬說明</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --secondary: #06b6d4;
+            --bg: #030712;
+            --surface: rgba(17, 24, 39, 0.8);
+            --border: rgba(255, 255, 255, 0.1);
+            --text: #f9fafb;
+            --text-dim: #9ca3af;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Strict lock on scrollbars */
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .ambient {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 10% 10%, rgba(79, 70, 229, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 90% 90%, rgba(6, 182, 212, 0.15) 0%, transparent 50%);
+        }
+
+        .presentation {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            transition: transform 0.8s cubic-bezier(0.85, 0, 0.15, 1);
+            will-change: transform;
+        }
+
+        .scene {
+            flex: 0 0 100%; /* Use 100% of parent width */
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 6rem 4rem 6rem 4rem;
+            position: relative;
+        }
+
+        .scene-content {
+            display: grid;
+            grid-template-columns: 1fr 1.25fr;
+            gap: 4rem;
+            max-width: 1200px;
+            width: 100%;
+            align-items: center;
+        }
+
+        .scene-content.reversed {
+            grid-template-columns: 1.25fr 1fr;
+        }
+
+        .text-side { animation: slideInLeft 0.8s ease backwards; }
+        .visual-side { animation: slideInRight 0.8s ease backwards; }
+
+        .reversed .text-side { order: 2; animation-name: slideInRight; }
+        .reversed .visual-side { order: 1; animation-name: slideInLeft; }
+
+        .scene-num {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 900;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 2rem;
+            line-height: 1.1;
+            letter-spacing: -0.04em;
+            background: linear-gradient(135deg, #fff 0%, #9ca3af 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: var(--text-dim);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .visual-frame {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 2rem;
+            padding: 1rem;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.5);
+            width: 100%;
+            display: flex; align-items: center; justify-content: center;
+            overflow: hidden; aspect-ratio: 16/10;
+        }
+
+        .visual-frame img {
+            max-width: 100%; 
+            max-height: 100%; 
+            border-radius: 1rem; 
+            object-fit: contain;
+        }
+
+        .controls {
+            position: fixed;
+            bottom: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            padding: 1rem 2.5rem;
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 5rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .nav-btn {
+            background: none; border: none; color: var(--text);
+            font-family: 'Outfit', sans-serif; font-weight: 700;
+            cursor: pointer; display: flex; align-items: center; gap: 0.5rem;
+            font-size: 1rem; transition: all 0.3s ease; opacity: 0.6;
+        }
+
+        .nav-btn:hover:not(:disabled) { opacity: 1; color: var(--primary); }
+        .nav-btn:disabled { cursor: not-allowed; opacity: 0.2; }
+
+        .page-counter {
+            font-family: 'Inter', sans-serif; font-weight: 800;
+            color: var(--text-dim); font-size: 0.9rem; letter-spacing: 0.1em;
+        }
+
+        @keyframes slideInLeft { from { opacity: 0; transform: translateX(-50px); } to { opacity: 1; transform: translateX(0); } }
+        @keyframes slideInRight { from { opacity: 0; transform: translateX(50px); } to { opacity: 1; transform: translateX(0); } }
+
+        .scene.hero {
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle at 50% 100%, rgba(79, 70, 229, 0.1) 0%, transparent 50%);
+            padding-top: 2rem; /* Moved up by reducing padding */
+        }
+        .hero-banner {
+            max-width: 1400px; /* Increased from 1000px */
+            width: 95%;
+            margin: 0.5rem auto 0 auto;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .hero-banner img {
+            max-width: 100%;
+            max-height: 65vh; /* Enlarged from 60vh to fill more vertical space */
+            object-fit: contain;
+            border-radius: 4rem;
+            box-shadow: 0 50px 100px rgba(0,0,0,0.6), 0 0 40px rgba(79, 70, 229, 0.2);
+            border: 1px solid var(--border);
+        }
+        .scene.hero h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 5rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.05em;
+            background: linear-gradient(135deg, #fff 0%, #6366f1 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .scene.hero p {
+            font-size: 1.4rem;
+            color: var(--text-dim);
+            max-width: 700px;
+            margin: 0 auto 4rem auto;
+        }
+
+        @media (max-width: 1024px) {
+            .scene-content { grid-template-columns: 1fr; gap: 4rem; }
+            h2 { font-size: 2.5rem; }
+            .visual-frame { order: -1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="ambient"></div>
+
+    <div class="presentation" id="presentation">
+        <!-- Scene 0: Redesigned Hero -->
+        <div class="scene hero">
+            <div class="scene-content" style="display: block; max-width: 1200px;">
+                <span class="scene-num">GitOps Workflow</span>
+                <div class="hero-banner">
+                    <img src="./assets/horizontal_flat_pipeline.png" alt="Flat Horizontal CI/CD Pipeline">
+                </div>
+            </div>
+        </div>
+
+        <!-- Scene 1: Source Control -->
+        <div class="scene">
+            <div class="scene-content reversed">
+                <div class="text-side">
+                    <span class="scene-num">STEP 01</span>
+                    <h2>代碼與版本管控</h2>
+                    <p>所有代碼異動皆透過 GitHub 存儲庫管理。推送到 <code>main</code> 分支後將觸發自動化部屬管線。</p>
+                    <p style="font-size: 0.9rem;">• 分支策略：Git Flow / GitHub Flow<br>• 自動化觸發：GitHub Webhooks</p>
+                </div>
+                <div class="visual-side">
+                    <div class="visual-frame"><img src="./assets/github_node.png" alt="GitHub Source"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scene 2: Cloud Build -->
+        <div class="scene">
+            <div class="scene-content reversed">
+                <div class="text-side">
+                    <span class="scene-num">STEP 02</span>
+                    <h2>雲端自動化編譯</h2>
+                    <p>GCP Cloud Build 接手後，會根據 <code>cloudbuild.yaml</code> 啟動容器化環境，執行 Vite 建置與測試。</p>
+                    <p style="font-size: 0.9rem;">• 編譯：Vite 7.1 + React 19<br>• 環境：Node 24 (Alpine Linux)</p>
+                </div>
+                <div class="visual-side">
+                    <div class="visual-frame"><img src="./assets/cloud_build_node.png" alt="Google Cloud Build"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scene 3: Artifact Registry -->
+        <div class="scene">
+            <div class="scene-content reversed">
+                <div class="text-side">
+                    <span class="scene-num">STEP 03</span>
+                    <h2>鏡像版本管理</h2>
+                    <p>建置完成的 Docker 鏡像會被推送到 Artifact Registry，做為穩定的生產環境交付資產。</p>
+                    <p style="font-size: 0.9rem;">• 安全掃描：自動弱點偵測<br>• 版本管理：SHA 標記與快照</p>
+                </div>
+                <div class="visual-side">
+                    <div class="visual-frame"><img src="./assets/artifact_registry_node.png" alt="Artifact Registry"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scene 4: Cloud Run -->
+        <div class="scene">
+            <div class="scene-content reversed">
+                <div class="text-side">
+                    <span class="scene-num">STEP 04</span>
+                    <h2>無伺服器部署</h2>
+                    <p>鏡像自動部署至 Google Cloud Run。支援自動擴展與台北 (asia-east1) 的超低延遲反應。</p>
+                    <p style="font-size: 0.9rem;">• 機房：asia-east1 (Taiwan)<br>• 特性：Serverless, Auto-scaling</p>
+                </div>
+                <div class="visual-side">
+                    <div class="visual-frame"><img src="./assets/cloud_run_node.png" alt="Google Cloud Run"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scene 5: Firebase CDN -->
+        <div class="scene">
+            <div class="scene-content reversed">
+                <div class="text-side">
+                    <span class="scene-num">STEP 05</span>
+                    <h2>全球分發與 PWA</h2>
+                    <p>Firebase Hosting 做為前端入口，提供全球 CDN 加速與 HTTPS 加密，並處理 PWA 的靜態資產快取。</p>
+                    <p style="font-size: 0.9rem;">• 域名：tw-student.web.app<br>• 加速：Global Goolge CDN</p>
+                </div>
+                <div class="visual-side">
+                    <div class="visual-frame"><img src="./assets/firebase_hosting_node.png" alt="Firebase Hosting"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button class="nav-btn" id="pBtn" disabled>← PREV</button>
+        <span class="page-counter" id="pCounter">1 / 6</span>
+        <button class="nav-btn" id="nBtn">NEXT →</button>
+    </div>
+
+    <script>
+        const pres = document.getElementById('presentation');
+        const pBtn = document.getElementById('pBtn');
+        const nBtn = document.getElementById('nBtn');
+        const pCounter = document.getElementById('pCounter');
+        const scenes = document.querySelectorAll('.scene');
+        
+        let currentIdx = 0;
+        const totalScenes = scenes.length;
+
+        function update() {
+            pres.style.transform = `translateX(-${currentIdx * 100}%)`;
+            pCounter.textContent = `${currentIdx + 1} / ${totalScenes}`;
+            pBtn.disabled = currentIdx === 0;
+            nBtn.disabled = currentIdx === totalScenes - 1;
+        }
+
+        pBtn.addEventListener('click', () => { if (currentIdx > 0) { currentIdx--; update(); } });
+        nBtn.addEventListener('click', () => { if (currentIdx < totalScenes - 1) { currentIdx++; update(); } });
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') nBtn.click();
+            if (e.key === 'ArrowLeft') pBtn.click();
+        });
+    </script>
+</body>
+</html>

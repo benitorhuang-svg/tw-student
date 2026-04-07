@@ -5,10 +5,10 @@ import type { Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 
-// After repo reorg, canonical data/ is at workspace root; resolve to that path
+// After repo reorg, canonical repo-root data/ is at workspace root; resolve to that path
 const backendDataDir = path.resolve(__dirname, '..', '..', 'data')
 
-/** Serve backend/data/ as /data/ in dev and copy to dist/data/ in build. */
+/** Serve repo-root data/ as /data/ in dev and copy to dist/data/ in build. */
 function backendDataPlugin(): Plugin {
   return {
     name: 'backend-data',
@@ -53,10 +53,31 @@ const publicBasePath = isGithubPagesBuild ? `/${repositoryName}/` : '/'
 
 export default defineConfig({
   base: publicBasePath,
+  // persist Vite cache under workspace root to speed cold restarts
+  cacheDir: path.resolve(__dirname, '..', '..', '.vite-cache', 'frontend'),
   optimizeDeps: {
-    include: ['react', 'react-dom', 'leaflet', 'react-leaflet'],
+    // include heavy libs to pre-bundle once and reuse
+    include: ['react', 'react-dom', 'leaflet', 'react-leaflet', 'sql.js', 'topojson-client', 'leaflet.vectorgrid'],
+    esbuildOptions: {
+      target: 'es2020',
+    },
   },
+  // reduce transpilation work by targeting modern browsers in dev tooling
+  esbuild: {
+    target: 'es2020',
+  },
+  // speed up dev HMR and reduce watcher overhead on Windows
+  server: {
+    hmr: { overlay: false },
+    // Avoid watching large repo data folders (they change rarely and are large)
+    watch: { usePolling: false, ignored: [path.resolve(backendDataDir, '**')] },
+  },
+  css: { devSourcemap: false },
   build: {
+    // target modern JS for faster bundling and smaller runtime transforms
+    target: 'es2020',
+    // disable source maps by default to speed up production builds (enable when debugging)
+    sourcemap: false,
     rollupOptions: {
       output: {
         manualChunks(id) {

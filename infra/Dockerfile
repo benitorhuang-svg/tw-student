@@ -8,12 +8,11 @@ WORKDIR /app
 
 # 複製 package 檔案以利用 Docker 層快取 (Cache Layering)
 # 我們需要 frontend 的 package.json
-# Move to services/frontend after repo reorg
 COPY services/frontend/package*.json ./services/frontend/
 RUN cd services/frontend && npm install
 
 # 複製其餘所有原始碼
-# 注意：Vite 建置過程會讀取 ../backend/data，所以必須完整複製
+# 注意：Vite 建置過程會讀取 repo-root data/，所以必須完整複製
 COPY . .
 
 # 執行前端建置

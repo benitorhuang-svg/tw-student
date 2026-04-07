@@ -1,115 +1,157 @@
 # 臺灣教育 Atlas — 學生人數分析工作台
 
-> 地圖為核心、資料為脈絡的教育研究儀表板。以 PWA 形式發布，支援桌機與手機全離線瀏覽。
+![Welcome Infographic](./welcome_infographic_mockup_1773711434948.png)
+
+> **地圖為核心、資料為脈絡的教育研究儀表板。** 以 PWA 形式發布，支援桌機與手機全離線瀏覽，深度分析台灣各級學校學生人數變遷。
+
+[![PWA Support](https://img.shields.io/badge/PWA-Ready-blue?logo=pwa)](https://web.dev/progressive-web-apps/)
+[![React 19](https://img.shields.io/badge/React-19-61DAFB?logo=react)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?logo=typescript)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-7.1-646CFF?logo=vite)](https://vitejs.dev/)
+[![GCP Deploy](https://img.shields.io/badge/GCP-CloudRun-4285F4?logo=google-cloud)](https://cloud.google.com/run)
+[![Firebase](https://img.shields.io/badge/Firebase-Hosting-FFCA28?logo=firebase)](https://firebase.google.com/)
 
 ---
 
-## 專案結構
+## 快速索引
+- [✨ 核心功能](#-核心功能)
+- [🛠️ 技術堆疊](#%EF%B8%8F-技術堆疊)
+- [📂 專案結構](#-專案結構)
+- [🚀 快速開始](#-快速開始)
+- [📐 架構決策](#-架構決策)
+- [🚢 部署資訊](#-部署資訊)
+- [📓 規格文件](#-規格文件)
 
-```
-student_counting_analysis_TW/
-├── frontend/              # React 19 + Vite 7 + TypeScript PWA
-│   ├── src/
-│   │   ├── components/    # 24 個圖表 / 面板元件（手刻 SVG）
-│   │   ├── hooks/         # useChartAnimation, useAtlas, …
-│   │   ├── layouts/       # Desktop / Mobile 自適應佈局
-│   │   ├── data/          # 資料載入 & 衍生邏輯
-│   │   ├── lib/           # analytics 工具函式
-│   │   └── styles/        # CSS 設計系統（chart foundations, …）
-│   ├── public/            # PWA icon SVGs
-│   └── tests/e2e/         # Playwright E2E 測試
-├── backend/
-│   ├── scripts/           # 資料刷新管線 (Node ESM)
-│   │   └── lib/           # 9 個 builder 模組
-│   └── data/              # 靜態資料資產（JSON, TopoJSON, SQLite）
-└── specs/                 # 規格驅動文件
-    ├── PRODUCT_SPEC.md
-    ├── TECHNICAL_DETAILS.md
-    ├── 001-data-flow-optimization/
-    ├── 002-chart-component-optimization/
-    └── 003-chart-ux-refinement/
-```
+---
 
-## 快速開始
+## ✨ 核心功能
+
+- **深度地理視覺化**：結合 Leaflet 與 VectorGrid，即時呈現縣市、區域至各級學校的地理分布。
+- **全方位數據圖表**：自研 SVG 圖表組件 (Trend, Scatter, Histogram, Stacked Area)，精準控數據視覺呈現。
+- **PWA 全離線支援**：透過 Service Worker 實現秒級載入與全站離線瀏覽體驗。
+- **校級導航系統**：從全國概覽、區域消長到單校追蹤，提供多層次的資料下鑽 (Drill-down) 體驗。
+- **數據管線自動化**：整合官方教育數據刷新管線，確保資料時效性。
+
+## 🛠️ 技術堆疊
+
+| 領域 | 使用技術 |
+|------|----------|
+| **前端框架** | React 19, TypeScript 5.9 |
+| **建置工具** | Vite 7.1 (極速開發/編譯) |
+| **地理引擎** | Leaflet, React Leaflet, VectorGrid |
+| **樣式設計** | Vanilla CSS (Atomic Design 思維), CSS 變數 |
+| **資料儲存** | TopoJSON, SQL.js (SQLite Wasm), JSON Assets |
+| **離線技術** | vite-plugin-pwa (Service Worker) |
+| **自動化測試**| Playwright (E2E), Lighthouse (效能/a11y) |
+| **雲端架構** | Google Cloud Run, Firebase Hosting |
+
+## 📂 專案結構
 
 ```bash
-# 安裝依賴
-cd frontend && npm install
-cd ../backend && npm install
-
-# 開發伺服器（Vite 自動代理 backend/data）
-cd frontend && npm run dev
-
-# 產品建置
-cd frontend && npm run build     # 輸出至 frontend/dist/
-
-# 資料刷新
-cd backend && node scripts/refresh-official-data.mjs
+├── services/
+│   ├── backend/
+│   │   └── scripts/       # 資料刷新管線 (Node ESM)
+│   │       └── lib/       # 9 個資料處理 builder 模組
+│   └── frontend/
+│       ├── src/           # React 應用源碼
+│       ├── scripts/       # 前端輔助腳本
+│       └── tests/e2e/     # Playwright E2E 測試案例
+├── docs/
+│   └── specs/             # 規格驅動開發 (SDD) 文件
+├── data/                  # 靜態資料資產（JSON, TopoJSON, SQLite）
+├── infra/                 # 基礎設施定義檔 (GCP/Firebase)
+└── package.json           # 工作區管理與通用指令
 ```
 
-## 關鍵架構決策
+## 🚀 快速開始
 
-| 決策 | 說明 |
-|------|------|
-| **資料分離** | `backend/data/` 為唯一資料源，Vite plugin 在 dev 代理、build 複製至 `dist/data/` |
-| **資料資產 helper** | `src/data/dataAsset.ts` 統一 `/data/*` URL 與 HTML fallback 偵測，避免 `Unexpected token '<'` 類錯誤 |
-| **手刻 SVG** | 所有圖表不依賴 D3/Recharts，以 `<svg viewBox>` + CSS 變數實現 |
-| **共用動畫** | `useChartAnimation` hook (IntersectionObserver) 統一進場動畫 |
-| **共用響應式尺寸** | `useResponsiveSvg` 以 `ResizeObserver` 將容器寬度映射成 SVG 座標系 |
-| **互動契約** | `chart-tooltip` + keyboard focus 規則已擴散到第二波圖表，並以 Playwright 守住 TrendChart、County storyboard、Schools workspace、Leaflet marker、SchoolComposition、PRIndicator 的 regression |
-| **PWA 離線** | vite-plugin-pwa + service worker，全靜態 precache |
-| **CSS 設計系統** | `00-chart-foundations.css` 統一色彩 token、tooltip、動畫、空狀態；目前持續將狀態樣式從 inline style 收斂回 CSS class |
+### 1. 安裝環境
+本專案使用 npm 進行相依性管理。
 
-## 規格文件
+```bash
+# 在根目錄一鍵安裝所有相依性 (frontend & backend)
+npm install
+```
 
-我們遵循 **規格驅動開發 (SDD)** 精神：先定義規格，再進行實作。
+### 2. 開發階段
+```bash
+# 啟動 Vite 開發伺服器 (包含資料代理)
+npm run dev
+```
 
-- **[PRODUCT_SPEC.md](./specs/PRODUCT_SPEC.md)**：產品導向規格
-- **[TECHNICAL_DETAILS.md](./specs/TECHNICAL_DETAILS.md)**：技術導向細節
-- **[003 稽核進度](./specs/003-chart-ux-refinement/tasks.md)**：圖表 UI/UX 稽核結果與待辦
+### 3. 資料處理
+若需刷新官方公開資料：
+```bash
+npm run data:refresh
+```
 
-## 下一輪優化建議
+### 4. 產品建置與預覽
+```bash
+npm run build
+# 預覽建置後結果
+cd services/frontend && npm run preview
+```
 
-### P2 — 圖表品質提升
+---
 
-1. **中斷帶密度微調**：County storyboard 與 school focus sidebar 在 720–960px 之間仍有進一步壓縮空白與整理資訊節奏的空間。
-2. **軸線與標籤 token 收斂**：Scatter / Trend / Histogram 目前已可讀，但 axis label、tooltip 內文與圖例字級仍未完全共用同一套 token 範圍。
-3. **Map + chart 混合場景 baselines**：目前已守住單圖表與工作台 regression，下一輪可補「地圖 + 右側分析卡」的窄寬度與 dark-theme 組合基準。
-4. **跨頁 chart audit 持續收斂**：將 overview、regional、county、schools、school-focus 剩餘的視覺密度問題持續轉成 spec、實作與 regression。
+## 📐 架構決策 (ADR)
 
-### P2 — 可及性 (a11y)
+| 決策 | 深度說明 |
+|------|----------|
+| **Single Source of Truth** | `data/` 為唯一資料源，Vite plugin 在開發時代理、部署時同步至 `dist/data/`。 |
+| **Zero-Library Visuals** | 所有圖表皆不依賴外部库（如 D3），透過 `<svg>` 與 `ResizeObserver` 實現 100% 響應式與可控動畫。 |
+| **Asset Fallback** | `dataAsset.ts` 統一處理 URL 與靜態資源回退，防止 SPA 路徑下的資源 404 錯誤。 |
+| **Interactivity Contract**| `chart-tooltip` 與鍵盤焦黑規則統一，並透過 Playwright 確保高難度組件（如 PRIndicator）的互動回歸。 |
+| **Performance PWA** | 全靜態 Precache 策略，確保即便在無網路環境下也能流暢進行教育政策分析。 |
 
-5. **ARIA 摘要深化**：Trend / Scatter / Histogram 已可操作，下一輪可為 remaining charts 補更具體的狀態摘要與資料語意。
-6. **焦點樣式**：統一 SVG / Leaflet / list-row 的 `:focus-visible` 規則與主題對比。
-7. **鍵盤捷徑一致性**：整理 Space / Enter 在 chart disclosure 與 drill-down 行為上的一致規範。
+---
 
-### P3 — 架構整理
+## 🚢 部署資訊
 
-8. **面板責任拆分延伸**：DashboardCanvas 已先拆出 `DashboardYearNavigator.tsx`，SchoolDetailPanel / SchoolAnalysisView 已完成 section-level 拆分；下一輪可把共用 panel heading / chip tab 邏輯再抽成 helper component。
-9. **共用 `formatWan`**：該函式在 ScatterPlotChart / StackedAreaTrendChart 各自重複定義，應抽取至 `lib/analytics`
-10. **E2E helper 收斂**：`chart-interactions.spec.ts` 已擴充到 9 個案例，下一輪可抽出 chart focus / screenshot helper，降低維護成本。
-11. **圖表互動樣式收斂**：tooltip 契約與 regression 已建立，但 responsive legend / axis / disclosure badge 的視覺密度仍可再做純樣式 QA 收斂。
+本專案採用 **GitOps** 模式，部署流程高度自動化。
 
-## 布署資訊
+- **線上入口**: [https://tw-student.web.app/](https://tw-student.web.app/)
+- **部署區域**: `asia-east1` (臺灣)
+- **基礎架構**: Cloud Run (服務端渲染/資料 API) + Firebase Hosting (前端 CDN & 域名)
 
-目前專案透過 **Google Cloud Run** 進行自動部屬，並搭配 **Firebase Hosting** 提供便捷的短網址服務。
+### 部署工作流 (Deployment Workflow)
 
-- **專案入口**: [https://tw-student.web.app/](https://tw-student.web.app/)
-- **布署區域**: `asia-east1` (台灣)
-- **環境設定**: 透過 Firebase Hosting 代理請求至 Cloud Run 服務
+![CI/CD Infographic](./cicd_pipeline_infographic.png)
 
-### 更新與布署流程 (Deployment Workflow)
+1. **GitHub 自動部屬**: 推送到 `main` 分支後，Cloud Build 自動執行多階段編譯與部署。
+2. **手動應急部署**: `.\deploy-to-gcp.ps1` (需 GCP SDK 環境)。
 
-1. **GitHub 自動部屬 (推薦)**:
-   - 只要推送到 `main` 分支，GCP Cloud Build 會自動觸發**多階段建置 (Node 24)**，編譯完成後自動更新 Cloud Run 全域版本。
-   - `git add . && git commit -m "Your update message" && git push origin main`
+---
 
-2. **GCP CLI 手動部屬 (備援)**:
-   - 若自動連動異常，可使用本機 PowerShell 腳本手動上傳編譯：
-   - `.\deploy-to-gcp.ps1`
+## 📓 規格文件
+
+我們遵循 **規格驅動開發 (SDD)** 精神，確保技術實作與產品願景一致。
+
+- **規格目錄**: [docs/specs/](./docs/specs/)
+- **圖表稽核**: [003-chart-ux-refinement](./docs/specs/003-chart-ux-refinement/tasks.md)
+- **地圖重構**: [004-map-uiflow-redesign](./docs/specs/004-map-uiflow-redesign/)
+
+## 🚧 下一輪優化建議 (Roadmap)
+
+- [ ] **視覺節奏微調**: 優化 720–960px 響應式中斷點的資訊密度。
+- [ ] **ARIA 深度整合**: 為剩餘圖表補齊具體狀態摘要，提升視障者可及性。
+- [ ] **Dark Theme 混合基準**: 補強地圖與側邊欄在深色模式下的對比度回歸測試。
+- [ ] **通用組件抽取**: 將 Panel Heading 與 Chip Tab 抽離為高階獨立 HOC。
+
+---
 
 ## 維護原則
 
-1. **規格先行**：重大功能開發前先更新 `specs/` 相關文件
-2. **歷史累積**：已完成或廢棄的計畫移入 `archive/` 而非刪除
-3. **語文一致**：維持繁體中文編寫
+1. **規格先行**：重大功能開發前先更新 `docs/specs/` 相關文件。
+2. **歷史累積**：已完成或廢棄計畫移入 `archive/`。
+3. **語文一致**：全站文件、代碼註釋與 UI 介面維持繁體中文。
+
+## ⚡ 開發與效能建議
+
+- **一鍵啟動**：已在根目錄設定 `npm run dev`，可直接從 repo 根啟動前端開發伺服器。
+- **快速安裝（CI / 本地）**：CI 與開發機建議使用 `npm ci` 以獲得可重現且較快的安裝。
+- **本機快取**：Vite 已配置持久化快取（`.vite-cache`），可加速冷啟動與依賴 pre-bundle。
+- **大資源忽略**：dev 監看已忽略 repo 根的 `data/` 資料目錄，減少檔案監看開銷。
+- **建置速度**：build 目標已調為 `es2020` 並預設關閉 source maps，可減少轉譯與輸出時間；如需調試，請在 `services/frontend/vite.config.ts` 中啟用 `sourcemap`。
+- **TypeScript**：已啟用 incremental build info，加速 `tsc -b` 的後續增量建置。
+- **進階**：若需要更快的安裝 (尤其在 CI)，可考慮採用 `pnpm` 的共享快取，或在 CI 使用 Node modules cache（例如 `~/.npm` 或 package manager 專用 cache）。
