@@ -231,9 +231,9 @@
             <div class="scene-content reversed">
                 <div class="text-side">
                     <span class="scene-num">STEP 01</span>
-                    <h2>代碼與版本管控</h2>
-                    <p>所有代碼異動皆透過 GitHub 存儲庫管理。推送到 <code>main</code> 分支後將觸發自動化部屬管線。</p>
-                    <p style="font-size: 0.9rem;">• 分支策略：Git Flow / GitHub Flow<br>• 自動化觸發：GitHub Webhooks</p>
+                    <h2>GitHub 源碼代控</h2>
+                    <p>開發流程始於 GitHub 倉庫。開發者推送到 <code>main</code> 分支後，將觸發 GCP 的全自動化「拉取」事件，無需在 GitHub 內儲存任何靜態金鑰。</p>
+                    <p style="font-size: 0.9rem;">• 模式：與 GCP 建立受信任的 OAuth 連結<br>• 安全：無需管理 GitHub Secrets</p>
                 </div>
                 <div class="visual-side">
                     <div class="visual-frame"><img src="./assets/github_node.png" alt="GitHub Source"></div>
@@ -246,9 +246,9 @@
             <div class="scene-content reversed">
                 <div class="text-side">
                     <span class="scene-num">STEP 02</span>
-                    <h2>雲端自動化編譯</h2>
-                    <p>GCP Cloud Build 接手後，會根據 <code>cloudbuild.yaml</code> 啟動容器化環境，執行 Vite 建置與測試。</p>
-                    <p style="font-size: 0.9rem;">• 編譯：Vite 7.1 + React 19<br>• 環境：Node 25 (Alpine Linux)</p>
+                    <h2>GCP 原生自動編譯 (Pull)</h2>
+                    <p>GCP Cloud Build 偵測到 GitHub 更新後，會主動「拉取」源碼，並根據 <code>infra/cloudbuild.yaml</code> 啟動容器化環境執行 Vite 建置與測試。</p>
+                    <p style="font-size: 0.9rem;">• 機制：Event-driven Pull Pipeline<br>• 環境：Node 25 (Alpine Linux)</p>
                 </div>
                 <div class="visual-side">
                     <div class="visual-frame"><img src="./assets/cloud_build_node.png" alt="Google Cloud Build"></div>
