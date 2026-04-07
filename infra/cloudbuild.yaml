@@ -3,6 +3,7 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: [
       'build',
+      '-f', 'infra/Dockerfile',
       '-t', 'asia-east1-docker.pkg.dev/$PROJECT_ID/tw-student-atlas/tw-student-atlas:$COMMIT_SHA',
       '-t', 'asia-east1-docker.pkg.dev/$PROJECT_ID/tw-student-atlas/tw-student-atlas:latest',
       '.'
