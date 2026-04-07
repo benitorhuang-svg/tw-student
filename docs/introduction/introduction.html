@@ -59,7 +59,7 @@
             display: flex;
             align-items: flex-start;
             justify-content: center;
-            padding: 6rem 4rem 6rem 4rem;
+            padding: 1rem 4rem 4rem 4rem; /* Tightened bottom padding to reduce total scene height */
             position: relative;
         }
 
@@ -69,7 +69,8 @@
             gap: 4rem;
             max-width: 1200px;
             width: 100%;
-            align-items: center;
+            align-items: flex-start;
+            margin-top: 0.5rem; /* Minimized top margin */
         }
 
         .scene-content.reversed {
@@ -111,6 +112,112 @@
             margin-bottom: 2rem;
         }
 
+        .visual-side {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem; /* Near-zero gap for a unified console block */
+            flex: 1.25;
+        }
+
+        .spec-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+            display: flex;
+            flex-direction: column; /* Changed to list for more vertical weight */
+            gap: 0.8rem;
+        }
+
+        .spec-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.8rem 1rem;
+            border-radius: 0.8rem;
+            border-left: 3px solid var(--secondary);
+            font-size: 0.85rem;
+        }
+
+        .spec-label {
+            display: block;
+            color: var(--secondary);
+            font-weight: 800;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            margin-bottom: 0.2rem;
+        }
+
+        .terminal-window {
+            background: rgba(15, 23, 42, 0.4);
+            border: 1px solid var(--border);
+            border-radius: 1.2rem;
+            padding: 1.2rem;
+            margin-top: 0; /* Respect parent gap only */
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+
+        .terminal-header {
+            display: flex; gap: 0.5rem; margin-bottom: 1rem;
+        }
+
+        .dot { width: 10px; height: 10px; border-radius: 50%; opacity: 0.5; }
+        .red { background: #ff5f56; } .yellow { background: #ffbd2e; } .green { background: #27c93f; }
+
+        .code-snippet {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #10b981;
+            white-space: pre-wrap;
+        }
+
+        .screenshot-frame {
+            position: relative;
+            background: #000;
+            border-radius: 1.2rem;
+            border: 1px solid var(--border);
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+            aspect-ratio: 16 / 9; /* Lock aspect ratio to crop out bars */
+        }
+
+        .visual-frame, .visual-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* This will crop the black bars (X marks) */
+            display: block;
+        }
+
+        .screenshot-frame::after {
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(180deg, transparent 80%, rgba(3,7,18,0.8));
+            pointer-events: none;
+        }
+
+        @keyframes slideInBottom { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+        code {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 0.4rem;
+            font-family: 'Courier New', Courier, monospace;
+            color: var(--secondary);
+            font-size: 0.9em;
+        }
+
+        .code-block {
+            background: #111827;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            border: 1px solid var(--border);
+            text-align: left;
+            margin-top: 1rem;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.85rem;
+            white-space: pre-wrap;
+            color: #10b981;
+        }
+
         .visual-frame {
             background: var(--surface);
             border: 1px solid var(--border);
@@ -132,17 +239,16 @@
         .controls {
             position: fixed;
             bottom: 1.5rem;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 100;
+            right: 4rem; /* Aligned to bottom right */
             display: flex;
             align-items: center;
             gap: 2rem;
-            padding: 1rem 2.5rem;
+            z-index: 100;
             background: rgba(15, 23, 42, 0.6);
-            backdrop-filter: blur(20px);
+            padding: 1rem 2rem;
+            border-radius: 2rem;
             border: 1px solid var(--border);
-            border-radius: 5rem;
+            backdrop-filter: blur(10px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
 
@@ -210,10 +316,60 @@
             h2 { font-size: 2.5rem; }
             .visual-frame { order: -1; }
         }
+
+        /* New Premium Elements */
+        .progress-bar-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.05);
+            z-index: 200;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            width: 0%;
+            transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+            box-shadow: 0 0 20px rgba(79, 70, 229, 0.5);
+        }
+
+        .project-tag {
+            position: fixed;
+            top: 2rem;
+            left: 4rem;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            color: var(--text-dim);
+            opacity: 0.5;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .project-tag::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--primary);
+        }
     </style>
 </head>
 <body>
     <div class="ambient"></div>
+
+    <div class="progress-bar-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+   
 
     <div class="presentation" id="presentation">
         <!-- Scene 0: Redesigned Hero -->
@@ -223,20 +379,38 @@
                 <div class="hero-banner">
                     <img src="./assets/horizontal_flat_pipeline.png" alt="Flat Horizontal CI/CD Pipeline">
                 </div>
+                
             </div>
         </div>
 
-        <!-- Scene 1: Source Control -->
+        <!-- Scene 1: GitHub -->
         <div class="scene">
             <div class="scene-content reversed">
+                <div class="visual-side">
+                    <div class="screenshot-frame">
+                        <div class="visual-frame"><img src="./assets/github_node.png" alt="GitHub Source"></div>
+                    </div>
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
+                        </div>
+                        <div class="code-snippet">
+# 推送代碼至生產分支
+git add .
+git commit -m "feat: upgrade pipeline"
+git push origin main
+                        </div>
+                    </div>
+                </div>
                 <div class="text-side">
                     <span class="scene-num">STEP 01</span>
                     <h2>GitHub 源碼代控</h2>
                     <p>開發流程始於 GitHub。我們採用 <b>GCP 第 2 代連線 (2nd Gen)</b>，透過 OAuth 2.0 建立受信任的專屬連結。當開發者推送至 <code>main</code> 分支，GCP 將即時接收事件通告。</p>
-                    <p style="font-size: 0.9rem;">• 連結：Cloud Build GitHub 2nd Gen<br>• 授權：OAuth 託管授權模式</p>
-                </div>
-                <div class="visual-side">
-                    <div class="visual-frame"><img src="./assets/github_node.png" alt="GitHub Source"></div>
+                    
+                    <div class="spec-list">
+                        <div class="spec-item"><span class="spec-label">Provider</span>GitHub Enterprise</div>
+                        <div class="spec-item"><span class="spec-label">Auth</span>OAuth 2.0 Handshake</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -244,14 +418,31 @@
         <!-- Scene 2: Cloud Build -->
         <div class="scene">
             <div class="scene-content reversed">
+                <div class="visual-side">
+                    <div class="screenshot-frame">
+                        <div class="visual-frame"><img src="./assets/cloud_build_node.png" alt="Google Cloud Build"></div>
+                    </div>
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
+                        </div>
+                        <div class="code-snippet">
+# Cloud Build 自動拉取與編譯
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/atlas', '.']
+                        </div>
+                    </div>
+                </div>
                 <div class="text-side">
                     <span class="scene-num">STEP 02</span>
-                    <h2>GCP 原生自動編譯 (Pull)</h2>
+                    <h2>GCP 原生自動編譯</h2>
                     <p>GCP 會根據儲存在 <b>Secret Manager</b> 的安全憑證，主動「拉取」源碼。建構器會自動讀取 <code>infra/cloudbuild.yaml</code> 組態，無需手動配置編譯腳本。</p>
-                    <p style="font-size: 0.9rem;">• 安全：零密鑰安全模型 (Zero-Secret Model)<br>• 環境：Node 25 (Alpine Linux)</p>
-                </div>
-                <div class="visual-side">
-                    <div class="visual-frame"><img src="./assets/cloud_build_node.png" alt="Google Cloud Build"></div>
+                    
+                    <div class="spec-list">
+                        <div class="spec-item"><span class="spec-label">Engine</span>Cloud Build Core</div>
+                        <div class="spec-item"><span class="spec-label">Runtimes</span>Node.js 25 (Alpine)</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -259,14 +450,31 @@
         <!-- Scene 3: Artifact Registry -->
         <div class="scene">
             <div class="scene-content reversed">
+                <div class="visual-side">
+                    <div class="screenshot-frame">
+                        <div class="visual-frame"><img src="./assets/artifact_registry_node.png" alt="Artifact Registry"></div>
+                    </div>
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
+                        </div>
+                        <div class="code-snippet">
+# 映像檔版本管理 (Semantic Versioning)
+gcloud artifacts repositories list \
+  --project=tw-student \
+  --location=asia-east1
+                        </div>
+                    </div>
+                </div>
                 <div class="text-side">
                     <span class="scene-num">STEP 03</span>
-                    <h2>鏡像版本管理</h2>
-                    <p>建置完成的 Docker 鏡像會被推送到 Artifact Registry，做為穩定的生產環境交付資產。</p>
-                    <p style="font-size: 0.9rem;">• 安全掃描：自動弱點偵測<br>• 版本管理：SHA 標記與快照</p>
-                </div>
-                <div class="visual-side">
-                    <div class="visual-frame"><img src="./assets/artifact_registry_node.png" alt="Artifact Registry"></div>
+                    <h2>代碼容器鏡像</h2>
+                    <p>編譯後的鏡像將被妥善儲存於 <b>Artifact Registry</b>。這不僅提供了企業級的弱點掃描機制，更保證了在多機房部署時的極低拉取延遲。</p>
+                    
+                    <div class="spec-list">
+                        <div class="spec-item"><span class="spec-label">Registry</span>Google Artifact GCR</div>
+                        <div class="spec-item"><span class="spec-label">Security</span>Vulnerability Scanning</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -274,29 +482,156 @@
         <!-- Scene 4: Cloud Run -->
         <div class="scene">
             <div class="scene-content reversed">
+                <div class="visual-side">
+                    <div class="screenshot-frame">
+                        <div class="visual-frame"><img src="./assets/cloud_run_node.png" alt="Google Cloud Run"></div>
+                    </div>
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
+                        </div>
+                        <div class="code-snippet">
+# 部署至台北 (asia-east1) 節點
+gcloud run deploy tw-student-portal \
+  --image asia-east1-docker.pkg.dev/atlas \
+  --region asia-east1
+                        </div>
+                    </div>
+                </div>
                 <div class="text-side">
                     <span class="scene-num">STEP 04</span>
                     <h2>無伺服器部署</h2>
                     <p>建置後自動部署至 Google Cloud Run。服務運行於台北 (asia-east1) 數據中心，確保台灣使用者享有毫秒級的極速載入體驗。</p>
-                    <p style="font-size: 0.9rem;">• 機房：asia-east1 (Taiwan, Taipei)<br>• 特性：Serverless, Auto-scaling</p>
-                </div>
-                <div class="visual-side">
-                    <div class="visual-frame"><img src="./assets/cloud_run_node.png" alt="Google Cloud Run"></div>
+                    
+                    <div class="spec-list">
+                        <div class="spec-item"><span class="spec-label">Location</span>Asia-East1 (Taipei)</div>
+                        <div class="spec-item"><span class="spec-label">Scaling</span>Serverless Auto-scale</div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Scene 5: Firebase CDN -->
+        <!-- Scene 5: Firebase Hosting -->
         <div class="scene">
             <div class="scene-content reversed">
+                <div class="visual-side">
+                    <div class="screenshot-frame">
+                        <div class="visual-frame"><img src="./assets/firebase_hosting_node.png" alt="Firebase Hosting"></div>
+                    </div>
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
+                        </div>
+                        <div class="code-snippet">
+# CDN 全球分流與預覽
+firebase deploy --only hosting \
+  --project tw-student \
+  --message "v1.2.0 production-ready"
+                        </div>
+                    </div>
+                </div>
                 <div class="text-side">
                     <span class="scene-num">STEP 05</span>
-                    <h2>全球分發與 PWA</h2>
-                    <p>Firebase Hosting 做為前端入口，提供全球 CDN 加速與 HTTPS 加密，並處理 PWA 的靜態資產快取。</p>
-                    <p style="font-size: 0.9rem;">• 域名：tw-student.web.app<br>• 加速：Global Goolge CDN</p>
+                    <h2>前端邊緣託管</h2>
+                    <p>靜態資源與前端文件將透過 <b>Firebase Hosting</b> 進行分流。藉由全球節點的快取，確保無論身在何處，都能享有首屏即現的高效服務。</p>
+                    
+                    <div class="spec-list">
+                        <div class="spec-item"><span class="spec-label">Traffic</span>Multi-CDN Delivery</div>
+                        <div class="spec-item"><span class="spec-label">Cache</span>Next-Gen Edge Caching</div>
+                    </div>
                 </div>
+            </div>
+        </div>
+
+        <!-- Scene 6: Host Connection -->
+        <div class="scene">
+            <div class="scene-content reversed">
                 <div class="visual-side">
-                    <div class="visual-frame"><img src="./assets/firebase_hosting_node.png" alt="Firebase Hosting"></div>
+                    <div class="screenshot-frame">
+                        <div class="visual-frame"><img src="./assets/setup_03.png" alt="Host Connection Detail"></div>
+                    </div>
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
+                        </div>
+                        <div class="code-snippet">
+# 啟動 GitHub 連線初始化
+gcloud builds connections create github "github-host" \
+  --region=asia-east1
+
+# 驗證連線狀態
+gcloud builds connections list --region=asia-east1
+                        </div>
+                    </div>
+                </div>
+                <div class="text-side">
+                    <span class="scene-num">STEP 06 (INIT)</span>
+                    <h2>雲端主機連線</h2>
+                    <p>透過第 2 代連線機制將 GitHub 帳務連結至 GCP 專案，確保所有的源碼與憑證皆受到 <b>IAM 管理策略</b> 的保護，而非零散於開發者個人的 Secrets 中。</p>
+                    
+                    <div class="spec-list">
+                        <div class="spec-item">
+                            <span class="spec-label">Security</span>
+                            OAuth 2.0 Encrypted
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Latency</span>
+                            Direct Backbone
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scene 7: Trigger Activation -->
+        <div class="scene">
+            <div class="scene-content reversed">
+                <div class="visual-side">
+                    <div class="screenshot-frame">
+                        <div class="visual-frame"><img src="./assets/trigger_final.png" alt="Auto Trigger Active"></div>
+                    </div>
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
+                        </div>
+                        <div class="code-snippet">
+# 注入日誌寫入權限 (IAM Hardening)
+gcloud projects add-iam-policy-binding tw-student \
+  --member="serviceAccount:firebase-adminsdk-fbsvc@tw-student.iam.gserviceaccount.com" \
+  --role="roles/logging.logWriter"
+                        </div>
+                    </div>
+                </div>
+                <div class="text-side">
+                    <span class="scene-num">STEP 07 (CONFIG)</span>
+                    <h2>全自動化觸發核心</h2>
+                    <p>將連線後的 Repository 綁定至特定的 <b>Artifact Registry</b>。透過路徑過濾機制，僅在 <code>infra/</code> 變動時觸發重新編譯，節省運算成本並提升部署效率。</p>
+                    
+                    <div class="spec-list">
+                        <div class="spec-item">
+                            <span class="spec-label">Triggering</span>
+                            Event-based (Webhook)
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Registry</span>
+                            Artifact Registry GCR
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scene 8: Final Summary -->
+        <div class="scene hero">
+            <div class="scene-content" style="display: block; max-width: 1200px; text-align: center;">
+                <span class="scene-num">Ready to Scale</span>
+                <h2 style="font-size: 4.5rem; margin-top: 1rem;">部署作業完成</h2>
+                <p style="margin: 2rem auto; max-width: 800px;">臺灣教育 Atlas 已成功建立全自動 GitOps 部署管線。當代碼更新時，系統將自動處理從鏡像編譯至全球分流的所有細節。</p>
+                <div class="spec-list" style="flex-direction: row; justify-content: center; gap: 2rem;">
+                    <div class="spec-item" style="flex: 0 1 250px;"><span class="spec-label">Environment</span>Production Ready</div>
+                    <div class="spec-item" style="flex: 0 1 250px;"><span class="spec-label">Reliability</span>99.9% SLI Target</div>
+                    <div class="spec-item" style="flex: 0 1 250px;"><span class="spec-label">Scale</span>Auto-Scaling Active</div>
                 </div>
             </div>
         </div>
@@ -304,7 +639,7 @@
 
     <div class="controls">
         <button class="nav-btn" id="pBtn" disabled>← PREV</button>
-        <span class="page-counter" id="pCounter">1 / 6</span>
+        <span class="page-counter" id="pCounter">1 / 9</span>
         <button class="nav-btn" id="nBtn">NEXT →</button>
     </div>
 
@@ -313,6 +648,7 @@
         const pBtn = document.getElementById('pBtn');
         const nBtn = document.getElementById('nBtn');
         const pCounter = document.getElementById('pCounter');
+        const pBar = document.getElementById('progressBar');
         const scenes = document.querySelectorAll('.scene');
         
         let currentIdx = 0;
@@ -323,6 +659,10 @@
             pCounter.textContent = `${currentIdx + 1} / ${totalScenes}`;
             pBtn.disabled = currentIdx === 0;
             nBtn.disabled = currentIdx === totalScenes - 1;
+            
+            // Update progress bar
+            const progress = ((currentIdx + 1) / totalScenes) * 100;
+            pBar.style.width = `${progress}%`;
         }
 
         pBtn.addEventListener('click', () => { if (currentIdx > 0) { currentIdx--; update(); } });
@@ -331,6 +671,9 @@
             if (e.key === 'ArrowRight' || e.key === ' ') nBtn.click();
             if (e.key === 'ArrowLeft') pBtn.click();
         });
+        
+        // Initial call to set status
+        update();
     </script>
 </body>
 </html>
