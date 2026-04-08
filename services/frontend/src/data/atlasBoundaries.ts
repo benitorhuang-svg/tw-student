@@ -1,6 +1,7 @@
 import type { FeatureCollection, Geometry } from 'geojson'
 
-import { feature } from 'topojson-client'
+// Topology decoding is offloaded to a worker to avoid main-thread topojson work
+import { decodeTopologyInWorker } from './atlas/topologyWorkerClient'
 
 import { loadDatabase } from './sqlite/connection'
 import { mapRows, parseJsonValue } from './sqlite/mappers'
@@ -35,16 +36,14 @@ const EMPTY_TOPOLOGY: TopologyCollection = {
   arcs: [],
 }
 
-function decodeFeatureCollection<TProperties>(
-  topology: TopologyCollection,
+async function decodeFeatureCollection<TProperties>(
+  topology: TopologyCollection | string,
   objectName: string,
-): FeatureCollection<Geometry, TProperties> {
-  const topologyObject = topology.objects[objectName]
-  if (!topologyObject) {
-    throw new Error(`缺少 TopoJSON 物件 ${objectName}`)
-  }
-
-  return feature(topology as never, topologyObject as never) as unknown as FeatureCollection<Geometry, TProperties>
+): Promise<FeatureCollection<Geometry, TProperties>> {
+  const topologyJson = typeof topology === 'string' ? topology : JSON.stringify(topology)
+  // delegate to worker
+  const fc = await decodeTopologyInWorker({ topologyJson, objectName })
+  return fc as FeatureCollection<Geometry, TProperties>
 }
 
 // 移除不再需要的網路抓取函數，現在統一由 SQLite 讀取
@@ -60,13 +59,13 @@ export async function loadCountyBoundaries(options: BoundaryLoadOptions = {}) {
     return countyBoundaryCache
   }
 
-  const { db } = await loadDatabase(options)
-  const rows = mapRows(db.exec("SELECT topology_json FROM boundaries WHERE id = 'counties' AND type = 'county'"))
+  const bytes = await import('./sqlite/sqliteWorkerClient').then((m) => m.initSqliteWorker(options.forceRefresh))
+  const rows = mapRows(await import('./sqlite/sqliteWorkerClient').then((m) => m.execInSqlite("SELECT topology_json FROM boundaries WHERE id = 'counties' AND type = 'county'")))
   const topologyJson = rows[0]?.topology_json as string
   if (!topologyJson) throw new Error('找不到縣市邊界資料庫紀錄')
 
   const value = parseJsonValue<TopologyCollection>(topologyJson, EMPTY_TOPOLOGY)
-  countyBoundaryCache = decodeFeatureCollection<CountyBoundaryProperties>(value, 'counties')
+  countyBoundaryCache = await decodeFeatureCollection<CountyBoundaryProperties>(topologyJson, 'counties')
   return countyBoundaryCache
 }
 
@@ -87,13 +86,13 @@ export async function loadTownshipBoundaries(countyId: string, _townshipFile?: s
   }
 
   const nextRequest = (async () => {
-    const { db } = await loadDatabase(options)
-    const rows = mapRows(db.exec('SELECT topology_json FROM boundaries WHERE id = ? AND type = "township"', [countyId]))
+    const bytes = await import('./sqlite/sqliteWorkerClient').then((m) => m.initSqliteWorker(options.forceRefresh))
+    const rows = mapRows(await import('./sqlite/sqliteWorkerClient').then((m) => m.execInSqlite('SELECT topology_json FROM boundaries WHERE id = ? AND type = "township"', [countyId])))
     const topologyJson = rows[0]?.topology_json as string
     if (!topologyJson) throw new Error(`找不到鄉鎮邊界資料庫紀錄：${countyId}`)
 
     const value = parseJsonValue<TopologyCollection>(topologyJson, EMPTY_TOPOLOGY)
-    const decoded = decodeFeatureCollection<TownshipBoundaryProperties>(value, 'townships')
+    const decoded = await decodeFeatureCollection<TownshipBoundaryProperties>(topologyJson, 'townships')
     townshipBoundaryMemoryCache.set(countyId, decoded)
     return decoded
   })()

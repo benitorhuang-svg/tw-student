@@ -1,6 +1,6 @@
 import { recordResourceLoad } from '../atlasLoadObservation'
-import { loadDatabase } from './connection'
-import { mapRows, parseJsonValue } from './mappers'
+import { mapRows } from './mappers'
+import { processBucketsInWorker } from './bucketsWorkerClient'
 import { resolveCountyCode } from './summary'
 import type { CountyBucketDataset, RegionGroup } from '../educationTypes'
 
@@ -18,37 +18,16 @@ export async function loadCountyBuckets(bucketFile: string, countyId?: string) {
   if (pendingRequest) return pendingRequest
 
   const nextRequest = (async () => {
-    const { db, bytes } = await loadDatabase()
+    const bytes = await import('./sqliteWorkerClient').then((m) => m.initSqliteWorker())
     const countyCode = resolveCountyCode(resolvedCountyId)
-    const countyRows = mapRows(db.exec('SELECT * FROM counties WHERE id = ?', [countyCode]))
+    const countyRows = mapRows(await import('./sqliteWorkerClient').then(m => m.execInSqlite('SELECT * FROM counties WHERE id = ?', [countyCode])))
     const countyRow = countyRows[0]
     if (!countyRow) throw new Error(`找不到縣市 bucket：${resolvedCountyId}`)
 
-    const bucketRows = mapRows(db.exec('SELECT * FROM school_buckets WHERE county_id = ? ORDER BY precision, bucket_id', [countyCode]))
-    const precisions: CountyBucketDataset['precisions'] = {}
-    
-    bucketRows.forEach((row) => {
-      const precisionKey = String(row.precision)
-      if (!precisions[precisionKey]) precisions[precisionKey] = []
-      precisions[precisionKey].push({
-        id: String(row.bucket_id),
-        geohash: String(row.geohash),
-        precision: Number(row.precision),
-        count: Number(row.school_count),
-        totalStudents: Number(row.total_students),
-        latitude: Number(row.latitude),
-        longitude: Number(row.longitude),
-        bounds: {
-          minLatitude: Number(row.min_latitude),
-          maxLatitude: Number(row.max_latitude),
-          minLongitude: Number(row.min_longitude),
-          maxLongitude: Number(row.max_longitude),
-        },
-        topSchools: parseJsonValue(row.top_schools_json, []),
-      })
-    })
+    const bucketRows = mapRows(await import('./sqliteWorkerClient').then(m => m.execInSqlite('SELECT * FROM school_buckets WHERE county_id = ? ORDER BY precision, bucket_id', [countyCode])))
+    const { precisions } = await processBucketsInWorker(bucketRows)
 
-    const metaGeneratedAt = mapRows(db.exec("SELECT value FROM meta WHERE key = 'generatedAt'"))[0]?.value
+    const metaGeneratedAt = mapRows(await import('./sqliteWorkerClient').then(m => m.execInSqlite("SELECT value FROM meta WHERE key = 'generatedAt'")))[0]?.value
 
     const detail: CountyBucketDataset = {
       generatedAt: String(metaGeneratedAt ?? ''),

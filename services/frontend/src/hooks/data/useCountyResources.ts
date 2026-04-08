@@ -121,10 +121,25 @@ export function useCountyResources(
     townshipBoundaryCache,
   ])
 
-  const prefetchCounty = (countyId: string | null) => {
+  const prefetchCounty = (countyId: string | null, viewport?: { bounds?: [number, number, number, number]; zoom?: number }) => {
     if (!summaryDataset || !countyId) return
     const county = resolveCountyRecord(summaryDataset, countyId)
-    if (county) void prefetchCountyResources(county, { includeTownshipSlice: true, includeBucketSlice: true })
+    if (!county) return
+
+    // Avoid redundant prefetch if we already have the county detail cached
+    if (countyDetailCache[county.id]) return
+
+    const doPrefetch = () => {
+      void prefetchCountyResources(county, { includeTownshipSlice: true, includeBucketSlice: true, includeDetailSlice: Boolean(viewport?.bounds) }, viewport)
+    }
+
+    // Schedule non-urgent prefetch work during idle time to avoid blocking
+    if ((window as any).requestIdleCallback) {
+      (window as any).requestIdleCallback?.(() => doPrefetch(), { timeout: 2000 })
+    } else {
+      // Fallback
+      setTimeout(doPrefetch, 200)
+    }
   }
 
   return {

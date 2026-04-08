@@ -5,6 +5,7 @@ import { useMap } from 'react-leaflet'
 import type { CountyBoundaryCollection, RegionGroupFilter, TownshipBoundaryCollection } from '../../../data/educationData'
 import type { SchoolMapPoint } from '../types'
 import { MAP_MAX_BOUNDS } from '../../../lib/constants'
+import { MAP_TOWNSHIP_FOCUS_ZOOM } from '../../../lib/constants'
 import { useViewportIntent } from '../hooks/useViewportIntent'
 
 const AUTO_SELECT_SUPPRESSION_MS = 2000
@@ -97,6 +98,7 @@ function MapBoundsController({
 
   useEffect(() => {
     const intent = viewportIntent()
+    // Computed viewport intent
     if (intent.id === lastAppliedIntentIdRef.current) return
 
     if (intent.type === 'flyTo') {
@@ -174,6 +176,42 @@ function MapBoundsController({
   }, [map, onZoomChange])
 
   useEffect(() => {
+    const idleHandleRef = { id: 0 as number | null }
+
+    const schedulePrefetch = (ids: string[], boundsObj?: L.LatLngBounds, zoom?: number) => {
+      // Cancel any pending idle callback
+      if ((idleHandleRef.id as any) != null) {
+        try {
+          ;(window as any).cancelIdleCallback?.(idleHandleRef.id)
+        } catch {
+          clearTimeout(idleHandleRef.id as any)
+        }
+        idleHandleRef.id = null
+      }
+
+      const cb = () => {
+        // Limit concurrent prefetches to a small number to avoid overload
+        const max = 6
+        // derive viewport tuple [minLat, minLng, maxLat, maxLng]
+        let viewport
+        if (boundsObj) {
+          const sw = boundsObj.getSouthWest()
+          const ne = boundsObj.getNorthEast()
+          viewport = { bounds: [sw.lat, sw.lng, ne.lat, ne.lng], zoom }
+        }
+        for (const id of ids.slice(0, max)) {
+          try { onHoverCounty?.(id, viewport as any) } catch { /* ignore */ }
+        }
+      }
+
+      if ((window as any).requestIdleCallback) {
+        idleHandleRef.id = (window as any).requestIdleCallback(cb, { timeout: 1000 })
+      } else {
+        // Fallback to timeout
+        idleHandleRef.id = window.setTimeout(cb, 200)
+      }
+    }
+
     const handleMoveEnd = () => {
       const c = map.getCenter()
       const b = map.getBounds()
@@ -181,14 +219,18 @@ function MapBoundsController({
 
       onMoveEnd?.(Math.round(c.lat * 10000) / 10000, Math.round(c.lng * 10000) / 10000)
 
-      // Automated prefetching for visible counties when zoomed in
-      if (z >= 11 && onHoverCounty) {
-        countyBoundaries.features.forEach(feature => {
+      // Automated prefetching for visible counties when zoomed in enough.
+      // Use a higher zoom threshold and schedule prefetch work during idle
+      // periods to avoid blocking the main thread.
+      if (z >= MAP_TOWNSHIP_FOCUS_ZOOM && onHoverCounty) {
+        const idsInView: string[] = []
+        for (const feature of countyBoundaries.features) {
           const center = [feature.properties.centerLatitude, feature.properties.centerLongitude] as [number, number]
           if (b.contains(center)) {
-            onHoverCounty(feature.properties.countyId)
+            idsInView.push(feature.properties.countyId)
           }
-        })
+        }
+        if (idsInView.length > 0) schedulePrefetch(idsInView, b, z)
       }
 
       if (activeTab !== 'overview' && !activeCountyId && onAutoSelectCounty && Date.now() >= suppressAutoSelectUntilRef.current) {
@@ -202,8 +244,14 @@ function MapBoundsController({
         } catch { /* ... */ }
       }
     }
+
     map.on('moveend', handleMoveEnd)
-    return () => { map.off('moveend', handleMoveEnd) }
+    return () => {
+      map.off('moveend', handleMoveEnd)
+      if ((idleHandleRef.id as any) != null) {
+        try { ;(window as any).cancelIdleCallback?.(idleHandleRef.id) } catch { clearTimeout(idleHandleRef.id as any) }
+      }
+    }
   }, [map, onMoveEnd, onAutoSelectCounty, getNearestCountyId, activeTab, activeCountyId, countyBoundaries, onHoverCounty])
 
   return null

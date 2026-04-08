@@ -1,10 +1,8 @@
-import { memo, useCallback, useMemo, useRef } from 'react'
-import { useMapEvents } from 'react-leaflet'
+import { memo, useCallback, useMemo, useRef, useState, startTransition } from 'react'
+import { useMap, useMapEvents } from 'react-leaflet'
 import type { CountyBucketDataset } from '../../../data/educationData'
 import type { SchoolMapPoint } from '../types'
-import { useSchoolClustering } from '../hooks/useSchoolClustering'
 import { SchoolMarker } from '../atoms/SchoolMarker'
-import { ClusterMarker } from '../atoms/ClusterMarker'
 
 type VisibleSchoolMarkersProps = {
   schoolPoints: SchoolMapPoint[]
@@ -24,12 +22,9 @@ const VisibleSchoolMarkers = memo(function VisibleSchoolMarkers({
   const suppressNextMapClearRef = useRef(false)
   const stableSelectSchool = useCallback((id: string | null) => onSelectSchool(id), [onSelectSchool])
 
-  const { clusteredPoints, zoom } = useSchoolClustering(schoolPoints, countyBuckets)
-
-  const maxStudentsInView = useMemo(
-    () => Math.max(...clusteredPoints.map((c) => c.totalStudents), 1000),
-    [clusteredPoints]
-  )
+  const map = useMap()
+  const [zoom, setZoom] = useState(() => map.getZoom())
+  const [bounds, setBounds] = useState(() => map.getBounds())
 
   useMapEvents({
     click: () => {
@@ -38,56 +33,59 @@ const VisibleSchoolMarkers = memo(function VisibleSchoolMarkers({
         return
       }
       stableSelectSchool(null)
-    }
+    },
+    moveend: () => startTransition(() => {
+      setZoom(map.getZoom())
+      setBounds(map.getBounds())
+    }),
+    zoomend: () => startTransition(() => {
+      setZoom(map.getZoom())
+      setBounds(map.getBounds())
+    }),
   })
 
-  // Sort clustered points:
-  // 1. Primary: Put selected school on top (rendered last)
-  // 2. Secondary: Larger schools (by student count) on top to emphasize significance
-  const sortedClusteredPoints = useMemo(() => {
-    return [...clusteredPoints].sort((a, b) => {
-      // Check if either cluster contains the selected school
-      const aHasSelected = a.count === 1 && a.schools[0]?.id === selectedSchoolId ? 1 : 0
-      const bHasSelected = b.count === 1 && b.schools[0]?.id === selectedSchoolId ? 1 : 0
-      
+  // Limit markers to those within the current viewport to avoid rendering large
+  // numbers of markers off-screen which can cause long main-thread work.
+  const visibleSchoolPoints = useMemo(() => {
+    try {
+      const pad = bounds.pad(0.2)
+      return schoolPoints.filter((s) => pad.contains([s.latitude, s.longitude]))
+    } catch {
+      return schoolPoints
+    }
+  }, [schoolPoints, bounds])
+
+  const maxStudentsInView = useMemo(
+    () => Math.max(...visibleSchoolPoints.map((s) => s.currentStudents ?? 0), 1000),
+    [visibleSchoolPoints]
+  )
+
+  const sortedSchoolPoints = useMemo(() => {
+    return [...visibleSchoolPoints].sort((a, b) => {
+      const aHasSelected = a.id === selectedSchoolId ? 1 : 0
+      const bHasSelected = b.id === selectedSchoolId ? 1 : 0
+
       if (aHasSelected !== bHasSelected) {
-        return aHasSelected - bHasSelected // Selected on top
+        return aHasSelected - bHasSelected
       }
-      
-      // Secondary sort: Larger school count or larger student volume
-      return a.totalStudents - b.totalStudents
+
+      return (a.currentStudents ?? 0) - (b.currentStudents ?? 0)
     })
-  }, [clusteredPoints, selectedSchoolId])
+  }, [visibleSchoolPoints, selectedSchoolId])
 
   return (
     <>
-      {sortedClusteredPoints.map((cluster) => {
-        // Individual school markers
-        if (cluster.count === 1 && cluster.schools.length === 1) {
-          const school = cluster.schools[0]
-          return (
-            <SchoolMarker
-              key={`school-${school.id}`}
-              school={school}
-              zoom={zoom}
-              isSelected={school.id === selectedSchoolId}
-              isHighlighted={school.id === highlightedSchoolId}
-              onSelect={stableSelectSchool}
-              suppressNextMapClearRef={suppressNextMapClearRef}
-            />
-          )
-        }
-
-        // Clustered markers
-        return (
-          <ClusterMarker
-            key={`cluster-${cluster.id}`}
-            cluster={cluster}
-            maxStudentsInView={maxStudentsInView}
-            zoom={zoom}
-          />
-        )
-      })}
+      {sortedSchoolPoints.map((school) => (
+        <SchoolMarker
+          key={`school-${school.id}`}
+          school={school}
+          zoom={zoom}
+          isSelected={school.id === selectedSchoolId}
+          isHighlighted={school.id === highlightedSchoolId}
+          onSelect={stableSelectSchool}
+          suppressNextMapClearRef={suppressNextMapClearRef}
+        />
+      ))}
     </>
   )
 })

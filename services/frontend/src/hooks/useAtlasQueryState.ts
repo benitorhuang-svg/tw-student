@@ -52,7 +52,8 @@ export function readInitialQueryState() {
     tab: isAtlasTab(tab) ? tab : 'overview',
     tabIsExplicit: params.has('tab'),
     forceTownshipLabels: forceTownshipLabels === 'true',
-    zoom: Number.isFinite(zoomRaw) && zoomRaw >= 7 && zoomRaw <= 18 ? zoomRaw : undefined,
+    // Cap zoom from URL to 12 to avoid overly-detailed deep links.
+    zoom: Number.isFinite(zoomRaw) && zoomRaw >= 7 && zoomRaw <= 18 ? Math.min(zoomRaw, 12) : undefined,
     lat: Number.isFinite(latRaw) && latRaw >= 21 && latRaw <= 26 ? latRaw : undefined,
     lon: Number.isFinite(lonRaw) && lonRaw >= 119 && lonRaw <= 123 ? lonRaw : undefined,
   }

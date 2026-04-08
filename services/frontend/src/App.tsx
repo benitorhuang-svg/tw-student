@@ -65,9 +65,9 @@ function App() {
   })
 
   // 5. Action Handlers
-  const handlePrefetchCounty = useCallback((countyId: string | null) => {
+  const handlePrefetchCounty = useCallback((countyId: string | null, viewport?: { bounds?: [number, number, number, number]; zoom?: number }) => {
     if (countyId) {
-      prefetchCounty(countyId)
+      prefetchCounty(countyId, viewport)
     }
   }, [prefetchCounty])
 

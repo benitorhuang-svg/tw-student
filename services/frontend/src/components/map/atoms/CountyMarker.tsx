@@ -15,6 +15,7 @@ export type CountyMarkerProps = {
   onHover: (id: string | null) => void
   showTooltip: (latlng: L.LatLng, content: string) => void
   hideTooltip: () => void
+  currentMapZoom?: number
 }
 
 /**
@@ -32,8 +33,10 @@ export const CountyMarker = ({
   onHover,
   showTooltip,
   hideTooltip,
+  currentMapZoom,
 }: CountyMarkerProps) => {
   const markerRef = useRef<L.Marker | null>(null)
+  const openedTooltipRef = useRef(false)
   const icon = usePill
     ? renderScopePillIcon(county.shortLabel, growthChoroplethColor(county.deltaRatio), isActive)
     : renderScopeMarkerIcon(county.shortLabel, county.students, growthChoroplethColor(county.deltaRatio), 54, 'county')
@@ -46,6 +49,8 @@ export const CountyMarker = ({
     let element: HTMLElement | null = null
     const latlng = L.latLng(position[0], position[1])
     const tooltipContent = buildHoverPreviewHtml(county.name, county.students)
+
+    const shouldSuppressMarkerTooltip = () => (currentMapZoom != null && currentMapZoom >= 13)
 
     const attachAccessibility = () => {
       element = marker.getElement() ?? null
@@ -66,12 +71,18 @@ export const CountyMarker = ({
       const handleFocus = () => {
         if (isInteractive) {
           onHover(county.id)
-          showTooltip(latlng, tooltipContent)
+          if (!shouldSuppressMarkerTooltip()) {
+            showTooltip(latlng, tooltipContent)
+            openedTooltipRef.current = true
+          }
         }
       }
       const handleBlur = () => {
         onHover(null)
-        hideTooltip()
+        if (openedTooltipRef.current) {
+          hideTooltip()
+          openedTooltipRef.current = false
+        }
       }
       const handleKeyDown = (event: KeyboardEvent) => {
         if (!isInteractive) return
@@ -80,18 +91,30 @@ export const CountyMarker = ({
           onSelect(county.id)
         }
         if (event.key === 'Escape') {
-          hideTooltip()
+          if (openedTooltipRef.current) {
+            hideTooltip()
+            openedTooltipRef.current = false
+          }
         }
+      }
+
+      const handleElementClick = (ev: MouseEvent) => {
+        if (!isInteractive) return
+        ev.preventDefault()
+        ev.stopPropagation()
+        onSelect(county.id)
       }
 
       element.addEventListener('focus', handleFocus)
       element.addEventListener('blur', handleBlur)
       element.addEventListener('keydown', handleKeyDown)
+      element.addEventListener('click', handleElementClick)
 
       return () => {
         element?.removeEventListener('focus', handleFocus)
         element?.removeEventListener('blur', handleBlur)
         element?.removeEventListener('keydown', handleKeyDown)
+        element?.removeEventListener('click', handleElementClick)
       }
     }
 
@@ -100,7 +123,7 @@ export const CountyMarker = ({
       window.cancelAnimationFrame(frameId)
       cleanup?.()
     }
-  }, [county.id, county.name, county.students, hideTooltip, isActive, isInteractive, onHover, onSelect, position, showTooltip])
+  }, [county.id, county.name, county.students, hideTooltip, isActive, isInteractive, onHover, onSelect, position, showTooltip, currentMapZoom])
 
   return (
     <Marker
@@ -109,6 +132,11 @@ export const CountyMarker = ({
       interactive={isInteractive}
       icon={icon}
       eventHandlers={{
+        mousedown: (e) => {
+          if (!isInteractive) return
+          L.DomEvent.stopPropagation(e.originalEvent)
+          onSelect(county.id)
+        },
         click: (e) => {
           if (!isInteractive) return
           L.DomEvent.stopPropagation(e.originalEvent)
@@ -117,13 +145,19 @@ export const CountyMarker = ({
         mouseover: (e) => {
           if (isInteractive) {
             onHover(county.id)
-            showTooltip(e.latlng, buildHoverPreviewHtml(county.name, county.students))
+            if (!(currentMapZoom != null && currentMapZoom >= 13)) {
+              showTooltip(e.latlng, buildHoverPreviewHtml(county.name, county.students))
+              openedTooltipRef.current = true
+            }
           }
         },
         mouseout: () => {
           if (isInteractive) {
             onHover(null)
-            hideTooltip()
+            if (openedTooltipRef.current) {
+              hideTooltip()
+              openedTooltipRef.current = false
+            }
           }
         },
       }}

@@ -1,74 +1,68 @@
 {
-  "hash": "e1082458",
+  "hash": "ad86571a",
   "configHash": "a5712ce4",
-  "lockfileHash": "7e567c28",
-  "browserHash": "700005d6",
+  "lockfileHash": "32999788",
+  "browserHash": "277fe31d",
   "optimized": {
     "react": {
       "src": "../../../services/frontend/node_modules/react/index.js",
       "file": "react.js",
-      "fileHash": "7857d04a",
+      "fileHash": "2481570a",
       "needsInterop": true
     },
     "react-dom": {
       "src": "../../../services/frontend/node_modules/react-dom/index.js",
       "file": "react-dom.js",
-      "fileHash": "77b8ec19",
+      "fileHash": "c394a0c5",
       "needsInterop": true
     },
     "leaflet": {
       "src": "../../../services/frontend/node_modules/leaflet/dist/leaflet-src.js",
       "file": "leaflet.js",
-      "fileHash": "81b1ff8f",
+      "fileHash": "b680ef6a",
       "needsInterop": true
     },
     "react-leaflet": {
       "src": "../../../services/frontend/node_modules/react-leaflet/lib/index.js",
       "file": "react-leaflet.js",
-      "fileHash": "2db8a5ee",
+      "fileHash": "ff8f40c5",
       "needsInterop": false
     },
     "sql.js": {
       "src": "../../../services/frontend/node_modules/sql.js/dist/sql-wasm-browser.js",
       "file": "sql__js.js",
-      "fileHash": "a585bb5f",
+      "fileHash": "36f4fa3e",
       "needsInterop": true
     },
     "topojson-client": {
       "src": "../../../services/frontend/node_modules/topojson-client/src/index.js",
       "file": "topojson-client.js",
-      "fileHash": "401da021",
+      "fileHash": "e823491a",
       "needsInterop": false
     },
     "leaflet.vectorgrid": {
       "src": "../../../services/frontend/node_modules/leaflet.vectorgrid/dist/Leaflet.VectorGrid.bundled.min.js",
       "file": "leaflet__vectorgrid.js",
-      "fileHash": "0c4bb2f7",
+      "fileHash": "a245ed9c",
       "needsInterop": true
     },
     "react/jsx-dev-runtime": {
       "src": "../../../services/frontend/node_modules/react/jsx-dev-runtime.js",
       "file": "react_jsx-dev-runtime.js",
-      "fileHash": "8031ae75",
+      "fileHash": "f89a7c12",
       "needsInterop": true
     },
     "leaflet.vectorgrid/dist/Leaflet.VectorGrid.bundled.min.js": {
       "src": "../../../services/frontend/node_modules/leaflet.vectorgrid/dist/Leaflet.VectorGrid.bundled.min.js",
       "file": "leaflet__vectorgrid_dist_Leaflet__VectorGrid__bundled__min__js.js",
-      "fileHash": "83b60d67",
+      "fileHash": "7779dfed",
       "needsInterop": true
     },
     "react-dom/client": {
       "src": "../../../services/frontend/node_modules/react-dom/client.js",
       "file": "react-dom_client.js",
-      "fileHash": "1bae8303",
+      "fileHash": "33dcfca7",
       "needsInterop": true
-    },
-    "supercluster": {
-      "src": "../../../services/frontend/node_modules/supercluster/index.js",
-      "file": "supercluster.js",
-      "fileHash": "94c00627",
-      "needsInterop": false
     }
   },
   "chunks": {

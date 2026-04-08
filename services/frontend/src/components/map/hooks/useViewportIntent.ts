@@ -68,14 +68,14 @@ export function useViewportIntent(
     }
 
     if (selectedSchoolPoint) {
-      const id = `school:${selectedSchoolPoint.id}`
-      const zoom = requestedZoom ?? pendingInitialZoom ?? MAP_FOCUS_SCHOOL_ZOOM
-      return {
-        id,
-        type: 'flyTo',
-        center: [selectedSchoolPoint.latitude, selectedSchoolPoint.longitude],
-        zoom,
-      }
+        const zoom = requestedZoom ?? pendingInitialZoom ?? MAP_FOCUS_SCHOOL_ZOOM
+        const id = `school:${selectedSchoolPoint.id}:${zoom}`
+        return {
+          id,
+          type: 'flyTo',
+          center: [selectedSchoolPoint.latitude, selectedSchoolPoint.longitude],
+          zoom,
+        }
     }
 
     if (activeTownshipId && townshipBoundaries) {
@@ -86,37 +86,47 @@ export function useViewportIntent(
         const bounds = L.geoJSON(townshipFeature as GeoJsonObject).getBounds()
         if (bounds.isValid()) {
           const center = bounds.getCenter()
+          const zoom = requestedZoom ?? Math.max(currentZoom, MAP_TOWNSHIP_FOCUS_ZOOM)
+          const id = `township:${activeTownshipId}:${zoom}`
           return {
-            id: `township:${activeTownshipId}`,
+            id,
             type: 'flyTo',
             center: [center.lat, center.lng],
-            zoom: requestedZoom ?? Math.max(currentZoom, MAP_TOWNSHIP_FOCUS_ZOOM),
+            zoom,
           }
         }
       }
     }
 
     if (activeCountyId) {
-      const id = `county:${activeCountyId}`
       const now = Date.now()
       const autoSelectedRecently =
         lastAutoSelectAttempt.countyId === activeCountyId &&
         lastAutoSelectAttempt.time != null &&
         now - lastAutoSelectAttempt.time < AUTO_SELECT_DETECTION_WINDOW_MS
 
-      if (autoSelectedRecently) {
-        return { id, type: 'noop' }
-      }
-
       const countyFeature = countyBoundaries.features.find(
         (feature) => feature.properties.countyId === activeCountyId,
       )
+
+      // If the county was auto-selected recently, preserve the noop behavior to
+      // avoid disturbing implicit navigation. Otherwise compute the intended
+      // zoom and include it in the intent id so repeated selections with a
+      // different zoom still produce a flyTo.
+      if (autoSelectedRecently) {
+        const zoom = requestedZoom ?? MAP_COUNTY_ZOOM
+        const id = `county:${activeCountyId}:${zoom}`
+        return { id, type: 'noop' }
+      }
+
       if (countyFeature) {
+        const zoom = requestedZoom ?? MAP_COUNTY_ZOOM
+        const id = `county:${activeCountyId}:${zoom}`
         return {
           id,
           type: 'flyTo',
           center: [countyFeature.properties.centerLatitude, countyFeature.properties.centerLongitude],
-          zoom: requestedZoom ?? MAP_COUNTY_ZOOM,
+          zoom,
         }
       }
     }

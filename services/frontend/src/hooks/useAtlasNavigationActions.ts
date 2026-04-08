@@ -61,6 +61,11 @@ export function useAtlasNavigationActions({
   }
 
   const handleCountySelect = (countyId: string, options?: { skipTabSwitch?: boolean, zoom?: number }) => {
+    
+    // Ensure MapBoundsController suppression is applied immediately
+    // so any map moveend auto-select does not override this explicit
+    // user-initiated county selection.
+    setMapResetToken((current) => current + 1)
     startTransition(() => {
       setSelectedCountyId(countyId)
       setSelectedTownshipId(null)

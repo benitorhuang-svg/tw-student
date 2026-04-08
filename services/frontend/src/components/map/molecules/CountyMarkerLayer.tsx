@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useMap } from 'react-leaflet'
 import L from 'leaflet'
+import { MAP_DEFAULT_ZOOM, MAP_TOWNSHIP_ZOOM, MAP_MAX_ZOOM } from '../../../lib/constants'
 import type { FeatureCollection, GeoJsonObject } from 'geojson'
 import { CountyMarker } from '../atoms/CountyMarker'
 import type { CountySummary } from '../../../lib/analytics'
@@ -193,6 +194,9 @@ export function CountyMarkerLayer({
         const isInteractive = usePill ? true : (zoom < 10.5);
         const opacity = zoom >= 11.5 ? 0.6 : 1.0;
 
+        // When clicking a county marker, zoom directly to township level for clearer drill-in
+        const nextZoom = MAP_TOWNSHIP_ZOOM
+
         return (
           <CountyMarker
             key={`county-marker-${county.id}`}
@@ -202,10 +206,11 @@ export function CountyMarkerLayer({
             usePill={usePill}
             isInteractive={isInteractive}
             opacity={opacity}
-            onSelect={onSelectCounty}
+            onSelect={(id) => onSelectCounty(id, { zoom: nextZoom })}
             onHover={onHoverCounty}
             showTooltip={showMapTooltip}
             hideTooltip={hideMapTooltip}
+            currentMapZoom={currentMapZoom}
           />
         )
       })}

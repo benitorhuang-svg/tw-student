@@ -1,5 +1,5 @@
 import { recordResourceLoad } from '../atlasLoadObservation'
-import { loadDatabase, type LoadDatabaseOptions } from './connection'
+import type { LoadDatabaseOptions } from './connection'
 import { mapRows, parseJsonValue } from './mappers'
 
 export type TownshipCoordinateLookupEntry = {
@@ -58,8 +58,8 @@ async function loadMetaLookup<T>(
   resourceKey: string,
   options: LoadDatabaseOptions = {},
 ) {
-  const { db, bytes } = await loadDatabase(options)
-  const rows = mapRows(db.exec('SELECT value FROM meta WHERE key = ?', [key]))
+  const bytes = await import('./sqliteWorkerClient').then((m) => m.initSqliteWorker(options.forceRefresh))
+  const rows = mapRows(await import('./sqliteWorkerClient').then((m) => m.execInSqlite('SELECT value FROM meta WHERE key = ?', [key])))
   const json = rows[0]?.value as string | undefined
   const value = json ? parseJsonValue<T>(json, fallbackValue) : fallbackValue
 

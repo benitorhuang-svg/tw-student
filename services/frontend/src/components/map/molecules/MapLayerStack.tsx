@@ -6,6 +6,7 @@ import { TownshipBoundaryLayer } from './TownshipBoundaryLayer'
 import { CountyMarkerLayer } from './CountyMarkerLayer'
 import AllTownshipLabels from './AllTownshipLabels'
 import VisibleSchoolMarkers from './VisibleSchoolMarkers'
+import CanvasSchoolLayer from './CanvasSchoolLayer'
 import VectorTileBoundaryLayer from './VectorTileBoundaryLayer'
 import { StarMarker } from '../atoms/StarMarker'
 import { buildSchoolMarkerAriaLabel, renderSchoolHoverCard } from '../atoms/MapHoverCard'
@@ -82,32 +83,21 @@ export const MapLayerStack = memo(function MapLayerStack(props: LayerStackProps)
   )
 
   useEffect(() => {
-    if (!map) return
-    tooltipRef.current = L.tooltip({
-      direction: 'top',
-      offset: [0, -10],
-      className: 'atlas-map-tooltip atlas-map-tooltip--preview',
-      sticky: true,
-      opacity: 1
-    })
-    return () => {
-      tooltipRef.current?.remove()
-    }
+    // Disable global map tooltip: keep tooltipRef but do not create a Leaflet tooltip.
+    // This prevents the duplicate "map hover" tooltip that previously appeared
+    // alongside county/township marker hovers. Components still receive
+    // `showMapTooltip`/`hideMapTooltip` props but those are no-ops below.
+    return () => {}
   }, [map])
 
-  const showMapTooltip = useCallback((latlng: L.LatLng, content: string) => {
-    if (!tooltipRef.current || !map) return
-    tooltipRef.current.setLatLng(latlng).setContent(content)
-    if (!map.hasLayer(tooltipRef.current)) {
-      tooltipRef.current.addTo(map)
-    }
-  }, [map])
+  // NO-OP tooltip functions: intentionally disable global map hover tooltip.
+  const showMapTooltip = useCallback((_latlng: L.LatLng, _content: string) => {
+    // intentionally empty
+  }, [])
 
   const hideMapTooltip = useCallback(() => {
-    if (tooltipRef.current && map.hasLayer(tooltipRef.current)) {
-      tooltipRef.current.remove()
-    }
-  }, [map])
+    // intentionally empty
+  }, [])
 
   return (
     <>
@@ -187,13 +177,22 @@ export const MapLayerStack = memo(function MapLayerStack(props: LayerStackProps)
       />
 
       {showSchoolMarkers && (
-        <VisibleSchoolMarkers
-          countyBuckets={countyBuckets}
-          schoolPoints={schoolPoints}
-          selectedSchoolId={selectedSchoolId}
-          highlightedSchoolId={highlightedSchoolId}
-          onSelectSchool={onSelectSchool}
-        />
+        (import.meta.env.VITE_CANVAS_MARKERS === 'true') ? (
+          <CanvasSchoolLayer
+            schoolPoints={schoolPoints}
+            selectedSchoolId={selectedSchoolId}
+            highlightedSchoolId={highlightedSchoolId}
+            onSelectSchool={onSelectSchool}
+          />
+        ) : (
+          <VisibleSchoolMarkers
+            countyBuckets={countyBuckets}
+            schoolPoints={schoolPoints}
+            selectedSchoolId={selectedSchoolId}
+            highlightedSchoolId={highlightedSchoolId}
+            onSelectSchool={onSelectSchool}
+          />
+        )
       )}
 
       {/* Global Selection Marker Molecule: Combines Star, Dot, and Pulse to prevent drift */}

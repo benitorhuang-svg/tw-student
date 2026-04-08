@@ -1,6 +1,6 @@
 import { recordResourceLoad } from '../atlasLoadObservation'
-import { loadDatabase, SQLITE_RESOURCE_KEY, type LoadDatabaseOptions } from './connection'
-import { mapRows, parseJsonValue, buildSummaryMap, buildSchoolCodeIndex, type SqlValueRow } from './mappers'
+import { SQLITE_RESOURCE_KEY, type LoadDatabaseOptions } from './connection'
+import { mapRows, type SqlValueRow } from './mappers'
 import type { 
   EducationSummaryDataset, 
   CountySummaryRecord,
@@ -37,11 +37,6 @@ export function registerCountyLookups(counties: CountySummaryRecord[]) {
 
 const EMPTY_DATA_NOTES: DataNote[] = []
 
-function readMeta(db: { exec: (sql: string, params?: unknown[]) => Array<{ columns: string[]; values: unknown[][] }> }, key: string) {
-  const rows = mapRows(db.exec('SELECT value FROM meta WHERE key = ?', [key]))
-  return rows[0]?.value
-}
-
 export async function loadEducationSummaryWithOptions(options: LoadDatabaseOptions = {}) {
   if (options.forceRefresh) {
     summaryCache = null
@@ -56,23 +51,19 @@ export async function loadEducationSummaryWithOptions(options: LoadDatabaseOptio
     return summaryCache
   }
 
-  const { db, bytes } = await loadDatabase(options)
-  const years = parseJsonValue(readMeta(db, 'years'), []) as EducationSummaryDataset['years']
-  const sources = parseJsonValue(readMeta(db, 'sources'), {
-    points: '',
-    statistics: '',
-    townshipBoundaries: '',
-    countyBoundaries: '',
-  })
-  const dataNotes = parseJsonValue(readMeta(db, 'dataNotes'), []) as EducationSummaryDataset['dataNotes']
-  const generatedAt = String(readMeta(db, 'generatedAt') ?? '')
-  
-  const countyRows = mapRows(db.exec('SELECT * FROM counties ORDER BY name'))
-  const townRows = mapRows(db.exec('SELECT * FROM towns ORDER BY county_id, name'))
-  const countySummaryRows = mapRows(db.exec('SELECT * FROM county_summaries ORDER BY county_id, year, education_level, management_type'))
-  const townSummaryRows = mapRows(db.exec('SELECT * FROM town_summaries ORDER BY county_id, town_id, year, education_level, management_type'))
-  const coordinateIssueRows = mapRows(db.exec('SELECT * FROM coordinate_issues ORDER BY county_legacy_id, township_legacy_id, code, school_level'))
-  const schoolIndexRows = mapRows(db.exec(`
+  // Initialize sqlite worker and fetch raw SQL rows, then offload heavy mapping to a worker
+  const bytes = await import('./sqliteWorkerClient').then((m) => m.initSqliteWorker(options.forceRefresh))
+  const yearsRaw = mapRows(await import('./sqliteWorkerClient').then((m) => m.execInSqlite('SELECT value FROM meta WHERE key = ?', ['years'])))
+  const sourcesRaw = mapRows(await import('./sqliteWorkerClient').then((m) => m.execInSqlite('SELECT value FROM meta WHERE key = ?', ['sources'])))
+  const dataNotesRaw = mapRows(await import('./sqliteWorkerClient').then((m) => m.execInSqlite('SELECT value FROM meta WHERE key = ?', ['dataNotes'])))
+  const generatedAtRaw = mapRows(await import('./sqliteWorkerClient').then((m) => m.execInSqlite('SELECT value FROM meta WHERE key = ?', ['generatedAt'])))
+
+  const countyRows = mapRows(await import('./sqliteWorkerClient').then((m) => m.execInSqlite('SELECT * FROM counties ORDER BY name')))
+  const townRows = mapRows(await import('./sqliteWorkerClient').then((m) => m.execInSqlite('SELECT * FROM towns ORDER BY county_id, name')))
+  const countySummaryRows = mapRows(await import('./sqliteWorkerClient').then((m) => m.execInSqlite('SELECT * FROM county_summaries ORDER BY county_id, year, education_level, management_type')))
+  const townSummaryRows = mapRows(await import('./sqliteWorkerClient').then((m) => m.execInSqlite('SELECT * FROM town_summaries ORDER BY county_id, town_id, year, education_level, management_type')))
+  const coordinateIssueRows = mapRows(await import('./sqliteWorkerClient').then((m) => m.execInSqlite('SELECT * FROM coordinate_issues ORDER BY county_legacy_id, township_legacy_id, code, school_level')))
+  const schoolIndexRows = mapRows(await import('./sqliteWorkerClient').then((m) => m.execInSqlite(`
     SELECT schools.code, schools.legacy_id, schools.name, schools.education_level, schools.longitude, schools.latitude,
            schools.county_id, schools.county_legacy_id, schools.township_id, schools.township_legacy_id,
            counties.name AS county_name, towns.name AS township_name
@@ -80,95 +71,24 @@ export async function loadEducationSummaryWithOptions(options: LoadDatabaseOptio
     JOIN counties ON counties.id = schools.county_id
     JOIN towns ON towns.id = schools.township_id
     ORDER BY schools.code, schools.education_level
-  `))
+  `)))
 
-  const countySummaryLookup = new Map<string, SqlValueRow[]>()
-  countySummaryRows.forEach((row) => {
-    const key = String(row.county_id)
-    if (!countySummaryLookup.has(key)) countySummaryLookup.set(key, [])
-    countySummaryLookup.get(key)?.push(row)
+  // Offload heavy mapping/parsing to worker
+  const { processSummaryInWorker } = await import('./summaryWorkerClient')
+  const summary = await processSummaryInWorker({
+    yearsJson: yearsRaw[0]?.value,
+    sourcesJson: sourcesRaw[0]?.value,
+    dataNotesJson: dataNotesRaw[0]?.value,
+    generatedAtJson: generatedAtRaw[0]?.value,
+    countyRows,
+    townRows,
+    countySummaryRows,
+    townSummaryRows,
+    coordinateIssueRows,
+    schoolIndexRows,
   })
 
-  const townSummaryLookup = new Map<string, SqlValueRow[]>()
-  townSummaryRows.forEach((row) => {
-    const key = String(row.town_id)
-    if (!townSummaryLookup.has(key)) townSummaryLookup.set(key, [])
-    townSummaryLookup.get(key)?.push(row)
-  })
-
-  const townRowsByCounty = new Map<string, SqlValueRow[]>()
-  townRows.forEach((row) => {
-    const key = String(row.county_id)
-    if (!townRowsByCounty.has(key)) townRowsByCounty.set(key, [])
-    townRowsByCounty.get(key)?.push(row)
-  })
-
-  const counties = countyRows.map((countyRow) => {
-    const countyCode = String(countyRow.id)
-    const towns = (townRowsByCounty.get(countyCode) ?? []).map((townRow) => ({
-      id: String(townRow.legacy_id),
-      countyId: String(countyRow.legacy_id),
-      countyCode,
-      townCode: String(townRow.id),
-      legacyTownshipId: String(townRow.legacy_id),
-      name: String(townRow.name),
-      dataNotes: parseJsonValue(townRow.data_notes_json, []),
-      summaries: buildSummaryMap(townSummaryLookup.get(String(townRow.id)) ?? []),
-    }))
-
-    return {
-      id: String(countyRow.legacy_id),
-      countyCode,
-      legacyCountyId: String(countyRow.legacy_id),
-      name: String(countyRow.name),
-      shortLabel: String(countyRow.short_label),
-      region: String(countyRow.region) as RegionGroup,
-      townshipFile: String(countyRow.township_file),
-      detailFile: String(countyRow.detail_file),
-      bucketFile: String(countyRow.bucket_file),
-      assetMetrics: {
-        detailBytes: Number(countyRow.detail_bytes),
-        bucketBytes: Number(countyRow.bucket_bytes),
-        townshipBytes: Number(countyRow.township_bytes),
-        sqliteBytes: bytes,
-      },
-      dataNotes: parseJsonValue(countyRow.data_notes_json, EMPTY_DATA_NOTES),
-      summaries: buildSummaryMap(countySummaryLookup.get(countyCode) ?? []),
-      towns,
-    }
-  })
-
-  const summary: EducationSummaryDataset = {
-    generatedAt,
-    years,
-    dataNotes,
-    assetMetrics: {
-      countyBoundaryBytes: 0,
-      countyDetailBytes: counties.reduce((sum, county) => sum + (county.assetMetrics?.detailBytes ?? 0), 0),
-      townshipBoundaryBytes: counties.reduce((sum, county) => sum + (county.assetMetrics?.townshipBytes ?? 0), 0),
-      countyBucketBytes: counties.reduce((sum, county) => sum + (county.assetMetrics?.bucketBytes ?? 0), 0),
-      sqliteBytes: bytes,
-    },
-    sources,
-    schoolCodeIndex: buildSchoolCodeIndex(schoolIndexRows),
-    missingCoordinates: coordinateIssueRows.map((row) => ({
-      code: String(row.code),
-      name: String(row.school_name),
-      county: String(row.county_legacy_id),
-      township: String(row.township_legacy_id).split(':').slice(1).join(':') || String(row.township_legacy_id),
-      countyCode: String(row.county_id),
-      townCode: String(row.township_id),
-      level: String(row.school_level) as SchoolLevel,
-      address: String(row.address || ''),
-      longitude: row.longitude == null ? undefined : Number(row.longitude),
-      latitude: row.latitude == null ? undefined : Number(row.latitude),
-      coordinateResolution: row.coordinate_resolution == null ? undefined : (String(row.coordinate_resolution) as MissingCoordinateEntry['coordinateResolution']),
-      coordinateMatchType: row.coordinate_match_type == null ? undefined : String(row.coordinate_match_type),
-      coordinateMatchScore: row.coordinate_match_score == null ? undefined : Number(row.coordinate_match_score),
-    })),
-    counties,
-  }
-
+  // worker already returned final summary structure
   summaryCache = summary
   registerCountyLookups(summary.counties)
   recordResourceLoad({

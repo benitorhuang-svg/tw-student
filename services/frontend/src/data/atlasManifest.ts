@@ -1,6 +1,5 @@
 import { recordResourceLoad } from './atlasLoadObservation'
 import { buildDataAssetUrl, parseJsonDataResponse } from './dataAsset'
-import { loadDatabase } from './sqlite/connection'
 import { mapRows, parseJsonValue } from './sqlite/mappers'
 import type { DataManifest, ValidationReport } from './educationTypes'
 
@@ -85,8 +84,8 @@ export async function loadValidationReport(options: ManifestLoadOptions = {}) {
 
   if (!pendingValidationRequest) {
     pendingValidationRequest = (async () => {
-      const { db, bytes } = await loadDatabase(options)
-      const rows = mapRows(db.exec("SELECT value FROM meta WHERE key = 'validationReport'"))
+      const bytes = await import('./sqlite/sqliteWorkerClient').then((m) => m.initSqliteWorker(options.forceRefresh))
+      const rows = mapRows(await import('./sqlite/sqliteWorkerClient').then(m => m.execInSqlite("SELECT value FROM meta WHERE key = 'validationReport'")))
       const reportJson = rows[0]?.value as string
       
       if (!reportJson) {
@@ -135,4 +134,4 @@ export function resetAtlasManifestCache() {
   validationReportCache = null
   pendingManifestRequest = null
   pendingValidationRequest = null
-}
+}
