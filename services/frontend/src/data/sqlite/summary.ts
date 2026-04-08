@@ -126,12 +126,10 @@ export async function loadEducationSummaryWithOptions(options: LoadDatabaseOptio
       townshipFile: String(countyRow.township_file),
       detailFile: String(countyRow.detail_file),
       bucketFile: String(countyRow.bucket_file),
-      schoolAtlasFile: String(countyRow.school_atlas_file),
       assetMetrics: {
         detailBytes: Number(countyRow.detail_bytes),
         bucketBytes: Number(countyRow.bucket_bytes),
         townshipBytes: Number(countyRow.township_bytes),
-        schoolAtlasBytes: Number(countyRow.school_atlas_bytes),
         sqliteBytes: bytes,
       },
       dataNotes: parseJsonValue(countyRow.data_notes_json, EMPTY_DATA_NOTES),
@@ -143,14 +141,12 @@ export async function loadEducationSummaryWithOptions(options: LoadDatabaseOptio
   const summary: EducationSummaryDataset = {
     generatedAt,
     years,
-    schoolAtlasFile: 'school-atlas/index.json',
     dataNotes,
     assetMetrics: {
       countyBoundaryBytes: 0,
       countyDetailBytes: counties.reduce((sum, county) => sum + (county.assetMetrics?.detailBytes ?? 0), 0),
       townshipBoundaryBytes: counties.reduce((sum, county) => sum + (county.assetMetrics?.townshipBytes ?? 0), 0),
       countyBucketBytes: counties.reduce((sum, county) => sum + (county.assetMetrics?.bucketBytes ?? 0), 0),
-      schoolAtlasBytes: counties.reduce((sum, county) => sum + (county.assetMetrics?.schoolAtlasBytes ?? 0), 0),
       sqliteBytes: bytes,
     },
     sources,

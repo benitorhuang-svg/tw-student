@@ -1,4 +1,5 @@
 import L from 'leaflet'
+import { memo } from 'react'
 import { CircleMarker, useMap } from 'react-leaflet'
 import { MAP_MAX_ZOOM } from '../../../lib/constants'
 import { growthChoroplethColor, growthChoroplethOpacity } from '../mapStyles'
@@ -15,7 +16,7 @@ type SchoolMarkerProps = {
   suppressNextMapClearRef: React.MutableRefObject<boolean>
 }
 
-export function SchoolMarker({
+export const SchoolMarker = memo(function SchoolMarker({
   school,
   zoom,
   isSelected,
@@ -28,7 +29,7 @@ export function SchoolMarker({
   // If selected, we don't render anything on the Canvas layer.
   // The SelectedSchoolMarker (Molecule) in MapLayerStack will handle the 
   // synchronous rendering of both the dot and the star on the HTML layer.
-  if (isSelected) return null;
+  if (isSelected) return null
 
   // Scale logic: Start as small dots at Zoom 11, grow more aggressively as we zoom in
   // - Zoom 11: zoomFactor approx 1.0 (Small dots)
@@ -120,4 +121,4 @@ export function SchoolMarker({
       />
     </>
   )
-}
+})

@@ -9,6 +9,7 @@ import {
   type EducationSummaryDataset,
   type ValidationReport,
 } from '../../data/educationData'
+import { warmAtlasRuntime } from '../../data/sqlite/connection'
 
 export function useAtlasBootstrap() {
   const [summaryDataset, setSummaryDataset] = useState<EducationSummaryDataset | null>(null)
@@ -18,19 +19,53 @@ export function useAtlasBootstrap() {
   const [loadError, setLoadError] = useState<string | null>(null)
 
   useEffect(() => {
-    Promise.all([
-      loadEducationSummary(),
-      loadCountyBoundaries(),
-      loadDataManifest().catch(() => null),
-      loadValidationReport().catch(() => null),
-    ])
-      .then(([nextSummary, nextBoundaries, nextManifest, nextValidationReport]) => {
-        setSummaryDataset(nextSummary)
-        setCountyBoundaries(nextBoundaries)
-        setLocalManifest(nextManifest)
-        setValidationReport(nextValidationReport)
+    let cancelled = false
+
+    void warmAtlasRuntime()
+
+    void loadEducationSummary()
+      .then((nextSummary) => {
+        if (!cancelled) {
+          setSummaryDataset(nextSummary)
+        }
       })
-      .catch((error: Error) => setLoadError(error.message))
+      .catch((error: Error) => {
+        if (!cancelled) {
+          setLoadError(error.message)
+        }
+      })
+
+    void loadCountyBoundaries()
+      .then((nextBoundaries) => {
+        if (!cancelled) {
+          setCountyBoundaries(nextBoundaries)
+        }
+      })
+      .catch((error: Error) => {
+        if (!cancelled) {
+          setLoadError(error.message)
+        }
+      })
+
+    void loadDataManifest()
+      .then((nextManifest) => {
+        if (!cancelled) {
+          setLocalManifest(nextManifest)
+        }
+      })
+      .catch(() => null)
+
+    void loadValidationReport()
+      .then((nextValidationReport) => {
+        if (!cancelled) {
+          setValidationReport(nextValidationReport)
+        }
+      })
+      .catch(() => null)
+
+    return () => {
+      cancelled = true
+    }
   }, [])
 
   return {

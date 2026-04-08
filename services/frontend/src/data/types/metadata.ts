@@ -37,13 +37,11 @@ export type DataAssetGroup =
   | 'summary'
   | 'validation'
   | 'schema'
-  | 'school-atlas-index'
   | 'county-boundary'
   | 'lookup'
   | 'sqlite'
   | 'county-detail'
   | 'county-bucket'
-  | 'school-atlas'
   | 'township-boundary'
 
 export type DataManifestAsset = {

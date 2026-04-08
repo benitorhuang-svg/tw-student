@@ -22,10 +22,8 @@ export function useEducationData(selectedCountyId: string | null) {
     setValidationReport: bootstrap.setValidationReport,
     setCountyDetailCache: resources.setCountyDetailCache,
     setCountyBucketCache: resources.setCountyBucketCache,
-    setCountySchoolAtlasCache: resources.setCountySchoolAtlasCache,
     setTownshipBoundaryCache: resources.setTownshipBoundaryCache,
     setCountyDetailError: resources.setCountyDetailError,
-    setCountySchoolAtlasError: resources.setCountySchoolAtlasError,
   })
 
   const prefetchAllCounties = () => {

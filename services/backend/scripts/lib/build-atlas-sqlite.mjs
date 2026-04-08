@@ -57,11 +57,9 @@ export async function buildAtlasSqliteBuffer(datasetBundle, boundaries, { valida
       detail_file TEXT NOT NULL,
       bucket_file TEXT NOT NULL,
       township_file TEXT NOT NULL,
-      school_atlas_file TEXT NOT NULL,
       detail_bytes INTEGER NOT NULL,
       bucket_bytes INTEGER NOT NULL,
       township_bytes INTEGER NOT NULL,
-      school_atlas_bytes INTEGER NOT NULL,
       data_notes_json TEXT NOT NULL
     );
     CREATE TABLE towns (
@@ -189,7 +187,7 @@ export async function buildAtlasSqliteBuffer(datasetBundle, boundaries, { valida
   `)
 
   const insertMeta = db.prepare('INSERT INTO meta (key, value) VALUES (?, ?)')
-  const insertCounty = db.prepare('INSERT INTO counties VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)')
+  const insertCounty = db.prepare('INSERT INTO counties VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)')
   const insertTown = db.prepare('INSERT INTO towns VALUES (?, ?, ?, ?, ?)')
   const insertSchool = db.prepare('INSERT INTO schools VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)')
   const insertYearMetric = db.prepare('INSERT INTO school_year_metrics VALUES (?, ?, ?, ?, ?, ?)')
@@ -217,6 +215,12 @@ export async function buildAtlasSqliteBuffer(datasetBundle, boundaries, { valida
     }
     // 把完整的摘要也存一份進去，徹底取代 summary.json
     insertMeta.run(['summaryDataset', encodeJson(datasetBundle.summaryDataset)])
+    insertMeta.run(['areaCoordinateLookup', encodeJson({
+      generatedAt: datasetBundle.summaryDataset.generatedAt,
+      counties: boundaries.countyCoordinateLookup,
+      townships: boundaries.townshipCoordinateLookup,
+    })])
+    insertMeta.run(['schoolCoordinateLookup', encodeJson(datasetBundle.schoolCoordinateLookup)])
 
     insertBoundary.run(['counties', 'county', encodeJson(boundaries.countyTopology)])
 
@@ -231,11 +235,9 @@ export async function buildAtlasSqliteBuffer(datasetBundle, boundaries, { valida
         county.detailFile,
         county.bucketFile,
         county.townshipFile,
-        county.schoolAtlasFile,
         county.assetMetrics?.detailBytes ?? 0,
         county.assetMetrics?.bucketBytes ?? 0,
         county.assetMetrics?.townshipBytes ?? 0,
-        county.assetMetrics?.schoolAtlasBytes ?? 0,
         encodeJson(county.dataNotes ?? []),
       ])
 

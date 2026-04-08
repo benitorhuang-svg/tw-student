@@ -14,7 +14,6 @@ import type { AtlasTab } from '../hooks/useAtlasQueryState'
 import type { useAtlasDerivedState } from '../hooks/useAtlasDerivedState'
 import type {
   RegionGroupFilter,
-  CountySchoolAtlasDataset,
   AcademicYear,
   EducationLevelFilter,
   ManagementTypeFilter
@@ -63,10 +62,8 @@ type DashboardCanvasProps = {
 
   // School detail
   countyDetailError: string | null
-  countySchoolAtlasError: string | null
   selectedCountyId: string | null
   selectedTownshipId: string | null
-  countySchoolAtlasCache: Record<string, CountySchoolAtlasDataset>
   schoolWorkbenchView: 'list' | 'analysis' | 'notes'
   onSetSchoolWorkbenchView: (view: 'list' | 'analysis' | 'notes') => void
 

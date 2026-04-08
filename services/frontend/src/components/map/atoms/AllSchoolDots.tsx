@@ -1,19 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { CircleMarker, Tooltip, useMap, useMapEvents } from 'react-leaflet'
-import { buildDataAssetUrl } from '../../../data/dataAsset'
-
-type SchoolCoord = {
-  code: string
-  name: string
-  countyId: string
-  townshipId: string
-  longitude: number
-  latitude: number
-}
-
-type SchoolLookup = {
-  schools: Record<string, SchoolCoord>
-}
+import { loadSchoolCoordinateLookup, type SchoolCoordinateLookupEntry } from '../../../data/sqlite/lookups'
 
 type AllSchoolDotsProps = {
   onSelectSchool: (schoolId: string | null) => void
@@ -21,14 +8,23 @@ type AllSchoolDotsProps = {
 
 function AllSchoolDots({ onSelectSchool }: AllSchoolDotsProps) {
   const map = useMap()
-  const [data, setData] = useState<SchoolCoord[] | null>(null)
+  const [data, setData] = useState<SchoolCoordinateLookupEntry[] | null>(null)
   const [, setVersion] = useState(0)
 
   useEffect(() => {
-    fetch(buildDataAssetUrl('school-coordinate-lookup.json'))
-      .then((res) => res.json())
-      .then((json: SchoolLookup) => setData(Object.values(json.schools)))
+    let cancelled = false
+
+    void loadSchoolCoordinateLookup()
+      .then((lookup) => {
+        if (!cancelled) {
+          setData(Object.values(lookup.schools))
+        }
+      })
       .catch(() => {})
+
+    return () => {
+      cancelled = true
+    }
   }, [])
 
   useMapEvents({

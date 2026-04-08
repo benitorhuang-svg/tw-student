@@ -1,16 +1,5 @@
-/* Main application styles - Foundations are handled by index.css */
-@import url('./styles/organisms/dashboard-header.css');
+/* Critical shell styles only. Heavy map/chart/layout styles are lazy-loaded with their components. */
 @import url('./styles/templates/dashboard-shell.css');
-@import url('./styles/templates/dashboard-canvas.css');
-@import url('./styles/organisms/dashboard-footer.css');
-@import url('./styles/atoms/forms.css');
 @import url('./styles/atoms/typography.css');
-@import url('./styles/atoms/stat-cards.css');
 @import url('./styles/atoms/shared-utils.css');
 @import url('./styles/molecules/panels.css');
-@import url('./styles/molecules/tabs.css');
-@import url('./styles/data/charts.css');
-@import url('./styles/organisms/anomaly-panel.css');
-@import url('./styles/organisms/school-panels.css');
-@import url('./styles/organisms/map-panels.css');
-@import url('./styles/responsive/mobile.css');

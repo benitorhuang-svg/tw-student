@@ -1,4 +1,4 @@
-import { Suspense, lazy, useEffect, useState, useTransition } from 'react'
+import { Suspense, lazy, useCallback, useEffect, useMemo, useState, useTransition } from 'react'
 
 import './App.css'
 
@@ -64,81 +64,113 @@ function App() {
     educationData, loadObservation,
   })
 
-  // 4. Loading & Error Checks
-  const noBoundaries = countyBoundaries?.features?.length === 0
-  if (loadError || !summaryDataset || !countyBoundaries || noBoundaries) {
-    return (
-      <AppErrorShell 
-        eyebrow={loadError || noBoundaries ? '資料載入失敗' : '正式資料準備中'}
-        title={loadError || noBoundaries ? '正式資料尚未成功載入' : '正在載入教育部與官方行政區資料'}
-        description={loadError || (noBoundaries ? '縣市界線資料為空，請確認主機設定。' : '系統正在載入全台摘要中...')}
-      />
-    )
-  }
-
   // 5. Action Handlers
-  const handlePrefetchCounty = (countyId: string | null) => { if (countyId) prefetchCounty(countyId) }
-  const handleSchoolSelect = (schoolId: string | null) => {
+  const handlePrefetchCounty = useCallback((countyId: string | null) => {
+    if (countyId) {
+      prefetchCounty(countyId)
+    }
+  }, [prefetchCounty])
+
+  const handleSchoolSelect = useCallback((schoolId: string | null) => {
     scenarioActions.handleSchoolSelect(schoolId, { skipTabSwitch: true })
-    if (schoolId) state.setSchoolWorkbenchView('analysis')
-  }
+    if (schoolId) {
+      state.setSchoolWorkbenchView('analysis')
+    }
+  }, [scenarioActions, state])
 
   // 6. UI Composition
   const shouldForceTownshipLabels = state.forceTownshipLabels || (state.initialQueryState.zoom != null && state.initialQueryState.lat != null && state.initialQueryState.lon != null)
   const desktopTabItems = buildDesktopTabItems(derived.selectedCounty, derived.selectedTownshipSummary, derived.selectedSchool)
 
-  const mapElement = (
-    <TaiwanExplorerMap
-      counties={derived.mapCountySummaries}
-      activeRegion={state.region}
-      activeCountyId={derived.activeCountyId}
-      activeTownshipId={derived.activeTownshipId}
-      countyBoundaries={countyBoundaries}
-      townshipBoundaries={derived.activeTownshipBoundaries}
-      townshipRows={derived.townshipRows}
-      allTownshipRows={derived.allTownshipRows}
-      allTownshipBoundaries={derived.allTownshipBoundaries}
-      schoolPoints={derived.schoolMapPoints}
-      countyBuckets={derived.activeCountyBuckets}
-      selectedSchoolId={derived.selectedSchool?.id ?? null}
-      highlightedCountyId={state.hoveredCountyId}
-      highlightedTownshipId={state.hoveredTownshipId}
-      highlightedSchoolId={state.hoveredSchoolId}
-      isTownshipBoundaryLoading={derived.isTownshipBoundaryLoading}
-      activeTab={state.activeTab}
-      theme={state.theme}
-      mapResetToken={state.mapResetToken}
-      onSelectCounty={scenarioActions.handleCountySelect}
-      onAutoSelectCounty={scenarioActions.ensureCountySelected}
-      onSelectTownship={scenarioActions.handleTownshipSelect}
-      onSelectSchool={handleSchoolSelect}
-      onHoverCounty={handlePrefetchCounty}
-      onZoomChange={state.setMapZoom}
-      currentMapZoom={state.mapZoom}
-      onMoveEnd={(lat: number, lon: number) => { state.setMapLat(lat); state.setMapLon(lon) }}
-      initialMapZoom={state.mapZoom}
-      initialMapLat={state.mapLat}
-      initialMapLon={state.mapLon}
-      forceTownshipLabels={shouldForceTownshipLabels}
-      vectorTileBaseUrl={vectorTileUrl}
-      onVectorTileError={() => setVectorTileUrl('')}
-      scopePath={derived.scopePath}
-      onNavigateScope={scenarioActions.handleNavigateScope}
-      activeYear={state.activeYear}
-      summaryYears={[...summaryDataset.years]}
-      educationLevel={state.educationLevel}
-      managementType={state.managementType}
-      onSetRegion={scenarioActions.handleRegionSelect}
-      onResetRegion={scenarioActions.handleResetScope}
-      onSetActiveYear={state.setActiveYear}
-      onStopPlayback={() => setIsYearPlaybackActive(false)}
-      onSetEducationLevel={state.setEducationLevel}
-      onSetManagementType={state.setManagementType}
-      startTransition={startTransition}
-      activeCountyName={derived.selectedCounty?.name ?? null}
-      summaryDataset={summaryDataset}
-    />
+  const mapElement = useMemo(
+    () => {
+      if (!summaryDataset || !countyBoundaries) {
+        return null
+      }
+
+      return (
+        <TaiwanExplorerMap
+          counties={derived.mapCountySummaries}
+          activeRegion={state.region}
+          activeCountyId={derived.activeCountyId}
+          activeTownshipId={derived.activeTownshipId}
+          countyBoundaries={countyBoundaries}
+          townshipBoundaries={derived.activeTownshipBoundaries}
+          townshipRows={derived.townshipRows}
+          allTownshipRows={derived.allTownshipRows}
+          allTownshipBoundaries={derived.allTownshipBoundaries}
+          schoolPoints={derived.schoolMapPoints}
+          countyBuckets={derived.activeCountyBuckets}
+          selectedSchoolId={derived.selectedSchool?.id ?? null}
+          highlightedCountyId={state.hoveredCountyId}
+          highlightedTownshipId={state.hoveredTownshipId}
+          highlightedSchoolId={state.hoveredSchoolId}
+          isTownshipBoundaryLoading={derived.isTownshipBoundaryLoading}
+          activeTab={state.activeTab}
+          theme={state.theme}
+          mapResetToken={state.mapResetToken}
+          onSelectCounty={scenarioActions.handleCountySelect}
+          onAutoSelectCounty={scenarioActions.ensureCountySelected}
+          onSelectTownship={scenarioActions.handleTownshipSelect}
+          onSelectSchool={handleSchoolSelect}
+          onHoverCounty={handlePrefetchCounty}
+          onZoomChange={state.setMapZoom}
+          currentMapZoom={state.mapZoom}
+          onMoveEnd={(lat: number, lon: number) => { state.setMapLat(lat); state.setMapLon(lon) }}
+          initialMapZoom={state.mapZoom}
+          initialMapLat={state.mapLat}
+          initialMapLon={state.mapLon}
+          forceTownshipLabels={shouldForceTownshipLabels}
+          vectorTileBaseUrl={vectorTileUrl}
+          onVectorTileError={() => setVectorTileUrl('')}
+          scopePath={derived.scopePath}
+          onNavigateScope={scenarioActions.handleNavigateScope}
+          activeYear={state.activeYear}
+          summaryYears={[...summaryDataset.years]}
+          educationLevel={state.educationLevel}
+          managementType={state.managementType}
+          onSetRegion={scenarioActions.handleRegionSelect}
+          onResetRegion={scenarioActions.handleResetScope}
+          onSetActiveYear={state.setActiveYear}
+          onStopPlayback={() => setIsYearPlaybackActive(false)}
+          onSetEducationLevel={state.setEducationLevel}
+          onSetManagementType={state.setManagementType}
+          startTransition={startTransition}
+          activeCountyName={derived.selectedCounty?.name ?? null}
+          summaryDataset={summaryDataset}
+        />
+      )
+    },
+    [
+      countyBoundaries,
+      derived,
+      handlePrefetchCounty,
+      handleSchoolSelect,
+      scenarioActions,
+      shouldForceTownshipLabels,
+      startTransition,
+      state,
+      setIsYearPlaybackActive,
+      summaryDataset,
+      vectorTileUrl,
+    ],
   )
+
+  // 4. Loading & Error Checks
+  const noBoundaries = countyBoundaries?.features?.length === 0
+  if (loadError || noBoundaries) {
+    return (
+      <AppErrorShell 
+        eyebrow="資料載入失敗"
+        title="正式資料尚未成功載入"
+        description={loadError || '縣市界線資料為空，請確認主機設定。'}
+      />
+    )
+  }
+
+  if (!summaryDataset || !countyBoundaries) {
+    return <AppLoadingShell message="正在載入教育部與官方行政區資料" />
+  }
 
   return (
     <Suspense fallback={<AppLoadingShell message="正在載入台灣教育地圖與分析元件" />}>
@@ -156,10 +188,8 @@ function App() {
           refreshData={educationData.refreshData}
           countyDetailCache={educationData.countyDetailCache}
           countyBucketCache={educationData.countyBucketCache}
-          countySchoolAtlasCache={educationData.countySchoolAtlasCache}
           townshipBoundaryCache={educationData.townshipBoundaryCache}
           countyDetailError={educationData.countyDetailError}
-          countySchoolAtlasError={educationData.countySchoolAtlasError}
           
           derived={derived}
           isPending={isPending}

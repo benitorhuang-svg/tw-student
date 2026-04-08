@@ -1,10 +1,2 @@
-/* Fonts are loaded in foundations.css */
-
-/* Foundations & Base Resets (Atoms) */
+/* Foundations & Base Resets */
 @import url('./styles/base/reset.css');
-
-/* Map Atomic Modules (Molecules & Atoms) */
-@import url('./styles/map/floating-filters.css');
-@import url('./styles/map/tooltips.css');
-@import url('./styles/map/markers.css');
-@import url('./styles/map/minimap.css');

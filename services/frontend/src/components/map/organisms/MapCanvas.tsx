@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import { MapContainer } from 'react-leaflet'
 
 import { MAP_DEFAULT_CENTER, MAP_DEFAULT_ZOOM, MAP_MAX_ZOOM, MAP_MAX_BOUNDS } from '../../../lib/constants'
@@ -86,26 +86,37 @@ export default function MapCanvas(props: MapCanvasProps) {
     startTransition, activeCountyName
   } = props
 
-  let selectedSchool = selectedSchoolId ? schoolPoints.find((school) => school.id === selectedSchoolId) ?? null : null
+  const selectedSchool = useMemo(() => {
+    const directMatch = selectedSchoolId
+      ? schoolPoints.find((school) => school.id === selectedSchoolId) ?? null
+      : null
 
-  if (!selectedSchool && selectedSchoolId && props.summaryDataset?.schoolCodeIndex) {
-    const entry = Object.values(props.summaryDataset.schoolCodeIndex).find(e =>
-      e.schoolIds?.includes(selectedSchoolId)
+    if (directMatch || !selectedSchoolId || !props.summaryDataset?.schoolCodeIndex) {
+      return directMatch
+    }
+
+    const entry = Object.values(props.summaryDataset.schoolCodeIndex).find((value) =>
+      value.schoolIds?.includes(selectedSchoolId),
     )
     if (entry?.longitude && entry?.latitude) {
-      selectedSchool = {
+      return {
         id: selectedSchoolId,
         name: entry.name,
         latitude: entry.latitude,
         longitude: entry.longitude,
       } as SchoolMapPoint
     }
-  }
+
+    return null
+  }, [props.summaryDataset, schoolPoints, selectedSchoolId])
 
   const [hoveredCountyId, setHoveredCountyId] = useState<string | null>(null)
   const [hoveredTownshipId, setHoveredTownshipId] = useState<string | null>(null)
 
-  const visibleTownshipRows = allTownshipRows.length > 0 ? allTownshipRows : townshipRows
+  const visibleTownshipRows = useMemo(
+    () => (allTownshipRows.length > 0 ? allTownshipRows : townshipRows),
+    [allTownshipRows, townshipRows],
+  )
 
   const computed = useMapComputedState(
     props.counties, activeCountyId, activeTownshipId,

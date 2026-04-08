@@ -17,9 +17,12 @@ export function useMapComputedState(
 ) {
   void _currentMapCenter
 
-  const activeCounty = counties.find((c) => c.id === activeCountyId) ?? null
-  const countyLookup = new Map(counties.map((c) => [c.id, c]))
-  const townshipLookup = new Map(townshipRows.map((t) => [t.id, t]))
+  const activeCounty = useMemo(
+    () => counties.find((c) => c.id === activeCountyId) ?? null,
+    [activeCountyId, counties],
+  )
+  const countyLookup = useMemo(() => new Map(counties.map((c) => [c.id, c])), [counties])
+  const townshipLookup = useMemo(() => new Map(townshipRows.map((t) => [t.id, t])), [townshipRows])
 
   const countyCenterLookup = useMemo(
     () =>

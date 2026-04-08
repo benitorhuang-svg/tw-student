@@ -2,7 +2,7 @@ import path from 'node:path'
 import fs from 'node:fs'
 import { defineConfig } from 'vite'
 import type { Plugin } from 'vite'
-import react from '@vitejs/plugin-react'
+import react from '@vitejs/plugin-react-swc'
 import { VitePWA } from 'vite-plugin-pwa'
 
 // After repo reorg, canonical repo-root data/ is at workspace root; resolve to that path
@@ -29,6 +29,7 @@ function backendDataPlugin(): Plugin {
     },
     closeBundle() {
       const distDataDir = path.resolve(__dirname, 'dist', 'data')
+      fs.rmSync(distDataDir, { recursive: true, force: true })
       copyDirSync(backendDataDir, distDataDir)
     },
   }

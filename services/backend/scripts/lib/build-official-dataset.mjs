@@ -407,10 +407,6 @@ function getStudentsForYear(school, year) {
   return school.yearlyStudents.find((entry) => entry.year === year)?.students ?? 0
 }
 
-function toCountySchoolAtlasFile(countyId) {
-  return `school-atlas/${countyId}.json`
-}
-
 function buildSummarySeries(schools) {
   const summaries = {}
   for (const educationLevel of SUMMARY_EDUCATION_LEVELS) {
@@ -985,104 +981,14 @@ export async function buildOfficialDataset(boundaries) {
   }
 
   const generatedAt = new Date().toISOString()
-  const countySchoolAtlasSlices = counties.map((county) => {
-    const schoolAtlasByCode = new Map()
-
-    county.towns.forEach((town) => {
-      town.schools.forEach((school) => {
-        if (!schoolAtlasByCode.has(school.code)) {
-          schoolAtlasByCode.set(school.code, {
-            code: school.code,
-            primaryName: school.name,
-            aliases: new Set([school.name]),
-            levels: [],
-          })
-        }
-
-        const schoolAtlasEntry = schoolAtlasByCode.get(school.code)
-        schoolAtlasEntry.aliases.add(school.name)
-        schoolAtlasEntry.levels.push({
-          schoolId: school.id,
-          schoolLevelId: school.schoolLevelId,
-          name: school.name,
-          educationLevel: school.educationLevel,
-          managementType: school.managementType,
-          countyId: county.id,
-          countyCode: county.countyCode,
-          countyName: county.name,
-          townshipId: town.id,
-          townCode: town.townCode,
-          townshipName: town.name,
-          coordinates: school.coordinates,
-          address: school.address,
-          phone: school.phone,
-          website: school.website,
-          profileUrl: school.profileUrl,
-          yearlyStudents: school.yearlyStudents,
-          studentCompositions: school.studentCompositions ?? [],
-          status: school.status,
-          missingYears: school.missingYears,
-          dataNotes: school.dataNotes,
-        })
-      })
-    })
-
-    const schools = [...schoolAtlasByCode.values()]
-      .map((entry) => ({
-        code: entry.code,
-        primaryName: entry.primaryName,
-        aliases: [...entry.aliases].sort((left, right) => left.localeCompare(right, 'zh-Hant')),
-        levels: entry.levels.sort((left, right) => {
-          const levelDelta = (levelOrder.get(left.educationLevel) ?? 99) - (levelOrder.get(right.educationLevel) ?? 99)
-          if (levelDelta !== 0) return levelDelta
-          return left.name.localeCompare(right.name, 'zh-Hant')
-        }),
-      }))
-      .sort((left, right) => left.code.localeCompare(right.code, 'en'))
-
-    return {
-      countyId: county.id,
-      fileName: toCountySchoolAtlasFile(county.id),
-      detail: {
-        generatedAt,
-        years: ACADEMIC_YEARS,
-        county: {
-          id: county.id,
-          countyCode: county.countyCode,
-          legacyCountyId: county.legacyCountyId,
-          name: county.name,
-          shortLabel: county.shortLabel,
-          region: county.region,
-        },
-        schools,
-      },
-    }
-  })
-
-  const schoolAtlasIndexDataset = {
-    generatedAt,
-    years: ACADEMIC_YEARS,
-    counties: countySchoolAtlasSlices.map((entry) => ({
-      countyId: entry.countyId,
-      countyCode: entry.detail.county.countyCode,
-      countyName: entry.detail.county.name,
-      schoolAtlasFile: entry.fileName,
-      schoolCount: entry.detail.schools.length,
-      levelCount: entry.detail.schools.reduce((sum, school) => sum + school.levels.length, 0),
-    })),
-  }
-
   return {
     generatedAt,
     years: ACADEMIC_YEARS,
     sources,
     missingCoordinates,
-    schoolAtlasIndexDataset,
-    countySchoolAtlasSlices,
     summaryDataset: {
       generatedAt,
       years: ACADEMIC_YEARS,
-      schoolAtlasFile: 'school-atlas/index.json',
       sources,
       dataNotes,
       schoolCodeIndex,
@@ -1097,7 +1003,6 @@ export async function buildOfficialDataset(boundaries) {
         townshipFile: `townships/${county.id}.topo.json`,
         detailFile: `counties/${toCountyDetailFile(county.id)}`,
         bucketFile: `buckets/${toCountyBucketFile(county.id)}`,
-        schoolAtlasFile: toCountySchoolAtlasFile(county.id),
         dataNotes: county.dataNotes,
         summaries: buildSummarySeries(county.towns.flatMap((town) => town.schools)),
         towns: county.towns.map((town) => ({

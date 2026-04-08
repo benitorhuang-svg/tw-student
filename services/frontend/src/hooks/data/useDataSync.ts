@@ -11,7 +11,6 @@ import {
   type EducationSummaryDataset,
   type CountyDetailDataset,
   type CountyBucketDataset,
-  type CountySchoolAtlasDataset,
   type TownshipBoundaryCollection,
   type CountyBoundaryCollection,
   type ValidationReport,
@@ -31,10 +30,8 @@ type SyncDeps = {
   setValidationReport: (v: ValidationReport | null) => void
   setCountyDetailCache: (c: Record<string, CountyDetailDataset>) => void
   setCountyBucketCache: (c: Record<string, CountyBucketDataset>) => void
-  setCountySchoolAtlasCache: (c: Record<string, CountySchoolAtlasDataset>) => void
   setTownshipBoundaryCache: (c: Record<string, TownshipBoundaryCollection>) => void
   setCountyDetailError: (e: string | null) => void
-  setCountySchoolAtlasError: (e: string | null) => void
 }
 
 export function useDataSync(deps: SyncDeps) {

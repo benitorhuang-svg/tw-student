@@ -1,3 +1,14 @@
+import '../styles/organisms/dashboard-header.css'
+import '../styles/templates/dashboard-canvas.css'
+import '../styles/organisms/dashboard-footer.css'
+import '../styles/atoms/forms.css'
+import '../styles/atoms/stat-cards.css'
+import '../styles/molecules/tabs.css'
+import '../styles/data/charts.css'
+import '../styles/organisms/anomaly-panel.css'
+import '../styles/organisms/school-panels.css'
+import '../styles/responsive/mobile.css'
+
 import type { ReactNode, RefObject } from 'react'
 
 import AnomalyPanel from '../components/organisms/AnomalyPanel'
@@ -7,7 +18,7 @@ import DashboardHeader from '../components/DashboardHeader'
 import DataGovernanceFlyout from '../components/organisms/DataGovernanceFlyout'
 import type { useAtlasDerivedState } from '../hooks/useAtlasDerivedState'
 import type { useAtlasScenarioActions } from '../hooks/useAtlasScenarioActions'
-import type { AcademicYear, CountyBoundaryCollection, CountyBucketDataset, CountyDetailDataset, CountySchoolAtlasDataset, EducationLevelFilter, ManagementTypeFilter, RegionGroupFilter, TownshipBoundaryCollection } from '../data/educationData'
+import type { AcademicYear, CountyBoundaryCollection, CountyBucketDataset, CountyDetailDataset, EducationLevelFilter, ManagementTypeFilter, RegionGroupFilter, TownshipBoundaryCollection } from '../data/educationData'
 import type { AtlasTab } from '../hooks/useAtlasQueryState'
 import type { SavedComparisonScenario, InvestigationFilter } from '../hooks/types'
 import type { AtlasTheme } from '../lib/constants'
@@ -49,13 +60,11 @@ type DesktopAppLayoutProps = {
   copyFeedbackMessage: string | null
   scenarioFeedbackMessage: string | null
   countyDetailError: string | null
-  countySchoolAtlasError: string | null
   selectedCountyId: string | null
   selectedTownshipId: string | null
   countyDetailCache: Record<string, CountyDetailDataset>
   countyBucketCache: Record<string, CountyBucketDataset>
   townshipBoundaryCache: Record<string, TownshipBoundaryCollection>
-  countySchoolAtlasCache: Record<string, CountySchoolAtlasDataset>
   schoolWorkbenchView: 'list' | 'analysis' | 'notes'
   onSetSchoolWorkbenchView: (view: 'list' | 'analysis' | 'notes') => void
   hoveredCountyId: string | null
@@ -152,10 +161,8 @@ function DesktopAppLayout(props: DesktopAppLayoutProps) {
         copyFeedbackMessage={props.copyFeedbackMessage}
         scenarioFeedbackMessage={props.scenarioFeedbackMessage}
         countyDetailError={props.countyDetailError}
-        countySchoolAtlasError={props.countySchoolAtlasError}
         selectedCountyId={props.selectedCountyId}
         selectedTownshipId={props.selectedTownshipId}
-        countySchoolAtlasCache={props.countySchoolAtlasCache}
         schoolWorkbenchView={props.schoolWorkbenchView}
         onSetSchoolWorkbenchView={props.onSetSchoolWorkbenchView}
         hoveredCountyId={props.hoveredCountyId}

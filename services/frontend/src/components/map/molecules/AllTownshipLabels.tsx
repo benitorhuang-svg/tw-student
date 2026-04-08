@@ -2,24 +2,10 @@ import { useEffect, useMemo, useState } from 'react'
 import type { GeoJsonObject } from 'geojson'
 import L from 'leaflet'
 import { Marker, useMap } from 'react-leaflet'
-import { buildDataAssetUrl } from '../../../data/dataAsset'
-
-type TownshipCoord = {
-  countyId: string
-  countyName: string
-  townId: string
-  townName: string
-  region: string
-  longitude: number
-  latitude: number
-}
+import { loadAreaCoordinateLookup, type TownshipCoordinateLookupEntry } from '../../../data/sqlite/lookups'
 
 // Import helper for tooltip content
 import { buildHoverPreviewHtml } from '../mapStyles'
-
-type AreaLookup = {
-  townships: Record<string, TownshipCoord>
-}
 
 import type { TownshipBoundaryCollection } from '../../../data/educationData'
 import type { RankingSummary } from '../../../lib/analytics'
@@ -60,7 +46,7 @@ function AllTownshipLabels({
   hideMapTooltip,
 }: AllTownshipLabelsProps) {
   const map = useMap()
-  const [data, setData] = useState<TownshipCoord[] | null>(null)
+  const [data, setData] = useState<TownshipCoordinateLookupEntry[] | null>(null)
   const [, setVersion] = useState(0)
   const [bounds, setBounds] = useState(() => map.getBounds())
 
@@ -77,10 +63,19 @@ function AllTownshipLabels({
   }, [townshipBoundaries])
 
   useEffect(() => {
-    fetch(buildDataAssetUrl('area-coordinate-lookup.json'))
-      .then((res) => res.json())
-      .then((json: AreaLookup) => setData(Object.values(json.townships)))
+    let cancelled = false
+
+    void loadAreaCoordinateLookup()
+      .then((lookup) => {
+        if (!cancelled) {
+          setData(Object.values(lookup.townships))
+        }
+      })
       .catch(() => {})
+
+    return () => {
+      cancelled = true
+    }
   }, [])
 
   useEffect(() => {

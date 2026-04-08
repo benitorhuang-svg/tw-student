@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useRef } from 'react'
+import { memo, useCallback, useMemo, useRef } from 'react'
 import { useMapEvents } from 'react-leaflet'
 import type { CountyBucketDataset } from '../../../data/educationData'
 import type { SchoolMapPoint } from '../types'
@@ -14,7 +14,7 @@ type VisibleSchoolMarkersProps = {
   onSelectSchool: (schoolId: string | null) => void
 }
 
-function VisibleSchoolMarkers({
+const VisibleSchoolMarkers = memo(function VisibleSchoolMarkers({
   schoolPoints,
   countyBuckets,
   selectedSchoolId,
@@ -47,8 +47,8 @@ function VisibleSchoolMarkers({
   const sortedClusteredPoints = useMemo(() => {
     return [...clusteredPoints].sort((a, b) => {
       // Check if either cluster contains the selected school
-      const aHasSelected = a.schools?.some(s => s.id === selectedSchoolId) ? 1 : 0
-      const bHasSelected = b.schools?.some(s => s.id === selectedSchoolId) ? 1 : 0
+      const aHasSelected = a.count === 1 && a.schools[0]?.id === selectedSchoolId ? 1 : 0
+      const bHasSelected = b.count === 1 && b.schools[0]?.id === selectedSchoolId ? 1 : 0
       
       if (aHasSelected !== bHasSelected) {
         return aHasSelected - bHasSelected // Selected on top
@@ -90,6 +90,6 @@ function VisibleSchoolMarkers({
       })}
     </>
   )
-}
+})
 
 export default VisibleSchoolMarkers

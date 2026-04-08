@@ -1,11 +1,9 @@
 import type { FeatureCollection, Geometry } from 'geojson'
-import type { AcademicYear, RegionGroup, SchoolLevel, SchoolManagementType, SummaryBucketKey, AtlasLoadSource } from './base'
+import type { AcademicYear, RegionGroup, SchoolLevel, SummaryBucketKey, AtlasLoadSource } from './base'
 import type { DataNote } from './metadata'
 import type { 
   SchoolBucketRecord, 
-  StudentCompositionRecord, 
   SummaryTrendRecord, 
-  TrendRecord,
   TownshipRecord
 } from './entities'
 
@@ -30,13 +28,11 @@ export type CountySummaryRecord = {
   townshipFile: string
   detailFile: string
   bucketFile: string
-  schoolAtlasFile: string
   assetMetrics?: {
     sqliteBytes?: number
     detailBytes: number
     townshipBytes: number
     bucketBytes: number
-    schoolAtlasBytes: number
   }
   dataNotes?: DataNote[]
   summaries: Record<SummaryBucketKey, SummaryTrendRecord[]>
@@ -46,7 +42,6 @@ export type CountySummaryRecord = {
 export type EducationSummaryDataset = {
   generatedAt: string
   years: readonly AcademicYear[]
-  schoolAtlasFile?: string
   dataNotes?: DataNote[]
   assetMetrics?: {
     sqliteBytes?: number
@@ -54,7 +49,6 @@ export type EducationSummaryDataset = {
     countyBoundaryBytes: number
     countyDetailBytes: number
     countyBucketBytes?: number
-    schoolAtlasBytes?: number
     townshipBoundaryBytes: number
   }
   sources: {
@@ -80,60 +74,6 @@ export type SchoolCodeEntry = {
   schoolIds?: string[]
   longitude?: number
   latitude?: number
-}
-
-export type SchoolCodeAtlasLevelEntry = {
-  schoolId: string
-  schoolLevelId?: string
-  name: string
-  educationLevel: SchoolLevel
-  managementType: SchoolManagementType
-  countyId: string
-  countyCode?: string
-  countyName: string
-  townshipId: string
-  townCode?: string
-  townshipName: string
-  coordinates: {
-    longitude: number
-    latitude: number
-  }
-  address: string
-  phone: string
-  website: string
-  profileUrl?: string
-  yearlyStudents: TrendRecord[]
-  studentCompositions: StudentCompositionRecord[]
-  status?: '正常' | '停辦' | '整併' | '待確認'
-  missingYears?: AcademicYear[]
-  dataNotes?: DataNote[]
-}
-
-export type SchoolCodeAtlasEntry = {
-  code: string
-  primaryName: string
-  aliases: string[]
-  levels: SchoolCodeAtlasLevelEntry[]
-}
-
-export type SchoolAtlasDataset = {
-  generatedAt: string
-  years: readonly AcademicYear[]
-  schools: SchoolCodeAtlasEntry[]
-}
-
-export type CountySchoolAtlasDataset = {
-  generatedAt: string
-  years: readonly AcademicYear[]
-  county: {
-    id: string
-    countyCode?: string
-    legacyCountyId?: string
-    name: string
-    shortLabel: string
-    region: RegionGroup
-  }
-  schools: SchoolCodeAtlasEntry[]
 }
 
 export type CountyDetailDataset = {

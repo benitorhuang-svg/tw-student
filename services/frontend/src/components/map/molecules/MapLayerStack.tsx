@@ -1,3 +1,4 @@
+import { memo, useCallback, useEffect, useMemo, useRef } from 'react'
 import { useMap } from 'react-leaflet'
 import L from 'leaflet'
 import { CountyBoundaryLayer } from './CountyBoundaryLayer'
@@ -13,7 +14,6 @@ import type {
   TownshipBoundaryCollection,
   CountyBucketDataset 
 } from '../../../data/educationData'
-import { useEffect, useRef, useCallback } from 'react'
 import type { 
   CountySummary, 
   RankingSummary 
@@ -28,7 +28,7 @@ type LayerStackProps = {
   hoveredTownshipId: string | null
   highlightedCountyId: string | null
   highlightedTownshipId: string | null
-   highlightedSchoolId: string | null
+  highlightedSchoolId: string | null
   selectedSchoolId: string | null
   selectedSchoolPoint: SchoolMapPoint | null
   countyBoundaries: CountyBoundaryCollection
@@ -57,7 +57,7 @@ type LayerStackProps = {
   onVectorTileError: () => void
 }
 
-export function MapLayerStack(props: LayerStackProps) {
+export const MapLayerStack = memo(function MapLayerStack(props: LayerStackProps) {
   const {
     theme, activeCountyId, activeTownshipId, hoveredCountyId, hoveredTownshipId,
     highlightedCountyId, highlightedTownshipId, highlightedSchoolId, selectedSchoolId,
@@ -72,6 +72,14 @@ export function MapLayerStack(props: LayerStackProps) {
 
   const map = useMap()
   const tooltipRef = useRef<L.Tooltip | null>(null)
+  const vectorTownshipLookup = useMemo(
+    () => new Map(allTownshipRows.map((township) => [township.id, township])),
+    [allTownshipRows],
+  )
+  const visibleTownshipIds = useMemo(
+    () => (showTownshipMarkers ? visibleTownshipRows.map((row) => row.id) : []),
+    [showTownshipMarkers, visibleTownshipRows],
+  )
 
   useEffect(() => {
     if (!map) return
@@ -115,7 +123,7 @@ export function MapLayerStack(props: LayerStackProps) {
           onSelectCounty={onSelectCounty}
           onSelectTownship={onSelectTownship}
           countyLookup={countyLookup}
-          townshipLookup={new Map(allTownshipRows.map((t) => [t.id, t]))}
+          townshipLookup={vectorTownshipLookup}
           showCounties={showCountyMarkers}
           showTownships={showTownshipMarkers}
         />
@@ -168,7 +176,7 @@ export function MapLayerStack(props: LayerStackProps) {
       <AllTownshipLabels
         onSelectTownship={onSelectTownship}
         hiddenTownshipId={null}
-        visibleTownshipIds={showTownshipMarkers ? visibleTownshipRows.map((r) => r.id) : []}
+        visibleTownshipIds={visibleTownshipIds}
         forceShowAll={forceTownshipLabels}
         townshipBoundaries={allTownshipBoundaries}
         currentZoom={currentMapZoom}
@@ -204,4 +212,4 @@ export function MapLayerStack(props: LayerStackProps) {
       )}
     </>
   )
-}
+})

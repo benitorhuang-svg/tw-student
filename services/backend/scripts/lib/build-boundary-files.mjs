@@ -14,9 +14,11 @@ import {
 
 const TOPOLOGY_QUANTIZATION = 1e5
 const COUNTY_BOUNDARY_URLS = [
+  'https://maps.nlsc.gov.tw/download/縣市界線(TWD97經緯度).zip',
   'https://maps.nlsc.gov.tw/download/%E7%9B%B4%E8%BD%84%E5%B8%82%E3%80%81%E7%B8%A3(%E5%B8%82)%E7%95%8C%E7%B7%9A(TWD97%E7%B6%93%E7%B7%AF%E5%BA%A6).zip',
 ]
 const TOWNSHIP_BOUNDARY_URLS = [
+  'https://maps.nlsc.gov.tw/download/鄉鎮市區界線(TWD97經緯度).zip',
   'https://maps.nlsc.gov.tw/download/%E9%84%89%E9%8E%AE%E5%B8%82%E5%8D%80%E7%95%8C%E7%B7%9A(TWD97%E7%B6%93%E7%B7%AF%E5%BA%A6).zip',
 ]
 

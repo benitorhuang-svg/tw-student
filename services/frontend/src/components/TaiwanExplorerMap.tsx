@@ -1,3 +1,9 @@
+import 'leaflet/dist/leaflet.css'
+import '../styles/map/tooltips.css'
+import '../styles/map/markers.css'
+import '../styles/map/minimap.css'
+import '../styles/organisms/map-panels.css'
+
 import { useEffect, useState } from 'react'
 import {
   MAP_DEFAULT_ZOOM,
