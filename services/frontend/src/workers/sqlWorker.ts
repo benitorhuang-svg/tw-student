@@ -7,7 +7,7 @@ async function initWorker(buffer?: ArrayBuffer) {
   if (!SQL) {
     const [{ default: initSqlJs }, { default: wasm }] = await Promise.all([import('sql.js'), import('sql.js/dist/sql-wasm.wasm?url')])
     wasmUrl = wasm
-    SQL = await initSqlJs({ locateFile: () => wasmUrl })
+    SQL = await initSqlJs({ locateFile: () => wasmUrl || '' })
   }
   if (buffer && !db) {
     db = new SQL.Database(new Uint8Array(buffer))
@@ -32,7 +32,7 @@ self.addEventListener('message', async (ev: MessageEvent) => {
       return
     }
   } catch (err) {
-    ;(self as any).postMessage({ id, error: String(err && err.message ? err.message : err) })
+    ;(self as any).postMessage({ id, error: String((err as any)?.message || err) })
   }
 })
 

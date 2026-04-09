@@ -13,7 +13,7 @@ self.addEventListener('message', (ev) => {
     const buf = enc.encode(json)
     ;(self as any).postMessage({ id, resultBuf: buf.buffer }, [buf.buffer])
   } catch (err) {
-    ;(self as any).postMessage({ id, error: String(err && err.message ? err.message : err) })
+    ;(self as any).postMessage({ id, error: String((err as any)?.message || err) })
   }
 })
 
