@@ -470,14 +470,16 @@
         text-overflow: ellipsis !important;
     }
 
-    /* Directional Fix: Make filters pop UP in the bottom-left cluster */
-    .map-mobile-controls-bottom-left .filter-expansion {
+    /* Directional Fix: Make filters pop UP in the bottom clusters (both left and right stacks) */
+    .map-mobile-controls-bottom-left .filter-expansion,
+    .mobile-utility-pod .filter-expansion {
         top: auto !important;
         bottom: calc(100% + 8px) !important;
         transform: translateY(10px) !important;
     }
 
-    .map-mobile-controls-bottom-left .map-collapsible-filter.is-open .filter-expansion {
+    .map-mobile-controls-bottom-left .map-collapsible-filter.is-open .filter-expansion,
+    .mobile-utility-pod .map-collapsible-filter.is-open .filter-expansion {
         transform: translateY(0) !important;
         opacity: 1 !important;
         visibility: visible !important;

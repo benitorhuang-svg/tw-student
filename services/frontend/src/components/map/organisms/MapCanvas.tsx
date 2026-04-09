@@ -218,9 +218,6 @@ export default function MapCanvas(props: MapCanvasProps) {
             >
               {isMobile ? (
                 <>
-                  <div style={{ marginBottom: '6px', marginRight: '20px' }}>
-                    <MapBreadcrumb scopePath={scopePath} onNavigate={onNavigateScope} />
-                  </div>
                   <AtlasMiniMap 
                     countyBoundaries={countyBoundaries}
                     activeCountyId={activeCountyId}
@@ -229,6 +226,28 @@ export default function MapCanvas(props: MapCanvasProps) {
                     style={{ marginLeft: 0 }}
                   />
                   <MapZoomControls isMobile={isMobile} />
+                  <div 
+                    className="mobile-filter-stack"
+                    style={{ 
+                      display: 'flex', 
+                      flexDirection: 'column', 
+                      gap: '6px', 
+                      pointerEvents: 'auto',
+                      width: '140px',
+                      marginTop: '4px'
+                    }}
+                  >
+                    <AtlasTypeFilter
+                      managementType={managementType}
+                      onSetManagementType={onSetManagementType}
+                      startTransition={startTransition}
+                    />
+                    <AtlasLevelFilter
+                      educationLevel={educationLevel}
+                      onSetEducationLevel={onSetEducationLevel}
+                      startTransition={startTransition}
+                    />
+                  </div>
                 </>
               ) : (
                 <>
@@ -343,28 +362,7 @@ export default function MapCanvas(props: MapCanvasProps) {
                 pointerEvents: 'none'
               }}
             >
-              {/* 2A. Mobile Filters Cluster */}
-              <div 
-                className="mobile-filter-stack"
-                style={{ 
-                  display: 'flex', 
-                  flexDirection: 'column', 
-                  gap: '6px', 
-                  pointerEvents: 'auto',
-                  width: '140px' 
-                }}
-              >
-                <AtlasTypeFilter
-                  managementType={managementType}
-                  onSetManagementType={onSetManagementType}
-                  startTransition={startTransition}
-                />
-                <AtlasLevelFilter
-                  educationLevel={educationLevel}
-                  onSetEducationLevel={onSetEducationLevel}
-                  startTransition={startTransition}
-                />
-              </div>
+              {/* Filters moved to the right side pod */}
 
               {/* 2B. Trend Card */}
               {props.currentTrend && props.currentLevel && props.currentLevel !== '全台' && (
@@ -389,6 +387,11 @@ export default function MapCanvas(props: MapCanvasProps) {
                   onTogglePlayback={props.onTogglePlayback}
                   startTransition={props.startTransition}
                 />
+              </div>
+
+              {/* 2D. Map Breadcrumb (導覽膠囊) - Now at the very bottom left */}
+              <div style={{ pointerEvents: 'auto', marginTop: '2px' }}>
+                <MapBreadcrumb scopePath={scopePath} onNavigate={onNavigateScope} />
               </div>
             </div>
           )}

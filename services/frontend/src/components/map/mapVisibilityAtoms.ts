@@ -13,16 +13,16 @@ export function computeLayerVisibility(zoom: number, hasSchoolPoints: boolean): 
   // Revised Zoom-based Visibility Rules:
   // | Level          | Zoom Range  | Layers Shown              |
   // |----------------|-------------|---------------------------|
-  // | County Level   | < 13.0      | Counties                  |
-  // | School Level   | >= 13.0     | Townships + Schools       |
+  // | County Level   | < 12.0      | Counties                  |
+  // | School Level   | >= 12.0     | Townships + Schools       |
   //
   // User Requirements:
   // 1. County + Township levels should NOT show schools.
-  // 2. Zoom >= 13 shows Townships + Schools (No Counties).
-  // 3. Zoom >= 13 is the threshold for detailed exploration.
+  // 2. Zoom >= 12 shows Townships + Schools (No Counties).
+  // 3. Zoom >= 12 is the threshold for detailed exploration.
 
-  const showSchoolMarkers = zoom >= 13.0 && hasSchoolPoints
-  const showCountyMarkers = zoom < 13.0
+  const showSchoolMarkers = zoom >= 12.0 && hasSchoolPoints
+  const showCountyMarkers = zoom < 12.0
   const showTownshipMarkers = zoom >= 10.5
 
   return {

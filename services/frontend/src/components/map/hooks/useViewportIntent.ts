@@ -68,9 +68,12 @@ export function useViewportIntent(
       }
     }
 
+    const isZoomCloseToCurrent = requestedZoom != null && Math.abs(requestedZoom - currentZoom) < 0.05
+    const effectiveZoomId = (requestedZoom == null || isZoomCloseToCurrent) ? 'auto' : requestedZoom.toFixed(1)
+
     if (selectedSchoolPoint) {
         const zoom = requestedZoom ?? pendingInitialZoom ?? MAP_FOCUS_SCHOOL_ZOOM
-        const id = `school:${selectedSchoolPoint.id}:${requestedZoom ?? 'auto'}:${mapResetToken}`
+        const id = `school:${selectedSchoolPoint.id}:${effectiveZoomId}:${mapResetToken}`
         const lat = isMobile ? selectedSchoolPoint.latitude - 0.01 : selectedSchoolPoint.latitude
         const lng = selectedSchoolPoint.longitude
 
@@ -91,7 +94,7 @@ export function useViewportIntent(
         if (bounds.isValid()) {
           const center = bounds.getCenter()
           const zoom = requestedZoom ?? Math.max(currentZoom, MAP_TOWNSHIP_FOCUS_ZOOM)
-          const id = `township:${activeTownshipId}:${requestedZoom ?? 'auto'}:${mapResetToken}`
+          const id = `township:${activeTownshipId}:${effectiveZoomId}:${mapResetToken}`
           const offsetLat = isMobile ? center.lat - 0.02 : center.lat
           const finalCenter = [offsetLat, center.lng]
 
@@ -122,13 +125,13 @@ export function useViewportIntent(
       // different zoom still produce a flyTo.
       if (autoSelectedRecently) {
         const zoom = requestedZoom ?? MAP_COUNTY_ZOOM
-        const id = `county:${activeCountyId}:${zoom}`
+        const id = `county:${activeCountyId}:${effectiveZoomId}:${mapResetToken}`
         return { id, type: 'noop' }
       }
 
       if (countyFeature) {
         const zoom = requestedZoom ?? MAP_COUNTY_ZOOM
-        const id = `county:${activeCountyId}:${requestedZoom ?? 'auto'}:${mapResetToken}`
+        const id = `county:${activeCountyId}:${effectiveZoomId}:${mapResetToken}`
         const centerLat = isMobile ? countyFeature.properties.centerLatitude - 0.1 : countyFeature.properties.centerLatitude
         const centerLng = countyFeature.properties.centerLongitude
         
@@ -146,7 +149,7 @@ export function useViewportIntent(
       // are not obscured by the left controls/edges. We also shift the center North
       // (+0.5 latitude) so that the map content visually shifts down.
       const nationalCenter: [number, number] = isMobile 
-        ? [MAP_DEFAULT_CENTER[0] - 0.8, MAP_DEFAULT_CENTER[1] ] 
+        ? [MAP_DEFAULT_CENTER[0] - 0.8, MAP_DEFAULT_CENTER[1] + 0.5] 
         : MAP_DEFAULT_CENTER
 
       return {
