@@ -53,7 +53,12 @@ export function useAtlasUrlSync({
     // Preserve any query params we don't explicitly manage (e.g. vectorTiles).
     const params = new URLSearchParams(window.location.search)
 
-    params.set('year', String(summaryDataset.years.includes(activeYear) ? activeYear : summaryDataset.years.at(-1) ?? activeYear))
+    const datasetYears = summaryDataset.years || []
+    const latestDatasetYear = datasetYears.length > 0 
+      ? Math.max(...datasetYears.map(Number)) as AcademicYear 
+      : activeYear
+      
+    params.set('year', String(datasetYears.includes(activeYear) ? activeYear : latestDatasetYear))
 
     if (educationLevel !== '全部') params.set('level', educationLevel)
     else params.delete('level')

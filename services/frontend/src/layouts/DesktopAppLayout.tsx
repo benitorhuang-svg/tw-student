@@ -47,7 +47,7 @@ type DesktopAppLayoutProps = {
   // Canvas
   activeTab: AtlasTab
   sidebarRef: RefObject<HTMLDivElement | null>
-  desktopTabItems: Array<{ id: AtlasTab; label: string }>
+  desktopTabItems: Array<{ key: AtlasTab; label: string }>
   setActiveTab: (tab: AtlasTab) => void
   mapElement: ReactNode
   derived: ReturnType<typeof useAtlasDerivedState>

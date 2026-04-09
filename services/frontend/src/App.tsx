@@ -9,13 +9,16 @@ import { buildDesktopTabItems } from './hooks/atlasHelpers'
 import { useEducationData } from './hooks/useEducationData'
 import { useFeedbackMessage } from './hooks/useFeedbackMessage'
 import { useYearPlayback } from './hooks/useYearPlayback'
+import { useIsMobile } from './hooks/useIsMobile'
 import { THEME_STORAGE_KEY } from './lib/constants'
 import { AppLoadingShell, AppErrorShell } from './components/AppStatusShell'
 
 const TaiwanExplorerMap = lazy(() => import('./components/TaiwanExplorerMap'))
 const DesktopAppLayout = lazy(() => import('./layouts/DesktopAppLayout'))
+const MobileAppLayout = lazy(() => import('./layouts/MobileAppLayout'))
 
 function App() {
+  const isMobile = useIsMobile()
   const state = useAtlasAppState()
   
   const [vectorTileUrl, setVectorTileUrl] = useState(() => {
@@ -136,8 +139,13 @@ function App() {
           onSetEducationLevel={state.setEducationLevel}
           onSetManagementType={state.setManagementType}
           startTransition={startTransition}
+          isYearPlaybackActive={isYearPlaybackActive}
+          onTogglePlayback={() => setIsYearPlaybackActive(!isYearPlaybackActive)}
           activeCountyName={derived.selectedCounty?.name ?? null}
           summaryDataset={summaryDataset}
+          currentTrend={derived.currentScope?.trend ?? []}
+          currentLabel={derived.currentScope?.label ?? '全台'}
+          currentLevel={derived.currentScope?.scopeLevel ?? '全台'}
         />
       )
     },
@@ -151,6 +159,7 @@ function App() {
       startTransition,
       state,
       setIsYearPlaybackActive,
+      isYearPlaybackActive,
       summaryDataset,
       vectorTileUrl,
     ],
@@ -170,6 +179,86 @@ function App() {
 
   if (!summaryDataset || !countyBoundaries) {
     return <AppLoadingShell message="正在載入教育部與官方行政區資料" />
+  }
+
+  if (isMobile) {
+    return (
+      <Suspense fallback={<AppLoadingShell message="正在載入行動版地圖..." />}>
+        <div className="app-shell" data-testid="atlas-app" data-theme={state.theme}>
+          <MobileAppLayout
+            {...state}
+            activeCountyId={state.selectedCountyId}
+            activeTownshipId={state.selectedTownshipId}
+            map={mapElement}
+            tabItems={desktopTabItems}
+            onSetActiveTab={state.setActiveTab}
+            scopePath={derived.scopePath}
+            scopeHeadline={derived.selectedCounty?.name ?? '全台'}
+            scopeDescription={derived.selectedTownshipSummary?.label || '請選擇區域'}
+            currentScope={derived.currentScope}
+            summaryYears={[...summaryDataset.years]}
+            isYearPlaybackActive={isYearPlaybackActive}
+            isPending={isPending}
+            startTransition={startTransition}
+            countyQuickPicks={derived.mapCountySummaries.map(c => ({ id: c.id, name: c.name }))}
+            onSetActiveYear={state.setActiveYear}
+            onSetEducationLevel={state.setEducationLevel}
+            onSetManagementType={state.setManagementType}
+            onSetRegion={state.setRegion}
+            onSetIsYearPlaybackActive={setIsYearPlaybackActive}
+            onResetScope={scenarioActions.handleResetScope}
+            onSelectCounty={scenarioActions.handleCountySelect}
+            onSelectTownship={scenarioActions.handleTownshipSelect}
+            onPrefetchCounty={handlePrefetchCounty}
+            educationDistribution={derived.educationDistribution}
+            observedCounties={derived.observedCounties}
+            topCountyPrefetchIds={derived.topCountyPrefetchIds}
+            loadObservation={loadObservation}
+            offlineReadyWithBuckets={derived.offlineReadyWithBuckets}
+            selectedCountyName={derived.selectedCounty?.name ?? null}
+            topRows={derived.topRows}
+            onPrefetchAll={() => {}}
+            comparisonScenarioName={activeScenarioSnapshot?.name ?? ''}
+            effectiveComparisonCountyIds={activeScenarioSnapshot?.countyIds ?? []}
+            comparisonCandidates={[]}
+            comparisonSummaries={[]}
+            favoriteScenarios={[]}
+            recentScenarios={[]}
+            activeScenarioSnapshot={activeScenarioSnapshot}
+            favoriteScenarioIds={new Set()}
+            copyFeedbackMessage={copyFeedback.message}
+            scenarioFeedbackMessage={scenarioFeedback.message}
+            filteredAnomalies={[]}
+            activeInvestigation={null}
+            selectedInvestigationId={null}
+            investigationFilter="全部"
+            scopeNotes={[]}
+            onChangeScenarioName={() => {}}
+            onToggleCounty={() => {}}
+            onCopyLink={() => {}}
+            onSaveScenario={() => {}}
+            onExportScenarios={() => {}}
+            onImportScenarios={() => {}}
+            onApplyScenario={() => {}}
+            onTogglePinScenario={() => {}}
+            onRenameScenario={() => {}}
+            onRemoveScenario={() => {}}
+            onSelectInvestigation={() => {}}
+            onSetFilter={() => {}}
+            onDownloadInvestigation={() => {}}
+            onDownloadAll={() => {}}
+            countyDetailError={educationData.countyDetailError}
+            isCountyDetailLoading={educationData.isRefreshingData}
+            schoolInsights={[]}
+            selectedSchool={null}
+            schoolPanelTitle=""
+            selectedTownshipSummary={derived.selectedTownshipSummary}
+            selectedCountySummary={derived.selectedCounty ? { label: derived.selectedCounty.name } : null}
+            onSelectSchool={handleSchoolSelect}
+          />
+        </div>
+      </Suspense>
+    )
   }
 
   return (

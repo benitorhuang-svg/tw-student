@@ -115,94 +115,22 @@ type MobileAppLayoutProps = {
 function MobileAppLayout(props: MobileAppLayoutProps) {
     const {
         map,
-        scopeHeadline,
         activeYear,
-        currentScope,
         educationLevel,
         managementType,
         region,
-        selectedCountyName,
-        topRows,
         activeCountyId,
-        activeTownshipId,
         onSelectCounty,
-        onSelectTownship,
         onPrefetchCounty,
     } = props
 
     const [isFilterOpen, setIsFilterOpen] = useState(false)
 
-    const filterBadges: string[] = []
-    if (educationLevel !== '全部') filterBadges.push(educationLevel)
-    if (managementType !== '全部') filterBadges.push(managementType)
-
     return (
         <>
-            <div className="mobile-layout" data-mode="overview">
-                <div className="mobile-layout__map">
-                    <div className="atlas-map-panel" style={{ height: '100%', borderRadius: 0 }}>
-                        <div className="atlas-map-shell">
-                            <div className="atlas-map-canvas-wrap">{map}</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="mobile-layout__panel">
-                    <div className="mobile-scope-bar">
-                        <div className="mobile-scope-bar__info">
-                            <span className="mobile-scope-bar__headline">{scopeHeadline}</span>
-                            <span className="mobile-scope-bar__sub">{currentScope.label}</span>
-                        </div>
-                        <span className="mobile-scope-bar__year">{formatAcademicYear(activeYear)}</span>
-                    </div>
-
-                    <button type="button" className="mobile-filter-trigger" onClick={() => setIsFilterOpen(true)}>
-                        <span>🔍 篩選條件</span>
-                        <div className="mobile-filter-trigger__badges">
-                            {filterBadges.length > 0
-                                ? filterBadges.map((b) => (
-                                    <span key={b} className="mobile-filter-trigger__badge">
-                                        {b}
-                                    </span>
-                                ))
-                                : <span className="mobile-filter-trigger__badge">全部</span>}
-                        </div>
-                    </button>
-
-                    <div className="mobile-layout__stack tab-content-enter">
-                            <ScopePanel
-                                scopePath={props.scopePath}
-                                scopeHeadline={props.scopeHeadline}
-                                scopeDescription={props.scopeDescription}
-                                currentScope={currentScope}
-                                activeYear={activeYear}
-                                isYearPlaybackActive={props.isYearPlaybackActive}
-                                educationDistribution={props.educationDistribution}
-                            />
-
-                            <InsightPanel
-                                title={selectedCountyName ? `${selectedCountyName} 鄉鎮排行` : '全台縣市排行'}
-                                subtitle={selectedCountyName ? '點擊鄉鎮即可同步切換' : '點擊縣市即可同步縮小地圖範圍'}
-                                rows={topRows}
-                                activeRowId={activeTownshipId ?? activeCountyId}
-                                onSelectRow={(rowId) => {
-                                    if (selectedCountyName) {
-                                        onSelectTownship(rowId)
-                                        return
-                                    }
-                                    onSelectCounty(rowId)
-                                }}
-                                onHoverRow={(rowId) => {
-                                    if (!selectedCountyName && rowId) {
-                                        onPrefetchCounty(rowId)
-                                        return
-                                    }
-
-                                    onPrefetchCounty(null)
-                                }}
-                                emptyMessage="目前條件沒有可顯示的排行資料。"
-                            />
-                    </div>
+            <div className="mobile-layout" data-view="map-centric">
+                <div className="mobile-layout__full-map">
+                    {map}
                 </div>
             </div>
 

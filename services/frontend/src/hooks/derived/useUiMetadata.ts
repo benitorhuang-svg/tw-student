@@ -17,6 +17,7 @@ type UiMetadataArgs = {
   nationalSummary: ScopeSummary | null
   loadObservation: AtlasLoadObservationSnapshot
   selectedCounty: CountySummaryRecord | null
+  selectedSchoolInsight: any | null
 }
 
 export function useUiMetadata(args: UiMetadataArgs) {
@@ -28,7 +29,8 @@ export function useUiMetadata(args: UiMetadataArgs) {
     townshipRows,
     nationalSummary,
     loadObservation,
-    selectedCounty
+    selectedCounty,
+    selectedSchoolInsight
   } = args
 
   return useMemo(() => {
@@ -85,6 +87,21 @@ export function useUiMetadata(args: UiMetadataArgs) {
         hasTownshipSlice: loadObservation.loadedTownshipSlices.includes(c.id),
       }))
 
+    const scopeLevel = selectedSchoolInsight ? '學校' : selectedTownshipSummary ? '鄉鎮' : selectedCountySummary ? '縣市' : '全台'
+    let currentScope = selectedTownshipSummary ?? selectedCountySummary ?? nationalSummary ?? fallbackScope
+    
+    // If a school is selected, override trend with school trend
+    if (selectedSchoolInsight) {
+      currentScope = {
+        ...currentScope,
+        label: selectedSchoolInsight.name,
+        students: selectedSchoolInsight.currentStudents,
+        delta: selectedSchoolInsight.delta,
+        deltaRatio: selectedSchoolInsight.deltaRatio,
+        trend: selectedSchoolInsight.trend,
+      }
+    }
+
     return {
       scopePath,
       rankingRows,
@@ -95,7 +112,10 @@ export function useUiMetadata(args: UiMetadataArgs) {
       schoolPanelTitle,
       generatedAtLabel,
       observedCounties,
-      currentScope: selectedTownshipSummary ?? selectedCountySummary ?? nationalSummary ?? fallbackScope,
+      currentScope: {
+        ...currentScope,
+        scopeLevel,
+      },
     }
-  }, [summaryDataset, selectedCountySummary, selectedTownshipSummary, selectedCounty, townshipRows, countyRankingRows, nationalSummary, loadObservation])
+  }, [summaryDataset, selectedCountySummary, selectedTownshipSummary, selectedCounty, townshipRows, countyRankingRows, nationalSummary, loadObservation, selectedSchoolInsight])
 }

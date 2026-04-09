@@ -12,7 +12,7 @@ import {
 
 export type AtlasTab = 'welcome' | 'overview' | 'county' | 'schools' | 'school-focus'
 
-export const DEFAULT_YEAR = ACADEMIC_YEARS.at(-1) ?? 114
+export const DEFAULT_YEAR = ACADEMIC_YEARS[ACADEMIC_YEARS.length - 1]
 
 function isAtlasTab(value: string | null): value is AtlasTab {
   return value === 'welcome' || value === 'overview' || value === 'county' || value === 'schools' || value === 'school-focus'
@@ -20,7 +20,12 @@ function isAtlasTab(value: string | null): value is AtlasTab {
 
 export function readInitialQueryState() {
   const params = new URLSearchParams(window.location.search)
-  const year = Number(params.get('year'))
+  const yearParam = params.get('year')
+  const yearNum = yearParam ? Number(yearParam) : null
+  const activeYear = (yearNum && ACADEMIC_YEARS.includes(yearNum as AcademicYear))
+    ? (yearNum as AcademicYear)
+    : DEFAULT_YEAR
+
   const educationLevel = params.get('level')
   const managementType = params.get('management')
   const compare = params.get('compare')
@@ -34,7 +39,7 @@ export function readInitialQueryState() {
   const forceTownshipLabels = params.get('forceTownshipLabels')
 
   return {
-    activeYear: ACADEMIC_YEARS.includes(year as AcademicYear) ? (year as AcademicYear) : DEFAULT_YEAR,
+    activeYear,
     educationLevel: EDUCATION_LEVELS.includes(educationLevel as EducationLevelFilter)
       ? (educationLevel as EducationLevelFilter)
       : '全部',

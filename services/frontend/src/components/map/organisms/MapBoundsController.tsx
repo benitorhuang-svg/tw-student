@@ -9,9 +9,6 @@ import { MAP_TOWNSHIP_FOCUS_ZOOM } from '../../../lib/constants'
 import { useViewportIntent } from '../hooks/useViewportIntent'
 
 const AUTO_SELECT_SUPPRESSION_MS = 2000
-const PADDING_TOP_LEFT: L.PointExpression = [200, 150]
-const PADDING_BOTTOM_RIGHT: L.PointExpression = [60, 60]
-
 type MapBoundsControllerProps = {
   countyBoundaries: CountyBoundaryCollection
   townshipBoundaries: TownshipBoundaryCollection | null
@@ -20,6 +17,7 @@ type MapBoundsControllerProps = {
   selectedSchoolPoint: SchoolMapPoint | null
   activeRegion: RegionGroupFilter
   mapResetToken: number
+  isMobile: boolean
   onZoomChange?: (zoom: number) => void
   onMoveEnd?: (lat: number, lon: number) => void
   initialZoomFromUrl?: number | null
@@ -39,6 +37,7 @@ function MapBoundsController({
   selectedSchoolPoint,
   activeRegion,
   mapResetToken,
+  isMobile,
   onZoomChange,
   onMoveEnd,
   onAutoSelectCounty,
@@ -50,6 +49,10 @@ function MapBoundsController({
   activeTab,
 }: MapBoundsControllerProps) {
   const map = useMap()
+
+  // Dynamic padding based on responsivity
+  const dynamicPaddingTopLeft: L.PointExpression = isMobile ? [20, 80] : [400, 100]
+  const dynamicPaddingBottomRight: L.PointExpression = isMobile ? [20, 80] : [60, 60]
 
   const lastAutoSelectRef = useRef<string | null>(null)
   const hasInitialCenter = initialLatFromUrl != null && initialLonFromUrl != null
@@ -104,8 +107,8 @@ function MapBoundsController({
     if (intent.type === 'flyTo') {
       const bounds = L.latLng(intent.center).toBounds(200)
       map.flyToBounds(bounds, {
-        paddingTopLeft: PADDING_TOP_LEFT,
-        paddingBottomRight: PADDING_BOTTOM_RIGHT,
+        paddingTopLeft: dynamicPaddingTopLeft,
+        paddingBottomRight: dynamicPaddingBottomRight,
         maxZoom: intent.zoom,
         animate: true,
         duration: 0.8,
@@ -119,8 +122,8 @@ function MapBoundsController({
       // Use fitBounds with duration 0 to respect padding for snap commands too
       const bounds = L.latLng(intent.center).toBounds(200)
       map.fitBounds(bounds, {
-        paddingTopLeft: PADDING_TOP_LEFT,
-        paddingBottomRight: PADDING_BOTTOM_RIGHT,
+        paddingTopLeft: dynamicPaddingTopLeft,
+        paddingBottomRight: dynamicPaddingBottomRight,
         maxZoom: intent.zoom,
         animate: false
       })

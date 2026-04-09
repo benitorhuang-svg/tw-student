@@ -8,11 +8,14 @@ import { MapLayerStack } from '../molecules/MapLayerStack'
 import { useMapComputedState } from '../useMapComputedState'
 import { MapEvents } from '../atoms/MapEvents'
 import MapBreadcrumb from '../atoms/MapBreadcrumb'
-import { MapYearLabel } from '../atoms/MapYearLabel'
+
+import { MapTrendCard } from '../molecules/MapTrendCard'
 import { MapControlStack } from '../molecules/MapControlStack'
 import { AtlasLevelFilter, AtlasTypeFilter } from '../../AtlasGlobalFilters'
 import { AtlasMiniMap } from '../molecules/AtlasMiniMap'
 import { MapZoomControls } from '../atoms/MapZoomControls'
+import { MapYearStepper } from '../atoms/MapYearStepper'
+import { useIsMobile } from '../../../hooks/useIsMobile'
 
 import type { CountyBucketDataset, CountyBoundaryCollection, TownshipBoundaryCollection, AcademicYear, EducationLevelFilter, ManagementTypeFilter, RegionGroupFilter, EducationSummaryDataset } from '../../../data/educationData'
 import type { CountySummary, RankingSummary } from '../../../lib/analytics.types'
@@ -66,11 +69,16 @@ export type MapCanvasProps = {
   onResetRegion: () => void
   onSetActiveYear: (year: AcademicYear) => void
   onStopPlayback: () => void
+  onTogglePlayback: () => void
   onSetEducationLevel: (level: EducationLevelFilter) => void
   onSetManagementType: (type: ManagementTypeFilter) => void
+  isYearPlaybackActive: boolean
   startTransition: TransitionStartFunction
   activeCountyName: string | null
   summaryDataset?: EducationSummaryDataset | null
+  currentTrend?: Array<{ year: AcademicYear; value: number }>
+  currentLabel?: string
+  currentLevel?: string
 }
 
 export default function MapCanvas(props: MapCanvasProps) {
@@ -85,6 +93,8 @@ export default function MapCanvas(props: MapCanvasProps) {
     onSetEducationLevel, onSetManagementType,
     startTransition, activeCountyName
   } = props
+
+  const isMobile = useIsMobile()
 
   const selectedSchool = useMemo(() => {
     const directMatch = selectedSchoolId
@@ -174,53 +184,188 @@ export default function MapCanvas(props: MapCanvasProps) {
             
             <MapBoundsController
               {...props}
+              isMobile={isMobile}
               selectedSchoolPoint={selectedSchool}
               initialZoomFromUrl={initialMapZoom}
               initialLatFromUrl={initialMapLat}
               initialLonFromUrl={initialMapLon}
             />
 
-            {/* 1. Top Bar: Breadcrumb (Left) | Filters + Year (Right) */}
-            <div className="map-top-bar">
-              <div className="map-top-bar__left">
-                <MapBreadcrumb scopePath={scopePath} onNavigate={onNavigateScope} />
-              </div>
-              
-              <div className="map-top-bar__right">
-                <div className="map-top-bar__filters">
-                  <AtlasTypeFilter
-                    managementType={managementType}
-                    onSetManagementType={onSetManagementType}
-                    startTransition={startTransition}
-                  />
-                  <AtlasLevelFilter
-                    educationLevel={educationLevel}
-                    onSetEducationLevel={onSetEducationLevel}
-                    startTransition={startTransition}
-                  />
-                </div>
-                <MapYearLabel activeYear={props.activeYear} />
-              </div>
-            </div>
-
-            {/* 2. Control Pillar: MiniMap + Zoom (Below Top Bar) */}
-            <div className="map-control-pillar">
+            {/* Utility Pod: Context-based controls */}
+            <div 
+              className={isMobile ? "mobile-utility-pod" : "map-control-pillar"}
+              style={isMobile ? { 
+                position: 'absolute', 
+                top: '60px', 
+                left: '5px', 
+                display: 'flex', 
+                alignItems: 'flex-end', 
+                gap: '8px', 
+                zIndex: 1000 
+              } : {
+                position: 'absolute',
+                bottom: '16px',
+                top: 'auto',
+                left: '16px',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '12px',
+                zIndex: 1000
+              }}
+            >
+              <MapZoomControls />
               <AtlasMiniMap 
                 countyBoundaries={countyBoundaries}
                 activeCountyId={activeCountyId}
                 onSelectCounty={props.onSelectCounty}
                 isVisible={true}
+                style={{ marginLeft: 0 }}
               />
-              <MapZoomControls />
             </div>
 
-            {/* 3. Floating Overlay Tools (Bottom Left) */}
             <MapControlStack
               activeTab={activeTab}
               activeCountyName={activeCountyName}
             />
-
           </MapContainer>
+
+          {/* Map UI Layer: Overlays above the leaflet canvas */}
+          <div 
+            className="map-top-bar"
+            style={{ 
+              position: 'absolute', 
+              top: isMobile ? '10px' : '16px', 
+              left: 0, 
+              right: 0, 
+              width: '100%', 
+              zIndex: 1100, 
+              pointerEvents: 'none',
+              display: 'flex',
+              justifyContent: 'space-between',
+              padding: '0 8px'
+            }}
+          >
+              {/* 1. Left Cluster: Cockpit Pod (Breadcrumb + Controls) */}
+              <div 
+                className="map-top-bar__controls-left"
+                style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px', pointerEvents: 'auto' }}
+              >
+                <MapBreadcrumb scopePath={scopePath} onNavigate={onNavigateScope} />
+                
+                {/* 1A. Western Year Correlation - Width Fixed to 140px */}
+                {!isMobile && (
+                  <div 
+                    className="map-western-year-badge"
+                    style={{
+                      height: '40px',
+                      width: '140px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      backgroundColor: 'var(--map-overlay-bg)',
+                      backdropFilter: 'blur(var(--map-overlay-blur))',
+                      border: '1px solid var(--map-overlay-border)',
+                      borderRadius: 'var(--radius-md)',
+                      fontSize: '0.85rem',
+                      fontWeight: 800,
+                      color: 'var(--brand-primary)',
+                      boxShadow: 'var(--shadow-premium)',
+                      letterSpacing: '0.02em'
+                    }}
+                  >
+                    {String(parseInt(String(props.activeYear)) + 1910)} - {String(parseInt(String(props.activeYear)) + 1911)}
+                  </div>
+                )}
+
+                {/* 1B. Filters - All unified to 140px width */}
+                {!isMobile && (
+                  <>
+                    <div style={{ width: '140px' }}>
+                      <AtlasTypeFilter
+                        managementType={managementType}
+                        onSetManagementType={onSetManagementType}
+                        startTransition={startTransition}
+                      />
+                    </div>
+                    <div style={{ width: '140px' }}>
+                      <AtlasLevelFilter
+                        educationLevel={educationLevel}
+                        onSetEducationLevel={onSetEducationLevel}
+                        startTransition={startTransition}
+                      />
+                    </div>
+                  </>
+                )}
+              </div>
+
+              {/* 2. Right Side: Empty for maximum map visibility */}
+              <div className="map-top-right-tower" />
+          </div>
+
+          {/* 2. Bottom-Left Overlay: Unified Control Stack (Filters + Trend Card + Year Stepper) */}
+          {isMobile && (
+            <div 
+              className="map-mobile-controls-bottom-left"
+              style={{ 
+                position: 'absolute', 
+                bottom: '15px', 
+                left: '8px', 
+                display: 'flex', 
+                flexDirection: 'column', 
+                gap: '8px', 
+                zIndex: 1050,
+                pointerEvents: 'none'
+              }}
+            >
+              {/* 2A. Mobile Filters Cluster */}
+              <div 
+                className="mobile-filter-stack"
+                style={{ 
+                  display: 'flex', 
+                  flexDirection: 'column', 
+                  gap: '6px', 
+                  pointerEvents: 'auto',
+                  width: '140px' 
+                }}
+              >
+                <AtlasTypeFilter
+                  managementType={managementType}
+                  onSetManagementType={onSetManagementType}
+                  startTransition={startTransition}
+                />
+                <AtlasLevelFilter
+                  educationLevel={educationLevel}
+                  onSetEducationLevel={onSetEducationLevel}
+                  startTransition={startTransition}
+                />
+              </div>
+
+              {/* 2B. Trend Card */}
+              {props.currentTrend && props.currentLevel && props.currentLevel !== '全台' && (
+                <div style={{ pointerEvents: 'auto' }}>
+                  <MapTrendCard 
+                    trend={props.currentTrend} 
+                    activeYear={props.activeYear} 
+                    label={props.currentLabel || '全台'}
+                    level={props.currentLevel}
+                  />
+                </div>
+              )}
+
+              {/* 2C. Year Stepper (學年度) - Now below the Trend Card */}
+              <div style={{ pointerEvents: 'auto' }}>
+                <MapYearStepper
+                  activeYear={props.activeYear}
+                  summaryYears={props.summaryYears}
+                  isYearPlaybackActive={props.isYearPlaybackActive}
+                  onSetActiveYear={props.onSetActiveYear}
+                  onStopPlayback={props.onStopPlayback}
+                  onTogglePlayback={props.onTogglePlayback}
+                  startTransition={props.startTransition}
+                />
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </section>

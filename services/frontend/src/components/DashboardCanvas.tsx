@@ -27,7 +27,7 @@ import '../styles/templates/dashboard-shell/01-premium-cards-system.css'
 type DashboardCanvasProps = {
   activeTab: AtlasTab
   sidebarRef: RefObject<HTMLDivElement | null>
-  desktopTabItems: Array<{ id: AtlasTab; label: string }>
+  desktopTabItems: Array<{ key: AtlasTab; label: string }>
   setActiveTab: (tab: AtlasTab) => void
   mapElement: ReactNode
   header: ReactNode
@@ -146,7 +146,7 @@ function DashboardCanvas({
         <div className="side-shell__body" ref={sidebarRef}>
           <AtlasTabs
             activeTab={activeTab}
-            items={desktopTabItems.map(item => ({ key: item.id, label: item.label }))}
+            items={desktopTabItems}
             onSelectTab={setActiveTab}
           />
 

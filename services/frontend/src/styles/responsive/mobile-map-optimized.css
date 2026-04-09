@@ -1,0 +1,472 @@
+/* mobile-map-optimization.css */
+
+@media (max-width: 860px) {
+    /* Full screen map layout */
+    .mobile-layout[data-view="map-centric"] {
+        width: 100vw;
+        height: 100vh;
+        height: 100dvh;
+        overflow: hidden;
+        background: var(--map-canvas-bg);
+        position: relative;
+    }
+
+    .mobile-layout__full-map {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mobile-layout__full-map .atlas-map-panel {
+        height: 100%;
+        width: 100%;
+    }
+
+    /* 1. Top Bar: Streamlined Multi-tier Header */
+    .map-top-bar {
+        position: absolute;
+        top: 15px;
+        left: 0 !important;
+        right: auto !important;
+        width: fit-content !important;
+        padding-left: 5px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        pointer-events: none;
+        z-index: 1100;
+    }
+
+    .map-top-bar__controls {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 8px;
+        pointer-events: auto;
+        overflow: visible !important;
+    }
+
+    .map-top-bar__controls > * {
+        flex-shrink: 0;
+    }
+
+    .map-top-bar__controls::-webkit-scrollbar {
+        display: none;
+    }
+
+    .map-breadcrumb-container.is-mobile {
+        position: absolute;
+        bottom: 15px;
+        left: 0 !important;
+        padding-left: 5px;
+        right: auto;
+        z-index: 1050;
+        pointer-events: none;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .map-breadcrumb-container.is-mobile > * {
+        pointer-events: auto;
+    }
+
+    /* Map Year Stepper Redesign */
+    .map-year-stepper {
+        pointer-events: auto;
+        flex: none;
+    }
+
+    .map-year-stepper__wrapper {
+        display: flex;
+        align-items: center;
+        background: var(--map-overlay-bg);
+        border: 1px solid var(--map-overlay-border);
+        border-radius: var(--radius-pill);
+        padding: 4px 8px;
+        box-shadow: var(--shadow-premium);
+        backdrop-filter: blur(var(--map-overlay-blur));
+        width: fit-content;
+        min-width: 260px !important;
+        justify-content: space-between;
+    }
+
+    .map-year-stepper__controls {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .map-year-stepper__label {
+        font-size: 0.88rem;
+        font-weight: 800;
+        color: var(--brand-primary);
+        padding: 0 4px;
+        min-width: 95px;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    .map-year-stepper__btn {
+        width: 32px;
+        height: 32px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: none;
+        background: transparent;
+        color: var(--text-main);
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    .map-year-stepper__btn:disabled {
+        opacity: 0.3;
+    }
+
+    .map-year-stepper__divider {
+        width: 1px;
+        height: 18px;
+        background: rgba(0,0,0,0.12);
+        margin: 0 12px;
+    }
+
+    .map-year-stepper__play-btn {
+        width: 32px;
+        height: 32px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: none;
+        background: transparent;
+        color: var(--brand-primary);
+        cursor: pointer;
+        transition: all 0.2s;
+        margin-right: 4px;
+    }
+
+    /* Trend Line Chart Mobile Version */
+    .map-trend-card__chart-container {
+        position: relative;
+        height: 100px;
+        width: 100%;
+        margin-top: 5px;
+        padding: 0 10px;
+    }
+
+    .map-trend-card__svg {
+        width: 100%;
+        height: 50px;
+        overflow: visible;
+        margin-top: 20px;
+    }
+
+    .map-trend-card__labels {
+        position: absolute;
+        top: 0;
+        left: 10px;
+        right: 10px;
+        bottom: 0;
+        pointer-events: none;
+    }
+
+    .map-trend-card__data-col {
+        position: absolute;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        justify-content: flex-start;
+    }
+
+    .map-trend-card__data-col.is-active .map-trend-card__year-label {
+        color: var(--brand-primary);
+        font-weight: 900;
+        background: var(--brand-primary-light);
+        border-radius: 4px;
+        padding: 0 2px;
+    }
+
+    .map-trend-card__year-label {
+        margin-top: auto;
+        font-size: 8px;
+        font-weight: 700;
+        color: var(--text-muted);
+        margin-bottom: 2px;
+    }
+
+    .map-trend-card__top-value {
+        font-size: 7px;
+        font-weight: 800;
+        color: var(--text-main);
+        margin-bottom: 2px;
+        white-space: nowrap;
+    }
+
+    .map-trend-card__point {
+        transition: all 0.3s ease;
+    }
+
+    .map-trend-card__point.is-active {
+        r: 5px;
+    }
+
+    .map-year-stepper__play-btn.is-playing {
+        background: var(--brand-primary);
+        color: #fff;
+    }
+
+
+    /* Reset Breadcrumbs to left-aligned industrial pill */
+    .map-breadcrumb {
+        margin-left: 0 !important;
+        padding: 8px 16px !important;
+        background: var(--map-overlay-bg) !important;
+        border: 1px solid var(--map-overlay-border) !important;
+        border-radius: var(--radius-lg) !important;
+        box-shadow: var(--shadow-premium) !important;
+        backdrop-filter: blur(var(--map-overlay-blur)) !important;
+        gap: 2px !important; 
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        font-size: 0.95rem !important;
+        margin-bottom: 0 !important;
+    }
+
+    .map-breadcrumb__segment {
+        background: transparent !important;
+        border-radius: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        border: none !important;
+        display: flex;
+        align-items: center;
+    }
+
+    .map-breadcrumb__step {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0 !important;
+    }
+
+    /* Filters: 1:1 Desktop Look */
+    .map-collapsible-filter {
+        min-width: 140px !important;
+        background: var(--map-overlay-bg) !important;
+        border: 1px solid var(--map-overlay-border) !important;
+        box-shadow: var(--shadow-premium) !important;
+        z-index: 100 !important;
+    }
+
+    .map-collapsible-filter.is-open {
+        z-index: 2000 !important;
+    }
+
+    .filter-expansion {
+        background: #fff !important;
+        color: #1e293b !important;
+        backdrop-filter: none !important;
+        box-shadow: var(--shadow-heavy) !important;
+    }
+
+    .filter-expansion button,
+    .filter-expansion span,
+    .filter-expansion div {
+        color: #1e293b !important;
+    }
+
+    .filter-expansion .segmented-btn {
+        color: #1e293b !important;
+        background: transparent !important;
+        padding: 10px 14px !important;
+        text-align: left !important;
+        width: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+        font-weight: 600 !important;
+        border-radius: var(--radius-sm) !important;
+    }
+
+    .filter-expansion .segmented-btn.active {
+        background: var(--brand-primary) !important;
+        color: #fff !important;
+    }
+
+    .filter-toggle-btn {
+        height: 44px !important;
+        padding: 0 16px !important;
+    }
+
+    /* Year Label: Hide as requested */
+    .map-year-label {
+        display: none !important;
+    }
+
+    /* 2. Reposition Pillar: MiniMap to bottom-left (above breadcrumbs) */
+    .map-control-pillar {
+        bottom: 70px !important;
+        left: 0 !important;
+        padding-left: 5px;
+        right: auto !important;
+        top: auto !important;
+        gap: 0 !important;
+        z-index: 1000;
+        pointer-events: none;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+
+    .map-control-pillar > * {
+        pointer-events: auto;
+    }
+
+    .atlas-mini-map-card,
+    .atlas-mini-map-card__body,
+    .atlas-mini-map-card__main {
+        width: 120px !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        margin-left: 0 !important;
+    }
+
+    .atlas-mini-map-card__main {
+        height: 160px !important;
+        border-radius: var(--radius-lg) !important;
+        background: var(--map-overlay-bg) !important;
+        backdrop-filter: blur(var(--map-overlay-blur)) !important;
+        padding: 0 !important;
+        box-shadow: var(--shadow-premium) !important;
+        border: 1px solid var(--map-overlay-border) !important;
+    }
+
+    .atlas-mini-map-card__svg {
+        border-radius: var(--radius-lg) !important;
+    }
+
+    .atlas-mini-map-card__sea {
+        fill: var(--mini-map-sea, #f0f7ff) !important;
+    }
+
+    /* Map Zoom Controls Mobile - Forced Vertical Pillar (Stretched) */
+    .atlas-map-canvas-wrap {
+        /* ... existing rules ... */
+    }
+
+    .atlas-map-canvas-wrap .map-control-pillar {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: flex-end !important;
+        gap: 12px !important;
+        bottom: 70px !important;
+        left: 12px !important; /* More breathing room from edge */
+        top: auto !important;
+    }
+
+    .atlas-map-canvas-wrap .map-zoom-controls {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        background: var(--map-overlay-bg) !important;
+        border: 1px solid var(--map-overlay-border) !important;
+        border-radius: var(--radius-pill) !important;
+        padding: 12px 4px !important; /* Stretched vertical padding */
+        box-shadow: var(--shadow-premium) !important;
+        backdrop-filter: blur(var(--map-overlay-blur)) !important;
+        gap: 15px !important; /* Larger gap to prevent mis-clicks */
+        width: 36px !important;
+        height: auto !important;
+        pointer-events: auto !important;
+    }
+
+    .map-zoom-btn {
+        width: 32px !important;
+        height: 32px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border-radius: 50% !important;
+        border: none !important;
+        background: transparent !important;
+        color: var(--brand-primary) !important;
+    }
+
+    .map-zoom-level {
+        font-size: 0.72rem !important;
+        font-weight: 800 !important;
+        color: var(--brand-primary) !important;
+        width: 28px !important;
+        height: 28px !important;
+        background: var(--surface-active) !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border: 1px solid var(--map-overlay-border) !important;
+    }
+
+    /* Map Trend Card Mobile     /* Trend Line Chart Mobile Version - Balanced Dashboard Layout */
+    /* Trend Line Chart Mobile Version - Integrated Left Stack Layout */
+    .map-trend-card {
+        position: relative; /* Now flows inside the parent column */
+        top: auto;
+        right: auto;
+        left: 0 !important;
+        width: 260px !important; /* Match SVG width + padding */
+        background: var(--map-overlay-bg);
+        border: 1px solid var(--map-overlay-border);
+        border-radius: 12px;
+        padding: 10px 12px;
+        box-shadow: var(--shadow-premium);
+        backdrop-filter: blur(var(--map-overlay-blur));
+        z-index: 1000;
+        pointer-events: auto;
+        margin-top: 4px;
+    }
+
+    .map-trend-card__title {
+        font-size: 0.82rem;
+        font-weight: 800;
+        color: var(--text-main);
+        margin-bottom: 20px; /* Balanced room for top labels */
+        padding-left: 8px;
+        border-left: 3px solid var(--brand-primary);
+        line-height: 1.2;
+    }
+
+    .map-trend-card__chart-container {
+        position: relative;
+        height: 88px; /* Precision fit for 55+35 layout */
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .map-trend-card__svg {
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+        z-index: 2;
+    }
+
+    .map-trend-card__point {
+        transition: all 0.3s ease;
+    }
+
+    /* Map Breadcrumb Mobile - Dynamic Width (Reverted) */
+    .map-breadcrumb {
+        width: auto !important;
+        min-width: unset !important;
+        max-width: calc(100vw - 40px) !important;
+        justify-content: flex-start !important;
+        text-overflow: ellipsis !important;
+    }
+}

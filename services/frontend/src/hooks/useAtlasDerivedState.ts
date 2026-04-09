@@ -134,7 +134,8 @@ export function useAtlasDerivedState(args: DerivedStateArgs) {
     townshipRows: analytics.townshipRows,
     nationalSummary: analytics.nationalSummary,
     loadObservation,
-    selectedCounty: hierarchy.selectedCounty
+    selectedCounty: hierarchy.selectedCounty,
+    selectedSchoolInsight: markers.selectedSchoolInsight
   })
 
   // 7. UI Composition

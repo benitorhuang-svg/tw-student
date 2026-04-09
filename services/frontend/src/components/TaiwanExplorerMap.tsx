@@ -74,11 +74,16 @@ type TaiwanExplorerMapProps = {
   onResetRegion: () => void
   onSetActiveYear: (year: AcademicYear) => void
   onStopPlayback: () => void
+  onTogglePlayback: () => void
   onSetEducationLevel: (level: EducationLevelFilter) => void
   onSetManagementType: (type: ManagementTypeFilter) => void
+  isYearPlaybackActive: boolean
   startTransition: React.TransitionStartFunction
   activeCountyName: string | null
   summaryDataset?: EducationSummaryDataset | null
+  currentTrend?: Array<{ year: AcademicYear; value: number }>
+  currentLabel?: string
+  currentLevel?: string
 }
 
 function TaiwanExplorerMap(props: TaiwanExplorerMapProps) {
@@ -95,7 +100,7 @@ function TaiwanExplorerMap(props: TaiwanExplorerMapProps) {
     vectorTileBaseUrl = '', onVectorTileError, forceTownshipLabels = false,
     activeTab, activeYear, summaryYears, educationLevel, managementType,
     onSetRegion, onResetRegion, 
-    onSetActiveYear, onStopPlayback, onSetEducationLevel, onSetManagementType,
+    onSetActiveYear, onStopPlayback, onTogglePlayback, onSetEducationLevel, onSetManagementType,
     startTransition, activeCountyName
   } = props
 
@@ -185,11 +190,16 @@ function TaiwanExplorerMap(props: TaiwanExplorerMapProps) {
       onResetRegion={onResetRegion}
       onSetActiveYear={onSetActiveYear}
       onStopPlayback={onStopPlayback}
+      onTogglePlayback={onTogglePlayback}
+      isYearPlaybackActive={props.isYearPlaybackActive}
       onSetEducationLevel={onSetEducationLevel}
       onSetManagementType={onSetManagementType}
       startTransition={startTransition}
       activeCountyName={activeCountyName}
       summaryDataset={props.summaryDataset}
+      currentTrend={props.currentTrend}
+      currentLabel={props.currentLabel}
+      currentLevel={props.currentLevel}
     />
   )
 }
