@@ -260,7 +260,7 @@
 
     /* Filters: 1:1 Desktop Look */
     .map-collapsible-filter {
-        min-width: 140px !important;
+        min-width: 110px !important;
         background: var(--map-overlay-bg) !important;
         border: 1px solid var(--map-overlay-border) !important;
         box-shadow: var(--shadow-premium) !important;
@@ -340,7 +340,7 @@
     }
 
     .atlas-mini-map-card__main {
-        height: 160px !important;
+        height: 120px !important;
         border-radius: var(--radius-lg) !important;
         background: var(--map-overlay-bg) !important;
         backdrop-filter: blur(var(--map-overlay-blur)) !important;
@@ -379,18 +379,18 @@
         background: var(--map-overlay-bg) !important;
         border: 1px solid var(--map-overlay-border) !important;
         border-radius: var(--radius-pill) !important;
-        padding: 4px 12px !important; /* Stretched horizontal padding */
+        padding: 4px 6px !important; /* Ultra-tight padding */
         box-shadow: var(--shadow-premium) !important;
         backdrop-filter: blur(var(--map-overlay-blur)) !important;
-        gap: 15px !important; /* Larger gap to prevent mis-clicks */
+        gap: 6px !important; /* Minimum gap */
         width: auto !important;
-        height: 36px !important;
+        height: 32px !important; /* Reduced height */
         pointer-events: auto !important;
     }
 
     .map-zoom-btn {
-        width: 32px !important;
-        height: 32px !important;
+        width: 28px !important;
+        height: 28px !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
@@ -401,11 +401,11 @@
     }
 
     .map-zoom-level {
-        font-size: 0.72rem !important;
+        font-size: 0.65rem !important;
         font-weight: 800 !important;
         color: var(--brand-primary) !important;
-        width: 28px !important;
-        height: 28px !important;
+        width: 24px !important;
+        height: 24px !important;
         background: var(--surface-active) !important;
         border-radius: 50% !important;
         display: flex !important;
@@ -421,7 +421,7 @@
         top: auto;
         right: auto;
         left: 0 !important;
-        width: 260px !important; /* Match SVG width + padding */
+        width: 260px !important; /* Reverted to original width for legibility */
         background: var(--map-overlay-bg);
         border: 1px solid var(--map-overlay-border);
         border-radius: 12px;

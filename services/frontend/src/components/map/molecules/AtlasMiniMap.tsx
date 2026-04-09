@@ -16,7 +16,7 @@ export type AtlasMiniMapProps = {
 }
 
 // Projection Constants (Magnified view for better detail)
-const PROJ_BOUNDS = { lonMin: 116.5, lonMax: 122.2, latMin: 21.9, latMax: 26.6 };
+const PROJ_BOUNDS = { lonMin: 118.0, lonMax: 122.2, latMin: 21.9, latMax: 26.6 };
 const VIEWBOX_W = 100;
 const VIEWBOX_H = 120;
 

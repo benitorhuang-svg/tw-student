@@ -4,7 +4,7 @@ import { CircleMarker, useMap } from 'react-leaflet'
 import { MAP_MAX_ZOOM } from '../../../lib/constants'
 import { growthChoroplethColor, growthChoroplethOpacity } from '../mapStyles'
 import { buildSchoolMarkerAriaLabel, renderSchoolHoverCard } from '../atoms/MapHoverCard'
-import { AccessibleCircleMarker } from '../molecules/AccessibleCircleMarker'
+import { AccessibleShapeMarker } from '../molecules/AccessibleShapeMarker'
 import type { SchoolMapPoint } from '../types'
 
 type SchoolMarkerProps = {
@@ -38,7 +38,7 @@ export const SchoolMarker = memo(function SchoolMarker({
   
   const baseRadius = isHighlighted
     ? 6 * zoomFactor
-    : Math.max(2.5, Math.min(8, Math.round(school.currentStudents / 350))) * zoomFactor
+    : (Math.sqrt(school.currentStudents ?? 0) * 0.15 + 2) * zoomFactor
 
   // At Zoom 11, keep hit zone manageable (20px), then scale up with the marker
   const hitZoneRadius = Math.max(20, baseRadius * 1.4)
@@ -97,19 +97,17 @@ export const SchoolMarker = memo(function SchoolMarker({
         }}
       />
 
-      {/* Base Circle Marker */}
-      <AccessibleCircleMarker
+      {/* Base Shape Marker */}
+      <AccessibleShapeMarker
         ariaLabel={buildSchoolMarkerAriaLabel(school)}
         center={[school.latitude, school.longitude]}
+        level={school.educationLevel}
         isPressed={isHighlighted}
         radius={baseRadius}
-        pathOptions={{
-          className: `atlas-school-marker atlas-school-marker-${school.id}`,
-          color: isHighlighted ? '#ffffff' : '#ffffff',
-          weight: 1.5,
-          fillColor: growthChoroplethColor(school.deltaRatio),
-          fillOpacity: isHighlighted ? 1.0 : Math.max(0.65, growthChoroplethOpacity(school.deltaRatio) + 0.1),
-        }}
+        color={isHighlighted ? '#ffffff' : '#ffffff'}
+        weight={1.5}
+        fillColor={growthChoroplethColor(school.deltaRatio)}
+        fillOpacity={isHighlighted ? 1.0 : Math.max(0.65, growthChoroplethOpacity(school.deltaRatio) + 0.1)}
         onActivate={() => {
           suppressNextMapClearRef.current = true
           onSelect(school.id)

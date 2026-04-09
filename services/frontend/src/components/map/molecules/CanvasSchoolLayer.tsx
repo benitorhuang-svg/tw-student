@@ -70,9 +70,27 @@ export default function CanvasSchoolLayer({ schoolPoints, selectedSchoolId, high
         const p = map.latLngToContainerPoint([s.latitude, s.longitude])
         const isSelected = s.id === selectedSchoolId
         const isHighlighted = s.id === highlightedSchoolId
-        const radius = isSelected ? 8 : isHighlighted ? 6 : Math.max(3, Math.min(6, (s.currentStudents ?? 0) / maxStudents * 6))
+        const radius = isSelected ? 8 : isHighlighted ? 6 : (Math.sqrt(s.currentStudents ?? 0) * 0.12 + 2)
         ctx.beginPath()
-        ctx.arc(p.x, p.y, radius, 0, Math.PI * 2)
+        const level = s.educationLevel
+        if (level === '國小') {
+          ctx.arc(p.x, p.y, radius, 0, Math.PI * 2)
+        } else if (level === '國中') {
+          ctx.rect(p.x - radius, p.y - radius, radius * 2, radius * 2)
+        } else if (level === '高中職') {
+          ctx.moveTo(p.x, p.y - radius * 1.2)
+          ctx.lineTo(p.x - radius, p.y + radius)
+          ctx.lineTo(p.x + radius, p.y + radius)
+          ctx.closePath()
+        } else if (level === '大專') {
+          ctx.moveTo(p.x, p.y - radius * 1.3)
+          ctx.lineTo(p.x - radius, p.y)
+          ctx.lineTo(p.x, p.y + radius * 1.3)
+          ctx.lineTo(p.x + radius, p.y)
+          ctx.closePath()
+        } else {
+          ctx.arc(p.x, p.y, radius, 0, Math.PI * 2)
+        }
         ctx.fillStyle = isSelected ? '#f59e0b' : isHighlighted ? '#60a5fa' : 'rgba(34,197,94,0.9)'
         ctx.fill()
       }
@@ -150,8 +168,8 @@ export default function CanvasSchoolLayer({ schoolPoints, selectedSchoolId, high
         const p = map.latLngToContainerPoint([s.latitude, s.longitude])
         const isSelected = s.id === selectedSchoolId
         const isHighlighted = s.id === highlightedSchoolId
-        const r = isSelected ? 8 : isHighlighted ? 6 : Math.max(3, Math.min(6, (s.currentStudents ?? 0) / maxStudents * 6))
-        return { x: p.x, y: p.y, r, fillStyle: isSelected ? '#f59e0b' : isHighlighted ? '#60a5fa' : 'rgba(34,197,94,0.9)' }
+        const r = isSelected ? 8 : isHighlighted ? 6 : (Math.sqrt(s.currentStudents ?? 0) * 0.12 + 2)
+        return { x: p.x, y: p.y, r, level: s.educationLevel, fillStyle: isSelected ? '#f59e0b' : isHighlighted ? '#60a5fa' : 'rgba(34,197,94,0.9)' }
       })
       worker.postMessage({ type: 'draw', payload: { width: size.x, height: size.y, points } })
       return
@@ -164,9 +182,27 @@ export default function CanvasSchoolLayer({ schoolPoints, selectedSchoolId, high
       const p = map.latLngToContainerPoint([s.latitude, s.longitude])
       const isSelected = s.id === selectedSchoolId
       const isHighlighted = s.id === highlightedSchoolId
-      const radius = isSelected ? 8 : isHighlighted ? 6 : Math.max(3, Math.min(6, (s.currentStudents ?? 0) / maxStudents * 6))
+      const radius = isSelected ? 8 : isHighlighted ? 6 : (Math.sqrt(s.currentStudents ?? 0) * 0.12 + 2)
       ctx.beginPath()
-      ctx.arc(p.x, p.y, radius, 0, Math.PI * 2)
+      const level = s.educationLevel
+      if (level === '國小') {
+        ctx.arc(p.x, p.y, radius, 0, Math.PI * 2)
+      } else if (level === '國中') {
+        ctx.rect(p.x - radius, p.y - radius, radius * 2, radius * 2)
+      } else if (level === '高中職') {
+        ctx.moveTo(p.x, p.y - radius * 1.2)
+        ctx.lineTo(p.x - radius, p.y + radius)
+        ctx.lineTo(p.x + radius, p.y + radius)
+        ctx.closePath()
+      } else if (level === '大專') {
+        ctx.moveTo(p.x, p.y - radius * 1.3)
+        ctx.lineTo(p.x - radius, p.y)
+        ctx.lineTo(p.x, p.y + radius * 1.3)
+        ctx.lineTo(p.x + radius, p.y)
+        ctx.closePath()
+      } else {
+        ctx.arc(p.x, p.y, radius, 0, Math.PI * 2)
+      }
       ctx.fillStyle = isSelected ? '#f59e0b' : isHighlighted ? '#60a5fa' : 'rgba(34,197,94,0.9)'
       ctx.fill()
     }

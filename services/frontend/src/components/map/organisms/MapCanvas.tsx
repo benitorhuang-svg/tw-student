@@ -197,7 +197,7 @@ export default function MapCanvas(props: MapCanvasProps) {
               style={isMobile ? { 
                 position: 'absolute', 
                 bottom: '15px', 
-                right: '8px', 
+                right: '6px', 
                 top: 'auto',
                 left: 'auto',
                 display: 'flex', 
@@ -225,7 +225,9 @@ export default function MapCanvas(props: MapCanvasProps) {
                     isVisible={true}
                     style={{ marginLeft: 0 }}
                   />
-                  <MapZoomControls isMobile={isMobile} />
+                  <div style={{ pointerEvents: 'auto', marginRight: '8px' }}>
+                    <MapZoomControls isMobile={isMobile} />
+                  </div>
                   <div 
                     className="mobile-filter-stack"
                     style={{ 
@@ -233,19 +235,22 @@ export default function MapCanvas(props: MapCanvasProps) {
                       flexDirection: 'column', 
                       gap: '6px', 
                       pointerEvents: 'auto',
-                      width: '140px',
-                      marginTop: '4px'
+                      width: '110px',
+                      marginTop: '4px',
+                      marginRight: '3px'
                     }}
                   >
                     <AtlasTypeFilter
                       managementType={managementType}
                       onSetManagementType={onSetManagementType}
                       startTransition={startTransition}
+                      hideIcon={isMobile}
                     />
                     <AtlasLevelFilter
                       educationLevel={educationLevel}
                       onSetEducationLevel={onSetEducationLevel}
                       startTransition={startTransition}
+                      hideIcon={isMobile}
                     />
                   </div>
                 </>
@@ -354,7 +359,7 @@ export default function MapCanvas(props: MapCanvasProps) {
               style={{ 
                 position: 'absolute', 
                 bottom: '15px', 
-                left: '8px', 
+                left: '5px', 
                 display: 'flex', 
                 flexDirection: 'column', 
                 gap: '8px', 

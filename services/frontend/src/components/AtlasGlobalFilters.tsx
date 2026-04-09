@@ -51,12 +51,14 @@ import { CollapsibleFilter } from './map/molecules/CollapsibleFilter'
 type LevelPillProps = CommonFilterProps & {
   educationLevel: EducationLevelFilter
   onSetEducationLevel: (level: EducationLevelFilter) => void
+  hideIcon?: boolean
 }
-
+ 
 export function AtlasLevelFilter({
   educationLevel,
   onSetEducationLevel,
   startTransition,
+  hideIcon,
 }: LevelPillProps) {
   return (
     <CollapsibleFilter
@@ -64,7 +66,7 @@ export function AtlasLevelFilter({
       options={EDUCATION_LEVEL_OPTIONS}
       currentValue={educationLevel}
       onSelect={(val) => startTransition(() => onSetEducationLevel(val as EducationLevelFilter))}
-      icon={(
+      icon={hideIcon ? undefined : (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" width="14" height="14">
           <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
           <path d="M6 12v5c3 3 9 3 12 0v-5" />
@@ -78,12 +80,14 @@ export function AtlasLevelFilter({
 type TypePillProps = CommonFilterProps & {
   managementType: ManagementTypeFilter
   onSetManagementType: (type: ManagementTypeFilter) => void
+  hideIcon?: boolean
 }
 
 export function AtlasTypeFilter({
   managementType,
   onSetManagementType,
   startTransition,
+  hideIcon,
 }: TypePillProps) {
   return (
     <CollapsibleFilter
@@ -91,7 +95,7 @@ export function AtlasTypeFilter({
       options={MANAGEMENT_TYPE_OPTIONS}
       currentValue={managementType}
       onSelect={(val) => startTransition(() => onSetManagementType(val as ManagementTypeFilter))}
-      icon={(
+      icon={hideIcon ? undefined : (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" width="14" height="14">
           <path d="M3 21h18M3 7v1a3 3 0 0 0 6 0V7m0 1a3 3 0 0 0 6 0V7m0 1a3 3 0 0 0 6 0V7M4 21V7m16 14V7" />
         </svg>
