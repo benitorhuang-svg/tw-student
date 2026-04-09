@@ -1,11 +1,10 @@
-import { useCallback, useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import L from 'leaflet'
 import { useMap } from 'react-leaflet'
 
 import type { CountyBoundaryCollection, RegionGroupFilter, TownshipBoundaryCollection } from '../../../data/educationData'
 import type { SchoolMapPoint } from '../types'
 import { MAP_MAX_BOUNDS } from '../../../lib/constants'
-import { MAP_TOWNSHIP_FOCUS_ZOOM } from '../../../lib/constants'
 import { useViewportIntent } from '../hooks/useViewportIntent'
 
 const AUTO_SELECT_SUPPRESSION_MS = 2000
@@ -23,10 +22,8 @@ type MapBoundsControllerProps = {
   initialZoomFromUrl?: number | null
   initialLatFromUrl?: number | null
   initialLonFromUrl?: number | null
-  onAutoSelectCounty?: (countyId: string) => void
   onHoverCounty?: (countyId: string | null) => void
   currentMapZoom?: number | null
-  activeTab: string
 }
 
 function MapBoundsController({
@@ -40,13 +37,11 @@ function MapBoundsController({
   isMobile,
   onZoomChange,
   onMoveEnd,
-  onAutoSelectCounty,
   onHoverCounty,
   currentMapZoom = null,
   initialZoomFromUrl = null,
   initialLatFromUrl = null,
   initialLonFromUrl = null,
-  activeTab,
 }: MapBoundsControllerProps) {
   const map = useMap()
 
@@ -127,12 +122,12 @@ function MapBoundsController({
       suppressAutoSelectUntilRef.current = Date.now() + 1500
 
       const bounds = L.latLng(intent.center).toBounds(200)
-      map.flyToBounds(bounds, {
+      map.fitBounds(bounds, {
         paddingTopLeft: dynamicPaddingTopLeft,
         paddingBottomRight: dynamicPaddingBottomRight,
         maxZoom: intent.zoom,
         animate: true,
-        duration: isMobile ? 0.4 : 0.8,
+        duration: isMobile ? 0.25 : 0.45,
       })
 
       if (intent.id.startsWith('initial:')) {
@@ -160,22 +155,6 @@ function MapBoundsController({
     lastAppliedIntentIdRef.current = intent.id
   }, [viewportIntent, map])
 
-  const getNearestCountyId = useCallback((lat: number, lon: number) => {
-    let bestCountyId: string | null = null
-    let bestDistance = Number.POSITIVE_INFINITY
-
-    for (const feature of countyBoundaries.features) {
-      const dLat = feature.properties.centerLatitude - lat
-      const dLon = feature.properties.centerLongitude - lon
-      const distance = dLat * dLat + dLon * dLon
-      if (distance < bestDistance) {
-        bestDistance = distance
-        bestCountyId = feature.properties.countyId
-      }
-    }
-    return bestCountyId
-  }, [countyBoundaries])
-
   useEffect(() => {
     const frameId = requestAnimationFrame(() => {
       map.invalidateSize(false)
@@ -202,77 +181,50 @@ function MapBoundsController({
   }, [map, onZoomChange])
 
   useEffect(() => {
-    const idleHandleRef = { id: 0 as number | null }
-
-    const schedulePrefetch = (ids: string[]) => {
-      // Cancel any pending idle callback
-      if ((idleHandleRef.id as any) != null) {
-        try {
-          ;(window as any).cancelIdleCallback?.(idleHandleRef.id)
-        } catch {
-          clearTimeout(idleHandleRef.id as any)
-        }
-        idleHandleRef.id = null
-      }
-
-      const cb = () => {
-        // Limit concurrent prefetches to a small number to avoid overload
-        const max = 6
-        // derive viewport tuple [minLat, minLng, maxLat, maxLng]
-        for (const id of ids.slice(0, max)) {
-          try { onHoverCounty?.(id) } catch { /* ignore */ }
-        }
-      }
-
-      if ((window as any).requestIdleCallback) {
-        idleHandleRef.id = (window as any).requestIdleCallback(cb, { timeout: 1000 })
-      } else {
-        // Fallback to timeout
-        idleHandleRef.id = window.setTimeout(cb, 200)
-      }
-    }
 
     const handleMoveEnd = () => {
-      const c = map.getCenter()
-      const b = map.getBounds()
+      const currentCenter = map.getCenter()
       const z = map.getZoom()
 
-      onMoveEnd?.(Math.round(c.lat * 10000) / 10000, Math.round(c.lng * 10000) / 10000)
+      onMoveEnd?.(Math.round(currentCenter.lat * 10000) / 10000, Math.round(currentCenter.lng * 10000) / 10000)
 
       // Automated prefetching for visible counties when zoomed in enough.
-      // Use a higher zoom threshold and schedule prefetch work during idle
-      // periods to avoid blocking the main thread.
-      if (z >= MAP_TOWNSHIP_FOCUS_ZOOM && onHoverCounty) {
+      // We start prefetching as soon as townships are visible (zoom 10.0).
+      if (z >= 10.0 && onHoverCounty) {
         const idsInView: string[] = []
+        const currentBounds = map.getBounds()
+        
         for (const feature of countyBoundaries.features) {
-          const center = [feature.properties.centerLatitude, feature.properties.centerLongitude] as [number, number]
-          if (b.contains(center)) {
-            idsInView.push(feature.properties.countyId)
+          try {
+            // Check if any part of the county boundary is inside the current viewport
+            const countyBounds = L.geoJSON(feature as any).getBounds()
+            if (currentBounds.intersects(countyBounds)) {
+              idsInView.push(feature.properties.countyId)
+            }
+          } catch {
+            // Fallback to center check if calculation fails
+            const center = [feature.properties.centerLatitude, feature.properties.centerLongitude] as [number, number]
+            if (currentBounds.contains(center)) {
+              idsInView.push(feature.properties.countyId)
+            }
           }
         }
-        if (idsInView.length > 0) schedulePrefetch(idsInView)
+        
+        // Pass all visible county IDs to trigger loading
+        if (idsInView.length > 0) {
+          idsInView.forEach(id => onHoverCounty(id))
+        }
       }
 
-      if (activeTab !== 'overview' && !activeCountyId && onAutoSelectCounty && Date.now() >= suppressAutoSelectUntilRef.current) {
-        try {
-          const countyId = getNearestCountyId(c.lat, c.lng)
-          if (countyId && countyId !== lastAutoSelectRef.current) {
-            lastAutoSelectRef.current = countyId
-            lastAutoSelectAttemptRef.current = { countyId, time: Date.now() }
-            onAutoSelectCounty(countyId)
-          }
-        } catch { /* ... */ }
-      }
+      // Auto-selection of nearest county has been disabled to prevent disruptive jumping
+      // when the user is simply panning across the map.
     }
 
     map.on('moveend', handleMoveEnd)
     return () => {
       map.off('moveend', handleMoveEnd)
-      if ((idleHandleRef.id as any) != null) {
-        try { ;(window as any).cancelIdleCallback?.(idleHandleRef.id) } catch { clearTimeout(idleHandleRef.id as any) }
-      }
     }
-  }, [map, onMoveEnd, onAutoSelectCounty, getNearestCountyId, activeTab, activeCountyId, countyBoundaries, onHoverCounty])
+  }, [map, onMoveEnd, countyBoundaries, onHoverCounty])
 
   return null
 }

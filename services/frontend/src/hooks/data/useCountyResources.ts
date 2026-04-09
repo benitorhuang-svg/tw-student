@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import {
   loadCountyBuckets,
   loadCountyDetail,
@@ -29,94 +29,88 @@ export function useCountyResources(
   const selectedCountyForQuery = resolveCountyRecord(summaryDataset, selectedCountyId)
   const selectedCountyCacheKey = selectedCountyForQuery?.id ?? null
 
+  const loadQueue = useMemo(() => {
+    // We treat the selected county, any pre-selected ones in the cache,
+    // and a small set of most recently viewport-observed counties as high priority.
+    const keys = new Set<string>()
+    if (selectedCountyCacheKey) keys.add(selectedCountyCacheKey)
+    return Array.from(keys)
+  }, [selectedCountyCacheKey])
+
   useEffect(() => {
-    if (!summaryDataset || !selectedCountyCacheKey) return
-    const county = selectedCountyForQuery
-    if (!county) return
-    const countyCode = county.countyCode ?? county.id
-    const isChiayi = selectedCountyCacheKey === '嘉義市' || selectedCountyCacheKey === '嘉義縣'
+    if (!summaryDataset) return
     const tasks: Array<Promise<CountyResourceLoadResult>> = []
 
-    if (!countyDetailCache[selectedCountyCacheKey]) {
-      tasks.push(
-        loadCountyDetail(county.detailFile, countyCode)
-          .then((detail): CountyResourceLoadResult => ({ kind: 'detail', countyId: selectedCountyCacheKey, value: detail }))
-          .catch((error: Error): CountyResourceLoadResult => ({ kind: 'detail-error', message: error.message })),
-      )
-    }
+    for (const cacheKey of loadQueue) {
+      if (!cacheKey) continue
+      const county = resolveCountyRecord(summaryDataset, cacheKey)
+      if (!county) continue
 
-    if (!townshipBoundaryCache[selectedCountyCacheKey]) {
-      tasks.push(
-        loadTownshipBoundaries(selectedCountyCacheKey, county.townshipFile)
-          .then((boundaries): CountyResourceLoadResult => ({ kind: 'township', countyId: selectedCountyCacheKey, value: boundaries })),
-      )
-    }
+      const countyCode = county.countyCode ?? county.id
+      const isChiayi = cacheKey === '嘉義市' || cacheKey === '嘉義縣'
 
-    if (isChiayi) {
-      const otherId = selectedCountyCacheKey === '嘉義市' ? '嘉義縣' : '嘉義市'
-      const otherCounty = summaryDataset.counties.find((entry) => entry.id === otherId) ?? null
-      if (otherCounty && !townshipBoundaryCache[otherId]) {
+      if (!countyDetailCache[cacheKey]) {
         tasks.push(
-          loadTownshipBoundaries(otherId, otherCounty.townshipFile)
-            .then((boundaries): CountyResourceLoadResult => ({ kind: 'township', countyId: otherId, value: boundaries })),
+          loadCountyDetail(county.detailFile, countyCode)
+            .then((detail): CountyResourceLoadResult => ({ kind: 'detail', countyId: cacheKey, value: detail }))
+            .catch((error: Error): CountyResourceLoadResult => ({ kind: 'detail-error', message: error.message })),
         )
       }
-    }
 
-    if (!countyBucketCache[selectedCountyCacheKey]) {
-      tasks.push(
-        loadCountyBuckets(county.bucketFile, countyCode)
-          .then((buckets): CountyResourceLoadResult => ({ kind: 'bucket', countyId: selectedCountyCacheKey, value: buckets })),
-      )
+      if (!townshipBoundaryCache[cacheKey]) {
+        tasks.push(
+          loadTownshipBoundaries(cacheKey, county.townshipFile)
+            .then((boundaries): CountyResourceLoadResult => ({ kind: 'township', countyId: cacheKey, value: boundaries })),
+        )
+      }
+
+      if (isChiayi) {
+        const otherId = cacheKey === '嘉義市' ? '嘉義縣' : '嘉義市'
+        const otherCounty = summaryDataset.counties.find((entry) => entry.id === otherId) ?? null
+        if (otherCounty && !townshipBoundaryCache[otherId]) {
+          tasks.push(
+            loadTownshipBoundaries(otherId, otherCounty.townshipFile)
+              .then((boundaries): CountyResourceLoadResult => ({ kind: 'township', countyId: otherId, value: boundaries })),
+          )
+        }
+      }
+
+      if (!countyBucketCache[cacheKey]) {
+        tasks.push(
+          loadCountyBuckets(county.bucketFile, cacheKey)
+            .then((buckets): CountyResourceLoadResult => ({ kind: 'bucket', countyId: cacheKey, value: buckets })),
+        )
+      }
     }
 
     if (!tasks.length) return
 
     let cancelled = false
-
     void Promise.all(tasks).then((results) => {
       if (cancelled) return
-
       const nextDetailCache: Record<string, CountyDetailDataset> = {}
       const nextBucketCache: Record<string, CountyBucketDataset> = {}
       const nextTownshipCache: Record<string, TownshipBoundaryCollection> = {}
 
       for (const result of results) {
         switch (result.kind) {
-          case 'detail':
-            nextDetailCache[result.countyId] = result.value
-            break
-          case 'bucket':
-            nextBucketCache[result.countyId] = result.value
-            break
-          case 'township':
-            nextTownshipCache[result.countyId] = result.value
-            break
-          case 'detail-error':
-            setCountyDetailError(result.message)
-            break
+          case 'detail': nextDetailCache[result.countyId] = result.value; break
+          case 'bucket': nextBucketCache[result.countyId] = result.value; break
+          case 'township': nextTownshipCache[result.countyId] = result.value; break
+          case 'detail-error': setCountyDetailError(result.message); break
         }
       }
 
-      if (Object.keys(nextDetailCache).length > 0) {
-        setCountyDetailCache((prev) => ({ ...prev, ...nextDetailCache }))
-      }
-      if (Object.keys(nextBucketCache).length > 0) {
-        setCountyBucketCache((prev) => ({ ...prev, ...nextBucketCache }))
-      }
-      if (Object.keys(nextTownshipCache).length > 0) {
-        setTownshipBoundaryCache((prev) => ({ ...prev, ...nextTownshipCache }))
-      }
+      if (Object.keys(nextDetailCache).length > 0) setCountyDetailCache((prev) => ({ ...prev, ...nextDetailCache }))
+      if (Object.keys(nextBucketCache).length > 0) setCountyBucketCache((prev) => ({ ...prev, ...nextBucketCache }))
+      if (Object.keys(nextTownshipCache).length > 0) setTownshipBoundaryCache((prev) => ({ ...prev, ...nextTownshipCache }))
     })
 
-    return () => {
-      cancelled = true
-    }
+    return () => { cancelled = true }
   }, [
     countyBucketCache,
     countyDetailCache,
-    selectedCountyCacheKey,
-    selectedCountyForQuery,
+    loadQueue,
     summaryDataset,
     townshipBoundaryCache,
   ])
@@ -126,8 +120,22 @@ export function useCountyResources(
     const county = resolveCountyRecord(summaryDataset, countyId)
     if (!county) return
 
-    // Avoid redundant prefetch if we already have the county detail cached
-    if (countyDetailCache[county.id]) return
+    // CRITICAL FIX: If a county is prefetched (meaning it is in or near viewport),
+    // and we don't have it in the react-state cache, then LOAD IT NOW.
+    if (!countyDetailCache[county.id]) {
+      const countyCode = county.countyCode ?? county.id
+      void loadCountyDetail(county.detailFile, countyCode)
+        .then((detail) => setCountyDetailCache(prev => ({ ...prev, [county.id]: detail })))
+        .catch(() => {})
+      
+      void loadTownshipBoundaries(county.id, county.townshipFile)
+        .then((boundaries) => setTownshipBoundaryCache(prev => ({ ...prev, [county.id]: boundaries })))
+        .catch(() => {})
+      
+      void loadCountyBuckets(county.bucketFile, county.id)
+        .then((buckets) => setCountyBucketCache(prev => ({ ...prev, [county.id]: buckets })))
+        .catch(() => {})
+    }
 
     const doPrefetch = () => {
       void prefetchCountyResources(county, { includeTownshipSlice: true, includeBucketSlice: true, includeDetailSlice: Boolean(viewport?.bounds) }, viewport)

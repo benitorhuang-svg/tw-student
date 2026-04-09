@@ -93,7 +93,7 @@ export function useViewportIntent(
         const bounds = L.geoJSON(townshipFeature as GeoJsonObject).getBounds()
         if (bounds.isValid()) {
           const center = bounds.getCenter()
-          const zoom = requestedZoom ?? Math.max(currentZoom, MAP_TOWNSHIP_FOCUS_ZOOM)
+          const zoom = requestedZoom ?? currentZoom ?? MAP_TOWNSHIP_FOCUS_ZOOM
           const id = `township:${activeTownshipId}:${effectiveZoomId}:${mapResetToken}`
           const offsetLat = isMobile ? center.lat - 0.02 : center.lat
           const finalCenter = [offsetLat, center.lng]
@@ -129,7 +129,7 @@ export function useViewportIntent(
       }
 
       if (countyFeature) {
-        const zoom = requestedZoom ?? MAP_COUNTY_ZOOM
+        const zoom = requestedZoom ?? currentZoom ?? MAP_COUNTY_ZOOM
         const id = `county:${activeCountyId}:${effectiveZoomId}:${mapResetToken}`
         const centerLat = isMobile ? countyFeature.properties.centerLatitude - 0.1 : countyFeature.properties.centerLatitude
         const centerLng = countyFeature.properties.centerLongitude

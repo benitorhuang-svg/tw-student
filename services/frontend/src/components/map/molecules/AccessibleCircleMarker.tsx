@@ -17,7 +17,6 @@ type AccessibleCircleMarkerProps = {
 export function AccessibleCircleMarker({
   ariaLabel,
   center,
-  isPressed = false,
   onActivate,
   onDoubleActivate,
   pathOptions,
@@ -28,58 +27,17 @@ export function AccessibleCircleMarker({
   const markerRef = useRef<L.CircleMarker | null>(null)
 
   useEffect(() => {
+    // In Canvas mode, markers don't have individual DOM elements.
+    // We only attach accessibility if we're in SVG mode (element exists).
     const marker = markerRef.current
     if (!marker) return
 
-    let frameId = 0
-    let element: SVGElement | null = null
-
-    const attachAccessibility = () => {
-      element = marker.getElement() as SVGElement | null
-      if (!element) {
-        frameId = window.requestAnimationFrame(attachAccessibility)
-        return
-      }
-
-      element.setAttribute('tabindex', '0')
+    const element = marker.getElement()
+    if (element) {
       element.setAttribute('role', 'button')
       element.setAttribute('aria-label', ariaLabel)
-      if (isPressed) {
-        element.setAttribute('aria-pressed', 'true')
-      } else {
-        element.removeAttribute('aria-pressed')
-      }
-
-      const handleFocus = () => marker.openTooltip()
-      const handleBlur = () => marker.closeTooltip()
-      const handleKeyDown = (event: KeyboardEvent) => {
-        if (event.key === 'Enter' || event.key === ' ') {
-          event.preventDefault()
-          marker.openTooltip()
-          onActivate()
-        }
-        if (event.key === 'Escape') {
-          marker.closeTooltip()
-        }
-      }
-
-      element.addEventListener('focus', handleFocus)
-      element.addEventListener('blur', handleBlur)
-      element.addEventListener('keydown', handleKeyDown)
-
-      return () => {
-        element?.removeEventListener('focus', handleFocus)
-        element?.removeEventListener('blur', handleBlur)
-        element?.removeEventListener('keydown', handleKeyDown)
-      }
     }
-
-    const cleanup = attachAccessibility()
-    return () => {
-      window.cancelAnimationFrame(frameId)
-      cleanup?.()
-    }
-  }, [ariaLabel, isPressed, onActivate])
+  }, [ariaLabel])
 
   return (
     <CircleMarker

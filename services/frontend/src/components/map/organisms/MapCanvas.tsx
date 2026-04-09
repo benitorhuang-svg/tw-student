@@ -43,7 +43,6 @@ export type MapCanvasProps = {
   isTownshipBoundaryLoading: boolean
   mapResetToken: number
   onSelectCounty: (countyId: string, options?: { skipTabSwitch?: boolean }) => void
-  onAutoSelectCounty?: (countyId: string) => void
   onSelectTownship: (townshipId: string, options?: { skipTabSwitch?: boolean }) => void
   onSelectSchool: (schoolId: string | null) => void
   onHoverCounty?: (countyId: string | null) => void
@@ -147,8 +146,8 @@ export default function MapCanvas(props: MapCanvasProps) {
               maxBounds={MAP_MAX_BOUNDS}
               maxBoundsViscosity={1.0}
               zoomControl={false}
-              zoomSnap={0.1}
-              zoomDelta={0.5}
+              zoomSnap={0}
+              zoomDelta={1}
               className="atlas-map-canvas"
               attributionControl={false}
               preferCanvas={true}

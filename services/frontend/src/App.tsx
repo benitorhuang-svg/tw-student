@@ -113,7 +113,6 @@ function App() {
           theme={state.theme}
           mapResetToken={state.mapResetToken}
           onSelectCounty={scenarioActions.handleCountySelect}
-          onAutoSelectCounty={scenarioActions.ensureCountySelected}
           onSelectTownship={scenarioActions.handleTownshipSelect}
           onSelectSchool={handleSchoolSelect}
           onHoverCounty={handlePrefetchCounty}

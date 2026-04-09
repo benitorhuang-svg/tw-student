@@ -23,7 +23,7 @@ export function computeLayerVisibility(zoom: number, hasSchoolPoints: boolean): 
 
   const showSchoolMarkers = zoom >= 12.0 && hasSchoolPoints
   const showCountyMarkers = zoom < 12.0
-  const showTownshipMarkers = zoom >= 10.5
+  const showTownshipMarkers = zoom >= 10.0
 
   return {
     showCountyMarkers,

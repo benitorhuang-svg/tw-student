@@ -49,7 +49,6 @@ type TaiwanExplorerMapProps = {
   isTownshipBoundaryLoading: boolean
   mapResetToken: number
   onSelectCounty: (countyId: string, options?: { skipTabSwitch?: boolean }) => void
-  onAutoSelectCounty?: (countyId: string) => void
   onSelectTownship: (townshipId: string, options?: { skipTabSwitch?: boolean }) => void
   onSelectSchool: (schoolId: string | null) => void
   onHoverCounty?: (countyId: string | null) => void
@@ -94,7 +93,7 @@ function TaiwanExplorerMap(props: TaiwanExplorerMapProps) {
     schoolPoints, countyBuckets, selectedSchoolId,
     highlightedCountyId = null, highlightedTownshipId = null, highlightedSchoolId = null,
     isTownshipBoundaryLoading, mapResetToken,
-    onSelectCounty, onAutoSelectCounty, onSelectTownship, onSelectSchool, onHoverCounty,
+    onSelectCounty, onSelectTownship, onSelectSchool, onHoverCounty,
     onZoomChange, onMoveEnd, currentMapZoom = null, initialMapZoom = null,
     initialMapLat = null, initialMapLon = null, scopePath, onNavigateScope,
     vectorTileBaseUrl = '', onVectorTileError, forceTownshipLabels = false,
@@ -166,7 +165,6 @@ function TaiwanExplorerMap(props: TaiwanExplorerMapProps) {
       isTownshipBoundaryLoading={isTownshipBoundaryLoading}
       mapResetToken={mapResetToken}
       onSelectCounty={onSelectCounty}
-      onAutoSelectCounty={onAutoSelectCounty}
       onSelectTownship={onSelectTownship}
       onSelectSchool={onSelectSchool}
       onHoverCounty={onHoverCounty}

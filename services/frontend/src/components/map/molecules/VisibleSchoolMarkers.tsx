@@ -1,4 +1,4 @@
-import { memo, useCallback, useMemo, useRef, useState, startTransition } from 'react'
+import { memo, useCallback, useMemo, useRef, useState } from 'react'
 import { useMap, useMapEvents } from 'react-leaflet'
 import type { CountyBucketDataset } from '../../../data/educationData'
 import type { SchoolMapPoint } from '../types'
@@ -34,21 +34,25 @@ const VisibleSchoolMarkers = memo(function VisibleSchoolMarkers({
       }
       stableSelectSchool(null)
     },
-    moveend: () => startTransition(() => {
+    move: () => {
       setZoom(map.getZoom())
       setBounds(map.getBounds())
-    }),
-    zoomend: () => startTransition(() => {
+    },
+    moveend: () => {
       setZoom(map.getZoom())
       setBounds(map.getBounds())
-    }),
+    },
+    zoomend: () => {
+      setZoom(map.getZoom())
+      setBounds(map.getBounds())
+    },
   })
 
   // Limit markers to those within the current viewport to avoid rendering large
   // numbers of markers off-screen which can cause long main-thread work.
   const visibleSchoolPoints = useMemo(() => {
     try {
-      const pad = bounds.pad(0.2)
+      const pad = bounds.pad(0.5)
       return schoolPoints.filter((s) => pad.contains([s.latitude, s.longitude]))
     } catch {
       return schoolPoints

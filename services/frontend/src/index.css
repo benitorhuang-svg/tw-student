@@ -1,2 +1,17 @@
 /* Foundations & Base Resets */
 @import url('./styles/base/reset.css');
+
+/* Map Performance & Sync Stabilizations */
+.leaflet-container .leaflet-marker-icon,
+.leaflet-container .leaflet-marker-shadow,
+.leaflet-container .leaflet-zoom-animated,
+.leaflet-container .leaflet-zoom-animated svg,
+.leaflet-container .leaflet-zoom-animated canvas {
+  /* Disable transitions that cause markers to 'drift' behind tiles during zoom */
+  transition: none !important;
+}
+
+/* Force hardware acceleration on the overlays */
+.leaflet-overlay-pane {
+  will-change: transform;
+}

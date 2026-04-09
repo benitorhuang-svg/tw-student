@@ -6,7 +6,6 @@ import { TownshipBoundaryLayer } from './TownshipBoundaryLayer'
 import { CountyMarkerLayer } from './CountyMarkerLayer'
 import AllTownshipLabels from './AllTownshipLabels'
 import VisibleSchoolMarkers from './VisibleSchoolMarkers'
-import CanvasSchoolLayer from './CanvasSchoolLayer'
 import VectorTileBoundaryLayer from './VectorTileBoundaryLayer'
 import { StarMarker } from '../atoms/StarMarker'
 import { buildSchoolMarkerAriaLabel, renderSchoolHoverCard } from '../atoms/MapHoverCard'
@@ -178,22 +177,13 @@ export const MapLayerStack = memo(function MapLayerStack(props: LayerStackProps)
       />
 
       {showSchoolMarkers && (
-        (import.meta.env.VITE_CANVAS_MARKERS === 'true') ? (
-          <CanvasSchoolLayer
-            schoolPoints={schoolPoints}
-            selectedSchoolId={selectedSchoolId}
-            highlightedSchoolId={highlightedSchoolId}
-            onSelectSchool={onSelectSchool}
-          />
-        ) : (
-          <VisibleSchoolMarkers
-            countyBuckets={countyBuckets}
-            schoolPoints={schoolPoints}
-            selectedSchoolId={selectedSchoolId}
-            highlightedSchoolId={highlightedSchoolId}
-            onSelectSchool={onSelectSchool}
-          />
-        )
+        <VisibleSchoolMarkers
+          countyBuckets={countyBuckets}
+          schoolPoints={schoolPoints}
+          selectedSchoolId={selectedSchoolId}
+          highlightedSchoolId={highlightedSchoolId}
+          onSelectSchool={onSelectSchool}
+        />
       )}
 
       {/* Global Selection Marker Molecule: Combines Star, Dot, and Pulse to prevent drift */}

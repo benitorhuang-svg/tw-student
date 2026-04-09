@@ -95,8 +95,8 @@ function AllTownshipLabels({
     if (!data) return []
     const zoom = currentZoom ?? map.getZoom()
     
-    // Strict visibility rule: hide if zoom < 11 unless forced. 
-    if (zoom < 11 && !forceShowAll) return []
+    // Strict visibility rule: hide if zoom < 10 unless forced. 
+    if (zoom < 10 && !forceShowAll) return []
     if (visibleTownshipIds.length === 0 && !forceShowAll) return []
     
     const visibleIdSet = new Set(visibleTownshipIds)
