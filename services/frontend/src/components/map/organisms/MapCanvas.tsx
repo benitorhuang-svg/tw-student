@@ -250,8 +250,8 @@ export default function MapCanvas(props: MapCanvasProps) {
                 className="map-top-bar__controls-left"
                 style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px', pointerEvents: 'auto' }}
               >
-                <MapBreadcrumb scopePath={scopePath} onNavigate={onNavigateScope} />
-                
+                {/* MapBreadcrumb is moved to the right on mobile */}
+                {!isMobile && <MapBreadcrumb scopePath={scopePath} onNavigate={onNavigateScope} />}
                 {/* 1A. Western Year Correlation - Width Fixed to 140px */}
                 {!isMobile && (
                   <div 
@@ -298,8 +298,13 @@ export default function MapCanvas(props: MapCanvasProps) {
                 )}
               </div>
 
-              {/* 2. Right Side: Empty for maximum map visibility */}
-              <div className="map-top-right-tower" />
+              {/* 2. Right Side: Top Right Tower */}
+              <div 
+                className="map-top-right-tower" 
+                style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '8px', pointerEvents: 'auto' }}
+              >
+                {isMobile && <MapBreadcrumb scopePath={scopePath} onNavigate={onNavigateScope} />}
+              </div>
           </div>
 
           {/* 2. Bottom-Left Overlay: Unified Control Stack (Filters + Trend Card + Year Stepper) */}

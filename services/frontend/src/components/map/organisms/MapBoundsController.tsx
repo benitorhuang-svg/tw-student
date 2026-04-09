@@ -96,7 +96,8 @@ function MapBoundsController({
     pendingInitialCenterRef,
     pendingInitialZoomRef,
     lastAutoSelectAttemptRef,
-    mapResetToken
+    mapResetToken,
+    isMobile
   )
 
   useEffect(() => {

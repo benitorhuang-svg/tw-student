@@ -36,7 +36,8 @@ export function useViewportIntent(
   pendingInitialCenterRef: MutableRefObject<[number, number] | null>,
   pendingInitialZoomRef: MutableRefObject<number | null>,
   lastAutoSelectAttemptRef: MutableRefObject<{ countyId: string | null; time: number | null }>,
-  mapResetToken: number
+  mapResetToken: number,
+  isMobile: boolean = false
 ) {
   const AUTO_SELECT_DETECTION_WINDOW_MS = 1500
 
@@ -132,10 +133,17 @@ export function useViewportIntent(
     }
 
     if (!activeCountyId && !activeTownshipId && !selectedSchoolPoint && activeRegion === '全部') {
+      // On mobile, shifting the default center slightly west ensures Kinmen/Matsu 
+      // are not obscured by the left controls/edges. We also shift the center North
+      // (+0.5 latitude) so that the map content visually shifts down.
+      const nationalCenter: [number, number] = isMobile 
+        ? [MAP_DEFAULT_CENTER[0] + 0.15, MAP_DEFAULT_CENTER[1] - 0.7] 
+        : MAP_DEFAULT_CENTER
+
       return {
         id: `national:${mapResetToken}`,
         type: 'flyTo',
-        center: MAP_DEFAULT_CENTER,
+        center: nationalCenter,
         zoom: MAP_DEFAULT_ZOOM,
       }
     }
@@ -154,6 +162,7 @@ export function useViewportIntent(
     pendingInitialCenterRef,
     pendingInitialZoomRef,
     lastAutoSelectAttemptRef,
-    mapResetToken
+    mapResetToken,
+    isMobile
   ])
 }
