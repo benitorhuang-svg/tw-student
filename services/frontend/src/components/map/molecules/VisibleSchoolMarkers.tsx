@@ -14,7 +14,7 @@ type VisibleSchoolMarkersProps = {
 
 const VisibleSchoolMarkers = memo(function VisibleSchoolMarkers({
   schoolPoints,
-  countyBuckets,
+  countyBuckets: _countyBuckets,
   selectedSchoolId,
   highlightedSchoolId = null,
   onSelectSchool,
@@ -55,10 +55,7 @@ const VisibleSchoolMarkers = memo(function VisibleSchoolMarkers({
     }
   }, [schoolPoints, bounds])
 
-  const maxStudentsInView = useMemo(
-    () => Math.max(...visibleSchoolPoints.map((s) => s.currentStudents ?? 0), 1000),
-    [visibleSchoolPoints]
-  )
+
 
   const sortedSchoolPoints = useMemo(() => {
     return [...visibleSchoolPoints].sort((a, b) => {

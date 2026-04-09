@@ -1,4 +1,4 @@
-import { memo, useCallback, useEffect, useMemo, useRef } from 'react'
+import { memo, useCallback, useEffect, useMemo } from 'react'
 import { useMap } from 'react-leaflet'
 import L from 'leaflet'
 import { CountyBoundaryLayer } from './CountyBoundaryLayer'
@@ -72,7 +72,8 @@ export const MapLayerStack = memo(function MapLayerStack(props: LayerStackProps)
   } = props
 
   const map = useMap()
-  const tooltipRef = useRef<L.Tooltip | null>(null)
+
+
   const vectorTownshipLookup = useMemo(
     () => new Map(allTownshipRows.map((township) => [township.id, township])),
     [allTownshipRows],

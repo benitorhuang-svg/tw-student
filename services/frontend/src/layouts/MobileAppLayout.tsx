@@ -8,13 +8,20 @@ import type {
     ManagementTypeFilter,
     RegionGroupFilter,
 } from '../data/educationData'
-import { formatAcademicYear, type CountyComparisonSummary, type EducationDistributionRow, type RankingSummary, type SchoolInsight, type ScopeSummary } from '../lib/analytics'
-import type { AtlasLoadObservationSnapshot } from '../hooks/types'
-import type { InvestigationFilter, InvestigationItem, SavedComparisonScenario } from '../hooks/types'
-
+import {
+    type CountyComparisonSummary,
+    type EducationDistributionRow,
+    type RankingSummary,
+    type SchoolInsight,
+    type ScopeSummary
+} from '../lib/analytics'
+import type {
+    AtlasLoadObservationSnapshot,
+    InvestigationFilter,
+    InvestigationItem,
+    SavedComparisonScenario
+} from '../hooks/types'
 import MobileFilterDrawer from '../components/mobile/MobileFilterDrawer'
-import InsightPanel from '../components/InsightPanel'
-import ScopePanel from '../components/ScopePanel'
 
 // Mobile uses the same single-page dashboard structure, with filters moved into a drawer.
 

@@ -1,13 +1,9 @@
 import { recordResourceLoad } from '../atlasLoadObservation'
 import { SQLITE_RESOURCE_KEY, type LoadDatabaseOptions } from './connection'
-import { mapRows, type SqlValueRow } from './mappers'
+import { mapRows } from './mappers'
 import type { 
   EducationSummaryDataset, 
   CountySummaryRecord,
-  DataNote,
-  RegionGroup,
-  SchoolLevel,
-  MissingCoordinateEntry,
 } from '../educationTypes'
 
 let summaryCache: EducationSummaryDataset | null = null
@@ -35,7 +31,8 @@ export function registerCountyLookups(counties: CountySummaryRecord[]) {
   })
 }
 
-const EMPTY_DATA_NOTES: DataNote[] = []
+
+
 
 export async function loadEducationSummaryWithOptions(options: LoadDatabaseOptions = {}) {
   if (options.forceRefresh) {

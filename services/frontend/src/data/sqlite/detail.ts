@@ -1,9 +1,8 @@
 import { recordResourceLoad } from '../atlasLoadObservation'
-import { loadDatabase } from './connection'
 import { mapRows, parseJsonValue } from './mappers'
 import { processCountyRowsInWorker } from './mapperWorkerClient'
 import { resolveCountyCode } from './summary'
-import type { CountyDetailDataset, DataNote, AcademicYear, RegionGroup, SchoolLevel, SchoolManagementType, SchoolRecord } from '../educationTypes'
+import type { CountyDetailDataset, DataNote, RegionGroup } from '../educationTypes'
 
 const countyDetailMemoryCache = new Map<string, CountyDetailDataset>()
 const pendingCountyDetailRequests = new Map<string, Promise<CountyDetailDataset>>()
@@ -70,7 +69,8 @@ function releaseDetailSlot() {
 }
 
 const EMPTY_DATA_NOTES: DataNote[] = []
-const EMPTY_ACADEMIC_YEARS: AcademicYear[] = []
+
+
 
 export async function loadCountyDetail(detailFile: string, countyId?: string) {
   const resolvedCountyId = countyId ?? detailFile // simplified for atomic refactor

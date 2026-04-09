@@ -2,7 +2,7 @@ import { getDatabaseUrl } from './connection'
 
 let worker: Worker | null = null
 let ready = false
-let initPromise: Promise<void> | null = null
+let initPromise: Promise<number> | null = null
 let nextId = 1
 const pending = new Map<number, { resolve: (v:any)=>void, reject:(e:any)=>void }>()
 
@@ -49,10 +49,10 @@ export async function initSqliteWorker(forceRefresh = false) {
   return initPromise
 }
 
-export async function execInSqlite(sql: string, params?: any[]) {
+export async function execInSqlite(sql: string, params?: any[]): Promise<any> {
   ensureWorker()
   await initSqliteWorker()
-  return new Promise((resolve, reject) => {
+  return new Promise<any>((resolve, reject) => {
     const id = nextId++
     pending.set(id, { resolve, reject })
     worker!.postMessage({ id, type: 'exec', sql, params })

@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import { useMemo } from 'react'
 import type { AcademicYear } from '../../../data/educationData'
 
 type TrendPoint = {
@@ -20,7 +20,7 @@ const formatValue = (val: number): string => {
   return val.toLocaleString()
 }
 
-export const MapTrendCard = ({ trend, activeYear, label, level }: MapTrendCardProps) => {
+export const MapTrendCard = ({ trend, activeYear, label, level: _level }: MapTrendCardProps) => {
   const { data, minVal, maxVal } = useMemo(() => {
     const recentTrend = trend.slice(-7)
     if (recentTrend.length === 0) return { data: [], minVal: 0, maxVal: 0 }

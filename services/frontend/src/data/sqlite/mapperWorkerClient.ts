@@ -23,9 +23,9 @@ function ensureWorker() {
   return worker
 }
 
-export function processCountyRowsInWorker(args: { schoolRows:any[], yearRows:any[], compositionSummaryRows:any[], compositionRows:any[] }) {
+export function processCountyRowsInWorker(args: { schoolRows: any[], yearRows: any[], compositionSummaryRows: any[], compositionRows: any[] }): Promise<any> {
   ensureWorker()
-  return new Promise((resolve, reject) => {
+  return new Promise<any>((resolve, reject) => {
     const id = nextId++
     pending.set(id, { resolve, reject })
     worker!.postMessage({ id, ...args })

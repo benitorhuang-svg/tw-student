@@ -78,28 +78,14 @@ export default function CanvasSchoolLayer({ schoolPoints, selectedSchoolId, high
       }
     }
 
-    const drawWorker = () => {
-      if (!offscreenWorker) return
-      const size = map.getSize()
-      const maxStudents = Math.max(...visibleSchoolPoints.map((s) => s.currentStudents ?? 0), 100)
-      const points = visibleSchoolPoints.map((s) => {
-        const p = map.latLngToContainerPoint([s.latitude, s.longitude])
-        const isSelected = s.id === selectedSchoolId
-        const isHighlighted = s.id === highlightedSchoolId
-        const r = isSelected ? 8 : isHighlighted ? 6 : Math.max(3, Math.min(6, (s.currentStudents ?? 0) / maxStudents * 6))
-        return { x: p.x, y: p.y, r, fillStyle: isSelected ? '#f59e0b' : isHighlighted ? '#60a5fa' : 'rgba(34,197,94,0.9)' }
-      })
-      offscreenWorker.postMessage({ type: 'draw', payload: { width: size.x, height: size.y, points } })
-    }
 
-    const draw = () => {
-      if (!canOffscreen) return drawMainThread()
-      return drawWorker()
-    }
+
+
+
 
     if (canOffscreen) {
       try {
-        offscreenWorker = new Worker(new URL('../../workers/processCanvasWorker.ts', import.meta.url), { type: 'module' })
+        offscreenWorker = new Worker(new URL('../../../workers/processCanvasWorker.ts', import.meta.url), { type: 'module' })
         workerRef.current = offscreenWorker
         // transfer an initial offscreen canvas
         const size = map.getSize()

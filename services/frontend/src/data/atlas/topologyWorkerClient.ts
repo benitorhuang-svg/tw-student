@@ -29,11 +29,11 @@ function ensure() {
   return worker
 }
 
-export function decodeTopologyInWorker({ topologyJson, objectName }) {
+export function decodeTopologyInWorker({ topologyJson, objectName }: { topologyJson: string; objectName: string }) {
   ensure()
   return new Promise((resolve, reject) => {
     const id = nextId++
     pending.set(id, { resolve, reject })
-    worker.postMessage({ id, payload: { topologyJson, objectName } })
+    worker!.postMessage({ id, payload: { topologyJson, objectName } })
   })
 }

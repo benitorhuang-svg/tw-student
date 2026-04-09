@@ -181,7 +181,7 @@ function MapBoundsController({
   useEffect(() => {
     const idleHandleRef = { id: 0 as number | null }
 
-    const schedulePrefetch = (ids: string[], boundsObj?: L.LatLngBounds, zoom?: number) => {
+    const schedulePrefetch = (ids: string[]) => {
       // Cancel any pending idle callback
       if ((idleHandleRef.id as any) != null) {
         try {
@@ -196,14 +196,8 @@ function MapBoundsController({
         // Limit concurrent prefetches to a small number to avoid overload
         const max = 6
         // derive viewport tuple [minLat, minLng, maxLat, maxLng]
-        let viewport
-        if (boundsObj) {
-          const sw = boundsObj.getSouthWest()
-          const ne = boundsObj.getNorthEast()
-          viewport = { bounds: [sw.lat, sw.lng, ne.lat, ne.lng], zoom }
-        }
         for (const id of ids.slice(0, max)) {
-          try { onHoverCounty?.(id, viewport as any) } catch { /* ignore */ }
+          try { onHoverCounty?.(id) } catch { /* ignore */ }
         }
       }
 
@@ -233,7 +227,7 @@ function MapBoundsController({
             idsInView.push(feature.properties.countyId)
           }
         }
-        if (idsInView.length > 0) schedulePrefetch(idsInView, b, z)
+        if (idsInView.length > 0) schedulePrefetch(idsInView)
       }
 
       if (activeTab !== 'overview' && !activeCountyId && onAutoSelectCounty && Date.now() >= suppressAutoSelectUntilRef.current) {

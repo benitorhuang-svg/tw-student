@@ -20,11 +20,11 @@ function ensureWorker() {
   return worker
 }
 
-export function processBucketsInWorker(bucketRows) {
+export function processBucketsInWorker(bucketRows: any[]): Promise<any> {
   ensureWorker()
-  return new Promise((resolve, reject) => {
+  return new Promise<any>((resolve, reject) => {
     const id = nextId++
     pending.set(id, { resolve, reject })
-    worker.postMessage({ id, bucketRows })
+    worker!.postMessage({ id, bucketRows })
   })
 }

@@ -145,7 +145,7 @@ function App() {
           summaryDataset={summaryDataset}
           currentTrend={derived.currentScope?.trend ?? []}
           currentLabel={derived.currentScope?.label ?? '全台'}
-          currentLevel={derived.currentScope?.scopeLevel ?? '全台'}
+          currentLevel={(derived.currentScope as any)?.scopeLevel ?? '全台'}
         />
       )
     },
