@@ -374,17 +374,17 @@
 
     .atlas-map-canvas-wrap .map-zoom-controls {
         display: flex !important;
-        flex-direction: column !important;
+        flex-direction: row !important;
         align-items: center !important;
         background: var(--map-overlay-bg) !important;
         border: 1px solid var(--map-overlay-border) !important;
         border-radius: var(--radius-pill) !important;
-        padding: 12px 4px !important; /* Stretched vertical padding */
+        padding: 4px 12px !important; /* Stretched horizontal padding */
         box-shadow: var(--shadow-premium) !important;
         backdrop-filter: blur(var(--map-overlay-blur)) !important;
         gap: 15px !important; /* Larger gap to prevent mis-clicks */
-        width: 36px !important;
-        height: auto !important;
+        width: auto !important;
+        height: 36px !important;
         pointer-events: auto !important;
     }
 
@@ -468,5 +468,18 @@
         max-width: calc(100vw - 40px) !important;
         justify-content: flex-start !important;
         text-overflow: ellipsis !important;
+    }
+
+    /* Directional Fix: Make filters pop UP in the bottom-left cluster */
+    .map-mobile-controls-bottom-left .filter-expansion {
+        top: auto !important;
+        bottom: calc(100% + 8px) !important;
+        transform: translateY(10px) !important;
+    }
+
+    .map-mobile-controls-bottom-left .map-collapsible-filter.is-open .filter-expansion {
+        transform: translateY(0) !important;
+        opacity: 1 !important;
+        visibility: visible !important;
     }
 }

@@ -196,9 +196,12 @@ export default function MapCanvas(props: MapCanvasProps) {
               className={isMobile ? "mobile-utility-pod" : "map-control-pillar"}
               style={isMobile ? { 
                 position: 'absolute', 
-                top: '60px', 
-                left: '5px', 
+                bottom: '15px', 
+                right: '8px', 
+                top: 'auto',
+                left: 'auto',
                 display: 'flex', 
+                flexDirection: 'column',
                 alignItems: 'flex-end', 
                 gap: '8px', 
                 zIndex: 1000 
@@ -213,14 +216,32 @@ export default function MapCanvas(props: MapCanvasProps) {
                 zIndex: 1000
               }}
             >
-              <MapZoomControls />
-              <AtlasMiniMap 
-                countyBoundaries={countyBoundaries}
-                activeCountyId={activeCountyId}
-                onSelectCounty={props.onSelectCounty}
-                isVisible={true}
-                style={{ marginLeft: 0 }}
-              />
+              {isMobile ? (
+                <>
+                  <div style={{ marginBottom: '6px', marginRight: '20px' }}>
+                    <MapBreadcrumb scopePath={scopePath} onNavigate={onNavigateScope} />
+                  </div>
+                  <AtlasMiniMap 
+                    countyBoundaries={countyBoundaries}
+                    activeCountyId={activeCountyId}
+                    onSelectCounty={props.onSelectCounty}
+                    isVisible={true}
+                    style={{ marginLeft: 0 }}
+                  />
+                  <MapZoomControls isMobile={isMobile} />
+                </>
+              ) : (
+                <>
+                  <MapZoomControls isMobile={isMobile} />
+                  <AtlasMiniMap 
+                    countyBoundaries={countyBoundaries}
+                    activeCountyId={activeCountyId}
+                    onSelectCounty={props.onSelectCounty}
+                    isVisible={true}
+                    style={{ marginLeft: 0 }}
+                  />
+                </>
+              )}
             </div>
 
             <MapControlStack
@@ -303,7 +324,7 @@ export default function MapCanvas(props: MapCanvasProps) {
                 className="map-top-right-tower" 
                 style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '8px', pointerEvents: 'auto' }}
               >
-                {isMobile && <MapBreadcrumb scopePath={scopePath} onNavigate={onNavigateScope} />}
+                {/* MapBreadcrumb is now in the utility pod for mobile */}
               </div>
           </div>
 

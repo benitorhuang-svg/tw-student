@@ -101,18 +101,38 @@ function MapBoundsController({
   )
 
   useEffect(() => {
+    const handleInteraction = () => {
+      // If the user manually moves the map, suppress auto-select 
+      // for a while to let them browse freely.
+      suppressAutoSelectUntilRef.current = Date.now() + 2500
+    }
+    map.on('movestart', handleInteraction)
+    map.on('dragstart', handleInteraction)
+    map.on('zoomstart', handleInteraction)
+    return () => {
+      map.off('movestart', handleInteraction)
+      map.off('dragstart', handleInteraction)
+      map.off('zoomstart', handleInteraction)
+    }
+  }, [map])
+
+  useEffect(() => {
     const intent = viewportIntent()
     // Computed viewport intent
     if (intent.id === lastAppliedIntentIdRef.current) return
 
     if (intent.type === 'flyTo') {
+      // Suppress auto-selection during and immediately after a transition 
+      // to avoid competing with manual navigation.
+      suppressAutoSelectUntilRef.current = Date.now() + 1500
+
       const bounds = L.latLng(intent.center).toBounds(200)
       map.flyToBounds(bounds, {
         paddingTopLeft: dynamicPaddingTopLeft,
         paddingBottomRight: dynamicPaddingBottomRight,
         maxZoom: intent.zoom,
         animate: true,
-        duration: 0.8,
+        duration: isMobile ? 0.4 : 0.8,
       })
 
       if (intent.id.startsWith('initial:')) {
@@ -120,6 +140,8 @@ function MapBoundsController({
         pendingInitialZoomRef.current = null
       }
     } else if (intent.type === 'snapTo') {
+      suppressAutoSelectUntilRef.current = Date.now() + 800
+      
       // Use fitBounds with duration 0 to respect padding for snap commands too
       const bounds = L.latLng(intent.center).toBounds(200)
       map.fitBounds(bounds, {

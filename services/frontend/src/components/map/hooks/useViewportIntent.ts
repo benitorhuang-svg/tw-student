@@ -39,7 +39,7 @@ export function useViewportIntent(
   mapResetToken: number,
   isMobile: boolean = false
 ) {
-  const AUTO_SELECT_DETECTION_WINDOW_MS = 1500
+  const AUTO_SELECT_DETECTION_WINDOW_MS = 3000
 
   return useCallback((): ViewportIntent => {
     const pendingInitialCenter = pendingInitialCenterRef.current
@@ -70,11 +70,14 @@ export function useViewportIntent(
 
     if (selectedSchoolPoint) {
         const zoom = requestedZoom ?? pendingInitialZoom ?? MAP_FOCUS_SCHOOL_ZOOM
-        const id = `school:${selectedSchoolPoint.id}:${zoom}`
+        const id = `school:${selectedSchoolPoint.id}:${requestedZoom ?? 'auto'}:${mapResetToken}`
+        const lat = isMobile ? selectedSchoolPoint.latitude - 0.01 : selectedSchoolPoint.latitude
+        const lng = selectedSchoolPoint.longitude
+
         return {
           id,
           type: 'flyTo',
-          center: [selectedSchoolPoint.latitude, selectedSchoolPoint.longitude],
+          center: [lat, lng],
           zoom,
         }
     }
@@ -88,11 +91,14 @@ export function useViewportIntent(
         if (bounds.isValid()) {
           const center = bounds.getCenter()
           const zoom = requestedZoom ?? Math.max(currentZoom, MAP_TOWNSHIP_FOCUS_ZOOM)
-          const id = `township:${activeTownshipId}:${zoom}`
+          const id = `township:${activeTownshipId}:${requestedZoom ?? 'auto'}:${mapResetToken}`
+          const offsetLat = isMobile ? center.lat - 0.02 : center.lat
+          const finalCenter = [offsetLat, center.lng]
+
           return {
             id,
             type: 'flyTo',
-            center: [center.lat, center.lng],
+            center: finalCenter as [number, number],
             zoom,
           }
         }
@@ -122,11 +128,14 @@ export function useViewportIntent(
 
       if (countyFeature) {
         const zoom = requestedZoom ?? MAP_COUNTY_ZOOM
-        const id = `county:${activeCountyId}:${zoom}`
+        const id = `county:${activeCountyId}:${requestedZoom ?? 'auto'}:${mapResetToken}`
+        const centerLat = isMobile ? countyFeature.properties.centerLatitude - 0.1 : countyFeature.properties.centerLatitude
+        const centerLng = countyFeature.properties.centerLongitude
+        
         return {
           id,
           type: 'flyTo',
-          center: [countyFeature.properties.centerLatitude, countyFeature.properties.centerLongitude],
+          center: [centerLat, centerLng],
           zoom,
         }
       }
@@ -137,7 +146,7 @@ export function useViewportIntent(
       // are not obscured by the left controls/edges. We also shift the center North
       // (+0.5 latitude) so that the map content visually shifts down.
       const nationalCenter: [number, number] = isMobile 
-        ? [MAP_DEFAULT_CENTER[0] + 0.15, MAP_DEFAULT_CENTER[1] - 0.7] 
+        ? [MAP_DEFAULT_CENTER[0] - 0.8, MAP_DEFAULT_CENTER[1] ] 
         : MAP_DEFAULT_CENTER
 
       return {
