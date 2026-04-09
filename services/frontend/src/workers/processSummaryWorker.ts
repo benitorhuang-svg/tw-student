@@ -1,5 +1,7 @@
-// Worker: build the EducationSummaryDataset structure from raw SQL row arrays
-self.addEventListener('message', (ev) => {
+/* eslint-disable @typescript-eslint/no-explicit-any */
+const ctx: Worker = self as any
+
+ctx.addEventListener('message', (ev) => {
   const { id, payload } = ev.data || {}
   try {
     const {
@@ -15,21 +17,20 @@ self.addEventListener('message', (ev) => {
       schoolIndexRows,
     } = payload || {}
 
-    function parseJsonValue(value: any, fallback: any) {
+    function parseJsonValue<T>(value: string | null | undefined, fallback: T): T {
       if (typeof value !== 'string' || !value) return fallback
       try { return JSON.parse(value) } catch { return fallback }
     }
 
     // build summary maps
     function buildSummaryMap(rows: any[]) {
-      // Keys must match buildSummaryBucketKey `${educationLevel}|${managementType}`
       const EDUCATION_LEVELS = ['全部', '國小', '國中', '高中職', '大專院校']
       const MANAGEMENT_TYPES = ['全部', '公立', '私立']
 
       const baseLevels = ['國小', '國中', '高中職', '大專院校']
       const baseMgmt = ['公立', '私立']
 
-      const summaries = {}
+      const summaries: Record<string, any[]> = {}
       // init empty arrays for all exact combos
       for (const el of baseLevels) {
         for (const mg of baseMgmt) {
@@ -49,7 +50,7 @@ self.addEventListener('message', (ev) => {
 
       // helper to merge multiple buckets by year
       function mergeBuckets(keys: string[]) {
-        const yearMap = new Map()
+        const yearMap = new Map<number, { students: number; schools: number }>()
         for (const k of keys) {
           const items = summaries[k] || []
           for (const it of items) {
@@ -67,10 +68,7 @@ self.addEventListener('message', (ev) => {
 
       // build aggregated keys that include '全部'
       for (const mg of MANAGEMENT_TYPES) {
-        if (mg === '全部') {
-          // 全部|全部 will be set below
-          continue
-        }
+        if (mg === '全部') continue
         const keys = baseLevels.map((el) => `${el}|${mg}`)
         summaries[`全部|${mg}`] = mergeBuckets(keys)
       }
@@ -81,11 +79,9 @@ self.addEventListener('message', (ev) => {
         summaries[`${el}|全部`] = mergeBuckets(keys)
       }
 
-      // 全部|全部: merge all exact combos
       const allKeys = baseLevels.flatMap((el) => baseMgmt.map((mg) => `${el}|${mg}`))
       summaries['全部|全部'] = mergeBuckets(allKeys)
 
-      // ensure all keys exist even if empty
       for (const el of EDUCATION_LEVELS) {
         for (const mg of MANAGEMENT_TYPES) {
           const k = `${el}|${mg}`
@@ -97,12 +93,12 @@ self.addEventListener('message', (ev) => {
     }
 
     function buildSchoolCodeIndex(rows: any[]) {
-      const levelOrder = new Map([['國小',1],['國中',2],['高中職',3],['大專院校',4]])
-      const schoolCodeIndex = {}
+      const levelOrder = new Map([['國小', 1], ['國中', 2], ['高中職', 3], ['大專院校', 4]])
+      const schoolCodeIndex: Record<string, any> = {}
       for (const row of rows) {
         const code = String(row.code)
         const current = schoolCodeIndex[code]
-        const nextLevels = Array.from(new Set([...(current?.levels||[]), String(row.education_level)])).sort((l,r)=> (levelOrder.get(l)||99)-(levelOrder.get(r)||99))
+        const nextLevels = Array.from(new Set([...(current?.levels || []), String(row.education_level)])).sort((l: string, r: string) => (levelOrder.get(l) || 99) - (levelOrder.get(r) || 99))
         schoolCodeIndex[code] = {
           countyId: current?.countyId ?? String(row.county_legacy_id),
           townshipId: current?.townshipId ?? String(row.township_legacy_id),
@@ -111,7 +107,7 @@ self.addEventListener('message', (ev) => {
           countyName: current?.countyName ?? String(row.county_name),
           townshipName: current?.townshipName ?? String(row.township_name),
           name: current?.name ?? String(row.name),
-          schoolIds: [...new Set([...(current?.schoolIds||[]), String(row.legacy_id)])],
+          schoolIds: [...new Set([...(current?.schoolIds || []), String(row.legacy_id)])],
           levels: nextLevels,
           longitude: current?.longitude ?? Number(row.longitude),
           latitude: current?.latitude ?? Number(row.latitude),
@@ -125,30 +121,30 @@ self.addEventListener('message', (ev) => {
     const dataNotes = parseJsonValue(dataNotesJson, [])
     const generatedAt = String(parseJsonValue(generatedAtJson, '') || '')
 
-    const countySummaryLookup = {}
+    const countySummaryLookup: Record<string, any[]> = {}
     for (const row of countySummaryRows || []) {
       const key = String(row.county_id)
       countySummaryLookup[key] = countySummaryLookup[key] || []
       countySummaryLookup[key].push(row)
     }
 
-    const townSummaryLookup = {}
+    const townSummaryLookup: Record<string, any[]> = {}
     for (const row of townSummaryRows || []) {
       const key = String(row.town_id)
       townSummaryLookup[key] = townSummaryLookup[key] || []
       townSummaryLookup[key].push(row)
     }
 
-    const townRowsByCounty = {}
+    const townRowsByCounty: Record<string, any[]> = {}
     for (const row of townRows || []) {
       const key = String(row.county_id)
       townRowsByCounty[key] = townRowsByCounty[key] || []
       townRowsByCounty[key].push(row)
     }
 
-    const counties = (countyRows || []).map((countyRow) => {
+    const counties = (countyRows || []).map((countyRow: any) => {
       const countyCode = String(countyRow.id)
-      const towns = (townRowsByCounty[countyCode] || []).map((townRow) => ({
+      const towns = (townRowsByCounty[countyCode] || []).map((townRow: any) => ({
         id: String(townRow.legacy_id),
         countyId: String(countyRow.legacy_id),
         countyCode,
@@ -212,9 +208,9 @@ self.addEventListener('message', (ev) => {
       counties,
     }
 
-    ;(self as any).postMessage({ id, result: summary })
-  } catch (err) {
-    ;(self as any).postMessage({ id, error: String((err as any)?.message || err) })
+    ctx.postMessage({ id, result: summary })
+  } catch (err: unknown) {
+    ctx.postMessage({ id, error: String((err as any)?.message || err) })
   }
 })
 

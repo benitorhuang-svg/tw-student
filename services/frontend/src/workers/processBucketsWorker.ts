@@ -1,13 +1,16 @@
-self.addEventListener('message', (ev) => {
+/* eslint-disable @typescript-eslint/no-explicit-any */
+const ctx: Worker = self as any
+
+ctx.addEventListener('message', (ev) => {
   const { id, bucketRows } = ev.data || {}
 
-  function parseJsonValue(value: any, fallback: any) {
+  function parseJsonValue<T>(value: string | null | undefined, fallback: T): T {
     if (typeof value !== 'string' || !value) return fallback
     try { return JSON.parse(value) } catch { return fallback }
   }
 
   try {
-    const precisions = Object.create(null)
+    const precisions: Record<string, any[]> = Object.create(null)
     for (const row of bucketRows || []) {
       const precisionKey = String(row.precision)
       if (!precisions[precisionKey]) precisions[precisionKey] = []
@@ -29,9 +32,9 @@ self.addEventListener('message', (ev) => {
       })
     }
 
-    ;(self as any).postMessage({ id, result: { precisions } })
-  } catch (err) {
-    ;(self as any).postMessage({ id, error: String((err as any)?.message || err) })
+    ctx.postMessage({ id, result: { precisions } })
+  } catch (err: unknown) {
+    ctx.postMessage({ id, error: String((err as any)?.message || err) })
   }
 })
 
