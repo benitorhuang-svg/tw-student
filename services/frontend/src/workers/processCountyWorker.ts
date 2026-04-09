@@ -2,12 +2,12 @@
 self.addEventListener('message', (ev: MessageEvent) => {
   const { id, schoolRows, yearRows, compositionSummaryRows, compositionRows } = ev.data || {}
 
-  function parseJsonValue(value, fallback) {
+  function parseJsonValue(value: any, fallback: any) {
     if (typeof value !== 'string' || !value) return fallback
     try { return JSON.parse(value) } catch { return fallback }
   }
 
-  function buildYearlyStudentLookup(rows) {
+  function buildYearlyStudentLookup(rows: any[]) {
     const lookup = Object.create(null)
     for (const row of rows) {
       const key = String(row.school_id)
@@ -18,7 +18,7 @@ self.addEventListener('message', (ev: MessageEvent) => {
     return lookup
   }
 
-  function buildCompositionLookup(summaryRows, bandRows) {
+  function buildCompositionLookup(summaryRows: any[], bandRows: any[]) {
     const summaries = Object.create(null)
     const bands = Object.create(null)
     for (const row of summaryRows) {
@@ -32,7 +32,7 @@ self.addEventListener('message', (ev: MessageEvent) => {
     return { summaries, bands }
   }
 
-  function buildStudentCompositions(schoolId, lookup) {
+  function buildStudentCompositions(schoolId: string, lookup: any) {
     const years = new Set()
     for (const k of Object.keys(lookup.summaries || {})) if (k.startsWith(`${schoolId}:`)) years.add(Number(k.split(':').pop()))
     for (const k of Object.keys(lookup.bands || {})) if (k.startsWith(`${schoolId}:`)) years.add(Number(k.split(':').pop()))
@@ -86,7 +86,7 @@ self.addEventListener('message', (ev: MessageEvent) => {
 
     ;(self as any).postMessage({ id, result: { schoolsByTown } })
   } catch (err) {
-    ;(self as any).postMessage({ id, error: String(err && err.message ? err.message : err) })
+    ;(self as any).postMessage({ id, error: String((err as any)?.message || err) })
   }
 })
 

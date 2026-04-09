@@ -15,13 +15,13 @@ self.addEventListener('message', (ev) => {
       schoolIndexRows,
     } = payload || {}
 
-    function parseJsonValue(value, fallback) {
+    function parseJsonValue(value: any, fallback: any) {
       if (typeof value !== 'string' || !value) return fallback
       try { return JSON.parse(value) } catch { return fallback }
     }
 
     // build summary maps
-    function buildSummaryMap(rows) {
+    function buildSummaryMap(rows: any[]) {
       // Keys must match buildSummaryBucketKey `${educationLevel}|${managementType}`
       const EDUCATION_LEVELS = ['全部', '國小', '國中', '高中職', '大專院校']
       const MANAGEMENT_TYPES = ['全部', '公立', '私立']
@@ -48,7 +48,7 @@ self.addEventListener('message', (ev) => {
       }
 
       // helper to merge multiple buckets by year
-      function mergeBuckets(keys) {
+      function mergeBuckets(keys: string[]) {
         const yearMap = new Map()
         for (const k of keys) {
           const items = summaries[k] || []
@@ -96,7 +96,7 @@ self.addEventListener('message', (ev) => {
       return summaries
     }
 
-    function buildSchoolCodeIndex(rows) {
+    function buildSchoolCodeIndex(rows: any[]) {
       const levelOrder = new Map([['國小',1],['國中',2],['高中職',3],['大專院校',4]])
       const schoolCodeIndex = {}
       for (const row of rows) {
@@ -187,14 +187,14 @@ self.addEventListener('message', (ev) => {
       dataNotes,
       assetMetrics: {
         countyBoundaryBytes: 0,
-        countyDetailBytes: counties.reduce((s,c)=>s+(c.assetMetrics?.detailBytes||0),0),
-        townshipBoundaryBytes: counties.reduce((s,c)=>s+(c.assetMetrics?.townshipBytes||0),0),
-        countyBucketBytes: counties.reduce((s,c)=>s+(c.assetMetrics?.bucketBytes||0),0),
+        countyDetailBytes: counties.reduce((s: number, c: any) => s + (c.assetMetrics?.detailBytes || 0), 0),
+        townshipBoundaryBytes: counties.reduce((s: number, c: any) => s + (c.assetMetrics?.townshipBytes || 0), 0),
+        countyBucketBytes: counties.reduce((s: number, c: any) => s + (c.assetMetrics?.bucketBytes || 0), 0),
         sqliteBytes: 0,
       },
       sources,
       schoolCodeIndex: buildSchoolCodeIndex(schoolIndexRows || []),
-      missingCoordinates: (coordinateIssueRows || []).map((row) => ({
+      missingCoordinates: (coordinateIssueRows || []).map((row: any) => ({
         code: String(row.code),
         name: String(row.school_name),
         county: String(row.county_legacy_id),
@@ -214,7 +214,7 @@ self.addEventListener('message', (ev) => {
 
     ;(self as any).postMessage({ id, result: summary })
   } catch (err) {
-    ;(self as any).postMessage({ id, error: String(err && err.message ? err.message : err) })
+    ;(self as any).postMessage({ id, error: String((err as any)?.message || err) })
   }
 })
 

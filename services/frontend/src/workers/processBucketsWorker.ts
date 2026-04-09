@@ -1,7 +1,7 @@
 self.addEventListener('message', (ev) => {
   const { id, bucketRows } = ev.data || {}
 
-  function parseJsonValue(value, fallback) {
+  function parseJsonValue(value: any, fallback: any) {
     if (typeof value !== 'string' || !value) return fallback
     try { return JSON.parse(value) } catch { return fallback }
   }
@@ -31,7 +31,7 @@ self.addEventListener('message', (ev) => {
 
     ;(self as any).postMessage({ id, result: { precisions } })
   } catch (err) {
-    ;(self as any).postMessage({ id, error: String(err && err.message ? err.message : err) })
+    ;(self as any).postMessage({ id, error: String((err as any)?.message || err) })
   }
 })
 
