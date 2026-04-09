@@ -42,10 +42,10 @@ export function AccessibleShapeMarker({
   const icon = L.divIcon({
     className: 'atlas-shape-marker-icon',
     html: path 
-      ? `<svg width="${radius * 3}" height="${radius * 3}" viewBox="${-radius * 1.5} ${-radius * 1.5} ${radius * 3} ${radius * 3}" style="display: block; overflow: visible;">
+      ? `<svg width="${radius * 4}" height="${radius * 4}" viewBox="${-radius * 2} ${-radius * 2} ${radius * 4} ${radius * 4}" style="display: block; overflow: visible;">
           <path d="${path}" fill="${fillColor}" fill-opacity="${fillOpacity}" stroke="${color}" stroke-width="${weight}" />
          </svg>`
-      : `<svg width="${radius * 2}" height="${radius * 2}" viewBox="${-radius} ${-radius} ${radius * 2} ${radius * 2}" style="display: block; overflow: visible;">
+      : `<svg width="${radius * 4}" height="${radius * 4}" viewBox="${-radius * 2} ${-radius * 2} ${radius * 4} ${radius * 4}" style="display: block; overflow: visible;">
           <circle cx="0" cy="0" r="${radius}" fill="${fillColor}" fill-opacity="${fillOpacity}" stroke="${color}" stroke-width="${weight}" />
          </svg>`,
     iconSize: [radius * 2, radius * 2],

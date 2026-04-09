@@ -21,28 +21,9 @@ self.addEventListener('message', (ev) => {
     const { width, height, points } = payload || {}
     ctx.clearRect(0, 0, width, height)
     for (const p of points || []) {
-      const { x, y, r, level, fillStyle } = p
+      const { x, y, r, fillStyle } = p
       ctx.beginPath()
-      if (level === '國小') {
-        ctx.arc(x, y, r, 0, Math.PI * 2)
-      } else if (level === '國中') {
-        ctx.rect(x - r, y - r, r * 2, r * 2)
-      } else if (level === '高中職') {
-        // Triangle
-        ctx.moveTo(x, y - r * 1.2)
-        ctx.lineTo(x - r, y + r)
-        ctx.lineTo(x + r, y + r)
-        ctx.closePath()
-      } else if (level === '大專') {
-        // Diamond
-        ctx.moveTo(x, y - r * 1.3)
-        ctx.lineTo(x - r, y)
-        ctx.lineTo(x, y + r * 1.3)
-        ctx.lineTo(x + r, y)
-        ctx.closePath()
-      } else {
-        ctx.arc(x, y, r, 0, Math.PI * 2)
-      }
+      ctx.arc(x, y, r, 0, Math.PI * 2)
       ctx.fillStyle = fillStyle || 'rgba(34,197,94,0.9)'
       ctx.fill()
     }

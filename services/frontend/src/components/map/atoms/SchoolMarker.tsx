@@ -4,7 +4,7 @@ import { CircleMarker, useMap } from 'react-leaflet'
 import { MAP_MAX_ZOOM } from '../../../lib/constants'
 import { growthChoroplethColor, growthChoroplethOpacity } from '../mapStyles'
 import { buildSchoolMarkerAriaLabel, renderSchoolHoverCard } from '../atoms/MapHoverCard'
-import { AccessibleShapeMarker } from '../molecules/AccessibleShapeMarker'
+import { AccessibleCircleMarker } from '../molecules/AccessibleCircleMarker'
 import type { SchoolMapPoint } from '../types'
 
 type SchoolMarkerProps = {
@@ -97,17 +97,19 @@ export const SchoolMarker = memo(function SchoolMarker({
         }}
       />
 
-      {/* Base Shape Marker */}
-      <AccessibleShapeMarker
+      {/* Base Circle Marker */}
+      <AccessibleCircleMarker
         ariaLabel={buildSchoolMarkerAriaLabel(school)}
         center={[school.latitude, school.longitude]}
-        level={school.educationLevel}
         isPressed={isHighlighted}
         radius={baseRadius}
-        color={isHighlighted ? '#ffffff' : '#ffffff'}
-        weight={1.5}
-        fillColor={growthChoroplethColor(school.deltaRatio)}
-        fillOpacity={isHighlighted ? 1.0 : Math.max(0.65, growthChoroplethOpacity(school.deltaRatio) + 0.1)}
+        pathOptions={{
+          className: `atlas-school-marker atlas-school-marker-${school.id}`,
+          color: isHighlighted ? '#ffffff' : '#ffffff',
+          weight: 1.5,
+          fillColor: growthChoroplethColor(school.deltaRatio),
+          fillOpacity: isHighlighted ? 1.0 : Math.max(0.65, growthChoroplethOpacity(school.deltaRatio) + 0.1),
+        }}
         onActivate={() => {
           suppressNextMapClearRef.current = true
           onSelect(school.id)
