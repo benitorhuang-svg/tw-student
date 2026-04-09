@@ -124,7 +124,6 @@ export function useViewportIntent(
       // zoom and include it in the intent id so repeated selections with a
       // different zoom still produce a flyTo.
       if (autoSelectedRecently) {
-        const zoom = requestedZoom ?? MAP_COUNTY_ZOOM
         const id = `county:${activeCountyId}:${effectiveZoomId}:${mapResetToken}`
         return { id, type: 'noop' }
       }
