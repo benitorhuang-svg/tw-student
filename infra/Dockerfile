@@ -1,22 +1,24 @@
 # ---------------------------------------------------------
 # 第一階段：建置階段 (Build Stage)
-# 使用 Node 25 來安裝依賴並進行前端編譯
+# 使用 root npm workspace 安裝依賴、刷新資料並編譯前端
 # ---------------------------------------------------------
 FROM node:25-slim AS build-stage
 
 WORKDIR /app
 
 # 複製 package 檔案以利用 Docker 層快取 (Cache Layering)
-# 我們需要 frontend 的 package.json
-COPY services/frontend/package*.json ./services/frontend/
-RUN cd services/frontend && npm install --loglevel=error --no-fund --no-audit
+COPY package*.json ./
+COPY frontend/package*.json ./frontend/
+COPY backend/package*.json ./backend/
+RUN npm ci --loglevel=error --no-fund --no-audit
 
 # 複製其餘所有原始碼
-# 注意：Vite 建置過程會讀取 repo-root data/，所以必須完整複製
+# 注意：正式資料由 backend workspace 產生到 backend/dist，再由 Vite 複製到 frontend/dist/data。
 COPY . .
 
-# 執行前端建置
-RUN cd services/frontend && npm run build
+# 刷新資料並執行前端建置
+RUN npm run data:refresh
+RUN npm run build
 
 # ---------------------------------------------------------
 # 第二階段：噴出階段 (Production Stage)
@@ -25,7 +27,7 @@ RUN cd services/frontend && npm run build
 FROM nginx:stable-alpine
 
 # 從 build-stage 複製產出的 dist 目錄到 Nginx 預設路徑
-COPY --from=build-stage /app/services/frontend/dist /usr/share/nginx/html
+COPY --from=build-stage /app/frontend/dist /usr/share/nginx/html
 
 # 安裝 gzip 工具並預先壓縮大型 SQLite 檔案 (優化載入速度)
 RUN apk add --no-cache gzip && \

@@ -1,0 +1,6 @@
+/* Critical shell styles only. Heavy map/chart/layout styles are lazy-loaded with their components. */
+@import url('./app/styles/templates/dashboard-shell.css');
+@import url('./app/styles/atoms/typography.css');
+@import url('./app/styles/atoms/shared-utils.css');
+@import url('./app/styles/molecules/panels.css');
+@import url('./app/styles/responsive/mobile-map-optimized.css');

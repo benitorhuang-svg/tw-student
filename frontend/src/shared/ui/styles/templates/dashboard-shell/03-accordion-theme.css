@@ -1,0 +1,55 @@
+/* Accordion Visual Theme & Dark Mode */
+.accordion-item {
+    background: var(--color-white);
+    border: 1px solid rgb(226 232 240 / 80%);
+    box-shadow: 0 4px 20px -5px rgb(16 32 51 / 5%);
+}
+
+.accordion-header {
+    color: var(--tw-slate-800);
+}
+
+.accordion-header:hover {
+    background: rgb(255 255 255 / 80%);
+}
+
+.accordion-icon {
+    background: rgb(15 23 42 / 5%);
+    color: var(--tw-slate-500);
+}
+
+.accordion-item--expanded {
+    box-shadow: 0 20px 40px -10px rgb(16 32 51 / 10%);
+}
+
+.accordion-item--expanded .accordion-header {
+    background: rgb(248 250 252 / 50%);
+    border-bottom: 1px solid rgb(226 232 240 / 30%);
+}
+
+.accordion-content {
+    background: var(--color-white);
+}
+
+/* Dark Mode Overrides */
+.app-shell[data-theme="dark"] .accordion-item {
+    background: var(--tw-slate-800);
+    border-color: rgb(51 65 85 / 60%);
+}
+
+.app-shell[data-theme="dark"] .accordion-header {
+    color: var(--tw-slate-100);
+}
+
+.app-shell[data-theme="dark"] .accordion-header:hover {
+    background: rgb(255 255 255 / 5%);
+}
+
+.app-shell[data-theme="dark"] .accordion-item--expanded .accordion-header {
+    background: rgb(0 0 0 / 20%);
+    border-bottom-color: rgb(51 65 85 / 40%);
+}
+
+.app-shell[data-theme="dark"] .accordion-content {
+    background: transparent;
+}

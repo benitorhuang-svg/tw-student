@@ -1,0 +1,50 @@
+/* Map Labels */
+.atlas-all-township-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px 8px;
+    border-radius: 999px;
+    background: #08111fd1;
+    border: 1px solid rgb(148 163 184 / 18%);
+    box-shadow: 0 4px 12px rgb(2 6 23 / 18%);
+    backdrop-filter: blur(8px);
+    color: var(--tw-sky-100);
+    font-size: .68rem;
+    font-weight: 600;
+    white-space: nowrap;
+    cursor: pointer
+}
+
+.offline-metric-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: .8rem
+}
+
+.offline-metric-row__fill {
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, var(--tw-green-500), var(--tw-sky-400));
+}
+
+/* Breadcrumbs & Badge Utility */
+.scope-breadcrumbs span {
+    padding: 4px 8px;
+    border-radius: 999px;
+    border: 1px solid rgb(42 111 145 / 14%);
+    background: rgb(42 111 145 / 12%);
+    color: var(--palette-cyan);
+    font-size: .76rem
+}
+
+.control-scope__badge {
+    align-self: start;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid rgb(125 211 252 / 24%);
+    background: rgb(14 165 233 / 16%);
+    color: var(--tw-sky-100);
+    font-size: .78rem
+}

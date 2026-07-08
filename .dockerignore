@@ -2,10 +2,19 @@
 .github
 .vscode
 node_modules
-services/frontend/node_modules
-services/backend/node_modules
-# services/frontend/dist (Removed to allow local build deployment)
-# data/ (Removed to allow multi-stage build in the cloud)
+backend/node_modules
+frontend/node_modules
+backend/dist
+frontend/dist
+.vite-cache
+.firebase
+.codex
+.codex-temp
+.agents
+frontend/test-results
+frontend/playwright-report
+*.log
+.DS_Store
 .git
 .github
 .vscode

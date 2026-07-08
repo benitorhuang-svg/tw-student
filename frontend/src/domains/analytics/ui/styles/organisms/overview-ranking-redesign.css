@@ -1,0 +1,177 @@
+/* Overview Ranking Redesign - Ultra Compact Layout */
+.overview-ranking-redesign {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.overview-ranking--flat {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.overview-ranking-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+@media (width <= 1100px) {
+    .overview-ranking-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Category Card */
+.ranking-category-card {
+    background: rgb(255 255 255 / 60%);
+    backdrop-filter: blur(10px);
+    border-radius: 18px;
+    border: 1px solid rgb(226 232 240 / 80%);
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.2s ease;
+}
+
+.app-shell[data-theme="dark"] .ranking-category-card {
+    background: rgb(30 41 59 / 40%);
+    border-color: rgb(255 255 255 / 6%);
+}
+
+.ranking-category-card__main {
+    padding: 14px 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.ranking-category-card__header {
+    margin-bottom: 12px;
+}
+
+.ranking-category-card__title-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ranking-category-card__icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background: var(--color-white);
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgb(0 0 0 / 5%);
+}
+
+.app-shell[data-theme="dark"] .ranking-category-card__icon-wrap {
+    background: rgb(255 255 255 / 5%);
+}
+
+.ranking-category-card__title {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 850;
+    color: var(--tw-slate-800);
+    letter-spacing: -0.01em;
+}
+
+.app-shell[data-theme="dark"] .ranking-category-card__title {
+    color: var(--tw-slate-100);
+}
+
+.ranking-list-simplified {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.ranking-item-compact-new {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 8px 12px;
+    background: rgb(248 250 252 / 70%);
+    border: 1px solid rgb(226 232 240 / 50%);
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.2s ease;
+    text-align: left;
+}
+
+.ranking-item-compact-new:hover {
+    background: var(--color-white);
+    border-color: var(--tw-sky-500);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgb(0 0 0 / 5%);
+}
+
+.app-shell[data-theme="dark"] .ranking-item-compact-new {
+    background: rgb(255 255 255 / 2%);
+    border-color: rgb(255 255 255 / 4%);
+}
+
+.ranking-item__name {
+    font-size: 0.85rem;
+    font-weight: 750;
+    color: var(--tw-slate-700);
+    z-index: 1;
+}
+
+.app-shell[data-theme="dark"] .ranking-item__name {
+    color: var(--tw-slate-200);
+}
+
+.ranking-item__value {
+    font-size: 0.85rem;
+    font-weight: 850;
+    font-family: var(--font-mono);
+    color: var(--tw-sky-600);
+    z-index: 1;
+    white-space: nowrap;
+}
+
+.ranking-category-card--growth .ranking-item__value { color: var(--tw-emerald-500); }
+.ranking-category-card--decline .ranking-item__value { color: var(--tw-rose-500); }
+
+/* Progress Bar as a subtle underlay */
+.ranking-item__bar-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    opacity: 0.6;
+}
+
+.ranking-item__bar-overlay .ranking-metric-bar {
+    height: 100% !important;
+    border-radius: 0;
+    background: transparent;
+}
+
+.ranking-item-compact-new:hover .ranking-item__bar-overlay {
+    opacity: 1;
+    height: 4px;
+}
+
+/* Empty State Small */
+.overview-ranking-empty {
+    padding: 24px;
+    text-align: center;
+    color: var(--tw-slate-400);
+    font-size: 0.8rem;
+    font-weight: 600;
+    background: rgb(248 250 252 / 40%);
+    border-radius: 16px;
+    border: 1.5px dashed var(--tw-slate-200);
+}

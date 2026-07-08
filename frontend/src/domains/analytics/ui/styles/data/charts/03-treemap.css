@@ -1,0 +1,250 @@
+.treemap-chart {
+    position: relative;
+    padding: 0;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 24px !important;
+    box-shadow: none !important;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: visible !important; 
+}
+
+
+.treemap-chart:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 25px 50px -12px rgb(16 32 51 / 12%),
+        0 15px 20px -5px rgb(16 32 51 / 4%) !important;
+}
+
+
+.treemap-chart .dashboard-card__head {
+    margin-bottom: 0;
+    padding: 0 24px; /* Reduced bottom padding to shorten gap */
+    border-bottom: none !important;
+    background: transparent !important;
+    display: flex;
+    justify-content: center;
+
+    /* Centered Title */
+    align-items: baseline;
+    gap: 28px;
+    min-height: 42px; /* Reduced min-height */
+}
+
+
+.treemap-chart .panel-heading__stack {
+    position: static;
+    transform: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+    /* Centered group */
+    align-items: baseline;
+    gap: 28px;
+}
+
+
+
+.treemap-chart .dashboard-card__title {
+    font-size: 1.35rem;
+    letter-spacing: -0.01em;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 0;
+}
+
+.treemap-chart .dashboard-card__body {
+    padding: 0 24px 16px !important; /* Slightly tighter body padding */
+    overflow: visible !important;
+}
+
+
+
+.treemap-chart__canvas {
+    position: relative;
+    width: 100%;
+    min-height: 200px;
+    aspect-ratio: 16 / 7; /* Shortened height for more compact layout */
+    border-radius: 12px;
+    overflow: hidden; /* Prevent bottom sagging from min-height items */
+    background: transparent;
+    border: none;
+    box-sizing: border-box;
+    padding: 0 12px;
+}
+
+
+
+
+
+
+.treemap-chart__columns {
+    display: flex;
+    gap: 1px; /* Minimal gap */
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: visible;
+}
+
+
+.treemap-chart__group-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1px; /* Tighter gap */
+    height: 100%;
+    min-width: 60px;
+}
+
+
+
+.treemap-chart__column-header {
+    flex-shrink: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+    padding: 2px 0;
+    border: none;
+    background: transparent;
+    color: var(--treemap-accent);
+    filter: brightness(0.85);
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    overflow: visible;
+    min-height: 28px;
+    text-align: center;
+}
+
+
+.treemap-chart__group-column:nth-last-child(2) .treemap-chart__column-header,
+.treemap-chart__group-column:last-child .treemap-chart__column-header {
+    justify-content: center;
+
+    /* Standardize all to center */
+}
+
+.treemap-chart__leaf-container {
+    position: relative;
+    flex: 1;
+    width: 100%;
+    min-height: 0;
+    background: rgb(0 0 0 / 5%);
+}
+
+.treemap-chart__leaf {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    border: none;
+    background: var(--treemap-accent);
+    color: var(--color-white);
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: filter 0.2s ease, transform 0.1s ease;
+    min-height: 20px; /* Reduced to avoid pushing out of container */
+}
+
+
+
+.treemap-chart__leaf:hover {
+    filter: brightness(1.1);
+    z-index: 10;
+}
+
+.treemap-chart__leaf--active {
+    box-shadow: inset 0 0 0 2px var(--palette-brass);
+    z-index: 10;
+}
+
+.treemap-chart__leaf-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0;
+    width: 100%;
+    pointer-events: none;
+}
+
+.treemap-chart__leaf-label {
+    font-size: 0.72rem;
+    font-weight: 900;
+    line-height: 1.1;
+    white-space: nowrap; /* Forced back to single line */
+    overflow: visible; /* Allow slight overflow if necessary rather than truncation */
+    text-overflow: clip;
+    width: auto;
+    text-shadow: 0 1px 2px rgb(0 0 0 / 40%);
+    letter-spacing: -0.04em; /* Tighter letter spacing to fit */
+    padding: 0 1px;
+}
+
+
+
+.treemap-chart__leaf-value {
+    font-size: 0.65rem;
+    font-weight: 800;
+    opacity: 1;
+    text-shadow: 0 1px 1px rgb(0 0 0 / 30%);
+    line-height: 1;
+    margin-top: 1px;
+}
+
+
+@media (width <= 860px) {
+    .treemap-chart__canvas {
+        min-height: 420px;
+        aspect-ratio: auto
+    }
+
+    .treemap-chart__leaf-label {
+        font-size: .72rem;
+    }
+
+    .treemap-chart__leaf-value {
+        font-size: .78rem;
+    }
+
+    .treemap-chart__leaf-meta {
+        display: none;
+    }
+}
+
+.app-shell[data-theme="dark"] .treemap-chart__canvas {
+    background:
+        radial-gradient(circle at top left, rgb(56 189 248 / 10%), transparent 34%),
+        linear-gradient(180deg, rgb(16 24 40 / 92%), rgb(11 20 36 / 98%));
+    border-color: rgb(148 163 184 / 10%)
+}
+
+.app-shell[data-theme="dark"] .treemap-chart__group {
+    background: linear-gradient(180deg, color-mix(in srgb, var(--treemap-accent) 14%, var(--tw-slate-900)), rgb(15 23 42 / 82%))
+}
+
+.app-shell[data-theme="dark"] .treemap-chart__group-header {
+    background: rgb(255 255 255 / 6%)
+}
+
+.app-shell[data-theme="dark"] .treemap-chart__group,
+.app-shell[data-theme="dark"] .treemap-chart__leaf {
+    border-color: rgb(255 255 255 / 8%)
+}
+
+.app-shell[data-theme="dark"] .treemap-chart__leaf {
+    background: rgb(255 255 255 / 5%)
+}
+
+.app-shell[data-theme="dark"] .treemap-chart__leaf:hover,
+.app-shell[data-theme="dark"] .treemap-chart__leaf--active {
+    border-color: rgb(42 111 145 / 36%);
+    box-shadow: 0 16px 28px rgb(0 0 0 / 30%)
+}

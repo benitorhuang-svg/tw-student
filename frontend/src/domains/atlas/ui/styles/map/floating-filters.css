@@ -1,0 +1,42 @@
+@import url('./atoms/filter-atoms.css');
+@import url('./molecules/filter-molecule.css');
+
+/* --- Animations --- */
+@keyframes fade-in-down {
+      from {
+         opacity: 0;
+        transform: translateY(-10px);
+    }
+
+      to {
+         opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Layout Specifics --- */
+.map-floating-filters {
+      position: absolute;
+      bottom: 24px;
+      left: 12px;
+      z-index: 1000;
+      pointer-events: none;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+}
+
+.atlas-map-ui-overlay-pane {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1000;
+      pointer-events: none;
+}
+
+.atlas-map-ui-overlay-pane > * {
+      pointer-events: auto;
+}

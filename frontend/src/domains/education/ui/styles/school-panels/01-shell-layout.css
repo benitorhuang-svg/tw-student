@@ -1,0 +1,66 @@
+/* Dashboard Canvas Grid Overrides */
+.dashboard-canvas--overview,
+.dashboard-canvas--regional,
+.dashboard-canvas--county,
+.dashboard-canvas--schools,
+.dashboard-canvas--school-focus {
+        grid-template-columns: var(--dashboard-side-column) var(--dashboard-map-column);
+        grid-template-areas: "sidebar map";
+}
+
+/* Shell Layouts */
+.school-detail-shell {
+        display: grid;
+        gap: var(--spacing-sm);
+        min-height: 0;
+        align-content: start
+}
+
+.school-detail-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1.45fr) minmax(320px, .95fr);
+        gap: var(--spacing-sm);
+        min-height: 0
+}
+
+.school-analysis-panel {
+        display: grid;
+        gap: var(--spacing-sm);
+        min-height: 0;
+        align-content: start
+}
+
+.school-list-workspace {
+        display: grid;
+        gap: var(--spacing-sm);
+        min-height: 0
+}
+
+.school-list-workspace__grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.2fr) minmax(320px, 1fr);
+        gap: 8px;
+        align-items: stretch
+}
+
+/* Dashboard Card Layering Fixes */
+.dashboard-card--matrix {
+     position: relative;
+    z-index: 6;
+}
+
+.dashboard-card--kpi {
+     position: relative;
+    z-index: 5;
+}
+
+.dashboard-card--ranking,
+.dashboard-card--overview-movers {
+     position: relative;
+    z-index: 4;
+}
+
+.atlas-storyboard__chart--flush {
+        margin: 0;
+        padding: 0;
+}

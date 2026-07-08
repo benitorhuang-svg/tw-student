@@ -1,0 +1,182 @@
+.matrix-chart-premium {
+    position: relative;
+    padding: 0;
+    background: transparent; /* Changed to transparent to inherit from parent card or be more glass-like */
+    border: none;
+    border-radius: 20px;
+    box-shadow: none;
+
+    /* transition: all 0.4s ... REMOVED: all transitions on containers are dangerous for layout stability */
+    transition: opacity 0.4s ease; 
+    overflow: visible;
+}
+
+.matrix-chart-premium:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.matrix-chart-premium .dashboard-card__head {
+    margin-bottom: 0;
+    padding: 0 24px 4px 100px;
+    border-bottom: none !important;
+    background: transparent !important;
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    gap: 28px;
+    min-height: 50px;
+}
+
+.matrix-chart-premium .panel-heading__stack {
+    position: static;
+    transform: none;
+    text-align: left;
+}
+
+.matrix-chart-premium .dashboard-card__title {
+    font-size: 1.35rem;
+    letter-spacing: -0.01em;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 0;
+}
+
+.matrix-chart-premium .dashboard-card__body {
+    padding: 0 !important;
+    overflow: visible !important;
+}
+
+.matrix-chart-premium .chart-svg-frame {
+    padding: 0 4px 0 12px;
+}
+
+.matrix-chart-premium .scatter-chart__quadrant {
+    transition: fill 0.8s ease;
+    opacity: 0.6;
+    rx: 4px; /* Apply radius in CSS for cleaner TSX */
+    shape-rendering: geometricprecision;
+}
+
+.matrix-chart-premium .scatter-chart__quadrant--tl { fill: rgb(56 189 248 / 8%); } /* Sky - Emerging */
+.matrix-chart-premium .scatter-chart__quadrant--tr { fill: rgb(16 185 129 / 8%); } /* Emerald - Growth */
+.matrix-chart-premium .scatter-chart__quadrant--bl { fill: rgb(244 63 94 / 8%); } /* Rose - Alert */
+.matrix-chart-premium .scatter-chart__quadrant--br { fill: rgb(15 23 42 / 6%); } /* Neutral - Scale */
+
+[data-theme="dark"] .matrix-chart-premium .scatter-chart__quadrant--br { fill: rgb(255 255 255 / 2%); }
+
+.matrix-chart-premium .scatter-chart__point {
+    fill: var(--brand-primary);
+    fill-opacity: 0.6;
+    stroke: var(--color-white);
+    stroke-width: 1.5;
+
+    /* Only animate light-weight properties to avoid frequent expensive repaints */
+    transition: fill 200ms ease, fill-opacity 200ms ease, stroke-width 200ms ease, filter 180ms ease, r 200ms ease;
+    outline: none !important;
+    cursor: pointer;
+
+    /* Ensure scale origin is center of the circle */
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+[data-theme='dark'] .matrix-chart-premium .scatter-chart__point {
+    stroke: var(--clr-slate-900);
+}
+
+.matrix-chart-premium .scatter-chart__point:hover {
+    fill-opacity: 1;
+    stroke: var(--color-white);
+    stroke-width: 2.5;
+
+    /* Keep a subtle shadow but avoid heavy animated transforms */
+    filter: drop-shadow(0 0 6px var(--brand-primary));
+}
+
+.matrix-chart-premium .scatter-chart__point--active {
+    fill: var(--clr-accent-amber) !important;
+    fill-opacity: 1 !important;
+    stroke: var(--color-white) !important;
+    stroke-width: 3;
+    filter: drop-shadow(0 0 15px var(--clr-accent-amber));
+    outline: none !important;
+
+    /* transform handled by stable overlay layer or static class */
+}
+
+.matrix-chart-premium .scatter-chart__point--hovered-base {
+    fill-opacity: 0.5 !important;
+    stroke-opacity: 0.7;
+    filter: none !important; /* Remove individual filter to avoid stacking lag */
+}
+
+/* Active Highlight Overlay (Atomic Layer) */
+.matrix-chart-premium .scatter-chart__point--active-overlay {
+    fill: var(--clr-accent-amber);
+    stroke: var(--color-white);
+    stroke-width: 3;
+    filter: drop-shadow(0 0 16px var(--clr-accent-amber));
+    pointer-events: none;
+
+    /* Animate opacity only to avoid reflow when overlay appears */
+    opacity: 1;
+    transition: opacity 160ms ease-out;
+}
+
+.matrix-chart-premium .scatter-chart__axis {
+    fill: var(--text-dim);
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.matrix-chart-premium .scatter-chart__axis-title {
+    fill: var(--text-soft);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.matrix-chart-premium .scatter-chart__zero {
+    stroke: var(--border-light);
+    stroke-width: 1;
+    stroke-dasharray: 6 4;
+}
+
+.matrix-chart-premium .scatter-chart__quadrant-label {
+    fill: var(--text-soft);
+    font-size: 11px;
+    font-weight: 800;
+    opacity: 0.4;
+    pointer-events: none;
+    letter-spacing: 0.05em;
+    font-family: var(--font-heading);
+}
+
+/* Tooltip Redesign inside SVG */
+.matrix-chart-premium .chart-svg-tooltip__surface {
+    fill: var(--clr-slate-900);
+    fill-opacity: 0.9;
+    filter: drop-shadow(0 12px 24px rgb(0 0 0 / 25%));
+}
+
+[data-theme='dark'] .matrix-chart-premium .chart-svg-tooltip__surface {
+    fill: var(--surface-card);
+    fill-opacity: 0.95;
+    stroke: var(--border-light);
+}
+
+.matrix-chart-premium .chart-svg-tooltip__title {
+    fill: var(--color-white);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+}
+
+[data-theme='dark'] .matrix-chart-premium .chart-svg-tooltip__title {
+    fill: var(--text-strong);
+}
+
+.chart-data-focusable {
+    outline: none !important;
+}

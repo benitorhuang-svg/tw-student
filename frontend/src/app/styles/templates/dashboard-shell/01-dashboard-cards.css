@@ -1,0 +1,98 @@
+.dashboard-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 0;
+    border-radius: 20px;
+    background: var(--color-white);
+    border: 1px solid rgb(148 163 184 / 12%);
+    box-shadow: 0 4px 20px rgb(16 32 51 / 4%), 0 1px 3px rgb(16 32 51 / 2%);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dashboard-card:hover {
+    box-shadow: 0 12px 36px rgb(16 32 51 / 8%);
+}
+
+.dashboard-card--flat {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+}
+
+.dashboard-card__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 10px 20px;
+    border-bottom: 1px solid rgb(148 163 184 / 8%);
+    flex-shrink: 0;
+    background: rgb(248 250 252 / 40%);
+}
+
+.dashboard-card--flat .dashboard-card__head {
+    background: transparent !important;
+    padding-left: 0;
+    padding-right: 0;
+    border-bottom: none;
+}
+
+.dashboard-card__title {
+    font-family: var(--font-heading);
+    font-size: .84rem;
+    font-weight: 700;
+    color: var(--text-main)
+}
+
+.dashboard-card__subtitle {
+    font-size: .72rem;
+    color: var(--text-soft)
+}
+
+.dashboard-card__body {
+    flex: 1;
+    min-height: 0;
+    overflow: hidden
+}
+
+.dashboard-card--flat .dashboard-card__body {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.dashboard-card__map-body {
+    position: relative;
+}
+
+.dashboard-card--map {
+    grid-area: map;
+    z-index: 1;
+    height: 100%;
+}
+
+.dashboard-card--overview-story,
+.dashboard-card--overview-movers,
+.dashboard-card--regional-story,
+.dashboard-card--comparison,
+.dashboard-card--ranking,
+.dashboard-card--county-story {
+    min-height: 260px
+}
+
+.dashboard-card__insight-body {
+    padding: 16px;
+    height: 100%;
+}
+
+.dashboard-card--matrix .dashboard-card__insight-body {
+    padding-top: 12px;
+}
+
+.app-shell[data-theme="dark"] .dashboard-card {
+    background: #091220eb;
+    border-color: var(--tw-slate-400-a12);
+    box-shadow: 0 24px 44px #0000003d
+}

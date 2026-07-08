@@ -1,0 +1,383 @@
+.anomaly-panel {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+}
+
+.governance-flyout .anomaly-panel {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+}
+
+.anomaly-panel__body-container {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        min-height: 0;
+}
+
+.anomaly-list-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 12px;
+        padding: 2px;
+}
+
+.anomaly-panel .dashboard-card__head {
+        padding: 0;
+        margin-bottom: 0;
+        border: none;
+        background: transparent;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+}
+
+.anomaly-panel .dashboard-card__title {
+        color: var(--text-strong);
+        font-size: 1.1rem;
+        font-weight: 700;
+}
+
+.anomaly-panel .dashboard-card__subtitle {
+        color: rgb(255 255 255 / 40%);
+        font-size: 0.8rem;
+}
+
+.anomaly-panel .dashboard-card__actions {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 4px;
+}
+
+.anomaly-panel .dashboard-card__actions--flat {
+        width: 100%;
+        border-bottom: 1px solid rgb(255 255 255 / 10%);
+        padding-bottom: 12px;
+}
+
+.anomaly-filter-controls {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+        background: rgb(255 255 255 / 4%);
+        padding: 6px;
+        border-radius: 999px;
+        border: 1px solid rgb(255 255 255 / 6%);
+}
+
+.filter-tab {
+        padding: 6px 16px;
+        border: none;
+        background: transparent;
+        color: rgb(255 255 255 / 50%);
+        font-size: 0.85rem;
+        font-weight: 700;
+        border-radius: 999px;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+}
+
+.filter-tab:hover {
+        color: var(--color-white);
+        background: rgb(255 255 255 / 8%);
+}
+
+.filter-tab.active {
+        background: var(--color-white);
+        color: var(--tw-slate-900);
+        box-shadow: 0 4px 12px rgb(255 255 255 / 10%);
+}
+
+.filter-count-badge {
+        height: 18px;
+        min-width: 18px;
+        padding: 0 6px;
+        background: rgb(255 255 255 / 10%);
+        color: inherit;
+        font-size: 10px;
+        font-weight: 900;
+        border-radius: 999px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1;
+        flex-shrink: 0;
+}
+
+.filter-tab.active .filter-count-badge {
+        background: var(--tw-sky-500);
+        color: var(--color-white);
+}
+
+/* Data Notes / Investigation Cards */
+.data-note {
+        width: 100%;
+        text-align: left;
+        display: grid;
+        gap: 8px;
+        padding: 16px;
+        border-radius: 12px;
+        background: rgb(255 255 255 / 3%);
+        border: 1px solid rgb(255 255 255 / 6%);
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+}
+
+.data-note::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: transparent;
+        transition: all 0.3s ease;
+}
+
+.data-note--info::before {
+     background: var(--brand-primary);
+}
+
+.data-note--warning::before {
+     background: var(--brand-warning);
+}
+
+.data-note--critical::before {
+     background: var(--brand-danger);
+}
+
+.data-note:hover {
+        background: rgb(255 255 255 / 6%);
+        transform: translateX(4px);
+        border-color: rgb(255 255 255 / 12%);
+}
+
+.data-note--selected {
+        background: rgb(56 189 248 / 8%);
+        border-color: rgb(56 189 248 / 30%);
+        box-shadow: 0 0 20px rgb(56 189 248 / 10%);
+}
+
+.data-note strong {
+        color: var(--text-strong);
+        font-size: 0.9rem;
+        font-weight: 700;
+}
+
+.anomaly-card__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+}
+
+.anomaly-card__header span {
+        font-size: 0.72rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: var(--palette-brass);
+}
+
+.data-note span {
+        color: rgb(255 255 255 / 60%);
+        font-size: 0.82rem;
+        line-height: 1.5;
+}
+
+.data-note small {
+        color: rgb(255 255 255 / 30%);
+        font-size: 0.7rem;
+        font-style: italic;
+}
+
+/* Anomaly Detail Area */
+.anomaly-detail {
+        margin-top: 16px;
+        padding: 24px;
+        border-radius: 16px;
+        background: rgb(0 0 0 / 20%);
+        border: 1px solid rgb(255 255 255 / 8%);
+        display: grid;
+        gap: 20px;
+        animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+        from {
+         opacity: 0;
+        transform: translateY(10px);
+    }
+
+        to {
+         opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.anomaly-detail__header h4 {
+        margin: 8px 0;
+        color: var(--text-strong);
+        font-size: 1.1rem;
+        font-weight: 700;
+}
+
+.anomaly-detail__header p {
+        color: rgb(255 255 255 / 50%);
+        font-size: 0.85rem;
+        line-height: 1.6;
+}
+
+.anomaly-series-table-wrap {
+        overflow-x: auto;
+        border-radius: 12px;
+        border: 1px solid rgb(255 255 255 / 6%);
+        background: rgb(255 255 255 / 2%);
+}
+
+.anomaly-series-table {
+        width: 100%;
+        border-collapse: collapse;
+}
+
+.anomaly-series-table th {
+        background: rgb(255 255 255 / 4%);
+        padding: 12px 16px;
+        text-align: left;
+        font-size: 0.7rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: rgb(255 255 255 / 40%);
+        letter-spacing: 0.05em;
+        border-bottom: 1px solid rgb(255 255 255 / 8%);
+}
+
+.anomaly-series-table td {
+        padding: 12px 16px;
+        font-size: 0.85rem;
+        color: rgb(255 255 255 / 80%);
+        border-bottom: 1px solid rgb(255 255 255 / 4%);
+}
+
+.anomaly-series-table tr:hover td {
+        background: rgb(255 255 255 / 2%);
+        color: var(--text-strong);
+}
+
+.anomaly-series-table tr:last-child td {
+        border-bottom: none;
+}
+
+.anomaly-series-visual {
+        padding: 24px;
+        background: rgb(255 255 255 / 2%);
+        border-radius: 12px;
+        border: 1px solid rgb(255 255 255 / 5%);
+}
+
+.status-timeline {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        padding: 20px 0;
+}
+
+.status-timeline::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        height: 2px;
+        background: rgb(255 255 255 / 8%);
+        transform: translateY(-50%);
+        z-index: 1;
+}
+
+.status-timeline__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        position: relative;
+        z-index: 2;
+}
+
+.status-timeline__label {
+        font-size: 0.72rem;
+        font-weight: 700;
+        color: var(--text-muted);
+}
+
+.status-timeline__point {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+}
+
+.point-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--tw-emerald-500);
+        border: 3px solid #111827;
+        box-shadow: 0 0 10px rgb(16 185 129 / 30%);
+        transition: all 0.3s ease;
+}
+
+.status-timeline__point--flagged .point-dot {
+        background: #f59e0b;
+        box-shadow: 0 0 15px rgb(245 158 11 / 50%);
+        transform: scale(1.2);
+}
+
+.point-value {
+        font-size: 0.8rem;
+        font-weight: 800;
+        color: var(--text-soft);
+}
+
+.anomaly-series-legend {
+        display: flex;
+        gap: 16px;
+        margin-top: 16px;
+        justify-content: center;
+}
+
+.legend-item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.75rem;
+        color: var(--text-dim);
+}
+
+.legend-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--tw-emerald-500);
+}
+
+.legend-dot--flagged {
+        background: #f59e0b;
+}
+
+.note-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+}

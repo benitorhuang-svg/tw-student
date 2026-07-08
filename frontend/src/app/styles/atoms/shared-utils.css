@@ -1,0 +1,61 @@
+/* Theme overrides */
+.app-shell[data-theme="dark"] .dashboard-canvas .stat-card,
+.app-shell[data-theme="dark"] .dashboard-canvas .scope-panel__visual-card,
+.app-shell[data-theme="dark"] .dashboard-canvas .insight-row,
+.app-shell[data-theme="dark"] .dashboard-canvas .trend-panel {
+  background: rgb(255 255 255 / 4%);
+  border-color: var(--tw-slate-400-a14)
+}
+
+.app-shell[data-theme="dark"] .dashboard-canvas .insight-row__index,
+.app-shell[data-theme="dark"] .dashboard-canvas .insight-row__meta strong,
+.app-shell[data-theme="dark"] .dashboard-canvas .stat-card__value {
+  color: var(--tw-slate-50)
+}
+
+/* Misc UI atoms */
+.empty-state {
+  padding: 14px;
+  border-radius: 12px;
+  background: rgb(255 255 255 / 3%);
+  color: var(--tw-slate-200-a68);
+  font-size: .9rem
+}
+
+.dashboard-canvas .empty-state {
+  background: rgb(15 23 42 / 4%);
+  color: var(--text-soft)
+}
+
+.sparkline {
+  flex-shrink: 0;
+  vertical-align: middle
+}
+
+.atlas-control-rail .panel,
+.atlas-control-rail .atlas-filterbar {
+  background: #08111f29;
+  border: 0;
+  box-shadow: none
+}
+
+/* Shared Label & Pill Utilities */
+.eyebrow,
+.filter-group__label,
+.filter-select span,
+.map-stage__legend-title,
+.dashboard-inline-filter__label {
+    font-size: .72rem;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+}
+
+.chip,
+.ghost-button,
+.map-pill,
+.rank-pill {
+    border-radius: 999px;
+    border: 1px solid rgb(148 163 184 / 18%);
+    transition: transform .16s ease, background-color .16s ease, border-color .16s ease, box-shadow .16s ease;
+}

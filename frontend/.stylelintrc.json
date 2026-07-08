@@ -1,0 +1,69 @@
+{
+  "extends": [
+    "stylelint-config-standard"
+  ],
+  "plugins": [
+    "stylelint-declaration-strict-value"
+  ],
+  "rules": {
+    "scale-unlimited/declaration-strict-value": [
+      [
+        "/color/",
+        "fill",
+        "stroke",
+        "background-color",
+        "border-color"
+      ],
+      {
+        "ignoreValues": [
+          "transparent",
+          "inherit",
+          "currentColor",
+          "none",
+          "initial",
+          "unset"
+        ],
+        "message": "Please use a CSS variable (token) instead of a hardcoded color value."
+      }
+    ],
+    "property-no-unknown": [
+      true,
+      {
+        "ignoreProperties": [
+          "composes"
+        ]
+      }
+    ],
+    "selector-class-pattern": [
+      "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*(?:__(?:[a-z0-9]+(?:-[a-z0-9]+)*))?(?:--(?:[a-z0-9]+(?:-[a-z0-9]+)*))?$",
+      {
+        "message": "Expected class selector to be kebab-case or BEM-style kebab-case."
+      }
+    ],
+    "keyframes-name-pattern": [
+      "^[a-z][a-zA-Z0-9]*(?:-[a-z0-9]+)*$",
+      {
+        "message": "Expected keyframe name to be camelCase or kebab-case."
+      }
+    ],
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": [
+          "global",
+          "local"
+        ]
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/foundations.css"
+      ],
+      "rules": {
+        "scale-unlimited/declaration-strict-value": null
+      }
+    }
+  ]
+}

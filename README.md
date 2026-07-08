@@ -1,7 +1,5 @@
 # 臺灣教育 Atlas — 學生人數分析工作台
 
-![Welcome Infographic](./welcome_infographic_mockup_1773711434948.png)
-
 > **地圖為核心、資料為脈絡的教育研究儀表板。** 以 PWA 形式發布，支援桌機與手機全離線瀏覽，深度分析台灣各級學校學生人數變遷。
 
 [![PWA Support](https://img.shields.io/badge/PWA-Ready-blue?logo=pwa)](https://web.dev/progressive-web-apps/)
@@ -48,17 +46,16 @@
 ## 📂 專案結構
 
 ```bash
-├── services/
-│   ├── backend/
-│   │   └── scripts/       # 資料刷新管線 (Node ESM)
-│   │       └── lib/       # 9 個資料處理 builder 模組
-│   └── frontend/
-│       ├── src/           # React 應用源碼
-│       ├── scripts/       # 前端輔助腳本
-│       └── tests/e2e/     # Playwright E2E 測試案例
+├── backend/
+│   ├── scripts/           # 資料刷新管線 (Node ESM)
+│   │   └── lib/           # 資料處理 builder 模組
+│   └── dist/              # 產生後的資料資產，本機保留但不提交
+├── frontend/
+│   ├── src/               # React + DDD/FSD 前端源碼
+│   ├── scripts/           # 前端輔助腳本
+│   └── tests/e2e/         # Playwright E2E 測試案例
 ├── docs/
 │   └── specs/             # 規格驅動開發 (SDD) 文件
-├── data/                  # 靜態資料資產（JSON, TopoJSON, SQLite）
 ├── infra/                 # 基礎設施定義檔 (GCP/Firebase)
 └── package.json           # 工作區管理與通用指令
 ```
@@ -89,7 +86,7 @@ npm run data:refresh
 ```bash
 npm run build
 # 預覽建置後結果
-cd services/frontend && npm run preview
+npm run preview
 ```
 
 ---
@@ -98,7 +95,7 @@ cd services/frontend && npm run preview
 
 | 決策 | 深度說明 |
 |------|----------|
-| **Single Source of Truth** | `data/` 為唯一資料源，Vite plugin 在開發時代理、部署時同步至 `dist/data/`。 |
+| **Single Source of Truth** | `backend/dist/` 為本機資料產物來源，Vite plugin 在開發時代理並 hot reload 資料更新，建置時同步至 `frontend/dist/data/`。 |
 | **Zero-Library Visuals** | 所有圖表皆不依賴外部库（如 D3），透過 `<svg>` 與 `ResizeObserver` 實現 100% 響應式與可控動畫。 |
 | **Asset Fallback** | `dataAsset.ts` 統一處理 URL 與靜態資源回退，防止 SPA 路徑下的資源 404 錯誤。 |
 | **Interactivity Contract**| `chart-tooltip` 與鍵盤焦黑規則統一，並透過 Playwright 確保高難度組件（如 PRIndicator）的互動回歸。 |
@@ -115,8 +112,6 @@ cd services/frontend && npm run preview
 - **基礎架構**: Cloud Run (服務端渲染/資料 API) + Firebase Hosting (前端 CDN & 域名)
 
 ### 部署工作流 (Deployment Workflow)
-
-![CI/CD Infographic](./cicd_pipeline_infographic.png)
 
 1. **GitHub 自動部屬**: 推送到 `main` 分支後，Cloud Build 自動執行多階段編譯與部署。
 2. **手動應急部署**: `.\deploy-to-gcp.ps1` (需 GCP SDK 環境)。
@@ -150,8 +145,8 @@ cd services/frontend && npm run preview
 
 - **一鍵啟動**：已在根目錄設定 `npm run dev`，可直接從 repo 根啟動前端開發伺服器。
 - **快速安裝（CI / 本地）**：CI 與開發機建議使用 `npm ci` 以獲得可重現且較快的安裝。
-- **本機快取**：Vite 已配置持久化快取（`.vite-cache`），可加速冷啟動與依賴 pre-bundle。
-- **大資源忽略**：dev 監看已忽略 repo 根的 `data/` 資料目錄，減少檔案監看開銷。
-- **建置速度**：build 目標已調為 `es2020` 並預設關閉 source maps，可減少轉譯與輸出時間；如需調試，請在 `services/frontend/vite.config.ts` 中啟用 `sourcemap`。
+- **本機快取**：Vite 已配置持久化快取（`.vite-cache`），但該目錄只保留於本機，不進版本庫。
+- **大資源忽略**：dev 監看已忽略 `backend/dist/` 資料產物目錄，減少檔案監看開銷。
+- **建置速度**：build 目標已調為 `es2020` 並預設關閉 source maps，可減少轉譯與輸出時間；如需調試，請在 `frontend/vite.config.ts` 中啟用 `sourcemap`。
 - **TypeScript**：已啟用 incremental build info，加速 `tsc -b` 的後續增量建置。
 - **進階**：若需要更快的安裝 (尤其在 CI)，可考慮採用 `pnpm` 的共享快取，或在 CI 使用 Node modules cache（例如 `~/.npm` 或 package manager 專用 cache）。
