@@ -1,4 +1,4 @@
-import { ACADEMIC_YEARS, SUMMARY_EDUCATION_LEVELS, SUMMARY_MANAGEMENT_TYPES, summaryBucketKey } from '../refresh-helpers.mjs'
+import { ACADEMIC_YEARS, CURRENT_YEAR, SUMMARY_EDUCATION_LEVELS, SUMMARY_MANAGEMENT_TYPES, summaryBucketKey } from '../refresh-helpers.mjs'
 
 export function getMissingYears(yearlyStudents) {
   const observedYears = yearlyStudents.filter((entry) => entry.students > 0).map((entry) => entry.year)
