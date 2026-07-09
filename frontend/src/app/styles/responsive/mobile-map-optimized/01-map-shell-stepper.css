@@ -1,0 +1,230 @@
+@media (width <= 860px) {
+    /* Full screen map layout */
+    .mobile-layout[data-view="map-centric"] {
+        width: 100vw;
+        height: 100vh;
+        height: 100dvh;
+        overflow: hidden;
+        background: var(--map-canvas-bg);
+        position: relative;
+    }
+
+    .mobile-layout__full-map {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mobile-layout__full-map .atlas-map-panel {
+        height: 100%;
+        width: 100%;
+    }
+
+    /* 1. Top Bar: Streamlined Multi-tier Header */
+    .map-top-bar {
+        position: absolute;
+        top: 15px;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        padding-left: 5px;
+        padding-right: 5px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start !important;
+        pointer-events: none;
+        z-index: 1100;
+    }
+
+    .map-top-bar__controls {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 8px;
+        pointer-events: auto;
+        overflow: visible !important;
+    }
+
+    .map-top-bar__controls > * {
+        flex-shrink: 0;
+    }
+
+    .map-top-bar__controls::-webkit-scrollbar {
+        display: none;
+    }
+
+    .map-breadcrumb-container.is-mobile {
+        position: absolute;
+        bottom: 15px;
+        left: 0 !important;
+        padding-left: 5px;
+        right: auto;
+        z-index: 1050;
+        pointer-events: none;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .map-control-pillar > * {
+        pointer-events: auto;
+    }
+
+    .map-breadcrumb-container.is-mobile > * {
+        pointer-events: auto;
+    }
+
+    /* Map Year Stepper Redesign */
+    .map-year-stepper {
+        pointer-events: auto;
+        flex: none;
+    }
+
+    .map-year-stepper__wrapper {
+        display: flex;
+        align-items: center;
+        background: var(--map-overlay-bg);
+        border: 1px solid var(--map-overlay-border);
+        border-radius: var(--radius-pill);
+        padding: 4px 8px;
+        box-shadow: var(--shadow-premium);
+        backdrop-filter: blur(var(--map-overlay-blur));
+        width: fit-content;
+        min-width: 260px !important;
+        justify-content: space-between;
+    }
+
+    .map-year-stepper__controls {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .map-year-stepper__label {
+        font-size: 0.88rem;
+        font-weight: 800;
+        color: var(--brand-primary);
+        padding: 0 4px;
+        min-width: 95px;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    .map-year-stepper__btn {
+        width: 32px;
+        height: 32px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: none;
+        background: transparent;
+        color: var(--text-main);
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    .map-year-stepper__btn:disabled {
+        opacity: 0.3;
+    }
+
+    .map-year-stepper__divider {
+        width: 1px;
+        height: 18px;
+        background: rgb(0 0 0 / 12%);
+        margin: 0 12px;
+    }
+
+    .map-year-stepper__play-btn {
+        width: 32px;
+        height: 32px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: none;
+        background: transparent;
+        color: var(--brand-primary);
+        cursor: pointer;
+        transition: all 0.2s;
+        margin-right: 4px;
+    }
+
+    /* Trend Line Chart Mobile Version */
+    .map-trend-card__chart-container {
+        position: relative;
+        height: 120px; /* Precision fit for 80+35 layout */
+        width: 100%;
+        margin-top: 5px;
+        padding: 0 10px;
+    }
+
+    .map-trend-card__svg {
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+        margin-top: 20px;
+        z-index: 2;
+    }
+
+    .map-trend-card__labels {
+        position: absolute;
+        inset: 0 10px;
+        pointer-events: none;
+    }
+
+    .map-trend-card__data-col {
+        position: absolute;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        justify-content: flex-start;
+    }
+
+    .map-trend-card__year-label {
+        margin-top: auto;
+        font-size: 8px;
+        font-weight: 700;
+        color: var(--text-muted);
+        margin-bottom: 2px;
+    }
+
+    .map-trend-card__data-col.is-active .map-trend-card__year-label {
+        color: var(--brand-primary);
+        font-weight: 900;
+        background: var(--brand-primary-light);
+        border-radius: 4px;
+        padding: 0 2px;
+    }
+
+    .map-trend-card__top-value {
+        font-size: 7px;
+        font-weight: 800;
+        color: var(--text-main);
+        margin-bottom: 2px;
+        white-space: nowrap;
+    }
+
+    .map-trend-card__point {
+        transition: all 0.3s ease;
+    }
+
+    .map-trend-card__point.is-active {
+        r: 5px;
+    }
+
+    .map-year-stepper__play-btn.is-playing {
+        background: var(--brand-primary);
+        color: var(--color-white);
+    }
+
+}

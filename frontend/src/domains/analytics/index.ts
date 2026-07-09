@@ -9,5 +9,5 @@ export { default as PieChart } from "./ui/PieChart";
 export { default as PRIndicatorChart } from "./ui/PRIndicatorChart";
 export { default as SchoolOverviewChart } from "./ui/SchoolOverviewChart";
 export { default as StackedShareBarChart } from "./ui/StackedShareBarChart";
-export { default as TreemapChart } from "./ui/TreemapChart";
-export { default as TrendChart } from "./ui/TrendChart";
+export { default as TreemapChart } from "./ui/charts/treemap";
+export { default as TrendChart } from "./ui/charts/trend";

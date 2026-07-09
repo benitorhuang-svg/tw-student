@@ -1,12 +1,13 @@
-import { Suspense, lazy, useCallback, useEffect, useMemo, useState, useTransition, useDeferredValue } from 'react'
+import { Suspense, lazy, useCallback, useDeferredValue, useMemo, useTransition } from 'react'
 
 import './App.css'
+import { useAtlasOrchestration, useEducationData, useYearPlayback } from '@/app/providers'
+import { useAtlasStore } from '@/app/store'
+import { useThemeSync } from '@/app/hooks/useThemeSync'
+import { useVectorTileUrl } from '@/app/hooks/useVectorTileUrl'
 import { useAtlasLoadObservation, buildDesktopTabItems, AppLoadingShell, AppErrorShell } from '@/domains/atlas'
 import { useFeedbackMessage } from '@/shared/lib/hooks/core/useFeedbackMessage'
 import { useIsMobile } from '@/shared/lib/hooks/core/useIsMobile'
-import { THEME_STORAGE_KEY } from '@/shared/lib/utils/constants'
-import { useAtlasStore } from "@/app/store";
-import { useAtlasOrchestration, useEducationData, useYearPlayback } from "@/app/providers";
 
 const TaiwanExplorerMap = lazy(() => import('@/domains/atlas').then((module) => ({ default: module.TaiwanExplorerMap })))
 const DesktopAppLayout = lazy(() => import('@/app/layouts/DesktopAppLayout'))
@@ -15,13 +16,7 @@ const MobileAppLayout = lazy(() => import('@/app/layouts/MobileAppLayout'))
 function App() {
   const isMobile = useIsMobile()
   const state = useAtlasStore()
-  
-  const [vectorTileUrl, setVectorTileUrl] = useState(() => {
-    const url = new URL(window.location.href)
-    const qFlag = url.searchParams.get('vectorTiles')
-    const enableVector = qFlag === 'true' || import.meta.env.VITE_USE_VECTOR_TILES === 'true'
-    return enableVector ? import.meta.env.VITE_VECTOR_TILE_BASE_URL || '/data/tiles' : ''
-  })
+  const [vectorTileUrl, setVectorTileUrl] = useVectorTileUrl()
 
   const loadObservation = useAtlasLoadObservation()
   const [isPending, startTransition] = useTransition()
@@ -37,11 +32,7 @@ function App() {
   // 2. Playback Layer
   const [isYearPlaybackActive, setIsYearPlaybackActive] = useYearPlayback(summaryDataset, state.setActiveYear, startTransition)
 
-  useEffect(() => {
-    window.localStorage.setItem(THEME_STORAGE_KEY, state.theme)
-    // Synchronize theme to body for global components like tooltips
-    document.body.setAttribute('data-theme', state.theme)
-  }, [state.theme])
+  useThemeSync(state.theme)
 
   const deferredSearchText = useDeferredValue(state.searchText)
 
@@ -156,6 +147,7 @@ function App() {
       startTransition,
       state,
       setIsYearPlaybackActive,
+      setVectorTileUrl,
       isYearPlaybackActive,
       summaryDataset,
       vectorTileUrl,

@@ -2,132 +2,13 @@ import { useMemo, useState } from 'react'
 
 import { useChartAnimation } from '@/shared/lib/hooks/core/useChartAnimation'
 import { formatStudents } from '@/shared/lib/analytics'
-
-type TreemapLeaf = {
-  id: string
-  label: string
-  value: number
-  meta?: string
-  color?: string
-}
-
-type TreemapGroup = {
-  id: string
-  label: string
-  value: number
-  accentColor: string
-  children: TreemapLeaf[]
-}
-
-type TreemapChartProps = {
-  title: string
-  subtitle?: React.ReactNode
-  groups: TreemapGroup[]
-  activeLeafId?: string | null
-  onSelectLeaf?: (id: string) => void
-  onSelectGroup?: (id: string) => void
-  className?: string
-  flat?: boolean
-  showHeader?: boolean
-  children?: React.ReactNode
-}
-
-type LayoutRect<T> = {
-  node: T
-  x: number
-  y: number
-  width: number
-  height: number
-}
-
-const CANVAS_WIDTH = 550
-const CANVAS_HEIGHT = 550
-
-/**
- * Squarified Treemap Layout (Simple version)
- */
-function squarify<T extends { value: number }>(
-  nodes: T[],
-  x: number,
-  y: number,
-  width: number,
-  height: number,
-): LayoutRect<T>[] {
-  if (nodes.length === 0) return []
-  if (width <= 0 || height <= 0) return []
-
-  const total = nodes.reduce((sum, n) => sum + Math.max(n.value, 0), 0)
-  if (total === 0) return []
-
-  const result: LayoutRect<T>[] = []
-  const sortedNodes = [...nodes].sort((a, b) => b.value - a.value)
-
-  let remainingNodes = [...sortedNodes]
-  let curX = x
-  let curY = y
-  let curW = width
-  let curH = height
-  const scale = (width * height) / total
-
-  while (remainingNodes.length > 0) {
-    const isVertical = curW < curH
-    const length = isVertical ? curW : curH
-
-    let i = 1
-    let worst = Infinity
-
-    while (i <= remainingNodes.length) {
-      const row = remainingNodes.slice(0, i)
-      const rowTotal = row.reduce((s, n) => s + n.value, 0)
-      const thickness = (rowTotal * scale) / length
-
-      const rowWorst = Math.max(
-        ...row.map(n => {
-          const side = (n.value * scale) / thickness
-          return Math.max(thickness / side, side / thickness)
-        })
-      )
-
-      if (rowWorst <= worst) {
-        worst = rowWorst
-        i++
-      } else {
-        i--
-        break
-      }
-    }
-
-    if (i > remainingNodes.length) i = remainingNodes.length
-    if (i === 0) i = 1
-
-    const row = remainingNodes.slice(0, i)
-    const rowTotal = row.reduce((s, n) => s + n.value, 0)
-    const thickness = (rowTotal * scale) / length
-
-    let rowCursor = 0
-    row.forEach(node => {
-      const side = (node.value * scale) / thickness
-      if (isVertical) {
-        result.push({ node, x: curX + rowCursor, y: curY, width: side, height: thickness })
-        rowCursor += side
-      } else {
-        result.push({ node, x: curX, y: curY + rowCursor, width: thickness, height: side })
-        rowCursor += side
-      }
-    })
-
-    remainingNodes = remainingNodes.slice(i)
-    if (isVertical) {
-      curY += thickness
-      curH -= thickness
-    } else {
-      curX += thickness
-      curW -= thickness
-    }
-  }
-
-  return result
-}
+import {
+  TREEMAP_CANVAS_HEIGHT,
+  TREEMAP_CANVAS_WIDTH,
+  squarify,
+  type LayoutRect,
+} from './layout'
+import type { TreemapChartProps, TreemapGroup } from './types'
 
 function TreemapChart({
   title,
@@ -162,8 +43,8 @@ function TreemapChart({
   const normalizedTotalRatio = ratios.reduce((a, b) => a + b, 0)
   
   const groupLayouts = groups.reduce((acc, group, idx) => {
-    const groupWidth = (ratios[idx] / normalizedTotalRatio) * CANVAS_WIDTH
-    acc.rects.push({ node: group, x: acc.cursor, y: 0, width: groupWidth, height: CANVAS_HEIGHT })
+    const groupWidth = (ratios[idx] / normalizedTotalRatio) * TREEMAP_CANVAS_WIDTH
+    acc.rects.push({ node: group, x: acc.cursor, y: 0, width: groupWidth, height: TREEMAP_CANVAS_HEIGHT })
     acc.cursor += groupWidth
     return acc
   }, { rects: [] as LayoutRect<TreemapGroup>[], cursor: 0 }).rects
@@ -226,7 +107,7 @@ function TreemapChart({
               0,
               0,
               groupLayout.width,
-              CANVAS_HEIGHT,
+              TREEMAP_CANVAS_HEIGHT,
             )
 
             return (
@@ -262,9 +143,9 @@ function TreemapChart({
                         className={isActive ? 'treemap-chart__leaf treemap-chart__leaf--active' : 'treemap-chart__leaf'}
                         style={{
                           left: `calc(${(childLayout.x / groupLayout.width) * 100}% + 0.5px)`,
-                          top: `calc(${(childLayout.y / CANVAS_HEIGHT) * 100}% + 0.5px)`,
+                          top: `calc(${(childLayout.y / TREEMAP_CANVAS_HEIGHT) * 100}% + 0.5px)`,
                           width: `calc(${(childLayout.width / groupLayout.width) * 100}% - 1px)`,
-                          height: `calc(${(childLayout.height / CANVAS_HEIGHT) * 100}% - 1px)`,
+                          height: `calc(${(childLayout.height / TREEMAP_CANVAS_HEIGHT) * 100}% - 1px)`,
                         }}
                         onClick={() => {
                           setDetailKey(`leaf:${child.id}`)

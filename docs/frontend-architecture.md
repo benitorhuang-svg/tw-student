@@ -96,6 +96,7 @@ import { TaiwanExplorerMap } from '@/domains/atlas';
 - `src/components`、`src/hooks`、`src/lib`、`src/data`、`src/layouts`、`src/styles` 這類舊式 root 目錄不可回流。
 - `shared/ui` 不可放入帶有 School、Atlas、County、Township、Scenario、Education、Governance、Map 等業務語意的 UI 或 CSS 檔案。
 - import graph 不可有 cycle，且正式 source 檔必須從 `src/main.tsx` 可達。
+- `frontend/src` 內的 `.ts`、`.tsx`、`.css`，以及 `backend/scripts` 內的 `.mjs`、`.ts`、`.tsx`、`.css`，單檔不得超過 300 行。
 
 ### 3. 絕對路徑 Alias (`@/`)
 我們在 `tsconfig.app.json` 與 `vite.config.ts` 中配置了 `@/` 指向 `src/` 目錄。
@@ -131,3 +132,20 @@ import type { AtlasTab } from '@/app/store';
    - 是，而且只屬於單一領域 ➡️ `src/domains/對應領域/`
 4. **這是一個需要協調多個業務領域的全域狀態或畫面佈局嗎？**
    - 是 ➡️ `src/app/`
+
+---
+
+## 原子化拆分與行數預算
+
+本專案的可維護性預算已納入 `lint:architecture` gate：正式 source 檔必須維持在 300 行以內。當單一檔案接近或超過 300 行時，不用靠刪空行壓線，而是依責任拆成同 layer、同 domain 的小檔案。
+
+拆分原則採 package-by-feature：一個 feature/package 應就近擁有自己的 component、CSS partials、constants、formatters、geometry 與 helper。只有跨 domain 且不含業務語意的 primitive 才能進 `shared`。
+
+- `app/`：保留跨 domain orchestration、theme sync、global state wiring。若 `App.tsx` 或 layout 過長，先拆到 `app/hooks/`、`app/layouts/` 或 `app/providers/`。
+- `domains/*/ui/`：保留 domain UI composition。大型元件應拆成同 domain 內的 atoms/molecules/organisms 或 feature-local helper，例如 `atlas/ui/map/organisms/MapCanvasControls.tsx`。
+- `domains/*/ui/styles/`：大型 CSS 檔保留原入口檔，入口檔只做 ordered `@import`，實際樣式拆到同資料夾 partials。
+- `domains/analytics/ui/*-chart/`：圖表 layout、geometry、formatter、SVG 子元件要從主元件拆出，避免主元件同時承擔資料計算與 SVG 細節。
+- `shared/ui/core/`：只放跨 domain generic primitives。即使是 shared chart，也要把 constants、formatters、geometry、SVG parts 拆成 feature-local partials。
+- `backend/scripts/lib/refresh/`：官方資料刷新共用常數、正規化、workbook parser、fetch client、GeoJSON helper 分開管理。
+- `backend/scripts/lib/official-dataset/`：官方資料 domain pipeline 依 geocoding、source fetchers、source lookups、school summaries、dataset output 拆分。
+- `backend/scripts/lib/atlas-sqlite/`：SQLite schema 與資料寫入 orchestration 分離，避免 `build-atlas-sqlite.mjs` 同時承擔 schema 與 insert flow。

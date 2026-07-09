@@ -1,0 +1,98 @@
+@media (width <= 860px) {
+    /* 2. Reposition Pillar: MiniMap to bottom-left (above breadcrumbs) */
+    .map-control-pillar {
+        inset: auto auto 70px 0 !important;
+        padding-left: 5px;
+        gap: 0 !important;
+        z-index: 1000;
+        pointer-events: none;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+
+    .atlas-mini-map-card,
+    .atlas-mini-map-card__body,
+    .atlas-mini-map-card__main {
+        width: 120px !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        margin-left: 0 !important;
+    }
+
+    .atlas-mini-map-card__main {
+        height: 120px !important;
+        border-radius: var(--radius-lg) !important;
+        background: var(--map-overlay-bg) !important;
+        backdrop-filter: blur(var(--map-overlay-blur)) !important;
+        padding: 0 !important;
+        box-shadow: var(--shadow-premium) !important;
+        border: 1px solid var(--map-overlay-border) !important;
+    }
+
+    .atlas-mini-map-card__svg {
+        border-radius: var(--radius-lg) !important;
+    }
+
+    .atlas-mini-map-card__sea {
+        fill: var(--mini-map-sea, #f0f7ff) !important;
+    }
+
+    /* Map Zoom Controls Mobile - Forced Vertical Pillar (Stretched) */
+    .atlas-map-canvas-wrap {
+        /* ... existing rules ... */
+    }
+
+    .atlas-map-canvas-wrap .map-control-pillar {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: flex-end !important;
+        gap: 12px !important;
+        bottom: 70px !important;
+        left: 12px !important; /* More breathing room from edge */
+        top: auto !important;
+    }
+
+    .atlas-map-canvas-wrap .map-zoom-controls {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        background: var(--map-overlay-bg) !important;
+        border: 1px solid var(--map-overlay-border) !important;
+        border-radius: var(--radius-pill) !important;
+        padding: 4px 6px !important; /* Ultra-tight padding */
+        box-shadow: var(--shadow-premium) !important;
+        backdrop-filter: blur(var(--map-overlay-blur)) !important;
+        gap: 6px !important; /* Minimum gap */
+        width: auto !important;
+        height: 32px !important; /* Reduced height */
+        pointer-events: auto !important;
+    }
+
+    .map-zoom-btn {
+        width: 28px !important;
+        height: 28px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border-radius: 50% !important;
+        border: none !important;
+        background: transparent !important;
+        color: var(--brand-primary) !important;
+    }
+
+    .map-zoom-level {
+        font-size: 0.65rem !important;
+        font-weight: 800 !important;
+        color: var(--brand-primary) !important;
+        width: 24px !important;
+        height: 24px !important;
+        background: var(--surface-active) !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border: 1px solid var(--map-overlay-border) !important;
+    }
+
+}

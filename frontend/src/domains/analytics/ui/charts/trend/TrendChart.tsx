@@ -1,41 +1,9 @@
 import { useState, useRef, useEffect } from 'react'
-import { formatAcademicYearCompact, type TrendPoint, formatStudents } from '@/shared/lib/analytics'
+import { formatAcademicYearCompact, formatStudents } from '@/shared/lib/analytics'
 import { useChartAnimation } from '@/shared/lib/hooks/core/useChartAnimation'
 import { useResponsiveSvg } from '@/shared/lib/hooks/core/useResponsiveSvg'
-
-type TrendChartProps = {
-  chartId: string
-  title: string
-  subtitle: string
-  points: TrendPoint[]
-  benchmarkPoints?: TrendPoint[]
-  activeYear: number
-  showHeader?: boolean
-  formatValue?: (value: number) => string
-  benchmarkLabel?: string
-  predictionLabel?: string
-  className?: string
-  flat?: boolean
-}
-
-function buildLinePath(points: Array<{ x: number; y: number }>) {
-  if (points.length === 0) return ''
-  return points.map((point, index) => `${index === 0 ? 'M' : 'L'} ${point.x} ${point.y}`).join(' ')
-}
-
-function linearRegression(xs: number[], ys: number[]): { slope: number; intercept: number } | null {
-  const n = xs.length
-  if (n < 2) return null
-  const sumX = xs.reduce((a, b) => a + b, 0)
-  const sumY = ys.reduce((a, b) => a + b, 0)
-  const sumXY = xs.reduce((a, x, i) => a + x * ys[i], 0)
-  const sumX2 = xs.reduce((a, x) => a + x * x, 0)
-  const denom = n * sumX2 - sumX * sumX
-  if (denom === 0) return null
-  const slope = (n * sumXY - sumX * sumY) / denom
-  const intercept = (sumY - slope * sumX) / n
-  return { slope, intercept }
-}
+import { buildLinePath, linearRegression } from './trendGeometry'
+import type { TrendChartProps } from './types'
 
 function TrendChart({
   chartId,

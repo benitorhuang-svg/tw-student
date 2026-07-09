@@ -12,7 +12,7 @@
 - Education school detail/table workflow 與 school panel styles 由 `domains/education/ui` 擁有。
 - Analytics chart/overview/county wrapper UI 與對應 CSS 由 `domains/analytics/ui` 擁有。
 - `shared/ui/core` 只保留可跨 domain 使用的 generic primitives；`shared/api/data` 保留為外部資料 gateway，因為 `educationData` / SQLite / manifest 類型同時被 app orchestration 與多個 domain 使用，搬進單一 domain 會製造反向依賴。
-- 新增 `npm.cmd --workspace frontend run lint:architecture`，檢查 layer 邊界、domain Public API、跨層相對 import、shared UI business leakage、import cycle 與 main reachability。
+- 新增 `npm.cmd --workspace frontend run lint:architecture`，檢查 layer 邊界、domain Public API、跨層相對 import、shared UI business leakage、CSS import resolution、import cycle、main reachability，以及 `frontend/src` / `backend/scripts` 的 300 行 source budget。
 - 清掉 root/backend 的一次性 scratch/fix/check/old 暫存檔，backend 正式資料管線維持 `backend/scripts/refresh-official-data.mjs` + `backend/scripts/lib/*` 結構。
 
 ## 1. 專案基本資訊

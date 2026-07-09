@@ -1,0 +1,94 @@
+@media (width <= 860px) {
+    /* Reset Breadcrumbs to left-aligned industrial pill */
+    .map-breadcrumb {
+        margin-left: 0 !important;
+        margin-top: 0 !important;
+        align-self: flex-start !important;
+        padding: 8px 16px !important;
+        background: var(--map-overlay-bg) !important;
+        border: 1px solid var(--map-overlay-border) !important;
+        border-radius: var(--radius-lg) !important;
+        box-shadow: var(--shadow-premium) !important;
+        backdrop-filter: blur(var(--map-overlay-blur)) !important;
+        gap: 2px !important;
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        font-size: 0.95rem !important;
+        margin-bottom: 0 !important;
+        width: auto !important;
+        min-width: unset !important;
+        max-width: calc(100vw - 40px) !important;
+        justify-content: flex-start !important;
+        text-overflow: ellipsis !important;
+    }
+
+    .map-breadcrumb__segment {
+        background: transparent !important;
+        border-radius: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        border: none !important;
+        display: flex;
+        align-items: center;
+    }
+
+    .map-breadcrumb__step {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0 !important;
+    }
+
+    /* Filters: 1:1 Desktop Look */
+    .map-collapsible-filter {
+        min-width: 110px !important;
+        background: var(--map-overlay-bg) !important;
+        border: 1px solid var(--map-overlay-border) !important;
+        box-shadow: var(--shadow-premium) !important;
+        z-index: 100 !important;
+    }
+
+    .map-collapsible-filter.is-open {
+        z-index: 2000 !important;
+    }
+
+    .filter-expansion {
+        background: var(--color-white) !important;
+        color: var(--tw-slate-800) !important;
+        backdrop-filter: none !important;
+        box-shadow: var(--shadow-heavy) !important;
+    }
+
+    .filter-expansion button,
+    .filter-expansion span,
+    .filter-expansion div {
+        color: var(--tw-slate-800) !important;
+    }
+
+    .filter-expansion .segmented-btn {
+        color: var(--tw-slate-800) !important;
+        background: transparent !important;
+        padding: 10px 14px !important;
+        text-align: left !important;
+        width: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+        font-weight: 600 !important;
+        border-radius: var(--radius-sm) !important;
+    }
+
+    .filter-expansion .segmented-btn.active {
+        background: var(--brand-primary) !important;
+        color: var(--color-white) !important;
+    }
+
+    .filter-toggle-btn {
+        height: 44px !important;
+        padding: 0 16px !important;
+    }
+
+    /* Year Label: Hide as requested */
+    .map-year-label {
+        display: none !important;
+    }
+
+}

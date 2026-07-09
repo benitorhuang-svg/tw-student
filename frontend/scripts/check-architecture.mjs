@@ -1,18 +1,27 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import process from 'node:process'
+import { fileURLToPath } from 'node:url'
+import { collectFiles, countSourceLines, parseImports, resolveExistingPath } from './architecture-helpers.mjs'
 
-const projectRoot = process.cwd()
-const srcRoot = path.join(projectRoot, 'src')
+const scriptDir = path.dirname(fileURLToPath(import.meta.url))
+const frontendRoot = path.resolve(scriptDir, '..')
+const projectRoot = path.resolve(frontendRoot, '..')
+const srcRoot = path.join(frontendRoot, 'src')
+const backendScriptsRoot = path.join(projectRoot, 'backend', 'scripts')
 const sourceExtensions = new Set(['.ts', '.tsx'])
 const styleExtensions = new Set(['.css'])
+const sourceLineBudgetExtensions = new Set(['.ts', '.tsx', '.css', '.mjs'])
+const sourceLineBudget = 300
 const ignoredDirs = new Set(['node_modules', 'dist', 'coverage'])
 
-const importPattern =
-  /(?:import|export)\s+(?:type\s+)?(?:[^'";]*?from\s*)?["']([^"']+)["']|import\(\s*["']([^"']+)["']\s*\)|new\s+URL\(\s*["']([^"']+)["']/g
-
-const sourceFiles = collectFiles(srcRoot).filter((filePath) => sourceExtensions.has(path.extname(filePath)))
-const styleFiles = collectFiles(srcRoot).filter((filePath) => styleExtensions.has(path.extname(filePath)))
+const frontendFiles = collectFiles(srcRoot, ignoredDirs)
+const backendScriptFiles = collectFiles(backendScriptsRoot, ignoredDirs)
+const sourceFiles = frontendFiles.filter((filePath) => sourceExtensions.has(path.extname(filePath)))
+const styleFiles = frontendFiles.filter((filePath) => styleExtensions.has(path.extname(filePath)))
+const sourceLineBudgetFiles = [...frontendFiles, ...backendScriptFiles].filter((filePath) =>
+  sourceLineBudgetExtensions.has(path.extname(filePath)),
+)
 const sourceFileSet = new Set(sourceFiles)
 const dependencyGraph = new Map()
 const violations = []
@@ -38,6 +47,7 @@ checkSharedUiBusinessFiles()
 checkCssImports()
 checkCycles()
 checkReachability()
+checkSourceLineBudget()
 
 if (violations.length > 0) {
   console.error('Architecture check failed:')
@@ -53,6 +63,8 @@ console.log(
       status: 'ok',
       files: sourceFiles.length,
       cssFiles: styleFiles.length,
+      sourceLineBudgetFiles: sourceLineBudgetFiles.length,
+      sourceLineBudget,
       checkedRules: [
         'layer boundaries',
         'domain public API imports',
@@ -62,38 +74,13 @@ console.log(
         'CSS import resolution',
         'import cycles',
         'main import reachability',
+        '300-line source budget',
       ],
     },
     null,
     2,
   ),
 )
-
-function collectFiles(directory) {
-  if (!fs.existsSync(directory)) return []
-
-  const files = []
-  for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
-    if (ignoredDirs.has(entry.name)) continue
-    const fullPath = path.join(directory, entry.name)
-    if (entry.isDirectory()) {
-      files.push(...collectFiles(fullPath))
-    } else {
-      files.push(fullPath)
-    }
-  }
-  return files
-}
-
-function parseImports(filePath) {
-  const source = fs.readFileSync(filePath, 'utf8')
-  const imports = []
-  let match
-  while ((match = importPattern.exec(source))) {
-    imports.push({ specifier: match[1] ?? match[2] ?? match[3] })
-  }
-  return imports
-}
 
 function resolveImport(fromFile, specifier) {
   if (specifier.startsWith('@/')) {
@@ -105,20 +92,6 @@ function resolveImport(fromFile, specifier) {
   }
 
   return null
-}
-
-function resolveExistingPath(basePath) {
-  const candidates = [
-    basePath,
-    `${basePath}.ts`,
-    `${basePath}.tsx`,
-    `${basePath}.d.ts`,
-    `${basePath}.css`,
-    path.join(basePath, 'index.ts'),
-    path.join(basePath, 'index.tsx'),
-  ]
-
-  return candidates.find((candidate) => fs.existsSync(candidate) && fs.statSync(candidate).isFile()) ?? null
 }
 
 function checkImportBoundary(fromFile, specifier, toFile) {
@@ -197,7 +170,7 @@ function checkCssImports() {
       if (specifier.startsWith('http://') || specifier.startsWith('https://')) continue
 
       const resolved = specifier.startsWith('/src/')
-        ? path.join(projectRoot, specifier.slice(1))
+        ? path.join(frontendRoot, specifier.slice(1))
         : path.resolve(path.dirname(filePath), specifier)
 
       if (!fs.existsSync(resolved)) {
@@ -206,6 +179,16 @@ function checkCssImports() {
         )
       }
     }
+  }
+}
+
+function checkSourceLineBudget() {
+  for (const filePath of sourceLineBudgetFiles) {
+    const lineCount = countSourceLines(fs.readFileSync(filePath, 'utf8'))
+    if (lineCount <= sourceLineBudget) continue
+    violations.push(
+      `source file exceeds ${sourceLineBudget} line budget: ${toProjectRelativePath(filePath)} has ${lineCount} lines`,
+    )
   }
 }
 

@@ -1,4 +1,4 @@
-import { StackedAreaTrendChart } from '@/shared/ui/core/organisms/StackedAreaTrendChart'
+import { StackedAreaTrendChart } from '@/shared/ui/core/charts/stacked-area-trend'
 import type { TrendPoint } from '@/shared/lib/analytics'
 import '../styles/organisms/overview-sections-redesign.css'
 

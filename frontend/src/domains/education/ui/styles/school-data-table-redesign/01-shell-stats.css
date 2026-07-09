@@ -1,0 +1,109 @@
+/*
+ * School Data Table Redesign (Premium Glassmorphism)
+ */
+
+.school-table-redesign {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      background: var(--surface-card);
+      border: 1px solid var(--border-light);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: var(--shadow-soft);
+}
+
+.school-table-redesign.dashboard-card--flat {
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      border-radius: 0 !important;
+}
+
+/* 1. Quick Stats Banner - Single Line V2 */
+.school-table-stats-bar-v2 {
+      padding: 10px 16px;
+      background: var(--surface-glass, rgb(255 255 255 / 2%));
+      border-bottom: 1px solid var(--border-light);
+}
+
+.stat-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+}
+
+.stat-group {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+}
+
+.stat-pill-v2-inline {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+}
+
+.stat-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      white-space: nowrap;
+}
+
+.stat-value {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-main);
+      font-family: Sora, sans-serif;
+}
+
+.stat-value-trend {
+      font-size: 0.9rem;
+      font-weight: 800;
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+}
+
+.stat-value-trend small {
+      font-size: 0.7rem;
+      font-weight: 700;
+      opacity: 0.8;
+}
+
+.premium-export-btn-compact {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: var(--surface-card);
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      color: var(--text-soft);
+      font-size: 0.75rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.25s ease;
+}
+
+.premium-export-btn-compact:hover {
+      background: var(--surface-page);
+      color: var(--brand-primary);
+      border-color: var(--brand-primary);
+      transform: translateY(-1px);
+}
+
+.text-up {
+     color: var(--tw-emerald-500);
+}
+
+.text-down {
+     color: var(--tw-rose-500);
+}
+
+/* 2. Enhanced Toolbar - REMOVED */

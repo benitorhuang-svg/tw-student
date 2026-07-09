@@ -1,0 +1,45 @@
+@media (width <= 860px) {
+    /* Map Trend Card Mobile     /* Trend Line Chart Mobile Version - Balanced Dashboard Layout */
+
+    /* Trend Line Chart Mobile Version - Integrated Left Stack Layout */
+    .map-trend-card {
+        position: relative; /* Now flows inside the parent column */
+        top: auto;
+        right: auto;
+        left: 0 !important;
+        width: 320px !important; /* Reverted to original width for legibility */
+        background: var(--map-overlay-bg);
+        border: 1px solid var(--map-overlay-border);
+        border-radius: 12px;
+        padding: 10px 12px;
+        box-shadow: var(--shadow-premium);
+        backdrop-filter: blur(var(--map-overlay-blur));
+        z-index: 1000;
+        pointer-events: auto;
+        margin-top: 4px;
+    }
+
+    .map-trend-card__title {
+        font-size: 0.82rem;
+        font-weight: 800;
+        color: var(--text-main);
+        margin-bottom: 20px; /* Balanced room for top labels */
+        padding-left: 8px;
+        border-left: 3px solid var(--brand-primary);
+        line-height: 1.2;
+    }
+
+    /* Directional Fix: Make filters pop UP in the bottom clusters (both left and right stacks) */
+    .map-mobile-controls-bottom-left .filter-expansion {
+        top: auto !important;
+        bottom: calc(100% + 8px) !important;
+        transform: translateY(10px) !important;
+    }
+
+    .map-mobile-controls-bottom-left .map-collapsible-filter.is-open .filter-expansion {
+        transform: translateY(0) !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+}

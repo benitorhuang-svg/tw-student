@@ -7,6 +7,7 @@
     "dev": "vite",
     "data:refresh": "node ../backend/scripts/refresh-official-data.mjs",
     "build": "tsc -b && vite build",
+    "test:types": "tsc -b",
     "lint": "eslint .",
     "lint:architecture": "node ./scripts/check-architecture.mjs",
     "lint:style": "stylelint \"src/**/*.css\"",

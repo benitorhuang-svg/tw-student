@@ -1,0 +1,280 @@
+.map-top-bar {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    right: 16px;
+    z-index: 1000;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px; /* Reduced from 8px */
+    pointer-events: none;
+}
+
+.map-top-bar > * {
+    pointer-events: auto;
+}
+
+.map-top-bar__controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.map-control-pillar {
+    position: absolute;
+    top: 76px; /* Offset below top bar */
+    left: 16px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    pointer-events: auto;
+}
+
+.map-breadcrumb {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    margin-left: 0;
+    padding: 0 14px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border-radius: var(--radius-md);
+    background: var(--map-overlay-bg);
+    backdrop-filter: blur(var(--map-overlay-blur));
+    border: 1px solid var(--map-overlay-border);
+    box-shadow: var(--shadow-premium);
+    pointer-events: auto;
+    flex-wrap: nowrap;
+    gap: 2px;
+    max-width: fit-content;
+}
+
+@media (width >= 861px) {
+    .map-breadcrumb {
+        width: 240px;
+        max-width: none;
+        justify-content: flex-start;
+    }
+}
+
+.map-breadcrumb__step {
+    display: flex;
+    align-items: center;
+    line-height: 1; /* Match line height */
+}
+
+.map-breadcrumb__segment {
+    display: flex;
+    align-items: center;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.map-breadcrumb__separator {
+    color: var(--text-soft);
+    opacity: 0.5;
+    margin: 0 6px; /* Slightly wider margin */
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+}
+
+.map-breadcrumb__link {
+    background: transparent;
+    border: none;
+    color: var(--text-soft);
+    font: inherit;
+    cursor: pointer;
+    padding: 2px 4px;
+    border-radius: var(--radius-sm);
+    transition: all 0.2s ease;
+}
+
+.map-breadcrumb__link:hover {
+    color: var(--brand-primary);
+    background: var(--surface-active);
+}
+
+.map-breadcrumb__current {
+    color: var(--brand-primary);
+    padding: 2px 4px;
+}
+
+.map-control-group {
+    display: flex;
+    align-items: flex-end; /* Align mini-map and help tools to bottom */
+    gap: 12px;
+    pointer-events: none;
+}
+
+.map-control-group > * {
+    pointer-events: auto;
+}
+
+.map-detached-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Tighter gap */
+    align-items: center;
+}
+
+.map-detached-controls .map-help-toggle {
+    width: 44px;
+    height: 44px;
+    background: var(--map-overlay-bg);
+    backdrop-filter: blur(var(--map-overlay-blur));
+    border: 1px solid var(--map-overlay-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-premium);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: var(--text-primary);
+}
+
+.map-detached-controls .map-help-toggle:hover {
+    background: var(--surface-active);
+    color: var(--brand-primary);
+    transform: translateY(-2px);
+}
+
+.map-zoom-controls {
+    display: flex;
+    flex-direction: row; /* Horizontal as requested */
+    align-items: center;
+    background: var(--map-overlay-bg);
+    backdrop-filter: blur(var(--map-overlay-blur));
+    border: 1px solid var(--map-overlay-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-premium);
+    width: fit-content;
+}
+
+.map-zoom-controls button {
+    width: 44px;
+    height: 44px;
+    border: none;
+    background: transparent;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.map-zoom-controls button:hover {
+    background: var(--surface-active);
+    color: var(--brand-primary);
+}
+
+.map-zoom-level {
+    width: 44px; /* Fixed width for symmetrical look */
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: var(--brand-primary);
+    background: var(--surface-active);
+    border-left: 1px solid var(--map-overlay-border);
+    border-right: 1px solid var(--map-overlay-border);
+    user-select: none;
+}
+
+.map-top-bar__left {
+    pointer-events: auto;
+}
+
+.map-top-bar__right {
+    display: flex;
+    align-items: center;
+    gap: 4px; /* Reduced from 8px */
+    margin-left: 4px; /* Reduced from 12px */
+    flex-shrink: 0;
+    pointer-events: auto;
+}
+
+.map-top-bar__filters {
+    display: flex;
+    gap: 4px; /* Reduced from 8px */
+    pointer-events: auto;
+}
+
+.map-context-segmented {
+    display: flex;
+    align-items: center;
+    background: var(--map-overlay-bg);
+    backdrop-filter: blur(var(--map-overlay-blur));
+    padding: 4px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--map-overlay-border);
+    box-shadow: var(--shadow-premium);
+}
+
+.map-bottom-left-stack {
+    position: absolute;
+    bottom: 24px;
+    left: 16px;
+    z-index: 1000;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.map-bottom-right-stack {
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+    z-index: 1000;
+    pointer-events: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-end;
+}
+
+.map-filter-group-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: var(--map-overlay-bg);
+    backdrop-filter: blur(var(--map-overlay-blur));
+    padding: 8px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--map-overlay-border);
+    box-shadow: var(--shadow-premium);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    gap: 8px;
+    pointer-events: auto;
+}
+
+.map-filter-group-bar:hover {
+    box-shadow: var(--shadow-heavy), 0 0 20px rgb(15 23 42 / 5%);
+    background: var(--surface-glass-rich);
+}
+
+.filter-divider {
+    display: none; /* Hide divider in vertical stack */
+}
+
+.map-filter-detached-row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+    pointer-events: none;
+}
+
+.map-filter-detached-row > * {
+    pointer-events: auto;
+}

@@ -1,0 +1,225 @@
+.map-school-ranking-dock {
+    position: absolute;
+    left: 16px;
+    right: auto;
+    bottom: 16px;
+    z-index: 1050;
+    pointer-events: none;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.map-school-ranking {
+    width: 340px;
+    max-height: 200px;
+    pointer-events: auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--map-overlay-border);
+    border-radius: var(--radius-md);
+    background: var(--map-overlay-bg);
+    color: var(--text-main);
+    box-shadow: var(--shadow-premium);
+    backdrop-filter: blur(var(--map-overlay-blur));
+}
+
+.map-school-ranking-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px 8px;
+    border-bottom: 1px solid var(--map-overlay-border);
+}
+
+.map-school-ranking-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.map-school-ranking-filters {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.map-school-ranking-title {
+    min-width: 0;
+    font-size: 0.86rem;
+    font-weight: 900;
+    color: var(--brand-primary);
+}
+
+.map-school-ranking-btn-group {
+    display: flex;
+    align-items: center;
+    background: rgb(0 0 0 / 4%);
+    border-radius: 20px;
+    padding: 3px;
+    gap: 2px;
+    box-shadow: inset 0 1px 3px rgb(0 0 0 / 5%);
+    border: 1px solid rgb(0 0 0 / 2%);
+    width: 100%;
+}
+
+.map-school-ranking-btn {
+    flex: 1;
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 18px;
+    background: transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    letter-spacing: 0.02em;
+}
+
+.map-school-ranking-btn:hover:not(.is-active) {
+    color: var(--text-main);
+    background: rgb(0 0 0 / 2%);
+}
+
+.map-school-ranking-btn.is-active {
+    background: var(--color-white);
+    color: var(--brand-primary);
+    box-shadow: 0 2px 8px rgb(0 0 0 / 8%), 0 1px 2px rgb(0 0 0 / 4%);
+    font-weight: 800;
+    transform: scale(1.02);
+}
+
+.map-school-ranking-list {
+    margin: 0;
+    padding: 6px;
+    list-style: none;
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+
+.map-school-ranking-item {
+    margin: 0 0 2px;
+}
+
+.map-school-ranking-row {
+    width: 100%;
+    min-height: 28px;
+    display: grid;
+    grid-template-columns: 28px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 8px;
+    border: 0;
+    border-radius: var(--radius-sm);
+    background: transparent;
+    color: inherit;
+    padding: 4px 8px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.map-school-ranking-row:hover,
+.map-school-ranking-row:focus-visible,
+.map-school-ranking-row[data-active="true"] {
+    background: var(--surface-active);
+    outline: none;
+}
+
+.map-school-ranking-rank {
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    background: rgb(14 165 233 / 12%);
+    color: var(--brand-primary);
+    font-size: 0.76rem;
+    font-weight: 900;
+}
+
+.map-school-ranking-main {
+    min-width: 0;
+    display: grid;
+    gap: 2px;
+}
+
+.map-school-ranking-name {
+    overflow: hidden;
+    color: var(--text-main);
+    font-size: 0.82rem;
+    font-weight: 850;
+    line-height: 1.2;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.map-school-ranking-meta {
+    overflow: hidden;
+    color: var(--text-soft);
+    font-size: 0.7rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.map-school-ranking-metric {
+    display: grid;
+    justify-items: end;
+    gap: 2px;
+    color: var(--text-main);
+    font-size: 0.72rem;
+    font-weight: 850;
+    white-space: nowrap;
+}
+
+.map-school-ranking-metric [data-trend="up"] {
+    color: var(--brand-primary);
+}
+
+.map-school-ranking-metric [data-trend="down"] {
+    color: var(--state-danger);
+}
+
+@media (width <= 960px) {
+    .map-school-ranking-dock {
+        left: 16px;
+        right: auto;
+        bottom: 16px;
+    }
+
+    .map-school-ranking {
+        max-height: 250px;
+    }
+}
+
+@media (width <= 760px) {
+    .map-school-ranking-dock {
+        left: 8px;
+        right: auto;
+        bottom: 16px;
+        justify-content: flex-start;
+    }
+
+    .map-school-ranking {
+        width: clamp(260px, 50vw, 320px);
+        max-height: 230px;
+    }
+
+    .map-school-ranking-head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .map-school-ranking-controls {
+        width: 100%;
+        justify-content: space-between;
+        gap: 6px;
+    }
+}

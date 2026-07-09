@@ -1,0 +1,108 @@
+/* Collapsible Filter Atom Molecule Styling */
+.map-collapsible-filter {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    background: var(--map-overlay-bg);
+    backdrop-filter: blur(var(--map-overlay-blur));
+    border: 1px solid var(--map-overlay-border);
+    border-radius: var(--radius-md);
+    padding: 0;
+    box-shadow: var(--shadow-premium);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    min-width: 80px; /* Reduced from 100px */
+    max-width: 180px;
+    z-index: 100;
+}
+
+.filter-toggle-btn {
+    width: 100%;
+    height: 40px; /* Slightly shorter */
+    border: none;
+    background: transparent;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+    border-radius: var(--radius-md);
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+    padding: 0 10px; /* Reduced padding from 16px */
+    position: relative;
+    gap: 8px; /* Reduced gap */
+}
+
+.filter-toggle-btn:hover {
+    background: var(--surface-active);
+    color: var(--brand-primary);
+}
+
+.filter-toggle-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+}
+
+.filter-active-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-soft);
+    white-space: nowrap;
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.map-collapsible-filter.is-open .filter-active-label {
+    color: var(--brand-primary);
+}
+
+.filter-expansion {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    min-width: 160px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    background: var(--map-overlay-bg);
+    backdrop-filter: blur(var(--map-overlay-blur));
+    border: 1px solid var(--map-overlay-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-heavy);
+    padding: 8px;
+    z-index: 2000;
+}
+
+.map-collapsible-filter.is-open {
+    background: var(--surface-active);
+}
+
+.map-collapsible-filter.is-open .filter-expansion {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Reset inner pill styles when collapsed */
+.filter-expansion .map-context-segmented {
+    background: transparent;
+    backdrop-filter: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 4px;
+}
+
+.filter-expansion .segmented-icon {
+    display: none; /* Hide internal icon since we have the toggle icon */
+}

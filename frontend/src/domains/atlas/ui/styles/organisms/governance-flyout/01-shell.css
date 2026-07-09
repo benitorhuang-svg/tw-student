@@ -1,0 +1,170 @@
+/* Data Governance Flyout Organism - Premium Redesign */
+
+.governance-flyout {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    /* Center vertically for better balance */
+        padding: 20px;
+        background: rgb(2 6 23 / 85%);
+        backdrop-filter: blur(25px);
+        z-index: 10000;
+        animation: premiumFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        pointer-events: auto;
+}
+
+@keyframes premiumFadeIn {
+        from {
+         opacity: 0;
+        transform: translateY(-20px);
+    }
+
+        to {
+         opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.governance-flyout__head {
+        padding: 32px 5%;
+        border-bottom: 1px solid rgb(255 255 255 / 10%);
+        background: radial-gradient(circle at top left, rgb(56 189 248 / 12%), transparent 70%);
+        display: flex;
+        justify-content: center;
+}
+
+.governance-flyout__head-inner {
+        width: 100%;
+        max-width: 1560px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+}
+
+.premium-badge {
+        display: inline-block;
+        color: var(--brand-primary, var(--tw-sky-400));
+        font-weight: 900;
+        letter-spacing: 0.2em;
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+        text-shadow: 0 0 15px rgb(56 189 248 / 50%);
+        background: rgb(56 189 248 / 10%);
+        padding: 4px 12px;
+        border-radius: 20px;
+        border: 1px solid rgb(56 189 248 / 20%);
+}
+
+.governance-flyout__head h3 {
+        margin: 4px 0 0;
+        color: var(--tw-slate-50);
+        font-size: 1.5rem;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+}
+
+.governance-flyout__head p {
+        color: rgb(255 255 255 / 50%);
+        font-size: 0.8rem;
+        line-height: 1.4;
+        margin-top: 8px;
+        max-width: 90%;
+}
+
+.close-trigger {
+        background: rgb(255 255 255 / 5%);
+        border: 1px solid rgb(255 255 255 / 10%);
+        color: rgb(255 255 255 / 40%);
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+}
+
+.close-trigger:hover {
+        background: rgb(244 63 94 / 15%);
+        color: var(--brand-danger);
+        border-color: rgb(244 63 94 / 30%);
+        transform: rotate(90deg);
+}
+
+.governance-flyout__body {
+        overflow: hidden;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+}
+
+.governance-hud {
+        background: linear-gradient(165deg, rgb(30 41 59 / 80%) 0%, rgb(2 6 23 / 98%) 100%);
+        backdrop-filter: blur(30px);
+        border: 1px solid rgb(255 255 255 / 12%);
+        border-radius: 32px;
+        padding: 40px;
+        width: 95%;
+        max-width: 1200px;
+        height: 90vh;
+
+    /* Set a height to allow internal scrolling */
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        box-shadow:
+            0 40px 100px rgb(0 0 0 / 80%),
+            inset 0 0 100px rgb(56 189 248 / 3%);
+        position: relative;
+        overflow: hidden;
+}
+
+.governance-hud__scroll-area {
+        flex: 1;
+        min-height: 0;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+}
+
+.governance-hud__inner-close {
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        background: rgb(255 255 255 / 5%);
+        border: 1px solid rgb(255 255 255 / 10%);
+        color: rgb(255 255 255 / 50%);
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        z-index: 10;
+}
+
+.governance-hud__inner-close:hover {
+        background: rgb(248 113 113 / 15%);
+        color: var(--tw-red-400);
+        border-color: rgb(248 113 113 / 30%);
+        transform: rotate(90deg);
+}
+
+.governance-hud::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 20%;
+        right: 20%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgb(56 189 248 / 40%), transparent);
+}

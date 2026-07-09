@@ -1,0 +1,129 @@
+/* Layer & Backdrop override */
+.governance-flyout-layer {
+        position: fixed;
+        inset: 0;
+        z-index: 10000;
+}
+
+.governance-flyout-backdrop {
+        position: absolute;
+        inset: 0;
+        background: transparent;
+        border: none;
+        width: 100%;
+        height: 100%;
+}
+
+/* Dashboard Card Overrides inside Dark Governance Flyout */
+.governance-flyout .dashboard-card {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+}
+
+.governance-flyout .dashboard-card__title {
+        color: var(--tw-slate-50);
+}
+
+.governance-flyout .dashboard-card__subtitle {
+        color: rgb(255 255 255 / 45%);
+}
+
+.governance-flyout .dashboard-card__body {
+        background: rgb(255 255 255 / 3%);
+        border: 1px solid rgb(255 255 255 / 8%);
+        border-radius: 20px;
+        padding: 0 !important;
+
+    /* Remove internal padding to use flex/grid better */
+        overflow-y: auto;
+        flex: 1;
+        min-height: 0;
+
+    /* Allow flex shrinking */
+}
+
+/* Added specific list styling for clarity */
+.governance-flyout .anomaly-panel {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        flex: 1;
+        min-height: 0;
+}
+
+.governance-flyout .dashboard-card__head {
+        margin-bottom: 20px;
+        flex-shrink: 0;
+}
+
+.governance-flyout .empty-state {
+        color: rgb(255 255 255 / 50%);
+}
+
+.governance-flyout .ghost-button {
+        color: var(--tw-sky-400);
+        background: rgb(56 189 248 / 10%);
+        border: 1px solid rgb(56 189 248 / 20%);
+}
+
+.governance-flyout .ghost-button:hover {
+        background: rgb(56 189 248 / 20%);
+        color: var(--tw-slate-50);
+}
+
+.governance-flyout select {
+        background: rgb(15 23 42 / 90%);
+        color: var(--tw-slate-50);
+        border: 1px solid rgb(255 255 255 / 20%);
+}
+
+.governance-flyout .filter-select span {
+        color: rgb(255 255 255 / 60%);
+}
+
+.governance-flyout .data-note {
+        background: rgb(255 255 255 / 3%);
+        border: 1px solid rgb(255 255 255 / 10%);
+}
+
+.governance-flyout .data-note:hover {
+        background: rgb(255 255 255 / 8%);
+}
+
+.governance-flyout .data-note strong {
+        color: var(--tw-slate-50);
+}
+
+.governance-flyout .data-note span {
+        color: rgb(255 255 255 / 60%);
+}
+
+.governance-flyout .anomaly-detail {
+        background: rgb(0 0 0 / 20%);
+        border: 1px solid rgb(255 255 255 / 5%);
+}
+
+.governance-flyout .anomaly-detail__header h4 {
+        color: var(--tw-slate-50);
+}
+
+.governance-flyout .anomaly-detail__header p {
+        color: rgb(255 255 255 / 70%);
+}
+
+.governance-flyout .status-timeline__label {
+        color: rgb(255 255 255 / 50%);
+}
+
+.governance-flyout .point-value {
+        color: var(--tw-slate-50);
+}
+
+.governance-flyout .legend-item {
+        color: rgb(255 255 255 / 60%);
+}

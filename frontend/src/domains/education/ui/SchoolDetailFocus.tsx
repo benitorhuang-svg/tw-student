@@ -1,6 +1,6 @@
 import React from 'react'
 import AccordionItem from '@/shared/ui/core/atoms/AccordionItem'
-import { StackedAreaTrendChart } from '@/shared/ui/core/organisms/StackedAreaTrendChart'
+import { StackedAreaTrendChart } from '@/shared/ui/core/charts/stacked-area-trend'
 import RadarChart from '@/shared/ui/core/molecules/RadarChart'
 import type { SchoolInsight } from '@/shared/lib/analytics'
 import type { SchoolWorkbenchView } from '@/shared/lib/atlas'

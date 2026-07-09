@@ -1,0 +1,158 @@
+/* Data Notes / Investigation Cards */
+.data-note {
+        width: 100%;
+        text-align: left;
+        display: grid;
+        gap: 8px;
+        padding: 16px;
+        border-radius: 12px;
+        background: rgb(255 255 255 / 3%);
+        border: 1px solid rgb(255 255 255 / 6%);
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+}
+
+.data-note::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: transparent;
+        transition: all 0.3s ease;
+}
+
+.data-note--info::before {
+     background: var(--brand-primary);
+}
+
+.data-note--warning::before {
+     background: var(--brand-warning);
+}
+
+.data-note--critical::before {
+     background: var(--brand-danger);
+}
+
+.data-note:hover {
+        background: rgb(255 255 255 / 6%);
+        transform: translateX(4px);
+        border-color: rgb(255 255 255 / 12%);
+}
+
+.data-note--selected {
+        background: rgb(56 189 248 / 8%);
+        border-color: rgb(56 189 248 / 30%);
+        box-shadow: 0 0 20px rgb(56 189 248 / 10%);
+}
+
+.data-note strong {
+        color: var(--text-strong);
+        font-size: 0.9rem;
+        font-weight: 700;
+}
+
+.anomaly-card__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+}
+
+.anomaly-card__header span {
+        font-size: 0.72rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: var(--palette-brass);
+}
+
+.data-note span {
+        color: rgb(255 255 255 / 60%);
+        font-size: 0.82rem;
+        line-height: 1.5;
+}
+
+.data-note small {
+        color: rgb(255 255 255 / 30%);
+        font-size: 0.7rem;
+        font-style: italic;
+}
+
+/* Anomaly Detail Area */
+.anomaly-detail {
+        margin-top: 16px;
+        padding: 24px;
+        border-radius: 16px;
+        background: rgb(0 0 0 / 20%);
+        border: 1px solid rgb(255 255 255 / 8%);
+        display: grid;
+        gap: 20px;
+        animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+        from {
+         opacity: 0;
+        transform: translateY(10px);
+    }
+
+        to {
+         opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.anomaly-detail__header h4 {
+        margin: 8px 0;
+        color: var(--text-strong);
+        font-size: 1.1rem;
+        font-weight: 700;
+}
+
+.anomaly-detail__header p {
+        color: rgb(255 255 255 / 50%);
+        font-size: 0.85rem;
+        line-height: 1.6;
+}
+
+.anomaly-series-table-wrap {
+        overflow-x: auto;
+        border-radius: 12px;
+        border: 1px solid rgb(255 255 255 / 6%);
+        background: rgb(255 255 255 / 2%);
+}
+
+.anomaly-series-table {
+        width: 100%;
+        border-collapse: collapse;
+}
+
+.anomaly-series-table th {
+        background: rgb(255 255 255 / 4%);
+        padding: 12px 16px;
+        text-align: left;
+        font-size: 0.7rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: rgb(255 255 255 / 40%);
+        letter-spacing: 0.05em;
+        border-bottom: 1px solid rgb(255 255 255 / 8%);
+}
+
+.anomaly-series-table td {
+        padding: 12px 16px;
+        font-size: 0.85rem;
+        color: rgb(255 255 255 / 80%);
+        border-bottom: 1px solid rgb(255 255 255 / 4%);
+}
+
+.anomaly-series-table tr:hover td {
+        background: rgb(255 255 255 / 2%);
+        color: var(--text-strong);
+}
+
+.anomaly-series-table tr:last-child td {
+        border-bottom: none;
+}

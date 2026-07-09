@@ -1,0 +1,188 @@
+/* Sections & Metrics */
+.school-chart-panel__section {
+        position: relative;
+}
+
+.panel-heading {
+        margin-bottom: 16px;
+}
+
+.panel-heading .eyebrow {
+        color: var(--palette-brass, #b88746);
+        font-size: 0.65rem;
+        font-weight: 900;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+}
+
+.panel-heading h3 {
+        color: var(--tw-slate-50);
+        font-size: 1.15rem;
+        font-weight: 800;
+        margin: 4px 0;
+}
+
+.panel-heading__meta {
+        color: rgb(255 255 255 / 45%);
+        font-size: 0.8rem;
+        line-height: 1.6;
+}
+
+.school-profile-sidebar__stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+}
+
+@media (width <= 1024px) {
+        .school-profile-sidebar__stats {
+                grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (width <= 600px) {
+        .school-profile-sidebar__stats {
+                grid-template-columns: 1fr;
+    }
+}
+
+.school-profile-metric {
+        background: rgb(255 255 255 / 3%);
+        border: 1px solid rgb(255 255 255 / 8%);
+        padding: 12px 16px;
+        border-radius: 12px;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+}
+
+.school-profile-metric:hover {
+        background: rgb(56 189 248 / 4%);
+        border-color: rgb(56 189 248 / 30%);
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgb(0 0 0 / 40%);
+}
+
+.school-profile-metric span {
+        color: rgb(255 255 255 / 30%);
+        font-size: 0.65rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+}
+
+.school-profile-metric strong {
+        color: var(--tw-slate-50);
+        font-family: var(--font-heading);
+        font-weight: 900;
+        letter-spacing: -0.02em;
+}
+
+.school-profile-metric .status--pass {
+     color: var(--clr-secondary-500);
+    text-shadow: 0 0 10px rgb(74 222 128 / 30%);
+}
+
+.school-profile-metric .status--fail {
+     color: var(--brand-danger);
+    text-shadow: 0 0 10px rgb(248 113 113 / 30%);
+}
+
+.school-profile-metric small {
+        color: rgb(255 255 255 / 25%);
+        font-size: 0.7rem;
+        line-height: 1.4;
+}
+
+/* Workflow Controls */
+.workflow-controls {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid rgb(255 255 255 / 6%);
+}
+
+.action-link {
+        background: none;
+        border: none;
+        color: var(--brand-primary);
+        font-size: 0.8rem;
+        font-weight: 700;
+        cursor: pointer;
+        padding: 4px 8px;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+}
+
+.action-link:hover {
+        background: rgb(56 189 248 / 10%);
+        text-decoration: underline;
+}
+
+.governance-missing-list {
+        margin-top: 24px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        overflow-y: auto;
+        max-height: 50dvh;
+        padding-right: 8px;
+}
+
+.governance-missing-item {
+        background: rgb(255 255 255 / 2%);
+        border: 1px solid rgb(255 255 255 / 5%);
+        padding: 12px 16px;
+        border-radius: 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: all 0.3s ease;
+}
+
+.governance-missing-item:hover {
+        background: rgb(255 255 255 / 5%);
+        border-color: rgb(255 255 255 / 12%);
+}
+
+.missing-item__info strong {
+        display: block;
+        color: var(--tw-slate-50);
+}
+
+.missing-item__info span {
+        color: rgb(255 255 255 / 40%);
+        font-size: 0.75rem;
+}
+
+.governance-status-tags {
+        display: flex;
+        gap: 4px;
+}
+
+.status-tag {
+        font-size: 0.65rem;
+        padding: 2px 8px;
+        border-radius: 6px;
+        background: rgb(255 255 255 / 5%);
+        border: 1px solid rgb(255 255 255 / 10%);
+        color: rgb(255 255 255 / 30%);
+        cursor: pointer;
+        transition: all 0.3s ease;
+}
+
+.status-tag--active {
+        background: var(--brand-primary);
+        color: var(--tw-slate-900);
+}
+
+.limit-note {
+        text-align: center;
+        color: rgb(255 255 255 / 30%);
+        font-size: 0.75rem;
+        font-style: italic;
+        margin-top: 8px;
+}
