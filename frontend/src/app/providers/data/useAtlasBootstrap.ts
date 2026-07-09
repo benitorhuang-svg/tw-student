@@ -4,12 +4,12 @@ import {
   loadDataManifest,
   loadEducationSummary,
   loadValidationReport,
+  warmAtlasRuntime,
   type CountyBoundaryCollection,
   type DataManifest,
   type EducationSummaryDataset,
   type ValidationReport,
 } from '@/shared/api/data/educationData'
-import { warmAtlasRuntime } from '@/shared/api/data/sqlite/connection'
 
 export function useAtlasBootstrap() {
   const [summaryDataset, setSummaryDataset] = useState<EducationSummaryDataset | null>(null)

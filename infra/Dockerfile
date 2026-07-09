@@ -43,7 +43,7 @@ RUN printf "server {\n\
     add_header X-Content-Type-Options nosniff;\n\
     add_header X-Frame-Options DENY;\n\
     add_header Referrer-Policy strict-origin-when-cross-origin;\n\
-    add_header Content-Security-Policy \"default-src 'self'; script-src 'self' blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*.tile.openstreetmap.org https://*.basemaps.cartocdn.com; connect-src 'self' blob:; worker-src 'self' blob:\";\n\
+    add_header Content-Security-Policy \"default-src 'self'; script-src 'self' 'wasm-unsafe-eval' blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*.tile.openstreetmap.org https://*.basemaps.cartocdn.com; connect-src 'self' blob:; worker-src 'self' blob:\";\n\
 \n\
     # 開啟 Gzip 靜態預壓縮與動態壓縮\n\
     gzip on;\n\

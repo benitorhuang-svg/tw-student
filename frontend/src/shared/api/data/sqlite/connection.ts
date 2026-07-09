@@ -75,7 +75,7 @@ async function fetchDatabaseBytes(forceRefresh = false) {
 }
 
 export async function warmAtlasRuntime() {
-  await Promise.allSettled([loadSqlEngine(), fetchDatabaseBytes(false)])
+  await Promise.allSettled([fetchDatabaseBytes(false)])
 }
 
 export async function loadDatabase(options: LoadDatabaseOptions = {}) {
