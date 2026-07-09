@@ -43,7 +43,7 @@ RUN printf "server {\n\
     add_header X-Content-Type-Options nosniff;\n\
     add_header X-Frame-Options DENY;\n\
     add_header Referrer-Policy strict-origin-when-cross-origin;\n\
-    add_header Content-Security-Policy \"default-src 'self'; script-src 'self' 'wasm-unsafe-eval' blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*.tile.openstreetmap.org https://*.basemaps.cartocdn.com; connect-src 'self' blob:; worker-src 'self' blob:\";\n\
+    add_header Content-Security-Policy \"default-src 'self'; script-src 'self' 'unsafe-eval' 'wasm-unsafe-eval' blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*.tile.openstreetmap.org https://*.basemaps.cartocdn.com; connect-src 'self' blob: https://tw-student-atlas-876052062983.asia-east1.run.app; worker-src 'self' blob:\";\n\
 \n\
     # 開啟 Gzip 靜態預壓縮與動態壓縮\n\
     gzip on;\n\
@@ -63,6 +63,7 @@ RUN printf "server {\n\
         expires 7d;\n\
         # 移除 immutable 以免與 StaleWhileRevalidate 衝突\n\
         add_header Cache-Control \"public, max-age=604800\";\n\
+        add_header Access-Control-Allow-Origin \"*\";\n\
     }\n\
 }\n" > /etc/nginx/conf.d/default.conf
 

@@ -6,6 +6,13 @@
       "**/.*",
       "**/node_modules/**"
     ],
+    "redirects": [
+      {
+        "source": "/data/:asset*",
+        "destination": "https://tw-student-atlas-876052062983.asia-east1.run.app/data/:asset",
+        "type": 302
+      }
+    ],
     "rewrites": [
       {
         "source": "**",

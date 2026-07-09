@@ -1,4 +1,18 @@
 const DATA_BASE_URL = import.meta.env.BASE_URL.replace(/\/$/, '')
+const CLOUD_RUN_DATA_ORIGIN = 'https://tw-student-atlas-876052062983.asia-east1.run.app'
+
+function resolveDataOrigin() {
+  if (typeof window === 'undefined') return ''
+
+  const host = window.location.hostname.toLowerCase()
+  // Firebase Hosting intermittently returns 500 for large proxied /data assets.
+  // Bypass the hosting proxy and fetch public data files from Cloud Run directly.
+  if (host.endsWith('.web.app') || host.endsWith('.firebaseapp.com')) {
+    return CLOUD_RUN_DATA_ORIGIN
+  }
+
+  return ''
+}
 
 function normalizeRelativePath(relativePath: string) {
   return relativePath.replace(/^\/+/, '')
@@ -6,7 +20,7 @@ function normalizeRelativePath(relativePath: string) {
 
 export function buildDataAssetUrl(relativePath: string, forceRefresh = false) {
   const normalizedPath = normalizeRelativePath(relativePath)
-  const baseUrl = `${DATA_BASE_URL}/data/${normalizedPath}`
+  const baseUrl = `${resolveDataOrigin()}${DATA_BASE_URL}/data/${normalizedPath}`
   return forceRefresh ? `${baseUrl}?refresh=${Date.now()}` : baseUrl
 }
 

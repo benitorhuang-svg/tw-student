@@ -58,26 +58,36 @@ export async function initSqliteWorker(forceRefresh = false) {
   initPromise = (async () => {
     const w = ensureWorker()
     const url = getDatabaseUrl(forceRefresh)
-    // Send the URL to the worker to fetch and store in OPFS directly
+    // Send the URL to the worker to fetch and initialize the database.
     w.postMessage({ type: 'init', url, forceRefresh })
 
-    // wait for ready signal
-    const timeout = 15000 // downloading 43MB could take a few seconds
+    const warningDelayMs = 15000
+    const initTimeoutMs = 120000
+    const pollIntervalMs = 100
     const start = Date.now()
-    while (!ready && !initError && Date.now() - start < timeout) {
-      await new Promise((r) => setTimeout(r, 100))
+    let warned = false
+
+    while (!ready && !initError) {
+      const elapsed = Date.now() - start
+      if (!warned && elapsed >= warningDelayMs) {
+        warned = true
+        console.warn('SQLite worker initialization is taking longer than expected')
+      }
+      if (elapsed >= initTimeoutMs) {
+        throw new Error('SQLite worker initialization exceeded 120s without becoming ready')
+      }
+      await new Promise((resolve) => setTimeout(resolve, pollIntervalMs))
     }
 
     if (initError) {
       throw initError
     }
 
-    if (!ready) {
-      console.warn('SQLite worker initialization timed out or took longer than 15s')
-    }
-
     return 1 // arbitrary size indicator, since we don't hold the buffer anymore
-  })()
+  })().catch((error) => {
+    resetSqliteWorker()
+    throw error
+  })
   return initPromise
 }
 
