@@ -7,7 +7,7 @@
         top: auto;
         right: auto;
         left: 0 !important;
-        width: 320px !important; /* Reverted to original width for legibility */
+        width: min(400px, calc(100vw - 16px)) !important;
         background: var(--map-overlay-bg);
         border: 1px solid var(--map-overlay-border);
         border-radius: 12px;

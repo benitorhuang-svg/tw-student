@@ -207,7 +207,7 @@
     }
 
     .map-school-ranking {
-        width: clamp(260px, 50vw, 320px);
+        width: min(400px, calc(100vw - 16px));
         max-height: 230px;
     }
 

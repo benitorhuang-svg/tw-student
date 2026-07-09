@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import MapBreadcrumb from '../atoms/MapBreadcrumb'
 import { MapYearStepper } from '../atoms/MapYearStepper'
 import { MapZoomControls } from '../atoms/MapZoomControls'
@@ -5,6 +6,7 @@ import { AtlasMiniMap } from '../molecules/AtlasMiniMap'
 import { MapControlStack } from '../molecules/MapControlStack'
 import { MapSchoolRankingPanel } from '../molecules/MapSchoolRankingPanel'
 import { MapTrendCard } from '../molecules/MapTrendCard'
+import { CollapsibleFilter } from '../molecules/CollapsibleFilter'
 
 import type { MapCanvasProps } from './MapCanvas.types'
 
@@ -49,6 +51,8 @@ export function MapCanvasMapControls({ isMobile, props }: MapCanvasControlsProps
 }
 
 export function MapCanvasOverlayControls({ isMobile, props }: MapCanvasControlsProps) {
+  const [activeBottomPanel, setActiveBottomPanel] = useState<'ranking' | 'trend' | 'none'>('ranking')
+
   return (
     <>
       <div
@@ -57,12 +61,12 @@ export function MapCanvasOverlayControls({ isMobile, props }: MapCanvasControlsP
           position: 'absolute',
           top: isMobile ? '10px' : '16px',
           left: 0,
-          right: 0,
-          width: '100%',
-          zIndex: 1100,
           pointerEvents: 'none',
           display: 'flex',
           justifyContent: 'space-between',
+          alignItems: 'flex-start',
+          flexWrap: 'wrap',
+          gap: '8px',
           padding: '0 8px',
         }}
       >
@@ -75,29 +79,63 @@ export function MapCanvasOverlayControls({ isMobile, props }: MapCanvasControlsP
 
         <div
           className="map-top-right-tower"
-          style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start', gap: '8px', pointerEvents: 'auto' }}
+          style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: isMobile ? 'stretch' : 'flex-end', gap: '8px', pointerEvents: 'auto' }}
         >
-          <div style={{ width: isMobile ? 'auto' : '140px' }}>
-            {props.renderManagementTypeFilter?.(isMobile ? { hideIcon: true } : {})}
-          </div>
           <div style={{ width: isMobile ? 'auto' : '140px' }}>
             {props.renderEducationLevelFilter?.(isMobile ? { hideIcon: true } : {})}
           </div>
+          <div style={{ width: isMobile ? 'auto' : '140px' }}>
+            {props.renderManagementTypeFilter?.(isMobile ? { hideIcon: true } : {})}
+          </div>
+          {isMobile && (
+            <div style={{ width: 'auto' }}>
+              <CollapsibleFilter
+                label="圖表顯示"
+                options={[
+                  { value: 'ranking', label: '學生總人數' },
+                  { value: 'trend', label: '歷史趨勢' },
+                  { value: 'none', label: '無圖譜' }
+                ]}
+                currentValue={activeBottomPanel}
+                onSelect={(val) => setActiveBottomPanel(val as 'ranking' | 'trend' | 'none')}
+                icon={undefined}
+              />
+            </div>
+          )}
         </div>
       </div>
 
-      {isMobile ? <MapMobileTimelineControls props={props} /> : <MapDesktopYearBadge activeYear={props.activeYear} />}
-
-      <div className="map-school-ranking-dock">
-        <MapSchoolRankingPanel
-          schools={props.schoolPoints.filter((school) =>
-            (!props.activeCountyId || school.countyId === props.activeCountyId) &&
-            (!props.activeTownshipId || school.townshipId === props.activeTownshipId),
+      {isMobile ? (
+        <>
+          {activeBottomPanel === 'trend' && <MapMobileTimelineControls props={props} />}
+          {activeBottomPanel === 'ranking' && (
+            <div className="map-school-ranking-dock">
+              <MapSchoolRankingPanel
+                schools={props.schoolPoints.filter((school) =>
+                  (!props.activeCountyId || school.countyId === props.activeCountyId) &&
+                  (!props.activeTownshipId || school.townshipId === props.activeTownshipId),
+                )}
+                selectedSchoolId={props.selectedSchoolId}
+                onSelectSchool={props.onSelectSchool}
+              />
+            </div>
           )}
-          selectedSchoolId={props.selectedSchoolId}
-          onSelectSchool={props.onSelectSchool}
-        />
-      </div>
+        </>
+      ) : (
+        <>
+          <MapDesktopYearBadge activeYear={props.activeYear} />
+          <div className="map-school-ranking-dock">
+            <MapSchoolRankingPanel
+              schools={props.schoolPoints.filter((school) =>
+                (!props.activeCountyId || school.countyId === props.activeCountyId) &&
+                (!props.activeTownshipId || school.townshipId === props.activeTownshipId),
+              )}
+              selectedSchoolId={props.selectedSchoolId}
+              onSelectSchool={props.onSelectSchool}
+            />
+          </div>
+        </>
+      )}
     </>
   )
 }
@@ -110,11 +148,11 @@ function MapMobileTimelineControls({ props }: { props: MapCanvasProps }) {
       className="map-mobile-controls-bottom-right"
       style={{
         position: 'absolute',
-        bottom: '15px',
-        right: '15px',
+        bottom: '16px',
+        right: '8px',
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'flex-end',
+        alignItems: 'center',
         gap: '8px',
         zIndex: 1050,
         pointerEvents: 'none',

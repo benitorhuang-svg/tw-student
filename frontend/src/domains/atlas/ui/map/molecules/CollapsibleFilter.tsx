@@ -45,6 +45,20 @@ export const CollapsibleFilter = ({
     }
   }, [isOpen])
 
+  // Mutually exclusive open state (close others when this one opens)
+  useEffect(() => {
+    const handleCloseOthers = (e: Event) => {
+      const customEvent = e as CustomEvent
+      if (customEvent.detail !== label) {
+        setIsOpen(false)
+      }
+    }
+    window.addEventListener('closeOtherFilters', handleCloseOthers)
+    return () => {
+      window.removeEventListener('closeOtherFilters', handleCloseOthers)
+    }
+  }, [label])
+
   return (
     <div className={`map-collapsible-filter ${isOpen ? 'is-open' : ''}`} ref={containerRef}>
       <button 
@@ -52,12 +66,16 @@ export const CollapsibleFilter = ({
         className="filter-toggle-btn" 
         onClick={(e) => {
           e.stopPropagation()
-          setIsOpen(!isOpen)
+          const nextState = !isOpen
+          setIsOpen(nextState)
+          if (nextState) {
+            window.dispatchEvent(new CustomEvent('closeOtherFilters', { detail: label }))
+          }
         }}
         aria-expanded={isOpen}
         title={label}
       >
-        <span className="filter-toggle-icon">{icon}</span>
+        {icon && <span className="filter-toggle-icon">{icon}</span>}
         <span className="filter-active-label">
           {options.find(o => o.value === currentValue)?.label}
         </span>

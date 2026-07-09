@@ -13,6 +13,7 @@
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     min-width: 80px; /* Reduced from 100px */
     max-width: 180px;
+    width: 100%;
     z-index: 100;
 }
 
@@ -63,9 +64,11 @@
     position: absolute;
     top: calc(100% + 8px);
     left: 0;
+    right: 0;
     display: flex;
     flex-direction: column;
-    min-width: 160px;
+    min-width: 100%;
+    width: 100%;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
@@ -105,4 +108,16 @@
 
 .filter-expansion .segmented-icon {
     display: none; /* Hide internal icon since we have the toggle icon */
+}
+
+/* Mobile scale down */
+@media (max-width: 768px) {
+    .filter-toggle-btn {
+        height: 34px;
+        padding: 0 8px;
+        gap: 6px;
+    }
+    .filter-active-label {
+        font-size: 0.8rem;
+    }
 }

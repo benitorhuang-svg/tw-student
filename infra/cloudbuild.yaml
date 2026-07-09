@@ -4,14 +4,14 @@ steps:
     args: [
       'build',
       '-f', 'infra/Dockerfile',
-      '-t', 'asia-east1-docker.pkg.dev/$PROJECT_ID/tw-student-atlas/tw-student-atlas:$COMMIT_SHA',
+      '-t', 'asia-east1-docker.pkg.dev/$PROJECT_ID/tw-student-atlas/tw-student-atlas:$BUILD_ID',
       '-t', 'asia-east1-docker.pkg.dev/$PROJECT_ID/tw-student-atlas/tw-student-atlas:latest',
       '.'
     ]
 
   # Step 2: Push the image to Artifact Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'asia-east1-docker.pkg.dev/$PROJECT_ID/tw-student-atlas/tw-student-atlas:$COMMIT_SHA']
+    args: ['push', 'asia-east1-docker.pkg.dev/$PROJECT_ID/tw-student-atlas/tw-student-atlas:$BUILD_ID']
   
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'asia-east1-docker.pkg.dev/$PROJECT_ID/tw-student-atlas/tw-student-atlas:latest']
@@ -21,10 +21,15 @@ steps:
     entrypoint: gcloud
     args: [
       'run', 'deploy', 'tw-student-atlas',
-      '--image', 'asia-east1-docker.pkg.dev/$PROJECT_ID/tw-student-atlas/tw-student-atlas:$COMMIT_SHA',
+      '--image', 'asia-east1-docker.pkg.dev/$PROJECT_ID/tw-student-atlas/tw-student-atlas:$BUILD_ID',
       '--region', 'asia-east1',
       '--platform', 'managed',
-      '--allow-unauthenticated'
+      '--allow-unauthenticated',
+      '--port', '8080',
+      '--memory', '1Gi',
+      '--cpu', '1',
+      '--cpu-boost',
+      '--max-instances', '10'
     ]
 
 # 關鍵解決：強制使用 Cloud Logging 避開 Logs Bucket 錯誤
