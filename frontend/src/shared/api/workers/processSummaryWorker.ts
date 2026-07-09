@@ -9,18 +9,46 @@ ctx.addEventListener('message', (ev) => {
       sourcesJson,
       dataNotesJson,
       generatedAtJson,
+      yearsResult,
+      sourcesResult,
+      dataNotesResult,
+      generatedAtResult,
+      countyResult,
+      townResult,
+      countySummaryResult,
+      townSummaryResult,
+      coordinateIssueResult,
+      schoolIndexResult,
       countyRows,
       townRows,
       countySummaryRows,
       townSummaryRows,
       coordinateIssueRows,
       schoolIndexRows,
+      task,
     } = payload || {}
 
     function parseJsonValue<T>(value: string | null | undefined, fallback: T): T {
       if (typeof value !== 'string' || !value) return fallback
       try { return JSON.parse(value) } catch { return fallback }
     }
+
+    function mapRows(result: Array<{ columns: string[]; values: unknown[][] }> | undefined) {
+      return (result || []).flatMap((entry) =>
+        entry.values.map((values) => Object.fromEntries(entry.columns.map((column, index) => [column, values[index]]))),
+      )
+    }
+
+    const mappedYearsRows = yearsJson == null ? mapRows(yearsResult) : []
+    const mappedSourcesRows = sourcesJson == null ? mapRows(sourcesResult) : []
+    const mappedDataNotesRows = dataNotesJson == null ? mapRows(dataNotesResult) : []
+    const mappedGeneratedAtRows = generatedAtJson == null ? mapRows(generatedAtResult) : []
+    const mappedCountyRows = countyRows ?? mapRows(countyResult)
+    const mappedTownRows = townRows ?? mapRows(townResult)
+    const mappedCountySummaryRows = countySummaryRows ?? mapRows(countySummaryResult)
+    const mappedTownSummaryRows = townSummaryRows ?? mapRows(townSummaryResult)
+    const mappedCoordinateIssueRows = coordinateIssueRows ?? mapRows(coordinateIssueResult)
+    const mappedSchoolIndexRows = schoolIndexRows ?? mapRows(schoolIndexResult)
 
     // build summary maps
     function buildSummaryMap(rows: any[]) {
@@ -116,33 +144,38 @@ ctx.addEventListener('message', (ev) => {
       return schoolCodeIndex
     }
 
-    const years = parseJsonValue(yearsJson, [])
-    const sources = parseJsonValue(sourcesJson, { points: '', statistics: '', townshipBoundaries: '', countyBoundaries: '' })
-    const dataNotes = parseJsonValue(dataNotesJson, [])
-    const generatedAt = String(parseJsonValue(generatedAtJson, '') || '')
+    if (task === 'schoolCodeIndex') {
+      ctx.postMessage({ id, resultString: JSON.stringify(buildSchoolCodeIndex(mappedSchoolIndexRows || [])) })
+      return
+    }
+
+    const years = parseJsonValue(yearsJson ?? mappedYearsRows[0]?.value, [])
+    const sources = parseJsonValue(sourcesJson ?? mappedSourcesRows[0]?.value, { points: '', statistics: '', townshipBoundaries: '', countyBoundaries: '' })
+    const dataNotes = parseJsonValue(dataNotesJson ?? mappedDataNotesRows[0]?.value, [])
+    const generatedAt = String(parseJsonValue(generatedAtJson ?? mappedGeneratedAtRows[0]?.value, '') || '')
 
     const countySummaryLookup: Record<string, any[]> = {}
-    for (const row of countySummaryRows || []) {
+    for (const row of mappedCountySummaryRows || []) {
       const key = String(row.county_id)
       countySummaryLookup[key] = countySummaryLookup[key] || []
       countySummaryLookup[key].push(row)
     }
 
     const townSummaryLookup: Record<string, any[]> = {}
-    for (const row of townSummaryRows || []) {
+    for (const row of mappedTownSummaryRows || []) {
       const key = String(row.town_id)
       townSummaryLookup[key] = townSummaryLookup[key] || []
       townSummaryLookup[key].push(row)
     }
 
     const townRowsByCounty: Record<string, any[]> = {}
-    for (const row of townRows || []) {
+    for (const row of mappedTownRows || []) {
       const key = String(row.county_id)
       townRowsByCounty[key] = townRowsByCounty[key] || []
       townRowsByCounty[key].push(row)
     }
 
-    const counties = (countyRows || []).map((countyRow: any) => {
+    const counties = (mappedCountyRows || []).map((countyRow: any) => {
       const countyCode = String(countyRow.id)
       const towns = (townRowsByCounty[countyCode] || []).map((townRow: any) => ({
         id: String(townRow.legacy_id),
@@ -189,8 +222,7 @@ ctx.addEventListener('message', (ev) => {
         sqliteBytes: 0,
       },
       sources,
-      schoolCodeIndex: buildSchoolCodeIndex(schoolIndexRows || []),
-      missingCoordinates: (coordinateIssueRows || []).map((row: any) => ({
+      missingCoordinates: (mappedCoordinateIssueRows || []).map((row: any) => ({
         code: String(row.code),
         name: String(row.school_name),
         county: String(row.county_legacy_id),
@@ -208,7 +240,7 @@ ctx.addEventListener('message', (ev) => {
       counties,
     }
 
-    ctx.postMessage({ id, result: summary })
+    ctx.postMessage({ id, resultString: JSON.stringify(summary) })
   } catch (err: unknown) {
     ctx.postMessage({ id, error: String((err as any)?.message || err) })
   }

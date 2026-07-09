@@ -20,7 +20,7 @@
 
 .trend-chart__tooltip-row {
     fill: var(--text-soft);
-    font-size: .7rem;
+    font-size: var(--text-xs);
     font-weight: 600;
 }
 
@@ -39,7 +39,7 @@
     border: 1px solid rgb(148 163 184 / 16%);
     background: rgb(255 255 255 / 66%);
     color: var(--text-main);
-    font-size: .76rem;
+    font-size: var(--text-xs);
     font-weight: 700;
 }
 
@@ -65,7 +65,7 @@
 }
 
 .scatter-chart__svg--compact .scatter-chart__quadrant-label {
-    font-size: 9px;
+    font-size: var(--text-xs);
     letter-spacing: 0.03em;
 }
 
@@ -104,11 +104,11 @@
     }
 
     .trend-chart__legend-item {
-        font-size: .72rem;
+        font-size: var(--text-xs);
         padding: 5px 8px;
     }
 
     .trend-chart__footnote {
-        font-size: .76rem;
+        font-size: var(--text-xs);
     }
 }

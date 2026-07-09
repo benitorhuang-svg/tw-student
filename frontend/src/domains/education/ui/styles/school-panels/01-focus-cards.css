@@ -23,7 +23,7 @@
 .school-focus__summary h3 {
     margin: 4px 0 6px;
     font-family: var(--font-heading);
-    font-size: .96rem;
+    font-size: var(--text-base);
     color: var(--atlas-text-strong);
     overflow: hidden;
     text-overflow: ellipsis;
@@ -32,7 +32,7 @@
 
 .school-focus__statline strong {
     font-family: var(--font-heading);
-    font-size: 1.5rem;
+    font-size: var(--text-2xl);
     color: var(--atlas-text-strong)
 }
 

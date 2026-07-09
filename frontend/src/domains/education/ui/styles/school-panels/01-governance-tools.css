@@ -62,7 +62,7 @@
     border: 1px solid rgb(216 228 236 / 16%);
     background: rgb(255 255 255 / 8%);
     color: var(--color-ice-100);
-    font-size: .74rem;
+    font-size: var(--text-xs);
     cursor: pointer
 }
 

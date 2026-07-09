@@ -97,85 +97,6 @@ export function CountyMarkerLayer({
     return inView
   }, [bounds, counties, countyCenterLookup, countyBoundsLookup, activeCountyId, map])
 
-  const globalPositionOffsets: Record<string, [number, number]> = {
-    '嘉市': [0, -0.02],
-    '新北市': [0, -0.03],
-    '基隆市': [0.02, 0],
-    '臺北市': [-0.02, 0.02],
-    '嘉縣': [0.05, 0.12],
-  }
-
-  const zoomSpecificOffsets: Record<number, Record<string, [number, number]>> = {
-    7: {
-      '新北': [-0.06, -0.02],
-      '基隆': [0, 0.06],
-      '臺北': [0.06, -0.06],
-      '台北': [0.06, -0.06],
-      '嘉縣': [0.05, 0.12],
-    },
-    8: {
-      '嘉市': [0, -0.02],
-      '嘉縣': [0.05, 0.12],
-    },
-    9: {
-      '新北': [-0.1, -0.1],
-      '基隆': [0, -0.02],
-      '臺北': [0.02, -0.02],
-      '台北': [0.02, -0.02],
-      '嘉縣': [0.05, 0.12],
-      '嘉市': [0, -0.02],
-    },
-    11: {
-      '新北': [-0.1, -0.1],
-      '基隆': [0, -0.01],
-      '臺北': [0.01, -0.01],
-      '台北': [0.01, -0.01],
-      '嘉縣': [0.05, 0.12],
-      '嘉市': [0, -0.02],
-    },
-  }
-
-  function lerp(a: number, b: number, t: number) {
-    return a + (b - a) * t
-  }
-
-  function getInterpolatedOffsetsForZoom(zoom: number | null) {
-    if (zoom == null) return globalPositionOffsets
-    const keys = Object.keys(zoomSpecificOffsets).map(Number).sort((a, b) => a - b)
-    if (keys.length === 0) return globalPositionOffsets
-    if (zoom <= keys[0]) return zoomSpecificOffsets[keys[0]]
-    if (zoom >= keys[keys.length - 1]) return zoomSpecificOffsets[keys[keys.length - 1]]
-
-    let lower = keys[0]
-    let upper = keys[keys.length - 1]
-    for (let i = 0; i < keys.length - 1; i++) {
-      if (zoom >= keys[i] && zoom <= keys[i + 1]) {
-        lower = keys[i]
-        upper = keys[i + 1]
-        break
-      }
-    }
-
-    const t = (zoom - lower) / (upper - lower)
-    const lowerOffsets = lowerSpecificOffsets(lower)
-    const upperOffsets = upperSpecificOffsets(upper)
-    const result: Record<string, [number, number]> = {}
-
-    const allKeys = new Set<string>([...Object.keys(lowerOffsets), ...Object.keys(upperOffsets)])
-    allKeys.forEach((k) => {
-      const lo = lowerOffsets[k] ?? globalPositionOffsets[k] ?? [0, 0]
-      const hi = upperOffsets[k] ?? globalPositionOffsets[k] ?? [0, 0]
-      result[k] = [lerp(lo[0], hi[0], t), lerp(lo[1], hi[1], t)]
-    })
-
-    return result
-
-    function lowerSpecificOffsets(l: number) { return zoomSpecificOffsets[l] }
-    function upperSpecificOffsets(u: number) { return zoomSpecificOffsets[u] }
-  }
-
-  const effectiveOffsets = getInterpolatedOffsetsForZoom(currentMapZoom)
-
   if (!showMarkers && !activeCountyId) return null
 
   return (
@@ -184,30 +105,21 @@ export function CountyMarkerLayer({
         const center = countyCenterLookup.get(county.id)
         if (!center) return null
 
-        const offset = effectiveOffsets[county.shortLabel] ?? null
-        const adjustedCenter: [number, number] = offset ? [center[0] + offset[0], center[1] + offset[1]] : center
-
-        if (isNaN(adjustedCenter[0]) || isNaN(adjustedCenter[1])) {
-          console.error('NaN DETECTED:', { countyId: county.id, center, offset, effectiveOffsets });
+        if (isNaN(center[0]) || isNaN(center[1])) {
+          console.error('NaN DETECTED:', { countyId: county.id, center });
         }
 
         const zoom = currentMapZoom ?? 7;
-        const usePill = zoom >= 9.5;
         const isActive = county.id === activeCountyId;
-        
-        // Pills are smaller, so we keep them interactive even at higher zooms
-        const isInteractive = usePill ? true : (zoom < 10.5);
-        const opacity = zoom >= 11.5 ? 0.6 : 1.0;
-
-
+        const isInteractive = true;
+        const opacity = zoom >= 11.5 ? 0.75 : 1.0;
 
         return (
           <CountyMarker
             key={`county-marker-${county.id}`}
             county={county}
-            position={adjustedCenter}
+            position={center}
             isActive={isActive}
-            usePill={usePill}
             isInteractive={isInteractive}
             opacity={opacity}
             onSelect={(id) => onSelectCounty(id, { skipTabSwitch: false })}

@@ -25,27 +25,27 @@
 }
 
 .kpi-card__label {
-    font-size: 0.75rem;
+    font-size: var(--text-xs);
     font-weight: 700;
     color: var(--text-muted);
 }
 
 .kpi-card__value {
-    font-size: 1.5rem;
+    font-size: var(--text-2xl);
     font-weight: 900;
     color: var(--text-strong);
     letter-spacing: -0.02em;
 }
 
 .kpi-card__unit {
-    font-size: 0.8rem;
+    font-size: var(--text-xs);
     font-weight: 700;
     color: var(--text-soft);
     margin-left: 4px;
 }
 
 .kpi-card__footer {
-    font-size: 0.7rem;
+    font-size: var(--text-xs);
     font-weight: 600;
     color: var(--text-dim);
     margin-top: 4px;
@@ -61,11 +61,11 @@
 }
 
 .county-sidebar-butterfly .butterfly-chart__label-group strong {
-    font-size: 0.85rem;
+    font-size: var(--text-sm);
 }
 
 .county-sidebar-butterfly .butterfly-chart__value {
-    font-size: 0.75rem;
+    font-size: var(--text-xs);
 }
 
 /* Township Distribution List */
@@ -95,13 +95,13 @@
 }
 
 .township-bar-item__name {
-    font-size: 0.85rem;
+    font-size: var(--text-sm);
     font-weight: 700;
     color: var(--text-main);
 }
 
 .township-bar-item__value {
-    font-size: 0.75rem;
+    font-size: var(--text-xs);
     font-weight: 600;
     color: var(--text-soft);
 }
@@ -133,7 +133,7 @@
 }
 
 .impact-group__title {
-    font-size: 0.8rem;
+    font-size: var(--text-xs);
     font-weight: 800;
     color: var(--text-muted);
     margin-bottom: 12px;
@@ -182,7 +182,7 @@
     align-items: center;
     justify-content: center;
     border-radius: 6px;
-    font-size: 10px;
+    font-size: var(--text-xs);
     font-weight: 900;
     color: var(--color-white);
 }
@@ -198,7 +198,7 @@
 }
 
 .impact-item__name {
-    font-size: 0.85rem;
+    font-size: var(--text-sm);
     font-weight: 700;
     color: var(--text-main);
     white-space: nowrap;
@@ -207,7 +207,7 @@
 }
 
 .impact-item__delta {
-    font-size: 0.7rem;
+    font-size: var(--text-xs);
     font-weight: 800;
     color: var(--text-soft);
 }

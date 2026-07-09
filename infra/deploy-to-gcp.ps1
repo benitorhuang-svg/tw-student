@@ -10,20 +10,8 @@ $GAR_LOCATION = "asia-east1-docker.pkg.dev/$PROJECT_ID/tw-student-atlas"
 Write-Host ">>> 授權 Docker 訪問 Artifact Registry..." -ForegroundColor Cyan
 gcloud auth configure-docker asia-east1-docker.pkg.dev --quiet
 
-Write-Host ">>> 正在將專案製作成容器映像檔並上傳至 GCP Artifact Registry..." -ForegroundColor Cyan
-# 使用 gcloud builds submit 到 Artifact Registry
-gcloud builds submit --tag "$GAR_LOCATION/$IMAGE_NAME"
+Write-Host ">>> 使用 Cloud Build 設定檔建置映像並部署到 Cloud Run..." -ForegroundColor Cyan
+gcloud builds submit --config "infra/cloudbuild.yaml" .
 
-Write-Host ">>> 正在部署到 Cloud Run (啟用 CPU Boost 與 Gzip 優化)..." -ForegroundColor Cyan
-gcloud run deploy tw-student-atlas `
-  --image "$GAR_LOCATION/$IMAGE_NAME" `
-  --platform managed `
-  --allow-unauthenticated `
-  --region $REGION `
-  --port 8080 `
-  --memory 1Gi `
-  --cpu 1 `
-  --cpu-boost `
-  --max-instances 10
 Write-Host ""
 Write-Host ">>> Deployment Complete! Your website is now live." -ForegroundColor Green

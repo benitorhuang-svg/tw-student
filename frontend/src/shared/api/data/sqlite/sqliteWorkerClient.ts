@@ -81,6 +81,14 @@ export async function initSqliteWorker(forceRefresh = false) {
   return initPromise
 }
 
+export async function warmAtlasRuntime() {
+  try {
+    await initSqliteWorker(false)
+  } catch {
+    // Runtime warm-up is best-effort; foreground data loading reports real failures.
+  }
+}
+
 export async function execInSqlite(sql: string, params?: unknown[]): Promise<SqlQueryResult> {
   await initSqliteWorker()
   const activeWorker = ensureWorker()

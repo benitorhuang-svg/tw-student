@@ -1,5 +1,5 @@
 import { useAtlasBootstrap } from './data/useAtlasBootstrap'
-import { useCountyResources } from './data/useCountyResources'
+import { useCountyLoader } from '@/domains/county'
 import { useDataSync } from './data/useDataSync'
 
 export function useEducationData(selectedCountyId: string | null) {
@@ -7,7 +7,7 @@ export function useEducationData(selectedCountyId: string | null) {
   const bootstrap = useAtlasBootstrap()
 
   // 2. County-specific slice cache
-  const resources = useCountyResources(bootstrap.summaryDataset, selectedCountyId)
+  const resources = useCountyLoader(bootstrap.summaryDataset, selectedCountyId)
 
   // 3. Sync & Update logic
   const sync = useDataSync({

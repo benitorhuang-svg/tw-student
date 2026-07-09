@@ -7,6 +7,7 @@ type CollapsibleFilterProps = {
   onSelect: (value: string) => void
   icon: React.ReactNode
   label: string
+  columns?: number
 }
 
 /**
@@ -19,7 +20,8 @@ export const CollapsibleFilter = ({
   currentValue,
   onSelect,
   icon,
-  label
+  label,
+  columns
 }: CollapsibleFilterProps) => {
   const [isOpen, setIsOpen] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
@@ -61,9 +63,9 @@ export const CollapsibleFilter = ({
 
   return (
     <div className={`map-collapsible-filter ${isOpen ? 'is-open' : ''}`} ref={containerRef}>
-      <button 
+      <button
         type="button"
-        className="filter-toggle-btn" 
+        className="filter-toggle-btn"
         onClick={(e) => {
           e.stopPropagation()
           const nextState = !isOpen
@@ -85,8 +87,12 @@ export const CollapsibleFilter = ({
           </svg>
         </span>
       </button>
-      
-      <div className="filter-expansion" onClick={(e) => e.stopPropagation()}>
+
+      <div
+        className="filter-expansion"
+        onClick={(e) => e.stopPropagation()}
+        data-cols={columns}
+      >
         <SegmentedPill
           options={options}
           currentValue={currentValue}

@@ -1,14 +1,13 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useMemo, useRef } from 'react'
 import { Marker } from 'react-leaflet'
 import L from 'leaflet'
-import { renderScopeMarkerIcon, renderScopePillIcon, growthChoroplethColor, buildHoverPreviewHtml } from '../mapStyles'
+import { renderCountyPinIcon, growthChoroplethColor, buildHoverPreviewHtml } from '../mapStyles'
 import type { CountySummary } from '@/shared/lib/analytics'
 
 export type CountyMarkerProps = {
   county: CountySummary
   position: [number, number]
   isActive: boolean
-  usePill: boolean
   isInteractive: boolean
   opacity: number
   onSelect: (id: string) => void
@@ -26,7 +25,6 @@ export const CountyMarker = ({
   county,
   position,
   isActive,
-  usePill,
   isInteractive,
   opacity,
   onSelect,
@@ -37,23 +35,24 @@ export const CountyMarker = ({
 }: CountyMarkerProps) => {
   const markerRef = useRef<L.Marker | null>(null)
   const openedTooltipRef = useRef(false)
-  const icon = usePill
-    ? renderScopePillIcon(county.shortLabel, growthChoroplethColor(county.deltaRatio), isActive)
-    : renderScopeMarkerIcon(county.shortLabel, county.students, growthChoroplethColor(county.deltaRatio), 54, 'county')
+  const icon = useMemo(
+    () => renderCountyPinIcon(county.shortLabel, growthChoroplethColor(county.deltaRatio), isActive),
+    [county.deltaRatio, county.shortLabel, isActive],
+  )
 
   useEffect(() => {
     const marker = markerRef.current
     if (!marker) return
 
     let frameId = 0
-    let element: HTMLElement | null = null
+    let cleanup: (() => void) | undefined
     const latlng = L.latLng(position[0], position[1])
     const tooltipContent = buildHoverPreviewHtml(county.name, county.students)
 
     const shouldSuppressMarkerTooltip = () => (currentMapZoom != null && currentMapZoom >= 13)
 
     const attachAccessibility = () => {
-      element = marker.getElement() ?? null
+      const element = marker.getElement()
       if (!element) {
         frameId = window.requestAnimationFrame(attachAccessibility)
         return
@@ -88,6 +87,7 @@ export const CountyMarker = ({
         if (!isInteractive) return
         if (event.key === 'Enter' || event.key === ' ') {
           event.preventDefault()
+          event.stopPropagation()
           onSelect(county.id)
         }
         if (event.key === 'Escape') {
@@ -98,27 +98,18 @@ export const CountyMarker = ({
         }
       }
 
-      const handleElementClick = (ev: MouseEvent) => {
-        if (!isInteractive) return
-        ev.preventDefault()
-        ev.stopPropagation()
-        onSelect(county.id)
-      }
-
       element.addEventListener('focus', handleFocus)
       element.addEventListener('blur', handleBlur)
       element.addEventListener('keydown', handleKeyDown)
-      element.addEventListener('click', handleElementClick)
 
-      return () => {
-        element?.removeEventListener('focus', handleFocus)
-        element?.removeEventListener('blur', handleBlur)
-        element?.removeEventListener('keydown', handleKeyDown)
-        element?.removeEventListener('click', handleElementClick)
+      cleanup = () => {
+        element.removeEventListener('focus', handleFocus)
+        element.removeEventListener('blur', handleBlur)
+        element.removeEventListener('keydown', handleKeyDown)
       }
     }
 
-    const cleanup = attachAccessibility()
+    attachAccessibility()
     return () => {
       window.cancelAnimationFrame(frameId)
       cleanup?.()
@@ -135,7 +126,6 @@ export const CountyMarker = ({
         mousedown: (e) => {
           if (!isInteractive) return
           L.DomEvent.stopPropagation(e.originalEvent)
-          onSelect(county.id)
         },
         click: (e) => {
           if (!isInteractive) return
@@ -162,7 +152,7 @@ export const CountyMarker = ({
         },
       }}
       opacity={opacity}
-      zIndexOffset={isActive ? 1000 : usePill ? 500 : 0}
+      zIndexOffset={isActive ? 1000 : 500}
     />
   )
 }

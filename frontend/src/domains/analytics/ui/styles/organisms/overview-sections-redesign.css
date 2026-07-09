@@ -35,7 +35,7 @@
 }
 
 .section-head-redesign__title {
-    font-size: 1.1rem;
+    font-size: var(--text-lg);
     font-weight: 800;
     color: var(--tw-slate-800);
     margin: 0 0 4px;
@@ -46,7 +46,7 @@
 }
 
 .section-head-redesign__subtitle {
-    font-size: 0.85rem;
+    font-size: var(--text-sm);
     color: var(--tw-slate-500);
     margin: 0;
     line-height: 1.5;

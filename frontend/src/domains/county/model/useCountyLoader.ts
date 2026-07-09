@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import {
   loadCountyBuckets,
   loadCountyDetail,
@@ -21,7 +21,7 @@ type WindowWithIdleCallback = Window & {
   requestIdleCallback?: (callback: IdleRequestCallback, options?: IdleRequestOptions) => number
 }
 
-export function useCountyResources(
+export function useCountyLoader(
   summaryDataset: EducationSummaryDataset | null,
   selectedCountyId: string | null
 ) {
@@ -29,6 +29,7 @@ export function useCountyResources(
   const [countyBucketCache, setCountyBucketCache] = useState<Record<string, CountyBucketDataset>>({})
   const [townshipBoundaryCache, setTownshipBoundaryCache] = useState<Record<string, TownshipBoundaryCollection>>({})
   const [countyDetailError, setCountyDetailError] = useState<string | null>(null)
+  const scheduledPrefetchKeysRef = useRef(new Set<string>())
 
   const selectedCountyForQuery = resolveCountyRecord(summaryDataset, selectedCountyId)
   const selectedCountyCacheKey = selectedCountyForQuery?.id ?? null
@@ -119,33 +120,26 @@ export function useCountyResources(
     townshipBoundaryCache,
   ])
 
-  const prefetchCounty = (countyId: string | null, viewport?: { bounds?: [number, number, number, number]; zoom?: number }) => {
+  const prefetchCounty = useCallback((countyId: string | null, viewport?: { bounds?: [number, number, number, number]; zoom?: number }) => {
     if (!summaryDataset || !countyId) return
     const county = resolveCountyRecord(summaryDataset, countyId)
     if (!county) return
 
-    // CRITICAL FIX: If a county is prefetched (meaning it is in or near viewport),
-    // and we don't have it in the react-state cache, then LOAD IT NOW.
-    if (!countyDetailCache[county.id]) {
-      const countyCode = county.countyCode ?? county.id
-      void loadCountyDetail(county.detailFile, countyCode)
-        .then((detail) => setCountyDetailCache(prev => ({ ...prev, [county.id]: detail })))
-        .catch(() => {})
-      
-      void loadTownshipBoundaries(county.id, county.townshipFile)
-        .then((boundaries) => setTownshipBoundaryCache(prev => ({ ...prev, [county.id]: boundaries })))
-        .catch(() => {})
-      
-      void loadCountyBuckets(county.bucketFile, county.id)
-        .then((buckets) => setCountyBucketCache(prev => ({ ...prev, [county.id]: buckets })))
-        .catch(() => {})
-    }
+    const boundsKey = viewport?.bounds?.map((value) => value.toFixed(2)).join(',') ?? 'metadata'
+    const prefetchKey = `${county.id}:${boundsKey}:${viewport?.zoom?.toFixed(1) ?? 'z'}`
+    if (scheduledPrefetchKeysRef.current.has(prefetchKey)) return
+    scheduledPrefetchKeysRef.current.add(prefetchKey)
 
     const doPrefetch = () => {
-      void prefetchCountyResources(county, { includeTownshipSlice: true, includeBucketSlice: true, includeDetailSlice: Boolean(viewport?.bounds) }, viewport)
+      void prefetchCountyResources(county, {
+        includeTownshipSlice: true,
+        includeBucketSlice: true,
+        includeDetailSlice: false,
+      }, viewport).finally(() => {
+        scheduledPrefetchKeysRef.current.delete(prefetchKey)
+      })
     }
 
-    // Schedule non-urgent prefetch work during idle time to avoid blocking
     const requestIdleCallback = (window as WindowWithIdleCallback).requestIdleCallback
     if (requestIdleCallback) {
       requestIdleCallback(() => doPrefetch(), { timeout: 2000 })
@@ -153,7 +147,7 @@ export function useCountyResources(
       // Fallback
       setTimeout(doPrefetch, 200)
     }
-  }
+  }, [summaryDataset])
 
   return {
     countyDetailCache,

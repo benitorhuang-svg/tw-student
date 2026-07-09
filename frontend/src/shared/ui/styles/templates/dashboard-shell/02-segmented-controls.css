@@ -21,7 +21,7 @@
     border: none;
     background: transparent;
     color: var(--tw-slate-500);
-    font-size: 0.95rem;
+    font-size: var(--text-base);
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);

@@ -49,7 +49,7 @@
         color: var(--brand-primary, var(--tw-sky-400));
         font-weight: 900;
         letter-spacing: 0.2em;
-        font-size: 0.65rem;
+        font-size: var(--text-xs);
         text-transform: uppercase;
         margin-bottom: 8px;
         text-shadow: 0 0 15px rgb(56 189 248 / 50%);
@@ -62,14 +62,14 @@
 .governance-flyout__head h3 {
         margin: 4px 0 0;
         color: var(--tw-slate-50);
-        font-size: 1.5rem;
+        font-size: var(--text-2xl);
         font-weight: 800;
         letter-spacing: -0.03em;
 }
 
 .governance-flyout__head p {
         color: rgb(255 255 255 / 50%);
-        font-size: 0.8rem;
+        font-size: var(--text-xs);
         line-height: 1.4;
         margin-top: 8px;
         max-width: 90%;

@@ -4,9 +4,9 @@ import '@/app/styles/atoms/forms.css'
 import '@/app/styles/atoms/stat-cards.css'
 import '@/app/styles/responsive/mobile.css'
 
-import type { ReactNode, RefObject } from 'react'
+import { Suspense, lazy, type ReactNode, type RefObject } from 'react'
 
-import { AnomalyPanel, AtlasFooter, DataGovernanceFlyout } from '@/domains/atlas'
+import { AtlasFooter, loadAnomalyPanel, loadDataGovernanceFlyout } from '@/domains/atlas'
 import type { TrendPoint } from '@/shared/lib/analytics'
 import type { AcademicYear, CountyBoundaryCollection, CountyBucketDataset, CountyDetailDataset, EducationLevelFilter, ManagementTypeFilter, RegionGroupFilter, TownshipBoundaryCollection } from '@/shared/api/data/educationData'
 import type { SavedComparisonScenario, InvestigationFilter } from '@/shared/lib/atlas'
@@ -16,6 +16,9 @@ import { type AtlasTab } from "@/app/store";
 import { useAtlasScenarioActions, type useAtlasDerivedState } from "@/app/providers";
 import DashboardCanvas from './DashboardCanvas';
 import DashboardHeader from './DashboardHeader';
+
+const DataGovernanceFlyout = lazy(loadDataGovernanceFlyout)
+const AnomalyPanel = lazy(loadAnomalyPanel)
 
 type DesktopAppLayoutProps = {
   theme: AtlasTheme
@@ -177,7 +180,9 @@ function DesktopAppLayout(props: DesktopAppLayoutProps) {
         setInvestigationFilter={props.setInvestigationFilter}
       />
 
-      <DataGovernanceFlyout
+      {props.showGovernancePanel ? (
+        <Suspense fallback={null}>
+          <DataGovernanceFlyout
         open={props.showGovernancePanel}
         onClose={() => props.setShowGovernancePanel(false)}
         generatedAtLabel={props.derived.generatedAtLabel}
@@ -199,7 +204,9 @@ function DesktopAppLayout(props: DesktopAppLayoutProps) {
           onDownloadInvestigation={props.scenarioActions.handleDownloadInvestigation}
           onDownloadAll={props.scenarioActions.handleDownloadAllInvestigations}
         />
-      </DataGovernanceFlyout>
+          </DataGovernanceFlyout>
+        </Suspense>
+      ) : null}
     </>
   )
 }

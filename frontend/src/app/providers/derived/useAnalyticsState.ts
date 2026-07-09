@@ -7,9 +7,9 @@ import type {
   ManagementTypeFilter,
   RegionGroupFilter
 } from '@/shared/api/data/educationData'
-import { useNationalAnalytics } from './useNationalAnalytics'
-import { useRegionalAnalytics } from './useRegionalAnalytics'
-import { useLocalAnalytics } from './useLocalAnalytics'
+import { useCountyAnalytics } from '@/domains/county'
+import { useNationalAnalytics } from '@/domains/national'
+import { useTownshipAnalytics } from '@/domains/township'
 
 export function useAnalyticsState(
   summaryDataset: EducationSummaryDataset | null,
@@ -27,14 +27,14 @@ export function useAnalyticsState(
 ) {
   const national = useNationalAnalytics(summaryDataset, filters)
 
-  const regional = useRegionalAnalytics({
+  const regional = useTownshipAnalytics({
     summaryDataset,
     filters,
     comparisonCountyIds,
     comparisonScenarioName
   })
 
-  const local = useLocalAnalytics({
+  const local = useCountyAnalytics({
     summaryDataset,
     filters,
     selectedCounty,

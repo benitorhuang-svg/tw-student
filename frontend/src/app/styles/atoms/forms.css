@@ -59,7 +59,7 @@
     border: 1px solid rgb(216 228 236 / 18%);
     background: rgb(255 255 255 / 10%);
     color: var(--color-blue-gray-50);
-    font-size: .9rem;
+    font-size: var(--text-sm);
     font-weight: 600;
     min-width: 0;
     max-width: 100%;
@@ -81,7 +81,7 @@
     border: 1px solid rgb(216 228 236 / 18%);
     background: rgb(255 255 255 / 8%);
     color: var(--color-blue-gray-50);
-    font-size: .82rem;
+    font-size: var(--text-sm);
     font-weight: 700;
     cursor: pointer;
     transition: transform .16s ease, background .16s ease, border-color .16s ease, box-shadow .16s ease;

@@ -18,7 +18,7 @@
 .school-overview-chart__legend {
     display: flex;
     gap: 16px;
-    font-size: .75rem;
+    font-size: var(--text-xs);
     color: var(--color-text-muted, #94a3b8)
 }
 

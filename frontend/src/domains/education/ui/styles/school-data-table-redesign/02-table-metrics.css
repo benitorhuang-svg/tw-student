@@ -39,7 +39,7 @@
       padding: 0;
       color: var(--text-dim);
       font-weight: 700;
-      font-size: 0.7rem;
+      font-size: var(--text-xs);
       letter-spacing: 0.02em;
       text-transform: uppercase;
       cursor: pointer;
@@ -73,7 +73,7 @@
 .school-table-v2-row td {
       padding: 12px 10px;
       border-bottom: 1px solid rgb(148 163 184 / 6%);
-      font-size: 0.85rem;
+      font-size: var(--text-sm);
       vertical-align: middle;
 }
 
@@ -110,7 +110,7 @@
       justify-content: flex-start;
       align-items: center;
       gap: 4px;
-      font-size: 0.85rem;
+      font-size: var(--text-sm);
       font-weight: 800;
       font-family: Sora, sans-serif;
 }

@@ -45,7 +45,7 @@
 .filter-select span,
 .map-stage__legend-title,
 .dashboard-inline-filter__label {
-    font-size: .72rem;
+    font-size: var(--text-xs);
     letter-spacing: .16em;
     text-transform: uppercase;
     color: var(--text-dim);

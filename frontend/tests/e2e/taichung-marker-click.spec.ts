@@ -20,24 +20,7 @@ test('taichung county marker click zooms in and selects county', async ({ page }
   const marker = page.getByRole('button', { name: /查看 [台臺]中(市)?/ })
   await expect(marker).toBeVisible({ timeout: 10000 })
 
-  // Try activating marker via mouse click (user action). Fallback to keyboard if needed.
-  // Try click first; if clicking doesn't update selection, fall back to keyboard activation.
-  await marker.click({ timeout: 3000 }).catch(() => null)
-
-  // If click did not cause selection within 2s, fallback to keyboard activation
-  const selectedByClick = await page.waitForFunction(() => {
-    const el = document.querySelector('.map-breadcrumb__current')
-    return !!el && /(台|臺)中(市)?/.test(el.textContent || '')
-  }, undefined, { timeout: 2000 }).catch(() => false)
-
-  if (!selectedByClick) {
-    // Fallback: keyboard activation
-    await marker.focus()
-    await page.keyboard.press('Enter')
-    await page.evaluate(() => console.log('marker-click: fallback-used'))
-  } else {
-    await page.evaluate(() => console.log('marker-click: selected-by-click'))
-  }
+  await marker.click()
 
   // Breadcrumb should update to Taichung (either variant)
   await expect(page.locator('.map-breadcrumb__current')).toHaveText(/(台|臺)中(市)?/, { timeout: 5000 })

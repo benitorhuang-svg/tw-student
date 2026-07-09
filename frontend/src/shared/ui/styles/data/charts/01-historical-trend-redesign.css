@@ -65,7 +65,7 @@
 }
 
 .historical-trend-chart .dashboard-card__title {
-    font-size: 1.35rem; /* Matched to Matrix Chart */
+    font-size: var(--text-xl); /* Matched to Matrix Chart */
     letter-spacing: -0.01em;
     font-weight: 800;
     color: var(--tw-slate-800);
@@ -90,7 +90,7 @@
 .historical-trend-chart .label-badge {
     padding: 2px 8px;
     border-radius: 6px;
-    font-size: 11px;
+    font-size: var(--text-xs);
     font-weight: 700;
     background: rgb(255 255 255 / 50%);
     backdrop-filter: blur(4px);
@@ -114,7 +114,7 @@
 .historical-trend-chart .total-badge {
     font-family: inherit;
     font-weight: 900;
-    font-size: 14px;
+    font-size: var(--text-sm);
     letter-spacing: -0.01em;
     filter: drop-shadow(0 0 8px rgb(255 255 255 / 60%));
 }
@@ -123,13 +123,13 @@
     font-family: inherit;
     letter-spacing: 0.1em;
     fill: var(--text-secondary);
-    font-size: 12px;
+    font-size: var(--text-xs);
     font-weight: 800;
 }
 
 .historical-trend-chart .label-badge-text {
     font-weight: 900;
-    font-size: 13px;
+    font-size: var(--text-xs);
     letter-spacing: 0.04em;
     text-transform: uppercase;
 }

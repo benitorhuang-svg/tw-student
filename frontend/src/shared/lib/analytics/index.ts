@@ -2,20 +2,24 @@ export * from './analytics.types'
 export * from './analytics.formatters'
 export * from './analytics.helpers'
 export {
-  getCountySummaries,
-  getNationSummary,
-  getTownshipSummaries,
+  getCountyComparisonSummaries,
+  getCountyEducationDistribution,
+  getCountyNotesFromSummary,
+  getCountyRankingRows,
   getCountyScopeSummary,
   getCountyScopeSummaryFromSummary,
-  getTownshipScopeSummaryFromSummary,
-  getTownshipNotesFromSummary,
-  getCountyNotesFromSummary,
+  getCountyStructureDistribution,
+  getCountySummaries,
+} from './model/countyAnalytics'
+export {
+  getNationSummary,
   getNationalEducationDistribution,
   getNationalEducationTrendSeries,
-  getCountyEducationDistribution,
   getRegionalComparisonRows,
-  getCountyComparisonSummaries,
-  getCountyRankingRows,
-  getCountyStructureDistribution,
-} from './analytics.summary'
-export { getSchoolInsights } from './analytics.schools'
+} from './model/nationalAnalytics'
+export { getSchoolInsights } from './model/schoolInsights'
+export {
+  getTownshipNotesFromSummary,
+  getTownshipScopeSummaryFromSummary,
+  getTownshipSummaries,
+} from './model/townshipAnalytics'

@@ -24,7 +24,7 @@ type AnalyticsFilters = {
 /**
  * Atom Hook: Computes specific county and township level metrics.
  */
-export function useLocalAnalytics({
+export function useCountyAnalytics({
   summaryDataset,
   filters,
   selectedCounty,

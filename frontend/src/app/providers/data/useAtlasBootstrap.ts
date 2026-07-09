@@ -53,7 +53,9 @@ export function useAtlasBootstrap() {
           setLocalManifest(nextManifest)
         }
       })
-      .catch(() => null)
+      .catch((err) => {
+        console.warn('Failed to load data in bootstrap:', err)
+      })
 
     void loadValidationReport()
       .then((nextValidationReport) => {
@@ -61,7 +63,9 @@ export function useAtlasBootstrap() {
           setValidationReport(nextValidationReport)
         }
       })
-      .catch(() => null)
+      .catch((err) => {
+        console.warn('Failed to load data in bootstrap:', err)
+      })
 
     return () => {
       cancelled = true

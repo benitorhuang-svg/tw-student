@@ -48,7 +48,7 @@
 
 
 .treemap-chart .dashboard-card__title {
-    font-size: 1.35rem;
+    font-size: var(--text-xl);
     letter-spacing: -0.01em;
     font-weight: 800;
     color: var(--text-main);
@@ -111,7 +111,7 @@
     background: transparent;
     color: var(--treemap-accent);
     filter: brightness(0.85);
-    font-size: 0.85rem;
+    font-size: var(--text-sm);
     font-weight: 800;
     letter-spacing: 0.02em;
     white-space: nowrap;
@@ -176,7 +176,7 @@
 }
 
 .treemap-chart__leaf-label {
-    font-size: 0.72rem;
+    font-size: var(--text-xs);
     font-weight: 900;
     line-height: 1.1;
     white-space: nowrap; /* Forced back to single line */
@@ -191,7 +191,7 @@
 
 
 .treemap-chart__leaf-value {
-    font-size: 0.65rem;
+    font-size: var(--text-xs);
     font-weight: 800;
     opacity: 1;
     text-shadow: 0 1px 1px rgb(0 0 0 / 30%);
@@ -207,11 +207,11 @@
     }
 
     .treemap-chart__leaf-label {
-        font-size: .72rem;
+        font-size: var(--text-xs);
     }
 
     .treemap-chart__leaf-value {
-        font-size: .78rem;
+        font-size: var(--text-xs);
     }
 
     .treemap-chart__leaf-meta {

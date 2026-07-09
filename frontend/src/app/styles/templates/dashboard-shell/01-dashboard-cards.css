@@ -42,13 +42,13 @@
 
 .dashboard-card__title {
     font-family: var(--font-heading);
-    font-size: .84rem;
+    font-size: var(--text-sm);
     font-weight: 700;
     color: var(--text-main)
 }
 
 .dashboard-card__subtitle {
-    font-size: .72rem;
+    font-size: var(--text-xs);
     color: var(--text-soft)
 }
 

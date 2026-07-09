@@ -18,9 +18,7 @@ test('county marker click zooms in and selects county', async ({ page }) => {
   const marker = page.getByRole('button', { name: `查看 ${countyName}` })
   await expect(marker).toBeVisible({ timeout: 10000 })
 
-  // Use keyboard activation which is how accessibility interacts with markers
-  await marker.focus()
-  await page.keyboard.press('Enter')
+  await marker.click()
 
   // Expect breadcrumb to update to the county name
   await expect(page.locator('.map-breadcrumb__current')).toHaveText(countyName, { timeout: 5000 })

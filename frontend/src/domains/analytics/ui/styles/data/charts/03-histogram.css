@@ -67,7 +67,7 @@
 
 .histogram-chart__range {
     color: var(--text-soft);
-    font-size: .72rem;
+    font-size: var(--text-xs);
     text-align: center
 }
 

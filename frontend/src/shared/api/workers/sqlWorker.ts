@@ -27,10 +27,34 @@ async function initWorker(url: string) {
   try {
     const SQL = await initSqlJs({ locateFile: () => sqlWasmUrl })
 
-    // Attempt to fetch from network or cache
-    const response = await fetch(url)
-    if (!response.ok) {
-      throw new Error(`Failed to fetch database: ${response.status} ${response.statusText}`)
+    // Fetch database with retry and timeout
+    let response: Response | null = null
+    let attempt = 0
+    let lastError: unknown = null
+
+    while (attempt < 3 && !response) {
+      try {
+        const controller = new AbortController()
+        const timeoutId = setTimeout(() => controller.abort(), 60000) // 60s timeout
+
+        response = await fetch(url, { signal: controller.signal })
+        clearTimeout(timeoutId)
+
+        if (!response.ok) {
+          throw new Error(`Failed to fetch database: ${response.status} ${response.statusText}`)
+        }
+      } catch (err) {
+        lastError = err
+        attempt++
+        if (attempt < 3) {
+          await new Promise(resolve => setTimeout(resolve, 2000 * attempt)) // Exponential backoff
+          response = null
+        }
+      }
+    }
+
+    if (!response) {
+      throw lastError || new Error('Failed to fetch database after 3 attempts')
     }
 
     const buffer = await response.arrayBuffer()

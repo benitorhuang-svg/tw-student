@@ -16,6 +16,7 @@ export default {
         'is-active',
         'active',
         'dark',
+        /^(.*)-leaflet-(.*)$/,
       ],
     }),
   ],

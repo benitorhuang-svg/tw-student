@@ -25,7 +25,7 @@
 }
 
 .stat-card__title {
-  font-size: .84rem;
+  font-size: var(--text-sm);
   color: var(--text-soft);
   font-weight: 600;
   letter-spacing: 0.02em
@@ -33,7 +33,7 @@
 
 .stat-card__value {
   font-family: var(--font-heading);
-  font-size: 1.8rem;
+  font-size: var(--text-3xl);
   line-height: 1;
   color: var(--text-main);
   display: flex;
@@ -42,13 +42,13 @@
 }
 
 .stat-card__value span {
-  font-size: 0.9rem;
+  font-size: var(--text-sm);
   color: var(--text-soft);
   font-weight: 600
 }
 
 .stat-card__caption {
-  font-size: .78rem;
+  font-size: var(--text-xs);
   color: var(--text-soft);
   line-height: 1.4
 }
@@ -82,7 +82,7 @@
   justify-content: center;
   gap: 2px;
   padding: 0 3px;
-  font-size: .58rem;
+  font-size: var(--text-xs);
   color: var(--tw-slate-900);
   white-space: nowrap;
   overflow: hidden

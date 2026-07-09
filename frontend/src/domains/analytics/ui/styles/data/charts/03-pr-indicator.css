@@ -31,7 +31,7 @@
 
 .pr-indicator__score-block strong {
     color: var(--text-main);
-    font-size: 2rem;
+    font-size: var(--text-3xl);
     line-height: 1
 }
 

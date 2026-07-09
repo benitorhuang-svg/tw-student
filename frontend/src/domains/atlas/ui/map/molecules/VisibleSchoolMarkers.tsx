@@ -49,10 +49,6 @@ const VisibleSchoolMarkers = memo(function VisibleSchoolMarkers({
       }
       stableSelectSchool(null)
     },
-    move: () => {
-      setZoom(map.getZoom())
-      setBounds(map.getBounds())
-    },
     moveend: () => {
       setZoom(map.getZoom())
       setBounds(map.getBounds())

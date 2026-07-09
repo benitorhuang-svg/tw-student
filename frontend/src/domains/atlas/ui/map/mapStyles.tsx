@@ -99,6 +99,26 @@ export function renderScopePillIcon(label: string, color: string, isActive: bool
   })
 }
 
+export function renderCountyPinIcon(
+  label: string,
+  color: string,
+  isActive: boolean,
+) {
+  const iconWidth = Math.min(56, Math.max(34, 14 + label.length * 12))
+  const iconHeight = 24
+
+  return L.divIcon({
+    className: 'atlas-county-pin-wrapper',
+    iconSize: [iconWidth, iconHeight],
+    iconAnchor: [iconWidth / 2, iconHeight / 2],
+    html: `
+      <div class="atlas-county-pin ${isActive ? 'is-active' : ''}" style="--county-pin-color:${color};">
+        <span class="atlas-county-pin__label">${label}</span>
+      </div>
+    `,
+  })
+}
+
 export function renderFocusLabelIcon(label: string, variant: 'focus' | 'township' = 'focus') {
   return L.divIcon({
     className: variant === 'township' ? 'atlas-map-township-label-wrapper' : 'atlas-map-focus-label-wrapper',

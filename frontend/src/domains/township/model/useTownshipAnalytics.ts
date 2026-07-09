@@ -17,10 +17,7 @@ type AnalyticsFilters = {
   searchText: string
 }
 
-/**
- * Atom Hook: Computes county rankings, regional comparisons, and scenario snapshots.
- */
-export function useRegionalAnalytics({
+export function useTownshipAnalytics({
   summaryDataset,
   filters,
   comparisonCountyIds,

@@ -8,11 +8,24 @@
   "scripts": {
     "dev": "npm run dev -w frontend",
     "build": "npm run build -w frontend",
-    "lint": "npm run lint -w frontend",
+    "lint": "npm run lint -w frontend && npm run lint:style -w frontend && npm run lint:architecture -w frontend",
     "lint:architecture": "npm run lint:architecture -w frontend",
     "preview": "npm run preview -w frontend",
     "test:types": "npm run test:types -w frontend",
     "data:refresh": "npm run data:refresh -w backend",
-    "data:refresh:tiles": "npm run data:refresh:tiles -w backend"
+    "data:refresh:tiles": "npm run data:refresh:tiles -w backend",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "npm exec -w frontend -- eslint --fix"
+    ],
+    "*.css": [
+      "npm exec -w frontend -- stylelint --fix"
+    ]
+  },
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.8"
   }
 }

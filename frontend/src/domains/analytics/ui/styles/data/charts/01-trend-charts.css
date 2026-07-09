@@ -32,7 +32,7 @@
 
 .trend-chart__label {
     fill: var(--text-soft);
-    font-size: .78rem;
+    font-size: var(--text-xs);
     font-weight: 600
 }
 

@@ -17,7 +17,7 @@ if (!domEvent.fakeStop) {
 import 'leaflet.vectorgrid/dist/Leaflet.VectorGrid.bundled.min.js'
 import { useMap } from 'react-leaflet'
 import type { CountySummary } from '@/shared/lib/analytics'
-import { choroplethColor, choroplethOpacity, buildHoverPreviewHtml } from '../mapStyles'
+import { growthChoroplethColor, growthChoroplethOpacity, buildHoverPreviewHtml } from '../mapStyles'
 
 type CountyTileProperties = {
   countyId?: string
@@ -54,6 +54,11 @@ type VectorGridNamespace = {
       getFeatureId: (feature: VectorTileFeature) => string | undefined
     }
   ) => VectorGridLayer
+}
+
+function countyTrendFillOpacity(summary: CountySummary, theme: 'light' | 'dark') {
+  const scaled = growthChoroplethOpacity(summary.deltaRatio) * (theme === 'dark' ? 0.66 : 0.62)
+  return Math.max(theme === 'dark' ? 0.24 : 0.22, Math.min(theme === 'dark' ? 0.5 : 0.44, scaled))
 }
 
 export type CountyBoundaryLayerProps = {
@@ -137,10 +142,10 @@ const VectorCountyBoundaryLayer = memo(({
           return {
             color: isActive || isHighlighted ? highlightStroke : baseStroke,
             weight: isActive || isHighlighted ? highlightWeight : baseWeight,
-            fillColor: isActive ? '#10b981' : choroplethColor(summary.students),
+            fillColor: isActive ? '#10b981' : growthChoroplethColor(summary.deltaRatio),
             fillOpacity: isActive
               ? (currentActiveTownshipId ? 0.05 : 0.45)
-              : Math.max(0.2, choroplethOpacity(summary.students)),
+              : countyTrendFillOpacity(summary, currentTheme),
           }
         },
       },
@@ -163,7 +168,7 @@ const VectorCountyBoundaryLayer = memo(({
     layer.on('click', (event) => {
       L.DomEvent.stop(event.originalEvent)
       const id = event.layer.properties?.countyId
-      if (id) handlersRef.current.onSelectCounty(id, { skipTabSwitch: true })
+      if (id) handlersRef.current.onSelectCounty(id, { skipTabSwitch: false })
     })
 
     return () => {
@@ -192,8 +197,10 @@ const VectorCountyBoundaryLayer = memo(({
       layer.setFeatureStyle(id, {
         color: isVisible ? (theme === 'dark' ? '#f8fafc' : '#000000') : (theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.15)'),
         weight: isVisible ? 1.6 : 0.8,
-        fillColor: isActive ? '#10b981' : choroplethColor(summary.students),
-        fillOpacity: isActive ? (activeTownshipId ? 0.05 : (theme === 'dark' ? 0.4 : 0.25)) : isHovered ? 0.2 : Math.min(0.12, choroplethOpacity(summary.students)),
+        fillColor: isActive ? '#10b981' : growthChoroplethColor(summary.deltaRatio),
+        fillOpacity: isActive
+          ? (activeTownshipId ? 0.05 : (theme === 'dark' ? 0.4 : 0.28))
+          : isHovered ? 0.34 : countyTrendFillOpacity(summary, theme),
       })
     })
   }, [activeCountyId, activeTownshipId, highlightedCountyId, countyLookup, theme])

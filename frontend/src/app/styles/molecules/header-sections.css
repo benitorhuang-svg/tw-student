@@ -37,7 +37,7 @@
 }
 
 .dashboard-inline-filter__label {
-    font-size: .72rem;
+    font-size: var(--text-xs);
     letter-spacing: .14em;
     text-transform: uppercase;
     color: var(--comp-header-soft-text);

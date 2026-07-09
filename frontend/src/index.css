@@ -11,7 +11,7 @@
   transition: none !important;
 }
 
-/* Force hardware acceleration on the overlays */
+/* Force hardware acceleration on the overlays only when needed during animations (handled by component styles now) */
 .leaflet-overlay-pane {
-  will-change: transform;
+  /* will-change: transform removed to save GPU memory when not animating */
 }

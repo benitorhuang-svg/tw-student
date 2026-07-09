@@ -1,6 +1,12 @@
-import type { Dispatch, SetStateAction, TransitionStartFunction } from 'react'
+import { useEffect, useRef, type Dispatch, type SetStateAction, type TransitionStartFunction } from 'react'
 
-import type { AcademicYear, EducationLevelFilter, ManagementTypeFilter, RegionGroupFilter } from '@/shared/api/data/educationData'
+import {
+  loadSchoolCodeIndex,
+  type AcademicYear,
+  type EducationLevelFilter,
+  type ManagementTypeFilter,
+  type RegionGroupFilter,
+} from '@/shared/api/data/educationData'
 import type { AtlasLoadObservationSnapshot, InvestigationFilter, SavedComparisonScenario } from '@/shared/lib/atlas'
 import type { AtlasTab } from '../store/useAtlasQueryState'
 import type { useFeedbackMessage } from '@/shared/lib/hooks/core/useFeedbackMessage'
@@ -91,8 +97,10 @@ export function useAtlasOrchestration(input: OrchestrationInput) {
     countyBucketCache, 
     townshipBoundaryCache, 
     countyDetailError, 
-    clearCountyDetailError 
+    clearCountyDetailError,
+    setSummaryDataset,
   } = educationData
+  const isSchoolCodeIndexLoadingRef = useRef(false)
 
   // 1. Data Integrity Layer
   useAtlasNormalization({
@@ -129,6 +137,38 @@ export function useAtlasOrchestration(input: OrchestrationInput) {
     setActiveTab,
   })
 
+  useEffect(() => {
+    const shouldLoadSchoolCodeIndex = Boolean(
+      summaryDataset &&
+      !summaryDataset.schoolCodeIndex &&
+      (deferredSearchText.trim().length >= 2 || selectedSchoolId || selectedCountyId || (input.mapZoom ?? 7) >= 12),
+    )
+    if (!shouldLoadSchoolCodeIndex || isSchoolCodeIndexLoadingRef.current) return undefined
+
+    let cancelled = false
+    isSchoolCodeIndexLoadingRef.current = true
+    void loadSchoolCodeIndex()
+      .then((schoolCodeIndex) => {
+        if (cancelled) return
+        startTransition(() => {
+          setSummaryDataset((current) => {
+            if (!current || current.schoolCodeIndex) return current
+            return { ...current, schoolCodeIndex }
+          })
+        })
+      })
+      .catch((err) => {
+        console.warn('Failed to load school code index:', err)
+      })
+      .finally(() => {
+        isSchoolCodeIndexLoadingRef.current = false
+      })
+
+    return () => {
+      cancelled = true
+    }
+  }, [deferredSearchText, input.mapZoom, selectedCountyId, selectedSchoolId, setSummaryDataset, startTransition, summaryDataset])
+
   // 4. Optimization Layer (Prefetching)
   useAtlasTopPrefetch({
     summaryDataset, selectedCountyId, activeYear, educationLevel,
@@ -140,6 +180,7 @@ export function useAtlasOrchestration(input: OrchestrationInput) {
     summaryDataset, activeYear, educationLevel, managementType, region,
     deferredSearchText, selectedCountyId, selectedTownshipId, selectedSchoolId,
     comparisonCountyIds, comparisonScenarioName,
+    mapZoom: input.mapZoom,
     countyDetailCache, countyBucketCache, townshipBoundaryCache,
     countyDetailError, loadObservation, investigationFilter, selectedInvestigationId,
   })

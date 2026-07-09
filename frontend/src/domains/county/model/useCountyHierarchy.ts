@@ -6,7 +6,7 @@ import type {
 } from '@/shared/api/data/educationData'
 import { normalizeCountyId, normalizeTownshipId, resolveCountyRecord } from '@/shared/lib/atlas'
 
-export function useHierarchyState(
+export function useCountyHierarchy(
   summaryDataset: EducationSummaryDataset | null,
   selectedCountyId: string | null,
   selectedTownshipId: string | null,

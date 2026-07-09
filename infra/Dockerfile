@@ -2,7 +2,7 @@
 # 第一階段：建置階段 (Build Stage)
 # 使用 root npm workspace 安裝依賴、刷新資料並編譯前端
 # ---------------------------------------------------------
-FROM node:25-slim AS build-stage
+FROM node:22-slim AS build-stage
 
 WORKDIR /app
 
@@ -39,6 +39,12 @@ RUN printf "server {\n\
     root /usr/share/nginx/html;\n\
     index index.html;\n\
 \n\
+    # 安全標頭\n\
+    add_header X-Content-Type-Options nosniff;\n\
+    add_header X-Frame-Options DENY;\n\
+    add_header Referrer-Policy strict-origin-when-cross-origin;\n\
+    add_header Content-Security-Policy \"default-src 'self'; script-src 'self' blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*.tile.openstreetmap.org https://*.basemaps.cartocdn.com; connect-src 'self' blob:; worker-src 'self' blob:\";\n\
+\n\
     # 開啟 Gzip 靜態預壓縮與動態壓縮\n\
     gzip on;\n\
     gzip_static on;\n\
@@ -55,7 +61,8 @@ RUN printf "server {\n\
     # 對地圖資料與 JSON 檔案進行長期緩存 (省錢與效能關鍵)\n\
     location ~* \\.(json|topojson|sqlite|svg|png|ico|woff2|pbf)$ {\n\
         expires 7d;\n\
-        add_header Cache-Control \"public, max-age=604800, immutable\";\n\
+        # 移除 immutable 以免與 StaleWhileRevalidate 衝突\n\
+        add_header Cache-Control \"public, max-age=604800\";\n\
     }\n\
 }\n" > /etc/nginx/conf.d/default.conf
 

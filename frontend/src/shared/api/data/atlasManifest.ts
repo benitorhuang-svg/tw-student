@@ -84,8 +84,9 @@ export async function loadValidationReport(options: ManifestLoadOptions = {}) {
 
   if (!pendingValidationRequest) {
     pendingValidationRequest = (async () => {
-      const bytes = await import('./sqlite/sqliteWorkerClient').then((m) => m.initSqliteWorker(options.forceRefresh))
-      const rows = mapRows(await import('./sqlite/sqliteWorkerClient').then(m => m.execInSqlite("SELECT value FROM meta WHERE key = 'validationReport'")))
+      const sqliteWorker = await import('./sqlite/sqliteWorkerClient')
+      const bytes = await sqliteWorker.initSqliteWorker(options.forceRefresh)
+      const rows = mapRows(await sqliteWorker.execInSqlite("SELECT value FROM meta WHERE key = 'validationReport'"))
       const reportJson = rows[0]?.value as string
       
       if (!reportJson) {

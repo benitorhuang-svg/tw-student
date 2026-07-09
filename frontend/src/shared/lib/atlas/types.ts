@@ -51,6 +51,23 @@ export type SchoolWorkbenchView = 'list' | 'analysis' | 'notes'
 
 export type AtlasTab = 'welcome' | 'overview' | 'county' | 'schools' | 'school-focus'
 
+export type SchoolMapPoint = {
+  id: string
+  name: string
+  countyId?: string
+  townshipId?: string
+  townshipName: string
+  educationLevel: string
+  managementType: string
+  status: string
+  currentStudents: number
+  delta: number
+  deltaRatio: number
+  latitude: number
+  longitude: number
+  website?: string
+}
+
 export const DEFAULT_YEAR = ACADEMIC_YEARS[ACADEMIC_YEARS.length - 1]
 
 export type AtlasFilters = {

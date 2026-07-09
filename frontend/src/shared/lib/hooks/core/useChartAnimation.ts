@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { startTransition, useEffect, useRef, useState } from 'react'
 
 /**
  * Shared chart enter-animation hook using IntersectionObserver.
@@ -12,19 +12,27 @@ export function useChartAnimation(options?: { threshold?: number; rootMargin?: s
   useEffect(() => {
     const el = ref.current
     if (!el) return
+    let timeoutId: number | null = null
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true)
           observer.disconnect()
+          timeoutId = window.setTimeout(() => {
+            startTransition(() => setIsVisible(true))
+          }, 0)
         }
       },
       { threshold: options?.threshold ?? 0.15, rootMargin: options?.rootMargin ?? '0px' }
     )
 
     observer.observe(el)
-    return () => observer.disconnect()
+    return () => {
+      observer.disconnect()
+      if (timeoutId != null) {
+        window.clearTimeout(timeoutId)
+      }
+    }
   }, [options?.threshold, options?.rootMargin])
 
   return { ref, isVisible }

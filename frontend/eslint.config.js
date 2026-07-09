@@ -45,6 +45,9 @@ export default defineConfig([
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
+      parserOptions: {
+        warnOnUnsupportedTypeScriptVersion: false,
+      },
     },
     rules: {
       'no-restricted-imports': [

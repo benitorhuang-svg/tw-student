@@ -9,7 +9,9 @@ export {
   refreshEducationSummary,
   loadCountyDetail,
   loadCountyBuckets,
+  loadSchoolCodeIndex,
   resetAtlasSqliteCache,
+  warmAtlasRuntime,
 } from './atlasSqlite'
 export {
   loadDataManifest,
@@ -40,11 +42,13 @@ export async function prefetchCountyResources(
 ) {
   const tasks: Array<Promise<unknown>> = []
 
-  if (viewport?.bounds && options?.includeDetailSlice) {
-    const [minLat, minLng, maxLat, maxLng] = viewport.bounds
-    tasks.push(loadCountyDetailSlice(county.detailFile, county.id, { minLat, maxLat, minLng, maxLng }))
-  } else {
-    tasks.push(loadCountyDetail(county.detailFile, county.id))
+  if (options?.includeDetailSlice) {
+    if (viewport?.bounds) {
+      const [minLat, minLng, maxLat, maxLng] = viewport.bounds
+      tasks.push(loadCountyDetailSlice(county.detailFile, county.id, { minLat, maxLat, minLng, maxLng }))
+    } else {
+      tasks.push(loadCountyDetail(county.detailFile, county.id))
+    }
   }
 
   if (options?.includeTownshipSlice) {

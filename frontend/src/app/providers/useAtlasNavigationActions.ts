@@ -1,8 +1,9 @@
 import { type Dispatch, type SetStateAction, type TransitionStartFunction } from 'react'
-import type { 
-  RegionGroupFilter, 
-  EducationSummaryDataset,
-  SchoolCodeEntry,
+import {
+  loadSchoolCodeIndex,
+  type RegionGroupFilter,
+  type EducationSummaryDataset,
+  type SchoolCodeEntry,
 } from '@/shared/api/data/educationData'
 import { MAP_TOWNSHIP_ZOOM, MAP_TOWNSHIP_FOCUS_ZOOM } from '@/shared/lib/utils/constants'
 import type { AtlasTab } from '../store/useAtlasQueryState'
@@ -43,7 +44,7 @@ export function useAtlasNavigationActions({
   clearCountyDetailError,
   startTransition,
 }: NavigationActionsArgs) {
-  
+
   const handleRegionSelect = (nextRegion: RegionGroupFilter, options?: { skipTabSwitch?: boolean, zoom?: number }) => {
     const shouldResetRegion = region === nextRegion && !selectedCountyId
 
@@ -61,7 +62,7 @@ export function useAtlasNavigationActions({
   }
 
   const handleCountySelect = (countyId: string, options?: { skipTabSwitch?: boolean, zoom?: number }) => {
-    
+
     // Ensure MapBoundsController suppression is applied immediately
     // so any map moveend auto-select does not override this explicit
     // user-initiated county selection.
@@ -92,7 +93,7 @@ export function useAtlasNavigationActions({
       setSelectedSchoolId(null)
       clearCountyDetailError()
     })
-    
+
     setActiveTab('county', 0)
   }
 
@@ -112,31 +113,39 @@ export function useAtlasNavigationActions({
     const shouldResetSchool = selectedSchoolId === schoolId
     const nextId = shouldResetSchool ? null : schoolId
 
-    startTransition(() => {
-      setSelectedSchoolId(nextId)
-      
-      if (nextId && summaryDataset?.schoolCodeIndex) {
-        const entry = Object.values(summaryDataset.schoolCodeIndex).find((value) => 
-          value.schoolIds?.includes(nextId)
-        )
-        if (entry) {
-          const schoolEntry: SchoolCodeEntry = entry
-          const cid = schoolEntry.countyId ?? schoolEntry.countyCode ?? null
-          const tid = schoolEntry.townshipId ?? schoolEntry.townCode ?? null
-          if (cid) setSelectedCountyId(cid)
-          if (tid) setSelectedTownshipId(tid)
-          if (schoolEntry.latitude && schoolEntry.longitude) {
-            setMapLat(schoolEntry.latitude)
-            setMapLon(schoolEntry.longitude)
-            setMapZoom((curr) => Math.max(curr ?? 0, MAP_TOWNSHIP_FOCUS_ZOOM))
+    const finalizeSelection = (index?: Record<string, SchoolCodeEntry>) => {
+      startTransition(() => {
+        setSelectedSchoolId(nextId)
+
+        if (nextId && index) {
+          const entry = index[nextId] || Object.values(index).find((value) =>
+            value.schoolIds?.includes(nextId)
+          )
+          if (entry) {
+            const schoolEntry: SchoolCodeEntry = entry
+            const cid = schoolEntry.countyId ?? schoolEntry.countyCode ?? null
+            const tid = schoolEntry.townshipId ?? schoolEntry.townCode ?? null
+            if (cid) setSelectedCountyId(cid)
+            if (tid) setSelectedTownshipId(tid)
+            if (schoolEntry.latitude && schoolEntry.longitude) {
+              setMapLat(schoolEntry.latitude)
+              setMapLon(schoolEntry.longitude)
+              setMapZoom((curr) => Math.max(curr ?? 0, MAP_TOWNSHIP_FOCUS_ZOOM))
+            }
           }
         }
-      }
 
-      if (nextId && !options?.skipTabSwitch) {
-        setActiveTab('school-focus', 0)
-      }
-    })
+        if (nextId && !options?.skipTabSwitch) {
+          setActiveTab('school-focus', 0)
+        }
+      })
+    }
+
+    if (nextId && summaryDataset && !summaryDataset.schoolCodeIndex) {
+      loadSchoolCodeIndex().then(finalizeSelection).catch(() => finalizeSelection(undefined))
+    } else {
+      finalizeSelection(summaryDataset?.schoolCodeIndex)
+    }
   }
 
   const handleResetScope = () => {

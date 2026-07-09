@@ -1,4 +1,4 @@
-import { memo, useMemo, useState } from 'react'
+import { memo, useMemo } from 'react'
 import type { SchoolMapPoint } from '../types'
 
 type RankingMode = 'students' | 'growth' | 'decline'
@@ -16,6 +16,9 @@ const RANKING_OPTIONS: RankingOption[] = [
 
 type MapSchoolRankingPanelProps = {
   schools: SchoolMapPoint[]
+  mode: RankingMode
+  showTabs?: boolean
+  onChangeMode?: (mode: RankingMode) => void
   selectedSchoolId: string | null
   onSelectSchool: (schoolId: string) => void
 }
@@ -43,10 +46,12 @@ function sortSchoolsByMode(mode: RankingMode, schools: SchoolMapPoint[]) {
 
 export const MapSchoolRankingPanel = memo(function MapSchoolRankingPanel({
   schools,
+  mode,
+  showTabs,
+  onChangeMode,
   selectedSchoolId,
   onSelectSchool,
 }: MapSchoolRankingPanelProps) {
-  const [mode, setMode] = useState<RankingMode>('students')
   const rows = useMemo(() => sortSchoolsByMode(mode, schools), [mode, schools])
 
   if (rows.length === 0) return null
@@ -58,22 +63,24 @@ export const MapSchoolRankingPanel = memo(function MapSchoolRankingPanel({
       onClick={(event) => event.stopPropagation()}
       onPointerDown={(event) => event.stopPropagation()}
     >
-      <div className="map-school-ranking-head">
-        <div className="map-school-ranking-controls">
-          <div className="map-school-ranking-btn-group">
-            {RANKING_OPTIONS.map((option) => (
-              <button
-                key={option.value}
-                type="button"
-                className={`map-school-ranking-btn ${mode === option.value ? 'is-active' : ''}`}
-                onClick={() => setMode(option.value)}
-              >
-                {option.label}
-              </button>
-            ))}
+      {showTabs && (
+        <div className="map-school-ranking-head">
+          <div className="map-school-ranking-controls">
+            <div className="map-school-ranking-btn-group">
+              {RANKING_OPTIONS.map((option) => (
+                <button
+                  key={option.value}
+                  type="button"
+                  className={`map-school-ranking-btn ${mode === option.value ? 'is-active' : ''}`}
+                  onClick={() => onChangeMode?.(option.value)}
+                >
+                  {option.label}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
       <ol className="map-school-ranking-list">
         {rows.map((school, index) => (

@@ -1,9 +1,10 @@
 import path from 'node:path'
 import fs from 'node:fs'
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vitest/config'
 import type { Plugin, ViteDevServer } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 import { VitePWA } from 'vite-plugin-pwa'
+import ViteWebfontDownload from 'vite-plugin-webfont-dl'
 
 // After repo reorg, generated data is stored in backend/dist
 const backendDataDir = path.resolve(__dirname, '..', 'backend', 'dist')
@@ -109,6 +110,10 @@ export default defineConfig({
     hmr: { overlay: false },
     watch: { usePolling: false },
   },
+  test: {
+    include: ['tests/unit/**/*.test.{ts,tsx}'],
+    exclude: ['tests/e2e/**', 'node_modules/**', 'dist/**'],
+  },
   css: { devSourcemap: false },
   build: {
     // target modern JS for faster bundling and smaller runtime transforms
@@ -133,6 +138,9 @@ export default defineConfig({
   plugins: [
     backendDataPlugin(),
     react(),
+    ViteWebfontDownload([
+      'https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;700;900&display=swap'
+    ]),
     VitePWA({
       registerType: 'autoUpdate',
       injectRegister: 'auto',

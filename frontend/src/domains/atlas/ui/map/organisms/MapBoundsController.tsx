@@ -162,11 +162,13 @@ function MapBoundsController({
   }, [viewportIntent, map, dynamicPaddingTopLeft, dynamicPaddingBottomRight, isMobile])
 
   useEffect(() => {
-    const frameId = requestAnimationFrame(() => {
+    const container = map.getContainer()
+    const observer = new ResizeObserver(() => {
       map.invalidateSize(false)
     })
-    return () => cancelAnimationFrame(frameId)
-  }, [map, mapResetToken])
+    observer.observe(container)
+    return () => observer.disconnect()
+  }, [map])
 
   useEffect(() => {
     const prevZoomRef = { current: map.getZoom() }

@@ -3,6 +3,7 @@ import type { CountyBoundaryCollection, TownshipBoundaryCollection } from '@/sha
 import type { CountySummary, RankingSummary } from '@/shared/lib/analytics'
 import type { SchoolMapPoint } from './types'
 import { computeLayerVisibility } from './mapVisibilityAtoms'
+import { resolveCountyMapAnchor } from './countyMapAnchors'
 
 export function useMapComputedState(
   counties: CountySummary[],
@@ -31,7 +32,7 @@ export function useMapComputedState(
       const lng = feature.properties?.centerLongitude
       const countyId = feature.properties?.countyId
       if (countyId && typeof lat === 'number' && typeof lng === 'number' && !isNaN(lat) && !isNaN(lng)) {
-        lookup.set(countyId, [lat, lng])
+        lookup.set(countyId, resolveCountyMapAnchor(feature.properties))
       }
     }
     return lookup

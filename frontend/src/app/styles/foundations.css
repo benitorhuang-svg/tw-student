@@ -44,53 +44,93 @@
     --clr-secondary-600: hsl(var(--h-secondary) 80% 38%);
 
     /* Rose - Accents */
-    --clr-accent-rose: #f43f5e;
-    --clr-accent-amber: #f59e0b;
+    --h-rose: 350;
+    --clr-accent-rose: hsl(var(--h-rose) 89% 60%);
+    --h-amber: 38;
+    --clr-accent-amber: hsl(var(--h-amber) 92% 50%);
+
+    /* Cyan */
+    --h-cyan: 187;
+    --clr-cyan-300: hsl(var(--h-cyan) 92% 69%);
+
+    /* Green */
+    --h-green: 142;
+    --clr-green-400: hsl(var(--h-green) 69% 58%);
+    --clr-green-500: hsl(var(--h-green) 71% 45%);
+    --clr-green-600: hsl(var(--h-green) 76% 36%);
+
+    /* Red */
+    --h-red: 0;
+    --clr-red-400: hsl(var(--h-red) 91% 71%);
+
+    /* Rose (light) */
+    --clr-rose-300: hsl(var(--h-rose) 96% 83%);
+
+    /* Orange */
+    --h-orange: 21;
+    --clr-orange-600: hsl(var(--h-orange) 90% 48%);
+
+    /* Amber (light) */
+    --clr-amber-400: hsl(var(--h-amber) 97% 56%);
+
+    /* Emerald (complementary shades) */
+    --clr-emerald-400: hsl(var(--h-secondary) 77% 57%);
+
+    /* Specialty Palette */
+    --h-cream: 37;
+    --clr-cream-200: hsl(var(--h-cream) 78% 86%);
+    --h-copper: 20;
+    --clr-copper-500: hsl(var(--h-copper) 51% 56%);
+    --h-brass: 34;
+    --clr-brass-500: hsl(var(--h-brass) 45% 50%);
 
     /* Exact palette aliases for legacy CSS migration. */
     --color-white: #fff;
-    --tw-slate-50: #f8fafc;
-    --tw-slate-100: #f1f5f9;
-    --tw-slate-200: #e2e8f0;
-    --tw-slate-300: #cbd5e1;
-    --tw-slate-400: #94a3b8;
-    --tw-slate-500: #64748b;
-    --tw-slate-600: #475569;
-    --tw-slate-700: #334155;
-    --tw-slate-800: #1e293b;
-    --tw-slate-900: #0f172a;
-    --tw-slate-950: #020617;
-    --tw-sky-50: #f0f9ff;
-    --tw-sky-100: #e0f2fe;
-    --tw-sky-400: #38bdf8;
-    --tw-sky-500: #0ea5e9;
-    --tw-sky-600: #0284c7;
-    --tw-cyan-300: #67e8f9;
-    --tw-emerald-400: #34d399;
-    --tw-emerald-500: #10b981;
-    --tw-green-400: #4ade80;
-    --tw-green-500: #22c55e;
-    --tw-green-600: #16a34a;
-    --tw-red-400: #f87171;
-    --tw-red-500: #ef4444;
-    --tw-rose-300: #fda4af;
-    --tw-rose-500: #f43f5e;
-    --tw-orange-500: #f97316;
-    --tw-orange-600: #ea580c;
-    --tw-amber-400: #fbbf24;
-    --color-cream-200: #f8e6bf;
-    --color-ice-100: #e5edf4;
-    --color-blue-gray-50: #eef3f6;
-    --color-copper-500: #c97a54;
-    --tw-slate-400-a12: #94a3b81f;
-    --tw-slate-400-a14: #94a3b824;
-    --tw-slate-400-a80: #94a3b8cc;
-    --tw-slate-200-a68: #e2e8f0ad;
-    --tw-sky-400-a40: #38bdf866;
-    --tw-sky-400-a50: #38bdf880;
-    --tw-green-500-a12: #22c55e1f;
-    --tw-orange-500-a12: #f973161f;
-    --color-brass-500-a66: #b88746a8;
+
+    /* Legacy Tailwind Aliases (All pointing to HSL primitives) */
+    --tw-slate-50: var(--clr-slate-50);
+    --tw-slate-100: var(--clr-slate-100);
+    --tw-slate-200: var(--clr-slate-200);
+    --tw-slate-300: var(--clr-slate-300);
+    --tw-slate-400: var(--clr-slate-400);
+    --tw-slate-500: var(--clr-slate-500);
+    --tw-slate-600: var(--clr-slate-600);
+    --tw-slate-700: var(--clr-slate-700);
+    --tw-slate-800: var(--clr-slate-800);
+    --tw-slate-900: var(--clr-slate-900);
+    --tw-slate-950: var(--clr-slate-950);
+    --tw-sky-50: var(--clr-primary-50);
+    --tw-sky-100: var(--clr-primary-100);
+    --tw-sky-400: var(--clr-primary-400, hsl(var(--h-primary) 85% 60%));
+    --tw-sky-500: var(--clr-primary-500);
+    --tw-sky-600: var(--clr-primary-600);
+    --tw-cyan-300: var(--clr-cyan-300);
+    --tw-emerald-400: var(--clr-emerald-400);
+    --tw-emerald-500: var(--clr-secondary-500);
+    --tw-green-400: var(--clr-green-400);
+    --tw-green-500: var(--clr-green-500);
+    --tw-green-600: var(--clr-green-600);
+    --tw-red-400: var(--clr-red-400);
+    --tw-red-500: var(--clr-accent-rose);
+    --tw-rose-300: var(--clr-rose-300);
+    --tw-rose-500: var(--clr-accent-rose);
+    --tw-orange-500: var(--clr-accent-amber);
+    --tw-orange-600: var(--clr-orange-600);
+    --tw-amber-400: var(--clr-amber-400);
+    --color-cream-200: var(--clr-cream-200);
+    --color-ice-100: var(--clr-slate-100);
+    --color-blue-gray-50: var(--clr-slate-50);
+    --color-copper-500: var(--clr-copper-500);
+    --tw-slate-400-a12: hsl(var(--h-slate) 15% 60% / 12%);
+    --tw-slate-400-a14: hsl(var(--h-slate) 15% 60% / 14%);
+    --tw-slate-400-a80: hsl(var(--h-slate) 15% 60% / 80%);
+    --tw-slate-200-a68: hsl(var(--h-slate) 15% 85% / 68%);
+    --tw-sky-400-a40: hsl(var(--h-primary) 85% 60% / 40%);
+    --tw-sky-400-a50: hsl(var(--h-primary) 85% 60% / 50%);
+    --tw-green-500-a12: hsl(var(--h-green) 71% 45% / 12%);
+    --tw-orange-500-a12: hsl(var(--h-amber) 92% 50% / 12%);
+    --color-brass-500-a66: hsl(var(--h-brass) 45% 50% / 66%);
+
 
     /**
      * 3. SEMANTIC TOKENS (Functional mapping)
@@ -104,7 +144,7 @@
     --action-primary-text: var(--text-inverse);
     --action-primary-hover: var(--clr-primary-700);
     --action-ghost-hover: var(--border-subtle);
-    
+
     /* Surface Tokens (Refined) */
     --surface-page: var(--clr-slate-50);
     --surface-card: #fff;
@@ -164,8 +204,6 @@
     --teal-main: var(--clr-secondary-600);
     --teal-deep: hsl(var(--h-secondary) 80% 25%);
     --accent-orange: var(--clr-accent-amber);
-    --font-heading: "Sora", "Noto Sans TC", sans-serif;
-    --font-body: "Noto Sans TC", sans-serif;
 
     /**
      * 5. COMPONENT-SPECIFIC TOKENS
@@ -249,36 +287,3 @@
     --chart-tooltip-ink: #0f172a;
     --chart-label: rgb(255 255 255 / 70%);
 }
-
-/* Base Utility Classes */
-.premium-glass {
-    background: var(--surface-glass);
-    backdrop-filter: blur(var(--map-overlay-blur));
-    border: 1px solid var(--border-light);
-    box-shadow: var(--shadow-premium);
-}
-
-/* Staggered Entry Animations */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(12px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.stagger-item {
-    opacity: 0;
-    animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.stagger-item:nth-child(1) { animation-delay: 0.1s; }
-.stagger-item:nth-child(2) { animation-delay: 0.18s; }
-.stagger-item:nth-child(3) { animation-delay: 0.26s; }
-.stagger-item:nth-child(4) { animation-delay: 0.34s; }
-.stagger-item:nth-child(5) { animation-delay: 0.42s; }
-.stagger-item:nth-child(6) { animation-delay: 0.5s; }

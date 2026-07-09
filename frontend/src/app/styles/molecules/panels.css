@@ -23,7 +23,7 @@
 .trend-panel .panel-heading h3 {
   margin: 2px 0 0;
   font-family: var(--font-heading);
-  font-size: 1.04rem;
+  font-size: var(--text-base);
   color: var(--clr-slate-50)
 }
 

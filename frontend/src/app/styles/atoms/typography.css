@@ -29,14 +29,14 @@
 .panel-heading h3 {
   margin: 0;
   font-family: var(--font-heading);
-  font-size: 1.12rem;
+  font-size: var(--text-lg);
   font-weight: 800;
   color: var(--text-main);
   letter-spacing: -0.02em;
 }
 
 .panel-heading__meta {
-  font-size: .84rem;
+  font-size: var(--text-sm);
   color: var(--text-soft);
   text-align: right
 }

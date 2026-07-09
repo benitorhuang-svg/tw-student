@@ -11,12 +11,12 @@ import type { SchoolMapPoint } from '../types'
 import {
   MAP_DEFAULT_CENTER,
   MAP_DEFAULT_ZOOM,
-  MAP_COUNTY_ZOOM,
   MAP_TOWNSHIP_ZOOM,
   MAP_TOWNSHIP_FOCUS_ZOOM,
   MAP_MAX_ZOOM,
   MAP_FOCUS_SCHOOL_ZOOM,
 } from '@/shared/lib/utils/constants'
+import { resolveCountyMapAnchor } from '../countyMapAnchors'
 
 export type ViewportIntent = 
   | { id: string; type: 'flyTo'; center: [number, number]; zoom: number }
@@ -134,15 +134,15 @@ export function useViewportIntent(
       }
 
       if (countyFeature) {
-        const zoom = requestedZoomValue ?? currentZoom ?? MAP_COUNTY_ZOOM
-        const id = `county:${activeCountyId}:${effectiveZoomId}:${mapResetToken}`
-        const centerLat = isMobile ? countyFeature.properties.centerLatitude - 0.1 : countyFeature.properties.centerLatitude
-        const centerLng = countyFeature.properties.centerLongitude
+        const zoom = Math.max(requestedZoomValue ?? currentZoom ?? MAP_TOWNSHIP_ZOOM, MAP_TOWNSHIP_ZOOM)
+        const id = `county:${activeCountyId}:${zoom.toFixed(1)}:${mapResetToken}`
+        const [anchorLat, anchorLng] = resolveCountyMapAnchor(countyFeature.properties)
+        const centerLat = isMobile ? anchorLat - 0.1 : anchorLat
         
         return {
           id,
           type: 'flyTo',
-          center: [centerLat, centerLng],
+          center: [centerLat, anchorLng],
           zoom,
         }
       }

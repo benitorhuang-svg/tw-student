@@ -43,11 +43,11 @@ export function readInitialTheme(): AtlasTheme {
 }
 
 // --- Map Configuration Parameters ---
-export const MAP_DEFAULT_CENTER: [number, number] = [24.72280, 119.50130]
-export const MAP_DEFAULT_ZOOM = 7.5
+export const MAP_DEFAULT_CENTER: [number, number] = [23.52280, 119.50130]
+export const MAP_DEFAULT_ZOOM = 7
 export const MAP_COUNTY_ZOOM = 9
 export const MAP_TOWNSHIP_ZOOM = 11
 export const MAP_TOWNSHIP_FOCUS_ZOOM = 13
 export const MAP_FOCUS_SCHOOL_ZOOM = 15
 export const MAP_MAX_ZOOM = 15
-export const MAP_MAX_BOUNDS: [[number, number], [number, number]] = [[22.5, 117.5], [25.3, 123.0]]
+export const MAP_MAX_BOUNDS: [[number, number], [number, number]] = [[22.5, 117.5], [25.8, 123.0]]

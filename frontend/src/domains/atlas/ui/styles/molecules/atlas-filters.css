@@ -42,7 +42,7 @@
 }
 
 .search-icon {
-  font-size: 0.9rem;
+  font-size: var(--text-sm);
   opacity: 0.6;
   margin-right: 8px;
 }
@@ -51,7 +51,7 @@
   background: transparent;
   border: none;
   color: inherit;
-  font-size: 0.85rem;
+  font-size: var(--text-sm);
   padding: 8px 0;
   width: 100%;
   outline: none;
@@ -69,7 +69,7 @@
   border-radius: 10px;
   border: 1px solid rgb(216 228 236 / 12%);
   color: var(--tw-slate-100);
-  font-size: 0.84rem;
+  font-size: var(--text-sm);
   font-weight: 600;
   cursor: pointer;
   appearance: none;

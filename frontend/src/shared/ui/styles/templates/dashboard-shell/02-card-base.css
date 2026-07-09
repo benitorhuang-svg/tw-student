@@ -28,7 +28,7 @@
 }
 
 .dashboard-card--premium .dashboard-card__title {
-    font-size: 1.15rem;
+    font-size: var(--text-lg);
     letter-spacing: -0.01em;
     font-weight: 800;
     color: var(--tw-slate-800);
@@ -36,7 +36,7 @@
 }
 
 .dashboard-card--premium .dashboard-card__subtitle {
-    font-size: 0.85rem;
+    font-size: var(--text-sm);
     color: var(--tw-slate-500);
 }
 

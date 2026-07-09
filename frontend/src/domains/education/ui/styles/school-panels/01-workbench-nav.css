@@ -74,7 +74,7 @@
 .dashboard-year-nav__value {
     min-width: 40px;
     text-align: center;
-    font-size: 0.8rem;
+    font-size: var(--text-xs);
     font-weight: 800;
 }
 
@@ -82,7 +82,7 @@
     padding: 2px 14px;
     min-height: 28px;
     border-radius: 999px;
-    font-size: 0.76rem;
+    font-size: var(--text-xs);
     font-weight: 700;
     white-space: nowrap;
     background: rgb(148 163 184 / 12%);

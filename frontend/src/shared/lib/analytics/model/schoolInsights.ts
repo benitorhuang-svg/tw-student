@@ -1,6 +1,6 @@
-import type { CountyDetailDataset } from '../../api/data/educationData'
-import type { DashboardFilters, SchoolInsight } from './analytics.types'
-import { getStudentsForYear, matchesSchoolFilters, previousYearOf } from './analytics.helpers'
+import type { CountyDetailDataset } from '@/shared/api/data/educationData'
+import type { DashboardFilters, SchoolInsight } from '@/shared/lib/analytics/analytics.types'
+import { getStudentsForYear, matchesSchoolFilters, previousYearOf } from '@/shared/lib/analytics/analytics.helpers'
 
 export function getSchoolInsights(
   countyDetail: CountyDetailDataset | null,

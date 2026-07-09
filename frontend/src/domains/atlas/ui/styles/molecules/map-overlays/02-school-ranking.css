@@ -48,7 +48,7 @@
 
 .map-school-ranking-title {
     min-width: 0;
-    font-size: 0.86rem;
+    font-size: var(--text-sm);
     font-weight: 900;
     color: var(--brand-primary);
 }
@@ -117,6 +117,8 @@
     border-radius: var(--radius-sm);
     background: transparent;
     color: inherit;
+    font-size: 0.75rem;
+    line-height: 1.15;
     padding: 4px 8px;
     text-align: left;
     cursor: pointer;
@@ -138,8 +140,8 @@
     border-radius: 999px;
     background: rgb(14 165 233 / 12%);
     color: var(--brand-primary);
-    font-size: 0.76rem;
-    font-weight: 900;
+    font-size: inherit;
+    font-weight: 600;
 }
 
 .map-school-ranking-main {
@@ -151,9 +153,9 @@
 .map-school-ranking-name {
     overflow: hidden;
     color: var(--text-main);
-    font-size: 0.82rem;
-    font-weight: 850;
-    line-height: 1.2;
+    font-size: inherit;
+    font-weight: 600;
+    line-height: 1.15;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
@@ -161,9 +163,9 @@
 .map-school-ranking-meta {
     overflow: hidden;
     color: var(--text-soft);
-    font-size: 0.7rem;
-    font-weight: 700;
-    line-height: 1.2;
+    font-size: inherit;
+    font-weight: 500;
+    line-height: 1.15;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
@@ -173,8 +175,8 @@
     justify-items: end;
     gap: 2px;
     color: var(--text-main);
-    font-size: 0.72rem;
-    font-weight: 850;
+    font-size: inherit;
+    font-weight: 600;
     white-space: nowrap;
 }
 
@@ -202,13 +204,13 @@
     .map-school-ranking-dock {
         left: 8px;
         right: auto;
-        bottom: 16px;
+        bottom: 8px;
         justify-content: flex-start;
     }
 
     .map-school-ranking {
         width: min(400px, calc(100vw - 16px));
-        max-height: 230px;
+        max-height: 205px;
     }
 
     .map-school-ranking-head {

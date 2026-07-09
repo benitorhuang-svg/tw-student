@@ -33,7 +33,12 @@
             "minScore": 0.9
           }
         ],
-        "categories:seo": "off",
+        "categories:seo": [
+          "warn",
+          {
+            "minScore": 0.9
+          }
+        ],
         "uses-http2": "off"
       }
     },

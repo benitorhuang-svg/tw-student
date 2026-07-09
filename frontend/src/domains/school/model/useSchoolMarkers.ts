@@ -8,10 +8,10 @@ import type {
   RegionGroupFilter,
   SchoolLevel,
 } from '@/shared/api/data/educationData'
-import type { SchoolMapPoint } from '@/domains/atlas'
+import type { SchoolMapPoint } from '@/shared/lib/atlas'
 import { getSchoolInsights, getStudentsForYear, previousYearOf } from '@/shared/lib/analytics'
 
-export function useMarkersState(
+export function useSchoolMarkers(
   summaryDataset: EducationSummaryDataset | null,
   countyDetailCache: Record<string, CountyDetailDataset>,
   filters: {
@@ -21,8 +21,10 @@ export function useMarkersState(
     region: RegionGroupFilter;
     searchText: string;
   },
+  activeCountyId: string | null,
   activeTownshipId: string | null,
   selectedSchoolId: string | null,
+  mapZoom: number | null,
 ) {
   return useMemo(() => {
     if (!summaryDataset) return { schoolMapPoints: [], selectedSchool: null, selectedSchoolInsight: null, schoolInsights: [], countyWideSchoolInsights: [] }
@@ -77,10 +79,13 @@ export function useMarkersState(
       }
     }
 
-    if (summaryDataset.schoolCodeIndex) {
+    const shouldReadSummarySchoolIndex = Boolean(selectedSchoolId || activeCountyId || (mapZoom ?? 7) >= 12)
+    if (shouldReadSummarySchoolIndex && summaryDataset.schoolCodeIndex) {
       for (const [code, entry] of Object.entries(summaryDataset.schoolCodeIndex)) {
         const id = entry.schoolIds?.[0] || code;
         if (processedIds.has(id)) continue;
+        if (activeCountyId && entry.countyId !== activeCountyId && entry.countyCode !== activeCountyId) continue;
+        if (!activeCountyId && selectedSchoolId && id !== selectedSchoolId && code !== selectedSchoolId && !entry.schoolIds?.includes(selectedSchoolId)) continue;
 
         if (entry.longitude && entry.latitude) {
           if (filters.educationLevel !== '全部' && !entry.levels?.includes(filters.educationLevel as SchoolLevel)) continue;
@@ -114,5 +119,5 @@ export function useMarkersState(
       schoolInsights: townshipSchoolInsights,
       countyWideSchoolInsights,
     };
-  }, [summaryDataset, countyDetailCache, filters, activeTownshipId, selectedSchoolId]);
+  }, [summaryDataset, countyDetailCache, filters, activeCountyId, activeTownshipId, selectedSchoolId, mapZoom]);
 }

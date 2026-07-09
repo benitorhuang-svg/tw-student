@@ -30,11 +30,8 @@ self.addEventListener('message', (ev) => {
     const obj = objectName && objects[objectName] ? objects[objectName] : Object.values(objects)[0]
     if (!obj) throw new Error('Topology payload has no convertible object')
     const fc = feature(topology, obj)
-    // serialize to a transferable ArrayBuffer to reduce structured-clone overhead
-    const json = JSON.stringify(fc)
-    const enc = new TextEncoder()
-    const buf = enc.encode(json)
-    workerScope.postMessage({ id, resultBuf: buf.buffer }, [buf.buffer])
+    // Send object directly, modern browsers handle structured cloning efficiently
+    workerScope.postMessage({ id, resultBuf: fc })
   } catch (err) {
     workerScope.postMessage({ id, error: err instanceof Error ? err.message : String(err) })
   }

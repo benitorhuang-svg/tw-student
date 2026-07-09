@@ -11,7 +11,7 @@ type PendingRequest<T> = {
 type TopologyWorkerResponse<T> = {
   id?: number
   result?: T
-  resultBuf?: ArrayBuffer
+  resultBuf?: unknown
   error?: string
 }
 
@@ -30,14 +30,8 @@ function ensure() {
     pending.delete(id)
     if (error) entry.reject(new Error(error))
     else if (resultBuf) {
-      try {
-        const arr = new Uint8Array(resultBuf)
-        const json = new TextDecoder().decode(arr)
-        const parsed = JSON.parse(json)
-        entry.resolve(parsed)
-      } catch (err) {
-        entry.reject(err)
-      }
+      // resultBuf is now the direct structured-cloned object
+      entry.resolve(resultBuf)
     } else entry.resolve(result)
   })
   worker.addEventListener('error', (err) => {

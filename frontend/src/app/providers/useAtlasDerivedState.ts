@@ -1,8 +1,8 @@
 import { useMemo } from 'react'
 
-import { useHierarchyState } from './derived/useHierarchyState'
+import { useCountyHierarchy } from '@/domains/county'
 import { useAnalyticsState } from './derived/useAnalyticsState'
-import { useMarkersState } from './derived/useMarkersState'
+import { useSchoolMarkers } from '@/domains/school'
 import { useInvestigationState } from './derived/useInvestigationState'
 import { useUiMetadata } from './derived/useUiMetadata'
 
@@ -33,6 +33,7 @@ type DerivedStateArgs = {
   selectedSchoolId: string | null
   comparisonCountyIds: string[]
   comparisonScenarioName: string
+  mapZoom: number | null
   countyDetailCache: Record<string, CountyDetailDataset>
   countyBucketCache: Record<string, CountyBucketDataset>
   townshipBoundaryCache: Record<string, TownshipBoundaryCollection>
@@ -55,6 +56,7 @@ export function useAtlasDerivedState(args: DerivedStateArgs) {
     selectedSchoolId,
     comparisonCountyIds,
     comparisonScenarioName,
+    mapZoom,
     countyDetailCache,
     countyBucketCache,
     townshipBoundaryCache,
@@ -73,7 +75,7 @@ export function useAtlasDerivedState(args: DerivedStateArgs) {
   }), [summaryDataset, activeYear, educationLevel, managementType, region, deferredSearchText])
 
   // 2. Hierarchy Atom
-  const hierarchy = useHierarchyState(
+  const hierarchy = useCountyHierarchy(
     summaryDataset,
     selectedCountyId,
     selectedTownshipId,
@@ -92,12 +94,14 @@ export function useAtlasDerivedState(args: DerivedStateArgs) {
   )
 
   // 4. Markers Atom
-  const markers = useMarkersState(
+  const markers = useSchoolMarkers(
     summaryDataset,
     countyDetailCache,
     filters,
+    hierarchy.activeCountyId,
     hierarchy.activeTownshipId,
-    selectedSchoolId
+    selectedSchoolId,
+    mapZoom
   )
 
   // 5. Investigative Logic
