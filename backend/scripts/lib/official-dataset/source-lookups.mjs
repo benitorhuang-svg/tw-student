@@ -1,17 +1,24 @@
 import { ACADEMIC_YEARS, CURRENT_YEAR, LEVEL_CONFIG, fetchJson, normalizeCountyName, normalizeSchoolCode, normalizeText, normalizeTownName, parseOfficialWorkbook } from '../refresh-helpers.mjs'
 import { buildWorkbookCandidates, fetchDetailRowsWithFallback } from './source-fetchers.mjs'
 import { mergeComposition } from './school-summaries.mjs'
+import { projectElementaryRow, projectJuniorRow } from './grade-progression-model.mjs'
 
 export async function fetchAllSchoolPoints() {
   let lastError = null
 
   for (let sourceYear = CURRENT_YEAR; sourceYear >= ACADEMIC_YEARS[0]; sourceYear -= 1) {
-    try {
-      const baseUrl = `https://stats.moe.gov.tw/server/rest/services/Hosted/${sourceYear}學年各級學校名錄點位/FeatureServer/0`
-      const pointLayer = await fetchJson(`${baseUrl}?f=pjson`)
-      if (!pointLayer || typeof pointLayer !== 'object' || !Number(pointLayer.maxRecordCount)) {
-        throw new Error(`Point layer metadata unavailable for ${sourceYear}`)
-      }
+    const candidateNames = [
+      `${sourceYear}學年各級學校名錄點位NEW`,
+      `${sourceYear}學年各級學校名錄點位`,
+    ]
+
+    for (const serviceName of candidateNames) {
+      try {
+        const baseUrl = `https://stats.moe.gov.tw/server/rest/services/Hosted/${encodeURIComponent(serviceName)}/FeatureServer/0`
+        const pointLayer = await fetchJson(`${baseUrl}?f=pjson`)
+        if (!pointLayer || typeof pointLayer !== 'object' || !Number(pointLayer.maxRecordCount)) {
+          continue
+        }
 
       const allFeatures = []
       let offset = 0
@@ -39,13 +46,14 @@ export async function fetchAllSchoolPoints() {
         offset += pageSize
       }
 
-      if (sourceYear !== CURRENT_YEAR) {
-        console.warn(`Fallback to ${sourceYear} point layer for ${CURRENT_YEAR}`)
-      }
+        if (sourceYear !== CURRENT_YEAR) {
+          console.warn(`Fallback to ${sourceYear} point layer (${serviceName}) for ${CURRENT_YEAR}`)
+        }
 
-      return allFeatures
-    } catch (error) {
-      lastError = error
+        return allFeatures
+      } catch (error) {
+        lastError = error
+      }
     }
   }
 
@@ -125,6 +133,7 @@ export async function buildTrendLookup() {
         level,
         yearlyStudents: new Map(),
         yearlyCompositions: new Map(),
+        yearlyStatuses: new Map(),
         countyName: '',
         townName: '',
         schoolName: '',
@@ -142,6 +151,9 @@ export async function buildTrendLookup() {
       entry.schoolName = normalizeText(scope.schoolName)
     }
     entry.yearlyStudents.set(year, students + (entry.yearlyStudents.get(year) ?? 0))
+    if (scope.isEstimated) {
+      entry.yearlyStatuses.set(year, 'estimated')
+    }
     if (scope.composition) {
       entry.yearlyCompositions.set(year, mergeComposition(entry.yearlyCompositions.get(year), scope.composition))
     }
@@ -152,23 +164,40 @@ export async function buildTrendLookup() {
       if ('detailFile' in config) {
         const { rows, sourceYear, sourceFile } = await fetchDetailRowsWithFallback(config.detailFile, year)
         recordFallback(year, level, sourceFile, sourceYear)
-        rows.forEach((row) => addTrendValue(normalizeSchoolCode(row['學校代碼']), year, level, config.sumRow(row), {
-          countyName: row['縣市名稱'],
-          townName: row['鄉鎮市區'],
-          schoolName: row['學校名稱'],
-          composition: config.breakdownRow?.(row),
-        }))
+        const isEstimated = sourceYear !== year
+
+        rows.forEach((originalRow) => {
+          let row = originalRow
+          if (isEstimated) {
+            if (level === '國小') {
+              row = projectElementaryRow(originalRow, year)
+            } else if (level === '國中') {
+              row = projectJuniorRow(originalRow, year)
+            }
+          }
+
+          addTrendValue(normalizeSchoolCode(row['學校代碼']), year, level, config.sumRow(row), {
+            countyName: row['縣市名稱'],
+            townName: row['鄉鎮市區'],
+            schoolName: row['學校名稱'],
+            composition: config.breakdownRow?.(row),
+            isEstimated,
+          })
+        })
         continue
       }
 
       for (const detailFile of config.detailFiles) {
         const { rows, sourceYear, sourceFile } = await fetchDetailRowsWithFallback(detailFile.name, year)
         recordFallback(year, level, sourceFile, sourceYear)
+        const isEstimated = sourceYear !== year
+
         rows.forEach((row) => addTrendValue(normalizeSchoolCode(row['學校代碼']), year, level, detailFile.sumRow(row), {
           countyName: row['縣市名稱'],
           townName: row['鄉鎮市區'],
           schoolName: row['學校名稱'],
           composition: detailFile.breakdownRow?.(row),
+          isEstimated,
         }))
       }
     }
@@ -176,3 +205,4 @@ export async function buildTrendLookup() {
 
   return { trendsByCode, fallbackEntries }
 }
+

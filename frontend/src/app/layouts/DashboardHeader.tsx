@@ -89,6 +89,11 @@ function DashboardHeader({
               </button>
               <div className="dashboard-header__year">
                 <span className="year-chip">{activeYear}學年度</span>
+                {activeYear != null && Number(activeYear) >= 115 && (
+                  <span className="dashboard-projection-badge" title="本學年度為模型推估數據">
+                    推估
+                  </span>
+                )}
               </div>
               <button
                 type="button"

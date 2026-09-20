@@ -268,3 +268,25 @@
     color: var(--tw-sky-400);
     border-color: rgb(56 189 248 / 30%);
 }
+
+.dashboard-projection-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 7px;
+    margin-left: 6px;
+    border-radius: var(--radius-pill);
+    background: rgb(245 158 11 / 15%);
+    border: 1px solid rgb(245 158 11 / 40%);
+    color: var(--clr-accent-amber);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    user-select: none;
+}
+
+[data-theme='dark'] .dashboard-projection-badge {
+    background: rgb(245 158 11 / 20%);
+    border-color: rgb(245 158 11 / 45%);
+    color: var(--clr-amber-400);
+}
+

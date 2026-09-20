@@ -4,7 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "data:refresh": "node ./scripts/refresh-official-data.mjs"
+    "data:refresh": "node ./scripts/refresh-official-data.mjs",
+    "data:probe:taichung": "node ./scripts/probe-taichung-primary-school-source.mjs",
+    "data:probe:115": "node ./scripts/probe-moe-115-release.mjs"
   },
   "dependencies": {
     "shpjs": "^6.2.0",

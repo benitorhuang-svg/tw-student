@@ -1,3 +1,4 @@
+import React from 'react'
 import { ScatterPlotChart } from '@/shared/ui/core/organisms/ScatterPlotChart'
 import '../styles/organisms/overview-sections-redesign.css'
 
@@ -7,6 +8,7 @@ type MatrixPoint = {
   x: number
   y: number
   size?: number
+  color?: string
 }
 
 type OverviewMatrixSectionProps = {

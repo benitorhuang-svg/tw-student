@@ -4,7 +4,7 @@ import OverviewMatrixSection from './OverviewMatrixSection'
 import OverviewTrendSection from './OverviewTrendSection'
 import OverviewTreemapSection, { type OverviewTreemapSectionProps } from './OverviewTreemapSection'
 import OverviewRankingSection from './OverviewRankingSection'
-import type { RankingSummary, ScopeSummary, TrendPoint } from '@/shared/lib/analytics'
+import { growthChoroplethColor, type RankingSummary, type ScopeSummary, type TrendPoint } from '@/shared/lib/analytics'
 
 type OverviewDerivedState = {
   countyRankingRows: RankingSummary[]
@@ -65,6 +65,7 @@ function OverviewTabPanel({
     x: row.students,
     y: (row.delta / Math.max(derived.globalNationalSummary?.students ?? 0, 1)) * 100,
     size: row.schools,
+    color: growthChoroplethColor(row.deltaRatio),
   })), [derived.countyRankingRows, derived.globalNationalSummary])
 
   const treemapGroups = useMemo(() => {

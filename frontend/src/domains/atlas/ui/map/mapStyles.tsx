@@ -1,8 +1,20 @@
 import L from 'leaflet'
-import { formatStudents } from '@/shared/lib/analytics'
+import { formatStudents, growthChoroplethColor, growthChoroplethOpacity } from '@/shared/lib/analytics'
 
-export const LIGHT_TILE_URL = 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png'
-export const DARK_TILE_URL = 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
+export { growthChoroplethColor, growthChoroplethOpacity }
+
+const CARTO_KEY = import.meta.env.VITE_CARTO_API_KEY ? `?api_key=${import.meta.env.VITE_CARTO_API_KEY}` : ''
+export const LIGHT_TILE_URL =
+  import.meta.env.VITE_MAP_TILE_LIGHT_URL ||
+  (import.meta.env.VITE_CARTO_API_KEY
+    ? `https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png${CARTO_KEY}`
+    : 'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png')
+
+export const DARK_TILE_URL =
+  import.meta.env.VITE_MAP_TILE_DARK_URL ||
+  (import.meta.env.VITE_CARTO_API_KEY
+    ? `https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png${CARTO_KEY}`
+    : 'https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png')
 
 export function buildHoverPreviewHtml(title: string, students?: number) {
   const stats = (students != null && students > 0) ? ` <span class="atlas-map-hover-card__stats">${students.toLocaleString('zh-TW')}人</span>` : ''
@@ -33,29 +45,6 @@ export function choroplethOpacity(students: number) {
   if (students >= 50000) return 0.25
   if (students >= 10000) return 0.18
   return 0.12
-}
-
-/** 年增減色域：成長藍、衰退紅，依百分比深淺 */
-export function growthChoroplethColor(deltaRatio: number) {
-  const pct = Math.abs(deltaRatio * 100)
-  if (deltaRatio >= 0) {
-    if (pct >= 10) return '#1e40af'
-    if (pct >= 5) return '#2563eb'
-    if (pct >= 2) return '#60a5fa'
-    return '#bfdbfe'
-  }
-  if (pct >= 10) return '#991b1b'
-  if (pct >= 5) return '#dc2626'
-  if (pct >= 2) return '#f87171'
-  return '#fecaca'
-}
-
-export function growthChoroplethOpacity(deltaRatio: number) {
-  const pct = Math.abs(deltaRatio * 100)
-  if (pct >= 10) return 0.76
-  if (pct >= 5) return 0.58
-  if (pct >= 2) return 0.42
-  return 0.26
 }
 
 export function renderScopeMarkerIcon(label: string, value: number, color: string, size: number, variant: 'region' | 'county' | 'township', compact = false) {

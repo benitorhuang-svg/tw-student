@@ -75,7 +75,12 @@ export async function buildOfficialDataset(boundaries) {
       })
     }
 
-    const yearlyStudents = ACADEMIC_YEARS.map((year) => ({ year, students: trendEntry.yearlyStudents.get(year) ?? 0 }))
+    const yearlyStudents = ACADEMIC_YEARS.map((year) => ({
+      year,
+      students: trendEntry.yearlyStudents.get(year) ?? 0,
+      isEstimated: trendEntry.yearlyStatuses?.get(year) === 'estimated' || undefined,
+      valueStatus: trendEntry.yearlyStatuses?.get(year) ?? ((trendEntry.yearlyStudents.get(year) ?? 0) > 0 ? 'official' : 'zero'),
+    }))
     const studentCompositions = buildYearlyCompositions(trendEntry)
     const annotations = buildSchoolAnnotations(yearlyStudents)
 
@@ -168,7 +173,12 @@ export async function buildOfficialDataset(boundaries) {
       coordinatesByCode.set(code, finalCoordinates)
       locationByCode.set(code, { countyName, townName, countyId, townshipId, countyCode, townCode })
     }
-    const yearlyStudents = ACADEMIC_YEARS.map((year) => ({ year, students: trendEntry.yearlyStudents.get(year) ?? 0 }))
+    const yearlyStudents = ACADEMIC_YEARS.map((year) => ({
+      year,
+      students: trendEntry.yearlyStudents.get(year) ?? 0,
+      isEstimated: trendEntry.yearlyStatuses?.get(year) === 'estimated' || undefined,
+      valueStatus: trendEntry.yearlyStatuses?.get(year) ?? ((trendEntry.yearlyStudents.get(year) ?? 0) > 0 ? 'official' : 'zero'),
+    }))
     const studentCompositions = buildYearlyCompositions(trendEntry)
     const annotations = buildSchoolAnnotations(yearlyStudents)
     const schoolName = normalizeText(trendEntry.schoolName || directoryRow?.['學校名稱'] || code)

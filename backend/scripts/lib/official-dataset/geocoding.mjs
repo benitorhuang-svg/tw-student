@@ -49,6 +49,22 @@ const MANUAL_COORDINATE_OVERRIDES = {
     matchType: 'manual-reviewed-poi',
     matchScore: 100,
   },
+  '091603': {
+    longitude: 120.521,
+    latitude: 23.6349,
+    resolution: '人工校正',
+    note: '正式統計資料存在但 GIS 點位缺失，座標已依同園區福智學校校址人工覆核校正。',
+    matchType: 'related-school-point',
+    matchScore: 100,
+  },
+  '101303': {
+    longitude: 120.4728,
+    latitude: 23.604715,
+    resolution: '人工校正',
+    note: '正式統計資料存在但 GIS 點位缺失，座標已依同濟中學校址人工覆核校正。',
+    matchType: 'manual-reviewed-address',
+    matchScore: 100,
+  },
   '113502': {
     longitude: 120.308156,
     latitude: 23.116287,
@@ -56,6 +72,14 @@ const MANUAL_COORDINATE_OVERRIDES = {
     note: '正式統計資料存在但 GIS 點位缺失，座標已依學校官網公開校址人工覆核校正。',
     matchType: 'manual-reviewed-address',
     matchScore: 98.24,
+  },
+  '131302': {
+    longitude: 120.536801,
+    latitude: 22.713735,
+    resolution: '人工校正',
+    note: '正式統計資料存在但 GIS 點位缺失，座標已依崇華高中校址人工覆核校正。',
+    matchType: 'manual-reviewed-address',
+    matchScore: 100,
   },
   193667: {
     longitude: 120.691423,
