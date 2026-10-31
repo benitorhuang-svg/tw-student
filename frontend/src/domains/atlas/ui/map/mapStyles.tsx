@@ -8,13 +8,13 @@ export const LIGHT_TILE_URL =
   import.meta.env.VITE_MAP_TILE_LIGHT_URL ||
   (import.meta.env.VITE_CARTO_API_KEY
     ? `https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png${CARTO_KEY}`
-    : 'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png')
+    : 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')
 
 export const DARK_TILE_URL =
   import.meta.env.VITE_MAP_TILE_DARK_URL ||
   (import.meta.env.VITE_CARTO_API_KEY
     ? `https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png${CARTO_KEY}`
-    : 'https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png')
+    : 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')
 
 export function buildHoverPreviewHtml(title: string, students?: number) {
   const stats = (students != null && students > 0) ? ` <span class="atlas-map-hover-card__stats">${students.toLocaleString('zh-TW')}人</span>` : ''
