@@ -1,0 +1,337 @@
+{
+  "schema_version": 1,
+  "diagram_type": "dataflow",
+  "meta": {
+    "title": "Taiwan Education Atlas Data Flow",
+    "subtitle": "Two-Tier Architecture, Edge CDN & Off-Thread Canvas Pipeline",
+    "output": ".archify/dataflow-tw-student-atlas-20261031-222800/tw-student-atlas-dataflow.html",
+    "animation": "trace",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/benitorhuang-svg/tw-student",
+      "provider": "github",
+      "revision": "4aa7c0cda4bd08aefdf7709c06b5c1025614175b"
+    }
+  },
+  "stages": [
+    { "label": "Official Sources" },
+    { "label": "ETL & Quantization" },
+    { "label": "Asset Storage" },
+    { "label": "Cloud & Cache" },
+    { "label": "Atlas Runtime" }
+  ],
+  "nodes": [
+    {
+      "id": "moe",
+      "type": "external",
+      "label": "MOE Open Data",
+      "sublabel": "stats.moe.gov.tw",
+      "stage": 0,
+      "row": 0,
+      "width": 140,
+      "height": 58,
+      "tag": "School Stats",
+      "icon": "external"
+    },
+    {
+      "id": "nlsc",
+      "type": "external",
+      "label": "NLSC GIS Portal",
+      "sublabel": "maps.nlsc.gov.tw",
+      "stage": 0,
+      "row": 1,
+      "width": 140,
+      "height": 58,
+      "tag": "Boundary SHP",
+      "icon": "external"
+    },
+    {
+      "id": "etl",
+      "type": "backend",
+      "label": "ETL Pipeline",
+      "sublabel": "refresh-official-data.mjs",
+      "stage": 1,
+      "row": 0,
+      "width": 160,
+      "height": 58,
+      "tag": "Dataset Builder",
+      "icon": "backend",
+      "sources": [
+        {
+          "path": "backend/scripts/refresh-official-data.mjs",
+          "line": 43,
+          "end_line": 85,
+          "label": "buildAssetDrafts"
+        }
+      ]
+    },
+    {
+      "id": "topo",
+      "type": "backend",
+      "label": "Topo Quantizer",
+      "sublabel": "build-boundary-files.mjs",
+      "stage": 1,
+      "row": 1,
+      "width": 160,
+      "height": 58,
+      "tag": "Quantization 1e4",
+      "icon": "backend",
+      "sources": [
+        {
+          "path": "backend/scripts/lib/build-boundary-files.mjs",
+          "line": 13,
+          "end_line": 21,
+          "label": "Topology Quantization"
+        }
+      ]
+    },
+    {
+      "id": "tier1",
+      "type": "database",
+      "label": "Tier 1 JSON",
+      "sublabel": "summary & topojson",
+      "stage": 2,
+      "row": 0,
+      "width": 150,
+      "height": 58,
+      "tag": "Fast-Path <300KB",
+      "icon": "database",
+      "sources": [
+        {
+          "path": "frontend/src/shared/api/data/sqlite/summary.ts",
+          "line": 52,
+          "end_line": 80,
+          "label": "loadEducationSummaryWithOptions"
+        }
+      ]
+    },
+    {
+      "id": "sqlite",
+      "type": "database",
+      "label": "Tier 2 SQLite",
+      "sublabel": "education-atlas.sqlite",
+      "stage": 2,
+      "row": 1,
+      "width": 150,
+      "height": 58,
+      "tag": "Compact 43MB",
+      "icon": "database",
+      "sources": [
+        {
+          "path": "backend/scripts/lib/build-atlas-sqlite.mjs",
+          "line": 13,
+          "end_line": 32,
+          "label": "buildAtlasSqliteBuffer"
+        }
+      ]
+    },
+    {
+      "id": "cdn",
+      "type": "cloud",
+      "label": "Cloud Run Edge",
+      "sublabel": "asia-east1 Nginx",
+      "stage": 3,
+      "row": 0,
+      "width": 150,
+      "height": 58,
+      "tag": "Gzip Precompress",
+      "icon": "cloud",
+      "sources": [
+        {
+          "path": "infra/Dockerfile",
+          "line": 49,
+          "end_line": 85,
+          "label": "Nginx Cache Configuration"
+        }
+      ]
+    },
+    {
+      "id": "client_cache",
+      "type": "security",
+      "label": "Browser Cache",
+      "sublabel": "HTTP/2 & ETag 304",
+      "stage": 3,
+      "row": 1,
+      "width": 150,
+      "height": 58,
+      "tag": "Sub-100ms Load",
+      "icon": "security",
+      "sources": [
+        {
+          "path": "frontend/src/shared/api/data/dataAsset.ts",
+          "line": 21,
+          "end_line": 53,
+          "label": "buildDataAssetUrl & parser"
+        }
+      ]
+    },
+    {
+      "id": "workers",
+      "type": "frontend",
+      "label": "Web Workers",
+      "sublabel": "topology & wa-sqlite",
+      "stage": 4,
+      "row": 0,
+      "width": 150,
+      "height": 58,
+      "tag": "Off-Thread Work",
+      "icon": "frontend",
+      "sources": [
+        {
+          "path": "frontend/src/shared/api/data/atlas/topologyWorkerClient.ts",
+          "line": 44,
+          "end_line": 54,
+          "label": "decodeTopologyInWorker"
+        }
+      ]
+    },
+    {
+      "id": "atlas_ui",
+      "type": "frontend",
+      "label": "Atlas Canvas UI",
+      "sublabel": "Leaflet & Analytics",
+      "stage": 4,
+      "row": 1,
+      "width": 150,
+      "height": 58,
+      "tag": "60fps Rendering",
+      "icon": "frontend",
+      "sources": [
+        {
+          "path": "frontend/src/domains/atlas/ui/map/atoms/MapTileLayer.tsx",
+          "line": 8,
+          "end_line": 21,
+          "label": "MapTileLayer"
+        }
+      ]
+    }
+  ],
+  "flows": [
+    {
+      "id": "moe-to-etl",
+      "from": "moe",
+      "to": "etl",
+      "label": "school trend data",
+      "classification": "raw xlsx/csv",
+      "variant": "default",
+      "route": "straight"
+    },
+    {
+      "id": "nlsc-to-topo",
+      "from": "nlsc",
+      "to": "topo",
+      "label": "boundary archives",
+      "classification": "raw SHP zip",
+      "variant": "default",
+      "route": "straight"
+    },
+    {
+      "id": "topo-to-etl",
+      "from": "topo",
+      "to": "etl",
+      "label": "quantized topologies",
+      "classification": "TopoJSON",
+      "variant": "emphasis",
+      "labelAt": [315, 215]
+    },
+    {
+      "id": "etl-to-tier1",
+      "from": "etl",
+      "to": "tier1",
+      "label": "fast-path JSON",
+      "classification": "Tier 1 (<300KB)",
+      "variant": "emphasis",
+      "route": "straight"
+    },
+    {
+      "id": "etl-to-sqlite",
+      "from": "etl",
+      "to": "sqlite",
+      "label": "database pack",
+      "classification": "Tier 2 (43MB)",
+      "variant": "dashed"
+    },
+    {
+      "id": "tier1-to-cdn",
+      "from": "tier1",
+      "to": "cdn",
+      "label": "precompressed assets",
+      "classification": "static JSON",
+      "variant": "emphasis",
+      "route": "straight"
+    },
+    {
+      "id": "sqlite-to-cdn",
+      "from": "sqlite",
+      "to": "cdn",
+      "label": "sqlite binary",
+      "classification": "database asset",
+      "variant": "default"
+    },
+    {
+      "id": "cdn-to-client",
+      "from": "cdn",
+      "to": "client_cache",
+      "label": "ETag 304 delivery",
+      "classification": "Edge CDN response",
+      "variant": "emphasis",
+      "labelAt": [745, 205]
+    },
+    {
+      "id": "client-to-workers",
+      "from": "client_cache",
+      "to": "workers",
+      "label": "worker stream",
+      "classification": "zero-copy transfer",
+      "variant": "emphasis"
+    },
+    {
+      "id": "client-to-ui",
+      "from": "client_cache",
+      "to": "atlas_ui",
+      "label": "initial summary state",
+      "classification": "sub-100ms render",
+      "variant": "emphasis",
+      "route": "straight",
+      "labelAt": [853, 315]
+    },
+    {
+      "id": "workers-to-ui",
+      "from": "workers",
+      "to": "atlas_ui",
+      "label": "canvas instructions",
+      "classification": "decoded GeoJSON",
+      "variant": "emphasis",
+      "labelAt": [960, 205]
+    }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "Two-Tier Data Model (雙層資料模型)",
+      "items": [
+        "Tier 1 (Fast-Path): education-summary.json (~240KB) 與 counties.topo.json (~50KB) 在首頁以非阻塞 HTTP 並行抓取，首屏傳輸量自 47.5MB 暴減 99.4% 至 < 300KB",
+        "Tier 2 (On-Demand): 43MB SQLite 資料庫延遲至深度下鑽（鄉鎮層級或單校檢索）時才在背景初始化，兼具即時查詢能力與極速開屏體驗",
+        "平滑降級: 若離線快取或 JSON 載入異常，前端自動 seamlessly 回退至 SQLite Worker 查詢"
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "Cloud Edge & Compression (雲端邊緣快取)",
+      "items": [
+        "Dockerfile 於建置階段執行 gzip -9 最高級別靜態預壓縮，Nginx 啟用 gzip_static 達成零 CPU 開銷交付",
+        "Firebase Hosting CDN 配置 s-maxage=3600 與 ETag 304 再驗證，二訪瞬間完成 0ms 載入",
+        "底圖服務全面整合 OpenStreetMap 官方圖磚，杜絕 API Key 浮水印干擾"
+      ]
+    },
+    {
+      "dot": "violet",
+      "title": "Off-Thread & Canvas Rendering (離線線程與畫布)",
+      "items": [
+        "拓撲解碼 (topologyWorker) 與 SQLite 查詢 (sqliteWorker) 全數卸載至 Web Worker，主線程幀率維持 60 FPS",
+        "Leaflet 地圖啟用 Canvas 標記渲染，徹底消除重複 Tooltip 節點以減輕 DOM 樹重繪開銷",
+        "分析儀表板即時計算學生百分等級 (PR) 與歷年入學世代推移趨勢"
+      ]
+    }
+  ]
+}

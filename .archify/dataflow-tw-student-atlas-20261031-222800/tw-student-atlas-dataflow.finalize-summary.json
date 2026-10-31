@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "command": "finalize",
+  "status": "pass",
+  "type": "dataflow",
+  "quality": "showcase",
+  "specification": {
+    "path": "C:\\Users\\benit\\Desktop\\project_home\\tw-student\\.archify\\dataflow-tw-student-atlas-20261031-222800\\candidate.json",
+    "sha256": "5f6eefb73cb758d140967027cf67d65d37020ef750d0fa619dc024ad1a7f4d30",
+    "bytes": 8959
+  },
+  "artifact": {
+    "path": "C:\\Users\\benit\\Desktop\\project_home\\tw-student\\.archify\\dataflow-tw-student-atlas-20261031-222800\\tw-student-atlas-dataflow.html",
+    "sha256": "d68f1e88b2470c77086bcfac8b40c5c7aa83fbe0703292f9315503a7d328adac",
+    "bytes": 848631
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "pass"
+  },
+  "diagnostics": [],
+  "diagnosticSummary": {
+    "total": 0,
+    "shown": 0,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "C:\\Users\\benit\\Desktop\\project_home\\tw-student\\.archify\\dataflow-tw-student-atlas-20261031-222800\\tw-student-atlas-dataflow.finalize.json",
+    "summaryReceipt": "C:\\Users\\benit\\Desktop\\project_home\\tw-student\\.archify\\dataflow-tw-student-atlas-20261031-222800\\tw-student-atlas-dataflow.finalize-summary.json",
+    "browserCheckReceipt": "C:\\Users\\benit\\Desktop\\project_home\\tw-student\\.archify\\dataflow-tw-student-atlas-20261031-222800\\tw-student-atlas-dataflow.browser-check.json"
+  },
+  "update": {
+    "status": "current",
+    "installedVersion": "3.2.0",
+    "availableVersion": "3.2.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-10-31T09:33:48.922Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  },
+  "visualReview": "not-requested",
+  "durationMs": 6035,
+  "browserCheck": {
+    "requested": true,
+    "ran": true
+  }
+}
