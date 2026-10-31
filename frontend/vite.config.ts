@@ -45,6 +45,15 @@ function backendDataPlugin(): Plugin {
         const relativePath = decodeURIComponent(requestUrl.pathname.replace(/^\/+/, ''))
         const filePath = path.join(backendDataDir, relativePath)
         if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
+          const stat = fs.statSync(filePath)
+          const etag = `W/"${stat.size.toString(16)}-${Math.floor(stat.mtimeMs).toString(16)}"`
+          if (req.headers['if-none-match'] === etag) {
+            res.statusCode = 304
+            res.end()
+            return
+          }
+          res.setHeader('ETag', etag)
+          res.setHeader('Cache-Control', 'public, max-age=86400, stale-while-revalidate=86400')
           res.setHeader('Content-Type', filePath.endsWith('.json') ? 'application/json' : 'application/octet-stream')
           fs.createReadStream(filePath).pipe(res)
         } else {
@@ -96,7 +105,7 @@ export default defineConfig({
   cacheDir: path.resolve(__dirname, '..', '.vite-cache', 'frontend'),
   optimizeDeps: {
     // include heavy libs to pre-bundle once and reuse
-    include: ['react', 'react-dom', 'leaflet', 'react-leaflet', 'sql.js', 'topojson-client', 'leaflet.vectorgrid'],
+    include: ['react', 'react-dom', 'leaflet', 'react-leaflet', 'sql.js', 'topojson-client', 'leaflet.vectorgrid', 'zustand'],
     esbuildOptions: {
       target: 'es2020',
     },
