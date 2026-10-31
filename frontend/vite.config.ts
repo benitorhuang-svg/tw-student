@@ -138,9 +138,18 @@ export default defineConfig({
   plugins: [
     backendDataPlugin(),
     react(),
-    ViteWebfontDownload([
-      'https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;700;900&display=swap'
-    ]),
+    ViteWebfontDownload(
+      [
+        'https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Sora:wght@600;700;800&display=swap'
+      ],
+      {
+        injectAsStyleTag: false,
+        async: true,
+        cache: true,
+      }
+    ),
+
+
     VitePWA({
       registerType: 'autoUpdate',
       injectRegister: 'auto',

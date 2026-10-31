@@ -13,6 +13,13 @@
       content="以教育部正式資料與官方行政區界線打造的台灣學生數互動地圖，支援縣市、鄉鎮與學校層級探索。"
     />
     <title>Taiwan Education Atlas</title>
+    <!-- Map tile CDN preconnect & DNS prefetch for sub-second tile streaming -->
+    <link rel="preconnect" href="https://a.basemaps.cartocdn.com" crossorigin />
+    <link rel="preconnect" href="https://b.basemaps.cartocdn.com" crossorigin />
+    <link rel="preconnect" href="https://c.basemaps.cartocdn.com" crossorigin />
+    <link rel="dns-prefetch" href="https://a.basemaps.cartocdn.com" />
+    <link rel="dns-prefetch" href="https://b.basemaps.cartocdn.com" />
+    <link rel="dns-prefetch" href="https://c.basemaps.cartocdn.com" />
   </head>
   <body>
     <div id="root"></div>
