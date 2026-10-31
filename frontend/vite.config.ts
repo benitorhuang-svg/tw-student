@@ -66,7 +66,9 @@ function backendDataPlugin(): Plugin {
     closeBundle() {
       const distDataDir = path.resolve(__dirname, 'dist', 'data')
       fs.rmSync(distDataDir, { recursive: true, force: true })
-      copyDirSync(backendDataDir, distDataDir)
+      if (fs.existsSync(backendDataDir)) {
+        copyDirSync(backendDataDir, distDataDir)
+      }
     },
   }
 }
