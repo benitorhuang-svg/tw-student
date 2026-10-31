@@ -110,6 +110,23 @@
     display: none; /* Hide internal icon since we have the toggle icon */
 }
 
+.filter-expansion .segmented-btn {
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+.filter-expansion .segmented-btn:hover {
+    color: var(--brand-primary);
+    background: var(--surface-active);
+}
+
+.filter-expansion .segmented-btn.active {
+    color: var(--text-inverse);
+    background: var(--brand-primary);
+}
+
+.filter-toggle-btn:focus-visible { outline-offset: -3px; }
+
 /* Mobile scale down */
 @media (width <= 768px) {
     .filter-toggle-btn {

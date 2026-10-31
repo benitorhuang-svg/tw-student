@@ -3,7 +3,7 @@ import { formatStudents } from '@/shared/lib/analytics'
 
 export function renderSchoolHoverCard(school: SchoolMapPoint) {
   const nameLabel = school.name || '未知學校'
-  const studentLabel = school.currentStudents > 0 
+  const studentLabel = school.valueStatus === 'missing' || school.valueStatus === 'year-not-applicable' ? '資料缺漏' : school.currentStudents >= 0
     ? `${formatStudents(school.currentStudents).replace(' ', '')}人`
     : '點擊載入人數'
     
@@ -25,7 +25,8 @@ export function renderClusterHoverCard(count: number, totalStudents: number) {
 }
 
 export function buildSchoolMarkerAriaLabel(school: SchoolMapPoint) {
-    return `${school.name}，${school.townshipName}，${school.educationLevel}，${formatStudents(school.currentStudents)} 人，按 Enter 查看學校分析`
+    const value = school.currentStudents < 0 ? '人數載入中' : school.valueStatus === 'missing' || school.valueStatus === 'year-not-applicable' ? '資料缺漏' : `${formatStudents(school.currentStudents)} 人`
+    return `${school.name}，${school.townshipName}，${school.educationLevel}，${value}，按 Enter 查看學校分析`
 }
 
 export function buildClusterMarkerAriaLabel(count: number, totalStudents: number) {

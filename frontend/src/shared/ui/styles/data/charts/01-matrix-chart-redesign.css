@@ -58,12 +58,10 @@
     shape-rendering: geometricprecision;
 }
 
-.matrix-chart-premium .scatter-chart__quadrant--tl { fill: rgb(56 189 248 / 4%); } /* Sky - Emerging */
-.matrix-chart-premium .scatter-chart__quadrant--tr { fill: rgb(16 185 129 / 4%); } /* Emerald - Growth */
-.matrix-chart-premium .scatter-chart__quadrant--bl { fill: rgb(244 63 94 / 4%); } /* Rose - Alert */
-.matrix-chart-premium .scatter-chart__quadrant--br { fill: rgb(15 23 42 / 3%); } /* Neutral - Scale */
-
-[data-theme="dark"] .matrix-chart-premium .scatter-chart__quadrant--br { fill: rgb(255 255 255 / 2%); }
+.matrix-chart-premium .scatter-chart__quadrant--tl { fill: var(--chart-quadrant-tl); }
+.matrix-chart-premium .scatter-chart__quadrant--tr { fill: var(--chart-quadrant-tr); }
+.matrix-chart-premium .scatter-chart__quadrant--bl { fill: var(--chart-quadrant-bl); }
+.matrix-chart-premium .scatter-chart__quadrant--br { fill: var(--chart-quadrant-br); }
 
 .matrix-chart-premium .scatter-chart__point {
     fill: var(--brand-primary);
@@ -73,7 +71,6 @@
 
     /* Only animate light-weight properties to avoid frequent expensive repaints */
     transition: fill 200ms ease, fill-opacity 200ms ease, stroke-width 200ms ease, filter 180ms ease, r 200ms ease;
-    outline: none !important;
     cursor: pointer;
 
     /* Ensure scale origin is center of the circle */
@@ -100,7 +97,6 @@
     stroke: var(--color-white) !important;
     stroke-width: 3;
     filter: drop-shadow(0 0 15px var(--clr-accent-amber));
-    outline: none !important;
 
     /* transform handled by stable overlay layer or static class */
 }
@@ -126,13 +122,13 @@
 
 .matrix-chart-premium .scatter-chart__axis {
     fill: var(--text-dim);
-    font-size: var(--text-xs);
+    font-size: 13px;
     font-weight: 600;
 }
 
 .matrix-chart-premium .scatter-chart__axis-title {
     fill: var(--text-soft);
-    font-size: var(--text-xs);
+    font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.02em;
 }
@@ -194,6 +190,7 @@
     fill: var(--text-strong);
 }
 
-.chart-data-focusable {
-    outline: none !important;
+.chart-data-focusable:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 3px;
 }

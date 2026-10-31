@@ -1,9 +1,11 @@
 import { useState } from 'react'
+import type { MapScopeSnapshot } from '../mapScopeSnapshot'
 
 import { MapYearStepper } from '../atoms/MapYearStepper'
 import { MapSchoolRankingPanel } from '../molecules/MapSchoolRankingPanel'
 import { MapTrendCard } from '../molecules/MapTrendCard'
 import type { MapCanvasProps } from './MapCanvas.types'
+import '../../styles/map/mobile-dock.css'
 
 type MobilePanel = 'students' | 'growth' | 'decline' | 'trend'
 
@@ -11,124 +13,64 @@ type MapMobileBottomDockProps = {
   props: MapCanvasProps
   defaultActivePanel: 'students' | 'trend'
   defaultShowOverlay: boolean
+  snapshot: MapScopeSnapshot
 }
 
 const modes: Array<{ value: MobilePanel; label: string }> = [
-  { value: 'students', label: '學生總人數' },
-  { value: 'growth', label: '學生增加率' },
-  { value: 'decline', label: '學生減少率' },
+  { value: 'students', label: '學生人數' },
+  { value: 'growth', label: '增加率' },
+  { value: 'decline', label: '減少率' },
   { value: 'trend', label: '歷史趨勢' },
 ]
 
-export function MapMobileBottomDock({
-  props,
-  defaultActivePanel,
-  defaultShowOverlay,
-}: MapMobileBottomDockProps) {
+export function MapMobileBottomDock({ props, defaultActivePanel, defaultShowOverlay, snapshot }: MapMobileBottomDockProps) {
   const [activePanel, setActivePanel] = useState<MobilePanel>(defaultActivePanel)
   const [showOverlay, setShowOverlay] = useState(defaultShowOverlay)
   const hasTrend = Boolean(props.currentTrend?.length && props.currentLevel)
+  const rankingTitle = `${props.scopePath.at(-1) ?? '全台'}學校排行`
+  const isSchoolTrendReady = !props.selectedSchoolId || props.currentLevel === '學校'
 
   return (
-    <div
-      className="map-mobile-controls-bottom-left"
-      style={{
-        position: 'absolute',
-        bottom: '8px',
-        left: '8px',
-        right: '8px',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'flex-start',
-        gap: '8px',
-        zIndex: 1050,
-        pointerEvents: 'none',
-      }}
-    >
+    <div className="map-mobile-controls-bottom-left">
       {showOverlay && (
-        <div
-          className="map-mobile-panel-group"
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            width: '100%',
-            pointerEvents: 'auto',
-            background: 'var(--map-overlay-bg)',
-            backdropFilter: 'blur(var(--map-overlay-blur))',
-            borderRadius: 'var(--radius-md)',
-            boxShadow: 'var(--shadow-premium)',
-            border: '1px solid var(--map-overlay-border)',
-            overflow: 'hidden',
-          }}
-        >
-          <style>{`
-            .map-mobile-panel-group > div > section,
-            .map-mobile-panel-group > div > .map-trend-card,
-            .map-mobile-panel-group .map-school-ranking {
-              box-shadow: none !important;
-              border: none !important;
-              border-radius: 0 !important;
-              background: transparent !important;
-              margin: 0 !important;
-              backdrop-filter: none !important;
-              height: 150px !important;
-              max-height: 150px !important;
-            }
-          `}</style>
-
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(4, 1fr)',
-              gap: '4px',
-              padding: '6px',
-              borderBottom: '1px solid var(--border-light)',
-              width: '100%',
-              overflowX: 'auto',
-            }}
-          >
-            {modes.map((mode) => {
-              const isActive = activePanel === mode.value
-              return (
-                <button
-                  key={mode.value}
-                  onClick={() => {
-                    if (activePanel !== mode.value) {
-                      setActivePanel(mode.value)
-                    }
-                  }}
-                  style={{
-                    padding: '8px 2px',
-                    borderRadius: 'var(--radius-sm)',
-                    border: 'none',
-                    background: isActive ? 'var(--brand-primary)' : 'transparent',
-                    color: isActive ? '#fff' : 'var(--text-main)',
-                    fontSize: '0.75rem',
-                    fontWeight: isActive ? 800 : 700,
-                    cursor: 'pointer',
-                    transition: 'all 0.2s ease',
-                    boxShadow: isActive ? '0 2px 8px rgb(0 0 0 / 15%)' : 'none',
-                    whiteSpace: 'nowrap',
-                    textAlign: 'center',
-                  }}
-                >
-                  {mode.label}
-                </button>
-              )
-            })}
+        <section id="mobile-analysis-panel" className="map-mobile-panel-group" aria-label="區域資料分析">
+          <div className="map-analysis-status" role="status">
+            <strong>{activePanel === 'trend' ? snapshot.label : rankingTitle}</strong>
+            {(activePanel === 'trend' || !props.selectedSchoolId) && <>
+              <span className="map-data-status" data-state={snapshot.status.kind}>{snapshot.status.label}</span>
+              {!snapshot.status.hasValue && <span>{snapshot.status.description}</span>}
+            </>}
           </div>
-
-          <div>
-            {activePanel === 'trend' && hasTrend && (
+          <div className="map-mobile-panel-group__modes" role="group" aria-label="分析方式">
+            {modes.map((mode) => (
+              <button
+                key={mode.value}
+                type="button"
+                aria-pressed={activePanel === mode.value}
+                onClick={() => setActivePanel(mode.value)}
+              >
+                {mode.label}
+              </button>
+            ))}
+          </div>
+          <div className="map-mobile-panel-group__content">
+            {activePanel === 'trend' && (hasTrend && isSchoolTrendReady ? (
               <MapTrendCard
                 trend={props.currentTrend ?? []}
                 activeYear={props.activeYear}
                 label={props.currentLabel ?? props.currentLevel ?? ''}
                 level={props.currentLevel ?? ''}
+                selectableYears={props.summaryYears}
+                onSelectYear={(year) => {
+                  props.onStopPlayback()
+                  props.startTransition(() => props.onSetActiveYear(year))
+                }}
               />
+            ) : <p className="map-mobile-panel-group__empty">{props.selectedSchoolId && props.isScopeLoading ? '正在載入所選學校的歷史資料…' : '目前範圍尚無歷史趨勢資料。'}</p>)}
+            {activePanel !== 'trend' && props.schoolPoints.length === 0 && (
+              <p className="map-mobile-panel-group__empty">{props.scopeError ? '學校資料暫時無法載入，請稍後再試。' : props.activeCountyId ? '正在載入學校資料…' : '先點選縣市，再查看區域內的學校排行。'}</p>
             )}
-
-            {activePanel !== 'trend' && (
+            {activePanel !== 'trend' && props.schoolPoints.length > 0 && (
               <MapSchoolRankingPanel
                 schools={props.schoolPoints.filter((school) =>
                   (!props.activeCountyId || school.countyId === props.activeCountyId) &&
@@ -140,80 +82,30 @@ export function MapMobileBottomDock({
               />
             )}
           </div>
-        </div>
+        </section>
       )}
-
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          gap: '12px',
-          width: '100%',
-          overflowX: 'auto',
-        }}
-      >
-        <div
-          className="map-overlay-toggle-group"
-          style={{
-            pointerEvents: 'auto',
-            display: 'flex',
-            background: 'var(--map-overlay-bg)',
-            backdropFilter: 'blur(var(--map-overlay-blur))',
-            borderRadius: '20px',
-            padding: '4px',
-            boxShadow: 'var(--shadow-premium)',
-            border: '1px solid var(--map-overlay-border)',
-            flexShrink: 0,
-          }}
+      <div className="map-mobile-dock-row">
+        <button
+          type="button"
+          className="map-analysis-toggle"
+          aria-expanded={showOverlay}
+          aria-controls="mobile-analysis-panel"
+          onClick={() => setShowOverlay((current) => !current)}
         >
-          <button
-            onClick={() => setShowOverlay(true)}
-            style={{
-              padding: '6px 14px',
-              borderRadius: '16px',
-              border: 'none',
-              background: showOverlay ? 'var(--brand-primary)' : 'transparent',
-              color: showOverlay ? '#fff' : 'var(--text-secondary)',
-              fontWeight: 800,
-              fontSize: '0.8rem',
-              cursor: 'pointer',
-              transition: 'all 0.2s ease',
-              boxShadow: showOverlay ? '0 2px 8px rgb(0 0 0 / 15%)' : 'none',
-            }}
-          >
-            圖譜
-          </button>
-          <button
-            onClick={() => setShowOverlay(false)}
-            style={{
-              padding: '6px 14px',
-              borderRadius: '16px',
-              border: 'none',
-              background: !showOverlay ? 'var(--text-soft)' : 'transparent',
-              color: !showOverlay ? '#fff' : 'var(--text-secondary)',
-              fontWeight: 800,
-              fontSize: '0.8rem',
-              cursor: 'pointer',
-              transition: 'all 0.2s ease',
-              boxShadow: !showOverlay ? '0 2px 8px rgb(0 0 0 / 15%)' : 'none',
-            }}
-          >
-            無圖譜
-          </button>
-        </div>
-
-        <div style={{ pointerEvents: 'auto', flexShrink: 0 }}>
-          <MapYearStepper
-            activeYear={props.activeYear}
-            summaryYears={props.summaryYears}
-            isYearPlaybackActive={props.isYearPlaybackActive}
-            onSetActiveYear={props.onSetActiveYear}
-            onStopPlayback={props.onStopPlayback}
-            onTogglePlayback={props.onTogglePlayback}
-            startTransition={props.startTransition}
-          />
-        </div>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+            <path d="M4 4v16h16M8 15v-4m5 4V7m5 8v-6" />
+          </svg>
+          {showOverlay ? '收起分析' : '顯示分析'}
+        </button>
+        <MapYearStepper
+          activeYear={props.activeYear}
+          summaryYears={props.summaryYears}
+          isYearPlaybackActive={props.isYearPlaybackActive}
+          onSetActiveYear={props.onSetActiveYear}
+          onStopPlayback={props.onStopPlayback}
+          onTogglePlayback={props.onTogglePlayback}
+          startTransition={props.startTransition}
+        />
       </div>
     </div>
   )

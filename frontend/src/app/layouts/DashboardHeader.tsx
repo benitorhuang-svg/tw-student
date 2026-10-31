@@ -1,8 +1,10 @@
 import type { AcademicYear } from '@/shared/api/data/educationData'
 import type { AtlasTheme } from '@/shared/lib/utils/constants'
+import type { DataStatus } from '@/shared/lib/analytics'
 
 type DashboardHeaderProps = {
   theme: AtlasTheme
+  yearDataStatus?: DataStatus
   activeYear?: AcademicYear
   summaryYears?: AcademicYear[]
   isYearPlaybackActive?: boolean
@@ -15,6 +17,7 @@ type DashboardHeaderProps = {
 
 function DashboardHeader({
   theme,
+  yearDataStatus,
   activeYear,
   summaryYears = [],
   isYearPlaybackActive = false,
@@ -68,9 +71,10 @@ function DashboardHeader({
         </button>
         <div className="dashboard-header__logo">
           <h1>
-            <span className="logo-text--primary">Taiwan</span>
-            <span className="logo-text--secondary">Education Atlas</span>
+            <span className="logo-text--primary">臺灣教育</span>
+            <span className="logo-text--secondary">Atlas</span>
           </h1>
+          <p className="dashboard-header__tagline">學生人數分析工作台</p>
         </div>
         
         {activeYear && (
@@ -82,6 +86,7 @@ function DashboardHeader({
                 disabled={activeIdx <= 0}
                 onClick={() => handleStep(-1)}
                 title="上一個學年度"
+                aria-label="上一個學年度"
               >
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" width="14" height="14">
                   <polyline points="15 18 9 12 15 6" />
@@ -89,9 +94,9 @@ function DashboardHeader({
               </button>
               <div className="dashboard-header__year">
                 <span className="year-chip">{activeYear}學年度</span>
-                {activeYear != null && Number(activeYear) >= 115 && (
-                  <span className="dashboard-projection-badge" title="本學年度為模型推估數據">
-                    推估
+                {yearDataStatus && yearDataStatus.kind !== 'official' && (
+                  <span className="dashboard-projection-badge" title={yearDataStatus.description}>
+                    {yearDataStatus.label}
                   </span>
                 )}
               </div>
@@ -101,6 +106,7 @@ function DashboardHeader({
                 disabled={activeIdx >= total - 1}
                 onClick={() => handleStep(1)}
                 title="下一個學年度"
+                aria-label="下一個學年度"
               >
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" width="14" height="14">
                   <polyline points="9 18 15 12 9 6" />
@@ -113,6 +119,8 @@ function DashboardHeader({
               className={isYearPlaybackActive ? 'header-playback-btn active' : 'header-playback-btn'}
               onClick={onTogglePlayback}
               title={isYearPlaybackActive ? '停止播放' : '播放年度變遷'}
+              aria-label={isYearPlaybackActive ? '停止播放' : '播放年度變遷'}
+              aria-pressed={isYearPlaybackActive}
             >
               {isYearPlaybackActive ? (
                 <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12">

@@ -7,6 +7,7 @@ interface StarMarkerProps {
   position: [number, number]
   size?: number
   color?: string
+  dotColor?: string
   isSelected?: boolean
   deltaRatio?: number
   tooltipContent?: React.ReactNode
@@ -26,6 +27,7 @@ export const StarMarker: React.FC<StarMarkerProps> = ({
   color = '#fbbf24',
   isSelected = false,
   deltaRatio = 0,
+  dotColor: schoolColor,
   tooltipContent,
   onActivate,
   ariaLabel,
@@ -36,7 +38,7 @@ export const StarMarker: React.FC<StarMarkerProps> = ({
   // Scale the star based on zoom level just like regular school markers
   const dynamicSize = size * (zoom / 11)
   
-  const dotColor = growthChoroplethColor(deltaRatio)
+  const dotColor = schoolColor ?? growthChoroplethColor(deltaRatio)
 
   const icon = L.divIcon({
     className: 'atlas-selected-marker-molecule-container',

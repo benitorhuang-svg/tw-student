@@ -1,18 +1,11 @@
-import { useState, useRef, useEffect } from 'react'
-import { SCHOOL_LEVEL_LEGEND } from '../schoolMarkerTheme'
+import { useState, useRef, useEffect, type ReactNode } from 'react'
 import { type AtlasTab } from "@/shared/lib/atlas";
 
 type MapFloatingHelpProps = {
   activeTab: AtlasTab
   activeCountyName: string | null
+  legend: ReactNode
 }
-
-const COUNTY_LEGEND = [
-  { id: 0, color: '#99f6e4', opacity: 0.28, label: '< 5 萬人' },
-  { id: 1, color: '#5eead4', opacity: 0.46, label: '5 萬 - 10 萬人' },
-  { id: 2, color: '#14b8a6', opacity: 0.64, label: '10 萬 - 15 萬人' },
-  { id: 3, color: '#0f766e', opacity: 0.82, label: '>= 15 萬人' },
-]
 
 function getTip(activeTab: MapFloatingHelpProps['activeTab'], activeCountyName: string | null) {
   if (activeTab === 'schools' || activeTab === 'school-focus') {
@@ -32,7 +25,7 @@ function getTip(activeTab: MapFloatingHelpProps['activeTab'], activeCountyName: 
     : '先從全台區域開始，依序點選地區、縣市、鄉鎮與學校進行多層級下鑽。'
 }
 
-function MapFloatingHelp({ activeTab, activeCountyName }: MapFloatingHelpProps) {
+function MapFloatingHelp({ activeTab, activeCountyName, legend }: MapFloatingHelpProps) {
   const [isOpen, setIsOpen] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
 
@@ -44,7 +37,7 @@ function MapFloatingHelp({ activeTab, activeCountyName }: MapFloatingHelpProps) 
       const target = event.target as HTMLElement
       // If clicking the toggle button itself, let its own handler (setIsOpen(!isOpen)) handle it.
       // For all other clicks (on the panel or anywhere else on the screen), close it.
-      if (target.closest('.map-help-toggle')) {
+      if (containerRef.current?.contains(target)) {
         return
       }
       
@@ -99,39 +92,7 @@ function MapFloatingHelp({ activeTab, activeCountyName }: MapFloatingHelpProps) 
             <p className="map-floating-help__tip-text">{getTip(activeTab, activeCountyName)}</p>
           </div>
 
-          <div className="map-floating-help__divider" />
-
-          <div className="map-floating-help__legend-header">
-            <h4 className="map-floating-help__legend-subtitle">數據圖例</h4>
-          </div>
-
-          <div className="map-floating-help__legend-grid">
-            {activeTab === 'schools' || activeTab === 'school-focus' ? (
-              <>
-                <div className="map-floating-help__legend-items">
-                  {SCHOOL_LEVEL_LEGEND.map((item) => (
-                    <div key={item.label} className="map-stage__legend-row">
-                      <span className="map-stage__legend-swatch map-stage__legend-swatch--dot" style={{ '--swatch-color': item.color } as React.CSSProperties} />
-                      <span className="map-stage__legend-label">{item.label}</span>
-                    </div>
-                  ))}
-                </div>
-                <p className="map-floating-help__legend-footer">圓點反映各校位置，大小代表學生總量。</p>
-              </>
-            ) : (
-              <>
-                <div className="map-floating-help__legend-items">
-                  {COUNTY_LEGEND.map((step) => (
-                    <div key={step.id} className="map-stage__legend-row">
-                      <span className="map-stage__legend-swatch" style={{ '--swatch-color': step.color, '--swatch-opacity': step.opacity } as React.CSSProperties} />
-                      <span className="map-stage__legend-label">{step.label}</span>
-                    </div>
-                  ))}
-                </div>
-                <p className="map-floating-help__legend-footer">填色越深，代表目前區域學生人數越多。</p>
-              </>
-            )}
-          </div>
+          {legend}
         </section>
       )}
     </div>

@@ -1,14 +1,16 @@
+@import url('./00-overlay-layout.css');
+
 .map-top-bar {
     position: absolute;
     top: 16px;
     left: 16px;
     right: 16px;
-    z-index: 1000;
+    z-index: 1100;
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
     justify-content: space-between;
-    gap: 4px; /* Reduced from 8px */
+    gap: 8px;
     pointer-events: none;
 }
 
@@ -24,7 +26,7 @@
 
 .map-control-pillar {
     position: absolute;
-    top: 76px; /* Offset below top bar */
+    top: 76px;
     left: 16px;
     z-index: 999;
     display: flex;
@@ -34,7 +36,7 @@
 }
 
 .map-breadcrumb {
-    height: 40px;
+    min-height: 40px;
     display: flex;
     align-items: center;
     margin-left: 0;
@@ -47,15 +49,15 @@
     border: 1px solid var(--map-overlay-border);
     box-shadow: var(--shadow-premium);
     pointer-events: auto;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     gap: 2px;
     max-width: fit-content;
 }
 
 @media (width >= 861px) {
     .map-breadcrumb {
-        width: 240px;
-        max-width: none;
+        width: auto;
+        max-width: 360px;
         justify-content: flex-start;
     }
 }

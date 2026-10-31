@@ -115,7 +115,7 @@ export function StackedAreaTrendChart({
               x2={width - paddingRight}
               y1={getValueY(0)}
               y2={getValueY(0)}
-              stroke="#e2e8f0"
+              stroke="var(--chart-grid)"
               strokeWidth="1"
               strokeDasharray="2 2"
             />
@@ -130,7 +130,7 @@ export function StackedAreaTrendChart({
             />
             <path
               d={totalTrendPath}
-              stroke="rgba(0,0,0,0.1)"
+              stroke="var(--border-strong)"
               strokeWidth="2"
               fill="none"
               strokeDasharray="4 4"

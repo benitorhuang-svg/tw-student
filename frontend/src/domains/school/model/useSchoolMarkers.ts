@@ -9,7 +9,7 @@ import type {
   SchoolLevel,
 } from '@/shared/api/data/educationData'
 import type { SchoolMapPoint } from '@/shared/lib/atlas'
-import { getSchoolInsights, getStudentsForYear, previousYearOf } from '@/shared/lib/analytics'
+import { getSchoolInsights, getStudentsForYear, previousYearOf, getYearValueStatus } from '@/shared/lib/analytics'
 
 export function useSchoolMarkers(
   summaryDataset: EducationSummaryDataset | null,
@@ -31,7 +31,7 @@ export function useSchoolMarkers(
 
     const cachedDetails = Object.values(countyDetailCache);
 
-    const currentCountyId = Object.keys(countyDetailCache).find(id =>
+    const currentCountyId = activeCountyId ?? Object.keys(countyDetailCache).find(id =>
         countyDetailCache[id].towns.some(t => t.id === activeTownshipId)
     )
     const selectedCountyDetail = currentCountyId ? countyDetailCache[currentCountyId] : null;
@@ -55,7 +55,9 @@ export function useSchoolMarkers(
           if (!lat || !lon || (lat === 0 && lon === 0)) continue;
 
           const currentStudents = getStudentsForYear(s, filters.year);
+          const currentRecord = s.yearlyStudents.find((record) => record.year === filters.year);
           const previousStudents = previousYear ? getStudentsForYear(s, previousYear) : currentStudents;
+          const previousRecord = s.yearlyStudents.find((record) => record.year === previousYear);
           const delta = currentStudents - previousStudents;
 
           points.push({
@@ -68,6 +70,8 @@ export function useSchoolMarkers(
             managementType: s.managementType,
             status: s.status ?? '正常',
             currentStudents,
+            valueStatus: getYearValueStatus(currentRecord, s.missingYears?.includes(filters.year)),
+            hasComparison: Boolean(previousRecord && !s.missingYears?.includes(previousRecord.year) && !['missing', 'year-not-applicable'].includes(getYearValueStatus(previousRecord) ?? '') && previousStudents > 0),
             delta,
             deltaRatio: previousStudents === 0 ? 0 : delta / previousStudents,
             latitude: lat,

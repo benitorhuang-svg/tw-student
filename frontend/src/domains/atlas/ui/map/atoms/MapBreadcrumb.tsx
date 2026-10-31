@@ -15,7 +15,7 @@ function MapBreadcrumb({ scopePath, onNavigate }: MapBreadcrumbProps) {
             {index > 0 && <span className="map-breadcrumb__separator" aria-hidden="true">&nbsp;&gt;&nbsp;</span>}
             <span className={`map-breadcrumb__segment ${isLast ? 'is-active' : ''}`}>
               {isLast ? (
-                <span className="map-breadcrumb__current">{segment}</span>
+                <span className="map-breadcrumb__current" aria-current="location" title={segment}>{segment}</span>
               ) : (
                 <button
                   type="button"

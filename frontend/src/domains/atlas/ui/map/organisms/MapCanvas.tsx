@@ -19,7 +19,7 @@ function toFiniteZoom(zoom: unknown): number | null {
 export default function MapCanvas(props: MapCanvasProps) {
   const {
     activeCountyId, activeTownshipId, theme, countyBoundaries,
-    townshipBoundaries, townshipRows, allTownshipRows, allTownshipBoundaries,
+    townshipBoundaries, townshipRows, allTownshipBoundaries,
     schoolPoints, selectedSchoolId, highlightedCountyId,
     highlightedTownshipId, highlightedSchoolId,
     onSelectSchool, initialMapZoom, initialMapLat, initialMapLon,
@@ -55,11 +55,12 @@ export default function MapCanvas(props: MapCanvasProps) {
   }, [props.summaryDataset, schoolPoints, selectedSchoolId])
 
   const [hoveredCountyId, setHoveredCountyId] = useState<string | null>(null)
+  const [showAllLabels, setShowAllLabels] = useState(false)
   const [hoveredTownshipId, setHoveredTownshipId] = useState<string | null>(null)
 
   const visibleTownshipRows = useMemo(
-    () => (allTownshipRows.length > 0 ? allTownshipRows : townshipRows),
-    [allTownshipRows, townshipRows],
+    () => activeCountyId ? townshipRows : [],
+    [activeCountyId, townshipRows],
   )
   const computed = useMapComputedState(
     props.counties, activeCountyId, activeTownshipId,
@@ -113,6 +114,7 @@ export default function MapCanvas(props: MapCanvasProps) {
               currentMapZoom={resolvedCurrentMapZoom}
               allTownshipBoundaries={allTownshipBoundaries}
               forceTownshipLabels={forceTownshipLabels}
+              showAllLabels={showAllLabels}
             />
 
             <MapBoundsController
@@ -124,10 +126,14 @@ export default function MapCanvas(props: MapCanvasProps) {
               initialLonFromUrl={initialMapLon}
             />
 
-            <MapCanvasMapControls isMobile={isMobile} props={props} />
+            <MapCanvasMapControls isMobile={isMobile} props={props} showAllLabels={showAllLabels} onToggleLabels={() => setShowAllLabels((current) => !current)} />
           </MapContainer>
 
-          <MapCanvasOverlayControls isMobile={isMobile} props={props} />
+          <MapCanvasOverlayControls
+            isMobile={isMobile}
+            props={props}
+            selectedSchool={selectedSchool}
+          />
         </div>
       </div>
     </section>

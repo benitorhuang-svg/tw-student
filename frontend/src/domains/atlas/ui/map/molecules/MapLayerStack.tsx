@@ -1,4 +1,5 @@
 import { memo, useCallback, useMemo } from 'react'
+import { Pane } from 'react-leaflet'
 import { CountyMarkerLayer } from './CountyMarkerLayer'
 import AllTownshipLabels from './AllTownshipLabels'
 import VisibleSchoolMarkers from './VisibleSchoolMarkers'
@@ -15,6 +16,7 @@ import type {
   RankingSummary 
 } from '@/shared/lib/analytics'
 import type { SchoolMapPoint } from '../types'
+import { getSchoolLevelColor } from '../schoolMarkerTheme'
 
 type LayerStackProps = {
   theme: 'light' | 'dark'
@@ -43,6 +45,7 @@ type LayerStackProps = {
   showSchoolMarkers: boolean
   currentMapZoom: number | null
   forceTownshipLabels: boolean
+  showAllLabels: boolean
   vectorTileBaseUrl: string
   onSelectCounty: (id: string, options?: { skipTabSwitch?: boolean }) => void
   onSelectTownship: (id: string, options?: { skipTabSwitch?: boolean }) => void
@@ -112,13 +115,14 @@ export const MapLayerStack = memo(function MapLayerStack(props: LayerStackProps)
         onHoverCounty={onHoverCounty}
         showMapTooltip={showMapTooltip}
         hideMapTooltip={hideMapTooltip}
+        showAllLabels={props.showAllLabels}
       />
 
       <AllTownshipLabels
         onSelectTownship={onSelectTownship}
         hiddenTownshipId={null}
         visibleTownshipIds={visibleTownshipIds}
-        forceShowAll={forceTownshipLabels}
+        forceShowAll={forceTownshipLabels || props.showAllLabels}
         townshipBoundaries={allTownshipBoundaries}
         currentZoom={currentMapZoom}
         townshipLookup={townshipLookup}
@@ -130,7 +134,7 @@ export const MapLayerStack = memo(function MapLayerStack(props: LayerStackProps)
       {showSchoolMarkers && (
         <VisibleSchoolMarkers
           countyBuckets={countyBuckets}
-          schoolPoints={schoolPoints}
+          schoolPoints={schoolPoints.filter((school) => school.countyId === activeCountyId)}
           selectedSchoolId={selectedSchoolId}
           highlightedSchoolId={highlightedSchoolId}
           onSelectSchool={onSelectSchool}
@@ -139,17 +143,20 @@ export const MapLayerStack = memo(function MapLayerStack(props: LayerStackProps)
 
       {/* Global Selection Marker Molecule: Combines Star, Dot, and Pulse to prevent drift */}
       {selectedSchoolPoint && (
-        <StarMarker
-          position={[selectedSchoolPoint.latitude, selectedSchoolPoint.longitude]}
-          isSelected={true}
-          deltaRatio={selectedSchoolPoint.deltaRatio}
-          zoom={currentMapZoom ?? 11}
-          size={36}
-          color="#fbbf24"
-          ariaLabel={buildSchoolMarkerAriaLabel(selectedSchoolPoint)}
-          onActivate={() => onSelectSchool(selectedSchoolPoint.id)}
-          tooltipContent={renderSchoolHoverCard(selectedSchoolPoint)}
-        />
+        <Pane name="selected-school" style={{ zIndex: 675 }}>
+          <StarMarker
+            position={[selectedSchoolPoint.latitude, selectedSchoolPoint.longitude]}
+            isSelected={true}
+            deltaRatio={selectedSchoolPoint.deltaRatio}
+            zoom={currentMapZoom ?? 11}
+            size={36}
+            color={getSchoolLevelColor(selectedSchoolPoint.educationLevel)}
+            dotColor={getSchoolLevelColor(selectedSchoolPoint.educationLevel)}
+            ariaLabel={buildSchoolMarkerAriaLabel(selectedSchoolPoint)}
+            onActivate={() => onSelectSchool(selectedSchoolPoint.id)}
+            tooltipContent={renderSchoolHoverCard(selectedSchoolPoint)}
+          />
+        </Pane>
       )}
     </>
   )

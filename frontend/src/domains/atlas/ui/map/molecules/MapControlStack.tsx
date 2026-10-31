@@ -1,11 +1,13 @@
 import MapFloatingHelp from './MapFloatingHelp'
-import styles from './MapControlStack.module.css'
+import './MapControlStack.css'
 import { type AtlasTab } from "@/shared/lib/atlas";
+import type { ReactNode } from 'react'
 
 type MapControlStackProps = {
   activeTab: AtlasTab
   activeCountyName: string | null
   className?: string
+  legend: ReactNode
 }
 
 /**
@@ -16,19 +18,21 @@ type MapControlStackProps = {
 export const MapControlStack = ({
   activeTab,
   activeCountyName,
+  legend,
   className = ""
 }: MapControlStackProps) => {
   return (
-    <div className={`${styles['map-bottom-left-stack']} ${className}`}>
+    <div className={`map-support-controls ${className}`}>
       {/* 1. Supports Area (Left empty for layout consistency or removed) */}
 
 
       {/* 2. Map Support Tools (Help Toggle only) */}
-      <div className={styles['map-control-group']}>
-        <div className={styles['map-detached-controls']}>
+      <div className="map-support-controls__group">
+        <div className="map-support-controls__tools">
           <MapFloatingHelp 
             activeTab={activeTab} 
             activeCountyName={activeCountyName} 
+            legend={legend}
           />
         </div>
       </div>

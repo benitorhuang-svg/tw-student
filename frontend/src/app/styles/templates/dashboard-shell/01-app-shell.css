@@ -3,19 +3,10 @@
     height: 100dvh;
     display: grid;
     grid-template-rows: auto 1fr auto;
-    background: radial-gradient(circle at top left, rgb(8 145 178 / 8%), transparent 24%), radial-gradient(circle at top right, rgb(249 115 22 / 6%), transparent 28%), var(--surface-page);
+    background: var(--surface-page);
     color: var(--text-main);
     overflow: hidden;
     padding: env(safe-area-inset-top, 0) env(safe-area-inset-right, 0) env(safe-area-inset-bottom, 0) env(safe-area-inset-left, 0)
-}
-
-.app-shell[data-theme="dark"] {
-    --text-main: #e5eef8;
-    --text-strong: #f8fafc;
-    --text-soft: #9cb1c7;
-    --surface-page: linear-gradient(180deg, #0b1424 0%, #101b30 100%);
-
-    color: var(--text-main)
 }
 
 .app-shell--loading {

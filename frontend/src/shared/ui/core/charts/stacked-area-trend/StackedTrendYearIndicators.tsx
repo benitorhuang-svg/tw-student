@@ -33,7 +33,7 @@ export function StackedTrendYearIndicators({
         return (
           <g key={year} className="trend-molecule--indicator-group">
             <g transform={`translate(${barXCenter}, ${getValueY(yearTotals[yearIndex]) - 10})`}>
-              <text y={-18} textAnchor="middle" fontSize="14" fontWeight="900" fill="#1e293b">
+              <text y={-18} textAnchor="middle" fontSize="14" fontWeight="700" fill="var(--text-strong)">
                 {formatStackedTrendValue(yearTotals[yearIndex])}
               </text>
 
@@ -45,16 +45,16 @@ export function StackedTrendYearIndicators({
                     width="44"
                     height="15"
                     rx="5"
-                    fill={totalDelta === 0 ? '#94a3b8' : totalDelta > 0 ? '#10b981' : '#f43f5e'}
+                    fill={totalDelta === 0 ? 'var(--data-neutral)' : totalDelta > 0 ? 'var(--data-increase)' : 'var(--data-decrease)'}
                     opacity="0.15"
                   />
                   <text
                     x="0"
                     y="2.5"
                     textAnchor="middle"
-                    fontSize="10.5"
-                    fontWeight="900"
-                    fill={totalDelta === 0 ? '#64748b' : totalDelta > 0 ? '#059669' : '#e11d48'}
+                    fontSize="11.5"
+                    fontWeight="650"
+                    fill={totalDelta === 0 ? 'var(--text-soft)' : totalDelta > 0 ? 'var(--data-increase)' : 'var(--data-decrease)'}
                   >
                     {totalDeltaPct !== null ? `${totalDeltaPct > 0 ? '+' : ''}${totalDeltaPct.toFixed(1)}%` : ''}
                   </text>
@@ -62,7 +62,7 @@ export function StackedTrendYearIndicators({
               )}
             </g>
 
-            <text x={barXCenter} y={getValueY(0) + 24} textAnchor="middle" fontSize="13" fontWeight="800" fill="#64748b">
+            <text x={barXCenter} y={getValueY(0) + 24} textAnchor="middle" fontSize="13" fontWeight="600" fill="var(--text-soft)">
               {year}
             </text>
 

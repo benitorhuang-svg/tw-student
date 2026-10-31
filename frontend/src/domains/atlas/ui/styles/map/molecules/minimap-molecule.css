@@ -1,7 +1,7 @@
 /* --- Mini Map Molecule Styles --- */
 
 .atlas-mini-map-card {
-        width: 160px;
+        width: 128px;
 
     /* Shrunk as requested */
         background: transparent;
@@ -29,7 +29,7 @@
 }
 
 .atlas-mini-map-card__main {
-        height: 180px;
+        height: 148px;
         width: 100%;
         display: flex;
         justify-content: center;

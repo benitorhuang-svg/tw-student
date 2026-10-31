@@ -93,8 +93,8 @@ export function renderCountyPinIcon(
   color: string,
   isActive: boolean,
 ) {
-  const iconWidth = Math.min(56, Math.max(34, 14 + label.length * 12))
-  const iconHeight = 24
+  const iconWidth = Math.min(112, Math.max(44, 14 + label.length * 12))
+  const iconHeight = 44
 
   return L.divIcon({
     className: 'atlas-county-pin-wrapper',

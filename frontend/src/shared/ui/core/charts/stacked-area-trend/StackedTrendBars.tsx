@@ -1,4 +1,5 @@
 import { SERIES_COLORS } from './constants'
+import { getEducationTheme } from '@/shared/lib/education/educationTheme'
 import { getSeriesValue, getStackBaseValue, getYearX } from './geometry'
 import type { TrendSeries, ValueScale } from './types'
 
@@ -41,7 +42,8 @@ export function StackedTrendBars({
                 y={point.y1}
                 width={barWidth}
                 height={Math.max(point.y0 - point.y1, 0.5)}
-                fill={`url(#bar-grad-${seriesIndex % SERIES_COLORS.length})`}
+                fill={getEducationTheme(series.label)?.color ?? `url(#bar-grad-${seriesIndex % SERIES_COLORS.length})`}
+                data-education-level={series.label}
                 opacity="0.9"
                 rx="2"
               />

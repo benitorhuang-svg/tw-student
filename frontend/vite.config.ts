@@ -172,8 +172,8 @@ export default defineConfig({
         name: 'Taiwan Education Atlas',
         short_name: 'TW Atlas',
         description: '以教育部正式資料與官方行政區界線打造的台灣學生數互動地圖。',
-        theme_color: '#08111f',
-        background_color: '#08111f',
+        theme_color: '#256078',
+        background_color: '#f4f6f8',
         display: 'standalone',
         lang: 'zh-Hant',
         icons: [
@@ -198,7 +198,7 @@ export default defineConfig({
         ],
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,svg,png,ico,txt,woff2}'],
+        globPatterns: ['**/*.{js,css,html,svg,png,ico,txt,woff2,wasm}'],
         navigateFallback: 'index.html',
         navigateFallbackDenylist: [/\/data\//, /\.json$/],
         maximumFileSizeToCacheInBytes: 50 * 1024 * 1024,

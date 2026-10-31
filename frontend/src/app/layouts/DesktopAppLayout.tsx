@@ -8,6 +8,7 @@ import { Suspense, lazy, type ReactNode, type RefObject } from 'react'
 
 import { AtlasFooter, loadAnomalyPanel, loadDataGovernanceFlyout } from '@/domains/atlas'
 import type { TrendPoint } from '@/shared/lib/analytics'
+import { describeDataStatus } from '@/shared/lib/analytics'
 import type { AcademicYear, CountyBoundaryCollection, CountyBucketDataset, CountyDetailDataset, EducationLevelFilter, ManagementTypeFilter, RegionGroupFilter, TownshipBoundaryCollection } from '@/shared/api/data/educationData'
 import type { SavedComparisonScenario, InvestigationFilter } from '@/shared/lib/atlas'
 import type { AtlasTheme } from '@/shared/lib/utils/constants'
@@ -116,6 +117,11 @@ function DesktopAppLayout(props: DesktopAppLayoutProps) {
         header={
           <DashboardHeader
             theme={props.theme}
+            yearDataStatus={describeDataStatus({
+              year: props.activeYear,
+              value: props.derived.globalNationalSummary?.students,
+              notes: props.summaryDataset.dataNotes?.filter((note) => props.educationLevel === '全部' || note.message.includes(props.educationLevel)),
+            })}
             activeYear={props.activeYear}
             summaryYears={[...props.summaryDataset.years]}
             isYearPlaybackActive={props.isYearPlaybackActive}

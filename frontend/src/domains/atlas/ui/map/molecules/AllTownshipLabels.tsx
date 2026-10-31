@@ -9,6 +9,7 @@ import { buildHoverPreviewHtml } from '../mapStyles'
 
 import type { TownshipBoundaryCollection } from '@/shared/api/data/educationData'
 import type { RankingSummary } from '@/shared/lib/analytics'
+import { selectMapLabels } from '@/shared/lib/utils/labelLayout'
 
 type AllTownshipLabelsProps = {
   onSelectTownship: (townshipId: string, options?: { skipTabSwitch?: boolean }) => void
@@ -23,13 +24,13 @@ type AllTownshipLabelsProps = {
   hideMapTooltip?: () => void
 }
 
-function makeTownshipLabelIcon(name: string) {
+function makeTownshipLabelIcon(name: string, selected: boolean) {
   const width = Math.min(140, 20 + name.length * 14)
   return L.divIcon({
     className: 'atlas-all-township-label-wrapper',
-    iconSize: [width, 24],
-    iconAnchor: [width / 2, 12],
-    html: `<div class="atlas-all-township-label">${name}</div>`,
+    iconSize: [width, 44],
+    iconAnchor: [width / 2, 22],
+    html: `<div class="atlas-township-hit-area"><div class="atlas-all-township-label ${selected ? 'atlas-all-township-label--selected' : ''}">${name}</div></div>`,
   })
 }
 
@@ -96,8 +97,8 @@ function AllTownshipLabels({
     const zoom = currentZoom ?? map.getZoom()
     
     // Strict visibility rule: hide if zoom < 10 unless forced. 
-    if (zoom < 10 && !forceShowAll) return []
-    if (visibleTownshipIds.length === 0 && !forceShowAll) return []
+    if (zoom < 10) return []
+    if (visibleTownshipIds.length === 0) return []
     
     const visibleIdSet = new Set(visibleTownshipIds)
     const renderBounds = bounds
@@ -110,7 +111,7 @@ function AllTownshipLabels({
       }
 
       if (t.townId === hiddenTownshipId) return false
-      if (visibleIdSet && !visibleIdSet.has(t.townId)) return false
+      if (!visibleIdSet.has(t.townId)) return false
 
       const townshipBounds = townshipBoundsLookup.get(t.townId)
       if (townshipBounds) {
@@ -121,28 +122,17 @@ function AllTownshipLabels({
     })
 
     // Optional deduplication for readability
-    if (!forceShowAll && zoom < 12) {
-      const accepted: typeof inView = []
-      for (const candidate of inView) {
-        // Selected township ALWAYS accepted
-        if (candidate.townId === selectedTownshipId) {
-          accepted.unshift(candidate) 
-          continue
-        }
-
-        const pt = map.latLngToContainerPoint([candidate.latitude, candidate.longitude])
-        const overlaps = accepted.some((existing) => {
-          const ept = map.latLngToContainerPoint([existing.latitude, existing.longitude])
-          return Math.abs(pt.x - ept.x) < 60 && Math.abs(pt.y - ept.y) < 20
-        })
-        if (!overlaps) accepted.push(candidate)
-      }
-      return accepted
+    if (!forceShowAll) {
+      const ids = selectMapLabels(inView.map((township) => {
+        const point = map.latLngToContainerPoint([township.latitude, township.longitude])
+        return { id: township.townId, x: point.x, y: point.y, width: 20 + township.townName.length * 14,
+          height: 44, priority: township.townId === selectedTownshipId ? 1000 : 0 }
+      }))
+      return inView.filter((township) => ids.has(township.townId))
     }
 
     return inView
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [data, hiddenTownshipId, visibleTownshipIds, currentZoom, bounds, forceShowAll])
+  }, [data, hiddenTownshipId, visibleTownshipIds, currentZoom, bounds, forceShowAll, selectedTownshipId, townshipBoundsLookup, map])
 
   if (!visible.length) return null
 
@@ -153,7 +143,9 @@ function AllTownshipLabels({
           <Marker
             key={t.townId}
             position={[t.latitude, t.longitude]}
-            icon={makeTownshipLabelIcon(t.townName)}
+            icon={makeTownshipLabelIcon(t.townName, t.townId === selectedTownshipId)}
+            title={t.townName}
+            zIndexOffset={t.townId === selectedTownshipId ? 2000 : 700}
             eventHandlers={{ 
               click: (e: L.LeafletMouseEvent) => {
                 L.DomEvent.stopPropagation(e.originalEvent)

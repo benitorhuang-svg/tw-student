@@ -11,7 +11,7 @@ import type {
   TownshipBoundaryCollection,
 } from '@/shared/api/data/educationData'
 import type { AtlasTab } from '@/shared/lib/atlas'
-import type { CountySummary, RankingSummary } from '@/shared/lib/analytics'
+import type { CountySummary, RankingSummary, ScopeSummary } from '@/shared/lib/analytics'
 
 import type { SchoolMapPoint } from '../types'
 
@@ -72,6 +72,9 @@ export type MapCanvasProps = {
   currentTrend?: Array<{ year: AcademicYear; value: number }>
   currentLabel?: string
   currentLevel?: string
+  currentSummary?: ScopeSummary
+  scopeError?: string | null
+  isScopeLoading?: boolean
   renderManagementTypeFilter?: (options?: MapFilterSlotOptions) => ReactNode
   renderEducationLevelFilter?: (options?: MapFilterSlotOptions) => ReactNode
 }

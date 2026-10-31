@@ -150,6 +150,9 @@ function App() {
           currentTrend={derived.currentScope?.trend ?? []}
           currentLabel={derived.currentScope?.label ?? '全台'}
           currentLevel={currentScopeLevel ?? '全台'}
+          currentSummary={derived.currentScope}
+          scopeError={educationData.countyDetailError}
+          isScopeLoading={derived.isCountyDetailLoading}
         />
       )
     },
@@ -161,6 +164,7 @@ function App() {
       derived.activeCountyBuckets, derived.selectedSchool?.id, derived.isTownshipBoundaryLoading,
       derived.scopePath, derived.selectedCounty?.name, derived.currentScope?.trend, derived.currentScope?.label,
       currentScopeLevel,
+      derived.currentScope, derived.isCountyDetailLoading, educationData.countyDetailError,
       state.region, state.hoveredCountyId, state.hoveredTownshipId, state.hoveredSchoolId,
       state.activeTab, state.theme, state.mapResetToken, state.mapZoom, state.mapLat, state.mapLon,
       state.activeYear, state.educationLevel, state.managementType,

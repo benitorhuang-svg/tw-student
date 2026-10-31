@@ -53,7 +53,7 @@ export function useMapComputedState(
   }, [townshipBoundaries])
 
   const zoom = currentMapZoom ?? 7
-  const visibility = computeLayerVisibility(zoom, schoolPoints.length > 0)
+  const visibility = computeLayerVisibility(zoom, schoolPoints.length > 0, Boolean(activeCountyId))
 
   return {
     activeCounty,

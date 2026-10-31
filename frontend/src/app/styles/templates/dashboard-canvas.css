@@ -12,7 +12,7 @@
     min-height: 0;
     height: 100vh;
     height: 100dvh;
-    background: var(--palette-ink, var(--clr-slate-950));
+    background: var(--surface-page);
 }
 
 .control-map-stage {

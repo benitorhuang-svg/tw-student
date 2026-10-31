@@ -52,7 +52,7 @@
         --sidebar-w: 340px    }
 
     .dashboard-canvas,.dashboard-canvas--overview,.dashboard-canvas--regional,.dashboard-canvas--county,.dashboard-canvas--schools,.dashboard-canvas--school-focus {
-        grid-template-columns:1fr    }
+        grid-template-columns:minmax(360px, 44fr) minmax(0, 56fr)    }
 
     .dashboard-side-shell {
         grid-column:auto    }

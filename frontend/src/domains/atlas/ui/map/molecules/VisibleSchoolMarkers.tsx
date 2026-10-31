@@ -93,6 +93,7 @@ const VisibleSchoolMarkers = memo(function VisibleSchoolMarkers({
           school={school}
           zoom={zoom}
           isSelected={school.id === selectedSchoolId}
+          isMuted={Boolean(selectedSchoolId) && school.id !== selectedSchoolId}
           isHighlighted={school.id === highlightedSchoolId}
           onSelect={stableSelectSchool}
           pane={SCHOOL_MARKER_PANE}

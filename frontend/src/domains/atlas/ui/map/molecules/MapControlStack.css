@@ -1,6 +1,6 @@
-.map-bottom-left-stack {
+.map-support-controls {
     position: absolute;
-    bottom: 24px;
+    bottom: 20px;
     left: 16px;
     z-index: 1000;
     pointer-events: none;
@@ -11,22 +11,38 @@
 }
 
 
-.map-control-group {
+.map-support-controls__group {
     display: flex;
     align-items: flex-start; /* Align from top since minimap is taller */
     gap: 12px;
     pointer-events: none;
 }
 
-.map-control-group > * {
+.map-support-controls__group > * {
     pointer-events: auto;
 }
 
-.map-detached-controls {
+.map-support-controls__tools {
     display: flex;
     flex-direction: column;
     gap: 8px;
     align-items: center;
+}
+
+.map-floating-tools {
+    position: relative;
+}
+
+@media (width <= 860px) {
+    .map-support-controls {
+        inset: 116px 12px auto auto;
+    }
+
+    .map-support-controls .map-floating-help {
+        inset: 52px 0 auto auto;
+        max-height: min(440px, calc(100dvh - 180px));
+        overflow-y: auto;
+    }
 }
 
 .map-minimap-zoom-pillar {

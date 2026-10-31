@@ -12,7 +12,7 @@
     height: 100vh;
     height: 100dvh;
     background: var(--surface-rail);
-    border-right: var(--border-light);
+    border-right: 1px solid var(--border-light);
     overflow: hidden;
     z-index: 10;
 }
@@ -20,16 +20,17 @@
 .side-shell__header {
     flex-shrink: 0;
     z-index: 20;
-    box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+    border-bottom: 1px solid var(--border-light);
 }
 
 .side-shell__body {
     flex: 1;
     overflow-y: auto;
-    padding: var(--spacing-xs) var(--spacing-md) 0;
+    min-height: 0;
+    padding: 20px 20px 24px;
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-sm);
+    gap: 20px;
     scrollbar-width: thin;
     scrollbar-color: var(--border-light) transparent;
 }
@@ -37,12 +38,14 @@
 .side-shell__footer {
     flex-shrink: 0;
     z-index: 20;
-    border-top: var(--border-subtle);
-    background: var(--surface-glass);
-    backdrop-filter: blur(8px);
+    border-top: 1px solid var(--border-light);
+    background: var(--surface-card);
 }
 
 .atlas-map-panel {
+    --brand-primary: var(--clr-primary-600);
+    --map-accent: var(--clr-primary-600);
+
     width: 100%;
     height: 100%;
     flex: 1;
@@ -70,7 +73,7 @@
     flex: 1;
     width: 100%;
     height: 100%;
-    min-height: 400px; /* Force minimum height */
+    min-height: 0;
     overflow: hidden;
     display: flex;
     flex-direction: column;

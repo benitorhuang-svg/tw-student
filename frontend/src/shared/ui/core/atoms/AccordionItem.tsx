@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from 'react'
+import { useRef, useState, useEffect, useId } from 'react'
 
 type AccordionItemProps = {
   id: string
@@ -28,6 +28,7 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
   className = ''
 }) => {
   const contentRef = useRef<HTMLDivElement | null>(null)
+  const contentId = useId()
   // After opening transition completes, switch to 'settled' to remove maxHeight constraint
   const [settled, setSettled] = useState(isExpanded)
 
@@ -71,9 +72,11 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
   return (
     <div className={`accordion-item stagger-item ${isExpanded ? 'accordion-item--expanded' : ''} ${className}`} style={style}>
       <button
+        type="button"
         className="accordion-header"
         onClick={() => onToggle(id)}
         aria-expanded={isExpanded}
+        aria-controls={contentId}
       >
         <div className={`accordion-icon-box ${isExpanded ? 'accordion-icon-box--expanded' : ''}`}>
           {isExpanded ? (
@@ -90,9 +93,11 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
         <span className="accordion-title">{title}</span>
       </button>
       <div
+        id={contentId}
         className="accordion-content"
         ref={contentRef}
         aria-hidden={!isExpanded}
+        inert={!isExpanded}
         style={contentStyle}
       >
         {children}

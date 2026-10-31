@@ -8,6 +8,7 @@ export type CountyMarkerProps = {
   county: CountySummary
   position: [number, number]
   isActive: boolean
+  showFullName?: boolean
   isInteractive: boolean
   opacity: number
   onSelect: (id: string) => void
@@ -25,6 +26,7 @@ export const CountyMarker = ({
   county,
   position,
   isActive,
+  showFullName = false,
   isInteractive,
   opacity,
   onSelect,
@@ -36,8 +38,8 @@ export const CountyMarker = ({
   const markerRef = useRef<L.Marker | null>(null)
   const openedTooltipRef = useRef(false)
   const icon = useMemo(
-    () => renderCountyPinIcon(county.shortLabel, growthChoroplethColor(county.deltaRatio), isActive),
-    [county.deltaRatio, county.shortLabel, isActive],
+    () => renderCountyPinIcon(showFullName || isActive || (currentMapZoom ?? 7) >= 10 ? county.name : county.shortLabel, growthChoroplethColor(county.deltaRatio), isActive),
+    [county.deltaRatio, county.name, county.shortLabel, isActive, showFullName, currentMapZoom],
   )
 
   useEffect(() => {
@@ -122,6 +124,7 @@ export const CountyMarker = ({
       position={position}
       interactive={isInteractive}
       icon={icon}
+      title={county.name}
       eventHandlers={{
         mousedown: (e) => {
           if (!isInteractive) return

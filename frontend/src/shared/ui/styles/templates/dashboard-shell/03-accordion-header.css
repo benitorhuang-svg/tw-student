@@ -1,73 +1,40 @@
-/* Accordion Interactive Header & Icons */
 .accordion-header {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 14px;
-    background: transparent;
-    border: none;
-    font-size: var(--text-sm);
-    font-weight: 800;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 52px;
+  padding: 14px 16px;
+  border: none;
+  background: transparent;
+  color: var(--text-strong);
+  text-align: left;
+  cursor: pointer;
 }
 
-.accordion-header:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgb(0 0 0 / 5%);
-}
+.accordion-header:focus-visible { outline-offset: -3px; }
 
 .accordion-icon-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 24px;
-    height: 24px;
-    border-radius: 6px;
-    background: var(--tw-slate-100);
-    color: var(--tw-slate-600);
-    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-    flex-shrink: 0;
-}
-
-.app-shell[data-theme="dark"] .accordion-icon-box {
-    background: rgb(255 255 255 / 5%);
-    color: var(--tw-slate-400);
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 5px;
+  background: var(--surface-secondary);
+  color: var(--text-soft);
+  flex-shrink: 0;
 }
 
 .accordion-icon-box--expanded {
-    background: var(--tw-sky-500);
-    color: var(--color-white);
-    transform: rotate(180deg);
-    box-shadow: 0 4px 12px rgb(14 165 233 / 30%);
-}
-
-.app-shell[data-theme="dark"] .accordion-icon-box--expanded {
-    background: var(--tw-sky-600);
-    color: var(--color-white);
+  background: var(--brand-primary-light);
+  color: var(--brand-primary);
 }
 
 .accordion-title {
-    flex: 1;
-    font-size: var(--text-base);
-    font-weight: 800;
-    font-family: var(--font-heading);
-    color: var(--tw-slate-800);
-    letter-spacing: -0.01em;
-    padding-top: 1px;
-    transition: color 0.3s ease;
+  flex: 1;
+  font-size: var(--text-base);
+  font-weight: 650;
+  line-height: 1.5;
+  color: var(--text-strong);
 }
-
-.accordion-item--expanded .accordion-title {
-    color: var(--tw-sky-600);
-}
-
-.app-shell[data-theme="dark"] .accordion-title {
-    color: var(--tw-slate-100);
-}
-
-.app-shell[data-theme="dark"] .accordion-item--expanded .accordion-title {
-    color: var(--tw-sky-400);
-}
+.accordion-item--expanded .accordion-title { color: var(--brand-primary); }

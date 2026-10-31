@@ -34,6 +34,7 @@ export const SegmentedPill = ({
           key={option.value}
           type="button"
           className={currentValue === option.value ? 'segmented-btn active' : 'segmented-btn'}
+          aria-pressed={currentValue === option.value}
           onClick={() => onSelect(option.value)}
         >
           {option.label}

@@ -9,6 +9,7 @@ import {
   type ManagementTypeFilter,
   type RegionGroupFilter,
   type SummaryTrendRecord,
+  type TrendRecord,
   type TownshipBoundaryCollection,
   type EducationSummaryDataset,
   type AtlasLoadObservationSnapshot,
@@ -66,6 +67,8 @@ export type SchoolMapPoint = {
   latitude: number
   longitude: number
   website?: string
+  valueStatus?: TrendRecord['valueStatus']
+  hasComparison?: boolean
 }
 
 export const DEFAULT_YEAR = ACADEMIC_YEARS[ACADEMIC_YEARS.length - 1]

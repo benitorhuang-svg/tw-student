@@ -8,7 +8,7 @@
 .atlas-county-pin {
     position: relative;
     width: 100%;
-    height: 24px;
+    height: 44px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -54,6 +54,8 @@
     border-color: rgb(16 185 129 / 78%);
     color: var(--clr-slate-900);
     box-shadow: 0 4px 12px rgb(16 185 129 / 22%);
+    outline: 2px solid var(--brand-primary);
+    outline-offset: 2px;
 }
 
 .atlas-county-pin-wrapper:focus-visible .atlas-county-pin {

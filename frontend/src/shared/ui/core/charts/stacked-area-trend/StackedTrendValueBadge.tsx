@@ -7,23 +7,23 @@ type StackedTrendValueBadgeProps = {
 }
 
 export function StackedTrendValueBadge({ x, y, delta }: StackedTrendValueBadgeProps) {
-  const deltaColor = delta === 0 ? 'rgba(255,255,255,0.8)' : '#ffffff'
-
+  const label = formatStackedTrendDelta(delta)
+  const width = Math.max(18, label.length * 7 + 6)
   return (
     <g style={{ pointerEvents: 'none' }}>
+      <rect x={x - width / 2} y={y - 12} width={width} height={17} rx={3} fill="var(--surface-card)" opacity={0.94} />
       <text
         x={x}
         y={y}
         textAnchor="middle"
-        fontSize="11"
-        fontWeight="1000"
-        fill={deltaColor}
+        fontSize="12"
+        fontWeight="650"
+        fill="var(--text-main)"
         style={{
-          filter: 'drop-shadow(0 0.5px 2px rgba(0,0,0,0.7))',
           letterSpacing: '-0.01em',
         }}
       >
-        {formatStackedTrendDelta(delta)}
+        {label}
       </text>
     </g>
   )

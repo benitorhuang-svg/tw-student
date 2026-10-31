@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef, useEffect, useId } from 'react'
 import { SegmentedPill } from '../atoms/SegmentedPill'
 
 type CollapsibleFilterProps = {
@@ -25,6 +25,7 @@ export const CollapsibleFilter = ({
 }: CollapsibleFilterProps) => {
   const [isOpen, setIsOpen] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
+  const panelId = useId()
 
   // Auto-close on click outside
   useEffect(() => {
@@ -75,6 +76,10 @@ export const CollapsibleFilter = ({
           }
         }}
         aria-expanded={isOpen}
+        aria-controls={panelId}
+        onKeyDown={(event) => {
+          if (event.key === 'Escape') setIsOpen(false)
+        }}
         title={label}
       >
         {icon && <span className="filter-toggle-icon">{icon}</span>}
@@ -89,7 +94,15 @@ export const CollapsibleFilter = ({
       </button>
 
       <div
+        id={panelId}
         className="filter-expansion"
+        inert={!isOpen}
+        onKeyDown={(event) => {
+          if (event.key === 'Escape') {
+            setIsOpen(false)
+            containerRef.current?.querySelector('button')?.focus()
+          }
+        }}
         onClick={(e) => e.stopPropagation()}
         data-cols={columns}
       >

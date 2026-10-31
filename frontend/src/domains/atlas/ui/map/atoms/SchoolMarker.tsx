@@ -1,8 +1,8 @@
 import L from 'leaflet'
-import { memo, useCallback, useMemo, type MutableRefObject } from 'react'
+import { memo, useCallback, useMemo, useRef, useEffect, type MutableRefObject } from 'react'
 import { CircleMarker, Marker, Tooltip, useMap } from 'react-leaflet'
 import { MAP_MAX_ZOOM } from '@/shared/lib/utils/constants'
-import { growthChoroplethColor, growthChoroplethOpacity } from '../mapStyles'
+import { getSchoolLevelColor } from '../schoolMarkerTheme'
 import { buildSchoolMarkerAriaLabel, renderSchoolHoverCard } from './MapHoverCard'
 import { AccessibleCircleMarker } from '../molecules/AccessibleCircleMarker'
 import type { SchoolMapPoint } from '../types'
@@ -11,6 +11,7 @@ type SchoolMarkerProps = {
   school: SchoolMapPoint
   zoom: number
   isSelected: boolean
+  isMuted: boolean
   isHighlighted: boolean
   onSelect: (id: string | null) => void
   pane: string
@@ -41,6 +42,7 @@ export const SchoolMarker = memo(function SchoolMarker({
   school,
   zoom,
   isSelected,
+  isMuted,
   isHighlighted,
   onSelect,
   pane,
@@ -48,6 +50,7 @@ export const SchoolMarker = memo(function SchoolMarker({
   suppressNextMapClearRef
 }: SchoolMarkerProps) {
   const map = useMap()
+  const hitMarkerRef = useRef<L.Marker | null>(null)
 
   // Scale logic: Start as small dots at Zoom 11, grow more aggressively as we zoom in
   // - Zoom 11: zoomFactor approx 1.0 (Small dots)
@@ -56,17 +59,19 @@ export const SchoolMarker = memo(function SchoolMarker({
   
   const baseRadius = isHighlighted
     ? 6 * zoomFactor
-    : (Math.sqrt(school.currentStudents ?? 0) * 0.15 + 2) * zoomFactor
+    : (Math.sqrt(Math.max(0, school.currentStudents ?? 0)) * 0.15 + 2) * zoomFactor
 
   // At Zoom 11, keep hit zone manageable (20px), then scale up with the marker
-  const hitZoneRadius = Math.max(20, baseRadius * 1.4)
+  const hitZoneRadius = Math.max(22, baseRadius * 1.4)
 
   const absPct = Math.abs(school.deltaRatio * 100)
   // Disable glow at low zoom levels to reduce clutter
-  const hasGlow = !isSelected && absPct >= 5 && zoom >= 11
+  const hasGlow = isHighlighted && !isSelected && !isMuted
+  const visualOpacity = isMuted ? 0.35 : 1
   const glowColor = school.deltaRatio >= 0 ? '#22c55e' : '#ef4444'
   const glowOpacityFactor = Math.max(0.2, Math.min(1, (zoom - 11) * 0.5 + 0.5))
   const ariaLabel = buildSchoolMarkerAriaLabel(school)
+  const unknownValue = school.currentStudents < 0 || school.valueStatus === 'missing' || school.valueStatus === 'year-not-applicable'
   const tooltipContent = renderSchoolHoverCard(school)
   const hitIcon = useMemo(
     () =>
@@ -84,6 +89,21 @@ export const SchoolMarker = memo(function SchoolMarker({
     suppressNextMapClearRef.current = true
     onSelect(school.id)
   }, [onSelect, school.id, suppressNextMapClearRef])
+
+  useEffect(() => {
+    const element = hitMarkerRef.current?.getElement()
+    if (!element) return
+    element.setAttribute('aria-label', ariaLabel)
+    element.setAttribute('role', 'button')
+    const handleSpace = (event: KeyboardEvent) => {
+      if (event.key !== ' ') return
+      event.preventDefault()
+      event.stopPropagation()
+      selectSchool()
+    }
+    element.addEventListener('keydown', handleSpace)
+    return () => element.removeEventListener('keydown', handleSpace)
+  }, [ariaLabel, selectSchool])
 
   // If selected, we don't render anything on the Canvas layer.
   // The SelectedSchoolMarker (Molecule) in MapLayerStack will handle the
@@ -116,8 +136,9 @@ export const SchoolMarker = memo(function SchoolMarker({
         pathOptions={{
           color: 'rgba(255, 255, 255, 0.3)',
           weight: 1,
+          opacity: visualOpacity,
           fillColor: 'rgba(255, 255, 255, 0.08)',
-          fillOpacity: 1,
+          fillOpacity: visualOpacity,
           className: 'atlas-school-marker-hitzone',
         }}
         interactive={false}
@@ -132,10 +153,12 @@ export const SchoolMarker = memo(function SchoolMarker({
         radius={baseRadius}
         pathOptions={{
           className: `atlas-school-marker atlas-school-marker-${school.id}`,
-          color: isHighlighted ? '#ffffff' : '#ffffff',
+          color: unknownValue ? getSchoolLevelColor(school.educationLevel) : '#ffffff',
           weight: 1.5,
-          fillColor: growthChoroplethColor(school.deltaRatio),
-          fillOpacity: isHighlighted ? 1.0 : Math.max(0.65, growthChoroplethOpacity(school.deltaRatio) + 0.1),
+          opacity: visualOpacity,
+          fillColor: getSchoolLevelColor(school.educationLevel),
+          fillOpacity: (unknownValue ? 0.1 : isHighlighted ? 1.0 : 0.9) * visualOpacity,
+          dashArray: unknownValue ? '3 2' : undefined,
         }}
         onActivate={() => selectSchool()}
         onDoubleActivate={() => {
@@ -145,6 +168,7 @@ export const SchoolMarker = memo(function SchoolMarker({
       />
 
       <Marker
+        ref={hitMarkerRef}
         position={[school.latitude, school.longitude]}
         pane={interactionPane}
         icon={hitIcon}

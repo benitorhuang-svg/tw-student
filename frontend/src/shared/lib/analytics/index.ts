@@ -1,6 +1,7 @@
 export * from './analytics.types'
 export * from './analytics.formatters'
 export * from './analytics.helpers'
+export * from './dataStatus'
 export {
   getCountyComparisonSummaries,
   getCountyEducationDistribution,

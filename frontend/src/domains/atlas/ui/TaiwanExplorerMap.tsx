@@ -23,7 +23,7 @@ import type {
   RegionGroupFilter,
   EducationSummaryDataset,
 } from '@/shared/api/data/educationData'
-import type { CountySummary, RankingSummary } from '@/shared/lib/analytics'
+import type { CountySummary, RankingSummary, ScopeSummary } from '@/shared/lib/analytics'
 import type { AtlasTab } from '@/shared/lib/atlas'
 import type { SchoolMapPoint } from './map/types'
 
@@ -84,6 +84,9 @@ type TaiwanExplorerMapProps = {
   currentTrend?: Array<{ year: AcademicYear; value: number }>
   currentLabel?: string
   currentLevel?: string
+  currentSummary?: ScopeSummary
+  scopeError?: string | null
+  isScopeLoading?: boolean
 }
 
 function TaiwanExplorerMap(props: TaiwanExplorerMapProps) {
@@ -199,6 +202,9 @@ function TaiwanExplorerMap(props: TaiwanExplorerMapProps) {
       currentTrend={props.currentTrend}
       currentLabel={props.currentLabel}
       currentLevel={props.currentLevel}
+      currentSummary={props.currentSummary}
+      scopeError={props.scopeError}
+      isScopeLoading={props.isScopeLoading}
       renderManagementTypeFilter={(options) => (
         <AtlasTypeFilter
           managementType={managementType}

@@ -12,12 +12,12 @@
         backdrop-filter: blur(var(--map-overlay-blur)) !important;
         gap: 2px !important;
         display: flex !important;
-        flex-wrap: nowrap !important;
+        flex-wrap: wrap !important;
         font-size: var(--text-base) !important;
         margin-bottom: 0 !important;
         width: auto !important;
         min-width: unset !important;
-        max-width: calc(100vw - 40px) !important;
+        max-width: calc(100vw - 152px) !important;
         justify-content: flex-start !important;
         text-overflow: ellipsis !important;
     }
@@ -52,8 +52,8 @@
     }
 
     .filter-expansion {
-        background: var(--color-white) !important;
-        color: var(--tw-slate-800) !important;
+        background: var(--surface-card) !important;
+        color: var(--text-main) !important;
         backdrop-filter: none !important;
         box-shadow: var(--shadow-heavy) !important;
     }
@@ -61,11 +61,11 @@
     .filter-expansion button,
     .filter-expansion span,
     .filter-expansion div {
-        color: var(--tw-slate-800) !important;
+        color: var(--text-main) !important;
     }
 
     .filter-expansion .segmented-btn {
-        color: var(--tw-slate-800) !important;
+        color: var(--text-main) !important;
         background: transparent !important;
         padding: 10px 14px !important;
         text-align: left !important;
@@ -78,7 +78,7 @@
 
     .filter-expansion .segmented-btn.active {
         background: var(--brand-primary) !important;
-        color: var(--color-white) !important;
+        color: var(--text-inverse) !important;
     }
 
     .filter-toggle-btn {

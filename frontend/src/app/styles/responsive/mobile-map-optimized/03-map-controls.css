@@ -14,14 +14,14 @@
     .atlas-mini-map-card,
     .atlas-mini-map-card__body,
     .atlas-mini-map-card__main {
-        width: 120px !important;
+        width: 96px !important;
         align-items: flex-start !important;
         justify-content: flex-start !important;
         margin-left: 0 !important;
     }
 
     .atlas-mini-map-card__main {
-        height: 120px !important;
+        height: 110px !important;
         border-radius: var(--radius-lg) !important;
         background: var(--map-overlay-bg) !important;
         backdrop-filter: blur(var(--map-overlay-blur)) !important;

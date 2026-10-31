@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { formatStudents } from '@/shared/lib/analytics'
+import { getEducationTheme } from '@/shared/lib/education/educationTheme'
 import { useChartAnimation } from '@/shared/lib/hooks/core/useChartAnimation'
 import { useResponsiveSvg } from '@/shared/lib/hooks/core/useResponsiveSvg'
 
@@ -76,6 +77,7 @@ function PieChart({ slices, size = 160, centerLabel = '總計' }: PieChartProps)
               <path
                 key={slice.label}
                 d={d}
+                style={{ fill: getEducationTheme(slice.label)?.color }}
                 className={`pie-chart__slice pie-chart__slice--${i % PIE_COLORS.length}${isActive ? ' pie-chart__slice--active' : ''}${hoveredIndex !== null && !isActive ? ' pie-chart__slice--muted' : ''}`}
                 tabIndex={0}
                 role="listitem"
@@ -122,7 +124,7 @@ function PieChart({ slices, size = 160, centerLabel = '總計' }: PieChartProps)
             onFocus={() => setHoveredIndex(i)}
             onBlur={() => setHoveredIndex(null)}
           >
-            <span className={`pie-chart-legend__swatch pie-chart-legend__swatch--${i % PIE_COLORS.length}`} />
+            <span className={`pie-chart-legend__swatch pie-chart-legend__swatch--${i % PIE_COLORS.length}`} style={{ background: getEducationTheme(slice.label)?.color }} />
             <span className="pie-chart-legend__label">{slice.label}</span>
             <span className="pie-chart-legend__value">{(slice.share * 100).toFixed(1)}%</span>
           </button>

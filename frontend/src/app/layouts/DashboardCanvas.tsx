@@ -18,6 +18,7 @@ import type { InvestigationItem, SavedComparisonScenario, InvestigationFilter } 
 
 // Styles
 import '@/shared/ui/styles/templates/dashboard-shell/01-premium-cards-system.css'
+import WorkbenchSummary from './WorkbenchSummary'
 
 type DashboardCanvasProps = {
   activeTab: AtlasTab
@@ -114,6 +115,9 @@ function DashboardCanvas({
   header,
   footer,
   derived,
+  activeYear,
+  educationLevel,
+  managementType,
   countyDetailError,
   selectedCountyId,
   selectedTownshipId,
@@ -139,6 +143,14 @@ function DashboardCanvas({
         </div>
 
         <div className="side-shell__body" ref={sidebarRef}>
+          {activeTab === 'overview' && (
+            <WorkbenchSummary
+              summary={derived.globalNationalSummary}
+              activeYear={activeYear}
+              educationLevel={educationLevel}
+              managementType={managementType}
+            />
+          )}
           <AtlasTabs
             activeTab={activeTab}
             items={desktopTabItems}

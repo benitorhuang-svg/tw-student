@@ -9,6 +9,7 @@ import type {
   RegionGroupFilter,
   SchoolRecord,
   StudentCompositionRecord,
+  TrendRecord,
 } from '../../api/data/educationData'
 
 export type DashboardFilters = {
@@ -22,6 +23,7 @@ export type DashboardFilters = {
 export type TrendPoint = {
   year: AcademicYear
   value: number
+  valueStatus?: TrendRecord['valueStatus']
 }
 
 export type CountySummary = {
@@ -93,6 +95,8 @@ export type SchoolInsight = {
   currentStudents: number
   delta: number
   deltaRatio: number
+  valueStatus?: TrendRecord['valueStatus']
+  hasComparison?: boolean
   trend: TrendPoint[]
   studentCompositions?: StudentCompositionRecord[]
   status?: SchoolRecord['status']

@@ -6,6 +6,7 @@ import L from 'leaflet'
 import type { FeatureCollection, GeoJsonObject } from 'geojson'
 import { CountyMarker } from '../atoms/CountyMarker'
 import type { CountySummary } from '@/shared/lib/analytics'
+import { selectMapLabels } from '@/shared/lib/utils/labelLayout'
 
 interface CountyMarkerLayerProps {
   counties: CountySummary[]
@@ -15,6 +16,7 @@ interface CountyMarkerLayerProps {
   activeCountyId: string | null
   onSelectCounty: (countyId: string, options?: { skipTabSwitch?: boolean }) => void
   showMarkers?: boolean
+  showAllLabels?: boolean
   onHoverCounty: (id: string | null) => void
   showMapTooltip: (latlng: L.LatLng, content: string) => void
   hideMapTooltip: () => void
@@ -28,6 +30,7 @@ export function CountyMarkerLayer({
   activeCountyId,
   onSelectCounty,
   showMarkers = true,
+  showAllLabels = false,
   onHoverCounty,
   showMapTooltip,
   hideMapTooltip,
@@ -97,11 +100,28 @@ export function CountyMarkerLayer({
     return inView
   }, [bounds, counties, countyCenterLookup, countyBoundsLookup, activeCountyId, map])
 
+  const displayedCounties = useMemo(() => {
+    const candidates = showMarkers ? visibleCounties : visibleCounties.filter((county) => county.id === activeCountyId)
+    if (showAllLabels || (currentMapZoom ?? 7) < 9) return candidates
+    const pairedChiayi = activeCountyId === '嘉義市' || activeCountyId === '嘉義縣'
+    const ids = selectMapLabels(candidates.flatMap((county) => {
+      const center = countyCenterLookup.get(county.id)
+      if (!center) return []
+      const point = map.latLngToContainerPoint(center)
+      const selected = county.id === activeCountyId
+      const protectedPair = pairedChiayi && (county.id === '嘉義市' || county.id === '嘉義縣')
+      const fullName = selected || (currentMapZoom ?? 7) >= 10
+      return [{ id: county.id, x: point.x, y: point.y, width: fullName ? 14 + county.name.length * 12 : 44, height: 44,
+        priority: selected || protectedPair ? 1000 : county.region === '離島' ? 100 : county.students / 10000 }]
+    }))
+    return candidates.filter((county) => ids.has(county.id))
+  }, [visibleCounties, showMarkers, showAllLabels, activeCountyId, countyCenterLookup, currentMapZoom, map])
+
   if (!showMarkers && !activeCountyId) return null
 
   return (
     <>
-      {visibleCounties.map((county) => {
+      {displayedCounties.map((county) => {
         const center = countyCenterLookup.get(county.id)
         if (!center) return null
 
@@ -120,6 +140,7 @@ export function CountyMarkerLayer({
             county={county}
             position={center}
             isActive={isActive}
+            showFullName={showAllLabels}
             isInteractive={isInteractive}
             opacity={opacity}
             onSelect={(id) => onSelectCounty(id, { skipTabSwitch: false })}

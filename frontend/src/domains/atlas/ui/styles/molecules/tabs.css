@@ -1,65 +1,52 @@
 .atlas-tabs {
   position: sticky;
-  top: -4px; /* Adjust for parent padding if necessary */
+  top: -20px;
   z-index: 100;
   display: flex;
   align-items: center;
-  gap: var(--spacing-sm);
-  overflow: hidden;
+  gap: 4px;
+  min-height: 44px;
+  padding: 4px;
+  overflow-x: auto;
   flex-shrink: 0;
   background: var(--comp-tabs-bg);
-  border-radius: 12px;
-  padding: 6px;
   border: 1px solid var(--comp-tabs-border);
-  box-shadow: var(--shadow-sm);
-  margin-bottom: var(--spacing-sm);
-  backdrop-filter: blur(8px);
-  height: 48px;
-  box-sizing: border-box;
+  border-radius: var(--radius-md);
+  scrollbar-width: none;
 }
 
-.atlas-tabs::-webkit-scrollbar {
-  display: none
-}
+.atlas-tabs::-webkit-scrollbar { display: none; }
 
 .atlas-tabs__indicator {
   position: absolute;
-  top: 6px;
-  bottom: 6px;
+  top: 4px;
+  bottom: 4px;
   left: 0;
   background: var(--comp-tab-active-bg);
-  border-radius: 8px;
-  box-shadow: 0 4px 12px color-mix(in srgb, var(--brand-primary) 30%, transparent);
+  border-radius: 6px;
+  box-shadow: var(--shadow-sm);
   pointer-events: none;
-  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-  will-change: transform, width;
+  transition: transform 180ms ease, width 180ms ease;
 }
 
 .atlas-tab {
   position: relative;
   z-index: 2;
-  flex: 0 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
   min-width: max-content;
-  padding: 8px 16px;
-  font-size: var(--text-sm);
-  font-weight: 700;
-  color: var(--comp-tab-text);
-  background: transparent;
+  min-height: 34px;
+  padding: 7px 14px;
   border: none;
-  border-radius: 8px;
-  cursor: pointer;
+  border-radius: 6px;
+  color: var(--comp-tab-text);
+  font-size: var(--text-sm);
+  font-weight: 600;
   white-space: nowrap;
-  transition: all 0.25s ease;
 }
 
-.atlas-tab:hover {
-  color: var(--comp-tab-hover-text);
-}
-
-.atlas-tab--active {
-  color: var(--comp-tab-active-text) !important;
-}
+.atlas-tab:hover { color: var(--comp-tab-hover-text); }
+.atlas-tab--active { color: var(--comp-tab-active-text); }
+.atlas-tab:focus-visible { outline-offset: -2px; }

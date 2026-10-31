@@ -34,7 +34,7 @@ export function StackedTrendCategoryLabels({
               alignmentBaseline="middle"
               fontSize="13"
               fontWeight="800"
-              fill="#334155"
+              fill="var(--text-soft)"
               style={{ letterSpacing: '0.02em' }}
             >
               {standardizedName}

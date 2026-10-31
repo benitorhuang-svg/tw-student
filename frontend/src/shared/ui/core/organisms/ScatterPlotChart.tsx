@@ -42,12 +42,12 @@ export const ScatterPlotChart: React.FC<ScatterPlotChartProps> = ({
   showHeader = true,
 }) => {
   const { ref: animRef } = useChartAnimation()
-  const responsiveOptions = useMemo(() => ({ minWidth: 320 }), [])
+  const responsiveOptions = useMemo(() => ({ minWidth: 320, minHeight: 260 }), [])
   const { containerRef, width, height } = useResponsiveSvg(620, 320, responsiveOptions)
   
   const padding = useMemo(() => ({
     ...DEFAULT_PADDING,
-    left: width < 450 ? 60 : 76,
+    left: 86,
     right: width < 450 ? 15 : 30
   }), [width])
 
