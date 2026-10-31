@@ -40,13 +40,28 @@ function attachAssetMetrics(datasetBundle, boundaries) {
   }
 }
 
-function buildAssetDrafts({ sqliteBuffer }) {
+function buildAssetDrafts({ sqliteBuffer, datasetBundle, boundaries }) {
+  const summaryJsonBuffer = Buffer.from(JSON.stringify(datasetBundle.summaryDataset), 'utf8')
+  const countyTopoJsonBuffer = Buffer.from(JSON.stringify(boundaries.countyTopology), 'utf8')
+
   return [
     {
       path: 'education-atlas.sqlite',
       assetGroup: 'sqlite',
       critical: true,
       buffer: sqliteBuffer,
+    },
+    {
+      path: 'education-summary.json',
+      assetGroup: 'summary',
+      critical: true,
+      buffer: summaryJsonBuffer,
+    },
+    {
+      path: 'counties.topo.json',
+      assetGroup: 'county-boundary',
+      critical: true,
+      buffer: countyTopoJsonBuffer,
     },
   ]
 }
@@ -98,8 +113,8 @@ async function main() {
     },
   }))
 
-  // 4. 建立最終的基本資產清單與 Manifest
-  const assetDrafts = buildAssetDrafts({ sqliteBuffer })
+  // 4. 建立最終的基本資產清單與 Manifest (包含雙層架構 Tier 1 JSON 與 Tier 2 SQLite)
+  const assetDrafts = buildAssetDrafts({ sqliteBuffer, datasetBundle, boundaries })
 
   const { manifest } = buildManifest({
     generatedAt: datasetBundle.generatedAt,
@@ -112,7 +127,7 @@ async function main() {
   await writeAtlasOutputs(assetDrafts, manifest)
 
   console.log('Official dataset refreshed successfully.')
-  console.log('Consolidated all data into education-atlas.sqlite')
+  console.log('Generated Tier 1 education-summary.json & counties.topo.json, and Tier 2 education-atlas.sqlite')
 }
 
 main().catch((error) => {

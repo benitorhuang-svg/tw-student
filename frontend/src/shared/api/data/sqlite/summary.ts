@@ -1,3 +1,4 @@
+import { buildDataAssetUrl, parseJsonDataResponse } from '../dataAsset'
 import { recordResourceLoad } from '../atlasLoadObservation'
 import { SQLITE_RESOURCE_KEY, type LoadDatabaseOptions } from './connection'
 import type { 
@@ -31,9 +32,6 @@ export function registerCountyLookups(counties: CountySummaryRecord[]) {
   })
 }
 
-
-
-
 export async function loadEducationSummaryWithOptions(options: LoadDatabaseOptions = {}) {
   if (options.forceRefresh) {
     summaryCache = null
@@ -42,12 +40,40 @@ export async function loadEducationSummaryWithOptions(options: LoadDatabaseOptio
   if (summaryCache) {
     recordResourceLoad({
       source: 'memory',
-      resourceKey: SQLITE_RESOURCE_KEY,
-      bytes: summaryCache.assetMetrics?.sqliteBytes,
+      resourceKey: 'education-summary.json',
+      bytes: summaryCache.assetMetrics?.summaryBytes ?? summaryCache.assetMetrics?.sqliteBytes,
     })
     return summaryCache
   }
 
+  // 第一階層 (Tier 1)：優先載入靜態預處理的 education-summary.json (~240KB gzipped)
+  // 達成毫秒級首頁首繪 (FP/FCP/LCP < 100ms)，完全不阻塞等待 47MB SQLite
+  try {
+    const summaryUrl = buildDataAssetUrl('education-summary.json', options.forceRefresh)
+    const response = await fetch(summaryUrl)
+    if (response.ok) {
+      const summary = await parseJsonDataResponse<EducationSummaryDataset>(
+        response,
+        'education-summary.json',
+        summaryUrl,
+      )
+      if (summary && Array.isArray(summary.counties) && summary.counties.length > 0) {
+        summaryCache = summary
+        registerCountyLookups(summary.counties)
+        const contentLength = response.headers.get('content-length')
+        recordResourceLoad({
+          source: 'network',
+          resourceKey: 'education-summary.json',
+          bytes: contentLength ? Number(contentLength) : summary.assetMetrics?.summaryBytes,
+        })
+        return summary
+      }
+    }
+  } catch {
+    // 當離線快取或 JSON 載入失敗時，平滑降級至 Tier 2 SQLite
+  }
+
+  // 第二階層 (Tier 2)：降級至 SQLite Worker 資料庫即時查詢
   const sqliteWorker = await import('./sqliteWorkerClient')
   const bytes = await sqliteWorker.initSqliteWorker(options.forceRefresh)
   const [
@@ -102,6 +128,11 @@ export async function loadSchoolCodeIndexWithOptions(options: LoadDatabaseOption
   }
 
   if (schoolCodeIndexCache) {
+    return schoolCodeIndexCache
+  }
+
+  if (summaryCache?.schoolCodeIndex && Object.keys(summaryCache.schoolCodeIndex).length > 0) {
+    schoolCodeIndexCache = summaryCache.schoolCodeIndex
     return schoolCodeIndexCache
   }
 

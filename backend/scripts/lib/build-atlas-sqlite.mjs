@@ -23,6 +23,7 @@ export async function buildAtlasSqliteBuffer(datasetBundle, boundaries, options 
     db.exec('BEGIN')
     writeAtlasSqliteDataset(statements, datasetBundle, boundaries, options)
     db.exec('COMMIT')
+    db.exec('VACUUM;')
     return db.export()
   } catch (error) {
     db.exec('ROLLBACK')

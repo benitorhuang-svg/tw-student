@@ -41,7 +41,15 @@ function ensure() {
   return worker
 }
 
-export function decodeTopologyInWorker<T>({ topologyJson, objectName }: TopologyWorkerPayload): Promise<T> {
+export async function decodeTopologyInWorker<T>({ topologyJson, objectName }: TopologyWorkerPayload): Promise<T> {
+  if (typeof Worker === 'undefined') {
+    const { feature } = await import('topojson-client')
+    const topologyInput = typeof topologyJson === 'string' ? JSON.parse(topologyJson) : topologyJson
+    const objects = topologyInput.objects
+    const obj = objectName && objects[objectName] ? objects[objectName] : Object.values(objects)[0]
+    return feature(topologyInput, obj) as T
+  }
+
   ensure()
   return new Promise<T>((resolve, reject) => {
     const id = nextId++

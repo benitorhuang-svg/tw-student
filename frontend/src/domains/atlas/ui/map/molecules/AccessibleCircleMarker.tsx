@@ -11,7 +11,7 @@ type AccessibleCircleMarkerProps = {
   pathOptions: L.PathOptions
   pane?: string
   radius: number
-  tooltipContent: ReactNode
+  tooltipContent?: ReactNode
   children?: ReactNode
 }
 
@@ -54,7 +54,9 @@ export function AccessibleCircleMarker({
       eventHandlers={{
         click: (event) => {
           L.DomEvent.stopPropagation(event.originalEvent)
-          markerRef.current?.openTooltip()
+          if (tooltipContent) {
+            markerRef.current?.openTooltip()
+          }
           onActivate()
         },
         dblclick: (event) => {
@@ -68,9 +70,11 @@ export function AccessibleCircleMarker({
         }
       }}
     >
-      <Tooltip direction="top" offset={[0, -6]} className="atlas-map-tooltip atlas-map-tooltip--preview">
-        {tooltipContent}
-      </Tooltip>
+      {tooltipContent ? (
+        <Tooltip direction="top" offset={[0, -6]} className="atlas-map-tooltip atlas-map-tooltip--preview">
+          {tooltipContent}
+        </Tooltip>
+      ) : null}
       {children}
     </CircleMarker>
   )

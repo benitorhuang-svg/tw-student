@@ -123,7 +123,7 @@ export const SchoolMarker = memo(function SchoolMarker({
         interactive={false}
       />
 
-      {/* Base Circle Marker */}
+      {/* Base Circle Marker: 消除重複的 Tooltip，由頂層 Marker 統一處理 hover */}
       <AccessibleCircleMarker
         ariaLabel={ariaLabel}
         center={[school.latitude, school.longitude]}
@@ -141,7 +141,7 @@ export const SchoolMarker = memo(function SchoolMarker({
         onDoubleActivate={() => {
           map.flyTo([school.latitude, school.longitude], MAP_MAX_ZOOM, { animate: true, duration: 1.2 })
         }}
-        tooltipContent={tooltipContent}
+        tooltipContent={null}
       />
 
       <Marker

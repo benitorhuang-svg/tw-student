@@ -2,8 +2,8 @@ import type { FeatureCollection, Geometry } from 'geojson'
 
 // Topology decoding is offloaded to a worker to avoid main-thread topojson work
 import { decodeTopologyInWorker } from './atlas/topologyWorkerClient'
-
-
+import { buildDataAssetUrl } from './dataAsset'
+import { recordResourceLoad } from './atlasLoadObservation'
 import { mapRows, parseJsonValue } from './sqlite/mappers'
 import type {
   CountyBoundaryCollection,
@@ -45,10 +45,6 @@ async function decodeFeatureCollection<TProperties>(
   return decodeTopologyInWorker<FeatureCollection<Geometry, TProperties>>({ topologyJson, objectName })
 }
 
-// 移除不再需要的網路抓取函數，現在統一由 SQLite 讀取
-
-
-
 export async function loadCountyBoundaries(options: BoundaryLoadOptions = {}) {
   if (options.forceRefresh) {
     countyBoundaryCache = null
@@ -58,6 +54,26 @@ export async function loadCountyBoundaries(options: BoundaryLoadOptions = {}) {
     return countyBoundaryCache
   }
 
+  // 第一階層 (Tier 1)：優先以非阻塞 HTTP 載入預量化的 counties.topo.json (~50KB gzipped)
+  try {
+    const topoUrl = buildDataAssetUrl('counties.topo.json', options.forceRefresh)
+    const response = await fetch(topoUrl)
+    if (response.ok) {
+      const topologyJson = await response.text()
+      countyBoundaryCache = await decodeFeatureCollection<CountyBoundaryProperties>(topologyJson, 'counties')
+      const contentLength = response.headers.get('content-length')
+      recordResourceLoad({
+        source: 'network',
+        resourceKey: 'counties.topo.json',
+        bytes: contentLength ? Number(contentLength) : topologyJson.length,
+      })
+      return countyBoundaryCache
+    }
+  } catch {
+    // 降級至 SQLite 資料庫讀取
+  }
+
+  // 第二階層 (Tier 2)：降級至 SQLite 資料庫
   await import('./sqlite/sqliteWorkerClient').then((m) => m.initSqliteWorker(options.forceRefresh))
   const rows = mapRows(await import('./sqlite/sqliteWorkerClient').then((m) => m.execInSqlite("SELECT topology_json FROM boundaries WHERE id = 'counties' AND type = 'county'")))
   const topologyJson = rows[0]?.topology_json as string
@@ -69,7 +85,6 @@ export async function loadCountyBoundaries(options: BoundaryLoadOptions = {}) {
 }
 
 export async function loadTownshipBoundaries(countyId: string, _townshipFile?: string, options: BoundaryLoadOptions = {}) {
-
   if (options.forceRefresh) {
     townshipBoundaryMemoryCache.delete(countyId)
     pendingTownshipBoundaryRequests.delete(countyId)

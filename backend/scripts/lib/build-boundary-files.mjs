@@ -12,7 +12,8 @@ import {
   shortCountyLabel,
 } from './refresh-helpers.mjs'
 
-const TOPOLOGY_QUANTIZATION = 1e5
+const COUNTY_TOPOLOGY_QUANTIZATION = 1e4
+const TOWNSHIP_TOPOLOGY_QUANTIZATION = 5e4
 const COUNTY_BOUNDARY_URLS = [
   'https://maps.nlsc.gov.tw/download/縣市界線(TWD97經緯度).zip',
   'https://maps.nlsc.gov.tw/download/%E7%9B%B4%E8%BD%84%E5%B8%82%E3%80%81%E7%B8%A3(%E5%B8%82)%E7%95%8C%E7%B7%9A(TWD97%E7%B6%93%E7%B7%AF%E5%BA%A6).zip',
@@ -196,7 +197,7 @@ export async function buildBoundaryFiles() {
   )
 
   return {
-    countyTopology: topology({ counties: { type: 'FeatureCollection', features: countyFeatures } }, TOPOLOGY_QUANTIZATION),
+    countyTopology: topology({ counties: { type: 'FeatureCollection', features: countyFeatures } }, COUNTY_TOPOLOGY_QUANTIZATION),
     countyCoordinateLookup,
     townshipCoordinateLookup,
     townshipTopologyByCounty: countyFeatures.map((countyFeature) => {
@@ -205,7 +206,7 @@ export async function buildBoundaryFiles() {
       return {
         countyId,
         fileName: countyFeature.properties.townshipFile,
-        topology: topology({ townships: { type: 'FeatureCollection', features } }, TOPOLOGY_QUANTIZATION),
+        topology: topology({ townships: { type: 'FeatureCollection', features } }, TOWNSHIP_TOPOLOGY_QUANTIZATION),
       }
     }),
   }
